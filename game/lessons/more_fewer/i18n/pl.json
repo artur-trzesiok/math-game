@@ -57,11 +57,11 @@
   },
   "line.p_intro": {
     "who": "lisek",
-    "text": "Teraz ty. Pokażę dwie kupki, a ty kliknij tę, gdzie jest więcej."
+    "text": "Teraz ty. Pokażę dwie kupki, a ty wskaż tę, gdzie jest więcej."
   },
   "line.p_which_more": {
     "who": "lisek",
-    "text": "Gdzie jest więcej? Kliknij."
+    "text": "Gdzie jest więcej? Wskaż."
   },
   "line.p_wrong_pair": {
     "who": "sowa",
@@ -77,7 +77,7 @@
   },
   "line.p_which_sign": {
     "who": "sowa",
-    "text": "Który znak pasuje? Kliknij."
+    "text": "Który znak pasuje? Wskaż."
   },
   "line.p_wrong_sign": {
     "who": "sowa",
@@ -101,7 +101,7 @@
   },
   "line.a_fox_which_sign": {
     "who": "lisek",
-    "text": "Który znak pasuje? Kubków jest mniej niż talerzy. Kliknij."
+    "text": "Który znak pasuje? Kubków jest mniej niż talerzy. Wskaż."
   },
   "line.a_owl_right": {
     "who": "sowa",

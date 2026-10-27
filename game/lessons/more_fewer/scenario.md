@@ -15,8 +15,8 @@ the pile with more". No counting at any point. Characters: Fox (left) and Owl (r
 
 ## Stage 2 - practice
 
-- Four tasks: two piles of one object (1-4 each); "where is more? tap it". The
-  piles are tap targets (outlined zones). A wrong tap triggers the pairing
+- Four tasks: two piles of one object (1-4 each); "where is more? point to it". The
+  piles are point to targets (outlined zones). A wrong pick triggers the pairing
   animation as the explanation, then the question again.
 - Four tasks: two piles and three sign cards (<, =, >) below; "which sign fits?".
   Two of the four are equal. The chosen sign slides between the piles.

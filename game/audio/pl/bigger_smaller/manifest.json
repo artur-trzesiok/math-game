@@ -35,9 +35,9 @@
   "text": "Wiewiórka ma małe łapki. Pomożesz jej wybrać?"
  },
  "line.s2_prompt": {
-  "hash": "27c7c5444698",
+  "hash": "4c8a623c8e50",
   "who": "lisek",
-  "text": "Kliknij mniejszy kubek."
+  "text": "Wskaż mniejszy kubek."
  },
  "line.s2_wrong": {
   "hash": "dea5d92c8c6d",
@@ -60,24 +60,24 @@
   "text": "Teraz zabawa. Pokażę ci dwie rzeczy, a ty wybierz."
  },
  "line.p_click_bigger": {
-  "hash": "b3a424761af0",
+  "hash": "5bb9dab4033f",
   "who": "lisek",
-  "text": "Kliknij większy."
+  "text": "Wskaż większy."
  },
  "line.p_click_smaller": {
-  "hash": "3b42f59e4e98",
+  "hash": "0342f471f5c0",
   "who": "lisek",
-  "text": "Kliknij mniejszy."
+  "text": "Wskaż mniejszy."
  },
  "line.p_click_biggest": {
-  "hash": "c2960986666e",
+  "hash": "7f5747e0ad0b",
   "who": "lisek",
-  "text": "Są trzy. Kliknij największy."
+  "text": "Są trzy. Wskaż największy."
  },
  "line.p_click_smallest": {
-  "hash": "feab98aa4669",
+  "hash": "e17104361b53",
   "who": "lisek",
-  "text": "Są trzy. Kliknij najmniejszy."
+  "text": "Są trzy. Wskaż najmniejszy."
  },
  "line.p_wrong": {
   "hash": "6b5b8948e470",
@@ -125,9 +125,9 @@
   "text": "Mniejsze! Ciastko jest mniejsze od łapki."
  },
  "line.a_sq_your_turn": {
-  "hash": "571d6a787a7a",
+  "hash": "e862bfff8b27",
   "who": "wiewiorka",
-  "text": "Teraz ty. Kliknij to, co jest większe od twojej dłoni."
+  "text": "Teraz ty. Wskaż to, co jest większe od twojej dłoni."
  },
  "line.a_fox_right": {
   "hash": "dc294f151c10",

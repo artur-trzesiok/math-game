@@ -57,11 +57,11 @@
   },
   "line.p_intro": {
     "who": "lisek",
-    "text": "Your turn. I'll show two piles and you tap the one with more."
+    "text": "Your turn. I'll show two piles and you point to the one with more."
   },
   "line.p_which_more": {
     "who": "lisek",
-    "text": "Where is more? Tap it."
+    "text": "Where is more? Point to it."
   },
   "line.p_wrong_pair": {
     "who": "sowa",
@@ -77,7 +77,7 @@
   },
   "line.p_which_sign": {
     "who": "sowa",
-    "text": "Which sign fits? Tap it."
+    "text": "Which sign fits? Point to it."
   },
   "line.p_wrong_sign": {
     "who": "sowa",
@@ -101,7 +101,7 @@
   },
   "line.a_fox_which_sign": {
     "who": "lisek",
-    "text": "Which sign fits? There are fewer cups than plates. Tap it."
+    "text": "Which sign fits? There are fewer cups than plates. Point to it."
   },
   "line.a_owl_right": {
     "who": "sowa",

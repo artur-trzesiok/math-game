@@ -29,7 +29,7 @@
   },
   "line.s2_prompt": {
     "who": "lisek",
-    "text": "Tap the smaller cup."
+    "text": "Point to the smaller cup."
   },
   "line.s2_wrong": {
     "who": "lisek",
@@ -49,19 +49,19 @@
   },
   "line.p_click_bigger": {
     "who": "lisek",
-    "text": "Tap the bigger one."
+    "text": "Point to the bigger one."
   },
   "line.p_click_smaller": {
     "who": "lisek",
-    "text": "Tap the smaller one."
+    "text": "Point to the smaller one."
   },
   "line.p_click_biggest": {
     "who": "lisek",
-    "text": "There are three. Tap the biggest."
+    "text": "There are three. Point to the biggest."
   },
   "line.p_click_smallest": {
     "who": "lisek",
-    "text": "There are three. Tap the smallest."
+    "text": "There are three. Point to the smallest."
   },
   "line.p_wrong": {
     "who": "lisek",
@@ -101,7 +101,7 @@
   },
   "line.a_sq_your_turn": {
     "who": "wiewiorka",
-    "text": "Your turn. Tap the thing that is bigger than your hand."
+    "text": "Your turn. Point to the thing that is bigger than your hand."
   },
   "line.a_fox_right": {
     "who": "lisek",

@@ -70,14 +70,14 @@
   "text": "More, fewer or as many. The mouth always opens where there is more."
  },
  "line.p_intro": {
-  "hash": "acfe00648289",
+  "hash": "0ea986591723",
   "who": "lisek",
-  "text": "Your turn. I'll show two piles and you tap the one with more."
+  "text": "Your turn. I'll show two piles and you point to the one with more."
  },
  "line.p_which_more": {
-  "hash": "f7c445926f6e",
+  "hash": "9a727d43ddb9",
   "who": "lisek",
-  "text": "Where is more? Tap it."
+  "text": "Where is more? Point to it."
  },
  "line.p_wrong_pair": {
   "hash": "6ac97c5d4c74",
@@ -95,9 +95,9 @@
   "text": "Now the signs. Pick the mouth that fits, or the equal lines when there are as many."
  },
  "line.p_which_sign": {
-  "hash": "5811c5e50818",
+  "hash": "077212df8f36",
   "who": "sowa",
-  "text": "Which sign fits? Tap it."
+  "text": "Which sign fits? Point to it."
  },
  "line.p_wrong_sign": {
   "hash": "025be67151a5",
@@ -125,9 +125,9 @@
   "text": "One plate is left alone. There are more plates and fewer cups."
  },
  "line.a_fox_which_sign": {
-  "hash": "d49bf84a3161",
+  "hash": "f9d9bde3b960",
   "who": "lisek",
-  "text": "Which sign fits? There are fewer cups than plates. Tap it."
+  "text": "Which sign fits? There are fewer cups than plates. Point to it."
  },
  "line.a_owl_right": {
   "hash": "953bc45465f4",

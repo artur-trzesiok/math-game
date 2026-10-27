@@ -70,14 +70,14 @@
   "text": "Więcej, mniej albo tyle samo. Paszcza zawsze otwiera się tam, gdzie jest więcej."
  },
  "line.p_intro": {
-  "hash": "510c29b5a09a",
+  "hash": "747b3e90d925",
   "who": "lisek",
-  "text": "Teraz ty. Pokażę dwie kupki, a ty kliknij tę, gdzie jest więcej."
+  "text": "Teraz ty. Pokażę dwie kupki, a ty wskaż tę, gdzie jest więcej."
  },
  "line.p_which_more": {
-  "hash": "cec79469a32c",
+  "hash": "c259d99492df",
   "who": "lisek",
-  "text": "Gdzie jest więcej? Kliknij."
+  "text": "Gdzie jest więcej? Wskaż."
  },
  "line.p_wrong_pair": {
   "hash": "29876a3cb834",
@@ -95,9 +95,9 @@
   "text": "A teraz znaki. Wybierz paszczę, która pasuje, albo równe kreski, gdy jest tyle samo."
  },
  "line.p_which_sign": {
-  "hash": "e295ffd85917",
+  "hash": "4171f895c961",
   "who": "sowa",
-  "text": "Który znak pasuje? Kliknij."
+  "text": "Który znak pasuje? Wskaż."
  },
  "line.p_wrong_sign": {
   "hash": "1ab823a9a539",
@@ -125,9 +125,9 @@
   "text": "Jeden talerz został sam. Talerzy jest więcej, kubków mniej."
  },
  "line.a_fox_which_sign": {
-  "hash": "4de98e672000",
+  "hash": "101be756f26b",
   "who": "lisek",
-  "text": "Który znak pasuje? Kubków jest mniej niż talerzy. Kliknij."
+  "text": "Który znak pasuje? Kubków jest mniej niż talerzy. Wskaż."
  },
  "line.a_owl_right": {
   "hash": "ec2b906806cc",

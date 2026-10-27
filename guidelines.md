@@ -2,7 +2,8 @@
 
 An educational maths game for 3-4 year olds, played on a tablet with a parent
 nearby. The child cannot read, so everything is spoken and everything the child
-does is a tap on something on screen. The target is a library of ~100 lessons
+does is pointing at something on screen (a finger on a tablet, a mouse on a
+computer - the lines always say "point to" / "wskaż", never "tap" or "click"). The target is a library of ~100 lessons
 built the same way, by Claude Code, from reusable characters, backgrounds and
 objects - no hand-made art, no in-house level editor.
 

@@ -11,7 +11,7 @@ names it. Characters: Fox (left) and Squirrel (right).
    is small, but sweet". Narrator names the relation both ways (bigger than / smaller
    than) while each apple pulses in turn. Everyday bridge: mum's shoes and the child's.
 2. Squirrel is thirsty: two cups, big and small. Fox: "Squirrel has little paws, help
-   her choose". The child taps the smaller cup (a wrong tap explains and asks again;
+   her choose". The child points to the smaller cup (a wrong pick explains and asks again;
    after two misses the right one pulses). The cup slides to Squirrel, she cheers,
    narrator sums up.
 
@@ -20,7 +20,7 @@ names it. Characters: Fox (left) and Squirrel (right).
 - Five pairs (pear, ball, cookie, flower, sock) at two sizes, left/right randomised;
   Fox asks for the bigger or the smaller one, alternating. Right answer: "that's
   right" + applause; wrong: "try again", hint after two misses.
-- Two triples (apples, cups) at three sizes: "tap the biggest", "tap the smallest".
+- Two triples (apples, cups) at three sizes: "point to the biggest", "point to the smallest".
 
 ## Stage 3 - apply (kitchen)
 
