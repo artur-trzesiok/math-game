@@ -1,9 +1,9 @@
 // Lesson: numbers 6-10 - counting on past five without skipping or doubling (a counted thing moves aside), the
 // digits 6-10, ten written with two digits. Script in scenario.md.
 
-const Y = 1.0;
+const Y = 0.15;                 // the row of things: between the characters, so a big digit fits over it
 const SZ = 0.86;
-const CY = 3.3;
+const CY = 2.65;                // a big digit: over the row and its counting badges, under the phase icons
 const RZAD = { x: -4.4, y: Y, gap: 0.98 };     // where counted things line up, one after another
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
@@ -36,7 +36,7 @@ async function ktoraCyfra(c, n, who, key, oferta) {
   return dobra;
 }
 async function pokazCyfre(c, n, who, { x = 0, y = CY } = {}) {
-  const [d] = await Promise.all([c.digit(n, { x, y, size: 1.6, duration: 1.0 }), c.say(who, `line.d${n}`, { anim: "Wskazanie" })]);
+  const [d] = await Promise.all([c.digit(n, { x, y, size: 1.3, duration: 1.0 }), c.say(who, `line.d${n}`, { anim: "Wskazanie" })]);
   return d;
 }
 const oferta = (n) => tasuj([n, n === 10 ? 8 : n + 1, n === 6 ? 7 : n - 1].filter((v, i, a) => a.indexOf(v) === i));

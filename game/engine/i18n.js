@@ -1,3 +1,4 @@
+import { v } from "./v.js";
 // Translations. Two layers: the player's own strings (game/i18n/<lang>.json) and one
 // file per lesson (game/lessons/<id>/i18n/<lang>.json). A lesson entry is either a
 // plain string (a label) or {who, text} (a spoken line - the key of a spoken line
@@ -15,7 +16,7 @@ export function pickLang() {
 }
 
 export async function loadStrings(url) {
-  const r = await fetch(url, FRESH);
+  const r = await fetch(v(url), FRESH);
   if (!r.ok) return {};
   return r.json();
 }

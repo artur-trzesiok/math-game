@@ -29,9 +29,9 @@ async function ktoraCyfra(c, n, who, key, oferta, { y = -2.45 } = {}) {
 const oferta = (n) => tasuj([n, n === 10 ? 8 : n + 1, n - 1].filter((v, i, a) => a.indexOf(v) === i));
 // a basket that holds `a` things already counted: a pencil number over it says how many are inside
 async function koszZLiczba(c, nazwa, a, { x = -0.8, image = "koszyk" } = {}) {
-  const kosz = await c.zone({ x, y: -0.1, w: 4.2, h: 2.7, image, name: image });
+  const kosz = await c.zone({ x, y: -0.55, w: 4.2, h: 2.4, image, name: image });
   await wStrefie(c, kosz, nazwa, a, 1.0);
-  const liczba = await c.digit(a, { x, y: 2.1, size: 1.3, color: "#1f5fbf", duration: 0.4 });
+  const liczba = await c.digit(a, { x, y: 1.25, size: 1.0, color: "#1f5fbf", duration: 0.4 });
   return { kosz, liczba };
 }
 
@@ -46,7 +46,7 @@ export default {
       async (c) => {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         await koszZLiczba(c, "kamyk", 5);
-        const nowe = await kupka(c, "kamyk", 3, { x: 3.4, y: 2.0, size: 1.05 });
+        const nowe = await kupka(c, "kamyk", 3, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("sarenka", "line.s_need");
         await c.say("wiewiorka", "line.s_have", { anim: "Wskazanie" });
         await c.say("wiewiorka", "line.s_naive", { anim: "Smutek" });
@@ -60,7 +60,7 @@ export default {
         await c.say("sarenka", "line.s_show");
         await c.count(nowe, { who: "sarenka", od: 5 });
         await c.say("wiewiorka", "line.s_eight", { anim: "Radosc" });
-        await Promise.all([c.equation([5, "+", 3, "=", 8], { y: 3.65, size: 1.25 }), c.say("sarenka", "line.s_write", { anim: "Wskazanie" })]);
+        await Promise.all([c.equation([5, "+", 3, "=", 8], { y: 2.7, size: 1.2 }), c.say("sarenka", "line.s_write", { anim: "Wskazanie" })]);
         await c.say("wiewiorka", "line.s_solved", { anim: "Brawo" });
         await c.say("sarenka", "line.s_to_garden");
         c.clear();
@@ -71,13 +71,13 @@ export default {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         await koszZLiczba(c, "marchewka", 6);
         await c.say("wiewiorka", "line.b_basket");
-        const nowe = await kupka(c, "marchewka", 2, { x: 3.4, y: 2.0, size: 1.05 });
+        const nowe = await kupka(c, "marchewka", 2, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("sarenka", "line.b_more", { anim: "Podskok" });
         await c.say("sarenka", "line.b_count");
         await c.count(nowe, { who: "wiewiorka", od: 6 });
         const k = await ktoraCyfra(c, 8, "wiewiorka", "line.b_pick", oferta(8));
         k.remove();
-        await Promise.all([c.equation([6, "+", 2, "=", 8], { y: 3.65, size: 1.25 }), c.say("sarenka", "line.b_write")]);
+        await Promise.all([c.equation([6, "+", 2, "=", 8], { y: 2.7, size: 1.2 }), c.say("sarenka", "line.b_write")]);
         await c.say("wiewiorka", "line.b_to_home");
         c.clear();
       },
@@ -87,10 +87,10 @@ export default {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         await koszZLiczba(c, "kubek", 7, { image: "pudelko" });
         await c.say("sarenka", "line.c_cups");
-        const nowe = await kupka(c, "kubek", 3, { x: 3.4, y: 2.0, size: 1.05 });
+        const nowe = await kupka(c, "kubek", 3, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("wiewiorka", "line.c_count");
         await c.count(nowe, { who: "sarenka", od: 7 });
-        const r = await c.equation([7, "+", 3, "=", null], { y: 3.65, size: 1.25 });
+        const r = await c.equation([7, "+", 3, "=", null], { y: 2.7, size: 1.2 });
         const slot = await c.zone({ x: r.luki[0].x, y: r.luki[0].y, w: 1.5, h: 1.5, name: "luka" });
         const karta = await ktoraCyfra(c, 10, "wiewiorka", "line.c_slot", oferta(10));
         await karta.moveTo(r.luki[0].x, r.luki[0].y, 0.6); slot.remove();
@@ -107,7 +107,7 @@ export default {
         for (const [a, b] of [[4, 2], [6, 3], [5, 4], [8, 2], [7, 2]]) {
           const nazwa = rzeczy.shift();
           await koszZLiczba(c, nazwa, a, { image: "pudelko" });
-          const nowe = await kupka(c, nazwa, b, { x: 3.4, y: 2.0, size: 1.05 });
+          const nowe = await kupka(c, nazwa, b, { x: 2.6, y: 0.8, size: 0.95 });
           await c.say("sarenka", "line.p_count_on");
           await c.count(nowe, { who: "wiewiorka", od: a });
           await ktoraCyfra(c, a + b, "sarenka", "line.p_together", oferta(a + b));
@@ -125,7 +125,7 @@ export default {
         await c.say("sarenka", "line.a_ok");
         for (const [nazwa, a, b] of [["lyzka", 5, 3], ["klocek", 6, 4], ["kubek", 7, 2]]) {
           await koszZLiczba(c, nazwa, a, { image: "pudelko" });
-          const nowe = await kupka(c, nazwa, b, { x: 3.4, y: 2.0, size: 1.05 });
+          const nowe = await kupka(c, nazwa, b, { x: 2.6, y: 0.8, size: 0.95 });
           await c.say("sarenka", `line.a_${nazwa}`);
           await c.count(nowe, { who: "wiewiorka", od: a });
           await ktoraCyfra(c, a + b, "sarenka", "line.a_which_digit", oferta(a + b));

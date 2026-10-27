@@ -15,8 +15,11 @@ export const CYFRY = {
   9: [{ bezier: [[0.78, 1.05], [0.75, 1.5], [0.1, 1.5], [0.12, 1.05], [0.15, 0.64], [0.75, 0.64], [0.78, 1.05], [0.8, 0.5], [0.62, 0.0], [0.2, 0.05]] }],
 };
 
-// draw the number n (0..10) with its top-left corner at nothing in particular: centred on (x, y), `size` = height
+import { SUFIT } from "./scene.js";
+
+// draw the number n (0..10) centred on (x, y), `size` = height; never above the ceiling (the phase icons)
 export async function narysujCyfre(S, n, { x = 0, y = 1.2, size = 1.6, color = "#2b2622", width = null, duration = 0.5, strong = true } = {}) {
+  y = Math.min(y, SUFIT - size / 2);
   const znaki = String(n).split("").map(Number), k = size / 1.4, gap = 0.3 * k;
   const szer = znaki.length * 0.9 * k + (znaki.length - 1) * gap;
   const parts = [];
@@ -45,7 +48,8 @@ export const ZNAKI = {
 };
 // an equation like [2, "+", 1, "=", 3] written left to right with the pencil; null leaves an empty slot
 // (returned as `luki`, centres of the gaps, for a card to fly into). Returns { czesci, luki, x0, x1 }
-export async function narysujRownanie(S, tokens, { x = 0, y = 3.2, size = 1.2, color = "#2b2622", duration = 0.35 } = {}) {
+export async function narysujRownanie(S, tokens, { x = 0, y = 2.7, size = 1.2, color = "#2b2622", duration = 0.35 } = {}) {
+  y = Math.min(y, SUFIT - size / 2);
   const k = size / 1.4, szer = (t) => (t === null ? 0.9 : typeof t === "number" ? String(t).length * 0.9 + (String(t).length - 1) * 0.3 : 0.9) * k;
   const gap = 0.35 * k, total = tokens.reduce((a, t) => a + szer(t), 0) + gap * (tokens.length - 1);
   let cx = x - total / 2;

@@ -6,12 +6,13 @@
 // (rig: kosci[k].stawy, pomiar: czesci[n].stawy) sa siatka zginana w stawach (siatka.js).
 
 import * as THREE from "three";
+import { v } from "./v.js";
 import { baza, sW, waga, pasmo, deformuj, punkt } from "./siatka.js";
 
 const DEG = Math.PI / 180;
 const ladowacz = new THREE.TextureLoader();
 function tekstura(url) {
-  return new Promise((ok, zle) => ladowacz.load(url, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, zle));
+  return new Promise((ok, zle) => ladowacz.load(v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, zle));
 }
 // interpolacja toru [[t, v], ...] (t w 0..1), gladka miedzy klatkami
 function tor(klatki, u) {
@@ -48,12 +49,12 @@ export class Lalka {
   static przejscie = 0.22;                 // s: a new animation blends in from the last pose (0 = cut, an animation may set `wejscie`)
 
   static async wczytaj(katalog, opis = {}) {
-    const dane = await (await fetch(katalog + "postac.json", { cache: "no-store" })).json();
+    const dane = await (await fetch(v(katalog + "postac.json"), { cache: "no-store" })).json();
     return new Lalka(dane, await Lalka.tekstury(katalog, dane), opis);
   }
   static async tekstury(katalog, dane) {
-    const tex = {}, t = Date.now();
-    await Promise.all(Object.keys(dane.czesci).map(async (n) => { tex[n] = await tekstura(`${katalog}czesci/${dane.czesci[n].plik}?t=${t}`); }));
+    const tex = {};
+    await Promise.all(Object.keys(dane.czesci).map(async (n) => { tex[n] = await tekstura(`${katalog}czesci/${dane.czesci[n].plik}`); }));
     return tex;
   }
 

@@ -6,6 +6,7 @@
 // URL: ?lekcja=<id>&etap=story|practice|apply&lang=pl|en&szybko&napisy&safe
 
 import * as THREE from "three";
+import { v } from "./v.js";
 import { narysujCyfre, liczDotykiem, narysujRownanie } from "./liczby.js";
 import { Stage } from "./scene.js";
 import { Speech, FAST } from "./speech.js";
@@ -28,7 +29,7 @@ export class Player {
   async boot() {
     this.ui = await loadStrings(`/game/i18n/${this.lang}.json`);
     this.t = translator([this.ui]);
-    this.index = await (await fetch("/game/lessons/index.json", { cache: "no-store" })).json();
+    this.index = await (await fetch(v("/game/lessons/index.json"), { cache: "no-store" })).json();
     const wanted = PARAMS.get("lekcja");
     if (wanted && this.index.lessons.some((l) => l.id === wanted)) await this.start(wanted, PARAMS.get("etap"));
     else this.menu();
@@ -50,7 +51,7 @@ export class Player {
     if (rest.length) topics.push({ id: "inne", title: null, color: "#ffb347", lessons: rest });
     const card = (l, i, color) => `
       <button class="lesson" data-id="${l.id}">
-        <img class="cover" src="/game/lessons/${l.id}/cover.webp" alt="" onerror="this.style.visibility='hidden'">
+        <img class="cover" src="${v(`/game/lessons/${l.id}/cover.webp`)}" alt="" onerror="this.style.visibility='hidden'">
         <span class="nr" style="background:${color}">${i + 1}</span>
         <span class="name">${l.title[this.lang] || l.title.en}</span>
         <span class="sub">${l.subtitle?.[this.lang] || ""}</span>
@@ -67,7 +68,7 @@ export class Player {
   async start(id, fromStage = null) {
     this.lessonId = id;
     const meta = this.index.lessons.find((l) => l.id === id);
-    const mod = await import(`/game/lessons/${id}/lesson.js?t=${Date.now()}`);
+    const mod = await import(v(`/game/lessons/${id}/lesson.js`));
     this.lesson = mod.default;
     this.strings = await loadStrings(`/game/lessons/${id}/i18n/${this.lang}.json`);
     this.tl = translator([this.strings, this.ui]);

@@ -30,7 +30,7 @@
   @media (max-width: 900px) { #hud .lesson-name { display: none; } }
   #hud .phases { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); display: flex; gap: 10px; }
   #hud .phases { gap: 16px; }
-  #hud .phase { width: 72px; height: 72px; border-radius: 22px; object-fit: contain; background: rgba(255,255,255,.35); padding: 4px; box-sizing: border-box; transition: transform .3s, background .3s, opacity .3s; }
+  #hud .phase { width: min(72px, 8vh); height: min(72px, 8vh); border-radius: 22px; object-fit: contain; background: rgba(255,255,255,.35); padding: 4px; box-sizing: border-box; transition: transform .3s, background .3s, opacity .3s; }
   #hud .phase.current { background: #ffb347; transform: scale(1.18); box-shadow: 0 3px 10px rgba(0,0,0,.3); }
   #hud .phase.done { background: rgba(255,255,255,.75); opacity: .75; }
   #hud .phase.ahead { opacity: .45; filter: grayscale(.4); }
@@ -43,15 +43,23 @@
   #card button { font: inherit; font-size: 20px; padding: 12px 34px; border: 0; border-radius: 18px; background: #ffb347; color: #fff; cursor: pointer; box-shadow: 0 5px 0 #d8902c; }
   #card button:active { transform: translateY(3px); box-shadow: 0 2px 0 #d8902c; }
 </style>
-<script type="importmap">
-{"imports":{
-  "three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
-  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
-}}
+<script>
+  // cache busting (engine/v.js): one stamp per page load on every file, the engine's modules included -
+  // the import map remaps each module URL to the same URL with ?t=<stamp>
+  window.__T = Date.now();
+  (() => {
+    const im = { imports: {
+      three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v"])
+      im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
+    const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);
+    document.currentScript.after(s);
+  })();
 </script>
 <div id="stage"></div>
 <div id="hud"><span class="lesson-name"></span>
-  <span class="phases"><img class="phase" data-stage="story" src="/game/assets/objects/ikona_opowiesc.webp" alt=""><img class="phase" data-stage="practice" src="/game/assets/objects/ikona_cwiczenia.webp" alt=""><img class="phase" data-stage="apply" src="/game/assets/objects/ikona_dom.webp" alt=""></span>
+  <span class="phases"><img class="phase" data-stage="story" data-src="/game/assets/objects/ikona_opowiesc.webp" alt=""><img class="phase" data-stage="practice" data-src="/game/assets/objects/ikona_cwiczenia.webp" alt=""><img class="phase" data-stage="apply" data-src="/game/assets/objects/ikona_dom.webp" alt=""></span>
   <button class="menu">☰</button></div>
 <div id="menu"><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div></div>
 <div id="subtitle"></div>
@@ -60,6 +68,8 @@
 <div id="card"><div class="box"><div class="text"></div><button></button></div></div>
 <script type="module">
   import { Player } from "./engine/player.js";
+  import { v } from "./engine/v.js";
+  for (const img of document.querySelectorAll("#hud .phase")) img.src = v(img.dataset.src);   // src only now, with the stamp
   new Player().boot();
 </script>
 </html>

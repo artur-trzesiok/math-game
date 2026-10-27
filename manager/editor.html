@@ -26,11 +26,19 @@
   .staw input[type=range] { width: 100%; }
   .staw span { color: #aaa; font-variant-numeric: tabular-nums; text-align: right; }
 </style>
-<script type="importmap">
-{"imports":{
-  "three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
-  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
-}}
+<script>
+  // cache busting (engine/v.js): one stamp per page load on every file, the engine's modules included -
+  // the import map remaps each module URL to the same URL with ?t=<stamp>
+  window.__T = Date.now();
+  (() => {
+    const im = { imports: {
+      three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v"])
+      im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
+    const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);
+    document.currentScript.after(s);
+  })();
 </script>
 <div id="panel">
   <div class="wiersz"><label>Postać <select id="kto"></select></label></div>
@@ -60,7 +68,8 @@
 <div id="scena"><div id="naglowki"><div>przód</div><div>¾ (patrz prawo)</div><div>tył</div><div>profil</div></div></div>
 <script type="module">
 import * as THREE from "three";
-import { Lalka } from "../game/engine/lalka.js?v=2";
+import { Lalka } from "../game/engine/lalka.js";
+import { v } from "../game/engine/v.js";
 
 const $ = (id) => document.getElementById(id);
 const KOLUMNY = [
@@ -119,7 +128,7 @@ async function wczytajListe() {
 }
 async function wczytajPostac(nazwa) {
   kto = nazwa;
-  dane = await (await fetch(`/game/assets/characters/${kto}/postac.json`, { cache: "no-store" })).json();
+  dane = await (await fetch(v(`/game/assets/characters/${kto}/postac.json`), { cache: "no-store" })).json();
   tex = await Lalka.tekstury(`/game/assets/characters/${kto}/`, dane);
   alfa = {};
   historia = []; zmieniono = false; wybor = null;

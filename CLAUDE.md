@@ -49,7 +49,7 @@ instead of the pane: `gra` (the Player) exposes `gra.snap("name")` (renders a
 frame and POSTs it), `gra.cele` (names of the current click targets),
 `gra.klikCel(i)` (clicks target i), `gra.klik(nx, ny)` (normalised device
 coords), `gra.dziennik` (spoken lines with timestamps). URL switches:
-`?lekcja=<id>&etap=story|practice|apply&lang=pl|en`, `?szybko` (every line 0.4 s,
+`?lekcja=<id>&etap=story|practice|apply&lang=pl|en`, `?cicho` (nothing is heard: voices and effects play muted - ALWAYS in tests, the user hears the speakers otherwise), `?szybko` (every line 0.4 s,
 cards auto-close, walks 0.2 s), `?napisy` (subtitles for every line), `?safe`
 (draws the safe rectangle), `?debug=1` (the phase icons are clickable and jump to
 that stage). A whole stage can be driven with `?szybko` plus

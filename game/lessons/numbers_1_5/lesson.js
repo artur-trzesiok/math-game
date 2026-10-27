@@ -1,9 +1,9 @@
 // Lesson: numbers 1-5 - counting (every thing once, the last number says how many) and what the digits look
 // like. Script in scenario.md.
 
-const Y = 1.0;                  // the row of things, above the characters' heads
-const SZ = 1.05;
-const CY = 3.3;                 // where a big digit is drawn, over the row
+const Y = 0.15;                 // the row of things: between the characters, so a big digit fits over it                  // the row of things, above the characters' heads
+const SZ = 1.2;
+const CY = 2.65;                // a big digit: over the row and its counting badges, under the phase icons                 // where a big digit is drawn, over the row
 
 async function rzad(c, name, n, { y = Y, size = SZ, x = 0, gap = 0.14 } = {}) {
   const hs = [];
@@ -25,7 +25,7 @@ async function ktoraCyfra(c, n, who, key, oferta) {
 }
 // a big digit drawn with the pencil, its rhyme said while it is drawn
 async function pokazCyfre(c, n, who, { x = 0, y = CY } = {}) {
-  const [d] = await Promise.all([c.digit(n, { x, y, size: 1.6, duration: 1.0 }), c.say(who, `line.d${n}`, { anim: "Wskazanie" })]);
+  const [d] = await Promise.all([c.digit(n, { x, y, size: 1.3, duration: 1.0 }), c.say(who, `line.d${n}`, { anim: "Wskazanie" })]);
   return d;
 }
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);

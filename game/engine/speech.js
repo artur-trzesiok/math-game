@@ -1,3 +1,4 @@
+import { v } from "./v.js";
 // Spoken lines: an mp3 made by tools/audio/make_audio.py when there is one, the
 // browser's speech synthesis otherwise. The speaking puppet gets an amplitude every
 // frame (mow()), so its mouth moves with the sound. The amplitude comes from the
@@ -9,6 +10,7 @@
 const PARAMS = new URLSearchParams(location.search);
 export const FAST = PARAMS.has("szybko");
 const FORCE_SUBS = PARAMS.has("napisy");
+const CICHO = PARAMS.has("cicho");          // tests: everything plays (timing, lip-sync) but nothing is heard
 const LOCALE = { pl: "pl-PL", en: "en-US" };
 
 let audioCtx = null, analyser = null, buf = null;
@@ -35,7 +37,7 @@ if ("speechSynthesis" in window) { speechSynthesis.getVoices(); speechSynthesis.
 const manifests = {};
 async function manifest(lang, lessonId) {
   const k = `${lang}/${lessonId}`;
-  if (!(k in manifests)) manifests[k] = await fetch(`/game/audio/${k}/manifest.json`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  if (!(k in manifests)) manifests[k] = await fetch(v(`/game/audio/${k}/manifest.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
   return manifests[k];
 }
 
@@ -82,9 +84,10 @@ export class Speech {
     try {
       if (FAST) { subtitle(FORCE_SUBS); await new Promise((r) => setTimeout(r, 400)); return; }
       if (m[key]) {
-        const a = new Audio(`/game/audio/${lang}/${lessonId}/${key}.mp3`);
+        const a = new Audio(v(`/game/audio/${lang}/${lessonId}/${key}.mp3`));
         a.volume = Math.max(0, Math.min(1, volume));                      // the character's trim (recordings are normalised already)
-        this.current.envelope = await fetch(`/game/audio/${lang}/${lessonId}/${key}.json`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+        a.muted = CICHO;
+        this.current.envelope = await fetch(v(`/game/audio/${lang}/${lessonId}/${key}.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
         if (!this.current.envelope) this.current.live = attachAnalyser(a);
         subtitle(FORCE_SUBS);
         await new Promise((ok, bad) => {
@@ -119,6 +122,7 @@ export class Speech {
       u.rate = 0.92; u.pitch = { lisek: 1.2, wiewiorka: 1.35, sowa: 0.9, sarenka: 1.1, narrator: 1.0 }[who] ?? 1;
       const guard = setTimeout(ok, 1500 + text.length * 90);
       u.onend = u.onerror = () => { clearTimeout(guard); ok(); };
+      if (CICHO) u.volume = 0;
       speechSynthesis.cancel(); speechSynthesis.speak(u);
       this.current.utterance = u;
     });

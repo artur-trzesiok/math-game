@@ -6,6 +6,7 @@
 // x in [-6, 6], y in [-4.5, 4.5], ground at GROUND. ?safe draws the rectangle.
 
 import * as THREE from "three";
+import { v } from "./v.js";
 import { Lalka } from "./lalka.js";
 import { Sfx } from "./sfx.js";
 import { zbudujTlo, czas as bgClock, zginanieTla } from "./tlo.js";
@@ -14,6 +15,10 @@ if (new URLSearchParams(location.search).has("sztywnetlo")) zginanieTla.value = 
 
 export const SAFE = { w: 12, h: 9 };
 export const GROUND = -3.3;
+// nothing a lesson draws goes above this: the band over it belongs to the phase icons (HUD, at most ~10% of the
+// screen height, sized in vh so a small tablet does not get bigger icons). Digits, equations, bubbles and
+// arrows that would reach higher are moved down by the engine itself.
+export const SUFIT = 3.3;
 export const ASPECT_MIN = 4 / 3, ASPECT_MAX = 16 / 9;
 const CAM_Z = 7.2;
 const ZAKRESLACZ = "#ff5a1f";          // pencil annotations: a bold saturated orange that reads on grass, sky and wood
@@ -22,7 +27,7 @@ const FRESH = { cache: "no-store" };
 
 const loader = new THREE.TextureLoader();
 function texture(url) {
-  return new Promise((ok, bad) => loader.load(url, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, bad));
+  return new Promise((ok, bad) => loader.load(v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, bad));
 }
 const easeInOut = (s) => s * s * (3 - 2 * s);
 const easeOutBack = (s) => { const c = 1.7; return 1 + (c + 1) * Math.pow(s - 1, 3) + c * Math.pow(s - 1, 2); };   // a small overshoot
@@ -168,7 +173,7 @@ export class Stage {
   // ------------------------------------------------------------------ puppets
   async puppet(name, { x = 0, side = "left", height = 3.6 } = {}) {
     const L = await Lalka.wczytaj(`/game/assets/characters/${name}/`, { strona: side === "left" ? "lewo" : "prawo", wysokosc: height });
-    L.meta = await fetch(`/game/assets/characters/${name}/meta.json`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    L.meta = await fetch(v(`/game/assets/characters/${name}/meta.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
     L.korzen.position.set(x, GROUND, 0);
     L.korzen.visible = false; L.home = x; L.name = name;
     L.cien = this.shadow(height * 0.42);
@@ -458,7 +463,7 @@ export class Stage {
     const ncol = Math.max(...rows.map((r) => r.length)), w = Math.max(2.2, ncol * size * 1.15 + 1.0), h = Math.max(1.5, rows.length * size * 1.2 + 0.9);
     const o = new THREE.Vector3(); L.korzen.getWorldPosition(o);
     const side = o.x < 0 ? 1 : -1;
-    const cx = Math.max(-6 + w / 2, Math.min(6 - w / 2, o.x + side * (w / 2 + 0.2))), cy = Math.min(4.4 - h / 2, o.y + L.wysokosc + h / 2 + 0.25);
+    const cx = Math.max(-6 + w / 2, Math.min(6 - w / 2, o.x + side * (w / 2 + 0.2))), cy = Math.min(SUFIT - h / 2, o.y + L.wysokosc + h / 2 + 0.25);
     // the cloud, drawn once per size on a canvas: overlapping round puffs, white, a pencil-grey rim
     const c = document.createElement("canvas"), px = 160; c.width = Math.round(w * px); c.height = Math.round(h * px);
     const ctx = c.getContext("2d"), puffs = [];
@@ -561,7 +566,7 @@ export class Stage {
   // ------------------------------------------------------------------ pencil
   // a pencil stroke along a path (polyline [[x, y], ...] or { bezier: [p0, c1, c2, p1, ...] }), drawn in over
   // `duration` s; a handle like a sticker's: a task target (a wide invisible strip takes the tap), remove, highlight
-  async line(path, { width = 0.06, color = "#3b3631", duration = 0.7, wobble = 0.012, name = "kreska", wait = true, strong = false } = {}) {
+  async line(path, { width = 0.06, color = "#3b3631", duration = 0.7, wobble = 0.012, name = "kreska", wait = true, strong = false, halo = true } = {}) {
     const pts = probkuj(path);
     const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
     const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
@@ -570,16 +575,24 @@ export class Stage {
     const { g: geo, dlugosc } = wstega(local, { grubosc: width, drzenie: wobble, ziarno: seed });
     const mat = olowekMaterial(color, dlugosc, seed, strong ? 1 : 0);
     const stroke = new THREE.Mesh(geo, mat); stroke.renderOrder = 12; stroke.frustumCulled = false;
+    // a white outline under every stroke, like the stickers' die-cut edge: the pencil reads on grass, water and sky
+    let haloMesh = null;
+    if (halo) {
+      const hw = Math.max(0.06, width * 0.7);
+      haloMesh = new THREE.Mesh(wstega(local, { grubosc: width + 2 * hw, drzenie: wobble, ziarno: seed }).g, olowekMaterial("#ffffff", dlugosc, seed + 7, 1));
+      haloMesh.material.uniforms.mocno.value = 1; haloMesh.renderOrder = 11; haloMesh.frustumCulled = false;
+    }
     const hit = new THREE.Mesh(wstega(local, { grubosc: Math.max(0.45, width * 4), drzenie: 0 }).g,
       new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false, side: THREE.DoubleSide }));
-    const grp = new THREE.Group(); grp.position.set(cx, cy, 0.45); grp.add(stroke, hit);
+    const grp = new THREE.Group(); grp.position.set(cx, cy, 0.45); if (haloMesh) grp.add(haloMesh); grp.add(stroke, hit);
     const handle = { mesh: grp, name, kind: "line", base: 1, pulse: false, points: pts, y: cy, x: cx,
       remove: () => { this.scene.remove(grp); const i = this.objects.indexOf(handle); if (i >= 0) this.objects.splice(i, 1); this.untarget(handle); },
       highlight: (on) => { mat.uniforms.blask.value = on ? 1 : 0; } };
     this.scene.add(grp); this.objects.push(handle);
     const czas = PARAMS.has("szybko") ? 0.1 : duration;
     if (czas >= 0.2) this.sfx.graj("pencil", { dlugosc: czas, tempo: 0.9 + Math.random() * 0.2 });
-    const draw = this.tween(czas, (s) => { mat.uniforms.postep.value = s; }).then(() => { mat.uniforms.postep.value = 1; });
+    const draw = this.tween(czas, (s) => { mat.uniforms.postep.value = s; if (haloMesh) haloMesh.material.uniforms.postep.value = s; })
+      .then(() => { mat.uniforms.postep.value = 1; if (haloMesh) haloMesh.material.uniforms.postep.value = 1; });
     if (wait) await draw;
     return handle;
   }
@@ -612,7 +625,7 @@ export class Stage {
   // an arrow bending down onto a thing from above-left (or `from`), with a two-stroke head
   async arrow(h, { from = null, color = ZAKRESLACZ, duration = 0.6, width = 0.13 } = {}) {
     const b = this._box(h), tx = (b.left + b.right) / 2, ty = b.top + 0.12;
-    const [fx, fy] = from || [tx - 1.1, ty + 1.5];
+    const [fx, fy] = from || [tx - 1.1, Math.min(SUFIT, ty + 1.5)];
     const k = [(fx + tx) / 2 - 0.35, (fy + ty) / 2 + 0.25];
     const body = await this.line({ bezier: [[fx, fy], k, [tx - 0.1, ty + 0.5], [tx, ty]] }, { color, duration, width, name: "strzalka", strong: true });
     const ang = Math.atan2(ty - (ty + 0.5), tx - (tx - 0.1)), L = 0.28;

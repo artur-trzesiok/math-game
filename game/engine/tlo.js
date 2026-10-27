@@ -7,6 +7,7 @@
 // itself (not one point: a tuft is wide). Clouds drift as one quad.
 
 import * as THREE from "three";
+import { v } from "./v.js";
 import { baza, wysokoscS, pasmo } from "./siatka.js";
 
 export const czas = { value: 0 };
@@ -16,7 +17,7 @@ const SWIEZO = { cache: "no-store" };
 const ladowacz = new THREE.TextureLoader();
 
 function tekstura(url) {
-  return new Promise((ok, zle) => ladowacz.load(url, (t) => {
+  return new Promise((ok, zle) => ladowacz.load(v(url), (t) => {
     t.colorSpace = THREE.SRGBColorSpace;
     t.minFilter = THREE.LinearMipmapLinearFilter;
     t.anisotropy = 4;
@@ -75,7 +76,7 @@ export async function zbudujTlo(scena, wymiar, opcje = {}) {
   const kat = opcje.katalog ?? "tlo/";
   const Z_TLA = opcje.zTla ?? -9, Z_CHMUR = opcje.zChmur ?? -8.4, Z_TRAWY = opcje.zTrawy ?? -1.2;
   const kamZ = opcje.odlegloscKamery ?? 7.2;
-  const opis = await (await fetch(kat + "rekwizyty.json", SWIEZO)).json();
+  const opis = await (await fetch(v(kat + "rekwizyty.json"), SWIEZO)).json();
   const W = opis.szerokosc, H = opis.wysokosc;
   const { w: pw, h: ph } = wymiar(Z_TLA);
   const s0 = Math.max(pw / W, ph / H) * 1.02;        // cover

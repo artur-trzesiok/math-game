@@ -73,7 +73,7 @@ export function material(kolor = "#3b3631", dlugosc = 1, ziarno = Math.random() 
         float a = smoothstep(0.0, brzeg, vUv.y) * smoothstep(0.0, brzeg, 1.0 - vUv.y);
         float g = n(vec2(s * 180.0, vUv.y * 9.0)) * 0.6 + n(vec2(s * 47.0, vUv.y * 3.0)) * 0.4;   // graphite grain
         a *= mix(0.55 + 0.45 * g, 0.88 + 0.12 * g, mocno);                        // a bold stroke: pressed hard, the grain barely shows
-        a *= mix(0.6, 1.0, smoothstep(0.0, 0.03 / max(dl, 0.01), postep - vUv.x));  // the fresh tip is lighter
+        a *= mix(mix(0.6, 1.0, smoothstep(0.0, 0.03 / max(dl, 0.01), postep - vUv.x)), 1.0, step(0.99, kolor.r * kolor.g * kolor.b));  // the fresh tip is lighter (not for the white outline)
         vec3 c = mix(kolor, vec3(1.0, 0.85, 0.3), blask * 0.6);
         gl_FragColor = vec4(c, a * (0.9 + 0.1 * blask));
         #include <colorspace_fragment>

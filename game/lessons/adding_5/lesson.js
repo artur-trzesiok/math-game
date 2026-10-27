@@ -39,9 +39,9 @@ export default {
       // "together that is two - mine are more, so mine count". Owl: nothing vanishes - add! Put them together, count all.
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
-        const kosz = await c.zone({ x: -0.9, y: -0.1, w: 5.6, h: 2.0, image: "koszyk", name: "koszyk" });
+        const kosz = await c.zone({ x: -0.9, y: -0.55, w: 5.6, h: 2.1, image: "koszyk", name: "koszyk" });
         await wStrefie(c, kosz, "jablko", 2, 1.1);
-        const sowy = await kupka(c, "jablko", 1, { x: 3.4, y: 2.0, size: 1.05 });
+        const sowy = await kupka(c, "jablko", 1, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("sowa", "line.s_guests");
         await c.say("lisek", "line.s_fox_has", { anim: "Wskazanie" });
         await c.say("sowa", "line.s_owl_has");
@@ -58,7 +58,7 @@ export default {
         await c.say("sowa", "line.s_count_all");
         await c.count(kosz.items, { who: "lisek" });
         await c.say("lisek", "line.s_three", { anim: "Radosc" });
-        await Promise.all([c.equation([2, "+", 1, "=", 3], { y: 3.65, size: 1.25 }), c.say("sowa", "line.s_write", { anim: "Wskazanie" })]);
+        await Promise.all([c.equation([2, "+", 1, "=", 3], { y: 2.7, size: 1.2 }), c.say("sowa", "line.s_write", { anim: "Wskazanie" })]);
         await c.say("sowa", "line.s_plus");
         await c.say("lisek", "line.s_solved", { anim: "Brawo" });
         await c.say("sowa", "line.s_to_meadow");
@@ -68,17 +68,17 @@ export default {
       async (c) => {
         await c.go("laka", { enter: true });
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
-        const koc = await c.zone({ x: -0.9, y: -0.1, w: 5.6, h: 2.0, name: "koc" });
+        const koc = await c.zone({ x: -0.9, y: -0.55, w: 5.6, h: 2.1, name: "koc" });
         await wStrefie(c, koc, "kubek", 2, 1.1);
         await c.say("lisek", "line.b_picnic");
-        const sowy = await kupka(c, "kubek", 2, { x: 3.4, y: 2.0, size: 1.05 });
+        const sowy = await kupka(c, "kubek", 2, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("sowa", "line.b_owl");
         await c.sort({ items: sowy, zones: [koc] });
         await c.say("lisek", "line.b_count");
         await c.count(koc.items, { who: "sowa" });
         const k = await ktoraCyfra(c, 4, "sowa", "line.b_pick", oferta(4));
         k.remove();
-        await Promise.all([c.equation([2, "+", 2, "=", 4], { y: 3.65, size: 1.25 }), c.say("sowa", "line.b_write")]);
+        await Promise.all([c.equation([2, "+", 2, "=", 4], { y: 2.7, size: 1.2 }), c.say("sowa", "line.b_write")]);
         await c.say("lisek", "line.b_to_home", { anim: "Radosc" });
         c.clear();
       },
@@ -86,14 +86,14 @@ export default {
       async (c) => {
         await c.go("dom", { enter: true });
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
-        const talerz = await c.zone({ x: -0.9, y: -0.1, w: 5.6, h: 2.0, name: "talerz" });
+        const talerz = await c.zone({ x: -0.9, y: -0.55, w: 5.6, h: 2.1, name: "talerz" });
         await wStrefie(c, talerz, "ciastko", 3, 1.1);
         await c.say("lisek", "line.c_bake");
-        const sowy = await kupka(c, "ciastko", 2, { x: 3.4, y: 2.0, size: 1.05 });
+        const sowy = await kupka(c, "ciastko", 2, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("sowa", "line.c_owl");
         await c.sort({ items: sowy, zones: [talerz] });
         await c.count(talerz.items, { who: "lisek" });
-        const r = await c.equation([3, "+", 2, "=", null], { y: 3.65, size: 1.25 });
+        const r = await c.equation([3, "+", 2, "=", null], { y: 2.7, size: 1.2 });
         const slot = await c.zone({ x: r.luki[0].x, y: r.luki[0].y, w: 1.1, h: 1.5, name: "luka" });
         const karta = await ktoraCyfra(c, 5, "sowa", "line.c_slot", oferta(5));
         await karta.moveTo(r.luki[0].x, r.luki[0].y, 0.6); slot.remove();
@@ -126,9 +126,9 @@ export default {
         await c.say("lisek", "line.a_game");
         await c.say("sowa", "line.a_ok");
         for (const [nazwa, a, b] of [["misiu", 2, 1], ["klocek", 3, 2], ["pilka", 1, 3]]) {
-          const pudlo = await c.zone({ x: -0.9, y: -0.1, w: 5.6, h: 2.0, image: "pudelko", name: "pudelko" });
+          const pudlo = await c.zone({ x: -0.9, y: -0.55, w: 5.6, h: 2.1, image: "pudelko", name: "pudelko" });
           await wStrefie(c, pudlo, nazwa, a, 1.0);
-          const reszta = await kupka(c, nazwa, b, { x: 3.4, y: 2.0, size: 1.05 });
+          const reszta = await kupka(c, nazwa, b, { x: 2.6, y: 0.8, size: 0.95 });
           await c.say("sowa", "line.a_put");
           await c.sort({ items: reszta, zones: [pudlo] });
           await c.count(pudlo.items, { who: "lisek" });
