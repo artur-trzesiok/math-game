@@ -93,7 +93,14 @@ export class Stage {
   tick(t) {
     const dt = Math.min(0.05, (t - this.last) / 1000); this.last = t; this.frame++;
     bgClock.value += dt;
-    for (const L of Object.values(this.puppets)) L.update(dt);
+    for (const L of Object.values(this.puppets)) {
+      L.update(dt);
+      if (L.cien) {                                                           // the shadow stays on the ground under the feet
+        const lift = Math.max(0, L.korzen.position.y - GROUND);
+        L.cien.visible = L.korzen.visible; L.cien.position.x = L.korzen.position.x;
+        const k = Math.max(0.4, 1 - lift * 0.8); L.cien.scale.set(k, k, 1); L.cien.material.opacity = 0.85 * k;
+      }
+    }
     for (const tw of this.tweens.slice()) {
       tw.t += dt; const s = (tw.ease || easeInOut)(Math.min(1, tw.t / tw.d));
       tw.step(s);
@@ -141,8 +148,37 @@ export class Stage {
     const L = await Lalka.wczytaj(`/game/assets/characters/${name}/`, { strona: side === "left" ? "lewo" : "prawo", wysokosc: height });
     L.korzen.position.set(x, GROUND, 0);
     L.korzen.visible = false; L.home = x; L.name = name;
-    this.scene.add(L.korzen); this.puppets[name] = L;
+    L.cien = this.shadow(height * 0.42);
+    this.scene.add(L.korzen, L.cien); this.puppets[name] = L;
     return L;
+  }
+  // a contact shadow with a pencil feel: short diagonal strokes inside a slightly wobbly ellipse
+  shadow(w) {
+    if (!this.shadowTex) {
+      const c = document.createElement("canvas"); c.width = 512; c.height = 160; const ctx = c.getContext("2d");
+      const cx = 256, cy = 80, rx = 236, ry = 62;
+      ctx.save();
+      ctx.beginPath();
+      for (let a = 0; a <= Math.PI * 2 + 0.01; a += Math.PI / 36) {             // wobbly outline, like a hand-drawn ellipse
+        const j = 1 + 0.04 * Math.sin(a * 5.3) + 0.03 * Math.sin(a * 11.1 + 1);
+        ctx.lineTo(cx + Math.cos(a) * rx * j, cy + Math.sin(a) * ry * j);
+      }
+      ctx.closePath(); ctx.clip();
+      ctx.fillStyle = "rgba(40,30,20,0.10)"; ctx.fillRect(0, 0, 512, 160);        // a faint base
+      ctx.strokeStyle = "rgba(40,30,20,0.42)"; ctx.lineCap = "round";
+      let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+      for (let i = 0; i < 70; i++) {                                              // hatching, denser in the middle
+        const t = i / 70, x = 20 + t * 472, y0 = 8 + rnd() * 30, y1 = 152 - rnd() * 30;
+        const s = 1 - Math.abs(t - 0.5) * 1.1;
+        ctx.lineWidth = 2.5 + rnd() * 2; ctx.globalAlpha = 0.35 + s * 0.55;
+        ctx.beginPath(); ctx.moveTo(x - 18 + rnd() * 6, y1); ctx.lineTo(x + 18 + rnd() * 6, y0); ctx.stroke();
+      }
+      ctx.restore();
+      this.shadowTex = new THREE.CanvasTexture(c); this.shadowTex.colorSpace = THREE.SRGBColorSpace;
+    }
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w * 2, w * 0.62), new THREE.MeshBasicMaterial({ map: this.shadowTex, transparent: true, depthWrite: false, opacity: 0.85 }));
+    m.position.set(0, GROUND + 0.02, -0.05); m.renderOrder = 5; m.visible = false;
+    return m;
   }
   async enter(name, from = "left") {
     const L = this.puppets[name]; if (!L) throw new Error("no puppet " + name);
@@ -371,5 +407,5 @@ export class Stage {
     await fetch(`/api/snap?name=${name}`, { method: "POST", body: blob });
     return name;
   }
-  dispose() { this.running = false; clearInterval(this.watchdog); window.removeEventListener("resize", this.onResize); this.renderer.dispose(); this.renderer.domElement.remove(); }
+  dispose() { for (const L of Object.values(this.puppets)) if (L.cien) this.scene.remove(L.cien); this.running = false; clearInterval(this.watchdog); window.removeEventListener("resize", this.onResize); this.renderer.dispose(); this.renderer.domElement.remove(); }
 }

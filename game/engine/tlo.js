@@ -80,7 +80,8 @@ export async function zbudujTlo(scena, wymiar, opcje = {}) {
     const poz = g.attributes.position, waga = new Float32Array(poz.count);
     for (let i = 0; i < poz.count; i++) {
       const u = (poz.getY(i) + r.h * s / 2) / (r.h * s);
-      waga[i] = r.klasa === "sway" ? u * u : 1.0;
+      // the lower third stays put (a pot, a root), the top bends most
+      waga[i] = r.klasa === "sway" ? Math.pow(Math.max(0, (u - 0.3) / 0.7), 2) : 1.0;
     }
     g.setAttribute("waga", new THREE.BufferAttribute(waga, 1));
     const moc = r.klasa === "sway" ? r.h * s * 0.45 : r.w * s * 0.22;

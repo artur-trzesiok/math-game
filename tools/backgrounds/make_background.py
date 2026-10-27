@@ -221,10 +221,18 @@ def split(nazwa: str, prog: int = 40, min_pikseli: int = 500) -> dict:
 
     # Ziarno papieru roznicuje sie wszedzie po trochu: prog wyzszy niz w
     # wersji wektorowej i otwarcie, zeby zostaly tylko obiekty.
-    m = np.abs(ruch.astype(int) - plyta.astype(int)).max(axis=2) > prog
+    roznica = np.abs(ruch.astype(int) - plyta.astype(int)).max(axis=2)
+    m = roznica > prog
+    # hysteresis: a weak difference counts when it touches a strong one (a pot the colour of the floor)
+    from scipy import ndimage
+    m = (roznica > prog / 3) & ndimage.binary_dilation(m, iterations=14)
     maska = Image.fromarray((m * 255).astype(np.uint8))
     maska = maska.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.MaxFilter(7)).filter(ImageFilter.MinFilter(3))
     m = np.asarray(maska) > 127
+    # a pot the colour of the floor leaves holes and notches in the difference: close and fill them
+    from scipy import ndimage
+    m = ndimage.binary_closing(m, structure=np.ones((9, 9)), iterations=2)
+    m = ndimage.binary_fill_holes(m)
 
     hor = _horyzont(plyta)
     grupy = _skladowe(m, min_pikseli)
@@ -240,6 +248,10 @@ def split(nazwa: str, prog: int = 40, min_pikseli: int = 500) -> dict:
         wydluzenie = max(szer, wys) / max(min(szer, wys), 1)
         wypelnienie = len(ys) / max(szer * wys, 1)
         if wydluzenie > 6 or wypelnienie < 0.12:
+            continue
+        # a huge component is the model redrawing part of the plate (a whole tree), not a mover
+        if wys > 0.45 * plyta.shape[0] or len(ys) > 0.06 * plyta.shape[0] * plyta.shape[1]:
+            print(f"  pominieto duza skladowa {szer}x{wys} ({len(ys)} px) - to przerysowane tlo, nie rekwizyt")
             continue
         i = len(rekwizyty)
         # alfa = maska rozmyta o niecaly piksel, zeby brzeg nie byl zabkowany
