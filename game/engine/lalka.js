@@ -142,6 +142,28 @@ export class Lalka {
   }
   _widoczna(o) { for (; o; o = o.parent) if (o.visible === false) return false; return true; }
 
+  // ------------------------------------------------------------ carrying
+  // where a carried thing sits now, in world coordinates: a humanoid holds it in the paw of the near arm
+  // (the tip of the arm chain, s > 0.9, as bent), a quadruped carries it on its back (the top of its torso)
+  uchwyt() {
+    const widok = this.wProfilu ? "profil" : this.wTyle ? "tyl" : "przod";
+    const reka = { przod: "reka_p", profil: "p_reka", tyl: "t_reka_p" }[widok];
+    const R = this.lancuchy.find((l) => l.czesc === reka || l.kosc === reka);
+    const v = new THREE.Vector3();
+    if (R && this.dane.rig !== "czworonog") {
+      if (!R.dlon) { R.dlon = []; for (let i = 0; i < R.B.vs.length; i++) if (R.B.vs[i] > 0.9) R.dlon.push(i); }
+      const pos = R.mesh.geometry.attributes.position.array;
+      for (const i of R.dlon) { v.x += pos[3 * i]; v.y += pos[3 * i + 1]; }
+      v.multiplyScalar(1 / Math.max(1, R.dlon.length));
+      R.mesh.updateWorldMatrix(true, false);
+      return { p: v.applyMatrix4(R.mesh.matrixWorld), na: "dlon" };
+    }
+    const tul = this.kosci[{ przod: "tulow", profil: "p_cialo", tyl: "t_tulow" }[widok]]?.children.find((c) => c.isMesh);
+    if (!tul) { this.korzen.getWorldPosition(v); v.y += this.wysokosc * 0.6; return { p: v, na: "plecy" }; }
+    const bb = new THREE.Box3().setFromObject(tul);
+    return { p: new THREE.Vector3((bb.min.x + bb.max.x) / 2, bb.max.y - (bb.max.y - bb.min.y) * 0.08, 0), na: "plecy" };
+  }
+
   // what hangs on a bent piece (the head and arms on the torso) moves and turns with the bend at its attachment
   _niesDzieci() {
     for (const L of this.lancuchy) {
@@ -488,6 +510,14 @@ export class Lalka {
       }
     }
     this.pozaSurowa = Object.fromEntries(Object.entries(p).filter(([, v]) => typeof v === "number"));   // before the gaze adds its own smoothed part
+    // carrying: the arm that holds comes forward and bends, blended in and out over 0.25 s
+    this.niesienieW = Math.max(0, Math.min(1, (this.niesienieW || 0) + (this.niesie ? 1 : -1) * dt / 0.25));
+    if (this.niesienieW > 0 && this.dane.rig !== "czworonog") {
+      const w = this.niesienieW * this.niesienieW * (3 - 2 * this.niesienieW);
+      p.reka_p = (p.reka_p || 0) * (1 - w) + 35 * w; p.lokiec_p = (p.lokiec_p || 0) * (1 - w) + 70 * w; p.nadgarstek_p = (p.nadgarstek_p || 0) * (1 - w) - 15 * w;
+      p.t_reka_p = p.reka_p; p.t_lokiec_p = p.lokiec_p;
+      p.p_reka = (p.p_reka || 0) * (1 - w) - 45 * w; p.p_lokiec = (p.p_lokiec || 0) * (1 - w) - 65 * w;
+    }
     // mruganie
     this.nastepneMrugniecie -= dt;
     if (this.mruganie >= 0) { this.mruganie += dt; if (this.mruganie > 0.28) { this.mruganie = -1; this.nastepneMrugniecie = 2 + Math.random() * 4; } }

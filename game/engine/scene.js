@@ -108,6 +108,13 @@ export class Stage {
         const k = Math.max(0.4, 1 - lift * 0.8); L.cien.scale.set(k, k, 1); L.cien.material.opacity = 0.85 * k;
       }
     }
+    // carried things follow the paw (or the back) they sit in, drawn over the one carrying them
+    for (const L of Object.values(this.puppets)) {
+      const h = L.trzyma; if (!h) continue;
+      L.korzen.updateMatrixWorld(true);
+      const { p, na } = L.uchwyt();
+      h.mesh.position.set(p.x, p.y + (na === "plecy" ? h.base * 0.35 : -h.base * 0.1), 0.8);   // held a little below the paw's centre, or riding on the back
+    }
     for (const tw of this.tweens.slice()) {
       tw.t += dt; const s = (tw.ease || easeInOut)(Math.min(1, tw.t / tw.d));
       tw.step(s);
@@ -408,6 +415,31 @@ export class Stage {
     this.endSort();
     for (const o of this.objects.slice()) o.remove();
     this.targets = [];
+  }
+
+  // ------------------------------------------------------------------ carrying
+  // a character takes a thing into its paw (a quadruped onto its back): the thing flies there, then follows
+  // every move - walking included - until `put` sets it down at (x, y)
+  async take(who, h, { d = 0.4 } = {}) {
+    const L = this.puppets[who]; if (!L || !h) return;
+    L.niesie = true;
+    await this.wait(0.25);                                            // the arm comes forward first
+    L.korzen.updateMatrixWorld(true);
+    const { p, na } = L.uchwyt();
+    h.zapisanyRO = []; h.mesh.traverse((o) => { if (o.isMesh) { h.zapisanyRO.push([o, o.renderOrder]); o.renderOrder = 35; } });
+    this.untarget(h);
+    h.baseNiesiony = h.base; h.base = h.base * 0.78; h.mesh.scale.setScalar(h.base);   // a carried thing is held close: a bit smaller
+    await h.moveTo(p.x, p.y + (na === "plecy" ? h.base * 0.35 : -h.base * 0.1), d);
+    L.trzyma = h; this.sfx.graj("tap");
+  }
+  async put(who, x, y, { d = 0.45 } = {}) {
+    const L = this.puppets[who]; const h = L?.trzyma; if (!h) return null;
+    L.trzyma = null; L.niesie = false;
+    if (h.baseNiesiony) { h.base = h.baseNiesiony; h.baseNiesiony = null; h.mesh.scale.setScalar(h.base); }
+    await h.moveTo(x, y, d);
+    for (const [o, r] of h.zapisanyRO || []) o.renderOrder = r;
+    this.sfx.graj("plop");
+    return h;
   }
 
   // ------------------------------------------------------------------ camera focus

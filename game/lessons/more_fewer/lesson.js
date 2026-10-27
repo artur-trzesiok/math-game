@@ -121,9 +121,11 @@ export default {
         // the problem solved: Fox runs off for the missing plate, now every cup has one
         sign.remove();
         await c.say("lisek", "line.m0_fetch", { anim: "Podskok" });
-        await c.walkTo("lisek", -7.6);
-        const extra = await c.object("talerz", { x: -6.6, y: Y, size: SZ * 1.3 });
-        await Promise.all([c.walkTo("lisek", -4.6), extra.moveTo(-3.2, Y, 1.0)]);
+        await c.walkTo("lisek", -7.8);                                  // off to the picnic basket ...
+        const extra = await c.object("talerz", { x: -7.8, y: -1.5, size: SZ * 1.3 });
+        await c.take("lisek", extra, { d: 0.1 });
+        await c.walkTo("lisek", -4.6);                                  // ... and back with the plate in its paw
+        await c.put("lisek", -3.2, Y);
         plates.push(extra);
         lay(c, cups, plates, true); await c.wait(0.8);
         await pair(c, cups, plates);

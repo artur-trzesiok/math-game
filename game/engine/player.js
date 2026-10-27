@@ -148,6 +148,9 @@ export class Player {
       sfx: (name, opts) => S.sfx.graj(name, opts),                // a sound effect (game/audio/sfx)
       // the camera closes in on things and dims the rest; unfocus brings the whole stage back
       focus: guard((items, opts) => S.focus(items, opts)),
+      // carrying: take a thing into a character's paw (onto a quadruped's back), walk with it, put it down
+      take: guard((who, h, opts) => S.take(who, h, opts)),
+      put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),
       arrow: guard((h, opts) => S.arrow(h, opts)),
