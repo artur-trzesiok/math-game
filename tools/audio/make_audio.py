@@ -64,6 +64,13 @@ VOICES = {
 }
 SPEED = float(os.environ.get("ELEVENLABS_SPEED", "0.85"))     # children: slower than the default 1.0 (range 0.7-1.2)
 SETTINGS = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.3, "use_speaker_boost": True, "speed": SPEED}
+PAUSE = os.environ.get("ELEVENLABS_PAUSE", "0.6s")          # a break after every sentence, so a child can take it in
+
+
+def with_pauses(text: str) -> str:
+    """Insert an ElevenLabs break tag after every sentence end; the i18n text stays clean."""
+    import re
+    return re.sub(r"([.!?])\s+(?=\S)", lambda m: f'{m.group(1)} <break time="{PAUSE}" /> ', text.strip())
 
 
 def api_key() -> str:
@@ -144,7 +151,7 @@ def synthesize(text: str, voice: str, dst: Path) -> None:
     r = requests.post(f"{API}/text-to-speech/{voice}",
                       headers={"xi-api-key": api_key(), "accept": "audio/mpeg"},
                       params={"output_format": FORMAT},
-                      json={"text": text, "model_id": MODEL, "voice_settings": SETTINGS}, timeout=120)
+                      json={"text": with_pauses(text), "model_id": MODEL, "voice_settings": SETTINGS}, timeout=120)
     if r.status_code != 200:
         raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
     dst.write_bytes(r.content)
@@ -158,7 +165,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
     done = skipped = failed = 0
     for l in lines(lesson, lang):
         voice = voice_for(lang, l["who"])
-        digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + json.dumps(SETTINGS, sort_keys=True) + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]   # a voice or settings change regenerates too
+        digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + json.dumps(SETTINGS, sort_keys=True) + "|" + PAUSE + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]   # a voice, settings or pause change regenerates too
         dst = out / f"{l['key']}.mp3"
         if dst.exists() and manifest.get(l["key"], {}).get("hash") == digest:
             if not dst.with_suffix(".json").exists():

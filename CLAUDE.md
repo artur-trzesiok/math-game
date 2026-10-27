@@ -190,7 +190,8 @@ order = `NAZWY`; split by alpha into 256 px WebP stickers.
 synthesises what is missing or changed (manifest by text hash) and writes
 `game/audio/<lang>/<lesson>/<key>.mp3` plus `<key>.json`, the BAKED lip-sync
 envelope (RMS every 20 ms, normalised; `--bake` recomputes them all) that the game
-reads by playback time - no WebAudio on the tablet. Every recording is normalised
+reads by playback time - no WebAudio on the tablet. A break of `ELEVENLABS_PAUSE` (0.6 s) is inserted after every sentence at synthesis
+time, so the i18n text stays clean. Every recording is normalised
 to -20 dBFS RMS of its voiced frames (`--normalize` redoes all), and each character's
 `meta.json` (`game/assets/characters/<who>/`) holds its ElevenLabs voice per language
 and a `volume` trim the game multiplies in. Keys live in the repository's `.env`

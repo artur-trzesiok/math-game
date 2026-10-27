@@ -1,251 +1,251 @@
 {
  "line.s1_fox_big": {
-  "hash": "41a2213badd4",
+  "hash": "3d04a2557cd2",
   "who": "lisek",
   "text": "Look, my apple is big!"
  },
  "line.s1_sq_small": {
-  "hash": "1e20d9ed7ad9",
+  "hash": "328d805219c7",
   "who": "wiewiorka",
   "text": "And mine is small. But it's sweet!"
  },
  "line.s1_compare": {
-  "hash": "822e6c4c2387",
+  "hash": "2a90d850632a",
   "who": "wiewiorka",
   "text": "Your big apple is bigger than mine. And my small apple is smaller than yours."
  },
  "line.s1_daily": {
-  "hash": "86d4b4c5e4bc",
+  "hash": "eda577bd8850",
   "who": "lisek",
   "text": "It's the same at home. Mum has big shoes and you have small ones. Your shoes are smaller."
  },
  "line.s2_thirsty": {
-  "hash": "d982d8e98773",
+  "hash": "54205cd3d61d",
   "who": "wiewiorka",
   "text": "I'm thirsty! Which cup is for me?"
  },
  "line.s2_fox_asks": {
-  "hash": "534f059feb66",
+  "hash": "41a578a4b368",
   "who": "lisek",
   "text": "Squirrel has little paws. Can you help her choose?"
  },
  "line.s2_prompt": {
-  "hash": "033125338a7f",
+  "hash": "e8dc5e696ab5",
   "who": "lisek",
   "text": "Point to the smaller cup."
  },
  "line.s2_wrong": {
-  "hash": "153a23805cf8",
+  "hash": "b7eb6e2d441e",
   "who": "lisek",
   "text": "That is the bigger cup. Look for the smaller one."
  },
  "line.s2_thanks": {
-  "hash": "9ff091aac731",
+  "hash": "8c19666b196b",
   "who": "wiewiorka",
   "text": "Thank you! The small cup fits my paws."
  },
  "line.s2_summary": {
-  "hash": "e35a34b0ec4c",
+  "hash": "b617e3e43187",
   "who": "lisek",
   "text": "The small cup is smaller and the big cup is bigger. Great!"
  },
  "line.p_intro": {
-  "hash": "d769c3c85995",
+  "hash": "05846ac1c667",
   "who": "lisek",
   "text": "Now a game. I'll show you two things and you choose."
  },
  "line.p_click_bigger": {
-  "hash": "04775185ba9e",
+  "hash": "03da362fff55",
   "who": "lisek",
   "text": "Point to the bigger one."
  },
  "line.p_click_smaller": {
-  "hash": "acc34207eab0",
+  "hash": "82e18bf837ca",
   "who": "lisek",
   "text": "Point to the smaller one."
  },
  "line.p_click_biggest": {
-  "hash": "1122e8f63c4f",
+  "hash": "828400639702",
   "who": "lisek",
   "text": "There are three. Point to the biggest."
  },
  "line.p_click_smallest": {
-  "hash": "92cdb8e497b5",
+  "hash": "30c7d67639ae",
   "who": "lisek",
   "text": "There are three. Point to the smallest."
  },
  "line.p_wrong": {
-  "hash": "0f6fde5a7dc9",
+  "hash": "01cdfc5c0589",
   "who": "lisek",
   "text": "Try again."
  },
  "line.p_good": {
-  "hash": "32b8266fb2db",
+  "hash": "bf899d327356",
   "who": "lisek",
   "text": "That's right!"
  },
  "line.a_bye": {
-  "hash": "6c0eb132d7a2",
+  "hash": "b7902165ed9a",
   "who": "lisek",
   "text": "See you!"
  },
  "line.a_fox_game": {
-  "hash": "d23f42c100ea",
+  "hash": "0141da9a992d",
   "who": "lisek",
   "text": "Let's play a home game! I show a thing and you say if it is bigger or smaller than my paw."
  },
  "line.a_sq_ok": {
-  "hash": "346a3925d092",
+  "hash": "25d8da939f7f",
   "who": "wiewiorka",
   "text": "Okay! Show me."
  },
  "line.a_fox_plate": {
-  "hash": "6d6c16507764",
+  "hash": "ab3a2bf256e4",
   "who": "lisek",
   "text": "A plate. Bigger or smaller than my paw?"
  },
  "line.a_sq_bigger": {
-  "hash": "91430289f439",
+  "hash": "f113232010d6",
   "who": "wiewiorka",
   "text": "Bigger! The plate is bigger than your paw."
  },
  "line.a_fox_cookie": {
-  "hash": "dd089d245aed",
+  "hash": "1d6bd3b03da1",
   "who": "lisek",
   "text": "And a cookie?"
  },
  "line.a_sq_smaller": {
-  "hash": "6bde09dbd0bc",
+  "hash": "5954674c2155",
   "who": "wiewiorka",
   "text": "Smaller! The cookie is smaller than your paw."
  },
  "line.a_sq_your_turn": {
-  "hash": "427beeb4ebc1",
+  "hash": "5578d4f23dd6",
   "who": "wiewiorka",
   "text": "Your turn. We'll show two of the same thing, one big and one small."
  },
  "line.a_ask_parents": {
-  "hash": "41795aff1d11",
+  "hash": "46c8c6ef8bc1",
   "who": "wiewiorka",
   "text": "Ask your parents to play this with you at home. Look for things bigger and smaller than your hand!"
  },
  "line.s1_pick_bigger": {
-  "hash": "9ea5486342dd",
+  "hash": "f55514e23ae7",
   "who": "lisek",
   "text": "I'm very hungry. Point to the bigger apple, that one is for me."
  },
  "line.s1_wrong": {
-  "hash": "34e36ea960a2",
+  "hash": "86799d0d0210",
   "who": "lisek",
   "text": "That is the smaller apple. Look for the bigger one."
  },
  "line.s1_fox_thanks": {
-  "hash": "5f3379bb4e8f",
+  "hash": "7e9523828a2f",
   "who": "lisek",
   "text": "Thank you! A big apple for a big hunger."
  },
  "line.s3_sq_flower": {
-  "hash": "70b434f3f836",
+  "hash": "9d9a453ac80d",
   "who": "wiewiorka",
   "text": "I want to put a flower behind my ear. There are two flowers."
  },
  "line.s3_fox_too_big": {
-  "hash": "d70cb9ac612d",
+  "hash": "9a82a494c93d",
   "who": "lisek",
   "text": "The big one is bigger than your head! It won't stay."
  },
  "line.s3_pick_smaller": {
-  "hash": "2df48bb35ce7",
+  "hash": "1a584db78024",
   "who": "wiewiorka",
   "text": "Point to the smaller flower. That one fits behind my ear."
  },
  "line.s3_wrong": {
-  "hash": "2adf15c8c167",
+  "hash": "0ef1d9e4e71f",
   "who": "wiewiorka",
   "text": "That one is too big. Point to the smaller one."
  },
  "line.s3_sq_thanks": {
-  "hash": "cd8e41632653",
+  "hash": "13368816a1c8",
   "who": "wiewiorka",
   "text": "It fits! The small flower is smaller than my ear."
  },
  "line.s4_fox_ball": {
-  "hash": "5449a2ef8f6a",
+  "hash": "03966d8ac520",
   "who": "lisek",
   "text": "Shall we play ball? The biggest one is best for kicking."
  },
  "line.s4_sq_three": {
-  "hash": "08657ee1a9c5",
+  "hash": "facb29f9d822",
   "who": "wiewiorka",
   "text": "There are three balls: small, medium and big."
  },
  "line.s4_pick_biggest": {
-  "hash": "26875182174c",
+  "hash": "d3ea9e6a9faf",
   "who": "lisek",
   "text": "Point to the biggest ball."
  },
  "line.s4_wrong": {
-  "hash": "a0141816b84e",
+  "hash": "a4bde22bf48a",
   "who": "lisek",
   "text": "There is a bigger one. Look for the biggest."
  },
  "line.s4_fox_thanks": {
-  "hash": "643c32ab92ec",
+  "hash": "67245302ac33",
   "who": "lisek",
   "text": "Yes! The biggest ball. Let's kick!"
  },
  "line.s5_sq_cookies": {
-  "hash": "abdad143f221",
+  "hash": "05bbf06f5bc5",
   "who": "wiewiorka",
   "text": "Snack time. I have two cookies: a small one and a big one."
  },
  "line.s5_fox_hungry": {
-  "hash": "072fd26c2bcc",
+  "hash": "58e024ea4c5b",
   "who": "lisek",
   "text": "I am big and very hungry!"
  },
  "line.s5_pick_bigger": {
-  "hash": "4a6698c36dc7",
+  "hash": "19462f91d4bf",
   "who": "wiewiorka",
   "text": "Point to the bigger cookie. That one is for Fox."
  },
  "line.s5_wrong": {
-  "hash": "f93399d71791",
+  "hash": "2f9385058327",
   "who": "wiewiorka",
   "text": "That is the smaller cookie. The bigger one is next to it."
  },
  "line.s5_sq_mine": {
-  "hash": "842b23a3833a",
+  "hash": "2d0d9b7eebaa",
   "who": "wiewiorka",
   "text": "And the smaller cookie is for me. Just right."
  },
  "line.s5_summary": {
-  "hash": "c50d5869374b",
+  "hash": "8847c1590a3d",
   "who": "lisek",
   "text": "Bigger for the bigger one, smaller for the smaller one. Yummy!"
  },
  "line.a_pick_bigger": {
-  "hash": "9cfbc221f15f",
+  "hash": "39f61cf616bf",
   "who": "lisek",
   "text": "Which one is bigger?"
  },
  "line.a_pick_smaller": {
-  "hash": "30bbcf1d64e7",
+  "hash": "162e4035fd58",
   "who": "wiewiorka",
   "text": "Which one is smaller?"
  },
  "line.a_right": {
-  "hash": "32b8266fb2db",
+  "hash": "bf899d327356",
   "who": "lisek",
   "text": "That's right!"
  },
  "line.s0_wind": {
-  "hash": "2fc3eccd0c10",
+  "hash": "23fb07ed5212",
   "who": "lisek",
   "text": "Oh, what a wind! The apple tree is shaking. Look out, something is falling!"
  },
  "line.s0_fell": {
-  "hash": "4d3462aa8ea9",
+  "hash": "e7c40aaf843f",
   "who": "wiewiorka",
   "text": "Hop! Two apples fell down. One big, one small."
  }
