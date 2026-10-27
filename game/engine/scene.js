@@ -646,7 +646,12 @@ export class Stage {
   async wonder(who, { na = 1.8 } = {}) {
     const L = this.puppets[who]; if (!L || !L.korzen.visible) return null;
     const o = new THREE.Vector3(); L.korzen.getWorldPosition(o);
-    const x = o.x + 0.95 * (o.x < 0 ? 1 : -1), y = o.y + L.wysokosc * 1.08, s = 0.85;   // over the head, towards the middle
+    // right over the head: above the head bone's x, its bottom just over the top of the ears
+    L.korzen.updateMatrixWorld(true);
+    const gl = L.kosci.glowa && L.widokGrupy.przod.visible ? L.kosci.glowa : (L.kosci.p_glowa && L.widokGrupy.profil.visible ? L.kosci.p_glowa : L.kosci.t_glowa);
+    const top = new THREE.Box3().setFromObject(L.korzen).max.y;
+    const hx = gl ? gl.getWorldPosition(new THREE.Vector3()).x : o.x, s = 0.85;
+    const x = hx + 0.12 * s, y = Math.min(SUFIT - 1.05 * s, top + 0.5 * s + 0.3);
     this.sfx.graj("wonder");
     const hook = await this.line({ bezier: [[x - 0.45 * s, y + 0.55 * s], [x - 0.45 * s, y + 1.05 * s], [x + 0.55 * s, y + 1.05 * s], [x + 0.5 * s, y + 0.55 * s],
                                             [x + 0.45 * s, y + 0.2 * s], [x, y + 0.25 * s], [x, y - 0.15 * s]] }, { color: "#2b2622", duration: 0.5, width: 0.14, name: "pytajnik", strong: true });
