@@ -260,7 +260,21 @@ edit; a blank head keeping the nose; a profile sheet with a pair of eyes;
 seven clouds" - "a few" is too sparse), difference -> PNG props, install ->
 WebP (plate q80 opaque, props q80 exact alpha). The engine puts the plate on one
 quad (cover) and each prop on a subdivided quad that sways (grass) or drifts
-(clouds). `make_objects.py gen|split`: all objects from one sheet, row-major
+(clouds). The split (`split`, knobs at the top of `make_background.py`): the
+difference is taken between the two passes BLURRED (sigma 1.2: paper grain and brush
+jitter are no change), strong > 40 plus weak > 24 within 4 px outdoors (14 within 8
+indoors); every pixel joins the component of its nearest CORE (the mask opened by
+r 2), so a mover touching redrawn plate by a thin bridge splits off while grass blades
+keep their tuft. Indoors notches are closed and holes filled (a pot the colour of the
+floor); outdoors not - the gaps between blades show the plate anyway, filled they
+carried water and stones along. A cloud keeps only its bright unsaturated body plus a
+bluish or white rim (leaves of a crown stuck to clouds before); an outdoor tuft drops
+light blue / teal pixels (water redrawn between reeds; a teal blade is dark, a purple
+flower has red); an indoor mover that is NEW in the second pass (median difference
+>= 80) drops, above its foot, pixels within 45 of the plate (the wallpaper between a
+plant's leaves) - one the plate already has keeps its leaves. Review every split with
+`python tools/backgrounds/debug_split.py <scene>|all` -> `work/split_<scene>.png`
+(outlines on the plate, every prop on a checkerboard). `make_objects.py gen|split`: all objects from one sheet, row-major
 order = `NAZWY`; split by alpha into 256 px WebP stickers.
 
 ## Audio

@@ -7,47 +7,38 @@
   {
    "plik": "rekwizyt_00.webp",
    "klasa": "sway",
-   "x": 961,
-   "y": 254,
-   "w": 168,
-   "h": 152,
+   "x": 963,
+   "y": 255,
+   "w": 165,
+   "h": 150,
    "faza": 0.0
   },
   {
    "plik": "rekwizyt_01.webp",
    "klasa": "drift",
    "x": 675,
-   "y": 125,
+   "y": 126,
    "w": 86,
-   "h": 38,
+   "h": 36,
    "faza": 0.618
   },
   {
    "plik": "rekwizyt_02.webp",
    "klasa": "drift",
-   "x": 688,
-   "y": 235,
-   "w": 81,
-   "h": 34,
+   "x": 689,
+   "y": 236,
+   "w": 79,
+   "h": 32,
    "faza": 0.2361
   },
   {
    "plik": "rekwizyt_03.webp",
    "klasa": "drift",
-   "x": 568,
-   "y": 160,
-   "w": 81,
-   "h": 47,
+   "x": 572,
+   "y": 161,
+   "w": 76,
+   "h": 45,
    "faza": 0.8541
-  },
-  {
-   "plik": "rekwizyt_04.webp",
-   "klasa": "sway",
-   "x": 1243,
-   "y": 504,
-   "w": 41,
-   "h": 71,
-   "faza": 0.4721
   }
  ]
 }

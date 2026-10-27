@@ -257,36 +257,171 @@ def gen(nazwa: str, jakosc: str = "high") -> None:
                         quality=jakosc, background="opaque")
 
 
-def split(nazwa: str, prog: int = 40, min_pikseli: int = 500) -> dict:
+# ---- the difference split: tuning knobs (see split)
+ROZMYCIE = 1.2          # sigma (px) of the blur both passes get before the difference: paper grain and brush jitter are no change
+PROG = 40               # a strong difference (max channel, 0-255)
+# a weak difference counts within ZASIEG px of a strong one; indoors the movers are solid things (a pot the
+# colour of the floor) whose notches are closed and holes filled; outdoors they are tufts and reeds whose gaps
+# show the plate anyway - filled, the gaps would carry water and stones along when the tuft sways
+WNETRZE = {"slaby": 14, "zasieg": 8, "domkniecie": 9, "dziury": True}
+PLENER = {"slaby": 24, "zasieg": 4, "domkniecie": 3, "dziury": False}
+NOWY = 80               # ... only for a mover that is new in the second pass (median difference; kitchen plant 122,
+                        # mobile and stars 88+), not one the plate already has and the model nudged (hallway plant)
+TAPETA = 45             # indoors, above a mover's foot: a pixel this close to the plate is wallpaper the model
+                        # redrew a little (measured 18-41 around the kitchen plant; its leaves differ by 68+)
+RDZEN = 2               # opening radius that finds a mover's core; thin bridges to redrawn plate have none
+CHMURA_JASNOSC = 170    # cloud pixels: bright ...
+CHMURA_NASYCENIE = 0.30 # ... and unsaturated (sky is blue, leaves are green or yellow)
+CHMURA_BRZEG = 3        # px of soft rim kept around a cloud's body
+
+
+def _kolo(r: int) -> np.ndarray:
+    y, x = np.mgrid[-r:r + 1, -r:r + 1]
+    return x * x + y * y <= r * r
+
+
+def _maska_roznicy(plyta: np.ndarray, ruch: np.ndarray, k: dict) -> np.ndarray:
+    from scipy import ndimage
+    rozm = lambda im: np.stack([ndimage.gaussian_filter(im[:, :, c].astype(float), ROZMYCIE) for c in range(3)], axis=2)
+    roznica = np.abs(rozm(ruch) - rozm(plyta)).max(axis=2)
+    mocna = roznica > PROG
+    # hysteresis: a weak difference counts next to a strong one
+    m = mocna | ((roznica > k["slaby"]) & ndimage.binary_dilation(mocna, structure=_kolo(1), iterations=k["zasieg"]))
+    m = ndimage.binary_closing(m, structure=np.ones((k["domkniecie"], k["domkniecie"])), iterations=2 if k["dziury"] else 1)
+    if k["dziury"]:
+        m = ndimage.binary_fill_holes(m)
+    return m
+
+
+def _rozdziel(m: np.ndarray) -> np.ndarray:
+    """Labels: every pixel of the mask joins the component of its nearest CORE (the mask opened by RDZEN).
+    Two movers touching by a thin bridge (a cloud and a redrawn crown) become two components; thin blades
+    of grass keep their tuft, because the mask itself is never eroded."""
+    from scipy import ndimage
+    rdzen = ndimage.binary_opening(m, structure=_kolo(RDZEN))
+    etyk, ile = ndimage.label(rdzen, structure=np.ones((3, 3), dtype=int))
+    if not ile:
+        return ndimage.label(m, structure=np.ones((3, 3), dtype=int))[0]
+    _, (iy, ix) = ndimage.distance_transform_edt(etyk == 0, return_indices=True)
+    out = np.where(m, etyk[iy, ix], 0)
+    # a pixel that joined a core it does not touch through the mask (an island) becomes its own component
+    final = np.zeros_like(out)
+    n = 0
+    for i in range(1, ile + 1):
+        czesci, k = ndimage.label(out == i, structure=np.ones((3, 3), dtype=int))
+        for j in range(1, k + 1):
+            n += 1
+            final[czesci == j] = n
+    return final
+
+
+def _chmura(ruch: np.ndarray, ys: np.ndarray, xs: np.ndarray):
+    """A cloud component keeps only its bright unsaturated body (its largest part, plus parts at least a
+    fifth of it) and a soft rim of CHMURA_BRZEG px - leaves or a roof stuck to it fall off."""
+    from scipy import ndimage
+    y0, x0 = ys.min(), xs.min()
+    h, w = ys.max() - y0 + 1, xs.max() - x0 + 1
+    skl = np.zeros((h, w), bool); skl[ys - y0, xs - x0] = True
+    px = ruch[y0:y0 + h, x0:x0 + w].astype(int)
+    jas = px.mean(axis=2); nas = (px.max(axis=2) - px.min(axis=2)) / np.maximum(px.max(axis=2), 1)
+    cialo = skl & (jas >= CHMURA_JASNOSC) & (nas <= CHMURA_NASYCENIE)
+    etyk, ile = ndimage.label(cialo, structure=np.ones((3, 3), dtype=int))
+    if not ile:
+        return ys, xs
+    rozm = ndimage.sum(cialo, etyk, range(1, ile + 1))
+    cialo = np.isin(etyk, 1 + np.where(rozm >= 0.2 * rozm.max())[0])
+    cialo = ndimage.binary_fill_holes(ndimage.binary_closing(cialo, structure=_kolo(2)))
+    # the rim only where it is sky or cloud (bluish or white): a willow leaf touching the cloud is green or yellow
+    niebo = px[:, :, 2] >= px[:, :, 1] - 5
+    nowa = skl & (cialo | (niebo & ndimage.binary_dilation(cialo, structure=_kolo(1), iterations=CHMURA_BRZEG)))
+    yy, xx = np.nonzero(nowa)
+    return yy + y0, xx + x0
+
+
+def _bez_wody(ruch: np.ndarray, ys: np.ndarray, xs: np.ndarray):
+    """An outdoor tuft keeps no water or sky: reeds drawn over a lake come with the redrawn ripples between their
+    blades, which would sway along. Light blue or teal pixels go (a purple flower has red in it, a reed blade is dark),
+    then specks smaller than a twentieth of what is left."""
+    from scipy import ndimage
+    px = ruch[ys, xs].astype(int)
+    # water and sky: blue over red, blue at least about green (pale teal water too), and light - a teal reed blade is dark
+    woda = (px[:, 2] > px[:, 0] + 25) & (px[:, 2] > px[:, 1] - 10) & (px[:, 0] > 105)
+    ys, xs = ys[~woda], xs[~woda]
+    if not len(ys):
+        return ys, xs
+    y0, x0 = ys.min(), xs.min()
+    pole = np.zeros((ys.max() - y0 + 1, xs.max() - x0 + 1), bool); pole[ys - y0, xs - x0] = True
+    etyk, ile = ndimage.label(pole, structure=np.ones((3, 3), dtype=int))
+    rozm = ndimage.sum(pole, etyk, range(1, ile + 1))
+    pole = np.isin(etyk, 1 + np.where(rozm >= max(40, 0.05 * rozm.max()))[0])
+    yy, xx = np.nonzero(pole)
+    return yy + y0, xx + x0
+
+
+def _bez_tla_u_gory(plyta: np.ndarray, ruch: np.ndarray, ys: np.ndarray, xs: np.ndarray):
+    """An indoor mover is closed and filled for its solid foot (a pot the colour of the floor), but its upper part
+    sways: there the filling would carry the wallpaper between the leaves along. Above the lower third, pixels the
+    two passes nearly agree on (TAPETA) go - the plate shows the same wallpaper there and it stays put."""
+    from scipy import ndimage
+    y0, x0 = ys.min(), xs.min(); h, w = ys.max() - y0 + 1, xs.max() - x0 + 1
+    a = ndimage.gaussian_filter(plyta[y0:y0 + h, x0:x0 + w].astype(float), (ROZMYCIE, ROZMYCIE, 0))
+    b = ndimage.gaussian_filter(ruch[y0:y0 + h, x0:x0 + w].astype(float), (ROZMYCIE, ROZMYCIE, 0))
+    roz = np.abs(b - a).max(axis=2)[ys - y0, xs - x0]
+    if np.median(roz) < NOWY:                # the thing is already in the plate (a plant the model only nudged): its
+        return ys, xs                        # leaves agree with the plate too and must not be cut away
+    zgodne = roz < TAPETA
+    gora = (ys - y0) < 0.65 * h
+    keep = ~(zgodne & gora)
+    ys, xs = ys[keep], xs[keep]
+    pole = np.zeros((h, w), bool); pole[ys - y0, xs - x0] = True
+    etyk, ile = ndimage.label(pole, structure=np.ones((3, 3), dtype=int))
+    if ile:
+        rozm = ndimage.sum(pole, etyk, range(1, ile + 1))
+        pole = np.isin(etyk, 1 + np.where(rozm >= max(40, 0.05 * rozm.max()))[0])
+    yy, xx = np.nonzero(pole)
+    return yy + y0, xx + x0
+
+
+def _jasnosc_nasycenie(px: np.ndarray):
+    px = px.astype(int)
+    return px.mean(), ((px.max(axis=1) - px.min(axis=1)) / np.maximum(px.max(axis=1), 1)).mean()
+
+
+def split(nazwa: str, min_pikseli: int = 500) -> dict:
     kat = KORZEN / nazwa
     plyta_img = Image.open(kat / "plyta.png").convert("RGB")
     plyta = np.asarray(plyta_img)
     ruch_img = Image.open(kat / "ruch.png").convert("RGB").resize(plyta_img.size, Image.LANCZOS)
     ruch = np.asarray(ruch_img)
 
-    # Ziarno papieru roznicuje sie wszedzie po trochu: prog wyzszy niz w
-    # wersji wektorowej i otwarcie, zeby zostaly tylko obiekty.
-    roznica = np.abs(ruch.astype(int) - plyta.astype(int)).max(axis=2)
-    m = roznica > prog
-    # hysteresis: a weak difference counts when it touches a strong one (a pot the colour of the floor)
-    from scipy import ndimage
-    m = (roznica > prog / 3) & ndimage.binary_dilation(m, iterations=14)
-    maska = Image.fromarray((m * 255).astype(np.uint8))
-    maska = maska.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.MaxFilter(7)).filter(ImageFilter.MinFilter(3))
-    m = np.asarray(maska) > 127
-    # a pot the colour of the floor leaves holes and notches in the difference: close and fill them
-    from scipy import ndimage
-    m = ndimage.binary_closing(m, structure=np.ones((9, 9)), iterations=2)
-    m = ndimage.binary_fill_holes(m)
-
+    m = _maska_roznicy(plyta, ruch, WNETRZE if SCENY[nazwa].get("wnetrze") else PLENER)
+    etyk = _rozdziel(m)
+    grupy = []
+    for i in range(1, int(etyk.max()) + 1):
+        ys, xs = np.nonzero(etyk == i)
+        if len(ys) >= min_pikseli:
+            grupy.append((ys, xs))
+    grupy.sort(key=lambda g: -len(g[0]))
     hor = _horyzont(plyta)
-    grupy = _skladowe(m, min_pikseli)
     print(f"roznica: {m.mean()*100:.1f}% kadru, {len(grupy)} elementow, horyzont y={hor}")
     for stary in kat.glob("rekwizyt_*.png"):
         stary.unlink()
 
     rekwizyty = []
+    H, W = plyta.shape[:2]
     for ys, xs in grupy:
+        # a cloud is bright and unsaturated and drifts; everything else sways (grass, a plant, a mobile)
+        jasnosc, nasycenie = _jasnosc_nasycenie(ruch[ys, xs])
+        wys0 = ys.max() - ys.min() + 1
+        chmura = jasnosc >= 185 and nasycenie <= 0.28 and wys0 < 0.3 * H
+        if chmura:
+            ys, xs = _chmura(ruch, ys, xs)
+        elif not SCENY[nazwa].get("wnetrze"):
+            ys, xs = _bez_wody(ruch, ys, xs)
+        else:
+            ys, xs = _bez_tla_u_gory(plyta, ruch, ys, xs)
+        if len(ys) < min_pikseli:
+            continue
         y0, y1 = int(ys.min()), int(ys.max()) + 1
         x0, x1 = int(xs.min()), int(xs.max()) + 1
         szer, wys = x1 - x0, y1 - y0
@@ -295,33 +430,25 @@ def split(nazwa: str, prog: int = 40, min_pikseli: int = 500) -> dict:
         if wydluzenie > 6 or wypelnienie < 0.12:
             continue
         # a huge component is the model redrawing part of the plate (a whole tree), not a mover
-        if wys > 0.45 * plyta.shape[0] or len(ys) > 0.06 * plyta.shape[0] * plyta.shape[1]:
+        if wys > 0.45 * H or len(ys) > 0.06 * H * W:
             print(f"  pominieto duza skladowa {szer}x{wys} ({len(ys)} px) - to przerysowane tlo, nie rekwizyt")
             continue
+        srodek_y = (y0 + y1) / 2
+        # outdoors, a dark saturated bit above the horizon is redraw noise (a piece of a swing frame, a crown)
+        if not SCENY[nazwa].get("wnetrze") and srodek_y < hor and not chmura:
+            print(f"  pominieto plamke nad horyzontem {szer}x{wys} (jasnosc {jasnosc:.0f}, nasycenie {nasycenie:.2f}) - nie chmura")
+            continue
         i = len(rekwizyty)
-        # alfa = maska rozmyta o niecaly piksel, zeby brzeg nie byl zabkowany
+        # alpha = the mask softened by under a pixel, so the edge is not jagged
         pole = np.zeros((wys, szer), dtype=np.uint8)
         pole[ys - y0, xs - x0] = 255
         alfa = Image.fromarray(pole).filter(ImageFilter.GaussianBlur(0.8))
         rgba = np.dstack([ruch[y0:y1, x0:x1], np.asarray(alfa)])
         plik = f"rekwizyt_{i:02d}.png"
         Image.fromarray(rgba, "RGBA").save(kat / plik)
-        srodek_y = (y0 + y1) / 2
-        # nad horyzontem dryfuja tylko male rzeczy (chmury); roslina w oknie
-        # kuchni ma srodek nad horyzontem, a ma sie kolysac, nie plywac
-        # a cloud is bright and unsaturated and drifts; everything else sways (grass, a plant, a mobile).
-        # Outdoors, a dark saturated bit above the horizon is redraw noise (a piece of a swing frame).
-        px = ruch[ys, xs].astype(int)
-        jasnosc = px.mean(); nasycenie = ((px.max(axis=1) - px.min(axis=1)) / np.maximum(px.max(axis=1), 1)).mean()
-        chmura = jasnosc >= 185 and nasycenie <= 0.28 and wys < 0.3 * plyta.shape[0]
-        klasa = "drift" if chmura else "sway"
-        if not SCENY[nazwa].get("wnetrze") and srodek_y < hor and not chmura:
-            print(f"  pominieto plamke nad horyzontem {szer}x{wys} (jasnosc {jasnosc:.0f}, nasycenie {nasycenie:.2f}) - nie chmura")
-            continue
-        rekwizyty.append({"plik": plik, "klasa": klasa, "x": x0, "y": y0, "w": szer, "h": wys,
+        rekwizyty.append({"plik": plik, "klasa": "drift" if chmura else "sway", "x": x0, "y": y0, "w": szer, "h": wys,
                           "faza": round((i * 0.6180339887) % 1.0, 4)})
-    opis = {"plyta": "plyta.png", "szerokosc": int(plyta.shape[1]), "wysokosc": int(plyta.shape[0]),
-            "horyzont": hor, "rekwizyty": rekwizyty}
+    opis = {"plyta": "plyta.png", "szerokosc": int(W), "wysokosc": int(H), "horyzont": hor, "rekwizyty": rekwizyty}
     (kat / "rekwizyty.json").write_text(json.dumps(opis, indent=1), encoding="utf-8")
     print(f"rekwizytow: {len(rekwizyty)} "
           f"(sway {sum(r['klasa']=='sway' for r in rekwizyty)}, drift {sum(r['klasa']=='drift' for r in rekwizyty)})")
