@@ -80,7 +80,11 @@ export class Player {
     this.stage.clear();
     for (const L of Object.values(this.stage.puppets)) { L.korzen.visible = false; }
     const ctx = this.context(st);
-    for (const scene of scenes) { if (this.abort) return; await scene(ctx); }
+    for (const scene of scenes) {
+      if (this.abort) return;
+      try { await scene(ctx); }
+      catch (e) { console.error(`lesson ${this.lessonId} / ${st}:`, e); await this.card(`Błąd sceny (${st}): ${e.message || e}`, this.t("button.menu")); this.abort = true; this.menu(); return; }
+    }
   }
 
   // the contract every scene gets
@@ -90,9 +94,7 @@ export class Player {
       const line = lineOf([strings], key);
       const puppet = who === "narrator" ? null : S.puppets[who];
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
-      this.bubble(puppet);
-      await this.speech.say({ lang, lessonId, key, text: line.text, who, puppet });
-      this.bubble(null);
+      await this.speech.say({ lang, lessonId, key, text: line.text, who, puppet });   // who speaks is shown by the mouth, no bubble
       if (puppet && puppet.korzen.visible) puppet.spoczynek();
     };
     return {
@@ -128,13 +130,6 @@ export class Player {
   }
 
   // ------------------------------------------------------------------ overlays
-  bubble(puppet) {
-    const b = $("#bubble");
-    if (!puppet) { b.style.display = "none"; clearInterval(this.bubbleTimer); return; }
-    b.style.display = "block";
-    const place = () => { const p = puppet.korzen.position.clone(); p.y += puppet.wysokosc + 0.3; const s = this.stage.toScreen(p); b.style.left = s.x + "px"; b.style.top = s.y + "px"; };
-    place(); clearInterval(this.bubbleTimer); this.bubbleTimer = setInterval(place, 100);
-  }
   card(text, button) {
     const c = $("#card"); c.style.display = "flex";
     c.querySelector(".text").textContent = text;

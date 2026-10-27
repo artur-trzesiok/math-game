@@ -1,4 +1,4 @@
-"""Manager + game server:  python manager/server.py [port]   (default 8740)
+"""Manager + game server:  python manager/server.py [port]   (default 8750)
 
 Serves the repository root statically (the game at /game/, the manager at
 /manager/) with no-store caching, plus a small API used by the manager's
@@ -24,7 +24,7 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parent.parent
 CHARACTERS = ROOT / "game" / "assets" / "characters"
 SNAPS = ROOT / "work" / "snap"
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8740
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8750
 FIELDS = ("x", "y", "w", "h", "os", "obrot", "rdzen")
 NAME = re.compile(r"[a-z0-9_]+")
 
@@ -111,7 +111,8 @@ class Handler(SimpleHTTPRequestHandler):
         self._json(200, {"ok": True, "corrections": count})
 
     def log_message(self, fmt, *a):
-        if "/api/" in (a[0] if a else ""):
+        # quiet for static files; errors pass str(code), so always stringify
+        if "/api/" in str(a[0] if a else ""):
             super().log_message(fmt, *a)
 
 

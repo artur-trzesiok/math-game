@@ -38,7 +38,7 @@ work/                       local scratch: snapshots (work/snap), debug renders 
 
 ## Run and test
 
-`python manager/server.py` (launch config `math_game`, port 8740) serves the repo:
+`python manager/server.py` (launch config `math_game`, port 8750) serves the repo:
 `/game/` and `/manager/`. It also takes `POST /api/snap?name=x` (a PNG from the
 page -> `work/snap/x.png`) and the editor's save API.
 

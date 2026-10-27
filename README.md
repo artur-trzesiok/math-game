@@ -6,8 +6,8 @@ pedagogy: [guidelines.md](guidelines.md). How to work in this repository:
 [CLAUDE.md](CLAUDE.md).
 
 ```
-python manager/server.py          # http://localhost:8740/game/     the game (master player)
-                                  # http://localhost:8740/manager/  the manager (character editor)
+python manager/server.py          # http://localhost:8750/game/     the game (master player)
+                                  # http://localhost:8750/manager/  the manager (character editor)
 ```
 
 ```

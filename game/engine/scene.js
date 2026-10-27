@@ -11,6 +11,7 @@ import { zbudujTlo, czas as bgClock } from "./tlo.js";
 
 export const SAFE = { w: 12, h: 9 };
 export const GROUND = -3.3;
+export const ASPECT_MIN = 4 / 3, ASPECT_MAX = 16 / 9;
 const CAM_Z = 7.2;
 const PARAMS = new URLSearchParams(location.search);
 const FRESH = { cache: "no-store" };
@@ -47,18 +48,33 @@ export class Stage {
   }
 
   // ------------------------------------------------------------------ camera and safe area
+  // The canvas keeps an aspect between 4:3 and 16:9 and sits centred; a wider or a
+  // taller screen gets black bars (the container's background) where nothing is drawn.
   resize() {
-    const w = this.container.clientWidth || 800, h = this.container.clientHeight || 600;
+    const W = this.container.clientWidth || 800, H = this.container.clientHeight || 600;
+    const aspect = Math.min(ASPECT_MAX, Math.max(ASPECT_MIN, W / H));
+    const w = Math.round(W / H > aspect ? H * aspect : W), h = Math.round(W / H > aspect ? H : W / aspect);
     this.renderer.setSize(w, h, false);
-    this.renderer.domElement.style.width = w + "px"; this.renderer.domElement.style.height = h + "px";
-    this.camera.aspect = w / h;
-    const h0 = Math.max(SAFE.h, SAFE.w / this.camera.aspect) * 1.02;     // the safe rect always fits
+    const c = this.renderer.domElement.style;
+    c.width = w + "px"; c.height = h + "px"; c.position = "absolute"; c.left = Math.round((W - w) / 2) + "px"; c.top = Math.round((H - h) / 2) + "px";
+    this.camera.aspect = aspect;
+    const h0 = SAFE.h * 1.02;                                             // 4:3 or wider: the safe rect fits by height
     this.camera.fov = 2 * Math.atan(h0 / 2 / CAM_Z) * 180 / Math.PI;
     this.camera.updateProjectionMatrix();
+    this.frameRect = { x: (W - w) / 2, y: (H - h) / 2, w, h };
   }
   visible(z = 0) {                                                        // visible rectangle at depth z
     const h = 2 * (CAM_Z - z) * Math.tan(this.camera.fov / 2 * Math.PI / 180);
     return { w: h * this.camera.aspect, h };
+  }
+  // the DESIGN rectangle at depth z: what a 16:9 landscape tablet sees around the safe area.
+  // The background is sized to this, never to the actual viewport, so the plate (and the
+  // ground, the blanket, the table) keep one fixed relation to the puppets on every screen;
+  // a narrower screen simply crops the sides.
+  design(z = 0) {
+    const h0 = SAFE.h * 1.02, fov = 2 * Math.atan(h0 / 2 / CAM_Z);
+    const h = 2 * (CAM_Z - z) * Math.tan(fov / 2);
+    return { w: h * ASPECT_MAX, h };
   }
   showSafe() {
     const g = new THREE.BufferGeometry().setFromPoints([-6, 6, 6, -6, -6].map((x, i) => new THREE.Vector3(x, [-4.5, -4.5, 4.5, 4.5, -4.5][i], 0.01)));
@@ -90,7 +106,7 @@ export class Stage {
   async background(name) {
     for (const m of this.bg) this.scene.remove(m);
     const before = new Set(this.scene.children);
-    await zbudujTlo(this.scene, (z) => this.visible(z), { katalog: `/game/assets/backgrounds/${name}/`, odlegloscKamery: CAM_Z, srodekY: 0.6 });
+    await zbudujTlo(this.scene, (z) => this.design(z), { katalog: `/game/assets/backgrounds/${name}/`, odlegloscKamery: CAM_Z, srodekY: 0.6 });
     this.bg = this.scene.children.filter((c) => !before.has(c));
   }
 
@@ -130,7 +146,7 @@ export class Stage {
       const m = new THREE.Mesh(new THREE.PlaneGeometry(1.18, 1.18), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
       m.position.z = -0.01; g.add(m);
     }
-    const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${name}.png`), transparent: true, alphaTest: 0.05 }));
+    const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${name}.webp`), transparent: true, alphaTest: 0.05 }));
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
     g.scale.setScalar(size);

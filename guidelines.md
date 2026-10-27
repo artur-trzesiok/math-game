@@ -43,11 +43,17 @@ objects - no hand-made art, no in-house level editor.
 
 ## Tablets and the safe area
 
-Tablets come in 4:3, 16:10 and 16:9. The stage has a fixed **safe area of 4:3
-(12 x 9 units)** that is always fully visible; on wider screens the extra width on
-the sides shows background only. Everything that matters - puppets, objects, signs,
+Tablets come in 4:3, 16:10 and 16:9, and that is the supported range. The stage
+has a fixed **safe area of 4:3 (12 x 9 units)** centred and always fully visible;
+between 4:3 and 16:9 the extra width shows background only. A screen wider than
+16:9 or taller than 4:3 gets black bars outside the renderer, where nothing
+happens. Everything that matters - puppets, objects, signs,
 zones, cards - is placed in safe-area units (x in -6..6, y in -4.5..4.5, the ground
-at y = -3.3). Landscape only. `?safe=1` draws the rectangle while testing.
+at y = -3.3). The background plate is sized to a fixed design frame (what a 16:9
+tablet sees around the safe area), never to the actual viewport, so the ground,
+the blanket or the table keep the same relation to the puppets on every screen; a
+narrower screen only crops the sides. Landscape only. `?safe=1` draws the
+rectangle while testing.
 
 ## Plug & play lessons
 

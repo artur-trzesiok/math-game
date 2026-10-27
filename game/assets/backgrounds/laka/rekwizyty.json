@@ -1,0 +1,260 @@
+{
+ "plyta": "plyta.webp",
+ "szerokosc": 1536,
+ "wysokosc": 1024,
+ "horyzont": 350,
+ "rekwizyty": [
+  {
+   "plik": "rekwizyt_00.webp",
+   "klasa": "sway",
+   "x": 1045,
+   "y": 55,
+   "w": 377,
+   "h": 149,
+   "faza": 0.0
+  },
+  {
+   "plik": "rekwizyt_01.webp",
+   "klasa": "sway",
+   "x": 479,
+   "y": 55,
+   "w": 294,
+   "h": 126,
+   "faza": 0.618
+  },
+  {
+   "plik": "rekwizyt_02.webp",
+   "klasa": "sway",
+   "x": 961,
+   "y": 891,
+   "w": 214,
+   "h": 89,
+   "faza": 0.2361
+  },
+  {
+   "plik": "rekwizyt_03.webp",
+   "klasa": "sway",
+   "x": 1386,
+   "y": 556,
+   "w": 142,
+   "h": 108,
+   "faza": 0.8541
+  },
+  {
+   "plik": "rekwizyt_04.webp",
+   "klasa": "sway",
+   "x": 179,
+   "y": 853,
+   "w": 200,
+   "h": 76,
+   "faza": 0.4721
+  },
+  {
+   "plik": "rekwizyt_05.webp",
+   "klasa": "drift",
+   "x": 856,
+   "y": 29,
+   "w": 158,
+   "h": 70,
+   "faza": 0.0902
+  },
+  {
+   "plik": "rekwizyt_06.webp",
+   "klasa": "drift",
+   "x": 800,
+   "y": 174,
+   "w": 160,
+   "h": 65,
+   "faza": 0.7082
+  },
+  {
+   "plik": "rekwizyt_07.webp",
+   "klasa": "sway",
+   "x": 2,
+   "y": 735,
+   "w": 127,
+   "h": 76,
+   "faza": 0.3262
+  },
+  {
+   "plik": "rekwizyt_08.webp",
+   "klasa": "drift",
+   "x": 1353,
+   "y": 218,
+   "w": 179,
+   "h": 57,
+   "faza": 0.9443
+  },
+  {
+   "plik": "rekwizyt_09.webp",
+   "klasa": "sway",
+   "x": 976,
+   "y": 520,
+   "w": 104,
+   "h": 85,
+   "faza": 0.5623
+  },
+  {
+   "plik": "rekwizyt_10.webp",
+   "klasa": "sway",
+   "x": 1197,
+   "y": 577,
+   "w": 118,
+   "h": 65,
+   "faza": 0.1803
+  },
+  {
+   "plik": "rekwizyt_11.webp",
+   "klasa": "sway",
+   "x": 885,
+   "y": 473,
+   "w": 101,
+   "h": 107,
+   "faza": 0.7984
+  },
+  {
+   "plik": "rekwizyt_12.webp",
+   "klasa": "sway",
+   "x": 1291,
+   "y": 794,
+   "w": 138,
+   "h": 76,
+   "faza": 0.4164
+  },
+  {
+   "plik": "rekwizyt_13.webp",
+   "klasa": "sway",
+   "x": 577,
+   "y": 589,
+   "w": 112,
+   "h": 56,
+   "faza": 0.0344
+  },
+  {
+   "plik": "rekwizyt_14.webp",
+   "klasa": "drift",
+   "x": 610,
+   "y": 247,
+   "w": 143,
+   "h": 45,
+   "faza": 0.6525
+  },
+  {
+   "plik": "rekwizyt_15.webp",
+   "klasa": "sway",
+   "x": 785,
+   "y": 443,
+   "w": 97,
+   "h": 56,
+   "faza": 0.2705
+  },
+  {
+   "plik": "rekwizyt_16.webp",
+   "klasa": "drift",
+   "x": 1415,
+   "y": 70,
+   "w": 89,
+   "h": 44,
+   "faza": 0.8885
+  },
+  {
+   "plik": "rekwizyt_17.webp",
+   "klasa": "sway",
+   "x": 368,
+   "y": 524,
+   "w": 104,
+   "h": 43,
+   "faza": 0.5066
+  },
+  {
+   "plik": "rekwizyt_18.webp",
+   "klasa": "sway",
+   "x": 0,
+   "y": 584,
+   "w": 94,
+   "h": 44,
+   "faza": 0.1246
+  },
+  {
+   "plik": "rekwizyt_19.webp",
+   "klasa": "sway",
+   "x": 1426,
+   "y": 719,
+   "w": 97,
+   "h": 43,
+   "faza": 0.7426
+  },
+  {
+   "plik": "rekwizyt_20.webp",
+   "klasa": "sway",
+   "x": 129,
+   "y": 753,
+   "w": 64,
+   "h": 55,
+   "faza": 0.3607
+  },
+  {
+   "plik": "rekwizyt_21.webp",
+   "klasa": "sway",
+   "x": 689,
+   "y": 442,
+   "w": 67,
+   "h": 41,
+   "faza": 0.9787
+  },
+  {
+   "plik": "rekwizyt_22.webp",
+   "klasa": "sway",
+   "x": 177,
+   "y": 539,
+   "w": 76,
+   "h": 29,
+   "faza": 0.5967
+  },
+  {
+   "plik": "rekwizyt_23.webp",
+   "klasa": "sway",
+   "x": 728,
+   "y": 500,
+   "w": 65,
+   "h": 26,
+   "faza": 0.2148
+  },
+  {
+   "plik": "rekwizyt_24.webp",
+   "klasa": "sway",
+   "x": 316,
+   "y": 475,
+   "w": 52,
+   "h": 26,
+   "faza": 0.8328
+  },
+  {
+   "plik": "rekwizyt_25.webp",
+   "klasa": "drift",
+   "x": 1005,
+   "y": 272,
+   "w": 51,
+   "h": 22,
+   "faza": 0.4508
+  },
+  {
+   "plik": "rekwizyt_26.webp",
+   "klasa": "sway",
+   "x": 584,
+   "y": 474,
+   "w": 60,
+   "h": 19,
+   "faza": 0.0689
+  },
+  {
+   "plik": "rekwizyt_27.webp",
+   "klasa": "sway",
+   "x": 110,
+   "y": 542,
+   "w": 46,
+   "h": 23,
+   "faza": 0.6869
+  }
+ ]
+}
