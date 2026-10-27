@@ -8,8 +8,14 @@ names it. Characters: Fox (left) and Squirrel (right).
 
 1. Orchard. A gust shakes the apple tree, two apples drop, the friends jump. Big
    and small, named both ways; Fox is hungry: the child points to the BIGGER
-   apple. "Let's go to the forest!"
-2. Forest. Two pine cones: the BIGGER one for Squirrel's winter store. A leaf comes
+   apple.
+1a. Orchard: HOW to compare. Two pears almost alike, the smaller one hanging
+   higher (the eye is fooled). Fox knows a way: a pencil draws a line, both pears
+   stand evenly on it; then a line over each pear at its top, across both (orange,
+   blue). The child points to the HIGHER line, then to the bigger pear. The rule:
+   evenly on one line, and a line over each. "Let's go to the forest!"
+2. Forest. Two pine cones, checked "our way" (on one line, a line over each):
+   the BIGGER one for Squirrel's winter store. A leaf comes
    spinning down from the crowns; two leaves: the SMALLER one fits behind
    Squirrel's ear. "It's getting cold, let's go home!"
 3. Kitchen. Two cups: the SMALLER for Squirrel's paws. Two cookies: the BIGGER for

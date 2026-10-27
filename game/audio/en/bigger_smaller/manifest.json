@@ -283,5 +283,55 @@
   "hash": "ae7dd77b01ab",
   "who": "wiewiorka",
   "text": "That one is too big for me. Point to the smaller one."
+ },
+ "line.c1_hard": {
+  "hash": "e2e81aa028e1",
+  "who": "wiewiorka",
+  "text": "Look, two pears. They are almost the same! It is hard to see which one is bigger."
+ },
+ "line.c1_way": {
+  "hash": "0f5deba9073f",
+  "who": "lisek",
+  "text": "I know a way. First we stand them evenly, on one line."
+ },
+ "line.c1_tops": {
+  "hash": "005c5b7fb74d",
+  "who": "lisek",
+  "text": "Now I draw a line over each pear, where it ends."
+ },
+ "line.c1_which_line": {
+  "hash": "2263a1ae8629",
+  "who": "wiewiorka",
+  "text": "Point to the line that is higher."
+ },
+ "line.c1_wrong_line": {
+  "hash": "608a423c5afd",
+  "who": "wiewiorka",
+  "text": "This line is lower. Point to the one that is higher."
+ },
+ "line.c1_higher": {
+  "hash": "1dd42964868c",
+  "who": "lisek",
+  "text": "Yes! This line is higher. Its pear reaches higher, so it is bigger."
+ },
+ "line.c1_pick": {
+  "hash": "0c0c03e6bd91",
+  "who": "wiewiorka",
+  "text": "Now point to the bigger pear."
+ },
+ "line.c1_wrong_pear": {
+  "hash": "97bc1e4c9fe1",
+  "who": "wiewiorka",
+  "text": "Look at the lines. The bigger pear has the higher line."
+ },
+ "line.c1_rule": {
+  "hash": "e8c7cad8495a",
+  "who": "lisek",
+  "text": "That is how we compare. Evenly on one line, and a line over each."
+ },
+ "line.c1_check": {
+  "hash": "0bf8b3a64d97",
+  "who": "lisek",
+  "text": "Let's check our way. Evenly on a line, and a line over each."
  }
 }

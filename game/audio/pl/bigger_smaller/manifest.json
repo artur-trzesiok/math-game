@@ -283,5 +283,55 @@
   "hash": "151dddecf74e",
   "who": "wiewiorka",
   "text": "Ta jest za duża dla mnie. Wskaż mniejszą."
+ },
+ "line.c1_hard": {
+  "hash": "1a1879875074",
+  "who": "wiewiorka",
+  "text": "Patrz, dwie gruszki. Są prawie takie same! Trudno zobaczyć, która jest większa."
+ },
+ "line.c1_way": {
+  "hash": "a8a2814d3a5f",
+  "who": "lisek",
+  "text": "Znam sposób. Najpierw stawiamy je równo, na jednej linii."
+ },
+ "line.c1_tops": {
+  "hash": "736b8fa38d00",
+  "who": "lisek",
+  "text": "Teraz rysuję kreskę nad każdą gruszką, tam gdzie się kończy."
+ },
+ "line.c1_which_line": {
+  "hash": "299eb6efa1c4",
+  "who": "wiewiorka",
+  "text": "Wskaż kreskę, która jest wyżej."
+ },
+ "line.c1_wrong_line": {
+  "hash": "91f5c9a1b655",
+  "who": "wiewiorka",
+  "text": "Ta kreska jest niżej. Wskaż tę, która jest wyżej."
+ },
+ "line.c1_higher": {
+  "hash": "cc276372a174",
+  "who": "lisek",
+  "text": "Tak! Ta kreska jest wyżej. Jej gruszka sięga wyżej, więc jest większa."
+ },
+ "line.c1_pick": {
+  "hash": "79dff4d5117d",
+  "who": "wiewiorka",
+  "text": "Teraz wskaż większą gruszkę."
+ },
+ "line.c1_wrong_pear": {
+  "hash": "807275274ba1",
+  "who": "wiewiorka",
+  "text": "Popatrz na kreski. Większa gruszka ma kreskę wyżej."
+ },
+ "line.c1_rule": {
+  "hash": "026dafcff2ab",
+  "who": "lisek",
+  "text": "Tak się porównuje. Równo na jednej linii i kreska nad każdym."
+ },
+ "line.c1_check": {
+  "hash": "345003b8d8b0",
+  "who": "lisek",
+  "text": "Sprawdźmy naszym sposobem. Równo na linii i kreska nad każdą."
  }
 }

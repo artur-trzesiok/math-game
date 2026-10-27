@@ -18,8 +18,11 @@ async function pile(c, name, n) {
   for (let i = 0; i < n; i++) hs.push(await c.object(name, { x: 0, y: Y, size: SZ }));
   return hs;
 }
+// pencil lines joining the pairs: they belong to the pairing, so any new layout wipes them
+let kreski = [];
+function wytrzyj() { for (const k of kreski) k.remove(); kreski = []; }
 // two piles side by side; returns the groups' extents
-function lay(c, a, b, animate = false, gap = 1.4) { return c.arrange([a, b], { y: Y, groupGap: gap, animate }); }
+function lay(c, a, b, animate = false, gap = 1.4) { wytrzyj(); return c.arrange([a, b], { y: Y, groupGap: gap, animate }); }
 function gapX(info) { const [a, b] = info; return (a.x + a.w / 2 + b.x - b.w / 2) / 2; }
 // slide two piles into pairs (one above the other); the leftovers of the longer pile pulse
 async function pair(c, a, b) {
@@ -31,6 +34,12 @@ async function pair(c, a, b) {
     if (b[i]) moves.push(b[i].moveTo(x, Y - 0.6, 0.8));
   }
   await Promise.all(moves);
+  // a pencil joins every pair, one after another, a little curved like a hand would
+  wytrzyj();
+  for (let i = 0; i < Math.min(a.length, b.length); i++) {
+    const ga = c.bounds(a[i]), gb = c.bounds(b[i]), x = (ga.x + gb.x) / 2, y0 = ga.bottom - 0.04, y1 = gb.top + 0.04;
+    kreski.push(await c.line({ bezier: [[x, y0], [x + 0.07, y0 - (y0 - y1) / 3], [x - 0.07, y0 - 2 * (y0 - y1) / 3], [x, y1]] }, { duration: 0.35, width: 0.06 }));
+  }
   const left = a.length > b.length ? a.slice(b.length) : b.slice(a.length);
   for (const h of left) h.highlight(true);
   await c.wait(1.5);
@@ -94,13 +103,13 @@ export default {
         lay(c, cups, plates);
         await c.say("sowa", "line.s0_roll", { anim: "Rozgladanie" });
         const runaway = cups[cups.length - 1];
-        await runaway.moveTo(5.4, -1.2, 1.1);
+        await runaway.moveTo(2.4, -2.5, 1.1);                         // rolls down onto the grass in front, clear of the owl
         await c.say("sowa", "line.s0_point_runaway");
         await c.task({ targets: cups, correct: runaway, wrong: "line.s0_wrong_runaway" });
         await c.say("lisek", "line.s0_fox_run");
-        await c.walkTo("lisek", 3.6);
+        await c.walkTo("lisek", 2.4);
         await c.play("lisek", "Podskok");
-        await runaway.moveTo(3.6, Y, 0.5);
+        await runaway.moveTo(2.4, Y, 0.5);
         await Promise.all([c.walkTo("lisek", -4.6), runaway.moveTo(-3.2, Y, 1.2)]);
         lay(c, cups, plates, true); await c.wait(0.8);
         await c.say("lisek", "line.s0_phew", { anim: "Radosc" });

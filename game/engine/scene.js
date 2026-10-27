@@ -8,6 +8,7 @@
 import * as THREE from "three";
 import { Lalka } from "./lalka.js";
 import { zbudujTlo, czas as bgClock, zginanieTla } from "./tlo.js";
+import { probkuj, wstega, material as olowekMaterial } from "./olowek.js";
 if (new URLSearchParams(location.search).has("sztywnetlo")) zginanieTla.value = 0;   // A/B: the old shearing grass
 
 export const SAFE = { w: 12, h: 9 };
@@ -248,7 +249,7 @@ export class Stage {
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 10; });                 // the foreground draws after every background prop
-    const handle = { mesh: g, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false,
+    const handle = { mesh: g, icon, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false,
       remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
       moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
@@ -401,6 +402,65 @@ export class Stage {
     this.targets = [];
   }
 
+  // ------------------------------------------------------------------ pencil
+  // a pencil stroke along a path (polyline [[x, y], ...] or { bezier: [p0, c1, c2, p1, ...] }), drawn in over
+  // `duration` s; a handle like a sticker's: a task target (a wide invisible strip takes the tap), remove, highlight
+  async line(path, { width = 0.06, color = "#3b3631", duration = 0.7, wobble = 0.012, name = "kreska", wait = true } = {}) {
+    const pts = probkuj(path);
+    const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
+    const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+    const local = pts.map(([x, y]) => [x - cx, y - cy]);
+    const seed = Math.random() * 1000;
+    const { g: geo, dlugosc } = wstega(local, { grubosc: width, drzenie: wobble, ziarno: seed });
+    const mat = olowekMaterial(color, dlugosc, seed);
+    const stroke = new THREE.Mesh(geo, mat); stroke.renderOrder = 12; stroke.frustumCulled = false;
+    const hit = new THREE.Mesh(wstega(local, { grubosc: Math.max(0.45, width * 4), drzenie: 0 }).g,
+      new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false, side: THREE.DoubleSide }));
+    const grp = new THREE.Group(); grp.position.set(cx, cy, 0.45); grp.add(stroke, hit);
+    const handle = { mesh: grp, name, kind: "line", base: 1, pulse: false, points: pts, y: cy, x: cx,
+      remove: () => { this.scene.remove(grp); const i = this.objects.indexOf(handle); if (i >= 0) this.objects.splice(i, 1); this.untarget(handle); },
+      highlight: (on) => { mat.uniforms.blask.value = on ? 1 : 0; } };
+    this.scene.add(grp); this.objects.push(handle);
+    const draw = this.tween(PARAMS.has("szybko") ? 0.1 : duration, (s) => { mat.uniforms.postep.value = s; }).then(() => { mat.uniforms.postep.value = 1; });
+    if (wait) await draw;
+    return handle;
+  }
+  // a segment |----| from a to b: the stroke and two short ticks across its ends
+  async segment(a, b, { ticks = 0.14, ...opts } = {}) {
+    const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l * ticks / 2, ny = dx / l * ticks / 2;
+    const main = await this.line([a, b], opts);
+    const t1 = await this.line([[a[0] - nx, a[1] - ny], [a[0] + nx, a[1] + ny]], { ...opts, duration: 0.15 });
+    const t2 = await this.line([[b[0] - nx, b[1] - ny], [b[0] + nx, b[1] + ny]], { ...opts, duration: 0.15 });
+    const parts = [main, t1, t2];
+    main.remove0 = main.remove; main.remove = () => parts.forEach((p) => (p === main ? p.remove0() : p.remove()));
+    return main;
+  }
+  // where a sticker's drawing really is (its alpha box, not the transparent square around it), in safe-area units
+  bounds(h) {
+    if (h.icon?.material?.map?.image) {
+      const img = h.icon.material.map.image;
+      if (!this.alphaBoxes) this.alphaBoxes = new WeakMap();
+      let b = this.alphaBoxes.get(img);
+      if (!b) {
+        const c = document.createElement("canvas"); c.width = img.width; c.height = img.height;
+        const ctx = c.getContext("2d", { willReadFrequently: true }); ctx.drawImage(img, 0, 0);
+        const d = ctx.getImageData(0, 0, img.width, img.height).data;
+        let x0 = img.width, y0 = img.height, x1 = 0, y1 = 0;
+        for (let y = 0; y < img.height; y++) for (let x = 0; x < img.width; x++) if (d[(y * img.width + x) * 4 + 3] > 40) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+        b = { u0: x0 / img.width, u1: (x1 + 1) / img.width, v0: y0 / img.height, v1: (y1 + 1) / img.height };
+        this.alphaBoxes.set(img, b);
+      }
+      const p = h.mesh.position, s = h.base ?? 1;
+      return { left: p.x + (b.u0 - 0.5) * s, right: p.x + (b.u1 - 0.5) * s, top: p.y + (0.5 - b.v0) * s, bottom: p.y + (0.5 - b.v1) * s, x: p.x, y: p.y };
+    }
+    const box = new THREE.Box3().setFromObject(this.meshOf(h));
+    return { left: box.min.x, right: box.max.x, top: box.max.y, bottom: box.min.y, x: (box.min.x + box.max.x) / 2, y: (box.min.y + box.max.y) / 2 };
+  }
+  // stand stickers with their bottoms on the line y (each keeps its x)
+  standOn(items, y, d = 0.6) {
+    return Promise.all(items.map((h) => { const b = this.bounds(h); return h.moveTo(h.mesh.position.x, h.mesh.position.y + (y - b.bottom), d); }));
+  }
+
   // ------------------------------------------------------------------ clicks
   target(handle) { if (!this.targets.includes(handle)) this.targets.push(handle); }
   untarget(handle) { const i = this.targets.indexOf(handle); if (i >= 0) this.targets.splice(i, 1); }
@@ -418,11 +478,16 @@ export class Stage {
   click(nx, ny) {                                   // normalised device coords; also used by tests (gra.klik)
     if (!this.pending) return null;
     this.raycaster.setFromCamera(new THREE.Vector2(nx, ny), this.camera);
-    let best = null, bestD = Infinity;
+    // a thing beats a character: tapping a character only repeats the instruction, so where a sticker and a
+    // character overlap (a cup rolled under the owl) the answer must win
+    let best = null, bestD = Infinity, bestP = null, bestPD = Infinity;
     for (const h of this.targets) {
       const hits = this.raycaster.intersectObject(this.meshOf(h), true).filter((i) => i.object.visible);
-      if (hits.length && hits[0].distance < bestD) { best = h; bestD = hits[0].distance; }
+      if (!hits.length) continue;
+      if (h.korzen) { if (hits[0].distance < bestPD) { bestP = h; bestPD = hits[0].distance; } }
+      else if (hits[0].distance < bestD) { best = h; bestD = hits[0].distance; }
     }
+    best = best || bestP;
     this.lastHit = best;
     if (!best) return null;
     const ok = this.pending; this.pending = null; this.targets = [];

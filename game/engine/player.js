@@ -143,6 +143,12 @@ export class Player {
       }),
       mood: (who, m) => S.mood(who, m),
       look: (who, target, opts) => S.lookAt(who, target, opts),   // a scene may direct a gaze too (null = ahead)
+      // drawing with a pencil: a stroke along points or Bezier segments, a segment with end ticks; stickers' real
+      // edges (bounds) and standing things on a line - the pieces for comparisons and pairings
+      line: guard((path, opts) => S.line(path, opts)),
+      segment: guard((a, b, opts) => S.segment(a, b, opts)),
+      bounds: (h) => S.bounds(h),
+      standOn: guard((items, y, d) => S.standOn(items, y, d)),
       object: guard((name, opts) => S.object(name, opts)),
       sign: guard((text, opts) => S.sign(text, opts)),
       zone: guard((opts) => S.zone(opts)),

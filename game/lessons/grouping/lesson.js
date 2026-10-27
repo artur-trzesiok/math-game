@@ -16,6 +16,28 @@ async function scatter(c, items, size = 0.85) {
   c.arrange([hs], { y: ROW_Y, gap: 0.14 });
   return hs;
 }
+// fruit lying anyhow on the rug (the floor between the characters), each a little turned: a real mess
+const RUG = { x: 0.2, y: -1.45, w: 5.6, h: 1.2 };     // the oval rug of the children's room, between the characters
+async function onRug(c, items, size = 0.85) {
+  // random spots on the rug, never two stickers on top of each other
+  const spots = [];
+  for (let tries = 0; spots.length < items.length && tries < 500; tries++) {
+    const x = RUG.x + (Math.random() - 0.5) * (RUG.w - 0.9), y = RUG.y + (Math.random() - 0.5) * (RUG.h - 0.5);
+    if (spots.every(([sx, sy]) => Math.hypot(sx - x, (sy - y) * 1.4) > 0.95)) spots.push([x, y]);
+  }
+  const out = [];
+  for (const [i, it] of items.slice().sort(() => Math.random() - 0.5).entries()) {
+    const [x, y] = spots[i] || [RUG.x, RUG.y];
+    const h = await c.object(it.name, { x, y, size: it.size || size });
+    h.tag = it.tag; h.mesh.rotation.z = (Math.random() < 0.5 ? -1 : 1) * (0.35 + Math.random() * 0.9); out.push(h);
+  }
+  return out;
+}
+// straighten what lay turned, over a short moment
+async function wyprostuj(c, items) {
+  const r0 = items.map((h) => h.mesh.rotation.z);
+  for (let k = 1; k <= 8; k++) { items.forEach((h, i) => { h.mesh.rotation.z = r0[i] * (1 - k / 8); }); await c.wait(0.03); }
+}
 async function containers(c) {
   return [await c.zone({ x: ZL, y: ZY, w: ZW, h: ZH, image: "koszyk", name: "koszyk" }),
           await c.zone({ x: ZR, y: ZY, w: ZW, h: ZH, image: "pudelko", name: "pudelko" })];
@@ -30,18 +52,21 @@ export default {
       // A. children's room after a snack: a pear rolls under the bed, apples and pears sorted, the apples' group
       async (c) => {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
-        await c.say("wiewiorka", "line.s1_intro");
-        const items = await scatter(c, [
+        const items = await onRug(c, [
           { name: "jablko", tag: "apple" }, { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" },
           { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" }]);
+        await c.say("wiewiorka", "line.s1_intro");
         await c.say("sarenka", "line.s1_sq_mixed");
         const pear = items.find((i) => i.tag === "pear");
         await c.say("sarenka", "line.s0_roll", { anim: "Rozgladanie" });
-        await pear.moveTo(-5.2, -2.9, 1.0);
+        pear.mesh.rotation.z += 2.5;
+        await pear.moveTo(-2.75, -3.05, 1.0);                          // off the rug towards the bed, on open floor in front of the squirrel
         await c.say("wiewiorka", "line.s0_drag_back");
-        const rug = await c.zone({ x: 0, y: ROW_Y, w: 7.2, h: 1.8, name: "dywan" });
+        const rug = await c.zone({ ...RUG, name: "dywan" });
         await c.sort({ items: [pear], zones: [rug] });
         rug.take(pear); rug.remove();
+        // off the rug and up into a row, so the sorting below has room
+        await wyprostuj(c, items);
         c.arrange([items], { y: ROW_Y, gap: 0.14, animate: true }); await c.wait(0.6);
         await c.say("sarenka", "line.s0_caught", { anim: "Radosc" });
         const zones = await containers(c);

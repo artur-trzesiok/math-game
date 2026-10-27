@@ -103,7 +103,14 @@ A lesson never touches three.js directly and never knows
 about other lessons; the player never knows what a lesson does. Adding lesson
 number 42 is a new folder and one line in `index.json`.
 
-## Rules learned in review (do not relearn them)
+## Rules learned in review
+
+- Teach the method, not only the answer: compare by standing things evenly on one
+  line and drawing a line over each top; pair things with pencil lines.
+- A thing that rolls or flies away lands in open view, never under a character -
+  the child must be able to see it and point to it.
+- A tapped character repeats the task's instruction, never the feedback said since.
+- A "mess" must look like one: scattered and turned, where the line says it is. (do not relearn them)
 
 Each of these came from a reviewer watching a child-sized screen; a new lesson
 that breaks one of them is wrong even if it runs.

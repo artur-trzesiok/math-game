@@ -223,5 +223,45 @@
   "line.j1_wrong_spoon": {
     "who": "wiewiorka",
     "text": "Ta jest za duża dla mnie. Wskaż mniejszą."
+  },
+  "line.c1_hard": {
+    "who": "wiewiorka",
+    "text": "Patrz, dwie gruszki. Są prawie takie same! Trudno zobaczyć, która jest większa."
+  },
+  "line.c1_way": {
+    "who": "lisek",
+    "text": "Znam sposób. Najpierw stawiamy je równo, na jednej linii."
+  },
+  "line.c1_tops": {
+    "who": "lisek",
+    "text": "Teraz rysuję kreskę nad każdą gruszką, tam gdzie się kończy."
+  },
+  "line.c1_which_line": {
+    "who": "wiewiorka",
+    "text": "Wskaż kreskę, która jest wyżej."
+  },
+  "line.c1_wrong_line": {
+    "who": "wiewiorka",
+    "text": "Ta kreska jest niżej. Wskaż tę, która jest wyżej."
+  },
+  "line.c1_higher": {
+    "who": "lisek",
+    "text": "Tak! Ta kreska jest wyżej. Jej gruszka sięga wyżej, więc jest większa."
+  },
+  "line.c1_pick": {
+    "who": "wiewiorka",
+    "text": "Teraz wskaż większą gruszkę."
+  },
+  "line.c1_wrong_pear": {
+    "who": "wiewiorka",
+    "text": "Popatrz na kreski. Większa gruszka ma kreskę wyżej."
+  },
+  "line.c1_rule": {
+    "who": "lisek",
+    "text": "Tak się porównuje. Równo na jednej linii i kreska nad każdym."
+  },
+  "line.c1_check": {
+    "who": "lisek",
+    "text": "Sprawdźmy naszym sposobem. Równo na linii i kreska nad każdą."
   }
 }

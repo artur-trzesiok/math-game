@@ -3,6 +3,23 @@
 
 const L = -4.6, R = 4.6;                       // where the two friends stand (safe-area x)
 const Y = 1.2;                                 // the object layer: above the puppets' heads
+const OLOWEK = ["#d9682b", "#2f6fb4"];         // the two top lines get a colour each, so they can be told apart
+
+// the comparison method: stand both on one line, then a line over each at its top, across both of them.
+// Returns the two top lines (in the order of `rzeczy`).
+async function porownaj(c, rzeczy, { podstawa = Y - 0.75 } = {}) {
+  const b0 = rzeczy.map((h) => c.bounds(h));
+  const x0 = Math.min(...b0.map((b) => b.left)) - 0.35, x1 = Math.max(...b0.map((b) => b.right)) + 0.35;
+  await c.line([[x0, podstawa], [x1, podstawa]], { duration: 0.8, name: "podstawa" });
+  await c.standOn(rzeczy, podstawa, 0.7);
+  const kreski = [];
+  for (const [i, h] of rzeczy.entries()) {
+    const top = c.bounds(h).top;
+    kreski.push(await c.line({ bezier: [[x0, top], [x0 + (x1 - x0) / 3, top + 0.02], [x0 + 2 * (x1 - x0) / 3, top - 0.02], [x1, top]] },
+      { color: OLOWEK[i % 2], width: 0.07, duration: 0.9, name: `kreska_${i}` }));
+  }
+  return kreski;
+}
 
 export default {
   id: "bigger_smaller",
@@ -29,6 +46,24 @@ export default {
         await c.task({ targets: [big, small], correct: big, wrong: "line.s1_wrong" });
         await big.moveTo(L + 1.6, Y);
         await c.say("lisek", "line.s1_fox_thanks", { anim: "Radosc" });
+        c.clear();
+      },
+      // A2. orchard: two pears almost alike - how to compare? on one line, a pencil line over each top
+      async (c) => {
+        const small = await c.object("gruszka", { x: 1.5, y: Y + 0.55, size: 1.08 });      // the smaller one hangs higher: the eye is fooled
+        const big = await c.object("gruszka", { x: -1.5, y: Y - 0.25, size: 1.28 });
+        await c.say("wiewiorka", "line.c1_hard", { anim: "Rozgladanie" });
+        await c.say("lisek", "line.c1_way", { anim: "Wskazanie" });
+        const [kBig, kSmall] = await porownaj(c, [big, small]);
+        await c.say("lisek", "line.c1_tops");
+        await c.say("wiewiorka", "line.c1_which_line");
+        await c.task({ targets: [kBig, kSmall], correct: kBig, wrong: "line.c1_wrong_line" });
+        kBig.highlight(true); big.highlight(true);
+        await c.say("lisek", "line.c1_higher", { anim: "Radosc" });
+        kBig.highlight(false); big.highlight(false);
+        await c.say("wiewiorka", "line.c1_pick");
+        await c.task({ targets: [big, small], correct: big, wrong: "line.c1_wrong_pear" });
+        await c.say("lisek", "line.c1_rule", { anim: "Brawo" });
         await c.say("lisek", "line.j1_to_forest");
         c.clear();
       },
@@ -40,6 +75,8 @@ export default {
         const bigCone = await c.object("szyszka", { y: Y, size: 1.7 }), smallCone = await c.object("szyszka", { y: Y, size: 0.85 });
         c.arrange([[smallCone], [bigCone]], { y: Y, groupGap: 1.2 });
         await c.say("wiewiorka", "line.j1_cones", { anim: "Wskazanie" });
+        await c.say("lisek", "line.c1_check");
+        await porownaj(c, [smallCone, bigCone]);                // the method again: on one line, a line over each
         await c.say("lisek", "line.j1_pick_big_cone");
         await c.task({ targets: [bigCone, smallCone], correct: bigCone, wrong: "line.j1_wrong_cone" });
         await bigCone.moveTo(R - 1.4, Y);

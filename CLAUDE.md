@@ -236,6 +236,17 @@ a new sticker gets a glance, a sort watches the containers, `clear` resets. A no
 (`glowa_x`) slides the face on the head - turning the head about x sorted the face
 behind it on the stage (no depth test) and the mouth vanished.
 
+Pencil (`olowek.js`, ctx `line`, `segment`): a stroke along a polyline or a chain of
+cubic Beziers, drawn in with a moving tip, graphite grain, tapered ends and a slight
+hand wobble; a segment has end ticks. A stroke is a handle like a sticker (a wide
+invisible strip takes the tap, so a line can be a task target; `highlight` makes it
+glow; `clear` removes it). `bounds(h)` is a sticker's real drawing (its alpha box, not
+the transparent square), `standOn(items, y)` stands stickers on a line. Lessons build
+with them: the comparison method in bigger_smaller (`porownaj`: a base line, things
+standing on it, a line over each top), the pairing lines in more_fewer. On a tap a
+thing beats a character (a character only repeats the instruction, the one said
+before the task - never the last "try again").
+
 Transitions: `graj` remembers the pose of the last frame (every numeric channel,
 before the gaze) and the new animation blends in from it over `Lalka.przejscie`
 (0.22 s; an animation may set `wejscie`, 0 = cut). Feet that were planted (`stopy:
