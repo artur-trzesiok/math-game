@@ -236,6 +236,12 @@ a new sticker gets a glance, a sort watches the containers, `clear` resets. A no
 (`glowa_x`) slides the face on the head - turning the head about x sorted the face
 behind it on the stage (no depth test) and the mouth vanished.
 
+Transitions: `graj` remembers the pose of the last frame (every numeric channel,
+before the gaze) and the new animation blends in from it over `Lalka.przejscie`
+(0.22 s; an animation may set `wejscie`, 0 = cut). Feet that were planted (`stopy:
+"ik"`) stay planted while the hips blend back. The editor's `raz` plays an
+animation once and returns to the idle, so the blend shows there.
+
 Background grass (`tlo.js`) uses the same mesh: a tuft is a grid trimmed to its alpha,
 s from its bottom edge up each blade (`dystalnie` "gora"), three bend lines at s 0.4 /
 0.62 / 0.82; the wind turns every vertex around the bend line under it (a tuft is

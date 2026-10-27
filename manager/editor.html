@@ -34,7 +34,7 @@
 </script>
 <div id="panel">
   <div class="wiersz"><label>Postać <select id="kto"></select></label></div>
-  <div class="wiersz"><label>Animacja <select id="anim"></select></label><button id="graj">▶</button></div>
+  <div class="wiersz"><label>Animacja <select id="anim"></select></label><button id="graj">▶</button><label title="zagraj raz i wróć do spoczynku - widać przejście między animacjami"><input type="checkbox" id="raz"> raz</label></div>
   <div class="wiersz"><label>Faza <input type="range" id="faza" min="0" max="1" step="0.01" value="0" style="width:120px"></label><button id="zrzut" title="zapisz PNG do work/snap">Zrzut</button></div>
   <div class="wiersz"><label><input type="checkbox" id="mow"> mówi</label></div>
   <div class="wiersz"><label title="A/B: wyłączone = sztywna wycinanka jak dotąd"><input type="checkbox" id="zginanie" checked> zginanie</label>
@@ -88,7 +88,7 @@ function rozmiar() {
 window.addEventListener("resize", rozmiar); rozmiar();
 
 let kto = null, dane = null, tex = null, lalki = [], alfa = {};
-window.edytor = { get lalki() { return lalki; }, get kamera() { return kam; }, get dane() { return dane; }, klatka: (t) => klatka(t, true),
+window.edytor = { get lalki() { return lalki; }, zrzut: (n) => zrzut(n), get kamera() { return kam; }, get dane() { return dane; }, klatka: (t) => klatka(t, true),
   // review from the console: one character, animation, frozen phase, A/B and wireframe -> work/snap/<nazwa>.png
   async przeglad(k, a, f, nazwa, { zgin = true, druty = false } = {}) {
     $("zginanie").checked = zgin; Lalka.zginanie = zgin; $("druty").checked = druty;
@@ -139,7 +139,7 @@ function zbuduj() {
     L.korzen.position.set(-W / 2 + KOL / 2 + i * KOL, -H / 2 + 0.25, 0);
     ustaw(L);
     L.recznie = reczne; L.pokazSiatke($("druty").checked);
-    if (anim && kolumnaGra(i)) { L.graj(anim, true); L.ta = stare[i] ?? czasAnim; } else { L.graj("Spoczynek", true); L.ta = 0; }
+    if (anim && kolumnaGra(i)) { L.graj(anim, !$("raz").checked); L.ta = stare[i] ?? czasAnim; } else { L.graj("Spoczynek", true); L.ta = 0; }
     L.update(0);
     scena.add(L.korzen);
     return L;
@@ -439,6 +439,7 @@ $("anim").onchange = () => { anim = $("anim").value; czasAnim = 0; gra = !!anim;
 $("zginanie").onchange = () => { Lalka.zginanie = $("zginanie").checked; for (const L of lalki) L.update(0); rysujNakladke(); };
 $("druty").onchange = () => { for (const L of lalki) L.pokazSiatke($("druty").checked); };
 $("zeruj").onclick = () => { for (const k of Object.keys(reczne)) delete reczne[k]; for (const L of lalki) L.update(0); pokazPola(); rysujNakladke(); };
+$("raz").onchange = () => { if (anim) { czasAnim = 0; for (const L of lalki) L.ta = 0; zbuduj(); } };
 $("graj").onclick = () => { if (!anim) return; gra = !gra; $("graj").textContent = gra ? "⏸" : "▶"; };
 // review: freeze the animation at a phase (0..1 of its length) in every column that plays it
 $("faza").oninput = () => {

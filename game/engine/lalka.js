@@ -40,6 +40,7 @@ const lustro = (k) => k.endsWith("_p") || k === "reka_p" || k === "noga_p" || k 
 export class Lalka {
   static klatki = 0;                       // >0: krokowanie lalki (np. 12)
   static zginanie = true;                  // false: chains stay at rest (A/B against the rigid cut-out)
+  static przejscie = 0.22;                 // s: a new animation blends in from the last pose (0 = cut, an animation may set `wejscie`)
 
   static async wczytaj(katalog, opis = {}) {
     const dane = await (await fetch(katalog + "postac.json", { cache: "no-store" })).json();
@@ -421,6 +422,9 @@ export class Lalka {
   graj(nazwa, petla = null) {
     const a = this.dane.animacje[nazwa];
     if (!a) return false;
+    // the pose the puppet holds now blends into the new animation instead of jumping; feet that were planted stay planted
+    const czas = a.wejscie ?? Lalka.przejscie;
+    this.przejscie = this.pozaSurowa && czas > 0 ? { od: { ...this.pozaSurowa }, start: this.t, czas, stopy: this.przejscie?.stopy === "ik" ? "ik" : this.akcja?.stopy } : null;
     this.akcja = { nazwa, ...a, petla: petla ?? !!a.petla }; this.ta = 0;
     return true;
   }
@@ -468,6 +472,21 @@ export class Lalka {
         for (const k of Object.keys(m.cel)) p[k] = (p[k] || 0) + (m.od[k] || 0) + ((m.cel[k] || 0) - (m.od[k] || 0)) * e;
       }
     }
+    // a blend from the previous animation's last pose: every numeric channel (bones, joints, hips, height, torso)
+    const B = this.przejscie;
+    if (B) {
+      const w = (this.t - B.start) / B.czas;
+      if (w >= 1) this.przejscie = null;
+      else {
+        const e = w * w * (3 - 2 * w), spoczynkowe = { tulow_skala: 1 };
+        for (const k of new Set([...Object.keys(B.od), ...Object.keys(p)])) {
+          if (typeof p[k] === "string" || typeof B.od[k] === "string") continue;
+          const v0 = B.od[k] ?? spoczynkowe[k] ?? 0, v1 = p[k] ?? spoczynkowe[k] ?? 0;
+          p[k] = v0 + (v1 - v0) * e;
+        }
+      }
+    }
+    this.pozaSurowa = Object.fromEntries(Object.entries(p).filter(([, v]) => typeof v === "number"));   // before the gaze adds its own smoothed part
     // mruganie
     this.nastepneMrugniecie -= dt;
     if (this.mruganie >= 0) { this.mruganie += dt; if (this.mruganie > 0.28) { this.mruganie = -1; this.nastepneMrugniecie = 2 + Math.random() * 4; } }
@@ -519,7 +538,7 @@ export class Lalka {
     const nogi = new Set(this.nogi);
     this._zginaj(p, (L) => !nogi.has(L));
     this._niesDzieci();
-    const stopy = a?.stopy;
+    const stopy = a?.stopy ?? (this.przejscie?.stopy === "ik" ? "ik" : undefined);   // planted feet stay planted while the hips blend back
     if (a?.krok && this.wProfilu) this._krok(u, a.krok);
     else if (stopy === "ik") this._ik(p); else for (const L of this.nogi) L.ikKaty = null;
     this._zginaj(p, (L) => nogi.has(L));
