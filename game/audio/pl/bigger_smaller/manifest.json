@@ -33,5 +33,110 @@
   "hash": "6a785749d0fe",
   "who": "lisek",
   "text": "Wiewiórka ma małe łapki. Pomożesz jej wybrać?"
+ },
+ "line.s2_prompt": {
+  "hash": "31401820f170",
+  "who": "lisek",
+  "text": "Kliknij mniejszy kubek."
+ },
+ "line.s2_wrong": {
+  "hash": "9b19df78635d",
+  "who": "lisek",
+  "text": "To jest większy kubek. Poszukaj mniejszego."
+ },
+ "line.s2_thanks": {
+  "hash": "a6c2fcdd47ff",
+  "who": "wiewiorka",
+  "text": "Dziękuję! Mały kubek pasuje do moich łapek."
+ },
+ "line.s2_summary": {
+  "hash": "b9f4c35b4d40",
+  "who": "lisek",
+  "text": "Mały kubek jest mniejszy, a duży kubek jest większy. Świetnie!"
+ },
+ "line.p_intro": {
+  "hash": "b86aeb0ba47a",
+  "who": "lisek",
+  "text": "Teraz zabawa. Pokażę ci dwie rzeczy, a ty wybierz."
+ },
+ "line.p_click_bigger": {
+  "hash": "f04801a7114f",
+  "who": "lisek",
+  "text": "Kliknij większy."
+ },
+ "line.p_click_smaller": {
+  "hash": "4d60fb3100b8",
+  "who": "lisek",
+  "text": "Kliknij mniejszy."
+ },
+ "line.p_click_biggest": {
+  "hash": "fa32956bf5d1",
+  "who": "lisek",
+  "text": "Są trzy. Kliknij największy."
+ },
+ "line.p_click_smallest": {
+  "hash": "2b5f8e0f5dfe",
+  "who": "lisek",
+  "text": "Są trzy. Kliknij najmniejszy."
+ },
+ "line.p_wrong": {
+  "hash": "2aaca26b7b3e",
+  "who": "lisek",
+  "text": "Spróbuj jeszcze raz."
+ },
+ "line.p_good": {
+  "hash": "2808a75451e6",
+  "who": "lisek",
+  "text": "Tak jest!"
+ },
+ "line.a_bye": {
+  "hash": "7e8191875cb5",
+  "who": "lisek",
+  "text": "Do zobaczenia!"
+ },
+ "line.a_fox_game": {
+  "hash": "44ae3318f5b4",
+  "who": "lisek",
+  "text": "Zagrajmy w domową zabawę! Ja pokazuję rzecz, a ty mówisz, czy jest większa, czy mniejsza od mojej łapki."
+ },
+ "line.a_sq_ok": {
+  "hash": "2b8c5c049109",
+  "who": "wiewiorka",
+  "text": "Dobrze! Pokazuj."
+ },
+ "line.a_fox_plate": {
+  "hash": "8bf94af0e313",
+  "who": "lisek",
+  "text": "Talerz. Większy czy mniejszy od łapki?"
+ },
+ "line.a_sq_bigger": {
+  "hash": "943b70279f86",
+  "who": "wiewiorka",
+  "text": "Większy! Talerz jest większy od łapki."
+ },
+ "line.a_fox_cookie": {
+  "hash": "d52cef798b64",
+  "who": "lisek",
+  "text": "A ciastko?"
+ },
+ "line.a_sq_smaller": {
+  "hash": "59f7d9512723",
+  "who": "wiewiorka",
+  "text": "Mniejsze! Ciastko jest mniejsze od łapki."
+ },
+ "line.a_sq_your_turn": {
+  "hash": "564c1dfb7310",
+  "who": "wiewiorka",
+  "text": "Teraz ty. Kliknij to, co jest większe od twojej dłoni."
+ },
+ "line.a_fox_right": {
+  "hash": "570be7abcd34",
+  "who": "lisek",
+  "text": "Tak! Piłka jest większa od dłoni, a kwiatek mniejszy."
+ },
+ "line.a_ask_parents": {
+  "hash": "785fe1de797d",
+  "who": "wiewiorka",
+  "text": "Poproście rodziców, żebyście pobawili się tak w domu. Szukajcie rzeczy większych i mniejszych od waszej dłoni!"
  }
 }

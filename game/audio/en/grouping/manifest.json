@@ -1,0 +1,137 @@
+{
+ "line.s1_intro": {
+  "hash": "3decd3487a24",
+  "who": "wiewiorka",
+  "text": "What a mess after the snack! Apples and pears lie mixed up on the rug."
+ },
+ "line.s1_sq_mixed": {
+  "hash": "29ed1f99c6f4",
+  "who": "sarenka",
+  "text": "Everything is mixed up! How do we tidy it?"
+ },
+ "line.s1_deer_idea": {
+  "hash": "eb949251aaab",
+  "who": "wiewiorka",
+  "text": "Apples in one basket, pears in the other. Everything goes to its group."
+ },
+ "line.s1_apples": {
+  "hash": "8e828f8c3666",
+  "who": "sarenka",
+  "text": "Drag the apples into the basket and the pears into the box. In any order!"
+ },
+ "line.s1_apples_done": {
+  "hash": "2a0cd307cf84",
+  "who": "sarenka",
+  "text": "Apples together, pears together. Those are two groups."
+ },
+ "line.s1_deer_happy": {
+  "hash": "0e6e4cfc5af9",
+  "who": "sarenka",
+  "text": "Now you can see at once what is where!"
+ },
+ "line.s1_daily": {
+  "hash": "65a516b08107",
+  "who": "wiewiorka",
+  "text": "We group at home too: spoons with spoons, socks with socks, blocks with blocks."
+ },
+ "line.s2_sq_size": {
+  "hash": "ed3d476b5b8c",
+  "who": "wiewiorka",
+  "text": "Can we sort them another way? Big with big and small with small!"
+ },
+ "line.s2_big": {
+  "hash": "f327b7bd7662",
+  "who": "sarenka",
+  "text": "The same fruit, a different rule. Big ones into the basket, small ones into the box."
+ },
+ "line.s2_summary": {
+  "hash": "1c8545ddddf7",
+  "who": "wiewiorka",
+  "text": "The same things can be grouped in different ways. First we say the rule, then we sort."
+ },
+ "line.p_intro": {
+  "hash": "c4d91252937c",
+  "who": "sarenka",
+  "text": "Now you sort. Listen to the rule and drag things into the basket or the box."
+ },
+ "line.p_cups": {
+  "hash": "6abfb60a5d89",
+  "who": "sarenka",
+  "text": "Cups into the basket, everything else into the box."
+ },
+ "line.p_food": {
+  "hash": "f9fe633b0a46",
+  "who": "sarenka",
+  "text": "Things you can eat into the basket. The rest into the box."
+ },
+ "line.p_red": {
+  "hash": "50bfc12dd6e6",
+  "who": "sarenka",
+  "text": "Everything red into the basket. The rest into the box."
+ },
+ "line.p_small": {
+  "hash": "943ee0292e9e",
+  "who": "sarenka",
+  "text": "Small things into the basket, big ones into the box."
+ },
+ "line.p_done": {
+  "hash": "f212f09d3bf0",
+  "who": "sarenka",
+  "text": "The whole group together!"
+ },
+ "line.p_good": {
+  "hash": "decca245e0d1",
+  "who": "wiewiorka",
+  "text": "Well done!"
+ },
+ "line.a_bye": {
+  "hash": "47b8c2cbaf59",
+  "who": "wiewiorka",
+  "text": "See you!"
+ },
+ "line.a_deer_tidy": {
+  "hash": "90085e795463",
+  "who": "sarenka",
+  "text": "A home game: tidying up after a snack. Food to the basket, dishes to the shelf."
+ },
+ "line.a_sq_food": {
+  "hash": "02ce615705e9",
+  "who": "wiewiorka",
+  "text": "I collect the food: apple, cookie, pear. Into the basket!"
+ },
+ "line.a_deer_dishes": {
+  "hash": "075a9a51f159",
+  "who": "sarenka",
+  "text": "And you drag the dishes into the box: cups and plates."
+ },
+ "line.a_sq_right": {
+  "hash": "e38e1411a7a9",
+  "who": "wiewiorka",
+  "text": "All tidy! Everything in its group."
+ },
+ "line.a_ask_parents": {
+  "hash": "f9ac39d4f3b3",
+  "who": "sarenka",
+  "text": "Ask your parents to play this with you at home. Tidy up together: toys into the box, clothes into the wardrobe, and then change the rule!"
+ },
+ "line.s1_mixed": {
+  "hash": "1e0b53f96f31",
+  "who": "sarenka",
+  "text": "Something got mixed up. One container only apples, the other only pears."
+ },
+ "line.s2_mixed": {
+  "hash": "21147a662dbf",
+  "who": "sarenka",
+  "text": "Something got mixed up. Big ones apart, small ones apart."
+ },
+ "line.p_mixed": {
+  "hash": "a6dca1c8eb8e",
+  "who": "sarenka",
+  "text": "Something here does not match the rest. Listen to the rule again and fix it."
+ },
+ "line.a_mixed": {
+  "hash": "8f916479203d",
+  "who": "sarenka",
+  "text": "Dishes apart, food apart."
+ }
+}

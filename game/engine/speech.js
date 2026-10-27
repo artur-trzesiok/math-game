@@ -44,9 +44,15 @@ export class Speech {
   tick(now) {
     const c = this.current; if (!c) return;
     let a;
-    if (c.live && analyser) { analyser.getByteTimeDomainData(buf); let s = 0; for (const v of buf) { const d = (v - 128) / 128; s += d * d; } a = Math.min(1, Math.sqrt(s / buf.length) * 6); }
+    if (c.live && analyser) {
+      analyser.getByteTimeDomainData(buf); let s = 0; for (const v of buf) { const d = (v - 128) / 128; s += d * d; }
+      const rms = Math.sqrt(s / buf.length);
+      // normalise against the recording's own running peak, so a quiet file still opens the mouth fully
+      c.peak = Math.max((c.peak || 0) * 0.996, rms);
+      a = Math.min(1, rms / Math.max(c.peak, 0.02));
+    }
     else a = 0.5 + 0.5 * Math.sin(now / 70);
-    this.amp += (a - this.amp) * 0.35;
+    this.amp += (a - this.amp) * 0.45;
     if (c.puppet) c.puppet.mow(this.amp);
   }
 

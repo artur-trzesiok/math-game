@@ -1,0 +1,107 @@
+{
+ "line.s1_intro": {
+  "hash": "5595ca8293e2",
+  "who": "lisek",
+  "text": "Sowo, robimy piknik nad jeziorem! Ja przyniosłem kubki, a ty talerze."
+ },
+ "line.s1_fox_cups": {
+  "hash": "b8c0972d6050",
+  "who": "lisek",
+  "text": "Mam kubki! Czy każdy kubek dostanie talerz?"
+ },
+ "line.s1_owl_plates": {
+  "hash": "d3be2dd593f2",
+  "who": "sowa",
+  "text": "Sprawdźmy. Ustawmy je w pary: kubek i talerz, kubek i talerz."
+ },
+ "line.s1_pair": {
+  "hash": "de719ef2128c",
+  "who": "sowa",
+  "text": "Każdy kubek staje przy swoim talerzu. Patrz, co zostaje."
+ },
+ "line.s1_result": {
+  "hash": "a4fe93483f93",
+  "who": "lisek",
+  "text": "Jeden kubek został bez pary. Kubków jest więcej niż talerzy."
+ },
+ "line.s1_owl_fewer": {
+  "hash": "aa7c0f8ff9cb",
+  "who": "sowa",
+  "text": "A talerzy jest mniej niż kubków. Brakuje jednego!"
+ },
+ "line.s1_daily": {
+  "hash": "6ea117d57053",
+  "who": "sowa",
+  "text": "Tak samo w domu: czy każdy przy stole ma łyżkę? Ustaw w pary i zobacz, co zostaje."
+ },
+ "line.s2_signs": {
+  "hash": "711021b74a0e",
+  "who": "sowa",
+  "text": "Znam taki znak, który mówi, czego jest więcej. Wygląda jak głodna paszcza."
+ },
+ "line.s2_more_sign": {
+  "hash": "ab9ad6aa21c8",
+  "who": "sowa",
+  "text": "Paszcza otwiera się w stronę tego, czego jest więcej. Kubków jest więcej, więc otwiera się na kubki."
+ },
+ "line.s2_fox_add": {
+  "hash": "9ca038aecb8f",
+  "who": "lisek",
+  "text": "Dołożę jeszcze jeden talerz!"
+ },
+ "line.s2_equal_sign": {
+  "hash": "ab37de27d18a",
+  "who": "lisek",
+  "text": "Teraz każdy kubek ma talerz. Jest tyle samo. Ten znak to dwie równe kreski."
+ },
+ "line.s2_owl_less": {
+  "hash": "bca774bf6c06",
+  "who": "sowa",
+  "text": "A jeśli zabiorę kubki? Zostanie jeden kubek i trzy talerze."
+ },
+ "line.s2_less_sign": {
+  "hash": "5af3d645ced1",
+  "who": "sowa",
+  "text": "Kubków jest mniej. Paszcza otwiera się w stronę talerzy, bo talerzy jest więcej."
+ },
+ "line.s2_summary": {
+  "hash": "195621c6ad06",
+  "who": "lisek",
+  "text": "Więcej, mniej albo tyle samo. Paszcza zawsze otwiera się tam, gdzie jest więcej."
+ },
+ "line.p_intro": {
+  "hash": "32085f15aa9f",
+  "who": "lisek",
+  "text": "Teraz ty. Pokażę dwie kupki, a ty kliknij tę, gdzie jest więcej."
+ },
+ "line.p_which_more": {
+  "hash": "171e4677e94c",
+  "who": "lisek",
+  "text": "Gdzie jest więcej? Kliknij."
+ },
+ "line.p_wrong_pair": {
+  "hash": "532dfd61ab29",
+  "who": "sowa",
+  "text": "Sprawdźmy parami. Patrz, co zostaje bez pary."
+ },
+ "line.p_good": {
+  "hash": "e90ee03c80a8",
+  "who": "sowa",
+  "text": "Świetnie!"
+ },
+ "line.p_signs_intro": {
+  "hash": "f0ea9267db1b",
+  "who": "sowa",
+  "text": "A teraz znaki. Wybierz paszczę, która pasuje, albo równe kreski, gdy jest tyle samo."
+ },
+ "line.p_which_sign": {
+  "hash": "c9bb5c41d09c",
+  "who": "sowa",
+  "text": "Który znak pasuje? Kliknij."
+ },
+ "line.p_wrong_sign": {
+  "hash": "4c7b031fa588",
+  "who": "sowa",
+  "text": "Nie ten. Paszcza otwiera się tam, gdzie jest więcej. Gdy jest tyle samo, wybierz równe kreski."
+ }
+}

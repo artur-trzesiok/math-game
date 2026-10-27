@@ -39,10 +39,12 @@ LANGS = ("pl", "en")
 # Voices from the account (tools/audio/run.py --voices lists them): a distinct one per
 # character and language; there is no narrator.
 VOICES = {
-    "pl": {"lisek": "6NJSmKqvyC5gS4qslstw",      # Patryk - young, narrative
-           "sowa": "NacdHGUYR1k3M0FAbAia",       # Hanna - calm and encouraging
+    # lisek: a child-like voice; "Thomas Martin - Upbeat" (0Wf1qAPYadufJQRrU48G, young, high-pitched)
+    # is the target once it is added to the account (the key cannot add voices; use the web UI)
+    "pl": {"lisek": "ZrIglAg8qumzXuvlNzWL",      # Weronika - young, warm, natural
+           "sowa": "5lDyCSjSKjtI6WDIPTVj",       # Tata Czyta - calm, clear storyteller
            "wiewiorka": "EdXKgqQHVOTjwJdLxQiw",  # Natalia - sweet, soothing
-           "sarenka": "ZrIglAg8qumzXuvlNzWL"},   # Weronika - warm, natural
+           "sarenka": "NacdHGUYR1k3M0FAbAia"},   # Hanna - calm and encouraging
     "en": {"lisek": "TX3LPaxmHKxFdv7VOQHJ",      # Liam - energetic
            "sowa": "Xb7hH8MSUJpSbSDYk0k2",       # Alice - clear educator
            "wiewiorka": "cgSgspJ2msm6clMCkdW9",  # Jessica - playful, bright
@@ -84,12 +86,12 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
     manifest = json.loads(manifest_p.read_text(encoding="utf-8")) if manifest_p.exists() else {}
     done = skipped = failed = 0
     for l in lines(lesson, lang):
-        digest = hashlib.sha1((l["who"] + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]
+        voice = VOICES[lang].get(l["who"]) or next(iter(VOICES[lang].values()))
+        digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]   # a voice change regenerates too
         dst = out / f"{l['key']}.mp3"
         if dst.exists() and manifest.get(l["key"], {}).get("hash") == digest:
             skipped += 1
             continue
-        voice = VOICES[lang].get(l["who"]) or next(iter(VOICES[lang].values()))
         try:
             synthesize(l["text"], voice, dst)
             manifest[l["key"]] = {"hash": digest, "who": l["who"], "text": l["text"]}
