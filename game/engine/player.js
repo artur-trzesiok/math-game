@@ -113,7 +113,7 @@ export class Player {
     const S = this.stage, lang = this.lang, lessonId = this.lessonId, strings = this.strings;
     const alive = () => { if (this.run !== run) throw new Error("abort"); };
     const guard = (f) => async (...a) => { alive(); const r = await f(...a); alive(); return r; };
-    let last = null;                                   // the last line, repeated when a puppet is tapped during a task
+    let last = null;                                   // the last line spoken; a task keeps the one said before it as its instruction
     const say = async (who, key, { anim = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
@@ -152,6 +152,7 @@ export class Player {
       // `wrong` line and, after `hintAfter` misses, pulses the right answer
       task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null }) => {
         const ok = Array.isArray(correct) ? correct : [correct];
+        const polecenie = last;                          // the instruction: a tapped character repeats it, not the "try again" said since
         let misses = 0;
         const puppets = Object.values(S.puppets).filter((L) => L.korzen.visible);
         // while the child thinks, the characters look from one option to the next - every option, so the gaze gives nothing away
@@ -164,7 +165,7 @@ export class Player {
           alive();
           const hit = await S.choose([...targets, ...puppets]);
           alive();
-          if (hit && hit.korzen) { if (last) await say(last.who, last.key, { anim: last.anim }); continue; }   // "say it again"
+          if (hit && hit.korzen) { if (polecenie) await say(polecenie.who, polecenie.key, { anim: polecenie.anim }); continue; }   // "say it again"
           if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); return hit; }
           misses++;
           S.shake(hit);
@@ -177,6 +178,7 @@ export class Player {
       // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line
       sort: async ({ items, zones, wrong }) => {
         alive();
+        const polecenie = last;
         Object.keys(S.puppets).forEach((n, j) => S.lookAt(n, zones[j % zones.length]));   // the characters watch the containers
         return new Promise((resolve) => {
           let busy = false;
@@ -197,7 +199,7 @@ export class Player {
               if (wrong && this.run === run) await say("narrator", wrong);
             } finally { busy = false; }
           };
-          S.sort({ items, zones, onDrop: () => { if (this.run === run) check(); }, onTap: () => { if (last && this.run === run) say(last.who, last.key, { anim: last.anim }); } });
+          S.sort({ items, zones, onDrop: () => { if (this.run === run) check(); }, onTap: () => { if (polecenie && this.run === run) say(polecenie.who, polecenie.key, { anim: polecenie.anim }); } });
         });
       },
       card: guard((key, button = "button.next") => this.card(this.tl(key), this.t(button))),
