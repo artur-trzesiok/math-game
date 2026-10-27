@@ -198,5 +198,9 @@
   "line.s0_fell": {
     "who": "wiewiorka",
     "text": "Hop! Spadły dwa jabłka. Jedno duże, jedno małe."
+  },
+  "line.a_right_sq": {
+    "who": "wiewiorka",
+    "text": "Brawo, zgadza się!"
   }
 }

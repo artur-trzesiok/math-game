@@ -117,7 +117,7 @@ export class Player {
     const say = async (who, key, { anim = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
-      if (who === "narrator" || !S.puppets[who]) who = line.who;    // no off-screen voice: the i18n line names the speaker
+      who = line.who || who;                                          // the i18n line names the speaker - that is whose voice was recorded
       last = { who, key, anim }; this.lastSpeaker = who;
       const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }

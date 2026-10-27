@@ -198,5 +198,9 @@
   "line.s0_fell": {
     "who": "wiewiorka",
     "text": "Hop! Two apples fell down. One big, one small."
+  },
+  "line.a_right_sq": {
+    "who": "wiewiorka",
+    "text": "Well done, that's right!"
   }
 }

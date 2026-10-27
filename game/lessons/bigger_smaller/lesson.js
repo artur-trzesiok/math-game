@@ -150,9 +150,9 @@ export default {
           const a = await c.object(n1, { y: Y, size: flip ? 0.8 : 1.6 }), b = await c.object(n2, { y: Y, size: flip ? 1.6 : 0.8 });
           c.arrange([[a], [b]], { y: Y, groupGap: 1.2 });
           const bigger = flip ? b : a, smaller = flip ? a : b;
-          await c.say(i % 2 ? "lisek" : "wiewiorka", want === "bigger" ? "line.a_pick_bigger" : "line.a_pick_smaller");
+          await c.say("lisek", want === "bigger" ? "line.a_pick_bigger" : "line.a_pick_smaller");   // the speaker comes from the line
           await c.task({ targets: [a, b], correct: want === "bigger" ? bigger : smaller, wrong: "line.p_wrong" });
-          await c.say(i % 2 ? "wiewiorka" : "lisek", "line.a_right", { anim: "Brawo" });
+          await c.say("lisek", want === "bigger" ? "line.a_right_sq" : "line.a_right", { anim: "Brawo" });
           c.clear();
         }
         await c.say("wiewiorka", "line.a_ask_parents");

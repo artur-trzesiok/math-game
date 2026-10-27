@@ -64,7 +64,9 @@ One folder per lesson, see `guidelines.md` for the contract and
 `game/lessons/bigger_smaller/` as the reference. Order of work for a new lesson:
 `scenario.md` first (the script, three stages), then `i18n/pl.json` + `en.json`
 (every spoken line as `"line.<stage>_<n>": {who, text}` - `who` is always a character
-of the lesson, never a narrator; the key is the mp3 name, so never rename a
+of the lesson, never a narrator, and it is THE speaker: the recording carries that
+voice, so the puppet that moves its mouth is chosen from the line, never by the
+scene code (to alternate speakers, write two lines); the key is the mp3 name, so never rename a
 recorded line, add a new key), then `lesson.js`, then a line in
 `lessons/index.json`, then `python tools/lessons/make_cover.py <id>` (the `cover`
 field of lesson.json says what the square menu picture shows; style and cast come
