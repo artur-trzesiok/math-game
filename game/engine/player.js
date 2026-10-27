@@ -133,6 +133,14 @@ export class Player {
       show: (who) => { alive(); const L = S.puppets[who]; if (L) { L.korzen.visible = true; L.korzen.position.x = L.home; L.patrz("przod"); L.spoczynek(); S.appear(L); } },
       play: guard((who, anim, opts) => S.play(who, anim, opts)),
       walkTo: guard((who, x) => S.walkTo(who, x)),
+      // travel inside a stage: dip to dark, new scenery, objects cleared; puppets stay at home
+      // (visible as before) unless enter: true hides them so the scene can walk them in again
+      go: guard(async (bg, { enter = false } = {}) => {
+        if (S.bgName === bg) return;
+        await this.fade(true); S.clear();
+        for (const L of Object.values(S.puppets)) { if (enter) L.korzen.visible = false; else L.korzen.position.x = L.home; }
+        await S.background(bg); await this.fade(false);
+      }),
       mood: (who, m) => S.mood(who, m),
       object: guard((name, opts) => S.object(name, opts)),
       sign: guard((text, opts) => S.sign(text, opts)),

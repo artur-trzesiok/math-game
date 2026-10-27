@@ -12,15 +12,19 @@
   ],
   "backgrounds": [
     "sad",
-    "plac_zabaw",
-    "dom"
+    "las",
+    "dom",
+    "plac_zabaw"
   ],
   "objects": [
     "jablko",
+    "szyszka",
+    "listek",
     "kubek",
+    "ciastko",
+    "lyzka",
     "gruszka",
     "pilka",
-    "ciastko",
     "kwiatek",
     "skarpetka"
   ],

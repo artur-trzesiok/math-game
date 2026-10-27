@@ -11,10 +11,6 @@
     "who": "wiewiorka",
     "text": "Twoje duże jabłko jest większe od mojego. A moje małe jabłko jest mniejsze od twojego."
   },
-  "line.s1_daily": {
-    "who": "lisek",
-    "text": "W domu też tak jest. Mama ma duże buty, a ty masz małe. Twoje buty są mniejsze."
-  },
   "line.s2_thirsty": {
     "who": "wiewiorka",
     "text": "Chce mi się pić! Który kubek jest dla mnie?"
@@ -115,46 +111,6 @@
     "who": "lisek",
     "text": "Dziękuję! Duże jabłko dla dużego głodu."
   },
-  "line.s3_sq_flower": {
-    "who": "wiewiorka",
-    "text": "Chcę włożyć kwiatek za ucho. Są dwa kwiatki."
-  },
-  "line.s3_fox_too_big": {
-    "who": "lisek",
-    "text": "Ten duży jest większy od twojej głowy! Nie utrzyma się."
-  },
-  "line.s3_pick_smaller": {
-    "who": "wiewiorka",
-    "text": "Wskaż mniejszy kwiatek. Ten zmieści się za uchem."
-  },
-  "line.s3_wrong": {
-    "who": "wiewiorka",
-    "text": "Ten jest za duży. Wskaż mniejszy."
-  },
-  "line.s3_sq_thanks": {
-    "who": "wiewiorka",
-    "text": "Pasuje! Mały kwiatek jest mniejszy od mojego ucha."
-  },
-  "line.s4_fox_ball": {
-    "who": "lisek",
-    "text": "Pogramy w piłkę? Do kopania najlepsza jest największa."
-  },
-  "line.s4_sq_three": {
-    "who": "wiewiorka",
-    "text": "Są trzy piłki: mała, średnia i duża."
-  },
-  "line.s4_pick_biggest": {
-    "who": "lisek",
-    "text": "Wskaż największą piłkę."
-  },
-  "line.s4_wrong": {
-    "who": "lisek",
-    "text": "Jest jeszcze większa. Poszukaj największej."
-  },
-  "line.s4_fox_thanks": {
-    "who": "lisek",
-    "text": "Tak! Największa piłka. Kopiemy!"
-  },
   "line.s5_sq_cookies": {
     "who": "wiewiorka",
     "text": "Czas na podwieczorek. Mam dwa ciastka: małe i duże."
@@ -207,5 +163,65 @@
   "line.s0_fell": {
     "who": "wiewiorka",
     "text": "Hop! Spadły dwa jabłka. Jedno duże, jedno małe."
+  },
+  "line.j1_to_forest": {
+    "who": "lisek",
+    "text": "A teraz chodźmy do lasu. Tam leżą szyszki!"
+  },
+  "line.j1_forest": {
+    "who": "wiewiorka",
+    "text": "Jesteśmy w lesie. Jak tu pachnie!"
+  },
+  "line.j1_cones": {
+    "who": "wiewiorka",
+    "text": "Patrz, dwie szyszki. Jedna duża, druga mała. Dużą schowam na zimę."
+  },
+  "line.j1_pick_big_cone": {
+    "who": "lisek",
+    "text": "Pomóż Wiewiórce. Wskaż większą szyszkę."
+  },
+  "line.j1_wrong_cone": {
+    "who": "lisek",
+    "text": "To jest mniejsza szyszka. Poszukaj większej."
+  },
+  "line.j1_cone_thanks": {
+    "who": "wiewiorka",
+    "text": "Dziękuję! Większa szyszka ma więcej nasionek."
+  },
+  "line.j1_leaf_falls": {
+    "who": "lisek",
+    "text": "Ooo, patrz! Z drzewa spada listek i kręci się w powietrzu."
+  },
+  "line.j1_leaf_hat": {
+    "who": "wiewiorka",
+    "text": "Chcę listek za ucho, jak kapelusz. Ten duży jest większy od mojej głowy!"
+  },
+  "line.j1_pick_small_leaf": {
+    "who": "lisek",
+    "text": "Wskaż mniejszy listek."
+  },
+  "line.j1_wrong_leaf": {
+    "who": "lisek",
+    "text": "Ten jest za duży. Wskaż mniejszy."
+  },
+  "line.j1_leaf_thanks": {
+    "who": "wiewiorka",
+    "text": "Pasuje! Mały listek jest mniejszy od mojego ucha."
+  },
+  "line.j1_cold": {
+    "who": "lisek",
+    "text": "Brr, robi się zimno. Wracajmy do domu na podwieczorek!"
+  },
+  "line.j1_spoons": {
+    "who": "lisek",
+    "text": "Do jedzenia potrzebne są łyżki. Jest duża i mała."
+  },
+  "line.j1_pick_small_spoon": {
+    "who": "wiewiorka",
+    "text": "Mój pyszczek jest mały. Wskaż mniejszą łyżkę, ta będzie dla mnie."
+  },
+  "line.j1_wrong_spoon": {
+    "who": "wiewiorka",
+    "text": "Ta jest za duża dla mnie. Wskaż mniejszą."
   }
 }

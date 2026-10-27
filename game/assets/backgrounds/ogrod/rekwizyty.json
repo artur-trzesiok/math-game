@@ -1,0 +1,161 @@
+{
+ "plyta": "plyta.webp",
+ "szerokosc": 1536,
+ "wysokosc": 1024,
+ "horyzont": 288,
+ "rekwizyty": [
+  {
+   "plik": "rekwizyt_00.webp",
+   "klasa": "drift",
+   "x": 929,
+   "y": 19,
+   "w": 220,
+   "h": 97,
+   "faza": 0.0
+  },
+  {
+   "plik": "rekwizyt_01.webp",
+   "klasa": "sway",
+   "x": 515,
+   "y": 884,
+   "w": 170,
+   "h": 132,
+   "faza": 0.618
+  },
+  {
+   "plik": "rekwizyt_02.webp",
+   "klasa": "drift",
+   "x": 758,
+   "y": 116,
+   "w": 150,
+   "h": 69,
+   "faza": 0.2361
+  },
+  {
+   "plik": "rekwizyt_03.webp",
+   "klasa": "drift",
+   "x": 1233,
+   "y": 77,
+   "w": 111,
+   "h": 50,
+   "faza": 0.8541
+  },
+  {
+   "plik": "rekwizyt_04.webp",
+   "klasa": "sway",
+   "x": 850,
+   "y": 801,
+   "w": 97,
+   "h": 62,
+   "faza": 0.4721
+  },
+  {
+   "plik": "rekwizyt_05.webp",
+   "klasa": "sway",
+   "x": 624,
+   "y": 338,
+   "w": 176,
+   "h": 63,
+   "faza": 0.0902
+  },
+  {
+   "plik": "rekwizyt_06.webp",
+   "klasa": "sway",
+   "x": 537,
+   "y": 808,
+   "w": 78,
+   "h": 65,
+   "faza": 0.7082
+  },
+  {
+   "plik": "rekwizyt_07.webp",
+   "klasa": "sway",
+   "x": 546,
+   "y": 359,
+   "w": 91,
+   "h": 49,
+   "faza": 0.3262
+  },
+  {
+   "plik": "rekwizyt_08.webp",
+   "klasa": "drift",
+   "x": 634,
+   "y": 189,
+   "w": 74,
+   "h": 36,
+   "faza": 0.9443
+  },
+  {
+   "plik": "rekwizyt_09.webp",
+   "klasa": "drift",
+   "x": 275,
+   "y": 55,
+   "w": 72,
+   "h": 34,
+   "faza": 0.5623
+  },
+  {
+   "plik": "rekwizyt_10.webp",
+   "klasa": "sway",
+   "x": 889,
+   "y": 927,
+   "w": 65,
+   "h": 26,
+   "faza": 0.1803
+  },
+  {
+   "plik": "rekwizyt_11.webp",
+   "klasa": "sway",
+   "x": 1450,
+   "y": 730,
+   "w": 48,
+   "h": 47,
+   "faza": 0.7984
+  },
+  {
+   "plik": "rekwizyt_12.webp",
+   "klasa": "sway",
+   "x": 703,
+   "y": 901,
+   "w": 55,
+   "h": 42,
+   "faza": 0.4164
+  },
+  {
+   "plik": "rekwizyt_13.webp",
+   "klasa": "sway",
+   "x": 175,
+   "y": 281,
+   "w": 50,
+   "h": 51,
+   "faza": 0.0344
+  },
+  {
+   "plik": "rekwizyt_14.webp",
+   "klasa": "drift",
+   "x": 938,
+   "y": 202,
+   "w": 51,
+   "h": 26,
+   "faza": 0.6525
+  },
+  {
+   "plik": "rekwizyt_15.webp",
+   "klasa": "sway",
+   "x": 794,
+   "y": 637,
+   "w": 54,
+   "h": 22,
+   "faza": 0.2705
+  },
+  {
+   "plik": "rekwizyt_16.webp",
+   "klasa": "sway",
+   "x": 951,
+   "y": 903,
+   "w": 41,
+   "h": 37,
+   "faza": 0.8885
+  }
+ ]
+}

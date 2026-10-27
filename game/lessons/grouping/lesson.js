@@ -27,7 +27,7 @@ export default {
   backgrounds: { story: "pokoj", practice: "przedpokoj", apply: "dom" },
   stages: {
     story: [
-      // 1. after a snack: apples and pears mixed up on the rug - sort, then point to the apples' group
+      // A. children's room after a snack: a pear rolls under the bed, apples and pears sorted, the apples' group
       async (c) => {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         await c.say("wiewiorka", "line.s1_intro");
@@ -35,7 +35,6 @@ export default {
           { name: "jablko", tag: "apple" }, { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" },
           { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" }]);
         await c.say("sarenka", "line.s1_sq_mixed");
-        // action: one pear rolls off under the bed; the child drags it back onto the rug
         const pear = items.find((i) => i.tag === "pear");
         await c.say("sarenka", "line.s0_roll", { anim: "Rozgladanie" });
         await pear.moveTo(-5.2, -2.9, 1.0);
@@ -54,21 +53,41 @@ export default {
         const apples = zones.find((z) => z.items.some((i) => i.tag === "apple"));
         await c.task({ targets: zones, correct: apples, wrong: "line.s1_not_apples" });
         await c.say("sarenka", "line.s1_deer_happy", { anim: "Radosc" });
-        await c.say("wiewiorka", "line.s1_daily");
+        await c.say("wiewiorka", "line.j3_to_brook");
         c.clear();
       },
-      // 2. the odd one out: three pears and one apple
+      // B. the brook: pebbles and leaves for the game, sorted; a cone among the pebbles does not belong
       async (c) => {
-        await c.say("sarenka", "line.s15_odd_intro");
+        await c.go("strumyk", { enter: true });
+        await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
+        await c.say("sarenka", "line.j3_brook");
         const items = await scatter(c, [
-          { name: "gruszka", tag: "pear" }, { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" }, { name: "gruszka", tag: "pear" }]);
-        await c.say("sarenka", "line.s15_point_odd");
-        await c.task({ targets: items, correct: items.find((i) => i.tag === "apple"), wrong: "line.s15_wrong" });
-        await c.say("wiewiorka", "line.s15_right", { anim: "Brawo" });
+          { name: "kamyk", tag: "stone" }, { name: "listek", tag: "leaf" }, { name: "kamyk", tag: "stone" },
+          { name: "listek", tag: "leaf" }, { name: "kamyk", tag: "stone" }, { name: "listek", tag: "leaf" }]);
+        await c.say("wiewiorka", "line.j3_collect");
+        const zones = await containers(c);
+        await c.say("sarenka", "line.j3_sort");
+        await c.sort({ items, zones, wrong: "line.j3_mixed" });
+        await c.say("wiewiorka", "line.j3_sorted", { anim: "Brawo" });
+        c.clear();
+        // action: Squirrel throws a pebble into the brook - plop! - then one thing on the bank is not a pebble
+        await c.say("wiewiorka", "line.j3_throw", { anim: "Wskazanie" });
+        const stone = await c.object("kamyk", { x: -2.5, y: ROW_Y, size: 0.9 });
+        await stone.moveTo(1.5, 3.0, 0.5); await stone.moveTo(4.2, -1.6, 0.6); stone.remove();
+        await c.play("sarenka", "Podskok");
+        await c.say("sarenka", "line.j3_plop");
+        const odd = await scatter(c, [
+          { name: "kamyk", tag: "stone" }, { name: "kamyk", tag: "stone" }, { name: "szyszka", tag: "cone" }, { name: "kamyk", tag: "stone" }]);
+        await c.say("sarenka", "line.j3_point_odd");
+        await c.task({ targets: odd, correct: odd.find((i) => i.tag === "cone"), wrong: "line.j3_wrong_odd" });
+        await c.say("wiewiorka", "line.j3_odd_right", { anim: "Radosc" });
+        await c.say("sarenka", "line.j3_to_home");
         c.clear();
       },
-      // 3. the same things, another rule: by size - sort, then point to the big ones' group
+      // C. kitchen: the same fruit, another rule - big and small
       async (c) => {
+        await c.go("dom", { enter: true });
+        await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         await c.say("wiewiorka", "line.s2_sq_size");
         const items = await scatter(c, [
           { name: "jablko", tag: "big", size: 1.3 }, { name: "gruszka", tag: "small", size: 0.7 }, { name: "jablko", tag: "small", size: 0.7 },

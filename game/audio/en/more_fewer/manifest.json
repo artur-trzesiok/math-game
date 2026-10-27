@@ -29,11 +29,6 @@
   "who": "sowa",
   "text": "And there are fewer plates than cups. One is missing!"
  },
- "line.s1_daily": {
-  "hash": "a4dbc4ebb030",
-  "who": "sowa",
-  "text": "It's the same at home: does everyone at the table have a spoon? Make pairs and see what is left."
- },
  "line.s2_signs": {
   "hash": "5c6bce68ea82",
   "who": "sowa",
@@ -43,26 +38,6 @@
   "hash": "fddea3f1ef6b",
   "who": "sowa",
   "text": "The mouth opens towards the pile with more. There are more cups, so it opens towards the cups."
- },
- "line.s2_fox_add": {
-  "hash": "b1578ee6d559",
-  "who": "lisek",
-  "text": "I'll add one more plate!"
- },
- "line.s2_equal_sign": {
-  "hash": "040091c4c7a4",
-  "who": "lisek",
-  "text": "Now every cup has a plate. There are as many. This sign is two equal lines."
- },
- "line.s2_owl_less": {
-  "hash": "c6e283acf4f3",
-  "who": "sowa",
-  "text": "And if I take the cups away? One cup and three plates are left."
- },
- "line.s2_less_sign": {
-  "hash": "e950ab2b3118",
-  "who": "sowa",
-  "text": "There are fewer cups. The mouth opens towards the plates, because there are more plates."
  },
  "line.s2_summary": {
   "hash": "7e4293e3ae5e",
@@ -184,16 +159,6 @@
   "who": "sowa",
   "text": "Yes! The mouth is open towards the cups, because there are more cups than plates."
  },
- "line.s2_good_eq": {
-  "hash": "a92fa74ec211",
-  "who": "lisek",
-  "text": "Yes! Equal lines. There are as many cups as plates."
- },
- "line.s2_good_lt": {
-  "hash": "640d31d5cb84",
-  "who": "sowa",
-  "text": "Yes! The mouth is open towards the plates, because there are more plates and fewer cups."
- },
  "line.s0_roll": {
   "hash": "0b5a1dcd10e3",
   "who": "sowa",
@@ -223,5 +188,85 @@
   "hash": "ec8cc1a461a5",
   "who": "sowa",
   "text": "Let's check in pairs: cup and plate, cup and plate."
+ },
+ "line.j2_to_garden": {
+  "hash": "43a8afa92e85",
+  "who": "sowa",
+  "text": "Let's go to the garden now. Fox promised carrots for lunch!"
+ },
+ "line.j2_garden": {
+  "hash": "ea6fab93aac2",
+  "who": "lisek",
+  "text": "This is my garden. I pulled out three carrots!"
+ },
+ "line.j2_carrots": {
+  "hash": "ae5eb1a5efff",
+  "who": "lisek",
+  "text": "Here they are, on the path."
+ },
+ "line.j2_flowers": {
+  "hash": "cd97349203f6",
+  "who": "sowa",
+  "text": "And I picked flowers for the vase. Are there as many flowers as carrots?"
+ },
+ "line.j2_check": {
+  "hash": "1266dd569bca",
+  "who": "lisek",
+  "text": "Let's check in pairs: carrot and flower, carrot and flower."
+ },
+ "line.j2_equal": {
+  "hash": "31ffdb7727a0",
+  "who": "sowa",
+  "text": "Nothing is left. Every carrot has its flower. There are as many!"
+ },
+ "line.j2_good_eq": {
+  "hash": "7c7d8bcf2310",
+  "who": "lisek",
+  "text": "Yes! Equal lines, because there are as many carrots as flowers."
+ },
+ "line.j2_one_more": {
+  "hash": "7873d560f601",
+  "who": "sowa",
+  "text": "Oh, one more flower is growing by the fence! I'll pick it."
+ },
+ "line.j2_now_fewer": {
+  "hash": "dbd576e9a99d",
+  "who": "sowa",
+  "text": "Now there are more flowers and fewer carrots. Which sign shows that?"
+ },
+ "line.j2_good_lt": {
+  "hash": "1bacfb952365",
+  "who": "sowa",
+  "text": "Yes! The mouth opens towards the flowers, because there are more flowers."
+ },
+ "line.j2_to_home": {
+  "hash": "55ae35da2fdd",
+  "who": "lisek",
+  "text": "We have the carrots. Let's go home, I'll bake cookies!"
+ },
+ "line.j2_kitchen": {
+  "hash": "64446da814bc",
+  "who": "sowa",
+  "text": "The cookies smell good! I put out cups of milk. Will every cup get a cookie?"
+ },
+ "line.j2_cookies_check": {
+  "hash": "0a24a54bc835",
+  "who": "lisek",
+  "text": "Let's check in pairs: cup and cookie, cup and cookie."
+ },
+ "line.j2_one_missing": {
+  "hash": "ed72cc00e91c",
+  "who": "sowa",
+  "text": "One cup has no cookie. There are fewer cookies."
+ },
+ "line.j2_bake_one": {
+  "hash": "503238c592b5",
+  "who": "lisek",
+  "text": "Don't worry, I'll bake one more!"
+ },
+ "line.j2_good_eq2": {
+  "hash": "c0ed76755df3",
+  "who": "lisek",
+  "text": "Yes! Now every cup has a cookie. As many!"
  }
 }

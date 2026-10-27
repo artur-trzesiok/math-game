@@ -48,10 +48,10 @@ objects - no hand-made art, no in-house level editor.
   the same set of moves (walk, talk, cheer, point, raise a paw, wave, sway, sad,
   look around) so any lesson can use any of them. The fox is the host; the others
   rotate so the child meets everyone.
-- Picture-book backgrounds (orchard, lake meadow, children's room, kitchen) with
-  gently moving grass and clouds. **Every lesson's story and its practice each play in a
-  setting of their own** (children like variety); the "at home" stage may reuse
-  a home setting.
+- Picture-book backgrounds (orchard, lake meadow, forest, playground, vegetable
+  garden, brook, children's room, hallway, kitchen) with gently moving grass and
+  clouds. A story travels through two or three of them; the practice has one of
+  its own (children like variety); the "at home" stage reuses the home.
 - Illustrated objects on white stickers (so a green pear reads on green grass),
   scaled for "bigger / smaller", repeated for "more / fewer", sorted for "groups".
 - Two languages from day one (Polish, English); every spoken line is a key in a
@@ -136,8 +136,10 @@ that breaks one of them is wrong even if it runs.
   repeats the last instruction.
 - **About five interactions in every stage**, the story included. A story that
   only talks is a bug.
-- **A different setting for the story and for the practice of every lesson**;
-  only the "at home" stage may share a setting (the kitchen).
+- **The story is a journey through two or three places** (`go`), each with its
+  own small adventure; the practice has a setting of its own, different from the
+  story's; across lessons settings may repeat, and the "at home" stage shares the
+  home (hallway, kitchen).
 - **The object layer floats above the characters' heads** (safe-area y 1.2) and
   never covers them; characters stand at x = ±4.6. Everything is placed with
   `arrange` (real widths, real gaps), zones are sized from what it returns, so

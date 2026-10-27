@@ -23,10 +23,6 @@
     "who": "sowa",
     "text": "And there are fewer plates than cups. One is missing!"
   },
-  "line.s1_daily": {
-    "who": "sowa",
-    "text": "It's the same at home: does everyone at the table have a spoon? Make pairs and see what is left."
-  },
   "line.s2_signs": {
     "who": "sowa",
     "text": "I know a sign that says which pile has more. It looks like a hungry mouth."
@@ -34,22 +30,6 @@
   "line.s2_more_sign": {
     "who": "sowa",
     "text": "The mouth opens towards the pile with more. There are more cups, so it opens towards the cups."
-  },
-  "line.s2_fox_add": {
-    "who": "lisek",
-    "text": "I'll add one more plate!"
-  },
-  "line.s2_equal_sign": {
-    "who": "lisek",
-    "text": "Now every cup has a plate. There are as many. This sign is two equal lines."
-  },
-  "line.s2_owl_less": {
-    "who": "sowa",
-    "text": "And if I take the cups away? One cup and three plates are left."
-  },
-  "line.s2_less_sign": {
-    "who": "sowa",
-    "text": "There are fewer cups. The mouth opens towards the plates, because there are more plates."
   },
   "line.s2_summary": {
     "who": "lisek",
@@ -150,14 +130,6 @@
     "who": "sowa",
     "text": "Yes! The mouth is open towards the cups, because there are more cups than plates."
   },
-  "line.s2_good_eq": {
-    "who": "lisek",
-    "text": "Yes! Equal lines. There are as many cups as plates."
-  },
-  "line.s2_good_lt": {
-    "who": "sowa",
-    "text": "Yes! The mouth is open towards the plates, because there are more plates and fewer cups."
-  },
   "line.s0_roll": {
     "who": "sowa",
     "text": "Oh! The wind rolled one cup right down to the water!"
@@ -177,5 +149,69 @@
   "line.s0_phew": {
     "who": "lisek",
     "text": "Phew, got it! All the cups are back."
+  },
+  "line.j2_to_garden": {
+    "who": "sowa",
+    "text": "Let's go to the garden now. Fox promised carrots for lunch!"
+  },
+  "line.j2_garden": {
+    "who": "lisek",
+    "text": "This is my garden. I pulled out three carrots!"
+  },
+  "line.j2_carrots": {
+    "who": "lisek",
+    "text": "Here they are, on the path."
+  },
+  "line.j2_flowers": {
+    "who": "sowa",
+    "text": "And I picked flowers for the vase. Are there as many flowers as carrots?"
+  },
+  "line.j2_check": {
+    "who": "lisek",
+    "text": "Let's check in pairs: carrot and flower, carrot and flower."
+  },
+  "line.j2_equal": {
+    "who": "sowa",
+    "text": "Nothing is left. Every carrot has its flower. There are as many!"
+  },
+  "line.j2_good_eq": {
+    "who": "lisek",
+    "text": "Yes! Equal lines, because there are as many carrots as flowers."
+  },
+  "line.j2_one_more": {
+    "who": "sowa",
+    "text": "Oh, one more flower is growing by the fence! I'll pick it."
+  },
+  "line.j2_now_fewer": {
+    "who": "sowa",
+    "text": "Now there are more flowers and fewer carrots. Which sign shows that?"
+  },
+  "line.j2_good_lt": {
+    "who": "sowa",
+    "text": "Yes! The mouth opens towards the flowers, because there are more flowers."
+  },
+  "line.j2_to_home": {
+    "who": "lisek",
+    "text": "We have the carrots. Let's go home, I'll bake cookies!"
+  },
+  "line.j2_kitchen": {
+    "who": "sowa",
+    "text": "The cookies smell good! I put out cups of milk. Will every cup get a cookie?"
+  },
+  "line.j2_cookies_check": {
+    "who": "lisek",
+    "text": "Let's check in pairs: cup and cookie, cup and cookie."
+  },
+  "line.j2_one_missing": {
+    "who": "sowa",
+    "text": "One cup has no cookie. There are fewer cookies."
+  },
+  "line.j2_bake_one": {
+    "who": "lisek",
+    "text": "Don't worry, I'll bake one more!"
+  },
+  "line.j2_good_eq2": {
+    "who": "lisek",
+    "text": "Yes! Now every cup has a cookie. As many!"
   }
 }

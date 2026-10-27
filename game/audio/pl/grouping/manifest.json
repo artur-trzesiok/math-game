@@ -29,11 +29,6 @@
   "who": "sarenka",
   "text": "Teraz od razu widać, co gdzie jest!"
  },
- "line.s1_daily": {
-  "hash": "39e1d41f8a9b",
-  "who": "wiewiorka",
-  "text": "W domu też grupujemy: łyżki do łyżek, skarpetki do skarpetek, klocki do klocków."
- },
  "line.s2_sq_size": {
   "hash": "84358eb9f715",
   "who": "wiewiorka",
@@ -134,26 +129,6 @@
   "who": "wiewiorka",
   "text": "Tam są gruszki. Wskaż jabłka."
  },
- "line.s15_odd_intro": {
-  "hash": "384da4a538ed",
-  "who": "sarenka",
-  "text": "Patrz, cztery owoce. Trzy są takie same, a jeden inny."
- },
- "line.s15_point_odd": {
-  "hash": "2d61c3011375",
-  "who": "sarenka",
-  "text": "Wskaż ten, który nie pasuje do reszty."
- },
- "line.s15_wrong": {
-  "hash": "fd4221bb38c2",
-  "who": "sarenka",
-  "text": "To gruszka, jak pozostałe. Szukamy innego."
- },
- "line.s15_right": {
-  "hash": "9ecff67933d2",
-  "who": "wiewiorka",
-  "text": "Jabłko! Nie pasuje do gruszek."
- },
  "line.s2_point_big": {
   "hash": "cc90528647c3",
   "who": "sarenka",
@@ -233,5 +208,65 @@
   "hash": "462b5ebec9e5",
   "who": "wiewiorka",
   "text": "Okrągłe do koszyka, reszta do pudełka."
+ },
+ "line.j3_to_brook": {
+  "hash": "6eb7e33faac8",
+  "who": "wiewiorka",
+  "text": "Posprzątane! Chodźmy nad strumyk, poszukamy kamyków do gry."
+ },
+ "line.j3_brook": {
+  "hash": "ec20572bfc81",
+  "who": "sarenka",
+  "text": "Strumyk! Woda szumi, a na brzegu leżą kamyki i listki."
+ },
+ "line.j3_collect": {
+  "hash": "26a4fbd2a01a",
+  "who": "wiewiorka",
+  "text": "Zbierzmy je. Kamyki do koszyka, listki do pudełka."
+ },
+ "line.j3_sort": {
+  "hash": "23e7153a394f",
+  "who": "sarenka",
+  "text": "Przeciągaj. Kamyki osobno, listki osobno."
+ },
+ "line.j3_mixed": {
+  "hash": "e9d95b795f7f",
+  "who": "sarenka",
+  "text": "Coś się pomieszało. Kamyki osobno, listki osobno."
+ },
+ "line.j3_sorted": {
+  "hash": "de6c83b3354b",
+  "who": "wiewiorka",
+  "text": "Dwie grupy: kamyki i listki. Brawo!"
+ },
+ "line.j3_throw": {
+  "hash": "0f6b50c40af6",
+  "who": "wiewiorka",
+  "text": "Patrz, rzucam kamykiem do wody!"
+ },
+ "line.j3_plop": {
+  "hash": "f0f2f6c56e58",
+  "who": "sarenka",
+  "text": "Plusk! Ale na brzegu zostało coś, co nie jest kamykiem."
+ },
+ "line.j3_point_odd": {
+  "hash": "e51a7a78e9ad",
+  "who": "sarenka",
+  "text": "Wskaż to, co nie pasuje do kamyków."
+ },
+ "line.j3_wrong_odd": {
+  "hash": "0a1f39616fb4",
+  "who": "sarenka",
+  "text": "To jest kamyk, jak pozostałe. Szukamy czegoś innego."
+ },
+ "line.j3_odd_right": {
+  "hash": "ac8093d43da3",
+  "who": "wiewiorka",
+  "text": "Szyszka! Szyszka nie jest kamykiem."
+ },
+ "line.j3_to_home": {
+  "hash": "66ef78772da8",
+  "who": "sarenka",
+  "text": "Wracajmy do domu. Zostały nam jeszcze owoce do poukładania."
  }
 }

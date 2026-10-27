@@ -179,6 +179,48 @@ Same colours, same trees, same log, same texture - only the clouds and the tufts
 are new. Do NOT move or redraw anything that was already there. Do NOT add
 animals, mushrooms or anything else.""",
     },
+    "ogrod": {
+        "plyta": f"""A background illustration for a children's game: a sunny vegetable garden
+behind a cottage. Low wooden raised beds with leafy green rows on the left and
+right, a watering can on the far left, a wooden fence with a gate along the back,
+a few fruit trees behind the fence. The lower middle is an EMPTY path of flat
+grass and earth where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+The SKY IS EMPTY - just sky, NO clouds, NO birds, NO sun.
+NO vegetables lying on the ground, NO tools on the path, NO characters, NO
+animals, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two
+things have been added, in the same style:
+  - SIX or SEVEN soft white cartoon clouds spread across the whole sky, big
+    and small, none touching each other;
+  - MANY tufts of taller grass standing up along the path and in front of the
+    beds - at least fifteen, scattered over the foreground, each tuft separate.
+Same colours, same beds, same fence, same texture - only the clouds and the tufts
+are new. Do NOT move or redraw anything that was already there. Do NOT add
+vegetables, animals or anything else.""",
+    },
+    "strumyk": {
+        "plyta": f"""A background illustration for a children's game: a shallow clear brook
+winding through a meadow, with a small arched wooden footbridge on the right.
+Smooth round pebbles along the near bank, a few big mossy boulders on the left,
+low green hills and a line of trees in the distance. The lower middle is EMPTY
+flat grass on the near bank where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+The SKY IS EMPTY - just sky, NO clouds, NO birds, NO sun.
+The GRASS IS PLAIN - NO tufts, NO flowers. NO fish, NO characters, NO animals,
+NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two
+things have been added, in the same style:
+  - SIX or SEVEN soft white cartoon clouds spread across the whole sky, big
+    and small, none touching each other;
+  - MANY tufts of taller grass and a few reeds at the water's edge - at least
+    fifteen, scattered over the foreground and the banks, each separate.
+Same colours, same brook, same bridge, same boulders, same texture - only the
+clouds and the tufts are new. Do NOT move or redraw anything that was already
+there. Do NOT add fish, animals or anything else.""",
+    },
     "przedpokoj": {
         "wnetrze": True,
         "plyta": f"""A background illustration for a children's game: a cosy home hallway

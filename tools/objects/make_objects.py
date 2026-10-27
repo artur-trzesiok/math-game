@@ -60,6 +60,20 @@ child's hand with the index finger pointing, tapping (the PRACTICE); a small cos
 house with a red roof and a window (AT HOME).
 All three roughly the same size.""",
     },
+    "objects2": {
+        "outline": True,
+        "names": ["szyszka", "listek", "kamyk", "marchewka", "but", "lyzka", "misiu", "klocek"],
+        "size": "1536x1024",
+        "prompt": f"""A sprite sheet of EIGHT small illustrated objects for a children's picture
+book, arranged in a neat grid of 2 rows and 4 columns on a fully TRANSPARENT
+background, with generous empty space between objects so none of them touch.
+{STYL}
+Row 1, left to right: a brown pine cone; a single green leaf; a smooth grey
+round pebble; an orange carrot with green tops.
+Row 2, left to right: a single child's red shoe seen from the side; a wooden
+spoon; a small brown teddy bear; a red wooden toy block.
+All eight objects roughly the same size.""",
+    },
     "containers": {
         "names": ["koszyk", "pudelko", "miska", "polka"],
         "size": "1536x1024",

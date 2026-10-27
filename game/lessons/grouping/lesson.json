@@ -12,17 +12,21 @@
   ],
   "backgrounds": [
     "pokoj",
-    "przedpokoj",
-    "dom"
+    "strumyk",
+    "dom",
+    "przedpokoj"
   ],
   "objects": [
     "jablko",
     "gruszka",
+    "kamyk",
+    "listek",
+    "szyszka",
     "kubek",
     "talerz",
+    "skarpetka",
     "pilka",
     "ciastko",
-    "skarpetka",
     "kwiatek"
   ],
   "cover": "On the rug in front of them two small baskets: one with red apples, one with green pears, neatly sorted."

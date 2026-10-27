@@ -10,10 +10,9 @@ export default {
   backgrounds: { story: "sad", practice: "plac_zabaw", apply: "dom" },
   stages: {
     story: [
-      // 1. two apples in the orchard - the bigger one is for Fox
+      // A. orchard: a gust shakes the tree, two apples drop out of the crown - the bigger one is for Fox
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
-        // action: a gust shakes the tree and two apples drop out of the crown
         await c.say("lisek", "line.s0_wind", { anim: "Rozgladanie" });
         const big = await c.object("jablko", { x: -1.6, y: 4.6, size: 1.7 });
         const small = await c.object("jablko", { x: 1.6, y: 4.9, size: 0.85 });
@@ -30,11 +29,40 @@ export default {
         await c.task({ targets: [big, small], correct: big, wrong: "line.s1_wrong" });
         await big.moveTo(L + 1.6, Y);
         await c.say("lisek", "line.s1_fox_thanks", { anim: "Radosc" });
-        await c.say("lisek", "line.s1_daily");
+        await c.say("lisek", "line.j1_to_forest");
         c.clear();
       },
-      // 2. which cup for the squirrel? the smaller one
+      // B. forest: cones for the winter store (the bigger one), a leaf spins down (the smaller one fits behind the ear)
       async (c) => {
+        await c.go("las", { enter: true });
+        await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
+        await c.say("wiewiorka", "line.j1_forest");
+        const bigCone = await c.object("szyszka", { y: Y, size: 1.7 }), smallCone = await c.object("szyszka", { y: Y, size: 0.85 });
+        c.arrange([[smallCone], [bigCone]], { y: Y, groupGap: 1.2 });
+        await c.say("wiewiorka", "line.j1_cones", { anim: "Wskazanie" });
+        await c.say("lisek", "line.j1_pick_big_cone");
+        await c.task({ targets: [bigCone, smallCone], correct: bigCone, wrong: "line.j1_wrong_cone" });
+        await bigCone.moveTo(R - 1.4, Y);
+        await c.say("wiewiorka", "line.j1_cone_thanks", { anim: "Radosc" });
+        c.clear();
+        // action: a leaf comes spinning down from the crowns
+        await c.say("lisek", "line.j1_leaf_falls", { anim: "Rozgladanie" });
+        const leaf = await c.object("listek", { x: 0.8, y: 5.0, size: 1.6 });
+        await leaf.moveTo(-0.6, 3.2, 0.8); await leaf.moveTo(0.9, 1.9, 0.8); await leaf.moveTo(0, Y, 0.7);
+        const smallLeaf = await c.object("listek", { y: Y, size: 0.8 });
+        c.arrange([[leaf], [smallLeaf]], { y: Y, groupGap: 1.2, animate: true });
+        await c.say("wiewiorka", "line.j1_leaf_hat");
+        await c.say("lisek", "line.j1_pick_small_leaf");
+        await c.task({ targets: [leaf, smallLeaf], correct: smallLeaf, wrong: "line.j1_wrong_leaf" });
+        await smallLeaf.moveTo(R - 1.3, Y);
+        await c.say("wiewiorka", "line.j1_leaf_thanks", { anim: "Radosc" });
+        await c.say("lisek", "line.j1_cold");
+        c.clear();
+      },
+      // C. kitchen: the smaller cup, the bigger cookie, the smaller spoon
+      async (c) => {
+        await c.go("dom", { enter: true });
+        await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
         await c.say("wiewiorka", "line.s2_thirsty");
         const bigCup = await c.object("kubek", { y: Y, size: 1.7 });
         const smallCup = await c.object("kubek", { y: Y, size: 0.85 });
@@ -46,38 +74,6 @@ export default {
         await c.say("wiewiorka", "line.s2_thanks", { anim: "Radosc" });
         await c.say("lisek", "line.s2_summary");
         c.clear();
-      },
-      // 3. a flower behind the squirrel's ear - the smaller one fits
-      async (c) => {
-        await c.say("wiewiorka", "line.s3_sq_flower");
-        const bigF = await c.object("kwiatek", { y: Y, size: 1.7 });
-        const smallF = await c.object("kwiatek", { y: Y, size: 0.85 });
-        c.arrange([[bigF], [smallF]], { y: Y, groupGap: 1.2 });
-        await c.say("lisek", "line.s3_fox_too_big", { anim: "Wskazanie" });
-        await c.say("wiewiorka", "line.s3_pick_smaller");
-        await c.task({ targets: [bigF, smallF], correct: smallF, wrong: "line.s3_wrong" });
-        await smallF.moveTo(R - 1.3, Y);
-        await c.say("wiewiorka", "line.s3_sq_thanks", { anim: "Radosc" });
-        c.clear();
-      },
-      // 4. three balls - the biggest one is best for kicking
-      async (c) => {
-        await c.say("lisek", "line.s4_fox_ball");
-        const sizes = [0.8, 1.25, 1.7].sort(() => Math.random() - 0.5);
-        const balls = [];
-        for (let i = 0; i < 3; i++) balls.push(await c.object("pilka", { y: Y, size: sizes[i] }));
-        c.arrange([balls], { y: Y, gap: 0.6 });
-        const biggest = balls[sizes.indexOf(1.7)];
-        await c.say("wiewiorka", "line.s4_sq_three");
-        await c.say("lisek", "line.s4_pick_biggest");
-        await c.task({ targets: balls, correct: biggest, wrong: "line.s4_wrong" });
-        await biggest.moveTo(L + 1.6, Y);
-        await c.play("lisek", "Podskok");
-        await c.say("lisek", "line.s4_fox_thanks");
-        c.clear();
-      },
-      // 5. snack time: the bigger cookie for the hungry fox, the smaller for the squirrel
-      async (c) => {
         await c.say("wiewiorka", "line.s5_sq_cookies");
         const bigC = await c.object("ciastko", { y: Y, size: 1.7 });
         const smallC = await c.object("ciastko", { y: Y, size: 0.85 });
@@ -88,6 +84,13 @@ export default {
         await bigC.moveTo(L + 1.6, Y);
         await smallC.moveTo(R - 1.3, Y);
         await c.say("wiewiorka", "line.s5_sq_mine");
+        c.clear();
+        const bigS = await c.object("lyzka", { y: Y, size: 1.7 }), smallS = await c.object("lyzka", { y: Y, size: 0.85 });
+        c.arrange([[bigS], [smallS]], { y: Y, groupGap: 1.2 });
+        await c.say("lisek", "line.j1_spoons");
+        await c.say("wiewiorka", "line.j1_pick_small_spoon");
+        await c.task({ targets: [bigS, smallS], correct: smallS, wrong: "line.j1_wrong_spoon" });
+        await smallS.moveTo(R - 1.3, Y); await bigS.moveTo(L + 1.6, Y);
         await c.say("lisek", "line.s5_summary", { anim: "Radosc" });
         c.clear();
       },

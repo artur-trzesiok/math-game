@@ -29,11 +29,6 @@
   "who": "sowa",
   "text": "A talerzy jest mniej niż kubków. Brakuje jednego!"
  },
- "line.s1_daily": {
-  "hash": "7cf7a6e47ab5",
-  "who": "sowa",
-  "text": "Tak samo w domu: czy każdy przy stole ma łyżkę? Ustaw w pary i zobacz, co zostaje."
- },
  "line.s2_signs": {
   "hash": "6e3f117280a5",
   "who": "sowa",
@@ -43,26 +38,6 @@
   "hash": "c98662acff2b",
   "who": "sowa",
   "text": "Paszcza otwiera się w stronę tego, czego jest więcej. Kubków jest więcej, więc otwiera się na kubki."
- },
- "line.s2_fox_add": {
-  "hash": "4f5ec15332a6",
-  "who": "lisek",
-  "text": "Dołożę jeszcze jeden talerz!"
- },
- "line.s2_equal_sign": {
-  "hash": "d75b7b647b4a",
-  "who": "lisek",
-  "text": "Teraz każdy kubek ma talerz. Jest tyle samo. Ten znak to dwie równe kreski."
- },
- "line.s2_owl_less": {
-  "hash": "0284e0d61f1e",
-  "who": "sowa",
-  "text": "A jeśli zabiorę kubki? Zostanie jeden kubek i trzy talerze."
- },
- "line.s2_less_sign": {
-  "hash": "a4bba1a42a59",
-  "who": "sowa",
-  "text": "Kubków jest mniej. Paszcza otwiera się w stronę talerzy, bo talerzy jest więcej."
  },
  "line.s2_summary": {
   "hash": "712211c7b1dc",
@@ -184,16 +159,6 @@
   "who": "sowa",
   "text": "Tak! Paszcza otwarta na kubki, bo kubków jest więcej niż talerzy."
  },
- "line.s2_good_eq": {
-  "hash": "65c703e094d9",
-  "who": "lisek",
-  "text": "Tak! Równe kreski. Kubków jest tyle samo, co talerzy."
- },
- "line.s2_good_lt": {
-  "hash": "fae01606e071",
-  "who": "sowa",
-  "text": "Tak! Paszcza otwarta na talerze, bo talerzy jest więcej, a kubków mniej."
- },
  "line.s0_roll": {
   "hash": "2acef5008dfd",
   "who": "sowa",
@@ -223,5 +188,85 @@
   "hash": "d3e6da157ac0",
   "who": "sowa",
   "text": "Sprawdźmy parami: kubek i talerz, kubek i talerz."
+ },
+ "line.j2_to_garden": {
+  "hash": "2ef5dc9ef385",
+  "who": "sowa",
+  "text": "Chodźmy teraz do ogrodu. Lisek obiecał marchewki na obiad!"
+ },
+ "line.j2_garden": {
+  "hash": "5e2a7347aa24",
+  "who": "lisek",
+  "text": "Oto mój ogród. Wyrwałem trzy marchewki!"
+ },
+ "line.j2_carrots": {
+  "hash": "3349126325ff",
+  "who": "lisek",
+  "text": "Są tutaj, na ścieżce."
+ },
+ "line.j2_flowers": {
+  "hash": "39f5b6011847",
+  "who": "sowa",
+  "text": "A ja zebrałam kwiatki do wazonu. Czy kwiatków jest tyle samo, co marchewek?"
+ },
+ "line.j2_check": {
+  "hash": "6fac00d7ec73",
+  "who": "lisek",
+  "text": "Sprawdźmy parami: marchewka i kwiatek, marchewka i kwiatek."
+ },
+ "line.j2_equal": {
+  "hash": "2ee642a84eaa",
+  "who": "sowa",
+  "text": "Nic nie zostało. Każda marchewka ma swój kwiatek. Jest tyle samo!"
+ },
+ "line.j2_good_eq": {
+  "hash": "fbc9963cb721",
+  "who": "lisek",
+  "text": "Tak! Równe kreski, bo marchewek jest tyle samo, co kwiatków."
+ },
+ "line.j2_one_more": {
+  "hash": "93aaa5b2be4b",
+  "who": "sowa",
+  "text": "O, pod płotem rośnie jeszcze jeden kwiatek! Zrywam."
+ },
+ "line.j2_now_fewer": {
+  "hash": "9dc884b9aa2b",
+  "who": "sowa",
+  "text": "Teraz kwiatków jest więcej, a marchewek mniej. Który znak to pokazuje?"
+ },
+ "line.j2_good_lt": {
+  "hash": "6f17f0cfc30b",
+  "who": "sowa",
+  "text": "Tak! Paszcza otwiera się na kwiatki, bo kwiatków jest więcej."
+ },
+ "line.j2_to_home": {
+  "hash": "22850acc44f3",
+  "who": "lisek",
+  "text": "Marchewki mamy. Wracajmy do domu, upiekę ciastka!"
+ },
+ "line.j2_kitchen": {
+  "hash": "76b3039f9816",
+  "who": "sowa",
+  "text": "Ciastka pachną! Postawiłam kubki z mlekiem. Czy każdy kubek dostanie ciastko?"
+ },
+ "line.j2_cookies_check": {
+  "hash": "2f23eed9b312",
+  "who": "lisek",
+  "text": "Sprawdźmy parami: kubek i ciastko, kubek i ciastko."
+ },
+ "line.j2_one_missing": {
+  "hash": "3fd85a53699e",
+  "who": "sowa",
+  "text": "Jeden kubek nie ma ciastka. Ciastek jest mniej."
+ },
+ "line.j2_bake_one": {
+  "hash": "be35bc1a184c",
+  "who": "lisek",
+  "text": "Nie martw się, dopiekę jeszcze jedno!"
+ },
+ "line.j2_good_eq2": {
+  "hash": "b04891b9bd29",
+  "who": "lisek",
+  "text": "Tak! Teraz każdy kubek ma ciastko. Tyle samo!"
  }
 }

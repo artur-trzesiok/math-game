@@ -29,11 +29,6 @@
   "who": "sarenka",
   "text": "Now you can see at once what is where!"
  },
- "line.s1_daily": {
-  "hash": "103ec7612c21",
-  "who": "wiewiorka",
-  "text": "We group at home too: spoons with spoons, socks with socks, blocks with blocks."
- },
  "line.s2_sq_size": {
   "hash": "275081fb7fe6",
   "who": "wiewiorka",
@@ -134,26 +129,6 @@
   "who": "wiewiorka",
   "text": "Those are pears. Point to the apples."
  },
- "line.s15_odd_intro": {
-  "hash": "a46fce5e4672",
-  "who": "sarenka",
-  "text": "Look, four fruits. Three are the same and one is different."
- },
- "line.s15_point_odd": {
-  "hash": "c8b346aaf9ef",
-  "who": "sarenka",
-  "text": "Point to the one that does not belong."
- },
- "line.s15_wrong": {
-  "hash": "b4d791305c41",
-  "who": "sarenka",
-  "text": "That is a pear, like the others. We are looking for the different one."
- },
- "line.s15_right": {
-  "hash": "ab91d4efdbcf",
-  "who": "wiewiorka",
-  "text": "An apple! It does not belong with the pears."
- },
  "line.s2_point_big": {
   "hash": "5234a8bf612c",
   "who": "sarenka",
@@ -233,5 +208,65 @@
   "hash": "05c58b7322b3",
   "who": "wiewiorka",
   "text": "Round things into the basket, the rest into the box."
+ },
+ "line.j3_to_brook": {
+  "hash": "9d665fbb740e",
+  "who": "wiewiorka",
+  "text": "All tidy! Let's go to the brook and look for pebbles for a game."
+ },
+ "line.j3_brook": {
+  "hash": "2d2524ed331b",
+  "who": "sarenka",
+  "text": "The brook! The water is rushing, and pebbles and leaves lie on the bank."
+ },
+ "line.j3_collect": {
+  "hash": "314d3c98cb02",
+  "who": "wiewiorka",
+  "text": "Let's collect them. Pebbles into the basket, leaves into the box."
+ },
+ "line.j3_sort": {
+  "hash": "73907b236366",
+  "who": "sarenka",
+  "text": "Drag them. Pebbles apart, leaves apart."
+ },
+ "line.j3_mixed": {
+  "hash": "1f02ccf31e02",
+  "who": "sarenka",
+  "text": "Something got mixed up. Pebbles apart, leaves apart."
+ },
+ "line.j3_sorted": {
+  "hash": "35b9d5d71290",
+  "who": "wiewiorka",
+  "text": "Two groups: pebbles and leaves. Well done!"
+ },
+ "line.j3_throw": {
+  "hash": "60da593ad679",
+  "who": "wiewiorka",
+  "text": "Look, I'm throwing a pebble into the water!"
+ },
+ "line.j3_plop": {
+  "hash": "f00127c78d68",
+  "who": "sarenka",
+  "text": "Splash! But something on the bank is not a pebble."
+ },
+ "line.j3_point_odd": {
+  "hash": "589c505ca262",
+  "who": "sarenka",
+  "text": "Point to the thing that does not belong with the pebbles."
+ },
+ "line.j3_wrong_odd": {
+  "hash": "f0b6a0e9eac2",
+  "who": "sarenka",
+  "text": "That is a pebble, like the others. We are looking for something different."
+ },
+ "line.j3_odd_right": {
+  "hash": "ccbfe89956e9",
+  "who": "wiewiorka",
+  "text": "A pine cone! A pine cone is not a pebble."
+ },
+ "line.j3_to_home": {
+  "hash": "01855815662a",
+  "who": "sarenka",
+  "text": "Let's go home. We still have fruit to sort."
  }
 }

@@ -12,17 +12,19 @@
   ],
   "backgrounds": [
     "laka",
-    "las",
-    "dom"
+    "ogrod",
+    "dom",
+    "las"
   ],
   "objects": [
     "kubek",
     "talerz",
-    "jablko",
-    "ciastko",
+    "marchewka",
     "kwiatek",
-    "pilka",
+    "ciastko",
+    "jablko",
     "gruszka",
+    "pilka",
     "skarpetka"
   ],
   "cover": "In front of them, on the grass by the water, a row of three blue cups and a row of two white plates, lined up to be compared."

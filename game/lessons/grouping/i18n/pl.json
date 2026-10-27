@@ -23,10 +23,6 @@
     "who": "sarenka",
     "text": "Teraz od razu widać, co gdzie jest!"
   },
-  "line.s1_daily": {
-    "who": "wiewiorka",
-    "text": "W domu też grupujemy: łyżki do łyżek, skarpetki do skarpetek, klocki do klocków."
-  },
   "line.s2_sq_size": {
     "who": "wiewiorka",
     "text": "A można poukładać inaczej? Duże do dużych, a małe do małych!"
@@ -110,22 +106,6 @@
     "who": "wiewiorka",
     "text": "Tam są gruszki. Wskaż jabłka."
   },
-  "line.s15_odd_intro": {
-    "who": "sarenka",
-    "text": "Patrz, cztery owoce. Trzy są takie same, a jeden inny."
-  },
-  "line.s15_point_odd": {
-    "who": "sarenka",
-    "text": "Wskaż ten, który nie pasuje do reszty."
-  },
-  "line.s15_wrong": {
-    "who": "sarenka",
-    "text": "To gruszka, jak pozostałe. Szukamy innego."
-  },
-  "line.s15_right": {
-    "who": "wiewiorka",
-    "text": "Jabłko! Nie pasuje do gruszek."
-  },
   "line.s2_point_big": {
     "who": "sarenka",
     "text": "Gdzie są duże?"
@@ -180,5 +160,53 @@
   "line.s0_caught": {
     "who": "sarenka",
     "text": "Mamy ją! Teraz wszystkie owoce są razem."
+  },
+  "line.j3_to_brook": {
+    "who": "wiewiorka",
+    "text": "Posprzątane! Chodźmy nad strumyk, poszukamy kamyków do gry."
+  },
+  "line.j3_brook": {
+    "who": "sarenka",
+    "text": "Strumyk! Woda szumi, a na brzegu leżą kamyki i listki."
+  },
+  "line.j3_collect": {
+    "who": "wiewiorka",
+    "text": "Zbierzmy je. Kamyki do koszyka, listki do pudełka."
+  },
+  "line.j3_sort": {
+    "who": "sarenka",
+    "text": "Przeciągaj. Kamyki osobno, listki osobno."
+  },
+  "line.j3_mixed": {
+    "who": "sarenka",
+    "text": "Coś się pomieszało. Kamyki osobno, listki osobno."
+  },
+  "line.j3_sorted": {
+    "who": "wiewiorka",
+    "text": "Dwie grupy: kamyki i listki. Brawo!"
+  },
+  "line.j3_throw": {
+    "who": "wiewiorka",
+    "text": "Patrz, rzucam kamykiem do wody!"
+  },
+  "line.j3_plop": {
+    "who": "sarenka",
+    "text": "Plusk! Ale na brzegu zostało coś, co nie jest kamykiem."
+  },
+  "line.j3_point_odd": {
+    "who": "sarenka",
+    "text": "Wskaż to, co nie pasuje do kamyków."
+  },
+  "line.j3_wrong_odd": {
+    "who": "sarenka",
+    "text": "To jest kamyk, jak pozostałe. Szukamy czegoś innego."
+  },
+  "line.j3_odd_right": {
+    "who": "wiewiorka",
+    "text": "Szyszka! Szyszka nie jest kamykiem."
+  },
+  "line.j3_to_home": {
+    "who": "sarenka",
+    "text": "Wracajmy do domu. Zostały nam jeszcze owoce do poukładania."
   }
 }

@@ -14,11 +14,6 @@
   "who": "wiewiorka",
   "text": "Twoje duże jabłko jest większe od mojego. A moje małe jabłko jest mniejsze od twojego."
  },
- "line.s1_daily": {
-  "hash": "0b888e6c5109",
-  "who": "lisek",
-  "text": "W domu też tak jest. Mama ma duże buty, a ty masz małe. Twoje buty są mniejsze."
- },
  "line.s2_thirsty": {
   "hash": "9dfa7b922cec",
   "who": "wiewiorka",
@@ -144,56 +139,6 @@
   "who": "lisek",
   "text": "Dziękuję! Duże jabłko dla dużego głodu."
  },
- "line.s3_sq_flower": {
-  "hash": "dfb886feb6ea",
-  "who": "wiewiorka",
-  "text": "Chcę włożyć kwiatek za ucho. Są dwa kwiatki."
- },
- "line.s3_fox_too_big": {
-  "hash": "3c8de82e61a4",
-  "who": "lisek",
-  "text": "Ten duży jest większy od twojej głowy! Nie utrzyma się."
- },
- "line.s3_pick_smaller": {
-  "hash": "619080246d4c",
-  "who": "wiewiorka",
-  "text": "Wskaż mniejszy kwiatek. Ten zmieści się za uchem."
- },
- "line.s3_wrong": {
-  "hash": "fa963efbbeff",
-  "who": "wiewiorka",
-  "text": "Ten jest za duży. Wskaż mniejszy."
- },
- "line.s3_sq_thanks": {
-  "hash": "486d724f5d52",
-  "who": "wiewiorka",
-  "text": "Pasuje! Mały kwiatek jest mniejszy od mojego ucha."
- },
- "line.s4_fox_ball": {
-  "hash": "d50997cfd621",
-  "who": "lisek",
-  "text": "Pogramy w piłkę? Do kopania najlepsza jest największa."
- },
- "line.s4_sq_three": {
-  "hash": "fe61a6ba5ee8",
-  "who": "wiewiorka",
-  "text": "Są trzy piłki: mała, średnia i duża."
- },
- "line.s4_pick_biggest": {
-  "hash": "2b7f45b32109",
-  "who": "lisek",
-  "text": "Wskaż największą piłkę."
- },
- "line.s4_wrong": {
-  "hash": "c4cdb851e066",
-  "who": "lisek",
-  "text": "Jest jeszcze większa. Poszukaj największej."
- },
- "line.s4_fox_thanks": {
-  "hash": "e54c713a9341",
-  "who": "lisek",
-  "text": "Tak! Największa piłka. Kopiemy!"
- },
  "line.s5_sq_cookies": {
   "hash": "700992f4d6d1",
   "who": "wiewiorka",
@@ -263,5 +208,80 @@
   "hash": "5db2e748f22d",
   "who": "wiewiorka",
   "text": "Tak jest!"
+ },
+ "line.j1_to_forest": {
+  "hash": "e10c2da5cc03",
+  "who": "lisek",
+  "text": "A teraz chodźmy do lasu. Tam leżą szyszki!"
+ },
+ "line.j1_forest": {
+  "hash": "724fed3a5c7b",
+  "who": "wiewiorka",
+  "text": "Jesteśmy w lesie. Jak tu pachnie!"
+ },
+ "line.j1_cones": {
+  "hash": "115c91392d66",
+  "who": "wiewiorka",
+  "text": "Patrz, dwie szyszki. Jedna duża, druga mała. Dużą schowam na zimę."
+ },
+ "line.j1_pick_big_cone": {
+  "hash": "773256f16221",
+  "who": "lisek",
+  "text": "Pomóż Wiewiórce. Wskaż większą szyszkę."
+ },
+ "line.j1_wrong_cone": {
+  "hash": "7d675c991b32",
+  "who": "lisek",
+  "text": "To jest mniejsza szyszka. Poszukaj większej."
+ },
+ "line.j1_cone_thanks": {
+  "hash": "f8de51e955a5",
+  "who": "wiewiorka",
+  "text": "Dziękuję! Większa szyszka ma więcej nasionek."
+ },
+ "line.j1_leaf_falls": {
+  "hash": "8c6817fc9913",
+  "who": "lisek",
+  "text": "Ooo, patrz! Z drzewa spada listek i kręci się w powietrzu."
+ },
+ "line.j1_leaf_hat": {
+  "hash": "9f24b8263c2e",
+  "who": "wiewiorka",
+  "text": "Chcę listek za ucho, jak kapelusz. Ten duży jest większy od mojej głowy!"
+ },
+ "line.j1_pick_small_leaf": {
+  "hash": "41363570080a",
+  "who": "lisek",
+  "text": "Wskaż mniejszy listek."
+ },
+ "line.j1_wrong_leaf": {
+  "hash": "5a0e6fad2991",
+  "who": "lisek",
+  "text": "Ten jest za duży. Wskaż mniejszy."
+ },
+ "line.j1_leaf_thanks": {
+  "hash": "daf00b20b47f",
+  "who": "wiewiorka",
+  "text": "Pasuje! Mały listek jest mniejszy od mojego ucha."
+ },
+ "line.j1_cold": {
+  "hash": "9380c22be80e",
+  "who": "lisek",
+  "text": "Brr, robi się zimno. Wracajmy do domu na podwieczorek!"
+ },
+ "line.j1_spoons": {
+  "hash": "52f8a4c97547",
+  "who": "lisek",
+  "text": "Do jedzenia potrzebne są łyżki. Jest duża i mała."
+ },
+ "line.j1_pick_small_spoon": {
+  "hash": "c6025a418202",
+  "who": "wiewiorka",
+  "text": "Mój pyszczek jest mały. Wskaż mniejszą łyżkę, ta będzie dla mnie."
+ },
+ "line.j1_wrong_spoon": {
+  "hash": "151dddecf74e",
+  "who": "wiewiorka",
+  "text": "Ta jest za duża dla mnie. Wskaż mniejszą."
  }
 }

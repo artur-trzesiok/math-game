@@ -4,16 +4,19 @@ Goal: the child decides which of two piles has more by pairing one to one and
 seeing what is left over; then reads =, < and > as "the hungry mouth opens towards
 the pile with more". No counting at any point. Characters: Fox (left) and Owl (right).
 
-## Stage 1 - story (picnic by the lake)
+## Stage 1 - story - a journey: lake, vegetable garden, kitchen (seven choices)
 
-Six choices in the story. 1. Fox brought three cups, Owl two plates. Action: the
-   wind rolls a cup down to the water; the child spots the runaway, Fox runs after
-   it and brings it back. "Will every cup get a plate?" The rows
-   slide into pairs; the cup without a pair pulses and the child points to it. Fox:
-   more cups than plates; Owl: fewer plates, one is missing. Bridge: spoons at the table.
-2. The sign between the piles: the child picks ">" (mouth towards the cups) from two
-   cards. Fox adds a plate: the child picks "=" from three. Owl takes two cups away:
-   the child picks "<". Finally the child points to the pile with more. Summary.
+1. Lake picnic. Fox's three cups, Owl's two plates. Action: the wind rolls a cup
+   down to the water; the child spots the runaway, Fox runs after it and brings it
+   back. Pairing: the child points to the cup without a pair; more cups, fewer
+   plates. The hungry mouth: the child picks ">" (mouth towards the cups) from two
+   cards; it lands in the slot between the piles and is named.
+2. Vegetable garden. Fox's three carrots, Owl's three flowers: pairing leaves
+   nothing over; the child picks "=". Owl finds one more flower by the fence: now
+   fewer carrots; the child picks "<". "Where is more?" - the child points to the
+   pile of flowers.
+3. Kitchen. Three cups of milk, two cookies: pairing, one cup without a cookie;
+   Fox bakes one more; the child picks "=". Summary.
 
 ## Stage 2 - practice
 

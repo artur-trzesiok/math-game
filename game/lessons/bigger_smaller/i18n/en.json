@@ -11,10 +11,6 @@
     "who": "wiewiorka",
     "text": "Your big apple is bigger than mine. And my small apple is smaller than yours."
   },
-  "line.s1_daily": {
-    "who": "lisek",
-    "text": "It's the same at home. Mum has big shoes and you have small ones. Your shoes are smaller."
-  },
   "line.s2_thirsty": {
     "who": "wiewiorka",
     "text": "I'm thirsty! Which cup is for me?"
@@ -115,46 +111,6 @@
     "who": "lisek",
     "text": "Thank you! A big apple for a big hunger."
   },
-  "line.s3_sq_flower": {
-    "who": "wiewiorka",
-    "text": "I want to put a flower behind my ear. There are two flowers."
-  },
-  "line.s3_fox_too_big": {
-    "who": "lisek",
-    "text": "The big one is bigger than your head! It won't stay."
-  },
-  "line.s3_pick_smaller": {
-    "who": "wiewiorka",
-    "text": "Point to the smaller flower. That one fits behind my ear."
-  },
-  "line.s3_wrong": {
-    "who": "wiewiorka",
-    "text": "That one is too big. Point to the smaller one."
-  },
-  "line.s3_sq_thanks": {
-    "who": "wiewiorka",
-    "text": "It fits! The small flower is smaller than my ear."
-  },
-  "line.s4_fox_ball": {
-    "who": "lisek",
-    "text": "Shall we play ball? The biggest one is best for kicking."
-  },
-  "line.s4_sq_three": {
-    "who": "wiewiorka",
-    "text": "There are three balls: small, medium and big."
-  },
-  "line.s4_pick_biggest": {
-    "who": "lisek",
-    "text": "Point to the biggest ball."
-  },
-  "line.s4_wrong": {
-    "who": "lisek",
-    "text": "There is a bigger one. Look for the biggest."
-  },
-  "line.s4_fox_thanks": {
-    "who": "lisek",
-    "text": "Yes! The biggest ball. Let's kick!"
-  },
   "line.s5_sq_cookies": {
     "who": "wiewiorka",
     "text": "Snack time. I have two cookies: a small one and a big one."
@@ -207,5 +163,65 @@
   "line.s0_fell": {
     "who": "wiewiorka",
     "text": "Hop! Two apples fell down. One big, one small."
+  },
+  "line.j1_to_forest": {
+    "who": "lisek",
+    "text": "And now let's go to the forest. There are pine cones there!"
+  },
+  "line.j1_forest": {
+    "who": "wiewiorka",
+    "text": "We are in the forest. It smells so good!"
+  },
+  "line.j1_cones": {
+    "who": "wiewiorka",
+    "text": "Look, two pine cones. One big, one small. I'll keep the big one for winter."
+  },
+  "line.j1_pick_big_cone": {
+    "who": "lisek",
+    "text": "Help Squirrel. Point to the bigger cone."
+  },
+  "line.j1_wrong_cone": {
+    "who": "lisek",
+    "text": "That is the smaller cone. Look for the bigger one."
+  },
+  "line.j1_cone_thanks": {
+    "who": "wiewiorka",
+    "text": "Thank you! The bigger cone has more seeds."
+  },
+  "line.j1_leaf_falls": {
+    "who": "lisek",
+    "text": "Ooh, look! A leaf is falling from the tree, spinning in the air."
+  },
+  "line.j1_leaf_hat": {
+    "who": "wiewiorka",
+    "text": "I want a leaf behind my ear, like a hat. The big one is bigger than my head!"
+  },
+  "line.j1_pick_small_leaf": {
+    "who": "lisek",
+    "text": "Point to the smaller leaf."
+  },
+  "line.j1_wrong_leaf": {
+    "who": "lisek",
+    "text": "That one is too big. Point to the smaller one."
+  },
+  "line.j1_leaf_thanks": {
+    "who": "wiewiorka",
+    "text": "It fits! The small leaf is smaller than my ear."
+  },
+  "line.j1_cold": {
+    "who": "lisek",
+    "text": "Brr, it's getting cold. Let's go home for a snack!"
+  },
+  "line.j1_spoons": {
+    "who": "lisek",
+    "text": "We need spoons to eat. There is a big one and a small one."
+  },
+  "line.j1_pick_small_spoon": {
+    "who": "wiewiorka",
+    "text": "My mouth is small. Point to the smaller spoon, that one is for me."
+  },
+  "line.j1_wrong_spoon": {
+    "who": "wiewiorka",
+    "text": "That one is too big for me. Point to the smaller one."
   }
 }

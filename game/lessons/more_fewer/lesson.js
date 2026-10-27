@@ -86,13 +86,12 @@ export default {
   backgrounds: { story: "laka", practice: "las", apply: "dom" },
   stages: {
     story: [
-      // 1. picnic: are there enough plates for the cups? pairing; the child finds the one without a pair
+      // A. lake picnic: cups and plates, the runaway cup, pairing, the one without a pair, the first sign
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
         await c.say("lisek", "line.s1_intro");
         const cups = await pile(c, "kubek", 3), plates = await pile(c, "talerz", 2);
         lay(c, cups, plates);
-        // action: the wind rolls one cup down to the water; the child spots it, Fox runs and brings it back
         await c.say("sowa", "line.s0_roll", { anim: "Rozgladanie" });
         const runaway = cups[cups.length - 1];
         await runaway.moveTo(5.4, -1.2, 1.1);
@@ -113,28 +112,51 @@ export default {
         await c.task({ targets: [...cups, ...plates], correct: left, wrong: "line.s1_wrong_left" });
         await c.say("lisek", "line.s1_result");
         await c.say("sowa", "line.s1_owl_fewer");
-        await c.say("sowa", "line.s1_daily");
+        await c.say("sowa", "line.s2_signs");
+        await c.say("sowa", "line.s2_more_sign");
+        await askSign(c, cups, plates, "sowa", "line.s2_pick_gt", ["<", ">"], "line.s2_good_gt");
+        await c.say("sowa", "line.j2_to_garden");
         c.clear();
       },
-      // 2. the signs: the hungry mouth opens towards "more" - the child picks the sign each time
+      // B. vegetable garden: carrots and flowers - as many, then more flowers; where is more?
       async (c) => {
-        await c.say("sowa", "line.s2_signs");
-        const cups = await pile(c, "kubek", 3), plates = await pile(c, "talerz", 2);
-        lay(c, cups, plates, false, SLOT);
-        await c.say("sowa", "line.s2_more_sign");
-        let sign = await askSign(c, cups, plates, "sowa", "line.s2_pick_gt", ["<", ">"], "line.s2_good_gt");
-        await c.say("lisek", "line.s2_fox_add");
-        const extra = await c.object("talerz", { x: 5.6, y: Y + 1.6, size: SZ });
-        plates.push(extra); sign.remove();
-        await c.say("lisek", "line.s2_equal_sign");
-        sign = await askSign(c, cups, plates, "lisek", "line.s2_pick_eq", ["<", "=", ">"], "line.s2_good_eq");
-        await c.say("sowa", "line.s2_owl_less");
-        for (const h of cups.splice(1)) h.remove();
+        await c.go("ogrod", { enter: true });
+        await Promise.all([c.enter("lisek"), c.enter("sowa")]);
+        await c.say("lisek", "line.j2_garden");
+        const carrots = await pile(c, "marchewka", 3);
+        await c.say("lisek", "line.j2_carrots", { anim: "Wskazanie" });
+        const flowers = await pile(c, "kwiatek", 3);
+        lay(c, carrots, flowers, true, SLOT); await c.wait(0.8);
+        await c.say("sowa", "line.j2_flowers");
+        await c.say("lisek", "line.j2_check");
+        await pair(c, carrots, flowers);
+        await c.say("sowa", "line.j2_equal");
+        let sign = await askSign(c, carrots, flowers, "lisek", "line.s2_pick_eq", ["<", "=", ">"], "line.j2_good_eq");
+        // action: Owl finds one more flower under the fence
+        await c.say("sowa", "line.j2_one_more", { anim: "Rozgladanie" });
+        const extra = await c.object("kwiatek", { x: 5.6, y: Y + 1.4, size: SZ });
+        flowers.push(extra); sign.remove();
+        await c.say("sowa", "line.j2_now_fewer");
+        sign = await askSign(c, carrots, flowers, "sowa", "line.s2_pick_lt", ["<", "=", ">"], "line.j2_good_lt");
         sign.remove();
-        await c.say("sowa", "line.s2_less_sign");
-        sign = await askSign(c, cups, plates, "sowa", "line.s2_pick_lt", ["<", "=", ">"], "line.s2_good_lt");
-        sign.remove();
-        await askMore(c, cups, plates, "lisek", "line.s2_which_more");
+        await askMore(c, carrots, flowers, "lisek", "line.s2_which_more");
+        await c.say("lisek", "line.j2_to_home");
+        c.clear();
+      },
+      // C. kitchen: cookies for the cups - a cookie for every cup
+      async (c) => {
+        await c.go("dom", { enter: true });
+        await Promise.all([c.enter("lisek"), c.enter("sowa")]);
+        await c.say("sowa", "line.j2_kitchen");
+        const cups = await pile(c, "kubek", 3), cookies = await pile(c, "ciastko", 2);
+        lay(c, cups, cookies);
+        await c.say("lisek", "line.j2_cookies_check");
+        await pair(c, cups, cookies);
+        await c.say("sowa", "line.j2_one_missing");
+        await c.say("lisek", "line.j2_bake_one");
+        const extra = await c.object("ciastko", { x: 5.6, y: Y + 1.4, size: SZ });
+        cookies.push(extra);
+        await askSign(c, cups, cookies, "lisek", "line.s2_pick_eq", ["<", "=", ">"], "line.j2_good_eq2");
         await c.say("lisek", "line.s2_summary", { anim: "Radosc" });
         c.clear();
       },
