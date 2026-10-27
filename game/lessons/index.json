@@ -1,0 +1,10 @@
+{
+  "lessons": [
+    { "id": "bigger_smaller", "title": { "pl": "Większy, mniejszy", "en": "Bigger, smaller" },
+      "subtitle": { "pl": "porównywanie wielkości", "en": "comparing size" } },
+    { "id": "more_fewer", "title": { "pl": "Więcej, mniej", "en": "More, fewer" },
+      "subtitle": { "pl": "porównywanie ilości i znaki =, <, >", "en": "comparing amounts and the signs =, <, >" } },
+    { "id": "grouping", "title": { "pl": "Grupowanie", "en": "Grouping" },
+      "subtitle": { "pl": "co do czego pasuje", "en": "what goes with what" } }
+  ]
+}

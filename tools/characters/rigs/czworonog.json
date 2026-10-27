@@ -1,0 +1,1147 @@
+{
+ "rig": "czworonog",
+ "kosci": {
+  "biodra": {
+   "rodzic": null,
+   "widok": "przod",
+   "czesc": null
+  },
+  "tulow": {
+   "rodzic": "biodra",
+   "widok": "przod",
+   "czesc": "tulow",
+   "z": 0.0
+  },
+  "ogon": {
+   "rodzic": "biodra",
+   "widok": "przod",
+   "czesc": "ogon",
+   "z": -0.08,
+   "opcjonalna": true
+  },
+  "glowa": {
+   "rodzic": "tulow",
+   "widok": "przod",
+   "czesc": "glowa",
+   "z": 0.04,
+   "os_wzgledna": [
+    0.5,
+    0.6
+   ]
+  },
+  "noga_l": {
+   "rodzic": "biodra",
+   "widok": "przod",
+   "czesc": "noga_l",
+   "z": 0.1,
+   "za_tulowiem": true
+  },
+  "noga_p": {
+   "rodzic": "biodra",
+   "widok": "przod",
+   "czesc": "noga_p",
+   "z": 0.1,
+   "za_tulowiem": true
+  },
+  "noga_tl": {
+   "rodzic": "biodra",
+   "widok": "przod",
+   "czesc": "noga_tl",
+   "z": -0.03
+  },
+  "noga_tp": {
+   "rodzic": "biodra",
+   "widok": "przod",
+   "czesc": "noga_tp",
+   "z": -0.03
+  },
+  "p_biodra": {
+   "rodzic": null,
+   "widok": "profil",
+   "czesc": null
+  },
+  "p_cialo": {
+   "rodzic": "p_biodra",
+   "widok": "profil",
+   "czesc": "p_cialo",
+   "z": 0.0
+  },
+  "p_glowa": {
+   "rodzic": "p_cialo",
+   "widok": "profil",
+   "czesc": "p_glowa",
+   "z": 0.04,
+   "os_wzgledna": [
+    0.3,
+    0.7
+   ]
+  },
+  "p_noga_pp": {
+   "rodzic": "p_cialo",
+   "widok": "profil",
+   "czesc": "p_noga_pp",
+   "z": 0.02,
+   "z_uniesiona": 0.1
+  },
+  "p_noga_pd": {
+   "rodzic": "p_cialo",
+   "widok": "profil",
+   "czesc": "p_noga_pd",
+   "z": -0.03
+  },
+  "p_noga_tp": {
+   "rodzic": "p_cialo",
+   "widok": "profil",
+   "czesc": "p_noga_tp",
+   "z": 0.02
+  },
+  "p_noga_td": {
+   "rodzic": "p_cialo",
+   "widok": "profil",
+   "czesc": "p_noga_td",
+   "z": -0.03
+  },
+  "p_ogon": {
+   "rodzic": "p_cialo",
+   "widok": "profil",
+   "czesc": "p_ogon",
+   "z": -0.08,
+   "opcjonalna": true
+  },
+  "t_biodra": {
+   "rodzic": null,
+   "widok": "tyl",
+   "czesc": null
+  },
+  "t_tulow": {
+   "rodzic": "t_biodra",
+   "widok": "tyl",
+   "czesc": "t_tulow",
+   "z": 0.0
+  },
+  "t_glowa": {
+   "rodzic": "t_tulow",
+   "widok": "tyl",
+   "czesc": "glowa_tyl",
+   "z": 0.04,
+   "os_wzgledna": [
+    0.5,
+    0.6
+   ]
+  },
+  "t_noga_l": {
+   "rodzic": "t_biodra",
+   "widok": "tyl",
+   "czesc": "t_noga_l",
+   "z": -0.02
+  },
+  "t_noga_p": {
+   "rodzic": "t_biodra",
+   "widok": "tyl",
+   "czesc": "t_noga_p",
+   "z": -0.02
+  },
+  "t_noga_tl": {
+   "rodzic": "t_biodra",
+   "widok": "tyl",
+   "czesc": "t_noga_tl",
+   "z": -0.03
+  },
+  "t_noga_tp": {
+   "rodzic": "t_biodra",
+   "widok": "tyl",
+   "czesc": "t_noga_tp",
+   "z": -0.03
+  },
+  "t_ogon": {
+   "rodzic": "t_biodra",
+   "widok": "tyl",
+   "czesc": "t_ogon",
+   "z": 0.03,
+   "opcjonalna": true
+  }
+ },
+ "glowy": {
+  "przod": "glowa",
+  "bok": "glowa_bok",
+  "tyl": "glowa_tyl",
+  "profil": "p_glowa"
+ },
+ "lokomocja": [
+  "Chod",
+  "Skradanie"
+ ],
+ "animacje": {
+  "Spoczynek": {
+   "czas": 3.0,
+   "petla": true,
+   "mikro": true,
+   "tory": {
+    "tulow_skala": [
+     [
+      0,
+      1.0
+     ],
+     [
+      0.5,
+      1.01
+     ],
+     [
+      1,
+      1.0
+     ]
+    ],
+    "p_ogon": [
+     [
+      0,
+      0
+     ],
+     [
+      0.5,
+      8
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   }
+  },
+  "Chod": {
+   "czas": 0.8,
+   "petla": true,
+   "kierunek": "profil",
+   "predkosc": 1.2,
+   "tory": {
+    "p_noga_pp": [
+     [
+      0,
+      22
+     ],
+     [
+      0.5,
+      -22
+     ],
+     [
+      1,
+      22
+     ]
+    ],
+    "p_noga_td": [
+     [
+      0,
+      22
+     ],
+     [
+      0.5,
+      -22
+     ],
+     [
+      1,
+      22
+     ]
+    ],
+    "p_noga_pd": [
+     [
+      0,
+      -22
+     ],
+     [
+      0.5,
+      22
+     ],
+     [
+      1,
+      -22
+     ]
+    ],
+    "p_noga_tp": [
+     [
+      0,
+      -22
+     ],
+     [
+      0.5,
+      22
+     ],
+     [
+      1,
+      -22
+     ]
+    ],
+    "p_glowa": [
+     [
+      0,
+      3
+     ],
+     [
+      0.5,
+      -3
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "p_ogon": [
+     [
+      0,
+      5
+     ],
+     [
+      0.5,
+      -5
+     ],
+     [
+      1,
+      5
+     ]
+    ]
+   },
+   "skok": [
+    [
+     0,
+     0
+    ],
+    [
+     0.25,
+     0.02
+    ],
+    [
+     0.5,
+     0
+    ],
+    [
+     0.75,
+     0.02
+    ],
+    [
+     1,
+     0
+    ]
+   ]
+  },
+  "Skradanie": {
+   "czas": 1.4,
+   "petla": true,
+   "kierunek": "profil",
+   "predkosc": 0.5,
+   "tory": {
+    "p_noga_pp": [
+     [
+      0,
+      25
+     ],
+     [
+      0.5,
+      -25
+     ],
+     [
+      1,
+      25
+     ]
+    ],
+    "p_noga_td": [
+     [
+      0,
+      25
+     ],
+     [
+      0.5,
+      -25
+     ],
+     [
+      1,
+      25
+     ]
+    ],
+    "p_noga_pd": [
+     [
+      0,
+      -25
+     ],
+     [
+      0.5,
+      25
+     ],
+     [
+      1,
+      -25
+     ]
+    ],
+    "p_noga_tp": [
+     [
+      0,
+      -25
+     ],
+     [
+      0.5,
+      25
+     ],
+     [
+      1,
+      -25
+     ]
+    ],
+    "p_glowa": [
+     [
+      0,
+      14
+     ],
+     [
+      1,
+      14
+     ]
+    ]
+   },
+   "skok": [
+    [
+     0,
+     0
+    ],
+    [
+     0.5,
+     -0.03
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "oczy": "pol"
+  },
+  "Mowienie": {
+   "czas": 4.0,
+   "petla": true,
+   "tory": {
+    "glowa": [
+     [
+      0,
+      0
+     ],
+     [
+      0.2,
+      1.5
+     ],
+     [
+      0.5,
+      -1.2
+     ],
+     [
+      0.8,
+      1.0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "p_glowa": [
+     [
+      0,
+      0
+     ],
+     [
+      0.3,
+      -3
+     ],
+     [
+      0.7,
+      2
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   }
+  },
+  "Podskok": {
+   "czas": 1.1,
+   "petla": false,
+   "tory": {
+    "noga_l": [
+     [
+      0,
+      0.0
+     ],
+     [
+      0.3,
+      6.0
+     ],
+     [
+      0.7,
+      6.0
+     ],
+     [
+      1,
+      0.0
+     ]
+    ],
+    "noga_p": [
+     [
+      0,
+      0.0
+     ],
+     [
+      0.3,
+      6.0
+     ],
+     [
+      0.7,
+      6.0
+     ],
+     [
+      1,
+      0.0
+     ]
+    ],
+    "p_noga_pp": [
+     [
+      0,
+      0
+     ],
+     [
+      0.3,
+      -45
+     ],
+     [
+      0.7,
+      -45
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "p_noga_pd": [
+     [
+      0,
+      0
+     ],
+     [
+      0.3,
+      -40
+     ],
+     [
+      0.7,
+      -40
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "tulow_skala": [
+     [
+      0,
+      1
+     ],
+     [
+      0.12,
+      0.92
+     ],
+     [
+      0.3,
+      1.04
+     ],
+     [
+      0.75,
+      1.04
+     ],
+     [
+      0.9,
+      0.96
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "skok": [
+    [
+     0,
+     0
+    ],
+    [
+     0.12,
+     0
+    ],
+    [
+     0.45,
+     0.35
+    ],
+    [
+     0.8,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "usta": "usmiech"
+  },
+  "Radosc": {
+   "czas": 2.0,
+   "petla": false,
+   "tory": {
+    "noga_l": [
+     [
+      0,
+      0.0
+     ],
+     [
+      0.2,
+      8.0
+     ],
+     [
+      0.35,
+      3.8
+     ],
+     [
+      0.5,
+      8.0
+     ],
+     [
+      0.65,
+      3.8
+     ],
+     [
+      0.8,
+      8.0
+     ],
+     [
+      1,
+      0.0
+     ]
+    ],
+    "noga_p": [
+     [
+      0,
+      0.0
+     ],
+     [
+      0.2,
+      8.0
+     ],
+     [
+      0.35,
+      3.8
+     ],
+     [
+      0.5,
+      8.0
+     ],
+     [
+      0.65,
+      3.8
+     ],
+     [
+      0.8,
+      8.0
+     ],
+     [
+      1,
+      0.0
+     ]
+    ],
+    "p_noga_pp": [
+     [
+      0,
+      0
+     ],
+     [
+      0.2,
+      -80
+     ],
+     [
+      0.8,
+      -80
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "p_noga_pd": [
+     [
+      0,
+      0
+     ],
+     [
+      0.2,
+      -70
+     ],
+     [
+      0.8,
+      -70
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "p_cialo": [
+     [
+      0,
+      0
+     ],
+     [
+      0.2,
+      15
+     ],
+     [
+      0.8,
+      15
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "skok": [
+    [
+     0,
+     0
+    ],
+    [
+     0.3,
+     0.16
+    ],
+    [
+     0.45,
+     0
+    ],
+    [
+     0.6,
+     0.16
+    ],
+    [
+     0.75,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "usta": "usmiech",
+   "oczy": "zamkniete"
+  },
+  "Zgloszenie": {
+   "czas": 2.4,
+   "petla": false,
+   "tory": {
+    "p_noga_pp": [
+     [
+      0,
+      0
+     ],
+     [
+      0.2,
+      -125
+     ],
+     [
+      0.4,
+      -118
+     ],
+     [
+      0.5,
+      -128
+     ],
+     [
+      0.6,
+      -118
+     ],
+     [
+      0.8,
+      -125
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "usta": "usmiech",
+   "oczy": "zdziwione",
+   "kierunek": "profil"
+  },
+  "Wskazanie": {
+   "czas": 2.0,
+   "petla": false,
+   "tory": {
+    "glowa": [
+     [
+      0,
+      0
+     ],
+     [
+      0.25,
+      -4
+     ],
+     [
+      0.8,
+      -4
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "p_noga_pp": [
+     [
+      0,
+      0
+     ],
+     [
+      0.25,
+      -70
+     ],
+     [
+      0.8,
+      -70
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "patrz": "prawo",
+   "kierunek": "profil"
+  },
+  "Machanie": {
+   "czas": 2.2,
+   "petla": false,
+   "tory": {
+    "p_noga_pp": [
+     [
+      0,
+      0
+     ],
+     [
+      0.2,
+      -120
+     ],
+     [
+      0.35,
+      -100
+     ],
+     [
+      0.5,
+      -120
+     ],
+     [
+      0.65,
+      -100
+     ],
+     [
+      0.8,
+      -120
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "usta": "usmiech",
+   "kierunek": "profil"
+  },
+  "Kiwanie": {
+   "czas": 2.0,
+   "petla": true,
+   "tory": {
+    "biodra": [
+     [
+      0,
+      0
+     ],
+     [
+      0.25,
+      8
+     ],
+     [
+      0.5,
+      0
+     ],
+     [
+      0.75,
+      -8
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "glowa": [
+     [
+      0,
+      0
+     ],
+     [
+      0.25,
+      -4
+     ],
+     [
+      0.5,
+      0
+     ],
+     [
+      0.75,
+      4
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "usta": "usmiech"
+  },
+  "Smutek": {
+   "czas": 2.5,
+   "petla": false,
+   "tory": {
+    "glowa": [
+     [
+      0,
+      0
+     ],
+     [
+      0.3,
+      5
+     ],
+     [
+      0.8,
+      5
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "glowa_x": [
+     [
+      0,
+      0
+     ],
+     [
+      0.3,
+      -8
+     ],
+     [
+      0.8,
+      -8
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "p_glowa": [
+     [
+      0,
+      0
+     ],
+     [
+      0.3,
+      12
+     ],
+     [
+      0.8,
+      12
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "p_ogon": [
+     [
+      0,
+      0
+     ],
+     [
+      0.3,
+      15
+     ],
+     [
+      0.8,
+      15
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "usta": "smutne",
+   "oczy": "pol"
+  },
+  "Brawo": {
+   "czas": 2.4,
+   "petla": false,
+   "tory": {
+    "noga_l": [
+     [
+      0,
+      0.0
+     ],
+     [
+      0.2,
+      8.0
+     ],
+     [
+      0.3,
+      3.2
+     ],
+     [
+      0.4,
+      8.0
+     ],
+     [
+      0.5,
+      3.2
+     ],
+     [
+      0.6,
+      8.0
+     ],
+     [
+      0.7,
+      3.2
+     ],
+     [
+      0.8,
+      8.0
+     ],
+     [
+      1,
+      0.0
+     ]
+    ],
+    "noga_p": [
+     [
+      0,
+      0.0
+     ],
+     [
+      0.2,
+      8.0
+     ],
+     [
+      0.3,
+      3.2
+     ],
+     [
+      0.4,
+      8.0
+     ],
+     [
+      0.5,
+      3.2
+     ],
+     [
+      0.6,
+      8.0
+     ],
+     [
+      0.7,
+      3.2
+     ],
+     [
+      0.8,
+      8.0
+     ],
+     [
+      1,
+      0.0
+     ]
+    ]
+   },
+   "skok": [
+    [
+     0,
+     0
+    ],
+    [
+     0.3,
+     0.03
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.5,
+     0.03
+    ],
+    [
+     0.6,
+     0
+    ],
+    [
+     0.7,
+     0.03
+    ],
+    [
+     0.8,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "usta": "usmiech"
+  },
+  "Rozgladanie": {
+   "czas": 3.2,
+   "petla": false,
+   "tory": {},
+   "patrz_sekwencja": [
+    [
+     0,
+     "prawo"
+    ],
+    [
+     0.4,
+     "lewo"
+    ],
+    [
+     0.8,
+     "przod"
+    ]
+   ],
+   "oczy": "zdziwione"
+  },
+  "Obrot": {
+   "czas": 1.6,
+   "petla": false,
+   "tory": {},
+   "patrz_sekwencja": [
+    [
+     0,
+     "prawo"
+    ],
+    [
+     0.25,
+     "tyl"
+    ],
+    [
+     0.6,
+     "lewo"
+    ],
+    [
+     0.85,
+     "przod"
+    ]
+   ]
+  }
+ }
+}

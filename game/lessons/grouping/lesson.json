@@ -1,0 +1,27 @@
+{
+  "id": "grouping",
+  "title": {
+    "pl": "Grupowanie",
+    "en": "Grouping"
+  },
+  "goal": "Sort things by a named criterion (kind, what it is for, colour, size) and notice that the same things can be grouped by different rules.",
+  "age": "3-4",
+  "characters": [
+    "wiewiorka",
+    "sarenka"
+  ],
+  "backgrounds": [
+    "pokoj",
+    "dom"
+  ],
+  "objects": [
+    "jablko",
+    "gruszka",
+    "kubek",
+    "talerz",
+    "pilka",
+    "ciastko",
+    "skarpetka",
+    "kwiatek"
+  ]
+}

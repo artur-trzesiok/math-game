@@ -1,0 +1,299 @@
+// Lalka wycinankowa sterowana danymi: postac.json (czesci, kosci, osie,
+// twarz, animacje) -> drzewo Object3D z teksturowanymi czworokatami.
+// Animacje to klatki kluczowe per kosc w JSON (stopnie, czas jako ulamek),
+// interpolowane gladko; do tego mruganie, lipsync z amplitudy i widoki
+// (przod / bok / tyl / profil) z podmiana glowy.
+
+import * as THREE from "three";
+
+const DEG = Math.PI / 180;
+const ladowacz = new THREE.TextureLoader();
+function tekstura(url) {
+  return new Promise((ok, zle) => ladowacz.load(url, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, zle));
+}
+// interpolacja toru [[t, v], ...] (t w 0..1), gladka miedzy klatkami
+function tor(klatki, u) {
+  if (!klatki || !klatki.length) return 0;
+  if (u <= klatki[0][0]) return klatki[0][1];
+  for (let i = 1; i < klatki.length; i++) {
+    if (u <= klatki[i][0]) {
+      const [t0, v0] = klatki[i - 1], [t1, v1] = klatki[i];
+      let s = (u - t0) / Math.max(1e-6, t1 - t0);
+      s = s * s * (3 - 2 * s);
+      return v0 + (v1 - v0) * s;
+    }
+  }
+  return klatki[klatki.length - 1][1];
+}
+function sekwencja(lista, u) {
+  let v = null;
+  for (const [t, w] of lista) if (u >= t) v = w;
+  return v;
+}
+
+export class Lalka {
+  static klatki = 0;                       // >0: krokowanie lalki (np. 12)
+
+  static async wczytaj(katalog, opis = {}) {
+    const dane = await (await fetch(katalog + "postac.json", { cache: "no-store" })).json();
+    return new Lalka(dane, await Lalka.tekstury(katalog, dane), opis);
+  }
+  static async tekstury(katalog, dane) {
+    const tex = {}, t = Date.now();
+    await Promise.all(Object.keys(dane.czesci).map(async (n) => { tex[n] = await tekstura(`${katalog}czesci/${dane.czesci[n].plik}?t=${t}`); }));
+    return tex;
+  }
+
+  constructor(dane, tex, opis) {
+    this.dane = dane; this.tex = tex;
+    this.wysokosc = opis.wysokosc ?? dane.wysokosc;
+    this.strona = opis.strona || "lewo";
+    this.skala = this.wysokosc / (dane.kadr.dol - dane.kadr.gora);
+    this.skalaP = this.wysokosc / (dane.kadr_profil.dol - dane.kadr_profil.gora);
+    this.skalaT = dane.kadr_tyl ? this.wysokosc / (dane.kadr_tyl.dol - dane.kadr_tyl.gora) : this.skala;
+    this.kierunek = "przod"; this.kierunekBazowy = "przod"; this.widokWymuszony = null;
+    this.mowi = false; this.amplituda = 0; this.ustaStan = "zamkniete"; this.ustaOd = 0;
+    this.emocja = { oczy: "otwarte", usta: "zamkniete" };
+    this.mruganie = -1; this.nastepneMrugniecie = 2 + Math.random() * 3;
+    this.t = 0; this.ta = 0; this.akcja = null; this.naKoniec = null;
+    this.mikro = { od: {}, cel: {}, start: 0, nastepny: 1 + Math.random() * 2 };
+    this.faza = Math.random() * 6.28;
+    this.stencil = (Lalka.licznikStencil = ((Lalka.licznikStencil || 0) % 254) + 1);   // maska tulowia tej lalki
+    this._zbuduj();
+    this.spoczynek();
+  }
+
+  // ------------------------------------------------------------ budowa
+  _kadr(w) { return w === "profil" || w === true ? this.dane.kadr_profil : w === "tyl" ? this.dane.kadr_tyl : this.dane.kadr; }
+  _skala(w) { return w === "profil" || w === true ? this.skalaP : w === "tyl" ? this.skalaT : this.skala; }
+  _sw(px, py, widok) {
+    const k = this._kadr(widok), s = this._skala(widok);
+    return [(px - k.w / 2) * s, (k.dol - py) * s];
+  }
+  _plane(nazwa, os, z, widok, bb = this.dane.czesci[nazwa]) {
+    const s = this._skala(widok);
+    const g = new THREE.PlaneGeometry(bb.w * s, bb.h * s);
+    g.translate((bb.x + bb.w / 2 - os[0]) * s, -(bb.y + bb.h / 2 - os[1]) * s, 0);
+    const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: this.tex[nazwa], transparent: true, alphaTest: 0.05, side: THREE.DoubleSide }));
+    m.position.z = z; m.userData.czesc = nazwa; m.frustumCulled = false;
+    return m;
+  }
+
+  _zbuduj() {
+    const d = this.dane, c = d.czesci;
+    this.korzen = new THREE.Group();
+    this.kosci = {};
+    this.widokGrupy = { przod: new THREE.Group(), profil: new THREE.Group(), tyl: new THREE.Group() };
+    this.korzen.add(this.widokGrupy.przod, this.widokGrupy.profil, this.widokGrupy.tyl);
+    this.widokGrupy.profil.visible = false; this.widokGrupy.tyl.visible = false;
+    // korzenie: biodra = dol tulowia danego widoku
+    const tulowWidoku = { przod: "tulow", profil: "p_cialo", tyl: "t_tulow" };
+    for (const [k, o] of Object.entries(d.kosci)) {
+      if (o.rodzic) continue;
+      const cz = c[tulowWidoku[o.widok]];
+      if (!cz) continue;                       // view without pieces (older character)
+      const os = [cz.x + cz.w / 2, cz.y + cz.h];
+      const g = new THREE.Group();
+      const [x, y] = this._sw(os[0], os[1], o.widok);
+      g.position.set(x, y, 0);
+      g.userData = { os, widok: o.widok, bazaY: y };
+      this.widokGrupy[o.widok].add(g);
+      this.kosci[k] = g;
+    }
+    // reszta kosci w kolejnosci rodzicow
+    let zostalo = Object.entries(d.kosci).filter(([k]) => !this.kosci[k]);
+    while (zostalo.length) {
+      const nast = [];
+      for (const [k, o] of zostalo) {
+        const rodzic = this.kosci[o.rodzic];
+        if (!rodzic) { nast.push([k, o]); continue; }
+        const cz = o.czesc && c[o.czesc];
+        if (!cz) { if (!o.opcjonalna) console.warn("brak czesci", o.czesc); continue; }
+        const s = this._skala(o.widok);
+        const os = cz.os || [cz.x + cz.w / 2, cz.y];
+        const g = new THREE.Group();
+        const ro = rodzic.userData.os;
+        g.position.set((os[0] - ro[0]) * s, -(os[1] - ro[1]) * s, o.z ?? 0);
+        g.userData = { os, widok: o.widok, z: o.z ?? 0, zUniesiona: o.z_uniesiona, czesc: o.czesc, bazaY: g.position.y };
+        const m = this._plane(o.czesc, os, 0, o.widok);
+        // "za tulowiem, ale przed glowa": element lezy nad glowa, a tulow wycina go w stencilu tam, gdzie sie nakladaja
+        if (o.czesc === "tulow") Object.assign(m.material, { stencilWrite: true, stencilRef: this.stencil, stencilFunc: THREE.AlwaysStencilFunc, stencilZPass: THREE.ReplaceStencilOp });
+        if (o.za_tulowiem) Object.assign(m.material, { stencilWrite: true, stencilRef: this.stencil, stencilFunc: THREE.NotEqualStencilFunc, stencilWriteMask: 0 });
+        g.add(m);
+        rodzic.add(g); this.kosci[k] = g;
+      }
+      if (nast.length === zostalo.length) break;
+      zostalo = nast;
+    }
+    // glowy: trzy widoki na tej samej kosci "glowa" (przod), kazda ze swojego kadru;
+    // glowa bok/tyl siedzi w podgrupie z wlasna osia (cz.os, domyslnie os glowy z przodu),
+    // ktora przejmuje obrot kosci, gdy ten widok jest aktywny
+    this.widoki = {}; this.widokiGrupy = {};
+    const gl = this.kosci.glowa;
+    if (gl) {
+      this.widoki.przod = gl.children[0];
+      for (const w of ["bok", "tyl"]) {
+        const n = d.glowy[w], cz = c[n];
+        if (!cz || (w === "tyl" && this.kosci.t_tulow)) continue;
+        const osG = gl.userData.os, os = cz.os || osG, s = this.skala;
+        const sub = new THREE.Group();
+        sub.position.set((os[0] - osG[0]) * s, -(os[1] - osG[1]) * s, 0);
+        sub.userData = { os, bx: sub.position.x, widok: w };
+        const m = this._plane(n, os, 0, false);
+        m.visible = false; sub.add(m); gl.add(sub); this.widoki[w] = m; this.widokiGrupy[w] = sub;
+      }
+    }
+    // warianty twarzy per widok
+    this.twarze = {}; this.twarzeGrupy = {};
+    for (const [widok, przyrostek, kosc] of [["przod", "", "glowa"], ["bok", "_bok", "glowa"], ["profil", "_profil", "p_glowa"]]) {
+      const cel = d.twarz[widok], g = this.widokiGrupy[widok] || this.kosci[kosc];   // twarz bok/tyl w podgrupie tej glowy
+      if (!cel || !g) continue;
+      const glowaCz = c[widok === "profil" ? "p_glowa" : widok === "bok" ? d.glowy.bok : "glowa"];
+      const osG = g.userData.os, profil = widok === "profil" ? "profil" : "przod", s = this._skala(profil);
+      const zestaw = { oczy: {}, usta: {} };
+      // kontener twarzy w osi glowy (lustro, obrot glowy bok/tyl) -> grupa celu w jego srodku (wlasny obrot) -> warianty
+      const kont = new THREE.Group(); g.add(kont); this.twarzeGrupy[widok] = kont;
+      const grupyCelu = {};
+      for (const [n, cz] of Object.entries(c)) {
+        const baza = przyrostek ? (n.endsWith(przyrostek) ? n.slice(0, -przyrostek.length) : null) : (/_(bok|profil)$/.test(n) ? null : n);
+        if (!baza) continue;
+        const t = baza.startsWith("oczy_") ? "oczy" : baza.startsWith("usta_") ? "usta" : null;
+        if (!t || !cel[t]) continue;
+        const bazowy = c[(t === "usta" ? "usta_usmiech" : "oczy_otwarte") + przyrostek] || cz;
+        const rb = bazowy.rdzen || { x: 0, y: 0, w: bazowy.w, h: bazowy.h };
+        const r = cz.rdzen || { x: 0, y: 0, w: cz.w, h: cz.h };
+        const k = cel[t].w / rb.w;
+        const y = t === "usta" ? cel[t].y - r.y * k : cel[t].y + cel[t].h - (r.y + r.h) * k;
+        const bb = { x: cel[t].x + cel[t].w / 2 - (r.x + r.w / 2) * k, y, w: cz.w * k, h: cz.h * k };
+        const nadOczami = d.usta_nad_oczami ? t === "usta" : t === "oczy";
+        if (!grupyCelu[t]) {
+          const sr = [cel[t].x + cel[t].w / 2, cel[t].y + cel[t].h / 2], gt = new THREE.Group();
+          gt.position.set((sr[0] - osG[0]) * s, -(sr[1] - osG[1]) * s, nadOczami ? 0.03 : 0.02);
+          gt.rotation.z = -(cel[t].obrot || 0) * DEG;
+          gt.userData.cel = t; kont.add(gt); grupyCelu[t] = { g: gt, sr };
+        }
+        const m = this._plane(n, grupyCelu[t].sr, 0, profil, bb);
+        m.visible = false; grupyCelu[t].g.add(m);
+        zestaw[t][baza.slice(5)] = m;
+      }
+      this.twarze[widok] = zestaw;
+    }
+    this.korzen.userData.lalka = this;
+  }
+
+  // ------------------------------------------------------------ stan
+  _oczyTeraz() {
+    if (this.mruganie >= 0) return this.mruganie < 0.08 ? "pol" : this.mruganie < 0.2 ? "zamkniete" : "pol";
+    return this.poza.oczy || this.emocja.oczy;
+  }
+  _ustaTeraz() {
+    if (!this.mowi) return this.poza.usta || this.emocja.usta;
+    const chce = this.amplituda > 0.55 ? "o" : this.amplituda > 0.22 ? "pol" : (this.poza.usta || "zamkniete");
+    if (chce !== this.ustaStan && this.t - this.ustaOd > 0.08) { this.ustaStan = chce; this.ustaOd = this.t; }
+    return this.ustaStan;
+  }
+  _ustawTwarz() {
+    const kier = this.kierunek, wProfilu = this.wProfilu;
+    const lewo = kier === "lewo";
+    // glowa z przodu: ktory widok
+    const wTyle = this.wTyle;
+    const widokGlowy = wProfilu || wTyle ? null : kier === "tyl" ? "tyl" : (kier !== "przod" && this.widoki.bok) ? "bok" : "przod";
+    for (const [w, m] of Object.entries(this.widoki)) m.visible = w === widokGlowy;
+    const oczy = this._oczyTeraz(), usta = this._ustaTeraz();
+    for (const [w, z] of Object.entries(this.twarze)) {
+      const aktywny = wProfilu ? w === "profil" : !wTyle && w === widokGlowy;
+      const sub = this.widokiGrupy[w];
+      if (sub) { sub.scale.x = lewo ? -1 : 1; sub.position.x = (lewo ? -1 : 1) * sub.userData.bx; }   // lustro wokol osi glowy z przodu
+      for (const [n, m] of Object.entries(z.oczy)) m.visible = aktywny && n === oczy;
+      for (const [n, m] of Object.entries(z.usta)) m.visible = aktywny && n === usta;
+    }
+  }
+
+  graj(nazwa, petla = null) {
+    const a = this.dane.animacje[nazwa];
+    if (!a) return false;
+    this.akcja = { nazwa, ...a, petla: petla ?? !!a.petla }; this.ta = 0;
+    return true;
+  }
+  spoczynek() { this.graj("Spoczynek", true); if (this.akcja) this.ta = Math.random() * this.akcja.czas; }
+  mow(amp) { this.mowi = true; this.amplituda = amp; }
+  cicho() { this.mowi = false; this.amplituda = 0; }
+  patrz(k) { this.kierunekBazowy = k; }
+  get predkoscChodu() { return (this.dane.animacje.Chod?.predkosc ?? 1) * this.wysokosc / 1.5; }
+
+  // ------------------------------------------------------------ klatka
+  update(dt) {
+    this.t += dt; this.ta += dt;
+    if (Lalka.klatki) { this.akum = (this.akum || 0) + dt; if (this.akum < 1 / Lalka.klatki) return; this.akum = 0; }
+    const p = this.poza = {};
+    const a = this.akcja;
+    let u = 0;
+    if (a) {
+      u = a.czas ? this.ta / a.czas : 1;
+      if (u >= 1) {
+        if (a.petla) { u -= Math.floor(u); }
+        else { u = 1; this.spoczynek(); if (this.naKoniec) { const f = this.naKoniec; this.naKoniec = null; f(); } return this.update(0); }
+      }
+      for (const [k, kl] of Object.entries(a.tory || {})) p[k] = tor(kl, u);
+      for (const k of Object.keys(p)) if (!k.startsWith("p_") && !k.startsWith("t_") && p["t_" + k] === undefined && this.kosci["t_" + k]) p["t_" + k] = p[k];
+      if (a.skok) p.skok = tor(a.skok, u);
+      if (a.usta) p.usta = a.usta;
+      if (a.oczy) p.oczy = a.oczy;
+      if (a.patrz) p.kierunek = a.patrz === "prawo" && this.strona === "prawo" ? "lewo" : a.patrz;
+      if (a.patrz_sekwencja) p.kierunek = sekwencja(a.patrz_sekwencja, u);
+      if (a.mikro) {
+        // hold + snap: nowa mikropoza co 1.5-4 s, dojscie w 0.2 s
+        const m = this.mikro;
+        if (this.t > m.nastepny) { m.od = { ...m.cel }; m.cel = { glowa: (Math.random() - 0.5) * 3, reka_l: (Math.random() - 0.5) * 8, reka_p: (Math.random() - 0.5) * 8, p_glowa: (Math.random() - 0.5) * 4, p_ogon: (Math.random() - 0.5) * 10 };
+                                   m.start = this.t; m.nastepny = this.t + 1.5 + Math.random() * 2.5; }
+        const s = Math.min(1, (this.t - m.start) / 0.2), e = s * s * (3 - 2 * s);
+        for (const k of Object.keys(m.cel)) p[k] = (p[k] || 0) + (m.od[k] || 0) + ((m.cel[k] || 0) - (m.od[k] || 0)) * e;
+      }
+    }
+    // mruganie
+    this.nastepneMrugniecie -= dt;
+    if (this.mruganie >= 0) { this.mruganie += dt; if (this.mruganie > 0.28) { this.mruganie = -1; this.nastepneMrugniecie = 2 + Math.random() * 4; } }
+    else if (this.nastepneMrugniecie <= 0) this.mruganie = 0;
+    // widok
+    const kier = p.kierunek || this.kierunekBazowy;
+    const lokomocja = a && (this.dane.lokomocja || []).includes(a.nazwa);
+    this.wProfilu = lokomocja && kier !== "przod" && kier !== "tyl" || !!(a && a.kierunek === "profil");   // kierunek profil = always the side puppet
+    if (kier !== this.kierunek) { this.kierunek = kier; this.squash = 0.15; }
+    if (this.widokWymuszony) this.wProfilu = this.widokWymuszony === "profil";
+    this.wTyle = !this.wProfilu && kier === "tyl" && !!this.kosci.t_tulow;
+    this.widokGrupy.profil.visible = !!this.wProfilu;
+    this.widokGrupy.tyl.visible = this.wTyle;
+    this.widokGrupy.przod.visible = !this.wProfilu && !this.wTyle;
+    this.widokGrupy.profil.scale.x = kier === "lewo" ? -1 : 1;
+    this._ustawTwarz();
+    // kosci: kat w stopniach; znak: prawa strona odwrotnie (odbicie)
+    for (const [k, g] of Object.entries(this.kosci)) {
+      if (!g.userData.czesc) { g.rotation.z = -(p[k] || 0) * DEG; continue; }   // korzen: kolysanie calej lalki na stopach
+      let kat = p[k] || 0;
+      if (k.endsWith("_p") || k === "reka_p" || k === "noga_p" || k === "noga_tp") kat = -kat;
+      if (k === "glowa" || k === "p_glowa" || k === "t_glowa") kat = Math.max(-25, Math.min(25, kat));
+      if (k === "glowa") this.katGlowy = kat;
+      g.rotation.z = -(kat + (this.dane.czesci[g.userData.czesc]?.obrot || 0)) * DEG;   // obrot = base rotation of the piece, not mirrored
+      if (k === "glowa") g.rotation.x = (p.glowa_x || 0) * DEG;
+      if (g.userData.zUniesiona !== undefined) g.position.z = Math.abs(p[k] || 0) > 45 ? g.userData.zUniesiona : g.userData.z;   // uniesiona konczyna przed glowa
+      if (k === "tulow" || k === "p_cialo" || k === "t_tulow") g.scale.y = p.tulow_skala || 1;
+    }
+    for (const root of ["biodra", "p_biodra", "t_biodra"]) {
+      const g = this.kosci[root]; if (!g) continue;
+      g.position.y = g.userData.bazaY + (p.skok || 0) * this.wysokosc;
+    }
+    // squash glowy przy zwrocie; glowy bok/tyl i ich twarze maja wlasny obrot bazowy wzgledem glowy z przodu
+    const gl = this.kosci.glowa;
+    if (gl) {
+      const ob = (n) => this.dane.czesci[n]?.obrot || 0;
+      for (const w of ["bok", "tyl"]) {
+        const sub = this.widokiGrupy[w]; if (!sub) continue;
+        const aktywna = this.widoki[w].visible;
+        sub.rotation.z = aktywna ? -((this.katGlowy || 0) + ob(this.dane.glowy[w])) * DEG : 0;
+        if (aktywna) gl.rotation.z = 0;               // obrot przejmuje podgrupa, wokol wlasnej osi
+      }
+      if (this.squash > 0) { this.squash -= dt; const q = 1 - 0.1 * Math.sin(Math.max(0, this.squash) / 0.15 * Math.PI); gl.scale.set(q, 1 / q, 1); }
+      else gl.scale.set(1, 1, 1);
+    }
+  }
+}

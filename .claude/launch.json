@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "math_game",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "manager/server.py",
+        "8740"
+      ],
+      "port": 8740
+    }
+  ]
+}

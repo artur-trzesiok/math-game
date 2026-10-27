@@ -1,0 +1,11 @@
+# local scratch: screenshots, debug renders, logs
+work/
+# gpt-image outputs: the cache that lets the pipelines rebuild without regenerating (big binaries)
+tools/*/work/
+# editor backups
+game/assets/characters/*/postac.json.bak
+# python
+__pycache__/
+*.pyc
+# never
+.env

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pl">
+<meta charset="utf-8">
+<title>Manager</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1f1f1f; color: #eee; font: 13px/1.4 system-ui, sans-serif; }
+  body { display: grid; grid-template-columns: 180px 1fr; grid-template-rows: 100%; }
+  nav { background: #141414; padding: 12px 0; border-right: 1px solid #333; }
+  nav h1 { font-size: 13px; margin: 0 14px 12px; color: #9a9a9a; text-transform: uppercase; letter-spacing: .06em; }
+  nav a { display: block; padding: 8px 14px; color: #ddd; text-decoration: none; }
+  nav a.aktywny { background: #2d6cdf; color: #fff; }
+  nav a.wkrotce { color: #666; cursor: default; }
+  nav a.wkrotce small { color: #555; }
+  iframe { width: 100%; height: 100%; border: 0; background: #6f6f6f; }
+</style>
+<nav>
+  <h1>Manager</h1>
+  <a href="#postacie" class="aktywny" data-src="editor.html">Postacie</a>
+  <a class="wkrotce">Tła <small>(wkrótce)</small></a>
+  <a class="wkrotce">Obiekty <small>(wkrótce)</small></a>
+  <a class="wkrotce">Lekcje <small>(wkrótce)</small></a>
+  <a href="../game/" target="_blank">Gra ↗</a>
+</nav>
+<iframe id="modul" src="editor.html"></iframe>
+<script>
+  // one module today (the character editor); the shell is here so the next ones have a home
+  for (const a of document.querySelectorAll("nav a[data-src]")) a.onclick = (e) => {
+    e.preventDefault();
+    document.querySelectorAll("nav a").forEach((x) => x.classList.remove("aktywny")); a.classList.add("aktywny");
+    document.getElementById("modul").src = a.dataset.src + location.search;
+  };
+</script>
+</html>

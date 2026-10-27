@@ -1,0 +1,9 @@
+{
+  "id": "bigger_smaller",
+  "title": { "pl": "Większy, mniejszy", "en": "Bigger, smaller" },
+  "goal": "Compare two or three things by size and name the relation (bigger / smaller, biggest / smallest) without counting or measuring.",
+  "age": "3-4",
+  "characters": ["lisek", "wiewiorka"],
+  "backgrounds": ["sad", "dom"],
+  "objects": ["jablko", "kubek", "gruszka", "pilka", "ciastko", "kwiatek", "skarpetka"]
+}

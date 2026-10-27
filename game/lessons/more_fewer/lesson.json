@@ -1,0 +1,27 @@
+{
+  "id": "more_fewer",
+  "title": {
+    "pl": "Więcej, mniej",
+    "en": "More, fewer"
+  },
+  "goal": "Compare two amounts by pairing one to one (more / fewer / as many) and read the signs =, < and > as a mouth opening towards the bigger pile. No counting.",
+  "age": "3-4",
+  "characters": [
+    "lisek",
+    "sowa"
+  ],
+  "backgrounds": [
+    "laka",
+    "dom"
+  ],
+  "objects": [
+    "kubek",
+    "talerz",
+    "jablko",
+    "ciastko",
+    "kwiatek",
+    "pilka",
+    "gruszka",
+    "skarpetka"
+  ]
+}
