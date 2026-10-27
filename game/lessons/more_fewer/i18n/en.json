@@ -1,28 +1,114 @@
 {
-  "line.s1_intro": { "who": "narrator", "text": "Fox and Owl are having a picnic by the lake. Fox brought cups and Owl brought plates." },
-  "line.s1_fox_cups": { "who": "lisek", "text": "I have cups! Will every cup get a plate?" },
-  "line.s1_owl_plates": { "who": "sowa", "text": "Let's check. Put them in pairs: cup and plate, cup and plate." },
-  "line.s1_pair": { "who": "narrator", "text": "Every cup stands by its plate. Look what is left." },
-  "line.s1_result": { "who": "narrator", "text": "One cup has no pair. There are more cups than plates." },
-  "line.s1_owl_fewer": { "who": "sowa", "text": "And there are fewer plates than cups. One is missing!" },
-  "line.s1_daily": { "who": "narrator", "text": "It's the same at home: does everyone at the table have a spoon? Make pairs and see what is left." },
-  "line.s2_signs": { "who": "narrator", "text": "There is a sign that says which pile has more. It looks like a hungry mouth." },
-  "line.s2_more_sign": { "who": "narrator", "text": "The mouth opens towards the pile with more. There are more cups, so it opens towards the cups." },
-  "line.s2_fox_add": { "who": "lisek", "text": "I'll add one more plate!" },
-  "line.s2_equal_sign": { "who": "narrator", "text": "Now every cup has a plate. There are as many. This sign is two equal lines." },
-  "line.s2_owl_less": { "who": "sowa", "text": "And if I take the cups away? One cup and three plates are left." },
-  "line.s2_less_sign": { "who": "narrator", "text": "There are fewer cups. The mouth opens towards the plates, because there are more plates." },
-  "line.s2_summary": { "who": "narrator", "text": "More, fewer or as many. The mouth always opens where there is more." },
-  "line.p_intro": { "who": "lisek", "text": "Your turn. I'll show two piles and you tap the one with more." },
-  "line.p_which_more": { "who": "lisek", "text": "Where is more? Tap it." },
-  "line.p_wrong_pair": { "who": "narrator", "text": "Let's check in pairs. Look what is left without a pair." },
-  "line.p_good": { "who": "sowa", "text": "Great!" },
-  "line.p_signs_intro": { "who": "sowa", "text": "Now the signs. Pick the mouth that fits, or the equal lines when there are as many." },
-  "line.p_which_sign": { "who": "sowa", "text": "Which sign fits? Tap it." },
-  "line.p_wrong_sign": { "who": "narrator", "text": "Not that one. The mouth opens where there is more. When there are as many, pick the equal lines." },
-  "line.a_intro": { "who": "narrator", "text": "You can check more and fewer at home without counting." },
-  "line.a_owl_table": { "who": "sowa", "text": "Set the table. Put a plate by every chair. Are there as many plates as chairs?" },
-  "line.a_fox_fingers": { "who": "lisek", "text": "Or make a mouth with your hand and show where there is more!" },
-  "card.a_parents": "For the parent:\nWhile setting the table ask: does everyone have a cup? Which is more, which is fewer?\nShow it with a hand sign: open towards the bigger pile.",
-  "line.a_bye": { "who": "narrator", "text": "See you!" }
+  "line.s1_intro": {
+    "who": "lisek",
+    "text": "Owl, a picnic by the lake! I brought the cups and you brought the plates."
+  },
+  "line.s1_fox_cups": {
+    "who": "lisek",
+    "text": "I have cups! Will every cup get a plate?"
+  },
+  "line.s1_owl_plates": {
+    "who": "sowa",
+    "text": "Let's check. Put them in pairs: cup and plate, cup and plate."
+  },
+  "line.s1_pair": {
+    "who": "sowa",
+    "text": "Every cup stands by its plate. Look what is left."
+  },
+  "line.s1_result": {
+    "who": "lisek",
+    "text": "One cup has no pair. There are more cups than plates."
+  },
+  "line.s1_owl_fewer": {
+    "who": "sowa",
+    "text": "And there are fewer plates than cups. One is missing!"
+  },
+  "line.s1_daily": {
+    "who": "sowa",
+    "text": "It's the same at home: does everyone at the table have a spoon? Make pairs and see what is left."
+  },
+  "line.s2_signs": {
+    "who": "sowa",
+    "text": "I know a sign that says which pile has more. It looks like a hungry mouth."
+  },
+  "line.s2_more_sign": {
+    "who": "sowa",
+    "text": "The mouth opens towards the pile with more. There are more cups, so it opens towards the cups."
+  },
+  "line.s2_fox_add": {
+    "who": "lisek",
+    "text": "I'll add one more plate!"
+  },
+  "line.s2_equal_sign": {
+    "who": "lisek",
+    "text": "Now every cup has a plate. There are as many. This sign is two equal lines."
+  },
+  "line.s2_owl_less": {
+    "who": "sowa",
+    "text": "And if I take the cups away? One cup and three plates are left."
+  },
+  "line.s2_less_sign": {
+    "who": "sowa",
+    "text": "There are fewer cups. The mouth opens towards the plates, because there are more plates."
+  },
+  "line.s2_summary": {
+    "who": "lisek",
+    "text": "More, fewer or as many. The mouth always opens where there is more."
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Your turn. I'll show two piles and you tap the one with more."
+  },
+  "line.p_which_more": {
+    "who": "lisek",
+    "text": "Where is more? Tap it."
+  },
+  "line.p_wrong_pair": {
+    "who": "sowa",
+    "text": "Let's check in pairs. Look what is left without a pair."
+  },
+  "line.p_good": {
+    "who": "sowa",
+    "text": "Great!"
+  },
+  "line.p_signs_intro": {
+    "who": "sowa",
+    "text": "Now the signs. Pick the mouth that fits, or the equal lines when there are as many."
+  },
+  "line.p_which_sign": {
+    "who": "sowa",
+    "text": "Which sign fits? Tap it."
+  },
+  "line.p_wrong_sign": {
+    "who": "sowa",
+    "text": "Not that one. The mouth opens where there is more. When there are as many, pick the equal lines."
+  },
+  "line.a_owl_table": {
+    "who": "sowa",
+    "text": "A home game: setting the table. I put out the plates, Fox the cups."
+  },
+  "line.a_bye": {
+    "who": "sowa",
+    "text": "See you!"
+  },
+  "line.a_fox_check": {
+    "who": "lisek",
+    "text": "Let's check in pairs: cup and plate, cup and plate."
+  },
+  "line.a_owl_more_plates": {
+    "who": "sowa",
+    "text": "One plate is left alone. There are more plates and fewer cups."
+  },
+  "line.a_fox_which_sign": {
+    "who": "lisek",
+    "text": "Which sign fits? There are fewer cups than plates. Tap it."
+  },
+  "line.a_owl_right": {
+    "who": "sowa",
+    "text": "Yes! The mouth opens towards the plates, because there are more plates."
+  },
+  "line.a_ask_parents": {
+    "who": "lisek",
+    "text": "Ask your parents to play this with you at home. When you set the table, check in pairs whether everyone has a plate and which there is more of!"
+  }
 }

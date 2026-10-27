@@ -1,28 +1,114 @@
 {
-  "line.s1_intro": { "who": "narrator", "text": "Lisek i Sowa robią piknik nad jeziorem. Lisek przyniósł kubki, a Sowa talerze." },
-  "line.s1_fox_cups": { "who": "lisek", "text": "Mam kubki! Czy każdy kubek dostanie talerz?" },
-  "line.s1_owl_plates": { "who": "sowa", "text": "Sprawdźmy. Ustawmy je w pary: kubek i talerz, kubek i talerz." },
-  "line.s1_pair": { "who": "narrator", "text": "Każdy kubek staje przy swoim talerzu. Patrz, co zostaje." },
-  "line.s1_result": { "who": "narrator", "text": "Jeden kubek został bez pary. Kubków jest więcej niż talerzy." },
-  "line.s1_owl_fewer": { "who": "sowa", "text": "A talerzy jest mniej niż kubków. Brakuje jednego!" },
-  "line.s1_daily": { "who": "narrator", "text": "Tak samo w domu: czy każdy przy stole ma łyżkę? Ustaw w pary i zobacz, co zostaje." },
-  "line.s2_signs": { "who": "narrator", "text": "Jest taki znak, który mówi, czego jest więcej. Wygląda jak głodna paszcza." },
-  "line.s2_more_sign": { "who": "narrator", "text": "Paszcza otwiera się w stronę tego, czego jest więcej. Kubków jest więcej, więc otwiera się na kubki." },
-  "line.s2_fox_add": { "who": "lisek", "text": "Dołożę jeszcze jeden talerz!" },
-  "line.s2_equal_sign": { "who": "narrator", "text": "Teraz każdy kubek ma talerz. Jest tyle samo. Ten znak to dwie równe kreski." },
-  "line.s2_owl_less": { "who": "sowa", "text": "A jeśli zabiorę kubki? Zostanie jeden kubek i trzy talerze." },
-  "line.s2_less_sign": { "who": "narrator", "text": "Kubków jest mniej. Paszcza otwiera się w stronę talerzy, bo talerzy jest więcej." },
-  "line.s2_summary": { "who": "narrator", "text": "Więcej, mniej albo tyle samo. Paszcza zawsze otwiera się tam, gdzie jest więcej." },
-  "line.p_intro": { "who": "lisek", "text": "Teraz ty. Pokażę dwie kupki, a ty kliknij tę, gdzie jest więcej." },
-  "line.p_which_more": { "who": "lisek", "text": "Gdzie jest więcej? Kliknij." },
-  "line.p_wrong_pair": { "who": "narrator", "text": "Sprawdźmy parami. Patrz, co zostaje bez pary." },
-  "line.p_good": { "who": "sowa", "text": "Świetnie!" },
-  "line.p_signs_intro": { "who": "sowa", "text": "A teraz znaki. Wybierz paszczę, która pasuje, albo równe kreski, gdy jest tyle samo." },
-  "line.p_which_sign": { "who": "sowa", "text": "Który znak pasuje? Kliknij." },
-  "line.p_wrong_sign": { "who": "narrator", "text": "Nie ten. Paszcza otwiera się tam, gdzie jest więcej. Gdy jest tyle samo, wybierz równe kreski." },
-  "line.a_intro": { "who": "narrator", "text": "Więcej i mniej sprawdzisz w domu bez liczenia." },
-  "line.a_owl_table": { "who": "sowa", "text": "Nakryj do stołu. Połóż talerz przy każdym krześle. Czy talerzy jest tyle samo, co krzeseł?" },
-  "line.a_fox_fingers": { "who": "lisek", "text": "Albo zrób paszczę z dłoni i pokaż, czego jest więcej!" },
-  "card.a_parents": "Dla rodzica:\nPrzy nakrywaniu do stołu zapytaj: czy każdy ma kubek? Czego jest więcej, czego mniej?\nPokażcie to znakiem z dłoni: otwarta w stronę tego, czego jest więcej.",
-  "line.a_bye": { "who": "narrator", "text": "Do zobaczenia!" }
+  "line.s1_intro": {
+    "who": "lisek",
+    "text": "Sowo, robimy piknik nad jeziorem! Ja przyniosłem kubki, a ty talerze."
+  },
+  "line.s1_fox_cups": {
+    "who": "lisek",
+    "text": "Mam kubki! Czy każdy kubek dostanie talerz?"
+  },
+  "line.s1_owl_plates": {
+    "who": "sowa",
+    "text": "Sprawdźmy. Ustawmy je w pary: kubek i talerz, kubek i talerz."
+  },
+  "line.s1_pair": {
+    "who": "sowa",
+    "text": "Każdy kubek staje przy swoim talerzu. Patrz, co zostaje."
+  },
+  "line.s1_result": {
+    "who": "lisek",
+    "text": "Jeden kubek został bez pary. Kubków jest więcej niż talerzy."
+  },
+  "line.s1_owl_fewer": {
+    "who": "sowa",
+    "text": "A talerzy jest mniej niż kubków. Brakuje jednego!"
+  },
+  "line.s1_daily": {
+    "who": "sowa",
+    "text": "Tak samo w domu: czy każdy przy stole ma łyżkę? Ustaw w pary i zobacz, co zostaje."
+  },
+  "line.s2_signs": {
+    "who": "sowa",
+    "text": "Znam taki znak, który mówi, czego jest więcej. Wygląda jak głodna paszcza."
+  },
+  "line.s2_more_sign": {
+    "who": "sowa",
+    "text": "Paszcza otwiera się w stronę tego, czego jest więcej. Kubków jest więcej, więc otwiera się na kubki."
+  },
+  "line.s2_fox_add": {
+    "who": "lisek",
+    "text": "Dołożę jeszcze jeden talerz!"
+  },
+  "line.s2_equal_sign": {
+    "who": "lisek",
+    "text": "Teraz każdy kubek ma talerz. Jest tyle samo. Ten znak to dwie równe kreski."
+  },
+  "line.s2_owl_less": {
+    "who": "sowa",
+    "text": "A jeśli zabiorę kubki? Zostanie jeden kubek i trzy talerze."
+  },
+  "line.s2_less_sign": {
+    "who": "sowa",
+    "text": "Kubków jest mniej. Paszcza otwiera się w stronę talerzy, bo talerzy jest więcej."
+  },
+  "line.s2_summary": {
+    "who": "lisek",
+    "text": "Więcej, mniej albo tyle samo. Paszcza zawsze otwiera się tam, gdzie jest więcej."
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Teraz ty. Pokażę dwie kupki, a ty kliknij tę, gdzie jest więcej."
+  },
+  "line.p_which_more": {
+    "who": "lisek",
+    "text": "Gdzie jest więcej? Kliknij."
+  },
+  "line.p_wrong_pair": {
+    "who": "sowa",
+    "text": "Sprawdźmy parami. Patrz, co zostaje bez pary."
+  },
+  "line.p_good": {
+    "who": "sowa",
+    "text": "Świetnie!"
+  },
+  "line.p_signs_intro": {
+    "who": "sowa",
+    "text": "A teraz znaki. Wybierz paszczę, która pasuje, albo równe kreski, gdy jest tyle samo."
+  },
+  "line.p_which_sign": {
+    "who": "sowa",
+    "text": "Który znak pasuje? Kliknij."
+  },
+  "line.p_wrong_sign": {
+    "who": "sowa",
+    "text": "Nie ten. Paszcza otwiera się tam, gdzie jest więcej. Gdy jest tyle samo, wybierz równe kreski."
+  },
+  "line.a_owl_table": {
+    "who": "sowa",
+    "text": "Zabawa w domu: nakrywamy do stołu. Ja stawiam talerze, Lisek kubki."
+  },
+  "line.a_bye": {
+    "who": "sowa",
+    "text": "Do zobaczenia!"
+  },
+  "line.a_fox_check": {
+    "who": "lisek",
+    "text": "Sprawdźmy parami: kubek i talerz, kubek i talerz."
+  },
+  "line.a_owl_more_plates": {
+    "who": "sowa",
+    "text": "Jeden talerz został sam. Talerzy jest więcej, kubków mniej."
+  },
+  "line.a_fox_which_sign": {
+    "who": "lisek",
+    "text": "Który znak pasuje? Kubków jest mniej niż talerzy. Kliknij."
+  },
+  "line.a_owl_right": {
+    "who": "sowa",
+    "text": "Tak! Paszcza otwiera się na talerze, bo talerzy jest więcej."
+  },
+  "line.a_ask_parents": {
+    "who": "lisek",
+    "text": "Poproście rodziców, żebyście pobawili się tak w domu. Przy nakrywaniu do stołu sprawdźcie parami, czy każdy ma talerz i czego jest więcej!"
+  }
 }

@@ -112,7 +112,8 @@ class Handler(SimpleHTTPRequestHandler):
 
     def log_message(self, fmt, *a):
         # quiet for static files that exist; API calls and errors (a[0] is the code) are logged
-        if "/api/" in str(a[0] if a else "") or (a and str(a[0]).isdigit()):
+        kod = str(a[1]) if len(a) > 1 else str(a[0]) if a else ""
+        if "/api/" in str(a[0] if a else "") or kod[:1] in ("4", "5"):
             super().log_message(fmt, *a)
 
 

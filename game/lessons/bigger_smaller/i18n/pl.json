@@ -1,25 +1,114 @@
 {
-  "line.s1_intro": { "who": "narrator", "text": "Lisek i Wiewiórka znalazły w sadzie dwa jabłka." },
-  "line.s1_fox_big": { "who": "lisek", "text": "Patrz, moje jabłko jest duże!" },
-  "line.s1_sq_small": { "who": "wiewiorka", "text": "A moje jest małe. Ale za to słodkie!" },
-  "line.s1_compare": { "who": "narrator", "text": "Duże jabłko jest większe od małego. A małe jabłko jest mniejsze od dużego." },
-  "line.s1_daily": { "who": "narrator", "text": "W domu też tak jest. Mama ma duże buty, a ty masz małe. Twoje buty są mniejsze." },
-  "line.s2_thirsty": { "who": "wiewiorka", "text": "Chce mi się pić! Który kubek jest dla mnie?" },
-  "line.s2_fox_asks": { "who": "lisek", "text": "Wiewiórka ma małe łapki. Pomożesz jej wybrać?" },
-  "line.s2_prompt": { "who": "narrator", "text": "Kliknij mniejszy kubek." },
-  "line.s2_wrong": { "who": "narrator", "text": "To jest większy kubek. Poszukaj mniejszego." },
-  "line.s2_thanks": { "who": "wiewiorka", "text": "Dziękuję! Mały kubek pasuje do moich łapek." },
-  "line.s2_summary": { "who": "narrator", "text": "Mały kubek jest mniejszy, a duży kubek jest większy. Świetnie!" },
-  "line.p_intro": { "who": "lisek", "text": "Teraz zabawa. Pokażę ci dwie rzeczy, a ty wybierz." },
-  "line.p_click_bigger": { "who": "lisek", "text": "Kliknij większy." },
-  "line.p_click_smaller": { "who": "lisek", "text": "Kliknij mniejszy." },
-  "line.p_click_biggest": { "who": "lisek", "text": "Są trzy. Kliknij największy." },
-  "line.p_click_smallest": { "who": "lisek", "text": "Są trzy. Kliknij najmniejszy." },
-  "line.p_wrong": { "who": "narrator", "text": "Spróbuj jeszcze raz." },
-  "line.p_good": { "who": "lisek", "text": "Tak jest!" },
-  "line.a_intro": { "who": "narrator", "text": "Większe i mniejsze rzeczy są wszędzie, nie tylko w grze." },
-  "line.a_fox_idea": { "who": "lisek", "text": "Poszukaj w domu łyżki większej niż twoja dłoń." },
-  "line.a_sq_idea": { "who": "wiewiorka", "text": "A potem czegoś mniejszego niż twój kciuk!" },
-  "card.a_parents": "Dla rodzica:\nUstawcie razem buty całej rodziny od najmniejszego do największego.\nZapytaj: które są większe od twoich? Które są najmniejsze?",
-  "line.a_bye": { "who": "narrator", "text": "Do zobaczenia w następnej lekcji!" }
+  "line.s1_intro": {
+    "who": "lisek",
+    "text": "Wiewiórko, patrz! Znaleźliśmy w sadzie dwa jabłka."
+  },
+  "line.s1_fox_big": {
+    "who": "lisek",
+    "text": "Patrz, moje jabłko jest duże!"
+  },
+  "line.s1_sq_small": {
+    "who": "wiewiorka",
+    "text": "A moje jest małe. Ale za to słodkie!"
+  },
+  "line.s1_compare": {
+    "who": "wiewiorka",
+    "text": "Twoje duże jabłko jest większe od mojego. A moje małe jabłko jest mniejsze od twojego."
+  },
+  "line.s1_daily": {
+    "who": "lisek",
+    "text": "W domu też tak jest. Mama ma duże buty, a ty masz małe. Twoje buty są mniejsze."
+  },
+  "line.s2_thirsty": {
+    "who": "wiewiorka",
+    "text": "Chce mi się pić! Który kubek jest dla mnie?"
+  },
+  "line.s2_fox_asks": {
+    "who": "lisek",
+    "text": "Wiewiórka ma małe łapki. Pomożesz jej wybrać?"
+  },
+  "line.s2_prompt": {
+    "who": "lisek",
+    "text": "Kliknij mniejszy kubek."
+  },
+  "line.s2_wrong": {
+    "who": "lisek",
+    "text": "To jest większy kubek. Poszukaj mniejszego."
+  },
+  "line.s2_thanks": {
+    "who": "wiewiorka",
+    "text": "Dziękuję! Mały kubek pasuje do moich łapek."
+  },
+  "line.s2_summary": {
+    "who": "lisek",
+    "text": "Mały kubek jest mniejszy, a duży kubek jest większy. Świetnie!"
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Teraz zabawa. Pokażę ci dwie rzeczy, a ty wybierz."
+  },
+  "line.p_click_bigger": {
+    "who": "lisek",
+    "text": "Kliknij większy."
+  },
+  "line.p_click_smaller": {
+    "who": "lisek",
+    "text": "Kliknij mniejszy."
+  },
+  "line.p_click_biggest": {
+    "who": "lisek",
+    "text": "Są trzy. Kliknij największy."
+  },
+  "line.p_click_smallest": {
+    "who": "lisek",
+    "text": "Są trzy. Kliknij najmniejszy."
+  },
+  "line.p_wrong": {
+    "who": "lisek",
+    "text": "Spróbuj jeszcze raz."
+  },
+  "line.p_good": {
+    "who": "lisek",
+    "text": "Tak jest!"
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Do zobaczenia!"
+  },
+  "line.a_fox_game": {
+    "who": "lisek",
+    "text": "Zagrajmy w domową zabawę! Ja pokazuję rzecz, a ty mówisz, czy jest większa, czy mniejsza od mojej łapki."
+  },
+  "line.a_sq_ok": {
+    "who": "wiewiorka",
+    "text": "Dobrze! Pokazuj."
+  },
+  "line.a_fox_plate": {
+    "who": "lisek",
+    "text": "Talerz. Większy czy mniejszy od łapki?"
+  },
+  "line.a_sq_bigger": {
+    "who": "wiewiorka",
+    "text": "Większy! Talerz jest większy od łapki."
+  },
+  "line.a_fox_cookie": {
+    "who": "lisek",
+    "text": "A ciastko?"
+  },
+  "line.a_sq_smaller": {
+    "who": "wiewiorka",
+    "text": "Mniejsze! Ciastko jest mniejsze od łapki."
+  },
+  "line.a_sq_your_turn": {
+    "who": "wiewiorka",
+    "text": "Teraz ty. Kliknij to, co jest większe od twojej dłoni."
+  },
+  "line.a_fox_right": {
+    "who": "lisek",
+    "text": "Tak! Piłka jest większa od dłoni, a kwiatek mniejszy."
+  },
+  "line.a_ask_parents": {
+    "who": "wiewiorka",
+    "text": "Poproście rodziców, żebyście pobawili się tak w domu. Szukajcie rzeczy większych i mniejszych od waszej dłoni!"
+  }
 }

@@ -14,8 +14,9 @@ export default {
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
         await c.say("narrator", "line.s1_intro");
-        const big = await c.object("jablko", { x: -1.6, y: Y, size: 1.7 });
-        const small = await c.object("jablko", { x: 1.6, y: Y, size: 0.85 });
+        const big = await c.object("jablko", { y: Y, size: 1.7 });
+        const small = await c.object("jablko", { y: Y, size: 0.85 });
+        c.arrange([[big], [small]], { y: Y, groupGap: 1.2 });
         await c.say("lisek", "line.s1_fox_big", { anim: "Wskazanie" });
         await c.say("wiewiorka", "line.s1_sq_small");
         await c.say("narrator", "line.s1_compare");
@@ -27,8 +28,9 @@ export default {
       // 2. which cup for the squirrel? (first choice, guided)
       async (c) => {
         await c.say("wiewiorka", "line.s2_thirsty");
-        const bigCup = await c.object("kubek", { x: -1.4, y: Y, size: 1.7 });
-        const smallCup = await c.object("kubek", { x: 1.4, y: Y, size: 0.85 });
+        const bigCup = await c.object("kubek", { y: Y, size: 1.7 });
+        const smallCup = await c.object("kubek", { y: Y, size: 0.85 });
+        c.arrange([[bigCup], [smallCup]], { y: Y, groupGap: 1.2 });
         await c.say("lisek", "line.s2_fox_asks");
         await c.say("narrator", "line.s2_prompt");
         await c.task({ targets: [bigCup, smallCup], correct: smallCup, wrong: "line.s2_wrong" });
@@ -48,8 +50,9 @@ export default {
         ];
         for (const [name, want] of plan) {
           const flip = Math.random() < 0.5;
-          const a = await c.object(name, { x: -1.6, y: Y, size: flip ? 0.85 : 1.7 });
-          const b = await c.object(name, { x: 1.6, y: Y, size: flip ? 1.7 : 0.85 });
+          const a = await c.object(name, { y: Y, size: flip ? 0.85 : 1.7 });
+          const b = await c.object(name, { y: Y, size: flip ? 1.7 : 0.85 });
+          c.arrange([[a], [b]], { y: Y, groupGap: 1.2 });
           const bigger = flip ? b : a, smaller = flip ? a : b;
           await c.say("lisek", want === "bigger" ? "line.p_click_bigger" : "line.p_click_smaller");
           await c.task({ targets: [a, b], correct: want === "bigger" ? bigger : smaller, wrong: "line.p_wrong" });
@@ -62,7 +65,8 @@ export default {
         for (const [name, want] of [["jablko", "biggest"], ["kubek", "smallest"]]) {
           const sizes = [0.8, 1.25, 1.7].sort(() => Math.random() - 0.5);
           const hs = [];
-          for (let i = 0; i < 3; i++) hs.push(await c.object(name, { x: -2.4 + i * 2.4, y: Y, size: sizes[i] }));
+          for (let i = 0; i < 3; i++) hs.push(await c.object(name, { y: Y, size: sizes[i] }));
+          c.arrange([hs], { y: Y, gap: 0.6 });
           const target = hs[sizes.indexOf(want === "biggest" ? 1.7 : 0.8)];
           await c.say("lisek", want === "biggest" ? "line.p_click_biggest" : "line.p_click_smallest");
           await c.task({ targets: hs, correct: target, wrong: "line.p_wrong" });
@@ -73,13 +77,28 @@ export default {
       },
     ],
     apply: [
+      // the home game: "bigger than my paw?" - the friends play it, the child joins once
       async (c) => {
         c.show("lisek"); c.show("wiewiorka");
-        await c.say("narrator", "line.a_intro");
-        await c.say("lisek", "line.a_fox_idea");
-        await c.say("wiewiorka", "line.a_sq_idea");
-        await c.card("card.a_parents");
-        await c.say("narrator", "line.a_bye");
+        await c.say("lisek", "line.a_fox_game");
+        await c.say("wiewiorka", "line.a_sq_ok");
+        const plate = await c.object("talerz", { x: 0, y: Y, size: 1.6 });
+        await c.say("lisek", "line.a_fox_plate", { anim: "Wskazanie" });
+        await c.say("wiewiorka", "line.a_sq_bigger", { anim: "Radosc" });
+        plate.remove();
+        const cookie = await c.object("ciastko", { x: 0, y: Y, size: 0.8 });
+        await c.say("lisek", "line.a_fox_cookie", { anim: "Wskazanie" });
+        await c.say("wiewiorka", "line.a_sq_smaller");
+        cookie.remove();
+        const ball = await c.object("pilka", { y: Y, size: 1.6 });
+        const flower = await c.object("kwiatek", { y: Y, size: 0.8 });
+        c.arrange([[ball], [flower]], { y: Y, groupGap: 1.2 });
+        await c.say("wiewiorka", "line.a_sq_your_turn");
+        await c.task({ targets: [ball, flower], correct: ball, wrong: "line.p_wrong" });
+        await c.say("lisek", "line.a_fox_right", { anim: "Brawo" });
+        c.clear();
+        await c.say("wiewiorka", "line.a_ask_parents");
+        await c.say("lisek", "line.a_bye");
         await c.play("lisek", "Machanie"); await c.play("wiewiorka", "Machanie");
       },
     ],

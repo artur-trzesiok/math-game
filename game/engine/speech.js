@@ -77,7 +77,7 @@ export class Speech {
         });
         return;
       }
-      subtitle(true);
+      subtitle(FORCE_SUBS);
       await this.synth(text, lang, who);
     } finally {
       subtitle(false);

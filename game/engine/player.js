@@ -5,6 +5,7 @@
 //
 // URL: ?lekcja=<id>&etap=story|practice|apply&lang=pl|en&szybko&napisy&safe
 
+import * as THREE from "three";
 import { Stage } from "./scene.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
@@ -34,12 +35,14 @@ export class Player {
   // ------------------------------------------------------------------ menu
   menu() {
     this.closeStage();
-    $("#menu").style.display = "flex"; $("#hud").style.display = "none";
+    const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
+    menu.classList.remove("in"); requestAnimationFrame(() => { menu.classList.add("in"); $("#iris").style.display = "none"; });
     $("#title").textContent = this.t("menu.title");
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("");
     $("#langs").onclick = (e) => { const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
     $("#lessons").innerHTML = this.index.lessons.map((l, i) => `
       <button class="lesson" data-id="${l.id}">
+        <img class="cover" src="/game/lessons/${l.id}/cover.webp" alt="" onerror="this.style.visibility='hidden'">
         <span class="nr">${i + 1}</span>
         <span class="name">${l.title[this.lang] || l.title.en}</span>
         <span class="sub">${l.subtitle?.[this.lang] || ""}</span>
@@ -69,7 +72,7 @@ export class Player {
       await this.runStage(st);
       if (this.abort) return;
     }
-    if (!this.abort && this.run === run) { await this.card(this.t("lesson.done"), this.t("button.menu")); if (this.run === run) this.menu(); }
+    if (!this.abort && this.run === run) { await this.outro(); if (this.run === run) this.menu(); }
   }
 
   async runStage(st) {
@@ -106,10 +109,13 @@ export class Player {
     const S = this.stage, lang = this.lang, lessonId = this.lessonId, strings = this.strings;
     const alive = () => { if (this.run !== run) throw new Error("abort"); };
     const guard = (f) => async (...a) => { alive(); const r = await f(...a); alive(); return r; };
+    let last = null;                                   // the last line, repeated when a puppet is tapped during a task
     const say = async (who, key, { anim = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
-      const puppet = who === "narrator" ? null : S.puppets[who];
+      if (who === "narrator" || !S.puppets[who]) who = line.who;    // no off-screen voice: the i18n line names the speaker
+      last = { who, key, anim }; this.lastSpeaker = who;
+      const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
       await this.speech.say({ lang, lessonId, key, text: line.text, who, puppet });   // who speaks is shown by the mouth, no bubble
       alive();
@@ -124,23 +130,52 @@ export class Player {
       mood: (who, m) => S.mood(who, m),
       object: guard((name, opts) => S.object(name, opts)),
       sign: guard((text, opts) => S.sign(text, opts)),
-      zone: (opts) => { alive(); return S.zone(opts); },
+      zone: guard((opts) => S.zone(opts)),
+      arrange: (groups, opts) => { alive(); return S.arrange(groups, opts); },
       choose: guard((targets) => S.choose(targets)),
       // a task: the child must click `correct` among `targets`; a wrong click plays the
       // `wrong` line and, after `hintAfter` misses, pulses the right answer
       task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null }) => {
         const ok = Array.isArray(correct) ? correct : [correct];
         let misses = 0;
+        const puppets = Object.values(S.puppets).filter((L) => L.korzen.visible);
         for (;;) {
           alive();
-          const hit = await S.choose(targets);
+          const hit = await S.choose([...targets, ...puppets]);
           alive();
+          if (hit && hit.korzen) { if (last) await say(last.who, last.key, { anim: last.anim }); continue; }   // "say it again"
           if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); return hit; }
           misses++;
           S.shake(hit);
           if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);
           if (misses >= hintAfter) for (const h of ok) h.highlight?.(true);
         }
+      },
+      // free sorting: every item must end up in a zone and every zone must hold one kind
+      // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line
+      sort: async ({ items, zones, wrong }) => {
+        alive();
+        return new Promise((resolve) => {
+          let busy = false;
+          const check = async () => {
+            if (busy || items.some((i) => !i.zone)) return;
+            busy = true;
+            try {
+              const odd = [];
+              for (const z of zones) {
+                const count = {}; for (const i of z.items) count[i.tag] = (count[i.tag] || 0) + 1;
+                const main = Object.keys(count).sort((a, b) => count[b] - count[a])[0];
+                for (const i of z.items) if (i.tag !== main) odd.push(i);
+              }
+              if (!odd.length) { S.endSort(); resolve(true); return; }
+              for (const i of odd) { S.shake(i); }
+              await S.wait(0.45);
+              for (const i of odd) { i.zone.take(i); i.moveTo(i.home.x, i.home.y, 0.4); }
+              if (wrong && this.run === run) await say("narrator", wrong);
+            } finally { busy = false; }
+          };
+          S.sort({ items, zones, onDrop: () => { if (this.run === run) check(); }, onTap: () => { if (last && this.run === run) say(last.who, last.key, { anim: last.anim }); } });
+        });
       },
       card: guard((key, button = "button.next") => this.card(this.tl(key), this.t(button))),
       wait: guard((s) => S.wait(FAST ? Math.min(s, 0.2) : s)),
@@ -150,6 +185,33 @@ export class Player {
   }
 
   // ------------------------------------------------------------------ overlays
+  // the goodbye: a blue iris closes around the characters' faces, then covers everything
+  async outro() {
+    const S = this.stage, iris = $("#iris");
+    // the iris closes on the face of whoever spoke last (the one saying goodbye)
+    const visible = Object.values(S.puppets).filter((L) => L.korzen.visible);
+    const star = S.puppets[this.lastSpeaker] && S.puppets[this.lastSpeaker].korzen.visible ? S.puppets[this.lastSpeaker] : visible[0];
+    const r = S.renderer.domElement.getBoundingClientRect();
+    let cx = r.left + r.width / 2, cy = r.top + r.height / 2, r1 = 220;
+    if (star) {
+      const head = star.korzen.position.clone(); head.y += star.wysokosc * 0.82;
+      const c = S.toScreen(head), edge = S.toScreen(head.clone().add(new THREE.Vector3(star.wysokosc * 0.3, 0, 0)));
+      cx = c.x + r.left; cy = c.y + r.top; r1 = Math.abs(edge.x - c.x);
+    }
+    const r0 = Math.hypot(innerWidth, innerHeight);
+    iris.style.display = "block";
+    const t0 = performance.now(), d = FAST ? 400 : 1800;
+    await new Promise((ok) => {
+      const step = () => {
+        const s = Math.min(1, (performance.now() - t0) / d), e = 1 - Math.pow(1 - s, 3);
+        const radius = s < 0.75 ? r0 + (r1 - r0) * (e / 0.84) : r1 * (1 - (s - 0.75) / 0.25);   // close on the faces, hold, then shut
+        const m = `radial-gradient(circle at ${cx}px ${cy}px, transparent ${Math.max(0, radius)}px, #000 ${Math.max(0, radius) + 3}px)`;
+        iris.style.webkitMaskImage = m; iris.style.maskImage = m;
+        if (s < 1) requestAnimationFrame(step); else setTimeout(ok, FAST ? 100 : 500);
+      };
+      step();
+    });
+  }
   card(text, button) {
     const c = $("#card"); c.style.display = "flex";
     c.querySelector(".text").textContent = text;

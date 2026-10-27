@@ -23,8 +23,9 @@ the pile with more". No counting at any point. Characters: Fox (left) and Owl (r
 
 ## Stage 3 - apply (kitchen)
 
-Owl: set the table, a plate by every chair - are there as many plates as chairs?
-Fox: make the mouth with your hand. Card for the parent.
+Owl and Fox set the table on screen (two cups, three plates), pair them, name
+the leftover; the child picks the sign; they end by asking the child to ask the
+parents to check the table in pairs at home. No card, no text.
 
 ## Notes
 

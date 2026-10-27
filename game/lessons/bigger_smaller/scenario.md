@@ -24,11 +24,12 @@ names it. Characters: Fox (left) and Squirrel (right).
 
 ## Stage 3 - apply (kitchen)
 
-Fox and Squirrel each give a real-life mission (a spoon bigger than your hand,
-something smaller than your thumb), then a card for the parent: line up the
-family's shoes from smallest to biggest and ask which are bigger / smallest.
+Fox and Squirrel play the home game on screen: "bigger or smaller than my paw?"
+(a plate: bigger; a cookie: smaller), then the child plays one round (ball vs
+flower, "bigger than your hand"). They end by asking the child to ask the parents
+to play it at home. No card, no text.
 
 ## Notes for the recording
 
 Lines are short and literal; "bigger / smaller" are always said as a pair at least
-once so the child hears both. Fox is lively, Squirrel is soft, the narrator calm.
+once so the child hears both. Fox is lively, Squirrel is soft; there is no narrator.

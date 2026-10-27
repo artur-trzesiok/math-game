@@ -1,24 +1,30 @@
 // Lesson 2: more / fewer by pairing, and the signs =, < and >. No counting: the
 // child pairs things one to one and sees what is left over; the sign is "the hungry
 // mouth that opens towards the bigger pile". Script in scenario.md.
+// Layout: everything goes through ctx.arrange, so piles, signs and zones line up
+// and never overlap.
 
-const ROW_L = -1.9, ROW_R = 1.9;         // the two piles
-const ROW_Y = 1.2;                       // the object layer: above the puppets' heads
+const Y = 1.2;                 // the object layer
+const SZ = 0.85;               // sticker size in rows
+const SIGN = 1.18 * SZ;        // a sign card is exactly one sticker wide
 
-// a row of n stickers centred on x
-async function row(c, name, n, x, y = ROW_Y, size = 0.9) {
+async function pile(c, name, n) {
   const hs = [];
-  for (let i = 0; i < n; i++) hs.push(await c.object(name, { x: x + (i - (n - 1) / 2) * 1.05, y, size }));
+  for (let i = 0; i < n; i++) hs.push(await c.object(name, { x: 0, y: Y, size: SZ }));
   return hs;
 }
-// slide two rows into pairs (one above the other); the leftovers of the longer row pulse
+// two piles side by side (with an optional sign between them); returns the groups' extents
+function lay(c, a, b, sign = null, animate = false) {
+  return c.arrange(sign ? [a, [sign], b] : [a, b], { y: Y, groupGap: sign ? 0.5 : 1.4, animate });
+}
+// slide two piles into pairs (one above the other); the leftovers of the longer pile pulse
 async function pair(c, a, b) {
-  const n = Math.max(a.length, b.length);
+  const n = Math.max(a.length, b.length), w = 1.18 * SZ + 0.18;
   const moves = [];
   for (let i = 0; i < n; i++) {
-    const x = (i - (n - 1) / 2) * 1.15;
-    if (a[i]) moves.push(a[i].moveTo(x, ROW_Y + 0.75, 0.8));
-    if (b[i]) moves.push(b[i].moveTo(x, ROW_Y - 0.65, 0.8));
+    const x = (i - (n - 1) / 2) * w;
+    if (a[i]) moves.push(a[i].moveTo(x, Y + 0.6, 0.8));
+    if (b[i]) moves.push(b[i].moveTo(x, Y - 0.6, 0.8));
   }
   await Promise.all(moves);
   const left = a.length > b.length ? a.slice(b.length) : b.slice(a.length);
@@ -38,41 +44,40 @@ export default {
       // 1. picnic: are there enough plates for the cups? pairing
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
-        await c.say("narrator", "line.s1_intro");
-        const cups = await row(c, "kubek", 3, ROW_L);
-        const plates = await row(c, "talerz", 2, ROW_R);
+        await c.say("lisek", "line.s1_intro");
+        const cups = await pile(c, "kubek", 3), plates = await pile(c, "talerz", 2);
+        lay(c, cups, plates);
         await c.say("lisek", "line.s1_fox_cups", { anim: "Wskazanie" });
         await c.say("sowa", "line.s1_owl_plates");
-        await c.say("narrator", "line.s1_pair");
+        await c.say("sowa", "line.s1_pair");
         await pair(c, cups, plates);
-        await c.say("narrator", "line.s1_result");
+        await c.say("lisek", "line.s1_result");
         await c.say("sowa", "line.s1_owl_fewer");
-        await c.say("narrator", "line.s1_daily");
+        await c.say("sowa", "line.s1_daily");
         c.clear();
       },
       // 2. the signs: the hungry mouth opens towards "more"
       async (c) => {
-        await c.say("narrator", "line.s2_signs");
-        const cups = await row(c, "kubek", 3, ROW_L - 0.4, ROW_Y, 0.8);
-        const plates = await row(c, "talerz", 2, ROW_R + 0.4, ROW_Y, 0.8);
-        const gt = await c.sign(">", { x: 0, y: ROW_Y, size: 1.3 });
-        await c.say("narrator", "line.s2_more_sign");
-        gt.highlight(true); await c.wait(1); gt.highlight(false);
+        await c.say("sowa", "line.s2_signs");
+        const cups = await pile(c, "kubek", 3), plates = await pile(c, "talerz", 2);
+        let sign = await c.sign(">", { size: SIGN });
+        lay(c, cups, plates, sign);
+        await c.say("sowa", "line.s2_more_sign");
+        sign.highlight(true); await c.wait(1); sign.highlight(false);
         await c.say("lisek", "line.s2_fox_add");
-        const extra = await c.object("talerz", { x: 5.6, y: ROW_Y + 1.6, size: 0.8 });
-        await extra.moveTo(plates[plates.length - 1].mesh.position.x + 1.05, ROW_Y, 0.7);   // next slot of the row
+        const extra = await c.object("talerz", { x: 5.6, y: Y + 1.6, size: SZ });
         plates.push(extra);
-        gt.remove();
-        const eq = await c.sign("=", { x: 0, y: ROW_Y, size: 1.3 });
-        await c.say("narrator", "line.s2_equal_sign");
-        eq.highlight(true); await c.wait(1); eq.highlight(false);
+        sign.remove(); sign = await c.sign("=", { size: SIGN });
+        lay(c, cups, plates, sign, true);
+        await c.say("lisek", "line.s2_equal_sign");
+        sign.highlight(true); await c.wait(1); sign.highlight(false);
         await c.say("sowa", "line.s2_owl_less");
         for (const h of cups.splice(1)) h.remove();
-        eq.remove();
-        const lt = await c.sign("<", { x: 0, y: ROW_Y, size: 1.3 });
-        await c.say("narrator", "line.s2_less_sign");
-        lt.highlight(true); await c.wait(1); lt.highlight(false);
-        await c.say("narrator", "line.s2_summary");
+        sign.remove(); sign = await c.sign("<", { size: SIGN });
+        lay(c, cups, plates, sign, true);
+        await c.say("sowa", "line.s2_less_sign");
+        sign.highlight(true); await c.wait(1); sign.highlight(false);
+        await c.say("lisek", "line.s2_summary");
         c.clear();
       },
     ],
@@ -83,11 +88,13 @@ export default {
         await c.say("lisek", "line.p_intro");
         const plan = [["jablko", 3, 1], ["ciastko", 2, 4], ["kwiatek", 4, 2], ["pilka", 1, 3]];
         for (const [name, a, b] of plan) {
-          const left = await row(c, name, a, ROW_L, ROW_Y, 0.8), right = await row(c, name, b, ROW_R, ROW_Y, 0.8);
-          const zl = c.zone({ x: ROW_L, y: ROW_Y, w: 4.6, h: 2 }), zr = c.zone({ x: ROW_R, y: ROW_Y, w: 4.6, h: 2 });
+          const left = await pile(c, name, a), right = await pile(c, name, b);
+          const [gl, gr] = lay(c, left, right);
+          const zl = await c.zone({ x: gl.x, y: Y, w: gl.w + 0.5, h: 1.18 * SZ + 0.5 });
+          const zr = await c.zone({ x: gr.x, y: Y, w: gr.w + 0.5, h: 1.18 * SZ + 0.5 });
           const more = a > b ? zl : zr;
           await c.say("lisek", "line.p_which_more");
-          await c.task({ targets: [zl, zr], correct: more, onWrong: async () => { await c.say("narrator", "line.p_wrong_pair"); await pair(c, left, right); } });
+          await c.task({ targets: [zl, zr], correct: more, onWrong: async () => { await c.say("sowa", "line.p_wrong_pair"); await pair(c, left, right); } });
           await c.say("sowa", "line.p_good", { anim: "Radosc" });
           c.clear();
         }
@@ -97,13 +104,15 @@ export default {
         await c.say("sowa", "line.p_signs_intro");
         const plan = [["kubek", 2, 2], ["gruszka", 3, 1], ["skarpetka", 1, 3], ["talerz", 4, 4]];
         for (const [name, a, b] of plan) {
-          await row(c, name, a, ROW_L - 0.6, ROW_Y + 0.4, 0.75); await row(c, name, b, ROW_R + 0.6, ROW_Y + 0.4, 0.75);
+          const left = await pile(c, name, a), right = await pile(c, name, b);
+          c.arrange([left, right], { y: Y, groupGap: SIGN + 1.0 });          // room for the sign to land between
           const signs = [];
-          for (const [i, s] of ["<", "=", ">"].entries()) signs.push(await c.sign(s, { x: -2.2 + i * 2.2, y: -2.4, size: 1.1 }));
+          for (const s of ["<", "=", ">"]) signs.push(await c.sign(s, { size: SIGN }));
+          c.arrange([signs], { y: -2.2, gap: 0.9 });
           const want = signs[["<", "=", ">"].indexOf(signFor(a, b))];
           await c.say("sowa", "line.p_which_sign");
           await c.task({ targets: signs, correct: want, wrong: "line.p_wrong_sign" });
-          await want.moveTo(0, ROW_Y + 0.4, 0.6);
+          await want.moveTo(0, Y, 0.6);
           await c.say("lisek", "line.p_good", { anim: "Brawo" });
           c.clear();
         }
@@ -111,13 +120,26 @@ export default {
       },
     ],
     apply: [
+      // the home game: setting the table - a plate for every cup
       async (c) => {
         c.show("lisek"); c.show("sowa");
-        await c.say("narrator", "line.a_intro");
         await c.say("sowa", "line.a_owl_table");
-        await c.say("lisek", "line.a_fox_fingers");
-        await c.card("card.a_parents");
-        await c.say("narrator", "line.a_bye");
+        const cups = await pile(c, "kubek", 2), plates = await pile(c, "talerz", 3);
+        lay(c, cups, plates);
+        await c.say("lisek", "line.a_fox_check");
+        await pair(c, cups, plates);
+        await c.say("sowa", "line.a_owl_more_plates");
+        const signs = [];
+        for (const s of ["<", "=", ">"]) signs.push(await c.sign(s, { size: SIGN }));
+        c.arrange([signs], { y: -2.2, gap: 0.9 });
+        await c.say("lisek", "line.a_fox_which_sign");
+        const want = signs[0];
+        await c.task({ targets: signs, correct: want, wrong: "line.p_wrong_sign" });
+        await want.moveTo(0, Y, 0.6);
+        await c.say("sowa", "line.a_owl_right", { anim: "Radosc" });
+        c.clear();
+        await c.say("lisek", "line.a_ask_parents");
+        await c.say("sowa", "line.a_bye");
         await c.play("lisek", "Machanie"); await c.play("sowa", "Machanie");
       },
     ],

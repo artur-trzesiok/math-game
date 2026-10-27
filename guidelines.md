@@ -20,9 +20,13 @@ objects - no hand-made art, no in-house level editor.
   2. **Practice** - short tasks that repeat the idea with different things. A wrong
      answer is never punished: it is named ("that is the bigger one"), the question
      is asked again, and after two misses the right answer pulses.
-  3. **Apply** - the characters send the child off screen: a mission in the
-     kitchen, at the table, with the socks; then a card for the parent with one
-     concrete thing to do together. The game should end with the tablet put down.
+  3. **Apply** - the characters play the home version of the game on screen
+     (bigger than my paw, a plate for every cup, tidying after a snack), the child
+     joins for one round, and they close with "ask your parents to play this at
+     home". No text, no card for the parent: the game itself shows how to play.
+     The lesson ends with the characters waving goodbye while a blue iris closes
+     around their faces and the menu fades in - a clear, calm ending, so the
+     tablet can be put down.
 - **One idea per lesson, said in both directions** ("bigger than ... smaller
   than"), with the same words every time.
 - **Nothing just appears or just happens**: things grow in with a little
@@ -44,6 +48,10 @@ objects - no hand-made art, no in-house level editor.
 - Two languages from day one (Polish, English); every spoken line is a key in a
   per-lesson translation file and becomes an mp3 through the audio pipeline. Until
   the mp3 exists the browser's own voice reads the line (for testing only).
+  **Sound only**: no subtitles, no written instructions. If the child missed the
+  instruction, tapping a character repeats it. **No narrator**: there is no voice
+  from off screen; every line belongs to a character who is on screen and moves
+  its mouth.
 
 ## Tablets and the safe area
 
@@ -74,7 +82,10 @@ A lesson is a folder `game/lessons/<id>/` with:
 The master player (`game/index.html`) lists lessons from `game/lessons/index.json`,
 picks the language, loads the module and runs the scenes in order, giving each one
 a `ctx` with: `say(who, key)`, `enter(who)`, `show(who)`, `play(who, anim)`,
-`object(name, {x, y, size})`, `sign(text)`, `zone({x, y, w, h})`, `choose(targets)`,
+`object(name, {x, y, size})`, `sign(text)`, `zone({x, y, w, h, image})`, `choose(targets)`,
+`sort({items, zones, wrong})` (drag things into containers, any order; checked only
+when everything is in, each container one kind), `arrange(groups, opts)` (the layout:
+rows and groups by real widths, so nothing overlaps or misaligns),
 `task({targets, correct, wrong})`, `card(key)`, `wait(s)`, `clear()`, `praise(who)`,
 `t(key)`, `lang`, `fast`. A lesson never touches three.js directly and never knows
 about other lessons; the player never knows what a lesson does. Adding lesson

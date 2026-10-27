@@ -7,12 +7,15 @@
   html, body { margin: 0; height: 100%; overflow: hidden; background: #000; font: 16px/1.4 system-ui, sans-serif; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
   #stage { position: fixed; inset: 0; background: #000; }
   #stage canvas { display: block; }
-  #menu { position: fixed; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 24px; background: linear-gradient(#bfe4ff, #e9f7d8); }
+  #menu { position: fixed; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 24px; background: linear-gradient(#bfe4ff, #e9f7d8); opacity: 0; transition: opacity .7s ease; }
+  #menu.in { opacity: 1; }
+  #iris { position: fixed; inset: 0; display: none; background: #2f7fe0; pointer-events: none; }
   #menu h1 { margin: 0; font-size: 44px; color: #2a4a6a; }
   #lessons { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; max-width: 900px; }
-  .lesson { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 230px; padding: 22px 16px; border: 0; border-radius: 22px; background: #fff; box-shadow: 0 6px 0 #c7d8e6; font: inherit; cursor: pointer; }
+  .lesson { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 230px; padding: 16px 16px 20px; border: 0; border-radius: 22px; background: #fff; box-shadow: 0 6px 0 #c7d8e6; font: inherit; cursor: pointer; }
   .lesson:active { transform: translateY(3px); box-shadow: 0 3px 0 #c7d8e6; }
-  .lesson .nr { width: 54px; height: 54px; border-radius: 50%; background: #ffb347; color: #fff; font-size: 28px; font-weight: 700; display: grid; place-items: center; }
+  .lesson .cover { width: 198px; height: 198px; border-radius: 16px; object-fit: cover; background: #e9f7d8; }
+  .lesson .nr { position: absolute; top: 6px; left: 6px; width: 40px; height: 40px; border-radius: 50%; background: #ffb347; color: #fff; font-size: 22px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 2px 4px rgba(0,0,0,.25); }
   .lesson .name { font-size: 20px; font-weight: 700; color: #2a4a6a; text-align: center; }
   .lesson .sub { font-size: 13px; color: #6a7f94; text-align: center; }
   #langs button { font: inherit; padding: 6px 14px; border: 2px solid #2a4a6a; border-radius: 12px; background: #fff; color: #2a4a6a; margin: 0 4px; cursor: pointer; }
@@ -44,6 +47,7 @@
   <button class="menu">☰</button></div>
 <div id="menu"><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div></div>
 <div id="subtitle"></div>
+<div id="iris"></div>
 <div id="card"><div class="box"><div class="text"></div><button></button></div></div>
 <script type="module">
   import { Player } from "./engine/player.js";

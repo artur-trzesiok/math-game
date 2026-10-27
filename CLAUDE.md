@@ -33,6 +33,7 @@ tools/                      pipelines; never shipped. Each has work/ (gpt-image 
   backgrounds/make_background.py gen | split | install | all <scene>
   objects/make_objects.py        gen | split
   audio/make_audio.py            [lesson]   ElevenLabs -> game/audio
+  lessons/make_cover.py          [lesson]   square menu cover from the lesson's `cover` prompt + refs
 work/                       local scratch: snapshots (work/snap), debug renders - git-ignored
 ```
 
@@ -61,9 +62,12 @@ for review snapshots of all four puppets at a frozen phase.
 One folder per lesson, see `guidelines.md` for the contract and
 `game/lessons/bigger_smaller/` as the reference. Order of work for a new lesson:
 `scenario.md` first (the script, three stages), then `i18n/pl.json` + `en.json`
-(every spoken line as `"line.<stage>_<n>": {who, text}` - the key is the mp3 name,
-so never rename a recorded line, add a new key), then `lesson.js`, then a line in
-`lessons/index.json`, then a run with `?szybko` and snapshots of every scene, then
+(every spoken line as `"line.<stage>_<n>": {who, text}` - `who` is always a character
+of the lesson, never a narrator; the key is the mp3 name, so never rename a
+recorded line, add a new key), then `lesson.js`, then a line in
+`lessons/index.json`, then `python tools/lessons/make_cover.py <id>` (the `cover`
+field of lesson.json says what the square menu picture shows; style and cast come
+from the character and background references), then a run with `?szybko` and snapshots of every scene, then
 `python tools/audio/make_audio.py <id>` once the lines are final.
 
 Scenes are plain async functions; keep each one a screen's worth. Positions are

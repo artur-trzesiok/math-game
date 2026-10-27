@@ -102,6 +102,8 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
 def main() -> int:
     if "--voices" in sys.argv:
         r = requests.get(f"{API}/voices", headers={"xi-api-key": api_key()}, timeout=30)
+        if r.status_code != 200:
+            print(f"HTTP {r.status_code}: {r.text[:200]}")
         for v in r.json().get("voices", []):
             lab = v.get("labels", {})
             print(f"  {v['voice_id']}  {v['name']:<16} {lab.get('gender', '?'):<7} {lab.get('age', '?'):<11} {lab.get('accent', '?')}")

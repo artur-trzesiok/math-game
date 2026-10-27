@@ -34,11 +34,14 @@ export class Stage {
     this.camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
     this.camera.position.set(0, 0, CAM_Z);
     this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0;
-    this.pending = null; this.lastHit = null;
+    this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;
     this.raycaster = new THREE.Raycaster();
     this.onResize = () => this.resize();
     window.addEventListener("resize", this.onResize); this.resize();
-    this.renderer.domElement.addEventListener("pointerdown", (e) => this.pointer(e));
+    this.renderer.domElement.addEventListener("pointerdown", (e) => { if (e.button !== 0 && e.pointerType === "mouse") return; if (!this.dragStart(e)) this.pointer(e); });
+    this.renderer.domElement.addEventListener("pointermove", (e) => this.dragMove(e));
+    this.renderer.domElement.addEventListener("pointerup", () => this.dragEnd());
+    this.renderer.domElement.addEventListener("pointercancel", () => this.dragEnd());
     if (PARAMS.has("safe")) this.showSafe();
     this.last = performance.now(); this.lastRaf = this.last;
     this.running = true;
@@ -169,8 +172,8 @@ export class Stage {
     const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${name}.webp`), transparent: true, alphaTest: 0.05 }));
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
-    const handle = { mesh: g, name, base: size, kind: "object", pulse: false,
-      remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
+    const handle = { mesh: g, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false,
+      remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
       moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
     this.scene.add(g); this.objects.push(handle);
@@ -197,23 +200,123 @@ export class Stage {
     this.appear(handle);
     return handle;
   }
-  // a zone: an outlined area objects can be sorted into
-  zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff" } = {}) {
+  // a zone: an area objects are sorted into - a dashed outline, optionally drawn over a
+  // container picture (a basket, a box). Items inside are laid out in rows by their real
+  // widths, a little smaller than loose (0.8), so even the big ones fit.
+  async zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff", image = null, name = "zone" } = {}) {
+    const g = new THREE.Group(); g.position.set(x, y, 0.3);
+    if (image) {
+      const side = Math.max(w, h) * 1.05;
+      const pic = new THREE.Mesh(new THREE.PlaneGeometry(side, side), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${image}.webp`), transparent: true, alphaTest: 0.05 }));
+      pic.position.set(0, (side - h) / 2 - side * 0.12, -0.01); g.add(pic);
+    }
     const c = document.createElement("canvas"); c.width = 256; c.height = 192; const ctx = c.getContext("2d");
-    ctx.fillStyle = "rgba(255,255,255,0.45)"; ctx.strokeStyle = color; ctx.lineWidth = 10; ctx.setLineDash([22, 14]);
+    ctx.fillStyle = image ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.45)"; ctx.strokeStyle = color; ctx.lineWidth = 8; ctx.setLineDash([22, 14]);
     ctx.beginPath(); ctx.roundRect(8, 8, 240, 176, 28); ctx.fill(); ctx.stroke();
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
-    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
-    m.position.set(x, y, 0.3);
-    const handle = { mesh: m, name: "zone", kind: "zone", x, y, w, h, base: 1, pulse: false, slots: 0,
-      slot: () => { const i = handle.slots++; const cols = Math.max(2, Math.round(w / 1.05)); return { x: x - w / 2 + 0.6 + (i % cols) * (w - 1.2) / (cols - 1), y: y + h / 2 - 0.65 - Math.floor(i / cols) * 0.8 }; },
-      remove: () => { this.scene.remove(m); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
-      highlight: (on) => { handle.pulse = on; if (!on) m.scale.setScalar(1); } };
-    this.scene.add(m); this.objects.push(handle);
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true, opacity: image ? 0.7 : 1 }));
+    g.add(m);
+    const handle = { mesh: g, name, kind: "zone", x, y, w, h, base: 1, pulse: false, items: [],
+      contains: (px, py) => Math.abs(px - x) < w / 2 + 0.2 && Math.abs(py - y) < h / 2 + 0.3,
+      layout: (animate = true) => {
+        const gap = 0.08, maxW = w - 0.25, rows = [[]]; let rowW = 0;
+        for (const it of handle.items) {
+          const iw = 1.18 * it.base;
+          if (rowW + iw > maxW && rows[rows.length - 1].length) { rows.push([]); rowW = 0; }
+          rows[rows.length - 1].push(it); rowW += iw + gap;
+        }
+        let top = y + h / 2 - 0.12;
+        const total = rows.reduce((a, r) => a + Math.max(...r.map((it) => 1.18 * it.base)) + gap, 0) - gap;
+        top -= Math.max(0, (h - 0.24 - total) / 2);
+        for (const r of rows) {
+          const rh = Math.max(...r.map((it) => 1.18 * it.base)), rw = r.reduce((a, it) => a + 1.18 * it.base + gap, 0) - gap;
+          let cx = x - rw / 2;
+          for (const it of r) {
+            const iw = 1.18 * it.base, tx = cx + iw / 2, ty = top - rh / 2;
+            if (animate) it.moveTo(tx, ty, 0.35); else it.mesh.position.set(tx, ty, it.mesh.position.z);
+            cx += iw + gap;
+          }
+          top -= rh + gap;
+        }
+      },
+      put: (it) => { if (it.zone && it.zone !== handle) it.zone.take(it); if (!handle.items.includes(it)) handle.items.push(it); it.zone = handle; it.base = it.size0 * 0.8; it.mesh.scale.setScalar(it.base); handle.layout(); },
+      take: (it, relayout = true) => { const i = handle.items.indexOf(it); if (i >= 0) handle.items.splice(i, 1); it.zone = null; it.base = it.size0; it.mesh.scale.setScalar(it.base); if (relayout) handle.layout(); },
+      // kept for scenes that place things one by one
+      slot: () => { const i = handle.items.length + (handle.slots = (handle.slots || 0) + 1) - 1; const cols = Math.max(2, Math.round(w / 1.05)); return { x: x - w / 2 + 0.6 + (i % cols) * (w - 1.2) / (cols - 1), y: y + h / 2 - 0.65 - Math.floor(i / cols) * 0.8 }; },
+      remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
+      highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(1); } };
+    this.scene.add(g); this.objects.push(handle);
     this.appear(handle);
     return handle;
   }
+
+  // ------------------------------------------------------------------ layout
+  // the width a handle takes on screen (sticker card, sign card, zone)
+  widthOf(h) { return h.kind === "zone" ? h.w : h.kind === "sign" ? h.base : 1.18 * (h.base ?? 1); }
+  // arrange(groups): lay the groups out in one line centred on x - items in a group `gap`
+  // apart, groups `groupGap` apart, every item centred on y. Returns {x, w, items} per
+  // group, so a zone or a sign can be sized from the group's real extent.
+  arrange(groups, { x = 0, y = 1.2, gap = 0.18, groupGap = 1.0, animate = false } = {}) {
+    const info = groups.map((items) => ({ items, w: items.reduce((a, h) => a + this.widthOf(h), 0) + gap * Math.max(0, items.length - 1) }));
+    const total = info.reduce((a, g) => a + g.w, 0) + groupGap * Math.max(0, info.length - 1);
+    let cx = x - total / 2;
+    for (const g of info) {
+      g.x = cx + g.w / 2;
+      let ix = cx;
+      for (const h of g.items) {
+        const w = this.widthOf(h), tx = ix + w / 2;
+        if (animate && h.moveTo) h.moveTo(tx, y, 0.4); else { h.mesh.position.x = tx; h.mesh.position.y = y; if (h.home) { h.home.x = tx; h.home.y = y; } }
+        ix += w + gap;
+      }
+      cx += g.w + groupGap;
+    }
+    return info;
+  }
+
+  // ------------------------------------------------------------------ drag and drop sorting
+  // sort({items, zones, onDrop, onTap}): the child drags any item into any zone, in any order,
+  // and may take it out again; onDrop(item, zone) after every drop, onTap(puppet) for a tap
+  // on a character (repeat the instruction). endSort() when the lesson is satisfied.
+  sort(set) { this.dragSet = set; this.drag = null; }
+  endSort() { this.dragSet = null; this.drag = null; }
+  dropInto(item, zone) { zone.put(item); this.bump(zone, 0.06); if (this.dragSet) this.dragSet.onDrop(item, zone); }
+  ndc(e) { const r = this.renderer.domElement.getBoundingClientRect(); return new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); }
+  worldAt(ndc, z = 0.4) {
+    this.raycaster.setFromCamera(ndc, this.camera);
+    const o = this.raycaster.ray.origin, d = this.raycaster.ray.direction, t = (z - o.z) / d.z;
+    return new THREE.Vector3(o.x + d.x * t, o.y + d.y * t, z);
+  }
+  dragStart(e) {
+    const set = this.dragSet; if (!set) return false;
+    const n = this.ndc(e); this.raycaster.setFromCamera(n, this.camera);
+    let best = null, bestD = Infinity;
+    for (const it of set.items) { const hits = this.raycaster.intersectObject(it.mesh, true); if (hits.length && hits[0].distance < bestD) { best = it; bestD = hits[0].distance; } }
+    if (!best) {
+      for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.raycaster.intersectObject(L.korzen, true).some((i) => i.object.visible)) { this.bump(L); set.onTap?.(L); return true; }
+      return false;
+    }
+    const p = this.worldAt(n);
+    this.drag = { item: best, dx: best.mesh.position.x - p.x, dy: best.mesh.position.y - p.y, from: { x: best.mesh.position.x, y: best.mesh.position.y }, zone: best.zone };
+    if (best.zone) best.zone.take(best);
+    best.mesh.position.z = 0.9; this.bump(best, 0.12);
+    this.renderer.domElement.setPointerCapture(e.pointerId);
+    return true;
+  }
+  dragMove(e) {
+    const d = this.drag; if (!d) return;
+    const p = this.worldAt(this.ndc(e)); d.item.mesh.position.x = p.x + d.dx; d.item.mesh.position.y = p.y + d.dy;
+  }
+  dragEnd() {
+    const d = this.drag; if (!d) return; this.drag = null;
+    const it = d.item, px = it.mesh.position.x, py = it.mesh.position.y;
+    it.mesh.position.z = 0.4;
+    const zone = (this.dragSet?.zones || []).find((z) => z.contains(px, py));
+    if (zone) this.dropInto(it, zone);
+    else if (d.zone) { d.zone.put(it); }                              // dropped nowhere: back where it was
+    else it.moveTo(it.home.x, it.home.y, 0.35);
+  }
   clear() {
+    this.endSort();
     for (const o of this.objects.slice()) o.remove();
     this.targets = [];
   }

@@ -1,25 +1,114 @@
 {
-  "line.s1_intro": { "who": "narrator", "text": "Fox and Squirrel found two apples in the orchard." },
-  "line.s1_fox_big": { "who": "lisek", "text": "Look, my apple is big!" },
-  "line.s1_sq_small": { "who": "wiewiorka", "text": "And mine is small. But it's sweet!" },
-  "line.s1_compare": { "who": "narrator", "text": "The big apple is bigger than the small one. And the small apple is smaller than the big one." },
-  "line.s1_daily": { "who": "narrator", "text": "It's the same at home. Mum has big shoes and you have small ones. Your shoes are smaller." },
-  "line.s2_thirsty": { "who": "wiewiorka", "text": "I'm thirsty! Which cup is for me?" },
-  "line.s2_fox_asks": { "who": "lisek", "text": "Squirrel has little paws. Can you help her choose?" },
-  "line.s2_prompt": { "who": "narrator", "text": "Tap the smaller cup." },
-  "line.s2_wrong": { "who": "narrator", "text": "That is the bigger cup. Look for the smaller one." },
-  "line.s2_thanks": { "who": "wiewiorka", "text": "Thank you! The small cup fits my paws." },
-  "line.s2_summary": { "who": "narrator", "text": "The small cup is smaller and the big cup is bigger. Great!" },
-  "line.p_intro": { "who": "lisek", "text": "Now a game. I'll show you two things and you choose." },
-  "line.p_click_bigger": { "who": "lisek", "text": "Tap the bigger one." },
-  "line.p_click_smaller": { "who": "lisek", "text": "Tap the smaller one." },
-  "line.p_click_biggest": { "who": "lisek", "text": "There are three. Tap the biggest." },
-  "line.p_click_smallest": { "who": "lisek", "text": "There are three. Tap the smallest." },
-  "line.p_wrong": { "who": "narrator", "text": "Try again." },
-  "line.p_good": { "who": "lisek", "text": "That's right!" },
-  "line.a_intro": { "who": "narrator", "text": "Bigger and smaller things are everywhere, not only in the game." },
-  "line.a_fox_idea": { "who": "lisek", "text": "Find a spoon at home that is bigger than your hand." },
-  "line.a_sq_idea": { "who": "wiewiorka", "text": "And then something smaller than your thumb!" },
-  "card.a_parents": "For the parent:\nLine up the whole family's shoes from the smallest to the biggest.\nAsk: which ones are bigger than yours? Which are the smallest?",
-  "line.a_bye": { "who": "narrator", "text": "See you in the next lesson!" }
+  "line.s1_intro": {
+    "who": "lisek",
+    "text": "Squirrel, look! We found two apples in the orchard."
+  },
+  "line.s1_fox_big": {
+    "who": "lisek",
+    "text": "Look, my apple is big!"
+  },
+  "line.s1_sq_small": {
+    "who": "wiewiorka",
+    "text": "And mine is small. But it's sweet!"
+  },
+  "line.s1_compare": {
+    "who": "wiewiorka",
+    "text": "Your big apple is bigger than mine. And my small apple is smaller than yours."
+  },
+  "line.s1_daily": {
+    "who": "lisek",
+    "text": "It's the same at home. Mum has big shoes and you have small ones. Your shoes are smaller."
+  },
+  "line.s2_thirsty": {
+    "who": "wiewiorka",
+    "text": "I'm thirsty! Which cup is for me?"
+  },
+  "line.s2_fox_asks": {
+    "who": "lisek",
+    "text": "Squirrel has little paws. Can you help her choose?"
+  },
+  "line.s2_prompt": {
+    "who": "lisek",
+    "text": "Tap the smaller cup."
+  },
+  "line.s2_wrong": {
+    "who": "lisek",
+    "text": "That is the bigger cup. Look for the smaller one."
+  },
+  "line.s2_thanks": {
+    "who": "wiewiorka",
+    "text": "Thank you! The small cup fits my paws."
+  },
+  "line.s2_summary": {
+    "who": "lisek",
+    "text": "The small cup is smaller and the big cup is bigger. Great!"
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Now a game. I'll show you two things and you choose."
+  },
+  "line.p_click_bigger": {
+    "who": "lisek",
+    "text": "Tap the bigger one."
+  },
+  "line.p_click_smaller": {
+    "who": "lisek",
+    "text": "Tap the smaller one."
+  },
+  "line.p_click_biggest": {
+    "who": "lisek",
+    "text": "There are three. Tap the biggest."
+  },
+  "line.p_click_smallest": {
+    "who": "lisek",
+    "text": "There are three. Tap the smallest."
+  },
+  "line.p_wrong": {
+    "who": "lisek",
+    "text": "Try again."
+  },
+  "line.p_good": {
+    "who": "lisek",
+    "text": "That's right!"
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "See you!"
+  },
+  "line.a_fox_game": {
+    "who": "lisek",
+    "text": "Let's play a home game! I show a thing and you say if it is bigger or smaller than my paw."
+  },
+  "line.a_sq_ok": {
+    "who": "wiewiorka",
+    "text": "Okay! Show me."
+  },
+  "line.a_fox_plate": {
+    "who": "lisek",
+    "text": "A plate. Bigger or smaller than my paw?"
+  },
+  "line.a_sq_bigger": {
+    "who": "wiewiorka",
+    "text": "Bigger! The plate is bigger than your paw."
+  },
+  "line.a_fox_cookie": {
+    "who": "lisek",
+    "text": "And a cookie?"
+  },
+  "line.a_sq_smaller": {
+    "who": "wiewiorka",
+    "text": "Smaller! The cookie is smaller than your paw."
+  },
+  "line.a_sq_your_turn": {
+    "who": "wiewiorka",
+    "text": "Your turn. Tap the thing that is bigger than your hand."
+  },
+  "line.a_fox_right": {
+    "who": "lisek",
+    "text": "Yes! The ball is bigger than a hand and the flower is smaller."
+  },
+  "line.a_ask_parents": {
+    "who": "wiewiorka",
+    "text": "Ask your parents to play this with you at home. Look for things bigger and smaller than your hand!"
+  }
 }
