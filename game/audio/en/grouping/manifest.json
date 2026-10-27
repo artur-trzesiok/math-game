@@ -175,32 +175,32 @@
   "text": "Cups into the basket, plates into the box."
  },
  "line.a_rule_red": {
-  "hash": "460cfd0d970f",
+  "hash": "7edbc6e97b21",
   "who": "sarenka",
   "text": "Red things into the basket, the rest into the box."
  },
  "line.a_rule_big": {
-  "hash": "622895deee74",
+  "hash": "80436c2a6bca",
   "who": "wiewiorka",
   "text": "Big ones into the basket, small ones into the box."
  },
  "line.a_rule_round": {
-  "hash": "5a8c5f947680",
+  "hash": "29d804ee5e8f",
   "who": "sarenka",
   "text": "Round things into the basket, the rest into the box."
  },
  "line.s0_roll": {
-  "hash": "2466af886eab",
+  "hash": "0fd241388f37",
   "who": "sarenka",
   "text": "Hop! One pear rolled under the bed!"
  },
  "line.s0_drag_back": {
-  "hash": "8b22abf4fce7",
+  "hash": "a07366843e5b",
   "who": "wiewiorka",
   "text": "Drag it back onto the rug, with the others."
  },
  "line.s0_caught": {
-  "hash": "318b9446783d",
+  "hash": "104a4bdcca05",
   "who": "sarenka",
   "text": "We've got it! Now all the fruit is together."
  }
