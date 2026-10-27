@@ -7,7 +7,8 @@
 
 import * as THREE from "three";
 import { Lalka } from "./lalka.js";
-import { zbudujTlo, czas as bgClock } from "./tlo.js";
+import { zbudujTlo, czas as bgClock, zginanieTla } from "./tlo.js";
+if (new URLSearchParams(location.search).has("sztywnetlo")) zginanieTla.value = 0;   // A/B: the old shearing grass
 
 export const SAFE = { w: 12, h: 9 };
 export const GROUND = -3.3;

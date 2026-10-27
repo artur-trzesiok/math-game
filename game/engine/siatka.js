@@ -71,10 +71,10 @@ export function baza(img, bb, os, centrum, strona = "dol") {
     keep[j * nx + i] = k;
   }
   const sx = (os[0] - bb.x) / CELL, sy = (os[1] - bb.y) / CELL, cx = (centrum[0] - bb.x) / CELL, cy = (centrum[1] - bb.y) / CELL;
-  // the distal side: below the pivot (limbs) or beyond it as seen from the torso centre (tails)
+  // the distal side: below the pivot (limbs), above it (plants rooted at the bottom), or beyond it as seen from the torso centre (tails)
   const dystalna = (i) => {
     const x = i % nx + 0.5, y = ((i / nx) | 0) + 0.5;
-    return strona === "od_tulowia" ? (x - sx) * (sx - cx) + (y - sy) * (sy - cy) > 0 : y > sy;
+    return strona === "od_tulowia" ? (x - sx) * (sx - cx) + (y - sy) * (sy - cy) > 0 : strona === "gora" ? y < sy : y > sy;
   };
   const dist = geodezyjnie(keep, nx, ny, sx, sy, (i) => !dystalna(i));   // over the mesh itself: a thin gap (a tuft, a claw) must not split s across one triangle
   let tip = 0;
@@ -119,6 +119,18 @@ export function sW(B, x, y) {
       if (d < bd) { bd = d; best = B.s[j * B.nx + i]; }
     }
   return best;
+}
+
+// the mean height (reference px) of the band of cells at chain position sk - a plant's bend line
+export function wysokoscS(B, sk, d = 0.03) {
+  let sum = 0, n = 0, best = 0, bd = Infinity;
+  for (let i = 0; i < B.nx * B.ny; i++) {
+    if (!B.keep[i] || B.s[i] < 0) continue;
+    const y = B.bb.y + (((i / B.nx) | 0) + 0.5) * CELL, e = Math.abs(B.s[i] - sk);
+    if (e < d) { sum += y; n++; }
+    if (e < bd) { bd = e; best = y; }
+  }
+  return n ? sum / n : best;
 }
 
 export function waga(s, sk, h) {

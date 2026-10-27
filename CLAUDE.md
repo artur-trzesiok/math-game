@@ -196,6 +196,23 @@ per-joint sliders `miękkość` (saved) and `zgięcie` (a test bend, not saved),
 switches `zginanie` (A/B against the rigid cut-out) and `siatka` (wireframe);
 `edytor.przeglad(kto, anim, faza, nazwa, {zgin, druty})` snapshots from the console.
 
+Feet (`lalka.js`, legs = chains of a `noga*` bone with a knee and an ankle). An
+animation's `stopy` decides: `"ik"` - feet planted: the animation moves only the hips
+(root rotation `biodra`, sideways shift `biodra_x` and height `skok`, both in puppet
+heights) and every leg of the visible view is solved as a 2-bone IK so its ankle
+returns to where it stood at rest; the knee track only picks the side the knee folds
+to (inside `zakres` first), the ankle keeps the foot level (Kiwanie). `"ziemia"` -
+the view moves up or down until the leg reaching deepest below ITS OWN rest floor
+stands on it (Chod, Skradanie): a far leg is drawn higher (perspective) or reaching
+lower, so one shared floor lifts or sinks the others; the walk's bob then comes from
+the legs and replaces `skok`. Rigid stance legs still lift the other feet a little.
+
+Background grass (`tlo.js`) uses the same mesh: a tuft is a grid trimmed to its alpha,
+s from its bottom edge up each blade (`dystalnie` "gora"), three bend lines at s 0.4 /
+0.62 / 0.82; the wind turns every vertex around the bend line under it (a tuft is
+wide, one rotation centre would lift its outer blades), the gust reaching each line
+0.55 rad later. Clouds still drift as one quad. `?sztywnetlo` = the old shear (A/B).
+
 Dead ends (do not retry): loose-part sheets for body pieces; any Python cut
 (difference masks, caps, erosion, hole filling); "head with face" as a keyed
 edit; a blank head keeping the nose; a profile sheet with a pair of eyes;

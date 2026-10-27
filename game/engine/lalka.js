@@ -138,6 +138,7 @@ export class Lalka {
       if (!this.widokGrupy[L.widok].visible) { L.wazne = false; continue; }   // a hidden view bends when it shows up
       let zmiana = !L.wazne;
       L.stawy.forEach((st, i) => {
+        if (L.ikKaty && i < 2) { const f = L.ikKaty[i]; if (f !== L.katy[i]) { L.katy[i] = f; zmiana = true; } return; }
         let a = (p[st.nazwa] || 0) + (this.recznie?.[st.nazwa] || 0);
         a = Math.max(st.zakres[0], Math.min(st.zakres[1], a));
         if (L.lustro) a = -a;
@@ -170,7 +171,7 @@ export class Lalka {
       const g = new THREE.Group();
       const [x, y] = this._sw(os[0], os[1], o.widok);
       g.position.set(x, y, 0);
-      g.userData = { os, widok: o.widok, bazaY: y };
+      g.userData = { os, widok: o.widok, bazaY: y, bazaX: x };
       this.widokGrupy[o.widok].add(g);
       this.kosci[k] = g;
     }
@@ -253,6 +254,71 @@ export class Lalka {
       this.twarze[widok] = zestaw;
     }
     this.korzen.userData.lalka = this;
+    this._spoczynekStop();
+  }
+
+  // ------------------------------------------------------------ feet
+  // legs = chains of a bone named noga* with a knee and an ankle; at rest: where each ankle
+  // stands (view space), the foot's rotation, and how low the lowest foot vertex reaches
+  _spoczynekStop() {
+    this.nogi = this.lancuchy.filter((L) => /noga/.test(L.kosc) && L.stawy.length >= 2);
+    for (const [k, g] of Object.entries(this.kosci)) g.rotation.z = g.userData.czesc ? -(this.dane.czesci[g.userData.czesc]?.obrot || 0) * DEG : 0;
+    this.korzen.updateMatrixWorld(true);
+    for (const L of this.nogi) {
+      const g = this.kosci[L.kosc], wg = this.widokGrupy[L.widok];
+      L.cel = wg.worldToLocal(g.localToWorld(new THREE.Vector3(L.stawy[1].jx, L.stawy[1].jy, 0)));
+      L.stopa0 = this._obrotWidoku(g);
+      L.podeszwa = [];
+      const B = L.rest;
+      for (let v = 0; v < B.length / 3; v++) if (L.wagi[1 * (B.length / 3) + v] > 0.99) L.podeszwa.push(v);   // the foot: past the ankle
+      L.dno0 = this._dnoNogi(L, true);   // each leg's own floor: a far leg is often drawn reaching lower than the near one
+    }
+  }
+  // the sum of z rotations from a bone up to its view group: the bone's angle in view space
+  _obrotWidoku(g) { const widoki = Object.values(this.widokGrupy); let a = 0; for (let o = g; o && !widoki.includes(o); o = o.parent) a += o.rotation.z; return a; }
+  // the lowest foot vertex of a leg in its view space (rest geometry or the bent one)
+  _dnoNogi(L, spoczynek = false) {
+    const wg = this.widokGrupy[L.widok], src = spoczynek ? L.rest : L.mesh.geometry.attributes.position.array;
+    const m = new THREE.Matrix4().copy(wg.matrixWorld).invert().multiply(L.mesh.matrixWorld), v = new THREE.Vector3();
+    let lo = Infinity;
+    for (const i of L.podeszwa) { v.set(src[3 * i], src[3 * i + 1], 0).applyMatrix4(m); if (v.y < lo) lo = v.y; }
+    return lo;
+  }
+  // feet planted: every leg of the visible view is solved (2-bone IK) so its ankle stays where it stood at rest;
+  // the animation moves the hips (biodra, biodra_x, skok), the knees follow. The track value of a knee only picks
+  // the side it folds to; the ankle keeps the foot level (plus its own track).
+  _ik(p) {
+    this.korzen.updateMatrixWorld(true);
+    for (const L of this.nogi) {
+      L.ikKaty = null;
+      if (!this.widokGrupy[L.widok].visible || !Lalka.zginanie) continue;
+      const g = this.kosci[L.kosc], wg = this.widokGrupy[L.widok];
+      const T = g.parent.worldToLocal(wg.localToWorld(L.cel.clone()));
+      const ux = T.x - g.position.x, uy = T.y - g.position.y, d = Math.hypot(ux, uy);
+      const [k0, k1] = L.stawy;
+      const kx = k0.jx, ky = k0.jy, ax = k1.jx - k0.jx, ay = k1.jy - k0.jy;
+      const L1 = Math.hypot(kx, ky), L2 = Math.hypot(ax, ay), beta = Math.atan2(ay, ax) - Math.atan2(ky, kx);
+      const c = Math.max(-1, Math.min(1, (d * d - L1 * L1 - L2 * L2) / (2 * L1 * L2))), gam = Math.acos(c);
+      const norm = (a) => Math.atan2(Math.sin(a), Math.cos(a));
+      const hint = p[k0.nazwa] || 0, jakKat = (psi) => (L.lustro ? 1 : -1) * psi / DEG;
+      const ocena = (psi) => { const kat = jakKat(psi); return (kat < k0.zakres[0] || kat > k0.zakres[1] ? 1000 : 0) + Math.abs(kat - hint); };
+      const a1 = norm(gam - beta), a2 = norm(-gam - beta), psi = ocena(a1) <= ocena(a2) ? a1 : a2;
+      const vx = kx + Math.cos(psi) * ax - Math.sin(psi) * ay, vy = ky + Math.sin(psi) * ax + Math.cos(psi) * ay;
+      g.rotation.z = Math.atan2(uy, ux) - Math.atan2(vy, vx);
+      const rodzic = this._obrotWidoku(g) - g.rotation.z;
+      const chi = L.stopa0 - (rodzic + g.rotation.z + psi) + (L.lustro ? 1 : -1) * (p[k1.nazwa] || 0) * DEG;
+      L.ikKaty = [psi, chi];
+    }
+  }
+  // feet on the floor: the visible view moves up or down until the leg reaching deepest below its own
+  // rest floor stands exactly on it - stance legs carry the body, the walk's bob comes from the legs
+  _naZiemi() {
+    const widok = this.wProfilu ? "profil" : this.wTyle ? "tyl" : "przod", nogi = this.nogi.filter((L) => L.widok === widok);
+    if (!nogi.length) return;
+    this.korzen.updateMatrixWorld(true);
+    const rel = Math.min(...nogi.map((L) => this._dnoNogi(L) - L.dno0));
+    const root = this.kosci[{ przod: "biodra", profil: "p_biodra", tyl: "t_biodra" }[widok]];
+    if (root && isFinite(rel)) root.position.y -= rel;
   }
 
   // ------------------------------------------------------------ stan
@@ -352,11 +418,15 @@ export class Lalka {
       if (g.userData.zUniesiona !== undefined) g.position.z = Math.abs(p[k] || 0) > 45 ? g.userData.zUniesiona : g.userData.z;   // uniesiona konczyna przed glowa
       if (k === "tulow" || k === "p_cialo" || k === "t_tulow") g.scale.y = p.tulow_skala || 1;
     }
-    this._zginaj(p);
     for (const root of ["biodra", "p_biodra", "t_biodra"]) {
       const g = this.kosci[root]; if (!g) continue;
       g.position.y = g.userData.bazaY + (p.skok || 0) * this.wysokosc;
+      g.position.x = g.userData.bazaX + (p.biodra_x || 0) * this.wysokosc;   // the hips shift sideways over the feet
     }
+    const stopy = a?.stopy;
+    if (stopy === "ik") this._ik(p); else for (const L of this.nogi) L.ikKaty = null;
+    this._zginaj(p);
+    if (stopy === "ziemia" && Lalka.zginanie) this._naZiemi();
     // squash glowy przy zwrocie; glowy bok/tyl i ich twarze maja wlasny obrot bazowy wzgledem glowy z przodu
     const gl = this.kosci.glowa;
     if (gl) {
