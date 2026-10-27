@@ -21,6 +21,7 @@ function texture(url) {
   return new Promise((ok, bad) => loader.load(url, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, bad));
 }
 const easeInOut = (s) => s * s * (3 - 2 * s);
+const easeOutBack = (s) => { const c = 1.7; return 1 + (c + 1) * Math.pow(s - 1, 3) + c * Math.pow(s - 1, 2); };   // a small overshoot
 
 export class Stage {
   constructor(container, speech) {
@@ -91,7 +92,7 @@ export class Stage {
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) L.update(dt);
     for (const tw of this.tweens.slice()) {
-      tw.t += dt; const s = easeInOut(Math.min(1, tw.t / tw.d));
+      tw.t += dt; const s = (tw.ease || easeInOut)(Math.min(1, tw.t / tw.d));
       tw.step(s);
       if (tw.t >= tw.d) { this.tweens.splice(this.tweens.indexOf(tw), 1); tw.done(); }
     }
@@ -99,7 +100,14 @@ export class Stage {
     if (this.speech) this.speech.tick(t);
     this.renderer.render(this.scene, this.camera);
   }
-  tween(d, step) { return new Promise((done) => this.tweens.push({ t: 0, d, step, done })); }
+  tween(d, step, ease = null) { return new Promise((done) => this.tweens.push({ t: 0, d, step, done, ease })); }
+  // things grow in from nothing with a little overshoot; not awaited by the caller, so a row appears sticker by sticker
+  appear(h) {
+    const m = this.meshOf(h), base = h.base ?? 1;
+    h.bumping = true; m.scale.setScalar(0.001);
+    return this.tween(0.38, (s) => { const q = base * Math.max(0.001, s); m.scale.set(q, q, h.korzen ? 1 : q); }, easeOutBack)
+      .then(() => { m.scale.set(base, base, h.korzen ? 1 : base); h.bumping = false; });
+  }
   // touch feedback: the tapped thing pops (scale up and back); a wrong answer also shakes
   async bump(h, amount = 0.25) {
     const m = this.meshOf(h), base = h.base ?? 1, k = h.korzen ? 0.08 : amount;
@@ -161,12 +169,12 @@ export class Stage {
     const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${name}.webp`), transparent: true, alphaTest: 0.05 }));
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
-    g.scale.setScalar(size);
     const handle = { mesh: g, name, base: size, kind: "object", pulse: false,
       remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
       moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
     this.scene.add(g); this.objects.push(handle);
+    this.appear(handle);
     return handle;
   }
   // a sign or a word drawn on a card (=, <, >, a label)
@@ -186,6 +194,7 @@ export class Stage {
       highlight: (on) => { handle.pulse = on; if (!on) m.scale.setScalar(1); },
       moveTo: (nx, ny, d = 0.5) => { const x0 = m.position.x, y0 = m.position.y; return this.tween(d, (s) => { m.position.x = x0 + (nx - x0) * s; m.position.y = y0 + (ny - y0) * s; }); } };
     this.scene.add(m); this.objects.push(handle);
+    this.appear(handle);
     return handle;
   }
   // a zone: an outlined area objects can be sorted into
@@ -201,6 +210,7 @@ export class Stage {
       remove: () => { this.scene.remove(m); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
       highlight: (on) => { handle.pulse = on; if (!on) m.scale.setScalar(1); } };
     this.scene.add(m); this.objects.push(handle);
+    this.appear(handle);
     return handle;
   }
   clear() {

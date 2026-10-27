@@ -111,8 +111,8 @@ class Handler(SimpleHTTPRequestHandler):
         self._json(200, {"ok": True, "corrections": count})
 
     def log_message(self, fmt, *a):
-        # quiet for static files; errors pass str(code), so always stringify
-        if "/api/" in str(a[0] if a else ""):
+        # quiet for static files that exist; API calls and errors (a[0] is the code) are logged
+        if "/api/" in str(a[0] if a else "") or (a and str(a[0]).isdigit()):
             super().log_message(fmt, *a)
 
 

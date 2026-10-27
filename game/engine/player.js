@@ -119,7 +119,7 @@ export class Player {
       stage: S, lang, st, t: this.tl, fast: FAST,
       say,
       enter: guard((who, from) => S.enter(who, from || ((this.lesson.characters[who] || {}).side === "right" ? "right" : "left"))),
-      show: (who) => { alive(); const L = S.puppets[who]; if (L) { L.korzen.visible = true; L.korzen.position.x = L.home; L.patrz("przod"); L.spoczynek(); } },
+      show: (who) => { alive(); const L = S.puppets[who]; if (L) { L.korzen.visible = true; L.korzen.position.x = L.home; L.patrz("przod"); L.spoczynek(); S.appear(L); } },
       play: guard((who, anim, opts) => S.play(who, anim, opts)),
       mood: (who, m) => S.mood(who, m),
       object: guard((name, opts) => S.object(name, opts)),
