@@ -1,8 +1,10 @@
 // Spoken lines: an mp3 made by tools/audio/make_audio.py when there is one, the
-// browser's speech synthesis otherwise. Either way the speaking puppet gets an
-// amplitude every frame (mow()), so its mouth moves with the sound, and the player
-// shows a subtitle only for synthesised lines (the children cannot read; the
-// subtitle is for whoever is testing) or when ?napisy is set.
+// browser's speech synthesis otherwise. The speaking puppet gets an amplitude every
+// frame (mow()), so its mouth moves with the sound. The amplitude comes from the
+// BAKED envelope next to the mp3 (<key>.json, RMS every 20 ms, normalised - made by
+// the pipeline, identical on every device, no WebAudio needed); only when that file
+// is missing does a live WebAudio analyser stand in, and for synthesised lines a
+// fake rhythm. Subtitles only with ?napisy (testing).
 
 const PARAMS = new URLSearchParams(location.search);
 export const FAST = PARAMS.has("szybko");
@@ -44,7 +46,10 @@ export class Speech {
   tick(now) {
     const c = this.current; if (!c) return;
     let a;
-    if (c.live && analyser) {
+    if (c.envelope && c.audio) {                                           // baked: look the loudness up by playback time
+      const env = c.envelope, i = Math.floor(c.audio.currentTime / env.step);
+      a = c.audio.paused || c.audio.ended ? 0 : (env.amp[Math.min(i, env.amp.length - 1)] ?? 0);
+    } else if (c.live && analyser) {
       analyser.getByteTimeDomainData(buf); let s = 0; for (const v of buf) { const d = (v - 128) / 128; s += d * d; }
       const rms = Math.sqrt(s / buf.length);
       // normalise against the recording's own running peak, so a quiet file still opens the mouth fully
@@ -52,7 +57,7 @@ export class Speech {
       a = Math.min(1, rms / Math.max(c.peak, 0.02));
     }
     else a = 0.5 + 0.5 * Math.sin(now / 70);
-    this.amp += (a - this.amp) * 0.45;
+    this.amp += (a - this.amp) * (c.envelope ? 0.6 : 0.45);
     if (c.puppet) c.puppet.mow(this.amp);
   }
 
@@ -67,7 +72,8 @@ export class Speech {
       if (FAST) { subtitle(FORCE_SUBS); await new Promise((r) => setTimeout(r, 400)); return; }
       if (m[key]) {
         const a = new Audio(`/game/audio/${lang}/${lessonId}/${key}.mp3`);
-        this.current.live = attachAnalyser(a);
+        this.current.envelope = await fetch(`/game/audio/${lang}/${lessonId}/${key}.json`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+        if (!this.current.envelope) this.current.live = attachAnalyser(a);
         subtitle(FORCE_SUBS);
         await new Promise((ok, bad) => {
           let timer = null;

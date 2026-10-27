@@ -46,8 +46,9 @@ objects - no hand-made art, no in-house level editor.
 - Illustrated objects on white stickers (so a green pear reads on green grass),
   scaled for "bigger / smaller", repeated for "more / fewer", sorted for "groups".
 - Two languages from day one (Polish, English); every spoken line is a key in a
-  per-lesson translation file and becomes an mp3 through the audio pipeline. Until
-  the mp3 exists the browser's own voice reads the line (for testing only).
+  per-lesson translation file and becomes an mp3 through the audio pipeline, with its
+  lip-sync envelope baked next to it. Until the mp3 exists the browser's own voice
+  reads the line (for testing only).
   **Sound only**: no subtitles, no written instructions. If the child missed the
   instruction, tapping a character repeats it. **No narrator**: there is no voice
   from off screen; every line belongs to a character who is on screen and moves

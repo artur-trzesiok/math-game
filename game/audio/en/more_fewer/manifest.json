@@ -1,0 +1,142 @@
+{
+ "line.s1_intro": {
+  "hash": "932883115138",
+  "who": "lisek",
+  "text": "Owl, a picnic by the lake! I brought the cups and you brought the plates."
+ },
+ "line.s1_fox_cups": {
+  "hash": "c26971c51647",
+  "who": "lisek",
+  "text": "I have cups! Will every cup get a plate?"
+ },
+ "line.s1_owl_plates": {
+  "hash": "61d3f59e746b",
+  "who": "sowa",
+  "text": "Let's check. Put them in pairs: cup and plate, cup and plate."
+ },
+ "line.s1_pair": {
+  "hash": "b3c26d2d46e8",
+  "who": "sowa",
+  "text": "Every cup stands by its plate. Look what is left."
+ },
+ "line.s1_result": {
+  "hash": "b8860a4b46bb",
+  "who": "lisek",
+  "text": "One cup has no pair. There are more cups than plates."
+ },
+ "line.s1_owl_fewer": {
+  "hash": "3ca18cb264e6",
+  "who": "sowa",
+  "text": "And there are fewer plates than cups. One is missing!"
+ },
+ "line.s1_daily": {
+  "hash": "e2c98e7b6230",
+  "who": "sowa",
+  "text": "It's the same at home: does everyone at the table have a spoon? Make pairs and see what is left."
+ },
+ "line.s2_signs": {
+  "hash": "3927f8d2a73a",
+  "who": "sowa",
+  "text": "I know a sign that says which pile has more. It looks like a hungry mouth."
+ },
+ "line.s2_more_sign": {
+  "hash": "cd602095a807",
+  "who": "sowa",
+  "text": "The mouth opens towards the pile with more. There are more cups, so it opens towards the cups."
+ },
+ "line.s2_fox_add": {
+  "hash": "4ba6e32a08c2",
+  "who": "lisek",
+  "text": "I'll add one more plate!"
+ },
+ "line.s2_equal_sign": {
+  "hash": "9839a4cfcb7a",
+  "who": "lisek",
+  "text": "Now every cup has a plate. There are as many. This sign is two equal lines."
+ },
+ "line.s2_owl_less": {
+  "hash": "ebf9980e43b7",
+  "who": "sowa",
+  "text": "And if I take the cups away? One cup and three plates are left."
+ },
+ "line.s2_less_sign": {
+  "hash": "b3fe3be1bd5b",
+  "who": "sowa",
+  "text": "There are fewer cups. The mouth opens towards the plates, because there are more plates."
+ },
+ "line.s2_summary": {
+  "hash": "76d7b4d457b8",
+  "who": "lisek",
+  "text": "More, fewer or as many. The mouth always opens where there is more."
+ },
+ "line.p_intro": {
+  "hash": "acfe00648289",
+  "who": "lisek",
+  "text": "Your turn. I'll show two piles and you tap the one with more."
+ },
+ "line.p_which_more": {
+  "hash": "f7c445926f6e",
+  "who": "lisek",
+  "text": "Where is more? Tap it."
+ },
+ "line.p_wrong_pair": {
+  "hash": "6ac97c5d4c74",
+  "who": "sowa",
+  "text": "Let's check in pairs. Look what is left without a pair."
+ },
+ "line.p_good": {
+  "hash": "11e590e630eb",
+  "who": "sowa",
+  "text": "Great!"
+ },
+ "line.p_signs_intro": {
+  "hash": "deb7e8add2d8",
+  "who": "sowa",
+  "text": "Now the signs. Pick the mouth that fits, or the equal lines when there are as many."
+ },
+ "line.p_which_sign": {
+  "hash": "5811c5e50818",
+  "who": "sowa",
+  "text": "Which sign fits? Tap it."
+ },
+ "line.p_wrong_sign": {
+  "hash": "025be67151a5",
+  "who": "sowa",
+  "text": "Not that one. The mouth opens where there is more. When there are as many, pick the equal lines."
+ },
+ "line.a_owl_table": {
+  "hash": "9a63f0fb9755",
+  "who": "sowa",
+  "text": "A home game: setting the table. I put out the plates, Fox the cups."
+ },
+ "line.a_bye": {
+  "hash": "d9e01fcf6308",
+  "who": "sowa",
+  "text": "See you!"
+ },
+ "line.a_fox_check": {
+  "hash": "18edc64ee492",
+  "who": "lisek",
+  "text": "Let's check in pairs: cup and plate, cup and plate."
+ },
+ "line.a_owl_more_plates": {
+  "hash": "39b10b4e9508",
+  "who": "sowa",
+  "text": "One plate is left alone. There are more plates and fewer cups."
+ },
+ "line.a_fox_which_sign": {
+  "hash": "d49bf84a3161",
+  "who": "lisek",
+  "text": "Which sign fits? There are fewer cups than plates. Tap it."
+ },
+ "line.a_owl_right": {
+  "hash": "953bc45465f4",
+  "who": "sowa",
+  "text": "Yes! The mouth opens towards the plates, because there are more plates."
+ },
+ "line.a_ask_parents": {
+  "hash": "9bd6b51d19dc",
+  "who": "lisek",
+  "text": "Ask your parents to play this with you at home. When you set the table, check in pairs whether everyone has a plate and which there is more of!"
+ }
+}

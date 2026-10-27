@@ -45,6 +45,20 @@ Row 2, left to right: a blue cup with a handle; a white round plate with a
 light blue rim; a single striped orange-and-white sock; a red-and-white ball.
 All eight objects roughly the same size.""",
     },
+    "icons": {
+        "names": ["ikona_opowiesc", "ikona_cwiczenia", "ikona_dom"],
+        "size": "1536x1024",
+        "prompt": f"""A sprite sheet of THREE illustrated icons for a children's game, arranged in
+one row of 3 on a fully TRANSPARENT background, with generous empty space between
+them so none of them touch. Each icon is a single simple object, big and readable at
+a small size, seen straight on, centred, with a soft white rounded-square card
+behind it.
+{STYL}
+Left to right: an open picture book with a tiny fox on its pages (the STORY); a
+child's hand with the index finger pointing, tapping (the PRACTICE); a small cosy
+house with a red roof and a window (AT HOME).
+All three roughly the same size.""",
+    },
     "containers": {
         "names": ["koszyk", "pudelko", "miska", "polka"],
         "size": "1536x1024",
