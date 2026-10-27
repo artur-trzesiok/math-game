@@ -1,14 +1,4 @@
 {
- "line.s1_fox_big": {
-  "hash": "69533dcde193",
-  "who": "lisek",
-  "text": "Patrz, moje jabłko jest duże!"
- },
- "line.s1_sq_small": {
-  "hash": "3fa20f719706",
-  "who": "wiewiorka",
-  "text": "A moje jest małe. Ale za to słodkie!"
- },
  "line.s1_compare": {
   "hash": "15513be3990c",
   "who": "wiewiorka",
@@ -363,5 +353,20 @@
   "hash": "8dae7a9a7bbe",
   "who": "lisek",
   "text": "Masz rację, twoja gruszka jest większa. Porównanie rozstrzygnęło nasz spór!"
+ },
+ "line.a1_line": {
+  "hash": "92bf0f8c2d16",
+  "who": "wiewiorka",
+  "text": "Postawmy je równo na jednej linii, tak jak gruszki."
+ },
+ "line.a1_see": {
+  "hash": "c92f2bc08728",
+  "who": "wiewiorka",
+  "text": "Teraz już bez kresek na górze. Widzisz, które jabłko jest większe?"
+ },
+ "line.a1_soon": {
+  "hash": "078400263361",
+  "who": "lisek",
+  "text": "Brawo! Za chwilę spróbujemy poznać większe i mniejsze bez stawiania na linii."
  }
 }

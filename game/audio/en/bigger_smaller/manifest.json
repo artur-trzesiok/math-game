@@ -1,14 +1,4 @@
 {
- "line.s1_fox_big": {
-  "hash": "3d04a2557cd2",
-  "who": "lisek",
-  "text": "Look, my apple is big!"
- },
- "line.s1_sq_small": {
-  "hash": "328d805219c7",
-  "who": "wiewiorka",
-  "text": "And mine is small. But it's sweet!"
- },
  "line.s1_compare": {
   "hash": "2a90d850632a",
   "who": "wiewiorka",
@@ -363,5 +353,20 @@
   "hash": "3a2bc20d9e4c",
   "who": "lisek",
   "text": "You are right, your pear is bigger. Comparing settled our argument!"
+ },
+ "line.a1_line": {
+  "hash": "1625454727fa",
+  "who": "wiewiorka",
+  "text": "Let's stand them evenly on one line, just like the pears."
+ },
+ "line.a1_see": {
+  "hash": "0f9e5a631da1",
+  "who": "wiewiorka",
+  "text": "Now without the lines on top. Can you see which apple is bigger?"
+ },
+ "line.a1_soon": {
+  "hash": "3e4879c031eb",
+  "who": "lisek",
+  "text": "Well done! Soon we will try to tell bigger and smaller without standing them on a line."
  }
 }

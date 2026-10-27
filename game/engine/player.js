@@ -122,7 +122,9 @@ export class Player {
       last = { who, key, anim }; this.lastSpeaker = who;
       const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
-      await this.speech.say({ lang, lessonId, key: stem, fallback: key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1 });   // who speaks is shown by the mouth, no bubble
+      S.sfx.mowa = true;                                              // effects duck under a line
+      try { await this.speech.say({ lang, lessonId, key: stem, fallback: key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1 }); }
+      finally { S.sfx.mowa = false; }   // who speaks is shown by the mouth, no bubble
       alive();
       if (puppet && puppet.korzen.visible) puppet.spoczynek();
     };
@@ -143,6 +145,7 @@ export class Player {
       }),
       mood: (who, m) => S.mood(who, m),
       look: (who, target, opts) => S.lookAt(who, target, opts),   // a scene may direct a gaze too (null = ahead)
+      sfx: (name, opts) => S.sfx.graj(name, opts),                // a sound effect (game/audio/sfx)
       // drawing with a pencil: a stroke along points or Bezier segments, a segment with end ticks; stickers' real
       // edges (bounds) and standing things on a line - the pieces for comparisons and pairings
       line: guard((path, opts) => S.line(path, opts)),
@@ -172,7 +175,7 @@ export class Player {
           const hit = await S.choose([...targets, ...puppets]);
           alive();
           if (hit && hit.korzen) { if (polecenie) await say(polecenie.who, polecenie.key, { anim: polecenie.anim }); continue; }   // "say it again"
-          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); return hit; }
+          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); S.sfx.graj("right"); return hit; }
           misses++;
           S.shake(hit);
           if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);
@@ -198,7 +201,7 @@ export class Player {
                 const main = Object.keys(count).sort((a, b) => count[b] - count[a])[0];
                 for (const i of z.items) if (i.tag !== main) odd.push(i);
               }
-              if (!odd.length) { S.endSort(); S.lookAt(null, null); resolve(true); return; }
+              if (!odd.length) { S.endSort(); S.lookAt(null, null); S.sfx.graj("right"); resolve(true); return; }
               for (const i of odd) { S.shake(i); }
               await S.wait(0.45);
               for (const i of odd) { i.zone.take(i); i.moveTo(i.home.x, i.home.y, 0.4); }

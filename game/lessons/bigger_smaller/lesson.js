@@ -3,6 +3,7 @@
 
 const L = -4.6, R = 4.6;                       // where the two friends stand (safe-area x)
 const Y = 1.2;                                 // the object layer: above the puppets' heads
+const ZIEMIA = -3.05;                          // the grass at the puppets' feet: where fallen things lie
 const OLOWEK = ["#d9682b", "#2f6fb4"];         // the two top lines get a colour each, so they can be told apart
 
 // the comparison method: stand both on one line, then a line over each at its top, across both of them.
@@ -59,18 +60,25 @@ export default {
         const big = await c.object("jablko", { x: -1.6, y: 4.6, size: 1.7 });
         const small = await c.object("jablko", { x: 1.6, y: 4.9, size: 0.85 });
         await c.wait(0.3);
-        await Promise.all([big.moveTo(-1.6, Y - 0.15, 0.7), small.moveTo(1.6, Y - 0.1, 0.55)]);
-        await Promise.all([big.moveTo(-1.6, Y, 0.25), small.moveTo(1.6, Y, 0.2), c.play("lisek", "Podskok"), c.play("wiewiorka", "Podskok")]);
+        // they fall all the way down to the grass at the friends' feet, and bounce once
+        const naZiemi = (h) => h.mesh.position.y + (ZIEMIA - c.bounds(h).bottom);
+        const yb = naZiemi(big), ys = naZiemi(small);
+        await Promise.all([big.moveTo(-1.6, yb, 0.75), small.moveTo(1.6, ys, 0.6)]);
+        c.sfx("plop");
+        await Promise.all([big.moveTo(-1.6, yb + 0.22, 0.14), small.moveTo(1.6, ys + 0.16, 0.12), c.play("lisek", "Podskok"), c.play("wiewiorka", "Podskok")]);
+        await Promise.all([big.moveTo(-1.6, yb, 0.14), small.moveTo(1.6, ys, 0.12)]);
         await c.say("wiewiorka", "line.s0_fell");
-        await c.say("lisek", "line.s1_fox_big", { anim: "Wskazanie" });
-        await c.say("wiewiorka", "line.s1_sq_small");
-        await c.say("wiewiorka", "line.s1_compare");
-        big.highlight(true); await c.wait(1.2); big.highlight(false);
-        small.highlight(true); await c.wait(1.2); small.highlight(false);
+        // the method once more, one step lighter: the base line only, no lines over the tops
+        await c.say("wiewiorka", "line.a1_line", { anim: "Wskazanie" });
+        await c.line([[-3.0, ZIEMIA], [3.0, ZIEMIA]], { duration: 0.8, name: "podstawa" });
+        await c.standOn([big, small], ZIEMIA, 0.4);
+        await c.say("wiewiorka", "line.a1_see");
         await c.say("lisek", "line.s1_pick_bigger");
         await c.task({ targets: [big, small], correct: big, wrong: "line.s1_wrong" });
-        await big.moveTo(L + 1.6, Y);
+        await big.moveTo(L + 1.9, yb, 0.6);                    // rolled over to Fox, still on the grass
         await c.say("lisek", "line.s1_fox_thanks", { anim: "Radosc" });
+        await c.say("wiewiorka", "line.s1_compare");
+        await c.say("lisek", "line.a1_soon", { anim: "Brawo" });
         await c.say("lisek", "line.j1_to_forest");
         c.clear();
       },

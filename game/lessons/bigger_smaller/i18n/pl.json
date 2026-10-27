@@ -1,12 +1,4 @@
 {
-  "line.s1_fox_big": {
-    "who": "lisek",
-    "text": "Patrz, moje jabłko jest duże!"
-  },
-  "line.s1_sq_small": {
-    "who": "wiewiorka",
-    "text": "A moje jest małe. Ale za to słodkie!"
-  },
   "line.s1_compare": {
     "who": "wiewiorka",
     "text": "Twoje duże jabłko jest większe od mojego. A moje małe jabłko jest mniejsze od twojego."
@@ -287,5 +279,17 @@
   "line.b0_fair": {
     "who": "lisek",
     "text": "Masz rację, twoja gruszka jest większa. Porównanie rozstrzygnęło nasz spór!"
+  },
+  "line.a1_line": {
+    "who": "wiewiorka",
+    "text": "Postawmy je równo na jednej linii, tak jak gruszki."
+  },
+  "line.a1_see": {
+    "who": "wiewiorka",
+    "text": "Teraz już bez kresek na górze. Widzisz, które jabłko jest większe?"
+  },
+  "line.a1_soon": {
+    "who": "lisek",
+    "text": "Brawo! Za chwilę spróbujemy poznać większe i mniejsze bez stawiania na linii."
   }
 }

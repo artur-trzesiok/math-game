@@ -247,6 +247,15 @@ standing on it, a line over each top), the pairing lines in more_fewer. On a tap
 thing beats a character (a character only repeats the instruction, the one said
 before the task - never the last "try again").
 
+Sound effects (`sfx.js`, `game/audio/sfx/*.mp3`): `python tools/audio/run.py --sfx` makes
+them - ElevenLabs sound generation when the key has the `sound_generation` permission
+(ours does not), else a numpy synthesis recipe per effect (repeatable, no service);
+trimmed of leading silence, normalised to -27 dB (voices -20). The stage plays them
+itself: pop on appear, tap on a tap, wrong on a shake, plop into a zone, pencil while
+a line draws, whoosh for a long flight, hop / clap with Podskok / Brawo (`Lalka.naGraj`),
+right on a correct pick or a finished sort; `ctx.sfx(name)` for a scene's own. Plain
+`<audio>` pools, a 60 ms gap per effect, ducking under speech, `?cicho` mutes.
+
 Transitions: `graj` remembers the pose of the last frame (every numeric channel,
 before the gaze) and the new animation blends in from it over `Lalka.przejscie`
 (0.22 s; an animation may set `wejscie`, 0 = cut). Feet that were planted (`stopy:

@@ -426,6 +426,7 @@ export class Lalka {
     const czas = a.wejscie ?? Lalka.przejscie;
     this.przejscie = this.pozaSurowa && czas > 0 ? { od: { ...this.pozaSurowa }, start: this.t, czas, stopy: this.przejscie?.stopy === "ik" ? "ik" : this.akcja?.stopy } : null;
     this.akcja = { nazwa, ...a, petla: petla ?? !!a.petla }; this.ta = 0;
+    Lalka.naGraj?.(this, nazwa);           // the stage hooks its sound effects here
     return true;
   }
   spoczynek() { this.graj("Spoczynek", true); if (this.akcja) this.ta = Math.random() * this.akcja.czas; }

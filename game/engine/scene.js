@@ -7,6 +7,7 @@
 
 import * as THREE from "three";
 import { Lalka } from "./lalka.js";
+import { Sfx } from "./sfx.js";
 import { zbudujTlo, czas as bgClock, zginanieTla } from "./tlo.js";
 import { probkuj, wstega, material as olowekMaterial } from "./olowek.js";
 if (new URLSearchParams(location.search).has("sztywnetlo")) zginanieTla.value = 0;   // A/B: the old shearing grass
@@ -38,6 +39,9 @@ export class Stage {
     this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0;
     this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;
     this.raycaster = new THREE.Raycaster();
+    // sound effects: ?cicho mutes them; a hop and a clap come with the puppets' animations
+    this.sfx = new Sfx({ wycisz: PARAMS.has("cicho") }); this.sfx.wczytaj();
+    Lalka.naGraj = (L, nazwa) => { if (nazwa === "Podskok") this.sfx.graj("hop"); else if (nazwa === "Brawo") this.sfx.graj("clap", { glosnosc: 0.8 }); };
     this.onResize = () => this.resize();
     window.addEventListener("resize", this.onResize); this.resize();
     this.renderer.domElement.addEventListener("pointerdown", (e) => { if (e.button !== 0 && e.pointerType === "mouse") return; if (!this.dragStart(e)) this.pointer(e); });
@@ -116,19 +120,22 @@ export class Stage {
   // things grow in from nothing with a little overshoot; not awaited by the caller, so a row appears sticker by sticker
   appear(h) {
     const m = this.meshOf(h), base = h.base ?? 1;
+    this.sfx.graj("pop", { tempo: 0.9 + Math.random() * 0.25 });
     h.bumping = true; m.scale.setScalar(0.001);
     return this.tween(0.38, (s) => { const q = base * Math.max(0.001, s); m.scale.set(q, q, h.korzen ? 1 : q); }, easeOutBack)
       .then(() => { m.scale.set(base, base, h.korzen ? 1 : base); h.bumping = false; });
   }
   // touch feedback: the tapped thing pops (scale up and back); a wrong answer also shakes
-  async bump(h, amount = 0.25) {
+  async bump(h, amount = 0.25, dzwiek = true) {
     const m = this.meshOf(h), base = h.base ?? 1, k = h.korzen ? 0.08 : amount;
+    if (dzwiek) this.sfx.graj("tap");
     h.bumping = true;
     await this.tween(0.28, (s) => { const q = base * (1 + k * Math.sin(s * Math.PI)); m.scale.set(q, q, h.korzen ? 1 : q); });
     m.scale.set(base, base, h.korzen ? 1 : base); h.bumping = false;
   }
   async shake(h) {
     const m = this.meshOf(h), x0 = m.position.x;
+    this.sfx.graj("wrong");
     await this.tween(0.4, (s) => { m.position.x = x0 + 0.12 * Math.sin(s * Math.PI * 4) * (1 - s); });
     m.position.x = x0;
   }
@@ -252,7 +259,7 @@ export class Stage {
     const handle = { mesh: g, icon, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false,
       remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
-      moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
+      moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; if (Math.hypot(nx - x0, ny - y0) > 2.5) this.sfx.graj("whoosh", { glosnosc: 0.7 }); return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
     this.scene.add(g); this.objects.push(handle);
     this.appear(handle);
     for (const L of Object.values(this.puppets)) if (L.korzen.visible && !L.celSpojrzenia) L.patrzNa(() => this.pointOf(handle), 1.1);   // a glance at what just appeared
@@ -360,7 +367,7 @@ export class Stage {
   // on a character (repeat the instruction). endSort() when the lesson is satisfied.
   sort(set) { this.dragSet = set; this.drag = null; }
   endSort() { this.dragSet = null; this.drag = null; }
-  dropInto(item, zone) { zone.put(item); this.bump(zone, 0.06); if (this.dragSet) this.dragSet.onDrop(item, zone); }
+  dropInto(item, zone) { zone.put(item); this.bump(zone, 0.06, false); this.sfx.graj("plop"); if (this.dragSet) this.dragSet.onDrop(item, zone); }
   ndc(e) { const r = this.renderer.domElement.getBoundingClientRect(); return new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); }
   worldAt(ndc, z = 0.4) {
     this.raycaster.setFromCamera(ndc, this.camera);
@@ -421,7 +428,9 @@ export class Stage {
       remove: () => { this.scene.remove(grp); const i = this.objects.indexOf(handle); if (i >= 0) this.objects.splice(i, 1); this.untarget(handle); },
       highlight: (on) => { mat.uniforms.blask.value = on ? 1 : 0; } };
     this.scene.add(grp); this.objects.push(handle);
-    const draw = this.tween(PARAMS.has("szybko") ? 0.1 : duration, (s) => { mat.uniforms.postep.value = s; }).then(() => { mat.uniforms.postep.value = 1; });
+    const czas = PARAMS.has("szybko") ? 0.1 : duration;
+    if (czas >= 0.2) this.sfx.graj("pencil", { dlugosc: czas, tempo: 0.9 + Math.random() * 0.2 });
+    const draw = this.tween(czas, (s) => { mat.uniforms.postep.value = s; }).then(() => { mat.uniforms.postep.value = 1; });
     if (wait) await draw;
     return handle;
   }
