@@ -249,9 +249,19 @@
   "who": "wiewiorka",
   "text": "Hop! Two apples fell down. One big, one small."
  },
- "line.a_right_sq": {
-  "hash": "145a61217b49",
+ "line.a_pick_bigger.wiewiorka": {
+  "hash": "d4885fe8a4d2",
   "who": "wiewiorka",
-  "text": "Well done, that's right!"
+  "text": "Which one is bigger?"
+ },
+ "line.a_pick_smaller.lisek": {
+  "hash": "11f3593a3ed6",
+  "who": "lisek",
+  "text": "Which one is smaller?"
+ },
+ "line.a_right.wiewiorka": {
+  "hash": "aed930910796",
+  "who": "wiewiorka",
+  "text": "That's right!"
  }
 }

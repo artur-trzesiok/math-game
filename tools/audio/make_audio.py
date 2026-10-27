@@ -81,12 +81,21 @@ def api_key() -> str:
 
 
 def lines(lesson: Path, lang: str) -> list[dict]:
+    """One entry per (line, speaker): the default speaker (`who`) records as <key>.mp3,
+    every other speaker listed in `speakers` as <key>.<who>.mp3 - so a scene may give
+    the same line to whichever character it likes among those."""
     f = lesson / "i18n" / f"{lang}.json"
     if not f.exists():
         return []
     data = json.loads(f.read_text(encoding="utf-8"))
-    return [{"key": k, "who": v.get("who", "narrator"), "text": v["text"]}
-            for k, v in data.items() if k.startswith("line.") and isinstance(v, dict) and v.get("text")]
+    out = []
+    for k, v in data.items():
+        if not (k.startswith("line.") and isinstance(v, dict) and v.get("text")):
+            continue
+        default = v.get("who", "narrator")
+        for who in dict.fromkeys([default, *v.get("speakers", [])]):
+            out.append({"key": k if who == default else f"{k}.{who}", "who": who, "text": v["text"]})
+    return out
 
 
 ENV_STEP = 0.02      # seconds per envelope sample

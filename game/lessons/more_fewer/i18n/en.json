@@ -89,7 +89,10 @@
   },
   "line.a_fox_check": {
     "who": "lisek",
-    "text": "Let's check in pairs: cup and plate, cup and plate."
+    "text": "Let's check in pairs: cup and plate, cup and plate.",
+    "speakers": [
+      "sowa"
+    ]
   },
   "line.a_fox_which_sign": {
     "who": "lisek",

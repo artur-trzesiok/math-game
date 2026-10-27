@@ -77,7 +77,10 @@
   },
   "line.a_sq_right": {
     "who": "wiewiorka",
-    "text": "Posprzątane! Każda rzecz w swojej grupie."
+    "text": "Posprzątane! Każda rzecz w swojej grupie.",
+    "speakers": [
+      "sarenka"
+    ]
   },
   "line.a_ask_parents": {
     "who": "sarenka",
@@ -133,23 +136,38 @@
   },
   "line.a_rule_food": {
     "who": "sarenka",
-    "text": "Jedzenie do koszyka, naczynia do pudełka."
+    "text": "Jedzenie do koszyka, naczynia do pudełka.",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.a_rule_cups": {
     "who": "wiewiorka",
-    "text": "Kubki do koszyka, talerze do pudełka."
+    "text": "Kubki do koszyka, talerze do pudełka.",
+    "speakers": [
+      "sarenka"
+    ]
   },
   "line.a_rule_red": {
     "who": "sarenka",
-    "text": "Czerwone do koszyka, reszta do pudełka."
+    "text": "Czerwone do koszyka, reszta do pudełka.",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.a_rule_big": {
     "who": "wiewiorka",
-    "text": "Duże do koszyka, małe do pudełka."
+    "text": "Duże do koszyka, małe do pudełka.",
+    "speakers": [
+      "sarenka"
+    ]
   },
   "line.a_rule_round": {
     "who": "sarenka",
-    "text": "Okrągłe do koszyka, reszta do pudełka."
+    "text": "Okrągłe do koszyka, reszta do pudełka.",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.s0_roll": {
     "who": "sarenka",

@@ -77,7 +77,10 @@
   },
   "line.a_sq_right": {
     "who": "wiewiorka",
-    "text": "All tidy! Everything in its group."
+    "text": "All tidy! Everything in its group.",
+    "speakers": [
+      "sarenka"
+    ]
   },
   "line.a_ask_parents": {
     "who": "sarenka",
@@ -133,23 +136,38 @@
   },
   "line.a_rule_food": {
     "who": "sarenka",
-    "text": "Food into the basket, dishes into the box."
+    "text": "Food into the basket, dishes into the box.",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.a_rule_cups": {
     "who": "wiewiorka",
-    "text": "Cups into the basket, plates into the box."
+    "text": "Cups into the basket, plates into the box.",
+    "speakers": [
+      "sarenka"
+    ]
   },
   "line.a_rule_red": {
     "who": "sarenka",
-    "text": "Red things into the basket, the rest into the box."
+    "text": "Red things into the basket, the rest into the box.",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.a_rule_big": {
     "who": "wiewiorka",
-    "text": "Big ones into the basket, small ones into the box."
+    "text": "Big ones into the basket, small ones into the box.",
+    "speakers": [
+      "sarenka"
+    ]
   },
   "line.a_rule_round": {
     "who": "sarenka",
-    "text": "Round things into the basket, the rest into the box."
+    "text": "Round things into the basket, the rest into the box.",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.s0_roll": {
     "who": "sarenka",

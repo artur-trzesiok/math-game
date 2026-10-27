@@ -97,7 +97,9 @@ a `ctx` with: `say(who, key)`, `enter(who)`, `show(who)`, `play(who, anim)`,
 when everything is in, each container one kind), `arrange(groups, opts)` (the layout:
 rows and groups by real widths, so nothing overlaps or misaligns),
 `task({targets, correct, wrong})`, `card(key)`, `wait(s)`, `clear()`, `praise(who)`,
-`t(key)`, `lang`, `fast`. A lesson never touches three.js directly and never knows
+`t(key)`, `lang`, `fast`. A scene chooses who says a line; a line declares its
+default speaker and the others allowed, and the pipeline records every variant.
+A lesson never touches three.js directly and never knows
 about other lessons; the player never knows what a lesson does. Adding lesson
 number 42 is a new folder and one line in `index.json`.
 

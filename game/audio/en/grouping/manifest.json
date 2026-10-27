@@ -203,5 +203,35 @@
   "hash": "104a4bdcca05",
   "who": "sarenka",
   "text": "We've got it! Now all the fruit is together."
+ },
+ "line.a_sq_right.sarenka": {
+  "hash": "244346867a97",
+  "who": "sarenka",
+  "text": "All tidy! Everything in its group."
+ },
+ "line.a_rule_food.wiewiorka": {
+  "hash": "755869025b7d",
+  "who": "wiewiorka",
+  "text": "Food into the basket, dishes into the box."
+ },
+ "line.a_rule_cups.sarenka": {
+  "hash": "aea32964cedf",
+  "who": "sarenka",
+  "text": "Cups into the basket, plates into the box."
+ },
+ "line.a_rule_red.wiewiorka": {
+  "hash": "d684096f76b1",
+  "who": "wiewiorka",
+  "text": "Red things into the basket, the rest into the box."
+ },
+ "line.a_rule_big.sarenka": {
+  "hash": "1f6c2f1f0106",
+  "who": "sarenka",
+  "text": "Big ones into the basket, small ones into the box."
+ },
+ "line.a_rule_round.wiewiorka": {
+  "hash": "05c58b7322b3",
+  "who": "wiewiorka",
+  "text": "Round things into the basket, the rest into the box."
  }
 }

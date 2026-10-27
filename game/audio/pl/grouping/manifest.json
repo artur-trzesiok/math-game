@@ -203,5 +203,35 @@
   "hash": "036ef554c7a7",
   "who": "sarenka",
   "text": "Mamy ją! Teraz wszystkie owoce są razem."
+ },
+ "line.a_sq_right.sarenka": {
+  "hash": "f02bbef5059f",
+  "who": "sarenka",
+  "text": "Posprzątane! Każda rzecz w swojej grupie."
+ },
+ "line.a_rule_food.wiewiorka": {
+  "hash": "2c8895858bac",
+  "who": "wiewiorka",
+  "text": "Jedzenie do koszyka, naczynia do pudełka."
+ },
+ "line.a_rule_cups.sarenka": {
+  "hash": "206b383aa828",
+  "who": "sarenka",
+  "text": "Kubki do koszyka, talerze do pudełka."
+ },
+ "line.a_rule_red.wiewiorka": {
+  "hash": "d671c1b2edb3",
+  "who": "wiewiorka",
+  "text": "Czerwone do koszyka, reszta do pudełka."
+ },
+ "line.a_rule_big.sarenka": {
+  "hash": "88bbe3a82ad5",
+  "who": "sarenka",
+  "text": "Duże do koszyka, małe do pudełka."
+ },
+ "line.a_rule_round.wiewiorka": {
+  "hash": "462b5ebec9e5",
+  "who": "wiewiorka",
+  "text": "Okrągłe do koszyka, reszta do pudełka."
  }
 }

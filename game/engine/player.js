@@ -117,11 +117,12 @@ export class Player {
     const say = async (who, key, { anim = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
-      who = line.who || who;                                          // the i18n line names the speaker - that is whose voice was recorded
+      if (!S.puppets[who]) who = line.who;                            // the scene picks the speaker; the line's `who` is the default
+      const stem = who === line.who ? key : `${key}.${who}`;          // a recording exists per allowed speaker (i18n `speakers`)
       last = { who, key, anim }; this.lastSpeaker = who;
       const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
-      await this.speech.say({ lang, lessonId, key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1 });   // who speaks is shown by the mouth, no bubble
+      await this.speech.say({ lang, lessonId, key: stem, fallback: key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1 });   // who speaks is shown by the mouth, no bubble
       alive();
       if (puppet && puppet.korzen.visible) puppet.spoczynek();
     };

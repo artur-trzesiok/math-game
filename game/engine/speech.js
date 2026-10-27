@@ -62,10 +62,11 @@ export class Speech {
   }
 
   // say a line; resolves when it ends
-  async say({ lang, lessonId, key, text, who, puppet, volume = 1 }) {
+  async say({ lang, lessonId, key, fallback = null, text, who, puppet, volume = 1 }) {
     this.stop();
-    this.log.push([key, who, performance.now() | 0]);
+    this.log.push([fallback || key, who, performance.now() | 0]);
     const m = await manifest(lang, lessonId);
+    if (!m[key] && fallback && m[fallback]) { console.warn(`no recording of ${fallback} for ${who}; add "${who}" to its speakers`); key = fallback; }
     const subtitle = (show) => { if (!this.sub) return; this.sub.textContent = show ? text : ""; this.sub.style.display = show ? "block" : "none"; };
     this.current = { puppet, live: false };
     try {

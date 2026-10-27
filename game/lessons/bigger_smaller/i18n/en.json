@@ -181,15 +181,24 @@
   },
   "line.a_pick_bigger": {
     "who": "lisek",
-    "text": "Which one is bigger?"
+    "text": "Which one is bigger?",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.a_pick_smaller": {
     "who": "wiewiorka",
-    "text": "Which one is smaller?"
+    "text": "Which one is smaller?",
+    "speakers": [
+      "lisek"
+    ]
   },
   "line.a_right": {
     "who": "lisek",
-    "text": "That's right!"
+    "text": "That's right!",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.s0_wind": {
     "who": "lisek",
@@ -198,9 +207,5 @@
   "line.s0_fell": {
     "who": "wiewiorka",
     "text": "Hop! Two apples fell down. One big, one small."
-  },
-  "line.a_right_sq": {
-    "who": "wiewiorka",
-    "text": "Well done, that's right!"
   }
 }

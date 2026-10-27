@@ -249,9 +249,19 @@
   "who": "wiewiorka",
   "text": "Hop! Spadły dwa jabłka. Jedno duże, jedno małe."
  },
- "line.a_right_sq": {
-  "hash": "14efddcf2129",
+ "line.a_pick_bigger.wiewiorka": {
+  "hash": "ed520aa32b6e",
   "who": "wiewiorka",
-  "text": "Brawo, zgadza się!"
+  "text": "Która jest większa?"
+ },
+ "line.a_pick_smaller.lisek": {
+  "hash": "a6c4a7977c6c",
+  "who": "lisek",
+  "text": "Która jest mniejsza?"
+ },
+ "line.a_right.wiewiorka": {
+  "hash": "5db2e748f22d",
+  "who": "wiewiorka",
+  "text": "Tak jest!"
  }
 }

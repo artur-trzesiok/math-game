@@ -181,15 +181,24 @@
   },
   "line.a_pick_bigger": {
     "who": "lisek",
-    "text": "Która jest większa?"
+    "text": "Która jest większa?",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.a_pick_smaller": {
     "who": "wiewiorka",
-    "text": "Która jest mniejsza?"
+    "text": "Która jest mniejsza?",
+    "speakers": [
+      "lisek"
+    ]
   },
   "line.a_right": {
     "who": "lisek",
-    "text": "Tak jest!"
+    "text": "Tak jest!",
+    "speakers": [
+      "wiewiorka"
+    ]
   },
   "line.s0_wind": {
     "who": "lisek",
@@ -198,9 +207,5 @@
   "line.s0_fell": {
     "who": "wiewiorka",
     "text": "Hop! Spadły dwa jabłka. Jedno duże, jedno małe."
-  },
-  "line.a_right_sq": {
-    "who": "wiewiorka",
-    "text": "Brawo, zgadza się!"
   }
 }
