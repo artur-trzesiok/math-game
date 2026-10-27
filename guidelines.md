@@ -11,7 +11,9 @@ objects - no hand-made art, no in-house level editor.
 - **No numbers before the ideas.** The first lessons compare and sort without
   counting: bigger / smaller by eye, more / fewer by pairing one to one, groups by
   a spoken rule. Numerals arrive only when the relations they describe are familiar.
-- **Every lesson has three stages**, always in this order:
+- **Every lesson has three stages**, always in this order, flowing into one another
+  without a prompt; a strip of three icons at the top (book, hand, house) shows
+  which one the child is in:
   1. **Story** - two characters meet a small everyday problem (two apples, not
      enough plates, a messy blanket) and the idea is shown, not explained. The
      child joins in once or twice, guided.

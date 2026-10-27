@@ -60,7 +60,7 @@ export default {
         gt.highlight(true); await c.wait(1); gt.highlight(false);
         await c.say("lisek", "line.s2_fox_add");
         const extra = await c.object("talerz", { x: 5.6, y: ROW_Y + 1.6, size: 0.8 });
-        await extra.moveTo(ROW_R + 0.4 + 1.05, ROW_Y, 0.7);
+        await extra.moveTo(plates[plates.length - 1].mesh.position.x + 1.05, ROW_Y, 0.7);   // next slot of the row
         plates.push(extra);
         gt.remove();
         const eq = await c.sign("=", { x: 0, y: ROW_Y, size: 1.3 });

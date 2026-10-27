@@ -204,7 +204,7 @@ export class Stage {
     this.targets = handles.slice();
     return new Promise((ok) => { this.pending = ok; });
   }
-  cancelChoice() { this.pending = null; this.targets = []; }
+  cancelChoice() { const p = this.pending; this.pending = null; this.targets = []; if (p) p(null); }
   meshOf(h) { return h.korzen ? h.korzen : h.mesh; }
   pointer(e) {
     const r = this.renderer.domElement.getBoundingClientRect();
