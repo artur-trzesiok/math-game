@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CHARACTERS = ROOT / "game" / "assets" / "characters"
 SNAPS = ROOT / "work" / "snap"
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8750
-FIELDS = ("x", "y", "w", "h", "os", "obrot", "rdzen")
+FIELDS = ("x", "y", "w", "h", "os", "obrot", "rdzen", "stawy")
 NAME = re.compile(r"[a-z0-9_]+")
 
 
@@ -85,10 +85,11 @@ class Handler(SimpleHTTPRequestHandler):
         u = urlparse(self.path)
         if u.path == "/api/snap":
             name = parse_qs(u.query).get("name", ["snap"])[0]
+            body = self._body()                       # read first: an unread body would be parsed as the next request
             if not NAME.fullmatch(name):
                 return self._json(400, {"error": "bad name"})
             SNAPS.mkdir(parents=True, exist_ok=True)
-            (SNAPS / f"{name}.png").write_bytes(self._body())
+            (SNAPS / f"{name}.png").write_bytes(body)
             return self._json(200, {"ok": True, "file": str(SNAPS / f"{name}.png")})
         m = re.fullmatch(r"/api/characters/([a-z0-9_]+)", u.path)
         if not m:

@@ -860,6 +860,9 @@ def install(nazwa: str) -> None:
     (dst / "postac.json").write_text(json.dumps(opis, ensure_ascii=False), encoding="utf-8")
     # the untouched build result travels with the character: the editor diffs against it (poprawki.json)
     shutil.copy(src / "postac.json", dst / "postac.build.json")
+    # joints of the bendable limbs: measured on the installed pieces, editor corrections kept
+    from stawy import measure as zmierz_stawy
+    zmierz_stawy(nazwa)
     print(f"zainstalowano {nazwa}: {len(list((dst / 'czesci').glob('*.webp')))} czesci")
 
 

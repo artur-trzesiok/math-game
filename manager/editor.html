@@ -21,6 +21,10 @@
   #zmiany { color: #ffb347; }
   kbd { background: #444; padding: 0 4px; border-radius: 3px; font-family: inherit; }
   .pomoc { color: #999; font-size: 12px; }
+  .staw { border-top: 1px solid #444; padding-top: 6px; display: grid; grid-template-columns: 70px 1fr 38px; gap: 3px 6px; align-items: center; }
+  .staw b { grid-column: 1 / -1; color: #ff6ad5; font-weight: 600; }
+  .staw input[type=range] { width: 100%; }
+  .staw span { color: #aaa; font-variant-numeric: tabular-nums; text-align: right; }
 </style>
 <script type="importmap">
 {"imports":{
@@ -33,6 +37,9 @@
   <div class="wiersz"><label>Animacja <select id="anim"></select></label><button id="graj">▶</button></div>
   <div class="wiersz"><label>Faza <input type="range" id="faza" min="0" max="1" step="0.01" value="0" style="width:120px"></label><button id="zrzut" title="zapisz PNG do work/snap">Zrzut</button></div>
   <div class="wiersz"><label><input type="checkbox" id="mow"> mówi</label></div>
+  <div class="wiersz"><label title="A/B: wyłączone = sztywna wycinanka jak dotąd"><input type="checkbox" id="zginanie" checked> zginanie</label>
+    <label title="siatka kończyn"><input type="checkbox" id="druty"> siatka</label>
+    <button id="zeruj" title="zeruj ręczne zgięcia">zeruj zgięcia</button></div>
   <div class="wiersz"><button id="zapisz" class="glowny">Zapisz (Ctrl+S)</button><button id="cofnij">Cofnij (Ctrl+Z)</button></div>
   <div id="status">…</div><div id="zmiany"></div>
   <h3>Element</h3>
@@ -44,14 +51,16 @@
     Animacja gra tylko w rzutach, które gra by pokazała (Skradanie: sam profil).
     Oczy i usta przeciągasz i obracasz jako cel (wszystkie warianty razem); ich <b>w</b>/<b>h</b> zmieniają rozmiar.
     Strzałki = 1 px, z <kbd>Shift</kbd> 10 px. Kółko = zoom. <kbd>Esc</kbd> odznacza.
+    <b>Stawy</b>: wybierz kończynę, różowe kółka to stawy - przeciągnij kółko, by przesunąć staw. Suwak <i>miękkość</i>
+    = szerokość zgięcia (mało = ostry staw, dużo = gumowy łuk), suwak <i>zgięcie</i> zgina na próbę (nie zapisuje się).
     „zablokuj" trzyma wybór: przeciąganie, <kbd>Shift</kbd> i <kbd>Alt</kbd> działają na nim, nawet gdy pod kursorem jest inny element.
-    Zapis trafia do <code>game/assets/characters/&lt;kto&gt;/postac.json</code> i do <code>poprawki.json</code>, które <code>install</code> nakłada po każdej przebudowie. Suwak fazy zatrzymuje animację w wybranym momencie (przegląd). <code>?kto=lisek&amp;anim=Radosc&amp;faza=0.6&amp;snap=nazwa</code> zapisuje zrzut do <code>work/snap</code>.
+    Zapis trafia do <code>game/assets/characters/&lt;kto&gt;/postac.json</code> i do <code>poprawki.json</code>, które <code>install</code> nakłada po każdej przebudowie. Suwak fazy zatrzymuje animację w wybranym momencie (przegląd). <code>?kto=lisek&amp;anim=Radosc&amp;faza=0.6&amp;snap=nazwa</code> zapisuje zrzut do <code>work/snap</code> (<code>&amp;zgin=0</code> bez zginania, <code>&amp;druty=1</code> z siatką).
   </div>
 </div>
 <div id="scena"><div id="naglowki"><div>przód</div><div>¾ (patrz prawo)</div><div>tył</div><div>profil</div></div></div>
 <script type="module">
 import * as THREE from "three";
-import { Lalka } from "../game/engine/lalka.js?v=1";
+import { Lalka } from "../game/engine/lalka.js?v=2";
 
 const $ = (id) => document.getElementById(id);
 const KOLUMNY = [
@@ -79,9 +88,19 @@ function rozmiar() {
 window.addEventListener("resize", rozmiar); rozmiar();
 
 let kto = null, dane = null, tex = null, lalki = [], alfa = {};
-window.edytor = { get lalki() { return lalki; }, klatka: (t) => klatka(t, true) };
+window.edytor = { get lalki() { return lalki; }, get kamera() { return kam; }, get dane() { return dane; }, klatka: (t) => klatka(t, true),
+  // review from the console: one character, animation, frozen phase, A/B and wireframe -> work/snap/<nazwa>.png
+  async przeglad(k, a, f, nazwa, { zgin = true, druty = false } = {}) {
+    $("zginanie").checked = zgin; Lalka.zginanie = zgin; $("druty").checked = druty;
+    if (k !== kto) await wczytajPostac(k); else zbuduj();
+    $("anim").value = a || ""; $("anim").dispatchEvent(new Event("change"));
+    if (a) { $("faza").value = f; $("faza").dispatchEvent(new Event("input")); }
+    await zrzut(nazwa);
+    return $("status").textContent;
+  } };
 let anim = "", gra = false, czasAnim = 0;
 let wybor = null;                 // {nazwa, kolumna, widok, twarz: "oczy"|"usta"|null}
+const reczne = {};                // test bends from the joint sliders (not saved)
 let historia = [], zmieniono = false;
 const nakladka = new THREE.Group(); scena.add(nakladka);
 
@@ -91,6 +110,8 @@ async function wczytajListe() {
   $("kto").innerHTML = lista.map((n) => `<option>${n}</option>`).join("");
   const q = new URLSearchParams(location.search), z = q.get("kto");
   if (z && lista.includes(z)) $("kto").value = z;
+  if (q.get("zgin") === "0") { $("zginanie").checked = false; Lalka.zginanie = false; }   // review: A/B and wireframe from the URL
+  if (q.get("druty") === "1") $("druty").checked = true;
   await wczytajPostac($("kto").value);
   if (q.get("anim") && dane.animacje[q.get("anim")]) { $("anim").value = q.get("anim"); $("anim").dispatchEvent(new Event("change")); }
   if (q.get("faza") !== null) { $("faza").value = q.get("faza"); $("faza").dispatchEvent(new Event("input")); }
@@ -117,6 +138,7 @@ function zbuduj() {
     L.mikro.nastepny = 1e9;                       // bez mikropoz; mruganie zostaje
     L.korzen.position.set(-W / 2 + KOL / 2 + i * KOL, -H / 2 + 0.25, 0);
     ustaw(L);
+    L.recznie = reczne; L.pokazSiatke($("druty").checked);
     if (anim && kolumnaGra(i)) { L.graj(anim, true); L.ta = stare[i] ?? czasAnim; } else { L.graj("Spoczynek", true); L.ta = 0; }
     L.update(0);
     scena.add(L.korzen);
@@ -202,6 +224,15 @@ function rysujNakladke() {
     nakladka.add(prostokat(new THREE.Box3().setFromObject(m), 0x40c0ff));
     nakladka.add(krzyz(new THREE.Vector3().setFromMatrixPosition(m.parent.matrixWorld), 0xffe040));
   }
+  for (const st of L.stawyCzesci(wybor.nazwa)) nakladka.add(kolko(st.swiat, R_STAWU / kam.zoom, 0xff40d0));
+}
+const R_STAWU = 0.022;
+function kolko(p, r, kolor) {
+  const pts = []; for (let a = 0; a <= 24; a++) pts.push(new THREE.Vector3(p.x + r * Math.cos(a / 24 * 2 * Math.PI), p.y + r * Math.sin(a / 24 * 2 * Math.PI), 0.8));
+  const g = new THREE.Group();
+  g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: kolor, depthTest: false })));
+  g.add(krzyz(p, kolor, r * 0.45));
+  return g;
 }
 function wybierz(nazwa, kolumna = null) {
   if (!nazwa) { wybor = null; }
@@ -235,6 +266,38 @@ function pokazPola() {
   const info = document.createElement("div"); info.style.gridColumn = "1 / -1"; info.className = "pomoc";
   info.textContent = wybor.twarz ? `cel ${wybor.twarz} w widoku ${wybor.widok}` : `${wybor.nazwa} (widok ${wybor.widok})`;
   el.append(info);
+  if (!wybor.twarz) polaStawow(el);
+}
+function specStawow(nazwa) { return Object.values(dane.kosci).find((k) => k.czesc === nazwa)?.stawy || null; }
+function polaStawow(el) {
+  const spec = specStawow(wybor.nazwa), cz = dane.czesci[wybor.nazwa];
+  if (!spec || !cz.stawy) return;
+  const teraz = lalki[wybor.kolumna]?.stawyCzesci(wybor.nazwa) || [];
+  spec.forEach((sp, i) => {
+    const j = cz.stawy[i]; if (!j) return;
+    const box = document.createElement("div"); box.className = "staw"; box.style.gridColumn = "1 / -1";
+    const st = teraz[i];
+    box.innerHTML = `<b>${sp.nazwa}</b>`;
+    const wiersz = (etyk, min, max, krok, wart, fmt, na) => {
+      const l = document.createElement("label"); l.textContent = etyk;
+      const r = document.createElement("input"); r.type = "range"; r.min = min; r.max = max; r.step = krok; r.value = wart;
+      const v = document.createElement("span"); v.textContent = fmt(wart);
+      r.oninput = () => { v.textContent = fmt(+r.value); na(+r.value, false); };
+      r.onchange = () => na(+r.value, true);
+      box.append(l, r, v);
+    };
+    wiersz("miękkość", 0.03, 1, 0.01, j.miekkosc ?? sp.miekkosc ?? 0.3, (x) => x.toFixed(2), (x, koniec) => {
+      if (koniec) zapamietaj();
+      j.miekkosc = x; zbuduj(); if (koniec) zaznaczZmiane();
+    });
+    wiersz("zgięcie", sp.zakres?.[0] ?? -90, sp.zakres?.[1] ?? 90, 1, reczne[sp.nazwa] || 0, (x) => `${Math.round(x)}°`, (x) => {
+      reczne[sp.nazwa] = x; for (const L of lalki) L.update(0); rysujNakladke();
+    });
+    const pos = document.createElement("div"); pos.className = "pomoc"; pos.style.gridColumn = "1 / -1";
+    pos.textContent = `x ${j.x}, y ${j.y}` + (st ? `, s = ${st.sk.toFixed(2)}, pasmo ${st.h.toFixed(2)}` : "");
+    box.append(pos);
+    el.append(box);
+  });
 }
 
 // ------------------------------------------------------------ edycja
@@ -271,6 +334,7 @@ function zaokraglij() {
   const c = wybor.twarz ? dane.twarz[wybor.widok][wybor.twarz] : dane.czesci[wybor.nazwa];
   for (const k of ["x", "y"]) c[k] = Math.round(c[k]);
   if (c.os) c.os = c.os.map(Math.round);
+  for (const j of c.stawy || []) { j.x = Math.round(j.x); j.y = Math.round(j.y); }
   if (c.obrot !== undefined) { c.obrot = Math.round(c.obrot * 2) / 2; if (!c.obrot) delete c.obrot; }
   for (const cele of Object.values(dane.twarz || {})) for (const b of Object.values(cele)) { b.x = Math.round(b.x); b.y = Math.round(b.y); }   // carried along with a head
 }
@@ -307,13 +371,22 @@ function trafienie(e) {
   return null;
 }
 let ciag = null;
+// a joint marker of the selected piece under the cursor (it may lie just outside the piece's alpha)
+function stawPod(e) {
+  if (!wybor || wybor.twarz) return null;
+  const p = swiat(e);
+  for (const st of lalki[wybor.kolumna].stawyCzesci(wybor.nazwa)) if (Math.hypot(p.x - st.swiat.x, p.y - st.swiat.y) < 1.6 * R_STAWU / kam.zoom) return st.i;
+  return null;
+}
 rend.domElement.addEventListener("pointerdown", (e) => {
   if (e.button !== 0) return;
   const blokada = $("blokada").checked && wybor;
-  const t = blokada ? { nazwa: wybor.nazwa, kolumna: wybor.kolumna } : trafienie(e);   // zablokowany wybor: klik gdziekolwiek dziala na nim
+  const t =blokada ? { nazwa: wybor.nazwa, kolumna: wybor.kolumna } : (stawPod(e) !== null ? { nazwa: wybor.nazwa, kolumna: wybor.kolumna } : trafienie(e));   // zablokowany wybor: klik gdziekolwiek dziala na nim
   if (!t) { wybierz(null); return; }
   if (!blokada) wybierz(t.nazwa, t.kolumna);
   zapamietaj();
+  const staw = stawPod(e);
+  if (staw !== null) { ciag = { od: swiat(e), staw, ruszyl: false }; rend.domElement.setPointerCapture(e.pointerId); return; }
   const m = siatki(lalki[t.kolumna]).find((m) => m.userData.czesc === t.nazwa && widoczny(m));
   const os = m ? new THREE.Vector3().setFromMatrixPosition(m.parent.matrixWorld) : null;
   ciag = { od: swiat(e), os: e.shiftKey, obrot: e.altKey, srodek: os, ruszyl: false };
@@ -322,6 +395,13 @@ rend.domElement.addEventListener("pointerdown", (e) => {
 rend.domElement.addEventListener("pointermove", (e) => {
   if (!ciag || !wybor) return;
   const p = swiat(e), L = lalki[wybor.kolumna], s = L._skala(wybor.widok === "bok" ? "przod" : wybor.widok);
+  if (ciag.staw !== undefined) {
+    const dx = (p.x - ciag.od.x) / s, dy = -(p.y - ciag.od.y) / s;
+    if (!dx && !dy) return;
+    ciag.od = p; ciag.ruszyl = true;
+    const j = dane.czesci[wybor.nazwa].stawy[ciag.staw]; j.x += dx; j.y += dy;
+    zbuduj(); zaznaczZmiane(); return;
+  }
   if (ciag.obrot && ciag.srodek) {
     const a0 = Math.atan2(ciag.od.y - ciag.srodek.y, ciag.od.x - ciag.srodek.x), a1 = Math.atan2(p.y - ciag.srodek.y, p.x - ciag.srodek.x);
     let d = (a1 - a0) * 180 / Math.PI; if (d > 180) d -= 360; if (d < -180) d += 360;
@@ -356,6 +436,9 @@ window.addEventListener("keydown", (e) => {
 });
 $("kto").onchange = async () => { if (zmieniono && !confirm("Porzucić niezapisane zmiany?")) { $("kto").value = kto; return; } await wczytajPostac($("kto").value); };
 $("anim").onchange = () => { anim = $("anim").value; czasAnim = 0; gra = !!anim; $("graj").textContent = gra ? "⏸" : "▶"; zbuduj(); };
+$("zginanie").onchange = () => { Lalka.zginanie = $("zginanie").checked; for (const L of lalki) L.update(0); rysujNakladke(); };
+$("druty").onchange = () => { for (const L of lalki) L.pokazSiatke($("druty").checked); };
+$("zeruj").onclick = () => { for (const k of Object.keys(reczne)) delete reczne[k]; for (const L of lalki) L.update(0); pokazPola(); rysujNakladke(); };
 $("graj").onclick = () => { if (!anim) return; gra = !gra; $("graj").textContent = gra ? "⏸" : "▶"; };
 // review: freeze the animation at a phase (0..1 of its length) in every column that plays it
 $("faza").oninput = () => {

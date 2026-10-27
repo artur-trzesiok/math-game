@@ -2,9 +2,11 @@
 // twarz, animacje) -> drzewo Object3D z teksturowanymi czworokatami.
 // Animacje to klatki kluczowe per kosc w JSON (stopnie, czas jako ulamek),
 // interpolowane gladko; do tego mruganie, lipsync z amplitudy i widoki
-// (przod / bok / tyl / profil) z podmiana glowy.
+// (przod / bok / tyl / profil) z podmiana glowy. Konczyny z lancuchem stawow
+// (rig: kosci[k].stawy, pomiar: czesci[n].stawy) sa siatka zginana w stawach (siatka.js).
 
 import * as THREE from "three";
+import { baza, sW, waga, pasmo, deformuj, punkt } from "./siatka.js";
 
 const DEG = Math.PI / 180;
 const ladowacz = new THREE.TextureLoader();
@@ -31,8 +33,13 @@ function sekwencja(lista, u) {
   return v;
 }
 
+const TULOW = { przod: "tulow", profil: "p_cialo", tyl: "t_tulow" };
+// a right-side bone (and its joints) takes mirrored angles
+const lustro = (k) => k.endsWith("_p") || k === "reka_p" || k === "noga_p" || k === "noga_tp";
+
 export class Lalka {
   static klatki = 0;                       // >0: krokowanie lalki (np. 12)
+  static zginanie = true;                  // false: chains stay at rest (A/B against the rigid cut-out)
 
   static async wczytaj(katalog, opis = {}) {
     const dane = await (await fetch(katalog + "postac.json", { cache: "no-store" })).json();
@@ -79,10 +86,77 @@ export class Lalka {
     return m;
   }
 
+  // a limb as a grid mesh trimmed to its alpha, bent along its joints
+  _siatka(k, o, os) {
+    const cz = this.dane.czesci[o.czesc], s = this._skala(o.widok), t = this.dane.czesci[TULOW[o.widok]] || cz;
+    const B = baza(this.tex[o.czesc].image, cz, os, [t.x + t.w / 2, t.y + t.h / 2], o.dystalnie);
+    const n = B.px.length, rest = new Float32Array(3 * n), uv = new Float32Array(2 * n);
+    for (let v = 0; v < n; v++) {
+      rest[3 * v] = (B.px[v] - os[0]) * s; rest[3 * v + 1] = -(B.py[v] - os[1]) * s;
+      uv[2 * v] = (B.px[v] - cz.x) / cz.w; uv[2 * v + 1] = 1 - (B.py[v] - cz.y) / cz.h;
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.BufferAttribute(rest.slice(), 3));
+    g.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+    g.setIndex(B.index);
+    const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: this.tex[o.czesc], transparent: true, alphaTest: 0.05, side: THREE.DoubleSide }));
+    m.userData.czesc = o.czesc; m.frustumCulled = false;
+    const stawy = o.stawy.map((spec, i) => {
+      const j = cz.stawy[i] || cz.stawy[cz.stawy.length - 1], sk = sW(B, j.x, j.y);
+      return { nazwa: spec.nazwa, zakres: spec.zakres || [-180, 180], sk, h: pasmo(sk, j.miekkosc ?? spec.miekkosc ?? 0.3),
+               jx: (j.x - os[0]) * s, jy: -(j.y - os[1]) * s, px: j.x, py: j.y };
+    });
+    const wagi = new Float32Array(stawy.length * n);
+    stawy.forEach((st, i) => { for (let v = 0; v < n; v++) wagi[i * n + v] = waga(B.vs[v], st.sk, st.h); });
+    this.lancuchy.push({ kosc: k, czesc: o.czesc, widok: o.widok, mesh: m, rest, wagi, stawy, lustro: lustro(k), katy: new Float32Array(stawy.length), wazne: false });
+    for (const st of stawy) this.stawyNazwy.add(st.nazwa);
+    return m;
+  }
+
+  // editor: the wireframe of every chain mesh on/off
+  pokazSiatke(tak) {
+    for (const L of this.lancuchy) {
+      let w = L.mesh.children.find((c) => c.userData.druty);
+      if (tak && !w) { w = new THREE.Mesh(L.mesh.geometry, new THREE.MeshBasicMaterial({ color: 0x00e0ff, wireframe: true, transparent: true, opacity: 0.35, depthTest: false })); w.userData.druty = true; w.renderOrder = 999; w.raycast = () => {}; L.mesh.add(w); }
+      if (w) w.visible = !!tak;
+    }
+  }
+  // editor: where the joints of a piece are now, in world coordinates
+  stawyCzesci(czesc) {
+    const L = this.lancuchy.find((l) => l.czesc === czesc && this._widoczna(l.mesh));
+    if (!L) return [];
+    L.mesh.updateWorldMatrix(true, false);
+    return L.stawy.map((st, i) => {
+      const [x, y] = punkt(st.jx, st.jy, st.sk, L.stawy, L.katy);
+      return { i, nazwa: st.nazwa, sk: st.sk, h: st.h, zakres: st.zakres, swiat: new THREE.Vector3(x, y, 0).applyMatrix4(L.mesh.matrixWorld) };
+    });
+  }
+  _widoczna(o) { for (; o; o = o.parent) if (o.visible === false) return false; return true; }
+
+  _zginaj(p) {
+    for (const L of this.lancuchy) {
+      if (!this.widokGrupy[L.widok].visible) { L.wazne = false; continue; }   // a hidden view bends when it shows up
+      let zmiana = !L.wazne;
+      L.stawy.forEach((st, i) => {
+        let a = (p[st.nazwa] || 0) + (this.recznie?.[st.nazwa] || 0);
+        a = Math.max(st.zakres[0], Math.min(st.zakres[1], a));
+        if (L.lustro) a = -a;
+        const f = Lalka.zginanie ? -a * DEG : 0;
+        if (f !== L.katy[i]) { L.katy[i] = f; zmiana = true; }
+      });
+      if (!zmiana) continue;
+      const pos = L.mesh.geometry.attributes.position;
+      deformuj(L.rest, pos.array, L.wagi, L.stawy, L.katy);
+      pos.needsUpdate = true; L.mesh.geometry.boundingSphere = null; L.mesh.geometry.boundingBox = null;
+      L.wazne = true;
+    }
+  }
+
   _zbuduj() {
     const d = this.dane, c = d.czesci;
     this.korzen = new THREE.Group();
     this.kosci = {};
+    this.lancuchy = []; this.stawyNazwy = new Set();
     this.widokGrupy = { przod: new THREE.Group(), profil: new THREE.Group(), tyl: new THREE.Group() };
     this.korzen.add(this.widokGrupy.przod, this.widokGrupy.profil, this.widokGrupy.tyl);
     this.widokGrupy.profil.visible = false; this.widokGrupy.tyl.visible = false;
@@ -115,7 +189,7 @@ export class Lalka {
         const ro = rodzic.userData.os;
         g.position.set((os[0] - ro[0]) * s, -(os[1] - ro[1]) * s, o.z ?? 0);
         g.userData = { os, widok: o.widok, z: o.z ?? 0, zUniesiona: o.z_uniesiona, czesc: o.czesc, bazaY: g.position.y };
-        const m = this._plane(o.czesc, os, 0, o.widok);
+        const m = o.stawy && cz.stawy ? this._siatka(k, o, os) : this._plane(o.czesc, os, 0, o.widok);
         // "za tulowiem, ale przed glowa": element lezy nad glowa, a tulow wycina go w stencilu tam, gdzie sie nakladaja
         if (o.czesc === "tulow") Object.assign(m.material, { stencilWrite: true, stencilRef: this.stencil, stencilFunc: THREE.AlwaysStencilFunc, stencilZPass: THREE.ReplaceStencilOp });
         if (o.za_tulowiem) Object.assign(m.material, { stencilWrite: true, stencilRef: this.stencil, stencilFunc: THREE.NotEqualStencilFunc, stencilWriteMask: 0 });
@@ -235,7 +309,7 @@ export class Lalka {
         else { u = 1; this.spoczynek(); if (this.naKoniec) { const f = this.naKoniec; this.naKoniec = null; f(); } return this.update(0); }
       }
       for (const [k, kl] of Object.entries(a.tory || {})) p[k] = tor(kl, u);
-      for (const k of Object.keys(p)) if (!k.startsWith("p_") && !k.startsWith("t_") && p["t_" + k] === undefined && this.kosci["t_" + k]) p["t_" + k] = p[k];
+      for (const k of Object.keys(p)) if (!k.startsWith("p_") && !k.startsWith("t_") && p["t_" + k] === undefined && (this.kosci["t_" + k] || this.stawyNazwy.has("t_" + k))) p["t_" + k] = p[k];
       if (a.skok) p.skok = tor(a.skok, u);
       if (a.usta) p.usta = a.usta;
       if (a.oczy) p.oczy = a.oczy;
@@ -270,7 +344,7 @@ export class Lalka {
     for (const [k, g] of Object.entries(this.kosci)) {
       if (!g.userData.czesc) { g.rotation.z = -(p[k] || 0) * DEG; continue; }   // korzen: kolysanie calej lalki na stopach
       let kat = p[k] || 0;
-      if (k.endsWith("_p") || k === "reka_p" || k === "noga_p" || k === "noga_tp") kat = -kat;
+      if (lustro(k)) kat = -kat;
       if (k === "glowa" || k === "p_glowa" || k === "t_glowa") kat = Math.max(-25, Math.min(25, kat));
       if (k === "glowa") this.katGlowy = kat;
       g.rotation.z = -(kat + (this.dane.czesci[g.userData.czesc]?.obrot || 0)) * DEG;   // obrot = base rotation of the piece, not mirrored
@@ -278,6 +352,7 @@ export class Lalka {
       if (g.userData.zUniesiona !== undefined) g.position.z = Math.abs(p[k] || 0) > 45 ? g.userData.zUniesiona : g.userData.z;   // uniesiona konczyna przed glowa
       if (k === "tulow" || k === "p_cialo" || k === "t_tulow") g.scale.y = p.tulow_skala || 1;
     }
+    this._zginaj(p);
     for (const root of ["biodra", "p_biodra", "t_biodra"]) {
       const g = this.kosci[root]; if (!g) continue;
       g.position.y = g.userData.bazaY + (p.skok || 0) * this.wysokosc;

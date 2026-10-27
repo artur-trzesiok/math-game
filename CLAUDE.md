@@ -172,6 +172,30 @@ interleave their pieces.
 Back view: limbs plainly behind. Profile: the near limb over the body, jumping
 to `z_uniesiona` past 45 deg.
 
+Bendable limbs (`game/engine/siatka.js`). A rig bone may carry `stawy`: a chain of
+joints (`nazwa` = the animation track, `okno` [a, b] or a fixed `s`, `miekkosc`,
+`zakres` [min, max] in degrees, same sign convention as bones, mirrored with the
+bone). Its piece then becomes a grid mesh (12 px cells, trimmed to alpha plus one
+cell) instead of a quad. s = geodesic distance inside the mesh from the PROXIMAL
+side of the pivot (the overlap hidden behind the torso: above the pivot for limbs,
+towards the torso centre for tails - the bone's `dystalnie`), 0 there, 1 at the tip;
+it follows curled tails and L-shaped feet. A vertex turns around joint k by
+smoothstep(s across a band of width `miekkosc` centred on s_k) x angle, last joint
+first; turning (not blending positions) keeps the limb's length, so a bend never
+collapses. `tools/characters/stawy.py <kto>|all` measures the joints (narrowest
+band in the window, pulled to its middle) into `czesci[n].stawy` [{x, y}] of
+postac.build.json and postac.json (install runs it; poprawki.json keeps the editor's
+joints and per-joint `miekkosc`); `debug_stawy.py <kto>` draws field + joints into
+work/. Measuring s from the pivot POINT tore the mesh where a hidden lobe met the
+limb (a sliver of the tail's overlap stuck out); measuring over the alpha mask
+instead of the mesh let a thin gap (a deer's hock tuft, owl claws) split s across one
+triangle (streaks); float32 distances in the Dijkstra stopped it half way. A foot
+drawn level must be kept level by the ankle track (= -(hip + knee)) or it dips
+under the floor at the ends of a stride. The editor: pink circles = joints (drag),
+per-joint sliders `miękkość` (saved) and `zgięcie` (a test bend, not saved),
+switches `zginanie` (A/B against the rigid cut-out) and `siatka` (wireframe);
+`edytor.przeglad(kto, anim, faza, nazwa, {zgin, druty})` snapshots from the console.
+
 Dead ends (do not retry): loose-part sheets for body pieces; any Python cut
 (difference masks, caps, erosion, hole filling); "head with face" as a keyed
 edit; a blank head keeping the nose; a profile sheet with a pair of eyes;

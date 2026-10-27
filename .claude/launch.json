@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "math_game",
+      "name": "math_game2",
       "runtimeExecutable": "python",
       "runtimeArgs": [
         "manager/server.py",
