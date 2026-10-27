@@ -146,6 +146,9 @@ export class Player {
       mood: (who, m) => S.mood(who, m),
       look: (who, target, opts) => S.lookAt(who, target, opts),   // a scene may direct a gaze too (null = ahead)
       sfx: (name, opts) => S.sfx.graj(name, opts),                // a sound effect (game/audio/sfx)
+      // the camera closes in on things and dims the rest; unfocus brings the whole stage back
+      focus: guard((items, opts) => S.focus(items, opts)),
+      unfocus: guard((d) => S.unfocus(d)),
       // drawing with a pencil: a stroke along points or Bezier segments, a segment with end ticks; stickers' real
       // edges (bounds) and standing things on a line - the pieces for comparisons and pairings
       line: guard((path, opts) => S.line(path, opts)),

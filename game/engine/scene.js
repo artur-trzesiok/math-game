@@ -403,10 +403,67 @@ export class Stage {
     else if (d.zone) { d.zone.put(it); }                              // dropped nowhere: back where it was
     else it.moveTo(it.home.x, it.home.y, 0.35);
   }
-  clear() { for (const L of Object.values(this.puppets)) L.patrzNa(null);
+  clear() { for (const L of Object.values(this.puppets)) L.patrzNa(null); this.unfocus(0);
     this.endSort();
     for (const o of this.objects.slice()) o.remove();
     this.targets = [];
+  }
+
+  // ------------------------------------------------------------------ camera focus
+  // close in on some things (stickers, lines, zones, puppets) and dim the rest: the camera zooms (1..2x) and
+  // pans so they fill the middle - never past the design frame - and a dark veil with a soft bright hole
+  // around them covers everything else, the characters included; the things themselves rise above the veil
+  async focus(items, { zoom = null, dim = 0.5, d = 0.7, margin = 0.6 } = {}) {
+    if (!items?.length) return;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const h of items) {
+      const b = h.korzen ? (() => { const bb = new THREE.Box3().setFromObject(h.korzen); return { left: bb.min.x, right: bb.max.x, bottom: bb.min.y, top: bb.max.y }; })() : this.bounds(h);
+      x0 = Math.min(x0, b.left); x1 = Math.max(x1, b.right); y0 = Math.min(y0, b.bottom); y1 = Math.max(y1, b.top);
+    }
+    x0 -= margin; x1 += margin; y0 -= margin; y1 += margin;
+    const v = this.visible(0), cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    const z = zoom ?? Math.max(1, Math.min(1.6, v.w / (x1 - x0), v.h / (y1 - y0)));   // 1.6 at most: some context stays and the veil shows
+    const ramka = this.design(0), hw = v.w / 2 / z, hh = v.h / 2 / z;
+    const tx = Math.max(-ramka.w / 2 + hw, Math.min(ramka.w / 2 - hw, cx)), ty = Math.max(-ramka.h / 2 + hh, Math.min(ramka.h / 2 - hh, cy));
+    // the veil, once
+    if (!this.zaslona) {
+      const mat = new THREE.ShaderMaterial({
+        transparent: true, depthTest: false, depthWrite: false,
+        uniforms: { alfa: { value: 0 }, srodek: { value: new THREE.Vector2() }, rozmiar: { value: new THREE.Vector2(1, 1) } },
+        vertexShader: `varying vec2 vP; void main(){ vP = (modelMatrix * vec4(position, 1.0)).xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+        fragmentShader: `uniform float alfa; uniform vec2 srodek, rozmiar; varying vec2 vP;
+          void main(){ vec2 q = (vP - srodek) / rozmiar; float r = length(q);
+            float a = alfa * smoothstep(0.75, 1.15, r);
+            gl_FragColor = vec4(0.03, 0.03, 0.08, a); }`,
+      });
+      this.zaslona = new THREE.Mesh(new THREE.PlaneGeometry(80, 50), mat);
+      this.zaslona.position.z = 0.6; this.zaslona.renderOrder = 40; this.zaslona.frustumCulled = false;
+      this.scene.add(this.zaslona);
+    }
+    const u = this.zaslona.material.uniforms;
+    u.srodek.value.set(cx, cy); u.rozmiar.value.set((x1 - x0) / 2, (y1 - y0) / 2);
+    // the things in focus draw above the veil
+    this.unlift();
+    this.lifted = [];
+    for (const h of items) (h.korzen || h.mesh).traverse((o) => { if (o.isMesh || o.isLine) { this.lifted.push([o, o.renderOrder]); o.renderOrder = 41 + (o.renderOrder % 20); } });
+    this.sfx.graj("zoom");
+    const z0 = this.camera.zoom, px = this.camera.position.x, py = this.camera.position.y, a0 = u.alfa.value;
+    await this.tween(PARAMS.has("szybko") ? 0.1 : d, (s) => {
+      this.camera.zoom = z0 + (z - z0) * s; this.camera.position.x = px + (tx - px) * s; this.camera.position.y = py + (ty - py) * s;
+      this.camera.updateProjectionMatrix(); u.alfa.value = a0 + (dim - a0) * s;
+    });
+  }
+  unlift() { for (const [o, r] of this.lifted || []) o.renderOrder = r; this.lifted = []; }
+  // back to the whole stage
+  async unfocus(d = 0.6) {
+    if (!this.zaslona && this.camera.zoom === 1) return;
+    const u = this.zaslona?.material.uniforms, z0 = this.camera.zoom, px = this.camera.position.x, py = this.camera.position.y, a0 = u ? u.alfa.value : 0;
+    const krok = (s) => {
+      this.camera.zoom = z0 + (1 - z0) * s; this.camera.position.x = px * (1 - s); this.camera.position.y = py * (1 - s);
+      this.camera.updateProjectionMatrix(); if (u) u.alfa.value = a0 * (1 - s);
+    };
+    if (d > 0 && !PARAMS.has("szybko")) await this.tween(d, krok); else krok(1);
+    this.unlift();
   }
 
   // ------------------------------------------------------------------ pencil
