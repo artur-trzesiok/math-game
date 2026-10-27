@@ -19,7 +19,7 @@
   #langs button.on { background: #2a4a6a; color: #fff; }
   #hud { position: fixed; top: 0; left: 0; right: 0; display: none; align-items: center; gap: 12px; padding: 10px 14px; pointer-events: none; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
   #hud .lesson-name { font-weight: 700; }
-  #hud .phases { display: flex; gap: 10px; margin-left: 14px; }
+  #hud .phases { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); display: flex; gap: 10px; }
   #hud .phase { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; background: rgba(255,255,255,.35); text-shadow: none; transition: transform .3s, background .3s; }
   #hud .phase.current { background: #ffb347; transform: scale(1.15); box-shadow: 0 2px 8px rgba(0,0,0,.3); }
   #hud .phase.done { background: rgba(255,255,255,.75); opacity: .7; }
