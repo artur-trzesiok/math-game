@@ -2,7 +2,7 @@
 // that belong to the named group; each tap moves the thing into the group's zone.
 // Script in scenario.md.
 
-const ROW_Y = 0.9;                             // loose things: above the puppets' heads
+const ROW_Y = 1.2;                             // loose things: above the puppets' heads
 const ZONE_L = -1.7, ZONE_R = 1.7, ZONE_Y = -2.3; // zones: on the ground between the puppets
 
 // scatter stickers in a row; `items` = [{name, size, tag}]

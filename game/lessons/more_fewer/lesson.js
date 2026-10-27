@@ -3,7 +3,7 @@
 // mouth that opens towards the bigger pile". Script in scenario.md.
 
 const ROW_L = -1.9, ROW_R = 1.9;         // the two piles
-const ROW_Y = 0.9;                       // the object layer: above the puppets' heads
+const ROW_Y = 1.2;                       // the object layer: above the puppets' heads
 
 // a row of n stickers centred on x
 async function row(c, name, n, x, y = ROW_Y, size = 0.9) {

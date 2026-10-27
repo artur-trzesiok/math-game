@@ -67,8 +67,8 @@ so never rename a recorded line, add a new key), then `lesson.js`, then a line i
 `python tools/audio/make_audio.py <id>` once the lines are final.
 
 Scenes are plain async functions; keep each one a screen's worth. Positions are
-safe-area units (x -6..6, y -4.5..4.5, ground -3.3); puppets stand at x = +-4.6,
-the object layer (stickers, signs) floats at y = 0.9, above the puppets' heads, so
+safe-area units (x -6..6, y -4.5..4.5, ground -3.3); puppets (3.6 units tall, 40% of the safe height) stand at x = +-4.6,
+the object layer (stickers, signs) floats at y = 1.2, above the puppets' heads, so
 nothing ever covers a character; zones lie on the ground between them (y -2.3). The two characters of a lesson stand
 left/right as `characters[name].side` says; the player preloads them and hides
 them until `enter`/`show`. Never block on anything but `ctx` calls.

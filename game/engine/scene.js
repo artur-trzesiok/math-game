@@ -111,7 +111,7 @@ export class Stage {
   }
 
   // ------------------------------------------------------------------ puppets
-  async puppet(name, { x = 0, side = "left", height = 2.7 } = {}) {
+  async puppet(name, { x = 0, side = "left", height = 3.6 } = {}) {
     const L = await Lalka.wczytaj(`/game/assets/characters/${name}/`, { strona: side === "left" ? "lewo" : "prawo", wysokosc: height });
     L.korzen.position.set(x, GROUND, 0);
     L.korzen.visible = false; L.home = x; L.name = name;
@@ -137,7 +137,7 @@ export class Stage {
 
   // ------------------------------------------------------------------ objects
   // a sticker: the icon on a white rounded card, so a green pear reads on green grass
-  async object(name, { x = 0, y = 0.9, size = 1.1, sticker = true, z = 0.4, label = null } = {}) {
+  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = true, z = 0.4, label = null } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, z);
     if (sticker) {
       const c = document.createElement("canvas"); c.width = c.height = 128; const ctx = c.getContext("2d");
@@ -167,7 +167,7 @@ export class Stage {
     const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
     m.position.y = y; return m;
   }
-  async sign(text, { x = 0, y = 0.9, size = 1.1 } = {}) {
+  async sign(text, { x = 0, y = 1.2, size = 1.1 } = {}) {
     const m = this.textMesh(text, { size }); m.position.set(x, y, 0.4);
     const handle = { mesh: m, name: text, base: size, kind: "sign", pulse: false,
       remove: () => { this.scene.remove(m); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },

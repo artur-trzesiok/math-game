@@ -2,7 +2,7 @@
 // every spoken line lives in i18n/<lang>.json under its "line.*" key.
 
 const L = -4.6, R = 4.6;                       // where the two friends stand (safe-area x)
-const Y = 0.9;                                 // the object layer: above the puppets' heads
+const Y = 1.2;                                 // the object layer: above the puppets' heads
 
 export default {
   id: "bigger_smaller",
