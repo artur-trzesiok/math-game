@@ -84,11 +84,6 @@
   "who": "sowa",
   "text": "Let's check in pairs. Look what is left without a pair."
  },
- "line.p_good": {
-  "hash": "11e590e630eb",
-  "who": "sowa",
-  "text": "Great!"
- },
  "line.p_signs_intro": {
   "hash": "96828a5a80a4",
   "who": "sowa",
@@ -119,20 +114,10 @@
   "who": "lisek",
   "text": "Let's check in pairs: cup and plate, cup and plate."
  },
- "line.a_owl_more_plates": {
-  "hash": "39b10b4e9508",
-  "who": "sowa",
-  "text": "One plate is left alone. There are more plates and fewer cups."
- },
  "line.a_fox_which_sign": {
   "hash": "7b0d61b21065",
   "who": "lisek",
   "text": "Which sign fits?"
- },
- "line.a_owl_right": {
-  "hash": "b9c8b57d5359",
-  "who": "sowa",
-  "text": "Correct!"
  },
  "line.a_ask_parents": {
   "hash": "432a10b2c71d",

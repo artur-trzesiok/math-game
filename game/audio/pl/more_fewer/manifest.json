@@ -84,11 +84,6 @@
   "who": "sowa",
   "text": "Sprawdźmy parami. Patrz, co zostaje bez pary."
  },
- "line.p_good": {
-  "hash": "1ba0b6eb8a70",
-  "who": "sowa",
-  "text": "Świetnie!"
- },
  "line.p_signs_intro": {
   "hash": "1f11204ee084",
   "who": "sowa",
@@ -119,20 +114,10 @@
   "who": "lisek",
   "text": "Sprawdźmy parami: kubek i talerz, kubek i talerz."
  },
- "line.a_owl_more_plates": {
-  "hash": "3377364c5329",
-  "who": "sowa",
-  "text": "Jeden talerz został sam. Talerzy jest więcej, kubków mniej."
- },
  "line.a_fox_which_sign": {
   "hash": "81da36060b14",
   "who": "lisek",
   "text": "Który znak pasuje?"
- },
- "line.a_owl_right": {
-  "hash": "eb97e60aa07b",
-  "who": "sowa",
-  "text": "Zgadza się!"
  },
  "line.a_ask_parents": {
   "hash": "53bf0a0f2460",

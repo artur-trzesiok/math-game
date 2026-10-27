@@ -135,6 +135,12 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
             print(f"  {lang} {lesson.name} {l['key']:28s} FAILED: {e}")
             if "401" in str(e):
                 raise SystemExit("key rejected")
+    # prune recordings of lines that no longer exist
+    live = {l["key"] for l in lines(lesson, lang)}
+    for f in list(out.glob("line.*.mp3")) + list(out.glob("line.*.json")):
+        if f.stem not in live:
+            f.unlink(); manifest.pop(f.stem, None); print(f"  {lang} {lesson.name} {f.name:32s} removed (no such line)")
+    manifest_p.write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
     return done, skipped, failed
 
 

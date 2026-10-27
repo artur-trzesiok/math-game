@@ -94,16 +94,6 @@
   "who": "sarenka",
   "text": "Zabawa w domu: sprzątanie po podwieczorku. Koszyk i pudełko, pięć zasad. Przeciągaj."
  },
- "line.a_sq_food": {
-  "hash": "30d1434f70af",
-  "who": "wiewiorka",
-  "text": "Ja zbieram jedzenie: jabłko, ciastko, gruszka. Do koszyka!"
- },
- "line.a_deer_dishes": {
-  "hash": "d948f2382eb6",
-  "who": "sarenka",
-  "text": "A ty przeciągnij naczynia do pudełka: kubki i talerze."
- },
  "line.a_sq_right": {
   "hash": "61c2046f6298",
   "who": "wiewiorka",
