@@ -1,98 +1,98 @@
 {
  "line.s1_intro": {
-  "hash": "3e17311417c8",
+  "hash": "954f83cf593e",
   "who": "wiewiorka",
   "text": "Ale bałagan po podwieczorku! Jabłka i gruszki leżą wymieszane na dywanie."
  },
  "line.s1_sq_mixed": {
-  "hash": "ce8ae0c1aca0",
+  "hash": "c9e697d26e7b",
   "who": "sarenka",
   "text": "Wszystko pomieszane! Jak to poukładać?"
  },
  "line.s1_deer_idea": {
-  "hash": "e0c4564f1328",
+  "hash": "5de9b941c02a",
   "who": "wiewiorka",
   "text": "Jabłka do jednego koszyka, gruszki do drugiego. Każda rzecz do swojej grupy."
  },
  "line.s1_apples": {
-  "hash": "1843a8a294d0",
+  "hash": "ba8beca20f4b",
   "who": "sarenka",
   "text": "Przeciągnij jabłka do koszyka, a gruszki do pudełka. W dowolnej kolejności!"
  },
  "line.s1_apples_done": {
-  "hash": "98d43f36a838",
+  "hash": "2a3fb21c4805",
   "who": "sarenka",
   "text": "Jabłka razem, gruszki razem. To są dwie grupy."
  },
  "line.s1_deer_happy": {
-  "hash": "700c52eca5f4",
+  "hash": "0e07ff749978",
   "who": "sarenka",
   "text": "Teraz od razu widać, co gdzie jest!"
  },
  "line.s1_daily": {
-  "hash": "0a6c7748a65a",
+  "hash": "ba9f2fcb25cd",
   "who": "wiewiorka",
   "text": "W domu też grupujemy: łyżki do łyżek, skarpetki do skarpetek, klocki do klocków."
  },
  "line.s2_sq_size": {
-  "hash": "4bfe26c32d86",
+  "hash": "ecd4f4d7253a",
   "who": "wiewiorka",
   "text": "A można poukładać inaczej? Duże do dużych, a małe do małych!"
  },
  "line.s2_big": {
-  "hash": "d8dc54c4b7e8",
+  "hash": "fc559c4bcd15",
   "who": "sarenka",
   "text": "Te same owoce, inna zasada. Duże do koszyka, małe do pudełka."
  },
  "line.s2_summary": {
-  "hash": "6c1a1b3ba8d6",
+  "hash": "884e3ac21a14",
   "who": "wiewiorka",
   "text": "Te same rzeczy można grupować na różne sposoby. Najpierw mówimy, według czego, a potem układamy."
  },
  "line.p_intro": {
-  "hash": "c076290cfb21",
+  "hash": "0486cece7994",
   "who": "sarenka",
   "text": "Teraz ty układasz. Słuchaj zasady i przeciągaj do koszyka albo do pudełka."
  },
  "line.p_cups": {
-  "hash": "a65802ed83b2",
+  "hash": "9f4827533967",
   "who": "sarenka",
   "text": "Kubki do koszyka, a wszystko inne do pudełka."
  },
  "line.p_food": {
-  "hash": "8820a8b6b77a",
+  "hash": "c1e3c0892dbf",
   "who": "sarenka",
   "text": "To, co można zjeść, do koszyka. Reszta do pudełka."
  },
  "line.p_red": {
-  "hash": "798d3bb1c8b9",
+  "hash": "21cc30512753",
   "who": "sarenka",
   "text": "Wszystko czerwone do koszyka. Reszta do pudełka."
  },
  "line.p_small": {
-  "hash": "72952451244b",
+  "hash": "5e2298380764",
   "who": "sarenka",
   "text": "Małe rzeczy do koszyka, duże do pudełka."
  },
  "line.p_done": {
-  "hash": "7aebb156a6a7",
+  "hash": "8c896125c9ec",
   "who": "sarenka",
   "text": "Cała grupa razem!"
  },
  "line.p_good": {
-  "hash": "8d6ca85a0c3f",
+  "hash": "ff0b9fe0206b",
   "who": "wiewiorka",
   "text": "Brawo!"
  },
  "line.a_bye": {
-  "hash": "b9ffd6a7d7ea",
+  "hash": "5d07114f1809",
   "who": "wiewiorka",
   "text": "Do zobaczenia!"
  },
  "line.a_deer_tidy": {
-  "hash": "9cbd041c9da9",
+  "hash": "4dc4c4386abb",
   "who": "sarenka",
-  "text": "Zabawa w domu: sprzątanie po podwieczorku. Jedzenie do koszyka, naczynia na półkę."
+  "text": "Zabawa w domu: sprzątanie po podwieczorku. Koszyk i pudełko, pięć zasad. Przeciągaj."
  },
  "line.a_sq_food": {
   "hash": "30d1434f70af",
@@ -105,33 +105,98 @@
   "text": "A ty przeciągnij naczynia do pudełka: kubki i talerze."
  },
  "line.a_sq_right": {
-  "hash": "8aee142914a8",
+  "hash": "61c2046f6298",
   "who": "wiewiorka",
   "text": "Posprzątane! Każda rzecz w swojej grupie."
  },
  "line.a_ask_parents": {
-  "hash": "90bb360ac908",
+  "hash": "b3c72f933692",
   "who": "sarenka",
   "text": "Poproście rodziców, żebyście pobawili się tak w domu. Sprzątajcie razem: zabawki do pudełka, ubrania do szafy, a potem zmieńcie zasadę!"
  },
  "line.s1_mixed": {
-  "hash": "633ecd6f3326",
+  "hash": "76b2c9f6379b",
   "who": "sarenka",
   "text": "Coś się pomieszało. W jednym koszyku mają być same jabłka, a w drugim same gruszki."
  },
  "line.s2_mixed": {
-  "hash": "7ea94e03e26d",
+  "hash": "beb772d81ec8",
   "who": "sarenka",
   "text": "Coś się pomieszało. Duże osobno, małe osobno."
  },
  "line.p_mixed": {
-  "hash": "29edaa1a9b9f",
+  "hash": "e78eea26d674",
   "who": "sarenka",
   "text": "Coś tu nie pasuje do reszty. Posłuchaj zasady jeszcze raz i popraw."
  },
  "line.a_mixed": {
-  "hash": "8fc4b8bd91c4",
+  "hash": "2f45522b6f47",
   "who": "sarenka",
-  "text": "Naczynia osobno, jedzenie osobno."
+  "text": "Coś się pomieszało. Posłuchaj zasady i popraw."
+ },
+ "line.s1_point_apples": {
+  "hash": "e73bb11fc634",
+  "who": "wiewiorka",
+  "text": "Gdzie jest grupa jabłek?"
+ },
+ "line.s1_not_apples": {
+  "hash": "738a10ae23b8",
+  "who": "wiewiorka",
+  "text": "Tam są gruszki. Wskaż jabłka."
+ },
+ "line.s15_odd_intro": {
+  "hash": "2f87b39d3544",
+  "who": "sarenka",
+  "text": "Patrz, cztery owoce. Trzy są takie same, a jeden inny."
+ },
+ "line.s15_point_odd": {
+  "hash": "5dd6d18def18",
+  "who": "sarenka",
+  "text": "Wskaż ten, który nie pasuje do reszty."
+ },
+ "line.s15_wrong": {
+  "hash": "aaec8072836c",
+  "who": "sarenka",
+  "text": "To gruszka, jak pozostałe. Szukamy innego."
+ },
+ "line.s15_right": {
+  "hash": "9f26621651d6",
+  "who": "wiewiorka",
+  "text": "Jabłko! Nie pasuje do gruszek."
+ },
+ "line.s2_point_big": {
+  "hash": "e651b069d56c",
+  "who": "sarenka",
+  "text": "Gdzie są duże?"
+ },
+ "line.s2_not_big": {
+  "hash": "3496b73a50f6",
+  "who": "sarenka",
+  "text": "Tam są małe. Wskaż duże."
+ },
+ "line.a_rule_food": {
+  "hash": "ceb6f4cda5b2",
+  "who": "sarenka",
+  "text": "Jedzenie do koszyka, naczynia do pudełka."
+ },
+ "line.a_rule_cups": {
+  "hash": "208c658831e3",
+  "who": "wiewiorka",
+  "text": "Kubki do koszyka, talerze do pudełka."
+ },
+ "line.a_rule_red": {
+  "hash": "675d8de4d155",
+  "who": "sarenka",
+  "text": "Czerwone do koszyka, reszta do pudełka."
+ },
+ "line.a_rule_big": {
+  "hash": "d5039f547803",
+  "who": "wiewiorka",
+  "text": "Duże do koszyka, małe do pudełka."
+ },
+ "line.a_rule_round": {
+  "hash": "6aff2346f8ee",
+  "who": "sarenka",
+  "text": "Okrągłe do koszyka, reszta do pudełka."
  }
 }

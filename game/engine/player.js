@@ -13,6 +13,7 @@ import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 const $ = (s) => document.querySelector(s);
 const PARAMS = new URLSearchParams(location.search);
 const STAGES = ["story", "practice", "apply"];
+const DEBUG = PARAMS.has("debug");                   // ?debug=1: the phase icons jump between stages
 
 export class Player {
   constructor() {
@@ -36,7 +37,7 @@ export class Player {
   menu() {
     this.closeStage();
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
-    menu.classList.remove("in"); requestAnimationFrame(() => { menu.classList.add("in"); $("#iris").style.display = "none"; });
+    menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20);
     $("#title").textContent = this.t("menu.title");
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("");
     $("#langs").onclick = (e) => { const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
@@ -79,13 +80,16 @@ export class Player {
     const scenes = this.lesson.stages[st] || [];
     for (const el of document.querySelectorAll("#hud .phase")) {           // the phase strip: done / current / ahead
       const i = STAGES.indexOf(el.dataset.stage), j = STAGES.indexOf(st);
-      el.className = "phase " + (i < j ? "done" : i === j ? "current" : "ahead");
+      el.className = "phase " + (i < j ? "done" : i === j ? "current" : "ahead") + (DEBUG ? " debug" : "");
       el.title = this.t(`stage.${el.dataset.stage}`);
+      if (DEBUG) el.onclick = () => { const q = new URLSearchParams(location.search); q.set("lekcja", this.lessonId); q.set("etap", el.dataset.stage); location.search = q.toString(); };
     }
     const bg = (this.lesson.backgrounds || {})[st];
-    if (bg) await this.stage.background(bg);
-    this.stage.clear();
-    for (const L of Object.values(this.stage.puppets)) { L.korzen.visible = false; }
+    if (bg && this.stage.bgName !== bg) {                 // a new scenery: dip to dark instead of a bare frame
+      await this.fade(true); this.stage.clear();
+      for (const L of Object.values(this.stage.puppets)) L.korzen.visible = false;
+      await this.stage.background(bg); await this.fade(false);
+    } else this.stage.clear();
     const ctx = this.context(st, this.run);
     for (const scene of scenes) {
       if (this.abort) return;
@@ -185,6 +189,11 @@ export class Player {
   }
 
   // ------------------------------------------------------------------ overlays
+  fade(dark) {
+    const f = $("#fade"); f.style.display = "block";
+    // timers, not animation frames: a hidden tab gets no frames and would hang here
+    return new Promise((ok) => { setTimeout(() => { f.style.opacity = dark ? "1" : "0"; setTimeout(() => { if (!dark) f.style.display = "none"; ok(); }, FAST ? 60 : 380); }, 20); });
+  }
   // the goodbye: a blue iris closes around the characters' faces, then covers everything
   async outro() {
     const S = this.stage, iris = $("#iris");
@@ -203,11 +212,15 @@ export class Player {
     const t0 = performance.now(), d = FAST ? 400 : 1800;
     await new Promise((ok) => {
       const step = () => {
-        const s = Math.min(1, (performance.now() - t0) / d), e = 1 - Math.pow(1 - s, 3);
-        const radius = s < 0.75 ? r0 + (r1 - r0) * (e / 0.84) : r1 * (1 - (s - 0.75) / 0.25);   // close on the faces, hold, then shut
+        const s = Math.min(1, (performance.now() - t0) / d);
+        // three phases: close in on the face (ease-out), hold on it, then shut (ease-in)
+        let radius;
+        if (s < 0.65) { const u = s / 0.65, e = 1 - Math.pow(1 - u, 3); radius = r0 + (r1 - r0) * e; }
+        else if (s < 0.8) radius = r1;
+        else { const u = (s - 0.8) / 0.2; radius = r1 * (1 - u * u); }
         const m = `radial-gradient(circle at ${cx}px ${cy}px, transparent ${Math.max(0, radius)}px, #000 ${Math.max(0, radius) + 3}px)`;
         iris.style.webkitMaskImage = m; iris.style.maskImage = m;
-        if (s < 1) requestAnimationFrame(step); else setTimeout(ok, FAST ? 100 : 500);
+        if (s < 1) setTimeout(step, 16); else setTimeout(ok, FAST ? 100 : 500);
       };
       step();
     });

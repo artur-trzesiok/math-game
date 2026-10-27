@@ -6,12 +6,12 @@ the pile with more". No counting at any point. Characters: Fox (left) and Owl (r
 
 ## Stage 1 - story (picnic by the lake)
 
-1. Fox brought three cups, Owl two plates. "Will every cup get a plate?" The rows
-   slide into pairs; the cup without a pair pulses. Narrator: more cups than plates;
-   Owl: fewer plates than cups, one is missing. Everyday bridge: spoons at the table.
-2. The sign between the piles: ">" - the mouth opens towards the cups. Fox adds a
-   plate: "=" - as many. Owl takes two cups away: "<" - fewer cups, the mouth opens
-   towards the plates. Summary line.
+Five choices in the story. 1. Fox brought three cups, Owl two plates. "Will every cup get a plate?" The rows
+   slide into pairs; the cup without a pair pulses and the child points to it. Fox:
+   more cups than plates; Owl: fewer plates, one is missing. Bridge: spoons at the table.
+2. The sign between the piles: the child picks ">" (mouth towards the cups) from two
+   cards. Fox adds a plate: the child picks "=" from three. Owl takes two cups away:
+   the child picks "<". Finally the child points to the pile with more. Summary.
 
 ## Stage 2 - practice
 
@@ -23,9 +23,10 @@ the pile with more". No counting at any point. Characters: Fox (left) and Owl (r
 
 ## Stage 3 - apply (kitchen)
 
-Owl and Fox set the table on screen (two cups, three plates), pair them, name
-the leftover; the child picks the sign; they end by asking the child to ask the
-parents to check the table in pairs at home. No card, no text.
+Owl and Fox set the table on screen five times (2/3, 3/2, 3/3, 1/3, 4/4 cups and
+plates): each round is paired, then the child picks the sign or points to the
+pile with more. They end by asking the child to ask the parents to check the
+table in pairs at home. No card, no text.
 
 ## Notes
 

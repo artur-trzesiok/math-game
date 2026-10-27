@@ -73,15 +73,7 @@
   },
   "line.a_deer_tidy": {
     "who": "sarenka",
-    "text": "A home game: tidying up after a snack. Food to the basket, dishes to the shelf."
-  },
-  "line.a_sq_food": {
-    "who": "wiewiorka",
-    "text": "I collect the food: apple, cookie, pear. Into the basket!"
-  },
-  "line.a_deer_dishes": {
-    "who": "sarenka",
-    "text": "And you drag the dishes into the box: cups and plates."
+    "text": "A home game: tidying up after a snack. A basket and a box, five rules. Drag."
   },
   "line.a_sq_right": {
     "who": "wiewiorka",
@@ -105,6 +97,58 @@
   },
   "line.a_mixed": {
     "who": "sarenka",
-    "text": "Dishes apart, food apart."
+    "text": "Something got mixed up. Listen to the rule and fix it."
+  },
+  "line.s1_point_apples": {
+    "who": "wiewiorka",
+    "text": "Where is the group of apples?"
+  },
+  "line.s1_not_apples": {
+    "who": "wiewiorka",
+    "text": "Those are pears. Point to the apples."
+  },
+  "line.s15_odd_intro": {
+    "who": "sarenka",
+    "text": "Look, four fruits. Three are the same and one is different."
+  },
+  "line.s15_point_odd": {
+    "who": "sarenka",
+    "text": "Point to the one that does not belong."
+  },
+  "line.s15_wrong": {
+    "who": "sarenka",
+    "text": "That is a pear, like the others. We are looking for the different one."
+  },
+  "line.s15_right": {
+    "who": "wiewiorka",
+    "text": "An apple! It does not belong with the pears."
+  },
+  "line.s2_point_big": {
+    "who": "sarenka",
+    "text": "Where are the big ones?"
+  },
+  "line.s2_not_big": {
+    "who": "sarenka",
+    "text": "Those are small. Point to the big ones."
+  },
+  "line.a_rule_food": {
+    "who": "sarenka",
+    "text": "Food into the basket, dishes into the box."
+  },
+  "line.a_rule_cups": {
+    "who": "wiewiorka",
+    "text": "Cups into the basket, plates into the box."
+  },
+  "line.a_rule_red": {
+    "who": "sarenka",
+    "text": "Red things into the basket, the rest into the box."
+  },
+  "line.a_rule_big": {
+    "who": "wiewiorka",
+    "text": "Big ones into the basket, small ones into the box."
+  },
+  "line.a_rule_round": {
+    "who": "sarenka",
+    "text": "Round things into the basket, the rest into the box."
   }
 }

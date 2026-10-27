@@ -73,15 +73,7 @@
   },
   "line.a_deer_tidy": {
     "who": "sarenka",
-    "text": "Zabawa w domu: sprzątanie po podwieczorku. Jedzenie do koszyka, naczynia na półkę."
-  },
-  "line.a_sq_food": {
-    "who": "wiewiorka",
-    "text": "Ja zbieram jedzenie: jabłko, ciastko, gruszka. Do koszyka!"
-  },
-  "line.a_deer_dishes": {
-    "who": "sarenka",
-    "text": "A ty przeciągnij naczynia do pudełka: kubki i talerze."
+    "text": "Zabawa w domu: sprzątanie po podwieczorku. Koszyk i pudełko, pięć zasad. Przeciągaj."
   },
   "line.a_sq_right": {
     "who": "wiewiorka",
@@ -105,6 +97,58 @@
   },
   "line.a_mixed": {
     "who": "sarenka",
-    "text": "Naczynia osobno, jedzenie osobno."
+    "text": "Coś się pomieszało. Posłuchaj zasady i popraw."
+  },
+  "line.s1_point_apples": {
+    "who": "wiewiorka",
+    "text": "Gdzie jest grupa jabłek?"
+  },
+  "line.s1_not_apples": {
+    "who": "wiewiorka",
+    "text": "Tam są gruszki. Wskaż jabłka."
+  },
+  "line.s15_odd_intro": {
+    "who": "sarenka",
+    "text": "Patrz, cztery owoce. Trzy są takie same, a jeden inny."
+  },
+  "line.s15_point_odd": {
+    "who": "sarenka",
+    "text": "Wskaż ten, który nie pasuje do reszty."
+  },
+  "line.s15_wrong": {
+    "who": "sarenka",
+    "text": "To gruszka, jak pozostałe. Szukamy innego."
+  },
+  "line.s15_right": {
+    "who": "wiewiorka",
+    "text": "Jabłko! Nie pasuje do gruszek."
+  },
+  "line.s2_point_big": {
+    "who": "sarenka",
+    "text": "Gdzie są duże?"
+  },
+  "line.s2_not_big": {
+    "who": "sarenka",
+    "text": "Tam są małe. Wskaż duże."
+  },
+  "line.a_rule_food": {
+    "who": "sarenka",
+    "text": "Jedzenie do koszyka, naczynia do pudełka."
+  },
+  "line.a_rule_cups": {
+    "who": "wiewiorka",
+    "text": "Kubki do koszyka, talerze do pudełka."
+  },
+  "line.a_rule_red": {
+    "who": "sarenka",
+    "text": "Czerwone do koszyka, reszta do pudełka."
+  },
+  "line.a_rule_big": {
+    "who": "wiewiorka",
+    "text": "Duże do koszyka, małe do pudełka."
+  },
+  "line.a_rule_round": {
+    "who": "sarenka",
+    "text": "Okrągłe do koszyka, reszta do pudełka."
   }
 }

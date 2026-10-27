@@ -1,86 +1,86 @@
 {
  "line.s1_intro": {
-  "hash": "932883115138",
+  "hash": "37226f0b1301",
   "who": "lisek",
   "text": "Owl, a picnic by the lake! I brought the cups and you brought the plates."
  },
  "line.s1_fox_cups": {
-  "hash": "c26971c51647",
+  "hash": "484aed884ae3",
   "who": "lisek",
   "text": "I have cups! Will every cup get a plate?"
  },
  "line.s1_owl_plates": {
-  "hash": "61d3f59e746b",
+  "hash": "0b5ee8ce1dbe",
   "who": "sowa",
   "text": "Let's check. Put them in pairs: cup and plate, cup and plate."
  },
  "line.s1_pair": {
-  "hash": "b3c26d2d46e8",
+  "hash": "6d2eb50f04a0",
   "who": "sowa",
   "text": "Every cup stands by its plate. Look what is left."
  },
  "line.s1_result": {
-  "hash": "b8860a4b46bb",
+  "hash": "2b84c67c4079",
   "who": "lisek",
   "text": "One cup has no pair. There are more cups than plates."
  },
  "line.s1_owl_fewer": {
-  "hash": "3ca18cb264e6",
+  "hash": "5b87dee2a9c9",
   "who": "sowa",
   "text": "And there are fewer plates than cups. One is missing!"
  },
  "line.s1_daily": {
-  "hash": "e2c98e7b6230",
+  "hash": "14078c586081",
   "who": "sowa",
   "text": "It's the same at home: does everyone at the table have a spoon? Make pairs and see what is left."
  },
  "line.s2_signs": {
-  "hash": "3927f8d2a73a",
+  "hash": "65f789cb2970",
   "who": "sowa",
   "text": "I know a sign that says which pile has more. It looks like a hungry mouth."
  },
  "line.s2_more_sign": {
-  "hash": "cd602095a807",
+  "hash": "2cf9b7333403",
   "who": "sowa",
   "text": "The mouth opens towards the pile with more. There are more cups, so it opens towards the cups."
  },
  "line.s2_fox_add": {
-  "hash": "4ba6e32a08c2",
+  "hash": "8897385a0601",
   "who": "lisek",
   "text": "I'll add one more plate!"
  },
  "line.s2_equal_sign": {
-  "hash": "9839a4cfcb7a",
+  "hash": "b9bdc090d486",
   "who": "lisek",
   "text": "Now every cup has a plate. There are as many. This sign is two equal lines."
  },
  "line.s2_owl_less": {
-  "hash": "ebf9980e43b7",
+  "hash": "ad73932941c9",
   "who": "sowa",
   "text": "And if I take the cups away? One cup and three plates are left."
  },
  "line.s2_less_sign": {
-  "hash": "b3fe3be1bd5b",
+  "hash": "f75604ed8ab7",
   "who": "sowa",
   "text": "There are fewer cups. The mouth opens towards the plates, because there are more plates."
  },
  "line.s2_summary": {
-  "hash": "76d7b4d457b8",
+  "hash": "a9066e2a70fb",
   "who": "lisek",
   "text": "More, fewer or as many. The mouth always opens where there is more."
  },
  "line.p_intro": {
-  "hash": "0ea986591723",
+  "hash": "a90f1f6b0804",
   "who": "lisek",
   "text": "Your turn. I'll show two piles and you point to the one with more."
  },
  "line.p_which_more": {
-  "hash": "9a727d43ddb9",
+  "hash": "04052ad9d308",
   "who": "lisek",
-  "text": "Where is more? Point to it."
+  "text": "Where is more?"
  },
  "line.p_wrong_pair": {
-  "hash": "6ac97c5d4c74",
+  "hash": "8916ba97159e",
   "who": "sowa",
   "text": "Let's check in pairs. Look what is left without a pair."
  },
@@ -90,32 +90,32 @@
   "text": "Great!"
  },
  "line.p_signs_intro": {
-  "hash": "deb7e8add2d8",
+  "hash": "96828a5a80a4",
   "who": "sowa",
   "text": "Now the signs. Pick the mouth that fits, or the equal lines when there are as many."
  },
  "line.p_which_sign": {
-  "hash": "077212df8f36",
+  "hash": "1e38127d9eca",
   "who": "sowa",
-  "text": "Which sign fits? Point to it."
+  "text": "Which sign fits?"
  },
  "line.p_wrong_sign": {
-  "hash": "025be67151a5",
+  "hash": "df9597eb47cc",
   "who": "sowa",
   "text": "Not that one. The mouth opens where there is more. When there are as many, pick the equal lines."
  },
  "line.a_owl_table": {
-  "hash": "9a63f0fb9755",
+  "hash": "3a92aa66ef70",
   "who": "sowa",
-  "text": "A home game: setting the table. I put out the plates, Fox the cups."
+  "text": "A home game: setting the table. I put out the plates, Fox the cups. We play five times."
  },
  "line.a_bye": {
-  "hash": "d9e01fcf6308",
+  "hash": "2536db665ec2",
   "who": "sowa",
   "text": "See you!"
  },
  "line.a_fox_check": {
-  "hash": "18edc64ee492",
+  "hash": "4a4c85ac90f4",
   "who": "lisek",
   "text": "Let's check in pairs: cup and plate, cup and plate."
  },
@@ -125,18 +125,88 @@
   "text": "One plate is left alone. There are more plates and fewer cups."
  },
  "line.a_fox_which_sign": {
-  "hash": "f9d9bde3b960",
+  "hash": "7b0d61b21065",
   "who": "lisek",
-  "text": "Which sign fits? There are fewer cups than plates. Point to it."
+  "text": "Which sign fits?"
  },
  "line.a_owl_right": {
-  "hash": "953bc45465f4",
+  "hash": "b9c8b57d5359",
   "who": "sowa",
-  "text": "Yes! The mouth opens towards the plates, because there are more plates."
+  "text": "Correct!"
  },
  "line.a_ask_parents": {
-  "hash": "9bd6b51d19dc",
+  "hash": "432a10b2c71d",
   "who": "lisek",
   "text": "Ask your parents to play this with you at home. When you set the table, check in pairs whether everyone has a plate and which there is more of!"
+ },
+ "line.s1_point_left": {
+  "hash": "27a201525a83",
+  "who": "sowa",
+  "text": "One is left without a pair. Show me which one."
+ },
+ "line.s1_wrong_left": {
+  "hash": "9ae7a461a9a1",
+  "who": "sowa",
+  "text": "That one has a pair. Look for the one standing alone."
+ },
+ "line.s2_pick_gt": {
+  "hash": "b4becbc4307b",
+  "who": "sowa",
+  "text": "Point to the sign whose mouth opens towards the cups."
+ },
+ "line.s2_pick_eq": {
+  "hash": "d6c6013d7850",
+  "who": "lisek",
+  "text": "There are as many. Point to the equal lines."
+ },
+ "line.s2_pick_lt": {
+  "hash": "48d85105c917",
+  "who": "sowa",
+  "text": "There are fewer cups. Point to the mouth open towards the plates."
+ },
+ "line.s2_which_more": {
+  "hash": "c608f0aabc75",
+  "who": "lisek",
+  "text": "And now point to the pile with more."
+ },
+ "line.a_which_more": {
+  "hash": "606148c07de8",
+  "who": "sowa",
+  "text": "Which is more?"
+ },
+ "line.good_gt": {
+  "hash": "de9e04451f1e",
+  "who": "sowa",
+  "text": "Very good! The mouth opens to the left, because there is more on the left."
+ },
+ "line.good_lt": {
+  "hash": "5685a473c2bc",
+  "who": "sowa",
+  "text": "Very good! The mouth opens to the right, because there is more on the right."
+ },
+ "line.good_eq": {
+  "hash": "f01110892255",
+  "who": "lisek",
+  "text": "Very good! Equal lines, because there are as many."
+ },
+ "line.good_more": {
+  "hash": "7399e53fe47e",
+  "who": "lisek",
+  "text": "Very good! There is more here."
+ },
+ "line.s2_good_gt": {
+  "hash": "f90f69573fa7",
+  "who": "sowa",
+  "text": "Yes! The mouth is open towards the cups, because there are more cups than plates."
+ },
+ "line.s2_good_eq": {
+  "hash": "c44a99284948",
+  "who": "lisek",
+  "text": "Yes! Equal lines. There are as many cups as plates."
+ },
+ "line.s2_good_lt": {
+  "hash": "d5ae46ddd539",
+  "who": "sowa",
+  "text": "Yes! The mouth is open towards the plates, because there are more plates and fewer cups."
  }
 }

@@ -50,7 +50,14 @@ def corrections(new: dict, base: dict) -> dict:
     return out
 
 
+class Server(ThreadingHTTPServer):
+    daemon_threads = True
+    request_queue_size = 256        # a lesson start is ~150 requests at once; the default backlog of 5 drops SYNs under load
+
+
 class Handler(SimpleHTTPRequestHandler):
+    protocol_version = "HTTP/1.1"   # keep-alive: far fewer TCP connects per lesson start
+
     def end_headers(self):
         self.send_header("Cache-Control", "no-store")
         super().end_headers()
@@ -120,4 +127,4 @@ class Handler(SimpleHTTPRequestHandler):
 if __name__ == "__main__":
     print(f"game:    http://localhost:{PORT}/game/")
     print(f"manager: http://localhost:{PORT}/manager/")
-    ThreadingHTTPServer(("127.0.0.1", PORT), partial(Handler, directory=str(ROOT))).serve_forever()
+    Server(("127.0.0.1", PORT), partial(Handler, directory=str(ROOT))).serve_forever()

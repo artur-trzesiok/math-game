@@ -1,133 +1,133 @@
 {
  "line.s1_intro": {
-  "hash": "49a26c32a160",
+  "hash": "f59c919a8e08",
   "who": "lisek",
   "text": "Wiewiórko, patrz! Znaleźliśmy w sadzie dwa jabłka."
  },
  "line.s1_fox_big": {
-  "hash": "dfd1344ca740",
+  "hash": "28a95e6a8368",
   "who": "lisek",
   "text": "Patrz, moje jabłko jest duże!"
  },
  "line.s1_sq_small": {
-  "hash": "3009d73fe568",
+  "hash": "3a75cefd4b8f",
   "who": "wiewiorka",
   "text": "A moje jest małe. Ale za to słodkie!"
  },
  "line.s1_compare": {
-  "hash": "fd829ea78cd2",
+  "hash": "d1d5091d7f7e",
   "who": "wiewiorka",
   "text": "Twoje duże jabłko jest większe od mojego. A moje małe jabłko jest mniejsze od twojego."
  },
  "line.s1_daily": {
-  "hash": "84727ef91490",
+  "hash": "84168493683a",
   "who": "lisek",
   "text": "W domu też tak jest. Mama ma duże buty, a ty masz małe. Twoje buty są mniejsze."
  },
  "line.s2_thirsty": {
-  "hash": "cd2efce50d59",
+  "hash": "b158579353b6",
   "who": "wiewiorka",
   "text": "Chce mi się pić! Który kubek jest dla mnie?"
  },
  "line.s2_fox_asks": {
-  "hash": "39dca23487ad",
+  "hash": "1e9803f369a2",
   "who": "lisek",
   "text": "Wiewiórka ma małe łapki. Pomożesz jej wybrać?"
  },
  "line.s2_prompt": {
-  "hash": "4c8a623c8e50",
+  "hash": "20c1cbf1ddc9",
   "who": "lisek",
   "text": "Wskaż mniejszy kubek."
  },
  "line.s2_wrong": {
-  "hash": "dea5d92c8c6d",
+  "hash": "91ea7ab16724",
   "who": "lisek",
   "text": "To jest większy kubek. Poszukaj mniejszego."
  },
  "line.s2_thanks": {
-  "hash": "9d07d87a0a2e",
+  "hash": "1350bec023f7",
   "who": "wiewiorka",
   "text": "Dziękuję! Mały kubek pasuje do moich łapek."
  },
  "line.s2_summary": {
-  "hash": "e9e483fadfe5",
+  "hash": "68c0f74f1748",
   "who": "lisek",
   "text": "Mały kubek jest mniejszy, a duży kubek jest większy. Świetnie!"
  },
  "line.p_intro": {
-  "hash": "43fcd1281bf9",
+  "hash": "502289889145",
   "who": "lisek",
   "text": "Teraz zabawa. Pokażę ci dwie rzeczy, a ty wybierz."
  },
  "line.p_click_bigger": {
-  "hash": "5bb9dab4033f",
+  "hash": "5f9d814a16f9",
   "who": "lisek",
   "text": "Wskaż większy."
  },
  "line.p_click_smaller": {
-  "hash": "0342f471f5c0",
+  "hash": "7e05a4a35313",
   "who": "lisek",
   "text": "Wskaż mniejszy."
  },
  "line.p_click_biggest": {
-  "hash": "7f5747e0ad0b",
+  "hash": "c46c21b011a9",
   "who": "lisek",
   "text": "Są trzy. Wskaż największy."
  },
  "line.p_click_smallest": {
-  "hash": "e17104361b53",
+  "hash": "b6d29be51cb9",
   "who": "lisek",
   "text": "Są trzy. Wskaż najmniejszy."
  },
  "line.p_wrong": {
-  "hash": "6b5b8948e470",
+  "hash": "f875e46cef98",
   "who": "lisek",
   "text": "Spróbuj jeszcze raz."
  },
  "line.p_good": {
-  "hash": "cb5f1117a875",
+  "hash": "27227b5e77bb",
   "who": "lisek",
   "text": "Tak jest!"
  },
  "line.a_bye": {
-  "hash": "b8f9afbf8d88",
+  "hash": "57cdbefd62f1",
   "who": "lisek",
   "text": "Do zobaczenia!"
  },
  "line.a_fox_game": {
-  "hash": "1008a8140474",
+  "hash": "225d3edd267b",
   "who": "lisek",
   "text": "Zagrajmy w domową zabawę! Ja pokazuję rzecz, a ty mówisz, czy jest większa, czy mniejsza od mojej łapki."
  },
  "line.a_sq_ok": {
-  "hash": "ac921342a709",
+  "hash": "494c351c82af",
   "who": "wiewiorka",
   "text": "Dobrze! Pokazuj."
  },
  "line.a_fox_plate": {
-  "hash": "111ca2ff32eb",
+  "hash": "7d7805bc4800",
   "who": "lisek",
   "text": "Talerz. Większy czy mniejszy od łapki?"
  },
  "line.a_sq_bigger": {
-  "hash": "344c9e327dfb",
+  "hash": "00befc347b8c",
   "who": "wiewiorka",
   "text": "Większy! Talerz jest większy od łapki."
  },
  "line.a_fox_cookie": {
-  "hash": "cb9ca66f38a0",
+  "hash": "a1efd4be2425",
   "who": "lisek",
   "text": "A ciastko?"
  },
  "line.a_sq_smaller": {
-  "hash": "a5371bc74114",
+  "hash": "ccce9c78cd17",
   "who": "wiewiorka",
   "text": "Mniejsze! Ciastko jest mniejsze od łapki."
  },
  "line.a_sq_your_turn": {
-  "hash": "e862bfff8b27",
+  "hash": "8836384e5ae3",
   "who": "wiewiorka",
-  "text": "Teraz ty. Wskaż to, co jest większe od twojej dłoni."
+  "text": "Teraz ty. Pokażemy dwie rzeczy, a ty wskaż."
  },
  "line.a_fox_right": {
   "hash": "dc294f151c10",
@@ -135,8 +135,118 @@
   "text": "Tak! Piłka jest większa od dłoni, a kwiatek mniejszy."
  },
  "line.a_ask_parents": {
-  "hash": "0fee9cc4b6cf",
+  "hash": "589e73d9d233",
   "who": "wiewiorka",
   "text": "Poproście rodziców, żebyście pobawili się tak w domu. Szukajcie rzeczy większych i mniejszych od waszej dłoni!"
+ },
+ "line.s1_pick_bigger": {
+  "hash": "3dbf52b7fa63",
+  "who": "lisek",
+  "text": "Jestem bardzo głodny. Wskaż większe jabłko, to będzie dla mnie."
+ },
+ "line.s1_wrong": {
+  "hash": "3af88d973979",
+  "who": "lisek",
+  "text": "To jest mniejsze jabłko. Poszukaj większego."
+ },
+ "line.s1_fox_thanks": {
+  "hash": "df624a3c40ff",
+  "who": "lisek",
+  "text": "Dziękuję! Duże jabłko dla dużego głodu."
+ },
+ "line.s3_sq_flower": {
+  "hash": "e1091fa0f589",
+  "who": "wiewiorka",
+  "text": "Chcę włożyć kwiatek za ucho. Są dwa kwiatki."
+ },
+ "line.s3_fox_too_big": {
+  "hash": "f75b54344558",
+  "who": "lisek",
+  "text": "Ten duży jest większy od twojej głowy! Nie utrzyma się."
+ },
+ "line.s3_pick_smaller": {
+  "hash": "c507dfdb01a4",
+  "who": "wiewiorka",
+  "text": "Wskaż mniejszy kwiatek. Ten zmieści się za uchem."
+ },
+ "line.s3_wrong": {
+  "hash": "d89adb85380f",
+  "who": "wiewiorka",
+  "text": "Ten jest za duży. Wskaż mniejszy."
+ },
+ "line.s3_sq_thanks": {
+  "hash": "9b80215c2818",
+  "who": "wiewiorka",
+  "text": "Pasuje! Mały kwiatek jest mniejszy od mojego ucha."
+ },
+ "line.s4_fox_ball": {
+  "hash": "5f985bde939f",
+  "who": "lisek",
+  "text": "Pogramy w piłkę? Do kopania najlepsza jest największa."
+ },
+ "line.s4_sq_three": {
+  "hash": "cfe699f57e55",
+  "who": "wiewiorka",
+  "text": "Są trzy piłki: mała, średnia i duża."
+ },
+ "line.s4_pick_biggest": {
+  "hash": "1c00173a4896",
+  "who": "lisek",
+  "text": "Wskaż największą piłkę."
+ },
+ "line.s4_wrong": {
+  "hash": "70dd40741afb",
+  "who": "lisek",
+  "text": "Jest jeszcze większa. Poszukaj największej."
+ },
+ "line.s4_fox_thanks": {
+  "hash": "171eabe4f23b",
+  "who": "lisek",
+  "text": "Tak! Największa piłka. Kopiemy!"
+ },
+ "line.s5_sq_cookies": {
+  "hash": "72990965cc14",
+  "who": "wiewiorka",
+  "text": "Czas na podwieczorek. Mam dwa ciastka: małe i duże."
+ },
+ "line.s5_fox_hungry": {
+  "hash": "844ed95da724",
+  "who": "lisek",
+  "text": "Ja jestem duży i bardzo głodny!"
+ },
+ "line.s5_pick_bigger": {
+  "hash": "6e1613cb1971",
+  "who": "wiewiorka",
+  "text": "Wskaż większe ciastko. To będzie dla Liska."
+ },
+ "line.s5_wrong": {
+  "hash": "220ee987e1ed",
+  "who": "wiewiorka",
+  "text": "To jest mniejsze ciastko. Większe jest obok."
+ },
+ "line.s5_sq_mine": {
+  "hash": "ac6c6bc18a30",
+  "who": "wiewiorka",
+  "text": "A mniejsze ciastko jest dla mnie. W sam raz."
+ },
+ "line.s5_summary": {
+  "hash": "9166fcb06aa6",
+  "who": "lisek",
+  "text": "Większe dla większego, mniejsze dla mniejszego. Pycha!"
+ },
+ "line.a_pick_bigger": {
+  "hash": "9ea0fb20898a",
+  "who": "lisek",
+  "text": "Wskaż to, co jest większe od twojej dłoni."
+ },
+ "line.a_pick_smaller": {
+  "hash": "c7ab6e405664",
+  "who": "wiewiorka",
+  "text": "Wskaż to, co jest mniejsze od twojej dłoni."
+ },
+ "line.a_right": {
+  "hash": "27227b5e77bb",
+  "who": "lisek",
+  "text": "Tak jest!"
  }
 }

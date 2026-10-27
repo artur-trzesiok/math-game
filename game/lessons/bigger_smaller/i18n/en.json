@@ -101,14 +101,98 @@
   },
   "line.a_sq_your_turn": {
     "who": "wiewiorka",
-    "text": "Your turn. Point to the thing that is bigger than your hand."
-  },
-  "line.a_fox_right": {
-    "who": "lisek",
-    "text": "Yes! The ball is bigger than a hand and the flower is smaller."
+    "text": "Your turn. We'll show two of the same thing, one big and one small."
   },
   "line.a_ask_parents": {
     "who": "wiewiorka",
     "text": "Ask your parents to play this with you at home. Look for things bigger and smaller than your hand!"
+  },
+  "line.s1_pick_bigger": {
+    "who": "lisek",
+    "text": "I'm very hungry. Point to the bigger apple, that one is for me."
+  },
+  "line.s1_wrong": {
+    "who": "lisek",
+    "text": "That is the smaller apple. Look for the bigger one."
+  },
+  "line.s1_fox_thanks": {
+    "who": "lisek",
+    "text": "Thank you! A big apple for a big hunger."
+  },
+  "line.s3_sq_flower": {
+    "who": "wiewiorka",
+    "text": "I want to put a flower behind my ear. There are two flowers."
+  },
+  "line.s3_fox_too_big": {
+    "who": "lisek",
+    "text": "The big one is bigger than your head! It won't stay."
+  },
+  "line.s3_pick_smaller": {
+    "who": "wiewiorka",
+    "text": "Point to the smaller flower. That one fits behind my ear."
+  },
+  "line.s3_wrong": {
+    "who": "wiewiorka",
+    "text": "That one is too big. Point to the smaller one."
+  },
+  "line.s3_sq_thanks": {
+    "who": "wiewiorka",
+    "text": "It fits! The small flower is smaller than my ear."
+  },
+  "line.s4_fox_ball": {
+    "who": "lisek",
+    "text": "Shall we play ball? The biggest one is best for kicking."
+  },
+  "line.s4_sq_three": {
+    "who": "wiewiorka",
+    "text": "There are three balls: small, medium and big."
+  },
+  "line.s4_pick_biggest": {
+    "who": "lisek",
+    "text": "Point to the biggest ball."
+  },
+  "line.s4_wrong": {
+    "who": "lisek",
+    "text": "There is a bigger one. Look for the biggest."
+  },
+  "line.s4_fox_thanks": {
+    "who": "lisek",
+    "text": "Yes! The biggest ball. Let's kick!"
+  },
+  "line.s5_sq_cookies": {
+    "who": "wiewiorka",
+    "text": "Snack time. I have two cookies: a small one and a big one."
+  },
+  "line.s5_fox_hungry": {
+    "who": "lisek",
+    "text": "I am big and very hungry!"
+  },
+  "line.s5_pick_bigger": {
+    "who": "wiewiorka",
+    "text": "Point to the bigger cookie. That one is for Fox."
+  },
+  "line.s5_wrong": {
+    "who": "wiewiorka",
+    "text": "That is the smaller cookie. The bigger one is next to it."
+  },
+  "line.s5_sq_mine": {
+    "who": "wiewiorka",
+    "text": "And the smaller cookie is for me. Just right."
+  },
+  "line.s5_summary": {
+    "who": "lisek",
+    "text": "Bigger for the bigger one, smaller for the smaller one. Yummy!"
+  },
+  "line.a_pick_bigger": {
+    "who": "lisek",
+    "text": "Which one is bigger?"
+  },
+  "line.a_pick_smaller": {
+    "who": "wiewiorka",
+    "text": "Which one is smaller?"
+  },
+  "line.a_right": {
+    "who": "lisek",
+    "text": "That's right!"
   }
 }

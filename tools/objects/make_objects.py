@@ -33,6 +33,7 @@ shadow, NO text."""
 
 SHEETS = {
     "objects": {
+        "outline": True,         # lesson stickers get a white die-cut outline
         "names": ["jablko", "gruszka", "kwiatek", "ciastko", "kubek", "talerz", "skarpetka", "pilka"],
         "size": "1536x1024",
         "prompt": f"""A sprite sheet of EIGHT small illustrated objects for a children's picture
@@ -85,6 +86,27 @@ def gen(sheet: str) -> None:
     figgen.generate(s["prompt"], dst, size=s["size"], quality="high", background="transparent")
 
 
+PX = 384             # sticker side in pixels
+
+
+def die_cut(im: Image.Image, border: float = 0.055) -> Image.Image:
+    """A thick white outline following the object's shape - a sticker cut around it.
+    The canvas grows so the outline is not clipped; the object is drawn on top."""
+    from scipy import ndimage
+
+    r = max(2, int(PX * border)); pad = r + 3
+    big = Image.new("RGBA", (im.width + 2 * pad, im.height + 2 * pad), (0, 0, 0, 0)); big.paste(im, (pad, pad))
+    a = np.asarray(big)[:, :, 3] > 40
+    y, x = np.ogrid[-r:r + 1, -r:r + 1]
+    disk = (x * x + y * y) <= r * r
+    grown = ndimage.binary_dilation(a, structure=disk)
+    edge = ndimage.gaussian_filter(grown.astype(np.float32), 1.0)         # soft 1 px edge
+    white = np.zeros((big.height, big.width, 4), dtype=np.uint8); white[:, :, :3] = 255
+    white[:, :, 3] = np.clip(edge * 255, 0, 255).astype(np.uint8)
+    out = Image.alpha_composite(Image.fromarray(white, "RGBA"), big)
+    return out.resize((PX, PX), Image.LANCZOS)
+
+
 def split(sheet: str, min_pikseli: int = 1500) -> None:
     from scipy import ndimage
 
@@ -112,8 +134,10 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
         bok = max(kaw.width, kaw.height)
         kw = Image.new("RGBA", (bok, bok), (0, 0, 0, 0))
         kw.paste(kaw, ((bok - kaw.width) // 2, (bok - kaw.height) // 2))
-        kw = kw.resize((256, 256), Image.LANCZOS)
-        kw.save(OUT / f"{nazwa}.webp", "WEBP", quality=75, method=6, exact=True)
+        kw = kw.resize((PX, PX), Image.LANCZOS)
+        if SHEETS[sheet].get("outline"):
+            kw = die_cut(kw)
+        kw.save(OUT / f"{nazwa}.webp", "WEBP", quality=80, method=6, exact=True)
         print(f"  {nazwa:10s} {kaw.width}x{kaw.height}")
 
 

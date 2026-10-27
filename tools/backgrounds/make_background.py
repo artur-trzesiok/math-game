@@ -135,6 +135,48 @@ Same colours, same furniture, same rug, same texture - only the mobile and the
 clouds are new. Do NOT move or redraw anything that was already there.
 Do NOT add anything else.""",
     },
+    "plac_zabaw": {
+        "plyta": f"""A background illustration for a children's game: a sunny small playground
+in a park. On the left a wooden sandbox with a low red-and-yellow slide behind it,
+on the right a simple swing frame with two empty swings, a few round trees along
+the back, a low hedge. The lower middle is EMPTY flat grass where characters will
+stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+The SKY IS EMPTY - just sky, NO clouds, NO birds, NO sun.
+The GRASS IS PLAIN - NO tufts, NO flowers, NO toys, NO balls.
+NO characters, NO animals, NO people, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two
+things have been added, in the same style:
+  - SIX or SEVEN soft white cartoon clouds spread across the whole sky, big
+    and small, none touching each other;
+  - MANY tufts of taller grass standing up from the ground - at least fifteen,
+    scattered over the foreground and the middle ground, each tuft separate.
+Same colours, same horizon, same sandbox, same swings, same texture - only the
+clouds and the tufts are new. Do NOT move or redraw anything that was already
+there. Do NOT add toys, animals, people or anything else.""",
+    },
+    "las": {
+        "plyta": f"""A background illustration for a children's game: a sunny clearing in a
+friendly deciduous forest. Tall tree trunks with green crowns on both sides and
+along the back, soft light between them, a fallen log on the far left, a few
+round bushes. The lower middle is EMPTY flat grass where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+The SKY between the crowns IS EMPTY - NO clouds, NO birds, NO sun rays.
+The GRASS IS PLAIN - NO tufts, NO flowers, NO mushrooms, NO stones.
+NO characters, NO animals, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two
+things have been added, in the same style:
+  - a few small soft white clouds in the sky visible between the tree crowns,
+    none touching each other;
+  - MANY tufts of taller grass and a few small ferns standing up from the ground -
+    at least fifteen, scattered over the foreground and the middle ground, each
+    separate from the others.
+Same colours, same trees, same log, same texture - only the clouds and the tufts
+are new. Do NOT move or redraw anything that was already there. Do NOT add
+animals, mushrooms or anything else.""",
+    },
     "przedpokoj": {
         "plyta": f"""A background illustration for a children's game: a cosy home hallway
 seen straight on. A low wooden shoe rack on the left with its shelves EMPTY, a

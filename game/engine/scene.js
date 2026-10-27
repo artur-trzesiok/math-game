@@ -127,10 +127,13 @@ export class Stage {
 
   // ------------------------------------------------------------------ background
   async background(name) {
+    if (this.bgName === name) return false;                                // same scenery: leave it as it is
+    this.bgName = name;
     for (const m of this.bg) this.scene.remove(m);
     const before = new Set(this.scene.children);
     await zbudujTlo(this.scene, (z) => this.design(z), { katalog: `/game/assets/backgrounds/${name}/`, odlegloscKamery: CAM_Z, srodekY: 0.6 });
     this.bg = this.scene.children.filter((c) => !before.has(c));
+    return true;
   }
 
   // ------------------------------------------------------------------ puppets
@@ -159,19 +162,20 @@ export class Stage {
   mood(name, { eyes, mouth } = {}) { const L = this.puppets[name]; if (!L) return; if (eyes) L.emocja.oczy = eyes; if (mouth) L.emocja.usta = mouth; }
 
   // ------------------------------------------------------------------ objects
-  // a sticker: the icon on a white rounded card, so a green pear reads on green grass
-  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = true, z = 0.4, label = null } = {}) {
+  // a sticker: the icon with its baked white die-cut outline, so a green pear reads on green grass
+  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = false, z = 0.4, label = null } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, z);
     if (sticker) {
-      const c = document.createElement("canvas"); c.width = c.height = 128; const ctx = c.getContext("2d");
-      ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.roundRect(4, 4, 120, 120, 22); ctx.fill();
+      const c = document.createElement("canvas"); c.width = c.height = 512; const ctx = c.getContext("2d");
+      ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.roundRect(16, 16, 480, 480, 88); ctx.fill();
       const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
-      const m = new THREE.Mesh(new THREE.PlaneGeometry(1.18, 1.18), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(1.18, 1.18), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false }));
       m.position.z = -0.01; g.add(m);
     }
-    const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${name}.webp`), transparent: true, alphaTest: 0.05 }));
+    const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${name}.webp`), transparent: true, alphaTest: 0.05, depthWrite: false }));
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
+    g.traverse((o) => { if (o.isMesh) o.renderOrder = 10; });                 // the foreground draws after every background prop
     const handle = { mesh: g, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false,
       remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
@@ -182,16 +186,16 @@ export class Stage {
   }
   // a sign or a word drawn on a card (=, <, >, a label)
   textMesh(text, { size = 1, y = 0, color = "#222", bg = "#fff" } = {}) {
-    const c = document.createElement("canvas"); c.width = 256; c.height = 256; const ctx = c.getContext("2d");
-    if (bg) { ctx.fillStyle = bg; ctx.beginPath(); ctx.roundRect(8, 8, 240, 240, 40); ctx.fill(); }
-    ctx.fillStyle = color; ctx.font = "bold 170px system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText(text, 128, 140);
+    const c = document.createElement("canvas"); c.width = 512; c.height = 512; const ctx = c.getContext("2d");
+    if (bg) { ctx.fillStyle = bg; ctx.beginPath(); ctx.roundRect(16, 16, 480, 480, 80); ctx.fill(); }
+    ctx.fillStyle = color; ctx.font = "bold 340px system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.fillText(text, 256, 280);
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
-    const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false }));   // no depth: a transparent corner must not cut out the grass behind
     m.position.y = y; return m;
   }
   async sign(text, { x = 0, y = 1.2, size = 1.1 } = {}) {
-    const m = this.textMesh(text, { size }); m.position.set(x, y, 0.4);
+    const m = this.textMesh(text, { size }); m.position.set(x, y, 0.4); m.renderOrder = 10;
     const handle = { mesh: m, name: text, base: size, kind: "sign", pulse: false,
       remove: () => { this.scene.remove(m); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
       highlight: (on) => { handle.pulse = on; if (!on) m.scale.setScalar(1); },
@@ -207,15 +211,18 @@ export class Stage {
     const g = new THREE.Group(); g.position.set(x, y, 0.3);
     if (image) {
       const side = Math.max(w, h) * 1.05;
-      const pic = new THREE.Mesh(new THREE.PlaneGeometry(side, side), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${image}.webp`), transparent: true, alphaTest: 0.05 }));
+      const pic = new THREE.Mesh(new THREE.PlaneGeometry(side, side), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${image}.webp`), transparent: true, alphaTest: 0.05, depthWrite: false }));
       pic.position.set(0, (side - h) / 2 - side * 0.12, -0.01); g.add(pic);
     }
-    const c = document.createElement("canvas"); c.width = 256; c.height = 192; const ctx = c.getContext("2d");
-    ctx.fillStyle = image ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.45)"; ctx.strokeStyle = color; ctx.lineWidth = 8; ctx.setLineDash([22, 14]);
-    ctx.beginPath(); ctx.roundRect(8, 8, 240, 176, 28); ctx.fill(); ctx.stroke();
+    // drawn at a fixed pixels-per-unit, so the dashes are the same length on every zone
+    const PPU = 200, c = document.createElement("canvas"); c.width = Math.round(w * PPU); c.height = Math.round(h * PPU); const ctx = c.getContext("2d");
+    const lw = 16, r = 44;
+    ctx.fillStyle = image ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.22)"; ctx.strokeStyle = color; ctx.lineWidth = lw; ctx.setLineDash([44, 28]); ctx.lineCap = "round";
+    ctx.beginPath(); ctx.roundRect(lw, lw, c.width - 2 * lw, c.height - 2 * lw, r); ctx.fill(); ctx.stroke();
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
-    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true, opacity: image ? 0.7 : 1 }));
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true, opacity: image ? 0.7 : 1, depthWrite: false }));
     g.add(m);
+    g.traverse((o) => { if (o.isMesh) o.renderOrder = 9; });                  // zones under the stickers, over the props
     const handle = { mesh: g, name, kind: "zone", x, y, w, h, base: 1, pulse: false, items: [],
       contains: (px, py) => Math.abs(px - x) < w / 2 + 0.2 && Math.abs(py - y) < h / 2 + 0.3,
       layout: (animate = true) => {
@@ -252,7 +259,7 @@ export class Stage {
 
   // ------------------------------------------------------------------ layout
   // the width a handle takes on screen (sticker card, sign card, zone)
-  widthOf(h) { return h.kind === "zone" ? h.w : h.kind === "sign" ? h.base : 1.18 * (h.base ?? 1); }
+  widthOf(h) { return h.kind === "zone" ? h.w : h.kind === "sign" ? h.base : 1.12 * (h.base ?? 1); }
   // arrange(groups): lay the groups out in one line centred on x - items in a group `gap`
   // apart, groups `groupGap` apart, every item centred on y. Returns {x, w, items} per
   // group, so a zone or a sign can be sized from the group's real extent.

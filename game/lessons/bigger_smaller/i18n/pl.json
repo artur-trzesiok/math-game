@@ -101,14 +101,98 @@
   },
   "line.a_sq_your_turn": {
     "who": "wiewiorka",
-    "text": "Teraz ty. Wskaż to, co jest większe od twojej dłoni."
-  },
-  "line.a_fox_right": {
-    "who": "lisek",
-    "text": "Tak! Piłka jest większa od dłoni, a kwiatek mniejszy."
+    "text": "Teraz ty. Pokażemy dwie takie same rzeczy, jedną dużą i jedną małą."
   },
   "line.a_ask_parents": {
     "who": "wiewiorka",
     "text": "Poproście rodziców, żebyście pobawili się tak w domu. Szukajcie rzeczy większych i mniejszych od waszej dłoni!"
+  },
+  "line.s1_pick_bigger": {
+    "who": "lisek",
+    "text": "Jestem bardzo głodny. Wskaż większe jabłko, to będzie dla mnie."
+  },
+  "line.s1_wrong": {
+    "who": "lisek",
+    "text": "To jest mniejsze jabłko. Poszukaj większego."
+  },
+  "line.s1_fox_thanks": {
+    "who": "lisek",
+    "text": "Dziękuję! Duże jabłko dla dużego głodu."
+  },
+  "line.s3_sq_flower": {
+    "who": "wiewiorka",
+    "text": "Chcę włożyć kwiatek za ucho. Są dwa kwiatki."
+  },
+  "line.s3_fox_too_big": {
+    "who": "lisek",
+    "text": "Ten duży jest większy od twojej głowy! Nie utrzyma się."
+  },
+  "line.s3_pick_smaller": {
+    "who": "wiewiorka",
+    "text": "Wskaż mniejszy kwiatek. Ten zmieści się za uchem."
+  },
+  "line.s3_wrong": {
+    "who": "wiewiorka",
+    "text": "Ten jest za duży. Wskaż mniejszy."
+  },
+  "line.s3_sq_thanks": {
+    "who": "wiewiorka",
+    "text": "Pasuje! Mały kwiatek jest mniejszy od mojego ucha."
+  },
+  "line.s4_fox_ball": {
+    "who": "lisek",
+    "text": "Pogramy w piłkę? Do kopania najlepsza jest największa."
+  },
+  "line.s4_sq_three": {
+    "who": "wiewiorka",
+    "text": "Są trzy piłki: mała, średnia i duża."
+  },
+  "line.s4_pick_biggest": {
+    "who": "lisek",
+    "text": "Wskaż największą piłkę."
+  },
+  "line.s4_wrong": {
+    "who": "lisek",
+    "text": "Jest jeszcze większa. Poszukaj największej."
+  },
+  "line.s4_fox_thanks": {
+    "who": "lisek",
+    "text": "Tak! Największa piłka. Kopiemy!"
+  },
+  "line.s5_sq_cookies": {
+    "who": "wiewiorka",
+    "text": "Czas na podwieczorek. Mam dwa ciastka: małe i duże."
+  },
+  "line.s5_fox_hungry": {
+    "who": "lisek",
+    "text": "Ja jestem duży i bardzo głodny!"
+  },
+  "line.s5_pick_bigger": {
+    "who": "wiewiorka",
+    "text": "Wskaż większe ciastko. To będzie dla Liska."
+  },
+  "line.s5_wrong": {
+    "who": "wiewiorka",
+    "text": "To jest mniejsze ciastko. Większe jest obok."
+  },
+  "line.s5_sq_mine": {
+    "who": "wiewiorka",
+    "text": "A mniejsze ciastko jest dla mnie. W sam raz."
+  },
+  "line.s5_summary": {
+    "who": "lisek",
+    "text": "Większe dla większego, mniejsze dla mniejszego. Pycha!"
+  },
+  "line.a_pick_bigger": {
+    "who": "lisek",
+    "text": "Która jest większa?"
+  },
+  "line.a_pick_smaller": {
+    "who": "wiewiorka",
+    "text": "Która jest mniejsza?"
+  },
+  "line.a_right": {
+    "who": "lisek",
+    "text": "Tak jest!"
   }
 }

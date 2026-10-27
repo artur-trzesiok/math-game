@@ -4,16 +4,22 @@ Goal: the child compares two (then three) things by size and says which is bigge
 smaller, biggest / smallest. No numbers, no measuring - the eye decides, the word
 names it. Characters: Fox (left) and Squirrel (right).
 
-## Stage 1 - story (orchard)
+## Stage 1 - story (orchard) - five scenes, each with one choice
 
-1. Both friends walk in. Narrator: they found two apples. A big apple appears by
-   Fox, a small one by Squirrel. Fox points at his: "my apple is big"; Squirrel: "mine
-   is small, but sweet". Narrator names the relation both ways (bigger than / smaller
-   than) while each apple pulses in turn. Everyday bridge: mum's shoes and the child's.
-2. Squirrel is thirsty: two cups, big and small. Fox: "Squirrel has little paws, help
-   her choose". The child points to the smaller cup (a wrong pick explains and asks again;
-   after two misses the right one pulses). The cup slides to Squirrel, she cheers,
-   narrator sums up.
+1. Two apples, big and small. Fox and Squirrel name the relation both ways while
+   each apple pulses. Fox is hungry: the child points to the BIGGER apple for him.
+   Everyday bridge: mum's shoes and the child's.
+2. Squirrel is thirsty: two cups. Fox: she has little paws. The child points to the
+   SMALLER cup; it slides to Squirrel.
+3. A flower behind Squirrel's ear: the big one is bigger than her head. The child
+   points to the SMALLER flower.
+4. Fox wants to play ball: three balls. The child points to the BIGGEST one; Fox
+   jumps for joy.
+5. Snack: two cookies. The BIGGER one for the hungry Fox (the child points to it),
+   the smaller one for Squirrel. Summary: bigger for the bigger, smaller for the
+   smaller.
+Every wrong pick is named and the question asked again; after two misses the right
+one pulses.
 
 ## Stage 2 - practice (orchard, Fox alone)
 
@@ -25,9 +31,9 @@ names it. Characters: Fox (left) and Squirrel (right).
 ## Stage 3 - apply (kitchen)
 
 Fox and Squirrel play the home game on screen: "bigger or smaller than my paw?"
-(a plate: bigger; a cookie: smaller), then the child plays one round (ball vs
-flower, "bigger than your hand"). They end by asking the child to ask the parents
-to play it at home. No card, no text.
+(a plate: bigger; a cookie: smaller), then the child plays five rounds (the same
+thing at two sizes, "which one is bigger / smaller?"). They end by asking the child to ask
+the parents to play it at home. No card, no text.
 
 ## Notes for the recording
 

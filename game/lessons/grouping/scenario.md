@@ -11,9 +11,12 @@ rule. Characters: Squirrel (left) and Deer (right).
    in any order and may take them out again; nothing is checked until everything
    is inside. Then each container must hold one kind: the odd ones shake and fly
    back out with Deer naming the rule again. Everyday bridge: spoons, socks, blocks.
-2. Squirrel: "can we sort them another way?" The same fruit at two sizes, the rule
-   is now big / small. Summary: the same things, different rules - say the rule
-   first, then sort.
+   Then the child points to the container with the apples.
+2. The odd one out: three pears and one apple - point to the one that does not
+   belong.
+3. Squirrel: "can we sort them another way?" The same fruit at two sizes, the rule
+   is now big / small; sort, then point to the big ones' container. Summary: the
+   same things, different rules - say the rule first, then sort.
 
 ## Stage 2 - practice (Deer asks, Squirrel cheers)
 
@@ -23,10 +26,10 @@ small vs big (size). Same free dragging, same check.
 
 ## Stage 3 - apply (kitchen)
 
-Squirrel and Deer tidy up after a snack on screen: Squirrel collects the food
-into the basket, the child collects the dishes to the shelf; they end by asking
-the child to ask the parents to tidy like this at home and then change the rule.
-No card, no text.
+Tidying up after a snack in the kitchen, five rules in a row (food / dishes, cups
+/ plates, red / the rest, big / small, round / the rest), basket and box, the same
+free dragging; they end by asking the child to ask the parents to tidy like this
+at home and then change the rule. No card, no text.
 
 ## Notes
 

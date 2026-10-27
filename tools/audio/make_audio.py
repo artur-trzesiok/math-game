@@ -56,7 +56,8 @@ VOICES = {
            "wiewiorka": "cgSgspJ2msm6clMCkdW9",  # Jessica - playful, bright
            "sarenka": "pFZP5JQG7iQjIQuC4Bku"},   # Lily - velvety
 }
-SETTINGS = {"stability": 0.55, "similarity_boost": 0.8, "style": 0.35, "use_speaker_boost": True}
+SPEED = float(os.environ.get("ELEVENLABS_SPEED", "0.85"))     # children: slower than the default 1.0 (range 0.7-1.2)
+SETTINGS = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.3, "use_speaker_boost": True, "speed": SPEED}
 
 
 def api_key() -> str:
@@ -114,7 +115,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
     done = skipped = failed = 0
     for l in lines(lesson, lang):
         voice = VOICES[lang].get(l["who"]) or next(iter(VOICES[lang].values()))
-        digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]   # a voice change regenerates too
+        digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + json.dumps(SETTINGS, sort_keys=True) + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]   # a voice or settings change regenerates too
         dst = out / f"{l['key']}.mp3"
         if dst.exists() and manifest.get(l["key"], {}).get("hash") == digest:
             if not dst.with_suffix(".json").exists():

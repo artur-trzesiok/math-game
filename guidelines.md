@@ -15,12 +15,16 @@ objects - no hand-made art, no in-house level editor.
 - **Every lesson has three stages**, always in this order, flowing into one another
   without a prompt; a strip of three icons at the top (book, hand, house) shows
   which one the child is in:
+  **Every stage has about five moments where the child acts** (a choice, a drag),
+  never a stretch of listening only.
   1. **Story** - two characters meet a small everyday problem (two apples, not
      enough plates, a messy blanket) and the idea is shown, not explained. The
      child joins in once or twice, guided.
   2. **Practice** - short tasks that repeat the idea with different things. A wrong
      answer is never punished: it is named ("that is the bigger one"), the question
-     is asked again, and after two misses the right answer pulses.
+     is asked again, and after two misses the right answer pulses. A right answer
+     is never skipped past: the correct picture stays on screen while a character
+     names it ("yes, the mouth opens towards the cups, because..."), then a pause.
   3. **Apply** - the characters play the home version of the game on screen
      (bigger than my paw, a plate for every cup, tidying after a snack), the child
      joins for one round, and they close with "ask your parents to play this at
@@ -42,8 +46,9 @@ objects - no hand-made art, no in-house level editor.
   look around) so any lesson can use any of them. The fox is the host; the others
   rotate so the child meets everyone.
 - Picture-book backgrounds (orchard, lake meadow, children's room, kitchen) with
-  gently moving grass and clouds. **Every lesson's story and practice play in a
-  setting no other lesson uses**; the "at home" stage may reuse a home setting.
+  gently moving grass and clouds. **Every lesson's story and its practice each play in a
+  setting of their own** (children like variety); the "at home" stage may reuse
+  a home setting.
 - Illustrated objects on white stickers (so a green pear reads on green grass),
   scaled for "bigger / smaller", repeated for "more / fewer", sorted for "groups".
 - Two languages from day one (Polish, English); every spoken line is a key in a
@@ -92,6 +97,64 @@ rows and groups by real widths, so nothing overlaps or misaligns),
 `t(key)`, `lang`, `fast`. A lesson never touches three.js directly and never knows
 about other lessons; the player never knows what a lesson does. Adding lesson
 number 42 is a new folder and one line in `index.json`.
+
+## Rules learned in review (do not relearn them)
+
+Each of these came from a reviewer watching a child-sized screen; a new lesson
+that breaks one of them is wrong even if it runs.
+
+- **Size is compared on the same thing at two sizes** (two apples, two cups),
+  never on two different things drawn at chosen sizes: a big cookie next to a
+  small plate asks the child to ignore what they know (a plate IS bigger than a
+  cookie). A single picture must also keep its real relation (a plate drawn
+  bigger than a paw, a cookie smaller).
+- **The point of reference is on the screen.** "Smaller than your hand" cannot
+  be answered by looking at two stickers; a screen question compares two
+  visible things ("which one is bigger?"). Real-world references (your hand,
+  your shoe) belong to the home task with real objects.
+- **A sign stands between two groups side by side.** "<", "=" and ">" only make
+  sense with a left pile and a right pile and a visible empty slot between them,
+  where the chosen card lands. Never ask for a sign while things are stacked
+  (after a pairing animation, lay the piles out side by side again first).
+- **A right answer stays on screen and is named.** The correct picture does not
+  vanish on the tap: the character praises it and says what it shows ("the mouth
+  opens towards the cups, because there are more cups"), then a pause. The child
+  has to see the correct arrangement, not just hear "well done".
+- **A wrong answer is explained, never punished**, and after two misses the right
+  one pulses.
+- **Instructions say "wskaż" / "point to"**, never "click" or "tap" (tablet or
+  computer, we do not know). **No one-word sentences** ("Wskaż." alone is read
+  badly by the voice); a question such as "Gdzie jest więcej?" is the whole
+  instruction.
+- **No narrator.** Every line belongs to a character on screen whose mouth moves.
+  **No subtitles, no text** the child would have to read. A tap on a character
+  repeats the last instruction.
+- **About five interactions in every stage**, the story included. A story that
+  only talks is a bug.
+- **A different setting for the story and for the practice of every lesson**;
+  only the "at home" stage may share a setting (the kitchen).
+- **The object layer floats above the characters' heads** (safe-area y 1.2) and
+  never covers them; characters stand at x = ±4.6. Everything is placed with
+  `arrange` (real widths, real gaps), zones are sized from what it returns, so
+  nothing overlaps and rows line up with their signs.
+- **Nothing pops in or out.** Things grow in with a little overshoot, a tapped
+  thing bumps, a wrong one shakes, a chosen one flies where it belongs, the stage
+  does not flicker between parts (same scenery is kept; a new one dips to dark).
+- **Stickers, not cards.** Objects carry a white die-cut outline baked by the
+  pipeline; a flat card behind an icon reads as a UI widget. Canvases for signs
+  and zones are drawn at a fixed pixel density (no stretched dashes, no
+  pixelation).
+- **Sorting is drag and drop into drawn containers** (a basket, a box), in any
+  order, checked only when everything is in; each container must hold one kind.
+  Containers are sized so the big things fit (rows by real widths).
+- **Voices are the characters'**: a child-like voice for a child-like character,
+  speech at 0.85 speed, lip-sync baked from the recording.
+- **Endings are gentle**: no cards between stages, three phase icons at the top
+  centre, the goodbye iris closes on the face of whoever spoke last, the menu
+  fades in.
+- **One scene, one idea, visible from the start**: the same mechanic for the
+  same idea across stages (pairing is always the check for "more"), so the child
+  recognises it.
 
 ## How it is made
 

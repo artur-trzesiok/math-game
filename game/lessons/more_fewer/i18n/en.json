@@ -61,15 +61,11 @@
   },
   "line.p_which_more": {
     "who": "lisek",
-    "text": "Where is more? Point to it."
+    "text": "Where is more?"
   },
   "line.p_wrong_pair": {
     "who": "sowa",
     "text": "Let's check in pairs. Look what is left without a pair."
-  },
-  "line.p_good": {
-    "who": "sowa",
-    "text": "Great!"
   },
   "line.p_signs_intro": {
     "who": "sowa",
@@ -77,7 +73,7 @@
   },
   "line.p_which_sign": {
     "who": "sowa",
-    "text": "Which sign fits? Point to it."
+    "text": "Which sign fits?"
   },
   "line.p_wrong_sign": {
     "who": "sowa",
@@ -85,7 +81,7 @@
   },
   "line.a_owl_table": {
     "who": "sowa",
-    "text": "A home game: setting the table. I put out the plates, Fox the cups."
+    "text": "A home game: setting the table. I put out the plates, Fox the cups. We play five times."
   },
   "line.a_bye": {
     "who": "sowa",
@@ -95,20 +91,68 @@
     "who": "lisek",
     "text": "Let's check in pairs: cup and plate, cup and plate."
   },
-  "line.a_owl_more_plates": {
-    "who": "sowa",
-    "text": "One plate is left alone. There are more plates and fewer cups."
-  },
   "line.a_fox_which_sign": {
     "who": "lisek",
-    "text": "Which sign fits? There are fewer cups than plates. Point to it."
-  },
-  "line.a_owl_right": {
-    "who": "sowa",
-    "text": "Yes! The mouth opens towards the plates, because there are more plates."
+    "text": "Which sign fits?"
   },
   "line.a_ask_parents": {
     "who": "lisek",
     "text": "Ask your parents to play this with you at home. When you set the table, check in pairs whether everyone has a plate and which there is more of!"
+  },
+  "line.s1_point_left": {
+    "who": "sowa",
+    "text": "One is left without a pair. Show me which one."
+  },
+  "line.s1_wrong_left": {
+    "who": "sowa",
+    "text": "That one has a pair. Look for the one standing alone."
+  },
+  "line.s2_pick_gt": {
+    "who": "sowa",
+    "text": "Point to the sign whose mouth opens towards the cups."
+  },
+  "line.s2_pick_eq": {
+    "who": "lisek",
+    "text": "There are as many. Point to the equal lines."
+  },
+  "line.s2_pick_lt": {
+    "who": "sowa",
+    "text": "There are fewer cups. Point to the mouth open towards the plates."
+  },
+  "line.s2_which_more": {
+    "who": "lisek",
+    "text": "And now point to the pile with more."
+  },
+  "line.a_which_more": {
+    "who": "sowa",
+    "text": "Which is more?"
+  },
+  "line.good_gt": {
+    "who": "sowa",
+    "text": "Very good! The mouth opens to the left, because there is more on the left."
+  },
+  "line.good_lt": {
+    "who": "sowa",
+    "text": "Very good! The mouth opens to the right, because there is more on the right."
+  },
+  "line.good_eq": {
+    "who": "lisek",
+    "text": "Very good! Equal lines, because there are as many."
+  },
+  "line.good_more": {
+    "who": "lisek",
+    "text": "Very good! There is more here."
+  },
+  "line.s2_good_gt": {
+    "who": "sowa",
+    "text": "Yes! The mouth is open towards the cups, because there are more cups than plates."
+  },
+  "line.s2_good_eq": {
+    "who": "lisek",
+    "text": "Yes! Equal lines. There are as many cups as plates."
+  },
+  "line.s2_good_lt": {
+    "who": "sowa",
+    "text": "Yes! The mouth is open towards the plates, because there are more plates and fewer cups."
   }
 }

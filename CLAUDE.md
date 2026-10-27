@@ -51,7 +51,8 @@ frame and POSTs it), `gra.cele` (names of the current click targets),
 coords), `gra.dziennik` (spoken lines with timestamps). URL switches:
 `?lekcja=<id>&etap=story|practice|apply&lang=pl|en`, `?szybko` (every line 0.4 s,
 cards auto-close, walks 0.2 s), `?napisy` (subtitles for every line), `?safe`
-(draws the safe rectangle). A whole stage can be driven with `?szybko` plus
+(draws the safe rectangle), `?debug=1` (the phase icons are clickable and jump to
+that stage). A whole stage can be driven with `?szybko` plus
 `klikCel` in a loop and inspected with snapshots. Look at the PNGs; judge by eye.
 
 The editor (`/manager/editor.html?kto=lisek`) accepts `&anim=Radosc&faza=0.6&snap=name`
@@ -70,7 +71,9 @@ field of lesson.json says what the square menu picture shows; style and cast com
 from the character and background references), then a run with `?szybko` and snapshots of every scene, then
 `python tools/audio/make_audio.py <id>` once the lines are final.
 
-Scenes are plain async functions; keep each one a screen's worth. Positions are
+Scenes are plain async functions; keep each one a screen's worth. Every stage
+(story, practice, at home) has about five interactions - a story that only talks
+is a bug. Positions are
 safe-area units (x -6..6, y -4.5..4.5, ground -3.3); puppets (3.6 units tall, 40% of the safe height) stand at x = +-4.6,
 the object layer (stickers, signs) floats at y = 1.2, above the puppets' heads, so
 nothing ever covers a character; zones lie on the ground between them (y -2.3). The two characters of a lesson stand
