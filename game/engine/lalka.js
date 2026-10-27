@@ -308,7 +308,8 @@ export class Lalka {
           const sr = [cel[t].x + cel[t].w / 2, cel[t].y + cel[t].h / 2], gt = new THREE.Group();
           gt.position.set((sr[0] - osG[0]) * s, -(sr[1] - osG[1]) * s, nadOczami ? 0.03 : 0.02);
           gt.rotation.z = -(cel[t].obrot || 0) * DEG;
-          gt.userData.cel = t; kont.add(gt); grupyCelu[t] = { g: gt, sr };
+          gt.userData.cel = t; gt.userData.baseY = gt.position.y; gt.userData.polH = cel[t].h / 2 * s;   // the visemes stretch it from its top edge
+          kont.add(gt); grupyCelu[t] = { g: gt, sr };
         }
         const m = this._plane(n, grupyCelu[t].sr, 0, profil, bb);
         m.visible = false; grupyCelu[t].g.add(m);
@@ -433,7 +434,7 @@ export class Lalka {
     if (this.wiz) {
       // a viseme: one of the drawn mouths, stretched to the sound's shape, opened a little more when louder
       const [n, sx, sy] = WIZEMY[this.wiz] || WIZEMY.X;
-      const otwarcie = n === "zamkniete" ? 1 : 0.8 + 0.35 * Math.min(1, this.amplituda);
+      const otwarcie = n === "zamkniete" ? 1 : 0.94 + 0.1 * Math.min(1, this.amplituda);
       this.ustaSkala = [sx, sy * otwarcie];
       return n === "zamkniete" && this.wiz === "X" ? (this.poza.usta || "zamkniete") : n;
     }
@@ -456,7 +457,13 @@ export class Lalka {
       for (const [n, m] of Object.entries(z.oczy)) m.visible = aktywny && n === oczy;
       for (const [n, m] of Object.entries(z.usta)) m.visible = aktywny && n === usta;
       const gu = Object.values(z.usta)[0]?.parent;                 // the mouth target group (its own centre)
-      if (gu) { const [sx, sy] = this.ustaSkala || [1, 1]; gu.scale.x += (sx - gu.scale.x) * 0.6; gu.scale.y += (sy - gu.scale.y) * 0.6; }
+      if (gu) {
+        // the drawn mouths carry the nose above them: the mouth opens downward from its top edge (the nose nearly
+        // stays) and stretches sideways only a little (that is what widened the nose)
+        const [sx0, sy0] = this.ustaSkala || [1, 1], sx = 1 + (sx0 - 1) * 0.35, sy = 1 + (sy0 - 1) * 0.5;   // gentle: the shape comes from the drawn mouth
+        gu.scale.x += (sx - gu.scale.x) * 0.6; gu.scale.y += (sy - gu.scale.y) * 0.6;
+        if (gu.userData.polH) gu.position.y = gu.userData.baseY - gu.userData.polH * (gu.scale.y - 1);
+      }
     }
   }
 
