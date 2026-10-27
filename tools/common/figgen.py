@@ -1,8 +1,8 @@
 """Stage 1 of the make_fig pipeline: prompt (+ optional references) -> PNG.
 
 Talks to the OpenAI image API over plain HTTP so the pipeline carries no SDK
-dependency. The key is read from D:\\Project\\ai\\.env and is never printed,
-logged or echoed back.
+dependency. The key is read from the repository's .env (OPENAI_API_KEY) and is
+never printed, logged or echoed back.
 
 Two endpoints, picked automatically:
   * no references  -> /v1/images/generations
@@ -27,6 +27,7 @@ DEFAULT_MODEL = "gpt-image-2.5-sunburst"
 
 # Walk up from this file looking for the .env that holds OPENAI_API_KEY.
 ENV_CANDIDATES = [
+    Path(__file__).resolve().parents[2] / ".env",        # the repository's own .env
     Path(r"D:\Project\ai\.env"),
     Path(__file__).resolve().parents[2] / ".env",
     Path(__file__).resolve().parents[1] / ".env",

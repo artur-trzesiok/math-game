@@ -28,7 +28,7 @@ game/                       the runtime a tablet loads (static, three.js via imp
 manager/                    the manager app (today: the character editor) + dev server
 tools/                      pipelines; never shipped. Each has work/ (gpt-image outputs,
                             git-ignored: the cache that lets us rebuild without paying again)
-  common/figgen.py          gpt-image client (key from D:\Project\ai\.env, never printed)
+  common/figgen.py          gpt-image client (key from the repo's .env, never printed)
   characters/make_character.py   gen | build | install | all <kto>   (+ rigs/, debug_face.py)
   backgrounds/make_background.py gen | split | install | all <scene>
   objects/make_objects.py        gen | split
@@ -179,11 +179,11 @@ order = `NAZWY`; split by alpha into 256 px WebP stickers.
 
 ## Audio
 
-`python tools/audio/make_audio.py [lesson]` reads every `"line.*"` of every
-language, synthesises what is missing or changed (manifest by text hash) and
-writes `game/audio/<lang>/<lesson>/<key>.mp3`. `ELEVENLABS_API_KEY` must be in the
-environment (the working key is in `D:\Project\OIDbook\.env`; export it, never
-print it). Voices per speaker per language in `VOICES`. Without an mp3 the game
+`python tools/audio/run.py [lesson]` reads every `"line.*"` of every language,
+synthesises what is missing or changed (manifest by text hash) and writes
+`game/audio/<lang>/<lesson>/<key>.mp3`. Keys live in the repository's `.env`
+(`OPENAI_API_KEY`, `ELEVENLABS_API_KEY`, `ELEVENLABS_MODEL_ID`,
+`ELEVENLABS_OUTPUT_FORMAT`; git-ignored, never printed). Voices per speaker per language in `VOICES`. Without an mp3 the game
 uses the browser's voice and shows a subtitle - fine for testing, not for a child.
 
 ## The manager

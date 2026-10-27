@@ -1,0 +1,37 @@
+{
+ "line.s1_intro": {
+  "hash": "13e6f9be0a57",
+  "who": "lisek",
+  "text": "Wiewiórko, patrz! Znaleźliśmy w sadzie dwa jabłka."
+ },
+ "line.s1_fox_big": {
+  "hash": "2d1c2b304b09",
+  "who": "lisek",
+  "text": "Patrz, moje jabłko jest duże!"
+ },
+ "line.s1_sq_small": {
+  "hash": "baeed51721a6",
+  "who": "wiewiorka",
+  "text": "A moje jest małe. Ale za to słodkie!"
+ },
+ "line.s1_compare": {
+  "hash": "c78489ae1849",
+  "who": "wiewiorka",
+  "text": "Twoje duże jabłko jest większe od mojego. A moje małe jabłko jest mniejsze od twojego."
+ },
+ "line.s1_daily": {
+  "hash": "e48c7fbd88fc",
+  "who": "lisek",
+  "text": "W domu też tak jest. Mama ma duże buty, a ty masz małe. Twoje buty są mniejsze."
+ },
+ "line.s2_thirsty": {
+  "hash": "17d70e94c7ca",
+  "who": "wiewiorka",
+  "text": "Chce mi się pić! Który kubek jest dla mnie?"
+ },
+ "line.s2_fox_asks": {
+  "hash": "6a785749d0fe",
+  "who": "lisek",
+  "text": "Wiewiórka ma małe łapki. Pomożesz jej wybrać?"
+ }
+}

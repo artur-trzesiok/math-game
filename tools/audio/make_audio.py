@@ -10,9 +10,9 @@ key starts with "line." and whose value is {"who": "<speaker>", "text": "..."}
 VOICES[lang]. The manifest next to the mp3s remembers the text and speaker each
 file was made from, so editing one line regenerates one file.
 
-ElevenLabs, model eleven_multilingual_v2. The key comes from the ELEVENLABS_API_KEY
-environment variable and is never printed (the working key lives in
-D:\\Project\\OIDbook\\.env - export it before running).
+ElevenLabs, model from ELEVENLABS_MODEL_ID (default eleven_multilingual_v2). The key
+comes from ELEVENLABS_API_KEY and is never printed; `tools/audio/run.py` loads it from
+the repository's .env.
 
 The game falls back to the browser's speech synthesis for lines that have no mp3,
 so the pipeline can run late; subtitles are shown only for such lines.
@@ -32,15 +32,21 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 LESSONS = ROOT / "game" / "lessons"
 AUDIO = ROOT / "game" / "audio"
 API = "https://api.elevenlabs.io/v1"
-MODEL = "eleven_multilingual_v2"
+MODEL = os.environ.get("ELEVENLABS_MODEL_ID", "eleven_multilingual_v2")
+FORMAT = os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100_128")
 LANGS = ("pl", "en")
 
-# Premade ElevenLabs voices (multilingual_v2 speaks both languages with any of them).
+# Voices from the account (tools/audio/run.py --voices lists them): a distinct one per
+# character and language; there is no narrator.
 VOICES = {
-    "pl": {"narrator": "21m00Tcm4TlvDq8ikWAM", "lisek": "MF3mGyEYCl7XYWbV9V6O", "wiewiorka": "EXAVITQu4vr4xnSDxMaL",
-           "sowa": "21m00Tcm4TlvDq8ikWAM", "sarenka": "EXAVITQu4vr4xnSDxMaL"},
-    "en": {"narrator": "21m00Tcm4TlvDq8ikWAM", "lisek": "MF3mGyEYCl7XYWbV9V6O", "wiewiorka": "EXAVITQu4vr4xnSDxMaL",
-           "sowa": "21m00Tcm4TlvDq8ikWAM", "sarenka": "EXAVITQu4vr4xnSDxMaL"},
+    "pl": {"lisek": "6NJSmKqvyC5gS4qslstw",      # Patryk - young, narrative
+           "sowa": "NacdHGUYR1k3M0FAbAia",       # Hanna - calm and encouraging
+           "wiewiorka": "EdXKgqQHVOTjwJdLxQiw",  # Natalia - sweet, soothing
+           "sarenka": "ZrIglAg8qumzXuvlNzWL"},   # Weronika - warm, natural
+    "en": {"lisek": "TX3LPaxmHKxFdv7VOQHJ",      # Liam - energetic
+           "sowa": "Xb7hH8MSUJpSbSDYk0k2",       # Alice - clear educator
+           "wiewiorka": "cgSgspJ2msm6clMCkdW9",  # Jessica - playful, bright
+           "sarenka": "pFZP5JQG7iQjIQuC4Bku"},   # Lily - velvety
 }
 SETTINGS = {"stability": 0.55, "similarity_boost": 0.8, "style": 0.35, "use_speaker_boost": True}
 
@@ -64,7 +70,7 @@ def lines(lesson: Path, lang: str) -> list[dict]:
 def synthesize(text: str, voice: str, dst: Path) -> None:
     r = requests.post(f"{API}/text-to-speech/{voice}",
                       headers={"xi-api-key": api_key(), "accept": "audio/mpeg"},
-                      params={"output_format": "mp3_44100_128"},
+                      params={"output_format": FORMAT},
                       json={"text": text, "model_id": MODEL, "voice_settings": SETTINGS}, timeout=120)
     if r.status_code != 200:
         raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
@@ -83,7 +89,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
         if dst.exists() and manifest.get(l["key"], {}).get("hash") == digest:
             skipped += 1
             continue
-        voice = VOICES[lang].get(l["who"], VOICES[lang]["narrator"])
+        voice = VOICES[lang].get(l["who"]) or next(iter(VOICES[lang].values()))
         try:
             synthesize(l["text"], voice, dst)
             manifest[l["key"]] = {"hash": digest, "who": l["who"], "text": l["text"]}
