@@ -142,6 +142,7 @@ export class Player {
         await S.background(bg); await this.fade(false);
       }),
       mood: (who, m) => S.mood(who, m),
+      look: (who, target, opts) => S.lookAt(who, target, opts),   // a scene may direct a gaze too (null = ahead)
       object: guard((name, opts) => S.object(name, opts)),
       sign: guard((text, opts) => S.sign(text, opts)),
       zone: guard((opts) => S.zone(opts)),
@@ -153,22 +154,30 @@ export class Player {
         const ok = Array.isArray(correct) ? correct : [correct];
         let misses = 0;
         const puppets = Object.values(S.puppets).filter((L) => L.korzen.visible);
+        // while the child thinks, the characters look from one option to the next - every option, so the gaze gives nothing away
+        const names = Object.keys(S.puppets).filter((n) => S.puppets[n].korzen.visible);
+        let tick = 0;
+        const glance = () => { names.forEach((n, j) => S.lookAt(n, targets[(tick + j) % targets.length])); tick++; };
+        glance(); const gazeTimer = setInterval(() => { if (this.run !== run) return clearInterval(gazeTimer); glance(); }, FAST ? 400 : 1700);
+        try {
         for (;;) {
           alive();
           const hit = await S.choose([...targets, ...puppets]);
           alive();
           if (hit && hit.korzen) { if (last) await say(last.who, last.key, { anim: last.anim }); continue; }   // "say it again"
-          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); return hit; }
+          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); return hit; }
           misses++;
           S.shake(hit);
           if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);
           if (misses >= hintAfter) for (const h of ok) h.highlight?.(true);
         }
+        } finally { clearInterval(gazeTimer); }
       },
       // free sorting: every item must end up in a zone and every zone must hold one kind
       // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line
       sort: async ({ items, zones, wrong }) => {
         alive();
+        Object.keys(S.puppets).forEach((n, j) => S.lookAt(n, zones[j % zones.length]));   // the characters watch the containers
         return new Promise((resolve) => {
           let busy = false;
           const check = async () => {
@@ -181,7 +190,7 @@ export class Player {
                 const main = Object.keys(count).sort((a, b) => count[b] - count[a])[0];
                 for (const i of z.items) if (i.tag !== main) odd.push(i);
               }
-              if (!odd.length) { S.endSort(); resolve(true); return; }
+              if (!odd.length) { S.endSort(); S.lookAt(null, null); resolve(true); return; }
               for (const i of odd) { S.shake(i); }
               await S.wait(0.45);
               for (const i of odd) { i.zone.take(i); i.moveTo(i.home.x, i.home.y, 0.4); }

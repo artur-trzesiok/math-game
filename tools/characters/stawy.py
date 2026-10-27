@@ -69,6 +69,8 @@ def field(mask: np.ndarray, seed: tuple, centre: tuple, side: str = "dol") -> np
     if side == "od_tulowia":          # the half-plane beyond the pivot, seen from the torso centre
         vx, vy = seed[0] - centre[0], seed[1] - centre[1]
         distal = (xs + 0.5 - seed[0]) * vx + (ys + 0.5 - seed[1]) * vy > 0
+    elif side == "gora":              # rooted at the bottom (the torso on the hips, a plant)
+        distal = ys + 0.5 < seed[1]
     else:
         distal = ys + 0.5 > seed[1]
     dist = geodesic(mask, seed, mask & ~distal)
@@ -81,7 +83,7 @@ def measure_piece(img: Image.Image, cz: dict, specs: list, torso: dict, side: st
     h, w = a.shape[0] // CELL, a.shape[1] // CELL
     mask = a[: h * CELL, : w * CELL].reshape(h, CELL, w, CELL).max(axis=(1, 3)) > 40
     sx, sy = cz["w"] / a.shape[1], cz["h"] / a.shape[0]           # image px -> reference px (1:1 today)
-    os_ = cz.get("os") or [cz["x"] + cz["w"] / 2, cz["y"]]
+    os_ = cz.get("os") or ([cz["x"] + cz["w"] / 2, cz["y"] + cz["h"] * 0.97] if side == "gora" else [cz["x"] + cz["w"] / 2, cz["y"]])
     seed = ((os_[0] - cz["x"]) / sx / CELL, (os_[1] - cz["y"]) / sy / CELL)
     centre = ((torso["x"] + torso["w"] / 2 - cz["x"]) / sx / CELL, (torso["y"] + torso["h"] / 2 - cz["y"]) / sy / CELL)
     s = field(mask, seed, centre, side)

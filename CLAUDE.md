@@ -207,6 +207,35 @@ stands on it (Chod, Skradanie): a far leg is drawn higher (perspective) or reach
 lower, so one shared floor lifts or sinks the others; the walk's bob then comes from
 the legs and replaces `skok`. Rigid stance legs still lift the other feet a little.
 
+The walk (`krok` on Chod / Skradanie: `dlugosc`, `uniesienie`, `przysiad` in leg
+lengths, `podpora` = stance fraction, `fazy` per leg, `pary` = legs sharing a stride
+centre) is procedural: in stance an ankle slides back in a straight line as fast as
+the body moves, in swing it arcs forward; the hips drop just enough for every leg to
+reach, the IK bends knees (the side from `zakres`) and keeps feet level. The leg
+tracks of those animations are gone. The stage walks a puppet by distance
+(`walkLine`): the stride's phase follows the ground covered, so a planted foot never
+slides, easing included; speed = stride / stance time, so a short-legged owl
+toddles. Legs and tails turn at a HIP joint inside the mesh (band 0.1 / 0.2 from
+s = 0): the bone keeps its base rotation, so the overlap hidden behind the torso
+stays there - turning the whole piece swung it out past the body's outline.
+
+The torso bends too (`tulow_1/2`, `p_tulow_1/2`, `t_tulow_1/2`; `dystalnie` "gora":
+s runs up from the hips); the head and arms hang on it, so after the bend they are
+moved and turned with it at their attachment (`_niesDzieci`). Order in a frame:
+bones, head view, hips, non-leg chains + carried children, then the legs solve. A
+quadruped's profile body stays rigid (its legs hang on it). Frames (`kadr*`) must
+span what the view's pieces actually draw (head top to feet), or that view comes out
+taller or shorter than the others: a correction that moves legs down needs the frame
+moved too (lisek profile, sarenka back fixed in poprawki.json).
+
+Gaze: `lalka.patrzNa(fn | null, seconds)`, `stage.lookAt(who, thing)`, `ctx.look`.
+The head turns to 3/4 towards the thing, nods towards its height and the torso leans;
+an animation's own direction wins. During a task the characters look from option to
+option (every option, so the gaze gives nothing away), after the right pick at it;
+a new sticker gets a glance, a sort watches the containers, `clear` resets. A nod
+(`glowa_x`) slides the face on the head - turning the head about x sorted the face
+behind it on the stage (no depth test) and the mouth vanished.
+
 Background grass (`tlo.js`) uses the same mesh: a tuft is a grid trimmed to its alpha,
 s from its bottom edge up each blade (`dystalnie` "gora"), three bend lines at s 0.4 /
 0.62 / 0.82; the wind turns every vertex around the bend line under it (a tuft is

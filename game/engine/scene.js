@@ -194,8 +194,7 @@ export class Stage {
     const x0 = from === "left" ? -edge : edge;
     L.korzen.position.x = x0; L.korzen.visible = true; this.bringToFront(L);
     L.patrz(from === "left" ? "prawo" : "lewo"); L.graj("Chod", true);
-    const d = Math.abs(L.home - x0) / (L.predkoscChodu * 1.3);
-    await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { L.korzen.position.x = x0 + (L.home - x0) * s; });
+    await this.walkLine(L, x0, L.home);
     L.patrz("przod"); L.spoczynek();
   }
   // walk to x (profile puppet), face the front there; the caller walks back the same way
@@ -204,9 +203,28 @@ export class Stage {
     const x0 = L.korzen.position.x; if (Math.abs(x - x0) < 0.05) return;
     this.bringToFront(L);
     L.patrz(x > x0 ? "prawo" : "lewo"); L.graj("Chod", true);
-    const d = Math.abs(x - x0) / (L.predkoscChodu * 1.3);
-    await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { L.korzen.position.x = x0 + (x - x0) * s; });
+    await this.walkLine(L, x0, x);
     L.patrz("przod"); L.spoczynek();
+  }
+  // move a walking puppet from x0 to x1 at its stride speed (gentle start and stop); the stride's phase
+  // follows the distance covered, so a planted foot stays where it stands
+  async walkLine(L, x0, x1) {
+    const d = Math.abs(x1 - x0) / L.predkoscChodu + 0.25;
+    let last = x0; L.droga = true;
+    await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { const x = x0 + (x1 - x0) * s; L.idz(x - last); last = x; L.korzen.position.x = x; });
+    L.droga = false;
+  }
+  // where a thing is now (a sticker, a sign, a zone or a puppet's head), for a gaze
+  pointOf(h) {
+    const v = new THREE.Vector3();
+    if (h?.korzen) { h.korzen.getWorldPosition(v); v.y += 0.8 * h.wysokosc; return v; }
+    const m = h?.mesh || h; if (!m?.getWorldPosition) return null;
+    return m.getWorldPosition(v);
+  }
+  // puppets look at a thing (null = back to the front); `for` seconds, then back on their own
+  lookAt(who, h, { for: na = null } = {}) {
+    const list = who ? [this.puppets[who]].filter(Boolean) : Object.values(this.puppets);
+    for (const L of list) L.patrzNa(h ? () => this.pointOf(h) : null, na);
   }
   async play(name, anim, { face = "przod", loop = false } = {}) {
     const L = this.puppets[name]; if (!L) return;
@@ -236,6 +254,7 @@ export class Stage {
       moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
     this.scene.add(g); this.objects.push(handle);
     this.appear(handle);
+    for (const L of Object.values(this.puppets)) if (L.korzen.visible && !L.celSpojrzenia) L.patrzNa(() => this.pointOf(handle), 1.1);   // a glance at what just appeared
     return handle;
   }
   // a sign or a word drawn on a card (=, <, >, a label)
@@ -376,7 +395,7 @@ export class Stage {
     else if (d.zone) { d.zone.put(it); }                              // dropped nowhere: back where it was
     else it.moveTo(it.home.x, it.home.y, 0.35);
   }
-  clear() {
+  clear() { for (const L of Object.values(this.puppets)) L.patrzNa(null);
     this.endSort();
     for (const o of this.objects.slice()) o.remove();
     this.targets = [];

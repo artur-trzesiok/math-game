@@ -192,7 +192,17 @@
    "y": 694,
    "w": 484,
    "h": 610,
-   "widok": "przod"
+   "widok": "przod",
+   "stawy": [
+    {
+     "x": 439,
+     "y": 1080
+    },
+    {
+     "x": 434,
+     "y": 867
+    }
+   ]
   },
   "glowa": {
    "plik": "glowa.png",
@@ -358,7 +368,17 @@
    "y": 678,
    "w": 533,
    "h": 651,
-   "widok": "tyl"
+   "widok": "tyl",
+   "stawy": [
+    {
+     "x": 447,
+     "y": 1088
+    },
+    {
+     "x": 433,
+     "y": 863
+    }
+   ]
   },
   "t_reka_l": {
    "plik": "t_reka_l.png",
@@ -480,7 +500,17 @@
    "y": 672,
    "w": 340,
    "h": 625,
-   "widok": "profil"
+   "widok": "profil",
+   "stawy": [
+    {
+     "x": 611,
+     "y": 1031
+    },
+    {
+     "x": 608,
+     "y": 810
+    }
+   ]
   },
   "p_glowa": {
    "plik": "p_glowa.png",

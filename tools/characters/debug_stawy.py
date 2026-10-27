@@ -24,7 +24,7 @@ for kosc in d["kosci"].values():
     a = np.asarray(im)[:, :, 3]
     h, w = a.shape[0] // CELL, a.shape[1] // CELL
     mask = a[: h * CELL, : w * CELL].reshape(h, CELL, w, CELL).max(axis=(1, 3)) > 40
-    os_ = cz.get("os") or [cz["x"] + cz["w"] / 2, cz["y"]]
+    os_ = cz.get("os") or ([cz["x"] + cz["w"] / 2, cz["y"] + cz["h"] * 0.97] if kosc.get("dystalnie") == "gora" else [cz["x"] + cz["w"] / 2, cz["y"]])
     t = d["czesci"][TORSO[cz.get("widok", "przod")]]
     s = field(mask, ((os_[0] - cz["x"]) / CELL, (os_[1] - cz["y"]) / CELL), ((t["x"] + t["w"] / 2 - cz["x"]) / CELL, (t["y"] + t["h"] / 2 - cz["y"]) / CELL), kosc.get("dystalnie", "dol"))
     ok = np.isfinite(s); s = np.nan_to_num(s)

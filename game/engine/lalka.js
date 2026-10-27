@@ -89,7 +89,9 @@ export class Lalka {
   // a limb as a grid mesh trimmed to its alpha, bent along its joints
   _siatka(k, o, os) {
     const cz = this.dane.czesci[o.czesc], s = this._skala(o.widok), t = this.dane.czesci[TULOW[o.widok]] || cz;
-    const B = baza(this.tex[o.czesc].image, cz, os, [t.x + t.w / 2, t.y + t.h / 2], o.dystalnie);
+    // a root piece (the torso) bends upward from the hips: its field starts at its bottom edge
+    const zrodlo = o.dystalnie === "gora" && !cz.os ? [cz.x + cz.w / 2, cz.y + cz.h * 0.97] : os;
+    const B = baza(this.tex[o.czesc].image, cz, zrodlo, [t.x + t.w / 2, t.y + t.h / 2], o.dystalnie);
     const n = B.px.length, rest = new Float32Array(3 * n), uv = new Float32Array(2 * n);
     for (let v = 0; v < n; v++) {
       rest[3 * v] = (B.px[v] - os[0]) * s; rest[3 * v + 1] = -(B.py[v] - os[1]) * s;
@@ -108,7 +110,13 @@ export class Lalka {
     });
     const wagi = new Float32Array(stawy.length * n);
     stawy.forEach((st, i) => { for (let v = 0; v < n; v++) wagi[i * n + v] = waga(B.vs[v], st.sk, st.h); });
-    this.lancuchy.push({ kosc: k, czesc: o.czesc, widok: o.widok, mesh: m, rest, wagi, stawy, lustro: lustro(k), katy: new Float32Array(stawy.length), wazne: false });
+    // legs and tails turn at a hip joint inside the mesh: the hidden overlap above the pivot stays with the body
+    let biodro = null;
+    if (/noga|ogon/.test(k)) {
+      const hb = /ogon/.test(k) ? 0.2 : 0.1;
+      biodro = { nazwa: null, jx: 0, jy: 0, sk: hb / 2, h: hb, wagi: Float32Array.from(B.vs, (v) => waga(v, hb / 2, hb)) };
+    }
+    this.lancuchy.push({ kosc: k, czesc: o.czesc, widok: o.widok, mesh: m, rest, wagi, stawy, lustro: lustro(k), katy: new Float32Array(stawy.length), wazne: false, B, biodro, katBiodra: 0 });
     for (const st of stawy) this.stawyNazwy.add(st.nazwa);
     return m;
   }
@@ -127,14 +135,29 @@ export class Lalka {
     if (!L) return [];
     L.mesh.updateWorldMatrix(true, false);
     return L.stawy.map((st, i) => {
-      const [x, y] = punkt(st.jx, st.jy, st.sk, L.stawy, L.katy);
+      const [x, y] = L.biodro ? punkt(st.jx, st.jy, st.sk, [L.biodro, ...L.stawy], [L.katBiodra, ...L.katy]) : punkt(st.jx, st.jy, st.sk, L.stawy, L.katy);
       return { i, nazwa: st.nazwa, sk: st.sk, h: st.h, zakres: st.zakres, swiat: new THREE.Vector3(x, y, 0).applyMatrix4(L.mesh.matrixWorld) };
     });
   }
   _widoczna(o) { for (; o; o = o.parent) if (o.visible === false) return false; return true; }
 
-  _zginaj(p) {
+  // what hangs on a bent piece (the head and arms on the torso) moves and turns with the bend at its attachment
+  _niesDzieci() {
     for (const L of this.lancuchy) {
+      const g = this.kosci[L.kosc];
+      if (!L.dzieci) L.dzieci = g.children.filter((c) => c.isGroup && c.userData.os).map((c) => ({ c, x: c.position.x, y: c.position.y, s: sW(L.B, c.userData.os[0], c.userData.os[1]) }));
+      if (!L.dzieci.length) continue;
+      for (const d of L.dzieci) {
+        const [x, y] = punkt(d.x, d.y, d.s, L.stawy, L.katy);
+        let a = 0; L.stawy.forEach((st, i) => { a += L.katy[i] * waga(d.s, st.sk, st.h); });
+        d.c.position.x = x; d.c.position.y = y; d.c.rotation.z += a;
+      }
+    }
+  }
+
+  _zginaj(p, ktore = null) {
+    for (const L of this.lancuchy) {
+      if (ktore && !ktore(L)) continue;
       if (!this.widokGrupy[L.widok].visible) { L.wazne = false; continue; }   // a hidden view bends when it shows up
       let zmiana = !L.wazne;
       L.stawy.forEach((st, i) => {
@@ -145,9 +168,17 @@ export class Lalka {
         const f = Lalka.zginanie ? -a * DEG : 0;
         if (f !== L.katy[i]) { L.katy[i] = f; zmiana = true; }
       });
+      if (L.biodro) {                                     // the bone's own turn becomes the hip joint; the piece itself keeps its base rotation
+        const g = this.kosci[L.kosc], baza = -(this.dane.czesci[L.czesc]?.obrot || 0) * DEG, f = Lalka.zginanie ? g.rotation.z - baza : 0;
+        if (Lalka.zginanie) g.rotation.z = baza;
+        if (f !== L.katBiodra) { L.katBiodra = f; zmiana = true; }
+      }
       if (!zmiana) continue;
       const pos = L.mesh.geometry.attributes.position;
-      deformuj(L.rest, pos.array, L.wagi, L.stawy, L.katy);
+      if (L.biodro) {
+        if (!L.wagiD) { const n = L.rest.length / 3; L.wagiD = new Float32Array((L.stawy.length + 1) * n); L.wagiD.set(L.biodro.wagi, 0); L.wagiD.set(L.wagi, n); L.stawyD = [L.biodro, ...L.stawy]; }
+        deformuj(L.rest, pos.array, L.wagiD, L.stawyD, [L.katBiodra, ...L.katy]);
+      } else deformuj(L.rest, pos.array, L.wagi, L.stawy, L.katy);
       pos.needsUpdate = true; L.mesh.geometry.boundingSphere = null; L.mesh.geometry.boundingBox = null;
       L.wazne = true;
     }
@@ -287,13 +318,13 @@ export class Lalka {
   // feet planted: every leg of the visible view is solved (2-bone IK) so its ankle stays where it stood at rest;
   // the animation moves the hips (biodra, biodra_x, skok), the knees follow. The track value of a knee only picks
   // the side it folds to; the ankle keeps the foot level (plus its own track).
-  _ik(p) {
+  _ik(p, cele = null) {
     this.korzen.updateMatrixWorld(true);
     for (const L of this.nogi) {
       L.ikKaty = null;
       if (!this.widokGrupy[L.widok].visible || !Lalka.zginanie) continue;
       const g = this.kosci[L.kosc], wg = this.widokGrupy[L.widok];
-      const T = g.parent.worldToLocal(wg.localToWorld(L.cel.clone()));
+      const T = g.parent.worldToLocal(wg.localToWorld((cele?.get(L) || L.cel).clone()));
       const ux = T.x - g.position.x, uy = T.y - g.position.y, d = Math.hypot(ux, uy);
       const [k0, k1] = L.stawy;
       const kx = k0.jx, ky = k0.jy, ax = k1.jx - k0.jx, ay = k1.jy - k0.jy;
@@ -309,6 +340,44 @@ export class Lalka {
       const chi = L.stopa0 - (rodzic + g.rotation.z + psi) + (L.lustro ? 1 : -1) * (p[k1.nazwa] || 0) * DEG;
       L.ikKaty = [psi, chi];
     }
+  }
+  // leg length (pivot - knee - ankle) of the legs of a view: a stride is measured in it
+  _dlugoscNogi(widok) {
+    const n = this.nogi.filter((L) => L.widok === widok);
+    if (!n.length) return this.wysokosc * 0.3;
+    return n.reduce((a, L) => { const [k0, k1] = L.stawy; return a + Math.hypot(k0.jx, k0.jy) + Math.hypot(k1.jx - k0.jx, k1.jy - k0.jy); }, 0) / n.length;
+  }
+  // a walk with planted feet (animation `krok`): each leg runs its own phase; in stance its ankle slides back
+  // in a straight line exactly as fast as the body moves forward (so it stays put on the floor), in swing it
+  // arcs forward. The hips drop just enough for every leg to reach its target, the IK bends knees and ankles.
+  _krok(u, k) {
+    const widok = "profil", nogi = this.nogi.filter((L) => L.widok === widok);
+    if (!nogi.length || !Lalka.zginanie || !this.widokGrupy.profil.visible) return;
+    const D = this._dlugoscNogi(widok), S = (k.dlugosc ?? 0.9) * D, lift = (k.uniesienie ?? 0.2) * D, duty = k.podpora ?? 0.6;
+    // a stride swings around the pair's common centre (legs drawn standing apart would limp), on each leg's own floor
+    const para = (L) => (k.pary || [nogi.map((n) => n.kosc)]).find((pr) => pr.includes(L.kosc)) || [L.kosc];
+    const cele = new Map();
+    for (const L of nogi) {
+      const pr = nogi.filter((n) => para(L).includes(n.kosc)), cx = pr.reduce((a, n) => a + n.cel.x, 0) / pr.length;
+      const q = ((u + (k.fazy?.[L.kosc] ?? 0)) % 1 + 1) % 1;
+      let x, y = 0;
+      if (q < duty) x = S / 2 - S * (q / duty);
+      else { const w = (q - duty) / (1 - duty), e = w * w * (3 - 2 * w); x = -S / 2 + S * e; y = lift * Math.sin(Math.PI * w); }
+      cele.set(L, new THREE.Vector3(cx + x, L.cel.y + y, 0));
+    }
+    // the hips come down until the farthest-reaching leg can reach (a straight leg cannot stride)
+    const root = this.kosci.p_biodra, wg = this.widokGrupy.profil;
+    root.position.y -= (k.przysiad ?? 0.03) * D;
+    this.korzen.updateMatrixWorld(true);
+    let spadek = 0;
+    for (const L of nogi) {
+      const g = this.kosci[L.kosc], P = wg.worldToLocal(g.parent.localToWorld(g.position.clone())), T = cele.get(L);
+      const [k0, k1] = L.stawy, R = 0.97 * (Math.hypot(k0.jx, k0.jy) + Math.hypot(k1.jx - k0.jx, k1.jy - k0.jy));
+      const dx = T.x - P.x, dyMax = Math.sqrt(Math.max(0, R * R - dx * dx));
+      spadek = Math.max(spadek, (P.y - T.y) - dyMax);
+    }
+    root.position.y -= spadek;
+    this._ik(this.poza, cele);
   }
   // feet on the floor: the visible view moves up or down until the leg reaching deepest below its own
   // rest floor stands exactly on it - stance legs carry the body, the walk's bob comes from the legs
@@ -359,11 +428,20 @@ export class Lalka {
   mow(amp) { this.mowi = true; this.amplituda = amp; }
   cicho() { this.mowi = false; this.amplituda = 0; }
   patrz(k) { this.kierunekBazowy = k; }
-  get predkoscChodu() { return (this.dane.animacje.Chod?.predkosc ?? 1) * this.wysokosc / 1.5; }
+  // a walk with planted feet moves exactly one stride per stance: speed = stride / (stance time)
+  get predkoscChodu() {
+    const a = this.dane.animacje.Chod, k = a?.krok;
+    if (k && Lalka.zginanie && this.nogi?.length) return (k.dlugosc ?? 0.9) * this._dlugoscNogi("profil") / ((k.podpora ?? 0.6) * a.czas);
+    return (a?.predkosc ?? 1) * this.wysokosc / 1.5;
+  }
+  // the scene moves the puppet: a walk's phase follows the distance, so planted feet never slide (easing included)
+  idz(dx) { if (this.akcja?.krok) this.ta += Math.abs(dx) / Math.max(1e-6, this.predkoscChodu); }
+  // look at a point (a function returning world {x, y}, or null); `na` seconds, then back
+  patrzNa(cel, na = null) { this.celSpojrzenia = cel; this.spojrzenieDo = na ? this.t + na : null; }
 
   // ------------------------------------------------------------ klatka
   update(dt) {
-    this.t += dt; this.ta += dt;
+    this.t += dt; if (!(this.droga && this.akcja?.krok)) this.ta += dt;   // walking on the stage: the distance drives the stride
     if (Lalka.klatki) { this.akum = (this.akum || 0) + dt; if (this.akum < 1 / Lalka.klatki) return; this.akum = 0; }
     const p = this.poza = {};
     const a = this.akcja;
@@ -395,8 +473,9 @@ export class Lalka {
     if (this.mruganie >= 0) { this.mruganie += dt; if (this.mruganie > 0.28) { this.mruganie = -1; this.nastepneMrugniecie = 2 + Math.random() * 4; } }
     else if (this.nastepneMrugniecie <= 0) this.mruganie = 0;
     // widok
-    const kier = p.kierunek || this.kierunekBazowy;
     const lokomocja = a && (this.dane.lokomocja || []).includes(a.nazwa);
+    this._spojrzenie(p, dt, lokomocja);
+    const kier = p.kierunek || this.kierunekBazowy;
     this.wProfilu = lokomocja && kier !== "przod" && kier !== "tyl" || !!(a && a.kierunek === "profil");   // kierunek profil = always the side puppet
     if (kier !== this.kierunek) { this.kierunek = kier; this.squash = 0.15; }
     if (this.widokWymuszony) this.wProfilu = this.widokWymuszony === "profil";
@@ -414,7 +493,7 @@ export class Lalka {
       if (k === "glowa" || k === "p_glowa" || k === "t_glowa") kat = Math.max(-25, Math.min(25, kat));
       if (k === "glowa") this.katGlowy = kat;
       g.rotation.z = -(kat + (this.dane.czesci[g.userData.czesc]?.obrot || 0)) * DEG;   // obrot = base rotation of the piece, not mirrored
-      if (k === "glowa") g.rotation.x = (p.glowa_x || 0) * DEG;
+      if (k === "glowa") for (const kont of Object.values(this.twarzeGrupy)) kont.position.y = (p.glowa_x || 0) * 0.0022 * this.wysokosc;   // a nod slides the face up or down the head
       if (g.userData.zUniesiona !== undefined) g.position.z = Math.abs(p[k] || 0) > 45 ? g.userData.zUniesiona : g.userData.z;   // uniesiona konczyna przed glowa
       if (k === "tulow" || k === "p_cialo" || k === "t_tulow") g.scale.y = p.tulow_skala || 1;
     }
@@ -423,10 +502,6 @@ export class Lalka {
       g.position.y = g.userData.bazaY + (p.skok || 0) * this.wysokosc;
       g.position.x = g.userData.bazaX + (p.biodra_x || 0) * this.wysokosc;   // the hips shift sideways over the feet
     }
-    const stopy = a?.stopy;
-    if (stopy === "ik") this._ik(p); else for (const L of this.nogi) L.ikKaty = null;
-    this._zginaj(p);
-    if (stopy === "ziemia" && Lalka.zginanie) this._naZiemi();
     // squash glowy przy zwrocie; glowy bok/tyl i ich twarze maja wlasny obrot bazowy wzgledem glowy z przodu
     const gl = this.kosci.glowa;
     if (gl) {
@@ -440,5 +515,37 @@ export class Lalka {
       if (this.squash > 0) { this.squash -= dt; const q = 1 - 0.1 * Math.sin(Math.max(0, this.squash) / 0.15 * Math.PI); gl.scale.set(q, 1 / q, 1); }
       else gl.scale.set(1, 1, 1);
     }
+    // order: the torso (and everything not a leg) bends and carries the head and arms, then the legs solve to the floor
+    const nogi = new Set(this.nogi);
+    this._zginaj(p, (L) => !nogi.has(L));
+    this._niesDzieci();
+    const stopy = a?.stopy;
+    if (a?.krok && this.wProfilu) this._krok(u, a.krok);
+    else if (stopy === "ik") this._ik(p); else for (const L of this.nogi) L.ikKaty = null;
+    this._zginaj(p, (L) => nogi.has(L));
+    if (stopy === "ziemia" && Lalka.zginanie) this._naZiemi();
+  }
+
+  // gaze: the head turns to 3/4 towards the target, nods towards its height and the torso leans a little;
+  // an animation's own direction (patrz, locomotion, a forced view) always wins
+  _spojrzenie(p, dt, lokomocja) {
+    if (this.spojrzenieDo && this.t > this.spojrzenieDo) { this.celSpojrzenia = null; this.spojrzenieDo = null; }
+    let cel = null;
+    if (this.celSpojrzenia && !lokomocja && !p.kierunek && !this.widokWymuszony && this.akcja?.kierunek !== "profil") { try { cel = this.celSpojrzenia(); } catch { cel = null; } }
+    let nod = 0, bok = 0;
+    if (cel) {
+      const o = new THREE.Vector3(); this.korzen.getWorldPosition(o);
+      const hy = o.y + 0.8 * this.wysokosc, dx = cel.x - o.x, dy = cel.y - hy;
+      p.kierunek = Math.abs(dx) < 0.22 * this.wysokosc ? "przod" : dx > 0 ? "prawo" : "lewo";
+      nod = Math.max(-1, Math.min(1, Math.atan2(dy, Math.abs(dx) + 0.5 * this.wysokosc) / 0.8));
+      bok = p.kierunek === "przod" ? 0 : dx > 0 ? 1 : -1;
+    }
+    const z = Math.min(1, dt * 6);
+    this.gNod = (this.gNod || 0) + (nod - (this.gNod || 0)) * z;
+    this.gBok = (this.gBok || 0) + (bok - (this.gBok || 0)) * z;
+    const kier = p.kierunek || this.kierunekBazowy;
+    p.glowa_x = (p.glowa_x || 0) + this.gNod * 10;                                      // nod up / down
+    p.glowa = (p.glowa || 0) - this.gNod * 8 * (kier === "lewo" ? -1 : kier === "prawo" ? 1 : 0);   // a 3/4 head tilts its chin to the target
+    p.tulow_2 = (p.tulow_2 || 0) + this.gBok * 4;                                       // the torso leans towards it
   }
 }
