@@ -125,9 +125,9 @@
   "text": "Smaller! The cookie is smaller than your paw."
  },
  "line.a_sq_your_turn": {
-  "hash": "e348dafc58e6",
+  "hash": "427beeb4ebc1",
   "who": "wiewiorka",
-  "text": "Your turn. We'll show two things and you point."
+  "text": "Your turn. We'll show two of the same thing, one big and one small."
  },
  "line.a_fox_right": {
   "hash": "ec57d7e7fcc5",
@@ -235,14 +235,14 @@
   "text": "Bigger for the bigger one, smaller for the smaller one. Yummy!"
  },
  "line.a_pick_bigger": {
-  "hash": "75beb9ed12cc",
+  "hash": "9cfbc221f15f",
   "who": "lisek",
-  "text": "Point to the thing that is bigger than your hand."
+  "text": "Which one is bigger?"
  },
  "line.a_pick_smaller": {
-  "hash": "9c545f7e9eab",
+  "hash": "30bbcf1d64e7",
   "who": "wiewiorka",
-  "text": "Point to the thing that is smaller than your hand."
+  "text": "Which one is smaller?"
  },
  "line.a_right": {
   "hash": "32b8266fb2db",

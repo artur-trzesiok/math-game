@@ -125,9 +125,9 @@
   "text": "Mniejsze! Ciastko jest mniejsze od łapki."
  },
  "line.a_sq_your_turn": {
-  "hash": "8836384e5ae3",
+  "hash": "5b8719efae45",
   "who": "wiewiorka",
-  "text": "Teraz ty. Pokażemy dwie rzeczy, a ty wskaż."
+  "text": "Teraz ty. Pokażemy dwie takie same rzeczy, jedną dużą i jedną małą."
  },
  "line.a_fox_right": {
   "hash": "dc294f151c10",
@@ -235,14 +235,14 @@
   "text": "Większe dla większego, mniejsze dla mniejszego. Pycha!"
  },
  "line.a_pick_bigger": {
-  "hash": "9ea0fb20898a",
+  "hash": "5791f3137acc",
   "who": "lisek",
-  "text": "Wskaż to, co jest większe od twojej dłoni."
+  "text": "Która jest większa?"
  },
  "line.a_pick_smaller": {
-  "hash": "c7ab6e405664",
+  "hash": "cbdb2dcbe569",
   "who": "wiewiorka",
-  "text": "Wskaż to, co jest mniejsze od twojej dłoni."
+  "text": "Która jest mniejsza?"
  },
  "line.a_right": {
   "hash": "27227b5e77bb",
