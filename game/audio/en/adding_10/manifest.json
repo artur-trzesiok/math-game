@@ -1,0 +1,297 @@
+{
+ "line.s_need": {
+  "hash": "002f69a052ac",
+  "who": "sarenka",
+  "text": "We need eight pebbles for hopscotch. I brought three."
+ },
+ "line.s_have": {
+  "hash": "45a59ac8aba3",
+  "who": "wiewiorka",
+  "text": "And I have five in my basket. I counted them this morning."
+ },
+ "line.s_naive": {
+  "hash": "7b9593878f8d",
+  "who": "wiewiorka",
+  "text": "Then I will count them all from the start. One, two, three, four... Oh no, I got mixed up!"
+ },
+ "line.s_not": {
+  "hash": "f1ca1600f377",
+  "who": "sarenka",
+  "text": "You do not have to start from one! We already know there are five in the basket."
+ },
+ "line.s_how": {
+  "hash": "6b0d18761e21",
+  "who": "wiewiorka",
+  "text": "Then where do I start?"
+ },
+ "line.s_on": {
+  "hash": "553d26654007",
+  "who": "sarenka",
+  "text": "From five! We count on. That is called counting on."
+ },
+ "line.s_what": {
+  "hash": "71030176e75d",
+  "who": "wiewiorka",
+  "text": "Counting on? Will you show me?"
+ },
+ "line.s_show": {
+  "hash": "b567f6ac07a2",
+  "who": "sarenka",
+  "text": "We keep five in our heads. Point to my pebbles one by one, and I will count on."
+ },
+ "line.s_eight": {
+  "hash": "7254fbd8b2ee",
+  "who": "wiewiorka",
+  "text": "Eight! And I did not have to count from the start."
+ },
+ "line.s_write": {
+  "hash": "4287a3af812f",
+  "who": "sarenka",
+  "text": "Five plus three equals eight."
+ },
+ "line.s_solved": {
+  "hash": "15acd35f9db8",
+  "who": "wiewiorka",
+  "text": "We have eight pebbles. Let's play hopscotch!"
+ },
+ "line.s_to_garden": {
+  "hash": "2e4856e124dc",
+  "who": "sarenka",
+  "text": "Let's go to the garden. We will practise counting on there too."
+ },
+ "line.b_basket": {
+  "hash": "e3b6a0307e4f",
+  "who": "wiewiorka",
+  "text": "There are six carrots in the basket."
+ },
+ "line.b_more": {
+  "hash": "999ad1ffd4f6",
+  "who": "sarenka",
+  "text": "I pulled out two more. Let's count on!"
+ },
+ "line.b_count": {
+  "hash": "870753543865",
+  "who": "sarenka",
+  "text": "Start from six. Point to the new carrots one by one."
+ },
+ "line.b_pick": {
+  "hash": "eaaed1457d93",
+  "who": "wiewiorka",
+  "text": "How many are there together? Point to the digit."
+ },
+ "line.b_write": {
+  "hash": "4b095d6a9ed0",
+  "who": "sarenka",
+  "text": "Six plus two equals eight."
+ },
+ "line.b_to_home": {
+  "hash": "920b1dca2fd1",
+  "who": "wiewiorka",
+  "text": "Let's go home. Guests are coming!"
+ },
+ "line.c_cups": {
+  "hash": "9c3df8f4b133",
+  "who": "sarenka",
+  "text": "There are seven cups in the box. The guests brought three more."
+ },
+ "line.c_count": {
+  "hash": "4441ff2d38f2",
+  "who": "wiewiorka",
+  "text": "Let's count on from seven. Point to the new cups."
+ },
+ "line.c_slot": {
+  "hash": "3d8bcc95bb58",
+  "who": "wiewiorka",
+  "text": "Seven plus three equals what? Point to the number that fits at the end."
+ },
+ "line.c_solved": {
+  "hash": "288ef785d8d6",
+  "who": "sarenka",
+  "text": "Seven plus three is ten! Counting on is quick."
+ },
+ "line.wrong_digit": {
+  "hash": "759298d22599",
+  "who": "sarenka",
+  "text": "That is another number. Count again."
+ },
+ "line.wrong_digit.wiewiorka": {
+  "hash": "046684a4f757",
+  "who": "wiewiorka",
+  "text": "That is another number. Count again."
+ },
+ "line.good_digit": {
+  "hash": "7eae85d83e52",
+  "who": "wiewiorka",
+  "text": "Yes! Well counted on."
+ },
+ "line.good_digit.sarenka": {
+  "hash": "8d2e9eb8a21c",
+  "who": "sarenka",
+  "text": "Yes! Well counted on."
+ },
+ "line.p_intro": {
+  "hash": "5c61f993f6a3",
+  "who": "sarenka",
+  "text": "Let's play counting on! The box says how many are inside."
+ },
+ "line.p_count_on": {
+  "hash": "eeb854d15f98",
+  "who": "sarenka",
+  "text": "Start from the number on the box. Point to the new things one by one."
+ },
+ "line.p_together": {
+  "hash": "b622e01c79a8",
+  "who": "sarenka",
+  "text": "How many are there together? Point to the number."
+ },
+ "line.p_together.wiewiorka": {
+  "hash": "c55093c9c399",
+  "who": "wiewiorka",
+  "text": "How many are there together? Point to the number."
+ },
+ "line.a_game": {
+  "hash": "204f2a690f71",
+  "who": "wiewiorka",
+  "text": "Let's play counting on, just like at home."
+ },
+ "line.a_ok": {
+  "hash": "74e726d96afa",
+  "who": "sarenka",
+  "text": "All right! We start from what we already know."
+ },
+ "line.a_lyzka": {
+  "hash": "8567a9351cab",
+  "who": "sarenka",
+  "text": "There are five spoons in the drawer. Add these too. Count on from five."
+ },
+ "line.a_klocek": {
+  "hash": "5e7509d3cef2",
+  "who": "sarenka",
+  "text": "There are six blocks in the box. Count on from six."
+ },
+ "line.a_kubek": {
+  "hash": "5510e8c395a4",
+  "who": "sarenka",
+  "text": "There are seven cups on the shelf. Count on from seven."
+ },
+ "line.a_which_digit": {
+  "hash": "b622e01c79a8",
+  "who": "sarenka",
+  "text": "How many are there together? Point to the number."
+ },
+ "line.a_which_digit.wiewiorka": {
+  "hash": "c55093c9c399",
+  "who": "wiewiorka",
+  "text": "How many are there together? Point to the number."
+ },
+ "line.a_ask_parents": {
+  "hash": "3d9283393f38",
+  "who": "sarenka",
+  "text": "Ask your parents to count on with you. How many stairs will there be when you climb three more?"
+ },
+ "line.a_bye": {
+  "hash": "3c8231148d14",
+  "who": "wiewiorka",
+  "text": "Bye bye! See you!"
+ },
+ "line.n1": {
+  "hash": "fe1f04809440",
+  "who": "sarenka",
+  "text": "One!"
+ },
+ "line.n1.wiewiorka": {
+  "hash": "b450b7ae1d7d",
+  "who": "wiewiorka",
+  "text": "One!"
+ },
+ "line.n2": {
+  "hash": "375458f35a95",
+  "who": "sarenka",
+  "text": "Two!"
+ },
+ "line.n2.wiewiorka": {
+  "hash": "9ffb03ee7b98",
+  "who": "wiewiorka",
+  "text": "Two!"
+ },
+ "line.n3": {
+  "hash": "bece30255ee6",
+  "who": "sarenka",
+  "text": "Three!"
+ },
+ "line.n3.wiewiorka": {
+  "hash": "5641cc4a1ea8",
+  "who": "wiewiorka",
+  "text": "Three!"
+ },
+ "line.n4": {
+  "hash": "c0cadba0f56e",
+  "who": "sarenka",
+  "text": "Four!"
+ },
+ "line.n4.wiewiorka": {
+  "hash": "f09afa4cffab",
+  "who": "wiewiorka",
+  "text": "Four!"
+ },
+ "line.n5": {
+  "hash": "2aae65c19a3e",
+  "who": "sarenka",
+  "text": "Five!"
+ },
+ "line.n5.wiewiorka": {
+  "hash": "288f44558ee1",
+  "who": "wiewiorka",
+  "text": "Five!"
+ },
+ "line.n6": {
+  "hash": "5b14398761e9",
+  "who": "sarenka",
+  "text": "Six!"
+ },
+ "line.n6.wiewiorka": {
+  "hash": "b67575136d25",
+  "who": "wiewiorka",
+  "text": "Six!"
+ },
+ "line.n7": {
+  "hash": "79805ce2a057",
+  "who": "sarenka",
+  "text": "Seven!"
+ },
+ "line.n7.wiewiorka": {
+  "hash": "bfd0856dbfbc",
+  "who": "wiewiorka",
+  "text": "Seven!"
+ },
+ "line.n8": {
+  "hash": "1320a0497736",
+  "who": "sarenka",
+  "text": "Eight!"
+ },
+ "line.n8.wiewiorka": {
+  "hash": "a3bd91e980af",
+  "who": "wiewiorka",
+  "text": "Eight!"
+ },
+ "line.n9": {
+  "hash": "4dd069b8f569",
+  "who": "sarenka",
+  "text": "Nine!"
+ },
+ "line.n9.wiewiorka": {
+  "hash": "42393bd97c27",
+  "who": "wiewiorka",
+  "text": "Nine!"
+ },
+ "line.n10": {
+  "hash": "25d96d7fd45f",
+  "who": "sarenka",
+  "text": "Ten!"
+ },
+ "line.n10.wiewiorka": {
+  "hash": "1b47bd071e1d",
+  "who": "wiewiorka",
+  "text": "Ten!"
+ }
+}

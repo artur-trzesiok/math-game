@@ -143,5 +143,105 @@
   "hash": "f468add04661",
   "who": "lisek",
   "text": "Yes! Well added."
+ },
+ "line.good_digit.sowa": {
+  "hash": "e3f41abcda3f",
+  "who": "sowa",
+  "text": "Yes! Well added."
+ },
+ "line.p_intro": {
+  "hash": "c3c9d3ac7c3e",
+  "who": "sowa",
+  "text": "Let's play adding! Two piles, and a plus between them."
+ },
+ "line.p_together": {
+  "hash": "704bf7201617",
+  "who": "sowa",
+  "text": "How many are there together? Point to the digit."
+ },
+ "line.a_game": {
+  "hash": "e230c72de0df",
+  "who": "lisek",
+  "text": "Let's play adding toys, just like at home."
+ },
+ "line.a_ok": {
+  "hash": "1fab2de46465",
+  "who": "sowa",
+  "text": "All right! We put the toys in the box and count them all."
+ },
+ "line.a_put": {
+  "hash": "5d9689782cbd",
+  "who": "sowa",
+  "text": "Drag the toys into the box, then count them all."
+ },
+ "line.a_which_digit": {
+  "hash": "704bf7201617",
+  "who": "sowa",
+  "text": "How many are there together? Point to the digit."
+ },
+ "line.a_which_digit.lisek": {
+  "hash": "0226421d1e0d",
+  "who": "lisek",
+  "text": "How many are there together? Point to the digit."
+ },
+ "line.a_ask_parents": {
+  "hash": "dcb1dcf95cca",
+  "who": "sowa",
+  "text": "Ask your parents to play adding with you. How many spoons will there be when you add one more?"
+ },
+ "line.a_bye": {
+  "hash": "5fdcbfe15d1f",
+  "who": "lisek",
+  "text": "Bye bye! See you!"
+ },
+ "line.n1": {
+  "hash": "13ecf4f502e6",
+  "who": "sowa",
+  "text": "One!"
+ },
+ "line.n1.lisek": {
+  "hash": "17ef5509f792",
+  "who": "lisek",
+  "text": "One!"
+ },
+ "line.n2": {
+  "hash": "03e0547eb360",
+  "who": "sowa",
+  "text": "Two!"
+ },
+ "line.n2.lisek": {
+  "hash": "b4f95635d899",
+  "who": "lisek",
+  "text": "Two!"
+ },
+ "line.n3": {
+  "hash": "1b70b81f1a09",
+  "who": "sowa",
+  "text": "Three!"
+ },
+ "line.n3.lisek": {
+  "hash": "4c345f0d5dab",
+  "who": "lisek",
+  "text": "Three!"
+ },
+ "line.n4": {
+  "hash": "ac53306b5483",
+  "who": "sowa",
+  "text": "Four!"
+ },
+ "line.n4.lisek": {
+  "hash": "2253e7bcda55",
+  "who": "lisek",
+  "text": "Four!"
+ },
+ "line.n5": {
+  "hash": "f7dbf2ce5c8d",
+  "who": "sowa",
+  "text": "Five!"
+ },
+ "line.n5.lisek": {
+  "hash": "094016c43adc",
+  "who": "lisek",
+  "text": "Five!"
  }
 }
