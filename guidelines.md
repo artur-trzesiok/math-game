@@ -25,8 +25,9 @@ objects - no hand-made art, no in-house level editor.
      concrete thing to do together. The game should end with the tablet put down.
 - **One idea per lesson, said in both directions** ("bigger than ... smaller
   than"), with the same words every time.
-- **Praise is a character's reaction** (a cheer, applause), not a score. No timers,
-  no lives, no stars.
+- **Every tap is visible**: the tapped thing pops, a wrong one also shakes, the
+  right one flies where it belongs. **Praise is a character's reaction** (a cheer,
+  applause), not a score. No timers, no lives, no stars.
 
 ## The world
 

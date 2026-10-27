@@ -137,6 +137,7 @@ export class Player {
           alive();
           if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); return hit; }
           misses++;
+          S.shake(hit);
           if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);
           if (misses >= hintAfter) for (const h of ok) h.highlight?.(true);
         }

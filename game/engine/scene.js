@@ -95,11 +95,23 @@ export class Stage {
       tw.step(s);
       if (tw.t >= tw.d) { this.tweens.splice(this.tweens.indexOf(tw), 1); tw.done(); }
     }
-    for (const o of this.objects) if (o.pulse) o.mesh.scale.setScalar(o.base * (1 + 0.08 * Math.sin(t / 150)));
+    for (const o of this.objects) if (o.pulse && !o.bumping) o.mesh.scale.setScalar(o.base * (1 + 0.08 * Math.sin(t / 150)));
     if (this.speech) this.speech.tick(t);
     this.renderer.render(this.scene, this.camera);
   }
   tween(d, step) { return new Promise((done) => this.tweens.push({ t: 0, d, step, done })); }
+  // touch feedback: the tapped thing pops (scale up and back); a wrong answer also shakes
+  async bump(h, amount = 0.25) {
+    const m = this.meshOf(h), base = h.base ?? 1, k = h.korzen ? 0.08 : amount;
+    h.bumping = true;
+    await this.tween(0.28, (s) => { const q = base * (1 + k * Math.sin(s * Math.PI)); m.scale.set(q, q, h.korzen ? 1 : q); });
+    m.scale.set(base, base, h.korzen ? 1 : base); h.bumping = false;
+  }
+  async shake(h) {
+    const m = this.meshOf(h), x0 = m.position.x;
+    await this.tween(0.4, (s) => { m.position.x = x0 + 0.12 * Math.sin(s * Math.PI * 4) * (1 - s); });
+    m.position.x = x0;
+  }
   wait(s) { return new Promise((ok) => setTimeout(ok, s * 1000)); }
 
   // ------------------------------------------------------------------ background
@@ -221,6 +233,7 @@ export class Stage {
     this.lastHit = best;
     if (!best) return null;
     const ok = this.pending; this.pending = null; this.targets = [];
+    this.bump(best);                                 // visible reaction before anything else happens
     ok(best);
     return best;
   }
