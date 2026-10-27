@@ -16,6 +16,7 @@ export const SAFE = { w: 12, h: 9 };
 export const GROUND = -3.3;
 export const ASPECT_MIN = 4 / 3, ASPECT_MAX = 16 / 9;
 const CAM_Z = 7.2;
+const ZAKRESLACZ = "#ff5a1f";          // pencil annotations: a bold saturated orange that reads on grass, sky and wood
 const PARAMS = new URLSearchParams(location.search);
 const FRESH = { cache: "no-store" };
 
@@ -469,14 +470,14 @@ export class Stage {
   // ------------------------------------------------------------------ pencil
   // a pencil stroke along a path (polyline [[x, y], ...] or { bezier: [p0, c1, c2, p1, ...] }), drawn in over
   // `duration` s; a handle like a sticker's: a task target (a wide invisible strip takes the tap), remove, highlight
-  async line(path, { width = 0.06, color = "#3b3631", duration = 0.7, wobble = 0.012, name = "kreska", wait = true } = {}) {
+  async line(path, { width = 0.06, color = "#3b3631", duration = 0.7, wobble = 0.012, name = "kreska", wait = true, strong = false } = {}) {
     const pts = probkuj(path);
     const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
     const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
     const local = pts.map(([x, y]) => [x - cx, y - cy]);
     const seed = Math.random() * 1000;
     const { g: geo, dlugosc } = wstega(local, { grubosc: width, drzenie: wobble, ziarno: seed });
-    const mat = olowekMaterial(color, dlugosc, seed);
+    const mat = olowekMaterial(color, dlugosc, seed, strong ? 1 : 0);
     const stroke = new THREE.Mesh(geo, mat); stroke.renderOrder = 12; stroke.frustumCulled = false;
     const hit = new THREE.Mesh(wstega(local, { grubosc: Math.max(0.45, width * 4), drzenie: 0 }).g,
       new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false, side: THREE.DoubleSide }));
@@ -501,6 +502,55 @@ export class Stage {
     main.remove0 = main.remove; main.remove = () => parts.forEach((p) => (p === main ? p.remove0() : p.remove()));
     return main;
   }
+  // ---- pencil annotations: the answer circled, an arrow down onto a thing, a thing crossed out, a "?" over a head
+  _box(h) {
+    if (h.korzen) { const bb = new THREE.Box3().setFromObject(h.korzen); return { left: bb.min.x, right: bb.max.x, bottom: bb.min.y, top: bb.max.y, x: (bb.min.x + bb.max.x) / 2, y: (bb.min.y + bb.max.y) / 2 }; }
+    return this.bounds(h);
+  }
+  // a hand-drawn loop around a thing: a little more than one turn, its end overshooting the start
+  circle(h, { color = ZAKRESLACZ, margin = 0.18, duration = 0.8, width = 0.13 } = {}) {
+    const b = this._box(h), cx = (b.left + b.right) / 2, cy = (b.bottom + b.top) / 2;
+    const rx = (b.right - b.left) / 2 + margin, ry = (b.top - b.bottom) / 2 + margin;
+    const pts = [], a0 = 2.2, turns = 1.12, n = 64;
+    for (let i = 0; i <= n; i++) {
+      const a = a0 + (i / n) * turns * 2 * Math.PI, r = 1 + 0.06 * (i / n);       // the stroke drifts outwards as a hand does
+      pts.push([cx + rx * r * Math.cos(a), cy + ry * r * Math.sin(a)]);
+    }
+    return this.line(pts, { color, duration, width, name: "kolko", strong: true });
+  }
+  // an arrow bending down onto a thing from above-left (or `from`), with a two-stroke head
+  async arrow(h, { from = null, color = ZAKRESLACZ, duration = 0.6, width = 0.13 } = {}) {
+    const b = this._box(h), tx = (b.left + b.right) / 2, ty = b.top + 0.12;
+    const [fx, fy] = from || [tx - 1.1, ty + 1.5];
+    const k = [(fx + tx) / 2 - 0.35, (fy + ty) / 2 + 0.25];
+    const body = await this.line({ bezier: [[fx, fy], k, [tx - 0.1, ty + 0.5], [tx, ty]] }, { color, duration, width, name: "strzalka", strong: true });
+    const ang = Math.atan2(ty - (ty + 0.5), tx - (tx - 0.1)), L = 0.28;
+    const g1 = await this.line([[tx, ty], [tx - L * Math.cos(ang - 0.5), ty - L * Math.sin(ang - 0.5)]], { color, duration: 0.12, width, strong: true });
+    const g2 = await this.line([[tx, ty], [tx - L * Math.cos(ang + 0.5), ty - L * Math.sin(ang + 0.5)]], { color, duration: 0.12, width, strong: true });
+    const parts = [g1, g2]; const r0 = body.remove; body.remove = () => { r0(); parts.forEach((p) => p.remove()); };
+    return body;
+  }
+  // two strokes across a thing
+  async cross(h, { color = "#d32f2f", duration = 0.3, width = 0.14, margin = 0.05 } = {}) {
+    const b = this._box(h);
+    const a = await this.line([[b.left - margin, b.top + margin], [b.right + margin, b.bottom - margin]], { color, duration, width, name: "krzyzyk", strong: true });
+    const c = await this.line([[b.right + margin, b.top + margin], [b.left - margin, b.bottom - margin]], { color, duration, width, strong: true });
+    const r0 = a.remove; a.remove = () => { r0(); c.remove(); };
+    return a;
+  }
+  // a pencil "?" over a character's head for a moment: puzzled
+  async wonder(who, { na = 1.8 } = {}) {
+    const L = this.puppets[who]; if (!L || !L.korzen.visible) return null;
+    const o = new THREE.Vector3(); L.korzen.getWorldPosition(o);
+    const x = o.x + 0.95 * (o.x < 0 ? 1 : -1), y = o.y + L.wysokosc * 1.08, s = 0.85;   // over the head, towards the middle
+    this.sfx.graj("wonder");
+    const hook = await this.line({ bezier: [[x - 0.45 * s, y + 0.55 * s], [x - 0.45 * s, y + 1.05 * s], [x + 0.55 * s, y + 1.05 * s], [x + 0.5 * s, y + 0.55 * s],
+                                            [x + 0.45 * s, y + 0.2 * s], [x, y + 0.25 * s], [x, y - 0.15 * s]] }, { color: "#2b2622", duration: 0.5, width: 0.14, name: "pytajnik", strong: true });
+    const dot = await this.line([[x - 0.03, y - 0.42 * s], [x + 0.04, y - 0.5 * s]], { color: "#2b2622", duration: 0.08, width: 0.2, strong: true });
+    setTimeout(() => { hook.remove(); dot.remove(); }, na * 1000);
+    return hook;
+  }
+
   // where a sticker's drawing really is (its alpha box, not the transparent square around it), in safe-area units
   bounds(h) {
     if (h.icon?.material?.map?.image) {

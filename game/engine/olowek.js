@@ -56,13 +56,13 @@ export function wstega(punkty, { grubosc = 0.06, drzenie = 0.012, ziarno = Math.
 }
 
 // graphite: grain along the stroke, soft ragged edges, revealed up to `postep` with a lighter tip
-export function material(kolor = "#3b3631", dlugosc = 1, ziarno = Math.random() * 1000) {
+export function material(kolor = "#3b3631", dlugosc = 1, ziarno = Math.random() * 1000, mocno = 0) {
   return new THREE.ShaderMaterial({
     transparent: true, depthWrite: false, depthTest: false, side: THREE.DoubleSide,
-    uniforms: { postep: { value: 0 }, kolor: { value: new THREE.Color(kolor) }, dl: { value: dlugosc }, ziarno: { value: ziarno }, blask: { value: 0 } },
+    uniforms: { postep: { value: 0 }, kolor: { value: new THREE.Color(kolor) }, dl: { value: dlugosc }, ziarno: { value: ziarno }, blask: { value: 0 }, mocno: { value: mocno } },
     vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
     fragmentShader: `
-      uniform float postep, dl, ziarno, blask; uniform vec3 kolor; varying vec2 vUv;
+      uniform float postep, dl, ziarno, blask, mocno; uniform vec3 kolor; varying vec2 vUv;
       float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7)) + ziarno) * 43758.5453); }
       float n(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
         return mix(mix(h(i), h(i + vec2(1, 0)), f.x), mix(h(i + vec2(0, 1)), h(i + vec2(1, 1)), f.x), f.y); }
@@ -72,7 +72,7 @@ export function material(kolor = "#3b3631", dlugosc = 1, ziarno = Math.random() 
         float brzeg = 0.18 + 0.12 * n(vec2(s * 60.0, 3.0));                       // a ragged edge
         float a = smoothstep(0.0, brzeg, vUv.y) * smoothstep(0.0, brzeg, 1.0 - vUv.y);
         float g = n(vec2(s * 180.0, vUv.y * 9.0)) * 0.6 + n(vec2(s * 47.0, vUv.y * 3.0)) * 0.4;   // graphite grain
-        a *= 0.55 + 0.45 * g;
+        a *= mix(0.55 + 0.45 * g, 0.88 + 0.12 * g, mocno);                        // a bold stroke: pressed hard, the grain barely shows
         a *= mix(0.6, 1.0, smoothstep(0.0, 0.03 / max(dl, 0.01), postep - vUv.x));  // the fresh tip is lighter
         vec3 c = mix(kolor, vec3(1.0, 0.85, 0.3), blask * 0.6);
         gl_FragColor = vec4(c, a * (0.9 + 0.1 * blask));

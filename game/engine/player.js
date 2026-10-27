@@ -148,6 +148,11 @@ export class Player {
       sfx: (name, opts) => S.sfx.graj(name, opts),                // a sound effect (game/audio/sfx)
       // the camera closes in on things and dims the rest; unfocus brings the whole stage back
       focus: guard((items, opts) => S.focus(items, opts)),
+      // pencil annotations (each a handle: remove it, or clear() does)
+      circle: guard((h, opts) => S.circle(h, opts)),
+      arrow: guard((h, opts) => S.arrow(h, opts)),
+      cross: guard((h, opts) => S.cross(h, opts)),
+      wonder: guard((who, opts) => S.wonder(who, opts)),
       unfocus: guard((d) => S.unfocus(d)),
       // drawing with a pencil: a stroke along points or Bezier segments, a segment with end ticks; stickers' real
       // edges (bounds) and standing things on a line - the pieces for comparisons and pairings
@@ -166,6 +171,7 @@ export class Player {
         const ok = Array.isArray(correct) ? correct : [correct];
         const polecenie = last;                          // the instruction: a tapped character repeats it, not the "try again" said since
         let misses = 0;
+        const podpowiedzi = [];                          // pencil hints drawn on the way; wiped when the task ends
         const puppets = Object.values(S.puppets).filter((L) => L.korzen.visible);
         // while the child thinks, the characters look from one option to the next - every option, so the gaze gives nothing away
         const names = Object.keys(S.puppets).filter((n) => S.puppets[n].korzen.visible);
@@ -182,9 +188,16 @@ export class Player {
           misses++;
           S.shake(hit);
           if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);
+          // the hint ladder: first the answer pulses, then a pencil arrow points at it, then the character shows it
           if (misses >= hintAfter) for (const h of ok) h.highlight?.(true);
+          if (misses === hintAfter + 1 && !podpowiedzi.length) podpowiedzi.push(await S.arrow(ok[0]));
+          if (misses === hintAfter + 2) {
+            const kto = polecenie?.who && S.puppets[polecenie.who] ? polecenie.who : Object.keys(S.puppets).find((n) => S.puppets[n].korzen.visible);
+            if (kto) { S.lookAt(kto, ok[0]); S.puppets[kto].graj("Wskazanie"); }
+            podpowiedzi.push(await S.circle(ok[0]));
+          }
         }
-        } finally { clearInterval(gazeTimer); }
+        } finally { clearInterval(gazeTimer); for (const p of podpowiedzi) p.remove(); }
       },
       // free sorting: every item must end up in a zone and every zone must hold one kind
       // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line

@@ -256,6 +256,14 @@ a line draws, whoosh for a long flight, hop / clap with Podskok / Brawo (`Lalka.
 right on a correct pick or a finished sort; `ctx.sfx(name)` for a scene's own. Plain
 `<audio>` pools, a 60 ms gap per effect, ducking under speech, `?cicho` mutes.
 
+Camera and annotations: `ctx.focus(items)` zooms (<= 1.6x, inside the design frame)
+and dims the rest under a veil with a soft hole, `ctx.unfocus()`. `ctx.circle(h)`,
+`ctx.arrow(h)`, `ctx.cross(h)` draw bold pencil marks (`strong`: pressed hard, little
+grain, saturated orange / red - the first thin ones did not read), `ctx.wonder(who)`
+a "?" over a head. The hint ladder in `task`: after `hintAfter` misses the answer
+pulses, one miss later a pencil arrow points at it, one more and the instructing
+character looks, points and circles it; the marks go when the task ends.
+
 Transitions: `graj` remembers the pose of the last frame (every numeric channel,
 before the gaze) and the new animation blends in from it over `Lalka.przejscie`
 (0.22 s; an animation may set `wejscie`, 0 = cut). Feet that were planted (`stopy:
