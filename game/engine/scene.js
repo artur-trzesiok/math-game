@@ -463,8 +463,9 @@ export class Stage {
     const c = document.createElement("canvas"), px = 160; c.width = Math.round(w * px); c.height = Math.round(h * px);
     const ctx = c.getContext("2d"), puffs = [];
     const W = c.width, H = c.height, r = Math.min(W, H) * 0.22;
-    for (let i = 0; i < 14; i++) { const a = i / 14 * Math.PI * 2; puffs.push([W / 2 + Math.cos(a) * (W / 2 - r * 1.05), H / 2 + Math.sin(a) * (H / 2 - r * 1.05), r * (0.95 + 0.25 * Math.sin(i * 2.3))]); }
-    const draw = (grow, fill) => { ctx.beginPath(); for (const [x, y, rr] of puffs) { ctx.moveTo(x + rr + grow, y); ctx.arc(x, y, rr + grow, 0, Math.PI * 2); } ctx.rect(r, r, W - 2 * r, H - 2 * r); ctx.fillStyle = fill; ctx.fill(); };
+    const brzeg = r * 1.2 + 9;                    // the biggest puff plus its rim stays inside the canvas (it was clipped flat)
+    for (let i = 0; i < 14; i++) { const a = i / 14 * Math.PI * 2; puffs.push([W / 2 + Math.cos(a) * (W / 2 - brzeg), H / 2 + Math.sin(a) * (H / 2 - brzeg), r * (0.95 + 0.25 * Math.sin(i * 2.3))]); }
+    const draw = (grow, fill) => { ctx.beginPath(); for (const [x, y, rr] of puffs) { ctx.moveTo(x + rr + grow, y); ctx.arc(x, y, rr + grow, 0, Math.PI * 2); } ctx.rect(brzeg, brzeg, W - 2 * brzeg, H - 2 * brzeg); ctx.fillStyle = fill; ctx.fill(); };
     draw(7, "#4a433c"); draw(0, "#ffffff");
     const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
     const grp = new THREE.Group(); grp.position.set(cx, cy, 0.9);
