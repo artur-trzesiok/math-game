@@ -162,6 +162,10 @@ ARMS (a quadruped's front legs) must be behind the torso yet in front of the
 head, so they sit at 0.10 with `za_tulowiem`: the torso writes a stencil ref and
 the arm draws only where the stencil differs. **Every renderer that shows a
 puppet must be created with `stencil: true`** (three r163+ defaults to false).
+On the stage a puppet's materials have depth test and depth write OFF: pieces
+sort by z inside the puppet, and each puppet sits on its own `renderOrder`
+layer (20, the one walking or entering 30), so two overlapping puppets never
+interleave their pieces.
 Back view: limbs plainly behind. Profile: the near limb over the body, jumping
 to `z_uniesiona` past 45 deg.
 

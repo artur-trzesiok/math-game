@@ -149,9 +149,15 @@ export class Stage {
     L.korzen.position.set(x, GROUND, 0);
     L.korzen.visible = false; L.home = x; L.name = name;
     L.cien = this.shadow(height * 0.42);
+    // puppets never interleave: no depth test, every piece sorted by z within the puppet,
+    // and the whole puppet on its own render layer (the moving one in front)
+    L.korzen.traverse((o) => { if (o.isMesh) { o.material.depthTest = false; o.material.depthWrite = false; } });
     this.scene.add(L.korzen, L.cien); this.puppets[name] = L;
+    this.layer(L, false);
     return L;
   }
+  layer(L, front) { L.korzen.traverse((o) => { if (o.isMesh) o.renderOrder = front ? 30 : 20; }); }
+  bringToFront(L) { for (const o of Object.values(this.puppets)) this.layer(o, o === L); }
   // a contact shadow with a pencil feel: short diagonal strokes inside a slightly wobbly ellipse
   shadow(w) {
     if (!this.shadowTex) {
@@ -184,7 +190,7 @@ export class Stage {
     const L = this.puppets[name]; if (!L) throw new Error("no puppet " + name);
     const edge = this.visible(0).w / 2 + 1.2;
     const x0 = from === "left" ? -edge : edge;
-    L.korzen.position.x = x0; L.korzen.visible = true;
+    L.korzen.position.x = x0; L.korzen.visible = true; this.bringToFront(L);
     L.patrz(from === "left" ? "prawo" : "lewo"); L.graj("Chod", true);
     const d = Math.abs(L.home - x0) / (L.predkoscChodu * 1.3);
     await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { L.korzen.position.x = x0 + (L.home - x0) * s; });
@@ -194,6 +200,7 @@ export class Stage {
   async walkTo(name, x) {
     const L = this.puppets[name]; if (!L) return;
     const x0 = L.korzen.position.x; if (Math.abs(x - x0) < 0.05) return;
+    this.bringToFront(L);
     L.patrz(x > x0 ? "prawo" : "lewo"); L.graj("Chod", true);
     const d = Math.abs(x - x0) / (L.predkoscChodu * 1.3);
     await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { L.korzen.position.x = x0 + (x - x0) * s; });
