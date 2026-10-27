@@ -137,7 +137,7 @@ export class Stage {
 
   // ------------------------------------------------------------------ objects
   // a sticker: the icon on a white rounded card, so a green pear reads on green grass
-  async object(name, { x = 0, y = -1.8, size = 1.1, sticker = true, z = 0.4, label = null } = {}) {
+  async object(name, { x = 0, y = 0.9, size = 1.1, sticker = true, z = 0.4, label = null } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, z);
     if (sticker) {
       const c = document.createElement("canvas"); c.width = c.height = 128; const ctx = c.getContext("2d");
@@ -167,7 +167,7 @@ export class Stage {
     const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
     m.position.y = y; return m;
   }
-  async sign(text, { x = 0, y = -1.8, size = 1.1 } = {}) {
+  async sign(text, { x = 0, y = 0.9, size = 1.1 } = {}) {
     const m = this.textMesh(text, { size }); m.position.set(x, y, 0.4);
     const handle = { mesh: m, name: text, base: size, kind: "sign", pulse: false,
       remove: () => { this.scene.remove(m); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
@@ -177,7 +177,7 @@ export class Stage {
     return handle;
   }
   // a zone: an outlined area objects can be sorted into
-  zone({ x = 0, y = -1.8, w = 3, h = 2.2, color = "#ffffff" } = {}) {
+  zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff" } = {}) {
     const c = document.createElement("canvas"); c.width = 256; c.height = 192; const ctx = c.getContext("2d");
     ctx.fillStyle = "rgba(255,255,255,0.45)"; ctx.strokeStyle = color; ctx.lineWidth = 10; ctx.setLineDash([22, 14]);
     ctx.beginPath(); ctx.roundRect(8, 8, 240, 176, 28); ctx.fill(); ctx.stroke();
@@ -185,7 +185,7 @@ export class Stage {
     const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
     m.position.set(x, y, 0.3);
     const handle = { mesh: m, name: "zone", kind: "zone", x, y, w, h, base: 1, pulse: false, slots: 0,
-      slot: () => { const i = handle.slots++; return { x: x - w / 2 + 0.75 + (i % 3) * (w - 1.5) / 2, y: y + h / 2 - 0.7 - Math.floor(i / 3) * 0.9 }; },
+      slot: () => { const i = handle.slots++; const cols = Math.max(2, Math.round(w / 1.05)); return { x: x - w / 2 + 0.6 + (i % cols) * (w - 1.2) / (cols - 1), y: y + h / 2 - 0.65 - Math.floor(i / cols) * 0.8 }; },
       remove: () => { this.scene.remove(m); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); },
       highlight: (on) => { handle.pulse = on; if (!on) m.scale.setScalar(1); } };
     this.scene.add(m); this.objects.push(handle);

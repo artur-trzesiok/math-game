@@ -60,7 +60,7 @@ export class Player {
     $("#hud .menu").onclick = () => { this.abort = true; this.speech.stop(); this.stage?.cancelChoice(); this.menu(); };
     this.closeStage();
     this.stage = new Stage($("#stage"), this.speech);
-    for (const [name, o] of Object.entries(this.lesson.characters || {})) await this.stage.puppet(name, { x: o.x ?? (o.side === "right" ? 3.4 : -3.4), side: o.side, height: o.height });
+    for (const [name, o] of Object.entries(this.lesson.characters || {})) await this.stage.puppet(name, { x: o.x ?? (o.side === "right" ? 4.6 : -4.6), side: o.side, height: o.height });
     this.abort = false;
     const order = fromStage && STAGES.includes(fromStage) ? STAGES.slice(STAGES.indexOf(fromStage)) : STAGES;
     for (const st of order) {

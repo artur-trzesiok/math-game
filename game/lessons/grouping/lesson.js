@@ -2,8 +2,8 @@
 // that belong to the named group; each tap moves the thing into the group's zone.
 // Script in scenario.md.
 
-const ROW_Y = -1.5;
-const ZONE_L = -3.3, ZONE_R = 3.3, ZONE_Y = -3.2;
+const ROW_Y = 0.9;                             // loose things: above the puppets' heads
+const ZONE_L = -1.7, ZONE_R = 1.7, ZONE_Y = -2.3; // zones: on the ground between the puppets
 
 // scatter stickers in a row; `items` = [{name, size, tag}]
 async function scatter(c, items, y = ROW_Y, size = 0.85) {
@@ -43,7 +43,7 @@ export default {
           { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" }]);
         await c.say("wiewiorka", "line.s1_sq_mixed");
         await c.say("sarenka", "line.s1_deer_idea");
-        const za = c.zone({ x: ZONE_L, y: ZONE_Y, w: 4.2, h: 1.9 }), zp = c.zone({ x: ZONE_R, y: ZONE_Y, w: 4.2, h: 1.9 });
+        const za = c.zone({ x: ZONE_L, y: ZONE_Y, w: 3.1, h: 1.9 }), zp = c.zone({ x: ZONE_R, y: ZONE_Y, w: 3.1, h: 1.9 });
         await c.say("narrator", "line.s1_apples");
         await sortInto(c, items, "apple", za, { wrong: "line.s1_not_apple", done: "line.s1_apples_done" });
         await c.say("narrator", "line.s1_pears");
@@ -58,7 +58,7 @@ export default {
         const items = await scatter(c, [
           { name: "jablko", tag: "big", size: 1.3 }, { name: "gruszka", tag: "small", size: 0.7 }, { name: "jablko", tag: "small", size: 0.7 },
           { name: "gruszka", tag: "big", size: 1.3 }, { name: "jablko", tag: "big", size: 1.3 }]);
-        const zb = c.zone({ x: ZONE_L, y: ZONE_Y, w: 4.2, h: 1.9 }), zs = c.zone({ x: ZONE_R, y: ZONE_Y, w: 4.2, h: 1.9 });
+        const zb = c.zone({ x: ZONE_L, y: ZONE_Y, w: 3.1, h: 1.9 }), zs = c.zone({ x: ZONE_R, y: ZONE_Y, w: 3.1, h: 1.9 });
         await c.say("narrator", "line.s2_big");
         await sortInto(c, items, "big", zb, { wrong: "line.s2_not_big" });
         await c.say("narrator", "line.s2_small");
@@ -84,7 +84,7 @@ export default {
         ];
         for (const r of rounds) {
           const items = await scatter(c, r.items);
-          const zone = c.zone({ x: 0, y: ZONE_Y, w: 5.2, h: 1.9 });
+          const zone = c.zone({ x: 0, y: ZONE_Y, w: 6.4, h: 1.9 });
           await c.say("sarenka", r.ask);
           await sortInto(c, items, r.tag, zone, { wrong: r.wrong, done: "line.p_done" });
           await c.say("wiewiorka", "line.p_good", { anim: "Brawo" });

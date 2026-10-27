@@ -2,9 +2,8 @@
 // child pairs things one to one and sees what is left over; the sign is "the hungry
 // mouth that opens towards the bigger pile". Script in scenario.md.
 
-const L = -3.4, R = 3.4;
 const ROW_L = -1.9, ROW_R = 1.9;         // the two piles
-const ROW_Y = -1.9;
+const ROW_Y = 0.9;                       // the object layer: above the puppets' heads
 
 // a row of n stickers centred on x
 async function row(c, name, n, x, y = ROW_Y, size = 0.9) {
@@ -60,7 +59,7 @@ export default {
         await c.say("narrator", "line.s2_more_sign");
         gt.highlight(true); await c.wait(1); gt.highlight(false);
         await c.say("lisek", "line.s2_fox_add");
-        const extra = await c.object("talerz", { x: 5.2, y: ROW_Y, size: 0.8 });
+        const extra = await c.object("talerz", { x: 5.6, y: ROW_Y + 1.6, size: 0.8 });
         await extra.moveTo(ROW_R + 0.4 + 1.05, ROW_Y, 0.7);
         plates.push(extra);
         gt.remove();
@@ -100,7 +99,7 @@ export default {
         for (const [name, a, b] of plan) {
           await row(c, name, a, ROW_L - 0.6, ROW_Y + 0.4, 0.75); await row(c, name, b, ROW_R + 0.6, ROW_Y + 0.4, 0.75);
           const signs = [];
-          for (const [i, s] of ["<", "=", ">"].entries()) signs.push(await c.sign(s, { x: -2.2 + i * 2.2, y: -3.6, size: 1.1 }));
+          for (const [i, s] of ["<", "=", ">"].entries()) signs.push(await c.sign(s, { x: -2.2 + i * 2.2, y: -2.4, size: 1.1 }));
           const want = signs[["<", "=", ">"].indexOf(signFor(a, b))];
           await c.say("sowa", "line.p_which_sign");
           await c.task({ targets: signs, correct: want, wrong: "line.p_wrong_sign" });
