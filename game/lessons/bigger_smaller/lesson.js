@@ -27,9 +27,34 @@ export default {
   backgrounds: { story: "sad", practice: "plac_zabaw", apply: "dom" },
   stages: {
     story: [
-      // A. orchard: a gust shakes the tree, two apples drop out of the crown - the bigger one is for Fox
+      // A. orchard, the problem: each friend says their pear is bigger; Fox thinks "higher = bigger".
+      // Squirrel: compare! - on one line, a pencil line over each top. The quarrel is settled.
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
+        const small = await c.object("gruszka", { x: 1.5, y: Y + 0.55, size: 1.08 });      // Fox's: the smaller one, hanging higher
+        const big = await c.object("gruszka", { x: -1.5, y: Y - 0.25, size: 1.28 });       // Squirrel's
+        await c.say("lisek", "line.b0_mine", { anim: "Wskazanie" });
+        await c.say("wiewiorka", "line.b0_no");
+        await c.say("lisek", "line.b0_higher", { anim: "Podskok" });
+        await c.say("wiewiorka", "line.b0_not");
+        await c.say("lisek", "line.b0_how", { anim: "Rozgladanie" });
+        await c.say("wiewiorka", "line.b0_compare", { anim: "Zgloszenie" });
+        await c.say("lisek", "line.b0_what");
+        await c.say("wiewiorka", "line.b0_show");
+        const [kBig, kSmall] = await porownaj(c, [big, small]);
+        await c.say("wiewiorka", "line.c1_which_line");
+        await c.task({ targets: [kBig, kSmall], correct: kBig, wrong: "line.c1_wrong_line" });
+        kBig.highlight(true); big.highlight(true);
+        await c.say("lisek", "line.c1_higher", { anim: "Radosc" });
+        kBig.highlight(false); big.highlight(false);
+        await c.say("wiewiorka", "line.c1_pick");
+        await c.task({ targets: [big, small], correct: big, wrong: "line.c1_wrong_pear" });
+        await c.say("lisek", "line.b0_fair", { anim: "Kiwanie" });
+        await c.say("lisek", "line.c1_rule", { anim: "Brawo" });
+        c.clear();
+      },
+      // A2. orchard: a gust shakes the tree, two apples drop out of the crown - the bigger one is for Fox
+      async (c) => {
         await c.say("lisek", "line.s0_wind", { anim: "Rozgladanie" });
         const big = await c.object("jablko", { x: -1.6, y: 4.6, size: 1.7 });
         const small = await c.object("jablko", { x: 1.6, y: 4.9, size: 0.85 });
@@ -46,24 +71,6 @@ export default {
         await c.task({ targets: [big, small], correct: big, wrong: "line.s1_wrong" });
         await big.moveTo(L + 1.6, Y);
         await c.say("lisek", "line.s1_fox_thanks", { anim: "Radosc" });
-        c.clear();
-      },
-      // A2. orchard: two pears almost alike - how to compare? on one line, a pencil line over each top
-      async (c) => {
-        const small = await c.object("gruszka", { x: 1.5, y: Y + 0.55, size: 1.08 });      // the smaller one hangs higher: the eye is fooled
-        const big = await c.object("gruszka", { x: -1.5, y: Y - 0.25, size: 1.28 });
-        await c.say("wiewiorka", "line.c1_hard", { anim: "Rozgladanie" });
-        await c.say("lisek", "line.c1_way", { anim: "Wskazanie" });
-        const [kBig, kSmall] = await porownaj(c, [big, small]);
-        await c.say("lisek", "line.c1_tops");
-        await c.say("wiewiorka", "line.c1_which_line");
-        await c.task({ targets: [kBig, kSmall], correct: kBig, wrong: "line.c1_wrong_line" });
-        kBig.highlight(true); big.highlight(true);
-        await c.say("lisek", "line.c1_higher", { anim: "Radosc" });
-        kBig.highlight(false); big.highlight(false);
-        await c.say("wiewiorka", "line.c1_pick");
-        await c.task({ targets: [big, small], correct: big, wrong: "line.c1_wrong_pear" });
-        await c.say("lisek", "line.c1_rule", { anim: "Brawo" });
         await c.say("lisek", "line.j1_to_forest");
         c.clear();
       },

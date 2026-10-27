@@ -1,19 +1,4 @@
 {
- "line.s1_intro": {
-  "hash": "047de346ba95",
-  "who": "wiewiorka",
-  "text": "Ale bałagan po podwieczorku! Jabłka i gruszki leżą wymieszane na dywanie."
- },
- "line.s1_sq_mixed": {
-  "hash": "8e8258a4d486",
-  "who": "sarenka",
-  "text": "Wszystko pomieszane! Jak to poukładać?"
- },
- "line.s1_deer_idea": {
-  "hash": "1e93ce6bc6a9",
-  "who": "wiewiorka",
-  "text": "Jabłka do jednego koszyka, gruszki do drugiego. Każda rzecz do swojej grupy."
- },
  "line.s1_apples": {
   "hash": "e7e36d02dcc3",
   "who": "sarenka",
@@ -164,21 +149,6 @@
   "who": "sarenka",
   "text": "Okrągłe do koszyka, reszta do pudełka."
  },
- "line.s0_roll": {
-  "hash": "4029c3a673de",
-  "who": "sarenka",
-  "text": "Hop! Jedna gruszka potoczyła się pod łóżko!"
- },
- "line.s0_drag_back": {
-  "hash": "4ca2111f8209",
-  "who": "wiewiorka",
-  "text": "Przeciągnij ją z powrotem na dywan, do reszty."
- },
- "line.s0_caught": {
-  "hash": "036ef554c7a7",
-  "who": "sarenka",
-  "text": "Mamy ją! Teraz wszystkie owoce są razem."
- },
  "line.a_sq_right.sarenka": {
   "hash": "f02bbef5059f",
   "who": "sarenka",
@@ -268,5 +238,65 @@
   "hash": "66ef78772da8",
   "who": "sarenka",
   "text": "Wracajmy do domu. Zostały nam jeszcze owoce do poukładania."
+ },
+ "line.g0_mess": {
+  "hash": "ee01f1c4c6c5",
+  "who": "wiewiorka",
+  "text": "Ale bałagan na dywanie! Trzeba to posprzątać."
+ },
+ "line.g0_box": {
+  "hash": "6dce5a029960",
+  "who": "wiewiorka",
+  "text": "Wiem! Wrzucę wszystko do tego pudła. Hop, hop, hop!"
+ },
+ "line.g0_not_tidy": {
+  "hash": "8f5a063b2ae3",
+  "who": "sarenka",
+  "text": "To nie jest sprzątanie! Ty tylko przenosisz bałagan z dywanu do pudła."
+ },
+ "line.g0_how": {
+  "hash": "b7e141bbcdba",
+  "who": "wiewiorka",
+  "text": "To jak mamy to zrobić?"
+ },
+ "line.g0_group": {
+  "hash": "070e991cabfe",
+  "who": "sarenka",
+  "text": "Grupując! Wtedy jest porządek."
+ },
+ "line.g0_what": {
+  "hash": "abbfa4942659",
+  "who": "wiewiorka",
+  "text": "Grupując? Co to jest grupowanie?"
+ },
+ "line.g0_explain": {
+  "hash": "8b15141fd677",
+  "who": "sarenka",
+  "text": "Już ci tłumaczę, to fajna zabawa! Takie same rzeczy idą razem, do jednej grupy."
+ },
+ "line.g0_out": {
+  "hash": "7f21eff410ef",
+  "who": "wiewiorka",
+  "text": "Dobrze, wyjmuję wszystko z pudła."
+ },
+ "line.g0_pear_please": {
+  "hash": "ba5cb4d9b216",
+  "who": "sarenka",
+  "text": "A teraz poproszę gruszkę."
+ },
+ "line.g0_where_pear": {
+  "hash": "ba9723b504be",
+  "who": "wiewiorka",
+  "text": "Wskaż, gdzie mam szukać gruszki."
+ },
+ "line.g0_wrong_pear": {
+  "hash": "0280b51cc98b",
+  "who": "wiewiorka",
+  "text": "Tam są jabłka. Gdzie są gruszki?"
+ },
+ "line.g0_found": {
+  "hash": "65d7550be92f",
+  "who": "wiewiorka",
+  "text": "Proszę! Wszystkie gruszki są w jednym miejscu, więc znalazłam ją od razu."
  }
 }

@@ -13,9 +13,9 @@ const SZ = 0.85;               // sticker size in rows
 const SIGN = 1.18 * SZ;        // a sign card is exactly one sticker wide
 const SLOT = SIGN + 0.9;       // the gap between the piles when a sign goes there
 
-async function pile(c, name, n) {
+async function pile(c, name, n, size = SZ) {
   const hs = [];
-  for (let i = 0; i < n; i++) hs.push(await c.object(name, { x: 0, y: Y, size: SZ }));
+  for (let i = 0; i < n; i++) hs.push(await c.object(name, { x: 0, y: Y, size }));
   return hs;
 }
 // pencil lines joining the pairs: they belong to the pairing, so any new layout wipes them
@@ -95,26 +95,20 @@ export default {
   backgrounds: { story: "laka", practice: "las", apply: "dom" },
   stages: {
     story: [
-      // A. lake picnic: cups and plates, the runaway cup, pairing, the one without a pair, the first sign
+      // A. lake picnic, the problem: will every cup get a plate? Fox thinks "the plates are big, so there are more".
+      // Owl: make pairs! - a pencil joins each pair, one cup is left over; the hungry mouth; Fox fetches the missing plate.
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
         await c.say("lisek", "line.s1_intro");
-        const cups = await pile(c, "kubek", 3), plates = await pile(c, "talerz", 2);
+        const cups = await pile(c, "kubek", 3), plates = await pile(c, "talerz", 2, SZ * 1.3);   // big plates: they look like "more"
         lay(c, cups, plates);
-        await c.say("sowa", "line.s0_roll", { anim: "Rozgladanie" });
-        const runaway = cups[cups.length - 1];
-        await runaway.moveTo(2.4, -2.5, 1.1);                         // rolls down onto the grass in front, clear of the owl
-        await c.say("sowa", "line.s0_point_runaway");
-        await c.task({ targets: cups, correct: runaway, wrong: "line.s0_wrong_runaway" });
-        await c.say("lisek", "line.s0_fox_run");
-        await c.walkTo("lisek", 2.4);
-        await c.play("lisek", "Podskok");
-        await runaway.moveTo(2.4, Y, 0.5);
-        await Promise.all([c.walkTo("lisek", -4.6), runaway.moveTo(-3.2, Y, 1.2)]);
-        lay(c, cups, plates, true); await c.wait(0.8);
-        await c.say("lisek", "line.s0_phew", { anim: "Radosc" });
-        await c.say("lisek", "line.s1_fox_cups", { anim: "Wskazanie" });
-        await c.say("sowa", "line.s1_owl_plates");
+        await c.say("sowa", "line.m0_question");
+        await c.say("lisek", "line.m0_naive", { anim: "Wskazanie" });
+        await c.say("sowa", "line.m0_not");
+        await c.say("lisek", "line.m0_how", { anim: "Rozgladanie" });
+        await c.say("sowa", "line.m0_pairs", { anim: "Zgloszenie" });
+        await c.say("lisek", "line.m0_what");
+        await c.say("sowa", "line.m0_show");
         await c.say("sowa", "line.s1_pair");
         const left = await pair(c, cups, plates);
         await c.say("sowa", "line.s1_point_left");
@@ -123,7 +117,17 @@ export default {
         await c.say("sowa", "line.s1_owl_fewer");
         await c.say("sowa", "line.s2_signs");
         await c.say("sowa", "line.s2_more_sign");
-        await askSign(c, cups, plates, "sowa", "line.s2_pick_gt", ["<", ">"], "line.s2_good_gt");
+        const sign = await askSign(c, cups, plates, "sowa", "line.s2_pick_gt", ["<", ">"], "line.s2_good_gt");
+        // the problem solved: Fox runs off for the missing plate, now every cup has one
+        sign.remove();
+        await c.say("lisek", "line.m0_fetch", { anim: "Podskok" });
+        await c.walkTo("lisek", -7.6);
+        const extra = await c.object("talerz", { x: -6.6, y: Y, size: SZ * 1.3 });
+        await Promise.all([c.walkTo("lisek", -4.6), extra.moveTo(-3.2, Y, 1.0)]);
+        plates.push(extra);
+        lay(c, cups, plates, true); await c.wait(0.8);
+        await pair(c, cups, plates);
+        await c.say("sowa", "line.m0_enough", { anim: "Radosc" });
         await c.say("sowa", "line.j2_to_garden");
         c.clear();
       },

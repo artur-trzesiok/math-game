@@ -224,18 +224,6 @@
     "who": "wiewiorka",
     "text": "Ta jest za duża dla mnie. Wskaż mniejszą."
   },
-  "line.c1_hard": {
-    "who": "wiewiorka",
-    "text": "Patrz, dwie gruszki. Są prawie takie same! Trudno zobaczyć, która jest większa."
-  },
-  "line.c1_way": {
-    "who": "lisek",
-    "text": "Znam sposób. Najpierw stawiamy je równo, na jednej linii."
-  },
-  "line.c1_tops": {
-    "who": "lisek",
-    "text": "Teraz rysuję kreskę nad każdą gruszką, tam gdzie się kończy."
-  },
   "line.c1_which_line": {
     "who": "wiewiorka",
     "text": "Wskaż kreskę, która jest wyżej."
@@ -263,5 +251,41 @@
   "line.c1_check": {
     "who": "lisek",
     "text": "Sprawdźmy naszym sposobem. Równo na linii i kreska nad każdą."
+  },
+  "line.b0_mine": {
+    "who": "lisek",
+    "text": "Ta gruszka na górze jest moja. Jest większa od twojej!"
+  },
+  "line.b0_no": {
+    "who": "wiewiorka",
+    "text": "Wcale nie! To moja gruszka jest większa."
+  },
+  "line.b0_higher": {
+    "who": "lisek",
+    "text": "Moja jest wyżej, więc jest większa!"
+  },
+  "line.b0_not": {
+    "who": "wiewiorka",
+    "text": "Wyżej nie znaczy większa! Jak staniesz na pieńku, też będziesz wyżej, a wcale nie urośniesz."
+  },
+  "line.b0_how": {
+    "who": "lisek",
+    "text": "To jak sprawdzić, która jest większa?"
+  },
+  "line.b0_compare": {
+    "who": "wiewiorka",
+    "text": "Porównując! Wtedy od razu widać."
+  },
+  "line.b0_what": {
+    "who": "lisek",
+    "text": "Porównując? A jak to się robi?"
+  },
+  "line.b0_show": {
+    "who": "wiewiorka",
+    "text": "Pokażę ci, to proste. Stawiamy je równo na jednej linii, a nad każdą rysujemy kreskę."
+  },
+  "line.b0_fair": {
+    "who": "lisek",
+    "text": "Masz rację, twoja gruszka jest większa. Porównanie rozstrzygnęło nasz spór!"
   }
 }

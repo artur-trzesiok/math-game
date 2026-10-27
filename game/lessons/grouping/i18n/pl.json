@@ -1,16 +1,4 @@
 {
-  "line.s1_intro": {
-    "who": "wiewiorka",
-    "text": "Ale bałagan po podwieczorku! Jabłka i gruszki leżą wymieszane na dywanie."
-  },
-  "line.s1_sq_mixed": {
-    "who": "sarenka",
-    "text": "Wszystko pomieszane! Jak to poukładać?"
-  },
-  "line.s1_deer_idea": {
-    "who": "wiewiorka",
-    "text": "Jabłka do jednego koszyka, gruszki do drugiego. Każda rzecz do swojej grupy."
-  },
   "line.s1_apples": {
     "who": "sarenka",
     "text": "Przeciągnij jabłka do koszyka, a gruszki do pudełka. W dowolnej kolejności!"
@@ -149,18 +137,6 @@
       "wiewiorka"
     ]
   },
-  "line.s0_roll": {
-    "who": "sarenka",
-    "text": "Hop! Jedna gruszka potoczyła się pod łóżko!"
-  },
-  "line.s0_drag_back": {
-    "who": "wiewiorka",
-    "text": "Przeciągnij ją z powrotem na dywan, do reszty."
-  },
-  "line.s0_caught": {
-    "who": "sarenka",
-    "text": "Mamy ją! Teraz wszystkie owoce są razem."
-  },
   "line.j3_to_brook": {
     "who": "wiewiorka",
     "text": "Posprzątane! Chodźmy nad strumyk, poszukamy kamyków do gry."
@@ -208,5 +184,53 @@
   "line.j3_to_home": {
     "who": "sarenka",
     "text": "Wracajmy do domu. Zostały nam jeszcze owoce do poukładania."
+  },
+  "line.g0_mess": {
+    "who": "wiewiorka",
+    "text": "Ale bałagan na dywanie! Trzeba to posprzątać."
+  },
+  "line.g0_box": {
+    "who": "wiewiorka",
+    "text": "Wiem! Wrzucę wszystko do tego pudła. Hop, hop, hop!"
+  },
+  "line.g0_not_tidy": {
+    "who": "sarenka",
+    "text": "To nie jest sprzątanie! Ty tylko przenosisz bałagan z dywanu do pudła."
+  },
+  "line.g0_how": {
+    "who": "wiewiorka",
+    "text": "To jak mamy to zrobić?"
+  },
+  "line.g0_group": {
+    "who": "sarenka",
+    "text": "Grupując! Wtedy jest porządek."
+  },
+  "line.g0_what": {
+    "who": "wiewiorka",
+    "text": "Grupując? Co to jest grupowanie?"
+  },
+  "line.g0_explain": {
+    "who": "sarenka",
+    "text": "Już ci tłumaczę, to fajna zabawa! Takie same rzeczy idą razem, do jednej grupy."
+  },
+  "line.g0_out": {
+    "who": "wiewiorka",
+    "text": "Dobrze, wyjmuję wszystko z pudła."
+  },
+  "line.g0_pear_please": {
+    "who": "sarenka",
+    "text": "A teraz poproszę gruszkę."
+  },
+  "line.g0_where_pear": {
+    "who": "wiewiorka",
+    "text": "Wskaż, gdzie mam szukać gruszki."
+  },
+  "line.g0_wrong_pear": {
+    "who": "wiewiorka",
+    "text": "Tam są jabłka. Gdzie są gruszki?"
+  },
+  "line.g0_found": {
+    "who": "wiewiorka",
+    "text": "Proszę! Wszystkie gruszki są w jednym miejscu, więc znalazłam ją od razu."
   }
 }

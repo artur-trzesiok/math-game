@@ -284,21 +284,6 @@
   "who": "wiewiorka",
   "text": "Ta jest za duża dla mnie. Wskaż mniejszą."
  },
- "line.c1_hard": {
-  "hash": "1a1879875074",
-  "who": "wiewiorka",
-  "text": "Patrz, dwie gruszki. Są prawie takie same! Trudno zobaczyć, która jest większa."
- },
- "line.c1_way": {
-  "hash": "a8a2814d3a5f",
-  "who": "lisek",
-  "text": "Znam sposób. Najpierw stawiamy je równo, na jednej linii."
- },
- "line.c1_tops": {
-  "hash": "736b8fa38d00",
-  "who": "lisek",
-  "text": "Teraz rysuję kreskę nad każdą gruszką, tam gdzie się kończy."
- },
  "line.c1_which_line": {
   "hash": "299eb6efa1c4",
   "who": "wiewiorka",
@@ -333,5 +318,50 @@
   "hash": "345003b8d8b0",
   "who": "lisek",
   "text": "Sprawdźmy naszym sposobem. Równo na linii i kreska nad każdą."
+ },
+ "line.b0_mine": {
+  "hash": "915ca26d2865",
+  "who": "lisek",
+  "text": "Ta gruszka na górze jest moja. Jest większa od twojej!"
+ },
+ "line.b0_no": {
+  "hash": "23fad4065dc9",
+  "who": "wiewiorka",
+  "text": "Wcale nie! To moja gruszka jest większa."
+ },
+ "line.b0_higher": {
+  "hash": "fa84a4982731",
+  "who": "lisek",
+  "text": "Moja jest wyżej, więc jest większa!"
+ },
+ "line.b0_not": {
+  "hash": "4d86c8040aff",
+  "who": "wiewiorka",
+  "text": "Wyżej nie znaczy większa! Jak staniesz na pieńku, też będziesz wyżej, a wcale nie urośniesz."
+ },
+ "line.b0_how": {
+  "hash": "e2e6df5ac1ba",
+  "who": "lisek",
+  "text": "To jak sprawdzić, która jest większa?"
+ },
+ "line.b0_compare": {
+  "hash": "9f45342706e4",
+  "who": "wiewiorka",
+  "text": "Porównując! Wtedy od razu widać."
+ },
+ "line.b0_what": {
+  "hash": "7b0feb9426d6",
+  "who": "lisek",
+  "text": "Porównując? A jak to się robi?"
+ },
+ "line.b0_show": {
+  "hash": "b76715d8a8f7",
+  "who": "wiewiorka",
+  "text": "Pokażę ci, to proste. Stawiamy je równo na jednej linii, a nad każdą rysujemy kreskę."
+ },
+ "line.b0_fair": {
+  "hash": "8dae7a9a7bbe",
+  "who": "lisek",
+  "text": "Masz rację, twoja gruszka jest większa. Porównanie rozstrzygnęło nasz spór!"
  }
 }

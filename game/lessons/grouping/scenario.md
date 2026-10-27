@@ -6,12 +6,12 @@ rule. Characters: Squirrel (left) and Deer (right).
 
 ## Stage 1 - story - a journey: children's room, brook, kitchen (seven interactions)
 
-1. Children's room. Apples and pears lie anyhow on the rug (scattered, turned - a
-   real mess). Action: a pear rolls off towards the bed onto open floor, the child
-   drags it back onto the rug; then the fruit jumps up into a row. Squirrel: apples to one
-   container, pears to the other; the child drags everything into a basket and a
-   box (any order, checked when all is in), then points to the container with the
-   apples.
+1. Children's room, the problem: a mess on the rug (fruit scattered and turned).
+   Squirrel "tidies" by throwing everything into one box; Deer: that only moves
+   the mess. How then? By grouping - "what is grouping?" - things that are the same
+   go together, a fun game. The fruit comes out; the child drags apples into the
+   basket, pears into the box (any order), points to the apples' group. Solved:
+   Deer asks for a pear, the child points to where to look, it is found at once.
 2. The brook. Pebbles and leaves on the bank: the child sorts them (pebbles /
    leaves). Action: Squirrel throws a pebble into the water, splash! Among the
    pebbles left on the bank one thing is not a pebble: the child points to the

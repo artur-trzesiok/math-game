@@ -49,34 +49,47 @@ export default {
   backgrounds: { story: "pokoj", practice: "przedpokoj", apply: "dom" },
   stages: {
     story: [
-      // A. children's room after a snack: a pear rolls under the bed, apples and pears sorted, the apples' group
+      // A. children's room, the problem: a mess on the rug. Squirrel "tidies" by throwing everything into one box;
+      // Deer: that only moves the mess - group! Sort apples and pears; then a pear is found at once.
       async (c) => {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         const items = await onRug(c, [
           { name: "jablko", tag: "apple" }, { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" },
           { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" }]);
-        await c.say("wiewiorka", "line.s1_intro");
-        await c.say("sarenka", "line.s1_sq_mixed");
-        const pear = items.find((i) => i.tag === "pear");
-        await c.say("sarenka", "line.s0_roll", { anim: "Rozgladanie" });
-        pear.mesh.rotation.z += 2.5;
-        await pear.moveTo(-2.75, -3.05, 1.0);                          // off the rug towards the bed, on open floor in front of the squirrel
-        await c.say("wiewiorka", "line.s0_drag_back");
-        const rug = await c.zone({ ...RUG, name: "dywan" });
-        await c.sort({ items: [pear], zones: [rug] });
-        rug.take(pear); rug.remove();
-        // off the rug and up into a row, so the sorting below has room
+        await c.say("wiewiorka", "line.g0_mess", { anim: "Rozgladanie" });
+        await c.say("wiewiorka", "line.g0_box", { anim: "Podskok" });
+        // the naive way: everything flies into one box, anyhow
+        const box = await c.object("pudelko", { x: 0, y: -1.7, size: 2.4 });
+        box.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = 9; });          // under the fruit falling in
+        for (const h of items.slice().sort(() => Math.random() - 0.5)) {
+          await h.moveTo((Math.random() - 0.5) * 1.1, -1.45 + (Math.random() - 0.5) * 0.35, 0.3);
+          h.mesh.rotation.z = (Math.random() - 0.5) * 2;
+        }
+        await c.say("sarenka", "line.g0_not_tidy", { anim: "Smutek" });
+        await c.say("wiewiorka", "line.g0_how");
+        await c.say("sarenka", "line.g0_group", { anim: "Zgloszenie" });
+        await c.say("wiewiorka", "line.g0_what");
+        await c.say("sarenka", "line.g0_explain");
+        await c.say("wiewiorka", "line.g0_out");
         await wyprostuj(c, items);
         c.arrange([items], { y: ROW_Y, gap: 0.14, animate: true }); await c.wait(0.6);
-        await c.say("sarenka", "line.s0_caught", { anim: "Radosc" });
+        box.remove();
         const zones = await containers(c);
-        await c.say("wiewiorka", "line.s1_deer_idea");
         await c.say("sarenka", "line.s1_apples");
         await c.sort({ items, zones, wrong: "line.s1_mixed" });
         await c.say("sarenka", "line.s1_apples_done");
         await c.say("wiewiorka", "line.s1_point_apples");
         const apples = zones.find((z) => z.items.some((i) => i.tag === "apple"));
         await c.task({ targets: zones, correct: apples, wrong: "line.s1_not_apples" });
+        // the problem solved: a pear, found at once
+        await c.say("sarenka", "line.g0_pear_please");
+        await c.say("wiewiorka", "line.g0_where_pear");
+        const pears = zones.find((z) => z.items.some((i) => i.tag === "pear"));
+        await c.task({ targets: zones, correct: pears, wrong: "line.g0_wrong_pear" });
+        const one = pears.items.find((i) => i.tag === "pear");
+        pears.take(one);
+        await one.moveTo(3.3, ROW_Y - 0.6, 0.8);
+        await c.say("wiewiorka", "line.g0_found", { anim: "Radosc" });
         await c.say("sarenka", "line.s1_deer_happy", { anim: "Radosc" });
         await c.say("wiewiorka", "line.j3_to_brook");
         c.clear();

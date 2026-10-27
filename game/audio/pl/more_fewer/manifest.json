@@ -4,16 +4,6 @@
   "who": "lisek",
   "text": "Sowo, robimy piknik nad jeziorem! Ja przyniosłem kubki, a ty talerze."
  },
- "line.s1_fox_cups": {
-  "hash": "9f09619857dc",
-  "who": "lisek",
-  "text": "Mam kubki! Czy każdy kubek dostanie talerz?"
- },
- "line.s1_owl_plates": {
-  "hash": "a22aac20f795",
-  "who": "sowa",
-  "text": "Sprawdźmy. Ustawmy je w pary: kubek i talerz, kubek i talerz."
- },
  "line.s1_pair": {
   "hash": "bdcaed7df384",
   "who": "sowa",
@@ -159,31 +149,6 @@
   "who": "sowa",
   "text": "Tak! Paszcza otwarta na kubki, bo kubków jest więcej niż talerzy."
  },
- "line.s0_roll": {
-  "hash": "2acef5008dfd",
-  "who": "sowa",
-  "text": "Oj! Wiatr poturlał jeden kubek nad samą wodę!"
- },
- "line.s0_point_runaway": {
-  "hash": "1fecd306f06b",
-  "who": "sowa",
-  "text": "Który kubek uciekł?"
- },
- "line.s0_wrong_runaway": {
-  "hash": "96d317a0d274",
-  "who": "sowa",
-  "text": "Ten stoi spokojnie. Poszukaj tego przy wodzie."
- },
- "line.s0_fox_run": {
-  "hash": "a9cdc13f68e3",
-  "who": "lisek",
-  "text": "Łapię go!"
- },
- "line.s0_phew": {
-  "hash": "74639d43a256",
-  "who": "lisek",
-  "text": "Uff! Mam wszystkie kubki z powrotem."
- },
  "line.a_fox_check.sowa": {
   "hash": "d3e6da157ac0",
   "who": "sowa",
@@ -268,5 +233,50 @@
   "hash": "b04891b9bd29",
   "who": "lisek",
   "text": "Tak! Teraz każdy kubek ma ciastko. Tyle samo!"
+ },
+ "line.m0_question": {
+  "hash": "ebc5e8ffd770",
+  "who": "sowa",
+  "text": "Czy każdy kubek dostanie swój talerz?"
+ },
+ "line.m0_naive": {
+  "hash": "2e62a2906d2f",
+  "who": "lisek",
+  "text": "Na pewno! Talerzy jest więcej, bo są takie duże."
+ },
+ "line.m0_not": {
+  "hash": "88da79183f44",
+  "who": "sowa",
+  "text": "Duże to nie znaczy, że jest ich więcej!"
+ },
+ "line.m0_how": {
+  "hash": "4d87fd031487",
+  "who": "lisek",
+  "text": "To jak sprawdzić, czego jest więcej?"
+ },
+ "line.m0_pairs": {
+  "hash": "705859d623d9",
+  "who": "sowa",
+  "text": "Łącząc w pary! Każdy kubek dostaje jeden talerz."
+ },
+ "line.m0_what": {
+  "hash": "9e67ffbb72e0",
+  "who": "lisek",
+  "text": "W pary? A jak to się robi?"
+ },
+ "line.m0_show": {
+  "hash": "3afaeb6fa329",
+  "who": "sowa",
+  "text": "Pokażę ci. To jak taniec w parach: jeden kubek i jeden talerz."
+ },
+ "line.m0_fetch": {
+  "hash": "614ebe368b04",
+  "who": "lisek",
+  "text": "Brakuje jednego talerza. Zaraz przyniosę!"
+ },
+ "line.m0_enough": {
+  "hash": "bbe09f8742e6",
+  "who": "sowa",
+  "text": "Teraz każdy kubek ma swój talerz. Jest ich tyle samo!"
  }
 }

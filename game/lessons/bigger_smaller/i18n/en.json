@@ -224,18 +224,6 @@
     "who": "wiewiorka",
     "text": "That one is too big for me. Point to the smaller one."
   },
-  "line.c1_hard": {
-    "who": "wiewiorka",
-    "text": "Look, two pears. They are almost the same! It is hard to see which one is bigger."
-  },
-  "line.c1_way": {
-    "who": "lisek",
-    "text": "I know a way. First we stand them evenly, on one line."
-  },
-  "line.c1_tops": {
-    "who": "lisek",
-    "text": "Now I draw a line over each pear, where it ends."
-  },
   "line.c1_which_line": {
     "who": "wiewiorka",
     "text": "Point to the line that is higher."
@@ -263,5 +251,41 @@
   "line.c1_check": {
     "who": "lisek",
     "text": "Let's check our way. Evenly on a line, and a line over each."
+  },
+  "line.b0_mine": {
+    "who": "lisek",
+    "text": "The pear up there is mine. It is bigger than yours!"
+  },
+  "line.b0_no": {
+    "who": "wiewiorka",
+    "text": "No way! My pear is the bigger one."
+  },
+  "line.b0_higher": {
+    "who": "lisek",
+    "text": "Mine is higher, so it is bigger!"
+  },
+  "line.b0_not": {
+    "who": "wiewiorka",
+    "text": "Higher does not mean bigger! If you stand on a stump, you are higher too, but you do not grow."
+  },
+  "line.b0_how": {
+    "who": "lisek",
+    "text": "Then how do we find out which one is bigger?"
+  },
+  "line.b0_compare": {
+    "who": "wiewiorka",
+    "text": "By comparing! Then you see it at once."
+  },
+  "line.b0_what": {
+    "who": "lisek",
+    "text": "Comparing? How do you do that?"
+  },
+  "line.b0_show": {
+    "who": "wiewiorka",
+    "text": "I will show you, it is easy. We stand them evenly on one line and draw a line over each."
+  },
+  "line.b0_fair": {
+    "who": "lisek",
+    "text": "You are right, your pear is bigger. Comparing settled our argument!"
   }
 }

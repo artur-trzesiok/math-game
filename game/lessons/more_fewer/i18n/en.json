@@ -3,14 +3,6 @@
     "who": "lisek",
     "text": "Owl, a picnic by the lake! I brought the cups and you brought the plates."
   },
-  "line.s1_fox_cups": {
-    "who": "lisek",
-    "text": "I have cups! Will every cup get a plate?"
-  },
-  "line.s1_owl_plates": {
-    "who": "sowa",
-    "text": "Let's check. Put them in pairs: cup and plate, cup and plate."
-  },
   "line.s1_pair": {
     "who": "sowa",
     "text": "Every cup stands by its plate. Look what is left."
@@ -130,26 +122,6 @@
     "who": "sowa",
     "text": "Yes! The mouth is open towards the cups, because there are more cups than plates."
   },
-  "line.s0_roll": {
-    "who": "sowa",
-    "text": "Oh! The wind rolled one cup right down to the water!"
-  },
-  "line.s0_point_runaway": {
-    "who": "sowa",
-    "text": "Which cup ran away?"
-  },
-  "line.s0_wrong_runaway": {
-    "who": "sowa",
-    "text": "That one is standing still. Look for the one by the water."
-  },
-  "line.s0_fox_run": {
-    "who": "lisek",
-    "text": "I'll catch it!"
-  },
-  "line.s0_phew": {
-    "who": "lisek",
-    "text": "Phew, got it! All the cups are back."
-  },
   "line.j2_to_garden": {
     "who": "sowa",
     "text": "Let's go to the garden now. Fox promised carrots for lunch!"
@@ -213,5 +185,41 @@
   "line.j2_good_eq2": {
     "who": "lisek",
     "text": "Yes! Now every cup has a cookie. As many!"
+  },
+  "line.m0_question": {
+    "who": "sowa",
+    "text": "Will every cup get its own plate?"
+  },
+  "line.m0_naive": {
+    "who": "lisek",
+    "text": "Sure! There are more plates, because they are so big."
+  },
+  "line.m0_not": {
+    "who": "sowa",
+    "text": "Big does not mean there are more of them!"
+  },
+  "line.m0_how": {
+    "who": "lisek",
+    "text": "Then how do we find out what there is more of?"
+  },
+  "line.m0_pairs": {
+    "who": "sowa",
+    "text": "By making pairs! Every cup gets one plate."
+  },
+  "line.m0_what": {
+    "who": "lisek",
+    "text": "Pairs? How do you do that?"
+  },
+  "line.m0_show": {
+    "who": "sowa",
+    "text": "I will show you. It is like dancing in pairs: one cup and one plate."
+  },
+  "line.m0_fetch": {
+    "who": "lisek",
+    "text": "One plate is missing. I'll bring one!"
+  },
+  "line.m0_enough": {
+    "who": "sowa",
+    "text": "Now every cup has its plate. There are as many!"
   }
 }

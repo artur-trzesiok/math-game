@@ -105,6 +105,21 @@ number 42 is a new folder and one line in `index.json`.
 
 ## Rules learned in review
 
+- **Part 1 always brings the concept in through a scene** - the story's opening,
+  every lesson, no exceptions:
+  1. a problem the characters have (a mess, a quarrel, will everyone get a plate?);
+  2. one character's naive try, built on a real childish misconception ("higher is
+     bigger", "big ones are more", "tidying = throwing it all in one box");
+  3. the other one objects and says why it does not work;
+  4. "then how?";
+  5. the concept named as the solution ("by comparing", "by making pairs", "by
+     grouping");
+  6. "what is that?" - "I'll show you, it's a fun game";
+  7. the lesson's interactions;
+  8. the problem solved thanks to the concept (the quarrel settled, the missing
+     plate fetched, the pear found at once).
+  Filler action ("something rolled away, fetch it") is not a story.
+
 - Teach the method, not only the answer: compare by standing things evenly on one
   line and drawing a line over each top; pair things with pencil lines.
 - A thing that rolls or flies away lands in open view, never under a character -

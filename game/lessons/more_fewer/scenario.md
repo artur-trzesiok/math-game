@@ -6,11 +6,12 @@ the pile with more". No counting at any point. Characters: Fox (left) and Owl (r
 
 ## Stage 1 - story - a journey: lake, vegetable garden, kitchen (seven choices)
 
-1. Lake picnic. Fox's three cups, Owl's two plates. Action: the wind rolls a cup
-   down onto the grass in front of Owl (never under a character); the child spots the runaway, Fox runs after it and brings it
-   back. Pairing (a pencil joins every pair): the child points to the cup without a pair; more cups, fewer
-   plates. The hungry mouth: the child picks ">" (mouth towards the cups) from two
-   cards; it lands in the slot between the piles and is named.
+1. Lake picnic, the problem: will every cup get a plate? Fox: "sure, there are
+   more plates, they are so big" (big plates on screen). Owl: big is not more.
+   How then? By making pairs, like dancing in pairs. A pencil joins each pair; the
+   child points to the cup without a pair; more cups, fewer plates; the hungry
+   mouth: the child picks ">". Solved: Fox runs off for the missing plate, now
+   every cup has one - as many.
 2. Vegetable garden. Fox's three carrots, Owl's three flowers: pairing leaves
    nothing over; the child picks "=". Owl finds one more flower by the fence: now
    fewer carrots; the child picks "<". "Where is more?" - the child points to the

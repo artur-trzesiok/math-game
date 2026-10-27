@@ -284,21 +284,6 @@
   "who": "wiewiorka",
   "text": "That one is too big for me. Point to the smaller one."
  },
- "line.c1_hard": {
-  "hash": "e2e81aa028e1",
-  "who": "wiewiorka",
-  "text": "Look, two pears. They are almost the same! It is hard to see which one is bigger."
- },
- "line.c1_way": {
-  "hash": "0f5deba9073f",
-  "who": "lisek",
-  "text": "I know a way. First we stand them evenly, on one line."
- },
- "line.c1_tops": {
-  "hash": "005c5b7fb74d",
-  "who": "lisek",
-  "text": "Now I draw a line over each pear, where it ends."
- },
  "line.c1_which_line": {
   "hash": "2263a1ae8629",
   "who": "wiewiorka",
@@ -333,5 +318,50 @@
   "hash": "0bf8b3a64d97",
   "who": "lisek",
   "text": "Let's check our way. Evenly on a line, and a line over each."
+ },
+ "line.b0_mine": {
+  "hash": "7d45d4b81f4d",
+  "who": "lisek",
+  "text": "The pear up there is mine. It is bigger than yours!"
+ },
+ "line.b0_no": {
+  "hash": "275782a994ff",
+  "who": "wiewiorka",
+  "text": "No way! My pear is the bigger one."
+ },
+ "line.b0_higher": {
+  "hash": "9b2c0294b475",
+  "who": "lisek",
+  "text": "Mine is higher, so it is bigger!"
+ },
+ "line.b0_not": {
+  "hash": "a7ac8652370b",
+  "who": "wiewiorka",
+  "text": "Higher does not mean bigger! If you stand on a stump, you are higher too, but you do not grow."
+ },
+ "line.b0_how": {
+  "hash": "12523d5a750d",
+  "who": "lisek",
+  "text": "Then how do we find out which one is bigger?"
+ },
+ "line.b0_compare": {
+  "hash": "d9047674e9bb",
+  "who": "wiewiorka",
+  "text": "By comparing! Then you see it at once."
+ },
+ "line.b0_what": {
+  "hash": "1410d9105863",
+  "who": "lisek",
+  "text": "Comparing? How do you do that?"
+ },
+ "line.b0_show": {
+  "hash": "c25d40d931ce",
+  "who": "wiewiorka",
+  "text": "I will show you, it is easy. We stand them evenly on one line and draw a line over each."
+ },
+ "line.b0_fair": {
+  "hash": "3a2bc20d9e4c",
+  "who": "lisek",
+  "text": "You are right, your pear is bigger. Comparing settled our argument!"
  }
 }

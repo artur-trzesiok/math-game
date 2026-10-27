@@ -1,19 +1,4 @@
 {
- "line.s1_intro": {
-  "hash": "d1abdae576ce",
-  "who": "wiewiorka",
-  "text": "What a mess after the snack! Apples and pears lie mixed up on the rug."
- },
- "line.s1_sq_mixed": {
-  "hash": "fe5cc0cd7aa5",
-  "who": "sarenka",
-  "text": "Everything is mixed up! How do we tidy it?"
- },
- "line.s1_deer_idea": {
-  "hash": "a720f5c6225b",
-  "who": "wiewiorka",
-  "text": "Apples in one basket, pears in the other. Everything goes to its group."
- },
  "line.s1_apples": {
   "hash": "13b3843b94c2",
   "who": "sarenka",
@@ -164,21 +149,6 @@
   "who": "sarenka",
   "text": "Round things into the basket, the rest into the box."
  },
- "line.s0_roll": {
-  "hash": "0fd241388f37",
-  "who": "sarenka",
-  "text": "Hop! One pear rolled under the bed!"
- },
- "line.s0_drag_back": {
-  "hash": "a07366843e5b",
-  "who": "wiewiorka",
-  "text": "Drag it back onto the rug, with the others."
- },
- "line.s0_caught": {
-  "hash": "104a4bdcca05",
-  "who": "sarenka",
-  "text": "We've got it! Now all the fruit is together."
- },
  "line.a_sq_right.sarenka": {
   "hash": "244346867a97",
   "who": "sarenka",
@@ -268,5 +238,65 @@
   "hash": "01855815662a",
   "who": "sarenka",
   "text": "Let's go home. We still have fruit to sort."
+ },
+ "line.g0_mess": {
+  "hash": "b4e7a85d1293",
+  "who": "wiewiorka",
+  "text": "What a mess on the rug! We have to tidy up."
+ },
+ "line.g0_box": {
+  "hash": "94f6afa2dcb5",
+  "who": "wiewiorka",
+  "text": "I know! I'll throw everything into this box. Hop, hop, hop!"
+ },
+ "line.g0_not_tidy": {
+  "hash": "3775f96d00b1",
+  "who": "sarenka",
+  "text": "That is not tidying! You are just moving the mess from the rug into the box."
+ },
+ "line.g0_how": {
+  "hash": "58515ef1ebd0",
+  "who": "wiewiorka",
+  "text": "Then how should we do it?"
+ },
+ "line.g0_group": {
+  "hash": "e174c5b4b965",
+  "who": "sarenka",
+  "text": "By grouping! Then everything is in order."
+ },
+ "line.g0_what": {
+  "hash": "b709d9378472",
+  "who": "wiewiorka",
+  "text": "Grouping? What is grouping?"
+ },
+ "line.g0_explain": {
+  "hash": "2bfec14b2074",
+  "who": "sarenka",
+  "text": "Let me explain, it is a fun game! Things that are the same go together, into one group."
+ },
+ "line.g0_out": {
+  "hash": "5029605b3d51",
+  "who": "wiewiorka",
+  "text": "All right, I'm taking everything out of the box."
+ },
+ "line.g0_pear_please": {
+  "hash": "59dc0e2970fc",
+  "who": "sarenka",
+  "text": "And now may I have a pear?"
+ },
+ "line.g0_where_pear": {
+  "hash": "1cbcf5cdf72d",
+  "who": "wiewiorka",
+  "text": "Point to where I should look for a pear."
+ },
+ "line.g0_wrong_pear": {
+  "hash": "5d40fe275ec7",
+  "who": "wiewiorka",
+  "text": "Those are apples. Where are the pears?"
+ },
+ "line.g0_found": {
+  "hash": "04d19b2d7e44",
+  "who": "wiewiorka",
+  "text": "Here you are! All the pears are in one place, so I found it at once."
  }
 }

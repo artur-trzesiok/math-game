@@ -1,16 +1,4 @@
 {
-  "line.s1_intro": {
-    "who": "wiewiorka",
-    "text": "What a mess after the snack! Apples and pears lie mixed up on the rug."
-  },
-  "line.s1_sq_mixed": {
-    "who": "sarenka",
-    "text": "Everything is mixed up! How do we tidy it?"
-  },
-  "line.s1_deer_idea": {
-    "who": "wiewiorka",
-    "text": "Apples in one basket, pears in the other. Everything goes to its group."
-  },
   "line.s1_apples": {
     "who": "sarenka",
     "text": "Drag the apples into the basket and the pears into the box. In any order!"
@@ -149,18 +137,6 @@
       "wiewiorka"
     ]
   },
-  "line.s0_roll": {
-    "who": "sarenka",
-    "text": "Hop! One pear rolled under the bed!"
-  },
-  "line.s0_drag_back": {
-    "who": "wiewiorka",
-    "text": "Drag it back onto the rug, with the others."
-  },
-  "line.s0_caught": {
-    "who": "sarenka",
-    "text": "We've got it! Now all the fruit is together."
-  },
   "line.j3_to_brook": {
     "who": "wiewiorka",
     "text": "All tidy! Let's go to the brook and look for pebbles for a game."
@@ -208,5 +184,53 @@
   "line.j3_to_home": {
     "who": "sarenka",
     "text": "Let's go home. We still have fruit to sort."
+  },
+  "line.g0_mess": {
+    "who": "wiewiorka",
+    "text": "What a mess on the rug! We have to tidy up."
+  },
+  "line.g0_box": {
+    "who": "wiewiorka",
+    "text": "I know! I'll throw everything into this box. Hop, hop, hop!"
+  },
+  "line.g0_not_tidy": {
+    "who": "sarenka",
+    "text": "That is not tidying! You are just moving the mess from the rug into the box."
+  },
+  "line.g0_how": {
+    "who": "wiewiorka",
+    "text": "Then how should we do it?"
+  },
+  "line.g0_group": {
+    "who": "sarenka",
+    "text": "By grouping! Then everything is in order."
+  },
+  "line.g0_what": {
+    "who": "wiewiorka",
+    "text": "Grouping? What is grouping?"
+  },
+  "line.g0_explain": {
+    "who": "sarenka",
+    "text": "Let me explain, it is a fun game! Things that are the same go together, into one group."
+  },
+  "line.g0_out": {
+    "who": "wiewiorka",
+    "text": "All right, I'm taking everything out of the box."
+  },
+  "line.g0_pear_please": {
+    "who": "sarenka",
+    "text": "And now may I have a pear?"
+  },
+  "line.g0_where_pear": {
+    "who": "wiewiorka",
+    "text": "Point to where I should look for a pear."
+  },
+  "line.g0_wrong_pear": {
+    "who": "wiewiorka",
+    "text": "Those are apples. Where are the pears?"
+  },
+  "line.g0_found": {
+    "who": "wiewiorka",
+    "text": "Here you are! All the pears are in one place, so I found it at once."
   }
 }

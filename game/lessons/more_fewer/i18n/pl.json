@@ -3,14 +3,6 @@
     "who": "lisek",
     "text": "Sowo, robimy piknik nad jeziorem! Ja przyniosłem kubki, a ty talerze."
   },
-  "line.s1_fox_cups": {
-    "who": "lisek",
-    "text": "Mam kubki! Czy każdy kubek dostanie talerz?"
-  },
-  "line.s1_owl_plates": {
-    "who": "sowa",
-    "text": "Sprawdźmy. Ustawmy je w pary: kubek i talerz, kubek i talerz."
-  },
   "line.s1_pair": {
     "who": "sowa",
     "text": "Każdy kubek staje przy swoim talerzu. Patrz, co zostaje."
@@ -130,26 +122,6 @@
     "who": "sowa",
     "text": "Tak! Paszcza otwarta na kubki, bo kubków jest więcej niż talerzy."
   },
-  "line.s0_roll": {
-    "who": "sowa",
-    "text": "Oj! Wiatr poturlał jeden kubek nad samą wodę!"
-  },
-  "line.s0_point_runaway": {
-    "who": "sowa",
-    "text": "Który kubek uciekł?"
-  },
-  "line.s0_wrong_runaway": {
-    "who": "sowa",
-    "text": "Ten stoi spokojnie. Poszukaj tego przy wodzie."
-  },
-  "line.s0_fox_run": {
-    "who": "lisek",
-    "text": "Łapię go!"
-  },
-  "line.s0_phew": {
-    "who": "lisek",
-    "text": "Uff! Mam wszystkie kubki z powrotem."
-  },
   "line.j2_to_garden": {
     "who": "sowa",
     "text": "Chodźmy teraz do ogrodu. Lisek obiecał marchewki na obiad!"
@@ -213,5 +185,41 @@
   "line.j2_good_eq2": {
     "who": "lisek",
     "text": "Tak! Teraz każdy kubek ma ciastko. Tyle samo!"
+  },
+  "line.m0_question": {
+    "who": "sowa",
+    "text": "Czy każdy kubek dostanie swój talerz?"
+  },
+  "line.m0_naive": {
+    "who": "lisek",
+    "text": "Na pewno! Talerzy jest więcej, bo są takie duże."
+  },
+  "line.m0_not": {
+    "who": "sowa",
+    "text": "Duże to nie znaczy, że jest ich więcej!"
+  },
+  "line.m0_how": {
+    "who": "lisek",
+    "text": "To jak sprawdzić, czego jest więcej?"
+  },
+  "line.m0_pairs": {
+    "who": "sowa",
+    "text": "Łącząc w pary! Każdy kubek dostaje jeden talerz."
+  },
+  "line.m0_what": {
+    "who": "lisek",
+    "text": "W pary? A jak to się robi?"
+  },
+  "line.m0_show": {
+    "who": "sowa",
+    "text": "Pokażę ci. To jak taniec w parach: jeden kubek i jeden talerz."
+  },
+  "line.m0_fetch": {
+    "who": "lisek",
+    "text": "Brakuje jednego talerza. Zaraz przyniosę!"
+  },
+  "line.m0_enough": {
+    "who": "sowa",
+    "text": "Teraz każdy kubek ma swój talerz. Jest ich tyle samo!"
   }
 }
