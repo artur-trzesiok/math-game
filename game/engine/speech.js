@@ -62,7 +62,7 @@ export class Speech {
   }
 
   // say a line; resolves when it ends
-  async say({ lang, lessonId, key, text, who, puppet }) {
+  async say({ lang, lessonId, key, text, who, puppet, volume = 1 }) {
     this.stop();
     this.log.push([key, who, performance.now() | 0]);
     const m = await manifest(lang, lessonId);
@@ -72,6 +72,7 @@ export class Speech {
       if (FAST) { subtitle(FORCE_SUBS); await new Promise((r) => setTimeout(r, 400)); return; }
       if (m[key]) {
         const a = new Audio(`/game/audio/${lang}/${lessonId}/${key}.mp3`);
+        a.volume = Math.max(0, Math.min(1, volume));                      // the character's trim (recordings are normalised already)
         this.current.envelope = await fetch(`/game/audio/${lang}/${lessonId}/${key}.json`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
         if (!this.current.envelope) this.current.live = attachAnalyser(a);
         subtitle(FORCE_SUBS);

@@ -121,7 +121,7 @@ export class Player {
       last = { who, key, anim }; this.lastSpeaker = who;
       const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
-      await this.speech.say({ lang, lessonId, key, text: line.text, who, puppet });   // who speaks is shown by the mouth, no bubble
+      await this.speech.say({ lang, lessonId, key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1 });   // who speaks is shown by the mouth, no bubble
       alive();
       if (puppet && puppet.korzen.visible) puppet.spoczynek();
     };

@@ -4,6 +4,12 @@
   python tools/audio/make_audio.py bigger_smaller  # one lesson
   python tools/audio/make_audio.py --voices        # list the account's voices and exit
   python tools/audio/make_audio.py --bake          # (re)compute the lip-sync envelopes of every mp3
+  python tools/audio/make_audio.py --normalize     # bring every mp3 to TARGET_RMS_DB and re-bake
+
+Loudness: every recording is normalised to the same speech loudness (-20 dBFS RMS
+of the voiced frames, peaks limited), so no voice shouts over another. A taste trim
+per character lives in game/assets/characters/<who>/meta.json ("volume", 1.0 =
+as recorded), together with the ElevenLabs voice per language ("voices").
 
 Next to every mp3 a <key>.json holds the baked lip-sync envelope (RMS every 20 ms,
 normalised); the game drives the mouth from it and needs no WebAudio.
@@ -77,14 +83,51 @@ def lines(lesson: Path, lang: str) -> list[dict]:
 
 
 ENV_STEP = 0.02      # seconds per envelope sample
+TARGET_RMS_DB = -20.0   # every recording is normalised to this speech loudness (RMS of voiced frames)
+CHARACTERS = ROOT / "game" / "assets" / "characters"
+
+
+def voice_for(lang: str, who: str) -> str:
+    """The character's meta.json (game/assets/characters/<who>/meta.json: voices per language,
+    volume) wins over the VOICES defaults here."""
+    meta = CHARACTERS / who / "meta.json"
+    if meta.exists():
+        v = json.loads(meta.read_text(encoding="utf-8")).get("voices", {}).get(lang)
+        if v:
+            return v
+    return VOICES[lang].get(who) or next(iter(VOICES[lang].values()))
+
+
+def decode(mp3: Path) -> np.ndarray:
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(mp3), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    return np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
+
+
+def speech_rms_db(x: np.ndarray) -> float:
+    n = 320
+    fr = x[: len(x) // n * n].reshape(-1, n)
+    rms = np.sqrt((fr ** 2).mean(axis=1)); rms = rms[rms > 0.01]            # voiced frames only, pauses do not count
+    return float(20 * np.log10(rms.mean())) if len(rms) else -60.0
+
+
+def normalize(mp3: Path) -> float:
+    """Re-encode the mp3 with the gain that brings its speech loudness to TARGET_RMS_DB
+    (a limiter keeps the peaks under -0.5 dBFS). Returns the gain applied in dB."""
+    gain = max(-12.0, min(12.0, TARGET_RMS_DB - speech_rms_db(decode(mp3))))
+    if abs(gain) < 0.5:
+        return 0.0
+    tmp = mp3.with_suffix(".tmp.mp3")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(mp3), "-af", f"volume={gain:.2f}dB,alimiter=limit=0.94:attack=3:release=40",
+                    "-codec:a", "libmp3lame", "-b:a", "128k", str(tmp)], check=True)
+    tmp.replace(mp3)
+    return gain
 
 
 def envelope(mp3: Path) -> dict:
     """Baked lip-sync: RMS loudness every ENV_STEP seconds, normalised to the file's
     peak and rounded to two decimals. Decoded with FFmpeg to 16 kHz mono PCM."""
-    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(mp3), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
-                         capture_output=True, check=True).stdout
-    x = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
+    x = decode(mp3)
     n = int(16000 * ENV_STEP)
     frames = x[: len(x) // n * n].reshape(-1, n)
     rms = np.sqrt((frames ** 2).mean(axis=1))
@@ -114,7 +157,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
     manifest = json.loads(manifest_p.read_text(encoding="utf-8")) if manifest_p.exists() else {}
     done = skipped = failed = 0
     for l in lines(lesson, lang):
-        voice = VOICES[lang].get(l["who"]) or next(iter(VOICES[lang].values()))
+        voice = voice_for(lang, l["who"])
         digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + json.dumps(SETTINGS, sort_keys=True) + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]   # a voice or settings change regenerates too
         dst = out / f"{l['key']}.mp3"
         if dst.exists() and manifest.get(l["key"], {}).get("hash") == digest:
@@ -124,6 +167,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
             continue
         try:
             synthesize(l["text"], voice, dst)
+            normalize(dst)
             bake(dst)
             manifest[l["key"]] = {"hash": digest, "who": l["who"], "text": l["text"]}
             manifest_p.write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -152,6 +196,13 @@ def main() -> int:
         for v in r.json().get("voices", []):
             lab = v.get("labels", {})
             print(f"  {v['voice_id']}  {v['name']:<16} {lab.get('gender', '?'):<7} {lab.get('age', '?'):<11} {lab.get('accent', '?')}")
+        return 0
+    if "--normalize" in sys.argv:
+        n = 0
+        for mp3 in AUDIO.glob("*/*/*.mp3"):
+            g = normalize(mp3); bake(mp3); n += 1
+            print(f"  {mp3.parent.parent.name} {mp3.parent.name} {mp3.name:32s} {g:+.1f} dB")
+        print(f"normalised {n} recordings")
         return 0
     if "--bake" in sys.argv:
         n = 0

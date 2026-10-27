@@ -146,6 +146,7 @@ export class Stage {
   // ------------------------------------------------------------------ puppets
   async puppet(name, { x = 0, side = "left", height = 3.6 } = {}) {
     const L = await Lalka.wczytaj(`/game/assets/characters/${name}/`, { strona: side === "left" ? "lewo" : "prawo", wysokosc: height });
+    L.meta = await fetch(`/game/assets/characters/${name}/meta.json`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
     L.korzen.position.set(x, GROUND, 0);
     L.korzen.visible = false; L.home = x; L.name = name;
     L.cien = this.shadow(height * 0.42);
