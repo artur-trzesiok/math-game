@@ -154,5 +154,25 @@
   "line.s2_good_lt": {
     "who": "sowa",
     "text": "Yes! The mouth is open towards the plates, because there are more plates and fewer cups."
+  },
+  "line.s0_roll": {
+    "who": "sowa",
+    "text": "Oh! The wind rolled one cup right down to the water!"
+  },
+  "line.s0_point_runaway": {
+    "who": "sowa",
+    "text": "Which cup ran away?"
+  },
+  "line.s0_wrong_runaway": {
+    "who": "sowa",
+    "text": "That one is standing still. Look for the one by the water."
+  },
+  "line.s0_fox_run": {
+    "who": "lisek",
+    "text": "I'll catch it!"
+  },
+  "line.s0_phew": {
+    "who": "lisek",
+    "text": "Phew, got it! All the cups are back."
   }
 }

@@ -1,8 +1,4 @@
 {
-  "line.s1_intro": {
-    "who": "lisek",
-    "text": "Wiewiórko, patrz! Znaleźliśmy w sadzie dwa jabłka."
-  },
   "line.s1_fox_big": {
     "who": "lisek",
     "text": "Patrz, moje jabłko jest duże!"
@@ -194,5 +190,13 @@
   "line.a_right": {
     "who": "lisek",
     "text": "Tak jest!"
+  },
+  "line.s0_wind": {
+    "who": "lisek",
+    "text": "Ojej, jaki wiatr! Jabłoń się trzęsie. Uwaga, coś spada!"
+  },
+  "line.s0_fell": {
+    "who": "wiewiorka",
+    "text": "Hop! Spadły dwa jabłka. Jedno duże, jedno małe."
   }
 }

@@ -17,6 +17,9 @@ objects - no hand-made art, no in-house level editor.
   which one the child is in:
   **Every stage has about five moments where the child acts** (a choice, a drag),
   never a stretch of listening only.
+  **The story opens with a small adventure**: something happens (a gust, a cup
+  rolling to the water, a pear under the bed), the characters react with their
+  bodies (a jump, a run) and the child helps once before the idea is introduced.
   1. **Story** - two characters meet a small everyday problem (two apples, not
      enough plates, a messy blanket) and the idea is shown, not explained. The
      child joins in once or twice, guided.

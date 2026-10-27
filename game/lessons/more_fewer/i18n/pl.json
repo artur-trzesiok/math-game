@@ -154,5 +154,25 @@
   "line.s2_good_lt": {
     "who": "sowa",
     "text": "Tak! Paszcza otwarta na talerze, bo talerzy jest więcej, a kubków mniej."
+  },
+  "line.s0_roll": {
+    "who": "sowa",
+    "text": "Oj! Wiatr poturlał jeden kubek nad samą wodę!"
+  },
+  "line.s0_point_runaway": {
+    "who": "sowa",
+    "text": "Który kubek uciekł?"
+  },
+  "line.s0_wrong_runaway": {
+    "who": "sowa",
+    "text": "Ten stoi spokojnie. Poszukaj tego przy wodzie."
+  },
+  "line.s0_fox_run": {
+    "who": "lisek",
+    "text": "Łapię go!"
+  },
+  "line.s0_phew": {
+    "who": "lisek",
+    "text": "Uff, mam! Wszystkie kubki z powrotem."
   }
 }

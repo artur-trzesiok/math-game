@@ -78,6 +78,7 @@ only the clouds and the tufts are new. Do NOT move or redraw anything that was
 already there. Do NOT add fruit, animals, birds or anything else.""",
     },
     "dom": {
+        "wnetrze": True,
         "plyta": f"""A background illustration for a children's game: the inside of a cosy,
 bright kitchen and dining room seen straight on. A big wooden table in the
 lower middle with its top COMPLETELY EMPTY, floor space in front of it where
@@ -118,6 +119,7 @@ clouds and the tufts are new. Do NOT move or redraw anything that was already
 there. Do NOT add boats, animals, birds or anything else.""",
     },
     "pokoj": {
+        "wnetrze": True,
         "plyta": f"""A background illustration for a children's game: a bright, tidy
 children's bedroom seen straight on. A low bed with a plain blanket on the left,
 a wooden toy shelf on the right with a few closed boxes, one big window on the
@@ -178,6 +180,7 @@ are new. Do NOT move or redraw anything that was already there. Do NOT add
 animals, mushrooms or anything else.""",
     },
     "przedpokoj": {
+        "wnetrze": True,
         "plyta": f"""A background illustration for a children's game: a cosy home hallway
 seen straight on. A low wooden shoe rack on the left with its shelves EMPTY, a
 row of coat hooks on the back wall with nothing on them, a small round window
@@ -264,7 +267,15 @@ def split(nazwa: str, prog: int = 40, min_pikseli: int = 500) -> dict:
         srodek_y = (y0 + y1) / 2
         # nad horyzontem dryfuja tylko male rzeczy (chmury); roslina w oknie
         # kuchni ma srodek nad horyzontem, a ma sie kolysac, nie plywac
-        klasa = "drift" if (srodek_y < hor and wys < 100) else "sway"
+        # a cloud is bright and unsaturated and drifts; everything else sways (grass, a plant, a mobile).
+        # Outdoors, a dark saturated bit above the horizon is redraw noise (a piece of a swing frame).
+        px = ruch[ys, xs].astype(int)
+        jasnosc = px.mean(); nasycenie = ((px.max(axis=1) - px.min(axis=1)) / np.maximum(px.max(axis=1), 1)).mean()
+        chmura = jasnosc >= 185 and nasycenie <= 0.28 and wys < 0.3 * plyta.shape[0]
+        klasa = "drift" if chmura else "sway"
+        if not SCENY[nazwa].get("wnetrze") and srodek_y < hor and not chmura:
+            print(f"  pominieto plamke nad horyzontem {szer}x{wys} (jasnosc {jasnosc:.0f}, nasycenie {nasycenie:.2f}) - nie chmura")
+            continue
         rekwizyty.append({"plik": plik, "klasa": klasa, "x": x0, "y": y0, "w": szer, "h": wys,
                           "faza": round((i * 0.6180339887) % 1.0, 4)})
     opis = {"plyta": "plyta.png", "szerokosc": int(plyta.shape[1]), "wysokosc": int(plyta.shape[0]),

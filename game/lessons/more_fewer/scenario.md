@@ -6,7 +6,9 @@ the pile with more". No counting at any point. Characters: Fox (left) and Owl (r
 
 ## Stage 1 - story (picnic by the lake)
 
-Five choices in the story. 1. Fox brought three cups, Owl two plates. "Will every cup get a plate?" The rows
+Six choices in the story. 1. Fox brought three cups, Owl two plates. Action: the
+   wind rolls a cup down to the water; the child spots the runaway, Fox runs after
+   it and brings it back. "Will every cup get a plate?" The rows
    slide into pairs; the cup without a pair pulses and the child points to it. Fox:
    more cups than plates; Owl: fewer plates, one is missing. Bridge: spoons at the table.
 2. The sign between the piles: the child picks ">" (mouth towards the cups) from two

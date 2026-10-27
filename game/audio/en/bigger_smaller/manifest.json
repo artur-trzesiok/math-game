@@ -1,9 +1,4 @@
 {
- "line.s1_intro": {
-  "hash": "25260fdbd4c5",
-  "who": "lisek",
-  "text": "Squirrel, look! We found two apples in the orchard."
- },
  "line.s1_fox_big": {
   "hash": "41a2213badd4",
   "who": "lisek",
@@ -243,5 +238,15 @@
   "hash": "32b8266fb2db",
   "who": "lisek",
   "text": "That's right!"
+ },
+ "line.s0_wind": {
+  "hash": "2fc3eccd0c10",
+  "who": "lisek",
+  "text": "Oh, what a wind! The apple tree is shaking. Look out, something is falling!"
+ },
+ "line.s0_fell": {
+  "hash": "4d3462aa8ea9",
+  "who": "wiewiorka",
+  "text": "Hop! Two apples fell down. One big, one small."
  }
 }

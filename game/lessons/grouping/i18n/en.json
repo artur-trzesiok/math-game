@@ -150,5 +150,17 @@
   "line.a_rule_round": {
     "who": "sarenka",
     "text": "Round things into the basket, the rest into the box."
+  },
+  "line.s0_roll": {
+    "who": "sarenka",
+    "text": "Hop! One pear rolled under the bed!"
+  },
+  "line.s0_drag_back": {
+    "who": "wiewiorka",
+    "text": "Drag it back onto the rug, with the others."
+  },
+  "line.s0_caught": {
+    "who": "sarenka",
+    "text": "We've got it! Now all the fruit is together."
   }
 }

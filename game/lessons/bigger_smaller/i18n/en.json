@@ -1,8 +1,4 @@
 {
-  "line.s1_intro": {
-    "who": "lisek",
-    "text": "Squirrel, look! We found two apples in the orchard."
-  },
   "line.s1_fox_big": {
     "who": "lisek",
     "text": "Look, my apple is big!"
@@ -194,5 +190,13 @@
   "line.a_right": {
     "who": "lisek",
     "text": "That's right!"
+  },
+  "line.s0_wind": {
+    "who": "lisek",
+    "text": "Oh, what a wind! The apple tree is shaking. Look out, something is falling!"
+  },
+  "line.s0_fell": {
+    "who": "wiewiorka",
+    "text": "Hop! Two apples fell down. One big, one small."
   }
 }

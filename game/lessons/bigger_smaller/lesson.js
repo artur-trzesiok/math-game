@@ -13,10 +13,14 @@ export default {
       // 1. two apples in the orchard - the bigger one is for Fox
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
-        await c.say("lisek", "line.s1_intro");
-        const big = await c.object("jablko", { y: Y, size: 1.7 });
-        const small = await c.object("jablko", { y: Y, size: 0.85 });
-        c.arrange([[big], [small]], { y: Y, groupGap: 1.2 });
+        // action: a gust shakes the tree and two apples drop out of the crown
+        await c.say("lisek", "line.s0_wind", { anim: "Rozgladanie" });
+        const big = await c.object("jablko", { x: -1.6, y: 4.6, size: 1.7 });
+        const small = await c.object("jablko", { x: 1.6, y: 4.9, size: 0.85 });
+        await c.wait(0.3);
+        await Promise.all([big.moveTo(-1.6, Y - 0.15, 0.7), small.moveTo(1.6, Y - 0.1, 0.55)]);
+        await Promise.all([big.moveTo(-1.6, Y, 0.25), small.moveTo(1.6, Y, 0.2), c.play("lisek", "Podskok"), c.play("wiewiorka", "Podskok")]);
+        await c.say("wiewiorka", "line.s0_fell");
         await c.say("lisek", "line.s1_fox_big", { anim: "Wskazanie" });
         await c.say("wiewiorka", "line.s1_sq_small");
         await c.say("wiewiorka", "line.s1_compare");

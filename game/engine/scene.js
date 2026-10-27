@@ -190,6 +190,15 @@ export class Stage {
     await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { L.korzen.position.x = x0 + (L.home - x0) * s; });
     L.patrz("przod"); L.spoczynek();
   }
+  // walk to x (profile puppet), face the front there; the caller walks back the same way
+  async walkTo(name, x) {
+    const L = this.puppets[name]; if (!L) return;
+    const x0 = L.korzen.position.x; if (Math.abs(x - x0) < 0.05) return;
+    L.patrz(x > x0 ? "prawo" : "lewo"); L.graj("Chod", true);
+    const d = Math.abs(x - x0) / (L.predkoscChodu * 1.3);
+    await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { L.korzen.position.x = x0 + (x - x0) * s; });
+    L.patrz("przod"); L.spoczynek();
+  }
   async play(name, anim, { face = "przod", loop = false } = {}) {
     const L = this.puppets[name]; if (!L) return;
     L.patrz(face); L.graj(anim, loop);

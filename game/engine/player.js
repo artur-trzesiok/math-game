@@ -131,6 +131,7 @@ export class Player {
       enter: guard((who, from) => S.enter(who, from || ((this.lesson.characters[who] || {}).side === "right" ? "right" : "left"))),
       show: (who) => { alive(); const L = S.puppets[who]; if (L) { L.korzen.visible = true; L.korzen.position.x = L.home; L.patrz("przod"); L.spoczynek(); S.appear(L); } },
       play: guard((who, anim, opts) => S.play(who, anim, opts)),
+      walkTo: guard((who, x) => S.walkTo(who, x)),
       mood: (who, m) => S.mood(who, m),
       object: guard((name, opts) => S.object(name, opts)),
       sign: guard((text, opts) => S.sign(text, opts)),

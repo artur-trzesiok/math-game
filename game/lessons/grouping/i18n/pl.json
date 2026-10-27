@@ -150,5 +150,17 @@
   "line.a_rule_round": {
     "who": "sarenka",
     "text": "Okrągłe do koszyka, reszta do pudełka."
+  },
+  "line.s0_roll": {
+    "who": "sarenka",
+    "text": "Hop! Jedna gruszka potoczyła się pod łóżko!"
+  },
+  "line.s0_drag_back": {
+    "who": "wiewiorka",
+    "text": "Przeciągnij ją z powrotem na dywan, do reszty."
+  },
+  "line.s0_caught": {
+    "who": "sarenka",
+    "text": "Mamy ją! Teraz wszystkie owoce są razem."
   }
 }

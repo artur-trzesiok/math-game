@@ -188,5 +188,20 @@
   "hash": "5a8c5f947680",
   "who": "sarenka",
   "text": "Round things into the basket, the rest into the box."
+ },
+ "line.s0_roll": {
+  "hash": "2466af886eab",
+  "who": "sarenka",
+  "text": "Hop! One pear rolled under the bed!"
+ },
+ "line.s0_drag_back": {
+  "hash": "8b22abf4fce7",
+  "who": "wiewiorka",
+  "text": "Drag it back onto the rug, with the others."
+ },
+ "line.s0_caught": {
+  "hash": "318b9446783d",
+  "who": "sarenka",
+  "text": "We've got it! Now all the fruit is together."
  }
 }

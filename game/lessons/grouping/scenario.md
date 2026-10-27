@@ -6,7 +6,8 @@ rule. Characters: Squirrel (left) and Deer (right).
 
 ## Stage 1 - story (children's room, after a snack)
 
-1. Apples and pears lie mixed on the rug. Squirrel: apples to one container,
+1. Apples and pears lie mixed on the rug. Action: a pear rolls under the bed and
+   the child drags it back onto the rug. Squirrel: apples to one container,
    pears to the other. A basket and a box appear. The child DRAGS things into them
    in any order and may take them out again; nothing is checked until everything
    is inside. Then each container must hold one kind: the odd ones shake and fly

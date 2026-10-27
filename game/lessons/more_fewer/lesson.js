@@ -92,6 +92,19 @@ export default {
         await c.say("lisek", "line.s1_intro");
         const cups = await pile(c, "kubek", 3), plates = await pile(c, "talerz", 2);
         lay(c, cups, plates);
+        // action: the wind rolls one cup down to the water; the child spots it, Fox runs and brings it back
+        await c.say("sowa", "line.s0_roll", { anim: "Rozgladanie" });
+        const runaway = cups[cups.length - 1];
+        await runaway.moveTo(5.4, -1.2, 1.1);
+        await c.say("sowa", "line.s0_point_runaway");
+        await c.task({ targets: cups, correct: runaway, wrong: "line.s0_wrong_runaway" });
+        await c.say("lisek", "line.s0_fox_run");
+        await c.walkTo("lisek", 3.6);
+        await c.play("lisek", "Podskok");
+        await runaway.moveTo(3.6, Y, 0.5);
+        await Promise.all([c.walkTo("lisek", -4.6), runaway.moveTo(-3.2, Y, 1.2)]);
+        lay(c, cups, plates, true); await c.wait(0.8);
+        await c.say("lisek", "line.s0_phew", { anim: "Radosc" });
         await c.say("lisek", "line.s1_fox_cups", { anim: "Wskazanie" });
         await c.say("sowa", "line.s1_owl_plates");
         await c.say("sowa", "line.s1_pair");

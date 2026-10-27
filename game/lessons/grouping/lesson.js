@@ -35,6 +35,16 @@ export default {
           { name: "jablko", tag: "apple" }, { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" },
           { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" }]);
         await c.say("sarenka", "line.s1_sq_mixed");
+        // action: one pear rolls off under the bed; the child drags it back onto the rug
+        const pear = items.find((i) => i.tag === "pear");
+        await c.say("sarenka", "line.s0_roll", { anim: "Rozgladanie" });
+        await pear.moveTo(-5.2, -2.9, 1.0);
+        await c.say("wiewiorka", "line.s0_drag_back");
+        const rug = await c.zone({ x: 0, y: ROW_Y, w: 7.2, h: 1.8, name: "dywan" });
+        await c.sort({ items: [pear], zones: [rug] });
+        rug.take(pear); rug.remove();
+        c.arrange([items], { y: ROW_Y, gap: 0.14, animate: true }); await c.wait(0.6);
+        await c.say("sarenka", "line.s0_caught", { anim: "Radosc" });
         const zones = await containers(c);
         await c.say("wiewiorka", "line.s1_deer_idea");
         await c.say("sarenka", "line.s1_apples");

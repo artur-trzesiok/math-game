@@ -188,5 +188,20 @@
   "hash": "6aff2346f8ee",
   "who": "sarenka",
   "text": "Okrągłe do koszyka, reszta do pudełka."
+ },
+ "line.s0_roll": {
+  "hash": "d2ab3407a2ba",
+  "who": "sarenka",
+  "text": "Hop! Jedna gruszka potoczyła się pod łóżko!"
+ },
+ "line.s0_drag_back": {
+  "hash": "f5064696d1f0",
+  "who": "wiewiorka",
+  "text": "Przeciągnij ją z powrotem na dywan, do reszty."
+ },
+ "line.s0_caught": {
+  "hash": "612a265c11cf",
+  "who": "sarenka",
+  "text": "Mamy ją! Teraz wszystkie owoce są razem."
  }
 }

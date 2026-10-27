@@ -193,5 +193,30 @@
   "hash": "d5ae46ddd539",
   "who": "sowa",
   "text": "Yes! The mouth is open towards the plates, because there are more plates and fewer cups."
+ },
+ "line.s0_roll": {
+  "hash": "907ae72e972b",
+  "who": "sowa",
+  "text": "Oh! The wind rolled one cup right down to the water!"
+ },
+ "line.s0_point_runaway": {
+  "hash": "ed6d9eaf9f7a",
+  "who": "sowa",
+  "text": "Which cup ran away?"
+ },
+ "line.s0_wrong_runaway": {
+  "hash": "7cab6acc33fe",
+  "who": "sowa",
+  "text": "That one is standing still. Look for the one by the water."
+ },
+ "line.s0_fox_run": {
+  "hash": "824b0639dd93",
+  "who": "lisek",
+  "text": "I'll catch it!"
+ },
+ "line.s0_phew": {
+  "hash": "23f718c49c93",
+  "who": "lisek",
+  "text": "Phew, got it! All the cups are back."
  }
 }

@@ -193,5 +193,30 @@
   "hash": "0dcea7913102",
   "who": "sowa",
   "text": "Tak! Paszcza otwarta na talerze, bo talerzy jest więcej, a kubków mniej."
+ },
+ "line.s0_roll": {
+  "hash": "f9831dfae2dc",
+  "who": "sowa",
+  "text": "Oj! Wiatr poturlał jeden kubek nad samą wodę!"
+ },
+ "line.s0_point_runaway": {
+  "hash": "3353bb3ecb34",
+  "who": "sowa",
+  "text": "Który kubek uciekł?"
+ },
+ "line.s0_wrong_runaway": {
+  "hash": "81c22a20590e",
+  "who": "sowa",
+  "text": "Ten stoi spokojnie. Poszukaj tego przy wodzie."
+ },
+ "line.s0_fox_run": {
+  "hash": "3c6907b7c869",
+  "who": "lisek",
+  "text": "Łapię go!"
+ },
+ "line.s0_phew": {
+  "hash": "aecafc304fd7",
+  "who": "lisek",
+  "text": "Uff, mam! Wszystkie kubki z powrotem."
  }
 }

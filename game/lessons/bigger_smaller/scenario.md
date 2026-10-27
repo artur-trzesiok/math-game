@@ -6,8 +6,9 @@ names it. Characters: Fox (left) and Squirrel (right).
 
 ## Stage 1 - story (orchard) - five scenes, each with one choice
 
-1. Two apples, big and small. Fox and Squirrel name the relation both ways while
-   each apple pulses. Fox is hungry: the child points to the BIGGER apple for him.
+1. Action: a gust shakes the apple tree, two apples drop out of the crown and the
+   friends jump out of the way. Big and small: Fox and Squirrel name the relation
+   both ways while each apple pulses. Fox is hungry: the child points to the BIGGER apple for him.
    Everyday bridge: mum's shoes and the child's.
 2. Squirrel is thirsty: two cups. Fox: she has little paws. The child points to the
    SMALLER cup; it slides to Squirrel.
