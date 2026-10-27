@@ -156,7 +156,11 @@ export class Lalka {
       for (const i of R.dlon) { v.x += pos[3 * i]; v.y += pos[3 * i + 1]; }
       v.multiplyScalar(1 / Math.max(1, R.dlon.length));
       R.mesh.updateWorldMatrix(true, false);
-      return { p: v.applyMatrix4(R.mesh.matrixWorld), na: "dlon" };
+      const o = new THREE.Vector3(); this.korzen.getWorldPosition(o);
+      v.applyMatrix4(R.mesh.matrixWorld);
+      // which way the thing sits beyond the paw: forward in profile, outward from the body in front / back
+      const kier = widok === "profil" ? (this.kierunek === "lewo" ? -1 : 1) : Math.sign(v.x - o.x) || 1;
+      return { p: v, na: "dlon", kier, widok };
     }
     const tul = this.kosci[{ przod: "tulow", profil: "p_cialo", tyl: "t_tulow" }[widok]]?.children.find((c) => c.isMesh);
     if (!tul) { this.korzen.getWorldPosition(v); v.y += this.wysokosc * 0.6; return { p: v, na: "plecy" }; }
@@ -514,9 +518,9 @@ export class Lalka {
     this.niesienieW = Math.max(0, Math.min(1, (this.niesienieW || 0) + (this.niesie ? 1 : -1) * dt / 0.25));
     if (this.niesienieW > 0 && this.dane.rig !== "czworonog") {
       const w = this.niesienieW * this.niesienieW * (3 - 2 * this.niesienieW);
-      p.reka_p = (p.reka_p || 0) * (1 - w) + 35 * w; p.lokiec_p = (p.lokiec_p || 0) * (1 - w) + 70 * w; p.nadgarstek_p = (p.nadgarstek_p || 0) * (1 - w) - 15 * w;
+      p.reka_p = (p.reka_p || 0) * (1 - w) + 22 * w; p.lokiec_p = (p.lokiec_p || 0) * (1 - w) + 30 * w; p.nadgarstek_p = (p.nadgarstek_p || 0) * (1 - w);
       p.t_reka_p = p.reka_p; p.t_lokiec_p = p.lokiec_p;
-      p.p_reka = (p.p_reka || 0) * (1 - w) - 45 * w; p.p_lokiec = (p.p_lokiec || 0) * (1 - w) - 65 * w;
+      p.p_reka = (p.p_reka || 0) * (1 - w) - 55 * w; p.p_lokiec = (p.p_lokiec || 0) * (1 - w) - 35 * w; p.p_nadgarstek = (p.p_nadgarstek || 0) * (1 - w);
     }
     // mruganie
     this.nastepneMrugniecie -= dt;

@@ -264,6 +264,14 @@ a "?" over a head. The hint ladder in `task`: after `hintAfter` misses the answe
 pulses, one miss later a pencil arrow points at it, one more and the instructing
 character looks, points and circles it; the marks go when the task ends.
 
+Carrying and ideas: `ctx.take(who, thing)` - the near arm comes forward and bends, the
+thing sits just beyond the paw (in front in profile, beside it from the front) INSIDE the
+puppet's draw order (its renderOrder, z between torso and arm), so the paw holds its
+edge; a quadruped carries it on its back; it follows walking; `ctx.put(who, x, y)`.
+Drawn over the whole puppet it covered the body - that looked wrong. `ctx.idea(who,
+[[names...], [names...]])`: a thought bubble over the head with stickers in groups (a
+row each), the "I have an idea!" step of a part 1 scene; `remove()` pops it.
+
 Transitions: `graj` remembers the pose of the last frame (every numeric channel,
 before the gaze) and the new animation blends in from it over `Lalka.przejscie`
 (0.22 s; an animation may set `wejscie`, 0 = cut). Feet that were planted (`stopy:

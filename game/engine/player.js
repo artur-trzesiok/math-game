@@ -150,6 +150,8 @@ export class Player {
       focus: guard((items, opts) => S.focus(items, opts)),
       // carrying: take a thing into a character's paw (onto a quadruped's back), walk with it, put it down
       take: guard((who, h, opts) => S.take(who, h, opts)),
+      // "I have an idea!": a thought bubble over a character with stickers pictured inside, in groups
+      idea: guard((who, groups, opts) => S.idea(who, groups, opts)),
       put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),

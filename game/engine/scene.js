@@ -112,8 +112,13 @@ export class Stage {
     for (const L of Object.values(this.puppets)) {
       const h = L.trzyma; if (!h) continue;
       L.korzen.updateMatrixWorld(true);
-      const { p, na } = L.uchwyt();
-      h.mesh.position.set(p.x, p.y + (na === "plecy" ? h.base * 0.35 : -h.base * 0.1), 0.8);   // held a little below the paw's centre, or riding on the back
+      const { p, na, kier, widok } = L.uchwyt();
+      const ro = L.korzen.children[0] ? (() => { let r = 20; L.korzen.traverse((o) => { if (o.isMesh) r = o.renderOrder; }); return r; })() : 20;
+      if (na === "plecy") { h.mesh.position.set(p.x, p.y + h.base * 0.35, L.korzen.position.z + 0.2); h.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = ro + 1; }); continue; }
+      // the paw holds its near edge: the thing sits a little in front (profile) or beside (front), under the paw
+      const dx = kier * h.base * (widok === "profil" ? 0.3 : 0.34), dy = widok === "profil" ? -h.base * 0.05 : -h.base * 0.18;
+      h.mesh.position.set(p.x + dx, p.y + dy, L.korzen.position.z + (widok === "profil" ? 0.02 : 0.07));
+      h.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = ro; });
     }
     for (const tw of this.tweens.slice()) {
       tw.t += dt; const s = (tw.ease || easeInOut)(Math.min(1, tw.t / tw.d));
@@ -426,20 +431,73 @@ export class Stage {
     await this.wait(0.25);                                            // the arm comes forward first
     L.korzen.updateMatrixWorld(true);
     const { p, na } = L.uchwyt();
-    h.zapisanyRO = []; h.mesh.traverse((o) => { if (o.isMesh) { h.zapisanyRO.push([o, o.renderOrder]); o.renderOrder = 35; } });
+    h.zapisanyRO = []; h.mesh.traverse((o) => { if (o.isMesh) h.zapisanyRO.push([o, o.renderOrder]); });
     this.untarget(h);
-    h.baseNiesiony = h.base; h.base = h.base * 0.78; h.mesh.scale.setScalar(h.base);   // a carried thing is held close: a bit smaller
+    h.baseNiesiony = h.base; h.base = h.base * 0.72; h.mesh.scale.setScalar(h.base);   // a carried thing is held close: a bit smaller
     await h.moveTo(p.x, p.y + (na === "plecy" ? h.base * 0.35 : -h.base * 0.1), d);
     L.trzyma = h; this.sfx.graj("tap");
   }
   async put(who, x, y, { d = 0.45 } = {}) {
     const L = this.puppets[who]; const h = L?.trzyma; if (!h) return null;
     L.trzyma = null; L.niesie = false;
+    h.mesh.position.z = 0.4;
     if (h.baseNiesiony) { h.base = h.baseNiesiony; h.baseNiesiony = null; h.mesh.scale.setScalar(h.base); }
     await h.moveTo(x, y, d);
     for (const [o, r] of h.zapisanyRO || []) o.renderOrder = r;
     this.sfx.graj("plop");
     return h;
+  }
+
+  // ------------------------------------------------------------------ thought bubble
+  // a character imagines something: a white cloud with a pencil rim over its head, three little puffs trailing
+  // down to it, and inside the stickers it thinks of - in groups (each group a row, a gap between groups), so
+  // "apples here, pears there" can be pictured. Returns a handle: remove() pops it away.
+  async idea(who, groups, { size = 0.6, na = null } = {}) {
+    const L = this.puppets[who]; if (!L) return null;
+    const rows = groups.map((g) => (Array.isArray(g) ? g : [g]));
+    const ncol = Math.max(...rows.map((r) => r.length)), w = Math.max(2.2, ncol * size * 1.15 + 1.0), h = Math.max(1.5, rows.length * size * 1.2 + 0.9);
+    const o = new THREE.Vector3(); L.korzen.getWorldPosition(o);
+    const side = o.x < 0 ? 1 : -1;
+    const cx = Math.max(-6 + w / 2, Math.min(6 - w / 2, o.x + side * (w / 2 + 0.2))), cy = Math.min(4.4 - h / 2, o.y + L.wysokosc + h / 2 + 0.25);
+    // the cloud, drawn once per size on a canvas: overlapping round puffs, white, a pencil-grey rim
+    const c = document.createElement("canvas"), px = 160; c.width = Math.round(w * px); c.height = Math.round(h * px);
+    const ctx = c.getContext("2d"), puffs = [];
+    const W = c.width, H = c.height, r = Math.min(W, H) * 0.22;
+    for (let i = 0; i < 14; i++) { const a = i / 14 * Math.PI * 2; puffs.push([W / 2 + Math.cos(a) * (W / 2 - r * 1.05), H / 2 + Math.sin(a) * (H / 2 - r * 1.05), r * (0.95 + 0.25 * Math.sin(i * 2.3))]); }
+    const draw = (grow, fill) => { ctx.beginPath(); for (const [x, y, rr] of puffs) { ctx.moveTo(x + rr + grow, y); ctx.arc(x, y, rr + grow, 0, Math.PI * 2); } ctx.rect(r, r, W - 2 * r, H - 2 * r); ctx.fillStyle = fill; ctx.fill(); };
+    draw(7, "#4a433c"); draw(0, "#ffffff");
+    const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+    const grp = new THREE.Group(); grp.position.set(cx, cy, 0.9);
+    const cloud = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false }));
+    cloud.renderOrder = 45; grp.add(cloud);
+    // the puffs trailing down to the head
+    const head = new THREE.Vector3(o.x + side * 0.35, o.y + L.wysokosc * 0.98, 0);
+    for (let i = 0; i < 3; i++) {
+      const t = (i + 1) / 4, rr = 0.07 + 0.05 * i;
+      const pc = document.createElement("canvas"); pc.width = pc.height = 64; const p2 = pc.getContext("2d");
+      p2.fillStyle = "#4a433c"; p2.beginPath(); p2.arc(32, 32, 30, 0, 7); p2.fill(); p2.fillStyle = "#fff"; p2.beginPath(); p2.arc(32, 32, 25, 0, 7); p2.fill();
+      const pt = new THREE.CanvasTexture(pc); pt.colorSpace = THREE.SRGBColorSpace;
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(rr * 2, rr * 2), new THREE.MeshBasicMaterial({ map: pt, transparent: true, depthWrite: false, depthTest: false }));
+      const bx = cx - side * w * 0.25, by = cy - h / 2 + 0.05;
+      m.position.set(head.x + (bx - head.x) * t - cx, head.y + (by - head.y) * t - cy, 0); m.renderOrder = 45; grp.add(m);
+    }
+    // the imagined things, row by row
+    rows.forEach((row, j) => {
+      const y = (rows.length - 1) / 2 * size * 1.2 - j * size * 1.2;
+      row.forEach((name, i) => {
+        const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, depthTest: false }));
+        texture(`/game/assets/objects/${name}.webp`).then((t) => { m.material.map = t; m.material.needsUpdate = true; });
+        m.position.set((i - (row.length - 1) / 2) * size * 1.15, y, 0.01); m.renderOrder = 46; grp.add(m);
+      });
+    });
+    this.scene.add(grp);
+    const handle = { mesh: grp, kind: "idea", base: 1, remove: () => { this.scene.remove(grp); const k = this.objects.indexOf(handle); if (k >= 0) this.objects.splice(k, 1); } };
+    this.objects.push(handle);
+    this.sfx.graj("idea");
+    grp.scale.setScalar(0.001);
+    await this.tween(0.35, (s) => grp.scale.setScalar(Math.max(0.001, s)), easeOutBack);
+    if (na) setTimeout(() => handle.remove(), na * 1000);
+    return handle;
   }
 
   // ------------------------------------------------------------------ camera focus

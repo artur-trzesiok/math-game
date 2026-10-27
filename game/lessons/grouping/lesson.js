@@ -67,9 +67,11 @@ export default {
         }
         await c.say("sarenka", "line.g0_not_tidy", { anim: "Smutek" });
         await c.say("wiewiorka", "line.g0_how");
+        const pomysl = await c.idea("sarenka", [["jablko", "jablko", "jablko"], ["gruszka", "gruszka"]]);
         await c.say("sarenka", "line.g0_group", { anim: "Zgloszenie" });
         await c.say("wiewiorka", "line.g0_what");
         await c.say("sarenka", "line.g0_explain");
+        pomysl.remove();
         await c.say("wiewiorka", "line.g0_out");
         await wyprostuj(c, items);
         c.arrange([items], { y: ROW_Y, gap: 0.14, animate: true }); await c.wait(0.6);
