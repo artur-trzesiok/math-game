@@ -1,0 +1,286 @@
+{
+  "line.s_jam": {
+    "who": "lisek",
+    "text": "Robię dżem! W przepisie jest napisane: sześć jabłek."
+  },
+  "line.s_enough": {
+    "who": "wiewiorka",
+    "text": "A czy masz akurat sześć?"
+  },
+  "line.s_fast": {
+    "who": "lisek",
+    "text": "Zaraz policzę, szybciutko!"
+  },
+  "line.s_nine": {
+    "who": "lisek",
+    "text": "Dziewięć! Mam aż dziewięć jabłek!"
+  },
+  "line.s_twice": {
+    "who": "wiewiorka",
+    "text": "Za szybko! To jabłko policzyłeś dwa razy, a tamto wcale."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "To jak liczyć, żeby się nie pomylić?"
+  },
+  "line.s_aside": {
+    "who": "wiewiorka",
+    "text": "Odkładając! Policzone jabłko odkładamy na bok."
+  },
+  "line.s_what": {
+    "who": "lisek",
+    "text": "Odkładając? Jak to?"
+  },
+  "line.s_show": {
+    "who": "wiewiorka",
+    "text": "Pokażę ci. Wskaż jabłko, a ja przesunę je do rzędu i powiem liczbę."
+  },
+  "line.s_six": {
+    "who": "wiewiorka",
+    "text": "Sześć jabłek! Żadne nie zostało policzone dwa razy."
+  },
+  "line.s_after_five": {
+    "who": "lisek",
+    "text": "Po pięciu jest sześć. Liczymy dalej, o jeden więcej."
+  },
+  "line.s_solved": {
+    "who": "lisek",
+    "text": "Akurat sześć, tyle ile w przepisie! Będzie dżem!"
+  },
+  "line.s_to_garden": {
+    "who": "wiewiorka",
+    "text": "Chodźmy do ogrodu. Do dżemu dodamy marchewkę."
+  },
+  "line.b_carrots": {
+    "who": "lisek",
+    "text": "Marchewki leżą wszędzie. Policz je i odkładaj po kolei."
+  },
+  "line.b_seven": {
+    "who": "lisek",
+    "text": "Siedem marchewek! Po sześciu jest siedem."
+  },
+  "line.b_one_more": {
+    "who": "wiewiorka",
+    "text": "Hop! Wyrwałam jeszcze jedną!"
+  },
+  "line.b_how_many_now": {
+    "who": "wiewiorka",
+    "text": "Było siedem, doszła jeszcze jedna. Ile jest teraz?"
+  },
+  "line.b_pick": {
+    "who": "wiewiorka",
+    "text": "Wskaż cyfrę, która mówi, ile jest teraz marchewek."
+  },
+  "line.b_eight": {
+    "who": "lisek",
+    "text": "Osiem! Po siedmiu jest osiem."
+  },
+  "line.b_to_home": {
+    "who": "wiewiorka",
+    "text": "Wracajmy do domu. Dziś mamy przyjęcie!"
+  },
+  "line.c_party": {
+    "who": "wiewiorka",
+    "text": "Na przyjęcie przyjdzie dużo gości. Policzmy kubki."
+  },
+  "line.c_knock": {
+    "who": "lisek",
+    "text": "Puk, puk! Przyszedł jeszcze jeden gość. Przyniosę mu kubek."
+  },
+  "line.c_ten": {
+    "who": "wiewiorka",
+    "text": "Dziewięć i jeszcze jeden to dziesięć!"
+  },
+  "line.c_solved": {
+    "who": "lisek",
+    "text": "Każdy gość ma kubek. Teraz umiesz liczyć do dziesięciu!"
+  },
+  "line.wrong_digit": {
+    "who": "lisek",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "To inna cyfra. Popatrz jeszcze raz."
+  },
+  "line.good_digit": {
+    "who": "lisek",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Tak! To ta cyfra. Świetnie!"
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Pobawmy się w liczenie do dziesięciu!"
+  },
+  "line.p_count": {
+    "who": "lisek",
+    "text": "Policz wszystko. Wskaż każdą rzecz tylko raz."
+  },
+  "line.p_which_digit": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Wskaż cyfrę, która mówi, ile ich jest."
+  },
+  "line.p_group_7": {
+    "who": "wiewiorka",
+    "text": "Wskaż grupę, w której jest siedem rzeczy."
+  },
+  "line.p_group_9": {
+    "who": "wiewiorka",
+    "text": "Wskaż grupę, w której jest dziewięć rzeczy."
+  },
+  "line.p_wrong_group": {
+    "who": "wiewiorka",
+    "text": "Policz jeszcze raz, każdą rzecz tylko raz."
+  },
+  "line.good_group": {
+    "who": "lisek",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Tak! Dobrze policzone."
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Zagrajmy w liczenie w przedpokoju, tak jak w domu."
+  },
+  "line.a_ok": {
+    "who": "lisek",
+    "text": "Dobrze! Liczymy i odkładamy po kolei."
+  },
+  "line.a_count_but": {
+    "who": "lisek",
+    "text": "Policz buty. Wskaż każdy po kolei."
+  },
+  "line.a_count_skarpetka": {
+    "who": "lisek",
+    "text": "Teraz skarpetki. Ile ich jest?"
+  },
+  "line.a_count_klocek": {
+    "who": "lisek",
+    "text": "A teraz klocki. Policz je wszystkie."
+  },
+  "line.a_which_digit": {
+    "who": "lisek",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Wskaż cyfrę, która mówi, ile ich jest."
+  },
+  "line.a_ask_parents": {
+    "who": "wiewiorka",
+    "text": "Poproście rodziców, żeby razem z wami policzyli buty w przedpokoju albo schody."
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Pa, pa! Do zobaczenia!"
+  },
+  "line.n1": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Jeden!"
+  },
+  "line.n2": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Dwa!"
+  },
+  "line.n3": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Trzy!"
+  },
+  "line.n4": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Cztery!"
+  },
+  "line.n5": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Pięć!"
+  },
+  "line.n6": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Sześć!"
+  },
+  "line.n7": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Siedem!"
+  },
+  "line.n8": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Osiem!"
+  },
+  "line.n9": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Dziewięć!"
+  },
+  "line.n10": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Dziesięć!"
+  },
+  "line.d6": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "To jest szóstka. Wygląda jak ślimak, który wystawia czułek do góry."
+  },
+  "line.d7": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "To jest siódemka. Ma daszek, długą nóżkę i krótki pasek w środku."
+  },
+  "line.d8": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "To jest ósemka. Wygląda jak bałwanek z dwóch kulek."
+  },
+  "line.d9": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "To jest dziewiątka. Wygląda jak balonik na sznurku."
+  },
+  "line.d10": {
+    "who": "wiewiorka",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "To jest dziesięć. Zapisujemy je dwiema cyframi, jedynką i zerem."
+  }
+}

@@ -65,6 +65,7 @@ export default {
           await h.moveTo((Math.random() - 0.5) * 1.1, -1.45 + (Math.random() - 0.5) * 0.35, 0.3);
           h.mesh.rotation.z = (Math.random() - 0.5) * 2;
         }
+        await c.wonder("sarenka");
         await c.say("sarenka", "line.g0_not_tidy", { anim: "Smutek" });
         await c.say("wiewiorka", "line.g0_how");
         const pomysl = await c.idea("sarenka", [["jablko", "jablko", "jablko"], ["gruszka", "gruszka"]]);
@@ -90,8 +91,12 @@ export default {
         await c.task({ targets: zones, correct: pears, wrong: "line.g0_wrong_pear" });
         const one = pears.items.find((i) => i.tag === "pear");
         pears.take(one);
-        await one.moveTo(3.3, ROW_Y - 0.6, 0.8);
+        // Squirrel takes it in her paw and brings it over
+        await c.take("wiewiorka", one);
+        await c.walkTo("wiewiorka", 2.2);
+        await c.put("wiewiorka", 3.4, ROW_Y - 0.9);
         await c.say("wiewiorka", "line.g0_found", { anim: "Radosc" });
+        await c.walkTo("wiewiorka", -4.6);
         await c.say("sarenka", "line.s1_deer_happy", { anim: "Radosc" });
         await c.say("wiewiorka", "line.j3_to_brook");
         c.clear();

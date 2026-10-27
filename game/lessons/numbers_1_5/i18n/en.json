@@ -1,0 +1,248 @@
+{
+  "line.s_store": {
+    "who": "wiewiorka",
+    "text": "I am collecting pine cones for winter. Look how many I have!"
+  },
+  "line.s_how_many": {
+    "who": "sowa",
+    "text": "Lovely! And how many exactly do you have?"
+  },
+  "line.s_lots": {
+    "who": "wiewiorka",
+    "text": "Lots! I have lots and lots of them!"
+  },
+  "line.s_lots_not": {
+    "who": "sowa",
+    "text": "Lots is not an answer. Tomorrow you will not know if one went missing."
+  },
+  "line.s_how": {
+    "who": "wiewiorka",
+    "text": "Then how can I check?"
+  },
+  "line.s_count": {
+    "who": "sowa",
+    "text": "By counting! Then you know exactly how many there are."
+  },
+  "line.s_what": {
+    "who": "wiewiorka",
+    "text": "Counting? What is counting?"
+  },
+  "line.s_show": {
+    "who": "sowa",
+    "text": "I will show you, it is fun. We point to each cone only once and say the numbers in order."
+  },
+  "line.s_point_each": {
+    "who": "sowa",
+    "text": "Point to each cone, one after another. I will count."
+  },
+  "line.s_last": {
+    "who": "sowa",
+    "text": "The last number tells how many there are. You have three cones!"
+  },
+  "line.s_digits": {
+    "who": "sowa",
+    "text": "A number can also be written down. We write it with a digit. Look."
+  },
+  "line.s_point_3": {
+    "who": "wiewiorka",
+    "text": "I have three cones. Point to the digit three."
+  },
+  "line.wrong_digit": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "That is another digit. Look again."
+  },
+  "line.s_solved": {
+    "who": "wiewiorka",
+    "text": "I will write a three by my store. Tomorrow I will count and check that they are all there!"
+  },
+  "line.s_to_brook": {
+    "who": "sowa",
+    "text": "Let's go to the brook. There is something to count there too."
+  },
+  "line.b_pebbles": {
+    "who": "wiewiorka",
+    "text": "Let's collect pebbles for hopscotch. I have a few."
+  },
+  "line.b_count": {
+    "who": "sowa",
+    "text": "Count them. Point to each pebble only once."
+  },
+  "line.b_four": {
+    "who": "wiewiorka",
+    "text": "Four pebbles! The last number is four."
+  },
+  "line.b_pick_4": {
+    "who": "sowa",
+    "text": "There is a four among the cards. Point to the digit four."
+  },
+  "line.good_digit": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Yes! That is the digit. Great!"
+  },
+  "line.b_to_home": {
+    "who": "wiewiorka",
+    "text": "Let's go home. Cookies are waiting for us!"
+  },
+  "line.c_cookies": {
+    "who": "sowa",
+    "text": "I baked cookies for our guests. Let's count them, so there are enough for everyone."
+  },
+  "line.c_five": {
+    "who": "sowa",
+    "text": "Five cookies! The last number is five."
+  },
+  "line.c_two_plates": {
+    "who": "wiewiorka",
+    "text": "Now there are two plates of cookies. One of them has five."
+  },
+  "line.c_pick_5": {
+    "who": "wiewiorka",
+    "text": "Point to the plate with five cookies. You can count them."
+  },
+  "line.c_wrong_5": {
+    "who": "wiewiorka",
+    "text": "Count again. There are fewer than five here."
+  },
+  "line.c_solved": {
+    "who": "sowa",
+    "text": "Well done! Now you can count to five and you know five digits."
+  },
+  "line.p_intro": {
+    "who": "sowa",
+    "text": "Let's play counting! Count the things and find their digit."
+  },
+  "line.p_how_many": {
+    "who": "sowa",
+    "text": "How many are there? Point to the right digit."
+  },
+  "line.p_group_1": {
+    "who": "wiewiorka",
+    "text": "Point to the group with only one thing."
+  },
+  "line.p_group_4": {
+    "who": "wiewiorka",
+    "text": "Point to the group with four things."
+  },
+  "line.p_wrong_group": {
+    "who": "wiewiorka",
+    "text": "Count again, each thing only once."
+  },
+  "line.good_group": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Yes! Well counted."
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Let's play counting toys, just like at home."
+  },
+  "line.a_ok": {
+    "who": "sowa",
+    "text": "All right! I show the toys and you count."
+  },
+  "line.a_count_klocek": {
+    "who": "sowa",
+    "text": "Count the blocks. Point to each one in turn."
+  },
+  "line.a_count_misiu": {
+    "who": "sowa",
+    "text": "Now the teddy bears. How many are there?"
+  },
+  "line.a_count_pilka": {
+    "who": "sowa",
+    "text": "And now the balls. Count them all."
+  },
+  "line.a_which_digit": {
+    "who": "wiewiorka",
+    "speakers": [
+      "sowa"
+    ],
+    "text": "Point to the digit that tells how many there are."
+  },
+  "line.a_ask_parents": {
+    "who": "sowa",
+    "text": "Ask your parents to count toys or the plates on the table with you."
+  },
+  "line.a_bye": {
+    "who": "wiewiorka",
+    "text": "Bye bye! See you!"
+  },
+  "line.n1": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "One!"
+  },
+  "line.n2": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Two!"
+  },
+  "line.n3": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Three!"
+  },
+  "line.n4": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Four!"
+  },
+  "line.n5": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Five!"
+  },
+  "line.d1": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "This is a one. It looks like a stick with a little nose."
+  },
+  "line.d2": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "This is a two. It looks like a swan swimming on the water."
+  },
+  "line.d3": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "This is a three. It has two tummies, one on top of the other."
+  },
+  "line.d4": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "This is a four. It looks like a little chair turned upside down."
+  },
+  "line.d5": {
+    "who": "sowa",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "This is a five. It has a straight hat and a round tummy."
+  }
+}

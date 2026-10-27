@@ -1,0 +1,33 @@
+{
+  "id": "adding_10",
+  "title": {
+    "pl": "Dodawanie do 10",
+    "en": "Adding to 10"
+  },
+  "goal": "Add up to ten by counting on: start from the known number of the first group, count only the new things; read a + b = c.",
+  "age": "6-7",
+  "characters": [
+    "wiewiorka",
+    "sarenka"
+  ],
+  "backgrounds": [
+    "strumyk",
+    "ogrod",
+    "dom",
+    "przedpokoj",
+    "pokoj"
+  ],
+  "objects": [
+    "kamyk",
+    "marchewka",
+    "kubek",
+    "szyszka",
+    "but",
+    "skarpetka",
+    "klocek",
+    "lyzka",
+    "koszyk",
+    "pudelko"
+  ],
+  "cover": "Between them a basket of five grey pebbles with a pencil 5 over it and three more pebbles beside; above, a pencil-drawn 5 + 3 = 8."
+}

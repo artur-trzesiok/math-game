@@ -1,0 +1,382 @@
+{
+ "line.s_jam": {
+  "hash": "c5a600553f50",
+  "who": "lisek",
+  "text": "I am making jam! The recipe says: six apples."
+ },
+ "line.s_enough": {
+  "hash": "6e238339f5f4",
+  "who": "wiewiorka",
+  "text": "And do you have exactly six?"
+ },
+ "line.s_fast": {
+  "hash": "54c5e0282a81",
+  "who": "lisek",
+  "text": "I'll count, quick as a flash!"
+ },
+ "line.s_nine": {
+  "hash": "f1a0e736a4b0",
+  "who": "lisek",
+  "text": "Nine! I have nine apples!"
+ },
+ "line.s_twice": {
+  "hash": "7ee8fd508b9b",
+  "who": "wiewiorka",
+  "text": "Too fast! You counted this apple twice and that one not at all."
+ },
+ "line.s_how": {
+  "hash": "28c52c4db939",
+  "who": "lisek",
+  "text": "Then how do I count without a mistake?"
+ },
+ "line.s_aside": {
+  "hash": "f131b51f1590",
+  "who": "wiewiorka",
+  "text": "By moving them aside! A counted apple goes to the side."
+ },
+ "line.s_what": {
+  "hash": "ddf8517b21ca",
+  "who": "lisek",
+  "text": "Moving them aside? How?"
+ },
+ "line.s_show": {
+  "hash": "3f35938be5ff",
+  "who": "wiewiorka",
+  "text": "I will show you. Point to an apple, I will move it into the row and say the number."
+ },
+ "line.s_six": {
+  "hash": "810c1a46cd46",
+  "who": "wiewiorka",
+  "text": "Six apples! None was counted twice."
+ },
+ "line.s_after_five": {
+  "hash": "5d7caebb8fa4",
+  "who": "lisek",
+  "text": "After five comes six. We count on, one more."
+ },
+ "line.s_solved": {
+  "hash": "133a42c2d0a9",
+  "who": "lisek",
+  "text": "Exactly six, just like the recipe! There will be jam!"
+ },
+ "line.s_to_garden": {
+  "hash": "8946eaeed55a",
+  "who": "wiewiorka",
+  "text": "Let's go to the garden. We will add carrots to the jam."
+ },
+ "line.b_carrots": {
+  "hash": "88d50369665e",
+  "who": "lisek",
+  "text": "Carrots are lying everywhere. Count them and move them aside one by one."
+ },
+ "line.b_seven": {
+  "hash": "8be36a4c4518",
+  "who": "lisek",
+  "text": "Seven carrots! After six comes seven."
+ },
+ "line.b_one_more": {
+  "hash": "19de7789103b",
+  "who": "wiewiorka",
+  "text": "Hop! I pulled out one more!"
+ },
+ "line.b_how_many_now": {
+  "hash": "98c43c0cbd30",
+  "who": "wiewiorka",
+  "text": "There were seven and one more came. How many are there now?"
+ },
+ "line.b_pick": {
+  "hash": "1615f2c82fc4",
+  "who": "wiewiorka",
+  "text": "Point to the digit that tells how many carrots there are now."
+ },
+ "line.b_eight": {
+  "hash": "5bcd9363e0d0",
+  "who": "lisek",
+  "text": "Eight! After seven comes eight."
+ },
+ "line.b_to_home": {
+  "hash": "d91d7f13aaf6",
+  "who": "wiewiorka",
+  "text": "Let's go home. We have a party today!"
+ },
+ "line.c_party": {
+  "hash": "eee6392754d0",
+  "who": "wiewiorka",
+  "text": "Lots of guests are coming to the party. Let's count the cups."
+ },
+ "line.c_knock": {
+  "hash": "56b14f67d8b6",
+  "who": "lisek",
+  "text": "Knock, knock! One more guest came. I'll bring a cup."
+ },
+ "line.c_ten": {
+  "hash": "ecb1c098c5a5",
+  "who": "wiewiorka",
+  "text": "Nine and one more is ten!"
+ },
+ "line.c_solved": {
+  "hash": "18ae57449919",
+  "who": "lisek",
+  "text": "Every guest has a cup. Now you can count to ten!"
+ },
+ "line.wrong_digit": {
+  "hash": "a1d6f2a4e261",
+  "who": "lisek",
+  "text": "That is another digit. Look again."
+ },
+ "line.wrong_digit.wiewiorka": {
+  "hash": "b0cebfd59e50",
+  "who": "wiewiorka",
+  "text": "That is another digit. Look again."
+ },
+ "line.good_digit": {
+  "hash": "c88efe903656",
+  "who": "lisek",
+  "text": "Yes! That is the digit. Great!"
+ },
+ "line.good_digit.wiewiorka": {
+  "hash": "8ddd5a1bbbe3",
+  "who": "wiewiorka",
+  "text": "Yes! That is the digit. Great!"
+ },
+ "line.p_intro": {
+  "hash": "7960e44d1530",
+  "who": "lisek",
+  "text": "Let's play counting to ten!"
+ },
+ "line.p_count": {
+  "hash": "a3cbd7e1a19e",
+  "who": "lisek",
+  "text": "Count everything. Point to each thing only once."
+ },
+ "line.p_which_digit": {
+  "hash": "3c5df646eba4",
+  "who": "wiewiorka",
+  "text": "Point to the digit that tells how many there are."
+ },
+ "line.p_which_digit.lisek": {
+  "hash": "5a518cfd9547",
+  "who": "lisek",
+  "text": "Point to the digit that tells how many there are."
+ },
+ "line.p_group_7": {
+  "hash": "40103ad64699",
+  "who": "wiewiorka",
+  "text": "Point to the group with seven things."
+ },
+ "line.p_group_9": {
+  "hash": "4564c20e2597",
+  "who": "wiewiorka",
+  "text": "Point to the group with nine things."
+ },
+ "line.p_wrong_group": {
+  "hash": "92012f5b9bc8",
+  "who": "wiewiorka",
+  "text": "Count again, each thing only once."
+ },
+ "line.good_group": {
+  "hash": "c3ff5c670c71",
+  "who": "lisek",
+  "text": "Yes! Well counted."
+ },
+ "line.good_group.wiewiorka": {
+  "hash": "1447fb9b3d06",
+  "who": "wiewiorka",
+  "text": "Yes! Well counted."
+ },
+ "line.a_game": {
+  "hash": "a163e52b3fc5",
+  "who": "wiewiorka",
+  "text": "Let's play counting in the hallway, just like at home."
+ },
+ "line.a_ok": {
+  "hash": "fb051cc87a92",
+  "who": "lisek",
+  "text": "All right! We count and move things aside one by one."
+ },
+ "line.a_count_but": {
+  "hash": "c4364f96acad",
+  "who": "lisek",
+  "text": "Count the shoes. Point to each one in turn."
+ },
+ "line.a_count_skarpetka": {
+  "hash": "489ff27d4aa0",
+  "who": "lisek",
+  "text": "Now the socks. How many are there?"
+ },
+ "line.a_count_klocek": {
+  "hash": "cb44657fe767",
+  "who": "lisek",
+  "text": "And now the blocks. Count them all."
+ },
+ "line.a_which_digit": {
+  "hash": "5a518cfd9547",
+  "who": "lisek",
+  "text": "Point to the digit that tells how many there are."
+ },
+ "line.a_which_digit.wiewiorka": {
+  "hash": "3c5df646eba4",
+  "who": "wiewiorka",
+  "text": "Point to the digit that tells how many there are."
+ },
+ "line.a_ask_parents": {
+  "hash": "b82d0564ec5e",
+  "who": "wiewiorka",
+  "text": "Ask your parents to count the shoes in the hallway or the stairs with you."
+ },
+ "line.a_bye": {
+  "hash": "5fdcbfe15d1f",
+  "who": "lisek",
+  "text": "Bye bye! See you!"
+ },
+ "line.n1": {
+  "hash": "b450b7ae1d7d",
+  "who": "wiewiorka",
+  "text": "One!"
+ },
+ "line.n1.lisek": {
+  "hash": "17ef5509f792",
+  "who": "lisek",
+  "text": "One!"
+ },
+ "line.n2": {
+  "hash": "9ffb03ee7b98",
+  "who": "wiewiorka",
+  "text": "Two!"
+ },
+ "line.n2.lisek": {
+  "hash": "b4f95635d899",
+  "who": "lisek",
+  "text": "Two!"
+ },
+ "line.n3": {
+  "hash": "5641cc4a1ea8",
+  "who": "wiewiorka",
+  "text": "Three!"
+ },
+ "line.n3.lisek": {
+  "hash": "4c345f0d5dab",
+  "who": "lisek",
+  "text": "Three!"
+ },
+ "line.n4": {
+  "hash": "f09afa4cffab",
+  "who": "wiewiorka",
+  "text": "Four!"
+ },
+ "line.n4.lisek": {
+  "hash": "2253e7bcda55",
+  "who": "lisek",
+  "text": "Four!"
+ },
+ "line.n5": {
+  "hash": "288f44558ee1",
+  "who": "wiewiorka",
+  "text": "Five!"
+ },
+ "line.n5.lisek": {
+  "hash": "094016c43adc",
+  "who": "lisek",
+  "text": "Five!"
+ },
+ "line.n6": {
+  "hash": "b67575136d25",
+  "who": "wiewiorka",
+  "text": "Six!"
+ },
+ "line.n6.lisek": {
+  "hash": "2455ce0aca10",
+  "who": "lisek",
+  "text": "Six!"
+ },
+ "line.n7": {
+  "hash": "bfd0856dbfbc",
+  "who": "wiewiorka",
+  "text": "Seven!"
+ },
+ "line.n7.lisek": {
+  "hash": "9e5d404f681c",
+  "who": "lisek",
+  "text": "Seven!"
+ },
+ "line.n8": {
+  "hash": "a3bd91e980af",
+  "who": "wiewiorka",
+  "text": "Eight!"
+ },
+ "line.n8.lisek": {
+  "hash": "c1a359f1d2e7",
+  "who": "lisek",
+  "text": "Eight!"
+ },
+ "line.n9": {
+  "hash": "42393bd97c27",
+  "who": "wiewiorka",
+  "text": "Nine!"
+ },
+ "line.n9.lisek": {
+  "hash": "6305113b7552",
+  "who": "lisek",
+  "text": "Nine!"
+ },
+ "line.n10": {
+  "hash": "1b47bd071e1d",
+  "who": "wiewiorka",
+  "text": "Ten!"
+ },
+ "line.n10.lisek": {
+  "hash": "a1c7d406b77c",
+  "who": "lisek",
+  "text": "Ten!"
+ },
+ "line.d6": {
+  "hash": "cc5e4064597a",
+  "who": "wiewiorka",
+  "text": "This is a six. It looks like a snail sticking its feeler up."
+ },
+ "line.d6.lisek": {
+  "hash": "456772de1ac2",
+  "who": "lisek",
+  "text": "This is a six. It looks like a snail sticking its feeler up."
+ },
+ "line.d7": {
+  "hash": "55a460bb5f33",
+  "who": "wiewiorka",
+  "text": "This is a seven. It has a roof, a long leg and a short stripe in the middle."
+ },
+ "line.d7.lisek": {
+  "hash": "9732b1808ef8",
+  "who": "lisek",
+  "text": "This is a seven. It has a roof, a long leg and a short stripe in the middle."
+ },
+ "line.d8": {
+  "hash": "af755eb1eab1",
+  "who": "wiewiorka",
+  "text": "This is an eight. It looks like a snowman made of two balls."
+ },
+ "line.d8.lisek": {
+  "hash": "5c40da4c326a",
+  "who": "lisek",
+  "text": "This is an eight. It looks like a snowman made of two balls."
+ },
+ "line.d9": {
+  "hash": "eb1ead5fd122",
+  "who": "wiewiorka",
+  "text": "This is a nine. It looks like a balloon on a string."
+ },
+ "line.d9.lisek": {
+  "hash": "d89898866330",
+  "who": "lisek",
+  "text": "This is a nine. It looks like a balloon on a string."
+ },
+ "line.d10": {
+  "hash": "3966a516bfec",
+  "who": "wiewiorka",
+  "text": "This is ten. We write it with two digits, a one and a zero."
+ },
+ "line.d10.lisek": {
+  "hash": "b1f43b3db3ab",
+  "who": "lisek",
+  "text": "This is ten. We write it with two digits, a one and a zero."
+ }
+}

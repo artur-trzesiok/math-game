@@ -1,0 +1,327 @@
+{
+ "line.s_store": {
+  "hash": "a11094823700",
+  "who": "wiewiorka",
+  "text": "Zbieram szyszki na zimę. Zobacz, ile już mam!"
+ },
+ "line.s_how_many": {
+  "hash": "47a250b44837",
+  "who": "sowa",
+  "text": "Piękne! A ile dokładnie ich masz?"
+ },
+ "line.s_lots": {
+  "hash": "801dbce8bf6e",
+  "who": "wiewiorka",
+  "text": "Dużo! Mam ich bardzo, bardzo dużo!"
+ },
+ "line.s_lots_not": {
+  "hash": "0c54e2cc5d6b",
+  "who": "sowa",
+  "text": "Dużo to nie odpowiedź. Jutro nie będziesz wiedziała, czy jakaś nie zginęła."
+ },
+ "line.s_how": {
+  "hash": "cab7cbb170bc",
+  "who": "wiewiorka",
+  "text": "To jak mam to sprawdzić?"
+ },
+ "line.s_count": {
+  "hash": "faa0d7280187",
+  "who": "sowa",
+  "text": "Licząc! Wtedy wiesz dokładnie, ile ich jest."
+ },
+ "line.s_what": {
+  "hash": "d798a7c3f187",
+  "who": "wiewiorka",
+  "text": "Licząc? A co to jest liczenie?"
+ },
+ "line.s_show": {
+  "hash": "f85e568bba77",
+  "who": "sowa",
+  "text": "Pokażę ci, to fajna zabawa. Każdą szyszkę wskazujemy tylko raz i mówimy po kolei liczby."
+ },
+ "line.s_point_each": {
+  "hash": "538f9c2d162b",
+  "who": "sowa",
+  "text": "Wskaż każdą szyszkę, jedną po drugiej. Ja będę liczyć."
+ },
+ "line.s_last": {
+  "hash": "8b14d0966d0d",
+  "who": "sowa",
+  "text": "Ostatnia liczba mówi, ile ich jest. Masz trzy szyszki!"
+ },
+ "line.s_digits": {
+  "hash": "160f1de3b1d7",
+  "who": "sowa",
+  "text": "Liczbę można też zapisać. Zapisujemy ją cyfrą. Popatrz."
+ },
+ "line.s_point_3": {
+  "hash": "c1d7d0e3e608",
+  "who": "wiewiorka",
+  "text": "Mam trzy szyszki. Wskaż cyfrę trzy."
+ },
+ "line.wrong_digit": {
+  "hash": "707661e2a86e",
+  "who": "sowa",
+  "text": "To inna cyfra. Popatrz jeszcze raz."
+ },
+ "line.wrong_digit.wiewiorka": {
+  "hash": "5a9af79af576",
+  "who": "wiewiorka",
+  "text": "To inna cyfra. Popatrz jeszcze raz."
+ },
+ "line.s_solved": {
+  "hash": "04f36cbfd650",
+  "who": "wiewiorka",
+  "text": "Zapiszę trójkę przy mojej spiżarni. Jutro policzę i sprawdzę, czy wszystkie są!"
+ },
+ "line.s_to_brook": {
+  "hash": "c98e9e970321",
+  "who": "sowa",
+  "text": "Chodźmy nad strumyk. Tam też jest co liczyć."
+ },
+ "line.b_pebbles": {
+  "hash": "b1ac3a4c95a6",
+  "who": "wiewiorka",
+  "text": "Zbierzemy kamyki do gry w klasy. Mam ich kilka."
+ },
+ "line.b_count": {
+  "hash": "cdada523c362",
+  "who": "sowa",
+  "text": "Policz je. Wskaż każdy kamyk tylko raz."
+ },
+ "line.b_four": {
+  "hash": "bbf7076d739b",
+  "who": "wiewiorka",
+  "text": "Cztery kamyki! Ostatnia liczba to cztery."
+ },
+ "line.b_pick_4": {
+  "hash": "ea8c47940e95",
+  "who": "sowa",
+  "text": "Wśród kart jest czwórka. Wskaż cyfrę cztery."
+ },
+ "line.good_digit": {
+  "hash": "487242c0a2fc",
+  "who": "sowa",
+  "text": "Tak! To ta cyfra. Świetnie!"
+ },
+ "line.good_digit.wiewiorka": {
+  "hash": "d2a3a7b91efa",
+  "who": "wiewiorka",
+  "text": "Tak! To ta cyfra. Świetnie!"
+ },
+ "line.b_to_home": {
+  "hash": "a00fc8d6b8b4",
+  "who": "wiewiorka",
+  "text": "Wracajmy do domu. Czekają na nas ciastka!"
+ },
+ "line.c_cookies": {
+  "hash": "2bef22c5a656",
+  "who": "sowa",
+  "text": "Upiekłam ciastka dla gości. Policzmy je, żeby nikomu nie zabrakło."
+ },
+ "line.c_five": {
+  "hash": "90373f28c127",
+  "who": "sowa",
+  "text": "Pięć ciastek! Ostatnia liczba to pięć."
+ },
+ "line.c_two_plates": {
+  "hash": "5b3c09952f71",
+  "who": "wiewiorka",
+  "text": "Teraz są dwa talerze z ciastkami. Na jednym jest pięć."
+ },
+ "line.c_pick_5": {
+  "hash": "bf36a76d3da0",
+  "who": "wiewiorka",
+  "text": "Wskaż talerz, na którym jest pięć ciastek. Możesz je policzyć."
+ },
+ "line.c_wrong_5": {
+  "hash": "50a9577ce637",
+  "who": "wiewiorka",
+  "text": "Policz jeszcze raz. Tutaj jest mniej niż pięć."
+ },
+ "line.c_solved": {
+  "hash": "223f087e8e73",
+  "who": "sowa",
+  "text": "Brawo! Teraz umiesz liczyć do pięciu i znasz pięć cyfr."
+ },
+ "line.p_intro": {
+  "hash": "ba4ed4feacab",
+  "who": "sowa",
+  "text": "Pobawmy się w liczenie! Policz rzeczy i znajdź ich cyfrę."
+ },
+ "line.p_how_many": {
+  "hash": "aae8ed90e712",
+  "who": "sowa",
+  "text": "Ile ich jest? Wskaż właściwą cyfrę."
+ },
+ "line.p_group_1": {
+  "hash": "1fe602bcf24a",
+  "who": "wiewiorka",
+  "text": "Wskaż grupę, w której jest tylko jedna rzecz."
+ },
+ "line.p_group_4": {
+  "hash": "e08ea2ac3638",
+  "who": "wiewiorka",
+  "text": "Wskaż grupę, w której są cztery rzeczy."
+ },
+ "line.p_wrong_group": {
+  "hash": "81f6d97176ed",
+  "who": "wiewiorka",
+  "text": "Policz jeszcze raz, każdą rzecz tylko raz."
+ },
+ "line.good_group": {
+  "hash": "3e9ed32c74cf",
+  "who": "sowa",
+  "text": "Tak! Dobrze policzone."
+ },
+ "line.good_group.wiewiorka": {
+  "hash": "21eea1c8324c",
+  "who": "wiewiorka",
+  "text": "Tak! Dobrze policzone."
+ },
+ "line.a_game": {
+  "hash": "470c846a53c3",
+  "who": "wiewiorka",
+  "text": "Zagrajmy w liczenie zabawek, tak jak w domu."
+ },
+ "line.a_ok": {
+  "hash": "e57f28905305",
+  "who": "sowa",
+  "text": "Dobrze! Ja pokazuję zabawki, a ty liczysz."
+ },
+ "line.a_count_klocek": {
+  "hash": "b316fcc80201",
+  "who": "sowa",
+  "text": "Policz klocki. Wskaż każdy po kolei."
+ },
+ "line.a_count_misiu": {
+  "hash": "86fdd3e0e4d0",
+  "who": "sowa",
+  "text": "Teraz misie. Ile ich jest?"
+ },
+ "line.a_count_pilka": {
+  "hash": "a67f1bd6a5d7",
+  "who": "sowa",
+  "text": "A teraz piłki. Policz je wszystkie."
+ },
+ "line.a_which_digit": {
+  "hash": "2261af79ef5a",
+  "who": "wiewiorka",
+  "text": "Wskaż cyfrę, która mówi, ile ich jest."
+ },
+ "line.a_which_digit.sowa": {
+  "hash": "80f3f9561dd8",
+  "who": "sowa",
+  "text": "Wskaż cyfrę, która mówi, ile ich jest."
+ },
+ "line.a_ask_parents": {
+  "hash": "7f984f3c701a",
+  "who": "sowa",
+  "text": "Poproście rodziców, żeby razem z wami policzyli zabawki albo talerze na stole."
+ },
+ "line.a_bye": {
+  "hash": "de5cebfd32fc",
+  "who": "wiewiorka",
+  "text": "Pa, pa! Do zobaczenia!"
+ },
+ "line.n1": {
+  "hash": "4fae823a23d6",
+  "who": "sowa",
+  "text": "Jeden!"
+ },
+ "line.n1.wiewiorka": {
+  "hash": "ba57f5b09fb8",
+  "who": "wiewiorka",
+  "text": "Jeden!"
+ },
+ "line.n2": {
+  "hash": "e363b2e5ef6b",
+  "who": "sowa",
+  "text": "Dwa!"
+ },
+ "line.n2.wiewiorka": {
+  "hash": "1fe22df41e61",
+  "who": "wiewiorka",
+  "text": "Dwa!"
+ },
+ "line.n3": {
+  "hash": "08bcfaaf489e",
+  "who": "sowa",
+  "text": "Trzy!"
+ },
+ "line.n3.wiewiorka": {
+  "hash": "de660ab27bd0",
+  "who": "wiewiorka",
+  "text": "Trzy!"
+ },
+ "line.n4": {
+  "hash": "8414b0618ffe",
+  "who": "sowa",
+  "text": "Cztery!"
+ },
+ "line.n4.wiewiorka": {
+  "hash": "55526c232825",
+  "who": "wiewiorka",
+  "text": "Cztery!"
+ },
+ "line.n5": {
+  "hash": "4ec94c6a823a",
+  "who": "sowa",
+  "text": "Pięć!"
+ },
+ "line.n5.wiewiorka": {
+  "hash": "f368640872aa",
+  "who": "wiewiorka",
+  "text": "Pięć!"
+ },
+ "line.d1": {
+  "hash": "672f2188bd6b",
+  "who": "sowa",
+  "text": "To jest jedynka. Wygląda jak patyk z małym noskiem."
+ },
+ "line.d1.wiewiorka": {
+  "hash": "4ee729b27bee",
+  "who": "wiewiorka",
+  "text": "To jest jedynka. Wygląda jak patyk z małym noskiem."
+ },
+ "line.d2": {
+  "hash": "c432d53d393b",
+  "who": "sowa",
+  "text": "To jest dwójka. Wygląda jak łabędź, który płynie po wodzie."
+ },
+ "line.d2.wiewiorka": {
+  "hash": "4bc4b304de89",
+  "who": "wiewiorka",
+  "text": "To jest dwójka. Wygląda jak łabędź, który płynie po wodzie."
+ },
+ "line.d3": {
+  "hash": "1b532e74372d",
+  "who": "sowa",
+  "text": "To jest trójka. Ma dwa brzuszki, jeden nad drugim."
+ },
+ "line.d3.wiewiorka": {
+  "hash": "afd148dbb260",
+  "who": "wiewiorka",
+  "text": "To jest trójka. Ma dwa brzuszki, jeden nad drugim."
+ },
+ "line.d4": {
+  "hash": "fdc3f0c2e630",
+  "who": "sowa",
+  "text": "To jest czwórka. Wygląda jak krzesełko odwrócone do góry nogami."
+ },
+ "line.d4.wiewiorka": {
+  "hash": "ac2e273b08c9",
+  "who": "wiewiorka",
+  "text": "To jest czwórka. Wygląda jak krzesełko odwrócone do góry nogami."
+ },
+ "line.d5": {
+  "hash": "d7c6166d878b",
+  "who": "sowa",
+  "text": "To jest piątka. Ma prosty daszek i okrągły brzuszek."
+ },
+ "line.d5.wiewiorka": {
+  "hash": "c80a5e8fcad1",
+  "who": "wiewiorka",
+  "text": "To jest piątka. Ma prosty daszek i okrągły brzuszek."
+ }
+}

@@ -1,0 +1,224 @@
+{
+  "line.s_need": {
+    "who": "sarenka",
+    "text": "Do gry w klasy potrzebujemy ośmiu kamyków. Przyniosłam trzy."
+  },
+  "line.s_have": {
+    "who": "wiewiorka",
+    "text": "A ja mam w koszyku pięć. Policzyłam je rano."
+  },
+  "line.s_naive": {
+    "who": "wiewiorka",
+    "text": "To policzę wszystkie od początku. Jeden, dwa, trzy, cztery... Ojej, pomyliłam się!"
+  },
+  "line.s_not": {
+    "who": "sarenka",
+    "text": "Nie musisz zaczynać od jednego! Wiemy już, że w koszyku jest pięć."
+  },
+  "line.s_how": {
+    "who": "wiewiorka",
+    "text": "To od czego mam zacząć?"
+  },
+  "line.s_on": {
+    "who": "sarenka",
+    "text": "Od pięciu! Liczymy dalej. To się nazywa doliczanie."
+  },
+  "line.s_what": {
+    "who": "wiewiorka",
+    "text": "Doliczanie? Pokażesz mi?"
+  },
+  "line.s_show": {
+    "who": "sarenka",
+    "text": "Pięć mamy w głowie. Wskaż moje kamyki po kolei, a ja będę liczyć dalej."
+  },
+  "line.s_eight": {
+    "who": "wiewiorka",
+    "text": "Osiem! I nie musiałam liczyć od początku."
+  },
+  "line.s_write": {
+    "who": "sarenka",
+    "text": "Pięć plus trzy równa się osiem."
+  },
+  "line.s_solved": {
+    "who": "wiewiorka",
+    "text": "Mamy osiem kamyków. Można grać w klasy!"
+  },
+  "line.s_to_garden": {
+    "who": "sarenka",
+    "text": "Chodźmy do ogrodu. Tam też poćwiczymy doliczanie."
+  },
+  "line.b_basket": {
+    "who": "wiewiorka",
+    "text": "W koszyku jest sześć marchewek."
+  },
+  "line.b_more": {
+    "who": "sarenka",
+    "text": "Wyrwałam jeszcze dwie. Doliczmy!"
+  },
+  "line.b_count": {
+    "who": "sarenka",
+    "text": "Zacznij od sześciu. Wskaż nowe marchewki po kolei."
+  },
+  "line.b_pick": {
+    "who": "wiewiorka",
+    "text": "Ile jest razem? Wskaż cyfrę."
+  },
+  "line.b_write": {
+    "who": "sarenka",
+    "text": "Sześć plus dwa równa się osiem."
+  },
+  "line.b_to_home": {
+    "who": "wiewiorka",
+    "text": "Wracajmy do domu. Przyjdą goście!"
+  },
+  "line.c_cups": {
+    "who": "sarenka",
+    "text": "W pudełku jest siedem kubków. Goście przynieśli jeszcze trzy."
+  },
+  "line.c_count": {
+    "who": "wiewiorka",
+    "text": "Doliczmy od siedmiu. Wskaż nowe kubki."
+  },
+  "line.c_slot": {
+    "who": "wiewiorka",
+    "text": "Siedem plus trzy równa się ile? Wskaż liczbę, która pasuje na końcu."
+  },
+  "line.c_solved": {
+    "who": "sarenka",
+    "text": "Siedem plus trzy to dziesięć! Doliczanie jest szybkie."
+  },
+  "line.wrong_digit": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "To inna liczba. Policz jeszcze raz."
+  },
+  "line.good_digit": {
+    "who": "wiewiorka",
+    "speakers": [
+      "sarenka"
+    ],
+    "text": "Tak! Dobrze doliczone."
+  },
+  "line.p_intro": {
+    "who": "sarenka",
+    "text": "Pobawmy się w doliczanie! Na pudełku jest napisane, ile jest w środku."
+  },
+  "line.p_count_on": {
+    "who": "sarenka",
+    "text": "Zacznij od liczby na pudełku. Wskaż nowe rzeczy po kolei."
+  },
+  "line.p_together": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Ile jest razem? Wskaż liczbę."
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Zagrajmy w doliczanie, tak jak w domu."
+  },
+  "line.a_ok": {
+    "who": "sarenka",
+    "text": "Dobrze! Zaczynamy od tego, co już wiemy."
+  },
+  "line.a_lyzka": {
+    "who": "sarenka",
+    "text": "W szufladzie jest pięć łyżek. Dołóż jeszcze te. Doliczaj od pięciu."
+  },
+  "line.a_klocek": {
+    "who": "sarenka",
+    "text": "W pudełku jest sześć klocków. Doliczaj od sześciu."
+  },
+  "line.a_kubek": {
+    "who": "sarenka",
+    "text": "Na półce stoi siedem kubków. Doliczaj od siedmiu."
+  },
+  "line.a_which_digit": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Ile jest razem? Wskaż liczbę."
+  },
+  "line.a_ask_parents": {
+    "who": "sarenka",
+    "text": "Poproście rodziców o doliczanie. Ile będzie schodów, gdy wejdziecie jeszcze trzy wyżej?"
+  },
+  "line.a_bye": {
+    "who": "wiewiorka",
+    "text": "Pa, pa! Do zobaczenia!"
+  },
+  "line.n1": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Jeden!"
+  },
+  "line.n2": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Dwa!"
+  },
+  "line.n3": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Trzy!"
+  },
+  "line.n4": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Cztery!"
+  },
+  "line.n5": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Pięć!"
+  },
+  "line.n6": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Sześć!"
+  },
+  "line.n7": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Siedem!"
+  },
+  "line.n8": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Osiem!"
+  },
+  "line.n9": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Dziewięć!"
+  },
+  "line.n10": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Dziesięć!"
+  }
+}

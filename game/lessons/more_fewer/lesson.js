@@ -104,15 +104,21 @@ export default {
         lay(c, cups, plates);
         await c.say("sowa", "line.m0_question");
         await c.say("lisek", "line.m0_naive", { anim: "Wskazanie" });
+        await c.wonder("sowa");
         await c.say("sowa", "line.m0_not");
         await c.say("lisek", "line.m0_how", { anim: "Rozgladanie" });
+        const pomysl = await c.idea("sowa", [["kubek", "kubek"], ["talerz", "talerz"]]);
         await c.say("sowa", "line.m0_pairs", { anim: "Zgloszenie" });
         await c.say("lisek", "line.m0_what");
+        pomysl.remove();
         await c.say("sowa", "line.m0_show");
         await c.say("sowa", "line.s1_pair");
         const left = await pair(c, cups, plates);
+        await c.focus([...cups, ...plates]);                       // close in on the pairs
         await c.say("sowa", "line.s1_point_left");
         await c.task({ targets: [...cups, ...plates], correct: left, wrong: "line.s1_wrong_left" });
+        await c.circle(left[0]);
+        await c.unfocus();
         await c.say("lisek", "line.s1_result");
         await c.say("sowa", "line.s1_owl_fewer");
         await c.say("sowa", "line.s2_signs");

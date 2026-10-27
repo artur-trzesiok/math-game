@@ -1,0 +1,34 @@
+{
+  "id": "numbers_1_5",
+  "title": {
+    "pl": "Liczby od 1 do 5",
+    "en": "Numbers 1 to 5"
+  },
+  "goal": "Count up to five (every thing once, the last number says how many) and recognise the digits 1-5.",
+  "age": "4-5",
+  "characters": [
+    "wiewiorka",
+    "sowa"
+  ],
+  "backgrounds": [
+    "las",
+    "strumyk",
+    "dom",
+    "laka",
+    "pokoj"
+  ],
+  "objects": [
+    "szyszka",
+    "kamyk",
+    "ciastko",
+    "jablko",
+    "kwiatek",
+    "pilka",
+    "gruszka",
+    "marchewka",
+    "kubek",
+    "klocek",
+    "misiu"
+  ],
+  "cover": "Between them a row of three pine cones on the forest floor, and above them a big hand-drawn pencil digit 3."
+}

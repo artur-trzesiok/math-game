@@ -1,0 +1,382 @@
+{
+ "line.s_jam": {
+  "hash": "f6a13cadfae6",
+  "who": "lisek",
+  "text": "Robię dżem! W przepisie jest napisane: sześć jabłek."
+ },
+ "line.s_enough": {
+  "hash": "2fb9ce8e4be9",
+  "who": "wiewiorka",
+  "text": "A czy masz akurat sześć?"
+ },
+ "line.s_fast": {
+  "hash": "077215b4fb58",
+  "who": "lisek",
+  "text": "Zaraz policzę, szybciutko!"
+ },
+ "line.s_nine": {
+  "hash": "64b582aedfda",
+  "who": "lisek",
+  "text": "Dziewięć! Mam aż dziewięć jabłek!"
+ },
+ "line.s_twice": {
+  "hash": "52e600226fa3",
+  "who": "wiewiorka",
+  "text": "Za szybko! To jabłko policzyłeś dwa razy, a tamto wcale."
+ },
+ "line.s_how": {
+  "hash": "89e85c7d1d99",
+  "who": "lisek",
+  "text": "To jak liczyć, żeby się nie pomylić?"
+ },
+ "line.s_aside": {
+  "hash": "7fcb6fac27d2",
+  "who": "wiewiorka",
+  "text": "Odkładając! Policzone jabłko odkładamy na bok."
+ },
+ "line.s_what": {
+  "hash": "0354539ad4a7",
+  "who": "lisek",
+  "text": "Odkładając? Jak to?"
+ },
+ "line.s_show": {
+  "hash": "031f99e4a683",
+  "who": "wiewiorka",
+  "text": "Pokażę ci. Wskaż jabłko, a ja przesunę je do rzędu i powiem liczbę."
+ },
+ "line.s_six": {
+  "hash": "b24f75dbd7a2",
+  "who": "wiewiorka",
+  "text": "Sześć jabłek! Żadne nie zostało policzone dwa razy."
+ },
+ "line.s_after_five": {
+  "hash": "8f6c8964c7d1",
+  "who": "lisek",
+  "text": "Po pięciu jest sześć. Liczymy dalej, o jeden więcej."
+ },
+ "line.s_solved": {
+  "hash": "4fd883735ac2",
+  "who": "lisek",
+  "text": "Akurat sześć, tyle ile w przepisie! Będzie dżem!"
+ },
+ "line.s_to_garden": {
+  "hash": "8f2acc74167f",
+  "who": "wiewiorka",
+  "text": "Chodźmy do ogrodu. Do dżemu dodamy marchewkę."
+ },
+ "line.b_carrots": {
+  "hash": "b235ce818dee",
+  "who": "lisek",
+  "text": "Marchewki leżą wszędzie. Policz je i odkładaj po kolei."
+ },
+ "line.b_seven": {
+  "hash": "98afb395e312",
+  "who": "lisek",
+  "text": "Siedem marchewek! Po sześciu jest siedem."
+ },
+ "line.b_one_more": {
+  "hash": "84ac37bed267",
+  "who": "wiewiorka",
+  "text": "Hop! Wyrwałam jeszcze jedną!"
+ },
+ "line.b_how_many_now": {
+  "hash": "ddcbeeac979e",
+  "who": "wiewiorka",
+  "text": "Było siedem, doszła jeszcze jedna. Ile jest teraz?"
+ },
+ "line.b_pick": {
+  "hash": "0932a9653f13",
+  "who": "wiewiorka",
+  "text": "Wskaż cyfrę, która mówi, ile jest teraz marchewek."
+ },
+ "line.b_eight": {
+  "hash": "e3af0863fe86",
+  "who": "lisek",
+  "text": "Osiem! Po siedmiu jest osiem."
+ },
+ "line.b_to_home": {
+  "hash": "dac614e2ed1f",
+  "who": "wiewiorka",
+  "text": "Wracajmy do domu. Dziś mamy przyjęcie!"
+ },
+ "line.c_party": {
+  "hash": "0f3b860097a2",
+  "who": "wiewiorka",
+  "text": "Na przyjęcie przyjdzie dużo gości. Policzmy kubki."
+ },
+ "line.c_knock": {
+  "hash": "b23dbfdf96c8",
+  "who": "lisek",
+  "text": "Puk, puk! Przyszedł jeszcze jeden gość. Przyniosę mu kubek."
+ },
+ "line.c_ten": {
+  "hash": "8169e6810896",
+  "who": "wiewiorka",
+  "text": "Dziewięć i jeszcze jeden to dziesięć!"
+ },
+ "line.c_solved": {
+  "hash": "d3b81f779589",
+  "who": "lisek",
+  "text": "Każdy gość ma kubek. Teraz umiesz liczyć do dziesięciu!"
+ },
+ "line.wrong_digit": {
+  "hash": "5d026fa9ba96",
+  "who": "lisek",
+  "text": "To inna cyfra. Popatrz jeszcze raz."
+ },
+ "line.wrong_digit.wiewiorka": {
+  "hash": "5a9af79af576",
+  "who": "wiewiorka",
+  "text": "To inna cyfra. Popatrz jeszcze raz."
+ },
+ "line.good_digit": {
+  "hash": "df526b9309c5",
+  "who": "lisek",
+  "text": "Tak! To ta cyfra. Świetnie!"
+ },
+ "line.good_digit.wiewiorka": {
+  "hash": "d2a3a7b91efa",
+  "who": "wiewiorka",
+  "text": "Tak! To ta cyfra. Świetnie!"
+ },
+ "line.p_intro": {
+  "hash": "9ba5dfe93c39",
+  "who": "lisek",
+  "text": "Pobawmy się w liczenie do dziesięciu!"
+ },
+ "line.p_count": {
+  "hash": "835b343d6c29",
+  "who": "lisek",
+  "text": "Policz wszystko. Wskaż każdą rzecz tylko raz."
+ },
+ "line.p_which_digit": {
+  "hash": "2261af79ef5a",
+  "who": "wiewiorka",
+  "text": "Wskaż cyfrę, która mówi, ile ich jest."
+ },
+ "line.p_which_digit.lisek": {
+  "hash": "b990764846e3",
+  "who": "lisek",
+  "text": "Wskaż cyfrę, która mówi, ile ich jest."
+ },
+ "line.p_group_7": {
+  "hash": "3e97fa23b1cd",
+  "who": "wiewiorka",
+  "text": "Wskaż grupę, w której jest siedem rzeczy."
+ },
+ "line.p_group_9": {
+  "hash": "0bd9f500c367",
+  "who": "wiewiorka",
+  "text": "Wskaż grupę, w której jest dziewięć rzeczy."
+ },
+ "line.p_wrong_group": {
+  "hash": "81f6d97176ed",
+  "who": "wiewiorka",
+  "text": "Policz jeszcze raz, każdą rzecz tylko raz."
+ },
+ "line.good_group": {
+  "hash": "60365c0331e8",
+  "who": "lisek",
+  "text": "Tak! Dobrze policzone."
+ },
+ "line.good_group.wiewiorka": {
+  "hash": "21eea1c8324c",
+  "who": "wiewiorka",
+  "text": "Tak! Dobrze policzone."
+ },
+ "line.a_game": {
+  "hash": "b64bc2c30ba9",
+  "who": "wiewiorka",
+  "text": "Zagrajmy w liczenie w przedpokoju, tak jak w domu."
+ },
+ "line.a_ok": {
+  "hash": "094a43042005",
+  "who": "lisek",
+  "text": "Dobrze! Liczymy i odkładamy po kolei."
+ },
+ "line.a_count_but": {
+  "hash": "b4f6dc59002f",
+  "who": "lisek",
+  "text": "Policz buty. Wskaż każdy po kolei."
+ },
+ "line.a_count_skarpetka": {
+  "hash": "ac5974eeb169",
+  "who": "lisek",
+  "text": "Teraz skarpetki. Ile ich jest?"
+ },
+ "line.a_count_klocek": {
+  "hash": "1fed873bf6cb",
+  "who": "lisek",
+  "text": "A teraz klocki. Policz je wszystkie."
+ },
+ "line.a_which_digit": {
+  "hash": "b990764846e3",
+  "who": "lisek",
+  "text": "Wskaż cyfrę, która mówi, ile ich jest."
+ },
+ "line.a_which_digit.wiewiorka": {
+  "hash": "2261af79ef5a",
+  "who": "wiewiorka",
+  "text": "Wskaż cyfrę, która mówi, ile ich jest."
+ },
+ "line.a_ask_parents": {
+  "hash": "a18b354811f5",
+  "who": "wiewiorka",
+  "text": "Poproście rodziców, żeby razem z wami policzyli buty w przedpokoju albo schody."
+ },
+ "line.a_bye": {
+  "hash": "163cfb6abb1b",
+  "who": "lisek",
+  "text": "Pa, pa! Do zobaczenia!"
+ },
+ "line.n1": {
+  "hash": "ba57f5b09fb8",
+  "who": "wiewiorka",
+  "text": "Jeden!"
+ },
+ "line.n1.lisek": {
+  "hash": "6fbe262bb5aa",
+  "who": "lisek",
+  "text": "Jeden!"
+ },
+ "line.n2": {
+  "hash": "1fe22df41e61",
+  "who": "wiewiorka",
+  "text": "Dwa!"
+ },
+ "line.n2.lisek": {
+  "hash": "4ae56520b21c",
+  "who": "lisek",
+  "text": "Dwa!"
+ },
+ "line.n3": {
+  "hash": "de660ab27bd0",
+  "who": "wiewiorka",
+  "text": "Trzy!"
+ },
+ "line.n3.lisek": {
+  "hash": "06aeae1887f5",
+  "who": "lisek",
+  "text": "Trzy!"
+ },
+ "line.n4": {
+  "hash": "55526c232825",
+  "who": "wiewiorka",
+  "text": "Cztery!"
+ },
+ "line.n4.lisek": {
+  "hash": "9dfcf62ace93",
+  "who": "lisek",
+  "text": "Cztery!"
+ },
+ "line.n5": {
+  "hash": "f368640872aa",
+  "who": "wiewiorka",
+  "text": "Pięć!"
+ },
+ "line.n5.lisek": {
+  "hash": "13dc2f7ccaef",
+  "who": "lisek",
+  "text": "Pięć!"
+ },
+ "line.n6": {
+  "hash": "87fbeaf5cf14",
+  "who": "wiewiorka",
+  "text": "Sześć!"
+ },
+ "line.n6.lisek": {
+  "hash": "6950cd4f3042",
+  "who": "lisek",
+  "text": "Sześć!"
+ },
+ "line.n7": {
+  "hash": "0bc997608410",
+  "who": "wiewiorka",
+  "text": "Siedem!"
+ },
+ "line.n7.lisek": {
+  "hash": "73991a9873b7",
+  "who": "lisek",
+  "text": "Siedem!"
+ },
+ "line.n8": {
+  "hash": "0d6fb9d4b5e6",
+  "who": "wiewiorka",
+  "text": "Osiem!"
+ },
+ "line.n8.lisek": {
+  "hash": "eccb34f292b4",
+  "who": "lisek",
+  "text": "Osiem!"
+ },
+ "line.n9": {
+  "hash": "f8a4ba0e263a",
+  "who": "wiewiorka",
+  "text": "Dziewięć!"
+ },
+ "line.n9.lisek": {
+  "hash": "3684317899ac",
+  "who": "lisek",
+  "text": "Dziewięć!"
+ },
+ "line.n10": {
+  "hash": "97b5f38198ac",
+  "who": "wiewiorka",
+  "text": "Dziesięć!"
+ },
+ "line.n10.lisek": {
+  "hash": "ffd792e7b207",
+  "who": "lisek",
+  "text": "Dziesięć!"
+ },
+ "line.d6": {
+  "hash": "53325378983c",
+  "who": "wiewiorka",
+  "text": "To jest szóstka. Wygląda jak ślimak, który wystawia czułek do góry."
+ },
+ "line.d6.lisek": {
+  "hash": "d61491889566",
+  "who": "lisek",
+  "text": "To jest szóstka. Wygląda jak ślimak, który wystawia czułek do góry."
+ },
+ "line.d7": {
+  "hash": "d100c103cea7",
+  "who": "wiewiorka",
+  "text": "To jest siódemka. Ma daszek, długą nóżkę i krótki pasek w środku."
+ },
+ "line.d7.lisek": {
+  "hash": "99330635954e",
+  "who": "lisek",
+  "text": "To jest siódemka. Ma daszek, długą nóżkę i krótki pasek w środku."
+ },
+ "line.d8": {
+  "hash": "1cba634ecd9a",
+  "who": "wiewiorka",
+  "text": "To jest ósemka. Wygląda jak bałwanek z dwóch kulek."
+ },
+ "line.d8.lisek": {
+  "hash": "a6883ba73466",
+  "who": "lisek",
+  "text": "To jest ósemka. Wygląda jak bałwanek z dwóch kulek."
+ },
+ "line.d9": {
+  "hash": "fade94e01885",
+  "who": "wiewiorka",
+  "text": "To jest dziewiątka. Wygląda jak balonik na sznurku."
+ },
+ "line.d9.lisek": {
+  "hash": "4a24457322ad",
+  "who": "lisek",
+  "text": "To jest dziewiątka. Wygląda jak balonik na sznurku."
+ },
+ "line.d10": {
+  "hash": "caf63bd39611",
+  "who": "wiewiorka",
+  "text": "To jest dziesięć. Zapisujemy je dwiema cyframi, jedynką i zerem."
+ },
+ "line.d10.lisek": {
+  "hash": "7bf2444c7d7b",
+  "who": "lisek",
+  "text": "To jest dziesięć. Zapisujemy je dwiema cyframi, jedynką i zerem."
+ }
+}

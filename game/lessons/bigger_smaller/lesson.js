@@ -37,19 +37,25 @@ export default {
         await c.say("lisek", "line.b0_mine", { anim: "Wskazanie" });
         await c.say("wiewiorka", "line.b0_no");
         await c.say("lisek", "line.b0_higher", { anim: "Podskok" });
+        await c.wonder("wiewiorka");
         await c.say("wiewiorka", "line.b0_not");
         await c.say("lisek", "line.b0_how", { anim: "Rozgladanie" });
+        const pomysl = await c.idea("wiewiorka", [["gruszka", "gruszka"]]);
         await c.say("wiewiorka", "line.b0_compare", { anim: "Zgloszenie" });
         await c.say("lisek", "line.b0_what");
+        pomysl.remove();
         await c.say("wiewiorka", "line.b0_show");
         const [kBig, kSmall] = await porownaj(c, [big, small]);
+        await c.focus([big, small, kBig, kSmall]);                 // the camera closes in on the comparison
         await c.say("wiewiorka", "line.c1_which_line");
         await c.task({ targets: [kBig, kSmall], correct: kBig, wrong: "line.c1_wrong_line" });
         kBig.highlight(true); big.highlight(true);
         await c.say("lisek", "line.c1_higher", { anim: "Radosc" });
         kBig.highlight(false); big.highlight(false);
+        await c.unfocus();
         await c.say("wiewiorka", "line.c1_pick");
         await c.task({ targets: [big, small], correct: big, wrong: "line.c1_wrong_pear" });
+        await c.circle(big);
         await c.say("lisek", "line.b0_fair", { anim: "Kiwanie" });
         await c.say("lisek", "line.c1_rule", { anim: "Brawo" });
         c.clear();

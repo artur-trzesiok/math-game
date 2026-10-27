@@ -6,6 +6,7 @@
 // URL: ?lekcja=<id>&etap=story|practice|apply&lang=pl|en&szybko&napisy&safe
 
 import * as THREE from "three";
+import { narysujCyfre, liczDotykiem, narysujRownanie } from "./liczby.js";
 import { Stage } from "./scene.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
@@ -41,13 +42,24 @@ export class Player {
     $("#title").textContent = this.t("menu.title");
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("");
     $("#langs").onclick = (e) => { const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
-    $("#lessons").innerHTML = this.index.lessons.map((l, i) => `
+    // lessons grouped into topics (index.json "topics"; a lesson in no topic goes to a last, untitled row);
+    // numbers restart in every topic, the topic's colour marks its cards
+    const byId = Object.fromEntries(this.index.lessons.map((l) => [l.id, l]));
+    const topics = (this.index.topics || []).map((t) => ({ ...t, lessons: t.lessons.filter((id) => byId[id]) })).filter((t) => t.lessons.length);
+    const rest = this.index.lessons.map((l) => l.id).filter((id) => !topics.some((t) => t.lessons.includes(id)));
+    if (rest.length) topics.push({ id: "inne", title: null, color: "#ffb347", lessons: rest });
+    const card = (l, i, color) => `
       <button class="lesson" data-id="${l.id}">
         <img class="cover" src="/game/lessons/${l.id}/cover.webp" alt="" onerror="this.style.visibility='hidden'">
-        <span class="nr">${i + 1}</span>
+        <span class="nr" style="background:${color}">${i + 1}</span>
         <span class="name">${l.title[this.lang] || l.title.en}</span>
         <span class="sub">${l.subtitle?.[this.lang] || ""}</span>
-      </button>`).join("");
+      </button>`;
+    $("#lessons").innerHTML = topics.map((t) => `
+      <section class="topic">
+        ${t.title ? `<h2 style="--c:${t.color}">${t.title[this.lang] || t.title.en}</h2>` : ""}
+        <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
+      </section>`).join("");
     $("#lessons").onclick = (e) => { const b = e.target.closest(".lesson"); if (b) this.start(b.dataset.id); };
   }
 
@@ -152,6 +164,11 @@ export class Player {
       take: guard((who, h, opts) => S.take(who, h, opts)),
       // "I have an idea!": a thought bubble over a character with stickers pictured inside, in groups
       idea: guard((who, groups, opts) => S.idea(who, groups, opts)),
+      // numbers: a digit (or 10) drawn with the pencil; counting by touch - the number words are the lesson's own
+      // lines "line.n1".."line.n10", spoken by `who`
+      digit: guard((n, opts) => narysujCyfre(S, n, opts)),
+      count: guard((items, { who, od = 0, rzad = null } = {}) => liczDotykiem(S, items, { od, rzad, say: (k) => say(who, `line.n${k}`) })),
+      equation: guard((tokens, opts) => narysujRownanie(S, tokens, opts)),
       put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),

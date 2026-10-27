@@ -1,0 +1,190 @@
+{
+  "line.s_guests": {
+    "who": "sowa",
+    "text": "Na podwieczorek przyjdą trzy jeżyki. Każdy dostanie jedno jabłko."
+  },
+  "line.s_fox_has": {
+    "who": "lisek",
+    "text": "Ja mam w koszyku dwa jabłka."
+  },
+  "line.s_owl_has": {
+    "who": "sowa",
+    "text": "A ja mam jedno."
+  },
+  "line.s_naive": {
+    "who": "lisek",
+    "text": "Czyli razem mamy dwa! Moich jest więcej, więc liczą się moje."
+  },
+  "line.s_not": {
+    "who": "sowa",
+    "text": "Nic nie znika! Kiedy wkładamy jabłka razem, jest ich więcej niż dwa."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "To ile ich mamy razem?"
+  },
+  "line.s_add": {
+    "who": "sowa",
+    "text": "Dodajemy! Łączymy dwie kupki w jedną i liczymy wszystko."
+  },
+  "line.s_what": {
+    "who": "lisek",
+    "text": "Dodajemy? Co to znaczy dodawać?"
+  },
+  "line.s_show": {
+    "who": "sowa",
+    "text": "Pokażę ci, to proste. Przeciągnij moje jabłko do koszyka liska."
+  },
+  "line.s_count_all": {
+    "who": "sowa",
+    "text": "Teraz policz wszystkie jabłka w koszyku."
+  },
+  "line.s_three": {
+    "who": "lisek",
+    "text": "Trzy! Dwa i jeszcze jedno to razem trzy."
+  },
+  "line.s_write": {
+    "who": "sowa",
+    "text": "Dodawanie można zapisać. Dwa, plus, jeden, równa się trzy."
+  },
+  "line.s_plus": {
+    "who": "sowa",
+    "text": "Plus wygląda jak mały krzyżyk. Mówi nam: połącz razem."
+  },
+  "line.s_solved": {
+    "who": "lisek",
+    "text": "Trzy jabłka dla trzech jeżyków! Starczy dla każdego."
+  },
+  "line.s_to_meadow": {
+    "who": "sowa",
+    "text": "Chodźmy nad jezioro, na piknik."
+  },
+  "line.b_picnic": {
+    "who": "lisek",
+    "text": "Rozkładam kubki na kocu. Mam dwa kubki."
+  },
+  "line.b_owl": {
+    "who": "sowa",
+    "text": "Ja też mam dwa. Przeciągnij moje kubki na koc."
+  },
+  "line.b_count": {
+    "who": "lisek",
+    "text": "Policz wszystkie kubki na kocu."
+  },
+  "line.b_pick": {
+    "who": "sowa",
+    "text": "Ile jest razem? Wskaż cyfrę."
+  },
+  "line.b_write": {
+    "who": "sowa",
+    "text": "Dwa plus dwa równa się cztery."
+  },
+  "line.b_to_home": {
+    "who": "lisek",
+    "text": "Cztery kubki! Wracajmy do domu, upiekę ciastka."
+  },
+  "line.c_bake": {
+    "who": "lisek",
+    "text": "Upiekłem trzy ciastka."
+  },
+  "line.c_owl": {
+    "who": "sowa",
+    "text": "A ja dwa. Przeciągnij moje ciastka na talerz."
+  },
+  "line.c_slot": {
+    "who": "sowa",
+    "text": "Trzy plus dwa równa się ile? Wskaż cyfrę, która pasuje na końcu."
+  },
+  "line.c_read": {
+    "who": "sowa",
+    "text": "Trzy plus dwa równa się pięć!"
+  },
+  "line.c_solved": {
+    "who": "lisek",
+    "text": "Teraz umiesz dodawać! Łączymy razem i liczymy wszystko."
+  },
+  "line.wrong_digit": {
+    "who": "sowa",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "To inna cyfra. Policz jeszcze raz."
+  },
+  "line.good_digit": {
+    "who": "lisek",
+    "speakers": [
+      "sowa"
+    ],
+    "text": "Tak! Dobrze dodane."
+  },
+  "line.p_intro": {
+    "who": "sowa",
+    "text": "Pobawmy się w dodawanie! Dwie kupki, a pomiędzy nimi plus."
+  },
+  "line.p_together": {
+    "who": "sowa",
+    "text": "Ile jest razem? Wskaż cyfrę."
+  },
+  "line.a_game": {
+    "who": "lisek",
+    "text": "Zagrajmy w dodawanie zabawek, tak jak w domu."
+  },
+  "line.a_ok": {
+    "who": "sowa",
+    "text": "Dobrze! Wkładamy zabawki do pudełka i liczymy wszystkie."
+  },
+  "line.a_put": {
+    "who": "sowa",
+    "text": "Przeciągnij zabawki do pudełka, a potem policz wszystkie."
+  },
+  "line.a_which_digit": {
+    "who": "sowa",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Ile jest razem? Wskaż cyfrę."
+  },
+  "line.a_ask_parents": {
+    "who": "sowa",
+    "text": "Poproście rodziców o zabawę w dodawanie. Ile łyżek będzie, gdy dołożycie jeszcze jedną?"
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Pa, pa! Do zobaczenia!"
+  },
+  "line.n1": {
+    "who": "sowa",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Jeden!"
+  },
+  "line.n2": {
+    "who": "sowa",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Dwa!"
+  },
+  "line.n3": {
+    "who": "sowa",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Trzy!"
+  },
+  "line.n4": {
+    "who": "sowa",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Cztery!"
+  },
+  "line.n5": {
+    "who": "sowa",
+    "speakers": [
+      "lisek"
+    ],
+    "text": "Pięć!"
+  }
+}

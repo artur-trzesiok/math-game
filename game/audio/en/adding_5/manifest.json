@@ -1,0 +1,147 @@
+{
+ "line.s_guests": {
+  "hash": "359052929578",
+  "who": "sowa",
+  "text": "Three little hedgehogs are coming for a snack. Each one gets an apple."
+ },
+ "line.s_fox_has": {
+  "hash": "7c6709b0f0bd",
+  "who": "lisek",
+  "text": "I have two apples in my basket."
+ },
+ "line.s_owl_has": {
+  "hash": "16f66369050b",
+  "who": "sowa",
+  "text": "And I have one."
+ },
+ "line.s_naive": {
+  "hash": "1de1f33655ec",
+  "who": "lisek",
+  "text": "So together we have two! Mine are more, so mine count."
+ },
+ "line.s_not": {
+  "hash": "aabe718a5654",
+  "who": "sowa",
+  "text": "Nothing vanishes! When we put the apples together, there are more than two."
+ },
+ "line.s_how": {
+  "hash": "c5cd65cd8ee1",
+  "who": "lisek",
+  "text": "Then how many do we have together?"
+ },
+ "line.s_add": {
+  "hash": "da24efe2ebab",
+  "who": "sowa",
+  "text": "We add! We put two piles into one and count them all."
+ },
+ "line.s_what": {
+  "hash": "e8c9b655d505",
+  "who": "lisek",
+  "text": "Add? What does adding mean?"
+ },
+ "line.s_show": {
+  "hash": "849fe4971da2",
+  "who": "sowa",
+  "text": "I will show you, it is easy. Drag my apple into Fox's basket."
+ },
+ "line.s_count_all": {
+  "hash": "c8969005dbc1",
+  "who": "sowa",
+  "text": "Now count all the apples in the basket."
+ },
+ "line.s_three": {
+  "hash": "603c1b272b9e",
+  "who": "lisek",
+  "text": "Three! Two and one more make three."
+ },
+ "line.s_write": {
+  "hash": "d68c3976476e",
+  "who": "sowa",
+  "text": "Adding can be written down. Two, plus, one, equals three."
+ },
+ "line.s_plus": {
+  "hash": "5e5eef67ab62",
+  "who": "sowa",
+  "text": "Plus looks like a little cross. It tells us: put them together."
+ },
+ "line.s_solved": {
+  "hash": "3d03877297b2",
+  "who": "lisek",
+  "text": "Three apples for three hedgehogs! Enough for everyone."
+ },
+ "line.s_to_meadow": {
+  "hash": "df86f339f553",
+  "who": "sowa",
+  "text": "Let's go to the lake, for a picnic."
+ },
+ "line.b_picnic": {
+  "hash": "795c1cf695a8",
+  "who": "lisek",
+  "text": "I am putting cups on the blanket. I have two cups."
+ },
+ "line.b_owl": {
+  "hash": "a9182b3363d1",
+  "who": "sowa",
+  "text": "I have two as well. Drag my cups onto the blanket."
+ },
+ "line.b_count": {
+  "hash": "eef3bbdb462d",
+  "who": "lisek",
+  "text": "Count all the cups on the blanket."
+ },
+ "line.b_pick": {
+  "hash": "704bf7201617",
+  "who": "sowa",
+  "text": "How many are there together? Point to the digit."
+ },
+ "line.b_write": {
+  "hash": "9583f7eb2abc",
+  "who": "sowa",
+  "text": "Two plus two equals four."
+ },
+ "line.b_to_home": {
+  "hash": "5fc9b651d481",
+  "who": "lisek",
+  "text": "Four cups! Let's go home, I'll bake cookies."
+ },
+ "line.c_bake": {
+  "hash": "38ca1ebd2780",
+  "who": "lisek",
+  "text": "I baked three cookies."
+ },
+ "line.c_owl": {
+  "hash": "d5069d27bee7",
+  "who": "sowa",
+  "text": "And I baked two. Drag my cookies onto the plate."
+ },
+ "line.c_slot": {
+  "hash": "655c3e830b10",
+  "who": "sowa",
+  "text": "Three plus two equals what? Point to the digit that fits at the end."
+ },
+ "line.c_read": {
+  "hash": "3708137e69dc",
+  "who": "sowa",
+  "text": "Three plus two equals five!"
+ },
+ "line.c_solved": {
+  "hash": "d43fbed12cbf",
+  "who": "lisek",
+  "text": "Now you can add! We put things together and count them all."
+ },
+ "line.wrong_digit": {
+  "hash": "0b52fc5f359e",
+  "who": "sowa",
+  "text": "That is another digit. Count again."
+ },
+ "line.wrong_digit.lisek": {
+  "hash": "08138185b088",
+  "who": "lisek",
+  "text": "That is another digit. Count again."
+ },
+ "line.good_digit": {
+  "hash": "f468add04661",
+  "who": "lisek",
+  "text": "Yes! Well added."
+ }
+}

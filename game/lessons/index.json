@@ -1,10 +1,110 @@
 {
   "lessons": [
-    { "id": "bigger_smaller", "title": { "pl": "Większy, mniejszy", "en": "Bigger, smaller" },
-      "subtitle": { "pl": "porównywanie wielkości", "en": "comparing size" } },
-    { "id": "more_fewer", "title": { "pl": "Więcej, mniej", "en": "More, fewer" },
-      "subtitle": { "pl": "porównywanie ilości i znaki =, <, >", "en": "comparing amounts and the signs =, <, >" } },
-    { "id": "grouping", "title": { "pl": "Grupowanie", "en": "Grouping" },
-      "subtitle": { "pl": "co do czego pasuje", "en": "what goes with what" } }
+    {
+      "id": "bigger_smaller",
+      "title": {
+        "pl": "Większy, mniejszy",
+        "en": "Bigger, smaller"
+      },
+      "subtitle": {
+        "pl": "porównywanie wielkości",
+        "en": "comparing size"
+      }
+    },
+    {
+      "id": "more_fewer",
+      "title": {
+        "pl": "Więcej, mniej",
+        "en": "More, fewer"
+      },
+      "subtitle": {
+        "pl": "porównywanie ilości i znaki =, <, >",
+        "en": "comparing amounts and the signs =, <, >"
+      }
+    },
+    {
+      "id": "grouping",
+      "title": {
+        "pl": "Grupowanie",
+        "en": "Grouping"
+      },
+      "subtitle": {
+        "pl": "co do czego pasuje",
+        "en": "what goes with what"
+      }
+    },
+    {
+      "id": "numbers_1_5",
+      "title": {
+        "pl": "Liczby od 1 do 5",
+        "en": "Numbers 1 to 5"
+      },
+      "subtitle": {
+        "pl": "liczenie i cyfry",
+        "en": "counting and digits"
+      }
+    },
+    {
+      "id": "numbers_6_10",
+      "title": {
+        "pl": "Liczby od 6 do 10",
+        "en": "Numbers 6 to 10"
+      },
+      "subtitle": {
+        "pl": "liczenie dalej i cyfry",
+        "en": "counting on and digits"
+      }
+    },
+    {
+      "id": "adding_5",
+      "title": {
+        "pl": "Dodawanie do 5",
+        "en": "Adding to 5"
+      },
+      "subtitle": {
+        "pl": "łączymy i liczymy, znak +",
+        "en": "put together and count, the sign +"
+      }
+    },
+    {
+      "id": "adding_10",
+      "title": {
+        "pl": "Dodawanie do 10",
+        "en": "Adding to 10"
+      },
+      "subtitle": {
+        "pl": "doliczanie od znanej liczby",
+        "en": "counting on from a known number"
+      }
+    }
+  ],
+  "topics": [
+    {
+      "id": "porownywanie",
+      "title": {
+        "pl": "Porównywanie",
+        "en": "Comparing"
+      },
+      "color": "#ffb347",
+      "lessons": [
+        "bigger_smaller",
+        "more_fewer",
+        "grouping"
+      ]
+    },
+    {
+      "id": "liczby",
+      "title": {
+        "pl": "Liczby i dodawanie",
+        "en": "Numbers and adding"
+      },
+      "color": "#6cc4a1",
+      "lessons": [
+        "numbers_1_5",
+        "numbers_6_10",
+        "adding_5",
+        "adding_10"
+      ]
+    }
   ]
 }

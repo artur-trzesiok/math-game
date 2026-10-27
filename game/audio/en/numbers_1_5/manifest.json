@@ -1,0 +1,327 @@
+{
+ "line.s_store": {
+  "hash": "82c5099d645f",
+  "who": "wiewiorka",
+  "text": "I am collecting pine cones for winter. Look how many I have!"
+ },
+ "line.s_how_many": {
+  "hash": "f77e07f84cb8",
+  "who": "sowa",
+  "text": "Lovely! And how many exactly do you have?"
+ },
+ "line.s_lots": {
+  "hash": "15b4eeeeca5b",
+  "who": "wiewiorka",
+  "text": "Lots! I have lots and lots of them!"
+ },
+ "line.s_lots_not": {
+  "hash": "8fc95c42a118",
+  "who": "sowa",
+  "text": "Lots is not an answer. Tomorrow you will not know if one went missing."
+ },
+ "line.s_how": {
+  "hash": "9d2de29fc3a6",
+  "who": "wiewiorka",
+  "text": "Then how can I check?"
+ },
+ "line.s_count": {
+  "hash": "81d1fa4da5e9",
+  "who": "sowa",
+  "text": "By counting! Then you know exactly how many there are."
+ },
+ "line.s_what": {
+  "hash": "d31b2c8f7035",
+  "who": "wiewiorka",
+  "text": "Counting? What is counting?"
+ },
+ "line.s_show": {
+  "hash": "399390e3704b",
+  "who": "sowa",
+  "text": "I will show you, it is fun. We point to each cone only once and say the numbers in order."
+ },
+ "line.s_point_each": {
+  "hash": "b02fd6f605ce",
+  "who": "sowa",
+  "text": "Point to each cone, one after another. I will count."
+ },
+ "line.s_last": {
+  "hash": "ea3fd1084f05",
+  "who": "sowa",
+  "text": "The last number tells how many there are. You have three cones!"
+ },
+ "line.s_digits": {
+  "hash": "bb302e1f062e",
+  "who": "sowa",
+  "text": "A number can also be written down. We write it with a digit. Look."
+ },
+ "line.s_point_3": {
+  "hash": "d2d3df4a8fe5",
+  "who": "wiewiorka",
+  "text": "I have three cones. Point to the digit three."
+ },
+ "line.wrong_digit": {
+  "hash": "9998ff738234",
+  "who": "sowa",
+  "text": "That is another digit. Look again."
+ },
+ "line.wrong_digit.wiewiorka": {
+  "hash": "b0cebfd59e50",
+  "who": "wiewiorka",
+  "text": "That is another digit. Look again."
+ },
+ "line.s_solved": {
+  "hash": "06ed9de73f52",
+  "who": "wiewiorka",
+  "text": "I will write a three by my store. Tomorrow I will count and check that they are all there!"
+ },
+ "line.s_to_brook": {
+  "hash": "e258615f0295",
+  "who": "sowa",
+  "text": "Let's go to the brook. There is something to count there too."
+ },
+ "line.b_pebbles": {
+  "hash": "6d7a2e9fa898",
+  "who": "wiewiorka",
+  "text": "Let's collect pebbles for hopscotch. I have a few."
+ },
+ "line.b_count": {
+  "hash": "291e3ed1c5a6",
+  "who": "sowa",
+  "text": "Count them. Point to each pebble only once."
+ },
+ "line.b_four": {
+  "hash": "1cf2f2555193",
+  "who": "wiewiorka",
+  "text": "Four pebbles! The last number is four."
+ },
+ "line.b_pick_4": {
+  "hash": "5e65b627c893",
+  "who": "sowa",
+  "text": "There is a four among the cards. Point to the digit four."
+ },
+ "line.good_digit": {
+  "hash": "1ac6f424869b",
+  "who": "sowa",
+  "text": "Yes! That is the digit. Great!"
+ },
+ "line.good_digit.wiewiorka": {
+  "hash": "8ddd5a1bbbe3",
+  "who": "wiewiorka",
+  "text": "Yes! That is the digit. Great!"
+ },
+ "line.b_to_home": {
+  "hash": "0d89ab72e0fd",
+  "who": "wiewiorka",
+  "text": "Let's go home. Cookies are waiting for us!"
+ },
+ "line.c_cookies": {
+  "hash": "b716722a8966",
+  "who": "sowa",
+  "text": "I baked cookies for our guests. Let's count them, so there are enough for everyone."
+ },
+ "line.c_five": {
+  "hash": "f049ca5a9fc6",
+  "who": "sowa",
+  "text": "Five cookies! The last number is five."
+ },
+ "line.c_two_plates": {
+  "hash": "38d4ea0a4675",
+  "who": "wiewiorka",
+  "text": "Now there are two plates of cookies. One of them has five."
+ },
+ "line.c_pick_5": {
+  "hash": "2f9791ea1afe",
+  "who": "wiewiorka",
+  "text": "Point to the plate with five cookies. You can count them."
+ },
+ "line.c_wrong_5": {
+  "hash": "629bb2225e16",
+  "who": "wiewiorka",
+  "text": "Count again. There are fewer than five here."
+ },
+ "line.c_solved": {
+  "hash": "7f4160db36c4",
+  "who": "sowa",
+  "text": "Well done! Now you can count to five and you know five digits."
+ },
+ "line.p_intro": {
+  "hash": "0b2ee8908c4d",
+  "who": "sowa",
+  "text": "Let's play counting! Count the things and find their digit."
+ },
+ "line.p_how_many": {
+  "hash": "a08a6ffbfd1b",
+  "who": "sowa",
+  "text": "How many are there? Point to the right digit."
+ },
+ "line.p_group_1": {
+  "hash": "66889e0cf37b",
+  "who": "wiewiorka",
+  "text": "Point to the group with only one thing."
+ },
+ "line.p_group_4": {
+  "hash": "405321611e1f",
+  "who": "wiewiorka",
+  "text": "Point to the group with four things."
+ },
+ "line.p_wrong_group": {
+  "hash": "92012f5b9bc8",
+  "who": "wiewiorka",
+  "text": "Count again, each thing only once."
+ },
+ "line.good_group": {
+  "hash": "ab91cc567108",
+  "who": "sowa",
+  "text": "Yes! Well counted."
+ },
+ "line.good_group.wiewiorka": {
+  "hash": "1447fb9b3d06",
+  "who": "wiewiorka",
+  "text": "Yes! Well counted."
+ },
+ "line.a_game": {
+  "hash": "c51cf1595c95",
+  "who": "wiewiorka",
+  "text": "Let's play counting toys, just like at home."
+ },
+ "line.a_ok": {
+  "hash": "2be8ddf1b90f",
+  "who": "sowa",
+  "text": "All right! I show the toys and you count."
+ },
+ "line.a_count_klocek": {
+  "hash": "dc1eac46fda9",
+  "who": "sowa",
+  "text": "Count the blocks. Point to each one in turn."
+ },
+ "line.a_count_misiu": {
+  "hash": "77a1d3bea719",
+  "who": "sowa",
+  "text": "Now the teddy bears. How many are there?"
+ },
+ "line.a_count_pilka": {
+  "hash": "da69497e4616",
+  "who": "sowa",
+  "text": "And now the balls. Count them all."
+ },
+ "line.a_which_digit": {
+  "hash": "3c5df646eba4",
+  "who": "wiewiorka",
+  "text": "Point to the digit that tells how many there are."
+ },
+ "line.a_which_digit.sowa": {
+  "hash": "2a49b7bb478b",
+  "who": "sowa",
+  "text": "Point to the digit that tells how many there are."
+ },
+ "line.a_ask_parents": {
+  "hash": "5417eb570ce2",
+  "who": "sowa",
+  "text": "Ask your parents to count toys or the plates on the table with you."
+ },
+ "line.a_bye": {
+  "hash": "3c8231148d14",
+  "who": "wiewiorka",
+  "text": "Bye bye! See you!"
+ },
+ "line.n1": {
+  "hash": "13ecf4f502e6",
+  "who": "sowa",
+  "text": "One!"
+ },
+ "line.n1.wiewiorka": {
+  "hash": "b450b7ae1d7d",
+  "who": "wiewiorka",
+  "text": "One!"
+ },
+ "line.n2": {
+  "hash": "03e0547eb360",
+  "who": "sowa",
+  "text": "Two!"
+ },
+ "line.n2.wiewiorka": {
+  "hash": "9ffb03ee7b98",
+  "who": "wiewiorka",
+  "text": "Two!"
+ },
+ "line.n3": {
+  "hash": "1b70b81f1a09",
+  "who": "sowa",
+  "text": "Three!"
+ },
+ "line.n3.wiewiorka": {
+  "hash": "5641cc4a1ea8",
+  "who": "wiewiorka",
+  "text": "Three!"
+ },
+ "line.n4": {
+  "hash": "ac53306b5483",
+  "who": "sowa",
+  "text": "Four!"
+ },
+ "line.n4.wiewiorka": {
+  "hash": "f09afa4cffab",
+  "who": "wiewiorka",
+  "text": "Four!"
+ },
+ "line.n5": {
+  "hash": "f7dbf2ce5c8d",
+  "who": "sowa",
+  "text": "Five!"
+ },
+ "line.n5.wiewiorka": {
+  "hash": "288f44558ee1",
+  "who": "wiewiorka",
+  "text": "Five!"
+ },
+ "line.d1": {
+  "hash": "b0799080c5b5",
+  "who": "sowa",
+  "text": "This is a one. It looks like a stick with a little nose."
+ },
+ "line.d1.wiewiorka": {
+  "hash": "0e243e71a210",
+  "who": "wiewiorka",
+  "text": "This is a one. It looks like a stick with a little nose."
+ },
+ "line.d2": {
+  "hash": "9111a0eba68e",
+  "who": "sowa",
+  "text": "This is a two. It looks like a swan swimming on the water."
+ },
+ "line.d2.wiewiorka": {
+  "hash": "8d93f1ae5e22",
+  "who": "wiewiorka",
+  "text": "This is a two. It looks like a swan swimming on the water."
+ },
+ "line.d3": {
+  "hash": "beedf09790b0",
+  "who": "sowa",
+  "text": "This is a three. It has two tummies, one on top of the other."
+ },
+ "line.d3.wiewiorka": {
+  "hash": "bb305f1c1b97",
+  "who": "wiewiorka",
+  "text": "This is a three. It has two tummies, one on top of the other."
+ },
+ "line.d4": {
+  "hash": "fe2f692c37a0",
+  "who": "sowa",
+  "text": "This is a four. It looks like a little chair turned upside down."
+ },
+ "line.d4.wiewiorka": {
+  "hash": "047f9f4c752a",
+  "who": "wiewiorka",
+  "text": "This is a four. It looks like a little chair turned upside down."
+ },
+ "line.d5": {
+  "hash": "b224799c7fd3",
+  "who": "sowa",
+  "text": "This is a five. It has a straight hat and a round tummy."
+ },
+ "line.d5.wiewiorka": {
+  "hash": "ad819d28b6aa",
+  "who": "wiewiorka",
+  "text": "This is a five. It has a straight hat and a round tummy."
+ }
+}

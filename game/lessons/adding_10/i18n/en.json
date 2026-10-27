@@ -1,0 +1,224 @@
+{
+  "line.s_need": {
+    "who": "sarenka",
+    "text": "We need eight pebbles for hopscotch. I brought three."
+  },
+  "line.s_have": {
+    "who": "wiewiorka",
+    "text": "And I have five in my basket. I counted them this morning."
+  },
+  "line.s_naive": {
+    "who": "wiewiorka",
+    "text": "Then I will count them all from the start. One, two, three, four... Oh no, I got mixed up!"
+  },
+  "line.s_not": {
+    "who": "sarenka",
+    "text": "You do not have to start from one! We already know there are five in the basket."
+  },
+  "line.s_how": {
+    "who": "wiewiorka",
+    "text": "Then where do I start?"
+  },
+  "line.s_on": {
+    "who": "sarenka",
+    "text": "From five! We count on. That is called counting on."
+  },
+  "line.s_what": {
+    "who": "wiewiorka",
+    "text": "Counting on? Will you show me?"
+  },
+  "line.s_show": {
+    "who": "sarenka",
+    "text": "We keep five in our heads. Point to my pebbles one by one, and I will count on."
+  },
+  "line.s_eight": {
+    "who": "wiewiorka",
+    "text": "Eight! And I did not have to count from the start."
+  },
+  "line.s_write": {
+    "who": "sarenka",
+    "text": "Five plus three equals eight."
+  },
+  "line.s_solved": {
+    "who": "wiewiorka",
+    "text": "We have eight pebbles. Let's play hopscotch!"
+  },
+  "line.s_to_garden": {
+    "who": "sarenka",
+    "text": "Let's go to the garden. We will practise counting on there too."
+  },
+  "line.b_basket": {
+    "who": "wiewiorka",
+    "text": "There are six carrots in the basket."
+  },
+  "line.b_more": {
+    "who": "sarenka",
+    "text": "I pulled out two more. Let's count on!"
+  },
+  "line.b_count": {
+    "who": "sarenka",
+    "text": "Start from six. Point to the new carrots one by one."
+  },
+  "line.b_pick": {
+    "who": "wiewiorka",
+    "text": "How many are there together? Point to the digit."
+  },
+  "line.b_write": {
+    "who": "sarenka",
+    "text": "Six plus two equals eight."
+  },
+  "line.b_to_home": {
+    "who": "wiewiorka",
+    "text": "Let's go home. Guests are coming!"
+  },
+  "line.c_cups": {
+    "who": "sarenka",
+    "text": "There are seven cups in the box. The guests brought three more."
+  },
+  "line.c_count": {
+    "who": "wiewiorka",
+    "text": "Let's count on from seven. Point to the new cups."
+  },
+  "line.c_slot": {
+    "who": "wiewiorka",
+    "text": "Seven plus three equals what? Point to the number that fits at the end."
+  },
+  "line.c_solved": {
+    "who": "sarenka",
+    "text": "Seven plus three is ten! Counting on is quick."
+  },
+  "line.wrong_digit": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "That is another number. Count again."
+  },
+  "line.good_digit": {
+    "who": "wiewiorka",
+    "speakers": [
+      "sarenka"
+    ],
+    "text": "Yes! Well counted on."
+  },
+  "line.p_intro": {
+    "who": "sarenka",
+    "text": "Let's play counting on! The box says how many are inside."
+  },
+  "line.p_count_on": {
+    "who": "sarenka",
+    "text": "Start from the number on the box. Point to the new things one by one."
+  },
+  "line.p_together": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "How many are there together? Point to the number."
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Let's play counting on, just like at home."
+  },
+  "line.a_ok": {
+    "who": "sarenka",
+    "text": "All right! We start from what we already know."
+  },
+  "line.a_lyzka": {
+    "who": "sarenka",
+    "text": "There are five spoons in the drawer. Add these too. Count on from five."
+  },
+  "line.a_klocek": {
+    "who": "sarenka",
+    "text": "There are six blocks in the box. Count on from six."
+  },
+  "line.a_kubek": {
+    "who": "sarenka",
+    "text": "There are seven cups on the shelf. Count on from seven."
+  },
+  "line.a_which_digit": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "How many are there together? Point to the number."
+  },
+  "line.a_ask_parents": {
+    "who": "sarenka",
+    "text": "Ask your parents to count on with you. How many stairs will there be when you climb three more?"
+  },
+  "line.a_bye": {
+    "who": "wiewiorka",
+    "text": "Bye bye! See you!"
+  },
+  "line.n1": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "One!"
+  },
+  "line.n2": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Two!"
+  },
+  "line.n3": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Three!"
+  },
+  "line.n4": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Four!"
+  },
+  "line.n5": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Five!"
+  },
+  "line.n6": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Six!"
+  },
+  "line.n7": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Seven!"
+  },
+  "line.n8": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Eight!"
+  },
+  "line.n9": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Nine!"
+  },
+  "line.n10": {
+    "who": "sarenka",
+    "speakers": [
+      "wiewiorka"
+    ],
+    "text": "Ten!"
+  }
+}

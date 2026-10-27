@@ -272,6 +272,18 @@ Drawn over the whole puppet it covered the body - that looked wrong. `ctx.idea(w
 [[names...], [names...]])`: a thought bubble over the head with stickers in groups (a
 row each), the "I have an idea!" step of a part 1 scene; `remove()` pops it.
 
+Numbers (`liczby.js`): `ctx.digit(n)` draws a digit (0-9, and 10 as two) with the
+pencil, stroke after stroke as a child writes it; `ctx.equation([2, "+", 1, "=", null])`
+writes an equation, a null leaves a gap (`luki`) for a card to fly into; `ctx.count(items,
+{who, od, rzad})` - counting by touch: every thing once, its number drawn over it in blue
+and spoken by `who` from the lesson's own `line.n1..n10`; `od` counts on (from 5: 6, 7,
+8), `rzad` moves each counted thing into a row so nothing is counted twice. Number
+lessons keep things BIG (stickers ~1.0, counting badges 0.7, digit cards 1.2 on the floor,
+containers raised between the characters): the first layout at 0.5-0.7 was unreadable.
+
+Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}); the menu shows
+one row per topic, numbers restart per topic, a lesson in no topic goes to a last row.
+
 Transitions: `graj` remembers the pose of the last frame (every numeric channel,
 before the gaze) and the new animation blends in from it over `Lalka.przejscie`
 (0.22 s; an animation may set `wejscie`, 0 = cut). Feet that were planted (`stopy:
