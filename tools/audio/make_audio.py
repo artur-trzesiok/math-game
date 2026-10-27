@@ -152,18 +152,36 @@ def envelope(mp3: Path) -> dict:
     return {"step": ENV_STEP, "duration": round(len(x) / 16000, 3), "amp": [round(float(a), 2) for a in amp]}
 
 
-def bake(dst: Path) -> None:
-    dst.with_suffix(".json").write_text(json.dumps(envelope(dst), separators=(",", ":")), encoding="utf-8")
+def bake(dst: Path, text: str | None = None, wiz: list | None = None) -> None:
+    """The envelope plus the visemes ("wiz", see visemes.py): exact ones from the synthesis timestamps when
+    given, else aligned locally from the text (read from the manifest when not given)."""
+    import visemes
+    e = envelope(dst)
+    if wiz is None:
+        if text is None:
+            mf = dst.parent / "manifest.json"
+            text = (json.loads(mf.read_text(encoding="utf-8")).get(dst.stem, {}) if mf.exists() else {}).get("text")
+        if text:
+            wiz = visemes.align_local(decode(dst), text)
+    if wiz:
+        e["wiz"] = wiz
+    dst.with_suffix(".json").write_text(json.dumps(e, separators=(",", ":")), encoding="utf-8")
 
 
-def synthesize(text: str, voice: str, dst: Path) -> None:
-    r = requests.post(f"{API}/text-to-speech/{voice}",
-                      headers={"xi-api-key": api_key(), "accept": "audio/mpeg"},
+def synthesize(text: str, voice: str, dst: Path) -> list | None:
+    """Speech with character timestamps: returns the visemes of the recording (exact lip-sync)."""
+    import base64
+    import visemes
+    r = requests.post(f"{API}/text-to-speech/{voice}/with-timestamps",
+                      headers={"xi-api-key": api_key(), "accept": "application/json"},
                       params={"output_format": FORMAT},
                       json={"text": with_pauses(text), "model_id": MODEL, "voice_settings": SETTINGS}, timeout=120)
     if r.status_code != 200:
         raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
-    dst.write_bytes(r.content)
+    d = r.json()
+    dst.write_bytes(base64.b64decode(d["audio_base64"]))
+    al = d.get("alignment") or d.get("normalized_alignment")
+    return visemes.from_timestamps(al) if al else None
 
 
 def run(lesson: Path, lang: str) -> tuple[int, int, int]:
@@ -178,13 +196,13 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
         dst = out / f"{l['key']}.mp3"
         if dst.exists() and manifest.get(l["key"], {}).get("hash") == digest:
             if not dst.with_suffix(".json").exists():
-                bake(dst)
+                bake(dst, l["text"])
             skipped += 1
             continue
         try:
-            synthesize(l["text"], voice, dst)
-            normalize(dst)
-            bake(dst)
+            wiz = synthesize(l["text"], voice, dst)
+            normalize(dst)                                        # gain only: the timing stays
+            bake(dst, l["text"], wiz)
             manifest[l["key"]] = {"hash": digest, "who": l["who"], "text": l["text"]}
             manifest_p.write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
             done += 1
@@ -219,6 +237,12 @@ def main() -> int:
             g = normalize(mp3); bake(mp3); n += 1
             print(f"  {mp3.parent.parent.name} {mp3.parent.name} {mp3.name:32s} {g:+.1f} dB")
         print(f"normalised {n} recordings")
+        return 0
+    if "--visemes" in sys.argv:                                # (re)align the visemes of every recording locally
+        n = 0
+        for mp3 in AUDIO.glob("*/*/line.*.mp3"):
+            bake(mp3); n += 1
+        print(f"visemes baked for {n} recordings")
         return 0
     if "--bake" in sys.argv:
         n = 0

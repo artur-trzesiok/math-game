@@ -34,6 +34,11 @@ function sekwencja(lista, u) {
 }
 
 const TULOW = { przod: "tulow", profil: "p_cialo", tyl: "t_tulow" };
+// viseme -> drawn mouth + stretch (x, y): a open, o round, u small round, e half, i spread, s teeth, m closed
+const WIZEMY = {
+  X: ["zamkniete", 1, 1], M: ["zamkniete", 1.02, 0.9], A: ["o", 1.12, 1.12], O: ["o", 0.84, 1.0], U: ["o", 0.66, 0.82],
+  E: ["pol", 1.12, 1.0], I: ["usmiech", 1.06, 0.82], S: ["usmiech", 0.92, 0.66], F: ["pol", 0.94, 0.58], L: ["pol", 0.96, 0.78],
+};
 // a right-side bone (and its joints) takes mirrored angles
 const lustro = (k) => k.endsWith("_p") || k === "reka_p" || k === "noga_p" || k === "noga_tp";
 
@@ -423,7 +428,15 @@ export class Lalka {
     return this.poza.oczy || this.emocja.oczy;
   }
   _ustaTeraz() {
+    this.ustaSkala = null;
     if (!this.mowi) return this.poza.usta || this.emocja.usta;
+    if (this.wiz) {
+      // a viseme: one of the drawn mouths, stretched to the sound's shape, opened a little more when louder
+      const [n, sx, sy] = WIZEMY[this.wiz] || WIZEMY.X;
+      const otwarcie = n === "zamkniete" ? 1 : 0.8 + 0.35 * Math.min(1, this.amplituda);
+      this.ustaSkala = [sx, sy * otwarcie];
+      return n === "zamkniete" && this.wiz === "X" ? (this.poza.usta || "zamkniete") : n;
+    }
     const chce = this.amplituda > 0.55 ? "o" : this.amplituda > 0.22 ? "pol" : (this.poza.usta || "zamkniete");
     if (chce !== this.ustaStan && this.t - this.ustaOd > 0.08) { this.ustaStan = chce; this.ustaOd = this.t; }
     return this.ustaStan;
@@ -442,6 +455,8 @@ export class Lalka {
       if (sub) { sub.scale.x = lewo ? -1 : 1; sub.position.x = (lewo ? -1 : 1) * sub.userData.bx; }   // lustro wokol osi glowy z przodu
       for (const [n, m] of Object.entries(z.oczy)) m.visible = aktywny && n === oczy;
       for (const [n, m] of Object.entries(z.usta)) m.visible = aktywny && n === usta;
+      const gu = Object.values(z.usta)[0]?.parent;                 // the mouth target group (its own centre)
+      if (gu) { const [sx, sy] = this.ustaSkala || [1, 1]; gu.scale.x += (sx - gu.scale.x) * 0.6; gu.scale.y += (sy - gu.scale.y) * 0.6; }
     }
   }
 
@@ -456,8 +471,8 @@ export class Lalka {
     return true;
   }
   spoczynek() { this.graj("Spoczynek", true); if (this.akcja) this.ta = Math.random() * this.akcja.czas; }
-  mow(amp) { this.mowi = true; this.amplituda = amp; }
-  cicho() { this.mowi = false; this.amplituda = 0; }
+  mow(amp, wiz = null) { this.mowi = true; this.amplituda = amp; this.wiz = wiz; }
+  cicho() { this.mowi = false; this.amplituda = 0; this.wiz = null; }
   patrz(k) { this.kierunekBazowy = k; }
   // a walk with planted feet moves exactly one stride per stance: speed = stride / (stance time)
   get predkoscChodu() {

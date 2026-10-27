@@ -319,7 +319,15 @@ order = `NAZWY`; split by alpha into 256 px WebP stickers.
 synthesises what is missing or changed (manifest by text hash) and writes
 `game/audio/<lang>/<lesson>/<key>.mp3` plus `<key>.json`, the BAKED lip-sync
 envelope (RMS every 20 ms, normalised; `--bake` recomputes them all) that the game
-reads by playback time - no WebAudio on the tablet. A break of `ELEVENLABS_PAUSE` (0.6 s) is inserted after every sentence at synthesis
+reads by playback time - no WebAudio on the tablet. The json also holds VISEMES (`"wiz": [[t, code]]`,
+`tools/audio/visemes.py`): which mouth shape when - a, o, u, e, i, m/b/p closed, s/sz
+teeth, f lower lip, other consonants. New recordings get exact ones from ElevenLabs
+`with-timestamps` (character times; the plain TTS permission suffices); existing ones
+are aligned locally (`run.py --visemes`): phrases at punctuation matched to voiced runs
+at the pauses, sounds laid out by weight, vowels snapped to loudness peaks (forced
+alignment needs a permission our key lacks). The puppet maps each code to one of the
+drawn mouths stretched (o narrow for u, pol wide for e, usmiech flat for s ...) and
+opened a little more when loud; without visemes it falls back to loudness. A break of `ELEVENLABS_PAUSE` (0.6 s) is inserted after every sentence at synthesis
 time, so the i18n text stays clean. Every recording is normalised
 to -20 dBFS RMS of its voiced frames (`--normalize` redoes all), and each character's
 `meta.json` (`game/assets/characters/<who>/`) holds its ElevenLabs voice per language

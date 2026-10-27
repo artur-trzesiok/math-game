@@ -58,7 +58,17 @@ export class Speech {
     }
     else a = 0.5 + 0.5 * Math.sin(now / 70);
     this.amp += (a - this.amp) * (c.envelope ? 0.6 : 0.45);
-    if (c.puppet) c.puppet.mow(this.amp);
+    // the baked visemes: the mouth shape of the sound being spoken, looked up by playback time (a hair early,
+    // as the eye expects the mouth to lead the sound)
+    let wiz = null;
+    const W = c.envelope?.wiz;
+    if (W && c.audio && !c.audio.paused) {
+      const t = c.audio.currentTime + 0.04;
+      let lo = 0, hi = W.length - 1;
+      while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (W[mid][0] <= t) lo = mid; else hi = mid - 1; }
+      wiz = W[lo][0] <= t ? W[lo][1] : "X";
+    }
+    if (c.puppet) c.puppet.mow(this.amp, wiz);
   }
 
   // say a line; resolves when it ends
