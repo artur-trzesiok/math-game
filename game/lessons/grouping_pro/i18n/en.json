@@ -1,7 +1,11 @@
 {
-  "line.a_rano": {
+  "line.a_start": {
+    "who": "wiewiorka",
+    "text": "Deer, quick, come here! There's something under the apple tree again!"
+  },
+  "line.a_znowu": {
     "who": "sarenka",
-    "text": "Good morning, orchard! Oh, gifts under the apple tree again!"
+    "text": "Gifts! Somebody left them for us under the apple tree again."
   },
   "line.a_kto": {
     "who": "wiewiorka",

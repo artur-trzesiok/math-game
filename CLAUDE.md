@@ -257,7 +257,7 @@ one repeat at a time and never over a line being spoken. Counting by touch used 
 
 Sound effects (`sfx.js`, `game/audio/sfx/*.mp3`): `python tools/audio/run.py --sfx` makes
 them - ElevenLabs sound generation when the key has the `sound_generation` permission
-(ours does not), else a numpy synthesis recipe per effect (repeatable, no service);
+(ours has it since 2026-10-28; at least 0.5 s each), else a numpy synthesis recipe per effect (repeatable, no service);
 trimmed of leading silence, normalised to -27 dB (voices -20). The stage plays them
 itself: pop on appear, tap on a tap, wrong on a shake, plop into a zone, pencil while
 a line draws, whoosh for a long flight, hop / clap with Podskok / Brawo (`Lalka.naGraj`),
@@ -332,6 +332,14 @@ Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller_pr
 - comic effects: speed lines on every jump into a close-up (automatic in `ujecie`), `ctx.rozblysk(who | handle)`
   (golden rays and sparkles behind a discovery), motion streaks behind a sticker flying far and fast (automatic in
   `moveTo`); `ctx.przejdz(who, [[x, y]...], {skok})` walks into the picture (smaller, shadow along).
+Rhythm (`rytm.js`, the rhythm lesson): a sticker may carry its own sound (`object(name, {dzwiek})`, also
+`cicho: true` for no pop) - it sounds when pointed at; `ctx.rytm(items, {tempo, kiwaja})` plays a row from the start,
+one thing per beat (bump, glow, its sound), the method and the hint after a miss; `ctx.ruch(who, klask|skok|obrot)`
+one dance move squeezed into a beat (a one-clap `Klask` is built from Brawo at run time), `ctx.taniec(who, moves)`,
+`ctx.potknij(who)` (a wobble and a sour sound for a wrong move); `ctx.zamroz(who, on)` - statues: the body's
+animation clock stops and new animations are ignored, eyes and mouth still live, so a statue can speak. Characters
+can be the options of a task (statues: "who moved?").
+Music: `game/audio/muzyka/` (SOURCES.md says where each tune comes from); the menu's tune is ElevenLabs Music.
 Every lesson also gets, without its code doing anything: a start card (cover + name) and a card before every
 stage (icon + name), the characters' head badges peeking in (`plansza`, 2 s, a tap skips); encouragement when the
 child waits 9 s without a touch (game/zachety: invitations, never praise, in the instructing character's voice;

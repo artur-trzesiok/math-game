@@ -4,39 +4,39 @@
     "pl": "Rytm",
     "en": "Rhythm"
   },
-  "goal": "Recognise a repeating pattern (AB, AAB, ABB, ABC, big-small) and continue it.",
+  "goal": "A rhythm is something that repeats in order: hear it, see it, dance it, find where it breaks and continue it (AB, AAB, ABB, ABC, big-small).",
   "age": "4-5",
   "characters": [
+    "lisek",
+    "wiewiorka",
     "sowa",
-    "wiewiorka"
+    "sarenka"
   ],
   "backgrounds": [
-    "dom",
     "ogrod",
     "laka",
-    "sad",
-    "pokoj"
+    "dom"
   ],
   "objects": [
-    "jablko",
-    "gruszka",
-    "kwiatek",
-    "pilka",
-    "but",
-    "marchewka",
-    "kubek",
-    "talerz",
-    "lyzka",
-    "ciastko",
-    "szyszka",
+    "beben",
+    "dzwonek",
+    "garnek",
+    "kubek_lyzka",
+    "choragiewka_czerwona",
+    "choragiewka_zolta",
+    "choragiewka_niebieska",
+    "ruch_klask",
+    "ruch_skok",
+    "ruch_obrot",
+    "koralik_czerwony",
+    "koralik_zolty",
+    "koralik_niebieski",
     "listek",
-    "klocek",
-    "misiu",
-    "skarpetka"
+    "zoledz"
   ],
-  "cover": "Between them a party garland of alternating red apples and green pears on a string, the last place on the string still empty.",
+  "cover": "The four friends play a concert in a garden: the squirrel beats a small red toy drum, the owl rings a golden hand bell, the fox claps, the deer dances; a garland of red and yellow triangle flags hangs above them.",
   "naklejka": {
-    "obraz": "objects/misiu",
-    "kto": "wiewiorka"
+    "obraz": "objects/beben",
+    "kto": "sarenka"
   }
 }

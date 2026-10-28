@@ -1,7 +1,11 @@
 {
-  "line.a_rano": {
+  "line.a_start": {
+    "who": "wiewiorka",
+    "text": "Sarenko, szybko, chodź tutaj! Pod jabłonką znowu coś leży!"
+  },
+  "line.a_znowu": {
     "who": "sarenka",
-    "text": "Dzień dobry, sadzie! Ojej, znowu prezenty pod jabłonką!"
+    "text": "Prezenty! Ktoś znowu zostawił je dla nas pod jabłonką."
   },
   "line.a_kto": {
     "who": "wiewiorka",

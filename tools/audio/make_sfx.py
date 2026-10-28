@@ -5,7 +5,7 @@
   python tools/audio/run.py --sfx --synth    # force the built-in synthesis
 
 Two backends: ElevenLabs sound generation from the text prompt below (needs the key's
-`sound_generation` permission - ours lacks it today, 401), else SYNTHESIS: each effect is a
+`sound_generation` permission - ours has it since 2026-10-28), else SYNTHESIS: each effect is a
 small numpy recipe (sines with pitch slides, filtered noise, bursts), so the set is repeatable
 without any service. Output: game/audio/sfx/<name>.mp3 + manifest.json (hash of backend, recipe
 version and settings). Each file is trimmed of leading silence (a UI sound must react at once)
@@ -29,7 +29,7 @@ OUT = ma.ROOT / "game" / "audio" / "sfx"
 SFX_RMS_DB = -27.0
 SFX = {
     "pop":     ("a single soft cute bubble pop, a sticker appearing, children's game, clean, no music", 0.5),
-    "tap":     ("one gentle soft wooden tap, a button pressed in a children's game, clean, short", 0.4),
+    "tap":     ("one gentle soft wooden tap, a button pressed in a children's game, clean, short", 0.5),     # ElevenLabs: >= 0.5 s
     "wrong":   ("one soft friendly low cartoon boing, a gentle 'not this one', never harsh, children's game", 0.7),
     "right":   ("a short bright magical sparkle chime, a correct answer in a children's game, cheerful", 1.0),
     "pencil":  ("a pencil quickly drawing a line on paper, graphite scratching, close, no voices", 1.5),
@@ -43,6 +43,14 @@ SFX = {
     # the cards before a lesson and before each of its stages (player.js plansza)
     "plansza": ("a short cheerful magical jingle for the title card of a children's cartoon: a quick rising xylophone "
                 "and glockenspiel flourish ending in a warm twinkling sparkle, bright, happy, no voices, no drums", 2.0),
+    # rhythm instruments (the rhythm lesson: a sticker that sounds when pointed at or played by ctx.rytm)
+    "beben":   ("one single punchy hit with a wooden stick on a children's toy drum, a clear bright attack and a warm mid tone, a lively 'bum', not boomy, not bassy, dry, close, nothing else", 0.6),
+    "beben_maly": ("one single short high hit on a small toy drum, a bright tight tok, dry, close, nothing else", 0.5),
+    "dzwonek": ("one single clear ring of a small golden hand bell, bright and sweet, short ring, nothing else", 1.0),
+    "garnek":  ("one single hit with a wooden spoon on the side of a steel cooking pot, a warm metallic bong, close", 0.7),
+    "kubek":   ("one single light tap of a metal teaspoon on a ceramic cup, a clear high clink, close", 0.6),
+    "falsz":   ("a short funny out-of-tune cartoon clash of a drum and a bell hit together, a gentle sour honk, children's game", 0.7),
+    "klask":   ("one single clap of a child's hands, close, crisp, nothing else", 0.5),
     "melodyjka": ("a cheerful bouncy little marimba melody for a children's party game, loopable, 120 bpm, no voices", 4.0),
     "etap":    ("a short bright playful chime announcing the next part of a children's game: three rising "
                 "glockenspiel notes and a little sparkle, warm and happy, no voices", 1.2),

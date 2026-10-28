@@ -433,5 +433,15 @@
   "hash": "1634fc955eb2",
   "who": "lisek",
   "text": "You already have the sticker from this adventure. See you soon!"
+ },
+ "line.a_start": {
+  "hash": "b9faab4eddc8",
+  "who": "wiewiorka",
+  "text": "Deer, quick, come here! There's something under the apple tree again!"
+ },
+ "line.a_znowu": {
+  "hash": "762a3697fa3a",
+  "who": "sarenka",
+  "text": "Gifts! Somebody left them for us under the apple tree again."
  }
 }

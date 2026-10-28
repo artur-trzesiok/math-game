@@ -475,7 +475,7 @@ export class Lalka {
 
   graj(nazwa, petla = null) {
     const a = this.dane.animacje[nazwa];
-    if (!a) return false;
+    if (!a || this.zamrozona) return false;           // a statue keeps its pose, even while it speaks
     // the pose the puppet holds now blends into the new animation instead of jumping; feet that were planted stay planted
     const czas = a.wejscie ?? Lalka.przejscie;
     this.przejscie = this.pozaSurowa && czas > 0 ? { od: { ...this.pozaSurowa }, start: this.t, czas, stopy: this.przejscie?.stopy === "ik" ? "ik" : this.akcja?.stopy } : null;
@@ -500,7 +500,8 @@ export class Lalka {
 
   // ------------------------------------------------------------ klatka
   update(dt) {
-    this.t += dt; if (!(this.droga && this.akcja?.krok)) this.ta += dt;   // walking on the stage: the distance drives the stride
+    // a statue (rytm.js): the animation's clock stops, so the pose of this moment stays; eyes and mouth still live
+    this.t += dt; if (!this.zamrozona && !(this.droga && this.akcja?.krok)) this.ta += dt;   // walking on the stage: the distance drives the stride
     if (Lalka.klatki) { this.akum = (this.akum || 0) + dt; if (this.akum < 1 / Lalka.klatki) return; this.akum = 0; }
     const p = this.poza = {};
     const a = this.akcja;

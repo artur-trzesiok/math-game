@@ -53,7 +53,7 @@ export class Stage {
     this.raycaster = new THREE.Raycaster();
     // sound effects: ?cicho mutes them; a hop and a clap come with the puppets' animations
     this.sfx = new Sfx({ wycisz: PARAMS.has("cicho") }); this.sfx.wczytaj();
-    Lalka.naGraj = (L, nazwa) => { if (nazwa === "Podskok") this.sfx.graj("hop"); else if (nazwa === "Brawo") this.sfx.graj("clap", { glosnosc: 0.8 }); };
+    Lalka.naGraj = (L, nazwa) => { if (L.bezDzwieku) return; if (nazwa === "Podskok") this.sfx.graj("hop"); else if (nazwa === "Brawo") this.sfx.graj("clap", { glosnosc: 0.8 }); };
     this.onResize = () => this.resize();
     window.addEventListener("resize", this.onResize); this.resize();
     this.renderer.domElement.addEventListener("pointerdown", (e) => { if (e.button !== 0 && e.pointerType === "mouse") return; if (!this.dragStart(e)) this.pointer(e); });
@@ -158,9 +158,9 @@ export class Stage {
   }
   tween(d, step, ease = null) { return new Promise((done) => this.tweens.push({ t: 0, d, step, done, ease })); }
   // things grow in from nothing with a little overshoot; not awaited by the caller, so a row appears sticker by sticker
-  appear(h) {
+  appear(h, cicho = false) {
     const m = this.meshOf(h), base = h.base ?? 1;
-    this.sfx.graj("pop", { tempo: 0.9 + Math.random() * 0.25 });
+    if (!cicho) this.sfx.graj("pop", { tempo: 0.9 + Math.random() * 0.25 });
     h.bumping = true; m.scale.setScalar(0.001);
     return this.tween(0.38, (s) => { const q = base * Math.max(0.001, s); m.scale.set(q, q, h.korzen ? 1 : q); }, easeOutBack)
       .then(() => { m.scale.set(base, base, h.korzen ? 1 : base); h.bumping = false; });
@@ -168,7 +168,7 @@ export class Stage {
   // touch feedback: the tapped thing pops (scale up and back); a wrong answer also shakes
   async bump(h, amount = 0.25, dzwiek = true) {
     const m = this.meshOf(h), base = h.base ?? 1, k = h.korzen ? 0.08 : amount;
-    if (dzwiek) this.sfx.graj("tap");
+    if (dzwiek) this.sfx.graj(h.dzwiek || "tap");
     h.bumping = true;
     await this.tween(0.28, (s) => { const q = base * (1 + k * Math.sin(s * Math.PI)); m.scale.set(q, q, h.korzen ? 1 : q); });
     m.scale.set(base, base, h.korzen ? 1 : base); h.bumping = false;
@@ -349,7 +349,8 @@ export class Stage {
   // ------------------------------------------------------------------ objects
   // a sticker: the icon with its baked white die-cut outline, so a green pear reads on green grass
   // obraz: a picture of its own (a data: URL made in the page, e.g. the friends' heads) instead of objects/<name>.webp
-  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = false, z = 0.4, label = null, obraz = null } = {}) {
+  // dzwiek: the thing's own sound (an instrument), heard when it is pointed at and when its row plays (rytm.js)
+  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = false, z = 0.4, label = null, obraz = null, dzwiek = null, cicho = false } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, z);
     if (sticker) {
       const c = document.createElement("canvas"); c.width = c.height = 512; const ctx = c.getContext("2d");
@@ -364,12 +365,12 @@ export class Stage {
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 10; });                 // the foreground draws after every background prop
-    const handle = { mesh: g, icon, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false,
+    const handle = { mesh: g, icon, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false, dzwiek,
       remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
       moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; if (Math.hypot(nx - x0, ny - y0) > 2.5) this.sfx.graj("whoosh", { glosnosc: 0.7 }); E.smuga(this, x0, y0, nx, ny, d); return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
     this.scene.add(g); this.objects.push(handle);
-    this.appear(handle);
+    this.appear(handle, cicho);                      // cicho: no pop (a note joining a played row has its own sound)
     for (const L of Object.values(this.puppets)) if (L.korzen.visible && !L.celSpojrzenia) L.patrzNa(() => this.pointOf(handle), 1.1);   // a glance at what just appeared
     return handle;
   }

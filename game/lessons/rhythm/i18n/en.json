@@ -1,146 +1,322 @@
 {
-  "line.s_garland": {
-    "who": "sowa",
-    "text": "I am making a garland for the party. Apple, pear, apple, pear."
+  "line.a_koncert": {
+    "who": "lisek",
+    "text": "Listen, I have news! Our parents are coming this afternoon. Let's play them a concert!"
   },
-  "line.s_go_on": {
+  "line.a_mamy": {
     "who": "sowa",
-    "text": "Will you finish it for me?"
+    "text": "A concert! What a wonderful idea. Look, there is a drum and a bell in the garden."
   },
-  "line.s_anything": {
+  "line.a_ja": {
     "who": "wiewiorka",
-    "text": "Sure! I'll add anything, as long as it is colourful. Hop, hop!"
+    "text": "I'll play! I'll play loud and a lot!"
   },
-  "line.s_broken": {
+  "line.a_halas": {
     "who": "sowa",
-    "text": "Oh no, you broke the pattern! Look: apple, pear, apple, pear. Something repeats."
+    "text": "Oh dear, oh dear! Squirrel, that is not music, that is noise. Nobody knows what you will play next, so nobody can play along with you or dance to it."
   },
-  "line.s_how": {
+  "line.a_jak": {
     "who": "wiewiorka",
-    "text": "Then what should I add?"
+    "text": "Then how do you play real music?"
   },
-  "line.s_rhythm": {
+  "line.a_rytm": {
     "who": "sowa",
-    "text": "What fits the rhythm! A rhythm is something that repeats in order."
+    "text": "Music has a rhythm."
   },
-  "line.s_what": {
+  "line.a_co_to": {
     "who": "wiewiorka",
-    "text": "A rhythm? Will you show me?"
+    "text": "A rhythm? What is a rhythm?"
   },
-  "line.s_listen": {
+  "line.a_rytm_to": {
     "who": "sowa",
-    "text": "Listen. Clap, hop, clap, hop."
+    "text": "A rhythm is something that repeats in order, again and again. I'll show you, it's a fun game. Listen, and watch every sound take its place in the row."
   },
-  "line.s_same_garland": {
+  "line.a_co_dalej": {
     "who": "sowa",
-    "text": "The garland has the same kind of rhythm. Apple, pear, apple, pear. Let's start again."
+    "text": "Drum, bell, drum, bell. Boom, ding, boom, ding. Listen again from the start. What do we play now? Point to the drum or the bell."
   },
-  "line.s_fill": {
-    "who": "wiewiorka",
-    "text": "Drag what comes next. Careful, one thing does not fit!"
-  },
-  "line.wrong_pattern": {
+  "line.a_od_poczatku": {
     "who": "sowa",
-    "text": "That does not fit the rhythm. Say the rhythm from the start and listen for what comes next.",
+    "text": "Hmm, that doesn't fit. Let's listen from the start to hear what comes next.",
     "speakers": [
       "wiewiorka"
     ]
   },
-  "line.s_solved": {
+  "line.a_dobrze": {
     "who": "sowa",
-    "text": "The garland is ready! Apple, pear, apple, pear, all the way."
+    "text": "Yes! After the bell comes the drum again. Boom, ding, boom, ding, boom! The rhythm goes on."
   },
-  "line.s_to_garden": {
+  "line.a_moj": {
     "who": "wiewiorka",
-    "text": "Let's go to the garden. There are rhythms there too."
+    "text": "Now I'll make up a rhythm! Mine goes like this: boom, boom, ding."
   },
-  "line.b_bed": {
+  "line.a_moj_co": {
     "who": "wiewiorka",
-    "text": "In the bed there grows: flower, flower, carrot. And again: flower, flower, carrot."
+    "text": "Boom, boom, ding, boom, boom, ding, boom, boom... What do I play now? Point to the drum or the bell."
   },
-  "line.b_fill": {
-    "who": "sowa",
-    "text": "Plant what comes next."
-  },
-  "line.b_done": {
+  "line.a_moj_dobrze": {
     "who": "wiewiorka",
-    "text": "Flower, flower, carrot! The rhythm is right."
+    "text": "Ding! That's right! Boom, boom, ding, and again from the start."
   },
-  "line.b_sizes": {
+  "line.a_razem": {
+    "who": "lisek",
+    "text": "Let's all play it together!"
+  },
+  "line.a_muzyka": {
+    "who": "sowa",
+    "text": "Can you hear it? Now that is music! Everyone knows what comes next, so we can play together."
+  },
+  "line.a_ozdoby": {
+    "who": "lisek",
+    "text": "Our band can play now. But a concert needs decorations too. Let's make a garland of flags!"
+  },
+  "line.b_wieszam": {
     "who": "wiewiorka",
-    "text": "And here is a rhythm of sizes: big carrot, small carrot, big, small."
+    "text": "I'll hang the flags on the string!"
   },
-  "line.b_sizes_done": {
+  "line.b_widac": {
+    "who": "sowa",
+    "text": "A garland can have a rhythm too, one you can see. Let's look at it from the start."
+  },
+  "line.b_cos_nie": {
+    "who": "sowa",
+    "text": "Red, yellow, red, yellow, red... and red again? Something is wrong here. Point to the flag that breaks the rhythm."
+  },
+  "line.b_ta_pasuje": {
+    "who": "sowa",
+    "text": "That flag is in its place. Look from the start: after red always comes yellow. Which one doesn't fit?"
+  },
+  "line.b_ojej": {
     "who": "wiewiorka",
-    "text": "Big, small, big, small! A rhythm can be made of sizes too."
+    "text": "Oops, two reds side by side! After red there should be yellow. I'll fix it."
   },
-  "line.b_to_meadow": {
+  "line.b_dokoncz": {
     "who": "sowa",
-    "text": "Now a picnic by the lake."
+    "text": "There are three empty places left on the string. Drag the flags from the grass onto the string, so the rhythm goes on."
   },
-  "line.c_picnic": {
+  "line.b_slot_nie": {
     "who": "sowa",
-    "text": "I am laying the table: cup, plate, spoon. Cup, plate, spoon."
+    "text": "That flag doesn't fit here. Look at which colour comes after the one hanging next to it."
   },
-  "line.c_fill": {
+  "line.b_gotowe": {
+    "who": "lisek",
+    "text": "A beautiful garland! Red, yellow, red, yellow. We'll take it to the kitchen for the concert."
+  },
+  "line.c_posagi": {
+    "who": "lisek",
+    "text": "Before we go on, let's play statues! While the music plays, we dance. When the music stops, everyone stands still, like statues."
+  },
+  "line.c_pilnuj": {
+    "who": "sowa",
+    "text": "And you are the judge! When the music stops, look carefully to see who is still moving."
+  },
+  "line.c_kto": {
+    "who": "sowa",
+    "text": "The music stopped, everyone stands like a statue. But somebody is still moving! Point to who moved."
+  },
+  "line.c_jeszcze": {
+    "who": "lisek",
+    "text": "Once more! The music plays, we dance. And you watch who moves when it stops."
+  },
+  "line.c_nie_ja": {
+    "who": "lisek",
+    "text": "I'm standing like a statue! Look who is still moving.",
+    "speakers": [
+      "wiewiorka",
+      "sowa"
+    ]
+  },
+  "line.c_mam_lisek": {
+    "who": "lisek",
+    "text": "Hee hee, I moved! You caught me!"
+  },
+  "line.c_mam_wiewiorka": {
     "who": "wiewiorka",
-    "text": "Drag what comes next."
+    "text": "Hee hee, I moved! You caught me!"
   },
-  "line.c_solved": {
+  "line.c_mam_sowa": {
     "who": "sowa",
-    "text": "Cup, plate, spoon! Now you can finish any rhythm."
+    "text": "Hoo hoo, I moved! You caught me!"
   },
-  "line.p_intro": {
-    "who": "sowa",
-    "text": "Let's play rhythms! Look at what repeats."
+  "line.c_koniec": {
+    "who": "lisek",
+    "text": "That was fun! Now let's go to the lake and invite Deer to the concert."
   },
-  "line.p_fill": {
-    "who": "sowa",
-    "text": "What comes next? Drag it into the empty places.",
+  "line.d_zaproszenie": {
+    "who": "lisek",
+    "text": "Hello, Deer! This afternoon we're playing a concert for our parents. Will you come?"
+  },
+  "line.d_smutna": {
+    "who": "sarenka",
+    "text": "I'd love to... But everyone will be dancing at the concert, and I can't dance."
+  },
+  "line.d_nauczymy": {
+    "who": "lisek",
+    "text": "Don't worry, we'll teach you! A dance has a rhythm too: the moves repeat in order. Watch me."
+  },
+  "line.d_co_teraz": {
+    "who": "lisek",
+    "text": "Clap, clap, jump, clap, clap, jump, clap, clap... Which move now? Point to the card, and Deer will do it."
+  },
+  "line.d_od_poczatku": {
+    "who": "lisek",
+    "text": "Oops, not that move. Let's look again from the start at what comes next.",
     "speakers": [
       "wiewiorka"
     ]
   },
-  "line.good_pattern": {
+  "line.d_udalo": {
+    "who": "sarenka",
+    "text": "A jump! I did it!"
+  },
+  "line.d_drugi": {
     "who": "wiewiorka",
-    "text": "Yes! The rhythm is right.",
+    "text": "Now my dance, watch!"
+  },
+  "line.d_drugi_co": {
+    "who": "wiewiorka",
+    "text": "Clap, spin, clap, spin, clap... Which move now? Point to the card."
+  },
+  "line.d_sama": {
+    "who": "sarenka",
+    "text": "A spin! Now I'll try it on my own: clap, spin, clap, spin."
+  },
+  "line.d_umiem": {
+    "who": "sarenka",
+    "text": "I can dance! Thank you! I'll surely come to your concert."
+  },
+  "line.d_do_domu": {
+    "who": "lisek",
+    "text": "Hooray! Let's go home. Before our parents come, we'll have a rehearsal."
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Time for a rehearsal before the concert! I have five rhythm games for you."
+  },
+  "line.p_echo": {
+    "who": "sowa",
+    "text": "The first game is an echo. Listen to me play."
+  },
+  "line.p_echo_co": {
+    "who": "sowa",
+    "text": "Boom, ding, ding, boom, ding, ding, boom... What now? Point to the drum or the bell."
+  },
+  "line.p_od_poczatku": {
+    "who": "sowa",
+    "text": "That doesn't fit. Let's listen from the start to what comes next.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_echo_ok": {
+    "who": "sowa",
+    "text": "Ding! After the drum always come two bells. You listen so well."
+  },
+  "line.p_koraliki": {
+    "who": "wiewiorka",
+    "text": "I'm threading beads: red, yellow, blue. Drag the beads to the empty places, so the rhythm goes on."
+  },
+  "line.p_koraliki_nie": {
+    "who": "wiewiorka",
+    "text": "That bead doesn't fit here. Look at which colour comes after the one next to it."
+  },
+  "line.p_koraliki_ok": {
+    "who": "wiewiorka",
+    "text": "Red, yellow, blue, and again from the start. Beautiful beads!"
+  },
+  "line.p_blad": {
+    "who": "sowa",
+    "text": "Somebody mixed up the leaves and the acorns. Leaf, leaf, acorn... Look from the start and point to what breaks the rhythm."
+  },
+  "line.p_blad_nie": {
+    "who": "sowa",
+    "text": "That one is in its place. Look from the start: leaf, leaf, acorn. What doesn't fit?"
+  },
+  "line.p_blad_ok": {
+    "who": "sowa",
+    "text": "Yes! There should be a leaf here, and there is an acorn. Now we know where the rhythm broke."
+  },
+  "line.p_bebny": {
+    "who": "wiewiorka",
+    "text": "I have a big drum and a small drum. The big one plays low, the small one high. Listen."
+  },
+  "line.p_bebny_co": {
+    "who": "wiewiorka",
+    "text": "Big, small, big, small, big, small, big... Which drum plays now? Point to the big one or the small one."
+  },
+  "line.p_bebny_ok": {
+    "who": "wiewiorka",
+    "text": "The small one! Big, small, big, small. You can hear this rhythm and see it."
+  },
+  "line.p_taniec": {
+    "who": "wiewiorka",
+    "text": "The last game is my dance. Watch carefully."
+  },
+  "line.p_taniec_co": {
+    "who": "wiewiorka",
+    "text": "Jump, spin, spin, jump, spin, spin, jump... Which move now? Point to the card."
+  },
+  "line.p_taniec_ok": {
+    "who": "sowa",
+    "text": "A spin! After a jump always come two spins. We're ready for the concert!"
+  },
+  "line.e_girlanda": {
+    "who": "wiewiorka",
+    "text": "Our garland is hanging in the kitchen! Red, yellow, red, yellow."
+  },
+  "line.e_bez_bebna": {
+    "who": "sowa",
+    "text": "Oh no! The drum and the bell stayed in the garden. What will we play on now?"
+  },
+  "line.e_kuchnia": {
+    "who": "lisek",
+    "text": "I have an idea! There are instruments in the kitchen too. The pot will be our drum, and a spoon in a cup our bell. Listen!"
+  },
+  "line.e_zaczynam": {
+    "who": "lisek",
+    "text": "Our parents are here and sitting down. The concert begins! I'll start, and you play on."
+  },
+  "line.e_graj": {
+    "who": "lisek",
+    "text": "Now you! Play on: point to the pot or the cup, one after another, the way the rhythm goes."
+  },
+  "line.e_od_poczatku": {
+    "who": "lisek",
+    "text": "Not that sound. Let's listen from the start and play on.",
     "speakers": [
       "sowa"
     ]
   },
-  "line.a_game": {
-    "who": "wiewiorka",
-    "text": "Let's play rhythms with toys."
-  },
-  "line.a_ok": {
+  "line.e_brawo": {
     "who": "sowa",
-    "text": "All right! I start and you finish."
+    "text": "Bravo! You're playing in rhythm with us."
   },
-  "line.a_fill": {
+  "line.e_druga": {
     "who": "sowa",
-    "text": "What comes next? Drag the toys.",
-    "speakers": [
-      "wiewiorka"
-    ]
+    "text": "And now my song: boom, boom, ding. Listen."
   },
-  "line.a_ask_parents": {
+  "line.e_graj_dalej": {
     "who": "sowa",
-    "text": "Ask your parents to make a rhythm of spoons and forks with you. You can also clap a rhythm together."
+    "text": "Play on, the way my song goes."
   },
-  "line.a_bye": {
-    "who": "wiewiorka",
-    "text": "Bye bye! See you!"
+  "line.e_tancze": {
+    "who": "sarenka",
+    "text": "And I'll dance to your music, just as you taught me!"
+  },
+  "line.e_rodzice": {
+    "who": "lisek",
+    "text": "Our parents are clapping! Make a concert like this at home together: a pot, a spoon and a rhythm, like boom, boom, ding. Or clap it: clap, clap, stomp."
   },
   "line.naklejka_daj": {
-    "who": "wiewiorka",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+    "who": "sarenka",
+    "text": "Thank you for teaching me to dance! Here is a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "sarenka",
+    "text": "You already have the sticker from this adventure. See you!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the teddy from Squirrel. We got it when we made rhythms together."
-  },
-  "line.naklejka_juz": {
-    "who": "wiewiorka",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "This is the drum from the friends' concert. Deer gave it to us when we learnt about rhythm: in music, in a garland and in a dance."
   }
 }

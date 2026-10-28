@@ -1,187 +1,412 @@
 {
- "line.s_garland": {
-  "hash": "50f860c61f26",
-  "who": "sowa",
-  "text": "Robię girlandę na przyjęcie. Jabłko, gruszka, jabłko, gruszka."
+ "line.a_koncert": {
+  "hash": "6d6bf4478765",
+  "who": "lisek",
+  "text": "Słuchajcie, mam wiadomość! Dziś po południu przychodzą do nas rodzice. Zagrajmy im koncert!"
  },
- "line.s_go_on": {
-  "hash": "e22086ea7af7",
+ "line.a_mamy": {
+  "hash": "172fbb7d9511",
   "who": "sowa",
-  "text": "Dokończysz za mnie?"
+  "text": "Koncert! Wspaniały pomysł. Popatrzcie, w ogrodzie leżą bęben i dzwonek."
  },
- "line.s_anything": {
-  "hash": "36d7533404c2",
+ "line.a_ja": {
+  "hash": "84f35495d626",
   "who": "wiewiorka",
-  "text": "Jasne! Dołożę cokolwiek, byle było kolorowo. Hop, hop!"
+  "text": "Ja zagram! Będę grać głośno i dużo!"
  },
- "line.s_broken": {
-  "hash": "b6c3d310fa6d",
+ "line.a_halas": {
+  "hash": "c803777c76a0",
   "who": "sowa",
-  "text": "Ojej, zepsułaś wzór! Popatrz: jabłko, gruszka, jabłko, gruszka. Coś się powtarza."
+  "text": "Ojej, ojej! Wiewiórko, to nie jest muzyka, to hałas. Nikt nie wie, co zagrasz za chwilę, więc nikt nie zagra z tobą razem ani nie zatańczy."
  },
- "line.s_how": {
-  "hash": "575fff87dda7",
+ "line.a_jak": {
+  "hash": "0507ed2f1565",
   "who": "wiewiorka",
-  "text": "To co mam dokładać?"
+  "text": "To jak się gra prawdziwą muzykę?"
  },
- "line.s_rhythm": {
-  "hash": "aa504144b9be",
+ "line.a_rytm": {
+  "hash": "b18face1c517",
   "who": "sowa",
-  "text": "To, co pasuje do rytmu! Rytm to coś, co się powtarza po kolei."
+  "text": "Muzyka ma rytm."
  },
- "line.s_what": {
-  "hash": "4daaa6fa9618",
+ "line.a_co_to": {
+  "hash": "48c3163dde60",
   "who": "wiewiorka",
-  "text": "Rytm? Pokażesz mi?"
+  "text": "Rytm? A co to jest rytm?"
  },
- "line.s_listen": {
-  "hash": "07d04dd260bf",
+ "line.a_rytm_to": {
+  "hash": "89ab36cc2dc0",
   "who": "sowa",
-  "text": "Posłuchaj. Klask, hop, klask, hop."
+  "text": "Rytm to coś, co się powtarza po kolei, znowu i znowu. Pokażę ci, to fajna zabawa. Posłuchaj i popatrz, jak każdy dźwięk staje w rzędzie."
  },
- "line.s_same_garland": {
-  "hash": "29978be562d4",
+ "line.a_co_dalej": {
+  "hash": "ef4e53ead131",
   "who": "sowa",
-  "text": "Girlanda ma taki sam rytm. Jabłko, gruszka, jabłko, gruszka. Zacznijmy od nowa."
+  "text": "Bęben, dzwonek, bęben, dzwonek. Bum, dzyń, bum, dzyń. Posłuchaj jeszcze raz od początku. Co teraz zagramy? Wskaż bęben albo dzwonek."
  },
- "line.s_fill": {
-  "hash": "0ff5983d3a6d",
+ "line.a_od_poczatku": {
+  "hash": "09997cd643e2",
+  "who": "sowa",
+  "text": "Hmm, to nie pasuje. Posłuchajmy od początku, co przychodzi dalej."
+ },
+ "line.a_od_poczatku.wiewiorka": {
+  "hash": "72d089c6d148",
   "who": "wiewiorka",
-  "text": "Przeciągnij, co będzie dalej. Uwaga, jedna rzecz nie pasuje!"
+  "text": "Hmm, to nie pasuje. Posłuchajmy od początku, co przychodzi dalej."
  },
- "line.wrong_pattern": {
-  "hash": "0541915459b1",
+ "line.a_dobrze": {
+  "hash": "412d28161ff4",
   "who": "sowa",
-  "text": "To nie pasuje do rytmu. Powiedz rytm od początku i posłuchaj, co będzie dalej."
+  "text": "Tak! Po dzwonku znowu bęben. Bum, dzyń, bum, dzyń, bum! Rytm idzie dalej."
  },
- "line.wrong_pattern.wiewiorka": {
-  "hash": "0d1b353ad844",
+ "line.a_moj": {
+  "hash": "56b3299c9e61",
   "who": "wiewiorka",
-  "text": "To nie pasuje do rytmu. Powiedz rytm od początku i posłuchaj, co będzie dalej."
+  "text": "Teraz ja wymyślę rytm! Mój będzie taki: bum, bum, dzyń."
  },
- "line.s_solved": {
-  "hash": "61f2ce85619b",
+ "line.a_moj_co": {
+  "hash": "45791c564a28",
+  "who": "wiewiorka",
+  "text": "Bum, bum, dzyń, bum, bum, dzyń, bum, bum... Co teraz zagram? Wskaż bęben albo dzwonek."
+ },
+ "line.a_moj_dobrze": {
+  "hash": "25f843396742",
+  "who": "wiewiorka",
+  "text": "Dzyń! Zgadza się! Bum, bum, dzyń, i znowu od nowa."
+ },
+ "line.a_razem": {
+  "hash": "ccc66594d186",
+  "who": "lisek",
+  "text": "Zagrajmy to wszyscy razem!"
+ },
+ "line.a_muzyka": {
+  "hash": "0f8c378df176",
   "who": "sowa",
-  "text": "Girlanda gotowa! Jabłko, gruszka, jabłko, gruszka, aż do końca."
+  "text": "Słyszycie? Teraz to jest muzyka! Każdy wie, co będzie dalej, więc możemy grać razem."
  },
- "line.s_to_garden": {
-  "hash": "bd8af22cd355",
+ "line.a_ozdoby": {
+  "hash": "30df3b4c10c3",
+  "who": "lisek",
+  "text": "Nasz zespół już umie grać. Ale na koncert potrzebne są też ozdoby. Zróbmy girlandę z chorągiewek!"
+ },
+ "line.b_wieszam": {
+  "hash": "568951bfc25d",
   "who": "wiewiorka",
-  "text": "Chodźmy do ogrodu. Tam też są rytmy."
+  "text": "Ja powieszę chorągiewki na sznurku!"
  },
- "line.b_bed": {
-  "hash": "ab8fc0955326",
-  "who": "wiewiorka",
-  "text": "Na grządce rośnie: kwiatek, kwiatek, marchewka. I znowu: kwiatek, kwiatek, marchewka."
- },
- "line.b_fill": {
-  "hash": "074736da5300",
+ "line.b_widac": {
+  "hash": "fc2890a7e3bd",
   "who": "sowa",
-  "text": "Dosadź to, co będzie dalej."
+  "text": "Girlanda też może mieć rytm, taki, który widać. Popatrzmy na nią od początku."
  },
- "line.b_done": {
-  "hash": "f91166b63d95",
-  "who": "wiewiorka",
-  "text": "Kwiatek, kwiatek, marchewka! Rytm się zgadza."
- },
- "line.b_to_meadow": {
-  "hash": "d83448272398",
+ "line.b_cos_nie": {
+  "hash": "0fe8a2dc1c36",
   "who": "sowa",
-  "text": "Teraz piknik nad jeziorem."
+  "text": "Czerwona, żółta, czerwona, żółta, czerwona... i znowu czerwona? Coś tu się nie zgadza. Wskaż chorągiewkę, która psuje rytm."
  },
- "line.c_picnic": {
-  "hash": "978b8a48acbc",
+ "line.b_ta_pasuje": {
+  "hash": "1e5247a99195",
   "who": "sowa",
-  "text": "Nakrywam: kubek, talerz, łyżka. Kubek, talerz, łyżka."
+  "text": "Ta chorągiewka jest na swoim miejscu. Popatrz od początku: po czerwonej zawsze przychodzi żółta. Która tu nie pasuje?"
  },
- "line.c_fill": {
-  "hash": "910c9085f5c2",
+ "line.b_ojej": {
+  "hash": "5337830c16ae",
   "who": "wiewiorka",
-  "text": "Przeciągnij, co będzie dalej."
+  "text": "Ojej, dwie czerwone obok siebie! Po czerwonej miała być żółta. Już poprawiam."
  },
- "line.c_solved": {
-  "hash": "1ba5944307a5",
+ "line.b_dokoncz": {
+  "hash": "3269c0804e4b",
   "who": "sowa",
-  "text": "Kubek, talerz, łyżka! Teraz umiesz dokończyć każdy rytm."
+  "text": "Na sznurku zostały trzy puste miejsca. Przeciągnij chorągiewki z trawy na sznurek, tak żeby rytm szedł dalej."
  },
- "line.p_intro": {
-  "hash": "1b60ec9e83d1",
+ "line.b_slot_nie": {
+  "hash": "acee57b9ea4e",
   "who": "sowa",
-  "text": "Pobawmy się w rytmy! Popatrz, co się powtarza."
+  "text": "Ta chorągiewka tu nie pasuje. Popatrz, jaki kolor przychodzi po tym, który wisi obok."
  },
- "line.p_fill": {
-  "hash": "159a5bcc4b6b",
+ "line.b_gotowe": {
+  "hash": "a23b634a7914",
+  "who": "lisek",
+  "text": "Piękna girlanda! Czerwona, żółta, czerwona, żółta. Zabierzemy ją do kuchni na koncert."
+ },
+ "line.c_posagi": {
+  "hash": "ad6576b63359",
+  "who": "lisek",
+  "text": "Zanim pójdziemy dalej, zagrajmy w posągi! Kiedy gra muzyka, tańczymy. Kiedy muzyka ucichnie, wszyscy stoją bez ruchu, jak posągi."
+ },
+ "line.c_pilnuj": {
+  "hash": "3e99c204e806",
   "who": "sowa",
-  "text": "Co będzie dalej? Przeciągnij na puste miejsca."
+  "text": "A ty bądź sędzią! Kiedy muzyka ucichnie, popatrz uważnie, kto się jeszcze rusza."
  },
- "line.p_fill.wiewiorka": {
-  "hash": "b20736c12bc5",
-  "who": "wiewiorka",
-  "text": "Co będzie dalej? Przeciągnij na puste miejsca."
- },
- "line.good_pattern": {
-  "hash": "ff1d46649aaa",
-  "who": "wiewiorka",
-  "text": "Tak! Rytm się zgadza."
- },
- "line.good_pattern.sowa": {
-  "hash": "b9c5ef0bb04f",
+ "line.c_kto": {
+  "hash": "840bbacfc932",
   "who": "sowa",
-  "text": "Tak! Rytm się zgadza."
+  "text": "Muzyka ucichła, wszyscy stoją jak posągi. Ale ktoś się jeszcze rusza! Wskaż, kto się ruszył."
  },
- "line.a_game": {
-  "hash": "ce19de64894d",
+ "line.c_nie_ja": {
+  "hash": "d4955d13abe8",
+  "who": "lisek",
+  "text": "Ja stoję jak posąg! Popatrz, kto się jeszcze rusza."
+ },
+ "line.c_nie_ja.wiewiorka": {
+  "hash": "7b1b1f6629dc",
   "who": "wiewiorka",
-  "text": "Zagrajmy w rytmy z zabawek."
+  "text": "Ja stoję jak posąg! Popatrz, kto się jeszcze rusza."
  },
- "line.a_ok": {
-  "hash": "27ac7ffa8de2",
+ "line.c_nie_ja.sowa": {
+  "hash": "0ff78a671860",
   "who": "sowa",
-  "text": "Dobrze! Ja zaczynam, a ty kończysz."
+  "text": "Ja stoję jak posąg! Popatrz, kto się jeszcze rusza."
  },
- "line.a_fill": {
-  "hash": "d699a97e4113",
+ "line.c_mam_lisek": {
+  "hash": "313f091fd910",
+  "who": "lisek",
+  "text": "Hihi, ruszyłem się! Przyłapany!"
+ },
+ "line.c_mam_wiewiorka": {
+  "hash": "2b736398cce4",
+  "who": "wiewiorka",
+  "text": "Hihi, ruszyłam się! Przyłapana!"
+ },
+ "line.c_mam_sowa": {
+  "hash": "9ff15d983f5d",
   "who": "sowa",
-  "text": "Co będzie dalej? Przeciągnij zabawki."
+  "text": "Hu, hu, ruszyłam się! Przyłapana!"
  },
- "line.a_fill.wiewiorka": {
-  "hash": "c84fefa822ba",
+ "line.c_koniec": {
+  "hash": "3b1418cfb3a6",
+  "who": "lisek",
+  "text": "Ale było wesoło! A teraz chodźmy nad jezioro, zaprosić Sarenkę na koncert."
+ },
+ "line.d_zaproszenie": {
+  "hash": "95e52c9b1b97",
+  "who": "lisek",
+  "text": "Dzień dobry, Sarenko! Dziś po południu gramy koncert dla rodziców. Przyjdziesz?"
+ },
+ "line.d_smutna": {
+  "hash": "0d41fc058b88",
+  "who": "sarenka",
+  "text": "Bardzo bym chciała... Ale na koncercie wszyscy będą tańczyć, a ja nie umiem tańczyć."
+ },
+ "line.d_nauczymy": {
+  "hash": "272737fdc16f",
+  "who": "lisek",
+  "text": "Nie martw się, nauczymy cię! Taniec też ma rytm: ruchy powtarzają się po kolei. Popatrz na mnie."
+ },
+ "line.d_co_teraz": {
+  "hash": "e2df8bed5149",
+  "who": "lisek",
+  "text": "Klask, klask, skok, klask, klask, skok, klask, klask... Jaki ruch teraz? Wskaż kartę, a Sarenka go zrobi."
+ },
+ "line.d_od_poczatku": {
+  "hash": "536f66980afc",
+  "who": "lisek",
+  "text": "Ups, to nie ten ruch. Popatrzmy jeszcze raz od początku, co przychodzi dalej."
+ },
+ "line.d_od_poczatku.wiewiorka": {
+  "hash": "758205b31cce",
   "who": "wiewiorka",
-  "text": "Co będzie dalej? Przeciągnij zabawki."
+  "text": "Ups, to nie ten ruch. Popatrzmy jeszcze raz od początku, co przychodzi dalej."
  },
- "line.a_ask_parents": {
-  "hash": "19631ec6ec0e",
+ "line.d_udalo": {
+  "hash": "9c400d7606c2",
+  "who": "sarenka",
+  "text": "Skok! Udało mi się!"
+ },
+ "line.d_drugi": {
+  "hash": "83830c965bc7",
+  "who": "wiewiorka",
+  "text": "Teraz mój taniec, popatrz!"
+ },
+ "line.d_drugi_co": {
+  "hash": "1394b36127df",
+  "who": "wiewiorka",
+  "text": "Klask, obrót, klask, obrót, klask... Jaki ruch teraz? Wskaż kartę."
+ },
+ "line.d_sama": {
+  "hash": "b3fb324df480",
+  "who": "sarenka",
+  "text": "Obrót! A teraz spróbuję sama: klask, obrót, klask, obrót."
+ },
+ "line.d_umiem": {
+  "hash": "2fef101bffa8",
+  "who": "sarenka",
+  "text": "Umiem tańczyć! Dziękuję! Na pewno przyjdę na wasz koncert."
+ },
+ "line.d_do_domu": {
+  "hash": "71725b87ff56",
+  "who": "lisek",
+  "text": "Hurra! To wracamy do domu. Zanim przyjdą rodzice, zrobimy jeszcze próbę."
+ },
+ "line.p_start": {
+  "hash": "f1a1d277fdf0",
   "who": "sowa",
-  "text": "Poproście rodziców, żeby ułożyli z wami rytm z łyżek i widelców. Możecie też razem wyklaskać rytm."
+  "text": "Czas na próbę przed koncertem! Mam dla ciebie pięć zabaw z rytmem."
  },
- "line.a_bye": {
-  "hash": "de5cebfd32fc",
-  "who": "wiewiorka",
-  "text": "Pa, pa! Do zobaczenia!"
+ "line.p_echo": {
+  "hash": "079d59a5f36b",
+  "who": "sowa",
+  "text": "Pierwsza zabawa to echo. Posłuchaj, jak gram."
  },
- "line.b_sizes": {
-  "hash": "8a23cc8b043a",
-  "who": "wiewiorka",
-  "text": "A tu rytm z wielkości: duża marchewka, mała marchewka, duża, mała."
+ "line.p_echo_co": {
+  "hash": "fa8dffc7d8f8",
+  "who": "sowa",
+  "text": "Bum, dzyń, dzyń, bum, dzyń, dzyń, bum... Co teraz? Wskaż bęben albo dzwonek."
  },
- "line.b_sizes_done": {
-  "hash": "33898653a3f2",
+ "line.p_od_poczatku": {
+  "hash": "82e1f16a8fa7",
+  "who": "sowa",
+  "text": "To nie pasuje. Posłuchajmy od początku, co przychodzi dalej."
+ },
+ "line.p_od_poczatku.wiewiorka": {
+  "hash": "88fe278b2203",
   "who": "wiewiorka",
-  "text": "Duża, mała, duża, mała! Rytm może być też z wielkości."
+  "text": "To nie pasuje. Posłuchajmy od początku, co przychodzi dalej."
+ },
+ "line.p_echo_ok": {
+  "hash": "a7f80c4167be",
+  "who": "sowa",
+  "text": "Dzyń! Po bębnie zawsze dwa dzwonki. Świetnie słuchasz."
+ },
+ "line.p_koraliki": {
+  "hash": "2c5d73cebd34",
+  "who": "wiewiorka",
+  "text": "Nawlekam korale: czerwony, żółty, niebieski. Przeciągnij koraliki na puste miejsca, tak żeby rytm szedł dalej."
+ },
+ "line.p_koraliki_nie": {
+  "hash": "d2a32c122473",
+  "who": "wiewiorka",
+  "text": "Ten koralik tu nie pasuje. Popatrz, jaki kolor przychodzi po tym, który jest obok."
+ },
+ "line.p_koraliki_ok": {
+  "hash": "91bc746cbc43",
+  "who": "wiewiorka",
+  "text": "Czerwony, żółty, niebieski, i znowu od nowa. Piękne korale!"
+ },
+ "line.p_blad": {
+  "hash": "ceb7f7ec07cc",
+  "who": "sowa",
+  "text": "Ktoś pomieszał listki i żołędzie. Listek, listek, żołądź... Popatrz od początku i wskaż, co psuje rytm."
+ },
+ "line.p_blad_nie": {
+  "hash": "9ed860094732",
+  "who": "sowa",
+  "text": "To jest na swoim miejscu. Popatrz od początku: listek, listek, żołądź. Co tu nie pasuje?"
+ },
+ "line.p_blad_ok": {
+  "hash": "139042cbe548",
+  "who": "sowa",
+  "text": "Tak! Tu miał być listek, a jest żołądź. Teraz wiemy, gdzie rytm się zepsuł."
+ },
+ "line.p_bebny": {
+  "hash": "a37b6dd9854c",
+  "who": "wiewiorka",
+  "text": "Mam duży bęben i mały bęben. Duży gra nisko, a mały wysoko. Posłuchaj."
+ },
+ "line.p_bebny_co": {
+  "hash": "004bb5e748f5",
+  "who": "wiewiorka",
+  "text": "Duży, mały, duży, mały, duży, mały, duży... Który bęben zagra teraz? Wskaż duży albo mały."
+ },
+ "line.p_bebny_ok": {
+  "hash": "2d08480502f5",
+  "who": "wiewiorka",
+  "text": "Mały! Duży, mały, duży, mały. Ten rytm słychać i widać."
+ },
+ "line.p_taniec": {
+  "hash": "dcd410a609b5",
+  "who": "wiewiorka",
+  "text": "Ostatnia zabawa to mój taniec. Popatrz uważnie."
+ },
+ "line.p_taniec_co": {
+  "hash": "b5a4d502a05f",
+  "who": "wiewiorka",
+  "text": "Skok, obrót, obrót, skok, obrót, obrót, skok... Jaki ruch teraz? Wskaż kartę."
+ },
+ "line.p_taniec_ok": {
+  "hash": "cb2b6c9ae234",
+  "who": "sowa",
+  "text": "Obrót! Po skoku zawsze dwa obroty. Jesteśmy gotowi na koncert!"
+ },
+ "line.e_girlanda": {
+  "hash": "df851c323f37",
+  "who": "wiewiorka",
+  "text": "Nasza girlanda już wisi w kuchni! Czerwona, żółta, czerwona, żółta."
+ },
+ "line.e_bez_bebna": {
+  "hash": "c46d665e2703",
+  "who": "sowa",
+  "text": "Ojej! Bęben i dzwonek zostały w ogrodzie. Na czym teraz zagramy?"
+ },
+ "line.e_kuchnia": {
+  "hash": "0f16f178148a",
+  "who": "lisek",
+  "text": "Mam pomysł! W kuchni też są instrumenty. Garnek będzie naszym bębnem, a łyżeczka w kubku naszym dzwonkiem. Posłuchajcie!"
+ },
+ "line.e_zaczynam": {
+  "hash": "5d916e59c565",
+  "who": "lisek",
+  "text": "Rodzice już przyszli i siedzą. Zaczynamy koncert! Ja zacznę, a ty zagrasz dalej."
+ },
+ "line.e_graj": {
+  "hash": "d1e25067254f",
+  "who": "lisek",
+  "text": "Teraz ty! Graj dalej: wskazuj garnek albo kubek, po kolei, tak jak idzie rytm."
+ },
+ "line.e_od_poczatku": {
+  "hash": "15ce524b8310",
+  "who": "lisek",
+  "text": "To nie ten dźwięk. Posłuchajmy od początku i zagrajmy dalej."
+ },
+ "line.e_od_poczatku.sowa": {
+  "hash": "58bd19037b73",
+  "who": "sowa",
+  "text": "To nie ten dźwięk. Posłuchajmy od początku i zagrajmy dalej."
+ },
+ "line.e_brawo": {
+  "hash": "af8a1d7297ab",
+  "who": "sowa",
+  "text": "Brawo! Grasz razem z nami w rytmie."
+ },
+ "line.e_druga": {
+  "hash": "0c279dd23ffa",
+  "who": "sowa",
+  "text": "A teraz moja piosenka: bum, bum, dzyń. Posłuchaj."
+ },
+ "line.e_graj_dalej": {
+  "hash": "5f009821e372",
+  "who": "sowa",
+  "text": "Graj dalej, tak jak idzie moja piosenka."
+ },
+ "line.e_tancze": {
+  "hash": "a4372bb23f91",
+  "who": "sarenka",
+  "text": "A ja zatańczę do waszej muzyki, tak jak mnie nauczyliście!"
+ },
+ "line.e_rodzice": {
+  "hash": "8783c5be1187",
+  "who": "lisek",
+  "text": "Rodzice biją brawo! Zróbcie w domu taki koncert razem: garnek, łyżka i rytm, na przykład bum, bum, dzyń. Możecie też klaskać: klask, klask, tup."
  },
  "line.naklejka_daj": {
-  "hash": "2634c68df6d9",
-  "who": "wiewiorka",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "6c47a9e8426d",
-  "who": "narrator",
-  "text": "To miś od wiewiórki. Dostaliśmy go, kiedy razem układaliśmy rytmy."
+  "hash": "9f08013304e3",
+  "who": "sarenka",
+  "text": "Dziękuję za naukę tańca! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "85dccce7b7f1",
-  "who": "wiewiorka",
+  "hash": "7b4f384e1970",
+  "who": "sarenka",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "14b9f39fec70",
+  "who": "narrator",
+  "text": "To bęben z koncertu przyjaciół. Dostaliśmy go od Sarenki, kiedy poznawaliśmy rytm: w muzyce, w girlandzie i w tańcu."
+ },
+ "line.c_jeszcze": {
+  "hash": "814dab721406",
+  "who": "lisek",
+  "text": "Jeszcze raz! Muzyka gra, tańczymy. A ty popatrz, kto się ruszy, kiedy ucichnie."
  }
 }

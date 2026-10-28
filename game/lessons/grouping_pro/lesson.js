@@ -83,14 +83,17 @@ export default {
       // what the gifts have in common? Food / the rest: they land in both groups. Red / the rest: all in one!
       async (c) => {
         c.czastki("liscie", { wiatr: 0.5 });
-        await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
-        // the gifts under the apple tree, each with a golden bow: shown, named one by one
+        // the gifts already lie under the apple tree, each with a golden bow; Squirrel runs in, sees them and calls Deer
         const prezenty = [];
         for (const [i, n] of ["jablko", "lisc_czerwony", "klocek", "pilka"].entries()) {
           const h = await c.object(n, { x: -1.7 + i * 1.15, y: -1.95, size: 0.95 });
           Object.assign(h, { prezent: true, tag: n === "jablko" ? "jedzenie" : "inne", kolor: "czerwone" }); await kokarda(c, h); prezenty.push(h);
         }
-        await c.say("sarenka", "line.a_rano", { anim: "Radosc" });
+        await c.enter("wiewiorka");
+        await c.emocja("wiewiorka", "wykrzyknik", { anim: "Podskok" });
+        await c.say("wiewiorka", "line.a_start", { anim: "Machanie" });
+        await c.enter("sarenka");
+        await c.say("sarenka", "line.a_znowu", { anim: "Radosc" });
         await c.ujecie("sredni", { na: prezenty });
         await c.say("wiewiorka", "line.a_wymien");
         for (const h of prezenty) { c.stage.bump(h, 0.3); await c.wait(0.45); }

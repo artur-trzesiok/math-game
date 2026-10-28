@@ -1,187 +1,412 @@
 {
- "line.s_garland": {
-  "hash": "32f555df8bd5",
-  "who": "sowa",
-  "text": "I am making a garland for the party. Apple, pear, apple, pear."
+ "line.a_koncert": {
+  "hash": "ea7de6ca2c84",
+  "who": "lisek",
+  "text": "Listen, I have news! Our parents are coming this afternoon. Let's play them a concert!"
  },
- "line.s_go_on": {
-  "hash": "71d1062a007f",
+ "line.a_mamy": {
+  "hash": "35def1d95151",
   "who": "sowa",
-  "text": "Will you finish it for me?"
+  "text": "A concert! What a wonderful idea. Look, there is a drum and a bell in the garden."
  },
- "line.s_anything": {
-  "hash": "7c3931b71a5b",
+ "line.a_ja": {
+  "hash": "324625d99e27",
   "who": "wiewiorka",
-  "text": "Sure! I'll add anything, as long as it is colourful. Hop, hop!"
+  "text": "I'll play! I'll play loud and a lot!"
  },
- "line.s_broken": {
-  "hash": "1a0dc50a0674",
+ "line.a_halas": {
+  "hash": "9a02d93eee9b",
   "who": "sowa",
-  "text": "Oh no, you broke the pattern! Look: apple, pear, apple, pear. Something repeats."
+  "text": "Oh dear, oh dear! Squirrel, that is not music, that is noise. Nobody knows what you will play next, so nobody can play along with you or dance to it."
  },
- "line.s_how": {
-  "hash": "198c7c2a2697",
+ "line.a_jak": {
+  "hash": "dc581e774b25",
   "who": "wiewiorka",
-  "text": "Then what should I add?"
+  "text": "Then how do you play real music?"
  },
- "line.s_rhythm": {
-  "hash": "79f2d70dbe11",
+ "line.a_rytm": {
+  "hash": "406213efbde0",
   "who": "sowa",
-  "text": "What fits the rhythm! A rhythm is something that repeats in order."
+  "text": "Music has a rhythm."
  },
- "line.s_what": {
-  "hash": "bba2f3e7c3c8",
+ "line.a_co_to": {
+  "hash": "5862453bdc14",
   "who": "wiewiorka",
-  "text": "A rhythm? Will you show me?"
+  "text": "A rhythm? What is a rhythm?"
  },
- "line.s_listen": {
-  "hash": "fa76052b3b53",
+ "line.a_rytm_to": {
+  "hash": "1d887f1d20b1",
   "who": "sowa",
-  "text": "Listen. Clap, hop, clap, hop."
+  "text": "A rhythm is something that repeats in order, again and again. I'll show you, it's a fun game. Listen, and watch every sound take its place in the row."
  },
- "line.s_same_garland": {
-  "hash": "a09597c7dd00",
+ "line.a_co_dalej": {
+  "hash": "e168da8daa34",
   "who": "sowa",
-  "text": "The garland has the same kind of rhythm. Apple, pear, apple, pear. Let's start again."
+  "text": "Drum, bell, drum, bell. Boom, ding, boom, ding. Listen again from the start. What do we play now? Point to the drum or the bell."
  },
- "line.s_fill": {
-  "hash": "a550767f8dc1",
+ "line.a_od_poczatku": {
+  "hash": "537126f63f36",
+  "who": "sowa",
+  "text": "Hmm, that doesn't fit. Let's listen from the start to hear what comes next."
+ },
+ "line.a_od_poczatku.wiewiorka": {
+  "hash": "25c8d5523355",
   "who": "wiewiorka",
-  "text": "Drag what comes next. Careful, one thing does not fit!"
+  "text": "Hmm, that doesn't fit. Let's listen from the start to hear what comes next."
  },
- "line.wrong_pattern": {
-  "hash": "3d0429f13422",
+ "line.a_dobrze": {
+  "hash": "482613622372",
   "who": "sowa",
-  "text": "That does not fit the rhythm. Say the rhythm from the start and listen for what comes next."
+  "text": "Yes! After the bell comes the drum again. Boom, ding, boom, ding, boom! The rhythm goes on."
  },
- "line.wrong_pattern.wiewiorka": {
-  "hash": "ce4baa55b9da",
+ "line.a_moj": {
+  "hash": "cf011c7e6b1f",
   "who": "wiewiorka",
-  "text": "That does not fit the rhythm. Say the rhythm from the start and listen for what comes next."
+  "text": "Now I'll make up a rhythm! Mine goes like this: boom, boom, ding."
  },
- "line.s_solved": {
-  "hash": "a65c44d60807",
+ "line.a_moj_co": {
+  "hash": "896309ed5488",
+  "who": "wiewiorka",
+  "text": "Boom, boom, ding, boom, boom, ding, boom, boom... What do I play now? Point to the drum or the bell."
+ },
+ "line.a_moj_dobrze": {
+  "hash": "490624720736",
+  "who": "wiewiorka",
+  "text": "Ding! That's right! Boom, boom, ding, and again from the start."
+ },
+ "line.a_razem": {
+  "hash": "e892261253b6",
+  "who": "lisek",
+  "text": "Let's all play it together!"
+ },
+ "line.a_muzyka": {
+  "hash": "6248331f5d05",
   "who": "sowa",
-  "text": "The garland is ready! Apple, pear, apple, pear, all the way."
+  "text": "Can you hear it? Now that is music! Everyone knows what comes next, so we can play together."
  },
- "line.s_to_garden": {
-  "hash": "99b00c4ae62c",
+ "line.a_ozdoby": {
+  "hash": "745af6ac383a",
+  "who": "lisek",
+  "text": "Our band can play now. But a concert needs decorations too. Let's make a garland of flags!"
+ },
+ "line.b_wieszam": {
+  "hash": "45322d1f2ed3",
   "who": "wiewiorka",
-  "text": "Let's go to the garden. There are rhythms there too."
+  "text": "I'll hang the flags on the string!"
  },
- "line.b_bed": {
-  "hash": "690211ab4517",
-  "who": "wiewiorka",
-  "text": "In the bed there grows: flower, flower, carrot. And again: flower, flower, carrot."
- },
- "line.b_fill": {
-  "hash": "1a74965fe132",
+ "line.b_widac": {
+  "hash": "9edfebd0f62e",
   "who": "sowa",
-  "text": "Plant what comes next."
+  "text": "A garland can have a rhythm too, one you can see. Let's look at it from the start."
  },
- "line.b_done": {
-  "hash": "60132cd97ba3",
-  "who": "wiewiorka",
-  "text": "Flower, flower, carrot! The rhythm is right."
- },
- "line.b_to_meadow": {
-  "hash": "1b6ada794ff8",
+ "line.b_cos_nie": {
+  "hash": "62c9551055a9",
   "who": "sowa",
-  "text": "Now a picnic by the lake."
+  "text": "Red, yellow, red, yellow, red... and red again? Something is wrong here. Point to the flag that breaks the rhythm."
  },
- "line.c_picnic": {
-  "hash": "17fd2d639252",
+ "line.b_ta_pasuje": {
+  "hash": "06764cf8d810",
   "who": "sowa",
-  "text": "I am laying the table: cup, plate, spoon. Cup, plate, spoon."
+  "text": "That flag is in its place. Look from the start: after red always comes yellow. Which one doesn't fit?"
  },
- "line.c_fill": {
-  "hash": "5723fd15993a",
+ "line.b_ojej": {
+  "hash": "9b86b59cf707",
   "who": "wiewiorka",
-  "text": "Drag what comes next."
+  "text": "Oops, two reds side by side! After red there should be yellow. I'll fix it."
  },
- "line.c_solved": {
-  "hash": "e2a407ebf885",
+ "line.b_dokoncz": {
+  "hash": "35e12a548052",
   "who": "sowa",
-  "text": "Cup, plate, spoon! Now you can finish any rhythm."
+  "text": "There are three empty places left on the string. Drag the flags from the grass onto the string, so the rhythm goes on."
  },
- "line.p_intro": {
-  "hash": "c8df03aeab09",
+ "line.b_slot_nie": {
+  "hash": "bb5d83db5c81",
   "who": "sowa",
-  "text": "Let's play rhythms! Look at what repeats."
+  "text": "That flag doesn't fit here. Look at which colour comes after the one hanging next to it."
  },
- "line.p_fill": {
-  "hash": "b180b74171d1",
+ "line.b_gotowe": {
+  "hash": "7042514dfa67",
+  "who": "lisek",
+  "text": "A beautiful garland! Red, yellow, red, yellow. We'll take it to the kitchen for the concert."
+ },
+ "line.c_posagi": {
+  "hash": "25b2cb3e750f",
+  "who": "lisek",
+  "text": "Before we go on, let's play statues! While the music plays, we dance. When the music stops, everyone stands still, like statues."
+ },
+ "line.c_pilnuj": {
+  "hash": "44220b7dd94c",
   "who": "sowa",
-  "text": "What comes next? Drag it into the empty places."
+  "text": "And you are the judge! When the music stops, look carefully to see who is still moving."
  },
- "line.p_fill.wiewiorka": {
-  "hash": "a149cd8c59c1",
-  "who": "wiewiorka",
-  "text": "What comes next? Drag it into the empty places."
- },
- "line.good_pattern": {
-  "hash": "c108e154e9c8",
-  "who": "wiewiorka",
-  "text": "Yes! The rhythm is right."
- },
- "line.good_pattern.sowa": {
-  "hash": "5478a6c22a6b",
+ "line.c_kto": {
+  "hash": "39158a8a4a77",
   "who": "sowa",
-  "text": "Yes! The rhythm is right."
+  "text": "The music stopped, everyone stands like a statue. But somebody is still moving! Point to who moved."
  },
- "line.a_game": {
-  "hash": "4841b14c8516",
+ "line.c_nie_ja": {
+  "hash": "0d6adab4276c",
+  "who": "lisek",
+  "text": "I'm standing like a statue! Look who is still moving."
+ },
+ "line.c_nie_ja.wiewiorka": {
+  "hash": "d1358259ae01",
   "who": "wiewiorka",
-  "text": "Let's play rhythms with toys."
+  "text": "I'm standing like a statue! Look who is still moving."
  },
- "line.a_ok": {
-  "hash": "0fb2fef15bab",
+ "line.c_nie_ja.sowa": {
+  "hash": "238236cf8440",
   "who": "sowa",
-  "text": "All right! I start and you finish."
+  "text": "I'm standing like a statue! Look who is still moving."
  },
- "line.a_fill": {
-  "hash": "faed9272093e",
+ "line.c_mam_lisek": {
+  "hash": "9a926c18a978",
+  "who": "lisek",
+  "text": "Hee hee, I moved! You caught me!"
+ },
+ "line.c_mam_wiewiorka": {
+  "hash": "3128e69616e3",
+  "who": "wiewiorka",
+  "text": "Hee hee, I moved! You caught me!"
+ },
+ "line.c_mam_sowa": {
+  "hash": "9c99d8813633",
   "who": "sowa",
-  "text": "What comes next? Drag the toys."
+  "text": "Hoo hoo, I moved! You caught me!"
  },
- "line.a_fill.wiewiorka": {
-  "hash": "7b4cec8e59a6",
+ "line.c_koniec": {
+  "hash": "79e2a96da11d",
+  "who": "lisek",
+  "text": "That was fun! Now let's go to the lake and invite Deer to the concert."
+ },
+ "line.d_zaproszenie": {
+  "hash": "97ec2ab7215c",
+  "who": "lisek",
+  "text": "Hello, Deer! This afternoon we're playing a concert for our parents. Will you come?"
+ },
+ "line.d_smutna": {
+  "hash": "06bf0322b9a4",
+  "who": "sarenka",
+  "text": "I'd love to... But everyone will be dancing at the concert, and I can't dance."
+ },
+ "line.d_nauczymy": {
+  "hash": "0fc8bd7c659f",
+  "who": "lisek",
+  "text": "Don't worry, we'll teach you! A dance has a rhythm too: the moves repeat in order. Watch me."
+ },
+ "line.d_co_teraz": {
+  "hash": "5fd86b2950c9",
+  "who": "lisek",
+  "text": "Clap, clap, jump, clap, clap, jump, clap, clap... Which move now? Point to the card, and Deer will do it."
+ },
+ "line.d_od_poczatku": {
+  "hash": "554584150da7",
+  "who": "lisek",
+  "text": "Oops, not that move. Let's look again from the start at what comes next."
+ },
+ "line.d_od_poczatku.wiewiorka": {
+  "hash": "1cc423fe8cc1",
   "who": "wiewiorka",
-  "text": "What comes next? Drag the toys."
+  "text": "Oops, not that move. Let's look again from the start at what comes next."
  },
- "line.a_ask_parents": {
-  "hash": "0bed81df178b",
+ "line.d_udalo": {
+  "hash": "b2b437a91332",
+  "who": "sarenka",
+  "text": "A jump! I did it!"
+ },
+ "line.d_drugi": {
+  "hash": "61104ba3855b",
+  "who": "wiewiorka",
+  "text": "Now my dance, watch!"
+ },
+ "line.d_drugi_co": {
+  "hash": "25cf44c5d30f",
+  "who": "wiewiorka",
+  "text": "Clap, spin, clap, spin, clap... Which move now? Point to the card."
+ },
+ "line.d_sama": {
+  "hash": "919c5b00b932",
+  "who": "sarenka",
+  "text": "A spin! Now I'll try it on my own: clap, spin, clap, spin."
+ },
+ "line.d_umiem": {
+  "hash": "17d4e6699780",
+  "who": "sarenka",
+  "text": "I can dance! Thank you! I'll surely come to your concert."
+ },
+ "line.d_do_domu": {
+  "hash": "75ed83d1ddef",
+  "who": "lisek",
+  "text": "Hooray! Let's go home. Before our parents come, we'll have a rehearsal."
+ },
+ "line.p_start": {
+  "hash": "62966639b915",
   "who": "sowa",
-  "text": "Ask your parents to make a rhythm of spoons and forks with you. You can also clap a rhythm together."
+  "text": "Time for a rehearsal before the concert! I have five rhythm games for you."
  },
- "line.a_bye": {
-  "hash": "3c8231148d14",
-  "who": "wiewiorka",
-  "text": "Bye bye! See you!"
+ "line.p_echo": {
+  "hash": "fb575992b75a",
+  "who": "sowa",
+  "text": "The first game is an echo. Listen to me play."
  },
- "line.b_sizes": {
-  "hash": "5515ddcd675f",
-  "who": "wiewiorka",
-  "text": "And here is a rhythm of sizes: big carrot, small carrot, big, small."
+ "line.p_echo_co": {
+  "hash": "73bde448055f",
+  "who": "sowa",
+  "text": "Boom, ding, ding, boom, ding, ding, boom... What now? Point to the drum or the bell."
  },
- "line.b_sizes_done": {
-  "hash": "a46362164cb3",
+ "line.p_od_poczatku": {
+  "hash": "20f80f46ca70",
+  "who": "sowa",
+  "text": "That doesn't fit. Let's listen from the start to what comes next."
+ },
+ "line.p_od_poczatku.wiewiorka": {
+  "hash": "986fcac712a3",
   "who": "wiewiorka",
-  "text": "Big, small, big, small! A rhythm can be made of sizes too."
+  "text": "That doesn't fit. Let's listen from the start to what comes next."
+ },
+ "line.p_echo_ok": {
+  "hash": "e435a21117b1",
+  "who": "sowa",
+  "text": "Ding! After the drum always come two bells. You listen so well."
+ },
+ "line.p_koraliki": {
+  "hash": "9c0e30afa7cb",
+  "who": "wiewiorka",
+  "text": "I'm threading beads: red, yellow, blue. Drag the beads to the empty places, so the rhythm goes on."
+ },
+ "line.p_koraliki_nie": {
+  "hash": "e5209b02e0fc",
+  "who": "wiewiorka",
+  "text": "That bead doesn't fit here. Look at which colour comes after the one next to it."
+ },
+ "line.p_koraliki_ok": {
+  "hash": "1d4f154ed0dc",
+  "who": "wiewiorka",
+  "text": "Red, yellow, blue, and again from the start. Beautiful beads!"
+ },
+ "line.p_blad": {
+  "hash": "4101cf9b578b",
+  "who": "sowa",
+  "text": "Somebody mixed up the leaves and the acorns. Leaf, leaf, acorn... Look from the start and point to what breaks the rhythm."
+ },
+ "line.p_blad_nie": {
+  "hash": "080dd2d75166",
+  "who": "sowa",
+  "text": "That one is in its place. Look from the start: leaf, leaf, acorn. What doesn't fit?"
+ },
+ "line.p_blad_ok": {
+  "hash": "e0b18d943bfd",
+  "who": "sowa",
+  "text": "Yes! There should be a leaf here, and there is an acorn. Now we know where the rhythm broke."
+ },
+ "line.p_bebny": {
+  "hash": "8e143fe01a01",
+  "who": "wiewiorka",
+  "text": "I have a big drum and a small drum. The big one plays low, the small one high. Listen."
+ },
+ "line.p_bebny_co": {
+  "hash": "34558538c0b5",
+  "who": "wiewiorka",
+  "text": "Big, small, big, small, big, small, big... Which drum plays now? Point to the big one or the small one."
+ },
+ "line.p_bebny_ok": {
+  "hash": "7a67a009d45c",
+  "who": "wiewiorka",
+  "text": "The small one! Big, small, big, small. You can hear this rhythm and see it."
+ },
+ "line.p_taniec": {
+  "hash": "2a0d5e2267ea",
+  "who": "wiewiorka",
+  "text": "The last game is my dance. Watch carefully."
+ },
+ "line.p_taniec_co": {
+  "hash": "ca3b3ba8915e",
+  "who": "wiewiorka",
+  "text": "Jump, spin, spin, jump, spin, spin, jump... Which move now? Point to the card."
+ },
+ "line.p_taniec_ok": {
+  "hash": "79328336905a",
+  "who": "sowa",
+  "text": "A spin! After a jump always come two spins. We're ready for the concert!"
+ },
+ "line.e_girlanda": {
+  "hash": "7c50922b55a7",
+  "who": "wiewiorka",
+  "text": "Our garland is hanging in the kitchen! Red, yellow, red, yellow."
+ },
+ "line.e_bez_bebna": {
+  "hash": "f25853f8fdf4",
+  "who": "sowa",
+  "text": "Oh no! The drum and the bell stayed in the garden. What will we play on now?"
+ },
+ "line.e_kuchnia": {
+  "hash": "3ffee0be1128",
+  "who": "lisek",
+  "text": "I have an idea! There are instruments in the kitchen too. The pot will be our drum, and a spoon in a cup our bell. Listen!"
+ },
+ "line.e_zaczynam": {
+  "hash": "ad41642a94d7",
+  "who": "lisek",
+  "text": "Our parents are here and sitting down. The concert begins! I'll start, and you play on."
+ },
+ "line.e_graj": {
+  "hash": "510a0734208e",
+  "who": "lisek",
+  "text": "Now you! Play on: point to the pot or the cup, one after another, the way the rhythm goes."
+ },
+ "line.e_od_poczatku": {
+  "hash": "5fcc0db03b2a",
+  "who": "lisek",
+  "text": "Not that sound. Let's listen from the start and play on."
+ },
+ "line.e_od_poczatku.sowa": {
+  "hash": "cbff8e4b4939",
+  "who": "sowa",
+  "text": "Not that sound. Let's listen from the start and play on."
+ },
+ "line.e_brawo": {
+  "hash": "c8867d0cafa9",
+  "who": "sowa",
+  "text": "Bravo! You're playing in rhythm with us."
+ },
+ "line.e_druga": {
+  "hash": "55c9351d11ce",
+  "who": "sowa",
+  "text": "And now my song: boom, boom, ding. Listen."
+ },
+ "line.e_graj_dalej": {
+  "hash": "2803e5a0b93b",
+  "who": "sowa",
+  "text": "Play on, the way my song goes."
+ },
+ "line.e_tancze": {
+  "hash": "6239ce4f44b1",
+  "who": "sarenka",
+  "text": "And I'll dance to your music, just as you taught me!"
+ },
+ "line.e_rodzice": {
+  "hash": "594e56326831",
+  "who": "lisek",
+  "text": "Our parents are clapping! Make a concert like this at home together: a pot, a spoon and a rhythm, like boom, boom, ding. Or clap it: clap, clap, stomp."
  },
  "line.naklejka_daj": {
-  "hash": "09d044a8206f",
-  "who": "wiewiorka",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
- },
- "line.naklejka_opis": {
-  "hash": "dec733152620",
-  "who": "narrator",
-  "text": "This is the teddy from Squirrel. We got it when we made rhythms together."
+  "hash": "40e38d356a21",
+  "who": "sarenka",
+  "text": "Thank you for teaching me to dance! Here is a sticker for your album, to remember it by. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "a272dae35780",
-  "who": "wiewiorka",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "hash": "c5b40c9af054",
+  "who": "sarenka",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "17359af8f8ea",
+  "who": "narrator",
+  "text": "This is the drum from the friends' concert. Deer gave it to us when we learnt about rhythm: in music, in a garland and in a dance."
+ },
+ "line.c_jeszcze": {
+  "hash": "c4dddbc01207",
+  "who": "lisek",
+  "text": "Once more! The music plays, we dance. And you watch who moves when it stops."
  }
 }

@@ -433,5 +433,15 @@
   "hash": "126a203b8c35",
   "who": "lisek",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.a_start": {
+  "hash": "d234a4e3cc3d",
+  "who": "wiewiorka",
+  "text": "Sarenko, szybko, chodź tutaj! Pod jabłonką znowu coś leży!"
+ },
+ "line.a_znowu": {
+  "hash": "96d9651d488c",
+  "who": "sarenka",
+  "text": "Prezenty! Ktoś znowu zostawił je dla nas pod jabłonką."
  }
 }

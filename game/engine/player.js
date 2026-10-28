@@ -14,6 +14,7 @@ import * as U from "./ubior.js";
 import { Stage, GROUND } from "./scene.js";
 import * as Album from "./album.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
+import * as R from "./rytm.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -434,6 +435,12 @@ export class Player {
         g.forEach((im, i) => x.drawImage(im, (i % k) * s, Math.floor(i / k) * s, s, s));
         return c.toDataURL();
       },
+      // rhythm (rytm.js): a row plays itself up to the gap; a dance of moves on a beat; a stumble; statues
+      rytm: guard((items, o = {}) => R.rytm(S, items, { ...o, tempo: FAST ? 0.15 : o.tempo })),
+      taniec: guard((who, ruchy, o = {}) => R.taniec(S, who, ruchy, { ...o, tempo: FAST ? 0.25 : o.tempo })),
+      ruch: (who, nazwa, o = {}) => R.ruch(S, who, nazwa, o),
+      potknij: guard((who) => R.potknij(S, who)),
+      zamroz: (who, on = true) => R.zamroz(S, who, on),
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
       pan: guard((k, opts) => E.pan(S, k, opts)),
       odliczanie: guard((opts) => E.odliczanie(S, opts)),
@@ -519,7 +526,7 @@ export class Player {
           alive();
           const hit = await S.choose([...targets.filter((h) => !znalezione.has(h)), ...puppets]);
           alive();
-          if (hit && hit.korzen) { if (polecenie) await say(polecenie.who, polecenie.key, { anim: polecenie.anim }); continue; }   // "say it again"
+          if (hit && hit.korzen && !targets.includes(hit)) { if (polecenie) await say(polecenie.who, polecenie.key, { anim: polecenie.anim }); continue; }   // "say it again" - unless the characters are the options (statues)
           if (ok.includes(hit) && wszystkie && szukane().length > 1) {     // one of several found: ring it, look for the rest
             znalezione.add(hit); hit.highlight?.(false); S.sfx.graj("right"); E.ptaszek(S, hit); obrysy.push(await S.circle(hit)); continue;
           }
