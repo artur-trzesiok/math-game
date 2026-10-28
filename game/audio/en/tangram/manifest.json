@@ -188,5 +188,15 @@
   "hash": "0e0aedc8368f",
   "who": "lisek",
   "text": "That triangle is too big. Look at the gap."
+ },
+ "line.naklejka_daj": {
+  "hash": "f4f0467dd725",
+  "who": "lisek",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "896f25bf8ead",
+  "who": "narrator",
+  "text": "This is the block from Fox. We got it when we made pictures out of triangles."
  }
 }

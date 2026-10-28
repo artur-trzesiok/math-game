@@ -245,5 +245,13 @@
   "line.m0_enough": {
     "who": "sowa",
     "text": "Now every cup has its plate. There are as many!"
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the flower from Owl. We got it when we learned where there is more and where there is less."
   }
 }

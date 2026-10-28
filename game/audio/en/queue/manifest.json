@@ -233,5 +233,15 @@
   "hash": "232c4584bbf5",
   "who": "lisek",
   "text": "It wants another go, so it goes to the end of the queue."
+ },
+ "line.naklejka_daj": {
+  "hash": "f4f0467dd725",
+  "who": "lisek",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "ed7cd938054d",
+  "who": "narrator",
+  "text": "This is the little hedgehog from Fox. We got it when we learned who is first and who is last in a queue."
  }
 }

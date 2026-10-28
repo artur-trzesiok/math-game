@@ -27,5 +27,9 @@
     "pilka",
     "skarpetka"
   ],
-  "cover": "In front of them, on the grass by the water, a row of three blue cups and a row of two white plates, lined up to be compared."
+  "cover": "In front of them, on the grass by the water, a row of three blue cups and a row of two white plates, lined up to be compared.",
+  "naklejka": {
+    "obraz": "objects/kwiatek",
+    "kto": "sowa"
+  }
 }

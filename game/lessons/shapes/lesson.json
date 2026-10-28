@@ -24,5 +24,9 @@
     "koszyk",
     "pudelko"
   ],
-  "cover": "Between them big shapes cut from coloured paper with pencil outlines: a red circle, a yellow triangle, a blue square and a green rectangle; a little wooden birdhouse with a triangle roof and a round window."
+  "cover": "Between them big shapes cut from coloured paper with pencil outlines: a red circle, a yellow triangle, a blue square and a green rectangle; a little wooden birdhouse with a triangle roof and a round window.",
+  "naklejka": {
+    "obraz": "objects/talerz",
+    "kto": "sowa"
+  }
 }

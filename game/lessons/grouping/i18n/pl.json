@@ -229,5 +229,13 @@
   "line.g0_found": {
     "who": "wiewiorka",
     "text": "Proszę! Wszystkie gruszki są w jednym miejscu, więc znalazłam ją od razu."
+  },
+  "line.naklejka_daj": {
+    "who": "sarenka",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To koszyk od sarenki. Dostaliśmy go, kiedy uczyliśmy się grupować i razem sprzątaliśmy bałagan."
   }
 }

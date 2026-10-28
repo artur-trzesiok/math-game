@@ -178,5 +178,15 @@
   "hash": "ae77cb631079",
   "who": "lisek",
   "text": "To nie to miejsce. Popatrz, który jest większy."
+ },
+ "line.naklejka_daj": {
+  "hash": "9de442124747",
+  "who": "sarenka",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "f2b35b53d7a4",
+  "who": "narrator",
+  "text": "To bucik od sarenki. Dostaliśmy go, kiedy ustawialiśmy rzeczy po kolei."
  }
 }

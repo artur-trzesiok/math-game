@@ -293,5 +293,15 @@
   "hash": "97b5f38198ac",
   "who": "wiewiorka",
   "text": "Dziesięć!"
+ },
+ "line.naklejka_daj": {
+  "hash": "9de442124747",
+  "who": "sarenka",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "8f1fc063b9bd",
+  "who": "narrator",
+  "text": "To marchewka od sarenki. Dostaliśmy ją, kiedy dodawaliśmy aż do dziesięciu."
  }
 }

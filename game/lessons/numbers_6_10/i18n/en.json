@@ -290,5 +290,13 @@
       "lisek"
     ],
     "text": "This is ten. We write it with two digits: a one and a zero. Zero is a round ring, like an egg."
+  },
+  "line.naklejka_daj": {
+    "who": "lisek",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the apple from Fox. We got it when we counted all the way to ten."
   }
 }

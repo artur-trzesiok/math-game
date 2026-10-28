@@ -147,5 +147,13 @@
   "line.a_bye": {
     "who": "lisek",
     "text": "Bye bye! See you!"
+  },
+  "line.naklejka_daj": {
+    "who": "lisek",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the block from Fox. We got it when we made pictures out of triangles."
   }
 }

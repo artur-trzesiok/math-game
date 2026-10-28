@@ -313,5 +313,15 @@
   "hash": "a17d312f10b0",
   "who": "lisek",
   "text": "Which sign fits here? Point to it."
+ },
+ "line.naklejka_daj": {
+  "hash": "b3f88c152150",
+  "who": "sowa",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "5d448bf6ea00",
+  "who": "narrator",
+  "text": "This is the flower from Owl. We got it when we learned where there is more and where there is less."
  }
 }

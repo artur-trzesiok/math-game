@@ -353,5 +353,15 @@
   "hash": "6090c2961f0e",
   "who": "wiewiorka",
   "text": "Mam dwie szyszki. Wskaż cyfrę dwa."
+ },
+ "line.naklejka_daj": {
+  "hash": "2634c68df6d9",
+  "who": "wiewiorka",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "bf6e12f66ace",
+  "who": "narrator",
+  "text": "To szyszka od wiewiórki. Dostaliśmy ją, kiedy uczyliśmy się liczyć do pięciu."
  }
 }

@@ -373,5 +373,15 @@
   "hash": "e2b4def075f8",
   "who": "lisek",
   "text": "Wiewiórka wybrała nożyce."
+ },
+ "line.naklejka_daj": {
+  "hash": "2634c68df6d9",
+  "who": "wiewiorka",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "6463977abdb1",
+  "who": "narrator",
+  "text": "To kalosze od wiewiórki. Dostaliśmy je, kiedy porównywaliśmy, co jest większe, i przeszliśmy przez strumyk po dużych kamieniach."
  }
 }

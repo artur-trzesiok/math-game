@@ -307,5 +307,13 @@
   "line.a1_soon": {
     "who": "lisek",
     "text": "Brawo! Za chwilę spróbujemy poznać większe i mniejsze bez stawiania na linii."
+  },
+  "line.naklejka_daj": {
+    "who": "lisek",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To gruszka od liska. Dostaliśmy ją, kiedy uczyliśmy się, co jest większe, a co mniejsze."
   }
 }

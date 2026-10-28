@@ -22,6 +22,45 @@
   #wczytywanie .pasek { width: min(420px, 60vw); height: 18px; border-radius: 9px; background: rgba(255,255,255,.7); overflow: hidden; }
   #wczytywanie .pasek div { height: 100%; width: 0; border-radius: 9px; background: #ffb347; transition: width .2s; }
   @keyframes kiw { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg) scale(1.03); } }
+  /* the sticker album (engine/album.js): the button on the menu, the giving at a lesson's end, the album */
+  #albumBtn { position: absolute; left: var(--safe); top: 2vh; width: min(130px, 17vh); padding: 0; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 5px 10px rgba(0,0,0,.25)); z-index: 2; }
+  #albumBtn img { width: 100%; display: block; }
+  #albumBtn .ile { position: absolute; top: -6px; right: -6px; min-width: 34px; height: 34px; border-radius: 17px; background: #ff5b5b; color: #fff; font: 800 19px system-ui; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+  #albumBtn .ile:empty { display: none; }
+  #albumBtn.nowe { animation: kiw 1.4s ease-in-out infinite; }
+  .wycinek { filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 4px 6px rgba(0,0,0,.3)); }
+  #wreczenie { position: fixed; inset: 0; z-index: 45; display: flex; align-items: center; justify-content: center; cursor: pointer; background: rgba(20,30,50,.25); }
+  #wreczenie .blask { position: absolute; width: min(80vh, 80vw); aspect-ratio: 1; border-radius: 50%; background: repeating-conic-gradient(rgba(255,226,110,.75) 0 9deg, rgba(255,226,110,0) 9deg 20deg);
+    -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 68%); mask-image: radial-gradient(circle, #000 25%, transparent 68%); animation: obrot 9s linear infinite; transition: opacity .4s; }
+  #wreczenie .naklejka { position: relative; width: min(40vh, 40vw); animation: wskok .7s cubic-bezier(.2,1.6,.4,1) both, bujaj 2.2s ease-in-out .7s infinite; }
+  #wreczenie.zabrana { background: none; }
+  #wreczenie.zabrana .blask { opacity: 0; }
+  #wreczenie.zabrana .naklejka { animation: odlot .7s ease-in forwards; }
+  @keyframes obrot { to { transform: rotate(360deg); } }
+  @keyframes wskok { from { transform: scale(.1) rotate(-25deg); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes bujaj { 0%, 100% { transform: rotate(-4deg) scale(1); } 50% { transform: rotate(4deg) scale(1.05); } }
+  @keyframes odlot { to { transform: translate(-38vw, -40vh) scale(.15) rotate(-30deg); opacity: 0; } }
+  #album { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2vh;
+    background: radial-gradient(circle at 50% 40%, #fbefd6, #e2c28f); touch-action: none; user-select: none; -webkit-user-select: none; }
+  #album .ksiazka { position: relative; width: min(90vw, calc(72vh * 1.5)); aspect-ratio: 3 / 2; perspective: 2600px; }
+  #album .tlo { width: 100%; height: 100%; display: block; border-radius: 14px; box-shadow: 0 12px 34px rgba(80,40,0,.35); pointer-events: none; }
+  #album .strona { position: absolute; }
+  #album .nakl { position: absolute; width: 27%; cursor: grab; touch-action: none; }
+  #album .nakl.stuk { animation: stuk .4s ease-out; }
+  @keyframes stuk { 50% { scale: 1.15; } }
+  #album .tacka { display: flex; gap: 2.4vw; align-items: center; justify-content: center; min-height: min(16vh, 12vw); padding: 6px 24px; border-radius: 22px; background: rgba(255,255,255,.5); }
+  #album .tacka:empty { visibility: hidden; }
+  #album .tacka .nakl { position: static; width: min(15vh, 11vw); animation: bujaj 2.2s ease-in-out infinite; }
+  .nakl.duch { position: fixed; z-index: 70; pointer-events: none; }
+  #album .kartkuj { position: absolute; top: 46%; width: min(84px, 11vh); aspect-ratio: 1; border-radius: 50%; border: 0; background: #fff; color: #c0692b; font: 700 min(48px, 6vh) system-ui; box-shadow: 0 4px 12px rgba(0,0,0,.25); cursor: pointer; }
+  #album .wstecz { left: 1.5vw; } #album .dalej { right: 1.5vw; } #album .kartkuj:disabled { opacity: .25; }
+  #album .zamknij { position: absolute; top: 2vh; right: 2vh; width: min(64px, 9vh); aspect-ratio: 1; border-radius: 50%; border: 0; background: #fff; color: #555; font: 700 min(30px, 4vh) system-ui; box-shadow: 0 4px 12px rgba(0,0,0,.25); cursor: pointer; }
+  #album .lisc { position: absolute; top: 0; width: 50%; height: 100%; transform-style: preserve-3d; transition: transform .7s ease-in-out; z-index: 3; }
+  #album .lisc.w-lewo { left: 50%; transform-origin: left center; } #album .lisc.w-lewo.ruch { transform: rotateY(-180deg); }
+  #album .lisc.w-prawo { left: 0; transform-origin: right center; } #album .lisc.w-prawo.ruch { transform: rotateY(180deg); }
+  #album .twarz { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background-size: 200% 100%; overflow: hidden; }
+  #album .twarz.prawa { background-position: right center; border-radius: 0 14px 14px 0; } #album .twarz.lewa { background-position: left center; border-radius: 14px 0 0 14px; }
+  #album .twarz.tyl { transform: rotateY(180deg); }
   #menu h1 { margin: 0; font-size: max(22px, calc(var(--k) * 0.19)); color: #2a4a6a; text-align: center; }
   #langs { text-align: center; }
   #lessons { display: flex; align-items: stretch; gap: calc(var(--k) * 0.12); overflow-x: auto; overflow-y: hidden; padding: 6px var(--safe) 14px; box-sizing: border-box; width: 100%;
@@ -92,7 +131,7 @@
     const im = { imports: {
       three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);
     document.currentScript.after(s);
@@ -105,7 +144,7 @@
   <button class="ster pauza" aria-label="pauza">❚❚</button><button class="ster dalej" aria-label="dalej">▶▶</button><button class="ster pelny" aria-label="pełny ekran">⛶</button><button class="menu">☰</button></div>
 <div id="seria"></div>
 <div id="pauza"><button aria-label="graj"><svg viewBox="0 0 10 10"><path d="M3 2 L8 5 L3 8 Z" fill="#2a4a6a"/></svg></button></div>
-<div id="menu"><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div><div id="chips"></div></div>
+<div id="menu"><button id="albumBtn" aria-label="album"><img alt=""><span class="ile"></span></button><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div><div id="chips"></div></div>
 <div id="subtitle"></div>
 <div id="iris"></div>
 <div id="fade"></div>

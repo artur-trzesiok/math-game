@@ -230,5 +230,13 @@
     "speakers": [
       "lisek"
     ]
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the round plate from Owl. We got it when we got to know the shapes."
   }
 }

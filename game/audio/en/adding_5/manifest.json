@@ -253,5 +253,15 @@
   "hash": "5f673e7cd50c",
   "who": "lisek",
   "text": "Count all the cookies together."
+ },
+ "line.naklejka_daj": {
+  "hash": "b3f88c152150",
+  "who": "sowa",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "003f3958997a",
+  "who": "narrator",
+  "text": "This is the cookie from Owl. We got it when we learned to add."
  }
 }

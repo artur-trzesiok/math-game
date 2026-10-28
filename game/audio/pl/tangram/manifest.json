@@ -188,5 +188,15 @@
   "hash": "68653e75621c",
   "who": "lisek",
   "text": "Ten trójkąt jest za duży. Popatrz na lukę."
+ },
+ "line.naklejka_daj": {
+  "hash": "8738618c65d0",
+  "who": "lisek",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "50ef9ec60d72",
+  "who": "narrator",
+  "text": "To klocek od liska. Dostaliśmy go, kiedy układaliśmy obrazki z trójkątów."
  }
 }

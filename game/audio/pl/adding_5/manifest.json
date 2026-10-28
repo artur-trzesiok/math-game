@@ -253,5 +253,15 @@
   "hash": "9bb5bd94f67b",
   "who": "lisek",
   "text": "Policz wszystkie ciastka razem."
+ },
+ "line.naklejka_daj": {
+  "hash": "bc5b2c586047",
+  "who": "sowa",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "7f5531d21339",
+  "who": "narrator",
+  "text": "To ciastko od sowy. Dostaliśmy je, kiedy uczyliśmy się dodawać."
  }
 }

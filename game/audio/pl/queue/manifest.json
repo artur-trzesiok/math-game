@@ -233,5 +233,15 @@
   "hash": "cde70f5aed71",
   "who": "lisek",
   "text": "Chce zjechać jeszcze raz, więc idzie na koniec kolejki."
+ },
+ "line.naklejka_daj": {
+  "hash": "8738618c65d0",
+  "who": "lisek",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "64ee18822511",
+  "who": "narrator",
+  "text": "To jeżyk od liska. Dostaliśmy go, kiedy uczyliśmy się, kto stoi w kolejce pierwszy, a kto ostatni."
  }
 }

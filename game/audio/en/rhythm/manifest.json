@@ -168,5 +168,15 @@
   "hash": "a46362164cb3",
   "who": "wiewiorka",
   "text": "Big, small, big, small! A rhythm can be made of sizes too."
+ },
+ "line.naklejka_daj": {
+  "hash": "09d044a8206f",
+  "who": "wiewiorka",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "dec733152620",
+  "who": "narrator",
+  "text": "This is the teddy from Squirrel. We got it when we made rhythms together."
  }
 }

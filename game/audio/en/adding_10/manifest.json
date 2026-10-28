@@ -293,5 +293,15 @@
   "hash": "1b47bd071e1d",
   "who": "wiewiorka",
   "text": "Ten!"
+ },
+ "line.naklejka_daj": {
+  "hash": "876855e67825",
+  "who": "sarenka",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "02b15b07d1b0",
+  "who": "narrator",
+  "text": "This is the carrot from Deer. We got it when we added all the way to ten."
  }
 }

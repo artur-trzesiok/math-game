@@ -284,5 +284,13 @@
   "line.b_ona_nozyce": {
     "who": "lisek",
     "text": "Squirrel chose scissors."
+  },
+  "line.naklejka_daj": {
+    "who": "wiewiorka",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "These are the wellies from Squirrel. We got them when we compared sizes and crossed the brook on the big stones."
   }
 }

@@ -56,11 +56,13 @@ VOICES = {
     "pl": {"lisek": "2nnOurMrHn7IFbLfsAKx",      # chosen by the user for the fox
            "sowa": "5lDyCSjSKjtI6WDIPTVj",       # Tata Czyta - calm, clear storyteller
            "wiewiorka": "XXphLKNRxvJ1Qa95KBhX",  # chosen by the user for the squirrel
-           "sarenka": "3U1eLgixPqHuRDH10Wyb"},   # added to the account by the user for the deer
+           "sarenka": "3U1eLgixPqHuRDH10Wyb",    # added to the account by the user for the deer
+           "narrator": "5lDyCSjSKjtI6WDIPTVj"},  # Tata Czyta: the album tells where each sticker came from
     "en": {"lisek": "TX3LPaxmHKxFdv7VOQHJ",      # Liam - energetic
            "sowa": "Xb7hH8MSUJpSbSDYk0k2",       # Alice - clear educator
            "wiewiorka": "cgSgspJ2msm6clMCkdW9",  # Jessica - playful, bright
-           "sarenka": "pFZP5JQG7iQjIQuC4Bku"},   # Lily - velvety
+           "sarenka": "pFZP5JQG7iQjIQuC4Bku",    # Lily - velvety
+           "narrator": "Xb7hH8MSUJpSbSDYk0k2"},  # Alice - clear educator
 }
 SPEED = float(os.environ.get("ELEVENLABS_SPEED", "0.85"))     # children: slower than the default 1.0 (range 0.7-1.2)
 SETTINGS = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.3, "use_speaker_boost": True, "speed": SPEED}

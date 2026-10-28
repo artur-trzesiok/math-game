@@ -34,5 +34,9 @@
     "misiu",
     "skarpetka"
   ],
-  "cover": "Between them a party garland of alternating red apples and green pears on a string, the last place on the string still empty."
+  "cover": "Between them a party garland of alternating red apples and green pears on a string, the last place on the string still empty.",
+  "naklejka": {
+    "obraz": "objects/misiu",
+    "kto": "wiewiorka"
+  }
 }

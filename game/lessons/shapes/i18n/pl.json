@@ -230,5 +230,13 @@
     "speakers": [
       "lisek"
     ]
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To okrągły talerz od sowy. Dostaliśmy go, kiedy poznawaliśmy figury."
   }
 }

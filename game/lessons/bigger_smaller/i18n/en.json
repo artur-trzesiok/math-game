@@ -307,5 +307,13 @@
   "line.a1_soon": {
     "who": "lisek",
     "text": "Well done! Soon we will try to tell bigger and smaller without standing them on a line."
+  },
+  "line.naklejka_daj": {
+    "who": "lisek",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the pear from Fox. We got it when we learned what is bigger and what is smaller."
   }
 }

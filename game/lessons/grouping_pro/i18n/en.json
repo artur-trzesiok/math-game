@@ -317,5 +317,13 @@
   "line.e_jest": {
     "who": "lisek",
     "text": "There it is! I found it straight away. Grouping is great!"
+  },
+  "line.naklejka_daj": {
+    "who": "lisek",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the red hat from Fox. He gave it to us when, as detectives, we found out who was leaving the red gifts."
   }
 }

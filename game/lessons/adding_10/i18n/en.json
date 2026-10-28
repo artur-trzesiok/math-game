@@ -220,5 +220,13 @@
       "wiewiorka"
     ],
     "text": "Ten!"
+  },
+  "line.naklejka_daj": {
+    "who": "sarenka",
+    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the carrot from Deer. We got it when we added all the way to ten."
   }
 }

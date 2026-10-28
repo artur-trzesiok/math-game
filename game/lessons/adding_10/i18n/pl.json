@@ -220,5 +220,13 @@
       "wiewiorka"
     ],
     "text": "Dziesięć!"
+  },
+  "line.naklejka_daj": {
+    "who": "sarenka",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To marchewka od sarenki. Dostaliśmy ją, kiedy dodawaliśmy aż do dziesięciu."
   }
 }

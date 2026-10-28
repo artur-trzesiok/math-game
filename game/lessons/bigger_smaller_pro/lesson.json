@@ -28,5 +28,9 @@
     "gest_papier",
     "gest_nozyce"
   ],
-  "cover": "Fox in big yellow wellies and Squirrel in small ones stand on big stones in a shallow brook, rain drops around them; Owl in a red bobble hat and a striped scarf waves from under an old oak."
+  "cover": "Fox in big yellow wellies and Squirrel in small ones stand on big stones in a shallow brook, rain drops around them; Owl in a red bobble hat and a striped scarf waves from under an old oak.",
+  "naklejka": {
+    "obraz": "ubrania/kalosze_przod",
+    "kto": "wiewiorka"
+  }
 }

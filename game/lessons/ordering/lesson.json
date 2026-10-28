@@ -30,5 +30,9 @@
     "skarpetka",
     "misiu"
   ],
-  "cover": "Between them three blue cups in a row from the smallest to the biggest, with small pencil numbers 1, 2, 3 under them."
+  "cover": "Between them three blue cups in a row from the smallest to the biggest, with small pencil numbers 1, 2, 3 under them.",
+  "naklejka": {
+    "obraz": "objects/but",
+    "kto": "sarenka"
+  }
 }

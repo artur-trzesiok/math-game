@@ -313,5 +313,15 @@
   "hash": "42cc2a66dfb3",
   "who": "lisek",
   "text": "Który znak tu pasuje? Wskaż go."
+ },
+ "line.naklejka_daj": {
+  "hash": "bc5b2c586047",
+  "who": "sowa",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "bae46998fac9",
+  "who": "narrator",
+  "text": "To kwiatek od sowy. Dostaliśmy go, kiedy uczyliśmy się, gdzie jest więcej, a gdzie mniej."
  }
 }

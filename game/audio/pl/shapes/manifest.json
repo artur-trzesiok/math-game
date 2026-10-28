@@ -298,5 +298,15 @@
   "hash": "7dc73bab8e84",
   "who": "sowa",
   "text": "Policz rogi jeszcze raz."
+ },
+ "line.naklejka_daj": {
+  "hash": "bc5b2c586047",
+  "who": "sowa",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "3518a63ace0b",
+  "who": "narrator",
+  "text": "To okrągły talerz od sowy. Dostaliśmy go, kiedy poznawaliśmy figury."
  }
 }

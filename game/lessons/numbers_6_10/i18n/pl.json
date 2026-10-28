@@ -290,5 +290,13 @@
       "lisek"
     ],
     "text": "To jest dziesięć. Zapisujemy je dwiema cyframi: jedynką i zerem. Zero to okrągłe kółko, jak jajko."
+  },
+  "line.naklejka_daj": {
+    "who": "lisek",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To jabłko od liska. Dostaliśmy je, kiedy liczyliśmy aż do dziesięciu."
   }
 }

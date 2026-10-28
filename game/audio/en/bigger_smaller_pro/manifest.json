@@ -373,5 +373,15 @@
   "hash": "28c295bad6f7",
   "who": "lisek",
   "text": "Squirrel chose scissors."
+ },
+ "line.naklejka_daj": {
+  "hash": "09d044a8206f",
+  "who": "wiewiorka",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "649f54e059e9",
+  "who": "narrator",
+  "text": "These are the wellies from Squirrel. We got them when we compared sizes and crossed the brook on the big stones."
  }
 }

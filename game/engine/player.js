@@ -12,6 +12,7 @@ import * as G from "./geometria.js";
 import * as E from "./efekty.js";
 import * as U from "./ubior.js";
 import { Stage, GROUND } from "./scene.js";
+import * as Album from "./album.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -74,6 +75,13 @@ export class Player {
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
     menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20);
     $("#title").textContent = this.t("menu.title");
+    // the album: its button shows how many stickers wait to be stuck in
+    const ab = $("#albumBtn"), ile = Album.nieprzyklejone();
+    ab.querySelector("img").src = v("/game/assets/album/okladka.webp"); ab.querySelector(".ile").textContent = ile || ""; ab.classList.toggle("nowe", ile > 0);
+    ab.onclick = async () => {
+      const lekcje = await Promise.all(this.index.lessons.map(async (l) => ({ id: l.id, naklejka: (await fetch(v(`/game/lessons/${l.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}))).naklejka })));
+      await Album.otworz({ lekcje, lang: this.lang, speech: this.speech, onZamknij: () => { const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
+    };
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("")
       + `<button class="pelny" aria-label="fullscreen">⛶</button>`;
     $("#langs").onclick = (e) => { if (e.target.closest(".pelny")) return pelnyEkran(); const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
@@ -161,13 +169,28 @@ export class Player {
       await this.runStage(st);
       if (this.abort) return;
     }
+    if (!this.abort && this.run === run) await this.wreczNaklejke(run);
     if (!this.abort && this.run === run) { await this.outro(); if (NAGRAJ) this.scenariuszKoniec = true; if (this.run === run) this.menu(); }
   }
 
   // what a lesson shows: its sceneries (stages + lesson.json), stickers (lesson.json "objects") and the garments
   // its code names
+  // the end of a lesson: one of its characters thanks the child and gives the lesson's sticker for the album
+  async wreczNaklejke(run) {
+    const n = this.metaLekcji?.naklejka; if (!n || this.run !== run) return;
+    const c = this.context("apply", run, ++this.scenaNr);
+    try {
+      const L = this.stage.puppets[n.kto]; if (L && !L.korzen.visible) c.show(n.kto);
+      c.clear(); await c.ujecie("ogolny");
+      const wziete = Album.wrecz(this.lessonId, n, { szybko: FAST });
+      await c.say(n.kto, "line.naklejka_daj", { anim: "Radosc" });
+      await wziete; this.stage.sfx.graj("idea");
+    } catch (e) { if (e?.message !== "abort") console.warn("naklejka:", e); }
+  }
+
   async coWczytac(id) {
     const meta = await fetch(v(`/game/lessons/${id}/lesson.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    this.metaLekcji = meta;
     const zrodlo = await fetch(v(`/game/lessons/${id}/lesson.js`), { cache: "no-store" }).then((r) => (r.ok ? r.text() : "")).catch(() => "");
     const tla = new Set([...Object.values(this.lesson.backgrounds || {}).filter((b) => typeof b === "string"), ...(meta.backgrounds || [])]);
     const G = await U.galeria(), slowa = new Set(zrodlo.match(/[a-z_0-9]+/g) || []);

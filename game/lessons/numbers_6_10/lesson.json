@@ -30,5 +30,9 @@
     "skarpetka",
     "klocek"
   ],
-  "cover": "Between them six red apples in a neat row on the grass, and above them a big hand-drawn pencil digit 6."
+  "cover": "Between them six red apples in a neat row on the grass, and above them a big hand-drawn pencil digit 6.",
+  "naklejka": {
+    "obraz": "objects/jablko",
+    "kto": "lisek"
+  }
 }

@@ -245,5 +245,13 @@
   "line.m0_enough": {
     "who": "sowa",
     "text": "Teraz każdy kubek ma swój talerz. Jest ich tyle samo!"
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To kwiatek od sowy. Dostaliśmy go, kiedy uczyliśmy się, gdzie jest więcej, a gdzie mniej."
   }
 }

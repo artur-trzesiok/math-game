@@ -418,5 +418,15 @@
   "hash": "54abc6b2507d",
   "who": "lisek",
   "text": "Jest! Od razu ją znalazłem. Grupowanie jest super!"
+ },
+ "line.naklejka_daj": {
+  "hash": "8738618c65d0",
+  "who": "lisek",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "8becd2a874fa",
+  "who": "narrator",
+  "text": "To czerwona czapka od liska. Dał nam ją, kiedy jako detektywi odkryliśmy, kto zostawia czerwone prezenty."
  }
 }

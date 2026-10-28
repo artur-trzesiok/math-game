@@ -388,5 +388,15 @@
   "hash": "b868a97b3e58",
   "who": "lisek",
   "text": "Popatrz jeszcze raz. Który kubek jest największy?"
+ },
+ "line.naklejka_daj": {
+  "hash": "8738618c65d0",
+  "who": "lisek",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "44587f153a10",
+  "who": "narrator",
+  "text": "To gruszka od liska. Dostaliśmy ją, kiedy uczyliśmy się, co jest większe, a co mniejsze."
  }
 }

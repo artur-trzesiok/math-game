@@ -178,5 +178,15 @@
   "hash": "282704742af5",
   "who": "lisek",
   "text": "That is not its place. Look which one is bigger."
+ },
+ "line.naklejka_daj": {
+  "hash": "876855e67825",
+  "who": "sarenka",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "5f3a1e352d03",
+  "who": "narrator",
+  "text": "This is the little shoe from Deer. We got it when we put things in order."
  }
 }

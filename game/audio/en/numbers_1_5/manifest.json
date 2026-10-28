@@ -353,5 +353,15 @@
   "hash": "399076340a3d",
   "who": "wiewiorka",
   "text": "I have two cones. Point to the digit two."
+ },
+ "line.naklejka_daj": {
+  "hash": "09d044a8206f",
+  "who": "wiewiorka",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "1372c2e38aff",
+  "who": "narrator",
+  "text": "This is the pine cone from Squirrel. We got it when we learned to count to five."
  }
 }

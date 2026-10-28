@@ -18,5 +18,9 @@
     "dom"
   ],
   "objects": [],
-  "cover": "Between them a classic seven-piece tangram square in bright paper colours, a few pieces lifted out and turned, and next to it a little house made of a blue square and a yellow triangle roof."
+  "cover": "Between them a classic seven-piece tangram square in bright paper colours, a few pieces lifted out and turned, and next to it a little house made of a blue square and a yellow triangle roof.",
+  "naklejka": {
+    "obraz": "objects/klocek",
+    "kto": "lisek"
+  }
 }

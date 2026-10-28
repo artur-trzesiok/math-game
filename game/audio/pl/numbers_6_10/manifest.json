@@ -388,5 +388,15 @@
   "hash": "7ba93bf6ec11",
   "who": "wiewiorka",
   "text": "Policz nowy kubek dalej. Wskaż go."
+ },
+ "line.naklejka_daj": {
+  "hash": "8738618c65d0",
+  "who": "lisek",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "21bd657fbb3b",
+  "who": "narrator",
+  "text": "To jabłko od liska. Dostaliśmy je, kiedy liczyliśmy aż do dziesięciu."
  }
 }

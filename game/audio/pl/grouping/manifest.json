@@ -293,5 +293,15 @@
   "hash": "08d1c0bda021",
   "who": "sarenka",
   "text": "Zabawki do koszyka, naczynia do pudełka."
+ },
+ "line.naklejka_daj": {
+  "hash": "9de442124747",
+  "who": "sarenka",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "b40ab8004ac7",
+  "who": "narrator",
+  "text": "To koszyk od sarenki. Dostaliśmy go, kiedy uczyliśmy się grupować i razem sprzątaliśmy bałagan."
  }
 }

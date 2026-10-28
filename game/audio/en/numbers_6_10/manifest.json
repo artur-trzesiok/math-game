@@ -388,5 +388,15 @@
   "hash": "44704aff51e5",
   "who": "wiewiorka",
   "text": "Count the new cup on. Point to it."
+ },
+ "line.naklejka_daj": {
+  "hash": "f4f0467dd725",
+  "who": "lisek",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_opis": {
+  "hash": "3d1a7febfe96",
+  "who": "narrator",
+  "text": "This is the apple from Fox. We got it when we counted all the way to ten."
  }
 }

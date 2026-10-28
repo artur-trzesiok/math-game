@@ -168,5 +168,15 @@
   "hash": "33898653a3f2",
   "who": "wiewiorka",
   "text": "Duża, mała, duża, mała! Rytm może być też z wielkości."
+ },
+ "line.naklejka_daj": {
+  "hash": "2634c68df6d9",
+  "who": "wiewiorka",
+  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_opis": {
+  "hash": "6c47a9e8426d",
+  "who": "narrator",
+  "text": "To miś od wiewiórki. Dostaliśmy go, kiedy razem układaliśmy rytmy."
  }
 }

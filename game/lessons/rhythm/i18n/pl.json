@@ -130,5 +130,13 @@
   "line.a_bye": {
     "who": "wiewiorka",
     "text": "Pa, pa! Do zobaczenia!"
+  },
+  "line.naklejka_daj": {
+    "who": "wiewiorka",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To miś od wiewiórki. Dostaliśmy go, kiedy razem układaliśmy rytmy."
   }
 }

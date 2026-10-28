@@ -29,5 +29,9 @@
     "pilka",
     "klocek"
   ],
-  "cover": "Between them a little lemonade stand (a small wooden table with a jug) and a queue of a hedgehog, a mouse, a bunny and a duckling facing it, small pencil numbers 1, 2, 3, 4 over their heads."
+  "cover": "Between them a little lemonade stand (a small wooden table with a jug) and a queue of a hedgehog, a mouse, a bunny and a duckling facing it, small pencil numbers 1, 2, 3, 4 over their heads.",
+  "naklejka": {
+    "obraz": "objects/jez",
+    "kto": "lisek"
+  }
 }

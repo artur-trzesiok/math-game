@@ -284,5 +284,13 @@
   "line.b_ona_nozyce": {
     "who": "lisek",
     "text": "Wiewiórka wybrała nożyce."
+  },
+  "line.naklejka_daj": {
+    "who": "wiewiorka",
+    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To kalosze od wiewiórki. Dostaliśmy je, kiedy porównywaliśmy, co jest większe, i przeszliśmy przez strumyk po dużych kamieniach."
   }
 }
