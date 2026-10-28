@@ -17,7 +17,7 @@
   },
   "line.s_differ": {
     "who": "sowa",
-    "text": "Yes! Every shape is different. My round head will not fit through a window with corners."
+    "text": "No! Every shape is different. I wanted a window round like the moon, and this one has corners and straight sides."
   },
   "line.s_how": {
     "who": "lisek",
@@ -60,6 +60,36 @@
     "text": "That is another shape. Look at the corners.",
     "speakers": [
       "lisek"
+    ]
+  },
+  "line.wrong_sides": {
+    "who": "sowa",
+    "text": "Look at the sides. A square has all sides equal, and a rectangle has two longer ones.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.a_ciastko": {
+    "who": "sowa",
+    "text": "What shape is a cookie? Point to the shape."
+  },
+  "line.a_three_corners": {
+    "who": "lisek",
+    "text": "Which shape has three corners? Point to it."
+  },
+  "line.a_four_corners": {
+    "who": "lisek",
+    "text": "Which shape has four corners? Point to it."
+  },
+  "line.a_no_corners": {
+    "who": "lisek",
+    "text": "And which one has no corners at all?"
+  },
+  "line.wrong_corners": {
+    "who": "lisek",
+    "text": "Count the corners again.",
+    "speakers": [
+      "sowa"
     ]
   },
   "line.s_solved": {
@@ -164,21 +194,6 @@
   "line.a_klocek": {
     "who": "sowa",
     "text": "What shape is the side of a block? Point to the shape."
-  },
-  "line.a_pilka": {
-    "who": "sowa",
-    "text": "What shape is a ball? Point to the shape."
-  },
-  "line.a_how_many_corners": {
-    "who": "lisek",
-    "text": "How many corners does this shape have? Point to the number."
-  },
-  "line.wrong_number": {
-    "who": "lisek",
-    "text": "Count the corners again.",
-    "speakers": [
-      "sowa"
-    ]
   },
   "line.a_ask_parents": {
     "who": "sowa",

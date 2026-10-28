@@ -30,9 +30,9 @@
   "text": "Po kolei? Czyli jak?"
  },
  "line.s_show": {
-  "hash": "8d218bae2d53",
+  "hash": "de6ec7ab6cbd",
   "who": "sarenka",
-  "text": "Pokażę ci. Na miejscu numer jeden stawiamy najmniejszy, potem coraz większe."
+  "text": "Pokażę ci. Na pierwszym miejscu, tu z lewej, stawiamy najmniejszy, potem coraz większe."
  },
  "line.s_fill": {
   "hash": "6cd1275fda44",
@@ -55,9 +55,9 @@
   "text": "Teraz widzę! Mały wejdzie do średniego, a średni do dużego."
  },
  "line.s_solved": {
-  "hash": "39545c94807b",
+  "hash": "a9e924be7353",
   "who": "sarenka",
-  "text": "Wszystkie zmieściły się jeden w drugim. Tak działa szeregowanie!"
+  "text": "Wszystkie zmieściły się jeden w drugim. Tak działa układanie po kolei!"
  },
  "line.s_to_garden": {
   "hash": "c2be36c4bcc0",
@@ -65,9 +65,9 @@
   "text": "Chodźmy do ogrodu, wyrwiemy marchewki."
  },
  "line.b_carrots": {
-  "hash": "5195977830a4",
+  "hash": "edfd85a11068",
   "who": "lisek",
-  "text": "Wyrwałem cztery marchewki. Każda ma inną długość."
+  "text": "Wyrwałem marchewki. Każda ma inną długość."
  },
  "line.b_fill": {
   "hash": "718427ba58c8",
@@ -168,5 +168,15 @@
   "hash": "163cfb6abb1b",
   "who": "lisek",
   "text": "Pa, pa! Do zobaczenia!"
+ },
+ "line.wrong_order_big": {
+  "hash": "e93f247b0d72",
+  "who": "sarenka",
+  "text": "To nie to miejsce. Popatrz, który jest większy."
+ },
+ "line.wrong_order_big.lisek": {
+  "hash": "ae77cb631079",
+  "who": "lisek",
+  "text": "To nie to miejsce. Popatrz, który jest większy."
  }
 }

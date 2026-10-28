@@ -30,9 +30,9 @@
   "text": "In order? How?"
  },
  "line.s_show": {
-  "hash": "c10cbfd81b93",
+  "hash": "c7316819bf26",
   "who": "sarenka",
-  "text": "I will show you. The smallest goes in place number one, then bigger and bigger."
+  "text": "I will show you. In the first place, here on the left, we put the smallest, then bigger and bigger."
  },
  "line.s_fill": {
   "hash": "d940eae8476c",
@@ -55,9 +55,9 @@
   "text": "Now I see! The small one goes into the middle one, and the middle one into the big one."
  },
  "line.s_solved": {
-  "hash": "d984e2335c47",
+  "hash": "d19165747901",
   "who": "sarenka",
-  "text": "They all fit one inside another. That is putting things in order!"
+  "text": "They all fit one inside another. That is how putting things in order works!"
  },
  "line.s_to_garden": {
   "hash": "b40284993f13",
@@ -65,9 +65,9 @@
   "text": "Let's go to the garden and pull out some carrots."
  },
  "line.b_carrots": {
-  "hash": "2e1bc0a87e9f",
+  "hash": "49a0a4768930",
   "who": "lisek",
-  "text": "I pulled out four carrots. Each one is a different length."
+  "text": "I pulled out some carrots. Each one is a different length."
  },
  "line.b_fill": {
   "hash": "420800d045f8",
@@ -168,5 +168,15 @@
   "hash": "5fdcbfe15d1f",
   "who": "lisek",
   "text": "Bye bye! See you!"
+ },
+ "line.wrong_order_big": {
+  "hash": "20865d8d744d",
+  "who": "sarenka",
+  "text": "That is not its place. Look which one is bigger."
+ },
+ "line.wrong_order_big.lisek": {
+  "hash": "282704742af5",
+  "who": "lisek",
+  "text": "That is not its place. Look which one is bigger."
  }
 }

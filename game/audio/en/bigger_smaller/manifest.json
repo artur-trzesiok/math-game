@@ -50,14 +50,14 @@
   "text": "Point to the smaller one."
  },
  "line.p_click_biggest": {
-  "hash": "828400639702",
+  "hash": "907b08fa1ec6",
   "who": "lisek",
-  "text": "There are three. Point to the biggest."
+  "text": "Point to the biggest one."
  },
  "line.p_click_smallest": {
-  "hash": "30c7d67639ae",
+  "hash": "bccb5e4d149c",
   "who": "lisek",
-  "text": "There are three. Point to the smallest."
+  "text": "Point to the smallest one."
  },
  "line.p_wrong": {
   "hash": "01cdfc5c0589",
@@ -285,9 +285,9 @@
   "text": "This line is lower. Point to the one that is higher."
  },
  "line.c1_higher": {
-  "hash": "1dd42964868c",
+  "hash": "162ac4b63a2f",
   "who": "lisek",
-  "text": "Yes! This line is higher. Its pear reaches higher, so it is bigger."
+  "text": "Yes! Both pears stand on the same line. The one that reaches higher is bigger."
  },
  "line.c1_pick": {
   "hash": "0c0c03e6bd91",
@@ -303,11 +303,6 @@
   "hash": "e8c7cad8495a",
   "who": "lisek",
   "text": "That is how we compare. Evenly on one line, and a line over each."
- },
- "line.c1_check": {
-  "hash": "0bf8b3a64d97",
-  "who": "lisek",
-  "text": "Let's check our way. Evenly on a line, and a line over each."
  },
  "line.b0_mine": {
   "hash": "7d45d4b81f4d",
@@ -368,5 +363,30 @@
   "hash": "3e4879c031eb",
   "who": "lisek",
   "text": "Well done! Soon we will try to tell bigger and smaller without standing them on a line."
+ },
+ "line.s3_three": {
+  "hash": "c503f9429699",
+  "who": "lisek",
+  "text": "And here are more cups. One is the biggest and one is the smallest."
+ },
+ "line.s3_biggest": {
+  "hash": "5cd8c3295c9d",
+  "who": "lisek",
+  "text": "This one is the biggest."
+ },
+ "line.s3_smallest": {
+  "hash": "3056b6d07549",
+  "who": "wiewiorka",
+  "text": "And this one is the smallest."
+ },
+ "line.s3_pick": {
+  "hash": "00c67e0f1676",
+  "who": "lisek",
+  "text": "Point to the biggest cup."
+ },
+ "line.s3_wrong": {
+  "hash": "ba437e391d0d",
+  "who": "lisek",
+  "text": "Look again. Which cup is the biggest?"
  }
 }

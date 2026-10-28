@@ -11,13 +11,13 @@
     "who": "lisek",
     "text": "Zaraz policzę, szybciutko!"
   },
-  "line.s_nine": {
+  "line.s_seven": {
     "who": "lisek",
-    "text": "Dziewięć! Mam aż dziewięć jabłek!"
+    "text": "Siedem! Mam aż siedem jabłek!"
   },
   "line.s_twice": {
     "who": "wiewiorka",
-    "text": "Za szybko! To jabłko policzyłeś dwa razy, a tamto wcale."
+    "text": "Za szybko! To jabłko policzyłeś dwa razy. Zobacz, urosło dwa razy."
   },
   "line.s_how": {
     "who": "lisek",
@@ -49,7 +49,7 @@
   },
   "line.s_to_garden": {
     "who": "wiewiorka",
-    "text": "Chodźmy do ogrodu. Do dżemu dodamy marchewkę."
+    "text": "Chodźmy do ogrodu. Do dżemu potrzeba jeszcze ośmiu marchewek."
   },
   "line.b_carrots": {
     "who": "lisek",
@@ -65,7 +65,7 @@
   },
   "line.b_how_many_now": {
     "who": "wiewiorka",
-    "text": "Było siedem, doszła jeszcze jedna. Ile jest teraz?"
+    "text": "Było siedem, doszła jeszcze jedna. Policz ją dalej: wskaż nową marchewkę."
   },
   "line.b_pick": {
     "who": "wiewiorka",
@@ -75,17 +75,25 @@
     "who": "lisek",
     "text": "Osiem! Po siedmiu jest osiem."
   },
+  "line.b_enough": {
+    "who": "wiewiorka",
+    "text": "Akurat osiem, tyle ile trzeba do dżemu!"
+  },
   "line.b_to_home": {
     "who": "wiewiorka",
     "text": "Wracajmy do domu. Dziś mamy przyjęcie!"
   },
   "line.c_party": {
     "who": "wiewiorka",
-    "text": "Na przyjęcie przyjdzie dużo gości. Policzmy kubki."
+    "text": "Na przyjęcie przyjdzie dziewięciu gości. Czy dla każdego starczy kubek? Policzmy."
   },
   "line.c_knock": {
     "who": "lisek",
     "text": "Puk, puk! Przyszedł jeszcze jeden gość. Przyniosę mu kubek."
+  },
+  "line.c_count_on": {
+    "who": "wiewiorka",
+    "text": "Policz nowy kubek dalej. Wskaż go."
   },
   "line.c_ten": {
     "who": "wiewiorka",
@@ -260,7 +268,7 @@
     "speakers": [
       "lisek"
     ],
-    "text": "To jest siódemka. Ma daszek, długą nóżkę i krótki pasek w środku."
+    "text": "To jest siódemka. Ma daszek i długą, ukośną nóżkę."
   },
   "line.d8": {
     "who": "wiewiorka",
@@ -281,6 +289,6 @@
     "speakers": [
       "lisek"
     ],
-    "text": "To jest dziesięć. Zapisujemy je dwiema cyframi, jedynką i zerem."
+    "text": "To jest dziesięć. Zapisujemy je dwiema cyframi: jedynką i zerem. Zero to okrągłe kółko, jak jajko."
   }
 }

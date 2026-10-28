@@ -155,6 +155,15 @@ export class Player {
     const alive = () => { if (this.run !== run) throw new Error("abort"); };
     const guard = (f) => async (...a) => { alive(); const r = await f(...a); alive(); return r; };
     let last = null;                                   // the last line spoken; a task keeps the one said before it as its instruction
+    // the instruction in force while an interaction runs: a tapped character repeats it (scene.js tapPuppet), one
+    // repeat at a time; `wDzialaniu(p)` sets it for the life of promise p
+    let polecenieTeraz = null, powtarza = false;
+    S.onPuppetTap = async () => {
+      if (!polecenieTeraz || powtarza || S.sfx.mowa || this.run !== run) return;   // never over a line being spoken
+      powtarza = true;
+      try { await say(polecenieTeraz.who, polecenieTeraz.key, { anim: polecenieTeraz.anim }); } catch {} finally { powtarza = false; }
+    };
+    const wDzialaniu = (p) => { const pol = last; polecenieTeraz = pol; const koniec = () => { if (polecenieTeraz === pol) polecenieTeraz = null; }; Promise.resolve(p).then(koniec, koniec); return p; };
     const say = async (who, key, { anim = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
@@ -169,7 +178,7 @@ export class Player {
       alive();
       if (puppet && puppet.korzen.visible) puppet.spoczynek();
     };
-    return {
+    const ctx = {
       stage: S, lang, st, t: this.tl, fast: FAST,
       say,
       enter: guard((who, from) => S.enter(who, from || ((this.lesson.characters[who] || {}).side === "right" ? "right" : "left"))),
@@ -197,18 +206,18 @@ export class Player {
       // numbers: a digit (or 10) drawn with the pencil; counting by touch - the number words are the lesson's own
       // lines "line.n1".."line.n10", spoken by `who`
       digit: guard((n, opts) => narysujCyfre(S, n, opts)),
-      count: guard((items, { who, od = 0, rzad = null } = {}) => liczDotykiem(S, items, { od, rzad, say: (k) => say(who, `line.n${k}`) })),
+      count: guard((items, { who, od = 0, rzad = null } = {}) => wDzialaniu(liczDotykiem(S, items, { od, rzad, say: (k) => say(who, `line.n${k}`) }))),
       equation: guard((tokens, opts) => narysujRownanie(S, tokens, opts)),
       // geometry and order (geometria.js); the waits repeat the instruction when a character is tapped
       shape: (kind, opts) => { alive(); return G.ksztalt(S, kind, opts); },
       corners: (h) => G.rogi(S, h),
       piece: (t, opts = {}) => G.ksztalt(S, t, { ...opts, def: G.TANGRAM[t], name: `kawalek_${t}` }),
-      tangram: guard(async (name, opts) => { const t = G.tangram(S, name, opts); const pol = last; t.done = () => { const p = t.wait(); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }; return t; }),
-      place: guard(async (o) => { const pol = last; const p = G.umiesc(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }),
+      tangram: guard(async (name, opts) => { const t = G.tangram(S, name, opts); const pol = last; t.done = () => wDzialaniu(t.wait()); return t; }),
+      place: guard(async (o) => { const pol = last; return wDzialaniu(G.umiesc(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null })); }),
       behind: (item, ref) => G.zaRzecza(item, ref),
       relation: (item, ref, ref2) => G.relacja(S, item, ref, ref2),
-      symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => { const p = t.wait(); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }; return t; }),
-      slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => { const p = t.wait(); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }; return t; }),
+      symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()); return t; }),
+      slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()); return t; }),
       put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),
@@ -229,7 +238,9 @@ export class Player {
       choose: guard((targets) => S.choose(targets)),
       // a task: the child must click `correct` among `targets`; a wrong click plays the
       // `wrong` line and, after `hintAfter` misses, pulses the right answer
-      task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null }) => {
+      task: (o) => wDzialaniu(zadanie(o)),
+      sort: (o) => wDzialaniu(sortuj(o)),
+      _task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null }) => {
         const ok = Array.isArray(correct) ? correct : [correct];
         const polecenie = last;                          // the instruction: a tapped character repeats it, not the "try again" said since
         let misses = 0;
@@ -263,7 +274,7 @@ export class Player {
       },
       // free sorting: every item must end up in a zone and every zone must hold one kind
       // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line
-      sort: async ({ items, zones, wrong }) => {
+      _sort: async ({ items, zones, wrong }) => {
         alive();
         const polecenie = last;
         Object.keys(S.puppets).forEach((n, j) => S.lookAt(n, zones[j % zones.length]));   // the characters watch the containers
@@ -286,7 +297,7 @@ export class Player {
               if (wrong && this.run === run) await say("narrator", wrong);
             } finally { busy = false; }
           };
-          S.sort({ items, zones, onDrop: () => { if (this.run === run) check(); }, onTap: () => { if (polecenie && this.run === run) say(polecenie.who, polecenie.key, { anim: polecenie.anim }); } });
+          S.sort({ items, zones, onDrop: () => { if (this.run === run) check(); }, onTap: () => S.onPuppetTap() });
         });
       },
       card: guard((key, button = "button.next") => this.card(this.tl(key), this.t(button))),
@@ -294,6 +305,8 @@ export class Player {
       clear: () => { alive(); S.clear(); },
       praise: guard(async (who) => { const L = S.puppets[who]; if (L && L.korzen.visible) { L.graj("Radosc"); } await S.wait(FAST ? 0.2 : 1.2); }),
     };
+    const zadanie = ctx._task, sortuj = ctx._sort;   // task/sort run under the instruction rule (wDzialaniu)
+    return ctx;
   }
 
   // ------------------------------------------------------------------ overlays

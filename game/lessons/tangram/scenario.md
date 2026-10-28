@@ -7,7 +7,7 @@ Fox (right).
 ## Stage 1 - story - children's room, forest, brook
 
 1. Room, the problem: Squirrel's square puzzle falls apart (the seven pieces fly
-   across the floor) - "it is broken, I'll throw it away". Fox ("?"): nothing broke,
+   across the floor, each landing turned its own way, none on another) - "it is broken, I'll throw it away". Fox ("?"): nothing broke,
    it is a tangram - a square and lots of pictures. Every piece has its place; tap to
    turn. The child builds a square from two big triangles (one must be turned), then a
    house (square walls, triangle roof). Solved: the puzzle is not broken, it is better.
@@ -18,7 +18,8 @@ Fox (right).
 ## Stage 2 - practice - hallway
 
 Three silhouettes (house, fish, boat) with randomly turned pieces; two "which piece
-fits the gap?" (point to it among three).
+fits the gap?" (point to it among three; the big triangle in the house's roof gap is
+"too big", not "another shape").
 
 ## Stage 3 - at home - kitchen
 

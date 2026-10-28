@@ -184,6 +184,29 @@ that breaks one of them is wrong even if it runs.
 - **One scene, one idea, visible from the start**: the same mechanic for the
   same idea across stages (pairing is always the check for "more"), so the child
   recognises it.
+- **Nothing is asked before it is taught**: a digit is drawn and described before a
+  child is asked to find it, digits come one by one in order (1, 2, 3 ... 10), and a
+  card offer holds only digits already met; a sign ("=", "+") is shown and named
+  before it is asked for; what practice asks (the biggest, a rhythm of sizes) the
+  story has shown. No digits or number words in lessons that come before the numbers
+  lessons (ordering marks its first place with an arrow, not a 1).
+- **A tapped character repeats the instruction in force**, everywhere and always
+  (tasks, counting, sorting, dragging); the instruction is the line said before the
+  interaction began, never the "try again" since. One rule in the engine
+  (`scene.tapPuppet` + the player's `wDzialaniu`), not per lesson.
+- **The naive try must be visible and consistent**: six apples counted as "seven",
+  one apple twice (it grows each time it is counted, so it ends up the biggest) - not
+  "nine", which no child can see; a queue's "another go" only for the one who went.
+- **The words match the screen at that moment**: a thing is named once it is there; a
+  container named in a line is the one the check accepts; no "plate", "shelf",
+  "stand" or "drawer" that is not drawn; the line's tense follows the animation ("it
+  goes down" before, "it wants another go" after).
+- **One big digit at a time, nothing drawn over anything**: the 7 goes before the 8
+  is drawn (an 8 over a 7 read as neither, a 10 beside a 9 read as 109); two groups
+  stand clearly apart; rows stay off the characters' heads; a two-digit counting badge
+  is drawn smaller so "9 10" does not read "910".
+- **Random layouts never give the answer or break the task**: shuffled things never
+  lie in the answer order already; random turns that do not fit are replaced.
 
 ## How it is made
 

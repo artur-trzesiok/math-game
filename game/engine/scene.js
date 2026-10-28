@@ -405,7 +405,7 @@ export class Stage {
     // the topmost thing under the finger: a shape's own layer first (overlapping pieces), then distance
     for (const it of set.items) { const hits = this.raycaster.intersectObject(it.mesh, true); if (!hits.length) continue; const d = hits[0].distance - (it.warstwa ?? 0) * 1e3; if (d < bestD) { best = it; bestD = d; } }
     if (!best) {
-      for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.raycaster.intersectObject(L.korzen, true).some((i) => i.object.visible)) { this.bump(L); if (set.free) set.onPuppet?.(L); else set.onTap?.(L); return true; }
+      for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.raycaster.intersectObject(L.korzen, true).some((i) => i.object.visible)) { const f = set.free ? set.onPuppet : set.onTap; if (f) { this.bump(L); f(L); } else this.tapPuppet(L); return true; }
       return false;
     }
     if (set.free && best.zablokowany) return true;
@@ -505,8 +505,9 @@ export class Stage {
     // the imagined things, row by row
     rows.forEach((row, j) => {
       const y = (rows.length - 1) / 2 * size * 1.2 - j * size * 1.2;
-      row.forEach((name, i) => {
-        const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, depthTest: false }));
+      row.forEach((wpis, i) => {
+        const [name, skala] = String(wpis).split("@"), sz = size * (+skala || 1);   // "kubek@0.6": a smaller one (an order pictured)
+        const m = new THREE.Mesh(new THREE.PlaneGeometry(sz, sz), new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, depthTest: false }));
         texture(`/game/assets/objects/${name}.webp`).then((t) => { m.material.map = t; m.material.needsUpdate = true; });
         m.position.set((i - (row.length - 1) / 2) * size * 1.15, y, 0.01); m.renderOrder = 46; grp.add(m);
       });
@@ -715,9 +716,22 @@ export class Stage {
     const r = this.renderer.domElement.getBoundingClientRect();
     this.click(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
   }
+  // a visible character under the ray (only one standing in front counts)
+  puppetAt() {
+    let best = null, d = Infinity;
+    for (const L of Object.values(this.puppets)) {
+      if (!L.korzen.visible) continue;
+      const h = this.raycaster.intersectObject(L.korzen, true).filter((i) => i.object.visible);
+      if (h.length && h[0].distance < d) { best = L; d = h[0].distance; }
+    }
+    return best;
+  }
+  // the one rule of the whole game: a tapped character repeats the instruction in force (the player sets it while
+  // an interaction runs). Here it covers what a task does not: no choice open, or a choice among things only
+  tapPuppet(L) { if (!L) return null; this.bump(L); this.onPuppetTap?.(L); return L; }
   click(nx, ny) {                                   // normalised device coords; also used by tests (gra.klik)
-    if (!this.pending) return null;
     this.raycaster.setFromCamera(new THREE.Vector2(nx, ny), this.camera);
+    if (!this.pending) return this.tapPuppet(this.puppetAt());
     // a thing beats a character: tapping a character only repeats the instruction, so where a sticker and a
     // character overlap (a cup rolled under the owl) the answer must win
     let best = null, bestD = Infinity, bestP = null, bestPD = Infinity;
@@ -729,7 +743,7 @@ export class Stage {
     }
     best = best || bestP;
     this.lastHit = best;
-    if (!best) return null;
+    if (!best) return this.tapPuppet(this.puppetAt());     // a choice among things: the character still repeats
     const ok = this.pending; this.pending = null; this.targets = [];
     this.bump(best);                                 // visible reaction before anything else happens
     ok(best);

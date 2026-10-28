@@ -14,15 +14,11 @@ async function rzadFigur(c, kinds, { y = Y, size = 1.5, gap = 2.6, obroc = true 
   await c.wait(0.4);
   return hs;
 }
-async function ktoraKarta(c, n, who, key, oferta) {
-  const karty = [];
-  for (const d of oferta) karty.push(await c.sign(String(d), { size: 1.2 }));
-  c.arrange([karty], { y: -2.45, gap: 0.8 });
-  await c.say(who, key);
-  const dobra = karty[oferta.indexOf(n)];
-  await c.task({ targets: karty, correct: dobra, wrong: "line.wrong_number" });
-  return dobra;
-}
+// a wrong pick: square and rectangle both have four corners, so between them the hint is the sides
+const zle = (c, want) => async (hit) => {
+  const boki = (want === "kwadrat" && hit.tag === "prostokat") || (want === "prostokat" && hit.tag === "kwadrat");
+  await c.say("sowa", boki ? "line.wrong_sides" : "line.wrong_shape");
+};
 
 export default {
   id: "shapes",
@@ -72,7 +68,8 @@ export default {
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
         await c.say("lisek", "line.b_blocks");
         const kinds = tasuj(["kolo", "kolo", "kolo", "trojkat", "trojkat", "trojkat"]);
-        const items = kinds.map((k, i) => { const h = c.shape(k, { x: -3.6 + i * 1.45, y: 1.3, size: 1.0, color: kolor(), rot: k === "trojkat" ? 45 * Math.floor(Math.random() * 3) : 0 }); h.home = { x: -3.6 + i * 1.45, y: 1.3 }; return h; });
+        // left lying about: not a neat row - each a little off, at its own height and turn
+        const items = kinds.map((k, i) => { const x = -3.6 + i * 1.45 + (Math.random() - 0.5) * 0.4, y = 0.9 + Math.random() * 1.1; const h = c.shape(k, { x, y, size: 1.0, color: kolor(), rot: k === "trojkat" ? 15 + 45 * Math.floor(Math.random() * 3) : 0 }); h.home = { x, y }; return h; });
         const zones = [await c.zone({ x: -1.75, y: -1.95, w: 3.3, h: 2.6, image: "koszyk", name: "koszyk" }), await c.zone({ x: 1.75, y: -1.95, w: 3.3, h: 2.6, image: "pudelko", name: "pudelko" })];
         zones[0].want = "kolo"; zones[1].want = "trojkat";   // the line names the containers, so they are fixed
         await c.say("sowa", "line.b_sort");
@@ -82,7 +79,7 @@ export default {
         const [kw, pr, tr] = await rzadFigur(c, ["kwadrat", "prostokat", "trojkat"], { obroc: false });
         await kw.rotateTo(45, 0.6);
         await c.say("sowa", "line.b_turned");
-        await c.task({ targets: tasuj([kw, pr, tr]), correct: kw, wrong: "line.wrong_shape" });
+        await c.task({ targets: tasuj([kw, pr, tr]), correct: kw, onWrong: zle(c, "kwadrat") });
         await c.say("lisek", "line.b_still_square", { anim: "Radosc" });
         await c.say("sowa", "line.b_to_orchard");
         c.clear();
@@ -93,7 +90,7 @@ export default {
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
         const sciany = c.shape("kwadrat", { x: 0.6, y: 0.2, size: 2.0, color: "#d99a5b" });
         await c.say("lisek", "line.c_build");
-        const dach = c.shape("trojkat", { x: -2.8, y: 2.1, size: 2.3, color: "#e8604c" }); dach.home = { x: -2.8, y: 2.1 };
+        const dach = c.shape("trojkat", { x: -2.8, y: 1.9, size: 2.3, color: "#e8604c" }); dach.home = { x: -2.8, y: 1.9 };   // under the phase icons
         await c.say("sowa", "line.c_roof");
         await c.place({ item: dach, ref: sciany, want: "na", wrong: "line.c_roof_wrong" });
         const okno = c.shape("kolo", { x: -2.4, y: -2.3, size: 0.8, color: "#fbe9a0" }); okno.home = { x: -2.4, y: -2.3 };
@@ -113,7 +110,7 @@ export default {
           const kinds = tasuj([want, ...inne]);
           const hs = await rzadFigur(c, kinds);
           await c.say("sowa", `line.p_${want}`);
-          await c.task({ targets: hs, correct: hs[kinds.indexOf(want)], wrong: "line.wrong_shape" });
+          await c.task({ targets: hs, correct: hs[kinds.indexOf(want)], onWrong: zle(c, want) });
           await c.say("lisek", "line.good_shape", { anim: "Brawo" });
           c.clear();
         }
@@ -126,18 +123,21 @@ export default {
         c.show("lisek"); c.show("sowa");
         await c.say("lisek", "line.a_game");
         await c.say("sowa", "line.a_ok");
-        for (const [rzecz, ksztalt] of [["talerz", "kolo"], ["klocek", "kwadrat"], ["pilka", "kolo"]]) {
+        for (const [rzecz, ksztalt] of [["talerz", "kolo"], ["klocek", "kwadrat"], ["ciastko", "kolo"]]) {   // a ball is a sphere, a cookie is flat
           await c.object(rzecz, { x: 0, y: 1.5, size: 1.6 });
           const kinds = tasuj(["kolo", "kwadrat", "trojkat"]);
           const hs = await rzadFigur(c, kinds, { y: -1.9, size: 1.1, gap: 2.0 });
           await c.say("sowa", `line.a_${rzecz}`);
-          await c.task({ targets: hs, correct: hs[kinds.indexOf(ksztalt)], wrong: "line.wrong_shape" });
+          await c.task({ targets: hs, correct: hs[kinds.indexOf(ksztalt)], onWrong: zle(c, ksztalt) });
           await c.say("lisek", "line.good_shape", { anim: "Brawo" });
           c.clear();
         }
-        for (const [k, n] of [["trojkat", 3], ["kwadrat", 4]]) {
-          c.shape(k, { x: 0, y: 1.3, size: 2.0, color: kolor() });
-          await ktoraKarta(c, n, "lisek", "line.a_how_many_corners", tasuj([n, n === 3 ? 4 : 3, 0]));
+        // corners, without digits (the numbers lessons come later): which shape has three / four / no corners?
+        for (const [key, ksztalt] of [["line.a_three_corners", "trojkat"], ["line.a_four_corners", "kwadrat"], ["line.a_no_corners", "kolo"]]) {
+          const kinds = tasuj(["kolo", "kwadrat", "trojkat"]);
+          const hs = await rzadFigur(c, kinds, { y: 1.2, size: 1.5, gap: 2.6 });
+          await c.say("lisek", key);
+          await c.task({ targets: hs, correct: hs[kinds.indexOf(ksztalt)], wrong: "line.wrong_corners" });
           await c.say("sowa", "line.good_shape", { anim: "Brawo" });
           c.clear();
         }

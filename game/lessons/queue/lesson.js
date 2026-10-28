@@ -97,23 +97,24 @@ export default {
         const q = await kolejka(c, ["mysz", "zajac", "kaczka", "jez"]);
         let nr = await numery(c, q);
         await c.say("sarenka", "line.b_point_second");
-        await c.task({ targets: q, correct: q[1], wrong: "line.wrong_place" });
+        await c.task({ targets: q, correct: q[1], wrong: "line.wrong_place_q" });
         for (const d of nr) d.remove();
-        await c.say("lisek", "line.b_mouse_back");
-        // down the slide (off to the left), then round behind the queue to its end
+        await c.say("lisek", "line.b_mouse_goes");
+        // up to the slide on the left and down it, then round behind the queue to its end
         const mysz = q.shift(), y0 = mysz.mesh.position.y;
+        await mysz.moveTo(-3.9, y0 + 1.6, 0.4);
         c.sfx("whoosh");
-        await mysz.moveTo(-3.6, y0 - 0.5, 0.45);
-        await mysz.moveTo(-3.6, -4.2, 0.25);
+        await mysz.moveTo(-3.6, -4.2, 0.35);
+        await c.say("lisek", "line.b_mouse_again");
         const x0 = q.x0; q.push(mysz);
         const meta = c.bounds(q[q.length - 2]);
         mysz.mesh.position.set(meta.right + 0.9, -4.2, mysz.mesh.position.z);
         await przesun(c, q, x0);
         nr = await numery(c, q);
         await c.say("sarenka", "line.b_first_now");
-        await c.task({ targets: q, correct: q[0], wrong: "line.wrong_place" });
+        await c.task({ targets: q, correct: q[0], wrong: "line.wrong_place_q" });
         await c.say("sarenka", "line.b_point_last");
-        await c.task({ targets: q, correct: q[3], wrong: "line.wrong_place" });
+        await c.task({ targets: q, correct: q[3], wrong: "line.wrong_place_q" });
         await c.say("lisek", "line.b_done", { anim: "Radosc" });
         await c.say("sarenka", "line.b_to_home");
         c.clear();
@@ -126,9 +127,9 @@ export default {
         const q = await kolejka(c, ["kaczka", "jez", "motyl", "zajac", "mysz"]);
         await numery(c, q);
         await c.say("lisek", "line.c_point_fifth");
-        await c.task({ targets: q, correct: q[4], wrong: "line.wrong_place" });
+        await c.task({ targets: q, correct: q[4], wrong: "line.wrong_place_q" });
         await c.say("sarenka", "line.c_between");
-        await c.task({ targets: q, correct: q[2], wrong: "line.wrong_place" });
+        await c.task({ targets: q, correct: q[2], wrong: "line.wrong_place_q" });
         await c.say("lisek", "line.c_solved", { anim: "Brawo" });
         c.clear();
       },
@@ -142,7 +143,7 @@ export default {
           const q = await kolejka(c, tasuj(["jez", "mysz", "zajac", "kaczka"]));
           const cel = k === "last" ? q[3] : q[PORZ.indexOf(k)];
           await c.say("sarenka", `line.p_${k}`);
-          await c.task({ targets: q, correct: cel, wrong: "line.wrong_place" });
+          await c.task({ targets: q, correct: cel, wrong: "line.wrong_place_q" });
           await c.say("lisek", "line.good_place", { anim: "Brawo" });
           c.clear();
         }
@@ -160,7 +161,7 @@ export default {
           await strzalka(c, -1.85, -2.6);                     // counting starts here
           const cel = k === "last" ? zabawki[3] : zabawki[PORZ.indexOf(k)];
           await c.say("lisek", `line.a_${k}`);
-          await c.task({ targets: zabawki, correct: cel, wrong: "line.wrong_place" });
+          await c.task({ targets: zabawki, correct: cel, wrong: "line.wrong_place_arrow" });
           await c.say("sarenka", "line.good_place", { anim: "Brawo" });
           c.clear();
         }

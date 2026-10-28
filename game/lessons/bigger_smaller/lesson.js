@@ -32,8 +32,8 @@ export default {
       // Squirrel: compare! - on one line, a pencil line over each top. The quarrel is settled.
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
-        const small = await c.object("gruszka", { x: 1.5, y: Y + 0.55, size: 1.08 });      // Fox's: the smaller one, hanging higher
-        const big = await c.object("gruszka", { x: -1.5, y: Y - 0.25, size: 1.28 });       // Squirrel's
+        const small = await c.object("gruszka", { x: -1.5, y: Y + 0.55, size: 1.08 });     // Fox's (on his side): the smaller one, hanging higher
+        const big = await c.object("gruszka", { x: 1.5, y: Y - 0.25, size: 1.28 });        // Squirrel's
         await c.say("lisek", "line.b0_mine", { anim: "Wskazanie" });
         await c.say("wiewiorka", "line.b0_no");
         await c.say("lisek", "line.b0_higher", { anim: "Podskok" });
@@ -95,9 +95,7 @@ export default {
         await c.say("wiewiorka", "line.j1_forest");
         const bigCone = await c.object("szyszka", { y: Y, size: 1.7 }), smallCone = await c.object("szyszka", { y: Y, size: 0.85 });
         c.arrange([[smallCone], [bigCone]], { y: Y, groupGap: 1.2 });
-        await c.say("wiewiorka", "line.j1_cones", { anim: "Wskazanie" });
-        await c.say("lisek", "line.c1_check");
-        await porownaj(c, [smallCone, bigCone]);                // the method again: on one line, a line over each
+        await c.say("wiewiorka", "line.j1_cones", { anim: "Wskazanie" });   // by eye now, as promised in the orchard
         await c.say("lisek", "line.j1_pick_big_cone");
         await c.task({ targets: [bigCone, smallCone], correct: bigCone, wrong: "line.j1_wrong_cone" });
         await bigCone.moveTo(R - 1.4, Y);
@@ -149,6 +147,17 @@ export default {
         await c.say("wiewiorka", "line.j1_pick_small_spoon");
         await c.task({ targets: [bigS, smallS], correct: smallS, wrong: "line.j1_wrong_spoon" });
         await smallS.moveTo(R - 1.3, Y); await bigS.moveTo(L + 1.6, Y);
+        c.clear();
+        // three cups: with more than two things one is the biggest and one the smallest (practice asks for them)
+        const trzy = [];
+        for (const sz of [1.25, 1.7, 0.8]) trzy.push(await c.object("kubek", { y: Y, size: sz }));
+        c.arrange([trzy], { y: Y, gap: 0.6 });
+        const [sredni, najw, najm] = trzy; void sredni;
+        await c.say("lisek", "line.s3_three");
+        najw.highlight(true); await c.say("lisek", "line.s3_biggest", { anim: "Wskazanie" }); najw.highlight(false);
+        najm.highlight(true); await c.say("wiewiorka", "line.s3_smallest", { anim: "Wskazanie" }); najm.highlight(false);
+        await c.say("lisek", "line.s3_pick");
+        await c.task({ targets: trzy, correct: najw, wrong: "line.s3_wrong" });
         await c.say("lisek", "line.s5_summary", { anim: "Radosc" });
         c.clear();
       },
@@ -199,9 +208,12 @@ export default {
         await c.say("lisek", "line.a_fox_plate", { anim: "Wskazanie" });
         await c.say("wiewiorka", "line.a_sq_bigger", { anim: "Radosc" });
         plate.remove();
-        const cookie = await c.object("ciastko", { x: 0, y: Y, size: 0.8 });
-        await c.say("lisek", "line.a_fox_cookie", { anim: "Wskazanie" });
+        // the cookie must be drawn smaller than the paw it is compared with: Fox holds it in his paw
+        const cookie = await c.object("ciastko", { x: -3.2, y: -1.2, size: 0.32 });
+        await c.take("lisek", cookie);
+        await c.say("lisek", "line.a_fox_cookie", { anim: false });
         await c.say("wiewiorka", "line.a_sq_smaller");
+        await c.put("lisek", -3.2, -2.6);
         cookie.remove();
         await c.say("wiewiorka", "line.a_sq_your_turn");
         // always the SAME thing at two sizes: two different things would mix picture size with real size

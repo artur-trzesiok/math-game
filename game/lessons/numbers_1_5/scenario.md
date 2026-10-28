@@ -8,12 +8,17 @@ the digits 1-5. Characters: Squirrel (left), Owl (right).
 1. Forest, the problem: Squirrel stores pine cones for winter and has "lots".
    Owl: "lots" is no answer - tomorrow you won't know if one is missing. How then?
    By counting (Owl pictures three cones). "What is counting?" - every thing once,
-   the numbers in order. The child points to each cone; its number appears over it
-   in pencil and Owl says it. The last number says how many: three. Owl draws the
-   digits 1, 2, 3 with their rhymes; the child points to the 3 (it gets circled).
-   Solved: Squirrel writes a 3 by her store and will check tomorrow.
+   the numbers in order. One cone first (the other two wait by Squirrel): the child
+   touches it, "one", Owl draws the 1 with its rhyme. Squirrel adds a second: the child
+   counts from the start, the last number says how many - two; the 1 goes, the 2 is
+   drawn, the child finds the 2 among the cards 1 and 2. The same with the third: 3,
+   found among 1, 2, 3. Solved: Squirrel writes a 3 by her store and will check tomorrow.
 2. Brook: pebbles for hopscotch, counted by the child (Squirrel says the numbers):
-   four; Owl draws the 4; the child picks the 4 among three cards.
+   four; Owl draws the 4; the child picks the 4 among the cards 2, 3, 4.
+
+The digits come one by one, 1 to 5, each drawn and described before a child is asked
+to find it; the cards offered are only digits already met, and only one big digit is
+on the stage at a time.
 3. Home: cookies for the guests, five; Squirrel draws the 5. Two plates of
    cookies: the child points to the one with five.
 

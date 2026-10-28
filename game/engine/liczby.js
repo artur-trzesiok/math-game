@@ -84,7 +84,8 @@ export function liczDotykiem(S, items, { say, kolor = "#1f5fbf", size = 0.7, od 
       if (rzad) { hit.mesh.rotation.z = 0; await hit.moveTo(rzad.x + (k - 1) * (rzad.gap ?? 0.95), rzad.y, 0.35); }
       const b = S.bounds(hit);
       const gdzie = hit.etykieta || { x: (b.left + b.right) / 2, y: b.top + size * 0.75 };   // a corner puts its number outside the shape
-      znaczki.push(await narysujCyfre(S, od + k, { x: gdzie.x, y: gdzie.y, size, color: kolor, duration: 0.25 }));
+      // a two-digit badge is drawn smaller, or its 1 and 0 stand as far apart as the badge before: "9 1 0" read as 910
+      znaczki.push(await narysujCyfre(S, od + k, { x: gdzie.x, y: gdzie.y, size: od + k > 9 ? size * 0.72 : size, color: kolor, duration: 0.25 }));
       await say(od + k);
       tura();
     };

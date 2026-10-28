@@ -38,9 +38,13 @@ async function wyprostuj(c, items) {
   const r0 = items.map((h) => h.mesh.rotation.z);
   for (let k = 1; k <= 8; k++) { items.forEach((h, i) => { h.mesh.rotation.z = r0[i] * (1 - k / 8); }); await c.wait(0.03); }
 }
-async function containers(c) {
-  return [await c.zone({ x: ZL, y: ZY, w: ZW, h: ZH, image: "koszyk", name: "koszyk" }),
-          await c.zone({ x: ZR, y: ZY, w: ZW, h: ZH, image: "pudelko", name: "pudelko" })];
+// basket and box; `doKosza` / `doPudla` = the tag each takes: the lines name the containers, so a sort must keep to
+// them (without it cups in the box and the rest in the basket counted as right)
+async function containers(c, doKosza, doPudla) {
+  const z = [await c.zone({ x: ZL, y: ZY, w: ZW, h: ZH, image: "koszyk", name: "koszyk" }),
+             await c.zone({ x: ZR, y: ZY, w: ZW, h: ZH, image: "pudelko", name: "pudelko" })];
+  z[0].want = doKosza; z[1].want = doPudla;
+  return z;
 }
 
 export default {
@@ -53,9 +57,10 @@ export default {
       // Deer: that only moves the mess - group! Sort apples and pears; then a pear is found at once.
       async (c) => {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
+        // the same five fruit come back in the kitchen ("the same fruit, another rule"), so the sizes match there
         const items = await onRug(c, [
-          { name: "jablko", tag: "apple" }, { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" },
-          { name: "gruszka", tag: "pear" }, { name: "jablko", tag: "apple" }]);
+          { name: "jablko", tag: "apple", size: 1.3 }, { name: "gruszka", tag: "pear", size: 0.7 }, { name: "jablko", tag: "apple", size: 0.7 },
+          { name: "gruszka", tag: "pear", size: 1.3 }, { name: "jablko", tag: "apple", size: 1.3 }]);
         await c.say("wiewiorka", "line.g0_mess", { anim: "Rozgladanie" });
         await c.say("wiewiorka", "line.g0_box", { anim: "Podskok" });
         // the naive way: everything flies into one box, anyhow
@@ -77,7 +82,7 @@ export default {
         await wyprostuj(c, items);
         c.arrange([items], { y: ROW_Y, gap: 0.14, animate: true }); await c.wait(0.6);
         box.remove();
-        const zones = await containers(c);
+        const zones = await containers(c, "apple", "pear");
         await c.say("sarenka", "line.s1_apples");
         await c.sort({ items, zones, wrong: "line.s1_mixed" });
         await c.say("sarenka", "line.s1_apples_done");
@@ -110,21 +115,22 @@ export default {
           { name: "kamyk", tag: "stone" }, { name: "listek", tag: "leaf" }, { name: "kamyk", tag: "stone" },
           { name: "listek", tag: "leaf" }, { name: "kamyk", tag: "stone" }, { name: "listek", tag: "leaf" }]);
         await c.say("wiewiorka", "line.j3_collect");
-        const zones = await containers(c);
+        const zones = await containers(c, "stone", "leaf");
         await c.say("sarenka", "line.j3_sort");
         await c.sort({ items, zones, wrong: "line.j3_mixed" });
         await c.say("wiewiorka", "line.j3_sorted", { anim: "Brawo" });
-        c.clear();
-        // action: Squirrel throws a pebble into the brook - plop! - then one thing on the bank is not a pebble
+        // action: Squirrel takes a pebble from the basket and throws it into the brook - plop! Meanwhile a cone drops
+        // from the tree into the basket: what does not belong with the pebbles?
         await c.say("wiewiorka", "line.j3_throw", { anim: "Wskazanie" });
-        const stone = await c.object("kamyk", { x: -2.5, y: ROW_Y, size: 0.9 });
+        const kosz = zones[0], stone = kosz.items[0];
+        kosz.take(stone);
         await stone.moveTo(1.5, 3.0, 0.5); await stone.moveTo(4.2, -1.6, 0.6); stone.remove();
         await c.play("sarenka", "Podskok");
+        const cone = await c.object("szyszka", { x: ZL, y: 3.0, size: 0.9 }); cone.tag = "cone";
+        await cone.moveTo(ZL, ZY, 0.5); kosz.put(cone);
         await c.say("sarenka", "line.j3_plop");
-        const odd = await scatter(c, [
-          { name: "kamyk", tag: "stone" }, { name: "kamyk", tag: "stone" }, { name: "szyszka", tag: "cone" }, { name: "kamyk", tag: "stone" }]);
         await c.say("sarenka", "line.j3_point_odd");
-        await c.task({ targets: odd, correct: odd.find((i) => i.tag === "cone"), wrong: "line.j3_wrong_odd" });
+        await c.task({ targets: kosz.items.slice(), correct: cone, wrong: "line.j3_wrong_odd" });
         await c.say("wiewiorka", "line.j3_odd_right", { anim: "Radosc" });
         await c.say("sarenka", "line.j3_to_home");
         c.clear();
@@ -137,7 +143,7 @@ export default {
         const items = await scatter(c, [
           { name: "jablko", tag: "big", size: 1.3 }, { name: "gruszka", tag: "small", size: 0.7 }, { name: "jablko", tag: "small", size: 0.7 },
           { name: "gruszka", tag: "big", size: 1.3 }, { name: "jablko", tag: "big", size: 1.3 }]);
-        const zones = await containers(c);
+        const zones = await containers(c, "big", "small");
         await c.say("sarenka", "line.s2_big");
         await c.sort({ items, zones, wrong: "line.s2_mixed" });
         await c.say("sarenka", "line.s2_point_big");
@@ -164,7 +170,7 @@ export default {
         ];
         for (const r of rounds) {
           const items = await scatter(c, r.items);
-          const zones = await containers(c);
+          const zones = await containers(c, r.items.find((i) => i.tag !== "x").tag, "x");
           await c.say("sarenka", r.ask);
           await c.sort({ items, zones, wrong: "line.p_mixed" });
           await c.say("sarenka", "line.p_done");
@@ -175,7 +181,7 @@ export default {
       },
     ],
     apply: [
-      // the home game: tidying up after a snack - five rules, basket and box
+      // the home game: tidying up after a snack - one rule after another, basket and box
       async (c) => {
         c.show("wiewiorka"); c.show("sarenka");
         await c.say("sarenka", "line.a_deer_tidy");
@@ -184,11 +190,11 @@ export default {
           { ask: "line.a_rule_cups", items: [{ name: "kubek", tag: "a" }, { name: "talerz", tag: "b" }, { name: "kubek", tag: "a" }, { name: "talerz", tag: "b" }, { name: "talerz", tag: "b" }] },
           { ask: "line.a_rule_red", items: [{ name: "jablko", tag: "a" }, { name: "pilka", tag: "a" }, { name: "gruszka", tag: "b" }, { name: "kubek", tag: "b" }, { name: "jablko", tag: "a" }] },
           { ask: "line.a_rule_big", items: [{ name: "pilka", tag: "a", size: 1.3 }, { name: "pilka", tag: "b", size: 0.7 }, { name: "ciastko", tag: "a", size: 1.3 }, { name: "ciastko", tag: "b", size: 0.7 }, { name: "kwiatek", tag: "b", size: 0.7 }] },
-          { ask: "line.a_rule_round", items: [{ name: "pilka", tag: "a" }, { name: "skarpetka", tag: "b" }, { name: "talerz", tag: "a" }, { name: "kwiatek", tag: "b" }, { name: "ciastko", tag: "a" }, { name: "kubek", tag: "b" }] },
+          { ask: "line.a_rule_toys", items: [{ name: "pilka", tag: "a" }, { name: "kubek", tag: "b" }, { name: "misiu", tag: "a" }, { name: "talerz", tag: "b" }, { name: "klocek", tag: "a" }, { name: "lyzka", tag: "b" }] },
         ];
         for (const [i, r] of rounds.entries()) {
           const items = await scatter(c, r.items);
-          const zones = await containers(c);
+          const zones = await containers(c, "a", "b");
           await c.say(i % 2 ? "wiewiorka" : "sarenka", r.ask);
           await c.sort({ items, zones, wrong: "line.a_mixed" });
           await c.say(i % 2 ? "sarenka" : "wiewiorka", "line.a_sq_right", { anim: "Brawo" });

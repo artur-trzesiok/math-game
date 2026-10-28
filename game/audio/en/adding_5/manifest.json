@@ -75,19 +75,19 @@
   "text": "Let's go to the lake, for a picnic."
  },
  "line.b_picnic": {
-  "hash": "795c1cf695a8",
+  "hash": "fd8aa79a6279",
   "who": "lisek",
-  "text": "I am putting cups on the blanket. I have two cups."
+  "text": "I have two cups for the picnic."
  },
  "line.b_owl": {
-  "hash": "a9182b3363d1",
+  "hash": "c307b5343e6a",
   "who": "sowa",
-  "text": "I have two as well. Drag my cups onto the blanket."
+  "text": "I have two too. Drag my cups over to Fox's cups."
  },
  "line.b_count": {
-  "hash": "eef3bbdb462d",
+  "hash": "2208bf36cef9",
   "who": "lisek",
-  "text": "Count all the cups on the blanket."
+  "text": "Count all the cups together."
  },
  "line.b_pick": {
   "hash": "704bf7201617",
@@ -110,9 +110,9 @@
   "text": "I baked three cookies."
  },
  "line.c_owl": {
-  "hash": "d5069d27bee7",
+  "hash": "2896ba5e802c",
   "who": "sowa",
-  "text": "And I baked two. Drag my cookies onto the plate."
+  "text": "And I baked two. Drag my cookies over to Fox's cookies."
  },
  "line.c_slot": {
   "hash": "655c3e830b10",
@@ -243,5 +243,15 @@
   "hash": "094016c43adc",
   "who": "lisek",
   "text": "Five!"
+ },
+ "line.s_equals": {
+  "hash": "a40871e7ef86",
+  "who": "sowa",
+  "text": "And you know the equal lines. They say: as many. Two and one is as many as three."
+ },
+ "line.c_count": {
+  "hash": "5f673e7cd50c",
+  "who": "lisek",
+  "text": "Count all the cookies together."
  }
 }

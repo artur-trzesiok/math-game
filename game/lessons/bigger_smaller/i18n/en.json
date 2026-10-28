@@ -41,11 +41,11 @@
   },
   "line.p_click_biggest": {
     "who": "lisek",
-    "text": "There are three. Point to the biggest."
+    "text": "Point to the biggest one."
   },
   "line.p_click_smallest": {
     "who": "lisek",
-    "text": "There are three. Point to the smallest."
+    "text": "Point to the smallest one."
   },
   "line.p_wrong": {
     "who": "lisek",
@@ -216,6 +216,26 @@
     "who": "wiewiorka",
     "text": "That one is too big for me. Point to the smaller one."
   },
+  "line.s3_three": {
+    "who": "lisek",
+    "text": "And here are more cups. One is the biggest and one is the smallest."
+  },
+  "line.s3_biggest": {
+    "who": "lisek",
+    "text": "This one is the biggest."
+  },
+  "line.s3_smallest": {
+    "who": "wiewiorka",
+    "text": "And this one is the smallest."
+  },
+  "line.s3_pick": {
+    "who": "lisek",
+    "text": "Point to the biggest cup."
+  },
+  "line.s3_wrong": {
+    "who": "lisek",
+    "text": "Look again. Which cup is the biggest?"
+  },
   "line.c1_which_line": {
     "who": "wiewiorka",
     "text": "Point to the line that is higher."
@@ -226,7 +246,7 @@
   },
   "line.c1_higher": {
     "who": "lisek",
-    "text": "Yes! This line is higher. Its pear reaches higher, so it is bigger."
+    "text": "Yes! Both pears stand on the same line. The one that reaches higher is bigger."
   },
   "line.c1_pick": {
     "who": "wiewiorka",
@@ -239,10 +259,6 @@
   "line.c1_rule": {
     "who": "lisek",
     "text": "That is how we compare. Evenly on one line, and a line over each."
-  },
-  "line.c1_check": {
-    "who": "lisek",
-    "text": "Let's check our way. Evenly on a line, and a line over each."
   },
   "line.b0_mine": {
     "who": "lisek",

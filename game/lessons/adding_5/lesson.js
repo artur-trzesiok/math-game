@@ -60,6 +60,7 @@ export default {
         await c.say("lisek", "line.s_three", { anim: "Radosc" });
         await Promise.all([c.equation([2, "+", 1, "=", 3], { y: 2.7, size: 1.2 }), c.say("sowa", "line.s_write", { anim: "Wskazanie" })]);
         await c.say("sowa", "line.s_plus");
+        await c.say("sowa", "line.s_equals");                               // "=" is the "as many" sign from more_fewer
         await c.say("lisek", "line.s_solved", { anim: "Brawo" });
         await c.say("sowa", "line.s_to_meadow");
         c.clear();
@@ -76,9 +77,11 @@ export default {
         await c.sort({ items: sowy, zones: [koc] });
         await c.say("lisek", "line.b_count");
         await c.count(koc.items, { who: "sowa" });
+        // the right card stays: it flies into the equation's gap (as in scene C)
+        const r = await c.equation([2, "+", 2, "=", null], { y: 2.7, size: 1.2 });
         const k = await ktoraCyfra(c, 4, "sowa", "line.b_pick", oferta(4));
-        k.remove();
-        await Promise.all([c.equation([2, "+", 2, "=", 4], { y: 2.7, size: 1.2 }), c.say("sowa", "line.b_write")]);
+        await k.moveTo(r.luki[0].x, r.luki[0].y, 0.6);
+        await c.say("sowa", "line.b_write");
         await c.say("lisek", "line.b_to_home", { anim: "Radosc" });
         c.clear();
       },
@@ -92,6 +95,7 @@ export default {
         const sowy = await kupka(c, "ciastko", 2, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("sowa", "line.c_owl");
         await c.sort({ items: sowy, zones: [talerz] });
+        await c.say("lisek", "line.c_count");
         await c.count(talerz.items, { who: "lisek" });
         const r = await c.equation([3, "+", 2, "=", null], { y: 2.7, size: 1.2 });
         const slot = await c.zone({ x: r.luki[0].x, y: r.luki[0].y, w: 1.1, h: 1.5, name: "luka" });

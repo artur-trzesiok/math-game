@@ -152,13 +152,19 @@ export default {
         await c.say("lisek", "line.j2_check");
         await pair(c, carrots, flowers);
         await c.say("sowa", "line.j2_equal");
+        // "=" is new here: shown and named before it is asked for
+        const rowne = await c.sign("=", { x: 0, y: 2.5, size: SIGN });
+        await c.say("sowa", "line.j2_eq_sign", { anim: "Wskazanie" });
+        rowne.remove();
         let sign = await askSign(c, carrots, flowers, "lisek", "line.s2_pick_eq", ["<", "=", ">"], "line.j2_good_eq");
         // action: Owl finds one more flower under the fence
         await c.say("sowa", "line.j2_one_more", { anim: "Rozgladanie" });
         const extra = await c.object("kwiatek", { x: 5.6, y: Y + 1.4, size: SZ });
         flowers.push(extra); sign.remove();
+        lay(c, carrots, flowers, true); await c.wait(0.8);
+        await pair(c, carrots, flowers);                               // "more" is always checked by pairing
         await c.say("sowa", "line.j2_now_fewer");
-        sign = await askSign(c, carrots, flowers, "sowa", "line.s2_pick_lt", ["<", "=", ">"], "line.j2_good_lt");
+        sign = await askSign(c, carrots, flowers, "sowa", "line.j2_pick_lt", ["<", "=", ">"], "line.j2_good_lt");
         sign.remove();
         await askMore(c, carrots, flowers, "lisek", "line.s2_which_more");
         await c.say("lisek", "line.j2_to_home");
@@ -175,9 +181,11 @@ export default {
         await pair(c, cups, cookies);
         await c.say("sowa", "line.j2_one_missing");
         await c.say("lisek", "line.j2_bake_one");
-        const extra = await c.object("ciastko", { x: 5.6, y: Y + 1.4, size: SZ });
+        const extra = await c.object("ciastko", { x: -5.6, y: Y + 1.4, size: SZ });   // Fox bakes it: from Fox's side
         cookies.push(extra);
-        await askSign(c, cups, cookies, "lisek", "line.s2_pick_eq", ["<", "=", ">"], "line.j2_good_eq2");
+        lay(c, cups, cookies, true); await c.wait(0.8);
+        await pair(c, cups, cookies);
+        await askSign(c, cups, cookies, "lisek", "line.j2_pick_sign", ["<", "=", ">"], "line.j2_good_eq2");
         await c.say("lisek", "line.s2_summary", { anim: "Radosc" });
         c.clear();
       },

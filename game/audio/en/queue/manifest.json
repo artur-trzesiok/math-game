@@ -89,11 +89,6 @@
   "who": "sarenka",
   "text": "Point to the one standing second."
  },
- "line.b_mouse_back": {
-  "hash": "6064d6b788f4",
-  "who": "lisek",
-  "text": "The mouse stood first, so it went down first. It wants another go, so it goes to the end of the queue."
- },
  "line.b_point_last": {
   "hash": "ff034261b699",
   "who": "sarenka",
@@ -110,9 +105,9 @@
   "text": "Let's go home. There will be cookies!"
  },
  "line.c_cookies": {
-  "hash": "f5b8e21882c8",
+  "hash": "214aa3b2caf0",
   "who": "sarenka",
-  "text": "Five guests are queuing for cookies. We count from the table."
+  "text": "Five guests are queuing for cookies. We count from the front of the queue, on the left."
  },
  "line.c_point_fifth": {
   "hash": "4440b34b12b3",
@@ -170,9 +165,9 @@
   "text": "Yes! That is the place."
  },
  "line.a_game": {
-  "hash": "efbcc2d56907",
+  "hash": "886453084ba9",
   "who": "lisek",
-  "text": "Let's play a queue of toys on the shelf."
+  "text": "Let's play a queue of toys. They stand in a row."
  },
  "line.a_ok": {
   "hash": "3546e83f09a2",
@@ -208,5 +203,35 @@
   "hash": "2196bf21b367",
   "who": "sarenka",
   "text": "Everyone moved up. Who is first now?"
+ },
+ "line.wrong_place_q": {
+  "hash": "0e1c95a495b4",
+  "who": "sarenka",
+  "text": "That is not the place. Count from the front of the queue."
+ },
+ "line.wrong_place_q.lisek": {
+  "hash": "cdcc0bba1a9e",
+  "who": "lisek",
+  "text": "That is not the place. Count from the front of the queue."
+ },
+ "line.wrong_place_arrow": {
+  "hash": "043f4bce9a82",
+  "who": "sarenka",
+  "text": "That is not the place. Count from the arrow."
+ },
+ "line.wrong_place_arrow.lisek": {
+  "hash": "fec2d96ca59a",
+  "who": "lisek",
+  "text": "That is not the place. Count from the arrow."
+ },
+ "line.b_mouse_goes": {
+  "hash": "4337e7d6b99c",
+  "who": "lisek",
+  "text": "The mouse is first, so it goes down first!"
+ },
+ "line.b_mouse_again": {
+  "hash": "232c4584bbf5",
+  "who": "lisek",
+  "text": "It wants another go, so it goes to the end of the queue."
  }
 }

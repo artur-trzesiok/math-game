@@ -31,9 +31,33 @@
     "who": "sowa",
     "text": "I will show you, it is fun. We point to each cone only once and say the numbers in order."
   },
-  "line.s_point_each": {
+  "line.s_start_one": {
     "who": "sowa",
-    "text": "Point to each cone, one after another. I will count."
+    "text": "Let's start with one cone. Point to it."
+  },
+  "line.s_one": {
+    "who": "sowa",
+    "text": "You have one cone."
+  },
+  "line.s_add_2": {
+    "who": "wiewiorka",
+    "text": "I'm adding one more cone!"
+  },
+  "line.s_add_3": {
+    "who": "wiewiorka",
+    "text": "And one more!"
+  },
+  "line.s_count_again": {
+    "who": "sowa",
+    "text": "Count from the start. Point to every cone only once."
+  },
+  "line.s_two": {
+    "who": "sowa",
+    "text": "The last number tells how many there are. You have two cones!"
+  },
+  "line.s_point_2": {
+    "who": "wiewiorka",
+    "text": "I have two cones. Point to the digit two."
   },
   "line.s_last": {
     "who": "sowa",
@@ -91,7 +115,7 @@
   },
   "line.c_cookies": {
     "who": "sowa",
-    "text": "I baked cookies for our guests. Let's count them, so there are enough for everyone."
+    "text": "I baked cookies for the guests. Let's count how many I baked."
   },
   "line.c_five": {
     "who": "sowa",
@@ -99,11 +123,11 @@
   },
   "line.c_two_plates": {
     "who": "wiewiorka",
-    "text": "Now there are two plates of cookies. One of them has five."
+    "text": "Now there are two groups of cookies. One of them has five."
   },
   "line.c_pick_5": {
     "who": "wiewiorka",
-    "text": "Point to the plate with five cookies. You can count them."
+    "text": "Point to the group with five cookies. You can count them."
   },
   "line.c_wrong_5": {
     "who": "wiewiorka",

@@ -29,10 +29,11 @@ export default {
         await Promise.all([c.enter("wiewiorka"), c.enter("lisek")]);
         const caly = await c.tangram("duzy_kwadrat", { x: 0, y: 1.1, scale: 3.0 });
         // shown whole: every piece already in its place
+        const r0 = caly.kawalki.map((k) => k.rot);                // the turns the packer laid them out with
         for (const [i, k] of caly.kawalki.entries()) { const s = caly.sloty[i]; k.mesh.position.set(s.x, s.y, 0.4); k.rot = s.rot; k.inner.rotation.z = s.rot * Math.PI / 180; }
         await c.say("wiewiorka", "line.s_my_puzzle", { anim: "Radosc" });
         c.sfx("whoosh");
-        await Promise.all(caly.kawalki.map((k) => k.moveTo(k.home.x, k.home.y, 0.6)));
+        await Promise.all(caly.kawalki.map((k, i) => Promise.all([k.moveTo(k.home.x, k.home.y, 0.6), k.rotateTo(r0[i], 0.6)])));   // a real mess, and no overlaps
         c.sfx("plop");
         await c.say("wiewiorka", "line.s_broken", { anim: "Smutek" });
         await c.say("wiewiorka", "line.s_throw");
@@ -107,7 +108,8 @@ export default {
           let x = -szer / 2;
           for (const [i, h] of cele.entries()) { const b = bs[i]; h.mesh.position.x += x - b.left; h.mesh.position.y += -2.5 - (b.top + b.bottom) / 2; x += b.right - b.left + 0.5; }
           await c.say("wiewiorka", "line.p_gap");
-          await c.task({ targets: cele, correct: cele[opcje.indexOf(brak)], wrong: "line.wrong_piece" });
+          // the big triangle has the gap's shape, only bigger: "another shape" would be false for it
+          await c.task({ targets: cele, correct: cele[opcje.indexOf(brak)], onWrong: (hit) => c.say("wiewiorka", hit.tag === "L" && brak === "M" ? "line.wrong_big" : "line.wrong_piece") });
           await c.say("lisek", "line.good_build", { anim: "Brawo" });
           c.clear();
         }

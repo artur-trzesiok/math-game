@@ -57,7 +57,7 @@
   },
   "line.a_deer_tidy": {
     "who": "sarenka",
-    "text": "Zabawa w domu: sprzątanie po podwieczorku. Koszyk i pudełko, pięć zasad. Przeciągaj."
+    "text": "Zabawa w domu: sprzątanie po podwieczorku. Koszyk i pudełko, co chwilę nowa zasada. Przeciągaj."
   },
   "line.a_sq_right": {
     "who": "wiewiorka",
@@ -72,7 +72,7 @@
   },
   "line.s1_mixed": {
     "who": "sarenka",
-    "text": "Coś się pomieszało. W jednym koszyku mają być same jabłka, a w drugim same gruszki."
+    "text": "Coś się pomieszało. W koszyku mają być same jabłka, a w pudełku same gruszki."
   },
   "line.s2_mixed": {
     "who": "sarenka",
@@ -130,12 +130,9 @@
       "sarenka"
     ]
   },
-  "line.a_rule_round": {
+  "line.a_rule_toys": {
     "who": "sarenka",
-    "text": "Okrągłe do koszyka, reszta do pudełka.",
-    "speakers": [
-      "wiewiorka"
-    ]
+    "text": "Zabawki do koszyka, naczynia do pudełka."
   },
   "line.j3_to_brook": {
     "who": "wiewiorka",
@@ -167,11 +164,11 @@
   },
   "line.j3_plop": {
     "who": "sarenka",
-    "text": "Plusk! Ale na brzegu zostało coś, co nie jest kamykiem."
+    "text": "Plusk! Ojej, z drzewa coś spadło do koszyka."
   },
   "line.j3_point_odd": {
     "who": "sarenka",
-    "text": "Wskaż to, co nie pasuje do kamyków."
+    "text": "Wskaż to, co nie pasuje do kamyków w koszyku."
   },
   "line.j3_wrong_odd": {
     "who": "sarenka",

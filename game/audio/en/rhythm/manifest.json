@@ -5,9 +5,9 @@
   "text": "I am making a garland for the party. Apple, pear, apple, pear."
  },
  "line.s_go_on": {
-  "hash": "5c0020afb66f",
+  "hash": "71d1062a007f",
   "who": "sowa",
-  "text": "I have to fetch some string. Will you finish it for me?"
+  "text": "Will you finish it for me?"
  },
  "line.s_anything": {
   "hash": "7c3931b71a5b",
@@ -50,14 +50,14 @@
   "text": "Drag what comes next. Careful, one thing does not fit!"
  },
  "line.wrong_pattern": {
-  "hash": "63fd8ad53030",
+  "hash": "3d0429f13422",
   "who": "sowa",
-  "text": "That does not fit the rhythm. What came before this place?"
+  "text": "That does not fit the rhythm. Say the rhythm from the start and listen for what comes next."
  },
  "line.wrong_pattern.wiewiorka": {
-  "hash": "860cd4919aee",
+  "hash": "ce4baa55b9da",
   "who": "wiewiorka",
-  "text": "That does not fit the rhythm. What came before this place?"
+  "text": "That does not fit the rhythm. Say the rhythm from the start and listen for what comes next."
  },
  "line.s_solved": {
   "hash": "a65c44d60807",
@@ -158,5 +158,15 @@
   "hash": "3c8231148d14",
   "who": "wiewiorka",
   "text": "Bye bye! See you!"
+ },
+ "line.b_sizes": {
+  "hash": "5515ddcd675f",
+  "who": "wiewiorka",
+  "text": "And here is a rhythm of sizes: big carrot, small carrot, big, small."
+ },
+ "line.b_sizes_done": {
+  "hash": "a46362164cb3",
+  "who": "wiewiorka",
+  "text": "Big, small, big, small! A rhythm can be made of sizes too."
  }
 }

@@ -20,9 +20,9 @@
   "text": "A window is a window. Does it matter?"
  },
  "line.s_differ": {
-  "hash": "b2095d3648b9",
+  "hash": "6e42459527ac",
   "who": "sowa",
-  "text": "Yes! Every shape is different. My round head will not fit through a window with corners."
+  "text": "No! Every shape is different. I wanted a window round like the moon, and this one has corners and straight sides."
  },
  "line.s_how": {
   "hash": "ad64a53d1860",
@@ -209,26 +209,6 @@
   "who": "sowa",
   "text": "What shape is the side of a block? Point to the shape."
  },
- "line.a_pilka": {
-  "hash": "c6f19f23e418",
-  "who": "sowa",
-  "text": "What shape is a ball? Point to the shape."
- },
- "line.a_how_many_corners": {
-  "hash": "c7db37d5ce25",
-  "who": "lisek",
-  "text": "How many corners does this shape have? Point to the number."
- },
- "line.wrong_number": {
-  "hash": "6a3c15c0cbb9",
-  "who": "lisek",
-  "text": "Count the corners again."
- },
- "line.wrong_number.sowa": {
-  "hash": "bb5c4bcc3e75",
-  "who": "sowa",
-  "text": "Count the corners again."
- },
  "line.a_ask_parents": {
   "hash": "5fdaba26da04",
   "who": "sowa",
@@ -278,5 +258,45 @@
   "hash": "2253e7bcda55",
   "who": "lisek",
   "text": "Four!"
+ },
+ "line.wrong_sides": {
+  "hash": "b945a19786ef",
+  "who": "sowa",
+  "text": "Look at the sides. A square has all sides equal, and a rectangle has two longer ones."
+ },
+ "line.wrong_sides.lisek": {
+  "hash": "47f4c4220120",
+  "who": "lisek",
+  "text": "Look at the sides. A square has all sides equal, and a rectangle has two longer ones."
+ },
+ "line.a_ciastko": {
+  "hash": "6309d5032512",
+  "who": "sowa",
+  "text": "What shape is a cookie? Point to the shape."
+ },
+ "line.a_three_corners": {
+  "hash": "4e046eba84ff",
+  "who": "lisek",
+  "text": "Which shape has three corners? Point to it."
+ },
+ "line.a_four_corners": {
+  "hash": "7bce2d5c3e92",
+  "who": "lisek",
+  "text": "Which shape has four corners? Point to it."
+ },
+ "line.a_no_corners": {
+  "hash": "967bcfeccb78",
+  "who": "lisek",
+  "text": "And which one has no corners at all?"
+ },
+ "line.wrong_corners": {
+  "hash": "6a3c15c0cbb9",
+  "who": "lisek",
+  "text": "Count the corners again."
+ },
+ "line.wrong_corners.sowa": {
+  "hash": "bb5c4bcc3e75",
+  "who": "sowa",
+  "text": "Count the corners again."
  }
 }

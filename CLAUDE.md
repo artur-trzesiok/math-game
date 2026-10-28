@@ -245,7 +245,10 @@ the transparent square), `standOn(items, y)` stands stickers on a line. Lessons 
 with them: the comparison method in bigger_smaller (`porownaj`: a base line, things
 standing on it, a line over each top), the pairing lines in more_fewer. On a tap a
 thing beats a character (a character only repeats the instruction, the one said
-before the task - never the last "try again").
+before the task - never the last "try again"). This is ONE rule for the whole game: `scene.tapPuppet` (a tap on a
+visible character that no task takes) calls the player's `onPuppetTap`, which repeats the instruction in force,
+set by `wDzialaniu(p)` for the life of every interaction (task, count, sort, tangram, place, slots, symmetry),
+one repeat at a time and never over a line being spoken. Counting by touch used to ignore the characters.
 
 Sound effects (`sfx.js`, `game/audio/sfx/*.mp3`): `python tools/audio/run.py --sfx` makes
 them - ElevenLabs sound generation when the key has the `sound_generation` permission

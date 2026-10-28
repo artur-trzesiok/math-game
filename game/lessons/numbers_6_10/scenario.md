@@ -7,16 +7,22 @@ Characters: Fox (left), Squirrel (right).
 ## Stage 1 - story - orchard, garden, home
 
 1. Orchard, the problem: the jam recipe needs six apples, lying anyhow on the grass.
-   Fox counts in a hurry - one apple twice, one never - "nine!". Squirrel (a "?"
-   over her head): too fast - that one twice (crossed out), that one not at all. How
+   Fox counts out loud in a hurry - one, two ... seven - and every apple he counts grows
+   a little; one he counts twice, so it grows twice and ends up the biggest: six apples,
+   "seven!". Squirrel (a "?" over her head): too fast - that one twice (circled). How
    then? By moving them aside (she pictures two neat rows). The child points to the
    apples; each moves into a row and gets its number: six. After five comes six;
    Squirrel draws the 6. Solved: exactly six, like the recipe.
-2. Garden: seven carrots counted aside; the 7 drawn. Squirrel pulls out one more:
-   how many now? The child picks the 8; the 8 drawn.
+2. Garden: seven carrots counted aside; the 7 drawn. Squirrel pulls out one more; the
+   child counts it on: eight. The 7 goes, the 8 is drawn ("a snowman of two balls"),
+   and only then the child finds the 8 among cards.
 3. Home, a party: nine cups counted aside; the 9 drawn. A knock - one more guest; Fox
-   fetches a cup in his paw. Nine and one more is ten; ten is written with two
-   digits. Every guest has a cup.
+   fetches a cup in his paw. Nine and one more is ten; the 9 goes and ten is written
+   with two digits. Every guest has a cup.
+
+The digits come one by one, 6, 7, 8, 9, 10, each drawn and described before a child is
+ever asked to find it, and only one big digit is on the stage at a time (an 8 drawn
+over the 7 read as neither, a 10 next to a 9 read as 109).
 
 ## Stage 2 - practice - playground
 

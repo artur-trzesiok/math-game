@@ -11,13 +11,13 @@
     "who": "lisek",
     "text": "I'll count, quick as a flash!"
   },
-  "line.s_nine": {
+  "line.s_seven": {
     "who": "lisek",
-    "text": "Nine! I have nine apples!"
+    "text": "Seven! I have seven apples!"
   },
   "line.s_twice": {
     "who": "wiewiorka",
-    "text": "Too fast! You counted this apple twice and that one not at all."
+    "text": "Too fast! You counted this apple twice. Look, it grew twice."
   },
   "line.s_how": {
     "who": "lisek",
@@ -49,7 +49,7 @@
   },
   "line.s_to_garden": {
     "who": "wiewiorka",
-    "text": "Let's go to the garden. We will add carrots to the jam."
+    "text": "Let's go to the garden. The jam needs eight carrots too."
   },
   "line.b_carrots": {
     "who": "lisek",
@@ -65,7 +65,7 @@
   },
   "line.b_how_many_now": {
     "who": "wiewiorka",
-    "text": "There were seven and one more came. How many are there now?"
+    "text": "There were seven, one more came. Count on: point to the new carrot."
   },
   "line.b_pick": {
     "who": "wiewiorka",
@@ -75,17 +75,25 @@
     "who": "lisek",
     "text": "Eight! After seven comes eight."
   },
+  "line.b_enough": {
+    "who": "wiewiorka",
+    "text": "Exactly eight, just what the jam needs!"
+  },
   "line.b_to_home": {
     "who": "wiewiorka",
     "text": "Let's go home. We have a party today!"
   },
   "line.c_party": {
     "who": "wiewiorka",
-    "text": "Lots of guests are coming to the party. Let's count the cups."
+    "text": "Nine guests are coming to the party. Is there a cup for each? Let's count."
   },
   "line.c_knock": {
     "who": "lisek",
     "text": "Knock, knock! One more guest came. I'll bring a cup."
+  },
+  "line.c_count_on": {
+    "who": "wiewiorka",
+    "text": "Count the new cup on. Point to it."
   },
   "line.c_ten": {
     "who": "wiewiorka",
@@ -260,7 +268,7 @@
     "speakers": [
       "lisek"
     ],
-    "text": "This is a seven. It has a roof, a long leg and a short stripe in the middle."
+    "text": "This is a seven. It has a roof and a long, slanted leg."
   },
   "line.d8": {
     "who": "wiewiorka",
@@ -281,6 +289,6 @@
     "speakers": [
       "lisek"
     ],
-    "text": "This is ten. We write it with two digits, a one and a zero."
+    "text": "This is ten. We write it with two digits: a one and a zero. Zero is a round ring, like an egg."
   }
 }

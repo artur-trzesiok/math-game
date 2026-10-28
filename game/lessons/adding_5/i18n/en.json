@@ -51,6 +51,10 @@
     "who": "sowa",
     "text": "Plus looks like a little cross. It tells us: put them together."
   },
+  "line.s_equals": {
+    "who": "sowa",
+    "text": "And you know the equal lines. They say: as many. Two and one is as many as three."
+  },
   "line.s_solved": {
     "who": "lisek",
     "text": "Three apples for three hedgehogs! Enough for everyone."
@@ -61,15 +65,15 @@
   },
   "line.b_picnic": {
     "who": "lisek",
-    "text": "I am putting cups on the blanket. I have two cups."
+    "text": "I have two cups for the picnic."
   },
   "line.b_owl": {
     "who": "sowa",
-    "text": "I have two as well. Drag my cups onto the blanket."
+    "text": "I have two too. Drag my cups over to Fox's cups."
   },
   "line.b_count": {
     "who": "lisek",
-    "text": "Count all the cups on the blanket."
+    "text": "Count all the cups together."
   },
   "line.b_pick": {
     "who": "sowa",
@@ -89,7 +93,11 @@
   },
   "line.c_owl": {
     "who": "sowa",
-    "text": "And I baked two. Drag my cookies onto the plate."
+    "text": "And I baked two. Drag my cookies over to Fox's cookies."
+  },
+  "line.c_count": {
+    "who": "lisek",
+    "text": "Count all the cookies together."
   },
   "line.c_slot": {
     "who": "sowa",

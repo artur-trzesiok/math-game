@@ -51,6 +51,10 @@
     "who": "sowa",
     "text": "Plus wygląda jak mały krzyżyk. Mówi nam: połącz razem."
   },
+  "line.s_equals": {
+    "who": "sowa",
+    "text": "A równe kreski już znasz. Mówią: tyle samo. Dwa i jeden to tyle samo, co trzy."
+  },
   "line.s_solved": {
     "who": "lisek",
     "text": "Trzy jabłka dla trzech jeżyków! Starczy dla każdego."
@@ -61,15 +65,15 @@
   },
   "line.b_picnic": {
     "who": "lisek",
-    "text": "Rozkładam kubki na kocu. Mam dwa kubki."
+    "text": "Mam dwa kubki na piknik."
   },
   "line.b_owl": {
     "who": "sowa",
-    "text": "Ja też mam dwa. Przeciągnij moje kubki na koc."
+    "text": "Ja też mam dwa. Przeciągnij moje kubki do kubków liska."
   },
   "line.b_count": {
     "who": "lisek",
-    "text": "Policz wszystkie kubki na kocu."
+    "text": "Policz wszystkie kubki razem."
   },
   "line.b_pick": {
     "who": "sowa",
@@ -89,7 +93,11 @@
   },
   "line.c_owl": {
     "who": "sowa",
-    "text": "A ja dwa. Przeciągnij moje ciastka na talerz."
+    "text": "A ja dwa. Przeciągnij moje ciastka do ciastek liska."
+  },
+  "line.c_count": {
+    "who": "lisek",
+    "text": "Policz wszystkie ciastka razem."
   },
   "line.c_slot": {
     "who": "sowa",

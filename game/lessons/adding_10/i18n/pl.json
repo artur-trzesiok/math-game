@@ -9,11 +9,11 @@
   },
   "line.s_naive": {
     "who": "wiewiorka",
-    "text": "To policzę wszystkie od początku. Jeden, dwa, trzy, cztery... Ojej, pomyliłam się!"
+    "text": "Mamy trzy kamyki. Za mało!"
   },
   "line.s_not": {
     "who": "sarenka",
-    "text": "Nie musisz zaczynać od jednego! Wiemy już, że w koszyku jest pięć."
+    "text": "A pięć w koszyku? Nie licz ich od nowa, wiemy, że jest pięć."
   },
   "line.s_how": {
     "who": "wiewiorka",
@@ -126,7 +126,7 @@
   },
   "line.a_lyzka": {
     "who": "sarenka",
-    "text": "W szufladzie jest pięć łyżek. Dołóż jeszcze te. Doliczaj od pięciu."
+    "text": "W pudełku jest pięć łyżek. Obok są jeszcze trzy. Doliczaj od pięciu."
   },
   "line.a_klocek": {
     "who": "sarenka",
@@ -134,7 +134,7 @@
   },
   "line.a_kubek": {
     "who": "sarenka",
-    "text": "Na półce stoi siedem kubków. Doliczaj od siedmiu."
+    "text": "W pudełku jest siedem kubków. Doliczaj od siedmiu."
   },
   "line.a_which_digit": {
     "who": "sarenka",

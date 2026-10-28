@@ -65,9 +65,9 @@
   "text": "Nie ten. Paszcza otwiera się tam, gdzie jest więcej. Gdy jest tyle samo, wybierz równe kreski."
  },
  "line.a_owl_table": {
-  "hash": "45e1fa369582",
+  "hash": "8672376e5a59",
   "who": "sowa",
-  "text": "Zabawa w domu: nakrywamy do stołu. Ja stawiam talerze, Lisek kubki. Zagramy pięć razy."
+  "text": "Zabawa w domu: nakrywamy do stołu. Ja stawiam talerze, Lisek kubki."
  },
  "line.a_bye": {
   "hash": "80fbe024f126",
@@ -160,9 +160,9 @@
   "text": "Chodźmy teraz do ogrodu. Lisek obiecał marchewki na obiad!"
  },
  "line.j2_garden": {
-  "hash": "5e2a7347aa24",
+  "hash": "29a5759c03db",
   "who": "lisek",
-  "text": "Oto mój ogród. Wyrwałem trzy marchewki!"
+  "text": "Oto mój ogród. Wyrwałem marchewki!"
  },
  "line.j2_carrots": {
   "hash": "3349126325ff",
@@ -278,5 +278,40 @@
   "hash": "bbe09f8742e6",
   "who": "sowa",
   "text": "Teraz każdy kubek ma swój talerz. Jest ich tyle samo!"
+ },
+ "line.good_gt.lisek": {
+  "hash": "a4de8fde3e8d",
+  "who": "lisek",
+  "text": "Bardzo dobrze! Paszcza otwiera się w lewo, bo po lewej jest więcej."
+ },
+ "line.good_lt.lisek": {
+  "hash": "6554b077dcac",
+  "who": "lisek",
+  "text": "Bardzo dobrze! Paszcza otwiera się w prawo, bo po prawej jest więcej."
+ },
+ "line.good_eq.sowa": {
+  "hash": "2e68d23e49fe",
+  "who": "sowa",
+  "text": "Bardzo dobrze! Równe kreski, bo jest tyle samo."
+ },
+ "line.good_more.sowa": {
+  "hash": "9139ca7f6128",
+  "who": "sowa",
+  "text": "Bardzo dobrze! Tu jest więcej."
+ },
+ "line.j2_eq_sign": {
+  "hash": "5a643eaa8a75",
+  "who": "sowa",
+  "text": "Gdy jest tyle samo, paszcza się zamyka i zostają dwie równe kreski. Taki znak mówi: tyle samo."
+ },
+ "line.j2_pick_lt": {
+  "hash": "2fb4e46876f4",
+  "who": "sowa",
+  "text": "Marchewek jest mniej. Wskaż paszczę otwartą na kwiatki."
+ },
+ "line.j2_pick_sign": {
+  "hash": "42cc2a66dfb3",
+  "who": "lisek",
+  "text": "Który znak tu pasuje? Wskaż go."
  }
 }

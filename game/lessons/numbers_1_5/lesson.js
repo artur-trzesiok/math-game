@@ -29,6 +29,18 @@ async function pokazCyfre(c, n, who, { x = 0, y = CY } = {}) {
   return d;
 }
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
+// two groups of one thing side by side over the heads, clearly apart (a wide gap between, a small one inside), each
+// outlined: the zones come from the real extent of each group. `pierwsza` = the group that is the answer
+async function dwieGrupy(c, nazwa, n, m, { size = 0.85, y = 1.25 } = {}) {
+  const A = [], B = [];
+  for (let i = 0; i < n; i++) A.push(await c.object(nazwa, { y, size }));
+  for (let i = 0; i < m; i++) B.push(await c.object(nazwa, { y, size }));
+  const lewa = Math.random() < 0.5;
+  const info = c.arrange(lewa ? [A, B] : [B, A], { y, gap: 0.08, groupGap: 1.8 });
+  const [iA, iB] = lewa ? info : [info[1], info[0]];
+  const zA = await c.zone({ x: iA.x, y, w: iA.w + 0.5, h: size * 1.12 + 0.4 }), zB = await c.zone({ x: iB.x, y, w: iB.w + 0.5, h: size * 1.12 + 0.4 });
+  return { zA, zB };
+}
 const oferta = (n) => tasuj([n, n === 5 ? 3 : n + 1, n === 1 ? 2 : n - 1].filter((v, i, a) => a.indexOf(v) === i));
 
 export default {
@@ -38,7 +50,7 @@ export default {
   stages: {
     story: [
       // A. forest, the problem: Squirrel stores cones for winter and has "a lot". Owl: "a lot" says nothing -
-      // count! Every cone once, the last number says how many; the digits 1, 2, 3; the store is labelled.
+      // count! One cone, then two, then three: each counted by touch, its digit drawn, then found among cards.
       async (c) => {
         await Promise.all([c.enter("wiewiorka"), c.enter("sowa")]);
         const szyszki = await rzad(c, "szyszka", 3);
@@ -53,16 +65,28 @@ export default {
         await c.say("wiewiorka", "line.s_what");
         pomysl.remove();
         await c.say("sowa", "line.s_show");
-        await c.say("sowa", "line.s_point_each");
-        await c.count(szyszki, { who: "sowa" });
-        await c.say("sowa", "line.s_last", { anim: "Radosc" });
-        // the digits: 1, 2, 3 drawn big, each with its rhyme
+        // the digits come one by one, each tied to an amount, each drawn before it is asked for, one big digit at
+        // a time; the cards offered are only digits already met
+        const miejsca = szyszki.map((h) => ({ x: h.mesh.position.x, y: h.mesh.position.y }));
+        await Promise.all([szyszki[1].moveTo(-3.3, -3.5, 0.5), szyszki[2].moveTo(-2.5, -3.6, 0.5)]);   // waiting at Squirrel's feet, clear of the cards
+        await c.say("sowa", "line.s_start_one");
+        let liczenie = await c.count([szyszki[0]], { who: "sowa" });
+        await c.say("sowa", "line.s_one", { anim: "Radosc" });
         await c.say("sowa", "line.s_digits");
-        const cyfry = [];
-        for (const [i, n] of [1, 2, 3].entries()) cyfry.push(await pokazCyfre(c, n, "sowa", { x: -2.2 + i * 2.2 }));
-        await c.say("wiewiorka", "line.s_point_3");
-        await c.task({ targets: cyfry, correct: cyfry[2], wrong: "line.wrong_digit" });
-        await c.circle(cyfry[2]);
+        let duza = await pokazCyfre(c, 1, "sowa");
+        for (const n of [2, 3]) {
+          await c.say("wiewiorka", n === 2 ? "line.s_add_2" : "line.s_add_3", { anim: "Podskok" });
+          await szyszki[n - 1].moveTo(miejsca[n - 1].x, miejsca[n - 1].y, 0.5);
+          liczenie.znaczki.forEach((z) => z.remove());
+          await c.say("sowa", "line.s_count_again");
+          liczenie = await c.count(szyszki.slice(0, n), { who: "sowa" });
+          await c.say("sowa", n === 2 ? "line.s_two" : "line.s_last", { anim: "Radosc" });
+          duza.remove();
+          duza = await pokazCyfre(c, n, "sowa");
+          const karta = await ktoraCyfra(c, n, "wiewiorka", `line.s_point_${n}`, tasuj([1, 2, 3].slice(0, n)));
+          await c.say("sowa", "line.good_digit", { anim: "Brawo" });
+          karta.remove();
+        }
         await c.say("wiewiorka", "line.s_solved", { anim: "Brawo" });
         await c.say("sowa", "line.s_to_brook");
         c.clear();
@@ -77,12 +101,12 @@ export default {
         await c.count(kamyki, { who: "wiewiorka" });
         await c.say("wiewiorka", "line.b_four", { anim: "Radosc" });
         await pokazCyfre(c, 4, "sowa", { x: 0 });
-        await ktoraCyfra(c, 4, "sowa", "line.b_pick_4", tasuj([3, 4, 5]));
+        await ktoraCyfra(c, 4, "sowa", "line.b_pick_4", tasuj([2, 3, 4]));   // only digits met so far
         await c.say("sowa", "line.good_digit", { anim: "Brawo" });
         await c.say("wiewiorka", "line.b_to_home");
         c.clear();
       },
-      // C. home: cookies for the guests - five; the digit 5; which plate has five?
+      // C. home: cookies for the guests - five; the digit 5; which group has five?
       async (c) => {
         await c.go("dom", { enter: true });
         await Promise.all([c.enter("wiewiorka"), c.enter("sowa")]);
@@ -94,10 +118,7 @@ export default {
         c.clear();
         // two plates of cookies: which one has five?
         await c.say("wiewiorka", "line.c_two_plates");
-        const a = await rzad(c, "ciastko", 5, { x: -2.7, gap: 0.05, size: 0.78 }), b = await rzad(c, "ciastko", 4, { x: 2.7, gap: 0.05, size: 0.78 });
-        const lewa = Math.random() < 0.5;
-        if (!lewa) { c.arrange([b], { x: -2.6, y: Y, gap: 0.05 }); c.arrange([a], { x: 2.6, y: Y, gap: 0.05 }); }
-        const piec = await c.zone({ x: lewa ? -2.6 : 2.6, y: Y, w: 4.6, h: 1.5 }), cztery = await c.zone({ x: lewa ? 2.6 : -2.6, y: Y, w: 3.8, h: 1.5 });
+        const { zA: piec, zB: cztery } = await dwieGrupy(c, "ciastko", 5, 4);
         await c.say("wiewiorka", "line.c_pick_5");
         await c.task({ targets: [piec, cztery], correct: piec, wrong: "line.c_wrong_5" });
         await c.say("sowa", "line.c_solved", { anim: "Brawo" });
@@ -117,11 +138,8 @@ export default {
           c.clear();
         }
         for (const [n, m] of [[1, 2], [4, 3]]) {
-          const lewa = Math.random() < 0.5;
           const nazwa = rzeczy.shift() || "kubek";
-          const A = await rzad(c, nazwa, n, { x: lewa ? -2.6 : 2.6 }), B = await rzad(c, nazwa, m, { x: lewa ? 2.6 : -2.6 });
-          const zn = await c.zone({ x: lewa ? -2.6 : 2.6, y: Y, w: Math.max(1.6, n * 1.2 + 0.5), h: 1.6 });
-          const zm = await c.zone({ x: lewa ? 2.6 : -2.6, y: Y, w: Math.max(1.6, m * 1.2 + 0.5), h: 1.6 });
+          const { zA: zn, zB: zm } = await dwieGrupy(c, nazwa, n, m);
           await c.say("wiewiorka", `line.p_group_${n}`);
           await c.task({ targets: [zn, zm], correct: zn, wrong: "line.p_wrong_group" });
           await c.say("sowa", "line.good_group", { anim: "Brawo" });

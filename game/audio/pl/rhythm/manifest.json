@@ -5,9 +5,9 @@
   "text": "Robię girlandę na przyjęcie. Jabłko, gruszka, jabłko, gruszka."
  },
  "line.s_go_on": {
-  "hash": "fdff6aa3e3a9",
+  "hash": "e22086ea7af7",
   "who": "sowa",
-  "text": "Muszę przynieść nitkę. Dokończysz za mnie?"
+  "text": "Dokończysz za mnie?"
  },
  "line.s_anything": {
   "hash": "36d7533404c2",
@@ -50,14 +50,14 @@
   "text": "Przeciągnij, co będzie dalej. Uwaga, jedna rzecz nie pasuje!"
  },
  "line.wrong_pattern": {
-  "hash": "3ad417ba5913",
+  "hash": "0541915459b1",
   "who": "sowa",
-  "text": "To nie pasuje do rytmu. Co było przed tym miejscem?"
+  "text": "To nie pasuje do rytmu. Powiedz rytm od początku i posłuchaj, co będzie dalej."
  },
  "line.wrong_pattern.wiewiorka": {
-  "hash": "515ade540f88",
+  "hash": "0d1b353ad844",
   "who": "wiewiorka",
-  "text": "To nie pasuje do rytmu. Co było przed tym miejscem?"
+  "text": "To nie pasuje do rytmu. Powiedz rytm od początku i posłuchaj, co będzie dalej."
  },
  "line.s_solved": {
   "hash": "61f2ce85619b",
@@ -158,5 +158,15 @@
   "hash": "de5cebfd32fc",
   "who": "wiewiorka",
   "text": "Pa, pa! Do zobaczenia!"
+ },
+ "line.b_sizes": {
+  "hash": "8a23cc8b043a",
+  "who": "wiewiorka",
+  "text": "A tu rytm z wielkości: duża marchewka, mała marchewka, duża, mała."
+ },
+ "line.b_sizes_done": {
+  "hash": "33898653a3f2",
+  "who": "wiewiorka",
+  "text": "Duża, mała, duża, mała! Rytm może być też z wielkości."
  }
 }

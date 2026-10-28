@@ -53,7 +53,7 @@
   },
   "line.a_owl_table": {
     "who": "sowa",
-    "text": "A home game: setting the table. I put out the plates, Fox the cups. We play five times."
+    "text": "A home game: setting the table. I put out the plates, Fox the cups."
   },
   "line.a_bye": {
     "who": "sowa",
@@ -104,19 +104,31 @@
   },
   "line.good_gt": {
     "who": "sowa",
-    "text": "Very good! The mouth opens to the left, because there is more on the left."
+    "text": "Very good! The mouth opens to the left, because there is more on the left.",
+    "speakers": [
+      "lisek"
+    ]
   },
   "line.good_lt": {
     "who": "sowa",
-    "text": "Very good! The mouth opens to the right, because there is more on the right."
+    "text": "Very good! The mouth opens to the right, because there is more on the right.",
+    "speakers": [
+      "lisek"
+    ]
   },
   "line.good_eq": {
     "who": "lisek",
-    "text": "Very good! Equal lines, because there are as many."
+    "text": "Very good! Equal lines, because there are as many.",
+    "speakers": [
+      "sowa"
+    ]
   },
   "line.good_more": {
     "who": "lisek",
-    "text": "Very good! There is more here."
+    "text": "Very good! There is more here.",
+    "speakers": [
+      "sowa"
+    ]
   },
   "line.s2_good_gt": {
     "who": "sowa",
@@ -128,7 +140,7 @@
   },
   "line.j2_garden": {
     "who": "lisek",
-    "text": "This is my garden. I pulled out three carrots!"
+    "text": "This is my garden. I pulled out some carrots!"
   },
   "line.j2_carrots": {
     "who": "lisek",
@@ -145,6 +157,18 @@
   "line.j2_equal": {
     "who": "sowa",
     "text": "Nothing is left. Every carrot has its flower. There are as many!"
+  },
+  "line.j2_eq_sign": {
+    "who": "sowa",
+    "text": "When there are as many, the mouth closes and two equal lines are left. This sign says: as many."
+  },
+  "line.j2_pick_lt": {
+    "who": "sowa",
+    "text": "There are fewer carrots. Point to the mouth that opens towards the flowers."
+  },
+  "line.j2_pick_sign": {
+    "who": "lisek",
+    "text": "Which sign fits here? Point to it."
   },
   "line.j2_good_eq": {
     "who": "lisek",

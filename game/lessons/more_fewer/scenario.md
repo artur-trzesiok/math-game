@@ -12,12 +12,16 @@ the pile with more". No counting at any point. Characters: Fox (left) and Owl (r
    child points to the cup without a pair; more cups, fewer plates; the hungry
    mouth: the child picks ">". Solved: Fox runs off for the missing plate, now
    every cup has one - as many.
-2. Vegetable garden. Fox's three carrots, Owl's three flowers: pairing leaves
-   nothing over; the child picks "=". Owl finds one more flower by the fence: now
-   fewer carrots; the child picks "<". "Where is more?" - the child points to the
+2. Vegetable garden. Fox's carrots, Owl's flowers: pairing leaves nothing over. Owl
+   shows and names "=" (the mouth closes, two equal lines are left), then the child
+   picks it. Owl finds one more flower by the fence: paired again, now fewer carrots;
+   the child picks "<". "Where is more?" - the child points to the
    pile of flowers.
 3. Kitchen. Three cups of milk, two cookies: pairing, one cup without a cookie;
-   Fox bakes one more; the child picks "=". Summary.
+   Fox bakes one more, paired again; the child picks the sign ("="). Summary.
+
+"More" is always checked by pairing before a sign is asked; no number words here
+(numbers are a later lesson).
 
 ## Stage 2 - practice
 

@@ -38,14 +38,14 @@ export default {
       // whatever is at hand. Owl: the pattern is broken - a garland has a rhythm, something repeats in order.
       async (c) => {
         await Promise.all([c.enter("sowa"), c.enter("wiewiorka")]);
-        await c.say("sowa", "line.s_garland", { anim: "Radosc" });
         const krok = SZ * 1.1, x0 = -3.5 * krok;
         const jest = [];
         for (let i = 0; i < 4; i++) jest.push(await c.object(i % 2 ? "gruszka" : "jablko", { x: x0 + i * krok, y: Y, size: SZ }));
+        await c.say("sowa", "line.s_garland", { anim: "Radosc" });          // named once it is there
         await c.say("sowa", "line.s_go_on");
         await c.say("wiewiorka", "line.s_anything", { anim: "Podskok" });
         const zle = [];
-        for (const [i, n] of ["kwiatek", "pilka", "kwiatek", "but"].entries()) zle.push(await c.object(n, { x: x0 + (4 + i) * krok, y: Y, size: SZ }));
+        for (const [i, n] of ["kwiatek", "pilka", "but", "marchewka"].entries())   // nothing repeats: no rhythm at all zle.push(await c.object(n, { x: x0 + (4 + i) * krok, y: Y, size: SZ }));
         await c.wonder("sowa");
         await c.say("sowa", "line.s_broken");
         await c.say("wiewiorka", "line.s_how");
@@ -53,7 +53,7 @@ export default {
         await c.say("wiewiorka", "line.s_what");
         // a rhythm you can hear: clap, hop, clap, hop
         await c.say("sowa", "line.s_listen");
-        for (let i = 0; i < 4; i++) { if (i % 2) await c.play("sowa", "Podskok"); else { c.sfx("clap", { dlugosc: 0.35 }); await c.wait(0.45); } }
+        for (let i = 0; i < 4; i++) await c.play("sowa", i % 2 ? "Podskok" : "Brawo");   // clap (Brawo claps), hop, clap, hop
         await c.say("sowa", "line.s_same_garland");
         for (const h of zle) h.remove();
         for (const h of jest) h.remove();
@@ -68,11 +68,18 @@ export default {
       async (c) => {
         await c.go("ogrod", { enter: true });
         await Promise.all([c.enter("sowa"), c.enter("wiewiorka")]);
-        await c.say("wiewiorka", "line.b_bed");
         const t = await wzor(c, ["kwiatek", "kwiatek", "marchewka"], { dlugosc: 9, widac: 6, kandydaci: [["gruszka", 1]] });
+        await c.say("wiewiorka", "line.b_bed");
         await c.say("sowa", "line.b_fill");
         await t.done();
         await c.say("wiewiorka", "line.b_done", { anim: "Radosc" });
+        c.clear();
+        // a rhythm of sizes, taught here because practice asks for one: big carrot, small carrot ...
+        const r = await wzor(c, ["marchewka"], { dlugosc: 8, widac: 6, rozmiary: [1.1, 0.65], kandydaci: [] });
+        await c.say("wiewiorka", "line.b_sizes");
+        await c.say("sowa", "line.p_fill");
+        await r.done();
+        await c.say("wiewiorka", "line.b_sizes_done", { anim: "Radosc" });
         await c.say("sowa", "line.b_to_meadow");
         c.clear();
       },
@@ -80,8 +87,8 @@ export default {
       async (c) => {
         await c.go("laka", { enter: true });
         await Promise.all([c.enter("sowa"), c.enter("wiewiorka")]);
+        const t = await wzor(c, ["kubek", "talerz", "lyzka"], { dlugosc: 9, widac: 6, kandydaci: [["ciastko", 1]] });   // ends on a spoon, as the line says
         await c.say("sowa", "line.c_picnic");
-        const t = await wzor(c, ["kubek", "talerz", "lyzka"], { dlugosc: 8, widac: 6, kandydaci: [["ciastko", 1]] });
         await c.say("wiewiorka", "line.c_fill");
         await t.done();
         await c.say("sowa", "line.c_solved", { anim: "Brawo" });
@@ -92,7 +99,6 @@ export default {
       // five rows to finish: AB, AAB, ABB, ABC, big-small
       async (c) => {
         c.show("sowa"); c.show("wiewiorka");
-        await c.say("sowa", "line.p_intro");
         const plan = [
           { w: ["jablko", "kwiatek"] },
           { w: ["szyszka", "szyszka", "listek"], d: 9 },
@@ -100,8 +106,9 @@ export default {
           { w: ["gruszka", "marchewka", "ciastko"], d: 9 },
           { w: ["jablko"], r: [1.1, 0.65], d: 8 },
         ];
-        for (const p of plan) {
+        for (const [i, p] of plan.entries()) {
           const t = await wzor(c, p.w, { dlugosc: p.d || 8, widac: (p.d || 8) - 2, rozmiary: p.r || null, kandydaci: p.r ? [] : [["but", 1]] });
+          if (i === 0) await c.say("sowa", "line.p_intro");                    // "look what repeats": once the row is there
           await c.say("sowa", "line.p_fill");
           await t.done();
           await c.say("wiewiorka", "line.good_pattern", { anim: "Brawo" });

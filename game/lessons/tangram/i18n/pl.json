@@ -81,11 +81,18 @@
   },
   "line.c_solved": {
     "who": "lisek",
-    "text": "Cały kwadrat! Tangram znowu jest w pudełku, gotowy do zabawy."
+    "text": "Cały kwadrat! Tangram jest znowu cały, gotowy do zabawy."
   },
   "line.wrong_piece": {
     "who": "wiewiorka",
     "text": "Ten kawałek ma inny kształt. Popatrz na lukę.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.wrong_big": {
+    "who": "wiewiorka",
+    "text": "Ten trójkąt jest za duży. Popatrz na lukę.",
     "speakers": [
       "lisek"
     ]

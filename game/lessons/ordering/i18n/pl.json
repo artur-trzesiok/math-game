@@ -25,7 +25,7 @@
   },
   "line.s_show": {
     "who": "sarenka",
-    "text": "Pokażę ci. Na miejscu numer jeden stawiamy najmniejszy, potem coraz większe."
+    "text": "Pokażę ci. Na pierwszym miejscu, tu z lewej, stawiamy najmniejszy, potem coraz większe."
   },
   "line.s_fill": {
     "who": "sarenka",
@@ -38,13 +38,20 @@
       "lisek"
     ]
   },
+  "line.wrong_order_big": {
+    "who": "sarenka",
+    "text": "To nie to miejsce. Popatrz, który jest większy.",
+    "speakers": [
+      "lisek"
+    ]
+  },
   "line.s_nest": {
     "who": "lisek",
     "text": "Teraz widzę! Mały wejdzie do średniego, a średni do dużego."
   },
   "line.s_solved": {
     "who": "sarenka",
-    "text": "Wszystkie zmieściły się jeden w drugim. Tak działa szeregowanie!"
+    "text": "Wszystkie zmieściły się jeden w drugim. Tak działa układanie po kolei!"
   },
   "line.s_to_garden": {
     "who": "lisek",
@@ -52,7 +59,7 @@
   },
   "line.b_carrots": {
     "who": "lisek",
-    "text": "Wyrwałem cztery marchewki. Każda ma inną długość."
+    "text": "Wyrwałem marchewki. Każda ma inną długość."
   },
   "line.b_fill": {
     "who": "sarenka",

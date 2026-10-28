@@ -10,14 +10,14 @@
   "text": "A ja mam w koszyku pięć. Policzyłam je rano."
  },
  "line.s_naive": {
-  "hash": "052e2a2ebb47",
+  "hash": "10d35f4eb030",
   "who": "wiewiorka",
-  "text": "To policzę wszystkie od początku. Jeden, dwa, trzy, cztery... Ojej, pomyliłam się!"
+  "text": "Mamy trzy kamyki. Za mało!"
  },
  "line.s_not": {
-  "hash": "15413b69032d",
+  "hash": "d7799c10d0b9",
   "who": "sarenka",
-  "text": "Nie musisz zaczynać od jednego! Wiemy już, że w koszyku jest pięć."
+  "text": "A pięć w koszyku? Nie licz ich od nowa, wiemy, że jest pięć."
  },
  "line.s_how": {
   "hash": "0d3b49529392",
@@ -160,9 +160,9 @@
   "text": "Dobrze! Zaczynamy od tego, co już wiemy."
  },
  "line.a_lyzka": {
-  "hash": "0c94d63ecf03",
+  "hash": "de28bddf6abb",
   "who": "sarenka",
-  "text": "W szufladzie jest pięć łyżek. Dołóż jeszcze te. Doliczaj od pięciu."
+  "text": "W pudełku jest pięć łyżek. Obok są jeszcze trzy. Doliczaj od pięciu."
  },
  "line.a_klocek": {
   "hash": "e389eb16bbca",
@@ -170,9 +170,9 @@
   "text": "W pudełku jest sześć klocków. Doliczaj od sześciu."
  },
  "line.a_kubek": {
-  "hash": "9f883ee2bc86",
+  "hash": "1bf6f86ffb97",
   "who": "sarenka",
-  "text": "Na półce stoi siedem kubków. Doliczaj od siedmiu."
+  "text": "W pudełku jest siedem kubków. Doliczaj od siedmiu."
  },
  "line.a_which_digit": {
   "hash": "c05a75d817d7",

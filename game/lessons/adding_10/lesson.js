@@ -42,13 +42,15 @@ export default {
   stages: {
     story: [
       // A. brook, the problem: hopscotch needs eight pebbles; Squirrel has five in her basket (counted this morning),
-      // Deer brings three. Squirrel counts everything from one and loses count. Deer: start from five - count on!
+      // Deer brings three. Squirrel counts only the three new ones - "too few!". Deer: the five are there - count on!
       async (c) => {
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         await koszZLiczba(c, "kamyk", 5);
         const nowe = await kupka(c, "kamyk", 3, { x: 2.6, y: 0.8, size: 0.95 });
         await c.say("sarenka", "line.s_need");
         await c.say("wiewiorka", "line.s_have", { anim: "Wskazanie" });
+        // the naive try, visible: Squirrel counts only the new pebbles, one by one, and forgets the five in the basket
+        for (const [i, h] of nowe.entries()) { h.highlight(true); await c.say("wiewiorka", `line.n${i + 1}`); h.highlight(false); }
         await c.say("wiewiorka", "line.s_naive", { anim: "Smutek" });
         await c.wonder("sarenka");
         await c.say("sarenka", "line.s_not");
@@ -75,9 +77,11 @@ export default {
         await c.say("sarenka", "line.b_more", { anim: "Podskok" });
         await c.say("sarenka", "line.b_count");
         await c.count(nowe, { who: "wiewiorka", od: 6 });
+        // the right card stays: it flies into the equation's gap
+        const r = await c.equation([6, "+", 2, "=", null], { y: 2.7, size: 1.2 });
         const k = await ktoraCyfra(c, 8, "wiewiorka", "line.b_pick", oferta(8));
-        k.remove();
-        await Promise.all([c.equation([6, "+", 2, "=", 8], { y: 2.7, size: 1.2 }), c.say("sarenka", "line.b_write")]);
+        await k.moveTo(r.luki[0].x, r.luki[0].y, 0.6);
+        await c.say("sarenka", "line.b_write");
         await c.say("wiewiorka", "line.b_to_home");
         c.clear();
       },
@@ -86,8 +90,8 @@ export default {
         await c.go("dom", { enter: true });
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
         await koszZLiczba(c, "kubek", 7, { image: "pudelko" });
-        await c.say("sarenka", "line.c_cups");
         const nowe = await kupka(c, "kubek", 3, { x: 2.6, y: 0.8, size: 0.95 });
+        await c.say("sarenka", "line.c_cups");                              // said once the three are there
         await c.say("wiewiorka", "line.c_count");
         await c.count(nowe, { who: "sarenka", od: 7 });
         const r = await c.equation([7, "+", 3, "=", null], { y: 2.7, size: 1.2 });
@@ -118,7 +122,7 @@ export default {
       },
     ],
     apply: [
-      // the home game: spoons in the drawer, blocks in the box, cups on the shelf - count on from what is known
+      // the home game: spoons, blocks, cups in a box, a few more beside it - count on from what is known
       async (c) => {
         c.show("wiewiorka"); c.show("sarenka");
         await c.say("wiewiorka", "line.a_game");

@@ -14,15 +14,10 @@
   "who": "lisek",
   "text": "Zaraz policzę, szybciutko!"
  },
- "line.s_nine": {
-  "hash": "64b582aedfda",
-  "who": "lisek",
-  "text": "Dziewięć! Mam aż dziewięć jabłek!"
- },
  "line.s_twice": {
-  "hash": "52e600226fa3",
+  "hash": "47b296a94d10",
   "who": "wiewiorka",
-  "text": "Za szybko! To jabłko policzyłeś dwa razy, a tamto wcale."
+  "text": "Za szybko! To jabłko policzyłeś dwa razy. Zobacz, urosło dwa razy."
  },
  "line.s_how": {
   "hash": "89e85c7d1d99",
@@ -60,9 +55,9 @@
   "text": "Akurat sześć, tyle ile w przepisie! Będzie dżem!"
  },
  "line.s_to_garden": {
-  "hash": "8f2acc74167f",
+  "hash": "9e43bad12934",
   "who": "wiewiorka",
-  "text": "Chodźmy do ogrodu. Do dżemu dodamy marchewkę."
+  "text": "Chodźmy do ogrodu. Do dżemu potrzeba jeszcze ośmiu marchewek."
  },
  "line.b_carrots": {
   "hash": "b235ce818dee",
@@ -80,9 +75,9 @@
   "text": "Hop! Wyrwałam jeszcze jedną!"
  },
  "line.b_how_many_now": {
-  "hash": "ddcbeeac979e",
+  "hash": "f9e93d85899d",
   "who": "wiewiorka",
-  "text": "Było siedem, doszła jeszcze jedna. Ile jest teraz?"
+  "text": "Było siedem, doszła jeszcze jedna. Policz ją dalej: wskaż nową marchewkę."
  },
  "line.b_pick": {
   "hash": "0932a9653f13",
@@ -100,9 +95,9 @@
   "text": "Wracajmy do domu. Dziś mamy przyjęcie!"
  },
  "line.c_party": {
-  "hash": "0f3b860097a2",
+  "hash": "e2121875fcd8",
   "who": "wiewiorka",
-  "text": "Na przyjęcie przyjdzie dużo gości. Policzmy kubki."
+  "text": "Na przyjęcie przyjdzie dziewięciu gości. Czy dla każdego starczy kubek? Policzmy."
  },
  "line.c_knock": {
   "hash": "b23dbfdf96c8",
@@ -340,14 +335,14 @@
   "text": "To jest szóstka. Wygląda jak ślimak, który wystawia czułek do góry."
  },
  "line.d7": {
-  "hash": "d100c103cea7",
+  "hash": "ff9a070a27c3",
   "who": "wiewiorka",
-  "text": "To jest siódemka. Ma daszek, długą nóżkę i krótki pasek w środku."
+  "text": "To jest siódemka. Ma daszek i długą, ukośną nóżkę."
  },
  "line.d7.lisek": {
-  "hash": "99330635954e",
+  "hash": "6b2a1898c65e",
   "who": "lisek",
-  "text": "To jest siódemka. Ma daszek, długą nóżkę i krótki pasek w środku."
+  "text": "To jest siódemka. Ma daszek i długą, ukośną nóżkę."
  },
  "line.d8": {
   "hash": "1cba634ecd9a",
@@ -370,13 +365,28 @@
   "text": "To jest dziewiątka. Wygląda jak balonik na sznurku."
  },
  "line.d10": {
-  "hash": "caf63bd39611",
+  "hash": "a5bd43d68d66",
   "who": "wiewiorka",
-  "text": "To jest dziesięć. Zapisujemy je dwiema cyframi, jedynką i zerem."
+  "text": "To jest dziesięć. Zapisujemy je dwiema cyframi: jedynką i zerem. Zero to okrągłe kółko, jak jajko."
  },
  "line.d10.lisek": {
-  "hash": "7bf2444c7d7b",
+  "hash": "87c8f4f3ae23",
   "who": "lisek",
-  "text": "To jest dziesięć. Zapisujemy je dwiema cyframi, jedynką i zerem."
+  "text": "To jest dziesięć. Zapisujemy je dwiema cyframi: jedynką i zerem. Zero to okrągłe kółko, jak jajko."
+ },
+ "line.s_seven": {
+  "hash": "b7c9837f47d2",
+  "who": "lisek",
+  "text": "Siedem! Mam aż siedem jabłek!"
+ },
+ "line.b_enough": {
+  "hash": "eeb28ea334be",
+  "who": "wiewiorka",
+  "text": "Akurat osiem, tyle ile trzeba do dżemu!"
+ },
+ "line.c_count_on": {
+  "hash": "7ba93bf6ec11",
+  "who": "wiewiorka",
+  "text": "Policz nowy kubek dalej. Wskaż go."
  }
 }

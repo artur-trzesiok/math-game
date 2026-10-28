@@ -38,6 +38,28 @@
       "lisek"
     ]
   },
+  "line.wrong_place_q": {
+    "who": "sarenka",
+    "text": "That is not the place. Count from the front of the queue.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.wrong_place_arrow": {
+    "who": "sarenka",
+    "text": "That is not the place. Count from the arrow.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.b_mouse_goes": {
+    "who": "lisek",
+    "text": "The mouse is first, so it goes down first!"
+  },
+  "line.b_mouse_again": {
+    "who": "lisek",
+    "text": "It wants another go, so it goes to the end of the queue."
+  },
   "line.s_point_last": {
     "who": "lisek",
     "text": "And who stands last, at the very end?"
@@ -70,10 +92,6 @@
     "who": "sarenka",
     "text": "Point to the one standing second."
   },
-  "line.b_mouse_back": {
-    "who": "lisek",
-    "text": "The mouse stood first, so it went down first. It wants another go, so it goes to the end of the queue."
-  },
   "line.b_first_now": {
     "who": "sarenka",
     "text": "Everyone moved up. Who is first now?"
@@ -92,7 +110,7 @@
   },
   "line.c_cookies": {
     "who": "sarenka",
-    "text": "Five guests are queuing for cookies. We count from the table."
+    "text": "Five guests are queuing for cookies. We count from the front of the queue, on the left."
   },
   "line.c_point_fifth": {
     "who": "lisek",
@@ -139,7 +157,7 @@
   },
   "line.a_game": {
     "who": "lisek",
-    "text": "Let's play a queue of toys on the shelf."
+    "text": "Let's play a queue of toys. They stand in a row."
   },
   "line.a_ok": {
     "who": "sarenka",

@@ -40,24 +40,24 @@
   "text": "Teraz zabawa. Pokażę ci dwie rzeczy, a ty wybierz."
  },
  "line.p_click_bigger": {
-  "hash": "6f882e10b681",
+  "hash": "52c1818736d8",
   "who": "lisek",
-  "text": "Wskaż większy."
+  "text": "Wskaż to, co jest większe."
  },
  "line.p_click_smaller": {
-  "hash": "b127efe65082",
+  "hash": "3b865c06b453",
   "who": "lisek",
-  "text": "Wskaż mniejszy."
+  "text": "Wskaż to, co jest mniejsze."
  },
  "line.p_click_biggest": {
-  "hash": "7d891722fd97",
+  "hash": "c935240d32b8",
   "who": "lisek",
-  "text": "Są trzy. Wskaż największy."
+  "text": "Wskaż to, co jest największe."
  },
  "line.p_click_smallest": {
-  "hash": "086fed442b57",
+  "hash": "e118b33e79f3",
   "who": "lisek",
-  "text": "Są trzy. Wskaż najmniejszy."
+  "text": "Wskaż to, co jest najmniejsze."
  },
  "line.p_wrong": {
   "hash": "d7bcbc773091",
@@ -160,14 +160,14 @@
   "text": "Większe dla większego, mniejsze dla mniejszego. Pycha!"
  },
  "line.a_pick_bigger": {
-  "hash": "ed587abd6107",
+  "hash": "c464190ebd35",
   "who": "lisek",
-  "text": "Która jest większa?"
+  "text": "Co jest większe?"
  },
  "line.a_pick_smaller": {
-  "hash": "81cbee1a6c44",
+  "hash": "d1404e23f3a6",
   "who": "wiewiorka",
-  "text": "Która jest mniejsza?"
+  "text": "Co jest mniejsze?"
  },
  "line.a_right": {
   "hash": "2ff546ff6fe3",
@@ -185,14 +185,14 @@
   "text": "Hop! Spadły dwa jabłka. Jedno duże, jedno małe."
  },
  "line.a_pick_bigger.wiewiorka": {
-  "hash": "ed520aa32b6e",
+  "hash": "ddc974c34074",
   "who": "wiewiorka",
-  "text": "Która jest większa?"
+  "text": "Co jest większe?"
  },
  "line.a_pick_smaller.lisek": {
-  "hash": "a6c4a7977c6c",
+  "hash": "d3b215021fc3",
   "who": "lisek",
-  "text": "Która jest mniejsza?"
+  "text": "Co jest mniejsze?"
  },
  "line.a_right.wiewiorka": {
   "hash": "5db2e748f22d",
@@ -285,9 +285,9 @@
   "text": "Ta kreska jest niżej. Wskaż tę, która jest wyżej."
  },
  "line.c1_higher": {
-  "hash": "cc276372a174",
+  "hash": "cff0cb9d78dd",
   "who": "lisek",
-  "text": "Tak! Ta kreska jest wyżej. Jej gruszka sięga wyżej, więc jest większa."
+  "text": "Tak! Obie gruszki stoją na tej samej linii. Ta, która sięga wyżej, jest większa."
  },
  "line.c1_pick": {
   "hash": "79dff4d5117d",
@@ -303,11 +303,6 @@
   "hash": "026dafcff2ab",
   "who": "lisek",
   "text": "Tak się porównuje. Równo na jednej linii i kreska nad każdym."
- },
- "line.c1_check": {
-  "hash": "345003b8d8b0",
-  "who": "lisek",
-  "text": "Sprawdźmy naszym sposobem. Równo na linii i kreska nad każdą."
  },
  "line.b0_mine": {
   "hash": "915ca26d2865",
@@ -368,5 +363,30 @@
   "hash": "078400263361",
   "who": "lisek",
   "text": "Brawo! Za chwilę spróbujemy poznać większe i mniejsze bez stawiania na linii."
+ },
+ "line.s3_three": {
+  "hash": "a5904e872bf3",
+  "who": "lisek",
+  "text": "A tu jest więcej kubków. Jeden jest największy, a jeden najmniejszy."
+ },
+ "line.s3_biggest": {
+  "hash": "642b2b5a9c1d",
+  "who": "lisek",
+  "text": "Ten jest największy."
+ },
+ "line.s3_smallest": {
+  "hash": "28f95d7b713e",
+  "who": "wiewiorka",
+  "text": "A ten jest najmniejszy."
+ },
+ "line.s3_pick": {
+  "hash": "e22f2346b947",
+  "who": "lisek",
+  "text": "Wskaż największy kubek."
+ },
+ "line.s3_wrong": {
+  "hash": "b868a97b3e58",
+  "who": "lisek",
+  "text": "Popatrz jeszcze raz. Który kubek jest największy?"
  }
 }

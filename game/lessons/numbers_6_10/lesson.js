@@ -4,7 +4,8 @@
 const Y = 0.15;                 // the row of things: between the characters, so a big digit fits over it
 const SZ = 0.86;
 const CY = 2.65;                // a big digit: over the row and its counting badges, under the phase icons
-const RZAD = { x: -4.4, y: Y, gap: 0.98 };     // where counted things line up, one after another
+// where counted things line up, one after another: centred for the whole count (n), so the row stays off the heads
+const rzadNa = (n, gap = n > 9 ? 0.74 : 0.86) => ({ x: -((n - 1) * gap) / 2, y: Y, gap });
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 async function rzad(c, name, n, { y = Y, size = SZ, x = 0, gap = 0.1 } = {}) {
@@ -14,11 +15,12 @@ async function rzad(c, name, n, { y = Y, size = SZ, x = 0, gap = 0.1 } = {}) {
   return hs;
 }
 // things lying anyhow in the lower middle (a mess to be counted), never on top of each other
-async function rozsyp(c, name, n, { size = SZ } = {}) {
-  const spots = [];
-  for (let t = 0; spots.length < n && t < 800; t++) {
-    const x = (Math.random() - 0.5) * 6.4, y = -0.9 - Math.random() * 1.7;
-    if (spots.every(([a, b]) => Math.hypot(a - x, b - y) > 0.85)) spots.push([x, y]);
+async function rozsyp(c, name, n, { size = SZ, szer = 5.6, odstep = Math.min(1.15, Math.sqrt((5.6 * 2.0) / n) * 0.8) } = {}) {
+  let spots = [];
+  for (let t = 0; spots.length < n; t++) {
+    if (t > 0 && t % 800 === 0) { spots = []; odstep *= 0.92; }        // crowded: a little closer, never fewer things
+    const x = (Math.random() - 0.5) * szer, y = -0.8 - Math.random() * 2.0;
+    if (spots.every(([a, b]) => Math.hypot(a - x, b - y) > odstep)) spots.push([x, y]);
   }
   const hs = [];
   for (const [x, y] of spots) { const h = await c.object(name, { x, y, size }); h.mesh.rotation.z = (Math.random() - 0.5) * 1.2; hs.push(h); }
@@ -47,30 +49,35 @@ export default {
   backgrounds: { story: "sad", practice: "plac_zabaw", apply: "przedpokoj" },
   stages: {
     story: [
-      // A. orchard, the problem: the jam recipe needs six apples. Fox counts in a hurry, one apple twice and one
-      // missed - "nine!". Squirrel: every thing once - move each counted one aside. The child counts: six.
+      // A. orchard, the problem: the jam recipe needs six apples. Fox counts out loud in a hurry, one apple twice -
+      // "seven!". Squirrel: every thing once - move each counted one aside. The child counts: six.
       async (c) => {
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
         const jablka = await rozsyp(c, "jablko", 6);
         await c.say("lisek", "line.s_jam", { anim: "Radosc" });
         await c.say("wiewiorka", "line.s_enough");
-        // the naive count: too fast, one apple twice, one never
-        await c.say("lisek", "line.s_fast", { anim: "Podskok" });
-        const kolej = [0, 1, 2, 2, 3, 5, 4, 5, 1];
-        const strzalki = [];
-        for (const i of kolej) { c.sfx("tap"); jablka[i].highlight(true); await c.wait(0.18); jablka[i].highlight(false); }
-        await c.say("lisek", "line.s_nine");
+        await c.say("lisek", "line.s_fast", { anim: "Podskok" });            // the hurry, so "too fast!" has a cause
+        // the naive count, out loud: every counted apple grows a little, so the one counted twice ends up the biggest -
+        // six apples, "seven!" (one twice, none missed: the only mistake a child can see)
+        const kolej = [0, 1, 2, 3, 2, 4, 5];
+        for (const [k, i] of kolej.entries()) {
+          const j = jablka[i]; j.base *= 1.28; j.highlight(true);
+          await c.say("lisek", `line.n${k + 1}`);
+          j.highlight(false);
+        }
+        await c.say("lisek", "line.s_seven");
         await c.wonder("wiewiorka");
         await c.say("wiewiorka", "line.s_twice");
-        strzalki.push(await c.cross(jablka[2]));
-        await c.wait(0.6); strzalki.forEach((s) => s.remove());
+        const kolko = await c.circle(jablka[2]);
         await c.say("lisek", "line.s_how");
-        const pomysl = await c.idea("wiewiorka", [["jablko", "jablko", "jablko"], ["jablko", "jablko", "jablko"]]);
+        kolko.remove();
+        for (const j of jablka) { j.base = SZ; j.mesh.scale.setScalar(SZ); }   // a fresh start for the right count, once the evidence was seen
+        const pomysl = await c.idea("wiewiorka", [["jablko", "jablko", "jablko", "jablko", "jablko", "jablko"]]);   // one row, as the count lines them up
         await c.say("wiewiorka", "line.s_aside", { anim: "Zgloszenie" });
         await c.say("lisek", "line.s_what");
         pomysl.remove();
         await c.say("wiewiorka", "line.s_show");
-        await c.count(jablka, { who: "wiewiorka", rzad: RZAD });
+        await c.count(jablka, { who: "wiewiorka", rzad: rzadNa(6) });
         await c.say("wiewiorka", "line.s_six", { anim: "Radosc" });
         await c.say("lisek", "line.s_after_five");
         await pokazCyfre(c, 6, "wiewiorka", { x: 2.3 });
@@ -78,22 +85,26 @@ export default {
         await c.say("wiewiorka", "line.s_to_garden");
         c.clear();
       },
-      // B. vegetable garden: seven carrots counted aside; one more pulled out - eight
+      // B. vegetable garden: seven carrots counted aside; one more pulled out and counted on - eight; the digit 8
+      // is shown before the child is asked to find it
       async (c) => {
         await c.go("ogrod", { enter: true });
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
-        await c.say("lisek", "line.b_carrots");
         const marchewki = await rozsyp(c, "marchewka", 7);
-        await c.count(marchewki, { who: "lisek", rzad: RZAD });
+        await c.say("lisek", "line.b_carrots");
+        await c.count(marchewki, { who: "lisek", rzad: rzadNa(8) });          // room for the eighth
         await c.say("lisek", "line.b_seven");
-        await pokazCyfre(c, 7, "lisek", { x: 2.5 });
+        const siedem = await pokazCyfre(c, 7, "lisek", { x: 2.5 });
         await c.say("wiewiorka", "line.b_one_more", { anim: "Podskok" });
-        const nowa = await c.object("marchewka", { x: 5.2, y: -2.4, size: SZ });
-        await nowa.moveTo(RZAD.x + 7 * RZAD.gap, Y, 0.7);
+        const nowa = await c.object("marchewka", { x: 2.2, y: -2.3, size: SZ });
         await c.say("wiewiorka", "line.b_how_many_now");
-        await ktoraCyfra(c, 8, "wiewiorka", "line.b_pick", oferta(8));
+        // counting on: the new one is the eighth; only then the digit 8 is shown, and only then asked for
+        await c.count([nowa], { who: "lisek", od: 7, rzad: { ...rzadNa(8), x: rzadNa(8).x + 7 * rzadNa(8).gap } });
         await c.say("lisek", "line.b_eight", { anim: "Radosc" });
+        await c.say("wiewiorka", "line.b_enough");                            // the jam needed eight: solved
+        siedem.remove();                                       // one big digit at a time: an 8 drawn over the 7 read as neither
         await pokazCyfre(c, 8, "wiewiorka", { x: 2.5 });
+        await ktoraCyfra(c, 8, "wiewiorka", "line.b_pick", tasuj([6, 7, 8]));   // only digits met so far (9 comes later)
         await c.say("wiewiorka", "line.b_to_home");
         c.clear();
       },
@@ -103,15 +114,19 @@ export default {
         await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
         await c.say("wiewiorka", "line.c_party");
         const kubki = await rozsyp(c, "kubek", 9);
-        await c.count(kubki, { who: "wiewiorka", rzad: { ...RZAD, x: -4.6, gap: 0.92 } });
-        await pokazCyfre(c, 9, "lisek", { x: 2.5 });
+        const R10 = rzadNa(10);
+        await c.count(kubki, { who: "wiewiorka", rzad: R10 });
+        const dziewiec = await pokazCyfre(c, 9, "lisek", { x: 2.5 });
         await c.say("lisek", "line.c_knock", { anim: "Rozgladanie" });
         const kubek = await c.object("kubek", { x: -5.6, y: -2.2, size: SZ });
         await c.take("lisek", kubek, { d: 0.3 });
         await c.walkTo("lisek", 1.8);
-        await c.put("lisek", -4.6 + 9 * 0.92, Y);
+        await c.put("lisek", R10.x + 9 * R10.gap, -1.4);
         await c.walkTo("lisek", -4.6);
+        await c.say("wiewiorka", "line.c_count_on");
+        await c.count([kubek], { who: "wiewiorka", od: 9, rzad: { ...R10, x: R10.x + 9 * R10.gap } });   // the tenth is counted too
         await c.say("wiewiorka", "line.c_ten");
+        dziewiec.remove();
         await pokazCyfre(c, 10, "wiewiorka", { x: 1.2 });
         await c.say("lisek", "line.c_solved", { anim: "Brawo" });
         c.clear();
@@ -126,7 +141,7 @@ export default {
         for (const n of tasuj([6, 8, 10])) {
           const hs = await rozsyp(c, rzeczy.shift(), n, { size: 0.78 });
           await c.say("lisek", "line.p_count");
-          await c.count(hs, { who: "lisek", rzad: { x: -4.5, y: Y, gap: 0.92 } });
+          await c.count(hs, { who: "lisek", rzad: rzadNa(hs.length) });
           await ktoraCyfra(c, n, "wiewiorka", "line.p_which_digit", oferta(n));
           await c.say("lisek", "line.good_digit", { anim: "Brawo" });
           c.clear();
@@ -152,7 +167,7 @@ export default {
         for (const [nazwa, n] of [["but", 6], ["skarpetka", 8], ["klocek", 10]]) {
           const hs = await rozsyp(c, nazwa, n, { size: 0.78 });
           await c.say("lisek", `line.a_count_${nazwa}`);
-          await c.count(hs, { who: "wiewiorka", rzad: { x: -4.5, y: Y, gap: 0.92 } });
+          await c.count(hs, { who: "wiewiorka", rzad: rzadNa(hs.length) });
           await ktoraCyfra(c, n, "lisek", "line.a_which_digit", oferta(n));
           await c.say("wiewiorka", "line.good_digit", { anim: "Brawo" });
           c.clear();

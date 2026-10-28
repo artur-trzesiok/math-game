@@ -38,6 +38,28 @@
       "lisek"
     ]
   },
+  "line.wrong_place_q": {
+    "who": "sarenka",
+    "text": "To nie to miejsce. Licz od początku kolejki.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.wrong_place_arrow": {
+    "who": "sarenka",
+    "text": "To nie to miejsce. Licz od strzałki.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.b_mouse_goes": {
+    "who": "lisek",
+    "text": "Myszka stoi pierwsza, więc zjeżdża pierwsza!"
+  },
+  "line.b_mouse_again": {
+    "who": "lisek",
+    "text": "Chce zjechać jeszcze raz, więc idzie na koniec kolejki."
+  },
   "line.s_point_last": {
     "who": "lisek",
     "text": "A kto stoi ostatni, na samym końcu?"
@@ -70,10 +92,6 @@
     "who": "sarenka",
     "text": "Wskaż, kto stoi drugi."
   },
-  "line.b_mouse_back": {
-    "who": "lisek",
-    "text": "Myszka stała pierwsza, więc zjechała pierwsza. Chce jeszcze raz, więc idzie na koniec kolejki."
-  },
   "line.b_first_now": {
     "who": "sarenka",
     "text": "Wszyscy przesunęli się do przodu. Kto jest teraz pierwszy?"
@@ -92,7 +110,7 @@
   },
   "line.c_cookies": {
     "who": "sarenka",
-    "text": "Po ciastka ustawiło się pięcioro gości. Liczymy od stołu."
+    "text": "Po ciastka ustawiło się pięcioro gości. Liczymy od początku kolejki, z lewej."
   },
   "line.c_point_fifth": {
     "who": "lisek",
@@ -139,7 +157,7 @@
   },
   "line.a_game": {
     "who": "lisek",
-    "text": "Zagrajmy w kolejkę zabawek na półce."
+    "text": "Zagrajmy w kolejkę zabawek. Stoją w rzędzie."
   },
   "line.a_ok": {
     "who": "sarenka",

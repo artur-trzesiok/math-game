@@ -39,11 +39,6 @@
   "who": "sowa",
   "text": "Pokażę ci, to fajna zabawa. Każdą szyszkę wskazujemy tylko raz i mówimy po kolei liczby."
  },
- "line.s_point_each": {
-  "hash": "538f9c2d162b",
-  "who": "sowa",
-  "text": "Wskaż każdą szyszkę, jedną po drugiej. Ja będę liczyć."
- },
  "line.s_last": {
   "hash": "8b14d0966d0d",
   "who": "sowa",
@@ -115,9 +110,9 @@
   "text": "Wracajmy do domu. Czekają na nas ciastka!"
  },
  "line.c_cookies": {
-  "hash": "2bef22c5a656",
+  "hash": "8451354dd0e5",
   "who": "sowa",
-  "text": "Upiekłam ciastka dla gości. Policzmy je, żeby nikomu nie zabrakło."
+  "text": "Upiekłam ciastka dla gości. Policzmy, ile ich upiekłam."
  },
  "line.c_five": {
   "hash": "90373f28c127",
@@ -125,14 +120,14 @@
   "text": "Pięć ciastek! Ostatnia liczba to pięć."
  },
  "line.c_two_plates": {
-  "hash": "5b3c09952f71",
+  "hash": "f980c477d992",
   "who": "wiewiorka",
-  "text": "Teraz są dwa talerze z ciastkami. Na jednym jest pięć."
+  "text": "Teraz są dwie grupy ciastek. W jednej jest pięć."
  },
  "line.c_pick_5": {
-  "hash": "bf36a76d3da0",
+  "hash": "24e1fdcfd420",
   "who": "wiewiorka",
-  "text": "Wskaż talerz, na którym jest pięć ciastek. Możesz je policzyć."
+  "text": "Wskaż grupę, w której jest pięć ciastek. Możesz je policzyć."
  },
  "line.c_wrong_5": {
   "hash": "50a9577ce637",
@@ -323,5 +318,40 @@
   "hash": "c80a5e8fcad1",
   "who": "wiewiorka",
   "text": "To jest piątka. Ma prosty daszek i okrągły brzuszek."
+ },
+ "line.s_start_one": {
+  "hash": "7950315e4d20",
+  "who": "sowa",
+  "text": "Zacznijmy od jednej szyszki. Wskaż ją."
+ },
+ "line.s_one": {
+  "hash": "f7440813bd07",
+  "who": "sowa",
+  "text": "Masz jedną szyszkę."
+ },
+ "line.s_add_2": {
+  "hash": "bf42b28c933e",
+  "who": "wiewiorka",
+  "text": "Dokładam jeszcze jedną szyszkę!"
+ },
+ "line.s_add_3": {
+  "hash": "66718f881e74",
+  "who": "wiewiorka",
+  "text": "I jeszcze jedną!"
+ },
+ "line.s_count_again": {
+  "hash": "b3bd84af1502",
+  "who": "sowa",
+  "text": "Policz od początku. Każdą szyszkę wskaż tylko raz."
+ },
+ "line.s_two": {
+  "hash": "c7a777600a0e",
+  "who": "sowa",
+  "text": "Ostatnia liczba mówi, ile ich jest. Masz dwie szyszki!"
+ },
+ "line.s_point_2": {
+  "hash": "6090c2961f0e",
+  "who": "wiewiorka",
+  "text": "Mam dwie szyszki. Wskaż cyfrę dwa."
  }
 }

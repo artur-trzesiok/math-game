@@ -75,19 +75,19 @@
   "text": "Chodźmy nad jezioro, na piknik."
  },
  "line.b_picnic": {
-  "hash": "18d2329d4824",
+  "hash": "98389aaebcd4",
   "who": "lisek",
-  "text": "Rozkładam kubki na kocu. Mam dwa kubki."
+  "text": "Mam dwa kubki na piknik."
  },
  "line.b_owl": {
-  "hash": "32086c54597c",
+  "hash": "ca0cc0a89b9d",
   "who": "sowa",
-  "text": "Ja też mam dwa. Przeciągnij moje kubki na koc."
+  "text": "Ja też mam dwa. Przeciągnij moje kubki do kubków liska."
  },
  "line.b_count": {
-  "hash": "42d52dfedd7b",
+  "hash": "a5e3b37f73a9",
   "who": "lisek",
-  "text": "Policz wszystkie kubki na kocu."
+  "text": "Policz wszystkie kubki razem."
  },
  "line.b_pick": {
   "hash": "5dcbe45b8a1e",
@@ -110,9 +110,9 @@
   "text": "Upiekłem trzy ciastka."
  },
  "line.c_owl": {
-  "hash": "37b2a7180008",
+  "hash": "8f7e09893250",
   "who": "sowa",
-  "text": "A ja dwa. Przeciągnij moje ciastka na talerz."
+  "text": "A ja dwa. Przeciągnij moje ciastka do ciastek liska."
  },
  "line.c_slot": {
   "hash": "2227c60a991a",
@@ -243,5 +243,15 @@
   "hash": "13dc2f7ccaef",
   "who": "lisek",
   "text": "Pięć!"
+ },
+ "line.s_equals": {
+  "hash": "607b9dd24615",
+  "who": "sowa",
+  "text": "A równe kreski już znasz. Mówią: tyle samo. Dwa i jeden to tyle samo, co trzy."
+ },
+ "line.c_count": {
+  "hash": "9bb5bd94f67b",
+  "who": "lisek",
+  "text": "Policz wszystkie ciastka razem."
  }
 }

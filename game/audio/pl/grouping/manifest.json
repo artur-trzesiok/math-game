@@ -70,9 +70,9 @@
   "text": "Do zobaczenia!"
  },
  "line.a_deer_tidy": {
-  "hash": "1d91937be466",
+  "hash": "9b3e878aa141",
   "who": "sarenka",
-  "text": "Zabawa w domu: sprzątanie po podwieczorku. Koszyk i pudełko, pięć zasad. Przeciągaj."
+  "text": "Zabawa w domu: sprzątanie po podwieczorku. Koszyk i pudełko, co chwilę nowa zasada. Przeciągaj."
  },
  "line.a_sq_right": {
   "hash": "fac788091ea4",
@@ -85,9 +85,9 @@
   "text": "Poproście rodziców, żebyście pobawili się tak w domu. Sprzątajcie razem: zabawki do pudełka, ubrania do szafy, a potem zmieńcie zasadę!"
  },
  "line.s1_mixed": {
-  "hash": "9ed1c7b6743e",
+  "hash": "a1eb5426f9e0",
   "who": "sarenka",
-  "text": "Coś się pomieszało. W jednym koszyku mają być same jabłka, a w drugim same gruszki."
+  "text": "Coś się pomieszało. W koszyku mają być same jabłka, a w pudełku same gruszki."
  },
  "line.s2_mixed": {
   "hash": "196803aa6ee9",
@@ -144,11 +144,6 @@
   "who": "wiewiorka",
   "text": "Duże do koszyka, małe do pudełka."
  },
- "line.a_rule_round": {
-  "hash": "40909e3e3e37",
-  "who": "sarenka",
-  "text": "Okrągłe do koszyka, reszta do pudełka."
- },
  "line.a_sq_right.sarenka": {
   "hash": "f02bbef5059f",
   "who": "sarenka",
@@ -173,11 +168,6 @@
   "hash": "88bbe3a82ad5",
   "who": "sarenka",
   "text": "Duże do koszyka, małe do pudełka."
- },
- "line.a_rule_round.wiewiorka": {
-  "hash": "462b5ebec9e5",
-  "who": "wiewiorka",
-  "text": "Okrągłe do koszyka, reszta do pudełka."
  },
  "line.j3_to_brook": {
   "hash": "6eb7e33faac8",
@@ -215,14 +205,14 @@
   "text": "Patrz, rzucam kamykiem do wody!"
  },
  "line.j3_plop": {
-  "hash": "f0f2f6c56e58",
+  "hash": "763ed01336df",
   "who": "sarenka",
-  "text": "Plusk! Ale na brzegu zostało coś, co nie jest kamykiem."
+  "text": "Plusk! Ojej, z drzewa coś spadło do koszyka."
  },
  "line.j3_point_odd": {
-  "hash": "e51a7a78e9ad",
+  "hash": "9845e4b5c199",
   "who": "sarenka",
-  "text": "Wskaż to, co nie pasuje do kamyków."
+  "text": "Wskaż to, co nie pasuje do kamyków w koszyku."
  },
  "line.j3_wrong_odd": {
   "hash": "0a1f39616fb4",
@@ -298,5 +288,10 @@
   "hash": "65d7550be92f",
   "who": "wiewiorka",
   "text": "Proszę! Wszystkie gruszki są w jednym miejscu, więc znalazłam ją od razu."
+ },
+ "line.a_rule_toys": {
+  "hash": "08d1c0bda021",
+  "who": "sarenka",
+  "text": "Zabawki do koszyka, naczynia do pudełka."
  }
 }

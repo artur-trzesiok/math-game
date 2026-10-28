@@ -100,9 +100,9 @@
   "text": "Can we build the whole square again? All seven pieces!"
  },
  "line.c_solved": {
-  "hash": "2ae91f6b9b4c",
+  "hash": "7866034b31b0",
   "who": "lisek",
-  "text": "The whole square! The tangram is back in its box, ready to play."
+  "text": "The whole square! The tangram is whole again, ready to play."
  },
  "line.wrong_piece": {
   "hash": "9e8a46fe0942",
@@ -178,5 +178,15 @@
   "hash": "5fdcbfe15d1f",
   "who": "lisek",
   "text": "Bye bye! See you!"
+ },
+ "line.wrong_big": {
+  "hash": "21ae1afd5622",
+  "who": "wiewiorka",
+  "text": "That triangle is too big. Look at the gap."
+ },
+ "line.wrong_big.lisek": {
+  "hash": "0e0aedc8368f",
+  "who": "lisek",
+  "text": "That triangle is too big. Look at the gap."
  }
 }

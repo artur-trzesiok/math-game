@@ -70,9 +70,9 @@
   "text": "See you!"
  },
  "line.a_deer_tidy": {
-  "hash": "7dbbd8f517b9",
+  "hash": "c970129194fb",
   "who": "sarenka",
-  "text": "A home game: tidying up after a snack. A basket and a box, five rules. Drag."
+  "text": "A game at home: tidying up after a snack. A basket and a box, a new rule every time. Drag them."
  },
  "line.a_sq_right": {
   "hash": "271549c0ce7e",
@@ -85,9 +85,9 @@
   "text": "Ask your parents to play this with you at home. Tidy up together: toys into the box, clothes into the wardrobe, and then change the rule!"
  },
  "line.s1_mixed": {
-  "hash": "e94eff6e8cf8",
+  "hash": "5734634e3ea0",
   "who": "sarenka",
-  "text": "Something got mixed up. One container only apples, the other only pears."
+  "text": "Something got mixed up. Only apples go in the basket, and only pears in the box."
  },
  "line.s2_mixed": {
   "hash": "94ecfca2179b",
@@ -144,11 +144,6 @@
   "who": "wiewiorka",
   "text": "Big ones into the basket, small ones into the box."
  },
- "line.a_rule_round": {
-  "hash": "29d804ee5e8f",
-  "who": "sarenka",
-  "text": "Round things into the basket, the rest into the box."
- },
  "line.a_sq_right.sarenka": {
   "hash": "244346867a97",
   "who": "sarenka",
@@ -173,11 +168,6 @@
   "hash": "1f6c2f1f0106",
   "who": "sarenka",
   "text": "Big ones into the basket, small ones into the box."
- },
- "line.a_rule_round.wiewiorka": {
-  "hash": "05c58b7322b3",
-  "who": "wiewiorka",
-  "text": "Round things into the basket, the rest into the box."
  },
  "line.j3_to_brook": {
   "hash": "9d665fbb740e",
@@ -215,14 +205,14 @@
   "text": "Look, I'm throwing a pebble into the water!"
  },
  "line.j3_plop": {
-  "hash": "f00127c78d68",
+  "hash": "6ed1f1cb20da",
   "who": "sarenka",
-  "text": "Splash! But something on the bank is not a pebble."
+  "text": "Splash! Oh, something fell from the tree into the basket."
  },
  "line.j3_point_odd": {
-  "hash": "589c505ca262",
+  "hash": "995202345f9a",
   "who": "sarenka",
-  "text": "Point to the thing that does not belong with the pebbles."
+  "text": "Point to what does not belong with the pebbles in the basket."
  },
  "line.j3_wrong_odd": {
   "hash": "f0b6a0e9eac2",
@@ -298,5 +288,10 @@
   "hash": "04d19b2d7e44",
   "who": "wiewiorka",
   "text": "Here you are! All the pears are in one place, so I found it at once."
+ },
+ "line.a_rule_toys": {
+  "hash": "9923abfd7001",
+  "who": "sarenka",
+  "text": "Toys into the basket, dishes into the box."
  }
 }

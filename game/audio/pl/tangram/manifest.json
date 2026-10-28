@@ -100,9 +100,9 @@
   "text": "A czy umiemy z powrotem ułożyć cały kwadrat? Wszystkie siedem kawałków!"
  },
  "line.c_solved": {
-  "hash": "920aa193de82",
+  "hash": "4a875837f221",
   "who": "lisek",
-  "text": "Cały kwadrat! Tangram znowu jest w pudełku, gotowy do zabawy."
+  "text": "Cały kwadrat! Tangram jest znowu cały, gotowy do zabawy."
  },
  "line.wrong_piece": {
   "hash": "6b1342994e68",
@@ -178,5 +178,15 @@
   "hash": "163cfb6abb1b",
   "who": "lisek",
   "text": "Pa, pa! Do zobaczenia!"
+ },
+ "line.wrong_big": {
+  "hash": "6c6adc4b5163",
+  "who": "wiewiorka",
+  "text": "Ten trójkąt jest za duży. Popatrz na lukę."
+ },
+ "line.wrong_big.lisek": {
+  "hash": "68653e75621c",
+  "who": "lisek",
+  "text": "Ten trójkąt jest za duży. Popatrz na lukę."
  }
 }

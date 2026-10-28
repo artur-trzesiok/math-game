@@ -81,11 +81,18 @@
   },
   "line.c_solved": {
     "who": "lisek",
-    "text": "The whole square! The tangram is back in its box, ready to play."
+    "text": "The whole square! The tangram is whole again, ready to play."
   },
   "line.wrong_piece": {
     "who": "wiewiorka",
     "text": "This piece has another shape. Look at the gap.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.wrong_big": {
+    "who": "wiewiorka",
+    "text": "That triangle is too big. Look at the gap.",
     "speakers": [
       "lisek"
     ]

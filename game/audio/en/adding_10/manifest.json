@@ -10,14 +10,14 @@
   "text": "And I have five in my basket. I counted them this morning."
  },
  "line.s_naive": {
-  "hash": "7b9593878f8d",
+  "hash": "b507d4f8e742",
   "who": "wiewiorka",
-  "text": "Then I will count them all from the start. One, two, three, four... Oh no, I got mixed up!"
+  "text": "We have three pebbles. Not enough!"
  },
  "line.s_not": {
-  "hash": "f1ca1600f377",
+  "hash": "6d3b6c27c0d6",
   "who": "sarenka",
-  "text": "You do not have to start from one! We already know there are five in the basket."
+  "text": "And the five in the basket? Don't count them again, we know there are five."
  },
  "line.s_how": {
   "hash": "6b0d18761e21",
@@ -160,9 +160,9 @@
   "text": "All right! We start from what we already know."
  },
  "line.a_lyzka": {
-  "hash": "8567a9351cab",
+  "hash": "ba68f51dda38",
   "who": "sarenka",
-  "text": "There are five spoons in the drawer. Add these too. Count on from five."
+  "text": "There are five spoons in the box. Three more lie beside it. Count on from five."
  },
  "line.a_klocek": {
   "hash": "5e7509d3cef2",
@@ -170,9 +170,9 @@
   "text": "There are six blocks in the box. Count on from six."
  },
  "line.a_kubek": {
-  "hash": "5510e8c395a4",
+  "hash": "7c5d079b189f",
   "who": "sarenka",
-  "text": "There are seven cups on the shelf. Count on from seven."
+  "text": "There are seven cups in the box. Count on from seven."
  },
  "line.a_which_digit": {
   "hash": "b622e01c79a8",

@@ -6,13 +6,19 @@ Squirrel (right).
 ## Stage 1 - story - kitchen, garden, lake meadow
 
 1. Kitchen, the problem: Owl started a party garland - apple, pear, apple, pear - and
-   asks Squirrel to finish; Squirrel adds anything colourful (flower, ball, shoe).
+   asks Squirrel to finish; Squirrel adds anything colourful, nothing repeating
+   (flower, ball, shoe, carrot).
    Owl ("?"): the pattern is broken - something repeats. What to add? What fits the
-   rhythm; a rhythm you can hear: clap, hop, clap, hop. They start again; the child
+   rhythm; a rhythm you can hear: Owl claps, hops, claps, hops. They start again; the child
    drags the next things into the empty places (one candidate does not belong).
    Solved: the garland is ready.
-2. Garden bed: flower, flower, carrot (AAB) - three to plant.
-3. Picnic: cup, plate, spoon (ABC) - two to lay.
+2. Garden bed: flower, flower, carrot (AAB) - three to plant. Then a rhythm of sizes:
+   big carrot, small carrot (practice has one).
+3. Picnic: cup, plate, spoon (ABC) - three to lay, ending on a spoon.
+
+A wrong drop: "say the rhythm from the start and listen for what comes next" (the
+thing before the gap is usually NOT the answer). Every row is on the screen before a
+line names it.
 
 ## Stage 2 - practice - orchard
 

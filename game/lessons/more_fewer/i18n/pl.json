@@ -53,7 +53,7 @@
   },
   "line.a_owl_table": {
     "who": "sowa",
-    "text": "Zabawa w domu: nakrywamy do stołu. Ja stawiam talerze, Lisek kubki. Zagramy pięć razy."
+    "text": "Zabawa w domu: nakrywamy do stołu. Ja stawiam talerze, Lisek kubki."
   },
   "line.a_bye": {
     "who": "sowa",
@@ -104,19 +104,31 @@
   },
   "line.good_gt": {
     "who": "sowa",
-    "text": "Bardzo dobrze! Paszcza otwiera się w lewo, bo po lewej jest więcej."
+    "text": "Bardzo dobrze! Paszcza otwiera się w lewo, bo po lewej jest więcej.",
+    "speakers": [
+      "lisek"
+    ]
   },
   "line.good_lt": {
     "who": "sowa",
-    "text": "Bardzo dobrze! Paszcza otwiera się w prawo, bo po prawej jest więcej."
+    "text": "Bardzo dobrze! Paszcza otwiera się w prawo, bo po prawej jest więcej.",
+    "speakers": [
+      "lisek"
+    ]
   },
   "line.good_eq": {
     "who": "lisek",
-    "text": "Bardzo dobrze! Równe kreski, bo jest tyle samo."
+    "text": "Bardzo dobrze! Równe kreski, bo jest tyle samo.",
+    "speakers": [
+      "sowa"
+    ]
   },
   "line.good_more": {
     "who": "lisek",
-    "text": "Bardzo dobrze! Tu jest więcej."
+    "text": "Bardzo dobrze! Tu jest więcej.",
+    "speakers": [
+      "sowa"
+    ]
   },
   "line.s2_good_gt": {
     "who": "sowa",
@@ -128,7 +140,7 @@
   },
   "line.j2_garden": {
     "who": "lisek",
-    "text": "Oto mój ogród. Wyrwałem trzy marchewki!"
+    "text": "Oto mój ogród. Wyrwałem marchewki!"
   },
   "line.j2_carrots": {
     "who": "lisek",
@@ -145,6 +157,18 @@
   "line.j2_equal": {
     "who": "sowa",
     "text": "Nic nie zostało. Każda marchewka ma swój kwiatek. Jest tyle samo!"
+  },
+  "line.j2_eq_sign": {
+    "who": "sowa",
+    "text": "Gdy jest tyle samo, paszcza się zamyka i zostają dwie równe kreski. Taki znak mówi: tyle samo."
+  },
+  "line.j2_pick_lt": {
+    "who": "sowa",
+    "text": "Marchewek jest mniej. Wskaż paszczę otwartą na kwiatki."
+  },
+  "line.j2_pick_sign": {
+    "who": "lisek",
+    "text": "Który znak tu pasuje? Wskaż go."
   },
   "line.j2_good_eq": {
     "who": "lisek",

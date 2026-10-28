@@ -5,7 +5,7 @@
   },
   "line.s_go_on": {
     "who": "sowa",
-    "text": "Muszę przynieść nitkę. Dokończysz za mnie?"
+    "text": "Dokończysz za mnie?"
   },
   "line.s_anything": {
     "who": "wiewiorka",
@@ -41,7 +41,7 @@
   },
   "line.wrong_pattern": {
     "who": "sowa",
-    "text": "To nie pasuje do rytmu. Co było przed tym miejscem?",
+    "text": "To nie pasuje do rytmu. Powiedz rytm od początku i posłuchaj, co będzie dalej.",
     "speakers": [
       "wiewiorka"
     ]
@@ -65,6 +65,14 @@
   "line.b_done": {
     "who": "wiewiorka",
     "text": "Kwiatek, kwiatek, marchewka! Rytm się zgadza."
+  },
+  "line.b_sizes": {
+    "who": "wiewiorka",
+    "text": "A tu rytm z wielkości: duża marchewka, mała marchewka, duża, mała."
+  },
+  "line.b_sizes_done": {
+    "who": "wiewiorka",
+    "text": "Duża, mała, duża, mała! Rytm może być też z wielkości."
   },
   "line.b_to_meadow": {
     "who": "sowa",

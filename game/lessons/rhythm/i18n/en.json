@@ -5,7 +5,7 @@
   },
   "line.s_go_on": {
     "who": "sowa",
-    "text": "I have to fetch some string. Will you finish it for me?"
+    "text": "Will you finish it for me?"
   },
   "line.s_anything": {
     "who": "wiewiorka",
@@ -41,7 +41,7 @@
   },
   "line.wrong_pattern": {
     "who": "sowa",
-    "text": "That does not fit the rhythm. What came before this place?",
+    "text": "That does not fit the rhythm. Say the rhythm from the start and listen for what comes next.",
     "speakers": [
       "wiewiorka"
     ]
@@ -65,6 +65,14 @@
   "line.b_done": {
     "who": "wiewiorka",
     "text": "Flower, flower, carrot! The rhythm is right."
+  },
+  "line.b_sizes": {
+    "who": "wiewiorka",
+    "text": "And here is a rhythm of sizes: big carrot, small carrot, big, small."
+  },
+  "line.b_sizes_done": {
+    "who": "wiewiorka",
+    "text": "Big, small, big, small! A rhythm can be made of sizes too."
   },
   "line.b_to_meadow": {
     "who": "sowa",

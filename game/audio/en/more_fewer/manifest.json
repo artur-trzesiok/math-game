@@ -65,9 +65,9 @@
   "text": "Not that one. The mouth opens where there is more. When there are as many, pick the equal lines."
  },
  "line.a_owl_table": {
-  "hash": "a454fe051e91",
+  "hash": "fc9e4fac899d",
   "who": "sowa",
-  "text": "A home game: setting the table. I put out the plates, Fox the cups. We play five times."
+  "text": "A home game: setting the table. I put out the plates, Fox the cups."
  },
  "line.a_bye": {
   "hash": "412f3f5c8919",
@@ -160,9 +160,9 @@
   "text": "Let's go to the garden now. Fox promised carrots for lunch!"
  },
  "line.j2_garden": {
-  "hash": "ea6fab93aac2",
+  "hash": "08e09009ce10",
   "who": "lisek",
-  "text": "This is my garden. I pulled out three carrots!"
+  "text": "This is my garden. I pulled out some carrots!"
  },
  "line.j2_carrots": {
   "hash": "ae5eb1a5efff",
@@ -278,5 +278,40 @@
   "hash": "825d19397193",
   "who": "sowa",
   "text": "Now every cup has its plate. There are as many!"
+ },
+ "line.good_gt.lisek": {
+  "hash": "d0faffb02586",
+  "who": "lisek",
+  "text": "Very good! The mouth opens to the left, because there is more on the left."
+ },
+ "line.good_lt.lisek": {
+  "hash": "327f4311f8f1",
+  "who": "lisek",
+  "text": "Very good! The mouth opens to the right, because there is more on the right."
+ },
+ "line.good_eq.sowa": {
+  "hash": "17bb614d24e4",
+  "who": "sowa",
+  "text": "Very good! Equal lines, because there are as many."
+ },
+ "line.good_more.sowa": {
+  "hash": "b79460454dd1",
+  "who": "sowa",
+  "text": "Very good! There is more here."
+ },
+ "line.j2_eq_sign": {
+  "hash": "78fb12d8b95a",
+  "who": "sowa",
+  "text": "When there are as many, the mouth closes and two equal lines are left. This sign says: as many."
+ },
+ "line.j2_pick_lt": {
+  "hash": "9c0b7b555126",
+  "who": "sowa",
+  "text": "There are fewer carrots. Point to the mouth that opens towards the flowers."
+ },
+ "line.j2_pick_sign": {
+  "hash": "a17d312f10b0",
+  "who": "lisek",
+  "text": "Which sign fits here? Point to it."
  }
 }

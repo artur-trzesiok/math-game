@@ -14,15 +14,10 @@
   "who": "lisek",
   "text": "I'll count, quick as a flash!"
  },
- "line.s_nine": {
-  "hash": "f1a0e736a4b0",
-  "who": "lisek",
-  "text": "Nine! I have nine apples!"
- },
  "line.s_twice": {
-  "hash": "7ee8fd508b9b",
+  "hash": "b03e5a5565a1",
   "who": "wiewiorka",
-  "text": "Too fast! You counted this apple twice and that one not at all."
+  "text": "Too fast! You counted this apple twice. Look, it grew twice."
  },
  "line.s_how": {
   "hash": "28c52c4db939",
@@ -60,9 +55,9 @@
   "text": "Exactly six, just like the recipe! There will be jam!"
  },
  "line.s_to_garden": {
-  "hash": "8946eaeed55a",
+  "hash": "bba6cf7f3b8a",
   "who": "wiewiorka",
-  "text": "Let's go to the garden. We will add carrots to the jam."
+  "text": "Let's go to the garden. The jam needs eight carrots too."
  },
  "line.b_carrots": {
   "hash": "88d50369665e",
@@ -80,9 +75,9 @@
   "text": "Hop! I pulled out one more!"
  },
  "line.b_how_many_now": {
-  "hash": "98c43c0cbd30",
+  "hash": "cd116317e0a1",
   "who": "wiewiorka",
-  "text": "There were seven and one more came. How many are there now?"
+  "text": "There were seven, one more came. Count on: point to the new carrot."
  },
  "line.b_pick": {
   "hash": "1615f2c82fc4",
@@ -100,9 +95,9 @@
   "text": "Let's go home. We have a party today!"
  },
  "line.c_party": {
-  "hash": "eee6392754d0",
+  "hash": "99943650072d",
   "who": "wiewiorka",
-  "text": "Lots of guests are coming to the party. Let's count the cups."
+  "text": "Nine guests are coming to the party. Is there a cup for each? Let's count."
  },
  "line.c_knock": {
   "hash": "56b14f67d8b6",
@@ -340,14 +335,14 @@
   "text": "This is a six. It looks like a snail sticking its feeler up."
  },
  "line.d7": {
-  "hash": "55a460bb5f33",
+  "hash": "b0a56bf3c17e",
   "who": "wiewiorka",
-  "text": "This is a seven. It has a roof, a long leg and a short stripe in the middle."
+  "text": "This is a seven. It has a roof and a long, slanted leg."
  },
  "line.d7.lisek": {
-  "hash": "9732b1808ef8",
+  "hash": "3b217cfd40df",
   "who": "lisek",
-  "text": "This is a seven. It has a roof, a long leg and a short stripe in the middle."
+  "text": "This is a seven. It has a roof and a long, slanted leg."
  },
  "line.d8": {
   "hash": "af755eb1eab1",
@@ -370,13 +365,28 @@
   "text": "This is a nine. It looks like a balloon on a string."
  },
  "line.d10": {
-  "hash": "3966a516bfec",
+  "hash": "c93c284c875c",
   "who": "wiewiorka",
-  "text": "This is ten. We write it with two digits, a one and a zero."
+  "text": "This is ten. We write it with two digits: a one and a zero. Zero is a round ring, like an egg."
  },
  "line.d10.lisek": {
-  "hash": "b1f43b3db3ab",
+  "hash": "c1835a3b4dac",
   "who": "lisek",
-  "text": "This is ten. We write it with two digits, a one and a zero."
+  "text": "This is ten. We write it with two digits: a one and a zero. Zero is a round ring, like an egg."
+ },
+ "line.s_seven": {
+  "hash": "48731b372a6a",
+  "who": "lisek",
+  "text": "Seven! I have seven apples!"
+ },
+ "line.b_enough": {
+  "hash": "b1c3e50ec893",
+  "who": "wiewiorka",
+  "text": "Exactly eight, just what the jam needs!"
+ },
+ "line.c_count_on": {
+  "hash": "44704aff51e5",
+  "who": "wiewiorka",
+  "text": "Count the new cup on. Point to it."
  }
 }

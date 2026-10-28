@@ -11,11 +11,11 @@ equation a + b = c; the signs + and =. Characters: Fox (left), Owl (right).
    together, there are more. How many then? By adding (Owl pictures 2 and 1): put two
    piles into one and count all. The child drags Owl's apple into the basket and
    counts all: three. Owl writes 2 + 1 = 3 in pencil; plus is a little cross that
-   says "put together". Solved: three apples for three hedgehogs.
-2. Lake picnic: two cups on the blanket, the child drags Owl's two, counts all, picks
-   the 4; 2 + 2 = 4 written.
-3. Home: three cookies and two more; the child counts and completes 3 + 2 = _ by
-   flying the 5 card into the gap.
+   says "put together", and the equal lines are the "as many" sign the child knows. Solved: three apples for three hedgehogs.
+2. Lake picnic: Fox's two cups, the child drags Owl's two over to them, counts all;
+   2 + 2 = _ is written and the child's 4 card flies into the gap.
+3. Home: three cookies and two more; "count all the cookies together"; the child
+   completes 3 + 2 = _ by flying the 5 card into the gap.
 
 ## Stage 2 - practice - forest
 

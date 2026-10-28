@@ -20,9 +20,9 @@
   "text": "Okienko to okienko. Czy to nie wszystko jedno?"
  },
  "line.s_differ": {
-  "hash": "940f8f8af035",
+  "hash": "1b2ced09816a",
   "who": "sowa",
-  "text": "Nie! Każda figura jest inna. Przez kanciaste okienko moja okrągła głowa się nie zmieści."
+  "text": "Nie! Każda figura jest inna. Chciałam okienko okrągłe jak księżyc, a to ma rogi i proste boki."
  },
  "line.s_how": {
   "hash": "af734f2a2b33",
@@ -209,26 +209,6 @@
   "who": "sowa",
   "text": "Jaki kształt ma ściana klocka? Wskaż figurę."
  },
- "line.a_pilka": {
-  "hash": "485ee38f81d4",
-  "who": "sowa",
-  "text": "Jaki kształt ma piłka? Wskaż figurę."
- },
- "line.a_how_many_corners": {
-  "hash": "eae354021820",
-  "who": "lisek",
-  "text": "Ile rogów ma ta figura? Wskaż liczbę."
- },
- "line.wrong_number": {
-  "hash": "3c59de4933e9",
-  "who": "lisek",
-  "text": "Policz rogi jeszcze raz."
- },
- "line.wrong_number.sowa": {
-  "hash": "7dc73bab8e84",
-  "who": "sowa",
-  "text": "Policz rogi jeszcze raz."
- },
  "line.a_ask_parents": {
   "hash": "19ac34678ad6",
   "who": "sowa",
@@ -278,5 +258,45 @@
   "hash": "9dfcf62ace93",
   "who": "lisek",
   "text": "Cztery!"
+ },
+ "line.wrong_sides": {
+  "hash": "56d4cedf6224",
+  "who": "sowa",
+  "text": "Popatrz na boki. Kwadrat ma wszystkie boki równe, a prostokąt ma dwa dłuższe."
+ },
+ "line.wrong_sides.lisek": {
+  "hash": "a97862a8c0c5",
+  "who": "lisek",
+  "text": "Popatrz na boki. Kwadrat ma wszystkie boki równe, a prostokąt ma dwa dłuższe."
+ },
+ "line.a_ciastko": {
+  "hash": "45767ede4333",
+  "who": "sowa",
+  "text": "Jaki kształt ma ciastko? Wskaż figurę."
+ },
+ "line.a_three_corners": {
+  "hash": "62ebd9c47e2c",
+  "who": "lisek",
+  "text": "Która figura ma trzy rogi? Wskaż ją."
+ },
+ "line.a_four_corners": {
+  "hash": "6a1683c5e4b0",
+  "who": "lisek",
+  "text": "Która figura ma cztery rogi? Wskaż ją."
+ },
+ "line.a_no_corners": {
+  "hash": "130f77b1b772",
+  "who": "lisek",
+  "text": "A która nie ma żadnego rogu?"
+ },
+ "line.wrong_corners": {
+  "hash": "3c59de4933e9",
+  "who": "lisek",
+  "text": "Policz rogi jeszcze raz."
+ },
+ "line.wrong_corners.sowa": {
+  "hash": "7dc73bab8e84",
+  "who": "sowa",
+  "text": "Policz rogi jeszcze raz."
  }
 }

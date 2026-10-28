@@ -12,10 +12,10 @@ rule. Characters: Squirrel (left) and Deer (right).
    go together, a fun game. The fruit comes out; the child drags apples into the
    basket, pears into the box (any order), points to the apples' group. Solved:
    Deer asks for a pear, the child points to where to look, it is found at once.
-2. The brook. Pebbles and leaves on the bank: the child sorts them (pebbles /
-   leaves). Action: Squirrel throws a pebble into the water, splash! Among the
-   pebbles left on the bank one thing is not a pebble: the child points to the
-   pine cone.
+2. The brook. Pebbles and leaves on the bank: the child sorts them, pebbles into the
+   basket, leaves into the box. Action: Squirrel takes a pebble from the basket and
+   throws it into the water, splash! Meanwhile a pine cone drops from the tree into the
+   basket: the child points to what does not belong with the pebbles.
 3. Kitchen. The same fruit, another rule: big into the basket, small into the box;
    then the child points to the container with the big ones. Summary: the same
    things, different rules - say the rule first, then sort.
@@ -26,10 +26,15 @@ Four rounds, six things each, basket + box: cups vs the rest (kind); things you
 can eat vs the rest (purpose); red things vs the rest (colour: apple, ball);
 small vs big (size). Same free dragging, same check.
 
+Every rule names its containers ("apples into the basket, pears into the box"), and
+the check keeps to them: the right kind in the wrong container is a mix-up. The fruit
+of scene A comes back in scene C at the same sizes ("the same fruit, another rule").
+No shape rule here: shapes are a later lesson (and a daisy is round).
+
 ## Stage 3 - apply (kitchen)
 
 Tidying up after a snack in the kitchen, five rules in a row (food / dishes, cups
-/ plates, red / the rest, big / small, round / the rest), basket and box, the same
+/ plates, red / the rest, big / small, toys / dishes), basket and box, the same
 free dragging; they end by asking the child to ask the parents to tidy like this
 at home and then change the rule. No card, no text.
 

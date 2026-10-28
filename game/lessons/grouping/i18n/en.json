@@ -57,7 +57,7 @@
   },
   "line.a_deer_tidy": {
     "who": "sarenka",
-    "text": "A home game: tidying up after a snack. A basket and a box, five rules. Drag."
+    "text": "A game at home: tidying up after a snack. A basket and a box, a new rule every time. Drag them."
   },
   "line.a_sq_right": {
     "who": "wiewiorka",
@@ -72,7 +72,7 @@
   },
   "line.s1_mixed": {
     "who": "sarenka",
-    "text": "Something got mixed up. One container only apples, the other only pears."
+    "text": "Something got mixed up. Only apples go in the basket, and only pears in the box."
   },
   "line.s2_mixed": {
     "who": "sarenka",
@@ -130,12 +130,9 @@
       "sarenka"
     ]
   },
-  "line.a_rule_round": {
+  "line.a_rule_toys": {
     "who": "sarenka",
-    "text": "Round things into the basket, the rest into the box.",
-    "speakers": [
-      "wiewiorka"
-    ]
+    "text": "Toys into the basket, dishes into the box."
   },
   "line.j3_to_brook": {
     "who": "wiewiorka",
@@ -167,11 +164,11 @@
   },
   "line.j3_plop": {
     "who": "sarenka",
-    "text": "Splash! But something on the bank is not a pebble."
+    "text": "Splash! Oh, something fell from the tree into the basket."
   },
   "line.j3_point_odd": {
     "who": "sarenka",
-    "text": "Point to the thing that does not belong with the pebbles."
+    "text": "Point to what does not belong with the pebbles in the basket."
   },
   "line.j3_wrong_odd": {
     "who": "sarenka",

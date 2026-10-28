@@ -14,13 +14,15 @@ names it. Characters: Fox (left) and Squirrel (right).
    Fox admits it - comparing settled the quarrel. The rule.
 1a. Orchard: a gust, two apples drop; the child points to the BIGGER one for Fox.
    "Let's go to the forest!"
-2. Forest. Two pine cones, checked "our way" (on one line, a line over each):
-   the BIGGER one for Squirrel's winter store. A leaf comes
+2. Forest. Two pine cones, by eye now (as Fox promised in the orchard): the BIGGER
+   one for Squirrel's winter store. A leaf comes
    spinning down from the crowns; two leaves: the SMALLER one fits behind
    Squirrel's ear. "It's getting cold, let's go home!"
 3. Kitchen. Two cups: the SMALLER for Squirrel's paws. Two cookies: the BIGGER for
-   hungry Fox. Two spoons: the SMALLER for Squirrel's little mouth. Summary:
-   bigger for the bigger, smaller for the smaller.
+   hungry Fox. Two spoons: the SMALLER for Squirrel's little mouth. More than two
+   cups: Fox shows the biggest, Squirrel the smallest, the child points to the
+   biggest (practice asks for them). Summary: bigger for the bigger, smaller for the
+   smaller.
 Every pick is the same thing at two sizes; a wrong pick is named and asked again,
 after two misses the right one pulses.
 

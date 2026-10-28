@@ -25,7 +25,7 @@
   },
   "line.s_show": {
     "who": "sarenka",
-    "text": "I will show you. The smallest goes in place number one, then bigger and bigger."
+    "text": "I will show you. In the first place, here on the left, we put the smallest, then bigger and bigger."
   },
   "line.s_fill": {
     "who": "sarenka",
@@ -38,13 +38,20 @@
       "lisek"
     ]
   },
+  "line.wrong_order_big": {
+    "who": "sarenka",
+    "text": "That is not its place. Look which one is bigger.",
+    "speakers": [
+      "lisek"
+    ]
+  },
   "line.s_nest": {
     "who": "lisek",
     "text": "Now I see! The small one goes into the middle one, and the middle one into the big one."
   },
   "line.s_solved": {
     "who": "sarenka",
-    "text": "They all fit one inside another. That is putting things in order!"
+    "text": "They all fit one inside another. That is how putting things in order works!"
   },
   "line.s_to_garden": {
     "who": "lisek",
@@ -52,7 +59,7 @@
   },
   "line.b_carrots": {
     "who": "lisek",
-    "text": "I pulled out four carrots. Each one is a different length."
+    "text": "I pulled out some carrots. Each one is a different length."
   },
   "line.b_fill": {
     "who": "sarenka",

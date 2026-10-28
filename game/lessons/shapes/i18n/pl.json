@@ -17,7 +17,7 @@
   },
   "line.s_differ": {
     "who": "sowa",
-    "text": "Nie! Każda figura jest inna. Przez kanciaste okienko moja okrągła głowa się nie zmieści."
+    "text": "Nie! Każda figura jest inna. Chciałam okienko okrągłe jak księżyc, a to ma rogi i proste boki."
   },
   "line.s_how": {
     "who": "lisek",
@@ -60,6 +60,36 @@
     "text": "To inna figura. Popatrz na rogi.",
     "speakers": [
       "lisek"
+    ]
+  },
+  "line.wrong_sides": {
+    "who": "sowa",
+    "text": "Popatrz na boki. Kwadrat ma wszystkie boki równe, a prostokąt ma dwa dłuższe.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.a_ciastko": {
+    "who": "sowa",
+    "text": "Jaki kształt ma ciastko? Wskaż figurę."
+  },
+  "line.a_three_corners": {
+    "who": "lisek",
+    "text": "Która figura ma trzy rogi? Wskaż ją."
+  },
+  "line.a_four_corners": {
+    "who": "lisek",
+    "text": "Która figura ma cztery rogi? Wskaż ją."
+  },
+  "line.a_no_corners": {
+    "who": "lisek",
+    "text": "A która nie ma żadnego rogu?"
+  },
+  "line.wrong_corners": {
+    "who": "lisek",
+    "text": "Policz rogi jeszcze raz.",
+    "speakers": [
+      "sowa"
     ]
   },
   "line.s_solved": {
@@ -164,21 +194,6 @@
   "line.a_klocek": {
     "who": "sowa",
     "text": "Jaki kształt ma ściana klocka? Wskaż figurę."
-  },
-  "line.a_pilka": {
-    "who": "sowa",
-    "text": "Jaki kształt ma piłka? Wskaż figurę."
-  },
-  "line.a_how_many_corners": {
-    "who": "lisek",
-    "text": "Ile rogów ma ta figura? Wskaż liczbę."
-  },
-  "line.wrong_number": {
-    "who": "lisek",
-    "text": "Policz rogi jeszcze raz.",
-    "speakers": [
-      "sowa"
-    ]
   },
   "line.a_ask_parents": {
     "who": "sowa",

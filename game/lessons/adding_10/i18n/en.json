@@ -9,11 +9,11 @@
   },
   "line.s_naive": {
     "who": "wiewiorka",
-    "text": "Then I will count them all from the start. One, two, three, four... Oh no, I got mixed up!"
+    "text": "We have three pebbles. Not enough!"
   },
   "line.s_not": {
     "who": "sarenka",
-    "text": "You do not have to start from one! We already know there are five in the basket."
+    "text": "And the five in the basket? Don't count them again, we know there are five."
   },
   "line.s_how": {
     "who": "wiewiorka",
@@ -126,7 +126,7 @@
   },
   "line.a_lyzka": {
     "who": "sarenka",
-    "text": "There are five spoons in the drawer. Add these too. Count on from five."
+    "text": "There are five spoons in the box. Three more lie beside it. Count on from five."
   },
   "line.a_klocek": {
     "who": "sarenka",
@@ -134,7 +134,7 @@
   },
   "line.a_kubek": {
     "who": "sarenka",
-    "text": "There are seven cups on the shelf. Count on from seven."
+    "text": "There are seven cups in the box. Count on from seven."
   },
   "line.a_which_digit": {
     "who": "sarenka",
