@@ -37,7 +37,7 @@ async function kokarda(c, h) {
 // things already on screen up into a row (out of their containers too) - the same things, ready for another rule
 async function doRzedu(c, rzeczy, { y = ROW_Y } = {}) {
   for (const h of rzeczy) if (h.zone) h.zone.take(h, false);
-  c.arrange([rzeczy], { y, gap: 0.14, animate: true });
+  c.arrange([tasuj(rzeczy)], { y, gap: 0.14, animate: true });                 // shuffled: the gifts never stand together
   await c.wait(0.5);
 }
 // the children's room: the rug between the characters (Fox stands left of it at home)
