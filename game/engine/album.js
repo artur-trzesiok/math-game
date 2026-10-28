@@ -85,7 +85,6 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
     lisc.innerHTML = twarz(bokStary, rozklad * 2 + bokStary) + twarz(bokNowy, nowy * 2 + bokNowy).replace('class="twarz', 'class="twarz tyl');
     ksiazka.appendChild(lisc);
     strony[bokStary].innerHTML = tresc(nowy * 2 + bokStary);       // under the leaf: the new spread's page on that side
-    speech?.stop?.();
     void lisc.offsetWidth; lisc.classList.add("ruch");                // a reflow first, so the turn animates from 0
     setTimeout(() => { rozklad = nowy; lisc.remove(); rysuj(); kartkuje = false; }, 720);
   };

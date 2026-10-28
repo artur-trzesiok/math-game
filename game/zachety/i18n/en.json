@@ -1,0 +1,74 @@
+{
+  "line.z_sprobuj": {
+    "who": "lisek",
+    "text": "Go on, give it a try!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_dasz_rade": {
+    "who": "lisek",
+    "text": "You can do it! Point to what you think.",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_popatrz": {
+    "who": "lisek",
+    "text": "Look carefully. Which one fits?",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_nie_bojsie": {
+    "who": "lisek",
+    "text": "Don't be afraid to get it wrong. Have a go!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_przeciagnij": {
+    "who": "lisek",
+    "text": "Go on, drag one of them!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_paluszek": {
+    "who": "lisek",
+    "text": "Put your finger on a thing and move it.",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_razem": {
+    "who": "lisek",
+    "text": "We'll do it together. Have a try!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_tutaj": {
+    "who": "lisek",
+    "text": "Hmm... maybe here?",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  }
+}

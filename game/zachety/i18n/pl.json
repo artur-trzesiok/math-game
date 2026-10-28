@@ -1,0 +1,74 @@
+{
+  "line.z_sprobuj": {
+    "who": "lisek",
+    "text": "Śmiało, spróbuj!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_dasz_rade": {
+    "who": "lisek",
+    "text": "Dasz radę! Wskaż, co myślisz.",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_popatrz": {
+    "who": "lisek",
+    "text": "Popatrz uważnie. Co tu pasuje?",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_nie_bojsie": {
+    "who": "lisek",
+    "text": "Nie bój się pomylić. Spróbuj!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_przeciagnij": {
+    "who": "lisek",
+    "text": "Śmiało, przeciągnij jedną rzecz!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_paluszek": {
+    "who": "lisek",
+    "text": "Połóż paluszek na rzeczy i przesuń ją.",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_razem": {
+    "who": "lisek",
+    "text": "Zrobimy to razem. Spróbuj!",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  },
+  "line.z_tutaj": {
+    "who": "lisek",
+    "text": "Hmm... może tutaj?",
+    "speakers": [
+      "wiewiorka",
+      "sowa",
+      "sarenka"
+    ]
+  }
+}

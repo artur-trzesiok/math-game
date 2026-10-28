@@ -1,0 +1,162 @@
+{
+ "line.z_sprobuj": {
+  "hash": "8fd667338312",
+  "who": "lisek",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_sprobuj.wiewiorka": {
+  "hash": "e162c7515718",
+  "who": "wiewiorka",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_sprobuj.sowa": {
+  "hash": "288d7c5570fa",
+  "who": "sowa",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_sprobuj.sarenka": {
+  "hash": "8ee25e68d394",
+  "who": "sarenka",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_dasz_rade": {
+  "hash": "8e1887d0589f",
+  "who": "lisek",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_dasz_rade.wiewiorka": {
+  "hash": "9c4ce7923ed1",
+  "who": "wiewiorka",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_dasz_rade.sowa": {
+  "hash": "a757ff0c6695",
+  "who": "sowa",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_dasz_rade.sarenka": {
+  "hash": "a9a10725275e",
+  "who": "sarenka",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_popatrz": {
+  "hash": "95a0135ced8b",
+  "who": "lisek",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_popatrz.wiewiorka": {
+  "hash": "680861f118c0",
+  "who": "wiewiorka",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_popatrz.sowa": {
+  "hash": "2c1c723a194c",
+  "who": "sowa",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_popatrz.sarenka": {
+  "hash": "666b4191f916",
+  "who": "sarenka",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_nie_bojsie": {
+  "hash": "95b0f3081a5d",
+  "who": "lisek",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_nie_bojsie.wiewiorka": {
+  "hash": "6028badc58e4",
+  "who": "wiewiorka",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_nie_bojsie.sowa": {
+  "hash": "058a4c1f587a",
+  "who": "sowa",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_nie_bojsie.sarenka": {
+  "hash": "3e52d1c35a8b",
+  "who": "sarenka",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_przeciagnij": {
+  "hash": "33d68043d2d9",
+  "who": "lisek",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_przeciagnij.wiewiorka": {
+  "hash": "bc7749a2de8b",
+  "who": "wiewiorka",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_przeciagnij.sowa": {
+  "hash": "6a66a0dd5eb9",
+  "who": "sowa",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_przeciagnij.sarenka": {
+  "hash": "de1131bd2aa2",
+  "who": "sarenka",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_paluszek": {
+  "hash": "d5ead430cca5",
+  "who": "lisek",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_paluszek.wiewiorka": {
+  "hash": "6af5f46bb562",
+  "who": "wiewiorka",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_paluszek.sowa": {
+  "hash": "1867612f3bbf",
+  "who": "sowa",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_paluszek.sarenka": {
+  "hash": "33443b533240",
+  "who": "sarenka",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_razem": {
+  "hash": "6c07593ed689",
+  "who": "lisek",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_razem.wiewiorka": {
+  "hash": "a500bc5b7223",
+  "who": "wiewiorka",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_razem.sowa": {
+  "hash": "2a3afa2f3e5d",
+  "who": "sowa",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_razem.sarenka": {
+  "hash": "0286bbe5cb15",
+  "who": "sarenka",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_tutaj": {
+  "hash": "b426229486fb",
+  "who": "lisek",
+  "text": "Hmm... może tutaj?"
+ },
+ "line.z_tutaj.wiewiorka": {
+  "hash": "51bec2455da5",
+  "who": "wiewiorka",
+  "text": "Hmm... może tutaj?"
+ },
+ "line.z_tutaj.sowa": {
+  "hash": "782aab13e7fc",
+  "who": "sowa",
+  "text": "Hmm... może tutaj?"
+ },
+ "line.z_tutaj.sarenka": {
+  "hash": "03679afd3dd7",
+  "who": "sarenka",
+  "text": "Hmm... może tutaj?"
+ }
+}

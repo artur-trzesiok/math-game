@@ -261,6 +261,8 @@ def main() -> int:
     lessons = [p for p in sorted(LESSONS.iterdir()) if p.is_dir() and (p / "lesson.json").exists() and (not wanted or p.name in wanted)]
     album = LESSONS.parent / "album"                            # the sticker album's narrator (game/album/i18n) -> audio/<lang>/album
     if (album / "i18n").exists() and (not wanted or "album" in wanted): lessons.append(album)
+    zachety = LESSONS.parent / "zachety"                        # encouragements when a child waits, every voice -> audio/<lang>/zachety
+    if (zachety / "i18n").exists() and (not wanted or "zachety" in wanted): lessons.append(zachety)
     total = [0, 0, 0]
     for lesson in lessons:
         for lang in LANGS:

@@ -1,0 +1,162 @@
+{
+ "line.z_sprobuj": {
+  "hash": "47d70676cc32",
+  "who": "lisek",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_sprobuj.wiewiorka": {
+  "hash": "ddaad258b968",
+  "who": "wiewiorka",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_sprobuj.sowa": {
+  "hash": "da57c25c2503",
+  "who": "sowa",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_sprobuj.sarenka": {
+  "hash": "3e124de438f1",
+  "who": "sarenka",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_dasz_rade": {
+  "hash": "0b2fef9bef74",
+  "who": "lisek",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_dasz_rade.wiewiorka": {
+  "hash": "e18f101281bb",
+  "who": "wiewiorka",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_dasz_rade.sowa": {
+  "hash": "6a39323cba49",
+  "who": "sowa",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_dasz_rade.sarenka": {
+  "hash": "c5d6ad095847",
+  "who": "sarenka",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_popatrz": {
+  "hash": "dd201d406677",
+  "who": "lisek",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_popatrz.wiewiorka": {
+  "hash": "b924adba1dc8",
+  "who": "wiewiorka",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_popatrz.sowa": {
+  "hash": "22515e065833",
+  "who": "sowa",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_popatrz.sarenka": {
+  "hash": "044aa8d87445",
+  "who": "sarenka",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_nie_bojsie": {
+  "hash": "e8fc7d8686d1",
+  "who": "lisek",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_nie_bojsie.wiewiorka": {
+  "hash": "d551e17eb875",
+  "who": "wiewiorka",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_nie_bojsie.sowa": {
+  "hash": "95dbb804e045",
+  "who": "sowa",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_nie_bojsie.sarenka": {
+  "hash": "df9f8ed2730d",
+  "who": "sarenka",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_przeciagnij": {
+  "hash": "f5e916db730e",
+  "who": "lisek",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_przeciagnij.wiewiorka": {
+  "hash": "10934b507ec8",
+  "who": "wiewiorka",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_przeciagnij.sowa": {
+  "hash": "f21a3bdfc0c8",
+  "who": "sowa",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_przeciagnij.sarenka": {
+  "hash": "4914285d6316",
+  "who": "sarenka",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_paluszek": {
+  "hash": "e484e5ff8251",
+  "who": "lisek",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_paluszek.wiewiorka": {
+  "hash": "a644ea20e431",
+  "who": "wiewiorka",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_paluszek.sowa": {
+  "hash": "99baffe97c72",
+  "who": "sowa",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_paluszek.sarenka": {
+  "hash": "7641ad55539a",
+  "who": "sarenka",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_razem": {
+  "hash": "34376748d96e",
+  "who": "lisek",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_razem.wiewiorka": {
+  "hash": "ce30c5a58f80",
+  "who": "wiewiorka",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_razem.sowa": {
+  "hash": "c08c81b806a9",
+  "who": "sowa",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_razem.sarenka": {
+  "hash": "17d59ce62c4e",
+  "who": "sarenka",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_tutaj": {
+  "hash": "573c7b5c9bf3",
+  "who": "lisek",
+  "text": "Hmm... maybe here?"
+ },
+ "line.z_tutaj.wiewiorka": {
+  "hash": "17f816ec5c9a",
+  "who": "wiewiorka",
+  "text": "Hmm... maybe here?"
+ },
+ "line.z_tutaj.sowa": {
+  "hash": "eaacaaf1fffe",
+  "who": "sowa",
+  "text": "Hmm... maybe here?"
+ },
+ "line.z_tutaj.sarenka": {
+  "hash": "62fce22f5c18",
+  "who": "sarenka",
+  "text": "Hmm... maybe here?"
+ }
+}

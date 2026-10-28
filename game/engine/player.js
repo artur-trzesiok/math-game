@@ -140,6 +140,7 @@ export class Player {
     const mod = await import(v(`/game/lessons/${id}/lesson.js`));
     this.lesson = mod.default;
     this.strings = await loadStrings(`/game/lessons/${id}/i18n/${this.lang}.json`);
+    this.zachety = this.zachety?.lang === this.lang ? this.zachety : { lang: this.lang, t: await loadStrings(`/game/zachety/i18n/${this.lang}.json`) };
     this.tl = translator([this.strings, this.ui]);
     $("#menu").style.display = "none"; $("#hud").style.display = "flex";
     $("#hud .lesson-name").textContent = meta.title[this.lang] || meta.title.en;
@@ -279,7 +280,40 @@ export class Player {
         if (this.seria >= 2) pokazSerie(this.seria, S);
       }
     };
-    const wDzialaniu = (p) => { const pol = last; polecenieTeraz = pol; const koniec = () => { if (polecenieTeraz === pol) polecenieTeraz = null; }; Promise.resolve(p).then(koniec, koniec); return p; };
+    // a child who waits gets encouraged: after a while with no touch the character who gave the instruction says a
+    // few words (never praise - an invitation), each time other ones; the second time in a pointing task it points
+    // to the answer ("hmm... maybe here?"). Dragging tasks get dragging words.
+    const ZACH = { wskaz: ["line.z_sprobuj", "line.z_dasz_rade", "line.z_popatrz", "line.z_nie_bojsie"], przeciagnij: ["line.z_przeciagnij", "line.z_paluszek", "line.z_razem", "line.z_sprobuj"], dotknij: ["line.z_sprobuj", "line.z_razem", "line.z_nie_bojsie"] };
+    const zachecaj = (rodzaj) => {
+      let t = null, ile = 0, stop = false;
+      const plan = () => { clearTimeout(t); if (!stop && !FAST) t = setTimeout(zachec, ile ? 13000 : 9000); };
+      const zachec = async () => {
+        if (stop || this.run !== run) return;
+        if (S.sfx.mowa || powtarza) return plan();
+        const tab = this.zachety?.t || {};
+        const kto = polecenieTeraz?.who && S.puppets[polecenieTeraz.who]?.korzen.visible ? polecenieTeraz.who : Object.keys(S.puppets).find((n) => S.puppets[n].korzen.visible);
+        if (!kto) return plan();
+        ile++;
+        const cel = rodzaj === "wskaz" && ile >= 2 ? S.zachetaCel : null;
+        const pula = cel ? ["line.z_tutaj"] : ZACH[rodzaj].filter((k) => k !== this.ostatniaZacheta);
+        const key = pula[Math.floor(Math.random() * pula.length)]; this.ostatniaZacheta = key;
+        const L = S.puppets[kto], line = tab[key]; if (!line) return plan();
+        if (cel) { cel.highlight?.(true); S.lookAt(kto, cel); L.graj("Wskazanie"); } else { L.patrz("przod"); L.graj("Mowienie", true); }
+        S.sfx.mowa = true;
+        try { await this.speech.say({ lang, lessonId: "zachety", key: kto === line.who ? key : `${key}.${kto}`, fallback: key, text: line.text, who: kto, puppet: L, volume: L.meta?.volume ?? 1 }); }
+        catch { /* never break the task */ } finally { S.sfx.mowa = false; if (L.korzen.visible && !cel) L.spoczynek(); }
+        plan();
+      };
+      const dotyk = () => plan();
+      S.renderer.domElement.addEventListener("pointerdown", dotyk); plan();
+      return () => { stop = true; clearTimeout(t); S.renderer.domElement.removeEventListener("pointerdown", dotyk); };
+    };
+    const wDzialaniu = (p, rodzaj = "przeciagnij") => {
+      const pol = last; polecenieTeraz = pol; const koniecZachet = zachecaj(rodzaj);
+      const koniec = () => { koniecZachet(); if (polecenieTeraz === pol) polecenieTeraz = null; };
+      Promise.resolve(p).then(koniec, koniec); return p;
+    };
+    wDzialaniu.dotknij = (p) => wDzialaniu(p, "dotknij");                 // counting by touch
     // the recorder: what kind of line this is (the story, a wrong answer, a repeat on a tap)
     let zrodloMowy = "opowiesc";
     const zapisz = (ev) => {
@@ -366,7 +400,7 @@ export class Player {
       // numbers: a digit (or 10) drawn with the pencil; counting by touch - the number words are the lesson's own
       // lines "line.n1".."line.n10", spoken by `who`
       digit: guard((n, opts) => narysujCyfre(S, n, opts)),
-      count: guard((items, { who, od = 0, rzad = null } = {}) => wDzialaniu(liczDotykiem(S, items, { od, rzad, say: (k) => say(who, `line.n${k}`) }))),
+      count: guard((items, { who, od = 0, rzad = null } = {}) => wDzialaniu.dotknij(liczDotykiem(S, items, { od, rzad, say: (k) => say(who, `line.n${k}`) }))),
       equation: guard((tokens, opts) => narysujRownanie(S, tokens, opts)),
       // geometry and order (geometria.js); the waits repeat the instruction when a character is tapped
       shape: (kind, opts) => { alive(); return G.ksztalt(S, kind, opts); },
@@ -398,13 +432,14 @@ export class Player {
       choose: guard((targets) => S.choose(targets)),
       // a task: the child must click `correct` among `targets`; a wrong click plays the
       // `wrong` line and, after `hintAfter` misses, pulses the right answer
-      task: (o) => wDzialaniu(zadanie(o)),
+      task: (o) => wDzialaniu(zadanie(o), "wskaz"),
       sort: (o) => wDzialaniu(sortuj(o)).then((r) => { nagroda(null); return r; }),
       // wszystkie: every right one must be found ("point to all the apples"); each found one keeps a pencil ring
       _task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null, wszystkie = false }) => {
         const ok = Array.isArray(correct) ? correct : [correct];
         const znalezione = new Set(), obrysy = [];
         const szukane = () => ok.filter((h) => !znalezione.has(h));
+        Object.defineProperty(S, "zachetaCel", { configurable: true, get: () => szukane()[0] || null });
         const polecenie = last;                          // the instruction: a tapped character repeats it, not the "try again" said since
         let misses = 0;
         const podpowiedzi = [];                          // pencil hints drawn on the way; wiped when the task ends
@@ -436,7 +471,7 @@ export class Player {
             podpowiedzi.push(await S.circle(szukane()[0]));
           }
         }
-        } finally { clearInterval(gazeTimer); for (const p of [...podpowiedzi, ...obrysy]) p.remove(); }
+        } finally { clearInterval(gazeTimer); for (const p of [...podpowiedzi, ...obrysy]) p.remove(); Object.defineProperty(S, "zachetaCel", { configurable: true, value: null, writable: true }); }
       },
       // free sorting: every item must end up in a zone and every zone must hold one kind
       // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line
