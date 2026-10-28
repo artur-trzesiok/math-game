@@ -175,6 +175,49 @@ Both the same size.""",
 }
 
 
+SHEETS["rytm"] = {
+    "outline": True,
+    "names": ["beben", "dzwonek", "garnek", "kubek_lyzka", "choragiewka_czerwona", "choragiewka_zolta", "choragiewka_niebieska", "ruch_klask"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of EIGHT small illustrated objects for a children's picture book, arranged in a neat
+grid of 2 rows and 4 columns on a fully TRANSPARENT background, with generous empty space between objects so none
+of them touch.
+{STYL}
+Row 1, left to right: a small round toy drum with a red side, a light skin on top and two wooden drumsticks crossed
+on it; a shiny golden hand bell with a wooden handle; a round steel cooking pot with two handles and a lid; a blue
+cup with a silver spoon standing in it.
+Row 2, left to right: one triangular bunting flag pointing down, plain RED, a short piece of string along its top
+edge; the SAME triangular flag, plain YELLOW; the SAME triangular flag, plain BLUE; two small hands clapping
+together with three short curved motion lines around them.
+All eight roughly the same size.""",
+}
+SHEETS["rytm_ruchy"] = {
+    "outline": True,
+    "names": ["ruch_skok", "ruch_obrot", "koralik_czerwony", "koralik_zolty", "koralik_niebieski"],
+    "rows": 1,
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of FIVE small illustrated objects for a children's picture book, arranged in ONE ROW
+of 5 on a fully TRANSPARENT background, with generous empty space between objects so none of them touch.
+{STYL}
+Left to right: a pair of small red children's shoes leaping up, with an arched dotted line under them showing the
+jump; a big round curved arrow going almost all the way around in a circle, bright orange, showing a spin; one big
+round shiny wooden bead painted RED with a hole through its middle; the SAME round bead painted YELLOW; the SAME
+round bead painted BLUE.
+All five roughly the same size.""",
+}
+
+# the jump on its own: two shoes as two blobs on the row sheet split into one shoe and a scrap
+SHEETS["ruch_skok"] = {
+    "outline": True,
+    "names": ["ruch_skok"],
+    "size": "1024x1024",
+    "prompt": f"""ONE pair of small red children's shoes pressed together side by side, TOUCHING each other, lifted up
+in the air in a jump, with a thick orange curved arrow pointing UP drawn right under their soles and touching them,
+all one connected shape, centred, on a fully TRANSPARENT background with plenty of empty space around it, no glow.
+{STYL}""",
+}
+
+
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     dst = WORK / f"{sheet}.png"
@@ -223,7 +266,7 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
     plamy = plamy[:len(names)]
     if len(plamy) != len(names):
         print(f"UWAGA: {len(plamy)} plam, oczekiwano {len(names)} - sprawdz arkusz")
-    rows = 2 if len(names) > 4 else 1
+    rows = SHEETS[sheet].get("rows", 2 if len(names) > 4 else 1)
     srodek_y = np.median([p[4] for p in plamy])
     plamy.sort(key=lambda p: ((0 if p[4] < srodek_y else 1) if rows == 2 else 0, p[5]))
     OUT.mkdir(parents=True, exist_ok=True)
