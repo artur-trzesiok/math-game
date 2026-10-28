@@ -131,6 +131,15 @@ Row 2, left to right: one bright RED maple leaf; one bright YELLOW birch leaf; a
 stem; one shiny brown horse chestnut.
 All eight objects roughly the same size; the two leaves the same shape size, only the colour and the leaf type differ.""",
     },
+    "kokarda": {
+        "outline": True,
+        "names": ["kokarda"],
+        "size": "1024x1024",
+        "prompt": f"""ONE small shiny GOLDEN ribbon bow, like the bow on top of a gift, seen straight on, centred, on a fully
+TRANSPARENT background, with plenty of empty space around it.
+{STYL}
+NOT red, NOT a whole gift box - only the golden bow with two short ribbon tails.""",
+    },
     "prezent": {
         "outline": True,
         "names": ["prezent", "prezent_otwarty"],

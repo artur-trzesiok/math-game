@@ -365,9 +365,11 @@ export class Lalka {
       const L1 = Math.hypot(kx, ky), L2 = Math.hypot(ax, ay), beta = Math.atan2(ay, ax) - Math.atan2(ky, kx);
       const c = Math.max(-1, Math.min(1, (d * d - L1 * L1 - L2 * L2) / (2 * L1 * L2))), gam = Math.acos(c);
       const norm = (a) => Math.atan2(Math.sin(a), Math.cos(a));
-      // the knee folds the way it folded a frame ago (the track's value only picks the side at the start): choosing
-      // the solution nearest to the track's 0 every frame flipped a deer's leg between two bends mid-stride
-      const hint = L.ikPoprz ?? (p[k0.nazwa] || 0), jakKat = (psi) => (L.lustro ? 1 : -1) * psi / DEG;
+      // which way the knee folds: the track's value; else, for a joint that bends one way (a deer's [-5, 130]), the
+      // middle of its range - the same at every phase; else the bend it had a frame ago. Nearest to 0 every frame
+      // flipped the deer's leg between the two solutions mid-stride (one of them hyperextended inside the -5 slack)
+      const srodek = (k0.zakres[0] + k0.zakres[1]) / 2;
+      const hint = p[k0.nazwa] ? p[k0.nazwa] : Math.abs(srodek) > 15 ? srodek : (L.ikPoprz ?? 0), jakKat = (psi) => (L.lustro ? 1 : -1) * psi / DEG;
       const ocena = (psi) => { const kat = jakKat(psi); return (kat < k0.zakres[0] || kat > k0.zakres[1] ? 1000 : 0) + Math.abs(kat - hint); };
       const a1 = norm(gam - beta), a2 = norm(-gam - beta), psi = ocena(a1) <= ocena(a2) ? a1 : a2;
       L.ikPoprz = jakKat(psi);
