@@ -1,0 +1,314 @@
+{
+ "czapka_zimowa": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  }
+ },
+ "czapka_zimowa_2": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  }
+ },
+ "czapka_zimowa_3": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  }
+ },
+ "kapelusz": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  }
+ },
+ "kapelusz_2": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  }
+ },
+ "kapelusz_3": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 2.0,
+   "obrot": 0
+  }
+ },
+ "czapka_z_daszkiem": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  }
+ },
+ "czapka_z_daszkiem_2": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  }
+ },
+ "czapka_z_daszkiem_3": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.8,
+   "obrot": 0
+  }
+ },
+ "korona": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  }
+ },
+ "korona_2": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  }
+ },
+ "korona_3": {
+  "przod": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0.0,
+   "skala": 1.7,
+   "obrot": 0
+  }
+ }
+}

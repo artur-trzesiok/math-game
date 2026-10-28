@@ -96,13 +96,14 @@ def measure_piece(img: Image.Image, cz: dict, specs: list, torso: dict, side: st
         if "s" in sp:
             b = int(sp["s"] * BANDS)
             filled = np.nonzero(count)[0]
-            b = int(filled[np.argmin(abs(filled - b))])
+            if filled.size: b = int(filled[np.argmin(abs(filled - b))])   # a tiny piece (a bunny's tail) may have no field at all
         else:
             lo, hi = int(sp["okno"][0] * BANDS), int(sp["okno"][1] * BANDS)
             mid = (lo + hi) / 2
             cost = [width[b] * (1 + 1.0 * abs(b - mid) / max(1, (hi - lo) / 2)) for b in range(lo, hi + 1)]
             b = lo + int(np.argmin(cost))
         ys, xs = np.nonzero(ok & (band == b) & (s > 0))
+        if not len(xs): ys, xs = np.nonzero(mask)                  # no field: the piece's own middle
         cx, cy = (xs.mean() + 0.5) * CELL, (ys.mean() + 0.5) * CELL
         out.append({"x": round(cz["x"] + cx * sx), "y": round(cz["y"] + cy * sy)})
     return out

@@ -61,6 +61,37 @@ POSTACIE = {
                 "and a short fluffy tail",  # no spots/belly/fawn/doe: those get the side view moderation-blocked
         "konczyny": "front legs", "konczyna": "front leg", "usta": "mouth", "ogon": True,
     },
+    # the second cast (2026-10-28): the biggest and the smallest, the hasty one, the builder, the one who feels his way
+    "mis": {
+        "rig": "humanoid", "wysokosc": 1.6,
+        "opis": "a big, cuddly, friendly brown bear cub with a round tummy in a lighter tan, small round ears, "
+                "a light tan muzzle with a dark nose, big soft paws",
+        "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": False,
+    },
+    "jez": {
+        "rig": "humanoid", "wysokosc": 1.3,
+        "opis": "a tiny, shy, friendly hedgehog with soft rounded brown spines on its back and the top of its head, "
+                "a pale cream face and tummy, a small black nose, tiny pink paws",
+        "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": False,
+    },
+    "zajac": {
+        "rig": "humanoid", "wysokosc": 1.5,
+        "opis": "a lively, friendly grey-brown bunny with very long upright ears with pink insides, a white muzzle "
+                "and tummy, big feet, a small fluffy white tail",
+        "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": True,
+    },
+    "bobr": {
+        "rig": "humanoid", "wysokosc": 1.5,
+        "opis": "a cheerful, friendly brown beaver with two big white front teeth, a lighter brown muzzle, small "
+                "round ears, a broad flat dark brown tail with a criss-cross pattern",
+        "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": True,
+    },
+    "kret": {
+        "rig": "humanoid", "wysokosc": 1.4,
+        "opis": "a friendly, round little dark grey mole with soft velvety fur, small round dark eyes with a white "
+                "shine, a big pink nose, large pink digging paws with little claws",
+        "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": False,
+    },
 }
 
 USTA_WARIANTY = {
