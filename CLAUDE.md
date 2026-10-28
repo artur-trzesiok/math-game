@@ -406,7 +406,7 @@ flower has red); an indoor mover that is NEW in the second pass (median differen
 >= 80) drops, above its foot, pixels within 45 of the plate (the wallpaper between a
 plant's leaves) - one the plate already has keeps its leaves. Review every split with
 `python tools/backgrounds/debug_split.py <scene>|all` -> `work/split_<scene>.png`
-(outlines on the plate, every prop on a checkerboard). `make_objects.py gen|split`: all objects from one sheet, row-major
+(outlines on the plate, every prop on a checkerboard). A variant of a scene (`"z": "pokoj"`, e.g. `pokoj_noc`) edits that scene's plate; `"ruch": None` makes a still plate, and `poswiaty` ({x, y, r} in plate pixels, `kolor`, `moc`) lay a breathing lamp glow over it. `make_objects.py gen|split`: all objects from one sheet, row-major
 order = `NAZWY`; split by alpha into 256 px WebP stickers.
 
 ## Audio
