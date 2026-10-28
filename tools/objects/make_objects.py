@@ -777,6 +777,36 @@ sun rising - with ONE thing added in the front on the left: a proud colourful RO
 open, crowing, with three little curved sound lines coming from its beak. Keep everything else as it is.""",
 }
 
+# stage 6: the bakery, the dam, the picnic, the tournament
+SHEETS["etap6_a"] = {
+    "outline": True,
+    "names": ['bulka', 'torebka', 'taca', 'bal'],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: one round golden bread roll; one small brown paper bag, open at the top, EMPTY; one
+long flat wooden tray seen slightly from above, EMPTY; one short thick wooden log lying on its side, its cut end showing
+rings.
+Each object fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.""",
+}
+SHEETS["etap6_b"] = {
+    "outline": True,
+    "names": ['wiaderko', 'rybka_srebrna', 'kocyk', 'tablica'],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: one small blue tin bucket, EMPTY; one small silver-blue fish seen from the side; a small
+folded red-and-white checked picnic blanket; one small wooden board on two legs with a blank dark green surface (NO
+writing).
+Each object fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

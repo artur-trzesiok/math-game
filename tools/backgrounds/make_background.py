@@ -324,6 +324,21 @@ style: a little potted plant standing on the floor near the right wall.
 Same colours, same screen, same curtains, same lanterns. Do NOT move or redraw anything that was already there.""",
 }
 
+# stage 6: Bear's little forest bakery (counting to 5)
+SCENY["piekarnia"] = {
+    "wnetrze": True,
+    "plyta": f"""A background illustration for a children's game: the inside of a cosy little forest bakery made of wood,
+seen straight on: a big round brick bread oven glowing warm on the left, a long wooden counter across the back with a
+few EMPTY baskets on it, wooden shelves with jars of flour and honey on the right, a little window with a striped
+awning view of trees, warm morning light. The floor in the lower middle is EMPTY where characters will stand.
+{STYL}
+Wide landscape composition.
+NO bread, NO cakes on display, NO characters, NO animals, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
+style: a little potted plant on the windowsill.
+Same colours, same oven, same counter, same shelves. Do NOT move or redraw anything that was already there.""",
+}
+
 
 def gen(nazwa: str, jakosc: str = "high") -> None:
     kat = KORZEN / nazwa

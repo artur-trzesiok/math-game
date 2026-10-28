@@ -112,6 +112,17 @@ const DEMA = {
     await w.wloz(await S.object("jablko", { x: 2, y: -2, size: 0.8 }));
     await w.doPoziomu(2); info("na górze! teraz na dół"); await w.doPoziomu(0); info("na dole!");
   },
+  ramka: async () => {
+    pokaz(); info("przeciągnij do ramki siedem jabłek");
+    const r = await M3.ramka(S, { x: 0.4, y: 1.2 });
+    const J = []; for (let i = 0; i < 9; i++) J.push(await S.object("jablko", { x: -3.2 + i * 0.85, y: -2.3, size: 0.8 }));
+    await r.przeciagaj({ rzeczy: J, ile: 7, onZaDuzo: () => info("już siedem!") }); info("siedem: pięć i dwa");
+  },
+  domino: async () => {
+    pokaz(); info("wskaż domino z pięcioma kropkami");
+    const D = [[2, 3], [1, 1], [4, 2]].map(([a, b], i) => M3.domino(S, a, b, { x: -2 + i * 2, y: 0.6 }));
+    const hit = await S.choose(D); info(hit.suma === 5 ? "tak, 2 + 3 = 5!" : "to " + hit.suma);
+  },
   roznice: async () => { pokaz(); info("znajdź 3 różnice"); await M2.roznice(S, "laka"); info("wszystkie różnice!"); },
   kolorowanka: async () => { pokaz(); info("wybierz kredkę, potem pole z tą cyfrą"); await M2.kolorowanka(S, "domek"); info("pokolorowane!"); },
 };

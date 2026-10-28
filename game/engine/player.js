@@ -576,6 +576,8 @@ export class Player {
       // mechaniki3.js: a fence drawn around things, a pencil fence of given points, the lift
       zagroda: (o) => wDzialaniu(M3.zagroda(S, { ...o, onZle: o.wrong ? () => say("narrator", o.wrong) : null, onOtwarta: o.otwarta ? () => say("narrator", o.otwarta) : null }), "wskaz"),
       plot: guard((pts, o) => M3.plot(S, pts, o)),
+      ramka: guard(async (o = {}) => { const r = await M3.ramka(S, o); const p0 = r.przeciagaj; r.przeciagaj = (q) => wDzialaniu(p0({ ...q, onZaDuzo: q.wrong ? () => say("narrator", q.wrong) : null })); return r; }),
+      domino: (a, b, o) => { alive(); return M3.domino(S, a, b, o); },
       winda: guard(async (o = {}) => {
         const w = await M3.winda(S, { ...o, onZly: o.wrong ? () => say("narrator", o.wrong) : null });
         const d0 = w.doPoziomu; w.doPoziomu = (i) => wDzialaniu(d0(i)); return w;

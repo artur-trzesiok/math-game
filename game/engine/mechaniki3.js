@@ -1,5 +1,5 @@
-// Mechanics, third set (accepted 2026-10-28, stage 4): the fence (a closed line drawn with a finger makes an inside)
-// and the lift (a basket on a rope over a pulley, stopping at levels). The player wraps them as ctx calls.
+// Mechanics, third set (accepted 2026-10-28, stages 4 and 6): the fence (a closed line drawn with a finger makes an inside),
+// the lift (a basket on a rope over a pulley, stopping at levels), the ten frame and dominoes. The player wraps them as ctx calls.
 
 import * as THREE from "three";
 import { texture } from "./scene.js";
@@ -201,4 +201,81 @@ export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz
     remove: () => [h, belka, kolo, raczka, linyH].forEach((q) => q.remove()),
   };
   return W;
+}
+
+// ===================================================================== the ten frame
+// Two rows of five places (a card with a white rim); things dropped on it fill it place by place, top row first, so
+// "five and some more" is seen at a glance. ramka(S, {x, y}) -> {wloz(h), ile(), miejsce(i), przeciagaj({rzeczy, ile,
+// onZaDuzo}), remove}. przeciagaj waits until exactly `ile` lie in it (one more jumps back). Tests: the autopilot
+// drops on the frame (dragSet.ramka).
+export async function ramka(S, { x = 0.5, y = 1.0, krok = 0.95, kolor = "#2f6fd0" } = {}) {
+  const grp = new THREE.Group(); grp.position.set(x, y, 0.32); S.scene.add(grp);
+  const W = krok * 5 + 0.3, H = krok * 2 + 0.3;
+  const tlo = new THREE.Mesh(new THREE.PlaneGeometry(W + 0.22, H + 0.22), new THREE.MeshBasicMaterial({ color: "#8a5a2e", transparent: true, depthWrite: false }));   // a wooden frame
+  const plyta = new THREE.Mesh(new THREE.PlaneGeometry(W, H), new THREE.MeshBasicMaterial({ color: "#fdf6e6", transparent: true, depthWrite: false }));
+  tlo.renderOrder = 9.2; plyta.renderOrder = 9.3; grp.add(tlo, plyta);
+  const miejsca = [];
+  const srodek = new THREE.Mesh(new THREE.PlaneGeometry(W, 0.06), new THREE.MeshBasicMaterial({ color: "#8a5a2e", transparent: true, depthWrite: false }));
+  srodek.renderOrder = 9.45; srodek.position.z = 0.02; grp.add(srodek);                 // the line between the two fives
+  for (let r = 0; r < 2; r++) for (let k = 0; k < 5; k++) {
+    const mx = (k - 2) * krok, my = (0.5 - r) * krok;
+    const kwadrat = new THREE.Mesh(new THREE.PlaneGeometry(krok - 0.12, krok - 0.12), new THREE.MeshBasicMaterial({ color: kolor, transparent: true, opacity: 0.22, depthWrite: false }));
+    kwadrat.position.set(mx, my, 0.01); kwadrat.renderOrder = 9.4; grp.add(kwadrat);
+    miejsca.push({ x: x + mx, y: y + my, h: null });
+  }
+  const h = { mesh: grp, kind: "ramka", name: "ramka", base: 1, remove: () => { S.scene.remove(grp); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); for (const m of miejsca) m.h?.remove?.(); } };
+  S.objects.push(h);
+  const ile = () => miejsca.filter((m) => m.h).length;
+  const wloz = async (t) => {
+    const m = miejsca.find((q) => !q.h); if (!m) return false;
+    m.h = t; t.wRamce = true; const b = S.bounds(t), s = Math.min(1, (krok - 0.18) / Math.max(b.right - b.left, b.top - b.bottom));
+    t.mesh.scale.multiplyScalar(s); t.base = (t.base || 1) * s;
+    await t.moveTo(m.x, m.y, FAST ? 0.05 : 0.25); S.sfx.graj("plop"); S.bump(t, 0.12, false);
+    return true;
+  };
+  return {
+    ...h, h, miejsca, ile, wloz,
+    miejsce: (i) => miejsca[i],
+    // drag things in until exactly n lie in the frame
+    przeciagaj: ({ rzeczy, ile: n, onZaDuzo = null }) => new Promise((ok) => {
+      S.free({
+        items: rzeczy.slice(), ramka: { x, y, W, H, n, ile },
+        onDrop: async (t, p) => {
+          if (t.wRamce) return;
+          const wRamke = Math.abs(p.x - x) < W / 2 + 0.3 && Math.abs(p.y - y) < H / 2 + 0.3;
+          if (!wRamke) { await t.moveTo(t.home.x, t.home.y, 0.3); return; }
+          if (ile() >= n) { S.sfx.graj("wrong"); await t.moveTo(t.home.x, t.home.y, 0.35); onZaDuzo?.(); return; }
+          await wloz(t);
+          if (ile() === n) { S.endSort(); S.sfx.graj("right"); ok(); }
+        },
+        onTap: () => {}, onPuppet: () => S.onPuppetTap?.(),
+      });
+    }),
+  };
+}
+
+// ===================================================================== dominoes
+// A domino tile: a white rounded tile, a line across the middle, dots on each half (die patterns 0-6). A handle like a
+// sticker (a task target; `lewa`, `prawa`, `suma` on it). Pionowa by default (the halves above each other).
+const WZORY = { 0: [], 1: [[0, 0]], 2: [[-1, 1], [1, -1]], 3: [[-1, 1], [0, 0], [1, -1]], 4: [[-1, 1], [1, 1], [-1, -1], [1, -1]], 5: [[-1, 1], [1, 1], [0, 0], [-1, -1], [1, -1]], 6: [[-1, 1], [1, 1], [-1, 0], [1, 0], [-1, -1], [1, -1]] };
+export function domino(S, a, b, { x = 0, y = 0.8, size = 2.4, pozioma = false } = {}) {
+  const grp = new THREE.Group(); grp.position.set(x, y, 0.4); S.scene.add(grp);
+  const w = size * 0.5, hh = size;
+  const zaokr = (W, H, r) => { const s = new THREE.Shape(); s.moveTo(-W / 2 + r, -H / 2); s.lineTo(W / 2 - r, -H / 2); s.quadraticCurveTo(W / 2, -H / 2, W / 2, -H / 2 + r); s.lineTo(W / 2, H / 2 - r); s.quadraticCurveTo(W / 2, H / 2, W / 2 - r, H / 2); s.lineTo(-W / 2 + r, H / 2); s.quadraticCurveTo(-W / 2, H / 2, -W / 2, H / 2 - r); s.lineTo(-W / 2, -H / 2 + r); s.quadraticCurveTo(-W / 2, -H / 2, -W / 2 + r, -H / 2); return s; };
+  const mat = (c) => new THREE.MeshBasicMaterial({ color: c, transparent: true, depthWrite: false });
+  const brzeg = new THREE.Mesh(new THREE.ShapeGeometry(zaokr(w + 0.08, hh + 0.08, 0.14)), mat("#3a332d"));
+  const plyta = new THREE.Mesh(new THREE.ShapeGeometry(zaokr(w, hh, 0.11)), mat("#fffaf0"));
+  const kreska = new THREE.Mesh(new THREE.PlaneGeometry(w * 0.8, 0.035), mat("#3a332d"));
+  brzeg.renderOrder = 10; plyta.renderOrder = 10.1; kreska.renderOrder = 10.2; kreska.position.z = 0.01; grp.add(brzeg, plyta, kreska);
+  const r = w * 0.085, u = w * 0.25;
+  for (const [n, sy] of [[a, 1], [b, -1]]) for (const [px, py] of WZORY[n]) {
+    const d = new THREE.Mesh(new THREE.CircleGeometry(r, 20), mat("#2b2622")); d.position.set(px * u, sy * hh / 4 + py * u, 0.02); d.renderOrder = 10.3; grp.add(d);
+  }
+  if (pozioma) grp.rotation.z = Math.PI / 2;
+  const h = { mesh: grp, kind: "object", name: "domino", base: 1, size0: 1, pulse: false, home: { x, y }, zone: null, lewa: a, prawa: b, suma: a + b,
+    remove: () => { S.scene.remove(grp); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); S.untarget(h); },
+    highlight: (on) => { h.pulse = on; if (!on) grp.scale.setScalar(1); },
+    moveTo: (nx, ny, d = 0.4) => { const x0 = grp.position.x, y0 = grp.position.y; return S.tween(d, (s) => { grp.position.x = x0 + (nx - x0) * s; grp.position.y = y0 + (ny - y0) * s; }); } };
+  S.objects.push(h); S.appear?.(h, true);
+  return h;
 }
