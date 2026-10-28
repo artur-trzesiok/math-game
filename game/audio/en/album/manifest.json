@@ -1,0 +1,17 @@
+{
+ "line.album_witaj": {
+  "hash": "49cf76bc0652",
+  "who": "narrator",
+  "text": "This is your album of stickers you've earned in the lessons."
+ },
+ "line.album_pusty": {
+  "hash": "0fd15d93c949",
+  "who": "narrator",
+  "text": "There are no stickers here yet. You'll get one after every lesson!"
+ },
+ "line.album_nowe": {
+  "hash": "6c03e4ba74f6",
+  "who": "narrator",
+  "text": "You have a new sticker! Drag it onto a page of the album, anywhere you like."
+ }
+}

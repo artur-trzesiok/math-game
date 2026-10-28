@@ -59,6 +59,16 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
     el.querySelector(".wstecz").disabled = rozklad === 0; el.querySelector(".dalej").disabled = rozklad >= STRON / 2 - 1;
   };
   rysuj();
+  // the narrator welcomes: what this album is, then an empty album or a new sticker on the tray
+  const powitanie = async () => {
+    const tab = await fetch(v(`/game/album/i18n/${lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}));
+    const powiedz = (k) => (tab[k] ? speech.say({ lang, lessonId: "album", key: k, text: tab[k].text, who: "narrator" }).catch(() => {}) : null);
+    await powiedz("line.album_witaj");
+    if (!el.isConnected) return;
+    if (!Object.keys(stan.naklejki).length) await powiedz("line.album_pusty");
+    else if (nieprzyklejone()) await powiedz("line.album_nowe");
+  };
+  powitanie();
 
   // turning a page: a leaf over half the book rotates about the spine, showing the old page in front and the new
   // one on its back; under it the new spread is already there

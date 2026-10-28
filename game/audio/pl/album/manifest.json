@@ -1,0 +1,17 @@
+{
+ "line.album_witaj": {
+  "hash": "7c9105f9efaa",
+  "who": "narrator",
+  "text": "To Twój album z naklejkami zdobytymi w czasie lekcji."
+ },
+ "line.album_pusty": {
+  "hash": "104ab901de55",
+  "who": "narrator",
+  "text": "Jeszcze nie ma tu naklejek. Po każdej lekcji dostaniesz jedną!"
+ },
+ "line.album_nowe": {
+  "hash": "f15049f43aca",
+  "who": "narrator",
+  "text": "Masz nową naklejkę! Przeciągnij ją na stronę albumu, w dowolne miejsce."
+ }
+}
