@@ -78,6 +78,14 @@
   #album .twarz { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background-size: 200% 100%; overflow: hidden; }
   #album .twarz.prawa { background-position: right center; border-radius: 0 14px 14px 0; } #album .twarz.lewa { background-position: left center; border-radius: 14px 0 0 14px; }
   #album .twarz.tyl { transform: rotateY(180deg); }
+  #album .chmurka { position: fixed; z-index: 65; width: min(22vw, 30vh); padding: min(1.2vw, 1.6vh); background: #fff; border-radius: 28px;
+    box-shadow: 0 6px 20px rgba(80,40,0,.3); pointer-events: none; animation: wskok .45s cubic-bezier(.2,1.5,.4,1) both; }
+  #album .chmurka img { width: 100%; display: block; border-radius: 18px; }
+  #album .chmurka i { position: absolute; background: #fff; border-radius: 50%; box-shadow: 0 3px 8px rgba(80,40,0,.25); }
+  #album .chmurka .k1 { width: 18%; aspect-ratio: 1; bottom: 14%; } #album .chmurka .k2 { width: 9%; aspect-ratio: 1; bottom: 6%; }
+  #album .chmurka.z-lewej .k1 { left: -13%; } #album .chmurka.z-lewej .k2 { left: -22%; }
+  #album .chmurka.z-prawej .k1 { right: -13%; } #album .chmurka.z-prawej .k2 { right: -22%; }
+  #album .chmurka.znika { animation: zanik .3s ease-in reverse forwards; }
   #gora { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 var(--safe); }
   #menu h1 { margin: 0; line-height: 0; }
   #menu h1 .szyld { height: calc(var(--k) * 0.5); filter: drop-shadow(0 5px 6px rgba(60,30,0,.3)); animation: kiw 5s ease-in-out infinite; }

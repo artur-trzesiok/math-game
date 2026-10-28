@@ -92,12 +92,23 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
   el.querySelector(".wstecz").onclick = () => kartkuj(-1);
   el.querySelector(".dalej").onclick = () => kartkuj(1);
 
-  // a tapped sticker is told about: where it came from (its lesson's line, the narrator)
-  const opowiedz = async (id) => {
+  // a tapped sticker is told about: where it came from (its lesson's line, the narrator), and while it is told a
+  // thought cloud beside the sticker shows that lesson's picture
+  let chmurka = null;
+  const opowiedz = async (id, przy = null) => {
     const tab = await fetch(v(`/game/lessons/${id}/i18n/${lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}));
     const l = tab["line.naklejka_opis"]; if (!l) return;
-    speech.stop?.();
-    speech.say({ lang, lessonId: id, key: "line.naklejka_opis", text: l.text, who: "narrator" }).catch(() => {});
+    speech.stop?.(); chmurka?.remove();
+    const ta = chmurka = document.createElement("div"); ta.className = "chmurka";
+    ta.innerHTML = `<img src="${v(`/game/lessons/${id}/cover.webp`)}" alt=""><i class="k1"></i><i class="k2"></i>`;
+    const cel = (przy || el.querySelector(`.nakl[data-id="${id}"]`))?.getBoundingClientRect(), W = innerWidth;
+    if (cel) {
+      const wPrawo = cel.right + W * 0.24 < W, x = wPrawo ? cel.right + 18 : cel.left - 18, y = Math.max(16, Math.min(innerHeight - W * 0.22, cel.top - cel.height * 0.4));
+      Object.assign(ta.style, { top: `${y}px`, [wPrawo ? "left" : "right"]: `${wPrawo ? x : W - x}px` }); ta.classList.add(wPrawo ? "z-lewej" : "z-prawej");
+    }
+    el.appendChild(ta);
+    await speech.say({ lang, lessonId: id, key: "line.naklejka_opis", text: l.text, who: "narrator" }).catch(() => {});
+    if (chmurka === ta) { ta.classList.add("znika"); setTimeout(() => ta.remove(), 300); chmurka = null; }
   };
 
   // a free spot for a sticker on a page, nearest to where it was dropped: stickers never go one on another
@@ -138,7 +149,7 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
     if (c.swipe) {
       const dx = e.clientX - c.x0;
       if (Math.abs(dx) > 60) kartkuj(dx < 0 ? 1 : -1);
-      else if (c.stuk && Math.hypot(dx, e.clientY - c.y0) < 10) { opowiedz(c.stuk.dataset.id); c.stuk.classList.add("stuk"); setTimeout(() => c.stuk.classList.remove("stuk"), 400); }
+      else if (c.stuk && Math.hypot(dx, e.clientY - c.y0) < 10) { opowiedz(c.stuk.dataset.id, c.stuk); c.stuk.classList.add("stuk"); setTimeout(() => c.stuk.classList.remove("stuk"), 400); }
       return;
     }
     c.duch.remove();
