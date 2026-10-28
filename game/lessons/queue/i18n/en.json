@@ -72,7 +72,11 @@
   },
   "line.b_mouse_back": {
     "who": "lisek",
-    "text": "The mouse wants another go. It goes to the end of the queue."
+    "text": "The mouse stood first, so it went down first. It wants another go, so it goes to the end of the queue."
+  },
+  "line.b_first_now": {
+    "who": "sarenka",
+    "text": "Everyone moved up. Who is first now?"
   },
   "line.b_point_last": {
     "who": "sarenka",

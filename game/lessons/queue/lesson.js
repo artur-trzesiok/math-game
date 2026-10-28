@@ -88,21 +88,30 @@ export default {
         await c.say("sarenka", "line.s_to_playground");
         c.clear();
       },
-      // B. playground: the queue to the slide (on the left); the mouse goes to the back - who is last now?
+      // B. playground: the queue to the slide (on the left). The mouse stands first, so it goes down first; it wants
+      // another go, so it joins the END of the queue and everyone moves up - who is first now, who is last?
       async (c) => {
         await c.go("plac_zabaw", { enter: true });
         await Promise.all([c.enter("lisek"), c.enter("sarenka")]);
         await c.say("lisek", "line.b_slide");
-        const q = await kolejka(c, ["zajac", "mysz", "kaczka", "jez"]);
+        const q = await kolejka(c, ["mysz", "zajac", "kaczka", "jez"]);
         let nr = await numery(c, q);
         await c.say("sarenka", "line.b_point_second");
         await c.task({ targets: q, correct: q[1], wrong: "line.wrong_place" });
         for (const d of nr) d.remove();
         await c.say("lisek", "line.b_mouse_back");
-        const mysz = q.splice(1, 1)[0];
-        await mysz.moveTo(mysz.mesh.position.x, mysz.mesh.position.y - 0.7, 0.3);
-        const x0 = q.x0; q.push(mysz); await przesun(c, q, x0);
+        // down the slide (off to the left), then round behind the queue to its end
+        const mysz = q.shift(), y0 = mysz.mesh.position.y;
+        c.sfx("whoosh");
+        await mysz.moveTo(-3.6, y0 - 0.5, 0.45);
+        await mysz.moveTo(-3.6, -4.2, 0.25);
+        const x0 = q.x0; q.push(mysz);
+        const meta = c.bounds(q[q.length - 2]);
+        mysz.mesh.position.set(meta.right + 0.9, -4.2, mysz.mesh.position.z);
+        await przesun(c, q, x0);
         nr = await numery(c, q);
+        await c.say("sarenka", "line.b_first_now");
+        await c.task({ targets: q, correct: q[0], wrong: "line.wrong_place" });
         await c.say("sarenka", "line.b_point_last");
         await c.task({ targets: q, correct: q[3], wrong: "line.wrong_place" });
         await c.say("lisek", "line.b_done", { anim: "Radosc" });

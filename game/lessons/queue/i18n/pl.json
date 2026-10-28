@@ -72,7 +72,11 @@
   },
   "line.b_mouse_back": {
     "who": "lisek",
-    "text": "Myszka chce zjechać jeszcze raz. Idzie na koniec kolejki."
+    "text": "Myszka stała pierwsza, więc zjechała pierwsza. Chce jeszcze raz, więc idzie na koniec kolejki."
+  },
+  "line.b_first_now": {
+    "who": "sarenka",
+    "text": "Wszyscy przesunęli się do przodu. Kto jest teraz pierwszy?"
   },
   "line.b_point_last": {
     "who": "sarenka",

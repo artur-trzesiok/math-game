@@ -10,8 +10,9 @@ queue. Characters: Fox (left), Deer (right).
    first is the one nearest the stand - first, second, third... Pencil numbers over
    the heads; the child points to the first (circled), the last, the third. The first
    is served and leaves, everyone moves up: who is first now? Solved: serve in order.
-2. Playground: the queue to the slide (on the left); point to the second; the mouse
-   goes to the back - who is last now?
+2. Playground: the queue to the slide (on the left), the mouse first; point to the
+   second. The mouse goes down first and wants another go, so it joins the END of the
+   queue and everyone moves up: who is first now? who is last?
 3. Kitchen: five guests queue for cookies; point to the fifth; who stands between the
    second and the fourth?
 

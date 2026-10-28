@@ -90,9 +90,9 @@
   "text": "Point to the one standing second."
  },
  "line.b_mouse_back": {
-  "hash": "80a5120c1a40",
+  "hash": "6064d6b788f4",
   "who": "lisek",
-  "text": "The mouse wants another go. It goes to the end of the queue."
+  "text": "The mouse stood first, so it went down first. It wants another go, so it goes to the end of the queue."
  },
  "line.b_point_last": {
   "hash": "ff034261b699",
@@ -203,5 +203,10 @@
   "hash": "5fdcbfe15d1f",
   "who": "lisek",
   "text": "Bye bye! See you!"
+ },
+ "line.b_first_now": {
+  "hash": "2196bf21b367",
+  "who": "sarenka",
+  "text": "Everyone moved up. Who is first now?"
  }
 }
