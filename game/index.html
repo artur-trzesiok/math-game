@@ -15,8 +15,7 @@
 <meta property="og:image:alt" content="Lisek, Wiewiórka, Sowa i Sarenka na łące · Fox, Squirrel, Owl and Deer on a meadow">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://matematyka.cubeproject.pl/og.jpg">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<link href="/game/vendor/fonts/baloo2.css" rel="stylesheet">
 <style>
   html, body { margin: 0; height: 100%; overflow: hidden; background: #000; font: 16px/1.4 system-ui, sans-serif; touch-action: manipulation; user-select: none; -webkit-user-select: none;
                overscroll-behavior: none; }   /* no pull to refresh, no rubber band */
@@ -221,8 +220,7 @@
   window.__T = Date.now();
   (() => {
     const im = { imports: {
-      three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
+      three: "/game/vendor/three.module.js" } };
     for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);

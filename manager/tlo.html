@@ -16,7 +16,7 @@
   // the engine's modules with one stamp per page load (as the game and the editor do, engine/v.js)
   window.__T = Date.now();
   (() => {
-    const im = { imports: { three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
+    const im = { imports: { three: "/game/vendor/three.module.js" } };
     for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
