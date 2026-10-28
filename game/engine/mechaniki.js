@@ -43,8 +43,10 @@ export async function slad(S, co, { x = 0, y = 0.4, size = 3.4, tolerancja = 0.5
   for (const pts of kreski) drogiH.push(await S.line(pts, { color: "#e2d6c2", width: 0.34, duration: FAST ? 0.05 : 0.5, halo: true, strong: false, wobble: 0 }));
   for (const [ki, pts] of kreski.entries()) {
     const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + dl(pts[i], pts[i - 1]));
-    const ink = await S.line(pts, { color: kolor, width: 0.17, duration: 0.01, strong: true, wobble: 0.004 });
-    const postep = kreskaMaterialy(ink); postep.forEach((u) => (u.value = 0)); tusz.push(ink);
+    // the ink waits for the finger: hidden until its draw-in has been reset to nothing (it would flash in full)
+    const ink = await S.line(pts, { color: kolor, width: 0.17, duration: 0.01, strong: true, wobble: 0.004, wait: false });
+    ink.mesh.visible = false; await czekaj(0.06);
+    const postep = kreskaMaterialy(ink); postep.forEach((u) => (u.value = 0)); ink.mesh.visible = true; tusz.push(ink);
     let i = 0, aktywny = false, kr = kropka(S, pts[0]);
     const tetno = setInterval(() => { const s = 1 + 0.18 * Math.sin(performance.now() / 160); kr.mesh.scale.setScalar(aktywny ? 1 : s); }, 40);
     await new Promise((gotowe) => {
@@ -161,7 +163,11 @@ export function wieza(S, { klocki, miejsca = [{ x: 0 }], podloga = GROUND + 0.02
   const hs = klocki.map((k, i) => {
     const pts = [[-k.w / 2, -k.h / 2], [k.w / 2, -k.h / 2], [k.w / 2, k.h / 2], [-k.w / 2, k.h / 2]];
     const h = ksztalt(S, "klocek", { def: { pts, kolor: k.kolor || ["#e8604c", "#f5c341", "#58bd68", "#3f8ce0", "#b06ad0"][i % 5] }, x: k.x ?? -4 + i * 1.2, y: k.y ?? podloga + k.h / 2, size: 1, name: k.name || "klocek" });
-    Object.assign(h, { w: k.w, h: k.h, dane: k }); h.home = { x: h.mesh.position.x, y: h.mesh.position.y }; return h;
+    Object.assign(h, { w: k.w, h: k.h, dane: k }); h.home = { x: h.mesh.position.x, y: h.mesh.position.y };
+    // the white rim of every block lies under every block's fill: a stack has one outline round it all
+    const u0 = h.ustawWarstwe; h.ustawWarstwe = (j) => { u0(j); const r = h.inner.children[0]; r.renderOrder = 10.4; r.userData.ro0 = 10.4; };
+    h.ustawWarstwe(h.warstwa ?? 0);
+    return h;
   });
   const m = miejsca.map((q) => ({ ...q, stos: [] }));
   const zablokuj = () => { for (const h of hs) { const q = m.find((q) => q.stos.includes(h)); h.zablokowany = !!q && q.stos[q.stos.length - 1] !== h; } };
