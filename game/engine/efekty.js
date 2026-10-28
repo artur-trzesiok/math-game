@@ -509,9 +509,11 @@ function ikonaEmocji(rodzaj) {
     if (rodzaj === "zlosc") {                                    // the comic anger vein: four curved brackets around a gap
       C("#e2453c"); x.lineWidth = 20;
       for (const [dx, dy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { x.beginPath(); x.moveTo(128 + dx * 16, 112 + dy * 62); x.quadraticCurveTo(128 + dx * 16, 112 + dy * 16, 128 + dx * 62, 112 + dy * 16); x.stroke(); }
-    } else if (rodzaj === "pot") {
-      C("#5bb4f0"); x.beginPath(); x.moveTo(128, 40); x.bezierCurveTo(176, 110, 172, 168, 128, 168); x.bezierCurveTo(84, 168, 80, 110, 128, 40); x.fill();
-      x.fillStyle = "#fff"; x.beginPath(); x.ellipse(110, 134, 10, 18, -0.4, 0, 7); x.fill();
+    } else if (rodzaj === "pot") {                               // "oh dear": a worried face (a sweat drop read as nothing to a child)
+      x.fillStyle = "#ffd34e"; x.strokeStyle = "#c99a1c"; x.lineWidth = 6; x.beginPath(); x.arc(128, 110, 70, 0, 7); x.fill(); x.stroke();
+      C("#3a2a1e"); for (const ex of [100, 156]) { x.beginPath(); x.ellipse(ex, 100, 9, 12, 0, 0, 7); x.fill(); }
+      x.lineWidth = 8; x.beginPath(); x.moveTo(86, 82); x.lineTo(112, 72); x.stroke(); x.beginPath(); x.moveTo(144, 72); x.lineTo(170, 82); x.stroke();
+      x.fillStyle = "#7a2a1e"; x.beginPath(); x.ellipse(128, 146, 14, 17, 0, 0, 7); x.fill();
     } else if (rodzaj === "serce") {
       C("#ff5b8a"); x.beginPath(); x.moveTo(128, 170); x.bezierCurveTo(40, 112, 70, 40, 128, 78); x.bezierCurveTo(186, 40, 216, 112, 128, 170); x.fill();
     } else if (rodzaj === "radosc") {
