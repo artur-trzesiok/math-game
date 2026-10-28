@@ -56,6 +56,17 @@
       }
     },
     {
+      "id": "more_fewer_pro",
+      "title": {
+        "pl": "Więcej, mniej PRO",
+        "en": "More, fewer PRO"
+      },
+      "subtitle": {
+        "pl": "noc świetlików",
+        "en": "the night of the fireflies"
+      }
+    },
+    {
       "id": "rhythm",
       "title": {
         "pl": "Rytm",
@@ -168,7 +179,8 @@
         "grouping_pro",
         "bigger_smaller",
         "bigger_smaller_pro",
-        "more_fewer"
+        "more_fewer",
+        "more_fewer_pro"
       ]
     },
     {

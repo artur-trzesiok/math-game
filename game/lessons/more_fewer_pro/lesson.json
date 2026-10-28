@@ -1,0 +1,41 @@
+{
+  "id": "more_fewer_pro",
+  "title": {
+    "pl": "Więcej, mniej PRO",
+    "en": "More, fewer PRO"
+  },
+  "goal": "Compare two amounts without counting: give one to each and see who is left without (more / fewer), as many when nobody is; a long row is not more; make two amounts as many by adding, taking away or moving one over.",
+  "age": "3-4",
+  "characters": [
+    "lisek",
+    "wiewiorka",
+    "sowa",
+    "sarenka"
+  ],
+  "backgrounds": [
+    "polana_wieczorem",
+    "pokoj_noc"
+  ],
+  "objects": [
+    "latarenka",
+    "latarenka_swieci",
+    "swietlik",
+    "ksiezyc",
+    "pniak",
+    "przycisk_muzyki",
+    "gwiazdka",
+    "zajac",
+    "marchewka",
+    "jablko",
+    "gruszka",
+    "balonik",
+    "mysz",
+    "krzak",
+    "poduszka"
+  ],
+  "naklejka": {
+    "obraz": "objects/latarenka_swieci",
+    "kto": "sowa"
+  },
+  "cover": "At night on a glade, Fox, Squirrel, Owl and Deer each hold a small glass jar lantern glowing warm yellow with a firefly inside; a few more fireflies glow in the dark blue air around them and a crescent moon smiles in the sky."
+}

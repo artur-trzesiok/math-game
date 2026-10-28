@@ -208,6 +208,34 @@ that breaks one of them is wrong even if it runs.
 - **Random layouts never give the answer or break the task**: shuffled things never
   lie in the answer order already; random turns that do not fit are replaced.
 
+## Watch it as the child before calling it done
+
+A lesson written alone (more_fewer_pro) reached the user with plain faults that one look would have caught:
+a voice from a character who was not on screen, mice that vanished in a cut so nobody could know which bush had
+more, pairing arcs all at one height that ran into one band, a "sleepover" in a sunlit room, the characters
+covering the game, one lantern of four given its firefly. The code ran; nobody had watched it as a child does.
+So, for EVERY scene, look at the snapshot and listen to the line, and answer each question with what is on the
+picture, not with what the code means:
+- **Who is speaking - can I see them?** Every line is said by a character on screen (the engine hands a hidden
+  speaker's line to a visible one that has a recording, but write the scene right). A character that walked off
+  says nothing until it is back.
+- **Could a child who saw only this get it right?** Anything to remember or compare happens ON screen and slowly
+  enough: things hide by moving behind the cover one by one, never by disappearing in a cut; a group is shown
+  apart from the other group, next to the place it goes to.
+- **Can every line on the picture be followed with a finger?** Pairing lines, arcs and arrows never share a path:
+  nested arcs grow with their span, crossing lines are avoided, two strokes never lie over each other.
+- **Does the place fit the words?** The scenery shows the time and the weather the story talks about: a night is a
+  night picture (`pokoj_noc`), not a day picture under a dark veil; rain is seen.
+- **Is anything covered?** Characters, the HUD and other things never cover a task, a thing to drag or its target;
+  a thing in the hand is in front of the one carrying it.
+- **Does every promise come true?** What the story says happens to all ("every lantern gets a firefly") happens to
+  all, each one shown.
+- **Is the answer in the picture, not given away?** The answer is visible to the eye that looks (the mice come out
+  again after the pick), and nothing (a character standing next to it, a layout in answer order) gives it away
+  before.
+Run the whole lesson with the autopilot, snapshot every scene (each task before and after its answer), view the
+snapshots one by one against this list, and only then show it to the user.
+
 ## Atmosphere and editing (the "pro" lessons)
 
 Learned from a competitor's 7-minute "Big and Small" lesson (`reference/analiza_mniejszy_wiekszy.md`).

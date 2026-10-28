@@ -137,6 +137,23 @@ Same colours, same furniture, same rug, same texture - only the mobile and the
 clouds are new. Do NOT move or redraw anything that was already there.
 Do NOT add anything else.""",
     },
+    # the same room at night (a sleepover): the day plate EDITED, so bed, shelf and rug stay where they are
+    "pokoj_noc": {
+        "wnetrze": True,
+        "z": "pokoj",
+        "plyta": f"""Exactly the same children's bedroom, the same furniture in the same places, the same
+bed, shelf, boxes, window, rug, floor and wallpaper, but LATE AT NIGHT: through the window a deep
+dark-blue night sky with a small crescent moon and a few tiny stars, cool soft moonlight falling
+through the window onto the rug, the room dim and bluish, and a warm golden glow of a small
+night lamp standing on the floor beside the bed lighting the bed and the floor around it.
+{STYL}
+Do NOT move, add or remove any furniture except the small night lamp.
+NO toys lying around, NO people, NO animals, NO text.""",
+        # no movers: a second pass redrew the window frame and the pictures, and they swung with the mobile; the
+        # night lives in the lamp's breathing glow instead (plate pixels of the lampshade)
+        "ruch": None,
+        "poswiaty": [{"x": 448, "y": 495, "r": 300, "kolor": "#ffc66e", "moc": 0.5}],
+    },
     "plac_zabaw": {
         "plyta": f"""A background illustration for a children's game: a sunny small playground
 in a park. On the left a wooden sandbox with a low red-and-yellow slide behind it,
@@ -248,10 +265,11 @@ def gen(nazwa: str, jakosc: str = "high") -> None:
     plyta = kat / "plyta.png"
     if not plyta.exists():
         print("plyta...", flush=True)
-        figgen.generate(SCENY[nazwa]["plyta"], plyta, size="1536x1024",
+        z = SCENY[nazwa].get("z")                   # a variant of another scene: an edit of its plate
+        figgen.generate(SCENY[nazwa]["plyta"], plyta, refs=[KORZEN / z / "plyta.png"] if z else None, size="1536x1024",
                         quality=jakosc, background="opaque")
     ruch = kat / "ruch.png"
-    if not ruch.exists():
+    if SCENY[nazwa]["ruch"] and not ruch.exists():
         print("ruch...", flush=True)
         figgen.generate(SCENY[nazwa]["ruch"], ruch, refs=[plyta], size="1536x1024",
                         quality=jakosc, background="opaque")
@@ -389,6 +407,12 @@ def _jasnosc_nasycenie(px: np.ndarray):
 
 def split(nazwa: str, min_pikseli: int = 500) -> dict:
     kat = KORZEN / nazwa
+    if not SCENY[nazwa]["ruch"]:                    # a still plate, only glows
+        W, H = Image.open(kat / "plyta.png").size
+        opis = {"plyta": "plyta.png", "szerokosc": W, "wysokosc": H, "horyzont": _horyzont(np.asarray(Image.open(kat / "plyta.png").convert("RGB"))),
+                "rekwizyty": [], "poswiaty": SCENY[nazwa].get("poswiaty", [])}
+        (kat / "rekwizyty.json").write_text(json.dumps(opis, indent=1), encoding="utf-8")
+        return opis
     plyta_img = Image.open(kat / "plyta.png").convert("RGB")
     plyta = np.asarray(plyta_img)
     ruch_img = Image.open(kat / "ruch.png").convert("RGB").resize(plyta_img.size, Image.LANCZOS)
@@ -449,6 +473,7 @@ def split(nazwa: str, min_pikseli: int = 500) -> dict:
         rekwizyty.append({"plik": plik, "klasa": "drift" if chmura else "sway", "x": x0, "y": y0, "w": szer, "h": wys,
                           "faza": round((i * 0.6180339887) % 1.0, 4)})
     opis = {"plyta": "plyta.png", "szerokosc": int(W), "wysokosc": int(H), "horyzont": hor, "rekwizyty": rekwizyty}
+    if SCENY[nazwa].get("poswiaty"): opis["poswiaty"] = SCENY[nazwa]["poswiaty"]
     (kat / "rekwizyty.json").write_text(json.dumps(opis, indent=1), encoding="utf-8")
     print(f"rekwizytow: {len(rekwizyty)} "
           f"(sway {sum(r['klasa']=='sway' for r in rekwizyty)}, drift {sum(r['klasa']=='drift' for r in rekwizyty)})")

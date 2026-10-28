@@ -356,6 +356,8 @@ export class Player {
       alive();
       const line = lineOf([strings], key);
       if (!S.puppets[who]) who = line.who;                            // the scene picks the speaker; the line's `who` is the default
+      // never a voice from off the stage: a hidden speaker hands the line to one on stage that has a recording of it
+      if (S.puppets[who] && !S.puppets[who].korzen.visible) { const zast = [line.who, ...(line.speakers || [])].find((n) => S.puppets[n]?.korzen.visible); if (zast) who = zast; }
       const stem = who === line.who ? key : `${key}.${who}`;          // a recording exists per allowed speaker (i18n `speakers`)
       last = { who, key, anim }; this.lastSpeaker = who; S.ostatniMowca = who;
       if (NAGRAJ) zapisz({ typ: "kwestia", who, key, stem: who === line.who ? key : `${key}.${who}`, text: line.text, anim, zrodlo: zrodloMowy });

@@ -1,0 +1,16 @@
+{
+ "plyta": "plyta.webp",
+ "szerokosc": 1536,
+ "wysokosc": 1024,
+ "horyzont": 341,
+ "rekwizyty": [],
+ "poswiaty": [
+  {
+   "x": 448,
+   "y": 495,
+   "r": 300,
+   "kolor": "#ffc66e",
+   "moc": 0.5
+  }
+ ]
+}

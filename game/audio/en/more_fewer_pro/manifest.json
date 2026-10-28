@@ -1,0 +1,452 @@
+{
+ "line.a_zaproszenie": {
+  "hash": "f0562e467a86",
+  "who": "sowa",
+  "text": "What a beautiful sunset! Friends, tonight the fireflies will dance on the glade. You are all invited!"
+ },
+ "line.a_hurra": {
+  "hash": "5b580496da0b",
+  "who": "lisek",
+  "text": "Hooray! A night trip!"
+ },
+ "line.a_boje": {
+  "hash": "f244803bd709",
+  "who": "wiewiorka",
+  "text": "But it's dark at night... I'm a little afraid of the dark."
+ },
+ "line.a_latarenki": {
+  "hash": "9178eaeb35c2",
+  "who": "lisek",
+  "text": "Don't worry! We'll take lanterns. Everyone gets one. I'll bring them right away!"
+ },
+ "line.a_dlugi": {
+  "hash": "4380d8eac571",
+  "who": "lisek",
+  "text": "I've got the lanterns! Look what a long row. There's surely enough for everyone!"
+ },
+ "line.a_dlugi_rzad": {
+  "hash": "dd1194a50296",
+  "who": "lisek",
+  "text": "Look: the lanterns lie in a long row, and we stand close together. There must be more lanterns!"
+ },
+ "line.a_sprawdzmy": {
+  "hash": "1dc3ac28036a",
+  "who": "sarenka",
+  "text": "A long row doesn't mean there are more. Let's check: let everyone take one lantern."
+ },
+ "line.a_rozdaj": {
+  "hash": "57fd8945ab2c",
+  "who": "sarenka",
+  "text": "Drag the lanterns to the friends. Each one gets just one."
+ },
+ "line.a_zabraklo": {
+  "hash": "e27bdb32d347",
+  "who": "wiewiorka",
+  "text": "But there's no lantern left for me!"
+ },
+ "line.a_zabraklo.lisek": {
+  "hash": "42aea588f009",
+  "who": "lisek",
+  "text": "But there's no lantern left for me!"
+ },
+ "line.a_zabraklo.sowa": {
+  "hash": "e81d389621f1",
+  "who": "sowa",
+  "text": "But there's no lantern left for me!"
+ },
+ "line.a_zabraklo.sarenka": {
+  "hash": "6e23b54ebc3a",
+  "who": "sarenka",
+  "text": "But there's no lantern left for me!"
+ },
+ "line.a_wiecej": {
+  "hash": "18b50b37cd07",
+  "who": "sarenka",
+  "text": "See? Someone has no lantern. There are more friends than lanterns. There are fewer lanterns."
+ },
+ "line.a_oszukal": {
+  "hash": "3af46ba027c3",
+  "who": "lisek",
+  "text": "Oops! The long row fooled me. I'll run for one more!"
+ },
+ "line.a_tyle_samo": {
+  "hash": "234b7207879c",
+  "who": "sowa",
+  "text": "Now everyone has a lantern and nobody is left without. There are as many lanterns as there are of us."
+ },
+ "line.a_chodzmy": {
+  "hash": "c21a18ffa74e",
+  "who": "wiewiorka",
+  "text": "With a lantern I'm not afraid. Let's go to the glade!"
+ },
+ "line.b_ciemno": {
+  "hash": "003d93dd4767",
+  "who": "wiewiorka",
+  "text": "Oh dear, it's got really dark..."
+ },
+ "line.b_puste": {
+  "hash": "e81c98e8b9ee",
+  "who": "lisek",
+  "text": "But our lanterns are empty. They don't shine!"
+ },
+ "line.b_swietliki": {
+  "hash": "2bec04796557",
+  "who": "sowa",
+  "text": "Look, fireflies! When you touch a lantern, a firefly flies into it and lights it up."
+ },
+ "line.b_dotknij": {
+  "hash": "dc6259d5bc89",
+  "who": "sowa",
+  "text": "Touch a lantern that isn't shining yet."
+ },
+ "line.b_swieci": {
+  "hash": "94c0e57e4332",
+  "who": "wiewiorka",
+  "text": "It's shining! Touch the next one."
+ },
+ "line.b_jasno": {
+  "hash": "97b848ed5b3c",
+  "who": "wiewiorka",
+  "text": "It's so bright! I'm not afraid anymore."
+ },
+ "line.b_zostaly": {
+  "hash": "63ffad7430f0",
+  "who": "sarenka",
+  "text": "Look: every lantern has a firefly now, and some fireflies are still flying. There's no free lantern for them."
+ },
+ "line.b_czego": {
+  "hash": "da9b9eae80c7",
+  "who": "sarenka",
+  "text": "Which are there more of: fireflies or lanterns? Point to it."
+ },
+ "line.b_czego_nie": {
+  "hash": "2f21ef1ce799",
+  "who": "sarenka",
+  "text": "The lanterns are all full, and fireflies are still flying. Which are more?"
+ },
+ "line.b_czego_nie.sowa": {
+  "hash": "bdb0db313ac2",
+  "who": "sowa",
+  "text": "The lanterns are all full, and fireflies are still flying. Which are more?"
+ },
+ "line.b_wiecej_swietlikow": {
+  "hash": "f0d909aba517",
+  "who": "sowa",
+  "text": "Yes! There are more fireflies and fewer lanterns. The ones left over will dance for us!"
+ },
+ "line.c_gra": {
+  "hash": "c3c2c29615ab",
+  "who": "sowa",
+  "text": "And now let's play stumps!"
+ },
+ "line.c_zasady": {
+  "hash": "933332a517d7",
+  "who": "sowa",
+  "text": "Listen to the rules. While the music plays, we walk around. When the music stops, everyone jumps onto a stump."
+ },
+ "line.c_zasady2": {
+  "hash": "b33b9ec6a0bc",
+  "who": "lisek",
+  "text": "And whoever is too slow has no stump!"
+ },
+ "line.c_ty": {
+  "hash": "f7a23771c2e6",
+  "who": "sowa",
+  "text": "You stop the music. Touch the green button whenever you like."
+ },
+ "line.c_bez": {
+  "hash": "53a4d8924516",
+  "who": "lisek",
+  "text": "Oh no, there's no stump left for me!"
+ },
+ "line.c_kogo": {
+  "hash": "f35e5020f160",
+  "who": "sarenka",
+  "text": "Are there more friends or more stumps? Point to it."
+ },
+ "line.c_kogo_nie": {
+  "hash": "fd970a59f2c1",
+  "who": "sarenka",
+  "text": "Every stump is taken and Fox is standing beside them. Which are more?"
+ },
+ "line.c_kogo_nie.sowa": {
+  "hash": "06d85de0d3a9",
+  "who": "sowa",
+  "text": "Every stump is taken and Fox is standing beside them. Which are more?"
+ },
+ "line.c_wiecej_przyjaciol": {
+  "hash": "e85fd9890a92",
+  "who": "sowa",
+  "text": "There are more friends and fewer stumps. That's why someone was left without one."
+ },
+ "line.c_dolozmy": {
+  "hash": "8d9ac5577ff4",
+  "who": "wiewiorka",
+  "text": "Let's add one more stump so everyone has one. Touch the stump at the side."
+ },
+ "line.c_jeszcze_raz": {
+  "hash": "16b084da5c47",
+  "who": "sowa",
+  "text": "Let's play again! Touch the button whenever you like."
+ },
+ "line.c_kazdy": {
+  "hash": "d7c357154e16",
+  "who": "lisek",
+  "text": "Now everyone has a stump!"
+ },
+ "line.c_tyle": {
+  "hash": "a2231cd1f37d",
+  "who": "sarenka",
+  "text": "There are as many friends as stumps."
+ },
+ "line.c_sedzia": {
+  "hash": "b73799327ec5",
+  "who": "sowa",
+  "text": "Now I'll be the referee, and the three of you play."
+ },
+ "line.c_ostatni": {
+  "hash": "e28e74d3995e",
+  "who": "sowa",
+  "text": "Last round! Touch the button."
+ },
+ "line.c_pusty": {
+  "hash": "e96acdad2076",
+  "who": "sowa",
+  "text": "One stump is free. Which one? Point to it."
+ },
+ "line.c_pusty_nie": {
+  "hash": "c22f90b62b2a",
+  "who": "sowa",
+  "text": "Someone is standing on that one. Look for the stump nobody is on."
+ },
+ "line.c_pusty_nie.sarenka": {
+  "hash": "8f507469d9e3",
+  "who": "sarenka",
+  "text": "Someone is standing on that one. Look for the stump nobody is on."
+ },
+ "line.c_wiecej_pienkow": {
+  "hash": "e477dd48117e",
+  "who": "sarenka",
+  "text": "Now there are more stumps and fewer players. That's why one stump is empty."
+ },
+ "line.c_gwiazda": {
+  "hash": "ab3837f9cb58",
+  "who": "wiewiorka",
+  "text": "Look! A shooting star!"
+ },
+ "line.c_zyczenie": {
+  "hash": "21d6a4ebf85d",
+  "who": "sowa",
+  "text": "Make a wish. And now it's time to go home, for the sleepover!"
+ },
+ "line.c_hurra": {
+  "hash": "ecd75a280dd7",
+  "who": "lisek",
+  "text": "A sleepover! Hooray!"
+ },
+ "line.p_start": {
+  "hash": "af59fcad204a",
+  "who": "sowa",
+  "text": "Now some night games! You get a star for each one."
+ },
+ "line.p_bez_pary": {
+  "hash": "b0fd14fb44ed",
+  "who": "sarenka",
+  "text": "The lines join bunnies and carrots in pairs. Which bunny has no pair? Point to it."
+ },
+ "line.p_bez_pary_nie": {
+  "hash": "b69c63bfbf56",
+  "who": "sarenka",
+  "text": "There's a line from this bunny to a carrot. Look for the one with no line."
+ },
+ "line.p_bez_pary_nie.sowa": {
+  "hash": "eb2fa65352a1",
+  "who": "sowa",
+  "text": "There's a line from this bunny to a carrot. Look for the one with no line."
+ },
+ "line.p_dlugi": {
+  "hash": "f81ad3ec73a2",
+  "who": "lisek",
+  "text": "The apples lie in a long row, and the pears close together. Which are more? Point to it."
+ },
+ "line.p_dlugi.sowa": {
+  "hash": "cc3ae497e2a8",
+  "who": "sowa",
+  "text": "The apples lie in a long row, and the pears close together. Which are more? Point to it."
+ },
+ "line.p_dlugi.sarenka": {
+  "hash": "635e2ec178ca",
+  "who": "sarenka",
+  "text": "The apples lie in a long row, and the pears close together. Which are more? Point to it."
+ },
+ "line.p_dlugi_nie": {
+  "hash": "f98f0f150c7d",
+  "who": "sarenka",
+  "text": "Look at the pairs: one pear has no apple to pair with. Point again."
+ },
+ "line.p_dlugi_nie.sowa": {
+  "hash": "aeb38241b27d",
+  "who": "sowa",
+  "text": "Look at the pairs: one pear has no apple to pair with. Point again."
+ },
+ "line.p_daj": {
+  "hash": "e3c110667602",
+  "who": "wiewiorka",
+  "text": "Each bunny wants one carrot. Drag the carrots to the bunnies."
+ },
+ "line.p_daj.sowa": {
+  "hash": "b32d9f67a7f6",
+  "who": "sowa",
+  "text": "Each bunny wants one carrot. Drag the carrots to the bunnies."
+ },
+ "line.p_daj.sarenka": {
+  "hash": "146e1859ed2c",
+  "who": "sarenka",
+  "text": "Each bunny wants one carrot. Drag the carrots to the bunnies."
+ },
+ "line.p_daj_ok": {
+  "hash": "e3ee65e2d758",
+  "who": "wiewiorka",
+  "text": "Each bunny has one carrot. There are as many bunnies as their carrots."
+ },
+ "line.p_daj_ok.sowa": {
+  "hash": "bee89843553d",
+  "who": "sowa",
+  "text": "Each bunny has one carrot. There are as many bunnies as their carrots."
+ },
+ "line.p_daj_ok.sarenka": {
+  "hash": "359faf4466eb",
+  "who": "sarenka",
+  "text": "Each bunny has one carrot. There are as many bunnies as their carrots."
+ },
+ "line.p_baloniki": {
+  "hash": "c8da9038c35b",
+  "who": "sowa",
+  "text": "Each bunny can hold just one balloon, and there are too many balloons. Pop the extra ones."
+ },
+ "line.p_baloniki_ok": {
+  "hash": "c58ed3e7b0c7",
+  "who": "sowa",
+  "text": "Now each bunny has one balloon. There are as many."
+ },
+ "line.p_myszki": {
+  "hash": "a930e5a2723c",
+  "who": "lisek",
+  "text": "Watch out, mice! Look carefully, they're about to hide."
+ },
+ "line.p_myszki.sowa": {
+  "hash": "15e3ffd5231d",
+  "who": "sowa",
+  "text": "Watch out, mice! Look carefully, they're about to hide."
+ },
+ "line.p_myszki.sarenka": {
+  "hash": "858363e4f8cd",
+  "who": "sarenka",
+  "text": "Watch out, mice! Look carefully, they're about to hide."
+ },
+ "line.p_ktory_krzak": {
+  "hash": "e2a0191e41b0",
+  "who": "lisek",
+  "text": "Behind which bush did more mice hide? Point to it."
+ },
+ "line.p_ktory_krzak.sowa": {
+  "hash": "12902f606dc5",
+  "who": "sowa",
+  "text": "Behind which bush did more mice hide? Point to it."
+ },
+ "line.p_ktory_krzak.sarenka": {
+  "hash": "9ec3a5fc82ba",
+  "who": "sarenka",
+  "text": "Behind which bush did more mice hide? Point to it."
+ },
+ "line.p_krzak_nie": {
+  "hash": "5b4c959626bc",
+  "who": "lisek",
+  "text": "Fewer mice hid here. Try again."
+ },
+ "line.p_krzak_nie.sowa": {
+  "hash": "be118b1f3838",
+  "who": "sowa",
+  "text": "Fewer mice hid here. Try again."
+ },
+ "line.p_krzak_nie.sarenka": {
+  "hash": "bf23fabe3f61",
+  "who": "sarenka",
+  "text": "Fewer mice hid here. Try again."
+ },
+ "line.d_nocowanie": {
+  "hash": "d16716133d3d",
+  "who": "sowa",
+  "text": "Welcome to the sleepover! We have lots of pillows. Let's have a pillow fight!"
+ },
+ "line.d_druzyny": {
+  "hash": "9ddc59782af1",
+  "who": "lisek",
+  "text": "Squirrel and I are one team, and Owl and Deer are the other."
+ },
+ "line.d_niesprawiedliwie": {
+  "hash": "39a18e7682f7",
+  "who": "sarenka",
+  "text": "Hey, your team has more pillows! That's not fair."
+ },
+ "line.d_pary": {
+  "hash": "2d1917218d80",
+  "who": "sowa",
+  "text": "Let's check. I'll join the pillows in pairs: one of yours, one of ours."
+ },
+ "line.d_zostaly": {
+  "hash": "bcafc1d9effa",
+  "who": "sowa",
+  "text": "Two of Fox's pillows have no pair. Fox's team has more, and ours has fewer."
+ },
+ "line.d_przeloz": {
+  "hash": "d2df507c4ef3",
+  "who": "wiewiorka",
+  "text": "It's fair when both teams have as many. Drag one pillow over to the other side, to Owl and Deer."
+ },
+ "line.d_przeloz_nie": {
+  "hash": "ce07237ef18b",
+  "who": "wiewiorka",
+  "text": "Drag the pillow further, over to the other side."
+ },
+ "line.d_sprawdz": {
+  "hash": "cb75d472dd00",
+  "who": "sowa",
+  "text": "Let's check again."
+ },
+ "line.d_tyle": {
+  "hash": "acd79bd75653",
+  "who": "sarenka",
+  "text": "Every pillow has a pair! Both teams have as many. Now it's fair."
+ },
+ "line.d_bitwa": {
+  "hash": "f13618e4d32f",
+  "who": "lisek",
+  "text": "Then let's have a pillow fight!"
+ },
+ "line.d_dobranoc": {
+  "hash": "565a47dbf5c1",
+  "who": "sowa",
+  "text": "Phew, what fun! And now it's time to sleep. Good night, friends."
+ },
+ "line.d_rodzice": {
+  "hash": "17cf68bec034",
+  "who": "wiewiorka",
+  "text": "When you share with someone, lay things in pairs. If nothing is left without a pair, everyone has as many."
+ },
+ "line.naklejka_daj": {
+  "hash": "b3f88c152150",
+  "who": "sowa",
+  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "9590c79bf596",
+  "who": "sowa",
+  "text": "You already have the sticker from this adventure. See you soon!"
+ },
+ "line.naklejka_opis": {
+  "hash": "0e6c851f99e4",
+  "who": "narrator",
+  "text": "This is the glowing lantern from Owl. We got it on the night of the fireflies, when we checked where there was more and where there was less."
+ }
+}

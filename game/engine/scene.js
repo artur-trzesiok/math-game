@@ -137,7 +137,7 @@ export class Stage {
       // the paw holds its near edge: the thing sits a little in front (profile) or beside (front), under the paw
       const dx = kier * h.base * (widok === "profil" ? 0.3 : 0.34), dy = widok === "profil" ? -h.base * 0.05 : -h.base * 0.18;
       h.mesh.position.set(p.x + dx, p.y + dy, L.korzen.position.z + (widok === "profil" ? 0.02 : 0.07));
-      h.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = ro; });
+      h.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = ro + 0.5; });          // in front of its carrier, never hidden behind
     }
     for (const tw of this.tweens.slice()) {
       tw.t += dt; const s = (tw.ease || easeInOut)(Math.min(1, tw.t / tw.d));

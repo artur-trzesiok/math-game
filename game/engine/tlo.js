@@ -72,6 +72,27 @@ function materialRuchu(mapa, moc, faza, sway, linie = null) {
  * @param wymiar  (z) -> {w, h} widocznego prostokata na glebokosci z
  * @param opcje   {katalog, zTla, zChmur, zTrawy, odlegloscKamery, podniesChmury}
  */
+// a lamp's glow (rekwizyty.json `poswiaty`: {x, y, r} in plate pixels, `kolor`): an additive radial light over the
+// plate whose radius and strength breathe a little, like a warm light that is alive
+function poswiata(p, s, z, W, H, srodekY) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(p.r * 2.4 * s, p.r * 2.4 * s), new THREE.ShaderMaterial({
+    uniforms: { czas, kolor: { value: new THREE.Color(p.kolor || "#ffcf7a") }, moc: { value: p.moc ?? 0.55 }, faza: { value: p.faza ?? 0 } },
+    vertexShader: "varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
+    fragmentShader: `uniform float czas, moc, faza; uniform vec3 kolor; varying vec2 vUv;
+      void main() {
+        float t = czas + faza * 6.2831;
+        float oddech = 0.5 + 0.5 * sin(t * 1.3) * 0.7 + 0.15 * sin(t * 3.1 + 1.7) + 0.08 * sin(t * 7.9);   // slow swell, a faint flicker
+        float r = length(vUv - 0.5) * 2.4 / (0.9 + 0.12 * oddech);
+        float a = pow(max(0.0, 1.0 - r), 2.2) * moc * (0.75 + 0.35 * oddech);
+        gl_FragColor = vec4(kolor * a, a);
+      }`,
+    transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
+  }));
+  m.position.set((p.x - W / 2) * s, (H / 2 - p.y) * s + srodekY, z);
+  m.renderOrder = 1; m.frustumCulled = false;
+  return m;
+}
+
 export async function zbudujTlo(scena, wymiar, opcje = {}) {
   const kat = opcje.katalog ?? "tlo/";
   const Z_TLA = opcje.zTla ?? -9, Z_CHMUR = opcje.zChmur ?? -8.4, Z_TRAWY = opcje.zTrawy ?? -1.2;
@@ -129,5 +150,6 @@ export async function zbudujTlo(scena, wymiar, opcje = {}) {
     m.renderOrder = r.klasa === "drift" ? 0 : 2;
     scena.add(m);
   }
+  for (const p of opis.poswiaty || []) scena.add(poswiata(p, s0, Z_TLA + 0.05, W, H, opcje.srodekY ?? 0));
   return { obszary: opis.obszary || null, rekwizytow: opis.rekwizyty.length, horyzont: opis.horyzont, skala: s0, wysokosc: H, zTla: Z_TLA, plyta, srodekY: opcje.srodekY ?? 0 };
 }
