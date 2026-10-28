@@ -145,31 +145,51 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
     const t = tex[widok]; if (!t) continue;
     if (slot === "stopy") {
       for (const R of stopyWidoku(L, widok)) {
-        const m = meshRzeczy(t, 1); m.userData.ubior = true; m.renderOrder = ro; R.mesh.add(m);
-        // the foot at rest (the chain's rest positions): its centre, the ankle's centre, the sole, the ankle's width;
-        // the shoe is placed there once and then follows the foot's centre and turns with the ankle-to-foot direction
+        // the shoe is a grid bent by the same joints as the leg: every vertex takes the chain position s of the
+        // nearest leg vertex at rest, so the sole stays level with the foot and the shaft follows the shin
         const srodki = (arr) => {
-          let fx = 0, fy = 0, ax = 0, ay = 0, y0 = Infinity, k0 = Infinity, k1 = -Infinity;
-          for (const i of R.stopa) { fx += arr[3 * i]; fy += arr[3 * i + 1]; y0 = Math.min(y0, arr[3 * i + 1]); }
-          for (const i of R.kostka) { const x = arr[3 * i]; ax += x; ay += arr[3 * i + 1]; k0 = Math.min(k0, x); k1 = Math.max(k1, x); }
+          let fx = 0, fy = 0, ax = 0, y0 = Infinity, k0 = Infinity, k1 = -Infinity, f0 = Infinity, f1 = -Infinity;
+          for (const i of R.stopa) { const x = arr[3 * i], y = arr[3 * i + 1]; fx += x; fy += y; y0 = Math.min(y0, y); f0 = Math.min(f0, x); f1 = Math.max(f1, x); }
+          for (const i of R.kostka) { const x = arr[3 * i]; ax += x; k0 = Math.min(k0, x); k1 = Math.max(k1, x); }
           const nf = R.stopa.length, na = Math.max(1, R.kostka.length);
-          let f0 = Infinity, f1 = -Infinity; for (const i of R.stopa) { f0 = Math.min(f0, arr[3 * i]); f1 = Math.max(f1, arr[3 * i]); }
-          return { fx: fx / nf, fy: fy / nf, ax: ax / na, ay: ay / na, y0, szer: Math.max((R.kostka.length ? k1 - k0 : 0.3) * 1.15, (f1 - f0) * 0.92) };
+          // a little oversize, so no paw shows: in profile the whole foot length and some, from the front the ankle and some
+          const kost = R.kostka.length ? k1 - k0 : 0.3;
+          const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (f1 - f0) * 1.1);
+          return { fx: (f0 + f1) / 2, fy: fy / nf, ax: ax / na, y0, szer };
         };
         const K = korekta(L, rzecz, widok), H0 = L.wysokosc;
         const S0 = srodki(R.rest), w = S0.szer * P.szer * skala * K.skala;
         // the height comes from the leg, not from the picture (a front boot is tall and narrow, a side one wide):
         // from the sole up to the leg at s = `do` (a wellington to mid-shin, a sneaker just over the ankle)
         let gy = 0, gn = 0; for (let i = 0; i < R.B.vs.length; i++) if (Math.abs(R.B.vs[i] - P.do) < 0.04) { gy += R.rest[3 * i + 1]; gn++; }
-        const h = gn ? Math.max(w * 0.5, gy / gn - S0.y0 + 0.03) * K.skala : m.userData.h * w;
-        const xs0 = (widok === "profil" ? S0.fx : S0.ax) + K.dx * H0, ys0 = S0.y0 + h / 2 - 0.03 + K.dy * H0;
-        const off = [xs0 - S0.fx, ys0 - S0.fy], kat0 = Math.atan2(S0.fy - S0.ay, S0.fx - S0.ax);
-        m.scale.set(w, h / m.userData.h, 1);
+        const h = gn ? Math.max(w * 0.5, gy / gn - S0.y0 + 0.07) * K.skala : (t.image.height / t.image.width) * w;
+        const cx = (widok === "profil" ? S0.fx : S0.ax) + K.dx * H0, cy = S0.y0 + h / 2 - 0.05 + K.dy * H0;
+        const obrot = K.obrot * Math.PI / 180, co = Math.cos(obrot), si = Math.sin(obrot);
+        const g = new THREE.PlaneGeometry(w, h, 6, 12), rest = g.attributes.position.array.slice();
+        for (let i = 0; i < rest.length; i += 3) { const x = rest[i], y = rest[i + 1]; rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012; }
+        g.attributes.position.array.set(rest);
+        // every shoe vertex is glued to its nearest leg vertex at rest: it keeps its offset from it, turned by the
+        // same angle that vertex turns by (the sum of its joints' angles x weights) - the shoe bends exactly like
+        // the leg under it (giving it the leg's s instead tore it apart across the joint bands at a bent ankle)
+        const n = rest.length / 3, najb = new Int32Array(n), off = new Float32Array(2 * n);
+        for (let v = 0; v < n; v++) {
+          let best = Infinity, bi = 0;
+          for (let i = 0; i < R.B.vs.length; i++) { const dx = R.rest[3 * i] - rest[3 * v], dy = R.rest[3 * i + 1] - rest[3 * v + 1], d = dx * dx + dy * dy; if (d < best) { best = d; bi = i; } }
+          najb[v] = bi; off[2 * v] = rest[3 * v] - R.rest[3 * bi]; off[2 * v + 1] = rest[3 * v + 1] - R.rest[3 * bi + 1];
+        }
+        const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: t, transparent: true, alphaTest: 0.05, depthTest: false, depthWrite: false, side: THREE.DoubleSide }));
+        m.frustumCulled = false; m.userData.ubior = true; m.renderOrder = ro; R.mesh.add(m);
+        const nl = R.rest.length / 3;
         const aktualizuj = () => {
-          const T = srodki(R.mesh.geometry.attributes.position.array);
-          const d = Math.atan2(T.fy - T.ay, T.fx - T.ax) - kat0, c = Math.cos(d), sn = Math.sin(d);
-          m.rotation.z = d + K.obrot * Math.PI / 180;
-          m.position.set(T.fx + off[0] * c - off[1] * sn, T.fy + off[0] * sn + off[1] * c, 0.012);
+          const lp = R.mesh.geometry.attributes.position.array, out = g.attributes.position.array;
+          const stawy = R.biodro ? [R.katBiodra, ...R.katy] : R.katy, wagi = R.biodro ? R.wagiD : R.wagi;
+          for (let v = 0; v < n; v++) {
+            const i = najb[v]; let kat = 0;
+            if (wagi) for (let k = 0; k < stawy.length; k++) kat += stawy[k] * wagi[k * nl + i];
+            const c = Math.cos(kat), sn = Math.sin(kat), ox = off[2 * v], oy = off[2 * v + 1];
+            out[3 * v] = lp[3 * i] + ox * c - oy * sn; out[3 * v + 1] = lp[3 * i + 1] + ox * sn + oy * c;
+          }
+          g.attributes.position.needsUpdate = true;
         };
         aktualizuj(); rzeczy.push([m, aktualizuj]);
       }

@@ -112,7 +112,6 @@ export class Stage {
     const dt = dt0;
     E.ruszOtoczenie(this, dt, t); E.ruszNakladke(this, dt); E.ruszCzastki(this, dt, t);
     for (const d of this.dymki) d.za();
-    ruszUbiory(this);
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) {
       L.update(dt);
@@ -122,6 +121,7 @@ export class Stage {
         const k = Math.max(0.4, 1 - lift * 0.8); L.cien.scale.set(k, k, 1); L.cien.material.opacity = 0.85 * k;
       }
     }
+    ruszUbiory(this);                                                       // after the legs bent this frame
     // carried things follow the paw (or the back) they sit in, drawn over the one carrying them
     for (const L of Object.values(this.puppets)) {
       const h = L.trzyma; if (!h) continue;
