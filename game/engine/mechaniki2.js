@@ -4,7 +4,7 @@
 import * as THREE from "three";
 import { narysujCyfre } from "./liczby.js";
 import { ksztalt } from "./geometria.js";
-import { texture } from "./scene.js";
+import { texture, GROUND } from "./scene.js";
 import { Lalka } from "./lalka.js";
 import * as U from "./ubior.js";
 
@@ -318,7 +318,7 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
     O.korzen.scale.x = k * (1 + 0.015 * Math.sin(performance.now() / 300));
   }, 40);
   const narysowane = [];                                              // the circles of znajdz(): they go with the pond
-  const remove = () => { clearInterval(fala); L.bezCienia = false; narysowane.forEach((k) => k.remove()); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = L.podloga = null; L.podloga = null; };
+  const remove = () => { clearInterval(fala); L.bezCienia = false; narysowane.forEach((k) => k.remove()); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = GROUND; L.podloga = null; };   // back on the front ground
   // the differences: a target on the garment and on the place it would be in the water
   const znajdz = async () => {
     const cele = [];

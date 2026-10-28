@@ -126,7 +126,7 @@ export class Stage {
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) {
       if (L.lustro) {                                                         // a reflection (mechaniki2.js odbicie) moves as its original does
-        const O = L.lustro; L.akcja = O.akcja; L.ta = O.ta; L.przejscie = O.przejscie; L.kierunekBazowy = O.kierunekBazowy;
+        const O = L.lustro; L.akcja = O.akcja; L.ta = O.ta; L.przejscie = O.przejscie; L.t = O.t - dt; L.pozaSurowa = O.pozaSurowa; L.mikro = O.mikro;   // one clock: a blend timed by the original's clock exploded in the reflection's (streaks) L.kierunekBazowy = O.kierunekBazowy;
         L.mowi = O.mowi; L.amplituda = O.amplituda; L.wiz = O.wiz; L.celSpojrzenia = O.celSpojrzenia; L.korzen.position.x = O.korzen.position.x;
       }
       L.update(dt);
