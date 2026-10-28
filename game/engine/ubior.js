@@ -137,8 +137,8 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
   const G = await galeria(), def = G[rzecz]; if (!def) { console.warn(`no garment ${rzecz}`); return null; }
   const slot = def.slot, P = { ...DOMYSLNE[slot], ...def };
   await korekty(L);
-  zdejmij(S, who, slot);
   const tex = {}; for (const [w, plik] of Object.entries(def.widoki || {})) tex[w] = await tekstura(`/game/assets/ubrania/${plik}`);
+  zdejmij(S, who, slot);                 // only once the new pictures are in: a swap never shows an empty frame
   const rzeczy = [];                     // [mesh, update?]
   const ro = warstwaLalki(L);
   for (const widok of ["przod", "profil", "tyl"]) {

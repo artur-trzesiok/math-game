@@ -66,11 +66,11 @@
   <div class="wiersz"><select id="lista"><option value="">— kliknij na lalce —</option></select><label title="klik i przeciąganie zawsze działają na wybranym elemencie"><input type="checkbox" id="blokada"> zablokuj</label></div>
   <div id="pola" class="pola"></div>
   <div class="pomoc">
-    Przeciągnij element, by go przesunąć (oś idzie z nim); przeciągnij narożnik ramki, by zmienić jego wielkość. Ubranie też przeciągasz myszą (pomarańczowa ramka, narożnik = skala). <kbd>Shift</kbd>+przeciągnij przesuwa samą oś obrotu.
+    Przeciągnij element, by go przesunąć (oś idzie z nim); przeciągnij narożnik ramki, by zmienić jego wielkość. Ubranie też przeciągasz myszą (pomarańczowa ramka: narożnik = skala, kółko nad ramką albo <kbd>Alt</kbd>+przeciągnij = obrót, <kbd>Q</kbd>/<kbd>E</kbd> o 1°). <kbd>Shift</kbd>+przeciągnij przesuwa samą oś obrotu.
     <kbd>Alt</kbd>+przeciągnij obraca wokół osi (bazowy obrót, <kbd>Q</kbd>/<kbd>E</kbd> o 1°, z <kbd>Shift</kbd> 5°).
     Animacja gra tylko w rzutach, które gra by pokazała (Skradanie: sam profil).
     Oczy i usta przeciągasz i obracasz jako cel (wszystkie warianty razem); ich <b>w</b>/<b>h</b> zmieniają rozmiar.
-    Strzałki = 1 px, z <kbd>Shift</kbd> 10 px. Kółko = zoom. <kbd>Esc</kbd> odznacza.
+    Strzałki = 1 px, z <kbd>Shift</kbd> 10 px. Kółko = obrót wybranego (ubranie albo element), z <kbd>Shift</kbd> 5°. <kbd>Esc</kbd> odznacza.
     <b>Stawy</b>: wybierz kończynę, różowe kółka to stawy - przeciągnij kółko, by przesunąć staw. Suwak <i>miękkość</i>
     = szerokość zgięcia (mało = ostry staw, dużo = gumowy łuk), suwak <i>zgięcie</i> zgina na próbę (nie zapisuje się).
     „zablokuj" trzyma wybór: przeciąganie, <kbd>Shift</kbd> i <kbd>Alt</kbd> działają na nim, nawet gdy pod kursorem jest inny element.
@@ -472,6 +472,7 @@ function stawPod(e) {
 // column showing that view follows
 const WIDOK_KOLUMNY = ["przod", "przod", "tyl", "profil"];
 let ubrWybor = null, ciagU = null, ciagE = null;
+window.edytorUbrania = { get wybor() { return ubrWybor; }, get ciag() { return ciagU; }, trafienie: (e) => trafienieUbioru(e) };   // tests
 function meshUbioru(L, rzecz) { const out = []; L.korzen.traverse((o) => { if (o.isMesh && o.userData.rzecz === rzecz && widoczny(o)) out.push(o); }); return out; }
 function bbUbioru() {
   if (!ubrWybor) return null;
@@ -493,9 +494,23 @@ function trafienieUbioru(e) {
   }
   return null;
 }
+// the rotation handle: a circle over the box's top middle
+const uchwytObrotu = (bb) => new THREE.Vector3((bb.min.x + bb.max.x) / 2, bb.max.y + 3 * R_ROGU / kam.zoom, 0.8);
 function rysujUbior() {
   const bb = bbUbioru(); if (!bb) return;
   nakladka.add(prostokat(bb, 0xffa030)); for (const r of rogi(bb)) nakladka.add(kwadracik(r, 0xffa030));
+  nakladka.add(kolko(uchwytObrotu(bb), R_ROGU / kam.zoom, 0xffa030));
+}
+function naUchwycieObrotu(e) {
+  const bb = bbUbioru(); if (!bb) return null;
+  const p = swiat(e), u = uchwytObrotu(bb);
+  return Math.hypot(p.x - u.x, p.y - u.y) < 1.8 * R_ROGU / kam.zoom ? new THREE.Vector3((bb.min.x + bb.max.x) / 2, (bb.min.y + bb.max.y) / 2, 0) : null;
+}
+// turn the selected garment by d degrees (clockwise); live for hats, glasses and scarves, shoes on release
+function obrocUbior(d) {
+  const K = korektaWyboru(); K.obrot = (K.obrot ?? 0) + d;
+  for (const [i, L] of lalki.entries()) if (WIDOK_KOLUMNY[i] === ubrWybor.widok) for (const m of meshUbioru(L, ubrWybor.rzecz)) if (m.parent?.userData?.czesc === undefined || !m.parent.isMesh) m.rotation.z -= d * Math.PI / 180;
+  pokazKorekte(); $("ubr_status").textContent = "niezapisane";
 }
 function wybierzUbior(t) {
   ubrWybor = t;
@@ -509,10 +524,11 @@ function korektaWyboru() {
 }
 rend.domElement.addEventListener("pointerdown", (e) => {
   if (e.button !== 0) return;
-  const rogU = rogPod(e, bbUbioru()), tu = rogU ? ubrWybor : trafienieUbioru(e);
+  const os = naUchwycieObrotu(e), rogU = os ? null : rogPod(e, bbUbioru()), tu = os || rogU ? ubrWybor : trafienieUbioru(e);
   if (tu) {
-    if (!rogU) wybierzUbior(tu);
-    ciagU = { od: swiat(e), rog: !!rogU, H: lalki[tu.kolumna].wysokosc, ruszyl: false };
+    if (!rogU && !os) wybierzUbior(tu);
+    const bb = bbUbioru();
+    ciagU = { od: swiat(e), rog: !!rogU, obrot: !!os || e.altKey, srodek: os || (bb ? new THREE.Vector3((bb.min.x + bb.max.x) / 2, (bb.min.y + bb.max.y) / 2, 0) : null), H: lalki[tu.kolumna].wysokosc, ruszyl: false };
     rend.domElement.setPointerCapture(e.pointerId); e.stopImmediatePropagation(); return;
   }
   const rogE = rogPod(e, bbWyboru());
@@ -522,19 +538,36 @@ rend.domElement.addEventListener("pointerdown", (e) => {
 rend.domElement.addEventListener("pointermove", (e) => {
   if (ciagU) {
     const p = swiat(e), K = korektaWyboru();
+    // live: the worn meshes themselves move / scale (re-dressing on every move made it flicker); the exact fit
+    // is rebuilt from the corrections when the button goes up
+    const kolumny = lalki.filter((_, i) => WIDOK_KOLUMNY[i] === ubrWybor.widok);
+    if (ciagU.obrot && ciagU.srodek) {
+      const c = ciagU.srodek, a0 = Math.atan2(ciagU.od.y - c.y, ciagU.od.x - c.x), a1 = Math.atan2(p.y - c.y, p.x - c.x);
+      let d = (a1 - a0) * 180 / Math.PI; if (d > 180) d -= 360; if (d < -180) d += 360;
+      if (Math.abs(d) < 0.2) return;
+      obrocUbior(-d); ciagU.od = p; ciagU.ruszyl = true; rysujNakladke(); rysujUbior();
+      e.stopImmediatePropagation(); return;
+    }
     if (ciagU.rog) {
       const bb = bbUbioru(); if (!bb) return;
       const c = new THREE.Vector3((bb.min.x + bb.max.x) / 2, (bb.min.y + bb.max.y) / 2, 0);
       const f = Math.hypot(p.x - c.x, p.y - c.y) / Math.max(1e-4, Math.hypot(ciagU.od.x - c.x, ciagU.od.y - c.y));
       if (!isFinite(f) || Math.abs(f - 1) < 0.005) return;
       K.skala = Math.max(0.2, (K.skala ?? 1) * f);
+      for (const L of kolumny) for (const m of meshUbioru(L, ubrWybor.rzecz)) m.scale.multiplyScalar(f);
     } else {
       const dx = (p.x - ciagU.od.x) / ciagU.H, dy = (p.y - ciagU.od.y) / ciagU.H; if (!dx && !dy) return;
       K.dx = (K.dx ?? 0) + dx; K.dy = (K.dy ?? 0) + dy;
+      const d = new THREE.Vector3(p.x - ciagU.od.x, p.y - ciagU.od.y, 0);
+      for (const L of kolumny) for (const m of meshUbioru(L, ubrWybor.rzecz)) {
+        const par = m.parent; par.updateWorldMatrix(true, false);
+        const w0 = par.localToWorld(m.position.clone()), w1 = w0.clone().add(d);
+        m.position.add(par.worldToLocal(w1).sub(par.worldToLocal(w0.clone())));
+      }
     }
     ciagU.od = p; ciagU.ruszyl = true;
     pokazKorekte(); $("ubr_status").textContent = "niezapisane";
-    if (!ciagU.czeka) { ciagU.czeka = true; ubierzWszystkie(ubrWybor.rzecz).then(() => { if (ciagU) ciagU.czeka = false; rysujNakladke(); rysujUbior(); }); }
+    rysujNakladke(); rysujUbior();
     e.stopImmediatePropagation(); return;
   }
   if (ciagE) {
@@ -596,11 +629,22 @@ rend.domElement.addEventListener("pointerup", () => {
   if (ciag && ciag.ruszyl) { zaokraglij(); zbuduj(); }
   ciag = null;
 });
-rend.domElement.addEventListener("wheel", (e) => { e.preventDefault(); kam.zoom *= e.deltaY < 0 ? 1.15 : 1 / 1.15; kam.updateProjectionMatrix(); }, { passive: false });
+// the wheel turns the selection (a garment, else a piece): 2 degrees a notch, 5 with Shift - no zoom
+rend.domElement.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  const d = Math.sign(e.deltaY) * (e.shiftKey ? 5 : 2); if (!d) return;
+  if (ubrWybor) { obrocUbior(d); clearTimeout(kolkoUbr); kolkoUbr = setTimeout(() => ubierzWszystkie(ubrWybor.rzecz).then(() => { rysujNakladke(); rysujUbior(); }), 250); rysujNakladke(); rysujUbior(); return; }
+  if (wybor) { zapamietaj(); obroc(d); }
+}, { passive: false });
+let kolkoUbr = null;
 
 // ------------------------------------------------------------ klawiatura i panel
 window.addEventListener("keydown", (e) => {
   if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+  if (ubrWybor && (e.key === "q" || e.key === "Q" || e.key === "e" || e.key === "E")) {
+    obrocUbior((e.key.toLowerCase() === "q" ? -1 : 1) * (e.shiftKey ? 5 : 1)); ubierzWszystkie(ubrWybor.rzecz).then(() => { rysujNakladke(); rysujUbior(); });
+    e.preventDefault(); e.stopImmediatePropagation(); return;
+  }
   const krok = e.shiftKey ? 10 : 1;
   const strz = { ArrowLeft: [-krok, 0], ArrowRight: [krok, 0], ArrowUp: [0, -krok], ArrowDown: [0, krok] }[e.key];
   if (strz) { e.preventDefault(); zapamietaj(); przesun(...strz); }

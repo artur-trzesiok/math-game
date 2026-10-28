@@ -696,13 +696,26 @@ export class Stage {
     L.korzen.updateMatrixWorld(true);
     const gl = L.kosci.glowa && L.widokGrupy.przod.visible ? L.kosci.glowa : (L.kosci.p_glowa && L.widokGrupy.profil.visible ? L.kosci.p_glowa : L.kosci.t_glowa);
     const top = new THREE.Box3().setFromObject(L.korzen).max.y;
-    const hx = gl ? gl.getWorldPosition(new THREE.Vector3()).x : o.x, s = 0.85;
-    const x = hx + 0.12 * s, y = Math.min(SUFIT - 1.05 * s, top + 0.5 * s + 0.3);
+    const hx = gl ? gl.getWorldPosition(new THREE.Vector3()).x : o.x;
+    // inside what the camera sees now (a close-up or a two-shot zooms in): under the phase icons, beside the head
+    // when there is no room above it; a little smaller when zoomed
+    const v = this.visible(0), zc = this.camera.zoom, hw = v.w / 2 / zc, hh = v.h / 2 / zc, s = 0.85 / Math.sqrt(zc);
+    const gora = Math.min(SUFIT, this.camera.position.y + hh - 2 * hh * 0.11) - 1.05 * s;
+    let x = hx + 0.12 * s, y = top + 0.5 * s + 0.3;
+    if (y > gora) {
+      y = gora;
+      const b = new THREE.Box3().setFromObject(gl || L.korzen), strona = o.x < this.camera.position.x ? 1 : -1;
+      x = strona > 0 ? b.max.x + 0.6 * s : b.min.x - 0.6 * s;
+    }
+    x = Math.max(this.camera.position.x - hw + 0.6 * s, Math.min(this.camera.position.x + hw - 0.6 * s, x));
     this.sfx.graj("wonder");
     const hook = await this.line({ bezier: [[x - 0.45 * s, y + 0.55 * s], [x - 0.45 * s, y + 1.05 * s], [x + 0.55 * s, y + 1.05 * s], [x + 0.5 * s, y + 0.55 * s],
                                             [x + 0.45 * s, y + 0.2 * s], [x, y + 0.25 * s], [x, y - 0.15 * s]] }, { color: "#2b2622", duration: 0.5, width: 0.14, name: "pytajnik", strong: true });
-    const dot = await this.line([[x - 0.03, y - 0.42 * s], [x + 0.04, y - 0.5 * s]], { color: "#2b2622", duration: 0.08, width: 0.2, strong: true });
-    setTimeout(() => { hook.remove(); dot.remove(); }, na * 1000);
+    // the dot: a clean disc over a white rim (a pencil stroke this short got a fuzzy halo)
+    const dot = new THREE.Group(); dot.position.set(x, y - 0.46 * s, 0.9);
+    for (const [r, k, o] of [[0.15 * s, 0xffffff, 46], [0.1 * s, 0x2b2622, 46.5]]) { const m = new THREE.Mesh(new THREE.CircleGeometry(r, 40), new THREE.MeshBasicMaterial({ color: k, depthTest: false, depthWrite: false, transparent: true })); m.renderOrder = o; dot.add(m); }
+    this.scene.add(dot);
+    setTimeout(() => { hook.remove(); this.scene.remove(dot); }, na * 1000);
     return hook;
   }
 
