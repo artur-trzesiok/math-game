@@ -186,7 +186,7 @@ export default {
           await Promise.all(petle);
           for (const n of tancerze) if (n !== kto) c.zamroz(n);
           // the one who moves keeps wiggling until pointed at
-          let wierci = true; const wiercenie = (async () => { while (wierci) { c.play(kto, "Kiwanie"); await c.wait(0.5); } })();
+          let wierci = true; const wiercenie = (async () => { while (wierci) { c.play(kto, "Kiwanie"); await c.wait(0.5); } })().catch(() => {});   // a retired scene throws "abort"
           if (runda === 0) await c.say("sowa", "line.c_kto");
           const cele = tancerze.map((n) => c.stage.puppets[n]);
           dobre(cele, false); dobre(c.stage.puppets[kto]);
