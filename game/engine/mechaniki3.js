@@ -228,7 +228,9 @@ export async function ramka(S, { x = 0.5, y = 1.0, krok = 0.95, kolor = "#2f6fd0
   const ile = () => miejsca.filter((m) => m.h).length;
   const wloz = async (t) => {
     const m = miejsca.find((q) => !q.h); if (!m) return false;
-    m.h = t; t.wRamce = true; const b = S.bounds(t), s = Math.min(1, (krok - 0.18) / Math.max(b.right - b.left, b.top - b.bottom));
+    m.h = t; t.wRamce = true;
+    while (t.bumping) await new Promise((ok) => setTimeout(ok, 30));      // measured mid pop-in it reads too small
+    const b = S.bounds(t), s = Math.min(1, (krok - 0.18) / Math.max(b.right - b.left, b.top - b.bottom));
     t.mesh.scale.multiplyScalar(s); t.base = (t.base || 1) * s;
     await t.moveTo(m.x, m.y, FAST ? 0.05 : 0.25); S.sfx.graj("plop"); S.bump(t, 0.12, false);
     return true;

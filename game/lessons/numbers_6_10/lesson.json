@@ -4,35 +4,30 @@
     "pl": "Liczby od 6 do 10",
     "en": "Numbers 6 to 10"
   },
-  "goal": "Count on past five up to ten without skipping or doubling (a counted thing moves aside); recognise 6-10; ten has two digits.",
+  "goal": "Count to ten, each thing once (counted things move aside); 6-10 as five and some more (the ten frame); the digits 6-10; ten has two digits.",
   "age": "5-6",
   "characters": [
-    "lisek",
-    "wiewiorka"
+    "bobr",
+    "kret",
+    "sowa"
   ],
   "backgrounds": [
-    "sad",
-    "ogrod",
-    "dom",
-    "plac_zabaw",
-    "przedpokoj"
+    "strumyk",
+    "las",
+    "pokoj"
   ],
   "objects": [
-    "jablko",
-    "marchewka",
-    "kubek",
-    "kwiatek",
-    "pilka",
-    "gruszka",
+    "bal",
+    "kamyk",
     "szyszka",
-    "lyzka",
-    "but",
-    "skarpetka",
-    "klocek"
+    "jablko",
+    "zoledz",
+    "gest_papier",
+    "karta_rewers"
   ],
-  "cover": "Between them six red apples in a neat row on the grass, and above them a big hand-drawn pencil digit 6.",
+  "cover": "Beaver, Mole and Owl by a brook mending a little wooden dam; a wooden ten frame with two rows of five places, eight short logs in it; the water trickling through a small gap.",
   "naklejka": {
-    "obraz": "objects/jablko",
-    "kto": "lisek"
+    "obraz": "objects/bal",
+    "kto": "bobr"
   }
 }

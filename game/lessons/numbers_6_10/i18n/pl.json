@@ -1,306 +1,283 @@
 {
-  "line.s_jam": {
-    "who": "lisek",
-    "text": "Robię dżem! W przepisie jest napisane: sześć jabłek."
+  "line.a_tama": {
+    "who": "bobr",
+    "text": "Ojej, w mojej tamie jest dziura! Woda ucieka."
   },
-  "line.s_enough": {
-    "who": "wiewiorka",
-    "text": "A czy masz akurat sześć?"
+  "line.a_dziesiec": {
+    "who": "bobr",
+    "text": "Żeby ją załatać, potrzebuję dziesięciu bali."
   },
-  "line.s_fast": {
-    "who": "lisek",
-    "text": "Zaraz policzę, szybciutko!"
+  "line.a_licze": {
+    "who": "kret",
+    "text": "Policzę bale! Raz, dwa, trzy..."
   },
-  "line.s_seven": {
-    "who": "lisek",
-    "text": "Siedem! Mam aż siedem jabłek!"
+  "line.a_dwanascie": {
+    "who": "kret",
+    "text": "Dwanaście! Mamy nawet więcej, niż trzeba!"
   },
-  "line.s_twice": {
-    "who": "wiewiorka",
-    "text": "Za szybko! To jabłko policzyłeś dwa razy. Zobacz, urosło dwa razy."
+  "line.a_dwa_razy": {
+    "who": "sowa",
+    "text": "Krecie, niektóre bale policzyłeś dwa razy. Kiedy leżą na kupce, łatwo się pomylić."
   },
-  "line.s_how": {
-    "who": "lisek",
-    "text": "To jak liczyć, żeby się nie pomylić?"
+  "line.a_odkladaj": {
+    "who": "sowa",
+    "text": "Każdy policzony bal odkładamy na bok, do rządka. Wtedy żaden nie policzy się dwa razy. Dotykaj bali po kolei."
   },
-  "line.s_aside": {
-    "who": "wiewiorka",
-    "text": "Odkładając! Policzone jabłko odkładamy na bok."
+  "line.a_osiem": {
+    "who": "sowa",
+    "text": "Osiem bali."
   },
-  "line.s_what": {
-    "who": "lisek",
-    "text": "Odkładając? Jak to?"
+  "line.a_brakuje": {
+    "who": "bobr",
+    "text": "Osiem, a potrzebuję dziesięciu. Brakuje jeszcze dwóch."
   },
-  "line.s_show": {
-    "who": "wiewiorka",
-    "text": "Pokażę ci. Wskaż jabłko, a ja przesunę je do rzędu i powiem liczbę."
+  "line.a_ramka": {
+    "who": "sowa",
+    "text": "Mam ramkę na dziesięć: dwa rzędy po pięć miejsc. W niej od razu widać, ile jest."
   },
-  "line.s_six": {
-    "who": "wiewiorka",
-    "text": "Sześć jabłek! Żadne nie zostało policzone dwa razy."
+  "line.a_wloz": {
+    "who": "sowa",
+    "text": "Przeciągnij do ramki osiem bali."
   },
-  "line.s_after_five": {
-    "who": "lisek",
-    "text": "Po pięciu jest sześć. Liczymy dalej, o jeden więcej."
+  "line.a_piec_i_trzy": {
+    "who": "sowa",
+    "text": "Pełny rząd to pięć. Pięć i jeszcze trzy to osiem."
   },
-  "line.s_solved": {
-    "who": "lisek",
-    "text": "Akurat sześć, tyle ile w przepisie! Będzie dżem!"
+  "line.a_widze": {
+    "who": "kret",
+    "text": "Widzę! Do pełnej ramki brakuje dwóch miejsc."
   },
-  "line.s_to_garden": {
-    "who": "wiewiorka",
-    "text": "Chodźmy do ogrodu. Do dżemu potrzeba jeszcze ośmiu marchewek."
+  "line.b_las": {
+    "who": "bobr",
+    "text": "W lesie znajdziemy więcej bali."
   },
-  "line.b_carrots": {
-    "who": "lisek",
-    "text": "Marchewki leżą wszędzie. Policz je i odkładaj po kolei."
+  "line.b_do_dziesieciu": {
+    "who": "bobr",
+    "text": "Dokładaj bale do ramki, aż będzie ich dziesięć."
   },
-  "line.b_seven": {
-    "who": "lisek",
-    "text": "Siedem marchewek! Po sześciu jest siedem."
-  },
-  "line.b_one_more": {
-    "who": "wiewiorka",
-    "text": "Hop! Wyrwałam jeszcze jedną!"
-  },
-  "line.b_how_many_now": {
-    "who": "wiewiorka",
-    "text": "Było siedem, doszła jeszcze jedna. Policz ją dalej: wskaż nową marchewkę."
-  },
-  "line.b_pick": {
-    "who": "wiewiorka",
-    "text": "Wskaż cyfrę, która mówi, ile jest teraz marchewek."
-  },
-  "line.b_eight": {
-    "who": "lisek",
-    "text": "Osiem! Po siedmiu jest osiem."
-  },
-  "line.b_enough": {
-    "who": "wiewiorka",
-    "text": "Akurat osiem, tyle ile trzeba do dżemu!"
-  },
-  "line.b_to_home": {
-    "who": "wiewiorka",
-    "text": "Wracajmy do domu. Dziś mamy przyjęcie!"
-  },
-  "line.c_party": {
-    "who": "wiewiorka",
-    "text": "Na przyjęcie przyjdzie dziewięciu gości. Czy dla każdego starczy kubek? Policzmy."
-  },
-  "line.c_knock": {
-    "who": "lisek",
-    "text": "Puk, puk! Przyszedł jeszcze jeden gość. Przyniosę mu kubek."
-  },
-  "line.c_count_on": {
-    "who": "wiewiorka",
-    "text": "Policz nowy kubek dalej. Wskaż go."
-  },
-  "line.c_ten": {
-    "who": "wiewiorka",
-    "text": "Dziewięć i jeszcze jeden to dziesięć!"
-  },
-  "line.c_solved": {
-    "who": "lisek",
-    "text": "Każdy gość ma kubek. Teraz umiesz liczyć do dziesięciu!"
-  },
-  "line.wrong_digit": {
-    "who": "lisek",
+  "line.b_pelna": {
+    "who": "bobr",
+    "text": "Ramka jest pełna. Dziesięć wystarczy!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "To inna cyfra. Popatrz jeszcze raz."
+      "sowa"
+    ]
   },
-  "line.good_digit": {
-    "who": "lisek",
+  "line.b_dziesiec": {
+    "who": "sowa",
+    "text": "Dwa pełne rzędy po pięć to dziesięć!"
+  },
+  "line.b_cyfry": {
+    "who": "sowa",
+    "text": "A tak piszemy te liczby."
+  },
+  "line.b_cyfra6": {
+    "who": "sowa",
+    "text": "Sześć."
+  },
+  "line.b_cyfra7": {
+    "who": "sowa",
+    "text": "Siedem."
+  },
+  "line.b_cyfra8": {
+    "who": "sowa",
+    "text": "Osiem."
+  },
+  "line.b_cyfra9": {
+    "who": "sowa",
+    "text": "Dziewięć."
+  },
+  "line.b_cyfra10": {
+    "who": "sowa",
+    "text": "A dziesięć piszemy dwiema cyframi: jedynka i zero."
+  },
+  "line.b_skacz6": {
+    "who": "bobr",
+    "text": "Krecie, skocz do kamienia z liczbą sześć! Który to? Wskaż."
+  },
+  "line.b_skacz7": {
+    "who": "bobr",
+    "text": "Krecie, skocz do kamienia z liczbą siedem! Który to? Wskaż."
+  },
+  "line.b_skacz8": {
+    "who": "bobr",
+    "text": "Krecie, skocz do kamienia z liczbą osiem! Który to? Wskaż."
+  },
+  "line.b_skacz9": {
+    "who": "bobr",
+    "text": "Krecie, skocz do kamienia z liczbą dziewięć! Który to? Wskaż."
+  },
+  "line.b_skacz_nie": {
+    "who": "bobr",
+    "text": "To nie ten kamień. Popatrz na liczby pod kamieniami.",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Tak! To ta cyfra. Świetnie!"
+      "sowa"
+    ]
   },
-  "line.p_intro": {
-    "who": "lisek",
-    "text": "Pobawmy się w liczenie do dziesięciu!"
+  "line.b_doskoczylem": {
+    "who": "kret",
+    "text": "Hop, hop, hop! Doskoczyłem!"
   },
-  "line.p_count": {
-    "who": "lisek",
-    "text": "Policz wszystko. Wskaż każdą rzecz tylko raz."
+  "line.b_tama_gotowa": {
+    "who": "bobr",
+    "text": "Mam dziesięć bali. Tama będzie cała!"
   },
-  "line.p_which_digit": {
-    "who": "wiewiorka",
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Poćwiczmy liczby do dziesięciu! Mam pięć zabaw."
+  },
+  "line.p_ile": {
+    "who": "bobr",
+    "text": "Ile szyszek jest w ramce? Wskaż liczbę."
+  },
+  "line.p_ile_nie": {
+    "who": "bobr",
+    "text": "Pełny rząd to pięć. Policz, ile jest jeszcze w dolnym rzędzie."
+  },
+  "line.p_dobrze": {
+    "who": "sowa",
+    "text": "Brawo!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Wskaż cyfrę, która mówi, ile ich jest."
+      "bobr"
+    ]
   },
-  "line.p_group_7": {
-    "who": "wiewiorka",
-    "text": "Wskaż grupę, w której jest siedem rzeczy."
+  "line.p_siedem": {
+    "who": "sowa",
+    "text": "Włóż do ramki siedem jabłek."
   },
-  "line.p_group_9": {
-    "who": "wiewiorka",
-    "text": "Wskaż grupę, w której jest dziewięć rzeczy."
+  "line.p_siedem_juz": {
+    "who": "sowa",
+    "text": "Już jest siedem!"
   },
-  "line.p_wrong_group": {
-    "who": "wiewiorka",
-    "text": "Policz jeszcze raz, każdą rzecz tylko raz."
+  "line.p_napisz": {
+    "who": "bobr",
+    "text": "Napisz palcem siódemkę. Zacznij od zielonej kropki."
   },
-  "line.good_group": {
-    "who": "lisek",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Tak! Dobrze policzone."
+  "line.p_wiecej": {
+    "who": "sowa",
+    "text": "Gdzie jest więcej żołędzi? Policz i wskaż."
   },
-  "line.a_game": {
-    "who": "wiewiorka",
-    "text": "Zagrajmy w liczenie w przedpokoju, tak jak w domu."
+  "line.p_wiecej_nie": {
+    "who": "sowa",
+    "text": "Policz jeszcze raz. Duża kupka to jeszcze nie znaczy więcej."
   },
-  "line.a_ok": {
-    "who": "lisek",
-    "text": "Dobrze! Liczymy i odkładamy po kolei."
+  "line.p_osiem": {
+    "who": "bobr",
+    "text": "Osiem to więcej niż sześć!"
   },
-  "line.a_count_but": {
-    "who": "lisek",
-    "text": "Policz buty. Wskaż każdy po kolei."
+  "line.p_dziewiec": {
+    "who": "bobr",
+    "text": "Który kamień ma liczbę dziewięć? Wskaż."
   },
-  "line.a_count_skarpetka": {
-    "who": "lisek",
-    "text": "Teraz skarpetki. Ile ich jest?"
+  "line.h_palce": {
+    "who": "kret",
+    "text": "W domu policzymy palce!"
   },
-  "line.a_count_klocek": {
-    "who": "lisek",
-    "text": "A teraz klocki. Policz je wszystkie."
+  "line.h_ile_palcow": {
+    "who": "bobr",
+    "text": "Na każdej dłoni jest pięć palców. Ile palców mają dwie dłonie? Wskaż liczbę."
   },
-  "line.a_which_digit": {
-    "who": "lisek",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Wskaż cyfrę, która mówi, ile ich jest."
+  "line.h_ile_palcow_nie": {
+    "who": "bobr",
+    "text": "Pięć i jeszcze pięć. Policz wszystkie palce."
   },
-  "line.a_ask_parents": {
-    "who": "wiewiorka",
-    "text": "Poproście rodziców, żeby razem z wami policzyli buty w przedpokoju albo schody."
+  "line.h_dziesiec": {
+    "who": "kret",
+    "text": "Dziesięć palców! Tyle, ile miejsc w ramce."
   },
-  "line.a_bye": {
-    "who": "lisek",
-    "text": "Pa, pa! Do zobaczenia!"
+  "line.h_rodzice": {
+    "who": "bobr",
+    "text": "Policz z rodzicami dziesięć zabawek, wkładając je po jednej do pudełka!"
   },
   "line.n1": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Jeden!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Jeden!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n2": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Dwa!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Dwa!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n3": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Trzy!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Trzy!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n4": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Cztery!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Cztery!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n5": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Pięć!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Pięć!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n6": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Sześć!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Sześć!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n7": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Siedem!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Siedem!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n8": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Osiem!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Osiem!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n9": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Dziewięć!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Dziewięć!"
+      "bobr",
+      "kret"
+    ]
   },
   "line.n10": {
-    "who": "wiewiorka",
+    "who": "sowa",
+    "text": "Dziesięć!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Dziesięć!"
-  },
-  "line.d6": {
-    "who": "wiewiorka",
-    "speakers": [
-      "lisek"
-    ],
-    "text": "To jest szóstka. Wygląda jak ślimak, który wystawia czułek do góry."
-  },
-  "line.d7": {
-    "who": "wiewiorka",
-    "speakers": [
-      "lisek"
-    ],
-    "text": "To jest siódemka. Ma daszek i długą, ukośną nóżkę."
-  },
-  "line.d8": {
-    "who": "wiewiorka",
-    "speakers": [
-      "lisek"
-    ],
-    "text": "To jest ósemka. Wygląda jak bałwanek z dwóch kulek."
-  },
-  "line.d9": {
-    "who": "wiewiorka",
-    "speakers": [
-      "lisek"
-    ],
-    "text": "To jest dziewiątka. Wygląda jak balonik na sznurku."
-  },
-  "line.d10": {
-    "who": "wiewiorka",
-    "speakers": [
-      "lisek"
-    ],
-    "text": "To jest dziesięć. Zapisujemy je dwiema cyframi: jedynką i zerem. Zero to okrągłe kółko, jak jajko."
+      "bobr",
+      "kret"
+    ]
   },
   "line.naklejka_daj": {
-    "who": "lisek",
-    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+    "who": "bobr",
+    "text": "Dziękuję za pomoc przy tamie! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "bobr",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To jabłko od liska. Dostaliśmy je, kiedy liczyliśmy aż do dziesięciu."
-  },
-  "line.naklejka_juz": {
-    "who": "lisek",
-    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+    "text": "To bal z tamy Bobra. Dostaliśmy go, kiedy liczyliśmy do dziesięciu."
   }
 }

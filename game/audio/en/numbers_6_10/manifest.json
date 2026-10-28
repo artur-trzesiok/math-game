@@ -1,407 +1,407 @@
 {
- "line.s_jam": {
-  "hash": "c5a600553f50",
-  "who": "lisek",
-  "text": "I am making jam! The recipe says: six apples."
+ "line.a_tama": {
+  "hash": "0c3ee77537b0",
+  "who": "bobr",
+  "text": "Oh no, there's a hole in my dam! The water is escaping."
  },
- "line.s_enough": {
-  "hash": "6e238339f5f4",
-  "who": "wiewiorka",
-  "text": "And do you have exactly six?"
+ "line.a_dziesiec": {
+  "hash": "c14235f85219",
+  "who": "bobr",
+  "text": "To mend it, I need ten logs."
  },
- "line.s_fast": {
-  "hash": "54c5e0282a81",
-  "who": "lisek",
-  "text": "I'll count, quick as a flash!"
+ "line.a_licze": {
+  "hash": "cc5fbdda775b",
+  "who": "kret",
+  "text": "I'll count the logs! One, two, three..."
  },
- "line.s_twice": {
-  "hash": "b03e5a5565a1",
-  "who": "wiewiorka",
-  "text": "Too fast! You counted this apple twice. Look, it grew twice."
+ "line.a_dwanascie": {
+  "hash": "0a6108948927",
+  "who": "kret",
+  "text": "Twelve! We have even more than we need!"
  },
- "line.s_how": {
-  "hash": "28c52c4db939",
-  "who": "lisek",
-  "text": "Then how do I count without a mistake?"
+ "line.a_dwa_razy": {
+  "hash": "6b3a548438b9",
+  "who": "sowa",
+  "text": "Mole, you counted some logs twice. When they lie in a heap, it's easy to get mixed up."
  },
- "line.s_aside": {
-  "hash": "f131b51f1590",
-  "who": "wiewiorka",
-  "text": "By moving them aside! A counted apple goes to the side."
+ "line.a_odkladaj": {
+  "hash": "a560556d132c",
+  "who": "sowa",
+  "text": "We put every counted log aside, into a row. Then none gets counted twice. Touch the logs one by one."
  },
- "line.s_what": {
-  "hash": "ddf8517b21ca",
-  "who": "lisek",
-  "text": "Moving them aside? How?"
+ "line.a_osiem": {
+  "hash": "f73453dbd609",
+  "who": "sowa",
+  "text": "Eight logs."
  },
- "line.s_show": {
-  "hash": "3f35938be5ff",
-  "who": "wiewiorka",
-  "text": "I will show you. Point to an apple, I will move it into the row and say the number."
+ "line.a_brakuje": {
+  "hash": "0b4e6950ebb9",
+  "who": "bobr",
+  "text": "Eight, and I need ten. Two more are missing."
  },
- "line.s_six": {
-  "hash": "810c1a46cd46",
-  "who": "wiewiorka",
-  "text": "Six apples! None was counted twice."
+ "line.a_ramka": {
+  "hash": "cb76a8e6ae6a",
+  "who": "sowa",
+  "text": "I have a ten frame: two rows of five places. In it you see at once how many there are."
  },
- "line.s_after_five": {
-  "hash": "5d7caebb8fa4",
-  "who": "lisek",
-  "text": "After five comes six. We count on, one more."
+ "line.a_wloz": {
+  "hash": "bd7abab93acc",
+  "who": "sowa",
+  "text": "Drag eight logs into the frame."
  },
- "line.s_solved": {
-  "hash": "133a42c2d0a9",
-  "who": "lisek",
-  "text": "Exactly six, just like the recipe! There will be jam!"
+ "line.a_piec_i_trzy": {
+  "hash": "12f27e234a2c",
+  "who": "sowa",
+  "text": "A full row is five. Five and three more is eight."
  },
- "line.s_to_garden": {
-  "hash": "bba6cf7f3b8a",
-  "who": "wiewiorka",
-  "text": "Let's go to the garden. The jam needs eight carrots too."
+ "line.a_widze": {
+  "hash": "f3212e2c7645",
+  "who": "kret",
+  "text": "I see! Two places are left to fill the frame."
  },
- "line.b_carrots": {
-  "hash": "88d50369665e",
-  "who": "lisek",
-  "text": "Carrots are lying everywhere. Count them and move them aside one by one."
+ "line.b_las": {
+  "hash": "de1c594be06a",
+  "who": "bobr",
+  "text": "We'll find more logs in the forest."
  },
- "line.b_seven": {
-  "hash": "8be36a4c4518",
-  "who": "lisek",
-  "text": "Seven carrots! After six comes seven."
+ "line.b_do_dziesieciu": {
+  "hash": "05d60c53d431",
+  "who": "bobr",
+  "text": "Put logs into the frame until there are ten."
  },
- "line.b_one_more": {
-  "hash": "19de7789103b",
-  "who": "wiewiorka",
-  "text": "Hop! I pulled out one more!"
+ "line.b_pelna": {
+  "hash": "8923ce442c35",
+  "who": "bobr",
+  "text": "The frame is full. Ten is enough!"
  },
- "line.b_how_many_now": {
-  "hash": "cd116317e0a1",
-  "who": "wiewiorka",
-  "text": "There were seven, one more came. Count on: point to the new carrot."
+ "line.b_pelna.sowa": {
+  "hash": "72e96e298384",
+  "who": "sowa",
+  "text": "The frame is full. Ten is enough!"
  },
- "line.b_pick": {
-  "hash": "1615f2c82fc4",
-  "who": "wiewiorka",
-  "text": "Point to the digit that tells how many carrots there are now."
+ "line.b_dziesiec": {
+  "hash": "6dae4abccb10",
+  "who": "sowa",
+  "text": "Two full rows of five make ten!"
  },
- "line.b_eight": {
-  "hash": "5bcd9363e0d0",
-  "who": "lisek",
-  "text": "Eight! After seven comes eight."
+ "line.b_cyfry": {
+  "hash": "e21d2fee9640",
+  "who": "sowa",
+  "text": "And this is how we write these numbers."
  },
- "line.b_to_home": {
-  "hash": "d91d7f13aaf6",
-  "who": "wiewiorka",
-  "text": "Let's go home. We have a party today!"
+ "line.b_cyfra6": {
+  "hash": "95cb4a7caeac",
+  "who": "sowa",
+  "text": "Six."
  },
- "line.c_party": {
-  "hash": "99943650072d",
-  "who": "wiewiorka",
-  "text": "Nine guests are coming to the party. Is there a cup for each? Let's count."
+ "line.b_cyfra7": {
+  "hash": "7c6cb72c89d5",
+  "who": "sowa",
+  "text": "Seven."
  },
- "line.c_knock": {
-  "hash": "56b14f67d8b6",
-  "who": "lisek",
-  "text": "Knock, knock! One more guest came. I'll bring a cup."
+ "line.b_cyfra8": {
+  "hash": "dec68044ca5b",
+  "who": "sowa",
+  "text": "Eight."
  },
- "line.c_ten": {
-  "hash": "ecb1c098c5a5",
-  "who": "wiewiorka",
-  "text": "Nine and one more is ten!"
+ "line.b_cyfra9": {
+  "hash": "e4e926ec9b87",
+  "who": "sowa",
+  "text": "Nine."
  },
- "line.c_solved": {
-  "hash": "18ae57449919",
-  "who": "lisek",
-  "text": "Every guest has a cup. Now you can count to ten!"
+ "line.b_cyfra10": {
+  "hash": "a60b6fbfab6f",
+  "who": "sowa",
+  "text": "And ten is written with two digits: a one and a zero."
  },
- "line.wrong_digit": {
-  "hash": "a1d6f2a4e261",
-  "who": "lisek",
-  "text": "That is another digit. Look again."
+ "line.b_skacz6": {
+  "hash": "08f5acebfffe",
+  "who": "bobr",
+  "text": "Mole, hop to the stone with the number six! Which one is it? Point to it."
  },
- "line.wrong_digit.wiewiorka": {
-  "hash": "b0cebfd59e50",
-  "who": "wiewiorka",
-  "text": "That is another digit. Look again."
+ "line.b_skacz7": {
+  "hash": "02d806f1bd44",
+  "who": "bobr",
+  "text": "Mole, hop to the stone with the number seven! Which one is it? Point to it."
  },
- "line.good_digit": {
-  "hash": "c88efe903656",
-  "who": "lisek",
-  "text": "Yes! That is the digit. Great!"
+ "line.b_skacz8": {
+  "hash": "b01c81591dfb",
+  "who": "bobr",
+  "text": "Mole, hop to the stone with the number eight! Which one is it? Point to it."
  },
- "line.good_digit.wiewiorka": {
-  "hash": "8ddd5a1bbbe3",
-  "who": "wiewiorka",
-  "text": "Yes! That is the digit. Great!"
+ "line.b_skacz9": {
+  "hash": "9d02736fd1f8",
+  "who": "bobr",
+  "text": "Mole, hop to the stone with the number nine! Which one is it? Point to it."
  },
- "line.p_intro": {
-  "hash": "7960e44d1530",
-  "who": "lisek",
-  "text": "Let's play counting to ten!"
+ "line.b_skacz_nie": {
+  "hash": "7342cdda26a3",
+  "who": "bobr",
+  "text": "Not that stone. Look at the numbers under the stones."
  },
- "line.p_count": {
-  "hash": "a3cbd7e1a19e",
-  "who": "lisek",
-  "text": "Count everything. Point to each thing only once."
+ "line.b_skacz_nie.sowa": {
+  "hash": "4044bbba978e",
+  "who": "sowa",
+  "text": "Not that stone. Look at the numbers under the stones."
  },
- "line.p_which_digit": {
-  "hash": "3c5df646eba4",
-  "who": "wiewiorka",
-  "text": "Point to the digit that tells how many there are."
+ "line.b_doskoczylem": {
+  "hash": "42b0fa053677",
+  "who": "kret",
+  "text": "Hop, hop, hop! I made it!"
  },
- "line.p_which_digit.lisek": {
-  "hash": "5a518cfd9547",
-  "who": "lisek",
-  "text": "Point to the digit that tells how many there are."
+ "line.b_tama_gotowa": {
+  "hash": "0356a7ea7d59",
+  "who": "bobr",
+  "text": "I've got ten logs. The dam will be whole!"
  },
- "line.p_group_7": {
-  "hash": "40103ad64699",
-  "who": "wiewiorka",
-  "text": "Point to the group with seven things."
+ "line.p_start": {
+  "hash": "90d16bbe3d10",
+  "who": "sowa",
+  "text": "Let's practise numbers up to ten! I have five games."
  },
- "line.p_group_9": {
-  "hash": "4564c20e2597",
-  "who": "wiewiorka",
-  "text": "Point to the group with nine things."
+ "line.p_ile": {
+  "hash": "f4c45cae9066",
+  "who": "bobr",
+  "text": "How many pine cones are in the frame? Point to the number."
  },
- "line.p_wrong_group": {
-  "hash": "92012f5b9bc8",
-  "who": "wiewiorka",
-  "text": "Count again, each thing only once."
+ "line.p_ile_nie": {
+  "hash": "a8f85224cace",
+  "who": "bobr",
+  "text": "A full row is five. Count how many more are in the bottom row."
  },
- "line.good_group": {
-  "hash": "c3ff5c670c71",
-  "who": "lisek",
-  "text": "Yes! Well counted."
+ "line.p_dobrze": {
+  "hash": "c72d06c98857",
+  "who": "sowa",
+  "text": "Bravo!"
  },
- "line.good_group.wiewiorka": {
-  "hash": "1447fb9b3d06",
-  "who": "wiewiorka",
-  "text": "Yes! Well counted."
+ "line.p_dobrze.bobr": {
+  "hash": "443840bb6e59",
+  "who": "bobr",
+  "text": "Bravo!"
  },
- "line.a_game": {
-  "hash": "a163e52b3fc5",
-  "who": "wiewiorka",
-  "text": "Let's play counting in the hallway, just like at home."
+ "line.p_siedem": {
+  "hash": "412f93abf4ce",
+  "who": "sowa",
+  "text": "Put seven apples into the frame."
  },
- "line.a_ok": {
-  "hash": "fb051cc87a92",
-  "who": "lisek",
-  "text": "All right! We count and move things aside one by one."
+ "line.p_siedem_juz": {
+  "hash": "37b6dde6e62d",
+  "who": "sowa",
+  "text": "That's seven already!"
  },
- "line.a_count_but": {
-  "hash": "c4364f96acad",
-  "who": "lisek",
-  "text": "Count the shoes. Point to each one in turn."
+ "line.p_napisz": {
+  "hash": "48e427d1304b",
+  "who": "bobr",
+  "text": "Write a seven with your finger. Start at the green dot."
  },
- "line.a_count_skarpetka": {
-  "hash": "489ff27d4aa0",
-  "who": "lisek",
-  "text": "Now the socks. How many are there?"
+ "line.p_wiecej": {
+  "hash": "6d5afd9352aa",
+  "who": "sowa",
+  "text": "Where are there more acorns? Count and point."
  },
- "line.a_count_klocek": {
-  "hash": "cb44657fe767",
-  "who": "lisek",
-  "text": "And now the blocks. Count them all."
+ "line.p_wiecej_nie": {
+  "hash": "97cee284af34",
+  "who": "sowa",
+  "text": "Count again. A big heap doesn't mean more."
  },
- "line.a_which_digit": {
-  "hash": "5a518cfd9547",
-  "who": "lisek",
-  "text": "Point to the digit that tells how many there are."
+ "line.p_osiem": {
+  "hash": "86032160b6ac",
+  "who": "bobr",
+  "text": "Eight is more than six!"
  },
- "line.a_which_digit.wiewiorka": {
-  "hash": "3c5df646eba4",
-  "who": "wiewiorka",
-  "text": "Point to the digit that tells how many there are."
+ "line.p_dziewiec": {
+  "hash": "fcc0c08442bd",
+  "who": "bobr",
+  "text": "Which stone has the number nine? Point to it."
  },
- "line.a_ask_parents": {
-  "hash": "b82d0564ec5e",
-  "who": "wiewiorka",
-  "text": "Ask your parents to count the shoes in the hallway or the stairs with you."
+ "line.h_palce": {
+  "hash": "cd5fd3cce55c",
+  "who": "kret",
+  "text": "At home let's count fingers!"
  },
- "line.a_bye": {
-  "hash": "5fdcbfe15d1f",
-  "who": "lisek",
-  "text": "Bye bye! See you!"
+ "line.h_ile_palcow": {
+  "hash": "3bff2e585a43",
+  "who": "bobr",
+  "text": "There are five fingers on each hand. How many fingers do two hands have? Point to the number."
+ },
+ "line.h_ile_palcow_nie": {
+  "hash": "1c3ddd174d9b",
+  "who": "bobr",
+  "text": "Five and five more. Count all the fingers."
+ },
+ "line.h_dziesiec": {
+  "hash": "ca7e46e9c76b",
+  "who": "kret",
+  "text": "Ten fingers! As many as the places in the frame."
+ },
+ "line.h_rodzice": {
+  "hash": "f86bc86470dc",
+  "who": "bobr",
+  "text": "Count ten toys with your parents, putting them into the box one at a time!"
  },
  "line.n1": {
-  "hash": "b450b7ae1d7d",
-  "who": "wiewiorka",
+  "hash": "13ecf4f502e6",
+  "who": "sowa",
   "text": "One!"
  },
- "line.n1.lisek": {
-  "hash": "17ef5509f792",
-  "who": "lisek",
+ "line.n1.bobr": {
+  "hash": "fcec771364e8",
+  "who": "bobr",
+  "text": "One!"
+ },
+ "line.n1.kret": {
+  "hash": "5bf8bad8c9ff",
+  "who": "kret",
   "text": "One!"
  },
  "line.n2": {
-  "hash": "9ffb03ee7b98",
-  "who": "wiewiorka",
+  "hash": "03e0547eb360",
+  "who": "sowa",
   "text": "Two!"
  },
- "line.n2.lisek": {
-  "hash": "b4f95635d899",
-  "who": "lisek",
+ "line.n2.bobr": {
+  "hash": "0e3588d1acd2",
+  "who": "bobr",
+  "text": "Two!"
+ },
+ "line.n2.kret": {
+  "hash": "4761a655783b",
+  "who": "kret",
   "text": "Two!"
  },
  "line.n3": {
-  "hash": "5641cc4a1ea8",
-  "who": "wiewiorka",
+  "hash": "1b70b81f1a09",
+  "who": "sowa",
   "text": "Three!"
  },
- "line.n3.lisek": {
-  "hash": "4c345f0d5dab",
-  "who": "lisek",
+ "line.n3.bobr": {
+  "hash": "56d084a3044c",
+  "who": "bobr",
+  "text": "Three!"
+ },
+ "line.n3.kret": {
+  "hash": "753ad598bdeb",
+  "who": "kret",
   "text": "Three!"
  },
  "line.n4": {
-  "hash": "f09afa4cffab",
-  "who": "wiewiorka",
+  "hash": "ac53306b5483",
+  "who": "sowa",
   "text": "Four!"
  },
- "line.n4.lisek": {
-  "hash": "2253e7bcda55",
-  "who": "lisek",
+ "line.n4.bobr": {
+  "hash": "f7efe0e85a0a",
+  "who": "bobr",
+  "text": "Four!"
+ },
+ "line.n4.kret": {
+  "hash": "be6016fcc05c",
+  "who": "kret",
   "text": "Four!"
  },
  "line.n5": {
-  "hash": "288f44558ee1",
-  "who": "wiewiorka",
+  "hash": "f7dbf2ce5c8d",
+  "who": "sowa",
   "text": "Five!"
  },
- "line.n5.lisek": {
-  "hash": "094016c43adc",
-  "who": "lisek",
+ "line.n5.bobr": {
+  "hash": "ac186abedd0e",
+  "who": "bobr",
+  "text": "Five!"
+ },
+ "line.n5.kret": {
+  "hash": "531228d92028",
+  "who": "kret",
   "text": "Five!"
  },
  "line.n6": {
-  "hash": "b67575136d25",
-  "who": "wiewiorka",
+  "hash": "3c064149d3cf",
+  "who": "sowa",
   "text": "Six!"
  },
- "line.n6.lisek": {
-  "hash": "2455ce0aca10",
-  "who": "lisek",
+ "line.n6.bobr": {
+  "hash": "293c3687cf3a",
+  "who": "bobr",
+  "text": "Six!"
+ },
+ "line.n6.kret": {
+  "hash": "222069011391",
+  "who": "kret",
   "text": "Six!"
  },
  "line.n7": {
-  "hash": "bfd0856dbfbc",
-  "who": "wiewiorka",
+  "hash": "de89575f1790",
+  "who": "sowa",
   "text": "Seven!"
  },
- "line.n7.lisek": {
-  "hash": "9e5d404f681c",
-  "who": "lisek",
+ "line.n7.bobr": {
+  "hash": "b57cdae77a77",
+  "who": "bobr",
+  "text": "Seven!"
+ },
+ "line.n7.kret": {
+  "hash": "0272223fb496",
+  "who": "kret",
   "text": "Seven!"
  },
  "line.n8": {
-  "hash": "a3bd91e980af",
-  "who": "wiewiorka",
+  "hash": "02eba685a596",
+  "who": "sowa",
   "text": "Eight!"
  },
- "line.n8.lisek": {
-  "hash": "c1a359f1d2e7",
-  "who": "lisek",
+ "line.n8.bobr": {
+  "hash": "86b5be139222",
+  "who": "bobr",
+  "text": "Eight!"
+ },
+ "line.n8.kret": {
+  "hash": "27bd2c6b0679",
+  "who": "kret",
   "text": "Eight!"
  },
  "line.n9": {
-  "hash": "42393bd97c27",
-  "who": "wiewiorka",
+  "hash": "c20220e4f006",
+  "who": "sowa",
   "text": "Nine!"
  },
- "line.n9.lisek": {
-  "hash": "6305113b7552",
-  "who": "lisek",
+ "line.n9.bobr": {
+  "hash": "95e44feeb5f7",
+  "who": "bobr",
+  "text": "Nine!"
+ },
+ "line.n9.kret": {
+  "hash": "3566d9e16471",
+  "who": "kret",
   "text": "Nine!"
  },
  "line.n10": {
-  "hash": "1b47bd071e1d",
-  "who": "wiewiorka",
+  "hash": "781bf35075c4",
+  "who": "sowa",
   "text": "Ten!"
  },
- "line.n10.lisek": {
-  "hash": "a1c7d406b77c",
-  "who": "lisek",
+ "line.n10.bobr": {
+  "hash": "de9466e72709",
+  "who": "bobr",
   "text": "Ten!"
  },
- "line.d6": {
-  "hash": "cc5e4064597a",
-  "who": "wiewiorka",
-  "text": "This is a six. It looks like a snail sticking its feeler up."
- },
- "line.d6.lisek": {
-  "hash": "456772de1ac2",
-  "who": "lisek",
-  "text": "This is a six. It looks like a snail sticking its feeler up."
- },
- "line.d7": {
-  "hash": "b0a56bf3c17e",
-  "who": "wiewiorka",
-  "text": "This is a seven. It has a roof and a long, slanted leg."
- },
- "line.d7.lisek": {
-  "hash": "3b217cfd40df",
-  "who": "lisek",
-  "text": "This is a seven. It has a roof and a long, slanted leg."
- },
- "line.d8": {
-  "hash": "af755eb1eab1",
-  "who": "wiewiorka",
-  "text": "This is an eight. It looks like a snowman made of two balls."
- },
- "line.d8.lisek": {
-  "hash": "5c40da4c326a",
-  "who": "lisek",
-  "text": "This is an eight. It looks like a snowman made of two balls."
- },
- "line.d9": {
-  "hash": "eb1ead5fd122",
-  "who": "wiewiorka",
-  "text": "This is a nine. It looks like a balloon on a string."
- },
- "line.d9.lisek": {
-  "hash": "d89898866330",
-  "who": "lisek",
-  "text": "This is a nine. It looks like a balloon on a string."
- },
- "line.d10": {
-  "hash": "c93c284c875c",
-  "who": "wiewiorka",
-  "text": "This is ten. We write it with two digits: a one and a zero. Zero is a round ring, like an egg."
- },
- "line.d10.lisek": {
-  "hash": "c1835a3b4dac",
-  "who": "lisek",
-  "text": "This is ten. We write it with two digits: a one and a zero. Zero is a round ring, like an egg."
- },
- "line.s_seven": {
-  "hash": "48731b372a6a",
-  "who": "lisek",
-  "text": "Seven! I have seven apples!"
- },
- "line.b_enough": {
-  "hash": "b1c3e50ec893",
-  "who": "wiewiorka",
-  "text": "Exactly eight, just what the jam needs!"
- },
- "line.c_count_on": {
-  "hash": "44704aff51e5",
-  "who": "wiewiorka",
-  "text": "Count the new cup on. Point to it."
+ "line.n10.kret": {
+  "hash": "23d9fa3c08e6",
+  "who": "kret",
+  "text": "Ten!"
  },
  "line.naklejka_daj": {
-  "hash": "f4f0467dd725",
-  "who": "lisek",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
- },
- "line.naklejka_opis": {
-  "hash": "3d1a7febfe96",
-  "who": "narrator",
-  "text": "This is the apple from Fox. We got it when we counted all the way to ten."
+  "hash": "566bf743dafb",
+  "who": "bobr",
+  "text": "Thank you for helping with the dam! Here is a sticker for your album. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "1634fc955eb2",
-  "who": "lisek",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "hash": "46b7b6d44f2f",
+  "who": "bobr",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "dce028faeec0",
+  "who": "narrator",
+  "text": "This is a log from Beaver's dam. We got it when we counted to ten."
  }
 }

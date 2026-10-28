@@ -1,180 +1,157 @@
-// Lesson: numbers 6-10 - counting on past five without skipping or doubling (a counted thing moves aside), the
-// digits 6-10, ten written with two digits. Script in scenario.md.
-
-const Y = 0.15;                 // the row of things: between the characters, so a big digit fits over it
-const SZ = 0.86;
-const CY = 2.65;                // a big digit: over the row and its counting badges, under the phase icons
-// where counted things line up, one after another: centred for the whole count (n), so the row stays off the heads
-const rzadNa = (n, gap = n > 9 ? 0.74 : 0.86) => ({ x: -((n - 1) * gap) / 2, y: Y, gap });
+// Lesson: numbers 6 to 10 - count past five to ten, each thing once (a counted thing moves aside into a row); 6-10 as
+// five and some more (the ten frame: a full top row and some below); the digits 6-10; ten is written with two digits.
+// Beaver's dam needs ten logs: Mole counts the heap and loses track ("twelve!"); the logs counted into a row - eight;
+// two more fetched from the forest; the stepping stones to the number Beaver says. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
-async function rzad(c, name, n, { y = Y, size = SZ, x = 0, gap = 0.1 } = {}) {
-  const hs = [];
-  for (let i = 0; i < n; i++) hs.push(await c.object(name, { x, y, size }));
-  c.arrange([hs], { x, y, gap });
-  return hs;
-}
-// things lying anyhow in the lower middle (a mess to be counted), never on top of each other
-async function rozsyp(c, name, n, { size = SZ, szer = 5.6, odstep = Math.min(1.15, Math.sqrt((5.6 * 2.0) / n) * 0.8) } = {}) {
-  let spots = [];
-  for (let t = 0; spots.length < n; t++) {
-    if (t > 0 && t % 800 === 0) { spots = []; odstep *= 0.92; }        // crowded: a little closer, never fewer things
-    const x = (Math.random() - 0.5) * szer, y = -0.8 - Math.random() * 2.0;
-    if (spots.every(([a, b]) => Math.hypot(a - x, b - y) > odstep)) spots.push([x, y]);
+const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
+
+// digit cards in a row: a paper card (the target) with the number drawn on it
+async function karty(c, liczby, { y = -2.0, xs = [-1.1, 0.8, 2.7] } = {}) {
+  const out = [];
+  for (const [i, n] of tasuj(liczby).entries()) {
+    const k = await c.object("karta_cyfry", { obraz: "/game/assets/menu/karta.webp", x: xs[i], y, size: 1.5 });
+    await c.digit(n, { x: xs[i], y: y + 0.05, size: n === 10 ? 0.75 : 0.95, duration: 0.2 });
+    k.liczba = n; out.push(k);
   }
-  const hs = [];
-  for (const [x, y] of spots) { const h = await c.object(name, { x, y, size }); h.mesh.rotation.z = (Math.random() - 0.5) * 1.2; hs.push(h); }
-  return hs;
+  return out;
 }
-async function ktoraCyfra(c, n, who, key, oferta) {
-  const karty = [];
-  for (const d of oferta) { const k = await c.sign(String(d), { size: 1.0 }); karty.push(k); }
-  c.arrange([karty], { y: -2.1, gap: 0.8 });
-  await c.say(who, key);
-  const dobra = karty[oferta.indexOf(n)];
-  await c.task({ targets: karty, correct: dobra, wrong: "line.wrong_digit" });
-  for (const k of karty) if (k !== dobra) k.remove();
-  dobra.highlight(true); await c.wait(0.6); dobra.highlight(false);
-  return dobra;
+// a heap of n things lying anyhow in an area (no two on top of each other)
+async function stos(c, name, n, { x = 0.6, y = 0.6, w = 3.6, h = 1.6, size = 0.9 } = {}) {
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    let px, py, k = 0;
+    do { px = x - w / 2 + Math.random() * w; py = y - h / 2 + Math.random() * h; k++; } while (k < 40 && out.some((o) => Math.hypot(o.mesh.position.x - px, o.mesh.position.y - py) < size * 0.8));
+    out.push(await c.object(name, { x: px, y: py, size }));
+  }
+  return out;
 }
-async function pokazCyfre(c, n, who, { x = 0, y = CY } = {}) {
-  const [d] = await Promise.all([c.digit(n, { x, y, size: 1.3, duration: 1.0 }), c.say(who, `line.d${n}`, { anim: "Wskazanie" })]);
-  return d;
-}
-const oferta = (n) => tasuj([n, n === 10 ? 8 : n + 1, n === 6 ? 7 : n - 1].filter((v, i, a) => a.indexOf(v) === i));
 
 export default {
   id: "numbers_6_10",
-  characters: { lisek: { side: "left" }, wiewiorka: { side: "right" } },
-  backgrounds: { story: "sad", practice: "plac_zabaw", apply: "przedpokoj" },
+  przejscia: true,
+  nagrody: true,
+  characters: { bobr: { side: "left", x: -4.8 }, kret: { side: "left", x: -3.0 }, sowa: { side: "right", x: 4.7 } },
+  backgrounds: { story: "strumyk", practice: { kolor: "#e6f0f4", motyw: "cyfry" }, apply: "pokoj" },
   stages: {
     story: [
-      // A. orchard, the problem: the jam recipe needs six apples. Fox counts out loud in a hurry, one apple twice -
-      // "seven!". Squirrel: every thing once - move each counted one aside. The child counts: six.
+      // A. the brook: the dam needs ten logs; Mole counts the heap anyhow - "twelve!"; counted into a row: eight
       async (c) => {
-        await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
-        const jablka = await rozsyp(c, "jablko", 6);
-        await c.say("lisek", "line.s_jam", { anim: "Radosc" });
-        await c.say("wiewiorka", "line.s_enough");
-        await c.say("lisek", "line.s_fast", { anim: "Podskok" });            // the hurry, so "too fast!" has a cause
-        // the naive count, out loud: every counted apple grows a little, so the one counted twice ends up the biggest -
-        // six apples, "seven!" (one twice, none missed: the only mistake a child can see)
-        const kolej = [0, 1, 2, 3, 2, 4, 5];
-        for (const [k, i] of kolej.entries()) {
-          const j = jablka[i]; j.base *= 1.28; j.highlight(true);
-          await c.say("lisek", `line.n${k + 1}`);
-          j.highlight(false);
-        }
-        await c.say("lisek", "line.s_seven");
-        await c.wonder("wiewiorka");
-        await c.say("wiewiorka", "line.s_twice");
-        const kolko = await c.circle(jablka[2]);
-        await c.say("lisek", "line.s_how");
-        kolko.remove();
-        for (const j of jablka) { j.base = SZ; j.mesh.scale.setScalar(SZ); }   // a fresh start for the right count, once the evidence was seen
-        const pomysl = await c.idea("wiewiorka", [["jablko", "jablko", "jablko", "jablko", "jablko", "jablko"]]);   // one row, as the count lines them up
-        await c.say("wiewiorka", "line.s_aside", { anim: "Zgloszenie" });
-        await c.say("lisek", "line.s_what");
-        pomysl.remove();
-        await c.say("wiewiorka", "line.s_show");
-        await c.count(jablka, { who: "wiewiorka", rzad: rzadNa(6) });
-        await c.say("wiewiorka", "line.s_six", { anim: "Radosc" });
-        await c.say("lisek", "line.s_after_five");
-        await pokazCyfre(c, 6, "wiewiorka", { x: 2.3 });
-        await c.say("lisek", "line.s_solved", { anim: "Brawo" });
-        await c.say("wiewiorka", "line.s_to_garden");
+        await Promise.all(["bobr", "kret", "sowa"].map((n) => c.enter(n, n === "sowa" ? "right" : "left")));
+        await c.say("bobr", "line.a_tama", { anim: "Smutek" });
+        await c.say("bobr", "line.a_dziesiec");
+        const bale = await stos(c, "bal", 8, { x: 0.8, y: 0.9, w: 4.0, h: 1.6, size: 0.85 });
+        await c.say("kret", "line.a_licze", { anim: "Zgloszenie" });
+        for (const k of [0, 1, 2, 1, 3, 4, 5, 4, 6, 7, 6, 2]) { c.stage.bump(bale[k], 0.3); await c.wait(0.3); }
+        await c.say("kret", "line.a_dwanascie", { anim: "Radosc" });
+        await c.wonder("sowa");
+        await c.say("sowa", "line.a_dwa_razy");
+        await c.say("sowa", "line.a_odkladaj", { anim: "Zgloszenie" });
+        await c.count(bale, { who: "sowa", rzad: { y: -1.7, x: -1.6, gap: 0.76 } });
+        await c.say("sowa", "line.a_osiem");
+        await c.say("bobr", "line.a_brakuje");
+        c.clear();
+        // five and some more: the ten frame
+        await c.say("sowa", "line.a_ramka");
+        const r = await c.ramka({ x: 0.6, y: 1.2 });
+        const b2 = []; for (let i = 0; i < 8; i++) b2.push(await c.object("bal", { x: -2.6 + i * 0.85, y: -2.3, size: 0.85 }));
+        await c.say("sowa", "line.a_wloz");
+        await r.przeciagaj({ rzeczy: b2, ile: 8 });
+        await c.say("sowa", "line.a_piec_i_trzy", { anim: "Kiwanie" });
+        await c.say("kret", "line.a_widze");
         c.clear();
       },
-      // B. vegetable garden: seven carrots counted aside; one more pulled out and counted on - eight; the digit 8
-      // is shown before the child is asked to find it
+      // B. the forest: fetch logs until the frame holds ten; the digits 6-10; the stones to the number Beaver says
       async (c) => {
-        await c.go("ogrod", { enter: true });
-        await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
-        const marchewki = await rozsyp(c, "marchewka", 7);
-        await c.say("lisek", "line.b_carrots");
-        await c.count(marchewki, { who: "lisek", rzad: rzadNa(8) });          // room for the eighth
-        await c.say("lisek", "line.b_seven");
-        const siedem = await pokazCyfre(c, 7, "lisek", { x: 2.5 });
-        await c.say("wiewiorka", "line.b_one_more", { anim: "Podskok" });
-        const nowa = await c.object("marchewka", { x: 2.2, y: -2.3, size: SZ });
-        await c.say("wiewiorka", "line.b_how_many_now");
-        // counting on: the new one is the eighth; only then the digit 8 is shown, and only then asked for
-        await c.count([nowa], { who: "lisek", od: 7, rzad: { ...rzadNa(8), x: rzadNa(8).x + 7 * rzadNa(8).gap } });
-        await c.say("lisek", "line.b_eight", { anim: "Radosc" });
-        await c.say("wiewiorka", "line.b_enough");                            // the jam needed eight: solved
-        siedem.remove();                                       // one big digit at a time: an 8 drawn over the 7 read as neither
-        await pokazCyfre(c, 8, "wiewiorka", { x: 2.5 });
-        await ktoraCyfra(c, 8, "wiewiorka", "line.b_pick", tasuj([6, 7, 8]));   // only digits met so far (9 comes later)
-        await c.say("wiewiorka", "line.b_to_home");
+        const S = c.stage;
+        await c.go("las", { enter: true });
+        await Promise.all(["bobr", "kret", "sowa"].map((n) => c.enter(n, n === "sowa" ? "right" : "left")));
+        await c.say("bobr", "line.b_las");
+        const r = await c.ramka({ x: 0.6, y: 1.3 });
+        for (let i = 0; i < 8; i++) await r.wloz(await c.object("bal", { x: 0.6, y: 1.3, size: 0.8, cicho: true }));
+        const b = []; for (let i = 0; i < 4; i++) b.push(await c.object("bal", { x: -1.6 + i * 1.3, y: -2.2, size: 0.95 }));
+        await c.say("bobr", "line.b_do_dziesieciu");
+        await r.przeciagaj({ rzeczy: b, ile: 10, wrong: "line.b_pelna" });
+        await c.say("sowa", "line.b_dziesiec", { anim: "Radosc" });
         c.clear();
-      },
-      // C. home: a party - nine cups, one more guest knocks: ten; ten is written with two digits
-      async (c) => {
-        await c.go("dom", { enter: true });
-        await Promise.all([c.enter("lisek"), c.enter("wiewiorka")]);
-        await c.say("wiewiorka", "line.c_party");
-        const kubki = await rozsyp(c, "kubek", 9);
-        const R10 = rzadNa(10);
-        await c.count(kubki, { who: "wiewiorka", rzad: R10 });
-        const dziewiec = await pokazCyfre(c, 9, "lisek", { x: 2.5 });
-        await c.say("lisek", "line.c_knock", { anim: "Rozgladanie" });
-        const kubek = await c.object("kubek", { x: -5.6, y: -2.2, size: SZ });
-        await c.take("lisek", kubek, { d: 0.3 });
-        await c.walkTo("lisek", 1.8);
-        await c.put("lisek", R10.x + 9 * R10.gap, -1.4);
-        await c.walkTo("lisek", -4.6);
-        await c.say("wiewiorka", "line.c_count_on");
-        await c.count([kubek], { who: "wiewiorka", od: 9, rzad: { ...R10, x: R10.x + 9 * R10.gap } });   // the tenth is counted too
-        await c.say("wiewiorka", "line.c_ten");
-        dziewiec.remove();
-        await pokazCyfre(c, 10, "wiewiorka", { x: 1.2 });
-        await c.say("lisek", "line.c_solved", { anim: "Brawo" });
+        // the digits 6 to 10 drawn; ten has two digits
+        await c.say("sowa", "line.b_cyfry");
+        for (const [i, n] of [6, 7, 8, 9].entries()) { await c.digit(n, { x: -2.4 + i * 1.6, y: 1.4, size: 1.2 }); await c.say("sowa", `line.b_cyfra${n}`); }
         c.clear();
+        await c.digit(10, { x: 0.6, y: 1.2, size: 1.8 });
+        await c.say("sowa", "line.b_cyfra10");
+        c.clear();
+        // the breather: hop along the stones to the number Beaver says
+        const os = await c.os({ od: 0, do: 10, x0: -3.6, x1: 3.9, y: -1.4, size: 0.62 });
+        const cel = 6 + Math.floor(Math.random() * 4);
+        await c.say("bobr", `line.b_skacz${cel}`);
+        const ok = os.kamien(cel);
+        dobre(ok); await c.task({ targets: os.kamienie.filter((k) => k.liczba > 0), correct: ok, wrong: "line.b_skacz_nie" });
+        S.puppets.kret.korzen.position.x = os.pole(0)[0];
+        await os.skocz("kret", 0, cel);
+        await c.say("kret", "line.b_doskoczylem", { anim: "Radosc" });
+        await c.say("bobr", "line.b_tama_gotowa");
       },
     ],
     practice: [
-      // three "count and point to the digit", two "point to the group with n"
       async (c) => {
-        c.show("lisek"); c.show("wiewiorka");
-        await c.say("lisek", "line.p_intro");
-        const rzeczy = ["kwiatek", "pilka", "gruszka", "szyszka", "lyzka"];
-        for (const n of tasuj([6, 8, 10])) {
-          const hs = await rozsyp(c, rzeczy.shift(), n, { size: 0.78 });
-          await c.say("lisek", "line.p_count");
-          await c.count(hs, { who: "lisek", rzad: rzadNa(hs.length) });
-          await ktoraCyfra(c, n, "wiewiorka", "line.p_which_digit", oferta(n));
-          await c.say("lisek", "line.good_digit", { anim: "Brawo" });
-          c.clear();
+        const S = c.stage;
+        c.show("bobr"); c.show("sowa");
+        S.puppets.bobr.korzen.position.x = -5.2; S.puppets.sowa.korzen.position.x = 5.2;
+        const gw = c.gwiazdki(5, { auto: false });
+        await c.say("sowa", "line.p_start", { anim: "Radosc" });
+        // 1. how many (6-10) in the frame? point to the number
+        {
+          const ile = 6 + Math.floor(Math.random() * 5), r = await c.ramka({ x: 0.4, y: 1.3 });
+          for (let i = 0; i < ile; i++) await r.wloz(await c.object("szyszka", { x: 0.4, y: 1.3, size: 0.8, cicho: true }));
+          const opcje = tasuj([ile, ile === 10 ? 8 : ile + 1, ile === 6 ? 7 : ile - 1]);
+          const k = await karty(c, opcje);
+          await c.say("bobr", "line.p_ile");
+          const ok = k.find((q) => q.liczba === ile);
+          dobre(ok); await c.task({ targets: k, correct: ok, wrong: "line.p_ile_nie" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear();
         }
-        for (const [n, m] of [[7, 6], [9, 10]]) {
-          const lewa = Math.random() < 0.5, nazwa = rzeczy.shift() || "kubek";
-          await rzad(c, nazwa, n, { x: lewa ? -3 : 3, size: 0.56, gap: 0.03 }); await rzad(c, nazwa, m, { x: lewa ? 3 : -3, size: 0.56, gap: 0.03 });
-          const zn = await c.zone({ x: lewa ? -3 : 3, y: Y, w: n * 0.54 + 0.5, h: 1.0 }), zm = await c.zone({ x: lewa ? 3 : -3, y: Y, w: m * 0.54 + 0.5, h: 1.0 });
-          await c.say("wiewiorka", `line.p_group_${n}`);
-          await c.task({ targets: [zn, zm], correct: zn, wrong: "line.p_wrong_group" });
-          await c.say("lisek", "line.good_group", { anim: "Brawo" });
-          c.clear();
+        // 2. put seven in the frame
+        {
+          const r = await c.ramka({ x: 0.4, y: 1.3 });
+          const j = []; for (let i = 0; i < 9; i++) j.push(await c.object("jablko", { x: -3.0 + i * 0.85, y: -2.3, size: 0.8 }));
+          await c.say("sowa", "line.p_siedem");
+          await r.przeciagaj({ rzeczy: j, ile: 7, wrong: "line.p_siedem_juz" });
+          await c.say("bobr", "line.p_dobrze"); gw.dodaj(); c.clear();
         }
-        await c.praise("lisek");
+        // 3. write the 7
+        { await c.say("bobr", "line.p_napisz"); const t = await c.slad(7, { x: 0, y: 0.4, size: 2.8 }); t.remove(); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        // 4. which heap has more: eight or six? (counted, not guessed by the spread)
+        {
+          const a = await c.kupka("zoledz", 8, { x: -1.6, y: 0.8, size: 2.0 }), b = await c.kupka("zoledz", 6, { x: 2.0, y: 0.8, size: 2.4 });
+          a.ile = 8; b.ile = 6;
+          await c.say("sowa", "line.p_wiecej");
+          dobre(a); await c.task({ targets: [a, b], correct: a, wrong: "line.p_wiecej_nie" });
+          await c.say("bobr", "line.p_osiem"); gw.dodaj(); c.clear();
+        }
+        // 5. the stones: hop to nine
+        {
+          const os = await c.os({ od: 0, do: 10, x0: -3.6, x1: 3.9, y: -1.4, size: 0.62 });
+          await c.say("bobr", "line.p_dziewiec");
+          const ok = os.kamien(9);
+          dobre(ok); await c.task({ targets: os.kamienie.filter((k) => k.liczba > 0), correct: ok, wrong: "line.b_skacz_nie" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear();
+        }
+        await c.praise("sowa");
       },
     ],
     apply: [
-      // the home game: count things in the hallway, moving each aside - shoes, socks, blocks
+      // home: ten fingers - five on each hand; ten toys back into the box
       async (c) => {
-        c.show("lisek"); c.show("wiewiorka");
-        await c.say("wiewiorka", "line.a_game");
-        await c.say("lisek", "line.a_ok");
-        for (const [nazwa, n] of [["but", 6], ["skarpetka", 8], ["klocek", 10]]) {
-          const hs = await rozsyp(c, nazwa, n, { size: 0.78 });
-          await c.say("lisek", `line.a_count_${nazwa}`);
-          await c.count(hs, { who: "wiewiorka", rzad: rzadNa(hs.length) });
-          await ktoraCyfra(c, n, "lisek", "line.a_which_digit", oferta(n));
-          await c.say("wiewiorka", "line.good_digit", { anim: "Brawo" });
-          c.clear();
-        }
-        await c.say("wiewiorka", "line.a_ask_parents");
-        await c.say("lisek", "line.a_bye");
-        await c.play("lisek", "Machanie"); await c.play("wiewiorka", "Machanie");
+        for (const n of ["bobr", "kret"]) c.show(n);
+        await c.say("kret", "line.h_palce", { anim: "Zgloszenie" });
+        await c.object("gest_papier", { x: -1.0, y: 1.2, size: 2.2 }); await c.object("gest_papier", { x: 2.0, y: 1.2, size: 2.2 });
+        const k = await karty(c, [8, 9, 10]);
+        await c.say("bobr", "line.h_ile_palcow");
+        const ok = k.find((q) => q.liczba === 10);
+        dobre(ok); await c.task({ targets: k, correct: ok, wrong: "line.h_ile_palcow_nie" });
+        await c.say("kret", "line.h_dziesiec", { anim: "Radosc" });
+        await c.say("bobr", "line.h_rodzice");
       },
     ],
   },
