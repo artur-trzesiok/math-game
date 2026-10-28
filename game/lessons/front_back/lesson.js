@@ -125,8 +125,8 @@ export default {
         {
           const kr = await c.object("krzak", { x: 0, y: 0.9, size: 2.4 });
           const kto = tasuj(["zajac", "jez"])[0];
-          await schowaj(c, kto, kr, { size: 1.6, widac: 0.3 });
-          const op = []; for (const [i, n] of tasuj(["zajac", "jez", "kaczatko_stoi"]).entries()) op.push(await c.object(n, { x: -2.0 + i * 2.0, y: -2.0, size: 1.2 }));
+          const ukryty = await schowaj(c, kto, kr, { size: 1.6, widac: 0.3 });
+          const op = []; for (const [i, n] of tasuj(["zajac", "jez", "kaczatko_stoi"]).entries()) op.push(await c.object(n, { x: -2.0 + i * 2.0, y: -2.0, size: 1.2, plik: n === kto ? ukryty.plik : null }));
           await c.say("mis", "line.p_kto");
           const ok = op.find((h) => h.name === kto);
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_kto_nie" });

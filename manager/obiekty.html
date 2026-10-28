@@ -14,6 +14,8 @@
   .nazwa { font-weight: 600; margin-top: 6px; word-break: break-all; }
   .wym { color: #888; font-size: 12px; }
   .nieuzywana { opacity: .55; }
+  .warianty { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
+  .warianty img { height: 40px; background: #3a3a3a; border-radius: 4px; }
   h2 { font-size: 15px; color: #ffb347; text-transform: uppercase; letter-spacing: .04em; margin: 18px 0 8px; }
 </style>
 </head>
@@ -23,6 +25,7 @@
 <h2>Ubrania (game/assets/ubrania)</h2><div class="siatka" id="ubrania"></div></main>
 <script type="module">
 import { lekcje, katalog, json, uzywa, esc, STYL } from "./dane.js";
+import { warianty, bazowa } from "/game/engine/warianty.js";
 document.getElementById("styl").textContent = STYL;
 const L = await lekcje();
 const karta = (nazwa, src, kto, extra = "") => `<div class="rzecz ${kto.length ? "" : "nieuzywana"}" data-szukaj="${esc((nazwa + " " + kto.map((l) => l.id + " " + l.title.pl).join(" ")).toLowerCase())}" data-uzyta="${kto.length ? 1 : 0}">
@@ -30,7 +33,9 @@ const karta = (nazwa, src, kto, extra = "") => `<div class="rzecz ${kto.length ?
   <div class="nazwa">${esc(nazwa)}</div><div class="wym"></div>${extra}
   <div>${kto.length ? kto.map((l) => `<span class="chip">${esc(l.title.pl)}</span>`).join("") : '<span class="chip">nieużywana</span>'}</div></div>`;
 const pliki = (await katalog("/game/assets/objects/")).filter((n) => n.endsWith(".webp")).map((n) => n.slice(0, -5)).filter((n) => !n.startsWith("ikona_"));
-document.getElementById("naklejki").innerHTML = pliki.map((n) => karta(n, `/game/assets/objects/${n}.webp`, uzywa(L, n, "objects"))).join("");
+// a variant is shown on its base sticker's card (the stage draws one of them at random), not as an unused sticker of its own
+const zWariantami = (n) => { const w = warianty(n).slice(1).filter((v) => pliki.includes(v)); return w.length ? `<div class="warianty">${w.map((v) => `<img src="/game/assets/objects/${v}.webp" title="${esc(v)}" alt="">`).join("")}<div class="wym">+ ${w.length} ${w.length === 1 ? "wariant" : "warianty"} losowane</div></div>` : ""; };
+document.getElementById("naklejki").innerHTML = pliki.filter((n) => !bazowa(n)).map((n) => karta(n, `/game/assets/objects/${n}.webp`, uzywa(L, n, "objects"), zWariantami(n))).join("");
 const G = await json("/game/assets/ubrania/ubrania.json") || {};
 document.getElementById("ubrania").innerHTML = Object.entries(G).map(([n, d]) => karta(n, `/game/assets/ubrania/${d.widoki?.przod || Object.values(d.widoki || {})[0]}`, uzywa(L, n, "ubrania"), `<div class="wym">${esc(d.slot)} · ${Object.keys(d.widoki || {}).join(", ")}</div>`)).join("");
 document.getElementById("status").textContent = `${pliki.length} naklejek, ${Object.keys(G).length} ubrań`;

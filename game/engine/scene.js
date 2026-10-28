@@ -6,6 +6,7 @@
 // x in [-6, 6], y in [-4.5, 4.5], ground at GROUND. ?safe draws the rectangle.
 
 import * as THREE from "three";
+import { losuj, warianty } from "./warianty.js";
 import { v } from "./v.js";
 import { Lalka } from "./lalka.js";
 import { Sfx } from "./sfx.js";
@@ -230,7 +231,7 @@ export class Stage {
   // everything a lesson will show, loaded and sent to the GPU before it starts (a loading screen is fine; a stutter
   // in a transition is not): its sceneries, stickers, garments, the transitions' bands, the characters
   async prepare({ tla = [], obiekty = [], ubrania = [] } = {}, postep = () => {}) {
-    const zadania = [...tla.map((n) => () => this.tlo(n)), ...obiekty.map((n) => () => texture(`/game/assets/objects/${n}.webp`).catch(() => null)), () => U.wczytajUbrania(ubrania)];
+    const zadania = [...tla.map((n) => () => this.tlo(n)), ...obiekty.flatMap(warianty).map((n) => () => texture(`/game/assets/objects/${n}.webp`).catch(() => null)), () => U.wczytajUbrania(ubrania)];
     let zrobione = 0;
     for (const z of zadania) { await z(); postep(++zrobione / (zadania.length + 1)); }
     E.przygotujGlowy(this);                                          // the transitions' head badges, with faces
@@ -363,7 +364,8 @@ export class Stage {
   // a sticker: the icon with its baked white die-cut outline, so a green pear reads on green grass
   // obraz: a picture of its own (a data: URL made in the page, e.g. the friends' heads) instead of objects/<name>.webp
   // dzwiek: the thing's own sound (an instrument), heard when it is pointed at and when its row plays (rytm.js)
-  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = false, z = 0.4, label = null, obraz = null, dzwiek = null, cicho = false } = {}) {
+  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = false, z = 0.4, label = null, obraz = null, dzwiek = null, cicho = false, plik = null } = {}) {
+    plik = obraz ? null : plik || losuj(name);                       // which variant's file (warianty.js); `plik` forces one
     const g = new THREE.Group(); g.position.set(x, y, z);
     if (sticker) {
       const c = document.createElement("canvas"); c.width = c.height = 512; const ctx = c.getContext("2d");
@@ -372,13 +374,13 @@ export class Stage {
       const m = new THREE.Mesh(new THREE.PlaneGeometry(1.18, 1.18), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false }));
       m.position.z = -0.01; g.add(m);
     }
-    const mapa = await texture(obraz || `/game/assets/objects/${name}.webp`), iw = mapa.image.width, ih = mapa.image.height;
+    const mapa = await texture(obraz || `/game/assets/objects/${plik}.webp`), iw = mapa.image.width, ih = mapa.image.height;
     // a non-square picture (a garment) keeps its proportions inside the unit square
     const icon = new THREE.Mesh(new THREE.PlaneGeometry(iw >= ih ? 1 : iw / ih, iw >= ih ? ih / iw : 1), new THREE.MeshBasicMaterial({ map: mapa, transparent: true, alphaTest: 0.05, depthWrite: false }));
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 10; });                 // the foreground draws after every background prop
-    const handle = { mesh: g, icon, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false, dzwiek,
+    const handle = { mesh: g, icon, name, plik, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false, dzwiek,
       remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
       moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; if (Math.hypot(nx - x0, ny - y0) > 2.5) this.sfx.graj("whoosh", { glosnosc: 0.7 }); E.smuga(this, x0, y0, nx, ny, d); return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };

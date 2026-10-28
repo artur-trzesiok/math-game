@@ -561,6 +561,222 @@ Each object fills at most a fifth of the sheet's width; a WIDE empty gap between
 All four roughly the same size.""",
 }
 
+# variants the stage picks from at random (scene.js WARIANTY): an apple stays RED (stories name its colour), a pear
+# stays green-yellow; the originals' references keep the style and size
+SHEETS["warianty_owoce"] = {
+    "outline": True,
+    "names": ["jablko_2", "jablko_3", "gruszka_2", "gruszka_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["jablko", "gruszka"],
+    "prompt": f"""A sprite sheet of FOUR illustrated fruits for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the fruits is completely empty and transparent.
+{STYL}
+The reference images show the game's apple and pear: paint the same style, the same size and the same colours.
+Left to right: one shiny RED apple, a little rounder and wider than the reference, with a short brown stem and TWO
+green leaves; one RED apple, a little taller, with a short stem and NO leaf, a soft yellow blush on one side but red
+overall; one green-yellow pear like the reference but plumper, with a stem and one leaf; one green-yellow pear, slimmer
+and taller, with a curved stem and no leaf.
+All four the same size as the reference fruits.""",
+}
+
+# more variants (scene.js WARIANTY): the block stays RED (grouping puts it with the red things), the mug BLUE, the acorn
+# brown; each keeps the original's size, only its look changes
+SHEETS["warianty_rzeczy"] = {
+    "outline": True,
+    "names": ["klocek_2", "klocek_3", "kubek_2", "kubek_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["klocek", "kubek"],
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of FOUR on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own objects: paint the same style, the same size and the same colours.
+Left to right: one RED wooden toy cube like the reference with a small white star painted on its front; one RED wooden
+toy cube like the reference with softly rounded edges and a white dot on its front; one BLUE mug like the reference
+with small white polka dots; one BLUE mug like the reference with a thin white stripe round it.
+All four the same size as the references.""",
+}
+SHEETS["warianty_zoledz"] = {
+    "outline": True,
+    "names": ["zoledz_2", "zoledz_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["zoledz"],
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of TWO on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own objects: paint the same style, the same size and the same colours.
+Left to right: one brown acorn like the reference but rounder and plumper, its cap tilted a little; one brown acorn
+like the reference but slimmer, with a little stalk on its cap and one small green oak leaf.
+Both the same size as the reference.""",
+}
+
+# the ball stays RED and white (grouping counts it with the red things); the hedgehog keeps facing LEFT (queues face
+# their front on the left)
+SHEETS["warianty_3"] = {
+    "outline": True,
+    "names": ["szyszka_2", "szyszka_3", "pilka_2", "pilka_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["szyszka", "pilka"],
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of FOUR on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own objects: paint the same style, the same size and the same colours.
+Left to right: one brown pine cone like the reference but rounder and more open; one brown pine cone like the
+reference but slimmer and longer, with a tiny twig and two pine needles on top; one RED and white beach ball like the
+reference but with white stars on red; one RED and white ball with a single wide white band round its middle.
+All four the same size as the references.""",
+}
+SHEETS["warianty_jez"] = {
+    "outline": True,
+    "names": ["jez_2", "jez_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["jez"],
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of TWO on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own objects: paint the same style, the same size and the same colours.
+Left to right: the same little hedgehog as the reference, seen from the side FACING LEFT, walking with one front paw
+raised; the same little hedgehog FACING LEFT, sitting up a little, holding a tiny red apple on its back spines.
+Both the same size and colours as the reference hedgehog, both facing LEFT.""",
+}
+
+SHEETS["warianty_but"] = {
+    "outline": True,
+    "names": ["but_2", "but_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["but"],
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of 2 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference image shows the game's own shoe: paint the same style, the same size and the same colour.
+Left to right: one RED child's sneaker with white laces and a white sole, seen from the side, toe to the left like the
+reference; one RED child's ankle boot with two buttons, seen from the side, toe to the left.
+Both the same size as the reference.""",
+}
+
+SHEETS["warianty_4"] = {
+    "outline": True,
+    "names": ["kaczatko_stoi_2", "kaczatko_stoi_3", "krzak_2", "krzak_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["kaczatko_stoi", "krzak"],
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own duckling and bush: paint the same style, the same size and the same colours.
+Left to right: the same yellow duckling standing, seen from the side FACING LEFT, flapping its little wings; the same
+yellow duckling FACING LEFT, one foot lifted as if walking; one round green bush like the reference with a few tiny
+white flowers; one green bush like the reference, a little wider and lower, with a few red berries.
+All four the same size as the references; the ducklings face LEFT.""",
+}
+
+# the flower may change colour (no story names it), the teddy stays brown, the sock orange and striped, the plate
+# ROUND (it is a circle in the shapes lesson), the bunny faces LEFT
+SHEETS["warianty_5"] = {
+    "outline": True,
+    "names": ['kwiatek_2', 'kwiatek_3', 'misiu_2', 'misiu_3'],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ['kwiatek', 'misiu'],
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own objects: paint the same style and the same size.
+Left to right: one round daisy-like flower head like the reference but YELLOW petals with an orange centre; one
+round flower head like the reference but LIGHT PURPLE petals with a yellow centre; the same brown teddy bear as the
+reference sitting, with a red bow at its neck; the same brown teddy bear standing, waving one paw.
+All the same size as the references.""",
+}
+SHEETS["warianty_6"] = {
+    "outline": True,
+    "names": ['skarpetka_2', 'skarpetka_3', 'talerz_2', 'talerz_3'],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ['skarpetka', 'talerz'],
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own objects: paint the same style and the same size.
+Left to right: one ORANGE sock like the reference with white polka dots instead of stripes; one ORANGE sock with thin white
+stripes and a white heel and toe; one ROUND white plate seen from above like the reference with a green rim; one ROUND
+white plate seen from above with a red rim and little dots.
+All the same size as the references.""",
+}
+SHEETS["warianty_zajac"] = {
+    "outline": True,
+    "names": ['zajac_2', 'zajac_3'],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ['zajac'],
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of 2 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference images show the game's own objects: paint the same style and the same size.
+Left to right: the same grey-brown bunny as the reference sitting, seen from the side FACING LEFT, one ear
+flopped down; the same bunny FACING LEFT, hopping, both hind legs stretched back.
+Both face LEFT.
+All the same size as the references.""",
+}
+
+SHEETS["warianty_grzyb"] = {
+    "outline": True,
+    "names": ["grzyb_2", "grzyb_3"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["grzyb"],
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of 2 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+The reference image shows the game's own mushroom (a brown cep): paint the same style and the same size.
+Left to right: a brown-capped cep like the reference but with a wider, flatter cap and a short thick stem; a
+brown-capped cep like the reference but young and round, its cap small and domed, a tiny blade of grass at its foot.
+Both the same size as the reference.""",
+}
+
+# a better bunny variant (a leaping one did not fit a queue or a hiding place) and the morning card with a crowing
+# rooster: a child could not tell the morning from the evening by the sun and the colours alone
+SHEETS["warianty_zajac2"] = {
+    "outline": True,
+    "names": ["zajac_3"],
+    "size": "1024x1024",
+    "rows": 1,
+    "refs": ["zajac"],
+    "prompt": f"""ONE illustrated object for a children's picture book in the middle of a fully TRANSPARENT background.
+NO coloured background, NO glow, NO halo.
+{STYL}
+The reference image shows the game's own bunny: the same grey-brown bunny, the same style and size, SITTING calmly on
+all four paws, seen from the side FACING LEFT, both ears up and a little apart, a small daisy in its mouth.""",
+}
+SHEETS["pora_rano2"] = {
+    "outline": True,
+    "names": ["pora_rano"],
+    "size": "1024x1024",
+    "rows": 1,
+    "refs": ["pora_rano"],
+    "prompt": f"""ONE illustrated card for a children's picture book in the middle of a fully TRANSPARENT background.
+NO glow, NO halo outside the card.
+{STYL}
+Exactly the reference card - the same rounded frame, the same little house, tree, path and pink morning sky with the
+sun rising - with ONE thing added in the front on the left: a proud colourful ROOSTER standing on the fence, beak wide
+open, crowing, with three little curved sound lines coming from its beak. Keep everything else as it is.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
@@ -569,7 +785,8 @@ def gen(sheet: str) -> None:
         print(f"{dst} exists, skipping")
         return
     s = SHEETS[sheet]
-    figgen.generate(s["prompt"], dst, size=s["size"], quality="high", background="transparent")
+    refs = [OUT / f"{n}.webp" for n in s.get("refs", [])] or None       # existing stickers to match (style, size, colour)
+    figgen.generate(s["prompt"], dst, size=s["size"], quality="high", background="transparent", refs=refs)
 
 
 PX = 384             # sticker side in pixels

@@ -42,7 +42,7 @@ async function ozyw(c, t, ruch) {
 async function czyjCien(c, kto, opcje, linia, wrong) {
   const cien = await c.object(kto, { x: EKRAN.x, y: EKRAN.y, size: 2.2 }); c.cien(cien);
   const cele = [];
-  for (const [i, n] of tasuj(opcje).entries()) cele.push(await c.object(n, { x: -1.0 + i * 1.9, y: -2.3, size: 1.3 }));
+  for (const [i, n] of tasuj(opcje).entries()) cele.push(await c.object(n, { x: -1.0 + i * 1.9, y: -2.3, size: 1.3, plik: n === kto ? cien.plik : null }));   // the same variant as the shadow
   await c.say("sowa", linia);
   const ok = cele.find((h) => h.name === kto);
   dobre(ok); await c.task({ targets: cele, correct: ok, wrong });
