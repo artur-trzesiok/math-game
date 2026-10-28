@@ -1,0 +1,312 @@
+{
+ "line.a_piekarnia": {
+  "hash": "a5078dd1342f",
+  "who": "mis",
+  "text": "Otwieram leśną piekarnię! Upiekłem pierwsze bułeczki."
+ },
+ "line.a_ile": {
+  "hash": "7ad32f91a4ff",
+  "who": "wiewiorka",
+  "text": "Ile bułeczek jest na tacy? Policz je, dotykając każdej po kolei."
+ },
+ "line.a_piec": {
+  "hash": "c50cc7150f2c",
+  "who": "wiewiorka",
+  "text": "Pięć bułeczek! Ostatnia liczba mówi, ile ich jest."
+ },
+ "line.a_rozloze": {
+  "hash": "212efe85484c",
+  "who": "mis",
+  "text": "Rozłożę je na całej ladzie, żeby było ładnie."
+ },
+ "line.a_wiecej": {
+  "hash": "95e2c9e5a4db",
+  "who": "mis",
+  "text": "O, teraz jest ich więcej! Zajmują tyle miejsca!"
+ },
+ "line.a_policz": {
+  "hash": "ef2951617837",
+  "who": "jez",
+  "text": "Misiu, czy przybyło bułeczek? Policzmy jeszcze raz."
+ },
+ "line.a_dalej_piec": {
+  "hash": "3442bd78d5f5",
+  "who": "jez",
+  "text": "Dalej pięć! Kiedy rozkładamy rzeczy, ich nie przybywa."
+ },
+ "line.a_rozumiem": {
+  "hash": "4c5c7f5bb6b9",
+  "who": "mis",
+  "text": "Pięć to pięć, blisko czy daleko. Rozumiem!"
+ },
+ "line.a_zamowienie": {
+  "hash": "c817ac24f58c",
+  "who": "wiewiorka",
+  "text": "Pierwsze zamówienie! Sowa prosi o cztery bułeczki."
+ },
+ "line.a_spakuj": {
+  "hash": "e98e75646e59",
+  "who": "mis",
+  "text": "Włóż do torebki cztery bułeczki. Przeciągaj je po jednej, a ja policzę."
+ },
+ "line.a_za_duzo": {
+  "hash": "136fba513dd7",
+  "who": "mis",
+  "text": "Już są cztery! Więcej nie trzeba."
+ },
+ "line.a_cztery": {
+  "hash": "81b2eea6a0db",
+  "who": "wiewiorka",
+  "text": "Cztery bułeczki dla Sowy, w sam raz!"
+ },
+ "line.b_jablka": {
+  "hash": "9fe1ed48f3a7",
+  "who": "mis",
+  "text": "Do szarlotki potrzebuję pięciu jabłek."
+ },
+ "line.b_ktora": {
+  "hash": "0f74bbe11609",
+  "who": "wiewiorka",
+  "text": "Gdzie jest pięć jabłek? Wskaż."
+ },
+ "line.b_ktora_nie": {
+  "hash": "a55fd4a65c85",
+  "who": "wiewiorka",
+  "text": "Policz jeszcze raz. Szukamy pięciu."
+ },
+ "line.b_dobrze": {
+  "hash": "f753951de113",
+  "who": "mis",
+  "text": "Pięć jabłek na szarlotkę!"
+ },
+ "line.b_piec_twarzy": {
+  "hash": "4462696fbe82",
+  "who": "wiewiorka",
+  "text": "Pięć można pokazać na różne sposoby. Na przykład kropkami na domino."
+ },
+ "line.b_domino": {
+  "hash": "b2f678a3501a",
+  "who": "wiewiorka",
+  "text": "Na którym domino jest razem pięć kropek? Wskaż."
+ },
+ "line.b_domino_nie": {
+  "hash": "22888ea1f1e7",
+  "who": "wiewiorka",
+  "text": "Policz wszystkie kropki na tym domino, na górze i na dole."
+ },
+ "line.b_dwa_i_trzy": {
+  "hash": "c1ae2fbc42a0",
+  "who": "jez",
+  "text": "Dwie kropki i trzy kropki, razem pięć!"
+ },
+ "line.b_skacze": {
+  "hash": "4ff1bdc058dc",
+  "who": "jez",
+  "text": "Skaczę z radości! Policz moje skoki."
+ },
+ "line.b_ile_skokow": {
+  "hash": "2a53b3bea4d9",
+  "who": "wiewiorka",
+  "text": "Ile razy skoczył Jeżyk? Wskaż cyfrę."
+ },
+ "line.b_skok3": {
+  "hash": "452325842bca",
+  "who": "jez",
+  "text": "Trzy skoki!"
+ },
+ "line.b_skok4": {
+  "hash": "ef1229e6c1eb",
+  "who": "jez",
+  "text": "Cztery skoki!"
+ },
+ "line.b_skok5": {
+  "hash": "b95c06329e37",
+  "who": "jez",
+  "text": "Pięć skoków!"
+ },
+ "line.b_klient": {
+  "hash": "4eabbeda93cb",
+  "who": "mis",
+  "text": "Wracamy do piekarni. Klient chce ciasteczko za pięć monet. Pomóż mu zapłacić."
+ },
+ "line.b_zaplacone": {
+  "hash": "91f8e794a672",
+  "who": "mis",
+  "text": "Pięć monet, zapłacone. Dziękuję!"
+ },
+ "line.p_start": {
+  "hash": "4e2f29c0b4c9",
+  "who": "mis",
+  "text": "Poćwiczmy liczenie do pięciu! Mam pięć zabaw."
+ },
+ "line.p_ile": {
+  "hash": "e8c320bcf5cb",
+  "who": "wiewiorka",
+  "text": "Ile jest bułeczek? Policz i wskaż cyfrę."
+ },
+ "line.p_ile_nie": {
+  "hash": "21c7de11c058",
+  "who": "wiewiorka",
+  "text": "Policz jeszcze raz, dotykając każdej bułeczki."
+ },
+ "line.p_dobrze": {
+  "hash": "fcf2dd50e10a",
+  "who": "mis",
+  "text": "Brawo!"
+ },
+ "line.p_dobrze.wiewiorka": {
+  "hash": "380ec0c47b57",
+  "who": "wiewiorka",
+  "text": "Brawo!"
+ },
+ "line.p_trzy": {
+  "hash": "4326df641289",
+  "who": "mis",
+  "text": "Włóż do torebki trzy bułeczki."
+ },
+ "line.p_trzy_juz": {
+  "hash": "76584ae8828a",
+  "who": "mis",
+  "text": "Już są trzy!"
+ },
+ "line.p_taca": {
+  "hash": "2e5fc16a8513",
+  "who": "wiewiorka",
+  "text": "Na której tacy jest pięć ciasteczek? Wskaż."
+ },
+ "line.p_taca_nie": {
+  "hash": "dfda6f2f49ef",
+  "who": "wiewiorka",
+  "text": "Policz ciasteczka. Długi rządek to jeszcze nie znaczy więcej."
+ },
+ "line.p_memory": {
+  "hash": "8a6eeaf7123d",
+  "who": "mis",
+  "text": "Odwracaj karty i szukaj par: cyfra i tyle samo kropek."
+ },
+ "line.p_czwarta": {
+  "hash": "9d5b92d9bd9c",
+  "who": "wiewiorka",
+  "text": "Którą bułeczkę zje Jeżyk? Czwartą od strzałki. Wskaż."
+ },
+ "line.p_czwarta_nie": {
+  "hash": "e6dd5f98517e",
+  "who": "wiewiorka",
+  "text": "Licz od strzałki: pierwsza, druga, trzecia, czwarta."
+ },
+ "line.h_goscie": {
+  "hash": "cc479788244a",
+  "who": "jez",
+  "text": "Na kolację przyjdzie pięcioro gości. Nakryjmy do stołu!"
+ },
+ "line.h_talerze": {
+  "hash": "827f2968e4f4",
+  "who": "mis",
+  "text": "Policz talerze."
+ },
+ "line.h_kubki": {
+  "hash": "2c25ab53e890",
+  "who": "jez",
+  "text": "Każdy talerz dostaje jeden kubek. Policz kubki."
+ },
+ "line.h_po_jednym": {
+  "hash": "204ac92750f6",
+  "who": "jez",
+  "text": "Pięć talerzy i pięć kubków. Każdy gość ma swój!"
+ },
+ "line.h_rodzice": {
+  "hash": "ed0ef922eb53",
+  "who": "mis",
+  "text": "Policz z rodzicami pięć schodów, a przy stole policzcie talerze!"
+ },
+ "line.n1": {
+  "hash": "6d44dbf15322",
+  "who": "mis",
+  "text": "Jeden!"
+ },
+ "line.n1.wiewiorka": {
+  "hash": "ba57f5b09fb8",
+  "who": "wiewiorka",
+  "text": "Jeden!"
+ },
+ "line.n1.jez": {
+  "hash": "a84e9fbcc6ef",
+  "who": "jez",
+  "text": "Jeden!"
+ },
+ "line.n2": {
+  "hash": "285ad82008e7",
+  "who": "mis",
+  "text": "Dwa!"
+ },
+ "line.n2.wiewiorka": {
+  "hash": "1fe22df41e61",
+  "who": "wiewiorka",
+  "text": "Dwa!"
+ },
+ "line.n2.jez": {
+  "hash": "08da212e128f",
+  "who": "jez",
+  "text": "Dwa!"
+ },
+ "line.n3": {
+  "hash": "c51b1d268de5",
+  "who": "mis",
+  "text": "Trzy!"
+ },
+ "line.n3.wiewiorka": {
+  "hash": "de660ab27bd0",
+  "who": "wiewiorka",
+  "text": "Trzy!"
+ },
+ "line.n3.jez": {
+  "hash": "52909afeb507",
+  "who": "jez",
+  "text": "Trzy!"
+ },
+ "line.n4": {
+  "hash": "5a0bc83e6a41",
+  "who": "mis",
+  "text": "Cztery!"
+ },
+ "line.n4.wiewiorka": {
+  "hash": "55526c232825",
+  "who": "wiewiorka",
+  "text": "Cztery!"
+ },
+ "line.n4.jez": {
+  "hash": "004dbd9cdaec",
+  "who": "jez",
+  "text": "Cztery!"
+ },
+ "line.n5": {
+  "hash": "300b0380fce5",
+  "who": "mis",
+  "text": "Pięć!"
+ },
+ "line.n5.wiewiorka": {
+  "hash": "f368640872aa",
+  "who": "wiewiorka",
+  "text": "Pięć!"
+ },
+ "line.n5.jez": {
+  "hash": "2b25c0369a1b",
+  "who": "jez",
+  "text": "Pięć!"
+ },
+ "line.naklejka_daj": {
+  "hash": "33a461af4dcc",
+  "who": "mis",
+  "text": "Dziękuję za pomoc w piekarni! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "5ea5d48afa09",
+  "who": "mis",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "caf8885268d1",
+  "who": "narrator",
+  "text": "To bułeczka z piekarni Misia. Dostaliśmy ją, kiedy liczyliśmy do pięciu."
+ }
+}

@@ -259,10 +259,9 @@
         "en": "Counting to 5"
       },
       "subtitle": {
-        "pl": "liczenie rzeczy do pięciu",
-        "en": "counting things to five"
+        "pl": "leśna piekarnia",
+        "en": "the forest bakery"
       },
-      "wkrotce": true,
       "temat": "liczby"
     },
     {
@@ -374,8 +373,8 @@
       },
       "color": "#e0b83c",
       "lessons": [
-        "numbers_6_10",
         "counting_5",
+        "numbers_6_10",
         "adding_5",
         "adding_10"
       ],

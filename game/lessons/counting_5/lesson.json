@@ -1,0 +1,36 @@
+{
+  "id": "counting_5",
+  "title": {
+    "pl": "Liczymy do 5",
+    "en": "Counting to 5"
+  },
+  "goal": "Count to five: one number for each thing, the last number is how many; moving things does not change how many; five as a row, dots and a hand.",
+  "age": "4-5",
+  "characters": [
+    "mis",
+    "wiewiorka",
+    "jez"
+  ],
+  "backgrounds": [
+    "piekarnia",
+    "sad",
+    "dom"
+  ],
+  "objects": [
+    "taca",
+    "bulka",
+    "torebka",
+    "jablko",
+    "ciastko",
+    "moneta",
+    "metka",
+    "talerz",
+    "kubek",
+    "karta_rewers"
+  ],
+  "cover": "Bear in a baker's apron in a cosy wooden forest bakery, a tray of five golden rolls, Squirrel and Hedgehog counting them with their paws, a warm brick oven glowing behind.",
+  "naklejka": {
+    "obraz": "objects/bulka",
+    "kto": "mis"
+  }
+}

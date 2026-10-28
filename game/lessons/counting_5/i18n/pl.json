@@ -1,0 +1,229 @@
+{
+  "line.a_piekarnia": {
+    "who": "mis",
+    "text": "Otwieram leśną piekarnię! Upiekłem pierwsze bułeczki."
+  },
+  "line.a_ile": {
+    "who": "wiewiorka",
+    "text": "Ile bułeczek jest na tacy? Policz je, dotykając każdej po kolei."
+  },
+  "line.a_piec": {
+    "who": "wiewiorka",
+    "text": "Pięć bułeczek! Ostatnia liczba mówi, ile ich jest."
+  },
+  "line.a_rozloze": {
+    "who": "mis",
+    "text": "Rozłożę je na całej ladzie, żeby było ładnie."
+  },
+  "line.a_wiecej": {
+    "who": "mis",
+    "text": "O, teraz jest ich więcej! Zajmują tyle miejsca!"
+  },
+  "line.a_policz": {
+    "who": "jez",
+    "text": "Misiu, czy przybyło bułeczek? Policzmy jeszcze raz."
+  },
+  "line.a_dalej_piec": {
+    "who": "jez",
+    "text": "Dalej pięć! Kiedy rozkładamy rzeczy, ich nie przybywa."
+  },
+  "line.a_rozumiem": {
+    "who": "mis",
+    "text": "Pięć to pięć, blisko czy daleko. Rozumiem!"
+  },
+  "line.a_zamowienie": {
+    "who": "wiewiorka",
+    "text": "Pierwsze zamówienie! Sowa prosi o cztery bułeczki."
+  },
+  "line.a_spakuj": {
+    "who": "mis",
+    "text": "Włóż do torebki cztery bułeczki. Przeciągaj je po jednej, a ja policzę."
+  },
+  "line.a_za_duzo": {
+    "who": "mis",
+    "text": "Już są cztery! Więcej nie trzeba."
+  },
+  "line.a_cztery": {
+    "who": "wiewiorka",
+    "text": "Cztery bułeczki dla Sowy, w sam raz!"
+  },
+  "line.b_jablka": {
+    "who": "mis",
+    "text": "Do szarlotki potrzebuję pięciu jabłek."
+  },
+  "line.b_ktora": {
+    "who": "wiewiorka",
+    "text": "Gdzie jest pięć jabłek? Wskaż."
+  },
+  "line.b_ktora_nie": {
+    "who": "wiewiorka",
+    "text": "Policz jeszcze raz. Szukamy pięciu."
+  },
+  "line.b_dobrze": {
+    "who": "mis",
+    "text": "Pięć jabłek na szarlotkę!"
+  },
+  "line.b_piec_twarzy": {
+    "who": "wiewiorka",
+    "text": "Pięć można pokazać na różne sposoby. Na przykład kropkami na domino."
+  },
+  "line.b_domino": {
+    "who": "wiewiorka",
+    "text": "Na którym domino jest razem pięć kropek? Wskaż."
+  },
+  "line.b_domino_nie": {
+    "who": "wiewiorka",
+    "text": "Policz wszystkie kropki na tym domino, na górze i na dole."
+  },
+  "line.b_dwa_i_trzy": {
+    "who": "jez",
+    "text": "Dwie kropki i trzy kropki, razem pięć!"
+  },
+  "line.b_skacze": {
+    "who": "jez",
+    "text": "Skaczę z radości! Policz moje skoki."
+  },
+  "line.b_ile_skokow": {
+    "who": "wiewiorka",
+    "text": "Ile razy skoczył Jeżyk? Wskaż cyfrę."
+  },
+  "line.b_skok3": {
+    "who": "jez",
+    "text": "Trzy skoki!"
+  },
+  "line.b_skok4": {
+    "who": "jez",
+    "text": "Cztery skoki!"
+  },
+  "line.b_skok5": {
+    "who": "jez",
+    "text": "Pięć skoków!"
+  },
+  "line.b_klient": {
+    "who": "mis",
+    "text": "Wracamy do piekarni. Klient chce ciasteczko za pięć monet. Pomóż mu zapłacić."
+  },
+  "line.b_zaplacone": {
+    "who": "mis",
+    "text": "Pięć monet, zapłacone. Dziękuję!"
+  },
+  "line.p_start": {
+    "who": "mis",
+    "text": "Poćwiczmy liczenie do pięciu! Mam pięć zabaw."
+  },
+  "line.p_ile": {
+    "who": "wiewiorka",
+    "text": "Ile jest bułeczek? Policz i wskaż cyfrę."
+  },
+  "line.p_ile_nie": {
+    "who": "wiewiorka",
+    "text": "Policz jeszcze raz, dotykając każdej bułeczki."
+  },
+  "line.p_dobrze": {
+    "who": "mis",
+    "text": "Brawo!",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_trzy": {
+    "who": "mis",
+    "text": "Włóż do torebki trzy bułeczki."
+  },
+  "line.p_trzy_juz": {
+    "who": "mis",
+    "text": "Już są trzy!"
+  },
+  "line.p_taca": {
+    "who": "wiewiorka",
+    "text": "Na której tacy jest pięć ciasteczek? Wskaż."
+  },
+  "line.p_taca_nie": {
+    "who": "wiewiorka",
+    "text": "Policz ciasteczka. Długi rządek to jeszcze nie znaczy więcej."
+  },
+  "line.p_memory": {
+    "who": "mis",
+    "text": "Odwracaj karty i szukaj par: cyfra i tyle samo kropek."
+  },
+  "line.p_czwarta": {
+    "who": "wiewiorka",
+    "text": "Którą bułeczkę zje Jeżyk? Czwartą od strzałki. Wskaż."
+  },
+  "line.p_czwarta_nie": {
+    "who": "wiewiorka",
+    "text": "Licz od strzałki: pierwsza, druga, trzecia, czwarta."
+  },
+  "line.h_goscie": {
+    "who": "jez",
+    "text": "Na kolację przyjdzie pięcioro gości. Nakryjmy do stołu!"
+  },
+  "line.h_talerze": {
+    "who": "mis",
+    "text": "Policz talerze."
+  },
+  "line.h_kubki": {
+    "who": "jez",
+    "text": "Każdy talerz dostaje jeden kubek. Policz kubki."
+  },
+  "line.h_po_jednym": {
+    "who": "jez",
+    "text": "Pięć talerzy i pięć kubków. Każdy gość ma swój!"
+  },
+  "line.h_rodzice": {
+    "who": "mis",
+    "text": "Policz z rodzicami pięć schodów, a przy stole policzcie talerze!"
+  },
+  "line.n1": {
+    "who": "mis",
+    "text": "Jeden!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n2": {
+    "who": "mis",
+    "text": "Dwa!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n3": {
+    "who": "mis",
+    "text": "Trzy!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n4": {
+    "who": "mis",
+    "text": "Cztery!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n5": {
+    "who": "mis",
+    "text": "Pięć!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.naklejka_daj": {
+    "who": "mis",
+    "text": "Dziękuję za pomoc w piekarni! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "mis",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To bułeczka z piekarni Misia. Dostaliśmy ją, kiedy liczyliśmy do pięciu."
+  }
+}

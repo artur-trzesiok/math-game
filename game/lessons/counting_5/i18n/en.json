@@ -1,0 +1,229 @@
+{
+  "line.a_piekarnia": {
+    "who": "mis",
+    "text": "I'm opening a forest bakery! I've baked the first rolls."
+  },
+  "line.a_ile": {
+    "who": "wiewiorka",
+    "text": "How many rolls are on the tray? Count them, touching each one in turn."
+  },
+  "line.a_piec": {
+    "who": "wiewiorka",
+    "text": "Five rolls! The last number tells how many there are."
+  },
+  "line.a_rozloze": {
+    "who": "mis",
+    "text": "I'll spread them along the whole counter, to look nice."
+  },
+  "line.a_wiecej": {
+    "who": "mis",
+    "text": "Oh, now there are more! They take up so much room!"
+  },
+  "line.a_policz": {
+    "who": "jez",
+    "text": "Bear, did more rolls appear? Let's count again."
+  },
+  "line.a_dalej_piec": {
+    "who": "jez",
+    "text": "Still five! When we spread things out, there aren't more of them."
+  },
+  "line.a_rozumiem": {
+    "who": "mis",
+    "text": "Five is five, close together or far apart. I see!"
+  },
+  "line.a_zamowienie": {
+    "who": "wiewiorka",
+    "text": "The first order! Owl would like four rolls."
+  },
+  "line.a_spakuj": {
+    "who": "mis",
+    "text": "Put four rolls into the bag. Drag them one at a time and I'll count."
+  },
+  "line.a_za_duzo": {
+    "who": "mis",
+    "text": "That's four already! No more needed."
+  },
+  "line.a_cztery": {
+    "who": "wiewiorka",
+    "text": "Four rolls for Owl, just right!"
+  },
+  "line.b_jablka": {
+    "who": "mis",
+    "text": "I need five apples for the apple pie."
+  },
+  "line.b_ktora": {
+    "who": "wiewiorka",
+    "text": "Where are five apples? Point to them."
+  },
+  "line.b_ktora_nie": {
+    "who": "wiewiorka",
+    "text": "Count again. We're looking for five."
+  },
+  "line.b_dobrze": {
+    "who": "mis",
+    "text": "Five apples for the pie!"
+  },
+  "line.b_piec_twarzy": {
+    "who": "wiewiorka",
+    "text": "Five can be shown in many ways. For example with dots on a domino."
+  },
+  "line.b_domino": {
+    "who": "wiewiorka",
+    "text": "Which domino has five dots altogether? Point to it."
+  },
+  "line.b_domino_nie": {
+    "who": "wiewiorka",
+    "text": "Count all the dots on that domino, at the top and at the bottom."
+  },
+  "line.b_dwa_i_trzy": {
+    "who": "jez",
+    "text": "Two dots and three dots, five altogether!"
+  },
+  "line.b_skacze": {
+    "who": "jez",
+    "text": "I'm jumping for joy! Count my jumps."
+  },
+  "line.b_ile_skokow": {
+    "who": "wiewiorka",
+    "text": "How many times did Hedgehog jump? Point to the number."
+  },
+  "line.b_skok3": {
+    "who": "jez",
+    "text": "Three jumps!"
+  },
+  "line.b_skok4": {
+    "who": "jez",
+    "text": "Four jumps!"
+  },
+  "line.b_skok5": {
+    "who": "jez",
+    "text": "Five jumps!"
+  },
+  "line.b_klient": {
+    "who": "mis",
+    "text": "Back to the bakery. A customer wants a cookie for five coins. Help them pay."
+  },
+  "line.b_zaplacone": {
+    "who": "mis",
+    "text": "Five coins, all paid. Thank you!"
+  },
+  "line.p_start": {
+    "who": "mis",
+    "text": "Let's practise counting to five! I have five games."
+  },
+  "line.p_ile": {
+    "who": "wiewiorka",
+    "text": "How many rolls are there? Count and point to the number."
+  },
+  "line.p_ile_nie": {
+    "who": "wiewiorka",
+    "text": "Count again, touching each roll."
+  },
+  "line.p_dobrze": {
+    "who": "mis",
+    "text": "Bravo!",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_trzy": {
+    "who": "mis",
+    "text": "Put three rolls into the bag."
+  },
+  "line.p_trzy_juz": {
+    "who": "mis",
+    "text": "That's three already!"
+  },
+  "line.p_taca": {
+    "who": "wiewiorka",
+    "text": "Which tray has five cookies? Point to it."
+  },
+  "line.p_taca_nie": {
+    "who": "wiewiorka",
+    "text": "Count the cookies. A long row doesn't mean more."
+  },
+  "line.p_memory": {
+    "who": "mis",
+    "text": "Turn the cards and find pairs: a number and as many dots."
+  },
+  "line.p_czwarta": {
+    "who": "wiewiorka",
+    "text": "Which roll will Hedgehog eat? The fourth from the arrow. Point to it."
+  },
+  "line.p_czwarta_nie": {
+    "who": "wiewiorka",
+    "text": "Count from the arrow: first, second, third, fourth."
+  },
+  "line.h_goscie": {
+    "who": "jez",
+    "text": "Five guests are coming for supper. Let's set the table!"
+  },
+  "line.h_talerze": {
+    "who": "mis",
+    "text": "Count the plates."
+  },
+  "line.h_kubki": {
+    "who": "jez",
+    "text": "Every plate gets one cup. Count the cups."
+  },
+  "line.h_po_jednym": {
+    "who": "jez",
+    "text": "Five plates and five cups. Every guest has their own!"
+  },
+  "line.h_rodzice": {
+    "who": "mis",
+    "text": "Count five stairs with your parents, and count the plates at the table!"
+  },
+  "line.n1": {
+    "who": "mis",
+    "text": "One!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n2": {
+    "who": "mis",
+    "text": "Two!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n3": {
+    "who": "mis",
+    "text": "Three!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n4": {
+    "who": "mis",
+    "text": "Four!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.n5": {
+    "who": "mis",
+    "text": "Five!",
+    "speakers": [
+      "wiewiorka",
+      "jez"
+    ]
+  },
+  "line.naklejka_daj": {
+    "who": "mis",
+    "text": "Thank you for helping in the bakery! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "mis",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is a roll from Bear's bakery. We got it when we counted to five."
+  }
+}
