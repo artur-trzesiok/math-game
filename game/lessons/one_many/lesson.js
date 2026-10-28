@@ -11,7 +11,7 @@ const rzecz = async (c, name, ile, o = {}) => {
   const h = ile > 1 ? await c.kupka(name, ile, { size: 1.15, ...o }) : await c.object(name, { size: 0.95, ...o });
   h.tag = ile > 1 ? "wiele" : "jeden"; return h;
 };
-const pojemniki = async (c, { xs = [-1.3, 1.5], w = 2.3, h = 1.9 } = {}) => {
+const pojemniki = async (c, { xs = [-0.55, 2.05], w = 2.2, h = 1.9 } = {}) => {   // clear of Squirrel's tail
   const z = [await c.zone({ x: xs[0], y: ZY, w, h, image: "talerz", name: "talerz" }), await c.zone({ x: xs[1], y: ZY, w, h, image: "koszyk", name: "koszyk" })];
   z[0].want = "jeden"; z[1].want = "wiele"; return z;
 };
@@ -40,7 +40,7 @@ export default {
         await c.say("wiewiorka", "line.a_co_wiele");
         // many: this one, and this, and this... each nut bumps as she points
         const orzechy = [];
-        for (let i = 0; i < 6; i++) orzechy.push(await c.object("orzech", { x: 1.2 + (i % 3) * 0.55, y: -1.9 + Math.floor(i / 3) * 0.45, size: 0.6 }));
+        for (let i = 0; i < 6; i++) orzechy.push(await c.object("orzech", { x: 0.95 + (i % 3) * 0.7, y: -1.95 + Math.floor(i / 3) * 0.66, size: 0.6 }));   // apart: a heap of six, not overlapping
         await c.say("sarenka", "line.a_wiele", { anim: "Wskazanie" });
         for (const h of orzechy) { c.stage.bump(h, 0.35); await c.wait(0.3); }
         await c.say("sarenka", "line.a_nazwa");
