@@ -56,28 +56,6 @@
       }
     },
     {
-      "id": "shapes",
-      "title": {
-        "pl": "Figury geometryczne",
-        "en": "Shapes"
-      },
-      "subtitle": {
-        "pl": "koło, trójkąt, kwadrat, prostokąt",
-        "en": "circle, triangle, square, rectangle"
-      }
-    },
-    {
-      "id": "tangram",
-      "title": {
-        "pl": "Tangram",
-        "en": "Tangram"
-      },
-      "subtitle": {
-        "pl": "układanie obrazków z kawałków",
-        "en": "pictures from pieces"
-      }
-    },
-    {
       "id": "numbers_1_5",
       "title": {
         "pl": "Liczby od 1 do 5",
@@ -97,6 +75,28 @@
       "subtitle": {
         "pl": "pierwszy, drugi, ostatni",
         "en": "first, second, last"
+      }
+    },
+    {
+      "id": "shapes",
+      "title": {
+        "pl": "Figury geometryczne",
+        "en": "Shapes"
+      },
+      "subtitle": {
+        "pl": "koło, trójkąt, kwadrat, prostokąt",
+        "en": "circle, triangle, square, rectangle"
+      }
+    },
+    {
+      "id": "tangram",
+      "title": {
+        "pl": "Tangram",
+        "en": "Tangram"
+      },
+      "subtitle": {
+        "pl": "układanie obrazków z kawałków",
+        "en": "pictures from pieces"
       }
     },
     {
@@ -160,6 +160,18 @@
       ]
     },
     {
+      "id": "liczby",
+      "title": {
+        "pl": "Liczby do 5",
+        "en": "Numbers to 5"
+      },
+      "color": "#6cc4a1",
+      "lessons": [
+        "numbers_1_5",
+        "queue"
+      ]
+    },
+    {
       "id": "geometria",
       "title": {
         "pl": "Geometria",
@@ -172,15 +184,13 @@
       ]
     },
     {
-      "id": "liczby",
+      "id": "dodawanie",
       "title": {
-        "pl": "Liczby i dodawanie",
-        "en": "Numbers and adding"
+        "pl": "Liczby do 10 i dodawanie",
+        "en": "Numbers to 10 and adding"
       },
-      "color": "#6cc4a1",
+      "color": "#e07a5f",
       "lessons": [
-        "numbers_1_5",
-        "queue",
         "numbers_6_10",
         "adding_5",
         "adding_10"

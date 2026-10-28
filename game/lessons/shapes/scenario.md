@@ -26,5 +26,5 @@ up the square and the rectangle gets a hint about the sides (both have four corn
 
 What shape is a plate, a block, a cookie (point to the shape - a ball is a sphere, not
 a circle); which shape has three corners, four corners, no corners (point to it; no
-digit cards - the numbers lessons come later). "Ask your parents to look for circles,
+digit cards needed: the corners were counted in the story). "Ask your parents to look for circles,
 squares and triangles at home with you."

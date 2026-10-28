@@ -132,7 +132,7 @@ export default {
           await c.say("lisek", "line.good_shape", { anim: "Brawo" });
           c.clear();
         }
-        // corners, without digits (the numbers lessons come later): which shape has three / four / no corners?
+        // corners: which shape has three / four / no corners? (pointing at a shape, the counting done in the story)
         for (const [key, ksztalt] of [["line.a_three_corners", "trojkat"], ["line.a_four_corners", "kwadrat"], ["line.a_no_corners", "kolo"]]) {
           const kinds = tasuj(["kolo", "kwadrat", "trojkat"]);
           const hs = await rzadFigur(c, kinds, { y: 1.2, size: 1.5, gap: 2.6 });

@@ -9,7 +9,7 @@
   #stage canvas { display: block; }
   /* the menu: one long strip of lessons scrolled sideways (a finger, the wheel or a mouse drag), the topics marked
      along it as tinted blocks; sized from the height so it fits the 4:3 safe area of a tablet and a phone alike */
-  #menu { --k: max(110px, min(38vh, 62vw)); --safe: max(16px, calc((100vw - 133.34vh) / 2 + 16px));
+  #menu { --k: max(110px, min(36vh, 62vw)); --safe: max(16px, calc((100vw - 133.34vh) / 2 + 16px));
           position: fixed; inset: 0; display: none; flex-direction: column; justify-content: center; gap: 2.4vh; overflow: hidden; box-sizing: border-box; background: linear-gradient(#bfe4ff, #e9f7d8); opacity: 0; transition: opacity .7s ease; }
   #menu.in { opacity: 1; }
   #iris { position: fixed; inset: 0; display: none; background: #2f7fe0; pointer-events: none; }
@@ -29,7 +29,7 @@
   .topic .lesson { flex: 0 0 auto; }
   #chips { display: flex; justify-content: center; gap: calc(var(--k) * 0.035); padding: 0 var(--safe); white-space: nowrap; }
   @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } #chips button { padding: .3em .75em; } }
-  #chips button { font: inherit; font-size: max(12px, calc(var(--k) * 0.068)); font-weight: 700; padding: .35em .9em; border: 0; border-radius: 999px; color: #2a4a6a; background: rgba(255,255,255,.7); cursor: pointer; display: flex; align-items: center; gap: .45em; }
+  #chips button { font: inherit; font-size: max(11px, min(calc(var(--k) * 0.068), 1.5vw)); font-weight: 700; padding: .35em .9em; border: 0; border-radius: 999px; color: #2a4a6a; background: rgba(255,255,255,.7); cursor: pointer; display: flex; align-items: center; gap: .45em; }
   #chips button::before { content: ""; width: .7em; height: .7em; border-radius: 50%; background: var(--c); }
   #chips button.on { background: var(--c); color: #fff; }
   #chips button.on::before { background: #fff; }
