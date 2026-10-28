@@ -42,6 +42,18 @@
   #wreczenie.zabrana .blask { opacity: 0; }
   #wreczenie.zabrana .naklejka { animation: odlot .7s ease-in forwards; }
   @keyframes obrot { to { transform: rotate(360deg); } }
+  /* a stage card: the lesson (its cover and name) or a stage (its icon and name), the characters peeking in */
+  #plansza { position: fixed; inset: 0; z-index: 44; display: none; align-items: center; justify-content: center; background: rgba(30,50,70,.45); cursor: pointer; font-family: "Baloo 2", system-ui, sans-serif; }
+  #plansza.on { display: flex; animation: zanik .3s ease-out; }
+  #plansza.out { animation: zanik .35s ease-in reverse forwards; }
+  #plansza .karta { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2vh; padding: 9vh 6vh 5vh; width: min(64vh, 80vw);
+    background: url(/game/assets/menu/karta.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 10px 18px rgba(0,0,0,.35)); animation: wskok .55s cubic-bezier(.2,1.5,.4,1) both; }
+  #plansza .obraz { width: min(40vh, 52vw); aspect-ratio: 1; object-fit: cover; border-radius: 2.4vh; box-shadow: 0 0 0 4px rgba(90,53,24,.55); }
+  #plansza .obraz.ikona { object-fit: contain; box-shadow: none; }
+  #plansza .napis { padding: .25em 1.4em .35em; font: 800 min(6vh, 7vw) "Baloo 2", system-ui; color: #5a3518; white-space: nowrap; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; }
+  #plansza .glowa { position: absolute; bottom: 4vh; width: min(17vh, 20vw); filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); animation: bujaj 1.8s ease-in-out infinite; }
+  #plansza .glowa.l { left: -6vh; } #plansza .glowa.p { right: -6vh; animation-delay: -.9s; }
+  @keyframes zanik { from { opacity: 0; } to { opacity: 1; } }
   @keyframes wskok { from { transform: scale(.1) rotate(-25deg); opacity: 0; } to { transform: scale(1); opacity: 1; } }
   @keyframes bujaj { 0%, 100% { transform: rotate(-4deg) scale(1); } 50% { transform: rotate(4deg) scale(1.05); } }
   @keyframes odlot { to { transform: translate(-38vw, -40vh) scale(.15) rotate(-30deg); opacity: 0; } }
@@ -101,7 +113,12 @@
     font: 800 calc(var(--k) * 0.115) "Baloo 2", system-ui; display: grid; place-items: center; box-shadow: 0 0 0 3px var(--braz), 0 3px 4px rgba(0,0,0,.25); text-shadow: 0 1px 0 rgba(90,53,24,.6); }
   .lesson .name { font: 800 max(13px, calc(var(--k) * 0.095)) "Baloo 2", system-ui; color: var(--braz); text-align: center; line-height: 1.05; }
   .lesson .sub { font: 600 max(11px, calc(var(--k) * 0.06)) "Baloo 2", system-ui; color: #8a6440; text-align: center; line-height: 1.1; }
-  .lesson .mam { position: absolute; top: calc(var(--k) * 0.06); right: calc(var(--k) * 0.02); width: calc(var(--k) * 0.34); transform: rotate(12deg); pointer-events: none; }
+  /* the lesson's sticker waits in the card's lower corner; once taken to the album a paler patch of its shape stays,
+     as if it had been peeled off */
+  .lesson .nakl-karty { position: absolute; right: calc(var(--k) * -0.02); top: calc(var(--k) * 0.86); width: calc(var(--k) * 0.32); aspect-ratio: 1; transform: rotate(9deg); pointer-events: none; }
+  .lesson .nakl-karty img { width: 100%; height: 100%; object-fit: contain; }
+  .lesson .nakl-karty.oderwana { background: #fffaf0; -webkit-mask: var(--ksztalt) center / contain no-repeat; mask: var(--ksztalt) center / contain no-repeat;
+    filter: drop-shadow(0 0 1px rgba(90,53,24,.45)); opacity: .9; }
   #hud { position: fixed; top: 0; left: 0; right: 0; display: none; align-items: center; gap: 12px; padding: 10px 14px; pointer-events: none; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
   #hud .lesson-name { font-weight: 700; }
   @media (max-width: 900px) { #hud .lesson-name { display: none; } }
@@ -162,6 +179,7 @@
 <div id="subtitle"></div>
 <div id="iris"></div>
 <div id="fade"></div>
+<div id="plansza"></div>
 <div id="wczytywanie"><img alt=""><div class="pasek"><div></div></div></div>
 <div id="card"><div class="box"><div class="text"></div><button></button></div></div>
 <script type="module">

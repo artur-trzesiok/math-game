@@ -138,6 +138,7 @@ export default {
         await c.say("sarenka", "line.a_zasada_kolor");
         await c.sort({ items, zones, wrong: "line.a_pomylka" });
         await pokazPrezenty(c, items);
+        await c.rozblysk(zones[0]);                                                  // all the gifts in one basket!
         await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "wykrzyknik", { anim: "Radosc" });
         await c.say("wiewiorka", "line.a_wszystkie_czerwone");
@@ -206,6 +207,7 @@ export default {
         await c.ujecie("dwuujecie", { na: ["wiewiorka", "lisek"] });
         await c.say("wiewiorka", "line.c_pytanie", { anim: "Zgloszenie" });
         await c.ujecie("zblizenie", { na: "lisek" });
+        c.rozblysk("lisek");
         await c.emocja("lisek", "serce", { anim: "Kiwanie" });
         await c.say("lisek", "line.c_to_ja");
         await c.say("wiewiorka", "line.c_czemu");

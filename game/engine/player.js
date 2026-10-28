@@ -119,10 +119,13 @@ export class Player {
       this.menuX = x;
     };
     pas.onscroll = odswiez;
-    // a lesson whose sticker is in the album wears it in its corner
-    for (const b of pas.querySelectorAll(".lesson")) if (Album.ma(b.dataset.id))
+    // every card carries its lesson's sticker in the lower corner; once it is in the album a paler patch of its
+    // shape stays there, as if peeled off
+    for (const b of pas.querySelectorAll(".lesson"))
       fetch(v(`/game/lessons/${b.dataset.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).then((m) => {
-        if (m.naklejka && !b.querySelector(".mam")) b.insertAdjacentHTML("beforeend", `<img class="mam wycinek" src="${v(`/game/assets/${m.naklejka.obraz}.webp`)}" alt="">`);
+        if (!m.naklejka || b.querySelector(".nakl-karty")) return;
+        const url = v(`/game/assets/${m.naklejka.obraz}.webp`);
+        b.insertAdjacentHTML("beforeend", Album.ma(b.dataset.id) ? `<span class="nakl-karty oderwana" style="--ksztalt:url('${url}')"></span>` : `<span class="nakl-karty"><img class="wycinek" src="${url}" alt=""></span>`);
       }).catch(() => {});
     chips.onclick = (e) => { const c = e.target.closest("button"); if (c) naBlok(bloki.find((b) => b.dataset.topic === c.dataset.topic)); };
     // a mouse wheel turns into sideways scroll; a mouse drag scrolls the strip (a finger does it natively)
@@ -169,6 +172,7 @@ export class Player {
     catch (e) { console.warn("prepare:", e); }
     ekran.style.display = "none";
     if (run !== this.run) return;
+    if (!fromStage) await this.plansza({ obraz: v(`/game/lessons/${id}/cover.webp`), napis: meta.title[this.lang] || meta.title.en });
     this.abort = false;
     const order = fromStage && STAGES.includes(fromStage) ? STAGES.slice(STAGES.indexOf(fromStage)) : STAGES;
     for (const st of order) {
@@ -196,6 +200,18 @@ export class Player {
     } catch (e) { if (e?.message !== "abort") console.warn("naklejka:", e); }
   }
 
+  // a card for about two seconds (a tap skips it): the lesson's start (cover + name) or a stage (icon + name),
+  // the lesson's characters peeking in from the sides
+  async plansza({ obraz, ikona = false, napis }) {
+    const el = $("#plansza"), glowy = Object.keys(this.lesson.characters || {}).map((n) => E.glowaObraz(n)).filter(Boolean).slice(0, 2);
+    el.innerHTML = `<div class="karta"><img class="obraz ${ikona ? "ikona" : ""}" src="${obraz}" alt=""><div class="napis"></div>`
+      + glowy.map((g, i) => `<img class="glowa ${i ? "p" : "l"}" src="${g.toDataURL()}" alt="">`).join("") + "</div>";
+    el.querySelector(".napis").textContent = napis;
+    el.className = "on"; this.stage?.sfx.graj("pop");
+    await new Promise((ok) => { const t = setTimeout(ok, FAST ? 150 : 2100); el.onclick = () => { clearTimeout(t); ok(); }; });
+    el.className = "on out"; await new Promise((ok) => setTimeout(ok, FAST ? 30 : 330)); el.className = ""; el.innerHTML = "";
+  }
+
   async coWczytac(id) {
     const meta = await fetch(v(`/game/lessons/${id}/lesson.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
     this.metaLekcji = meta;
@@ -207,6 +223,9 @@ export class Player {
 
   async runStage(st) {
     const scenes = this.lesson.stages[st] || [];
+    const IKONA = { story: "ikona_opowiesc", practice: "ikona_cwiczenia", apply: "ikona_dom" };
+    if (scenes.length) await this.plansza({ obraz: v(`/game/assets/objects/${IKONA[st]}.webp`), ikona: true, napis: this.t(`stage.${st}`) });
+    if (this.abort) return;
     for (const el of document.querySelectorAll("#hud .phase")) {           // the phase strip: done / current / ahead
       const i = STAGES.indexOf(el.dataset.stage), j = STAGES.indexOf(st);
       el.className = "phase " + (i < j ? "done" : i === j ? "current" : "ahead") + (DEBUG ? " debug" : "");
@@ -377,6 +396,7 @@ export class Player {
       przejscie: guard((zmiana, rodzaj = null) => E.przejscie(S, async () => { alive(); await zmiana(); }, { rodzaj })),
       // film tools (efekty.js, guidelines "Atmosphere and editing")
       ujecie: guard((typ, opts) => E.ujecie(S, typ, opts)),
+      rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
       pan: guard((k, opts) => E.pan(S, k, opts)),
       odliczanie: guard((opts) => E.odliczanie(S, opts)),
       konfetti: (h, opts) => { alive(); E.konfetti(S, h, opts); },

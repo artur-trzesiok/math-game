@@ -329,7 +329,17 @@ Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller_pr
   right pick), `ctx.emocja(who, rodzaj, {anim})` (zlosc, pot, serce, radosc, smutek, sen, wykrzyknik, zarowka,
   zimno, mokro, muzyka, strach), `ctx.nalozenie(gorny, dolny)` -> {wiekszy, cofnij()}, `ctx.czastki(rodzaj)`
   (deszcz, snieg, swietliki, liscie, pylek, babelki; ends with the background), `ctx.gwiazdki(n)` (practice
-  stars in the HUD, a streak badge after two first-try answers).
+  stars in the HUD, a streak badge after two first-try answers);
+- comic effects: speed lines on every jump into a close-up (automatic in `ujecie`), `ctx.rozblysk(who | handle)`
+  (golden rays and sparkles behind a discovery), motion streaks behind a sticker flying far and fast (automatic in
+  `moveTo`); `ctx.przejdz(who, [[x, y]...], {skok})` walks into the picture (smaller, shadow along).
+Every lesson also gets, without its code doing anything: a start card (cover + name) and a card before every
+stage (icon + name), the characters' head badges peeking in (`plansza`, 2 s, a tap skips); encouragement when the
+child waits 9 s without a touch (game/zachety: invitations, never praise, in the instructing character's voice;
+the second time in a pointing task "hmm... maybe here?" with the answer pulsing); at the end of the home stage
+the lesson's sticker (lesson.json `naklejka: {obraz, kto}`, lines `naklejka_daj`, `naklejka_juz`,
+`naklejka_opis`) for the album (`album.js`, localStorage; game/album holds the narrator's welcome). The menu is
+painted (tools/menu); a card shows its sticker waiting, and a peeled-off patch once it is in the album.
 Overlay effects draw in the stage's orthographic overlay scene (`S.nak`, rendered after the world by `rysuj`),
 so they cover the letterboxed frame exactly and are in snapshots.
 HUD: pause (the picture, tweens and the voice stop), next (the scene's context is retired - every ctx call of the

@@ -366,7 +366,7 @@ export class Stage {
     const handle = { mesh: g, icon, name, base: size, size0: size, home: { x, y }, zone: null, kind: "object", pulse: false,
       remove: () => { this.scene.remove(g); this.objects.splice(this.objects.indexOf(handle), 1); this.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
       highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
-      moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; if (Math.hypot(nx - x0, ny - y0) > 2.5) this.sfx.graj("whoosh", { glosnosc: 0.7 }); return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
+      moveTo: (nx, ny, d = 0.5) => { const x0 = g.position.x, y0 = g.position.y; if (Math.hypot(nx - x0, ny - y0) > 2.5) this.sfx.graj("whoosh", { glosnosc: 0.7 }); E.smuga(this, x0, y0, nx, ny, d); return this.tween(d, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); } };
     this.scene.add(g); this.objects.push(handle);
     this.appear(handle);
     for (const L of Object.values(this.puppets)) if (L.korzen.visible && !L.celSpojrzenia) L.patrzNa(() => this.pointOf(handle), 1.1);   // a glance at what just appeared

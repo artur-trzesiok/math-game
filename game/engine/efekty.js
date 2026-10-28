@@ -185,6 +185,8 @@ export function przygotujGlowy(S) {
   }
   L0.forEach((L, i) => { L.korzen.visible = bylo[i]; });
 }
+// a character's head badge as a picture (the stage cards show them peeking in)
+export const glowaObraz = (name) => GLOWY.get(name)?.image || null;
 function glowyPostaci(S) {
   if (Object.values(S.puppets).some((L) => !GLOWY.has(L.name))) przygotujGlowy(S);     // a character added later
   return Object.values(S.puppets).filter((L) => L.korzen.visible && GLOWY.has(L.name)).map((L) => GLOWY.get(L.name));
@@ -310,6 +312,67 @@ export async function odliczanie(S, { od = 3, styl = "cyfry" } = {}) {
   const ring = plaski(canvasTex(1024, 1024, (x) => { x.scale(4, 4); x.strokeStyle = "#6bd66b"; x.lineWidth = 34; x.beginPath(); x.arc(128, 128, 100, 0, 7); x.stroke(); }), 1, 1, { order: 2 }); g.add(ring);
   await S.tween(T(0.4), (s) => { ring.scale.setScalar(0.3 + 2.2 * s); ring.material.opacity = 1 - s; tlo.material.opacity = 0.5 * (1 - s); });
   N.scena.remove(g);
+}
+
+// ====================================================================== comic effects
+// speed lines: thin white wedges from the screen's edges toward its middle, a burst when the camera jumps in close
+export async function linieSzybkosci(S, { d = 0.5, ile = 36 } = {}) {
+  if (FAST) return;
+  const N = nakladka(S), a = N.a || S.camera.aspect, g = new THREE.Group(); N.scena.add(g);
+  const mat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, depthTest: false, depthWrite: false, side: THREE.DoubleSide });
+  const R = Math.hypot(a, 1) * 1.08, kliny = [];
+  for (let i = 0; i < ile; i++) {
+    const kat = (i / ile) * 2 * Math.PI + los(-0.06, 0.06), r1 = R * los(0.58, 0.78), w = R * los(0.008, 0.022);
+    const c = Math.cos(kat), s = Math.sin(kat);
+    const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(c * r1, s * r1, 0), new THREE.Vector3(c * R - s * w, s * R + c * w, 0), new THREE.Vector3(c * R + s * w, s * R - c * w, 0)]);
+    const m = new THREE.Mesh(geo, mat); m.renderOrder = 3; m.userData = { kat, r1 }; g.add(m); kliny.push(m);
+  }
+  await S.tween(d, (q) => { mat.opacity = 0.85 * Math.sin(Math.PI * q); g.scale.setScalar(1 + 0.06 * q); });
+  N.scena.remove(g); for (const m of kliny) m.geometry.dispose(); mat.dispose();
+}
+// a burst behind a discovery ("they are all red!"): golden rays spin out behind it and little sparkles fly off
+export async function rozblysk(S, cel, { r = 1.5 } = {}) {
+  let x = 0, y = 0;
+  if (cel?.korzen) { const b = new THREE.Box3().setFromObject(cel.korzen); x = (b.min.x + b.max.x) / 2; y = b.max.y - (b.max.y - b.min.y) * 0.2; }
+  else if (cel?.mesh) { const p = new THREE.Vector3(); cel.mesh.getWorldPosition(p); x = p.x; y = p.y; }
+  else if (Array.isArray(cel)) [x, y] = cel;
+  const g = new THREE.Group(); g.position.set(x, y, 0.25); S.scene.add(g);
+  const promienie = new THREE.Group(); g.add(promienie);
+  const zlota = new THREE.MeshBasicMaterial({ color: 0xffd84a, transparent: true, opacity: 0.85, depthTest: false, depthWrite: false, side: THREE.DoubleSide });
+  for (let i = 0; i < 14; i++) {
+    const k = (i / 14) * 2 * Math.PI, w = 0.16, c = Math.cos(k), s = Math.sin(k);
+    const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(c * 0.2, s * 0.2, 0), new THREE.Vector3(c * r - s * w * r, s * r + c * w * r, 0), new THREE.Vector3(c * r + s * w * r, s * r - c * w * r, 0)]);
+    const m = new THREE.Mesh(geo, zlota); m.renderOrder = 8; promienie.add(m);
+  }
+  const blask = dysk("#fff6c8", 8.5); blask.scale.setScalar(r * 0.45); g.add(blask);
+  const iskry = [];
+  for (let i = 0; i < 10; i++) {
+    const sh = new THREE.Shape(); for (let j = 0; j < 8; j++) { const kk = j * Math.PI / 4, rr = j % 2 ? 0.035 : 0.13; j ? sh.lineTo(Math.cos(kk) * rr, Math.sin(kk) * rr) : sh.moveTo(rr, 0); }
+    const m = new THREE.Mesh(new THREE.ShapeGeometry(sh), new THREE.MeshBasicMaterial({ color: i % 2 ? 0xffffff : 0xffe680, transparent: true, depthTest: false, depthWrite: false }));
+    const k = Math.random() * 2 * Math.PI; m.userData = { vx: Math.cos(k) * los(1.2, 2.4), vy: Math.sin(k) * los(1.2, 2.4) }; m.renderOrder = 46; g.add(m); iskry.push(m);
+  }
+  S.sfx.graj("idea", { glosnosc: 0.6 });
+  await S.tween(FAST ? 0.1 : 0.9, (q) => {
+    const wejscie = Math.min(1, q * 3.5);
+    promienie.scale.setScalar(0.3 + 0.9 * easeOutBack(wejscie)); promienie.rotation.z = q * 0.8;
+    zlota.opacity = 0.85 * (q < 0.6 ? 1 : 1 - (q - 0.6) / 0.4);
+    if (blask.material.uniforms?.alfa) blask.material.uniforms.alfa.value = 0.9 * (1 - q);
+    for (const m of iskry) { m.position.set(m.userData.vx * q, m.userData.vy * q, 0); m.material.opacity = 1 - q; m.rotation.z = q * 4; }
+  });
+  S.scene.remove(g); g.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose?.(); } });
+}
+// motion streaks: something flying fast leaves three fading lines behind it, along its path
+export function smuga(S, x0, y0, x1, y1, d) {
+  if (FAST) return;
+  const dl = Math.hypot(x1 - x0, y1 - y0); if (dl < 1.8 || d > 0.6) return;
+  const ux = (x1 - x0) / dl, uy = (y1 - y0) / dl, g = new THREE.Group(); S.scene.add(g);
+  const mat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.8, depthTest: false, depthWrite: false });
+  for (const o of [-0.22, 0, 0.22]) {
+    const L = dl * (o ? 0.45 : 0.6), w = o ? 0.05 : 0.07, m = new THREE.Mesh(new THREE.PlaneGeometry(L, w), mat);
+    m.position.set(x0 + ux * L / 2 - uy * o, y0 + uy * L / 2 + ux * o, 0.3); m.rotation.z = Math.atan2(uy, ux); m.renderOrder = 9; g.add(m);
+  }
+  S.tween(d + 0.25, (q) => { mat.opacity = 0.8 * (1 - q); g.position.set(ux * dl * 0.4 * q, uy * dl * 0.4 * q, 0); })
+    .then(() => { S.scene.remove(g); g.traverse((o) => { if (o.isMesh) o.geometry.dispose(); }); mat.dispose(); });
 }
 
 // ====================================================================== confetti and a tick
@@ -525,6 +588,8 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 
   S.unlift?.();
   const kam = S.camera, z0 = kam.zoom, x0 = kam.position.x, y0 = kam.position.y;
   const krok = (s) => { kam.zoom = z0 + (z - z0) * s; kam.position.x = x0 + (cx - x0) * s; kam.position.y = y0 + (cy - y0) * s; kam.updateProjectionMatrix(); };
+  // a jump in close gets speed lines (the comic-book zoom); a cut back out does not
+  if (typ === "zblizenie" && S.ujecieTeraz !== "zblizenie") linieSzybkosci(S);
   if (ciecie || FAST) krok(1); else await S.tween(d, krok);
   S.ujecieTeraz = typ;
 }
