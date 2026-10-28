@@ -1,0 +1,222 @@
+{
+ "line.a_ziew": {
+  "hash": "28196616bad2",
+  "who": "kret",
+  "text": "Yawn... I slept so well. Is it morning yet?"
+ },
+ "line.a_ciemno": {
+  "hash": "f0a092211ae8",
+  "who": "kret",
+  "text": "I don't know. Underground it's always dark, and I can't see very well."
+ },
+ "line.a_dzien_dobry": {
+  "hash": "905bbf717311",
+  "who": "wiewiorka",
+  "text": "Good morning, Mole! Get up, it's morning already!"
+ },
+ "line.a_noc": {
+  "hash": "769c1cca76a7",
+  "who": "kret",
+  "text": "Morning? I thought it was always night."
+ },
+ "line.a_na_gore": {
+  "hash": "5da0604801d3",
+  "who": "sarenka",
+  "text": "Come up with us! We'll show you how a whole day goes by: morning, midday, evening and night."
+ },
+ "line.b_jasno": {
+  "hash": "330f29fa2d01",
+  "who": "kret",
+  "text": "Oh, how bright! The sun is rising."
+ },
+ "line.b_rano": {
+  "hash": "6f3cce3b101b",
+  "who": "sarenka",
+  "text": "Yes, it's morning. In the morning we get up, wash and eat breakfast."
+ },
+ "line.b_co_rano": {
+  "hash": "8d2c5110ebad",
+  "who": "wiewiorka",
+  "text": "What do we do in the morning? Point to it."
+ },
+ "line.b_co_rano_nie": {
+  "hash": "44406368f017",
+  "who": "wiewiorka",
+  "text": "We do that in the evening. In the morning we eat breakfast."
+ },
+ "line.b_sniadanie": {
+  "hash": "facd2e10f022",
+  "who": "kret",
+  "text": "Breakfast! Yum, I love mornings."
+ },
+ "line.b_caly_dzien": {
+  "hash": "37a2da0e5c36",
+  "who": "sarenka",
+  "text": "The day goes by in order: in the morning the sun rises, at midday it's high, in the evening it sets, and at night the moon shines."
+ },
+ "line.b_uloz": {
+  "hash": "39e95a8a0ea4",
+  "who": "sarenka",
+  "text": "Put the pictures in order, from morning to night. Start at the arrow."
+ },
+ "line.zla_kolejnosc": {
+  "hash": "c80ce7b85a30",
+  "who": "sarenka",
+  "text": "That's not its place. What comes earlier, and what later?"
+ },
+ "line.zla_kolejnosc.wiewiorka": {
+  "hash": "7214f1035b4d",
+  "who": "wiewiorka",
+  "text": "That's not its place. What comes earlier, and what later?"
+ },
+ "line.b_po_kolei": {
+  "hash": "12a3d3344259",
+  "who": "wiewiorka",
+  "text": "Morning, midday, evening, night. The whole day in order!"
+ },
+ "line.c_wieczor": {
+  "hash": "f3092827df75",
+  "who": "kret",
+  "text": "It's getting darker. Is it night already?"
+ },
+ "line.c_zgubil": {
+  "hash": "b06c577301a1",
+  "who": "sarenka",
+  "text": "Not yet, it's evening. Oh dear, little Hedgehog is lost. It got dark and he hid in the bushes."
+ },
+ "line.c_poswiec": {
+  "hash": "2010d2b03d5d",
+  "who": "wiewiorka",
+  "text": "Let's shine a light. Point to a bush, and we'll see if he's there."
+ },
+ "line.c_pusto": {
+  "hash": "b3e1879ad989",
+  "who": "wiewiorka",
+  "text": "He's not here. Shine on another bush."
+ },
+ "line.c_jest": {
+  "hash": "e2e0f6a90533",
+  "who": "sarenka",
+  "text": "There he is! Little Hedgehog is found."
+ },
+ "line.c_noc_swietliki": {
+  "hash": "f274422fd5c7",
+  "who": "kret",
+  "text": "Now it's night! Look, fireflies. Catch a firefly, point to it."
+ },
+ "line.c_juz_wiem": {
+  "hash": "d90dfaa00258",
+  "who": "kret",
+  "text": "Now I know! After the morning comes midday, after midday the evening, after the evening the night, and after the night the morning again."
+ },
+ "line.c_dobranoc": {
+  "hash": "dfb4bd9d70b1",
+  "who": "wiewiorka",
+  "text": "Bravo, Mole! Now let's go to bed."
+ },
+ "line.p_start": {
+  "hash": "7d3e0c32d86c",
+  "who": "sarenka",
+  "text": "Let's play with the times of day! I have five games."
+ },
+ "line.p_co_dalej": {
+  "hash": "17dbb9ed14d9",
+  "who": "kret",
+  "text": "Morning, midday, evening... and what comes next? Point to it."
+ },
+ "line.p_co_dalej_nie": {
+  "hash": "ac4431656c78",
+  "who": "kret",
+  "text": "After the evening it gets dark. What comes after the evening?"
+ },
+ "line.p_noc": {
+  "hash": "1590ca7e819c",
+  "who": "sarenka",
+  "text": "Yes, after the evening comes the night."
+ },
+ "line.p_w_nocy": {
+  "hash": "aabb5de07812",
+  "who": "sarenka",
+  "text": "What do we do at night? Point to it."
+ },
+ "line.p_w_nocy_nie": {
+  "hash": "b842188068cc",
+  "who": "sarenka",
+  "text": "We do that in the morning. At night we sleep."
+ },
+ "line.p_spimy": {
+  "hash": "cb7498bac09e",
+  "who": "kret",
+  "text": "At night we sleep in bed."
+ },
+ "line.p_trzy": {
+  "hash": "56dbd096171b",
+  "who": "kret",
+  "text": "Put the pictures in order, start at the arrow."
+ },
+ "line.p_dobrze": {
+  "hash": "ceb0ef83b223",
+  "who": "sarenka",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.kret": {
+  "hash": "960458c5116f",
+  "who": "kret",
+  "text": "Bravo!"
+ },
+ "line.p_memory": {
+  "hash": "526a16b47ee1",
+  "who": "sarenka",
+  "text": "Turn the cards and find pairs: morning with morning, night with night."
+ },
+ "line.p_po_nocy": {
+  "hash": "156d6a404d99",
+  "who": "kret",
+  "text": "And what comes after the night? Point to it."
+ },
+ "line.p_po_nocy_nie": {
+  "hash": "d6210178086f",
+  "who": "kret",
+  "text": "The evening comes before the night. After the night the sun rises."
+ },
+ "line.p_rano_znowu": {
+  "hash": "cf5b32f30dc5",
+  "who": "sarenka",
+  "text": "Yes! After the night it's morning again."
+ },
+ "line.d_wieczor": {
+  "hash": "11cc083d3db6",
+  "who": "wiewiorka",
+  "text": "It's evening. Time to get ready for bed."
+ },
+ "line.d_uloz": {
+  "hash": "008032f9a4e8",
+  "who": "sarenka",
+  "text": "What do we do in order? First a bath, then pyjamas, then a story, and last the bed. Put the pictures in order, start at the arrow."
+ },
+ "line.d_dobranoc": {
+  "hash": "c62a20305186",
+  "who": "kret",
+  "text": "A bath, pyjamas, a story and sleep. Good night, friends!"
+ },
+ "line.d_rodzice": {
+  "hash": "7df711804d53",
+  "who": "sarenka",
+  "text": "Tell your parents what happened this morning, at midday and this evening."
+ },
+ "line.naklejka_daj": {
+  "hash": "1b69c329fa39",
+  "who": "kret",
+  "text": "Thank you for showing me a whole day! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "9b58a4117beb",
+  "who": "kret",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "ba652896d7b7",
+  "who": "narrator",
+  "text": "This is the night with the moon. Mole gave it to us when we learnt the times of day in order."
+ }
+}

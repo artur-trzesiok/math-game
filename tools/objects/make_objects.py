@@ -374,6 +374,35 @@ All four the same size.""",
     "rows": 1,
 }
 
+# morning and night (stage 2): the parts of the day as cards, and the evening routine
+SHEETS["pory_dnia"] = {
+    "outline": True,
+    "names": ["pora_rano", "pora_poludnie", "pora_wieczor", "pora_noc"],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR small square picture cards for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. Each card has rounded corners
+and shows the SAME little meadow with one tree and a small house, at a different time of day:
+{STYL}
+Left to right: MORNING - a pale pink and gold sky, the sun just rising low on the left horizon, dew; MIDDAY - a bright
+blue sky, the sun high in the middle; EVENING - an orange and purple sky, the sun setting low on the right; NIGHT - a
+dark blue sky with a crescent moon and stars, a lit window in the house.""",
+}
+SHEETS["rutyna"] = {
+    "outline": True,
+    "names": ["sniadanie", "wanna", "pizama", "ksiazeczka", "lozeczko", "szczoteczka"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of SIX illustrated objects for a children's picture book, in a neat grid of 2 rows and 3 columns
+on a fully TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured
+background, NO glow.
+{STYL}
+Row 1, left to right: a breakfast - a bowl of porridge with a spoon and a glass of milk; a little white bathtub with
+bubbles and a yellow rubber duck; a pair of blue pyjamas with little stars, folded.
+Row 2, left to right: a children's picture book, open; a small cosy bed with a pillow and a blanket; a toothbrush with
+a blob of toothpaste and a cup.
+All six the same size.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

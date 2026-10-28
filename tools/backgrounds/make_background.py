@@ -154,6 +154,20 @@ NO toys lying around, NO people, NO animals, NO text.""",
         "ruch": None,
         "poswiaty": [{"x": 448, "y": 495, "r": 380, "kolor": "#ffbf5e", "moc": 0.8}],
     },
+    # Mole's home under the meadow (morning and night): a cosy burrow, roots from the ceiling, a round way up to the light
+    "nora": {
+        "wnetrze": True,
+        "plyta": f"""A background illustration for a children's game: a cosy underground burrow of a mole seen straight on, a
+wide round cave of warm brown earth, tree roots hanging from the earthen ceiling, a small round tunnel opening high
+on the right going up to a little circle of daylight, a little bed made of moss on the left, a wooden shelf with jars,
+a soft rug on the floor. The floor in the lower middle is EMPTY where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
+style: a few small glowing mushrooms near the moss bed.
+Same colours, same roots, same shelf, same tunnel. Do NOT move or redraw anything that was already there.""",
+    },
     "plac_zabaw": {
         "plyta": f"""A background illustration for a children's game: a sunny small playground
 in a park. On the left a wooden sandbox with a low red-and-yellow slide behind it,

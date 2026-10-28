@@ -1,0 +1,176 @@
+{
+  "line.a_ziew": {
+    "who": "kret",
+    "text": "Yawn... I slept so well. Is it morning yet?"
+  },
+  "line.a_ciemno": {
+    "who": "kret",
+    "text": "I don't know. Underground it's always dark, and I can't see very well."
+  },
+  "line.a_dzien_dobry": {
+    "who": "wiewiorka",
+    "text": "Good morning, Mole! Get up, it's morning already!"
+  },
+  "line.a_noc": {
+    "who": "kret",
+    "text": "Morning? I thought it was always night."
+  },
+  "line.a_na_gore": {
+    "who": "sarenka",
+    "text": "Come up with us! We'll show you how a whole day goes by: morning, midday, evening and night."
+  },
+  "line.b_jasno": {
+    "who": "kret",
+    "text": "Oh, how bright! The sun is rising."
+  },
+  "line.b_rano": {
+    "who": "sarenka",
+    "text": "Yes, it's morning. In the morning we get up, wash and eat breakfast."
+  },
+  "line.b_co_rano": {
+    "who": "wiewiorka",
+    "text": "What do we do in the morning? Point to it."
+  },
+  "line.b_co_rano_nie": {
+    "who": "wiewiorka",
+    "text": "We do that in the evening. In the morning we eat breakfast."
+  },
+  "line.b_sniadanie": {
+    "who": "kret",
+    "text": "Breakfast! Yum, I love mornings."
+  },
+  "line.b_caly_dzien": {
+    "who": "sarenka",
+    "text": "The day goes by in order: in the morning the sun rises, at midday it's high, in the evening it sets, and at night the moon shines."
+  },
+  "line.b_uloz": {
+    "who": "sarenka",
+    "text": "Put the pictures in order, from morning to night. Start at the arrow."
+  },
+  "line.zla_kolejnosc": {
+    "who": "sarenka",
+    "text": "That's not its place. What comes earlier, and what later?",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.b_po_kolei": {
+    "who": "wiewiorka",
+    "text": "Morning, midday, evening, night. The whole day in order!"
+  },
+  "line.c_wieczor": {
+    "who": "kret",
+    "text": "It's getting darker. Is it night already?"
+  },
+  "line.c_zgubil": {
+    "who": "sarenka",
+    "text": "Not yet, it's evening. Oh dear, little Hedgehog is lost. It got dark and he hid in the bushes."
+  },
+  "line.c_poswiec": {
+    "who": "wiewiorka",
+    "text": "Let's shine a light. Point to a bush, and we'll see if he's there."
+  },
+  "line.c_pusto": {
+    "who": "wiewiorka",
+    "text": "He's not here. Shine on another bush."
+  },
+  "line.c_jest": {
+    "who": "sarenka",
+    "text": "There he is! Little Hedgehog is found."
+  },
+  "line.c_noc_swietliki": {
+    "who": "kret",
+    "text": "Now it's night! Look, fireflies. Catch a firefly, point to it."
+  },
+  "line.c_juz_wiem": {
+    "who": "kret",
+    "text": "Now I know! After the morning comes midday, after midday the evening, after the evening the night, and after the night the morning again."
+  },
+  "line.c_dobranoc": {
+    "who": "wiewiorka",
+    "text": "Bravo, Mole! Now let's go to bed."
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Let's play with the times of day! I have five games."
+  },
+  "line.p_co_dalej": {
+    "who": "kret",
+    "text": "Morning, midday, evening... and what comes next? Point to it."
+  },
+  "line.p_co_dalej_nie": {
+    "who": "kret",
+    "text": "After the evening it gets dark. What comes after the evening?"
+  },
+  "line.p_noc": {
+    "who": "sarenka",
+    "text": "Yes, after the evening comes the night."
+  },
+  "line.p_w_nocy": {
+    "who": "sarenka",
+    "text": "What do we do at night? Point to it."
+  },
+  "line.p_w_nocy_nie": {
+    "who": "sarenka",
+    "text": "We do that in the morning. At night we sleep."
+  },
+  "line.p_spimy": {
+    "who": "kret",
+    "text": "At night we sleep in bed."
+  },
+  "line.p_trzy": {
+    "who": "kret",
+    "text": "Put the pictures in order, start at the arrow."
+  },
+  "line.p_dobrze": {
+    "who": "sarenka",
+    "text": "Bravo!",
+    "speakers": [
+      "kret"
+    ]
+  },
+  "line.p_memory": {
+    "who": "sarenka",
+    "text": "Turn the cards and find pairs: morning with morning, night with night."
+  },
+  "line.p_po_nocy": {
+    "who": "kret",
+    "text": "And what comes after the night? Point to it."
+  },
+  "line.p_po_nocy_nie": {
+    "who": "kret",
+    "text": "The evening comes before the night. After the night the sun rises."
+  },
+  "line.p_rano_znowu": {
+    "who": "sarenka",
+    "text": "Yes! After the night it's morning again."
+  },
+  "line.d_wieczor": {
+    "who": "wiewiorka",
+    "text": "It's evening. Time to get ready for bed."
+  },
+  "line.d_uloz": {
+    "who": "sarenka",
+    "text": "What do we do in order? First a bath, then pyjamas, then a story, and last the bed. Put the pictures in order, start at the arrow."
+  },
+  "line.d_dobranoc": {
+    "who": "kret",
+    "text": "A bath, pyjamas, a story and sleep. Good night, friends!"
+  },
+  "line.d_rodzice": {
+    "who": "sarenka",
+    "text": "Tell your parents what happened this morning, at midday and this evening."
+  },
+  "line.naklejka_daj": {
+    "who": "kret",
+    "text": "Thank you for showing me a whole day! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "kret",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the night with the moon. Mole gave it to us when we learnt the times of day in order."
+  }
+}

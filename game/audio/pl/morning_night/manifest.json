@@ -1,0 +1,222 @@
+{
+ "line.a_ziew": {
+  "hash": "ae637a72e153",
+  "who": "kret",
+  "text": "Aaa... ale się wyspałem. Czy to już rano?"
+ },
+ "line.a_ciemno": {
+  "hash": "820e7b5067df",
+  "who": "kret",
+  "text": "Nie wiem. Pod ziemią zawsze jest ciemno, a ja słabo widzę."
+ },
+ "line.a_dzien_dobry": {
+  "hash": "f423a688f3d6",
+  "who": "wiewiorka",
+  "text": "Dzień dobry, Krecie! Wstawaj, już jest rano!"
+ },
+ "line.a_noc": {
+  "hash": "dea185e86184",
+  "who": "kret",
+  "text": "Rano? A ja myślałem, że zawsze jest noc."
+ },
+ "line.a_na_gore": {
+  "hash": "ad5a16cb5790",
+  "who": "sarenka",
+  "text": "Chodź z nami na górę! Pokażemy ci, jak mija cały dzień: rano, w południe, wieczorem i w nocy."
+ },
+ "line.b_jasno": {
+  "hash": "e0100e00a274",
+  "who": "kret",
+  "text": "Och, jak jasno! Słońce wschodzi."
+ },
+ "line.b_rano": {
+  "hash": "23038d34d0e1",
+  "who": "sarenka",
+  "text": "Tak, jest rano. Rano wstajemy, myjemy się i jemy śniadanie."
+ },
+ "line.b_co_rano": {
+  "hash": "d2918143ddc8",
+  "who": "wiewiorka",
+  "text": "Co robimy rano? Wskaż."
+ },
+ "line.b_co_rano_nie": {
+  "hash": "6200cd778118",
+  "who": "wiewiorka",
+  "text": "To robimy wieczorem. Rano jemy śniadanie."
+ },
+ "line.b_sniadanie": {
+  "hash": "410aa21d4d89",
+  "who": "kret",
+  "text": "Śniadanie! Mniam, uwielbiam ranki."
+ },
+ "line.b_caly_dzien": {
+  "hash": "a57ceced0aae",
+  "who": "sarenka",
+  "text": "Dzień mija po kolei: rano słońce wschodzi, w południe jest wysoko, wieczorem zachodzi, a w nocy świeci księżyc."
+ },
+ "line.b_uloz": {
+  "hash": "65c69ef6f021",
+  "who": "sarenka",
+  "text": "Ułóż obrazki po kolei, od rana do nocy. Zacznij przy strzałce."
+ },
+ "line.zla_kolejnosc": {
+  "hash": "3a21c353aebe",
+  "who": "sarenka",
+  "text": "To nie to miejsce. Co jest wcześniej, a co później?"
+ },
+ "line.zla_kolejnosc.wiewiorka": {
+  "hash": "608d48d92a2a",
+  "who": "wiewiorka",
+  "text": "To nie to miejsce. Co jest wcześniej, a co później?"
+ },
+ "line.b_po_kolei": {
+  "hash": "e24068489812",
+  "who": "wiewiorka",
+  "text": "Rano, południe, wieczór, noc. Cały dzień po kolei!"
+ },
+ "line.c_wieczor": {
+  "hash": "c43f192e7709",
+  "who": "kret",
+  "text": "Robi się ciemniej. Czy to już noc?"
+ },
+ "line.c_zgubil": {
+  "hash": "b93dff24b0ae",
+  "who": "sarenka",
+  "text": "Jeszcze nie, to wieczór. Ojej, mały Jeżyk się zgubił. Zrobiło się ciemno i schował się w krzakach."
+ },
+ "line.c_poswiec": {
+  "hash": "626fe1e83d28",
+  "who": "wiewiorka",
+  "text": "Poświećmy latarką. Wskaż krzak, a zobaczymy, czy tam jest."
+ },
+ "line.c_pusto": {
+  "hash": "5ea6bcb5cf6e",
+  "who": "wiewiorka",
+  "text": "Tu go nie ma. Poświeć na inny krzak."
+ },
+ "line.c_jest": {
+  "hash": "bcb8806c6cef",
+  "who": "sarenka",
+  "text": "Jest! Mały Jeżyk się znalazł."
+ },
+ "line.c_noc_swietliki": {
+  "hash": "ad63d5a200f5",
+  "who": "kret",
+  "text": "Teraz jest noc! Popatrzcie, świetliki. Łap świetlika, wskaż go."
+ },
+ "line.c_juz_wiem": {
+  "hash": "6fdc3ff6cb64",
+  "who": "kret",
+  "text": "Już wiem! Po rankach jest południe, po południu wieczór, po wieczorze noc, a po nocy znowu rano."
+ },
+ "line.c_dobranoc": {
+  "hash": "fd6ab7443053",
+  "who": "wiewiorka",
+  "text": "Brawo, Krecie! A teraz chodźmy spać."
+ },
+ "line.p_start": {
+  "hash": "1f88b220cdb7",
+  "who": "sarenka",
+  "text": "Pobawmy się w pory dnia! Mam pięć zabaw."
+ },
+ "line.p_co_dalej": {
+  "hash": "4d0502704627",
+  "who": "kret",
+  "text": "Rano, południe, wieczór... a co jest potem? Wskaż."
+ },
+ "line.p_co_dalej_nie": {
+  "hash": "999ef146254a",
+  "who": "kret",
+  "text": "Po wieczorze robi się ciemno. Co jest po wieczorze?"
+ },
+ "line.p_noc": {
+  "hash": "744b97b62954",
+  "who": "sarenka",
+  "text": "Tak, po wieczorze jest noc."
+ },
+ "line.p_w_nocy": {
+  "hash": "56c4c7cada7c",
+  "who": "sarenka",
+  "text": "Co robimy w nocy? Wskaż."
+ },
+ "line.p_w_nocy_nie": {
+  "hash": "453cd639553c",
+  "who": "sarenka",
+  "text": "To robimy rano. W nocy śpimy."
+ },
+ "line.p_spimy": {
+  "hash": "0b6f9b866f4b",
+  "who": "kret",
+  "text": "W nocy śpimy w łóżeczku."
+ },
+ "line.p_trzy": {
+  "hash": "d534e90f9e37",
+  "who": "kret",
+  "text": "Ułóż obrazki po kolei, zacznij przy strzałce."
+ },
+ "line.p_dobrze": {
+  "hash": "d75425f6c769",
+  "who": "sarenka",
+  "text": "Brawo!"
+ },
+ "line.p_dobrze.kret": {
+  "hash": "707aad081120",
+  "who": "kret",
+  "text": "Brawo!"
+ },
+ "line.p_memory": {
+  "hash": "0a3a8caa7b3b",
+  "who": "sarenka",
+  "text": "Odwracaj karty i szukaj par: rano do rana, noc do nocy."
+ },
+ "line.p_po_nocy": {
+  "hash": "5bdbb6f91837",
+  "who": "kret",
+  "text": "A co jest po nocy? Wskaż."
+ },
+ "line.p_po_nocy_nie": {
+  "hash": "d8ac4aa5044f",
+  "who": "kret",
+  "text": "Wieczór jest przed nocą. A po nocy wstaje słońce."
+ },
+ "line.p_rano_znowu": {
+  "hash": "8db55253d717",
+  "who": "sarenka",
+  "text": "Tak! Po nocy znowu jest rano."
+ },
+ "line.d_wieczor": {
+  "hash": "7f506bdcc7cd",
+  "who": "wiewiorka",
+  "text": "Jest wieczór. Pora szykować się do spania."
+ },
+ "line.d_uloz": {
+  "hash": "6384126c0ba9",
+  "who": "sarenka",
+  "text": "Co robimy po kolei? Najpierw kąpiel, potem piżamka, potem bajka, a na końcu łóżeczko. Ułóż obrazki, zacznij przy strzałce."
+ },
+ "line.d_dobranoc": {
+  "hash": "017b8dfb70fe",
+  "who": "kret",
+  "text": "Kąpiel, piżamka, bajka i spanie. Dobranoc, przyjaciele!"
+ },
+ "line.d_rodzice": {
+  "hash": "f7171af9995d",
+  "who": "sarenka",
+  "text": "Opowiedz rodzicom, co się działo dziś rano, w południe i wieczorem."
+ },
+ "line.naklejka_daj": {
+  "hash": "c12f0a93327b",
+  "who": "kret",
+  "text": "Dziękuję, że pokazaliście mi cały dzień! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "8556c4423588",
+  "who": "kret",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "28f1abfb8f17",
+  "who": "narrator",
+  "text": "To noc z księżycem. Dostaliśmy ją od Kreta, kiedy poznawaliśmy pory dnia po kolei."
+ }
+}
