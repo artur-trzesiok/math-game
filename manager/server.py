@@ -16,6 +16,8 @@ character editor and by browser-side tests:
   GET  /api/arkusz.pdf            every sticker on one PDF page: a grid of equal squares, each
                                   original file embedded at its own resolution and aspect, centred,
                                   with its name under it (the manager's "pobierz arkusz")
+  GET  /api/tla.pdf               every scenery's plate one under another, each fitted to the width
+                                  of the widest (panoramas set the width), its name over it
 """
 import json
 import re
@@ -90,6 +92,35 @@ def arkusz() -> bytes:
     c.showPage(); c.save()
     return out.getvalue()
 
+
+def arkusz_tel() -> bytes:
+    """One page: every scenery's plate (its own file, not resampled) one under another, all scaled to the width of the
+    widest plate in pixels (1 px = 1 pt), aspect kept, the name over each."""
+    import io
+    from PIL import Image
+    from reportlab.lib.utils import ImageReader
+    from reportlab.pdfgen import canvas
+    plyty = sorted(p for p in (ROOT / "game" / "assets" / "backgrounds").glob("*/plyta.webp"))
+    wym = {p: Image.open(p).size for p in plyty}
+    W = max(w for w, _ in wym.values())
+    pad, podpis = 40, 70
+    wys = {p: h * W / w for p, (w, h) in wym.items()}
+    H = sum(wys.values()) + len(plyty) * (podpis + pad) + pad
+    out = io.BytesIO()
+    c = canvas.Canvas(out, pagesize=(W + 2 * pad, H))
+    c.setFillColorRGB(0.93, 0.93, 0.93); c.rect(0, 0, W + 2 * pad, H, fill=1, stroke=0)
+    y = H - pad
+    for p in plyty:
+        w, h = wym[p]
+        c.setFillColorRGB(0.15, 0.15, 0.15); c.setFont("Helvetica-Bold", 40)
+        c.drawString(pad, y - 48, f"{p.parent.name}  ({w}x{h})")
+        y -= podpis
+        buf = io.BytesIO(); Image.open(p).convert("RGB").save(buf, "PNG")
+        c.drawImage(ImageReader(io.BytesIO(buf.getvalue())), pad, y - wys[p], W, wys[p])
+        y -= wys[p] + pad
+    c.showPage(); c.save()
+    return out.getvalue()
+
 class Server(ThreadingHTTPServer):
     daemon_threads = True
     request_queue_size = 256        # a lesson start is ~150 requests at once; the default backlog of 5 drops SYNs under load
@@ -119,11 +150,11 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_response(302); self.send_header("Location", "/game/"); self.end_headers(); return
         if path == "/api/characters":
             return self._json(200, sorted(p.name for p in CHARACTERS.iterdir() if (p / "postac.json").exists()))
-        if path == "/api/arkusz.pdf":
-            body = arkusz()
+        if path in ("/api/arkusz.pdf", "/api/tla.pdf"):
+            body = arkusz() if path == "/api/arkusz.pdf" else arkusz_tel()
             self.send_response(200)
             self.send_header("Content-Type", "application/pdf")
-            self.send_header("Content-Disposition", 'attachment; filename="naklejki_arkusz.pdf"')
+            self.send_header("Content-Disposition", f'attachment; filename="{"naklejki" if path == "/api/arkusz.pdf" else "tla"}_arkusz.pdf"')
             self.send_header("Content-Length", str(len(body)))
             self.end_headers(); self.wfile.write(body); return
         super().do_GET()

@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tła</title>
-<style id="styl"></style>
+<style id="styl">  .przycisk { background: #2d6cdf; color: #fff; border-radius: 4px; padding: 3px 10px; text-decoration: none; margin-left: 8px; }
+</style>
 <style>
   .tlo { background: #333; border-radius: 8px; padding: 12px; margin-bottom: 14px; }
   .tlo h2 { margin: 0 0 6px; font-size: 16px; }
@@ -14,7 +15,7 @@
 </style>
 </head>
 <body>
-<header><h1>Tła</h1><input id="szukaj" placeholder="szukaj…"><span id="status">wczytuję…</span></header>
+<header><h1>Tła</h1><input id="szukaj" placeholder="szukaj…"><a class="przycisk" href="/api/tla.pdf" download>pobierz arkusz</a><span id="status">wczytuję…</span></header>
 <main id="lista"></main>
 <script type="module">
 import { lekcje, katalog, json, uzywa, esc, STYL } from "./dane.js";
