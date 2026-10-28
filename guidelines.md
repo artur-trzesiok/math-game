@@ -208,6 +208,15 @@ that breaks one of them is wrong even if it runs.
 - **Random layouts never give the answer or break the task**: shuffled things never
   lie in the answer order already; random turns that do not fit are replaced.
 
+## A lesson asks for the tools it needs
+
+Designing a lesson starts from what would make it a good lesson, not from what the engine can do today. When an
+idea needs a mechanic or a tool the engine does not have yet (a row that plays itself, a dance on a beat, statues,
+a night with lights, music), describe it to the user for acceptance - what it does on screen, why the lesson needs
+it, what it costs (engine code, new pictures or sounds) - before building it. Never water the lesson down to the
+existing tools in silence, and never build a new tool without the user's yes. An accepted tool goes into the engine
+for every lesson (documented in CLAUDE.md), not into one lesson's code.
+
 ## Watch it as the child before calling it done
 
 A lesson written alone (more_fewer_pro) reached the user with plain faults that one look would have caught:

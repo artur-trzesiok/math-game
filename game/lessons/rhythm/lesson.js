@@ -59,6 +59,15 @@ async function kartyRuchow(c, ruchy, { y = -2.35, size = 1.05 } = {}) {
   return out;
 }
 const sprzatnij = (hs) => { for (const h of hs) h.remove(); hs.length = 0; };
+// read a row aloud: each thing bumps as its name is said (the words' times are baked with the recording)
+const SLOWA = {
+  beben: { pl: ["bęben", "bum", "duży"], en: ["drum", "boom", "big"] }, maly: { pl: ["mały"], en: ["small"] },
+  dzwonek: { pl: ["dzwonek", "dzyń"], en: ["bell", "ding"] },
+  czerwona: { pl: ["czerwona"], en: ["red"] }, zolta: { pl: ["żółta"], en: ["yellow"] },
+  listek: { pl: ["listek"], en: ["leaf"] }, zoledz: { pl: ["żołądź"], en: ["acorn"] },
+  klask: { pl: ["klask"], en: ["clap"] }, skok: { pl: ["skok"], en: ["jump"] }, obrot: { pl: ["obrót"], en: ["spin"] },
+};
+const czytaj = (c, items, kto, linia, o = {}) => c.rytm(items, { linia, kto, slowo: (h) => SLOWA[h.klucz || h.ruch || h.tag || h.name]?.[c.lang], ...o });
 
 // the garland: flags hanging under a sagging string between two trees; in the kitchen it hangs higher and smaller,
 // above the row of the notes (at one height the pots ran into the flags)
@@ -111,7 +120,7 @@ export default {
         // Owl plays: bum, dzyń, bum, dzyń - every sound puts its picture into the row
         const rzad = [];
         await graj(c, rzad, instr, ["beben", "dzwonek", "beben", "dzwonek"]);
-        await c.say("sowa", "line.a_co_dalej");
+        await czytaj(c, rzad, "sowa", "line.a_co_dalej");
         await c.rytm(rzad);
         await coDalej(c, rzad, instr, "beben", { kto: "sowa", zle: "line.a_od_poczatku" });
         await c.say("sowa", "line.a_dobrze", { anim: "Brawo" });
@@ -119,7 +128,7 @@ export default {
         sprzatnij(rzad);
         await c.say("wiewiorka", "line.a_moj", { anim: "Radosc" });
         await graj(c, rzad, instr, ["beben", "beben", "dzwonek", "beben", "beben", "dzwonek", "beben", "beben"]);
-        await c.say("wiewiorka", "line.a_moj_co");
+        await czytaj(c, rzad, "wiewiorka", "line.a_moj_co");
         await coDalej(c, rzad, instr, "dzwonek", { kto: "wiewiorka", zle: "line.a_od_poczatku" });
         await c.say("wiewiorka", "line.a_moj_dobrze", { anim: "Podskok" });
         // the band plays it together, everyone nodding to the beat: it sounds like music
@@ -136,16 +145,15 @@ export default {
         await c.say("wiewiorka", "line.b_wieszam", { anim: "Radosc" });
         const flagi = await girlanda(c, ["czerwona", "zolta", "czerwona", "zolta", "czerwona", "czerwona"]);
         await c.say("sowa", "line.b_widac");
-        await c.rytm(flagi);
+        await czytaj(c, flagi, "sowa", "line.b_cos_nie");
         await c.wonder("sowa");
-        await c.say("sowa", "line.b_cos_nie");
         const zla = flagi[5];
         dobre(zla);
         await c.task({ targets: flagi, correct: zla, wrong: "line.b_ta_pasuje" });
         await c.say("wiewiorka", "line.b_ojej");
         await zla.moveTo(zla.mesh.position.x, -4.0, 0.5); zla.remove();
         flagi[5] = await flaga(c, 5, "zolta");
-        await c.rytm(flagi);
+        await czytaj(c, flagi, "wiewiorka", "line.b_teraz", { anim: "Radosc" });
         // three places left; the flags lie on the grass (and one blue that does not belong)
         const sloty = [6, 7, 8].map((i) => ({ x: flagaX(i), y: sznurek(flagaX(i)) - 0.42, w: 1.0, h: 1.0, accept: (it) => it.tag === (i % 2 ? "zolta" : "czerwona") }));
         const items = [];
@@ -155,9 +163,9 @@ export default {
         await c.say("sowa", "line.b_dokoncz");
         const t = await c.slots({ items, slots: sloty, wrong: "line.b_slot_nie" });
         await t.done();
-        await c.say("lisek", "line.b_gotowe", { anim: "Brawo" });
         const cala = c.stage.objects.filter((h) => h.name?.startsWith("choragiewka_") && h.mesh.position.y > 0).sort((a, b) => a.mesh.position.x - b.mesh.position.x);
-        await c.rytm(cala, { tempo: 0.4 });
+        await czytaj(c, cala, "lisek", "line.b_cala");
+        await c.say("lisek", "line.b_gotowe", { anim: "Brawo" });
         c.clear();
       },
       // C. a breather, no maths: statues. While the music plays they dance; it stops, everyone freezes - but one
@@ -205,14 +213,14 @@ export default {
         const rzad = [];
         const pierwszy = ["klask", "klask", "skok", "klask", "klask", "skok", "klask", "klask"];
         await tanczy(c, "lisek", rzad, pierwszy);
-        await c.say("lisek", "line.d_co_teraz");
+        await czytaj(c, rzad, "lisek", "line.d_co_teraz");
         await jakiRuch(c, rzad, karty, "skok", { kto: "lisek", uczen: "sarenka", zle: "line.d_od_poczatku", pokaz: () => c.rytm(rzad) });
         await c.say("sarenka", "line.d_udalo", { anim: "Radosc" });
         // a second dance, Squirrel's
         sprzatnij(rzad);
         await c.say("wiewiorka", "line.d_drugi", { anim: "Podskok" });
         await tanczy(c, "wiewiorka", rzad, ["klask", "obrot", "klask", "obrot", "klask"]);
-        await c.say("wiewiorka", "line.d_drugi_co");
+        await czytaj(c, rzad, "wiewiorka", "line.d_drugi_co");
         await jakiRuch(c, rzad, karty, "obrot", { kto: "wiewiorka", uczen: "sarenka", zle: "line.d_od_poczatku", pokaz: () => c.rytm(rzad) });
         await c.say("sarenka", "line.d_sama");
         await c.taniec("sarenka", ["klask", "obrot", "klask", "obrot"]);
@@ -235,7 +243,7 @@ export default {
           const instr = [await instrument(c, "beben", -1.0), await instrument(c, "dzwonek", 1.0)], rzad = [];
           await c.say("sowa", "line.p_echo");
           await graj(c, rzad, instr, ["beben", "dzwonek", "dzwonek", "beben", "dzwonek", "dzwonek", "beben"]);
-          await c.say("sowa", "line.p_echo_co");
+          await czytaj(c, rzad, "sowa", "line.p_echo_co");
           await coDalej(c, rzad, instr, "dzwonek", { kto: "sowa", zle: "line.p_od_poczatku" });
           await c.say("sowa", "line.p_echo_ok");
           gw.dodaj(); c.clear();
@@ -259,7 +267,8 @@ export default {
           const wzor = ["listek", "listek", "zoledz", "listek", "zoledz", "zoledz", "listek", "listek", "zoledz"], rzad = [];
           for (const [i, n] of wzor.entries()) rzad.push(await c.object(n, { x: -4.4 + i * 1.1, y: ROW_Y, size: 0.95 }));
           await c.say("sowa", "line.p_blad");
-          await c.rytm(rzad, { tempo: 0.45 });
+          await czytaj(c, rzad, "sowa", "line.p_blad_czytaj");
+          await c.say("sowa", "line.p_blad_wskaz");
           dobre(rzad[4]);
           await c.task({ targets: rzad, correct: rzad[4], wrong: "line.p_blad_nie" });
           await c.say("sowa", "line.p_blad_ok");
@@ -270,7 +279,7 @@ export default {
           const instr = [await instrument(c, "beben", -1.1), await instrument(c, "maly", 1.1)], rzad = [];
           await c.say("wiewiorka", "line.p_bebny");
           await graj(c, rzad, instr, ["beben", "maly", "beben", "maly", "beben", "maly", "beben"]);
-          await c.say("wiewiorka", "line.p_bebny_co");
+          await czytaj(c, rzad, "wiewiorka", "line.p_bebny_co");
           await coDalej(c, rzad, instr, "maly", { kto: "wiewiorka", zle: "line.p_od_poczatku" });
           await c.say("wiewiorka", "line.p_bebny_ok");
           gw.dodaj(); c.clear();
@@ -280,7 +289,7 @@ export default {
           const karty = await kartyRuchow(c, ["klask", "skok", "obrot"]), rzad = [];
           await c.say("wiewiorka", "line.p_taniec");
           await tanczy(c, "wiewiorka", rzad, ["skok", "obrot", "obrot", "skok", "obrot", "obrot", "skok"]);
-          await c.say("wiewiorka", "line.p_taniec_co");
+          await czytaj(c, rzad, "wiewiorka", "line.p_taniec_co");
           await jakiRuch(c, rzad, karty, "obrot", { kto: "wiewiorka", uczen: "wiewiorka", zle: "line.p_od_poczatku", pokaz: () => c.rytm(rzad) });
           await c.say("sowa", "line.p_taniec_ok");
           gw.dodaj(); c.clear();
@@ -293,8 +302,8 @@ export default {
       // bell; Fox starts and the child plays on; then Owl's song; Deer dances to it; applause from the parents
       async (c) => {
         for (const n of ["lisek", "wiewiorka", "sowa", "sarenka"]) c.show(n);
-        await girlanda(c, ["czerwona", "zolta", "czerwona", "zolta", "czerwona", "zolta", "czerwona", "zolta", "czerwona"], GIRLANDA.kuchnia);
-        await c.say("wiewiorka", "line.e_girlanda", { anim: "Radosc" });
+        const girl = await girlanda(c, ["czerwona", "zolta", "czerwona", "zolta", "czerwona", "zolta", "czerwona", "zolta", "czerwona"], GIRLANDA.kuchnia);
+        await czytaj(c, girl, "wiewiorka", "line.e_girlanda", { anim: "Radosc" });
         await c.say("sowa", "line.e_bez_bebna");
         await c.wonder("sowa");
         await c.say("lisek", "line.e_kuchnia", { anim: "Zgloszenie" });

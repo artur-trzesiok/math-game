@@ -39,11 +39,6 @@
   "who": "sowa",
   "text": "A rhythm is something that repeats in order, again and again. I'll show you, it's a fun game. Listen, and watch every sound take its place in the row."
  },
- "line.a_co_dalej": {
-  "hash": "e168da8daa34",
-  "who": "sowa",
-  "text": "Drum, bell, drum, bell. Boom, ding, boom, ding. Listen again from the start. What do we play now? Point to the drum or the bell."
- },
  "line.a_od_poczatku": {
   "hash": "537126f63f36",
   "who": "sowa",
@@ -63,11 +58,6 @@
   "hash": "cf011c7e6b1f",
   "who": "wiewiorka",
   "text": "Now I'll make up a rhythm! Mine goes like this: boom, boom, ding."
- },
- "line.a_moj_co": {
-  "hash": "896309ed5488",
-  "who": "wiewiorka",
-  "text": "Boom, boom, ding, boom, boom, ding, boom, boom... What do I play now? Point to the drum or the bell."
  },
  "line.a_moj_dobrze": {
   "hash": "490624720736",
@@ -99,11 +89,6 @@
   "who": "sowa",
   "text": "A garland can have a rhythm too, one you can see. Let's look at it from the start."
  },
- "line.b_cos_nie": {
-  "hash": "62c9551055a9",
-  "who": "sowa",
-  "text": "Red, yellow, red, yellow, red... and red again? Something is wrong here. Point to the flag that breaks the rhythm."
- },
  "line.b_ta_pasuje": {
   "hash": "06764cf8d810",
   "who": "sowa",
@@ -125,9 +110,9 @@
   "text": "That flag doesn't fit here. Look at which colour comes after the one hanging next to it."
  },
  "line.b_gotowe": {
-  "hash": "7042514dfa67",
+  "hash": "63c27f6dd388",
   "who": "lisek",
-  "text": "A beautiful garland! Red, yellow, red, yellow. We'll take it to the kitchen for the concert."
+  "text": "A beautiful garland! We'll take it to the kitchen for the concert."
  },
  "line.c_posagi": {
   "hash": "25b2cb3e750f",
@@ -194,11 +179,6 @@
   "who": "lisek",
   "text": "Don't worry, we'll teach you! A dance has a rhythm too: the moves repeat in order. Watch me."
  },
- "line.d_co_teraz": {
-  "hash": "5fd86b2950c9",
-  "who": "lisek",
-  "text": "Clap, clap, jump, clap, clap, jump, clap, clap... Which move now? Point to the card, and Deer will do it."
- },
  "line.d_od_poczatku": {
   "hash": "554584150da7",
   "who": "lisek",
@@ -218,11 +198,6 @@
   "hash": "61104ba3855b",
   "who": "wiewiorka",
   "text": "Now my dance, watch!"
- },
- "line.d_drugi_co": {
-  "hash": "25cf44c5d30f",
-  "who": "wiewiorka",
-  "text": "Clap, spin, clap, spin, clap... Which move now? Point to the card."
  },
  "line.d_sama": {
   "hash": "919c5b00b932",
@@ -248,11 +223,6 @@
   "hash": "fb575992b75a",
   "who": "sowa",
   "text": "The first game is an echo. Listen to me play."
- },
- "line.p_echo_co": {
-  "hash": "73bde448055f",
-  "who": "sowa",
-  "text": "Boom, ding, ding, boom, ding, ding, boom... What now? Point to the drum or the bell."
  },
  "line.p_od_poczatku": {
   "hash": "20f80f46ca70",
@@ -285,9 +255,9 @@
   "text": "Red, yellow, blue, and again from the start. Beautiful beads!"
  },
  "line.p_blad": {
-  "hash": "4101cf9b578b",
+  "hash": "87904f46deae",
   "who": "sowa",
-  "text": "Somebody mixed up the leaves and the acorns. Leaf, leaf, acorn... Look from the start and point to what breaks the rhythm."
+  "text": "Somebody mixed up the leaves and the acorns. Listen to me read it from the start."
  },
  "line.p_blad_nie": {
   "hash": "080dd2d75166",
@@ -304,11 +274,6 @@
   "who": "wiewiorka",
   "text": "I have a big drum and a small drum. The big one plays low, the small one high. Listen."
  },
- "line.p_bebny_co": {
-  "hash": "34558538c0b5",
-  "who": "wiewiorka",
-  "text": "Big, small, big, small, big, small, big... Which drum plays now? Point to the big one or the small one."
- },
  "line.p_bebny_ok": {
   "hash": "7a67a009d45c",
   "who": "wiewiorka",
@@ -319,20 +284,10 @@
   "who": "wiewiorka",
   "text": "The last game is my dance. Watch carefully."
  },
- "line.p_taniec_co": {
-  "hash": "ca3b3ba8915e",
-  "who": "wiewiorka",
-  "text": "Jump, spin, spin, jump, spin, spin, jump... Which move now? Point to the card."
- },
  "line.p_taniec_ok": {
   "hash": "79328336905a",
   "who": "sowa",
   "text": "A spin! After a jump always come two spins. We're ready for the concert!"
- },
- "line.e_girlanda": {
-  "hash": "7c50922b55a7",
-  "who": "wiewiorka",
-  "text": "Our garland is hanging in the kitchen! Red, yellow, red, yellow."
  },
  "line.e_bez_bebna": {
   "hash": "f25853f8fdf4",
@@ -408,5 +363,70 @@
   "hash": "c4dddbc01207",
   "who": "lisek",
   "text": "Once more! The music plays, we dance. And you watch who moves when it stops."
+ },
+ "line.a_co_dalej": {
+  "hash": "e168da8daa34",
+  "who": "sowa",
+  "text": "Drum, bell, drum, bell. Boom, ding, boom, ding. Listen again from the start. What do we play now? Point to the drum or the bell."
+ },
+ "line.a_moj_co": {
+  "hash": "896309ed5488",
+  "who": "wiewiorka",
+  "text": "Boom, boom, ding, boom, boom, ding, boom, boom... What do I play now? Point to the drum or the bell."
+ },
+ "line.b_cos_nie": {
+  "hash": "62c9551055a9",
+  "who": "sowa",
+  "text": "Red, yellow, red, yellow, red... and red again? Something is wrong here. Point to the flag that breaks the rhythm."
+ },
+ "line.b_teraz": {
+  "hash": "4968259e1977",
+  "who": "wiewiorka",
+  "text": "Red, yellow, red, yellow, red, yellow. Now it's right!"
+ },
+ "line.b_cala": {
+  "hash": "ceba059950d5",
+  "who": "lisek",
+  "text": "Red, yellow, red, yellow, red, yellow, red, yellow, red!"
+ },
+ "line.d_co_teraz": {
+  "hash": "5fd86b2950c9",
+  "who": "lisek",
+  "text": "Clap, clap, jump, clap, clap, jump, clap, clap... Which move now? Point to the card, and Deer will do it."
+ },
+ "line.d_drugi_co": {
+  "hash": "25cf44c5d30f",
+  "who": "wiewiorka",
+  "text": "Clap, spin, clap, spin, clap... Which move now? Point to the card."
+ },
+ "line.p_echo_co": {
+  "hash": "73bde448055f",
+  "who": "sowa",
+  "text": "Boom, ding, ding, boom, ding, ding, boom... What now? Point to the drum or the bell."
+ },
+ "line.p_blad_czytaj": {
+  "hash": "d0dcf7ed3d1a",
+  "who": "sowa",
+  "text": "Leaf, leaf, acorn, leaf, acorn, acorn, leaf, leaf, acorn."
+ },
+ "line.p_blad_wskaz": {
+  "hash": "c972ebc687f2",
+  "who": "sowa",
+  "text": "What breaks the rhythm here? Point to it."
+ },
+ "line.p_bebny_co": {
+  "hash": "34558538c0b5",
+  "who": "wiewiorka",
+  "text": "Big, small, big, small, big, small, big... Which drum plays now? Point to the big one or the small one."
+ },
+ "line.p_taniec_co": {
+  "hash": "ca3b3ba8915e",
+  "who": "wiewiorka",
+  "text": "Jump, spin, spin, jump, spin, spin, jump... Which move now? Point to the card."
+ },
+ "line.e_girlanda": {
+  "hash": "7c50922b55a7",
+  "who": "wiewiorka",
+  "text": "Our garland is hanging in the kitchen! Red, yellow, red, yellow."
  }
 }

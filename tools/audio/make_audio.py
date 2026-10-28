@@ -159,7 +159,25 @@ def envelope(mp3: Path) -> dict:
     return {"step": ENV_STEP, "duration": round(len(x) / 16000, 3), "amp": [round(float(a), 2) for a in amp]}
 
 
-def bake(dst: Path, text: str | None = None, wiz: list | None = None) -> None:
+def slowa(alignment: dict) -> list[list]:
+    """When each word starts, [[t, "word"], ...] (lowercase letters only; the <break> tags skipped) - a row of
+    things can bump in step with a line that names them (rytm.js)."""
+    out, slowo, t0, w_tagu = [], "", 0.0, False
+    for ch, st in zip(alignment["characters"], alignment["character_start_times_seconds"]):
+        if ch == "<": w_tagu = True
+        if w_tagu:
+            if ch == ">": w_tagu = False
+            ch = " "
+        if ch.isalpha():
+            if not slowo: t0 = st
+            slowo += ch.lower()
+        elif slowo:
+            out.append([round(t0, 3), slowo]); slowo = ""
+    if slowo: out.append([round(t0, 3), slowo])
+    return out
+
+
+def bake(dst: Path, text: str | None = None, wiz: list | None = None, slowa_: list | None = None) -> None:
     """The envelope plus the visemes ("wiz", see visemes.py): exact ones from the synthesis timestamps when
     given, else aligned locally from the text (read from the manifest when not given)."""
     import visemes
@@ -172,11 +190,15 @@ def bake(dst: Path, text: str | None = None, wiz: list | None = None) -> None:
             wiz = visemes.align_local(decode(dst), text)
     if wiz:
         e["wiz"] = wiz
+    if slowa_ is None and dst.with_suffix(".json").exists():       # a rebake keeps the words' times (only synthesis knows them)
+        slowa_ = json.loads(dst.with_suffix(".json").read_text(encoding="utf-8")).get("slowa")
+    if slowa_:
+        e["slowa"] = slowa_
     dst.with_suffix(".json").write_text(json.dumps(e, separators=(",", ":")), encoding="utf-8")
 
 
-def synthesize(text: str, voice: str, dst: Path) -> list | None:
-    """Speech with character timestamps: returns the visemes of the recording (exact lip-sync)."""
+def synthesize(text: str, voice: str, dst: Path) -> tuple[list | None, list | None]:
+    """Speech with character timestamps: returns the visemes of the recording (exact lip-sync) and its words' times."""
     import base64
     import visemes
     r = requests.post(f"{API}/text-to-speech/{voice}/with-timestamps",
@@ -188,7 +210,7 @@ def synthesize(text: str, voice: str, dst: Path) -> list | None:
     d = r.json()
     dst.write_bytes(base64.b64decode(d["audio_base64"]))
     al = d.get("alignment") or d.get("normalized_alignment")
-    return visemes.from_timestamps(al) if al else None
+    return (visemes.from_timestamps(al), slowa(al)) if al else (None, None)
 
 
 def run(lesson: Path, lang: str) -> tuple[int, int, int]:
@@ -207,9 +229,9 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
             skipped += 1
             continue
         try:
-            wiz = synthesize(l["text"], voice, dst)
+            wiz, sl = synthesize(l["text"], voice, dst)
             normalize(dst)                                        # gain only: the timing stays
-            bake(dst, l["text"], wiz)
+            bake(dst, l["text"], wiz, sl)
             manifest[l["key"]] = {"hash": digest, "who": l["who"], "text": l["text"]}
             manifest_p.write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
             done += 1

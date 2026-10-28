@@ -90,6 +90,10 @@
     "who": "wiewiorka",
     "text": "Ojej, dwie czerwone obok siebie! Po czerwonej miała być żółta. Już poprawiam."
   },
+  "line.b_teraz": {
+    "who": "wiewiorka",
+    "text": "Czerwona, żółta, czerwona, żółta, czerwona, żółta. Teraz się zgadza!"
+  },
   "line.b_dokoncz": {
     "who": "sowa",
     "text": "Na sznurku zostały trzy puste miejsca. Przeciągnij chorągiewki z trawy na sznurek, tak żeby rytm szedł dalej."
@@ -98,9 +102,13 @@
     "who": "sowa",
     "text": "Ta chorągiewka tu nie pasuje. Popatrz, jaki kolor przychodzi po tym, który wisi obok."
   },
+  "line.b_cala": {
+    "who": "lisek",
+    "text": "Czerwona, żółta, czerwona, żółta, czerwona, żółta, czerwona, żółta, czerwona!"
+  },
   "line.b_gotowe": {
     "who": "lisek",
-    "text": "Piękna girlanda! Czerwona, żółta, czerwona, żółta. Zabierzemy ją do kuchni na koncert."
+    "text": "Piękna girlanda! Zabierzemy ją do kuchni na koncert."
   },
   "line.c_posagi": {
     "who": "lisek",
@@ -226,7 +234,15 @@
   },
   "line.p_blad": {
     "who": "sowa",
-    "text": "Ktoś pomieszał listki i żołędzie. Listek, listek, żołądź... Popatrz od początku i wskaż, co psuje rytm."
+    "text": "Ktoś pomieszał listki i żołędzie. Posłuchaj, jak czytam od początku."
+  },
+  "line.p_blad_czytaj": {
+    "who": "sowa",
+    "text": "Listek, listek, żołądź, listek, żołądź, żołądź, listek, listek, żołądź."
+  },
+  "line.p_blad_wskaz": {
+    "who": "sowa",
+    "text": "Co tu psuje rytm? Wskaż to."
   },
   "line.p_blad_nie": {
     "who": "sowa",

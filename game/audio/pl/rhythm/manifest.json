@@ -39,11 +39,6 @@
   "who": "sowa",
   "text": "Rytm to coś, co się powtarza po kolei, znowu i znowu. Pokażę ci, to fajna zabawa. Posłuchaj i popatrz, jak każdy dźwięk staje w rzędzie."
  },
- "line.a_co_dalej": {
-  "hash": "ef4e53ead131",
-  "who": "sowa",
-  "text": "Bęben, dzwonek, bęben, dzwonek. Bum, dzyń, bum, dzyń. Posłuchaj jeszcze raz od początku. Co teraz zagramy? Wskaż bęben albo dzwonek."
- },
  "line.a_od_poczatku": {
   "hash": "09997cd643e2",
   "who": "sowa",
@@ -63,11 +58,6 @@
   "hash": "56b3299c9e61",
   "who": "wiewiorka",
   "text": "Teraz ja wymyślę rytm! Mój będzie taki: bum, bum, dzyń."
- },
- "line.a_moj_co": {
-  "hash": "45791c564a28",
-  "who": "wiewiorka",
-  "text": "Bum, bum, dzyń, bum, bum, dzyń, bum, bum... Co teraz zagram? Wskaż bęben albo dzwonek."
  },
  "line.a_moj_dobrze": {
   "hash": "25f843396742",
@@ -99,11 +89,6 @@
   "who": "sowa",
   "text": "Girlanda też może mieć rytm, taki, który widać. Popatrzmy na nią od początku."
  },
- "line.b_cos_nie": {
-  "hash": "0fe8a2dc1c36",
-  "who": "sowa",
-  "text": "Czerwona, żółta, czerwona, żółta, czerwona... i znowu czerwona? Coś tu się nie zgadza. Wskaż chorągiewkę, która psuje rytm."
- },
  "line.b_ta_pasuje": {
   "hash": "1e5247a99195",
   "who": "sowa",
@@ -125,9 +110,9 @@
   "text": "Ta chorągiewka tu nie pasuje. Popatrz, jaki kolor przychodzi po tym, który wisi obok."
  },
  "line.b_gotowe": {
-  "hash": "a23b634a7914",
+  "hash": "40c7398146c0",
   "who": "lisek",
-  "text": "Piękna girlanda! Czerwona, żółta, czerwona, żółta. Zabierzemy ją do kuchni na koncert."
+  "text": "Piękna girlanda! Zabierzemy ją do kuchni na koncert."
  },
  "line.c_posagi": {
   "hash": "ad6576b63359",
@@ -194,11 +179,6 @@
   "who": "lisek",
   "text": "Nie martw się, nauczymy cię! Taniec też ma rytm: ruchy powtarzają się po kolei. Popatrz na mnie."
  },
- "line.d_co_teraz": {
-  "hash": "e2df8bed5149",
-  "who": "lisek",
-  "text": "Klask, klask, skok, klask, klask, skok, klask, klask... Jaki ruch teraz? Wskaż kartę, a Sarenka go zrobi."
- },
  "line.d_od_poczatku": {
   "hash": "536f66980afc",
   "who": "lisek",
@@ -218,11 +198,6 @@
   "hash": "83830c965bc7",
   "who": "wiewiorka",
   "text": "Teraz mój taniec, popatrz!"
- },
- "line.d_drugi_co": {
-  "hash": "1394b36127df",
-  "who": "wiewiorka",
-  "text": "Klask, obrót, klask, obrót, klask... Jaki ruch teraz? Wskaż kartę."
  },
  "line.d_sama": {
   "hash": "b3fb324df480",
@@ -248,11 +223,6 @@
   "hash": "079d59a5f36b",
   "who": "sowa",
   "text": "Pierwsza zabawa to echo. Posłuchaj, jak gram."
- },
- "line.p_echo_co": {
-  "hash": "fa8dffc7d8f8",
-  "who": "sowa",
-  "text": "Bum, dzyń, dzyń, bum, dzyń, dzyń, bum... Co teraz? Wskaż bęben albo dzwonek."
  },
  "line.p_od_poczatku": {
   "hash": "82e1f16a8fa7",
@@ -285,9 +255,9 @@
   "text": "Czerwony, żółty, niebieski, i znowu od nowa. Piękne korale!"
  },
  "line.p_blad": {
-  "hash": "ceb7f7ec07cc",
+  "hash": "babff81a4e54",
   "who": "sowa",
-  "text": "Ktoś pomieszał listki i żołędzie. Listek, listek, żołądź... Popatrz od początku i wskaż, co psuje rytm."
+  "text": "Ktoś pomieszał listki i żołędzie. Posłuchaj, jak czytam od początku."
  },
  "line.p_blad_nie": {
   "hash": "9ed860094732",
@@ -304,11 +274,6 @@
   "who": "wiewiorka",
   "text": "Mam duży bęben i mały bęben. Duży gra nisko, a mały wysoko. Posłuchaj."
  },
- "line.p_bebny_co": {
-  "hash": "004bb5e748f5",
-  "who": "wiewiorka",
-  "text": "Duży, mały, duży, mały, duży, mały, duży... Który bęben zagra teraz? Wskaż duży albo mały."
- },
  "line.p_bebny_ok": {
   "hash": "2d08480502f5",
   "who": "wiewiorka",
@@ -319,20 +284,10 @@
   "who": "wiewiorka",
   "text": "Ostatnia zabawa to mój taniec. Popatrz uważnie."
  },
- "line.p_taniec_co": {
-  "hash": "b5a4d502a05f",
-  "who": "wiewiorka",
-  "text": "Skok, obrót, obrót, skok, obrót, obrót, skok... Jaki ruch teraz? Wskaż kartę."
- },
  "line.p_taniec_ok": {
   "hash": "cb2b6c9ae234",
   "who": "sowa",
   "text": "Obrót! Po skoku zawsze dwa obroty. Jesteśmy gotowi na koncert!"
- },
- "line.e_girlanda": {
-  "hash": "df851c323f37",
-  "who": "wiewiorka",
-  "text": "Nasza girlanda już wisi w kuchni! Czerwona, żółta, czerwona, żółta."
  },
  "line.e_bez_bebna": {
   "hash": "c46d665e2703",
@@ -408,5 +363,70 @@
   "hash": "814dab721406",
   "who": "lisek",
   "text": "Jeszcze raz! Muzyka gra, tańczymy. A ty popatrz, kto się ruszy, kiedy ucichnie."
+ },
+ "line.a_co_dalej": {
+  "hash": "ef4e53ead131",
+  "who": "sowa",
+  "text": "Bęben, dzwonek, bęben, dzwonek. Bum, dzyń, bum, dzyń. Posłuchaj jeszcze raz od początku. Co teraz zagramy? Wskaż bęben albo dzwonek."
+ },
+ "line.a_moj_co": {
+  "hash": "45791c564a28",
+  "who": "wiewiorka",
+  "text": "Bum, bum, dzyń, bum, bum, dzyń, bum, bum... Co teraz zagram? Wskaż bęben albo dzwonek."
+ },
+ "line.b_cos_nie": {
+  "hash": "0fe8a2dc1c36",
+  "who": "sowa",
+  "text": "Czerwona, żółta, czerwona, żółta, czerwona... i znowu czerwona? Coś tu się nie zgadza. Wskaż chorągiewkę, która psuje rytm."
+ },
+ "line.b_teraz": {
+  "hash": "dd5fd18d2038",
+  "who": "wiewiorka",
+  "text": "Czerwona, żółta, czerwona, żółta, czerwona, żółta. Teraz się zgadza!"
+ },
+ "line.b_cala": {
+  "hash": "8adb2239133d",
+  "who": "lisek",
+  "text": "Czerwona, żółta, czerwona, żółta, czerwona, żółta, czerwona, żółta, czerwona!"
+ },
+ "line.d_co_teraz": {
+  "hash": "e2df8bed5149",
+  "who": "lisek",
+  "text": "Klask, klask, skok, klask, klask, skok, klask, klask... Jaki ruch teraz? Wskaż kartę, a Sarenka go zrobi."
+ },
+ "line.d_drugi_co": {
+  "hash": "1394b36127df",
+  "who": "wiewiorka",
+  "text": "Klask, obrót, klask, obrót, klask... Jaki ruch teraz? Wskaż kartę."
+ },
+ "line.p_echo_co": {
+  "hash": "fa8dffc7d8f8",
+  "who": "sowa",
+  "text": "Bum, dzyń, dzyń, bum, dzyń, dzyń, bum... Co teraz? Wskaż bęben albo dzwonek."
+ },
+ "line.p_blad_czytaj": {
+  "hash": "8c17555b3190",
+  "who": "sowa",
+  "text": "Listek, listek, żołądź, listek, żołądź, żołądź, listek, listek, żołądź."
+ },
+ "line.p_blad_wskaz": {
+  "hash": "06295a000845",
+  "who": "sowa",
+  "text": "Co tu psuje rytm? Wskaż to."
+ },
+ "line.p_bebny_co": {
+  "hash": "004bb5e748f5",
+  "who": "wiewiorka",
+  "text": "Duży, mały, duży, mały, duży, mały, duży... Który bęben zagra teraz? Wskaż duży albo mały."
+ },
+ "line.p_taniec_co": {
+  "hash": "b5a4d502a05f",
+  "who": "wiewiorka",
+  "text": "Skok, obrót, obrót, skok, obrót, obrót, skok... Jaki ruch teraz? Wskaż kartę."
+ },
+ "line.e_girlanda": {
+  "hash": "df851c323f37",
+  "who": "wiewiorka",
+  "text": "Nasza girlanda już wisi w kuchni! Czerwona, żółta, czerwona, żółta."
  }
 }

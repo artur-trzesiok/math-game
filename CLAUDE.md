@@ -334,7 +334,9 @@ Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller_pr
   `moveTo`); `ctx.przejdz(who, [[x, y]...], {skok})` walks into the picture (smaller, shadow along).
 Rhythm (`rytm.js`, the rhythm lesson): a sticker may carry its own sound (`object(name, {dzwiek})`, also
 `cicho: true` for no pop) - it sounds when pointed at; `ctx.rytm(items, {tempo, kiwaja})` plays a row from the start,
-one thing per beat (bump, glow, its sound), the method and the hint after a miss; `ctx.ruch(who, klask|skok|obrot)`
+one thing per beat (bump, glow, its sound), the method and the hint after a miss; `ctx.rytm(items, {linia, kto,
+slowo})` reads it aloud instead - each thing bumps as its name is said (word start times, `slowa` in the recording's
+json, come from the ElevenLabs timestamps; only new recordings have them, so a line used this way is recorded again); `ctx.ruch(who, klask|skok|obrot)`
 one dance move squeezed into a beat (a one-clap `Klask` is built from Brawo at run time), `ctx.taniec(who, moves)`,
 `ctx.potknij(who)` (a wobble and a sour sound for a wrong move); `ctx.zamroz(who, on)` - statues: the body's
 animation clock stops and new animations are ignored, eyes and mouth still live, so a statue can speak. Characters

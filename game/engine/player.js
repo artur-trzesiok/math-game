@@ -377,7 +377,7 @@ export class Player {
       } catch { /* no picture */ }
       this.scenariusz.push({ ...ev, etap: st, scena: this.scenaW ?? 0, t: performance.now() | 0, miniatura });
     };
-    const say = async (who, key, { anim = null } = {}) => {
+    const say = async (who, key, { anim = null, onSlowo = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
       if (!S.puppets[who]) who = line.who;                            // the scene picks the speaker; the line's `who` is the default
@@ -389,7 +389,7 @@ export class Player {
       const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
       S.sfx.mowa = true;                                              // effects duck under a line
-      try { await this.speech.say({ lang, lessonId, key: stem, fallback: key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1 }); }
+      try { await this.speech.say({ lang, lessonId, key: stem, fallback: key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1, onSlowo }); }
       finally { S.sfx.mowa = false; }   // who speaks is shown by the mouth, no bubble
       alive();
       if (puppet && puppet.korzen.visible) puppet.spoczynek();
@@ -436,7 +436,15 @@ export class Player {
         return c.toDataURL();
       },
       // rhythm (rytm.js): a row plays itself up to the gap; a dance of moves on a beat; a stumble; statues
-      rytm: guard((items, o = {}) => R.rytm(S, items, { ...o, tempo: FAST ? 0.15 : o.tempo })),
+      // with `linia` the row is read aloud: `kto` says the line and each thing bumps as its name is said (h.slowo:
+      // {pl: [...], en: [...]} or `slowo(h)`); without the words' times (no recording, ?szybko) the row runs by the clock
+      rytm: guard(async (items, o = {}) => {
+        if (!o.linia) return R.rytm(S, items, { ...o, tempo: FAST ? 0.15 : o.tempo });
+        const slowa = (h) => [].concat((o.slowo ? o.slowo(h) : h.slowo?.[lang] ?? h.slowo) || []).map((w) => String(w).toLowerCase());
+        let i = 0;
+        await say(o.kto, o.linia, { anim: o.anim, onSlowo: (w) => { const h = items[i]; if (h && slowa(h).includes(w)) { i++; R.stuk(S, h); } } });
+        if (!i) await R.rytm(S, items, { tempo: FAST ? 0.15 : 0.5, bezDzwieku: true });
+      }),
       taniec: guard((who, ruchy, o = {}) => R.taniec(S, who, ruchy, { ...o, tempo: FAST ? 0.25 : o.tempo })),
       ruch: (who, nazwa, o = {}) => R.ruch(S, who, nazwa, o),
       potknij: guard((who) => R.potknij(S, who)),

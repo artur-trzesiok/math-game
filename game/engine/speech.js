@@ -78,16 +78,19 @@ export class Speech {
       wiz = W[lo][0] <= t ? W[lo][1] : "X";
     }
     if (c.puppet) c.puppet.mow(this.amp, wiz);
+    // the words as they are said (baked word times, "slowa"): a row of things bumps in step with the line naming them
+    const SL = c.envelope?.slowa;
+    if (c.onSlowo && SL && c.audio && !c.audio.paused) while (c.iSlowa < SL.length && SL[c.iSlowa][0] <= c.audio.currentTime + 0.03) { c.onSlowo(SL[c.iSlowa][1], c.iSlowa); c.iSlowa++; }
   }
 
   // say a line; resolves when it ends
-  async say({ lang, lessonId, key, fallback = null, text, who, puppet, volume = 1 }) {
+  async say({ lang, lessonId, key, fallback = null, text, who, puppet, volume = 1, onSlowo = null }) {
     this.stop();
     this.log.push([fallback || key, who, performance.now() | 0]);
     const m = await manifest(lang, lessonId);
     if (!m[key] && fallback && m[fallback]) { console.warn(`no recording of ${fallback} for ${who}; add "${who}" to its speakers`); key = fallback; }
     const subtitle = (show) => { if (!this.sub) return; this.sub.textContent = show ? text : ""; this.sub.style.display = show ? "block" : "none"; };
-    this.current = { puppet, live: false };
+    this.current = { puppet, live: false, onSlowo, iSlowa: 0 };
     try {
       if (FAST) { subtitle(FORCE_SUBS); await new Promise((r) => setTimeout(r, 400)); return; }
       if (m[key]) {

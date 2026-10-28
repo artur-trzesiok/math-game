@@ -5,15 +5,18 @@ const czekaj = (S, s) => S.wait ? S.wait(s) : new Promise((ok) => setTimeout(ok,
 
 // the row plays itself from the start, one thing per beat: it bumps, glows a moment and sounds; `luka` (a handle
 // at the gap) pulses after the last beat - "and now what comes?"; `kiwaja` nod to the beat
-export async function rytm(S, items, { tempo = 0.62, luka = null, kiwaja = [] } = {}) {
+export async function rytm(S, items, { tempo = 0.62, luka = null, kiwaja = [], bezDzwieku = false } = {}) {
   for (const h of items) {
-    if (h.dzwiek) S.sfx.graj(h.dzwiek);
+    if (h.dzwiek && !bezDzwieku) S.sfx.graj(h.dzwiek);
     h.highlight?.(true); S.bump(h, 0.3, false);
     for (const n of kiwaja) { const L = S.puppets[n]; if (L?.korzen.visible) S.bump(L, 0.25, false); }
     await czekaj(S, tempo * 0.55); h.highlight?.(false); await czekaj(S, tempo * 0.45);
   }
   if (luka) { luka.highlight?.(true); await S.bump(luka, 0.35, false); await czekaj(S, 0.4); luka.highlight?.(false); }
 }
+
+// one thing of a row read aloud: it bumps and glows a moment while its name is said
+export function stuk(S, h) { h.highlight?.(true); S.bump(h, 0.3, false); setTimeout(() => h.highlight?.(false), 320); }
 
 // one clap made from the puppet's Brawo (three claps): arms up, together once, down
 function jedenKlask(brawo) {

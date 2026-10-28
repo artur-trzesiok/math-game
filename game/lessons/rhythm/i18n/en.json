@@ -90,6 +90,10 @@
     "who": "wiewiorka",
     "text": "Oops, two reds side by side! After red there should be yellow. I'll fix it."
   },
+  "line.b_teraz": {
+    "who": "wiewiorka",
+    "text": "Red, yellow, red, yellow, red, yellow. Now it's right!"
+  },
   "line.b_dokoncz": {
     "who": "sowa",
     "text": "There are three empty places left on the string. Drag the flags from the grass onto the string, so the rhythm goes on."
@@ -98,9 +102,13 @@
     "who": "sowa",
     "text": "That flag doesn't fit here. Look at which colour comes after the one hanging next to it."
   },
+  "line.b_cala": {
+    "who": "lisek",
+    "text": "Red, yellow, red, yellow, red, yellow, red, yellow, red!"
+  },
   "line.b_gotowe": {
     "who": "lisek",
-    "text": "A beautiful garland! Red, yellow, red, yellow. We'll take it to the kitchen for the concert."
+    "text": "A beautiful garland! We'll take it to the kitchen for the concert."
   },
   "line.c_posagi": {
     "who": "lisek",
@@ -226,7 +234,15 @@
   },
   "line.p_blad": {
     "who": "sowa",
-    "text": "Somebody mixed up the leaves and the acorns. Leaf, leaf, acorn... Look from the start and point to what breaks the rhythm."
+    "text": "Somebody mixed up the leaves and the acorns. Listen to me read it from the start."
+  },
+  "line.p_blad_czytaj": {
+    "who": "sowa",
+    "text": "Leaf, leaf, acorn, leaf, acorn, acorn, leaf, leaf, acorn."
+  },
+  "line.p_blad_wskaz": {
+    "who": "sowa",
+    "text": "What breaks the rhythm here? Point to it."
   },
   "line.p_blad_nie": {
     "who": "sowa",
