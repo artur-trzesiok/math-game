@@ -13,6 +13,9 @@ character editor and by browser-side tests:
   POST /api/characters/<name>/ubior  body = the wardrobe's corrections; writes ubior.json
   POST /api/snap?name=x           body = PNG; saved as work/snap/x.png (test screenshots
                                   rendered by the page itself, see CLAUDE.md)
+  GET  /api/arkusz.pdf            every sticker on one PDF page: a grid of equal squares, each
+                                  original file embedded at its own resolution and aspect, centred,
+                                  with its name under it (the manager's "pobierz arkusz")
 """
 import json
 import re
@@ -51,6 +54,42 @@ def corrections(new: dict, base: dict) -> dict:
     return out
 
 
+
+OBJECTS = ROOT / "game" / "assets" / "objects"
+
+
+def arkusz() -> bytes:
+    """One page: a grid of equal square cells, every sticker's own file embedded unchanged (its pixels, not resampled)
+    and drawn fitted to the cell with its aspect kept, centred, its name and pixel size under it."""
+    import io
+    from PIL import Image
+    from reportlab.lib.utils import ImageReader
+    from reportlab.pdfgen import canvas
+    pliki = sorted(p for p in OBJECTS.glob("*.webp") if not p.stem.startswith("ikona_"))
+    wym = {p: Image.open(p).size for p in pliki}
+    bok = 384                                                   # the cell in points; a file's pixels stay as they are
+    pad, podpis = 24, 34
+    kol = max(1, round((len(pliki) * 1.4) ** 0.5))
+    rzedy = -(-len(pliki) // kol)
+    cw, ch = bok + 2 * pad, bok + 2 * pad + podpis
+    W, H = kol * cw, rzedy * ch
+    out = io.BytesIO()
+    c = canvas.Canvas(out, pagesize=(W, H))
+    c.setFillColorRGB(0.93, 0.93, 0.93); c.rect(0, 0, W, H, fill=1, stroke=0)
+    for i, p in enumerate(pliki):
+        k, r = i % kol, i // kol
+        x0, y0 = k * cw, H - (r + 1) * ch
+        c.setFillColorRGB(1, 1, 1); c.setStrokeColorRGB(0.8, 0.8, 0.8)
+        c.rect(x0 + pad / 2, y0 + pad / 2, cw - pad, ch - pad / 2, fill=1, stroke=1)
+        w, h = wym[p]; s = bok / max(w, h); dw, dh = w * s, h * s
+        im = Image.open(p).convert("RGBA")                      # webp is not a PDF image type: the same pixels as PNG
+        buf = io.BytesIO(); im.save(buf, "PNG")
+        c.drawImage(ImageReader(io.BytesIO(buf.getvalue())), x0 + pad + (bok - dw) / 2, y0 + pad + podpis + (bok - dh) / 2, dw, dh, mask="auto")
+        c.setFillColorRGB(0.15, 0.15, 0.15); c.setFont("Helvetica-Bold", 18)
+        c.drawCentredString(x0 + cw / 2, y0 + pad + 6, f"{p.stem}  ({w}x{h})")
+    c.showPage(); c.save()
+    return out.getvalue()
+
 class Server(ThreadingHTTPServer):
     daemon_threads = True
     request_queue_size = 256        # a lesson start is ~150 requests at once; the default backlog of 5 drops SYNs under load
@@ -80,6 +119,13 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_response(302); self.send_header("Location", "/game/"); self.end_headers(); return
         if path == "/api/characters":
             return self._json(200, sorted(p.name for p in CHARACTERS.iterdir() if (p / "postac.json").exists()))
+        if path == "/api/arkusz.pdf":
+            body = arkusz()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/pdf")
+            self.send_header("Content-Disposition", 'attachment; filename="naklejki_arkusz.pdf"')
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers(); self.wfile.write(body); return
         super().do_GET()
 
     def do_POST(self):

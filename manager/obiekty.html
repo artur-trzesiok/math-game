@@ -14,13 +14,14 @@
   .nazwa { font-weight: 600; margin-top: 6px; word-break: break-all; }
   .wym { color: #888; font-size: 12px; }
   .nieuzywana { opacity: .55; }
+  .przycisk { background: #2d6cdf; color: #fff; border-radius: 4px; padding: 3px 10px; text-decoration: none; margin-left: 8px; }
   .warianty { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
   .warianty img { height: 40px; background: #3a3a3a; border-radius: 4px; }
   h2 { font-size: 15px; color: #ffb347; text-transform: uppercase; letter-spacing: .04em; margin: 18px 0 8px; }
 </style>
 </head>
 <body>
-<header><h1>Obiekty</h1><input id="szukaj" placeholder="szukaj… (nazwa albo lekcja)"><label><input type="checkbox" id="nieuzyte"> tylko nieużywane</label><span id="status">wczytuję…</span></header>
+<header><h1>Obiekty</h1><input id="szukaj" placeholder="szukaj… (nazwa albo lekcja)"><label><input type="checkbox" id="nieuzyte"> tylko nieużywane</label><a class="przycisk" href="/api/arkusz.pdf" download>pobierz arkusz</a><span id="status">wczytuję…</span></header>
 <main><h2>Naklejki (game/assets/objects)</h2><div class="siatka" id="naklejki"></div>
 <h2>Ubrania (game/assets/ubrania)</h2><div class="siatka" id="ubrania"></div></main>
 <script type="module">
