@@ -3,72 +3,112 @@
     "who": "lisek",
     "text": "Go on, give it a try!",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   },
   "line.z_dasz_rade": {
     "who": "lisek",
     "text": "You can do it! Point to what you think.",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   },
   "line.z_popatrz": {
     "who": "lisek",
     "text": "Look carefully. Which one fits?",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   },
   "line.z_nie_bojsie": {
     "who": "lisek",
     "text": "Don't be afraid to get it wrong. Have a go!",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   },
   "line.z_przeciagnij": {
     "who": "lisek",
     "text": "Go on, drag one of them!",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   },
   "line.z_paluszek": {
     "who": "lisek",
     "text": "Put your finger on a thing and move it.",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   },
   "line.z_razem": {
     "who": "lisek",
     "text": "We'll do it together. Have a try!",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   },
   "line.z_tutaj": {
     "who": "lisek",
     "text": "Hmm... maybe here?",
     "speakers": [
-      "wiewiorka",
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
       "sowa",
-      "sarenka"
+      "wiewiorka",
+      "zajac"
     ]
   }
 }

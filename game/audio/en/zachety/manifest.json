@@ -158,5 +158,205 @@
   "hash": "62fce22f5c18",
   "who": "sarenka",
   "text": "Hmm... maybe here?"
+ },
+ "line.z_sprobuj.bobr": {
+  "hash": "131e19395738",
+  "who": "bobr",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_sprobuj.jez": {
+  "hash": "7c14d81284e7",
+  "who": "jez",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_sprobuj.kret": {
+  "hash": "9390e6895e75",
+  "who": "kret",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_sprobuj.mis": {
+  "hash": "db9dfcc7c511",
+  "who": "mis",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_sprobuj.zajac": {
+  "hash": "3f1dd98572a4",
+  "who": "zajac",
+  "text": "Go on, give it a try!"
+ },
+ "line.z_dasz_rade.bobr": {
+  "hash": "1da5c999711b",
+  "who": "bobr",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_dasz_rade.jez": {
+  "hash": "c713cfba36aa",
+  "who": "jez",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_dasz_rade.kret": {
+  "hash": "9b7314f5c4b9",
+  "who": "kret",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_dasz_rade.mis": {
+  "hash": "e54c97874037",
+  "who": "mis",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_dasz_rade.zajac": {
+  "hash": "131e3aaad9e9",
+  "who": "zajac",
+  "text": "You can do it! Point to what you think."
+ },
+ "line.z_popatrz.bobr": {
+  "hash": "d8da68ccd9b5",
+  "who": "bobr",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_popatrz.jez": {
+  "hash": "8dbcdd948d84",
+  "who": "jez",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_popatrz.kret": {
+  "hash": "dbc67aff2451",
+  "who": "kret",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_popatrz.mis": {
+  "hash": "024f1f6c77b0",
+  "who": "mis",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_popatrz.zajac": {
+  "hash": "206a10216886",
+  "who": "zajac",
+  "text": "Look carefully. Which one fits?"
+ },
+ "line.z_nie_bojsie.bobr": {
+  "hash": "5083326072c6",
+  "who": "bobr",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_nie_bojsie.jez": {
+  "hash": "152c1995c6c8",
+  "who": "jez",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_nie_bojsie.kret": {
+  "hash": "f73bbe74dce2",
+  "who": "kret",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_nie_bojsie.mis": {
+  "hash": "d7c7d8152f83",
+  "who": "mis",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_nie_bojsie.zajac": {
+  "hash": "5df46f4d2ab0",
+  "who": "zajac",
+  "text": "Don't be afraid to get it wrong. Have a go!"
+ },
+ "line.z_przeciagnij.bobr": {
+  "hash": "854fe33d2046",
+  "who": "bobr",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_przeciagnij.jez": {
+  "hash": "d6bdcfd214d3",
+  "who": "jez",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_przeciagnij.kret": {
+  "hash": "004003fff580",
+  "who": "kret",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_przeciagnij.mis": {
+  "hash": "53bb3331dd06",
+  "who": "mis",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_przeciagnij.zajac": {
+  "hash": "76f22f8ca9fe",
+  "who": "zajac",
+  "text": "Go on, drag one of them!"
+ },
+ "line.z_paluszek.bobr": {
+  "hash": "2812728aaca1",
+  "who": "bobr",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_paluszek.jez": {
+  "hash": "caa7377ad66b",
+  "who": "jez",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_paluszek.kret": {
+  "hash": "ecbd360ed98e",
+  "who": "kret",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_paluszek.mis": {
+  "hash": "fb270b8db5f6",
+  "who": "mis",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_paluszek.zajac": {
+  "hash": "1a4f24676932",
+  "who": "zajac",
+  "text": "Put your finger on a thing and move it."
+ },
+ "line.z_razem.bobr": {
+  "hash": "a6110d1c1731",
+  "who": "bobr",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_razem.jez": {
+  "hash": "72d4a5d261f0",
+  "who": "jez",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_razem.kret": {
+  "hash": "c16dbf7ca3a0",
+  "who": "kret",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_razem.mis": {
+  "hash": "4e87709ec53b",
+  "who": "mis",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_razem.zajac": {
+  "hash": "228f04cbb19e",
+  "who": "zajac",
+  "text": "We'll do it together. Have a try!"
+ },
+ "line.z_tutaj.bobr": {
+  "hash": "d4855d6d5d74",
+  "who": "bobr",
+  "text": "Hmm... maybe here?"
+ },
+ "line.z_tutaj.jez": {
+  "hash": "e777819c32a3",
+  "who": "jez",
+  "text": "Hmm... maybe here?"
+ },
+ "line.z_tutaj.kret": {
+  "hash": "8aa3d55d89f2",
+  "who": "kret",
+  "text": "Hmm... maybe here?"
+ },
+ "line.z_tutaj.mis": {
+  "hash": "32fc38c8f69d",
+  "who": "mis",
+  "text": "Hmm... maybe here?"
+ },
+ "line.z_tutaj.zajac": {
+  "hash": "aa08ea35851d",
+  "who": "zajac",
+  "text": "Hmm... maybe here?"
  }
 }

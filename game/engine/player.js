@@ -367,6 +367,7 @@ export class Player {
 
   async runStage(st) {
     const scenes = this.lesson.stages[st] || [];
+    if (st === "practice") this.stage.muzyka.miejsce({});                  // the practice theme; the story and home stages take the place's
     const IKONA = { story: "ikona_opowiesc", practice: "ikona_cwiczenia", apply: "ikona_dom" };
     if (scenes.length) await this.plansza({ obraz: v(`/game/assets/objects/${IKONA[st]}.webp`), ikona: true, napis: this.t(`stage.${st}`), linia: `line.etap_${st}` });
     if (this.abort) return;
@@ -604,6 +605,7 @@ export class Player {
       plot: guard((pts, o) => M3.plot(S, pts, o)),
       ramka: guard(async (o = {}) => { const r = await M3.ramka(S, o); const p0 = r.przeciagaj; r.przeciagaj = (q) => wDzialaniu(p0({ ...q, onZaDuzo: q.wrong ? () => say("narrator", q.wrong) : null })); return r; }),
       domino: (a, b, o) => { alive(); return M3.domino(S, a, b, o); },
+      szukaj: (nazwa, o) => wDzialaniu(M3.szukaj(S, nazwa, o), "wskaz"),
       winda: guard(async (o = {}) => {
         const w = await M3.winda(S, { ...o, onZly: o.wrong ? () => say("narrator", o.wrong) : null });
         const d0 = w.doPoziomu; w.doPoziomu = (i) => wDzialaniu(d0(i)); return w;

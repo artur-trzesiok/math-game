@@ -170,6 +170,12 @@ export function wieza(S, { klocki, miejsca = [{ x: 0 }], podloga = GROUND + 0.02
     return h;
   });
   const m = miejsca.map((q) => ({ ...q, stos: [] }));
+  // where to build: a pencil line on the ground under every place, ticks at its ends (without it a child did not know
+  // where to drag); as wide as the widest block, a little more
+  const szer = Math.max(...klocki.map((k) => k.w)) / 2 + 0.25, kreski = [];
+  for (const q of m) {
+    S.segment([q.x - szer, podloga - 0.02], [q.x + szer, podloga - 0.02], { color: "#3b3631", width: 0.07, strong: true, duration: 0.4, ticks: 0.3 }).then((k) => kreski.push(k));
+  }
   const zablokuj = () => { for (const h of hs) { const q = m.find((q) => q.stos.includes(h)); h.zablokowany = !!q && q.stos[q.stos.length - 1] !== h; } };
   const gora = (q) => q.stos.reduce((y, h) => y + h.h, podloga);
   const wynik = { klocki: hs, miejsca: m, wysokosc: (q) => gora(q) - podloga };
@@ -192,7 +198,7 @@ export function wieza(S, { klocki, miejsca = [{ x: 0 }], podloga = GROUND + 0.02
         }
         cel.stos.push(h); S.sfx.graj("plop"); zablokuj();
         onPolozony?.(h, cel);
-        if (gotowe(m)) { S.endSort(); ok(wynik); }
+        if (gotowe(m)) { S.endSort(); kreski.forEach((k) => k.remove()); ok(wynik); }
       },
       onTap: () => {}, onPuppet: () => S.onPuppetTap?.(),
     });

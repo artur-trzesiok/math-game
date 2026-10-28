@@ -25,7 +25,7 @@
   },
   "line.a_od_najwiekszego": {
     "who": "bobr",
-    "text": "At the bottom the biggest block, on it a smaller one, then a smaller one still, and at the top the smallest. Drag the blocks and build the tower."
+    "text": "At the bottom the biggest block, on it a smaller one, then a smaller one still, and at the top the smallest. Drag the blocks onto the line on the grass and build the tower."
   },
   "line.a_stoi": {
     "who": "zajac",
@@ -131,7 +131,7 @@
   },
   "line.p_wieza": {
     "who": "zajac",
-    "text": "Last, build a tower: the biggest block at the bottom."
+    "text": "Last, build a tower on the line: the biggest block at the bottom."
   },
   "line.p_wieza_ok": {
     "who": "bobr",

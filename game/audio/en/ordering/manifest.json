@@ -30,9 +30,9 @@
   "text": "In order? How do you mean?"
  },
  "line.a_od_najwiekszego": {
-  "hash": "2078c334c01e",
+  "hash": "bbba4cff7f1a",
   "who": "bobr",
-  "text": "At the bottom the biggest block, on it a smaller one, then a smaller one still, and at the top the smallest. Drag the blocks and build the tower."
+  "text": "At the bottom the biggest block, on it a smaller one, then a smaller one still, and at the top the smallest. Drag the blocks onto the line on the grass and build the tower."
  },
  "line.a_stoi": {
   "hash": "3f14f0d9dad1",
@@ -165,9 +165,9 @@
   "text": "Yes! Here the leaves grow in order."
  },
  "line.p_wieza": {
-  "hash": "4d92ea55a360",
+  "hash": "f411f2a73099",
   "who": "zajac",
-  "text": "Last, build a tower: the biggest block at the bottom."
+  "text": "Last, build a tower on the line: the biggest block at the bottom."
  },
  "line.p_wieza_ok": {
   "hash": "dc2e20eb30b5",

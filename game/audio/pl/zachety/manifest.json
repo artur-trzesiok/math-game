@@ -158,5 +158,205 @@
   "hash": "03679afd3dd7",
   "who": "sarenka",
   "text": "Hmm... może tutaj?"
+ },
+ "line.z_sprobuj.bobr": {
+  "hash": "4f52fb5c7c36",
+  "who": "bobr",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_sprobuj.jez": {
+  "hash": "0f42501919b8",
+  "who": "jez",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_sprobuj.kret": {
+  "hash": "88b887f829ed",
+  "who": "kret",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_sprobuj.mis": {
+  "hash": "3067bc82e081",
+  "who": "mis",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_sprobuj.zajac": {
+  "hash": "adee7a8128b6",
+  "who": "zajac",
+  "text": "Śmiało, spróbuj!"
+ },
+ "line.z_dasz_rade.bobr": {
+  "hash": "ef751700dd0a",
+  "who": "bobr",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_dasz_rade.jez": {
+  "hash": "49c0ca7b4ea5",
+  "who": "jez",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_dasz_rade.kret": {
+  "hash": "6ee73f0565cb",
+  "who": "kret",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_dasz_rade.mis": {
+  "hash": "e108e5700bda",
+  "who": "mis",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_dasz_rade.zajac": {
+  "hash": "357fa7dc8514",
+  "who": "zajac",
+  "text": "Dasz radę! Wskaż, co myślisz."
+ },
+ "line.z_popatrz.bobr": {
+  "hash": "9f5c5aca0a31",
+  "who": "bobr",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_popatrz.jez": {
+  "hash": "5651f520c1e9",
+  "who": "jez",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_popatrz.kret": {
+  "hash": "631f24cd932d",
+  "who": "kret",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_popatrz.mis": {
+  "hash": "a4504bdc3b05",
+  "who": "mis",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_popatrz.zajac": {
+  "hash": "14ef8d24f282",
+  "who": "zajac",
+  "text": "Popatrz uważnie. Co tu pasuje?"
+ },
+ "line.z_nie_bojsie.bobr": {
+  "hash": "2000b6eaa48a",
+  "who": "bobr",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_nie_bojsie.jez": {
+  "hash": "5d9556c84f45",
+  "who": "jez",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_nie_bojsie.kret": {
+  "hash": "53023a295728",
+  "who": "kret",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_nie_bojsie.mis": {
+  "hash": "8e98807ec01b",
+  "who": "mis",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_nie_bojsie.zajac": {
+  "hash": "e47a8ff9c3a3",
+  "who": "zajac",
+  "text": "Nie bój się pomylić. Spróbuj!"
+ },
+ "line.z_przeciagnij.bobr": {
+  "hash": "0a5744dacc31",
+  "who": "bobr",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_przeciagnij.jez": {
+  "hash": "add3c847dcc7",
+  "who": "jez",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_przeciagnij.kret": {
+  "hash": "aaf7eb8a1f6e",
+  "who": "kret",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_przeciagnij.mis": {
+  "hash": "17e01243920c",
+  "who": "mis",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_przeciagnij.zajac": {
+  "hash": "ccdce82e31cd",
+  "who": "zajac",
+  "text": "Śmiało, przeciągnij jedną rzecz!"
+ },
+ "line.z_paluszek.bobr": {
+  "hash": "a29540b53995",
+  "who": "bobr",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_paluszek.jez": {
+  "hash": "b7deb49bff17",
+  "who": "jez",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_paluszek.kret": {
+  "hash": "43d132d26af1",
+  "who": "kret",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_paluszek.mis": {
+  "hash": "182bd2b27d3b",
+  "who": "mis",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_paluszek.zajac": {
+  "hash": "d6fd9c2c8833",
+  "who": "zajac",
+  "text": "Połóż paluszek na rzeczy i przesuń ją."
+ },
+ "line.z_razem.bobr": {
+  "hash": "b597bd929f11",
+  "who": "bobr",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_razem.jez": {
+  "hash": "9ca5bbdeb4b3",
+  "who": "jez",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_razem.kret": {
+  "hash": "d1d227962892",
+  "who": "kret",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_razem.mis": {
+  "hash": "e6680af8cefe",
+  "who": "mis",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_razem.zajac": {
+  "hash": "7b04f2af8f5e",
+  "who": "zajac",
+  "text": "Zrobimy to razem. Spróbuj!"
+ },
+ "line.z_tutaj.bobr": {
+  "hash": "3ecca05a48f3",
+  "who": "bobr",
+  "text": "Hmm... może tutaj?"
+ },
+ "line.z_tutaj.jez": {
+  "hash": "5bb5c66f1f64",
+  "who": "jez",
+  "text": "Hmm... może tutaj?"
+ },
+ "line.z_tutaj.kret": {
+  "hash": "41a7ce1e0ec7",
+  "who": "kret",
+  "text": "Hmm... może tutaj?"
+ },
+ "line.z_tutaj.mis": {
+  "hash": "58a97293f6c9",
+  "who": "mis",
+  "text": "Hmm... może tutaj?"
+ },
+ "line.z_tutaj.zajac": {
+  "hash": "657c3e54cde0",
+  "who": "zajac",
+  "text": "Hmm... może tutaj?"
  }
 }

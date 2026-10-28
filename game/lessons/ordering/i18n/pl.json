@@ -25,7 +25,7 @@
   },
   "line.a_od_najwiekszego": {
     "who": "bobr",
-    "text": "Na dole największy klocek, na nim trochę mniejszy, potem jeszcze mniejszy, a na górze najmniejszy. Przeciągnij klocki i zbuduj wieżę."
+    "text": "Na dole największy klocek, na nim trochę mniejszy, potem jeszcze mniejszy, a na górze najmniejszy. Przeciągaj klocki na kreskę na trawie i zbuduj wieżę."
   },
   "line.a_stoi": {
     "who": "zajac",
@@ -131,7 +131,7 @@
   },
   "line.p_wieza": {
     "who": "zajac",
-    "text": "Na koniec zbuduj wieżę: największy klocek na dole."
+    "text": "Na koniec zbuduj wieżę na kresce: największy klocek na dole."
   },
   "line.p_wieza_ok": {
     "who": "bobr",

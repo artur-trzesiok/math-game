@@ -17,9 +17,9 @@ export const MOTYW = {
 const WERSJE = 2, GLOS_MUZ = 0.32, GLOS_POG = 0.45, POD_MOWA = 0.45, FADE = 1400;
 
 class Kanal {
-  constructor() { this.a = null; this.cel = 0; this.vol = 0; }
+  constructor(wycisz = false) { this.a = null; this.cel = 0; this.vol = 0; this.wycisz = wycisz; }
   graj(src, { loop = false, onKoniec = null } = {}) {
-    const a = new Audio(v(src)); a.loop = loop; a.volume = 0; a.preload = "auto";
+    const a = new Audio(v(src)); a.loop = loop; a.volume = 0; a.preload = "auto"; a.muted = this.wycisz;   // ?cicho: everything runs, nothing is heard (tests)
     a.onended = () => onKoniec?.(); a.onerror = () => {};             // not made yet: silence
     a.play()?.catch(() => {});
     return a;
@@ -33,7 +33,6 @@ export class Muzyka {
     this.pogodaNazwa = null; this.pog = [];
     this.cicho = 0;                                                  // >0: a scene listens
     this.wylaczona = false;
-    if (wycisz) return;
     naPierwszyDotyk(() => { for (const k of [...this.muz, ...this.pog]) if (k.a.paused && k.cel > 0) k.a.play()?.catch(() => {}); });
     this.t = setInterval(() => this._krok(), 50);
   }
@@ -57,13 +56,13 @@ export class Muzyka {
       if (dalej || this.motyw !== motyw) return; dalej = true;
       k.cel = 0; this.wersja = (this.wersja + 1) % WERSJE; this.muz.push(this._wersja(motyw));
     };
-    k.a = new Kanal().graj(`/game/audio/muzyka/${motyw}_${this.wersja + 1}.mp3`, { onKoniec: nastepna });
+    k.a = new Kanal(this.wycisz).graj(`/game/audio/muzyka/${motyw}_${this.wersja + 1}.mp3`, { onKoniec: nastepna });
     k.a.ontimeupdate = () => { if (k.a.duration && k.a.duration - k.a.currentTime < 4) nastepna(); };   // the tracks end on a fade
     return k;
   }
   // a place: its name (a scenery) or an insert on a plain colour (an object) - the practice theme
   miejsce(nazwa) {
-    if (this.wycisz) return;
+    if (this.zamkniety) return;
     const m = typeof nazwa === "object" ? "cwiczenia" : MOTYW[nazwa] || null;
     if (m === this.motyw) return;
     for (const k of this.muz) k.cel = 0;
@@ -71,19 +70,18 @@ export class Muzyka {
     if (m) { this.wersja = Math.floor(Math.random() * WERSJE); this.muz.push(this._wersja(m)); }
   }
   pogoda(rodzaj) {
-    if (this.wycisz || rodzaj === this.pogodaNazwa) return;
+    if (this.zamkniety || rodzaj === this.pogodaNazwa) return;
     for (const k of this.pog) k.cel = 0;
     this.pogodaNazwa = rodzaj || null;
-    if (rodzaj) this.pog.push({ a: new Kanal().graj(`/game/audio/pogoda/${rodzaj}.mp3`, { loop: true }), cel: 1, vol: 0 });
+    if (rodzaj) this.pog.push({ a: new Kanal(this.wycisz).graj(`/game/audio/pogoda/${rodzaj}.mp3`, { loop: true }), cel: 1, vol: 0 });
   }
   // a scene that listens (counting claps, a rhythm): music and weather fade out until it is done
   async ucisz(p) { this.cicho++; try { return await p; } finally { this.cicho--; } }
-  stop() { if (this.wycisz) return; this.miejsce(null); this.pogoda(null); }
+  stop() { this.miejsce(null); this.pogoda(null); }
   // the lesson is over: fade everything out, then stop the clock (clearing it at once left the last place's music
   // playing under the menu's)
   zamknij() {
-    if (this.wycisz) return;
-    this.stop();
+    this.stop(); this.zamkniety = true;                              // nothing starts after this (a late scenery change did)
     const koniec = setInterval(() => { if (!this.muz.length && !this.pog.length) { clearInterval(this.t); clearInterval(koniec); } }, 100);
     setTimeout(() => { for (const k of [...this.muz, ...this.pog]) k.a.pause(); this.muz = []; this.pog = []; clearInterval(this.t); clearInterval(koniec); }, FADE + 600);
   }

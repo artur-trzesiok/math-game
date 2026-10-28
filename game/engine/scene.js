@@ -210,7 +210,7 @@ export class Stage {
     this.bgName = name;
     for (const m of this.bg) this.scene.remove(m);
     this.otoczenie = []; this.panorama = null; E.czastki(this, null); E.koniecNocy(this);   // weather and night belong to the place
-    this.muzyka.miejsce(name);
+    if (typeof name !== "object") this.muzyka.miejsce(name);             // an insert keeps the place's music (the practice stage sets its own)
     if (typeof name === "object") { await E.plansza(this, name); this.bgName = name.id || this.bgName; return true; }   // an insert on a plain colour
     const t = await this.tlo(name);
     for (const m of t.meshes) this.scene.add(m);

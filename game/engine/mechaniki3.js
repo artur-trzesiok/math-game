@@ -281,3 +281,62 @@ export function domino(S, a, b, { x = 0, y = 0.8, size = 2.4, pozioma = false } 
   S.objects.push(h); S.appear?.(h, true);
   return h;
 }
+
+// ===================================================================== a search picture (through a spyglass)
+// One picture of a roznice pair (tools/roznice: the second picture, `b`, has the hidden things; its found areas are
+// where they hide), shown big in a round spyglass view with a dark rim; the child taps each hidden thing - it gets a
+// pencil ring and a tick in the count of empty circles at the side. szukaj(S, nazwa) -> {remove}. Tests: S.szukaj.dokoncz().
+export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null } = {}) {
+  const kat = `/game/assets/roznice/${nazwa}/`;
+  const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
+  const tex = await texture(kat + "b.webp");
+  const grp = new THREE.Group(); grp.position.set(0, y, 0.3); S.scene.add(grp);
+  const obraz = new THREE.Mesh(new THREE.CircleGeometry(size / 2, 96), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false }));
+  const uv = obraz.geometry.attributes.uv, pos = obraz.geometry.attributes.position;          // the square picture seen through a circle
+  for (let i = 0; i < uv.count; i++) uv.setXY(i, 0.5 + pos.getX(i) / size, 0.5 + pos.getY(i) / size);
+  const brzeg = new THREE.Mesh(new THREE.RingGeometry(size / 2, size / 2 + 0.28, 96), new THREE.MeshBasicMaterial({ color: "#6b4a2a", transparent: true, depthWrite: false }));
+  const brzeg2 = new THREE.Mesh(new THREE.RingGeometry(size / 2 + 0.28, size / 2 + 0.36, 96), new THREE.MeshBasicMaterial({ color: "#c9a25a", transparent: true, depthWrite: false }));
+  obraz.renderOrder = 9.9; brzeg.renderOrder = 10; brzeg2.renderOrder = 10; grp.add(obraz, brzeg, brzeg2);
+  const h = { mesh: grp, kind: "szukaj", name: "luneta_widok", base: 1, remove: () => { S.scene.remove(grp); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
+  S.objects.push(h);
+  const punkt = (r) => [(r.x - 0.5) * size, y + (0.5 - r.y) * size];
+  // inside the circle only: a hidden thing in the square's corner would be unseen
+  const rzeczy = meta.roznice.filter((r) => Math.hypot(r.x - 0.5, r.y - 0.5) < 0.47);
+  // the count: empty circles at the side, filled one by one
+  const licznik = [];
+  for (let i = 0; i < rzeczy.length; i++) {
+    const ky = y + ((rzeczy.length - 1) / 2 - i) * 0.62, kx = size / 2 + 0.85;
+    const k = new THREE.Mesh(new THREE.CircleGeometry(0.24, 32), new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, depthWrite: false }));
+    const o = new THREE.Mesh(new THREE.RingGeometry(0.24, 0.3, 32), new THREE.MeshBasicMaterial({ color: "#3a332d", transparent: true, depthWrite: false }));
+    k.position.set(kx, ky - y, 0.01); o.position.set(kx, ky - y, 0.02); k.renderOrder = o.renderOrder = 10.2; grp.add(k, o); licznik.push(k);
+  }
+  const cele = rzeczy.map((r, k) => {
+    const [px, py] = punkt(r), rr = Math.max(0.4, r.r * size);
+    const m = new THREE.Mesh(new THREE.CircleGeometry(rr, 24), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide }));
+    const g = new THREE.Group(); g.add(m); g.position.set(px, py, 0.5); S.scene.add(g);
+    return uchwytCelu(S, g, { name: "ukryta", nr: k, r: rr, dobry: true, p: [px, py] });
+  });
+  const znalezione = new Set(), kolka = [];
+  const kolo = ([cx, cy], r) => Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.92]; });
+  const znajdz = async (hit) => {
+    znalezione.add(hit.nr); S.sfx.graj("right");
+    kolka.push(await S.line(kolo(hit.p, hit.r), { color: "#e8502e", width: 0.09, duration: 0.3, strong: true }));
+    const k = licznik[znalezione.size - 1]; k.material.color.set("#f2b632"); S.bump({ mesh: k, base: 1 }, 0.3, false);
+  };
+  Object.defineProperty(S, "zachetaCel", { configurable: true, get: () => cele.find((c) => !znalezione.has(c.nr)) || null });
+  S.szukaj = { dokoncz: async () => { for (const c of cele) if (!znalezione.has(c.nr)) await znajdz(c); } };
+  while (znalezione.size < cele.length) {
+    const hit = await S.choose(cele.filter((c) => !znalezione.has(c.nr)));
+    if (hit && !znalezione.has(hit.nr)) await znajdz(hit);
+  }
+  S.szukaj = null;
+  Object.defineProperty(S, "zachetaCel", { configurable: true, value: null, writable: true });
+  cele.forEach((c) => c.remove());
+  return { ...h, ile: cele.length, remove: () => { h.remove(); kolka.forEach((k) => k.remove()); } };
+}
+function uchwytCelu(S, g, extra) {
+  const h = { mesh: g, kind: "object", base: 1, size0: 1, pulse: false, zone: null, ...extra,
+    remove: () => { S.scene.remove(g); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); S.untarget(h); },
+    highlight: (on) => { h.pulse = on; if (!on) g.scale.setScalar(1); } };
+  S.objects.push(h); return h;
+}
