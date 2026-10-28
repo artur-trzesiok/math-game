@@ -341,6 +341,20 @@ one dance move squeezed into a beat (a one-clap `Klask` is built from Brawo at r
 `ctx.potknij(who)` (a wobble and a sour sound for a wrong move); `ctx.zamroz(who, on)` - statues: the body's
 animation clock stops and new animations are ignored, eyes and mouth still live, so a statue can speak. Characters
 can be the options of a task (statues: "who moved?").
+Mechanics (`mechaniki.js`, `mechaniki2.js`; try each on `manager/mechaniki.html?m=<name>`): `ctx.slad(digit | shape)`
+- trace with a finger along a light road from a green dot (the pencil follows forward only, off the road it stops);
+`ctx.waga()` -> {poloz, przeciagaj({rzeczy, gotowe}), wynik} - a balance scale, things carry `masa`, the beam tips to
+the heavier pan (its parts have no sticker outline: one ran over the next); `ctx.os({od, do})` -> {skocz(who, z, na)}
+- stepping stones with numbers; `ctx.wieza({klocki, miejsca, stoi})` - blocks stacked by dragging, a block that does
+not stand (wider than the one below) tips and falls back; `ctx.kubki({ile, rzeczy})` -> {przykryj, tasuj(n), odkryj};
+`ctx.dzwieki(n, {kto, ruch | dzwiek})` - counting by ear; `ctx.podziel(obraz, {ciecia})` -> {kawalki, rowne, ulamek} -
+cut with a finger stroke (near the middle it snaps through it, far from it the pieces come out unequal);
+`ctx.memory(pary)` (faces {obraz | cyfra | kropki}); `ctx.sklepik({towar, cena})` - coins onto a plate, as many as
+the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program of arrows a pawn follows;
+`ctx.cien(h)` - any sticker as its silhouette; `ctx.kolorowanka(name)` - colour by number
+(`tools/kolorowanki/make_kolorowanka.py`: a flat-coloured page split into regions, colours clustered into a palette).
+A drawing finger takes the stage's pointers while set (`S.palec` {down, move, up}); tests drive them through
+`S.slad.dokoncz()`, `S.podziel.tnij(kat)`, `S.memory.karty`, `S.strzalki`, `S.kolorowanka.dokoncz()`.
 Music: `game/audio/muzyka/` (SOURCES.md says where each tune comes from); the menu's tune is ElevenLabs Music.
 Every lesson also gets, without its code doing anything: a start card (cover + name) and a card before every
 stage (icon + name), the characters' head badges peeking in (`plansza`, 2 s, a tap skips); encouragement when the

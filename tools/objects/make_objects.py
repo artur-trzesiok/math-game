@@ -238,6 +238,22 @@ with a few round slices of salami, not cut; one whole bar of milk chocolate seen
 The beam is long and thin; the other parts roughly the same size.""",
 }
 
+# the second set of mechanics: memory, the shop, arrows
+SHEETS["mechaniki2"] = {
+    "outline": True,
+    "names": ["karta_rewers", "moneta", "metka", "strzalka"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of FOUR separate illustrated objects for a children's picture book, arranged in ONE ROW
+of 4 on a fully TRANSPARENT background, with generous empty space between them so none of them touch.
+{STYL}
+Left to right: the BACK of a playing card for a children's memory game, a little taller than wide, warm green with a
+cream border and a simple pattern of small leaves and one acorn in the middle, rounded corners; one shiny round
+golden coin with a little embossed leaf in its middle and a raised rim, NO numbers; one blank cream paper price tag
+with a small round hole and a short red string, rectangular with one cut corner, NOTHING written on it; one big bold
+friendly green arrow pointing to the RIGHT, thick and rounded.
+All four roughly the same size.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

@@ -16,6 +16,7 @@ import * as Album from "./album.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
 import * as R from "./rytm.js";
 import * as M from "./mechaniki.js";
+import * as M2 from "./mechaniki2.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -506,6 +507,11 @@ export class Player {
       kubki: guard((o) => M.kubki(S, o)),
       dzwieki: guard((n, o = {}) => M.dzwieki(S, n, { ...o, tempo: FAST ? 0.15 : o.tempo })),
       podziel: (obraz, o) => wDzialaniu(M.podziel(S, obraz, o)),
+      memory: (pary, o) => wDzialaniu(M2.memory(S, pary, o), "wskaz"),
+      sklepik: (o) => wDzialaniu(M2.sklepik(S, o)),
+      strzalki: (o) => wDzialaniu(M2.strzalki(S, o), "wskaz"),
+      cien: (h, on, o) => M2.cien(S, h, on, o),
+      kolorowanka: (nazwa, o) => wDzialaniu(M2.kolorowanka(S, nazwa, o), "wskaz"),
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
       pan: guard((k, opts) => E.pan(S, k, opts)),
       odliczanie: guard((opts) => E.odliczanie(S, opts)),

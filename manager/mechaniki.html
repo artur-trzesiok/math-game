@@ -17,7 +17,7 @@
   window.__T = Date.now();
   (() => {
     const im = { imports: { three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
   })();
@@ -34,6 +34,7 @@
 // every mechanic of mechaniki.js on a stage of its own, to try by hand (and from the console: mech.uruchom("waga"))
 import { Stage } from "/game/engine/scene.js";
 import * as M from "/game/engine/mechaniki.js";
+import * as M2 from "/game/engine/mechaniki2.js";
 const $ = (id) => document.getElementById(id);
 const S = new Stage($("scena"), { tick() {}, say: async () => {}, stop() {} });
 await S.background("laka");
@@ -75,6 +76,16 @@ const DEMA = {
     info("czekolada na cztery: dwa cięcia");
     w = await M.podziel(S, "czekolada", { x: 0, y: 0.3, ciecia: 2 }); info(`czekolada: ${w.czesci} części, ${w.rowne ? "po równo" : "nierówno"}`);
   },
+  memory: async () => { pokaz(); info("znajdź pary: kropki i cyfra, jabłko i jabłko"); await M2.memory(S, [[{ kropki: 3 }, { cyfra: 3 }], [{ obraz: "jablko" }, { obraz: "jablko" }], [{ kropki: 5 }, { cyfra: 5 }], [{ obraz: "gruszka" }, { obraz: "gruszka" }]]); info("wszystkie pary!"); },
+  sklepik: async () => { pokaz("lisek"); info("zapłać za jabłko: tyle monet, ile kropek na metce"); await M2.sklepik(S, { towar: "jablko", cena: 3, onZaDuzo: () => info("za dużo!") }); info("zapłacone"); },
+  strzalki: async () => { pokaz(); info("ułóż strzałki i wciśnij zielony guzik"); await M2.strzalki(S, { przeszkody: [[2, 0], [2, 1]] }); info("jeż przy marchewce!"); },
+  cienie: async () => {
+    pokaz("sowa"); info("czyj to cień? wskaż");
+    const c = M2.cien(S, await S.object("gruszka", { x: 0, y: 1.6, size: 2.0 }), true);
+    const opcje = []; for (const [i, n] of ["jablko", "gruszka", "marchewka"].entries()) opcje.push(await S.object(n, { x: -2 + i * 2, y: -2.3, size: 1.1 }));
+    const hit = await S.choose(opcje); info(hit.name === "gruszka" ? "tak, gruszka!" : "to nie ten"); if (hit.name === "gruszka") M2.cien(S, c, false);
+  },
+  kolorowanka: async () => { pokaz(); info("wybierz kredkę, potem pole z tą cyfrą"); await M2.kolorowanka(S, "domek"); info("pokolorowane!"); },
 };
 const uruchom = async (n) => {
   const nr = ++bieg; S.palec = null; S.endSort(); S.clear(); S.pending = null; S.targets = [];
