@@ -333,6 +333,7 @@ Both the same size.""",
 # tall and short (stage 2): each thing twice, the SAME thing at two heights, standing upright on one ground line
 SHEETS["wysoki_niski"] = {
     "outline": True,
+    "px": 1024,                 # tall things shown big: at 384 px the height chart was pixelated
     "wspolna_skala": True,
     "names": ["slonecznik_wysoki", "slonecznik_niski", "swieca_wysoka", "swieca_niska", "drzewko_wysokie", "drzewko_niskie", "patyk_wysoki", "patyk_niski"],
     "rows": 1,
@@ -349,6 +350,7 @@ The background is fully TRANSPARENT: NO coloured background, NO glow, NO light h
 }
 SHEETS["wysoki_niski2"] = {
     "outline": True,
+    "px": 1024,                 # tall things shown big: at 384 px the height chart was pixelated
     "names": ["pieniek_niski", "miarka_scienna", "domek_na_drzewie", "jablon_wysoka"],
     "size": "1536x1024",
     "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
@@ -1092,7 +1094,7 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
     for i in range(1, ile + 1):
         ys, xs = np.where(etyk == i)
         if len(ys) >= min_pikseli:
-            plamy.append((int(ys.min()), int(ys.max()), int(xs.min()), int(xs.max()), float(ys.mean()), float(xs.mean())))
+            plamy.append((int(ys.min()), int(ys.max()), int(xs.min()), int(xs.max()), float(ys.mean()), float(xs.mean()), i))
     plamy.sort(key=lambda p: -((p[1] - p[0]) * (p[3] - p[2])))
     plamy = plamy[:len(names)]
     if len(plamy) != len(names):
@@ -1105,9 +1107,13 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
         plamy.sort(key=lambda p: ((0 if p[4] < srodek_y else 1) if rows == 2 else 0, p[5]))
     OUT.mkdir(parents=True, exist_ok=True)
     wspolny = max(max(p[1] - p[0], p[3] - p[2]) for p in plamy) + 16 if SHEETS[sheet].get("wspolna_skala") else None
-    for nazwa, (y0, y1, x0, x1, _, _) in zip(names, plamy):
+    for nazwa, (y0, y1, x0, x1, _, _, lab) in zip(names, plamy):
         pad = 8
-        kaw = im.crop((max(0, x0 - pad), max(0, y0 - pad), min(im.width, x1 + pad), min(im.height, y1 + pad)))
+        box = (max(0, x0 - pad), max(0, y0 - pad), min(im.width, x1 + pad), min(im.height, y1 + pad))
+        # only this object's own blob: a neighbour's leaf reaching into the box came along with its outline
+        wlasna = ndimage.binary_dilation(etyk[box[1]:box[3], box[0]:box[2]] == lab, iterations=3)
+        k = np.asarray(im.crop(box)).copy(); k[:, :, 3] = np.where(wlasna, k[:, :, 3], 0)
+        kaw = Image.fromarray(k, "RGBA")
         bok = wspolny or max(kaw.width, kaw.height)
         kw = Image.new("RGBA", (bok, bok), (0, 0, 0, 0))
         kw.paste(kaw, ((bok - kaw.width) // 2, (bok - kaw.height) // 2))
