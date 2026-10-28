@@ -1,6 +1,6 @@
 # Bigger and smaller - a new home for Squirrel
 
-Goal: bigger / smaller, the biggest / the smallest, compared by laying one thing on the other (the bigger one sticks
+Goal: bigger / smaller, the biggest / the smallest - the hollows compared with the old hollow's round door held against each new hole (a hollow cannot be carried, its door can); small things laid one on the other (the bigger one sticks
 out all round). Age 3-4. Characters: Squirrel and Fox (left), Owl (right). Stage 1, lesson 3 - it follows "one or
 many?": the winter store made her hollow too small.
 

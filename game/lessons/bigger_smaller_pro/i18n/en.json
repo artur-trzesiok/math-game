@@ -21,7 +21,7 @@
   },
   "line.a_metoda": {
     "who": "sowa",
-    "text": "We'll lay one on the other. The one that sticks out all round is bigger. The one that hides is smaller."
+    "text": "We'll hold the door against each new hollow. If there's a gap all round it, the hollow is bigger. If the door covers the hole and sticks out, it's smaller."
   },
   "line.a_w_droge": {
     "who": "lisek",
@@ -61,11 +61,11 @@
   },
   "line.b_sprawdzmy": {
     "who": "sowa",
-    "text": "There's one more left. Let's check it: we'll lay the old hollow on it."
+    "text": "One is left. Now you check: hold the door against this hollow."
   },
   "line.b_wystaje": {
     "who": "sowa",
-    "text": "The new hollow sticks out all round. It is bigger than the old one!"
+    "text": "There's only a small gap round the door. This hollow is a little bigger than the old one!"
   },
   "line.b_wskaz_wieksza": {
     "who": "sowa",
@@ -73,7 +73,7 @@
   },
   "line.b_wskaz_wieksza_nie": {
     "who": "sowa",
-    "text": "That's the old, smaller hollow. The other one stuck out all round."
+    "text": "That's the old, smaller hollow. In the new one there was a gap round the door."
   },
   "line.b_w_sam_raz": {
     "who": "wiewiorka",
@@ -194,5 +194,25 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is Squirrel's new hollow. We found it when we compared what is bigger and what is smaller."
+  },
+  "line.b_stara_ze_soba": {
+    "who": "sowa",
+    "text": "We've brought the door from the old hollow. We'll hold it against each new one."
+  },
+  "line.b_obwodka": {
+    "who": "sowa",
+    "text": "Look: there's a big dark gap all round the door. I've circled it."
+  },
+  "line.b_duzo_wieksza": {
+    "who": "sowa",
+    "text": "This hollow is much bigger than the old one."
+  },
+  "line.b_stara_wystaje": {
+    "who": "sowa",
+    "text": "The door covers the whole hole and still sticks out! This hollow is smaller than the old one."
+  },
+  "line.a_drzwiczki": {
+    "who": "sowa",
+    "text": "Your old hollow has a round little door. It fits it exactly. We can't take the hollow, but we can take the door!"
   }
 }

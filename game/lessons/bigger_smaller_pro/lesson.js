@@ -1,6 +1,7 @@
 // Lesson: bigger and smaller - a new home for Squirrel (stage 1, rethought). Her hollow has become too small; the
-// friends look for a new one: too small, too big, just right - compared by laying one on the other (the bigger
-// sticks out all round). The mice need a bigger box; a catching game; at home the cups and hats go by size.
+// friends look for a new one: too small, too big, just right - compared with the old hollow's round door, carried
+// along and held against each new hole (a hollow cannot be carried; its door can): a dark gap round the door - bigger,
+// the door covering the hole and sticking out - smaller. The mice need a bigger box; a catching game; at home the cups and hats go by size.
 // Script in scenario.md.
 
 const ROW_Y = 1.4;
@@ -19,6 +20,19 @@ async function rzeczy(c, rzecz, rozmiary, { y = -2.4, odstep = 2.2 } = {}) {
 const pasujeRozmiar = (h, who) => (h.ranga === MIEJSCE[who] ? true : h.ranga < MIEJSCE[who] ? "za_duze" : "za_male");
 const zleRozmiar = (o) => (o === "za_duze" ? "line.za_duze" : "line.za_male");
 
+// the hole of a "dziupla" sticker: centre and diameter (measured on the picture: 0.43 of the sticker, a bit above the middle)
+const OTWOR = { dx: 0.0, dy: 0.025, d: 0.43 }, DRZWI = 0.94;      // DRZWI: the door's circle in its own sticker
+const otwor = (h) => ({ x: h.mesh.position.x + OTWOR.dx * h.base, y: h.mesh.position.y + OTWOR.dy * h.base, d: OTWOR.d * h.base });
+// the door held against a hollow's hole, centred; an orange pencil ring round the larger of the two (the gap, or the
+// door's edge on the bark); returns {zdejmij()}
+async function przyloz(c, drzwi, h) {
+  const o = otwor(h); drzwi.mesh.traverse((m) => { if (m.isMesh) m.renderOrder = 12; });
+  await drzwi.moveTo(o.x, o.y, 0.6); c.sfx("tap");
+  const r = Math.max(o.d, drzwi.base * DRZWI) / 2 + 0.06;
+  const kolo = await c.line(Array.from({ length: 49 }, (_, i) => [o.x + r * Math.cos(i / 48 * 2 * Math.PI), o.y + r * Math.sin(i / 48 * 2 * Math.PI)]), { color: "#e8702a", width: 0.07, duration: 0.5, strong: true });
+  return { zdejmij: async () => { kolo.remove(); await drzwi.moveTo(drzwi.home.x, drzwi.home.y, 0.4); } };
+}
+
 export default {
   id: "bigger_smaller_pro",
   przejscia: true,
@@ -30,7 +44,8 @@ export default {
       // A. Squirrel's old hollow: she does not fit any more; the idea - a bigger one; how to tell: lay one on the other
       async (c) => {
         c.show("wiewiorka");
-        const stara = await c.object("dziupla", { x: -0.6, y: 1.1, size: 1.0 });
+        const STARA = 1.8;                                                    // the old hollow: the door is cut to its hole
+        const stara = await c.object("dziupla", { x: -0.4, y: 1.0, size: STARA });
         await c.say("wiewiorka", "line.a_zapasy", { anim: "Radosc" });
         // she squeezes in - only her head goes in, she bounces back
         const L = c.stage.puppets.wiewiorka;
@@ -44,38 +59,52 @@ export default {
         await c.say("lisek", "line.a_za_mala");
         await c.say("sowa", "line.a_nowa", { anim: "Zgloszenie" });
         await c.say("wiewiorka", "line.a_jak");
+        // the old hollow's round door: it fits the old hole exactly - a template to carry along
+        const o = otwor(stara), drzwi = await c.object("drzwiczki", { x: o.x, y: o.y, size: o.d / DRZWI });
+        await c.say("sowa", "line.a_drzwiczki", { anim: "Zgloszenie" });
         await c.say("sowa", "line.a_metoda");
+        await c.wait(0.5); await drzwi.moveTo(-2.4, 0.9, 0.6);
         await c.say("lisek", "line.a_w_droge", { anim: "Machanie" });
         c.clear();
       },
       // B. three hollows: too big, too small, just right - each compared with the old door laid onto it
       async (c) => {
         await c.ujecie("ogolny");
-        const duza = await c.object("dziupla", { x: -1.6, y: 1.5, size: 2.2 });
-        const mala = await c.object("dziupla", { x: 0.9, y: 1.3, size: 0.7 });
-        const sr = await c.object("dziupla", { x: 2.9, y: 1.4, size: 1.35 });
+        const duza = await c.object("dziupla", { x: -1.5, y: 1.1, size: 3.1 });
+        const mala = await c.object("dziupla", { x: 1.15, y: 0.9, size: 1.3 });
+        const sr = await c.object("dziupla", { x: 3.4, y: 1.1, size: 2.1 });
         await c.say("sowa", "line.b_trzy");
-        // the biggest first
+        const drzwi = await c.object("drzwiczki", { x: 0.9, y: -1.9, size: OTWOR.d * 1.8 / DRZWI });     // the old door, the size of the old hole
+        await c.say("sowa", "line.b_stara_ze_soba");
+        // the biggest: a dark gap all round the door - the hole is much bigger than the old one
         await c.say("lisek", "line.b_najwieksza");
         dobre(duza); await c.task({ targets: [duza, mala, sr], correct: duza, wrong: "line.b_najwieksza_nie" }); dobre(duza, false);
+        await c.wait(1.4); let n = await przyloz(c, drzwi, duza);
+        await c.say("sowa", "line.b_obwodka");
+        await c.say("sowa", "line.b_duzo_wieksza");
+        await n.zdejmij();
         await c.say("wiewiorka", "line.b_sprobuje");
         c.czastki("liscie", { wiatr: 1.4 });
         await c.emocja("wiewiorka", "zimno", { anim: "Smutek" });
         await c.say("wiewiorka", "line.b_za_duza");
         c.czastki(null);
-        // the smallest
+        // the smallest: the door covers the whole hole and sticks out over the bark - smaller than the old
         await c.say("lisek", "line.b_najmniejsza");
         dobre(mala); await c.task({ targets: [duza, mala, sr], correct: mala, wrong: "line.b_najmniejsza_nie" }); dobre(mala, false);
-        c.stage.shake(mala);
+        await c.wait(1.4); n = await przyloz(c, drzwi, mala);
+        await c.say("sowa", "line.b_stara_wystaje");
+        await n.zdejmij();
         await c.say("wiewiorka", "line.b_za_mala");
-        // the last one: laid on the old door, it sticks out a little - bigger than the old, smaller than the huge
+        // the last one: the child holds the door against it
         await c.say("sowa", "line.b_sprawdzmy");
-        const stara = await c.object("dziupla", { x: -4.2, y: 1.3, size: 1.0 });
-        const n = await c.nalozenie(stara, sr);
+        await new Promise((ok) => c.stage.free({
+          items: [drzwi], przeloz: { x: sr.mesh.position.x, y: sr.mesh.position.y },
+          onDrop: async (h, p) => { if (Math.hypot(p.x - sr.mesh.position.x, p.y - sr.mesh.position.y) < 1.2) { c.stage.endSort(); ok(); } else await h.moveTo(h.home.x, h.home.y, 0.35); },
+          onTap: () => {}, onPuppet: () => c.stage.onPuppetTap?.(),
+        }));
+        n = await przyloz(c, drzwi, sr);
         await c.say("sowa", "line.b_wystaje");
-        await n.cofnij(0.3);
-        await c.say("sowa", "line.b_wskaz_wieksza");
-        dobre(sr); await c.task({ targets: [stara, sr], correct: sr, wrong: "line.b_wskaz_wieksza_nie" }); dobre(sr, false);
+        await n.zdejmij();
         await c.emocja("wiewiorka", "serce", { anim: "Radosc" });
         await c.say("wiewiorka", "line.b_w_sam_raz");
         c.clear();

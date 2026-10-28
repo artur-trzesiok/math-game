@@ -25,9 +25,9 @@
   "text": "But how will we know which hollow is bigger?"
  },
  "line.a_metoda": {
-  "hash": "dbdc6086e2d4",
+  "hash": "57c109cb6efd",
   "who": "sowa",
-  "text": "We'll lay one on the other. The one that sticks out all round is bigger. The one that hides is smaller."
+  "text": "We'll hold the door against each new hollow. If there's a gap all round it, the hollow is bigger. If the door covers the hole and sticks out, it's smaller."
  },
  "line.a_w_droge": {
   "hash": "26f375d8d75a",
@@ -75,14 +75,14 @@
   "text": "This one is too small, even smaller than my old one!"
  },
  "line.b_sprawdzmy": {
-  "hash": "bc7862d3b65d",
+  "hash": "adb6624b70af",
   "who": "sowa",
-  "text": "There's one more left. Let's check it: we'll lay the old hollow on it."
+  "text": "One is left. Now you check: hold the door against this hollow."
  },
  "line.b_wystaje": {
-  "hash": "e0a44a7af2e8",
+  "hash": "74cd66921473",
   "who": "sowa",
-  "text": "The new hollow sticks out all round. It is bigger than the old one!"
+  "text": "There's only a small gap round the door. This hollow is a little bigger than the old one!"
  },
  "line.b_wskaz_wieksza": {
   "hash": "830f1fc59f30",
@@ -90,9 +90,9 @@
   "text": "Which hollow is bigger, the old one or the new one? Point to it."
  },
  "line.b_wskaz_wieksza_nie": {
-  "hash": "280c8ff8cb9a",
+  "hash": "bef6a48b298a",
   "who": "sowa",
-  "text": "That's the old, smaller hollow. The other one stuck out all round."
+  "text": "That's the old, smaller hollow. In the new one there was a gap round the door."
  },
  "line.b_w_sam_raz": {
   "hash": "b11143771829",
@@ -253,5 +253,30 @@
   "hash": "94f23de2d1e2",
   "who": "narrator",
   "text": "This is Squirrel's new hollow. We found it when we compared what is bigger and what is smaller."
+ },
+ "line.b_stara_ze_soba": {
+  "hash": "4d598d9e0814",
+  "who": "sowa",
+  "text": "We've brought the door from the old hollow. We'll hold it against each new one."
+ },
+ "line.b_obwodka": {
+  "hash": "933964817823",
+  "who": "sowa",
+  "text": "Look: there's a big dark gap all round the door. I've circled it."
+ },
+ "line.b_duzo_wieksza": {
+  "hash": "f1a4a795e884",
+  "who": "sowa",
+  "text": "This hollow is much bigger than the old one."
+ },
+ "line.b_stara_wystaje": {
+  "hash": "d8501d9add97",
+  "who": "sowa",
+  "text": "The door covers the whole hole and still sticks out! This hollow is smaller than the old one."
+ },
+ "line.a_drzwiczki": {
+  "hash": "fd4611da3040",
+  "who": "sowa",
+  "text": "Your old hollow has a round little door. It fits it exactly. We can't take the hollow, but we can take the door!"
  }
 }

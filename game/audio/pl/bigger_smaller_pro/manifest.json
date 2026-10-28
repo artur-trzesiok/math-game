@@ -25,9 +25,9 @@
   "text": "A jak poznamy, która dziupla jest większa?"
  },
  "line.a_metoda": {
-  "hash": "51e336da4e38",
+  "hash": "043e51249f33",
   "who": "sowa",
-  "text": "Położymy jedną na drugiej. Ta, która wystaje dookoła, jest większa. Ta, która się chowa, jest mniejsza."
+  "text": "Przyłożymy drzwiczki do każdej nowej dziupli. Jeśli dookoła nich zostanie dziura, dziupla jest większa. Jeśli drzwiczki zakryją dziurę i jeszcze wystaną, jest mniejsza."
  },
  "line.a_w_droge": {
   "hash": "ee06943fe844",
@@ -75,14 +75,14 @@
   "text": "Ta jest za mała, jeszcze mniejsza niż moja stara!"
  },
  "line.b_sprawdzmy": {
-  "hash": "42875b7d7357",
+  "hash": "f7781397fd9a",
   "who": "sowa",
-  "text": "Została jeszcze jedna. Sprawdźmy ją: położymy na niej starą dziuplę."
+  "text": "Została ostatnia. Teraz Ty sprawdź: przyłóż drzwiczki do tej dziupli."
  },
  "line.b_wystaje": {
-  "hash": "a6d15aaaf149",
+  "hash": "d7173fe6f7ab",
   "who": "sowa",
-  "text": "Nowa dziupla wystaje dookoła. Jest większa od starej!"
+  "text": "Dookoła drzwiczek została tylko mała szpara. Ta dziupla jest troszkę większa od starej!"
  },
  "line.b_wskaz_wieksza": {
   "hash": "06b96f7c888e",
@@ -90,9 +90,9 @@
   "text": "Która dziupla jest większa, stara czy nowa? Wskaż."
  },
  "line.b_wskaz_wieksza_nie": {
-  "hash": "25da7e18f9e7",
+  "hash": "111a940cb8e9",
   "who": "sowa",
-  "text": "To stara, mniejsza dziupla. Ta druga wystawała dookoła."
+  "text": "To stara, mniejsza dziupla. Dookoła drzwiczek w nowej była szpara."
  },
  "line.b_w_sam_raz": {
   "hash": "cd8cf6b4f1d9",
@@ -253,5 +253,30 @@
   "hash": "a699688a0c63",
   "who": "narrator",
   "text": "To nowa dziupla Wiewiórki. Znaleźliśmy ją, kiedy porównywaliśmy, co jest większe, a co mniejsze."
+ },
+ "line.b_stara_ze_soba": {
+  "hash": "68e0d6eacfd1",
+  "who": "sowa",
+  "text": "Mamy ze sobą drzwiczki od starej dziupli. Przyłożymy je do każdej nowej."
+ },
+ "line.b_obwodka": {
+  "hash": "f4a88cdd13da",
+  "who": "sowa",
+  "text": "Popatrz: dookoła drzwiczek została duża ciemna dziura. Zaznaczyłam ją kółkiem."
+ },
+ "line.b_duzo_wieksza": {
+  "hash": "03c5500ac985",
+  "who": "sowa",
+  "text": "Ta dziupla jest dużo większa od starej."
+ },
+ "line.b_stara_wystaje": {
+  "hash": "8c44499c3afc",
+  "who": "sowa",
+  "text": "Drzwiczki zakrywają całą dziurę i jeszcze wystają! Ta dziupla jest mniejsza od starej."
+ },
+ "line.a_drzwiczki": {
+  "hash": "2d6b28cfd269",
+  "who": "sowa",
+  "text": "Twoja stara dziupla ma okrągłe drzwiczki. Pasują do niej idealnie. Dziupli nie zabierzemy, ale drzwiczki tak!"
  }
 }

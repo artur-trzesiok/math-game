@@ -889,6 +889,20 @@ The same round warm-yellow face as the reference, now SAD: eyebrows tilted down 
 small downturned mouth, ONE small tear on one cheek, soft rosy cheeks. Gentle, NOT scary.""",
 }
 
+# bigger and smaller: the old hollow's little round door - carried along and held against each new hole (a template)
+SHEETS["drzwiczki"] = {
+    "names": ["drzwiczki"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["dziupla"],
+    "prompt": f"""ONE illustrated object for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO glow, NO halo, NO background.
+{STYL}
+A small ROUND wooden door for the tree hollow in the reference, seen straight on: a perfect circle of light planks with
+a thin darker rim, a tiny round knob and a little leaf painted on it. Only the door - NO tree, NO frame.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

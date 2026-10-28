@@ -21,7 +21,7 @@
   },
   "line.a_metoda": {
     "who": "sowa",
-    "text": "Położymy jedną na drugiej. Ta, która wystaje dookoła, jest większa. Ta, która się chowa, jest mniejsza."
+    "text": "Przyłożymy drzwiczki do każdej nowej dziupli. Jeśli dookoła nich zostanie dziura, dziupla jest większa. Jeśli drzwiczki zakryją dziurę i jeszcze wystaną, jest mniejsza."
   },
   "line.a_w_droge": {
     "who": "lisek",
@@ -61,11 +61,11 @@
   },
   "line.b_sprawdzmy": {
     "who": "sowa",
-    "text": "Została jeszcze jedna. Sprawdźmy ją: położymy na niej starą dziuplę."
+    "text": "Została ostatnia. Teraz Ty sprawdź: przyłóż drzwiczki do tej dziupli."
   },
   "line.b_wystaje": {
     "who": "sowa",
-    "text": "Nowa dziupla wystaje dookoła. Jest większa od starej!"
+    "text": "Dookoła drzwiczek została tylko mała szpara. Ta dziupla jest troszkę większa od starej!"
   },
   "line.b_wskaz_wieksza": {
     "who": "sowa",
@@ -73,7 +73,7 @@
   },
   "line.b_wskaz_wieksza_nie": {
     "who": "sowa",
-    "text": "To stara, mniejsza dziupla. Ta druga wystawała dookoła."
+    "text": "To stara, mniejsza dziupla. Dookoła drzwiczek w nowej była szpara."
   },
   "line.b_w_sam_raz": {
     "who": "wiewiorka",
@@ -194,5 +194,25 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To nowa dziupla Wiewiórki. Znaleźliśmy ją, kiedy porównywaliśmy, co jest większe, a co mniejsze."
+  },
+  "line.b_stara_ze_soba": {
+    "who": "sowa",
+    "text": "Mamy ze sobą drzwiczki od starej dziupli. Przyłożymy je do każdej nowej."
+  },
+  "line.b_obwodka": {
+    "who": "sowa",
+    "text": "Popatrz: dookoła drzwiczek została duża ciemna dziura. Zaznaczyłam ją kółkiem."
+  },
+  "line.b_duzo_wieksza": {
+    "who": "sowa",
+    "text": "Ta dziupla jest dużo większa od starej."
+  },
+  "line.b_stara_wystaje": {
+    "who": "sowa",
+    "text": "Drzwiczki zakrywają całą dziurę i jeszcze wystają! Ta dziupla jest mniejsza od starej."
+  },
+  "line.a_drzwiczki": {
+    "who": "sowa",
+    "text": "Twoja stara dziupla ma okrągłe drzwiczki. Pasują do niej idealnie. Dziupli nie zabierzemy, ale drzwiczki tak!"
   }
 }
