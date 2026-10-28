@@ -4,34 +4,33 @@
     "pl": "Dodawanie do 10",
     "en": "Adding to 10"
   },
-  "goal": "Add up to ten by counting on: start from the known number of the first group, count only the new things; read a + b = c.",
+  "goal": "Adding to ten by counting on: start from the known first number and count only the new things; equations to ten.",
   "age": "6-7",
   "characters": [
     "wiewiorka",
-    "sarenka"
+    "sowa",
+    "mis"
   ],
   "backgrounds": [
+    "plac_zabaw",
     "strumyk",
-    "ogrod",
-    "dom",
-    "przedpokoj",
-    "pokoj"
+    "przedpokoj"
   ],
   "objects": [
+    "torebka",
     "kamyk",
-    "marchewka",
-    "kubek",
+    "wiaderko",
+    "rybka_srebrna",
+    "dzwonek",
+    "koszyk",
+    "jablko",
     "szyszka",
     "but",
-    "skarpetka",
-    "klocek",
-    "lyzka",
-    "koszyk",
-    "pudelko"
+    "karta_rewers"
   ],
-  "cover": "Between them a basket of five grey pebbles with a pencil 5 over it and three more pebbles beside; above, a pencil-drawn 5 + 3 = 8.",
+  "cover": "A hopscotch tournament on a sunny playground: numbered chalk squares 1 to 10, Squirrel hopping from the six, Owl holding a paper bag with a 5 on it and three pebbles, Bear cheering with a bucket of fish.",
   "naklejka": {
-    "obraz": "objects/marchewka",
-    "kto": "sarenka"
+    "obraz": "objects/kamyk",
+    "kto": "wiewiorka"
   }
 }

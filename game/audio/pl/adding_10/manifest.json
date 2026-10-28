@@ -1,252 +1,267 @@
 {
- "line.s_need": {
-  "hash": "831897a24b24",
-  "who": "sarenka",
-  "text": "Do gry w klasy potrzebujemy ośmiu kamyków. Przyniosłam trzy."
- },
- "line.s_have": {
-  "hash": "2451c5773315",
+ "line.a_turniej": {
+  "hash": "07d04ecdd979",
   "who": "wiewiorka",
-  "text": "A ja mam w koszyku pięć. Policzyłam je rano."
+  "text": "Dziś wielki turniej w klasy!"
  },
- "line.s_naive": {
-  "hash": "10d35f4eb030",
+ "line.a_potrzebuje": {
+  "hash": "7bb8d8adf2c8",
   "who": "wiewiorka",
-  "text": "Mamy trzy kamyki. Za mało!"
+  "text": "Do gry potrzebuję ośmiu kamyków."
  },
- "line.s_not": {
-  "hash": "d7799c10d0b9",
-  "who": "sarenka",
-  "text": "A pięć w koszyku? Nie licz ich od nowa, wiemy, że jest pięć."
- },
- "line.s_how": {
-  "hash": "0d3b49529392",
+ "line.a_w_torebce": {
+  "hash": "fc7e58a3a4f4",
   "who": "wiewiorka",
-  "text": "To od czego mam zacząć?"
+  "text": "W torebce mam pięć kamyków. Policzyłam je rano i napisałam piątkę."
  },
- "line.s_on": {
-  "hash": "da3b3a70a565",
-  "who": "sarenka",
-  "text": "Od pięciu! Liczymy dalej. To się nazywa doliczanie."
+ "line.a_przynioslam": {
+  "hash": "463e346e0fd8",
+  "who": "sowa",
+  "text": "A ja przyniosłam trzy kamyki!"
  },
- "line.s_what": {
-  "hash": "bd2396cc8a93",
+ "line.a_trzy": {
+  "hash": "652c3e68381f",
   "who": "wiewiorka",
-  "text": "Doliczanie? Pokażesz mi?"
+  "text": "Jeden, dwa, trzy. Trzy kamyki, za mało!"
  },
- "line.s_show": {
-  "hash": "a7179a3d291c",
-  "who": "sarenka",
-  "text": "Pięć mamy w głowie. Wskaż moje kamyki po kolei, a ja będę liczyć dalej."
+ "line.a_a_piec": {
+  "hash": "2d0462053d36",
+  "who": "sowa",
+  "text": "A pięć w torebce? Nie musimy ich liczyć jeszcze raz. Wiemy, że jest ich pięć."
  },
- "line.s_eight": {
-  "hash": "8d4c208891fc",
+ "line.a_od_pieciu": {
+  "hash": "1821329d23df",
+  "who": "sowa",
+  "text": "Zaczynamy od pięciu i liczymy dalej tylko nowe kamyki. Dotykaj ich po kolei."
+ },
+ "line.a_osiem": {
+  "hash": "36cbe4ebcd31",
+  "who": "sowa",
+  "text": "Osiem kamyków!"
+ },
+ "line.a_szybciej": {
+  "hash": "53fb818a443a",
   "who": "wiewiorka",
-  "text": "Osiem! I nie musiałam liczyć od początku."
+  "text": "Pięć plus trzy równa się osiem. Tak jest dużo szybciej!"
  },
- "line.s_write": {
-  "hash": "7e57ca466d01",
-  "who": "sarenka",
-  "text": "Pięć plus trzy równa się osiem."
+ "line.a_ramka": {
+  "hash": "c00899606420",
+  "who": "sowa",
+  "text": "W ramce dziesiątkowej pięć kamyków to pełny górny rząd."
  },
- "line.s_solved": {
-  "hash": "913f0810280f",
+ "line.a_dorzuc": {
+  "hash": "d5bee54689c8",
+  "who": "sowa",
+  "text": "Dorzuć trzy kamyki i powiedz, ile jest razem."
+ },
+ "line.a_dosc": {
+  "hash": "9bcfd09c81ae",
+  "who": "sowa",
+  "text": "Już jest osiem, dosyć!"
+ },
+ "line.a_dosc.wiewiorka": {
+  "hash": "e53fc49e022f",
   "who": "wiewiorka",
-  "text": "Mamy osiem kamyków. Można grać w klasy!"
+  "text": "Już jest osiem, dosyć!"
  },
- "line.s_to_garden": {
-  "hash": "de898f8fe8ca",
-  "who": "sarenka",
-  "text": "Chodźmy do ogrodu. Tam też poćwiczymy doliczanie."
- },
- "line.b_basket": {
-  "hash": "def9b8448d09",
+ "line.a_piec_i_trzy": {
+  "hash": "87a636ed0d87",
   "who": "wiewiorka",
-  "text": "W koszyku jest sześć marchewek."
+  "text": "Pięć w górnym rzędzie i trzy w dolnym. Osiem!"
  },
- "line.b_more": {
-  "hash": "241eff8dd3cd",
-  "who": "sarenka",
-  "text": "Wyrwałam jeszcze dwie. Doliczmy!"
- },
- "line.b_count": {
-  "hash": "adba7fe26f0c",
-  "who": "sarenka",
-  "text": "Zacznij od sześciu. Wskaż nowe marchewki po kolei."
- },
- "line.b_pick": {
-  "hash": "229416003e1d",
+ "line.a_klasy": {
+  "hash": "609e235946c2",
   "who": "wiewiorka",
-  "text": "Ile jest razem? Wskaż cyfrę."
+  "text": "Gramy w klasy! Stoję na szóstce."
  },
- "line.b_write": {
-  "hash": "9a951758f670",
-  "who": "sarenka",
-  "text": "Sześć plus dwa równa się osiem."
+ "line.a_z_szostki": {
+  "hash": "2271c7b2f26c",
+  "who": "sowa",
+  "text": "Wiewiórka skoczy jeszcze trzy razy. Na którym kamieniu stanie? Wskaż."
  },
- "line.b_to_home": {
-  "hash": "dab52a98794f",
+ "line.a_z_szostki_nie": {
+  "hash": "69ec5899549f",
+  "who": "sowa",
+  "text": "Licz dalej od szóstki: siedem, osiem, dziewięć."
+ },
+ "line.a_dziewiec": {
+  "hash": "924b7de8776e",
   "who": "wiewiorka",
-  "text": "Wracajmy do domu. Przyjdą goście!"
+  "text": "Siedem, osiem, dziewięć! Jestem na dziewiątce!"
  },
- "line.c_cups": {
-  "hash": "a3756a299692",
-  "who": "sarenka",
-  "text": "W pudełku jest siedem kubków. Goście przynieśli jeszcze trzy."
+ "line.b_ryby": {
+  "hash": "1e5d9db18309",
+  "who": "mis",
+  "text": "Idę na ryby! W wiaderku mam już siedem rybek."
  },
- "line.c_count": {
-  "hash": "aa49e2748e32",
+ "line.b_zlowilem": {
+  "hash": "69ba8a5f9b2c",
+  "who": "mis",
+  "text": "Złowiłem jeszcze dwie!"
+ },
+ "line.b_od_siedmiu": {
+  "hash": "2b5ff3e74f70",
   "who": "wiewiorka",
-  "text": "Doliczmy od siedmiu. Wskaż nowe kubki."
+  "text": "W wiaderku jest siedem. Licz dalej od siedmiu, dotykając nowych rybek."
  },
- "line.c_slot": {
-  "hash": "ca9eb6d7a1aa",
+ "line.b_karta": {
+  "hash": "9cbde4747b8b",
+  "who": "sowa",
+  "text": "Siedem plus dwa równa się... Która karta pasuje? Wskaż."
+ },
+ "line.b_karta_nie": {
+  "hash": "a91319600366",
+  "who": "sowa",
+  "text": "Zacznij od siedmiu i dolicz dwie rybki."
+ },
+ "line.b_dziewiec": {
+  "hash": "7e20afd7e19e",
+  "who": "mis",
+  "text": "Dziewięć rybek! Wystarczy na kolację."
+ },
+ "line.b_dzwonek": {
+  "hash": "74eb5f35836f",
+  "who": "sowa",
+  "text": "Mój dzwonek dzwonił już sześć razy."
+ },
+ "line.b_juz_szesc": {
+  "hash": "4e17952ec400",
+  "who": "sowa",
+  "text": "Zapisałam szóstkę. Posłuchaj, ile razy zadzwoni jeszcze."
+ },
+ "line.b_ile_razem": {
+  "hash": "8d36cf72baf5",
+  "who": "sowa",
+  "text": "Ile razy dzwonek zadzwonił razem? Wskaż kartę."
+ },
+ "line.b_ile_razem_nie": {
+  "hash": "fc47cf25cab4",
+  "who": "sowa",
+  "text": "Zacznij od sześciu i dolicz nowe dzwonienia."
+ },
+ "line.b_razem8": {
+  "hash": "20460a88729b",
   "who": "wiewiorka",
-  "text": "Siedem plus trzy równa się ile? Wskaż liczbę, która pasuje na końcu."
+  "text": "Sześć i jeszcze dwa: osiem!"
  },
- "line.c_solved": {
-  "hash": "a0b36ae4c9c6",
-  "who": "sarenka",
-  "text": "Siedem plus trzy to dziesięć! Doliczanie jest szybkie."
- },
- "line.wrong_digit": {
-  "hash": "f105e521bdf3",
-  "who": "sarenka",
-  "text": "To inna liczba. Policz jeszcze raz."
- },
- "line.wrong_digit.wiewiorka": {
-  "hash": "4b00397fdba6",
+ "line.b_razem9": {
+  "hash": "8ce3e54a3503",
   "who": "wiewiorka",
-  "text": "To inna liczba. Policz jeszcze raz."
+  "text": "Sześć i jeszcze trzy: dziewięć!"
  },
- "line.good_digit": {
-  "hash": "e6c1392f55ee",
+ "line.b_razem10": {
+  "hash": "1850329a2244",
   "who": "wiewiorka",
-  "text": "Tak! Dobrze doliczone."
+  "text": "Sześć i jeszcze cztery: dziesięć!"
  },
- "line.good_digit.sarenka": {
-  "hash": "85cde546e0fa",
-  "who": "sarenka",
-  "text": "Tak! Dobrze doliczone."
+ "line.b_koniec": {
+  "hash": "38df1798c6ba",
+  "who": "mis",
+  "text": "Liczenie od znanej liczby to sprytny sposób!"
  },
- "line.p_intro": {
-  "hash": "c9d847cc9849",
-  "who": "sarenka",
-  "text": "Pobawmy się w doliczanie! Na pudełku jest napisane, ile jest w środku."
+ "line.p_start": {
+  "hash": "a3a81af58b2a",
+  "who": "sowa",
+  "text": "Poćwiczmy liczenie dalej! Mam pięć zabaw."
  },
- "line.p_count_on": {
-  "hash": "416486228b5e",
-  "who": "sarenka",
-  "text": "Zacznij od liczby na pudełku. Wskaż nowe rzeczy po kolei."
- },
- "line.p_together": {
-  "hash": "c05a75d817d7",
-  "who": "sarenka",
-  "text": "Ile jest razem? Wskaż liczbę."
- },
- "line.p_together.wiewiorka": {
-  "hash": "9bbde8b0a001",
+ "line.p_od_szesciu": {
+  "hash": "54f9d125e722",
   "who": "wiewiorka",
-  "text": "Ile jest razem? Wskaż liczbę."
+  "text": "W koszyku jest sześć jabłek. Dolicz nowe jabłka, dotykając ich po kolei."
  },
- "line.a_game": {
-  "hash": "91677509d6fb",
+ "line.p_dziewiec": {
+  "hash": "a4e361723854",
+  "who": "sowa",
+  "text": "Sześć i trzy to dziewięć!"
+ },
+ "line.p_z_czworki": {
+  "hash": "74ea955f09a7",
+  "who": "sowa",
+  "text": "Stoisz na czwórce i skaczesz jeszcze cztery razy. Gdzie staniesz? Wskaż."
+ },
+ "line.p_z_czworki_nie": {
+  "hash": "ecd4257107f2",
+  "who": "sowa",
+  "text": "Licz dalej od czwórki: pięć, sześć, siedem, osiem."
+ },
+ "line.p_dobrze": {
+  "hash": "380ec0c47b57",
   "who": "wiewiorka",
-  "text": "Zagrajmy w doliczanie, tak jak w domu."
+  "text": "Brawo!"
  },
- "line.a_ok": {
-  "hash": "5342cd83d2c3",
-  "who": "sarenka",
-  "text": "Dobrze! Zaczynamy od tego, co już wiemy."
+ "line.p_dobrze.sowa": {
+  "hash": "671b319f1b8d",
+  "who": "sowa",
+  "text": "Brawo!"
  },
- "line.a_lyzka": {
-  "hash": "de28bddf6abb",
-  "who": "sarenka",
-  "text": "W pudełku jest pięć łyżek. Obok są jeszcze trzy. Doliczaj od pięciu."
- },
- "line.a_klocek": {
-  "hash": "e389eb16bbca",
-  "who": "sarenka",
-  "text": "W pudełku jest sześć klocków. Doliczaj od sześciu."
- },
- "line.a_kubek": {
-  "hash": "1bf6f86ffb97",
-  "who": "sarenka",
-  "text": "W pudełku jest siedem kubków. Doliczaj od siedmiu."
- },
- "line.a_which_digit": {
-  "hash": "c05a75d817d7",
-  "who": "sarenka",
-  "text": "Ile jest razem? Wskaż liczbę."
- },
- "line.a_which_digit.wiewiorka": {
-  "hash": "9bbde8b0a001",
+ "line.p_karta": {
+  "hash": "24f81a8cc712",
   "who": "wiewiorka",
-  "text": "Ile jest razem? Wskaż liczbę."
+  "text": "Która karta pasuje do pustego miejsca? Wskaż."
  },
- "line.a_ask_parents": {
-  "hash": "7dae24600180",
-  "who": "sarenka",
-  "text": "Poproście rodziców o doliczanie. Ile będzie schodów, gdy wejdziecie jeszcze trzy wyżej?"
+ "line.p_karta.sowa": {
+  "hash": "a3732d8fcc86",
+  "who": "sowa",
+  "text": "Która karta pasuje do pustego miejsca? Wskaż."
  },
- "line.a_bye": {
-  "hash": "de5cebfd32fc",
+ "line.p_karta_nie": {
+  "hash": "885745acb8c0",
   "who": "wiewiorka",
-  "text": "Pa, pa! Do zobaczenia!"
+  "text": "Zacznij od pierwszej liczby i dolicz drugą."
  },
- "line.n1": {
-  "hash": "fa74c8ce122d",
-  "who": "sarenka",
-  "text": "Jeden!"
+ "line.p_karta_nie.sowa": {
+  "hash": "f46f934b843e",
+  "who": "sowa",
+  "text": "Zacznij od pierwszej liczby i dolicz drugą."
  },
- "line.n1.wiewiorka": {
-  "hash": "ba57f5b09fb8",
+ "line.p_do_dziesieciu": {
+  "hash": "a30114556f44",
+  "who": "sowa",
+  "text": "W ramce jest osiem szyszek. Ilu brakuje do dziesięciu? Wskaż kartę."
+ },
+ "line.p_do_dziesieciu_nie": {
+  "hash": "7f2e45b82a08",
+  "who": "sowa",
+  "text": "Policz puste miejsca w ramce."
+ },
+ "line.p_dwa": {
+  "hash": "13e5fe55b3a9",
   "who": "wiewiorka",
-  "text": "Jeden!"
+  "text": "Dwóch! Osiem i dwa to dziesięć."
  },
- "line.n2": {
-  "hash": "7f4a57f70df5",
-  "who": "sarenka",
-  "text": "Dwa!"
- },
- "line.n2.wiewiorka": {
-  "hash": "1fe22df41e61",
+ "line.p_dziesiec": {
+  "hash": "102f4467e18d",
   "who": "wiewiorka",
-  "text": "Dwa!"
+  "text": "Pięć i pięć to dziesięć, jak dwie dłonie!"
  },
- "line.n3": {
-  "hash": "4f6d31a2ee36",
-  "who": "sarenka",
-  "text": "Trzy!"
- },
- "line.n3.wiewiorka": {
-  "hash": "de660ab27bd0",
+ "line.h_buty": {
+  "hash": "f315b6ae0654",
   "who": "wiewiorka",
-  "text": "Trzy!"
+  "text": "W przedpokoju stoją buty."
  },
- "line.n4": {
-  "hash": "8918276949e6",
-  "who": "sarenka",
-  "text": "Cztery!"
+ "line.h_szesc": {
+  "hash": "2517c3d075b6",
+  "who": "mis",
+  "text": "Tu stoi sześć butów. Już je policzyłem."
  },
- "line.n4.wiewiorka": {
-  "hash": "55526c232825",
+ "line.h_dwa_nowe": {
+  "hash": "75345120016b",
+  "who": "mis",
+  "text": "Przyszli goście i zostawili jeszcze dwa buty. Dolicz je od sześciu."
+ },
+ "line.h_osiem": {
+  "hash": "da7adf85c5e8",
   "who": "wiewiorka",
-  "text": "Cztery!"
+  "text": "Osiem butów!"
  },
- "line.n5": {
-  "hash": "e9ca2a9ab4ab",
-  "who": "sarenka",
-  "text": "Pięć!"
- },
- "line.n5.wiewiorka": {
-  "hash": "f368640872aa",
-  "who": "wiewiorka",
-  "text": "Pięć!"
+ "line.h_rodzice": {
+  "hash": "04b40d9304a8",
+  "who": "mis",
+  "text": "Liczcie z rodzicami dalej: od pięciu jeszcze trzy schody w górę!"
  },
  "line.n6": {
-  "hash": "f1d4e655948d",
-  "who": "sarenka",
+  "hash": "f117d690e980",
+  "who": "sowa",
   "text": "Sześć!"
  },
  "line.n6.wiewiorka": {
@@ -254,9 +269,14 @@
   "who": "wiewiorka",
   "text": "Sześć!"
  },
+ "line.n6.mis": {
+  "hash": "8138070e751d",
+  "who": "mis",
+  "text": "Sześć!"
+ },
  "line.n7": {
-  "hash": "44c9962f24be",
-  "who": "sarenka",
+  "hash": "3fea4af84f86",
+  "who": "sowa",
   "text": "Siedem!"
  },
  "line.n7.wiewiorka": {
@@ -264,9 +284,14 @@
   "who": "wiewiorka",
   "text": "Siedem!"
  },
+ "line.n7.mis": {
+  "hash": "1c6fa82eb413",
+  "who": "mis",
+  "text": "Siedem!"
+ },
  "line.n8": {
-  "hash": "40c4d5b1a7bc",
-  "who": "sarenka",
+  "hash": "0cdaa2c92515",
+  "who": "sowa",
   "text": "Osiem!"
  },
  "line.n8.wiewiorka": {
@@ -274,9 +299,14 @@
   "who": "wiewiorka",
   "text": "Osiem!"
  },
+ "line.n8.mis": {
+  "hash": "dfb1e5a85318",
+  "who": "mis",
+  "text": "Osiem!"
+ },
  "line.n9": {
-  "hash": "06c21f734e51",
-  "who": "sarenka",
+  "hash": "9ef830074cad",
+  "who": "sowa",
   "text": "Dziewięć!"
  },
  "line.n9.wiewiorka": {
@@ -284,9 +314,14 @@
   "who": "wiewiorka",
   "text": "Dziewięć!"
  },
+ "line.n9.mis": {
+  "hash": "a23a1e271e99",
+  "who": "mis",
+  "text": "Dziewięć!"
+ },
  "line.n10": {
-  "hash": "4c71f87c85d6",
-  "who": "sarenka",
+  "hash": "2ede2784c903",
+  "who": "sowa",
   "text": "Dziesięć!"
  },
  "line.n10.wiewiorka": {
@@ -294,19 +329,24 @@
   "who": "wiewiorka",
   "text": "Dziesięć!"
  },
- "line.naklejka_daj": {
-  "hash": "9de442124747",
-  "who": "sarenka",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ "line.n10.mis": {
+  "hash": "32dfa1b2aa0e",
+  "who": "mis",
+  "text": "Dziesięć!"
  },
- "line.naklejka_opis": {
-  "hash": "8f1fc063b9bd",
-  "who": "narrator",
-  "text": "To marchewka od sarenki. Dostaliśmy ją, kiedy dodawaliśmy aż do dziesięciu."
+ "line.naklejka_daj": {
+  "hash": "7518f8b5f2c8",
+  "who": "wiewiorka",
+  "text": "Dziękuję za turniej w klasy! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "7b4f384e1970",
-  "who": "sarenka",
+  "hash": "85dccce7b7f1",
+  "who": "wiewiorka",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "61b26052a87a",
+  "who": "narrator",
+  "text": "To kamyk z turnieju w klasy. Dostaliśmy go, kiedy uczyliśmy się liczyć dalej."
  }
 }

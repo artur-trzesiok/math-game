@@ -1,29 +1,22 @@
-# Adding to 10
+# Adding to 10 - the hopscotch tournament
 
-Goal: add up to ten by COUNTING ON - the first group's number is known, so start from
-it and count only the new things; read a + b = c. Characters: Squirrel (left), Deer
-(right).
+Goal: adding to ten by counting on - start from the known first number and count only the new things; equations to
+ten. Age 5-6. Characters: Squirrel, Owl, Bear. Stage 6, lesson 24.
 
-## Stage 1 - story - brook, garden, home
+**Misconception:** counting only the new ones - Squirrel has five pebbles in her bag (a 5 on it), Owl brings three:
+"three, not enough!".
 
-1. Brook, the problem: hopscotch needs eight pebbles. Squirrel has five in her
-   basket (a pencil 5 over it, counted this morning), Deer brings three. Squirrel
-   counts only the new ones out loud - one, two, three - "three, not enough!" Deer
-   ("?"): and the five in the basket? Don't count them again, we know there are five. Where then? From five: counting on (Deer pictures
-   five and three). The child points to Deer's three pebbles; the numbers go 6, 7, 8.
-   5 + 3 = 8 written. Solved: eight pebbles, hopscotch.
-2. Garden: six carrots in the basket, two more; the child counts on from six;
-   6 + 2 = _ is written and the 8 card flies into the gap.
-3. Home: seven cups in the box, the guests bring three (said once they are there); counting on to ten; the child
-   completes 7 + 3 = _ with the 10 card.
+## Stage 1 - story
+A. *Playground.* Owl: the five are known, start from five. **Child** counts on (`count` with `od`): 6, 7, 8;
+5 + 3 = 8. The ten frame: five fill the top row, **child** adds three. Hopscotch: Squirrel on the 6 hops three more -
+**child** points to where she lands (9), she hops there (`os`).
+B. *Brook.* Bear's bucket holds seven fish (a 7 on it), he catches two: **child** counts on from seven, picks the card
+for 7 + 2 = _. *Breather:* the bell has rung six times (a 6 written); it rings 2-4 more - how many altogether.
 
-## Stage 2 - practice - hallway
+## Stage 2 - practice
+Six apples in the basket and three more - count on; from the 4 stone hop four more; 7 + 2 = _; eight in the frame -
+how many more to ten; 5 + 5 = _.
 
-Five rounds: a box with its number (4, 6, 5, 8, 7) and a few new things (2, 3, 4, 2,
-2): count on, then the number from three cards.
-
-## Stage 3 - at home - children's room
-
-Counting on at home, each in a box with a few more beside it: 5 spoons + 3, 6 blocks
-+ 4, 7 cups + 2. "Ask your
-parents to count on with you - how many stairs when you climb three more?"
+## Stage 3 - at home (hallway)
+Six shoes by the door, guests leave two more - count on from six. "Count on with your parents: from five, three more
+stairs."

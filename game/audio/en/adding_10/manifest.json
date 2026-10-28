@@ -1,252 +1,267 @@
 {
- "line.s_need": {
-  "hash": "002f69a052ac",
-  "who": "sarenka",
-  "text": "We need eight pebbles for hopscotch. I brought three."
- },
- "line.s_have": {
-  "hash": "45a59ac8aba3",
+ "line.a_turniej": {
+  "hash": "1bc7939f7885",
   "who": "wiewiorka",
-  "text": "And I have five in my basket. I counted them this morning."
+  "text": "Today is the great hopscotch tournament!"
  },
- "line.s_naive": {
-  "hash": "b507d4f8e742",
+ "line.a_potrzebuje": {
+  "hash": "edc1d1995640",
   "who": "wiewiorka",
-  "text": "We have three pebbles. Not enough!"
+  "text": "I need eight pebbles for the game."
  },
- "line.s_not": {
-  "hash": "6d3b6c27c0d6",
-  "who": "sarenka",
-  "text": "And the five in the basket? Don't count them again, we know there are five."
- },
- "line.s_how": {
-  "hash": "6b0d18761e21",
+ "line.a_w_torebce": {
+  "hash": "08d4e3c6584e",
   "who": "wiewiorka",
-  "text": "Then where do I start?"
+  "text": "I have five pebbles in my bag. I counted them this morning and wrote a five on it."
  },
- "line.s_on": {
-  "hash": "553d26654007",
-  "who": "sarenka",
-  "text": "From five! We count on. That is called counting on."
+ "line.a_przynioslam": {
+  "hash": "20725995503d",
+  "who": "sowa",
+  "text": "And I brought three pebbles!"
  },
- "line.s_what": {
-  "hash": "71030176e75d",
+ "line.a_trzy": {
+  "hash": "2d182e558875",
   "who": "wiewiorka",
-  "text": "Counting on? Will you show me?"
+  "text": "One, two, three. Three pebbles, not enough!"
  },
- "line.s_show": {
-  "hash": "b567f6ac07a2",
-  "who": "sarenka",
-  "text": "We keep five in our heads. Point to my pebbles one by one, and I will count on."
+ "line.a_a_piec": {
+  "hash": "2b430b3ae905",
+  "who": "sowa",
+  "text": "And the five in the bag? We don't need to count them again. We know there are five."
  },
- "line.s_eight": {
-  "hash": "7254fbd8b2ee",
+ "line.a_od_pieciu": {
+  "hash": "996b4e942c15",
+  "who": "sowa",
+  "text": "We start from five and count on only the new pebbles. Touch them one by one."
+ },
+ "line.a_osiem": {
+  "hash": "c31610fdc2d1",
+  "who": "sowa",
+  "text": "Eight pebbles!"
+ },
+ "line.a_szybciej": {
+  "hash": "fcf324e32db0",
   "who": "wiewiorka",
-  "text": "Eight! And I did not have to count from the start."
+  "text": "Five plus three equals eight. That's much quicker!"
  },
- "line.s_write": {
-  "hash": "4287a3af812f",
-  "who": "sarenka",
-  "text": "Five plus three equals eight."
+ "line.a_ramka": {
+  "hash": "609b4707cc90",
+  "who": "sowa",
+  "text": "In the ten frame, five pebbles fill the whole top row."
  },
- "line.s_solved": {
-  "hash": "15acd35f9db8",
+ "line.a_dorzuc": {
+  "hash": "f75a1b031443",
+  "who": "sowa",
+  "text": "Add three pebbles and say how many there are altogether."
+ },
+ "line.a_dosc": {
+  "hash": "02db688e1460",
+  "who": "sowa",
+  "text": "That's eight already, enough!"
+ },
+ "line.a_dosc.wiewiorka": {
+  "hash": "1215d98476c8",
   "who": "wiewiorka",
-  "text": "We have eight pebbles. Let's play hopscotch!"
+  "text": "That's eight already, enough!"
  },
- "line.s_to_garden": {
-  "hash": "2e4856e124dc",
-  "who": "sarenka",
-  "text": "Let's go to the garden. We will practise counting on there too."
- },
- "line.b_basket": {
-  "hash": "e3b6a0307e4f",
+ "line.a_piec_i_trzy": {
+  "hash": "360b657b5487",
   "who": "wiewiorka",
-  "text": "There are six carrots in the basket."
+  "text": "Five in the top row and three in the bottom row. Eight!"
  },
- "line.b_more": {
-  "hash": "999ad1ffd4f6",
-  "who": "sarenka",
-  "text": "I pulled out two more. Let's count on!"
- },
- "line.b_count": {
-  "hash": "870753543865",
-  "who": "sarenka",
-  "text": "Start from six. Point to the new carrots one by one."
- },
- "line.b_pick": {
-  "hash": "eaaed1457d93",
+ "line.a_klasy": {
+  "hash": "cc163a2e44d1",
   "who": "wiewiorka",
-  "text": "How many are there together? Point to the digit."
+  "text": "Let's play hopscotch! I'm standing on the six."
  },
- "line.b_write": {
-  "hash": "4b095d6a9ed0",
-  "who": "sarenka",
-  "text": "Six plus two equals eight."
+ "line.a_z_szostki": {
+  "hash": "d0ec3efbbaa7",
+  "who": "sowa",
+  "text": "Squirrel will hop three more times. Which stone will she land on? Point to it."
  },
- "line.b_to_home": {
-  "hash": "920b1dca2fd1",
+ "line.a_z_szostki_nie": {
+  "hash": "567867134e19",
+  "who": "sowa",
+  "text": "Count on from six: seven, eight, nine."
+ },
+ "line.a_dziewiec": {
+  "hash": "46ec9e266c07",
   "who": "wiewiorka",
-  "text": "Let's go home. Guests are coming!"
+  "text": "Seven, eight, nine! I'm on the nine!"
  },
- "line.c_cups": {
-  "hash": "9c3df8f4b133",
-  "who": "sarenka",
-  "text": "There are seven cups in the box. The guests brought three more."
+ "line.b_ryby": {
+  "hash": "cca1838caa9a",
+  "who": "mis",
+  "text": "I'm going fishing! I already have seven fish in my bucket."
  },
- "line.c_count": {
-  "hash": "4441ff2d38f2",
+ "line.b_zlowilem": {
+  "hash": "adb0dd771422",
+  "who": "mis",
+  "text": "I caught two more!"
+ },
+ "line.b_od_siedmiu": {
+  "hash": "b05f9de2c45b",
   "who": "wiewiorka",
-  "text": "Let's count on from seven. Point to the new cups."
+  "text": "There are seven in the bucket. Count on from seven, touching the new fish."
  },
- "line.c_slot": {
-  "hash": "3d8bcc95bb58",
+ "line.b_karta": {
+  "hash": "fe75025804ae",
+  "who": "sowa",
+  "text": "Seven plus two equals... Which card fits? Point to it."
+ },
+ "line.b_karta_nie": {
+  "hash": "38ee0896c4ec",
+  "who": "sowa",
+  "text": "Start from seven and count on two fish."
+ },
+ "line.b_dziewiec": {
+  "hash": "3d356eeb6ea4",
+  "who": "mis",
+  "text": "Nine fish! Enough for supper."
+ },
+ "line.b_dzwonek": {
+  "hash": "d3742095fd39",
+  "who": "sowa",
+  "text": "My bell has already rung six times."
+ },
+ "line.b_juz_szesc": {
+  "hash": "b66bcd7db754",
+  "who": "sowa",
+  "text": "I wrote a six. Listen how many more times it rings."
+ },
+ "line.b_ile_razem": {
+  "hash": "1b4663d09c21",
+  "who": "sowa",
+  "text": "How many times did the bell ring altogether? Point to the card."
+ },
+ "line.b_ile_razem_nie": {
+  "hash": "80cdf9942a2d",
+  "who": "sowa",
+  "text": "Start from six and count on the new rings."
+ },
+ "line.b_razem8": {
+  "hash": "2fa3a8f12a96",
   "who": "wiewiorka",
-  "text": "Seven plus three equals what? Point to the number that fits at the end."
+  "text": "Six and two more: eight!"
  },
- "line.c_solved": {
-  "hash": "288ef785d8d6",
-  "who": "sarenka",
-  "text": "Seven plus three is ten! Counting on is quick."
- },
- "line.wrong_digit": {
-  "hash": "759298d22599",
-  "who": "sarenka",
-  "text": "That is another number. Count again."
- },
- "line.wrong_digit.wiewiorka": {
-  "hash": "046684a4f757",
+ "line.b_razem9": {
+  "hash": "ae556aef26a5",
   "who": "wiewiorka",
-  "text": "That is another number. Count again."
+  "text": "Six and three more: nine!"
  },
- "line.good_digit": {
-  "hash": "7eae85d83e52",
+ "line.b_razem10": {
+  "hash": "f7e253e91dc6",
   "who": "wiewiorka",
-  "text": "Yes! Well counted on."
+  "text": "Six and four more: ten!"
  },
- "line.good_digit.sarenka": {
-  "hash": "8d2e9eb8a21c",
-  "who": "sarenka",
-  "text": "Yes! Well counted on."
+ "line.b_koniec": {
+  "hash": "65db28f081b4",
+  "who": "mis",
+  "text": "Counting on from a number you know is a clever trick!"
  },
- "line.p_intro": {
-  "hash": "5c61f993f6a3",
-  "who": "sarenka",
-  "text": "Let's play counting on! The box says how many are inside."
+ "line.p_start": {
+  "hash": "802c19077a09",
+  "who": "sowa",
+  "text": "Let's practise counting on! I have five games."
  },
- "line.p_count_on": {
-  "hash": "eeb854d15f98",
-  "who": "sarenka",
-  "text": "Start from the number on the box. Point to the new things one by one."
- },
- "line.p_together": {
-  "hash": "b622e01c79a8",
-  "who": "sarenka",
-  "text": "How many are there together? Point to the number."
- },
- "line.p_together.wiewiorka": {
-  "hash": "c55093c9c399",
+ "line.p_od_szesciu": {
+  "hash": "a29f7808e74e",
   "who": "wiewiorka",
-  "text": "How many are there together? Point to the number."
+  "text": "There are six apples in the basket. Count on the new apples, touching them one by one."
  },
- "line.a_game": {
-  "hash": "204f2a690f71",
+ "line.p_dziewiec": {
+  "hash": "7e84c8bbd063",
+  "who": "sowa",
+  "text": "Six and three make nine!"
+ },
+ "line.p_z_czworki": {
+  "hash": "f156bc42af49",
+  "who": "sowa",
+  "text": "You're on the four and you hop four more times. Where will you land? Point to it."
+ },
+ "line.p_z_czworki_nie": {
+  "hash": "cc265046631e",
+  "who": "sowa",
+  "text": "Count on from four: five, six, seven, eight."
+ },
+ "line.p_dobrze": {
+  "hash": "b078bb8b91d9",
   "who": "wiewiorka",
-  "text": "Let's play counting on, just like at home."
+  "text": "Bravo!"
  },
- "line.a_ok": {
-  "hash": "74e726d96afa",
-  "who": "sarenka",
-  "text": "All right! We start from what we already know."
+ "line.p_dobrze.sowa": {
+  "hash": "c72d06c98857",
+  "who": "sowa",
+  "text": "Bravo!"
  },
- "line.a_lyzka": {
-  "hash": "ba68f51dda38",
-  "who": "sarenka",
-  "text": "There are five spoons in the box. Three more lie beside it. Count on from five."
- },
- "line.a_klocek": {
-  "hash": "5e7509d3cef2",
-  "who": "sarenka",
-  "text": "There are six blocks in the box. Count on from six."
- },
- "line.a_kubek": {
-  "hash": "7c5d079b189f",
-  "who": "sarenka",
-  "text": "There are seven cups in the box. Count on from seven."
- },
- "line.a_which_digit": {
-  "hash": "b622e01c79a8",
-  "who": "sarenka",
-  "text": "How many are there together? Point to the number."
- },
- "line.a_which_digit.wiewiorka": {
-  "hash": "c55093c9c399",
+ "line.p_karta": {
+  "hash": "8d35807bfcd9",
   "who": "wiewiorka",
-  "text": "How many are there together? Point to the number."
+  "text": "Which card fits the empty place? Point to it."
  },
- "line.a_ask_parents": {
-  "hash": "3d9283393f38",
-  "who": "sarenka",
-  "text": "Ask your parents to count on with you. How many stairs will there be when you climb three more?"
+ "line.p_karta.sowa": {
+  "hash": "fd34ecfe44d4",
+  "who": "sowa",
+  "text": "Which card fits the empty place? Point to it."
  },
- "line.a_bye": {
-  "hash": "3c8231148d14",
+ "line.p_karta_nie": {
+  "hash": "aa71e18d5d3a",
   "who": "wiewiorka",
-  "text": "Bye bye! See you!"
+  "text": "Start from the first number and count on the second."
  },
- "line.n1": {
-  "hash": "fe1f04809440",
-  "who": "sarenka",
-  "text": "One!"
+ "line.p_karta_nie.sowa": {
+  "hash": "3a115c04bce2",
+  "who": "sowa",
+  "text": "Start from the first number and count on the second."
  },
- "line.n1.wiewiorka": {
-  "hash": "b450b7ae1d7d",
+ "line.p_do_dziesieciu": {
+  "hash": "ff644dd0374c",
+  "who": "sowa",
+  "text": "There are eight pine cones in the frame. How many are missing to make ten? Point to the card."
+ },
+ "line.p_do_dziesieciu_nie": {
+  "hash": "5ee88cce59a8",
+  "who": "sowa",
+  "text": "Count the empty places in the frame."
+ },
+ "line.p_dwa": {
+  "hash": "b0700ae2e619",
   "who": "wiewiorka",
-  "text": "One!"
+  "text": "Two! Eight and two make ten."
  },
- "line.n2": {
-  "hash": "375458f35a95",
-  "who": "sarenka",
-  "text": "Two!"
- },
- "line.n2.wiewiorka": {
-  "hash": "9ffb03ee7b98",
+ "line.p_dziesiec": {
+  "hash": "7041750cf94b",
   "who": "wiewiorka",
-  "text": "Two!"
+  "text": "Five and five make ten, like two hands!"
  },
- "line.n3": {
-  "hash": "bece30255ee6",
-  "who": "sarenka",
-  "text": "Three!"
- },
- "line.n3.wiewiorka": {
-  "hash": "5641cc4a1ea8",
+ "line.h_buty": {
+  "hash": "a04a0df0dae3",
   "who": "wiewiorka",
-  "text": "Three!"
+  "text": "There are shoes in the hallway."
  },
- "line.n4": {
-  "hash": "c0cadba0f56e",
-  "who": "sarenka",
-  "text": "Four!"
+ "line.h_szesc": {
+  "hash": "eabd74669f69",
+  "who": "mis",
+  "text": "Six shoes stand here. I've already counted them."
  },
- "line.n4.wiewiorka": {
-  "hash": "f09afa4cffab",
+ "line.h_dwa_nowe": {
+  "hash": "8ef52c1b1052",
+  "who": "mis",
+  "text": "Guests came and left two more shoes. Count them on from six."
+ },
+ "line.h_osiem": {
+  "hash": "31a904e053d2",
   "who": "wiewiorka",
-  "text": "Four!"
+  "text": "Eight shoes!"
  },
- "line.n5": {
-  "hash": "2aae65c19a3e",
-  "who": "sarenka",
-  "text": "Five!"
- },
- "line.n5.wiewiorka": {
-  "hash": "288f44558ee1",
-  "who": "wiewiorka",
-  "text": "Five!"
+ "line.h_rodzice": {
+  "hash": "ca350cd4d3d5",
+  "who": "mis",
+  "text": "Count on with your parents: from five, three more stairs up!"
  },
  "line.n6": {
-  "hash": "5b14398761e9",
-  "who": "sarenka",
+  "hash": "3c064149d3cf",
+  "who": "sowa",
   "text": "Six!"
  },
  "line.n6.wiewiorka": {
@@ -254,9 +269,14 @@
   "who": "wiewiorka",
   "text": "Six!"
  },
+ "line.n6.mis": {
+  "hash": "2384895011a7",
+  "who": "mis",
+  "text": "Six!"
+ },
  "line.n7": {
-  "hash": "79805ce2a057",
-  "who": "sarenka",
+  "hash": "de89575f1790",
+  "who": "sowa",
   "text": "Seven!"
  },
  "line.n7.wiewiorka": {
@@ -264,9 +284,14 @@
   "who": "wiewiorka",
   "text": "Seven!"
  },
+ "line.n7.mis": {
+  "hash": "80305fca53f1",
+  "who": "mis",
+  "text": "Seven!"
+ },
  "line.n8": {
-  "hash": "1320a0497736",
-  "who": "sarenka",
+  "hash": "02eba685a596",
+  "who": "sowa",
   "text": "Eight!"
  },
  "line.n8.wiewiorka": {
@@ -274,9 +299,14 @@
   "who": "wiewiorka",
   "text": "Eight!"
  },
+ "line.n8.mis": {
+  "hash": "0fe91ed568cd",
+  "who": "mis",
+  "text": "Eight!"
+ },
  "line.n9": {
-  "hash": "4dd069b8f569",
-  "who": "sarenka",
+  "hash": "c20220e4f006",
+  "who": "sowa",
   "text": "Nine!"
  },
  "line.n9.wiewiorka": {
@@ -284,9 +314,14 @@
   "who": "wiewiorka",
   "text": "Nine!"
  },
+ "line.n9.mis": {
+  "hash": "fc10bfa66e2b",
+  "who": "mis",
+  "text": "Nine!"
+ },
  "line.n10": {
-  "hash": "25d96d7fd45f",
-  "who": "sarenka",
+  "hash": "781bf35075c4",
+  "who": "sowa",
   "text": "Ten!"
  },
  "line.n10.wiewiorka": {
@@ -294,19 +329,24 @@
   "who": "wiewiorka",
   "text": "Ten!"
  },
- "line.naklejka_daj": {
-  "hash": "876855e67825",
-  "who": "sarenka",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+ "line.n10.mis": {
+  "hash": "bbe14151a294",
+  "who": "mis",
+  "text": "Ten!"
  },
- "line.naklejka_opis": {
-  "hash": "02b15b07d1b0",
-  "who": "narrator",
-  "text": "This is the carrot from Deer. We got it when we added all the way to ten."
+ "line.naklejka_daj": {
+  "hash": "97b4719386c5",
+  "who": "wiewiorka",
+  "text": "Thank you for the hopscotch tournament! Here is a sticker for your album. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "d022a7420efe",
-  "who": "sarenka",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "hash": "92efc82c70f5",
+  "who": "wiewiorka",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "949013d46f31",
+  "who": "narrator",
+  "text": "This is a pebble from the hopscotch tournament. We got it when we learnt to count on."
  }
 }

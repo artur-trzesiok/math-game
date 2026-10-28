@@ -1,236 +1,258 @@
 {
-  "line.s_need": {
-    "who": "sarenka",
-    "text": "We need eight pebbles for hopscotch. I brought three."
-  },
-  "line.s_have": {
+  "line.a_turniej": {
     "who": "wiewiorka",
-    "text": "And I have five in my basket. I counted them this morning."
+    "text": "Today is the great hopscotch tournament!"
   },
-  "line.s_naive": {
+  "line.a_potrzebuje": {
     "who": "wiewiorka",
-    "text": "We have three pebbles. Not enough!"
+    "text": "I need eight pebbles for the game."
   },
-  "line.s_not": {
-    "who": "sarenka",
-    "text": "And the five in the basket? Don't count them again, we know there are five."
-  },
-  "line.s_how": {
+  "line.a_w_torebce": {
     "who": "wiewiorka",
-    "text": "Then where do I start?"
+    "text": "I have five pebbles in my bag. I counted them this morning and wrote a five on it."
   },
-  "line.s_on": {
-    "who": "sarenka",
-    "text": "From five! We count on. That is called counting on."
+  "line.a_przynioslam": {
+    "who": "sowa",
+    "text": "And I brought three pebbles!"
   },
-  "line.s_what": {
+  "line.a_trzy": {
     "who": "wiewiorka",
-    "text": "Counting on? Will you show me?"
+    "text": "One, two, three. Three pebbles, not enough!"
   },
-  "line.s_show": {
-    "who": "sarenka",
-    "text": "We keep five in our heads. Point to my pebbles one by one, and I will count on."
+  "line.a_a_piec": {
+    "who": "sowa",
+    "text": "And the five in the bag? We don't need to count them again. We know there are five."
   },
-  "line.s_eight": {
+  "line.a_od_pieciu": {
+    "who": "sowa",
+    "text": "We start from five and count on only the new pebbles. Touch them one by one."
+  },
+  "line.a_osiem": {
+    "who": "sowa",
+    "text": "Eight pebbles!"
+  },
+  "line.a_szybciej": {
     "who": "wiewiorka",
-    "text": "Eight! And I did not have to count from the start."
+    "text": "Five plus three equals eight. That's much quicker!"
   },
-  "line.s_write": {
-    "who": "sarenka",
-    "text": "Five plus three equals eight."
+  "line.a_ramka": {
+    "who": "sowa",
+    "text": "In the ten frame, five pebbles fill the whole top row."
   },
-  "line.s_solved": {
-    "who": "wiewiorka",
-    "text": "We have eight pebbles. Let's play hopscotch!"
+  "line.a_dorzuc": {
+    "who": "sowa",
+    "text": "Add three pebbles and say how many there are altogether."
   },
-  "line.s_to_garden": {
-    "who": "sarenka",
-    "text": "Let's go to the garden. We will practise counting on there too."
-  },
-  "line.b_basket": {
-    "who": "wiewiorka",
-    "text": "There are six carrots in the basket."
-  },
-  "line.b_more": {
-    "who": "sarenka",
-    "text": "I pulled out two more. Let's count on!"
-  },
-  "line.b_count": {
-    "who": "sarenka",
-    "text": "Start from six. Point to the new carrots one by one."
-  },
-  "line.b_pick": {
-    "who": "wiewiorka",
-    "text": "How many are there together? Point to the digit."
-  },
-  "line.b_write": {
-    "who": "sarenka",
-    "text": "Six plus two equals eight."
-  },
-  "line.b_to_home": {
-    "who": "wiewiorka",
-    "text": "Let's go home. Guests are coming!"
-  },
-  "line.c_cups": {
-    "who": "sarenka",
-    "text": "There are seven cups in the box. The guests brought three more."
-  },
-  "line.c_count": {
-    "who": "wiewiorka",
-    "text": "Let's count on from seven. Point to the new cups."
-  },
-  "line.c_slot": {
-    "who": "wiewiorka",
-    "text": "Seven plus three equals what? Point to the number that fits at the end."
-  },
-  "line.c_solved": {
-    "who": "sarenka",
-    "text": "Seven plus three is ten! Counting on is quick."
-  },
-  "line.wrong_digit": {
-    "who": "sarenka",
+  "line.a_dosc": {
+    "who": "sowa",
+    "text": "That's eight already, enough!",
     "speakers": [
       "wiewiorka"
-    ],
-    "text": "That is another number. Count again."
+    ]
   },
-  "line.good_digit": {
+  "line.a_piec_i_trzy": {
     "who": "wiewiorka",
-    "speakers": [
-      "sarenka"
-    ],
-    "text": "Yes! Well counted on."
+    "text": "Five in the top row and three in the bottom row. Eight!"
   },
-  "line.p_intro": {
-    "who": "sarenka",
-    "text": "Let's play counting on! The box says how many are inside."
-  },
-  "line.p_count_on": {
-    "who": "sarenka",
-    "text": "Start from the number on the box. Point to the new things one by one."
-  },
-  "line.p_together": {
-    "who": "sarenka",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "How many are there together? Point to the number."
-  },
-  "line.a_game": {
+  "line.a_klasy": {
     "who": "wiewiorka",
-    "text": "Let's play counting on, just like at home."
+    "text": "Let's play hopscotch! I'm standing on the six."
   },
-  "line.a_ok": {
-    "who": "sarenka",
-    "text": "All right! We start from what we already know."
+  "line.a_z_szostki": {
+    "who": "sowa",
+    "text": "Squirrel will hop three more times. Which stone will she land on? Point to it."
   },
-  "line.a_lyzka": {
-    "who": "sarenka",
-    "text": "There are five spoons in the box. Three more lie beside it. Count on from five."
+  "line.a_z_szostki_nie": {
+    "who": "sowa",
+    "text": "Count on from six: seven, eight, nine."
   },
-  "line.a_klocek": {
-    "who": "sarenka",
-    "text": "There are six blocks in the box. Count on from six."
-  },
-  "line.a_kubek": {
-    "who": "sarenka",
-    "text": "There are seven cups in the box. Count on from seven."
-  },
-  "line.a_which_digit": {
-    "who": "sarenka",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "How many are there together? Point to the number."
-  },
-  "line.a_ask_parents": {
-    "who": "sarenka",
-    "text": "Ask your parents to count on with you. How many stairs will there be when you climb three more?"
-  },
-  "line.a_bye": {
+  "line.a_dziewiec": {
     "who": "wiewiorka",
-    "text": "Bye bye! See you!"
+    "text": "Seven, eight, nine! I'm on the nine!"
   },
-  "line.n1": {
-    "who": "sarenka",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "One!"
+  "line.b_ryby": {
+    "who": "mis",
+    "text": "I'm going fishing! I already have seven fish in my bucket."
   },
-  "line.n2": {
-    "who": "sarenka",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Two!"
+  "line.b_zlowilem": {
+    "who": "mis",
+    "text": "I caught two more!"
   },
-  "line.n3": {
-    "who": "sarenka",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Three!"
+  "line.b_od_siedmiu": {
+    "who": "wiewiorka",
+    "text": "There are seven in the bucket. Count on from seven, touching the new fish."
   },
-  "line.n4": {
-    "who": "sarenka",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Four!"
+  "line.b_karta": {
+    "who": "sowa",
+    "text": "Seven plus two equals... Which card fits? Point to it."
   },
-  "line.n5": {
-    "who": "sarenka",
+  "line.b_karta_nie": {
+    "who": "sowa",
+    "text": "Start from seven and count on two fish."
+  },
+  "line.b_dziewiec": {
+    "who": "mis",
+    "text": "Nine fish! Enough for supper."
+  },
+  "line.b_dzwonek": {
+    "who": "sowa",
+    "text": "My bell has already rung six times."
+  },
+  "line.b_juz_szesc": {
+    "who": "sowa",
+    "text": "I wrote a six. Listen how many more times it rings."
+  },
+  "line.b_ile_razem": {
+    "who": "sowa",
+    "text": "How many times did the bell ring altogether? Point to the card."
+  },
+  "line.b_ile_razem_nie": {
+    "who": "sowa",
+    "text": "Start from six and count on the new rings."
+  },
+  "line.b_razem8": {
+    "who": "wiewiorka",
+    "text": "Six and two more: eight!"
+  },
+  "line.b_razem9": {
+    "who": "wiewiorka",
+    "text": "Six and three more: nine!"
+  },
+  "line.b_razem10": {
+    "who": "wiewiorka",
+    "text": "Six and four more: ten!"
+  },
+  "line.b_koniec": {
+    "who": "mis",
+    "text": "Counting on from a number you know is a clever trick!"
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Let's practise counting on! I have five games."
+  },
+  "line.p_od_szesciu": {
+    "who": "wiewiorka",
+    "text": "There are six apples in the basket. Count on the new apples, touching them one by one."
+  },
+  "line.p_dziewiec": {
+    "who": "sowa",
+    "text": "Six and three make nine!"
+  },
+  "line.p_z_czworki": {
+    "who": "sowa",
+    "text": "You're on the four and you hop four more times. Where will you land? Point to it."
+  },
+  "line.p_z_czworki_nie": {
+    "who": "sowa",
+    "text": "Count on from four: five, six, seven, eight."
+  },
+  "line.p_dobrze": {
+    "who": "wiewiorka",
+    "text": "Bravo!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Five!"
+      "sowa"
+    ]
+  },
+  "line.p_karta": {
+    "who": "wiewiorka",
+    "text": "Which card fits the empty place? Point to it.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.p_karta_nie": {
+    "who": "wiewiorka",
+    "text": "Start from the first number and count on the second.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.p_do_dziesieciu": {
+    "who": "sowa",
+    "text": "There are eight pine cones in the frame. How many are missing to make ten? Point to the card."
+  },
+  "line.p_do_dziesieciu_nie": {
+    "who": "sowa",
+    "text": "Count the empty places in the frame."
+  },
+  "line.p_dwa": {
+    "who": "wiewiorka",
+    "text": "Two! Eight and two make ten."
+  },
+  "line.p_dziesiec": {
+    "who": "wiewiorka",
+    "text": "Five and five make ten, like two hands!"
+  },
+  "line.h_buty": {
+    "who": "wiewiorka",
+    "text": "There are shoes in the hallway."
+  },
+  "line.h_szesc": {
+    "who": "mis",
+    "text": "Six shoes stand here. I've already counted them."
+  },
+  "line.h_dwa_nowe": {
+    "who": "mis",
+    "text": "Guests came and left two more shoes. Count them on from six."
+  },
+  "line.h_osiem": {
+    "who": "wiewiorka",
+    "text": "Eight shoes!"
+  },
+  "line.h_rodzice": {
+    "who": "mis",
+    "text": "Count on with your parents: from five, three more stairs up!"
   },
   "line.n6": {
-    "who": "sarenka",
+    "who": "sowa",
+    "text": "Six!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Six!"
+      "wiewiorka",
+      "mis"
+    ]
   },
   "line.n7": {
-    "who": "sarenka",
+    "who": "sowa",
+    "text": "Seven!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Seven!"
+      "wiewiorka",
+      "mis"
+    ]
   },
   "line.n8": {
-    "who": "sarenka",
+    "who": "sowa",
+    "text": "Eight!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Eight!"
+      "wiewiorka",
+      "mis"
+    ]
   },
   "line.n9": {
-    "who": "sarenka",
+    "who": "sowa",
+    "text": "Nine!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Nine!"
+      "wiewiorka",
+      "mis"
+    ]
   },
   "line.n10": {
-    "who": "sarenka",
+    "who": "sowa",
+    "text": "Ten!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Ten!"
+      "wiewiorka",
+      "mis"
+    ]
   },
   "line.naklejka_daj": {
-    "who": "sarenka",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+    "who": "wiewiorka",
+    "text": "Thank you for the hopscotch tournament! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "wiewiorka",
+    "text": "You already have the sticker from this adventure. See you!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the carrot from Deer. We got it when we added all the way to ten."
-  },
-  "line.naklejka_juz": {
-    "who": "sarenka",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "This is a pebble from the hopscotch tournament. We got it when we learnt to count on."
   }
 }
