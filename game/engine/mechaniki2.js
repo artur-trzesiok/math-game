@@ -352,3 +352,46 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
   };
   return { odbicie: O, znajdz, remove };
 }
+
+// ===================================================================== joining pairs with a line
+// `lewe` and `prawe` (handles already on the stage); `para(a, b)` says whether two belong together. The child draws from a
+// thing to another with a finger: the pencil follows; let go on its pair - the line stays drawn and both bump; on a
+// wrong one the line wobbles and fades. Resolves when every one of `lewe` is joined. Tests: S.polacz.dokoncz().
+export async function polacz(S, { lewe, prawe, para, kolor = "#2f6fd0", onZle = null }) {
+  const wszystkie = [...lewe, ...prawe], linie = [], polaczone = new Set();
+  const nad = ([x, y]) => wszystkie.find((h) => { if (polaczone.has(h)) return false; const b = S.bounds(h); return x >= b.left - 0.15 && x <= b.right + 0.15 && y >= b.bottom - 0.15 && y <= b.top + 0.15; });
+  const srodek = (h) => [h.mesh.position.x, h.mesh.position.y];
+  let tymczasowa = null, od = null;
+  // the line under the finger: a thick rounded band from the start to the finger (a GL line is one pixel thin)
+  const pokaz = (a, b) => {
+    if (!tymczasowa) { tymczasowa = new THREE.Mesh(new THREE.PlaneGeometry(1, 0.11), new THREE.MeshBasicMaterial({ color: kolor, transparent: true, opacity: 0.75, depthTest: false })); tymczasowa.renderOrder = 60; S.scene.add(tymczasowa); }
+    const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 0.001;
+    tymczasowa.position.set((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, 0.8); tymczasowa.scale.set(l, 1, 1); tymczasowa.rotation.z = Math.atan2(dy, dx);
+    tymczasowa.userData.koniec = b; tymczasowa.visible = true;
+  };
+  const schowaj = () => { if (tymczasowa) tymczasowa.visible = false; };
+  const dobrze = async (a, b) => {
+    polaczone.add(a); polaczone.add(b);
+    linie.push(await S.line([srodek(a), srodek(b)], { color: kolor, width: 0.08, duration: 0.25, strong: true }));
+    S.sfx.graj("right"); S.bump(a, 0.25, false); S.bump(b, 0.25, false);
+  };
+  await new Promise((ok) => {
+    const koniec = () => { if (lewe.every((h) => polaczone.has(h))) { S.palec = null; S.polacz = null; if (tymczasowa) S.scene.remove(tymczasowa); ok(); } };
+    S.palec = {
+      down: (p) => { od = nad(p); return !!od; },
+      move: (p) => { if (od) pokaz(srodek(od), p); },
+      up: async () => {
+        const a = od; od = null; if (!a || !tymczasowa?.visible) { schowaj(); return; }
+        const b = nad(tymczasowa.userData.koniec); schowaj();
+        if (!b || b === a) return;
+        if (para(a, b) || para(b, a)) { await dobrze(a, b); koniec(); }
+        else { S.sfx.graj("wrong"); S.shake(b); onZle?.(a, b); }
+      },
+    };
+    S.polacz = {                                                          // tests: join every pair at once
+      dokoncz: async () => { for (const a of lewe) if (!polaczone.has(a)) { const b = prawe.find((q) => !polaczone.has(q) && (para(a, q) || para(q, a))); if (b) await dobrze(a, b); } koniec(); },
+      lewe, prawe, para,
+    };
+  });
+  return { linie, remove: () => linie.forEach((l) => l.remove()) };
+}

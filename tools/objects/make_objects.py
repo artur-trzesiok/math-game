@@ -403,6 +403,69 @@ a blob of toothpaste and a cup.
 All six the same size.""",
 }
 
+# stage 3: story steps (three in a row = one little story, drawn on one sheet so they match), birthday, pairs
+SHEETS["historyjki1"] = {
+    "outline": True,
+    "names": ["jajko", "piskle", "kura", "nasiono", "kielek", "kwiat_rozkwit"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of SIX square picture cards with rounded corners for a children's picture book, in a neat grid
+of 2 rows and 3 columns on a fully TRANSPARENT background, with generous empty space between them. NO coloured background, NO glow.
+{STYL}
+Row 1 is one little story, the same nest on each card: a white egg in a straw nest; the same egg cracking with a
+yellow chick peeking out; a grown white hen standing by the empty nest.
+Row 2 is another story, the same pot of soil on each card: a seed being put into the soil; a small green sprout with
+two leaves; a big red tulip in bloom.""",
+}
+SHEETS["historyjki2"] = {
+    "outline": True,
+    "names": ["balwan_1", "balwan_2", "balwan_3", "ciasto_1", "ciasto_2", "ciasto_3"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of SIX square picture cards with rounded corners for a children's picture book, in a neat grid
+of 2 rows and 3 columns on a fully TRANSPARENT background, with generous empty space between them. NO coloured background, NO glow.
+{STYL}
+Row 1 is one little story in the same snowy garden: one big snowball on the snow; two snowballs stacked; a finished
+snowman with a carrot nose, a hat and a scarf.
+Row 2 is another story on the same kitchen table: eggs, a bag of flour and a bottle of milk; a mixing bowl with dough
+and a whisk; a round baked cake.""",
+}
+SHEETS["historyjki3"] = {
+    "outline": True,
+    "names": ["kanapka_1", "kanapka_2", "kanapka_3", "tort", "swieczka", "malina"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of SIX illustrated items for a children's picture book, in a neat grid of 2 rows and 3 columns
+on a fully TRANSPARENT background, with generous empty space between them. NO coloured background, NO glow.
+{STYL}
+Row 1 is one little story, three square picture cards with rounded corners on the same plate: a slice of bread; the
+same slice spread with butter; the same slice with butter and a slice of yellow cheese on top.
+Row 2: a round birthday cake with pink icing and NO candles, seen from the front; one thin striped birthday candle with
+a little flame; one red raspberry.""",
+}
+SHEETS["pary1"] = {
+    "outline": True,
+    "names": ["filizanka", "spodek", "pedzel", "farby", "pszczola", "mlotek", "gwozdz", "kubek_czerwony"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of EIGHT illustrated objects for a children's picture book, in a neat grid of 2 rows and 4
+columns on a fully TRANSPARENT background, with generous empty space between them. NO coloured background, NO glow.
+{STYL}
+Row 1, left to right: a white teacup with a little blue flower; a matching white saucer seen from the side; a paint
+brush; a box of watercolour paints.
+Row 2, left to right: a cute bee; a wooden hammer; one big nail; a plain RED cup with a handle.
+All eight roughly the same size.""",
+}
+SHEETS["pary2"] = {
+    "outline": True,
+    "names": ["klucz_gwiazda", "klucz_kolo", "klucz_kwadrat", "drzwi_gwiazda"],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them. NO coloured background, NO glow.
+{STYL}
+Left to right: a big golden key whose bit (the end) is shaped like a STAR; the same golden key but its bit shaped like a
+CIRCLE; the same golden key but its bit shaped like a SQUARE; a small round wooden door with a big keyhole shaped like a
+STAR.
+All four roughly the same height.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

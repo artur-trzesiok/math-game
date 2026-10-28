@@ -91,6 +91,14 @@ const DEMA = {
     S.puppets.lisek.graj("Machanie"); await new Promise((r) => setTimeout(r, 1500));
     await o.znajdz(); info("znalezione!");
   },
+  polacz: async () => {
+    pokaz(); info("połącz palcem pary: co pasuje do czego");
+    const L = [], P = [];
+    for (const [i, n] of ["skarpetka", "kubek", "kwiatek"].entries()) { const h = await S.object(n, { x: -2.4, y: 1.6 - i * 1.6, size: 1.1 }); L.push(h); }
+    for (const [i, n] of ["talerz", "motyl", "but"].entries()) { const h = await S.object(n, { x: 2.4, y: 1.6 - i * 1.6, size: 1.1 }); P.push(h); }
+    const pary = { skarpetka: "but", kubek: "talerz", kwiatek: "motyl" };
+    await M2.polacz(S, { lewe: L, prawe: P, para: (a, b) => pary[a.name] === b.name }); info("połączone!");
+  },
   roznice: async () => { pokaz(); info("znajdź 3 różnice"); await M2.roznice(S, "laka"); info("wszystkie różnice!"); },
   kolorowanka: async () => { pokaz(); info("wybierz kredkę, potem pole z tą cyfrą"); await M2.kolorowanka(S, "domek"); info("pokolorowane!"); },
 };

@@ -569,6 +569,7 @@ export class Player {
       strzalki: (o) => wDzialaniu(M2.strzalki(S, o), "wskaz"),
       cien: (h, on, o) => M2.cien(S, h, on, o),
       odbicie: guard((who, o) => M2.odbicie(S, who, o)),
+      polacz: (o) => wDzialaniu(M2.polacz(S, { ...o, onZle: o.wrong ? () => say("narrator", o.wrong) : null }), "wskaz"),
       roznice: (nazwa, o) => wDzialaniu(M2.roznice(S, nazwa, o), "wskaz"),
       kolorowanka: (nazwa, o) => wDzialaniu(M2.kolorowanka(S, nazwa, o), "wskaz"),
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it

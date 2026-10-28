@@ -168,6 +168,20 @@ NO characters, NO animals, NO text.""",
 style: a few small glowing mushrooms near the moss bed.
 Same colours, same roots, same shelf, same tunnel. Do NOT move or redraw anything that was already there.""",
     },
+    # Beaver's workshop by the brook (what goes with what): a cosy wooden hut full of shelves and tools
+    "warsztat": {
+        "wnetrze": True,
+        "plyta": f"""A background illustration for a children's game: the inside of a cosy wooden workshop of a beaver by a
+brook, seen straight on: log walls, a big workbench on the left, wooden shelves with jars and little boxes on the right,
+a round window with the brook outside, a few tools hanging on the wall, wood shavings on the plank floor. The floor in
+the lower middle is EMPTY where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
+style: a little potted plant on the windowsill.
+Same colours, same walls, same shelves. Do NOT move or redraw anything that was already there.""",
+    },
     "plac_zabaw": {
         "plyta": f"""A background illustration for a children's game: a sunny small playground
 in a park. On the left a wooden sandbox with a low red-and-yellow slide behind it,
