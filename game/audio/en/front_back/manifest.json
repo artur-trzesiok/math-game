@@ -1,0 +1,277 @@
+{
+ "line.a_chowany": {
+  "hash": "4fcf60b26058",
+  "who": "jez",
+  "text": "Let's play hide-and-seek! Bear seeks and we hide."
+ },
+ "line.a_licze": {
+  "hash": "f904faef528e",
+  "who": "mis",
+  "text": "I'm closing my eyes and counting to five!"
+ },
+ "line.a_raz_dwa": {
+  "hash": "3b7853f9e117",
+  "who": "mis",
+  "text": "One, two, three, four, five! Coming!"
+ },
+ "line.a_nie_widac": {
+  "hash": "1f7008f27e65",
+  "who": "zajac",
+  "text": "I've shut my eyes, so nobody can see me!"
+ },
+ "line.a_widze": {
+  "hash": "d6da46c26edb",
+  "who": "mis",
+  "text": "I can see you, Bunny! You're standing in front of the bush."
+ },
+ "line.a_przed": {
+  "hash": "fb4ece83164c",
+  "who": "jez",
+  "text": "Bunny, when you stand in front of the bush, everybody can see you. Even with your eyes shut."
+ },
+ "line.a_za": {
+  "hash": "f134f3e1da84",
+  "who": "jez",
+  "text": "To hide, you must stand behind the bush. Then the bush covers you."
+ },
+ "line.a_rozumiem": {
+  "hash": "1aac1ef24f58",
+  "who": "zajac",
+  "text": "I see! I'm off to find a good hiding place."
+ },
+ "line.a_schowaj_mysz": {
+  "hash": "15107f2fce90",
+  "who": "jez",
+  "text": "Mouse wants to hide too. Drag her behind the bush."
+ },
+ "line.a_mysz_nie": {
+  "hash": "0b35a80d3160",
+  "who": "jez",
+  "text": "Bear would see her here at once. Hide Mouse behind the bush."
+ },
+ "line.a_mysz_ok": {
+  "hash": "78376921492b",
+  "who": "mis",
+  "text": "I can only see her ears! Mouse is behind the bush."
+ },
+ "line.a_szukaj": {
+  "hash": "d5a847f0965f",
+  "who": "mis",
+  "text": "Help me look! See what's peeking out from behind the hiding places."
+ },
+ "line.a_gdzie_zajac": {
+  "hash": "06d44d8623c4",
+  "who": "mis",
+  "text": "Where is Bunny hiding? Point to his hiding place."
+ },
+ "line.a_gdzie_zajac_nie": {
+  "hash": "29b946abf01a",
+  "who": "mis",
+  "text": "He's not there. Look for long ears."
+ },
+ "line.a_mam_zajaca": {
+  "hash": "cc7eeb08db8f",
+  "who": "mis",
+  "text": "Got you! Bunny was behind the hiding place."
+ },
+ "line.a_gdzie_kaczka": {
+  "hash": "b6b0e6de3c57",
+  "who": "mis",
+  "text": "And where is the duckling? Point to it."
+ },
+ "line.a_gdzie_kaczka_nie": {
+  "hash": "aabb312ecad9",
+  "who": "mis",
+  "text": "She's not there. Look for a little yellow head."
+ },
+ "line.a_znalezione": {
+  "hash": "39f20d2d3b64",
+  "who": "jez",
+  "text": "Everybody's found!"
+ },
+ "line.a_wracam": {
+  "hash": "8cd221bf3208",
+  "who": "zajac",
+  "text": "This time I hid properly, behind something!"
+ },
+ "line.b_zabawa": {
+  "hash": "5d20b989d1db",
+  "who": "jez",
+  "text": "A new game: in front and behind!"
+ },
+ "line.b_przed": {
+  "hash": "f7f09373efa9",
+  "who": "jez",
+  "text": "Put the teddy in front of the house."
+ },
+ "line.b_przed_nie": {
+  "hash": "0e7e48a1fe5e",
+  "who": "jez",
+  "text": "In front of the house means at the front, where the door is."
+ },
+ "line.b_przed_ok": {
+  "hash": "13b7c1ea5fab",
+  "who": "zajac",
+  "text": "The teddy is in front of the house. You can see all of him!"
+ },
+ "line.b_za": {
+  "hash": "ae129a182b2a",
+  "who": "jez",
+  "text": "And now hide the teddy behind the house."
+ },
+ "line.b_za_nie": {
+  "hash": "35f2b93262e4",
+  "who": "jez",
+  "text": "Behind the house means at the back. The house should cover him."
+ },
+ "line.b_za_ok": {
+  "hash": "35461fc724e6",
+  "who": "zajac",
+  "text": "Behind the house! Only his head peeks out."
+ },
+ "line.b_co_przed": {
+  "hash": "47c49523fc88",
+  "who": "mis",
+  "text": "What is in front of the house? Point to it."
+ },
+ "line.b_co_przed_nie": {
+  "hash": "5ebdeb23b010",
+  "who": "mis",
+  "text": "She's behind the house, hidden. What stands at the front?"
+ },
+ "line.b_co_za": {
+  "hash": "a019cd2ca659",
+  "who": "mis",
+  "text": "And who is hiding behind the house? Point to them."
+ },
+ "line.b_co_za_nie": {
+  "hash": "b8c80b1531b4",
+  "who": "mis",
+  "text": "The ball lies at the front. Who's peeking out from behind the house?"
+ },
+ "line.b_koniec": {
+  "hash": "a4d8b254cbb4",
+  "who": "jez",
+  "text": "The ball in front of the house, the hen behind it!"
+ },
+ "line.p_start": {
+  "hash": "9f3ddda40dd5",
+  "who": "jez",
+  "text": "Let's play in front and behind! I have five games."
+ },
+ "line.p_mysz": {
+  "hash": "8ab4a09303af",
+  "who": "mis",
+  "text": "Hide Mouse behind the box."
+ },
+ "line.p_mysz_nie": {
+  "hash": "2dbd3f0d1260",
+  "who": "mis",
+  "text": "Mouse must be hidden, behind the box."
+ },
+ "line.p_dobrze": {
+  "hash": "a690e2d7af1b",
+  "who": "jez",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.mis": {
+  "hash": "2c107cf2e33b",
+  "who": "mis",
+  "text": "Bravo!"
+ },
+ "line.p_kaczka": {
+  "hash": "705d816d36a4",
+  "who": "jez",
+  "text": "Put the duckling in front of the basket."
+ },
+ "line.p_kaczka_nie": {
+  "hash": "1231756b4023",
+  "who": "jez",
+  "text": "In front of the basket, so she can be seen."
+ },
+ "line.p_kto": {
+  "hash": "160852871272",
+  "who": "mis",
+  "text": "Who is hiding behind the bush? Look at what's peeking out and point."
+ },
+ "line.p_kto_nie": {
+  "hash": "77f0ca9d10fd",
+  "who": "mis",
+  "text": "Look again at what is peeking out from behind the bush."
+ },
+ "line.p_fotel": {
+  "hash": "1a85d8423df3",
+  "who": "jez",
+  "text": "What is in front of the armchair? Point to it."
+ },
+ "line.p_fotel_nie": {
+  "hash": "b0a5baf3f58a",
+  "who": "jez",
+  "text": "The teddy is hiding behind the armchair. What is at the front?"
+ },
+ "line.p_glaz": {
+  "hash": "729ad4b2b3f3",
+  "who": "mis",
+  "text": "Hide the bunny behind the big stone."
+ },
+ "line.p_glaz_nie": {
+  "hash": "c9ff2c0715e9",
+  "who": "mis",
+  "text": "The bunny must be hidden, behind the stone."
+ },
+ "line.h_dom": {
+  "hash": "354c92ec6376",
+  "who": "zajac",
+  "text": "We play hide-and-seek at home too! The teddy is hiding."
+ },
+ "line.h_gdzie": {
+  "hash": "017189486216",
+  "who": "mis",
+  "text": "What is the teddy hiding behind? Point to it."
+ },
+ "line.h_gdzie_nie": {
+  "hash": "454127cb6b5c",
+  "who": "mis",
+  "text": "He's not there. Look for little paws peeking out."
+ },
+ "line.h_za_zaslona": {
+  "hash": "b9273bb57104",
+  "who": "mis",
+  "text": "Behind the curtain! His paws were peeking out."
+ },
+ "line.h_pilka": {
+  "hash": "dc5d533595a7",
+  "who": "zajac",
+  "text": "Put the ball in front of the armchair, so it can be seen."
+ },
+ "line.h_pilka_nie": {
+  "hash": "d4cbc2ee14a8",
+  "who": "zajac",
+  "text": "In front of the armchair."
+ },
+ "line.h_dobrze": {
+  "hash": "8255ea1706e1",
+  "who": "mis",
+  "text": "The ball is in front of the armchair. You can see it!"
+ },
+ "line.h_rodzice": {
+  "hash": "0e296216c0aa",
+  "who": "zajac",
+  "text": "Play hide-and-seek with your parents: behind the door, behind the armchair, behind the curtain. And remember: in front, everybody can see you!"
+ },
+ "line.naklejka_daj": {
+  "hash": "d0cb79e98763",
+  "who": "zajac",
+  "text": "Thank you for playing hide-and-seek! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "b1d881a6de67",
+  "who": "zajac",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "b929ddcee37a",
+  "who": "narrator",
+  "text": "This is the bush Mouse hid behind. We got it when we learnt what is in front and what is behind."
+ }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "front_back",
+  "title": {
+    "pl": "Z przodu i z tyłu",
+    "en": "In front and behind"
+  },
+  "goal": "In front of and behind: behind a thing you are hidden and only a bit peeks out; in front of it everybody sees you.",
+  "age": "3-4",
+  "characters": [
+    "jez",
+    "zajac",
+    "mis"
+  ],
+  "backgrounds": [
+    "las",
+    "laka",
+    "pokoj"
+  ],
+  "objects": [
+    "krzak",
+    "mysz",
+    "pniak",
+    "glaz",
+    "zajac",
+    "kaczatko_stoi",
+    "domek",
+    "misiu",
+    "kura",
+    "pilka",
+    "pudelko",
+    "koszyk",
+    "jez",
+    "fotel",
+    "klocek",
+    "zaslona"
+  ],
+  "cover": "Hide-and-seek in a sunny forest: Bear counts with his paws over his eyes, Bunny stands in FRONT of a bush with his eyes shut, giggling, and a little mouse's ears peek out from BEHIND the same bush; Hedgehog laughs.",
+  "naklejka": {
+    "obraz": "objects/krzak",
+    "kto": "zajac"
+  }
+}

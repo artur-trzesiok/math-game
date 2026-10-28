@@ -1,0 +1,221 @@
+{
+  "line.a_chowany": {
+    "who": "jez",
+    "text": "Let's play hide-and-seek! Bear seeks and we hide."
+  },
+  "line.a_licze": {
+    "who": "mis",
+    "text": "I'm closing my eyes and counting to five!"
+  },
+  "line.a_raz_dwa": {
+    "who": "mis",
+    "text": "One, two, three, four, five! Coming!"
+  },
+  "line.a_nie_widac": {
+    "who": "zajac",
+    "text": "I've shut my eyes, so nobody can see me!"
+  },
+  "line.a_widze": {
+    "who": "mis",
+    "text": "I can see you, Bunny! You're standing in front of the bush."
+  },
+  "line.a_przed": {
+    "who": "jez",
+    "text": "Bunny, when you stand in front of the bush, everybody can see you. Even with your eyes shut."
+  },
+  "line.a_za": {
+    "who": "jez",
+    "text": "To hide, you must stand behind the bush. Then the bush covers you."
+  },
+  "line.a_rozumiem": {
+    "who": "zajac",
+    "text": "I see! I'm off to find a good hiding place."
+  },
+  "line.a_schowaj_mysz": {
+    "who": "jez",
+    "text": "Mouse wants to hide too. Drag her behind the bush."
+  },
+  "line.a_mysz_nie": {
+    "who": "jez",
+    "text": "Bear would see her here at once. Hide Mouse behind the bush."
+  },
+  "line.a_mysz_ok": {
+    "who": "mis",
+    "text": "I can only see her ears! Mouse is behind the bush."
+  },
+  "line.a_szukaj": {
+    "who": "mis",
+    "text": "Help me look! See what's peeking out from behind the hiding places."
+  },
+  "line.a_gdzie_zajac": {
+    "who": "mis",
+    "text": "Where is Bunny hiding? Point to his hiding place."
+  },
+  "line.a_gdzie_zajac_nie": {
+    "who": "mis",
+    "text": "He's not there. Look for long ears."
+  },
+  "line.a_mam_zajaca": {
+    "who": "mis",
+    "text": "Got you! Bunny was behind the hiding place."
+  },
+  "line.a_gdzie_kaczka": {
+    "who": "mis",
+    "text": "And where is the duckling? Point to it."
+  },
+  "line.a_gdzie_kaczka_nie": {
+    "who": "mis",
+    "text": "She's not there. Look for a little yellow head."
+  },
+  "line.a_znalezione": {
+    "who": "jez",
+    "text": "Everybody's found!"
+  },
+  "line.a_wracam": {
+    "who": "zajac",
+    "text": "This time I hid properly, behind something!"
+  },
+  "line.b_zabawa": {
+    "who": "jez",
+    "text": "A new game: in front and behind!"
+  },
+  "line.b_przed": {
+    "who": "jez",
+    "text": "Put the teddy in front of the house."
+  },
+  "line.b_przed_nie": {
+    "who": "jez",
+    "text": "In front of the house means at the front, where the door is."
+  },
+  "line.b_przed_ok": {
+    "who": "zajac",
+    "text": "The teddy is in front of the house. You can see all of him!"
+  },
+  "line.b_za": {
+    "who": "jez",
+    "text": "And now hide the teddy behind the house."
+  },
+  "line.b_za_nie": {
+    "who": "jez",
+    "text": "Behind the house means at the back. The house should cover him."
+  },
+  "line.b_za_ok": {
+    "who": "zajac",
+    "text": "Behind the house! Only his head peeks out."
+  },
+  "line.b_co_przed": {
+    "who": "mis",
+    "text": "What is in front of the house? Point to it."
+  },
+  "line.b_co_przed_nie": {
+    "who": "mis",
+    "text": "She's behind the house, hidden. What stands at the front?"
+  },
+  "line.b_co_za": {
+    "who": "mis",
+    "text": "And who is hiding behind the house? Point to them."
+  },
+  "line.b_co_za_nie": {
+    "who": "mis",
+    "text": "The ball lies at the front. Who's peeking out from behind the house?"
+  },
+  "line.b_koniec": {
+    "who": "jez",
+    "text": "The ball in front of the house, the hen behind it!"
+  },
+  "line.p_start": {
+    "who": "jez",
+    "text": "Let's play in front and behind! I have five games."
+  },
+  "line.p_mysz": {
+    "who": "mis",
+    "text": "Hide Mouse behind the box."
+  },
+  "line.p_mysz_nie": {
+    "who": "mis",
+    "text": "Mouse must be hidden, behind the box."
+  },
+  "line.p_dobrze": {
+    "who": "jez",
+    "text": "Bravo!",
+    "speakers": [
+      "mis"
+    ]
+  },
+  "line.p_kaczka": {
+    "who": "jez",
+    "text": "Put the duckling in front of the basket."
+  },
+  "line.p_kaczka_nie": {
+    "who": "jez",
+    "text": "In front of the basket, so she can be seen."
+  },
+  "line.p_kto": {
+    "who": "mis",
+    "text": "Who is hiding behind the bush? Look at what's peeking out and point."
+  },
+  "line.p_kto_nie": {
+    "who": "mis",
+    "text": "Look again at what is peeking out from behind the bush."
+  },
+  "line.p_fotel": {
+    "who": "jez",
+    "text": "What is in front of the armchair? Point to it."
+  },
+  "line.p_fotel_nie": {
+    "who": "jez",
+    "text": "The teddy is hiding behind the armchair. What is at the front?"
+  },
+  "line.p_glaz": {
+    "who": "mis",
+    "text": "Hide the bunny behind the big stone."
+  },
+  "line.p_glaz_nie": {
+    "who": "mis",
+    "text": "The bunny must be hidden, behind the stone."
+  },
+  "line.h_dom": {
+    "who": "zajac",
+    "text": "We play hide-and-seek at home too! The teddy is hiding."
+  },
+  "line.h_gdzie": {
+    "who": "mis",
+    "text": "What is the teddy hiding behind? Point to it."
+  },
+  "line.h_gdzie_nie": {
+    "who": "mis",
+    "text": "He's not there. Look for little paws peeking out."
+  },
+  "line.h_za_zaslona": {
+    "who": "mis",
+    "text": "Behind the curtain! His paws were peeking out."
+  },
+  "line.h_pilka": {
+    "who": "zajac",
+    "text": "Put the ball in front of the armchair, so it can be seen."
+  },
+  "line.h_pilka_nie": {
+    "who": "zajac",
+    "text": "In front of the armchair."
+  },
+  "line.h_dobrze": {
+    "who": "mis",
+    "text": "The ball is in front of the armchair. You can see it!"
+  },
+  "line.h_rodzice": {
+    "who": "zajac",
+    "text": "Play hide-and-seek with your parents: behind the door, behind the armchair, behind the curtain. And remember: in front, everybody can see you!"
+  },
+  "line.naklejka_daj": {
+    "who": "zajac",
+    "text": "Thank you for playing hide-and-seek! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "zajac",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the bush Mouse hid behind. We got it when we learnt what is in front and what is behind."
+  }
+}

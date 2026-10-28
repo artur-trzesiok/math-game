@@ -1,0 +1,277 @@
+{
+ "line.a_chowany": {
+  "hash": "29e9fe5d23d2",
+  "who": "jez",
+  "text": "Bawimy się w chowanego! Miś szuka, a my się chowamy."
+ },
+ "line.a_licze": {
+  "hash": "d877fa9ebfb8",
+  "who": "mis",
+  "text": "Zamykam oczy i liczę do pięciu!"
+ },
+ "line.a_raz_dwa": {
+  "hash": "1746e7db8191",
+  "who": "mis",
+  "text": "Raz, dwa, trzy, cztery, pięć! Szukam!"
+ },
+ "line.a_nie_widac": {
+  "hash": "d28c9019d1d3",
+  "who": "zajac",
+  "text": "Zamknąłem oczy, więc nikt mnie nie widzi!"
+ },
+ "line.a_widze": {
+  "hash": "0974d410b096",
+  "who": "mis",
+  "text": "Widzę cię, Zajączku! Stoisz przed krzakiem."
+ },
+ "line.a_przed": {
+  "hash": "eee13c5c4c8d",
+  "who": "jez",
+  "text": "Zajączku, kiedy stoisz przed krzakiem, z przodu, wszyscy cię widzą. Nawet z zamkniętymi oczami."
+ },
+ "line.a_za": {
+  "hash": "a8a9ca9834b4",
+  "who": "jez",
+  "text": "Żeby się schować, trzeba stanąć za krzakiem, z tyłu. Wtedy krzak cię zasłania."
+ },
+ "line.a_rozumiem": {
+  "hash": "87c3490ca4f6",
+  "who": "zajac",
+  "text": "Aha! Idę poszukać dobrej kryjówki."
+ },
+ "line.a_schowaj_mysz": {
+  "hash": "153be0a20817",
+  "who": "jez",
+  "text": "Myszka też chce się schować. Przeciągnij ją za krzak."
+ },
+ "line.a_mysz_nie": {
+  "hash": "279cb94e29cd",
+  "who": "jez",
+  "text": "Tu Miś od razu ją zobaczy. Schowaj myszkę za krzakiem."
+ },
+ "line.a_mysz_ok": {
+  "hash": "8a390f5823b4",
+  "who": "mis",
+  "text": "Widzę tylko uszka! Myszka jest za krzakiem."
+ },
+ "line.a_szukaj": {
+  "hash": "52775eabb369",
+  "who": "mis",
+  "text": "Pomóż mi szukać! Popatrz, co wystaje zza kryjówek."
+ },
+ "line.a_gdzie_zajac": {
+  "hash": "4baba50d2c82",
+  "who": "mis",
+  "text": "Gdzie schował się Zajączek? Wskaż jego kryjówkę."
+ },
+ "line.a_gdzie_zajac_nie": {
+  "hash": "8d3bd920a193",
+  "who": "mis",
+  "text": "Tam go nie ma. Szukaj długich uszu."
+ },
+ "line.a_mam_zajaca": {
+  "hash": "21352e48028b",
+  "who": "mis",
+  "text": "Mam cię! Zajączek był za kryjówką."
+ },
+ "line.a_gdzie_kaczka": {
+  "hash": "2734b56222e7",
+  "who": "mis",
+  "text": "A gdzie jest kaczuszka? Wskaż."
+ },
+ "line.a_gdzie_kaczka_nie": {
+  "hash": "c60061f150c1",
+  "who": "mis",
+  "text": "Tam jej nie ma. Szukaj żółtej główki."
+ },
+ "line.a_znalezione": {
+  "hash": "18e4e6860e36",
+  "who": "jez",
+  "text": "Wszyscy znalezieni!"
+ },
+ "line.a_wracam": {
+  "hash": "db057d9fd491",
+  "who": "zajac",
+  "text": "Tym razem schowałem się dobrze, za kryjówką!"
+ },
+ "line.b_zabawa": {
+  "hash": "d9049ae1b93e",
+  "who": "jez",
+  "text": "Nowa zabawa: z przodu i z tyłu!"
+ },
+ "line.b_przed": {
+  "hash": "ca8652055bd7",
+  "who": "jez",
+  "text": "Postaw misia przed domkiem, z przodu."
+ },
+ "line.b_przed_nie": {
+  "hash": "2e0b6e09c288",
+  "who": "jez",
+  "text": "Przed domkiem znaczy z przodu, tam gdzie drzwi."
+ },
+ "line.b_przed_ok": {
+  "hash": "de93b267fc12",
+  "who": "zajac",
+  "text": "Miś stoi przed domkiem. Widać go całego!"
+ },
+ "line.b_za": {
+  "hash": "61db3a9f6990",
+  "who": "jez",
+  "text": "A teraz schowaj misia za domkiem, z tyłu."
+ },
+ "line.b_za_nie": {
+  "hash": "c0a67f193cc9",
+  "who": "jez",
+  "text": "Za domkiem znaczy z tyłu. Domek ma go zasłonić."
+ },
+ "line.b_za_ok": {
+  "hash": "5c6beb1d120d",
+  "who": "zajac",
+  "text": "Za domkiem! Wystaje mu tylko głowa."
+ },
+ "line.b_co_przed": {
+  "hash": "43f54c59643c",
+  "who": "mis",
+  "text": "Co jest przed domkiem? Wskaż."
+ },
+ "line.b_co_przed_nie": {
+  "hash": "531e860dec7c",
+  "who": "mis",
+  "text": "Ta jest za domkiem, schowana. Co stoi z przodu?"
+ },
+ "line.b_co_za": {
+  "hash": "ad40ebac4f9b",
+  "who": "mis",
+  "text": "A kto schował się za domkiem? Wskaż."
+ },
+ "line.b_co_za_nie": {
+  "hash": "5cdcb8bf8b76",
+  "who": "mis",
+  "text": "Piłka leży z przodu. Kto wystaje zza domku?"
+ },
+ "line.b_koniec": {
+  "hash": "01e33c2e2c6e",
+  "who": "jez",
+  "text": "Przed domkiem piłka, za domkiem kurka!"
+ },
+ "line.p_start": {
+  "hash": "0244685e128d",
+  "who": "jez",
+  "text": "Pobawmy się w z przodu i z tyłu! Mam pięć zabaw."
+ },
+ "line.p_mysz": {
+  "hash": "d6942b5991d3",
+  "who": "mis",
+  "text": "Schowaj myszkę za pudełkiem."
+ },
+ "line.p_mysz_nie": {
+  "hash": "a2f30b53a0b2",
+  "who": "mis",
+  "text": "Myszka ma być schowana, za pudełkiem."
+ },
+ "line.p_dobrze": {
+  "hash": "2d3a9f304989",
+  "who": "jez",
+  "text": "Brawo!"
+ },
+ "line.p_dobrze.mis": {
+  "hash": "fcf2dd50e10a",
+  "who": "mis",
+  "text": "Brawo!"
+ },
+ "line.p_kaczka": {
+  "hash": "1dd6d73c7f86",
+  "who": "jez",
+  "text": "Postaw kaczuszkę przed koszykiem."
+ },
+ "line.p_kaczka_nie": {
+  "hash": "dbac871e7055",
+  "who": "jez",
+  "text": "Przed koszykiem, z przodu, żeby było ją widać."
+ },
+ "line.p_kto": {
+  "hash": "b620a5e2c949",
+  "who": "mis",
+  "text": "Kto schował się za krzakiem? Popatrz, co wystaje, i wskaż."
+ },
+ "line.p_kto_nie": {
+  "hash": "4d60784b0f76",
+  "who": "mis",
+  "text": "Popatrz jeszcze raz na to, co wystaje zza krzaka."
+ },
+ "line.p_fotel": {
+  "hash": "52bd19cdd240",
+  "who": "jez",
+  "text": "Co leży przed fotelem? Wskaż."
+ },
+ "line.p_fotel_nie": {
+  "hash": "9a06386384c0",
+  "who": "jez",
+  "text": "Misio schował się za fotelem. Co jest z przodu?"
+ },
+ "line.p_glaz": {
+  "hash": "19f935a0ea3d",
+  "who": "mis",
+  "text": "Schowaj zajączka za dużym kamieniem."
+ },
+ "line.p_glaz_nie": {
+  "hash": "e9cc109f5832",
+  "who": "mis",
+  "text": "Zajączek ma być schowany, za kamieniem."
+ },
+ "line.h_dom": {
+  "hash": "3b95eb7ca1ac",
+  "who": "zajac",
+  "text": "W domu też bawimy się w chowanego! Misio się schował."
+ },
+ "line.h_gdzie": {
+  "hash": "424ac2ce25c0",
+  "who": "mis",
+  "text": "Za czym schował się misio? Wskaż."
+ },
+ "line.h_gdzie_nie": {
+  "hash": "b20cec83074f",
+  "who": "mis",
+  "text": "Tam go nie ma. Szukaj łapek, które wystają."
+ },
+ "line.h_za_zaslona": {
+  "hash": "abdbe799376e",
+  "who": "mis",
+  "text": "Za zasłoną! Wystawały mu łapki."
+ },
+ "line.h_pilka": {
+  "hash": "a67db4c9302c",
+  "who": "zajac",
+  "text": "Połóż piłkę przed fotelem, żeby było ją widać."
+ },
+ "line.h_pilka_nie": {
+  "hash": "d661a11d5b77",
+  "who": "zajac",
+  "text": "Przed fotelem, z przodu."
+ },
+ "line.h_dobrze": {
+  "hash": "dc607c940e2c",
+  "who": "mis",
+  "text": "Piłka przed fotelem. Widać ją!"
+ },
+ "line.h_rodzice": {
+  "hash": "0559af5b3f86",
+  "who": "zajac",
+  "text": "Pobaw się z rodzicami w chowanego: za drzwiami, za fotelem, za zasłoną. I pamiętaj: z przodu wszystko widać!"
+ },
+ "line.naklejka_daj": {
+  "hash": "d0565558568b",
+  "who": "zajac",
+  "text": "Dziękuję za zabawę w chowanego! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "55188bfe08ab",
+  "who": "zajac",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "0e891c6f8e2d",
+  "who": "narrator",
+  "text": "To krzak, za którym chowała się myszka. Dostaliśmy go, kiedy uczyliśmy się, co jest z przodu, a co z tyłu."
+ }
+}

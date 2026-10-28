@@ -34,7 +34,9 @@ export async function run(maxSteps = 20, prefix = "a") {
         } else if (ds.place) {
           kind = "place:" + ds.place.want;
           const G = await import("/game/engine/geometria.js");
-          const k = ds.items[0], p = G.pozycja(S, ds.place.want, k, ds.place.ref, ds.place.ref2);
+          const k = ds.items[0], w = ds.place.want, b = S.bounds(ds.place.ref);
+          // behind / in / in front of: a child drops it on the thing's middle (the settled spot of a small thing behind reads as "on")
+          const p = ["za", "w", "przed"].includes(w) ? { x: (b.left + b.right) / 2, y: (b.top + b.bottom) / 2 } : G.pozycja(S, w, k, ds.place.ref, ds.place.ref2);
           S.upusc(k, p.x, p.y);
         } else if (ds.ubieranie) {
           kind = "ubieranie";
