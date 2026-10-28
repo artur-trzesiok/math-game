@@ -153,7 +153,7 @@
   },
   "line.d_co": {
     "who": "sowa",
-    "text": "Dwie zabawki zamieniły się miejscami. Wskaż jedną z nich."
+    "text": "Dwie zabawki zamieniły się miejscami. Wskaż pierwszą z nich."
   },
   "line.d_nie": {
     "who": "sowa",
@@ -161,7 +161,7 @@
   },
   "line.d_tak": {
     "who": "lisek",
-    "text": "Tak! Te dwie zamieniły się miejscami."
+    "text": "Tak! Te dwie zamieniły się miejscami. Patrz, wracają na swoje miejsca."
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -178,5 +178,13 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To motyl znad zaczarowanego stawu. Dostaliśmy go, kiedy szukaliśmy różnic."
+  },
+  "line.d_druga": {
+    "who": "sowa",
+    "text": "A z którą zabawką się zamieniła? Wskaż drugą."
+  },
+  "line.d_druga_nie": {
+    "who": "sowa",
+    "text": "Ta stoi na swoim miejscu. Która jeszcze się przesunęła?"
   }
 }

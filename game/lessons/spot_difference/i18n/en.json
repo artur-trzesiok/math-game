@@ -153,7 +153,7 @@
   },
   "line.d_co": {
     "who": "sowa",
-    "text": "Two toys swapped places. Point to one of them."
+    "text": "Two toys have swapped places. Point to the first one."
   },
   "line.d_nie": {
     "who": "sowa",
@@ -161,7 +161,7 @@
   },
   "line.d_tak": {
     "who": "lisek",
-    "text": "Yes! Those two swapped places."
+    "text": "Yes! These two swapped places. Look, they're going back to their places."
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -178,5 +178,13 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the butterfly from the magic pond. We got it when we looked for differences."
+  },
+  "line.d_druga": {
+    "who": "sowa",
+    "text": "And which toy did it swap with? Point to the other one."
+  },
+  "line.d_druga_nie": {
+    "who": "sowa",
+    "text": "That one is in its own place. Which other one moved?"
   }
 }

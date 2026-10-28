@@ -195,9 +195,9 @@
   "text": "Zamknij oczy! Coś przestawię."
  },
  "line.d_co": {
-  "hash": "d67f72b52dcd",
+  "hash": "446ad8ac2b9e",
   "who": "sowa",
-  "text": "Dwie zabawki zamieniły się miejscami. Wskaż jedną z nich."
+  "text": "Dwie zabawki zamieniły się miejscami. Wskaż pierwszą z nich."
  },
  "line.d_nie": {
   "hash": "da26bb3ebd76",
@@ -205,9 +205,9 @@
   "text": "Ta zabawka leży tam, gdzie leżała. Która się przesunęła?"
  },
  "line.d_tak": {
-  "hash": "6fef9373d53a",
+  "hash": "509f5f658a57",
   "who": "lisek",
-  "text": "Tak! Te dwie zamieniły się miejscami."
+  "text": "Tak! Te dwie zamieniły się miejscami. Patrz, wracają na swoje miejsca."
  },
  "line.d_rodzice": {
   "hash": "3fe1dbe88133",
@@ -228,5 +228,15 @@
   "hash": "391ea4a99551",
   "who": "narrator",
   "text": "To motyl znad zaczarowanego stawu. Dostaliśmy go, kiedy szukaliśmy różnic."
+ },
+ "line.d_druga": {
+  "hash": "95343e27d885",
+  "who": "sowa",
+  "text": "A z którą zabawką się zamieniła? Wskaż drugą."
+ },
+ "line.d_druga_nie": {
+  "hash": "57c7bd726017",
+  "who": "sowa",
+  "text": "Ta stoi na swoim miejscu. Która jeszcze się przesunęła?"
  }
 }

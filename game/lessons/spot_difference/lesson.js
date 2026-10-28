@@ -144,9 +144,19 @@ export default {
             const pa = [a.mesh.position.x, a.mesh.position.y], pb = [b.mesh.position.x, b.mesh.position.y];
             a.mesh.position.set(pb[0], pb[1], a.mesh.position.z); b.mesh.position.set(pa[0], pa[1], b.mesh.position.z);
           });
+          // both: the first one, then the one it swapped with (one pick and "yes, these two" named a toy the child never found)
           await c.say("sowa", "line.d_co");
-          dobre([a, b]); await c.task({ targets: zabawki, correct: [a, b], wrong: "line.d_nie" }); dobre([a, b], false);
+          dobre([a, b]); const pierwsza = await c.task({ targets: zabawki, correct: [a, b], wrong: "line.d_nie" }); dobre([a, b], false);
+          const druga = pierwsza === a ? b : a;
+          const k1 = await c.circle(pierwsza);
+          await c.say("sowa", "line.d_druga");
+          dobre(druga); await c.task({ targets: zabawki.filter((h) => h !== pierwsza), correct: druga, wrong: "line.d_druga_nie" }); dobre(druga, false);
+          const k2 = await c.circle(druga);
           await c.say("lisek", "line.d_tak");
+          // they swap back, so the child sees the change
+          k1.remove(); k2.remove();
+          const pa = [a.mesh.position.x, a.mesh.position.y], pb = [b.mesh.position.x, b.mesh.position.y];
+          await Promise.all([a.moveTo(pb[0], pb[1], 0.6), b.moveTo(pa[0], pa[1], 0.6)]);
         }
         await c.say("sowa", "line.d_rodzice");
       },

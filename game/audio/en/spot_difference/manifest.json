@@ -195,9 +195,9 @@
   "text": "Close your eyes! I'll move something."
  },
  "line.d_co": {
-  "hash": "c55fcfb70dc8",
+  "hash": "0d1d80d95031",
   "who": "sowa",
-  "text": "Two toys swapped places. Point to one of them."
+  "text": "Two toys have swapped places. Point to the first one."
  },
  "line.d_nie": {
   "hash": "c89acb4f8428",
@@ -205,9 +205,9 @@
   "text": "This toy is where it was. Which one moved?"
  },
  "line.d_tak": {
-  "hash": "12af0bc5ea2d",
+  "hash": "5d2bc3a9272d",
   "who": "lisek",
-  "text": "Yes! Those two swapped places."
+  "text": "Yes! These two swapped places. Look, they're going back to their places."
  },
  "line.d_rodzice": {
   "hash": "d0cd97a94fcc",
@@ -228,5 +228,15 @@
   "hash": "548cc21862c1",
   "who": "narrator",
   "text": "This is the butterfly from the magic pond. We got it when we looked for differences."
+ },
+ "line.d_druga": {
+  "hash": "ba9c452cdf1d",
+  "who": "sowa",
+  "text": "And which toy did it swap with? Point to the other one."
+ },
+ "line.d_druga_nie": {
+  "hash": "c0ca3f9e29d1",
+  "who": "sowa",
+  "text": "That one is in its own place. Which other one moved?"
  }
 }

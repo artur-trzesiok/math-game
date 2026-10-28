@@ -502,7 +502,7 @@ function ikonaEmocji(rodzaj) {
   const tex = rysujDymek(rodzaj);
   if (MALOWANE[rodzaj]) {
     const img = new Image();
-    img.onload = () => { const x = tex.image.getContext("2d"); x.drawImage(img, 256 - 150, 224 - 150, 300, 300); tex.needsUpdate = true; };
+    img.onload = () => { const x = tex.image.getContext("2d"); x.setTransform(1, 0, 0, 1, 0, 0); x.drawImage(img, 256 - 140, 224 - 140, 280, 280); tex.needsUpdate = true; };   // the bubble was drawn scaled 2x
     img.src = MALOWANE[rodzaj];
   }
   return tex;
