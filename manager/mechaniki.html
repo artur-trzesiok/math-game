@@ -17,7 +17,7 @@
   window.__T = Date.now();
   (() => {
     const im = { imports: { three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
   })();
@@ -35,6 +35,7 @@
 import { Stage } from "/game/engine/scene.js";
 import * as M from "/game/engine/mechaniki.js";
 import * as M2 from "/game/engine/mechaniki2.js";
+import * as M3 from "/game/engine/mechaniki3.js";
 const $ = (id) => document.getElementById(id);
 const S = new Stage($("scena"), { tick() {}, say: async () => {}, stop() {} });
 await S.background("laka");
@@ -98,6 +99,18 @@ const DEMA = {
     for (const [i, n] of ["talerz", "motyl", "but"].entries()) { const h = await S.object(n, { x: 2.4, y: 1.6 - i * 1.6, size: 1.1 }); P.push(h); }
     const pary = { skarpetka: "but", kubek: "talerz", kwiatek: "motyl" };
     await M2.polacz(S, { lewe: L, prawe: P, para: (a, b) => pary[a.name] === b.name }); info("połączone!");
+  },
+  zagroda: async () => {
+    pokaz(); info("otocz palcem płotem same kury (nie wilka)");
+    const R = [];
+    for (const [n, x, y] of [["kura", -2.2, 1.2], ["kura", -1.0, 0.4], ["kura", -2.4, -0.6], ["wilk", 2.4, 0.6]]) R.push(await S.object(n, { x, y, size: 1.1 }));
+    await M3.zagroda(S, { rzeczy: R, chcemy: (h) => h.name === "kura", onOtwarta: () => info("płot ma dziurę!"), onZle: () => info("nie te w środku") }); info("zagroda gotowa!");
+  },
+  winda: async () => {
+    pokaz(); info("pociągnij linę albo koszyk: do góry");
+    const w = await M3.winda(S, { x: -0.5, pietra: [-2.0, 0.2, 2.0] });
+    await w.wloz(await S.object("jablko", { x: 2, y: -2, size: 0.8 }));
+    await w.doPoziomu(2); info("na górze! teraz na dół"); await w.doPoziomu(0); info("na dole!");
   },
   roznice: async () => { pokaz(); info("znajdź 3 różnice"); await M2.roznice(S, "laka"); info("wszystkie różnice!"); },
   kolorowanka: async () => { pokaz(); info("wybierz kredkę, potem pole z tą cyfrą"); await M2.kolorowanka(S, "domek"); info("pokolorowane!"); },

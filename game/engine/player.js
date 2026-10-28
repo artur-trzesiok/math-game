@@ -17,6 +17,7 @@ import { naPierwszyDotyk } from "./odblokuj.js";
 import * as R from "./rytm.js";
 import * as M from "./mechaniki.js";
 import * as M2 from "./mechaniki2.js";
+import * as M3 from "./mechaniki3.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -572,6 +573,13 @@ export class Player {
       polacz: (o) => wDzialaniu(M2.polacz(S, { ...o, onZle: o.wrong ? () => say("narrator", o.wrong) : null }), "wskaz"),
       roznice: (nazwa, o) => wDzialaniu(M2.roznice(S, nazwa, o), "wskaz"),
       kolorowanka: (nazwa, o) => wDzialaniu(M2.kolorowanka(S, nazwa, o), "wskaz"),
+      // mechaniki3.js: a fence drawn around things, a pencil fence of given points, the lift
+      zagroda: (o) => wDzialaniu(M3.zagroda(S, { ...o, onZle: o.wrong ? () => say("narrator", o.wrong) : null, onOtwarta: o.otwarta ? () => say("narrator", o.otwarta) : null }), "wskaz"),
+      plot: guard((pts, o) => M3.plot(S, pts, o)),
+      winda: guard(async (o = {}) => {
+        const w = await M3.winda(S, { ...o, onZly: o.wrong ? () => say("narrator", o.wrong) : null });
+        const d0 = w.doPoziomu; w.doPoziomu = (i) => wDzialaniu(d0(i)); return w;
+      }),
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
       pan: guard((k, opts) => E.pan(S, k, opts)),
       odliczanie: guard((opts) => E.odliczanie(S, opts)),

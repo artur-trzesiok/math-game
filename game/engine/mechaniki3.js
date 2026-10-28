@@ -1,0 +1,184 @@
+// Mechanics, third set (accepted 2026-10-28, stage 4): the fence (a closed line drawn with a finger makes an inside)
+// and the lift (a basket on a rope over a pulley, stopping at levels). The player wraps them as ctx calls.
+
+import * as THREE from "three";
+
+const FAST = new URLSearchParams(location.search).has("szybko");
+const DREWNO = "#7a5530";
+
+const srodek = (S, h) => { const b = S.bounds(h); return [(b.left + b.right) / 2, (b.bottom + b.top) / 2]; };
+// is the point inside the polygon (even-odd ray cast)
+export function wSrodku(poly, [x, y]) {
+  let w = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [xi, yi] = poly[i], [xj, yj] = poly[j];
+    if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) w = !w;
+  }
+  return w;
+}
+// a flat band from a to b (the live line under the finger, the rope)
+function pasek(kolor, grubosc, z = 0.8, ro = 60) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(1, grubosc), new THREE.MeshBasicMaterial({ color: kolor, transparent: true, depthTest: false, depthWrite: false }));
+  m.renderOrder = ro; m.position.z = z; m.frustumCulled = false;
+  m.ustaw = (a, b) => { const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 0.001; m.position.x = (a[0] + b[0]) / 2; m.position.y = (a[1] + b[1]) / 2; m.scale.x = l; m.rotation.z = Math.atan2(dy, dx); };
+  return m;
+}
+
+// ===================================================================== the fence
+// a pencil fence along `pts` (closed or not): the rail plus a post every ~0.55 units; a handle with remove()
+export async function plot(S, pts, { zamkniety = true, kolor = DREWNO, duration = 0.7 } = {}) {
+  const sciezka = zamkniety ? [...pts, pts[0]] : pts.slice();
+  const czesci = [await S.line(sciezka, { color: kolor, width: 0.09, duration, strong: true, name: "plot" })];
+  let reszta = 0;
+  for (let i = 1; i < sciezka.length; i++) {
+    const [ax, ay] = sciezka[i - 1], [bx, by] = sciezka[i], l = Math.hypot(bx - ax, by - ay);
+    for (let d = 0.55 - reszta; d <= l; d += 0.55) { const x = ax + ((bx - ax) * d) / l, y = ay + ((by - ay) * d) / l; czesci.push(await S.line([[x, y - 0.17], [x, y + 0.2]], { color: kolor, width: 0.08, duration: 0.02, strong: true, name: "slupek" })); }
+    reszta = (reszta + l) % 0.55;
+  }
+  return { mesh: czesci[0].mesh, points: sciezka, remove: () => czesci.forEach((c) => c.remove()) };
+}
+
+// The child draws a line around things with a finger. Let go near the start = a closed fence; `chcemy(h)` says which
+// of `rzeczy` belong inside: exactly those inside -> the fence is built (posts, a bump of everything inside) and the
+// call resolves; a line left open -> onOtwarta (a thing walks out through the gap); a wrong set -> onZle. The wrong
+// line fades. Tests: S.zagroda.dokoncz().
+export async function zagroda(S, { rzeczy, chcemy = () => true, kolor = DREWNO, onOtwarta = null, onZle = null, uciekinier = null }) {
+  const chciane = rzeczy.filter(chcemy);
+  let pts = [], kreski = [], plotek = null;
+  const grp = new THREE.Group(); S.scene.add(grp);
+  const czysc = () => { for (const k of kreski) grp.remove(k); kreski = []; pts = []; };
+  const zgas = async () => {
+    const mats = kreski.map((k) => k.material);
+    await S.tween(FAST ? 0.05 : 0.45, (s) => mats.forEach((m) => { m.opacity = 1 - s; })); czysc();
+  };
+  const zbuduj = async (poly) => {
+    czysc(); plotek = await plot(S, poly, { kolor, duration: FAST ? 0.1 : 0.4 });
+    S.sfx.graj("right"); for (const h of chciane) S.bump(h, 0.2, false);
+  };
+  const ocen = async (poly) => {
+    const w = rzeczy.filter((h) => wSrodku(poly, srodek(S, h)));
+    if (w.length === chciane.length && chciane.every((h) => w.includes(h))) { await zbuduj(poly); return true; }
+    S.sfx.graj("wrong"); for (const h of rzeczy.filter((h) => w.includes(h) !== chciane.includes(h))) S.shake(h);
+    await zgas(); onZle?.(w); return false;
+  };
+  const wynik = await new Promise((ok) => {
+    const koniec = (poly) => { S.palec = null; S.zagroda = null; ok(poly); };
+    S.palec = {
+      down: (p) => { czysc(); pts.push(p); return true; },
+      move: (p) => {
+        const q = pts[pts.length - 1]; if (!q || Math.hypot(p[0] - q[0], p[1] - q[1]) < 0.1) return;
+        const k = pasek(kolor, 0.11); k.ustaw(q, p); grp.add(k); kreski.push(k);
+        const d = new THREE.Mesh(new THREE.CircleGeometry(0.055, 12), k.material); d.position.set(p[0], p[1], 0.8); d.renderOrder = 60; grp.add(d); kreski.push(d);
+        pts.push(p);
+      },
+      up: async () => {
+        const dl = pts.reduce((a, p, i) => a + (i ? Math.hypot(p[0] - pts[i - 1][0], p[1] - pts[i - 1][1]) : 0), 0);
+        if (pts.length < 6 || dl < 2.0) { czysc(); return; }
+        const poly = pts.slice(), [a, b] = [poly[0], poly[poly.length - 1]];
+        if (Math.hypot(a[0] - b[0], a[1] - b[1]) > Math.max(0.9, dl * 0.12)) {              // open: a gap between the ends
+          S.sfx.graj("wrong");
+          const u = uciekinier || chciane[0];
+          if (u?.moveTo) { const [ux, uy] = srodek(S, u), gx = (a[0] + b[0]) / 2, gy = (a[1] + b[1]) / 2; const hx = u.mesh.position.x, hy = u.mesh.position.y;
+            await u.moveTo(hx + (gx - ux) * 1.3, hy + (gy - uy) * 1.3, FAST ? 0.05 : 0.6); await u.moveTo(hx, hy, FAST ? 0.05 : 0.5); }
+          await zgas(); onOtwarta?.(); return;
+        }
+        if (await ocen(poly)) koniec(poly);
+      },
+    };
+    S.zagroda = {                                                        // tests: a loop around exactly the wanted things
+      dokoncz: async () => {
+        const cs = chciane.map((h) => srodek(S, h)), r = 0.95, kolo = [];
+        for (const [x, y] of cs) for (let i = 0; i < 16; i++) kolo.push([x + r * Math.cos((i / 16) * 2 * Math.PI), y + r * Math.sin((i / 16) * 2 * Math.PI)]);
+        const poly = otoczka(kolo);
+        await zbuduj(poly); koniec(poly);
+      },
+      rzeczy, chcemy,
+    };
+  });
+  S.scene.remove(grp);
+  const wewnatrz = rzeczy.filter((h) => wSrodku(wynik, srodek(S, h)));
+  return { plot: plotek, wewnatrz, remove: () => plotek?.remove() };
+}
+// convex hull (monotone chain)
+function otoczka(p) {
+  const P = p.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]), x = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+  const lo = [], hi = [];
+  for (const q of P) { while (lo.length > 1 && x(lo[lo.length - 2], lo[lo.length - 1], q) <= 0) lo.pop(); lo.push(q); }
+  for (const q of P.reverse()) { while (hi.length > 1 && x(hi[hi.length - 2], hi[hi.length - 1], q) <= 0) hi.pop(); hi.push(q); }
+  return lo.slice(0, -1).concat(hi.slice(0, -1));
+}
+
+// ===================================================================== the lift
+// A basket (sticker `kosz`) hangs on a rope from a pulley over (x, top); the rope runs over the wheel and down its
+// other side to a wooden toggle. Pull the toggle down and the basket rises, or drag the basket itself; let go and it
+// settles on the nearest of `pietra` (y of the basket's centre, bottom first). Things put in ride along.
+// doPoziomu(i) waits for the child to bring it to level i. Tests: S.winda.dokoncz().
+export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz = "koszyk", size = 1.2, szer = 0.8, onZly = null } = {}) {
+  const dol = pietra[0], gora = pietra[pietra.length - 1];
+  const yK = Math.min(3.2, gora + size * 0.5 + 0.55), r = szer / 2, xL = x, xP = x + szer, cx = x + r;
+  const h = await S.object(kosz, { x, y: pietra[start], size });
+  const grp = new THREE.Group(); S.scene.add(grp);
+  // the beam and the wheel
+  const belka = pasek(DREWNO, 0.16, 0.5, 13); belka.ustaw([cx - r - 0.6, yK + r + 0.1], [cx + r + 0.6, yK + r + 0.1]); grp.add(belka);
+  const uchwyt = pasek("#5b3d22", 0.07, 0.5, 13); uchwyt.ustaw([cx, yK + r + 0.1], [cx, yK]); grp.add(uchwyt);
+  const kolo = new THREE.Mesh(new THREE.CircleGeometry(r + 0.04, 32), new THREE.MeshBasicMaterial({ color: "#5b3d22", transparent: true, depthWrite: false }));
+  const tarcza = new THREE.Mesh(new THREE.CircleGeometry(r - 0.06, 32), new THREE.MeshBasicMaterial({ color: "#b07c4a", transparent: true, depthWrite: false }));
+  const os = new THREE.Mesh(new THREE.CircleGeometry(0.07, 16), new THREE.MeshBasicMaterial({ color: "#3a2716", transparent: true, depthWrite: false }));
+  kolo.position.set(cx, yK, 0.5); tarcza.position.set(cx, yK, 0.51); os.position.set(cx, yK, 0.52);
+  kolo.renderOrder = 13.1; tarcza.renderOrder = 13.2; os.renderOrder = 13.3; grp.add(kolo, tarcza, os);
+  const szprychy = new THREE.Group(); szprychy.position.set(cx, yK, 0.515);
+  for (let i = 0; i < 3; i++) { const s = pasek("#7a5530", 0.04, 0, 13.25); s.ustaw([-(r - 0.08), 0], [r - 0.08, 0]); s.rotation.z = (i * Math.PI) / 3; szprychy.add(s); }
+  grp.add(szprychy);
+  const lina1 = pasek("#6b4a2a", 0.045, 0.49, 12.9), lina2 = pasek("#6b4a2a", 0.045, 0.49, 12.9); grp.add(lina1, lina2);
+  const raczka = new THREE.Mesh(new THREE.CircleGeometry(0.2, 24), new THREE.MeshBasicMaterial({ color: "#c58b4e", transparent: true, depthWrite: false }));
+  const obw = new THREE.Mesh(new THREE.CircleGeometry(0.25, 24), new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, depthWrite: false }));
+  raczka.renderOrder = 13.6; obw.renderOrder = 13.5; grp.add(obw, raczka);
+  const wiezie = [];                                                     // [handle, dx, dy]
+  const gornaKosza = () => S.bounds(h).top - 0.05;
+  const L = (yK - (dol + size * 0.4)) + (yK - gora);                     // rope length: basket down = toggle up
+  let y = pietra[start];
+  const ustaw = (ny) => {
+    const dy = ny - y; y = ny; h.mesh.position.y = ny; h.home = { x, y: ny };
+    for (const [t, ox, oy] of wiezie) { t.mesh.position.set(x + ox, ny + oy, t.mesh.position.z); t.home = { x: x + ox, y: ny + oy }; }
+    const top = gornaKosza(), yr = yK - (L - (yK - top));
+    lina1.ustaw([xL, yK], [x, top]); lina2.ustaw([xP, yK], [xP, yr]);
+    raczka.position.set(xP, yr - 0.18, 0.5); obw.position.set(xP, yr - 0.18, 0.5);
+    szprychy.rotation.z -= dy / r;                                       // the wheel turns as the rope runs over it
+  };
+  ustaw(y);
+  const najblizszy = () => pietra.reduce((b, p, i) => (Math.abs(p - y) < Math.abs(pietra[b] - y) ? i : b), 0);
+  const jedz = async (i, d = 0.6) => { const y0 = y, y1 = pietra[i]; if (Math.abs(y1 - y0) > 0.01) S.sfx.graj("whoosh", { glosnosc: 0.4 }); await S.tween(FAST ? 0.05 : d, (s) => ustaw(y0 + (y1 - y0) * s)); ustaw(y1); };
+  const W = {
+    kosz: h, pietra,
+    poziom: () => najblizszy(),
+    jedz,
+    // a thing into the basket (it sits on its rim and rides along), out again to (nx, ny)
+    wloz: async (t, dx = 0) => { const ty = gornaKosza() - h.mesh.position.y + 0.15; await t.moveTo(x + dx, y + ty, FAST ? 0.05 : 0.4); wiezie.push([t, dx, ty]); S.sfx.graj("plop"); },
+    wyjmij: async (t, nx, ny) => { const i = wiezie.findIndex((q) => q[0] === t); if (i >= 0) wiezie.splice(i, 1); await t.moveTo(nx, ny, FAST ? 0.05 : 0.4); },
+    // the child works the lift until it stands at level i
+    doPoziomu: (i) => new Promise((ok) => {
+      let chwyt = null, dy0 = 0;
+      S.palec = {
+        down: (p) => {
+          const b = S.bounds(h), [rx, ry] = [raczka.position.x, raczka.position.y];
+          if (Math.hypot(p[0] - rx, p[1] - ry) < 0.6) { chwyt = "lina"; dy0 = p[1] - ry; return true; }
+          if (p[0] >= b.left - 0.2 && p[0] <= b.right + 0.2 && p[1] >= b.bottom - 0.2 && p[1] <= b.top + 0.2) { chwyt = "kosz"; dy0 = p[1] - y; return true; }
+          return false;
+        },
+        move: (p) => {
+          if (!chwyt) return;
+          let ny = chwyt === "kosz" ? p[1] - dy0 : (() => { const yr = p[1] - dy0; const top = yK - (L - (yK - yr)); return y + (top - gornaKosza()); })();
+          ustaw(Math.max(dol, Math.min(gora, ny)));
+        },
+        up: async () => {
+          if (!chwyt) return; chwyt = null;
+          const k = najblizszy(); await jedz(k, 0.25); S.sfx.graj("plop");
+          if (k === i) { S.palec = null; S.winda = null; ok(); } else onZly?.(k);
+        },
+      };
+      S.winda = { dokoncz: async () => { await jedz(i); S.palec = null; S.winda = null; ok(); } };
+    }),
+    remove: () => { S.scene.remove(grp); h.remove(); },
+  };
+  return W;
+}

@@ -103,7 +103,7 @@ export default {
         const gw = c.gwiazdki(5, { auto: false });
         await c.say("bobr", "line.p_start", { anim: "Radosc" });
         // 1. cups from the smallest
-        { const { t, strzalka } = await szereg(c, "kubek_kolorowy", [0.8, 1.15, 1.5]); await c.say("zajac", "line.p_kubki"); await t.done(); strzalka.remove(); await c.say("bobr", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        { const { t, strzalka } = await szereg(c, "kubek_skladany", [0.8, 1.15, 1.5]); await c.say("zajac", "line.p_kubki"); await t.done(); strzalka.remove(); await c.say("bobr", "line.p_dobrze"); gw.dodaj(); c.clear(); }
         // 2. carrots from the biggest
         { const { t, strzalka } = await szereg(c, "marchewka", [0.8, 1.15, 1.5], { rosnaco: false }); await c.say("bobr", "line.p_marchewki"); await t.done(); strzalka.remove(); await c.say("zajac", "line.p_dobrze"); gw.dodaj(); c.clear(); }
         // 3. the missing one: a growing row with a gap

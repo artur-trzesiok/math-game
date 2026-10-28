@@ -286,6 +286,44 @@ Do NOT add anything else.""",
     },
 }
 
+# stage 4: Mole's little forest railway (numbers 1 to 5) and Owl's shadow theatre (tangram)
+SCENY["stacyjka"] = {
+    "plyta": f"""A background illustration for a children's game: a tiny wooden railway station at the edge of a sunny
+forest. On the left a small wooden station hut with a little roof and a round clock, a lantern on a post; along the
+back a narrow railway track runs across the whole picture, and on it, on the RIGHT, a small friendly red toy-like steam
+locomotive with a tall chimney and no wagons. Pine and birch trees behind, gentle hills. The lower middle is an EMPTY
+grassy platform where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+The SKY IS EMPTY - just sky, NO clouds, NO birds, NO sun.
+The GRASS IS PLAIN - NO tufts, NO flowers, NO stones.
+NO characters, NO animals, NO people, NO text, NO numbers.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that two
+things have been added, in the same style:
+  - SIX or SEVEN soft white cartoon clouds spread across the whole sky, big
+    and small, none touching each other;
+  - MANY tufts of taller grass standing up from the ground - at least fifteen,
+    scattered over the foreground and the middle ground, left, centre and
+    right, each tuft separate from the others.
+Same colours, same horizon, same hut, same track, same locomotive, same texture - only the clouds and the tufts are
+new. Do NOT move or redraw anything that was already there. Do NOT add animals or anything else.""",
+}
+SCENY["teatrzyk"] = {
+    "wnetrze": True,
+    "plyta": f"""A background illustration for a children's game: a cosy little shadow-puppet theatre in a forest
+animal's living room in the evening. In the middle, high up, a big wooden frame with a plain WHITE cloth screen
+stretched in it, softly glowing warm from a lamp behind it, little red curtains tied at its sides; the screen is EMPTY.
+Below the screen a dark wooden floor; on the left and right a few small wooden stools and cushions for the audience,
+a garland of little paper lanterns along the top. Dim, warm evening light.
+The floor in the lower middle is EMPTY where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO shadows on the screen, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
+style: a little potted plant standing on the floor near the right wall.
+Same colours, same screen, same curtains, same lanterns. Do NOT move or redraw anything that was already there.""",
+}
+
 
 def gen(nazwa: str, jakosc: str = "high") -> None:
     kat = KORZEN / nazwa

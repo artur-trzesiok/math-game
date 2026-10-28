@@ -76,7 +76,7 @@ All eight objects roughly the same size.""",
     },
     "objects3": {
         "outline": True,
-        "names": ["stol", "krzeslo", "krzak", "jez", "zajac", "mysz", "kaczka", "motyl"],
+        "names": ["stol", "krzeslo", "krzak", "jez", "zajac", "mysz", "kaczatko_stoi", "motyl"],
         "size": "1536x1024",
         "prompt": f"""A sprite sheet of EIGHT small illustrated things for a children's picture book, arranged in a
 neat grid of 2 rows and 4 columns on a fully TRANSPARENT background, with generous empty space between them
@@ -362,7 +362,7 @@ platform with a little roof, seen from the front, NO tree under it; one big tall
 # in order (stage 2): nesting boxes and owlets at three sizes, cups that stack inside each other
 SHEETS["po_kolei"] = {
     "outline": True,
-    "names": ["budka", "sowiatko", "kubek_kolorowy", "kamien_schodek"],
+    "names": ["budka", "sowiatko", "kubek_skladany", "kamien_schodek"],
     "size": "1536x1024",
     "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
 TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow.
@@ -464,6 +464,50 @@ Left to right: a big golden key whose bit (the end) is shaped like a STAR; the s
 CIRCLE; the same golden key but its bit shaped like a SQUARE; a small round wooden door with a big keyhole shaped like a
 STAR.
 All four roughly the same height.""",
+}
+
+# stage 4 (numbers 1-5, up and down, inside and outside): one row of four per sheet - a 3x4 grid came out on a glowing
+# coloured background twice and the split mixed the names
+SHEETS["etap4_a"] = {
+    "outline": True,
+    "names": ['wagon', 'bilet', 'ptak', 'gniazdo'],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: one small open red toy-train wagon seen from the side, with wheels, EMPTY, its side plain
+(NO number); one blank cream paper train ticket, nothing written on it; one small round blue songbird sitting, seen
+from the side; one empty round bird nest made of twigs.
+All four roughly the same size.""",
+}
+SHEETS["etap4_b"] = {
+    "outline": True,
+    "names": ['owca', 'wilk', 'akwarium', 'rybka'],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: one SMALL fluffy white sheep standing, seen from the side; one SMALL friendly grey cartoon wolf sitting,
+smiling, NOT scary; one round glass fishbowl with water, EMPTY (no fish); one small orange goldfish seen from the side.
+Each object fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.
+All four roughly the same size.""",
+}
+SHEETS["etap4_c"] = {
+    "outline": True,
+    "names": ['klatka', 'plecak', 'sloik', 'czapka'],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: one EMPTY round golden birdcage with its little door open; one small green child's backpack;
+one glass jar of honey with a cloth lid; one red knitted winter hat with a pompom.
+All four roughly the same size.""",
 }
 
 
