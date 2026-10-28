@@ -28,7 +28,7 @@ function kropki(n, r = 0.11, kolor = "#2b2622") {
 }
 
 // ===================================================================== memory
-// pary: [[face, face], ...], a face = {obraz} (a sticker), {cyfra}, {kropki}. The cards lie face down in a grid; the
+// pary: [[face, face], ...], a face = {obraz} (a sticker; with `ile` many of it in a heap), {cyfra}, {kropki}. The cards lie face down in a grid; the
 // child turns two; a pair stays open, two different ones turn back. Resolves when every pair is open.
 export async function memory(S, pary, { x = 0, y = 0.35, kolumny = 4, szer = 1.45, odstep = 0.28 } = {}) {
   const wys = szer * 1.25, karty = tasuj(pary.flatMap((p, i) => p.map((f) => ({ ...f, para: i }))));
@@ -39,7 +39,11 @@ export async function memory(S, pary, { x = 0, y = 0.35, kolumny = 4, szer = 1.4
     const przod = new THREE.Group(), tyl = new THREE.Group(); grp.add(przod, tyl); przod.visible = false;
     const karta = await S.object("karta_przod", { obraz: "/game/assets/menu/karta.webp", x: grp.position.x, y: grp.position.y, size: wys * 1.02, cicho: true }); doGrupy(S, grp, karta); przod.add(karta.mesh);
     const rewers = await S.object("karta_rewers", { x: grp.position.x, y: grp.position.y, size: wys * 1.1, cicho: true }); doGrupy(S, grp, rewers); tyl.add(rewers.mesh);
-    if (f.obraz) { const o = await S.object(f.obraz, { x: grp.position.x, y: grp.position.y, size: szer * 0.78, cicho: true }); doGrupy(S, grp, o); przod.add(o.mesh); }
+    if (f.obraz && !(f.ile > 1)) { const o = await S.object(f.obraz, { x: grp.position.x, y: grp.position.y, size: szer * 0.78, cicho: true }); doGrupy(S, grp, o); przod.add(o.mesh); }
+    if (f.obraz && f.ile > 1) for (let j = 0; j < f.ile; j++) {                 // many of one thing on one card: a little heap
+      const a = j / f.ile * Math.PI * 2 + 0.4, rr = j ? szer * 0.22 : 0;
+      const o = await S.object(f.obraz, { x: grp.position.x + Math.cos(a) * rr, y: grp.position.y + Math.sin(a) * rr * 1.2, size: szer * 0.38, cicho: true }); doGrupy(S, grp, o); przod.add(o.mesh);
+    }
     if (f.cyfra != null) { const d = await narysujCyfre(S, f.cyfra, { x: grp.position.x, y: grp.position.y, size: wys * 0.5, duration: 0.01 }); for (const p of d.parts) { doGrupy(S, grp, p); przod.add(p.mesh); } }
     if (f.kropki) { const k = kropki(f.kropki, szer * 0.08); k.position.z = 0.05; przod.add(k); }
     const h = uchwyt(S, grp, { name: "karta", para: f.para, przod, tyl, otwarta: false });
@@ -52,7 +56,9 @@ export async function memory(S, pary, { x = 0, y = 0.35, kolumny = 4, szer = 1.4
   }
   S.memory = { karty: hs };
   for (let znalezione = 0; znalezione < pary.length;) {
+    hs.forEach((h) => (h.dobry = !h.otwarta));                          // tests: any closed card first, then its pair
     const a = await S.choose(hs.filter((h) => !h.otwarta)); S.sfx.graj("tap"); await a.obroc(true);
+    hs.forEach((h) => (h.dobry = !h.otwarta && h.para === a.para));
     const b = await S.choose(hs.filter((h) => !h.otwarta)); S.sfx.graj("tap"); await b.obroc(true);
     if (a.para === b.para) { znalezione++; S.sfx.graj("right"); S.bump(a, 0.15, false); S.bump(b, 0.15, false); a.znaleziona = b.znaleziona = true; }
     else { await czekaj(1.0); await Promise.all([a.obroc(false), b.obroc(false)]); }

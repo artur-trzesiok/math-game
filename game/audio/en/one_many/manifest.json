@@ -1,0 +1,267 @@
+{
+ "line.a_zima": {
+  "hash": "e6682a77378b",
+  "who": "wiewiorka",
+  "text": "Brr, winter is coming! I must gather a store for the winter. I need lots of food, many nuts!"
+ },
+ "line.a_duzo": {
+  "hash": "8a00868f9654",
+  "who": "lisek",
+  "text": "Squirrel, look! I brought you a lot of food!"
+ },
+ "line.a_jedna": {
+  "hash": "38f6de1f72d6",
+  "who": "sarenka",
+  "text": "Fox, that is one pumpkin. Big, but just one."
+ },
+ "line.a_co_wiele": {
+  "hash": "5f188683f0c0",
+  "who": "wiewiorka",
+  "text": "Just one? Then what does many mean?"
+ },
+ "line.a_wiele": {
+  "hash": "a075b6eefbcd",
+  "who": "sarenka",
+  "text": "Many is when there are lots of things. Look at the nuts: this one, and this, and this, and this..."
+ },
+ "line.a_nazwa": {
+  "hash": "e5311d5bb5ee",
+  "who": "sarenka",
+  "text": "There is one pumpkin. And there are many nuts."
+ },
+ "line.a_gdzie_jedna": {
+  "hash": "a65513a4d0e5",
+  "who": "wiewiorka",
+  "text": "Now you. Where is one thing? Point to it."
+ },
+ "line.a_gdzie_jedna.sarenka": {
+  "hash": "78ac015465d1",
+  "who": "sarenka",
+  "text": "Now you. Where is one thing? Point to it."
+ },
+ "line.a_to_wiele": {
+  "hash": "d4b53229e7d8",
+  "who": "sarenka",
+  "text": "There are many nuts here. And where is there just one?"
+ },
+ "line.a_tak_jedna": {
+  "hash": "ec2a2cec651a",
+  "who": "sarenka",
+  "text": "Yes! There is one pumpkin."
+ },
+ "line.a_gdzie_wiele": {
+  "hash": "8a3602242c8b",
+  "who": "wiewiorka",
+  "text": "And where are many things? Point to them."
+ },
+ "line.a_to_jedna": {
+  "hash": "ea07fcb68e76",
+  "who": "sarenka",
+  "text": "That is one pumpkin. And where are many things?"
+ },
+ "line.a_tak_wiele": {
+  "hash": "4b62e2a6de2c",
+  "who": "sarenka",
+  "text": "Yes! There are many nuts."
+ },
+ "line.a_zbiory": {
+  "hash": "af4922f78cc6",
+  "who": "wiewiorka",
+  "text": "There is still a lot of harvest in the garden. Will you help me put it away?"
+ },
+ "line.a_sortuj": {
+  "hash": "5613a7aaadf8",
+  "who": "sarenka",
+  "text": "If there is one of something, put it on the plate. If there are many, put them in the basket. Drag every thing."
+ },
+ "line.a_pomylka": {
+  "hash": "93bb003d146d",
+  "who": "sarenka",
+  "text": "Look again: is it one thing, or are there many?"
+ },
+ "line.a_dynia_tez": {
+  "hash": "3d1eb441cc64",
+  "who": "lisek",
+  "text": "Then my pumpkin goes into the store too! One huge pumpkin and many nuts."
+ },
+ "line.a_do_strumyka": {
+  "hash": "e5eecbb05bdc",
+  "who": "wiewiorka",
+  "text": "Hooray! And now let's go to the brook for water."
+ },
+ "line.b_kaczka": {
+  "hash": "db8431f69dc6",
+  "who": "sarenka",
+  "text": "Oh dear, look! Mother Duck is very worried."
+ },
+ "line.b_mama": {
+  "hash": "74e7a24b25aa",
+  "who": "wiewiorka",
+  "text": "What happened, Mother Duck?"
+ },
+ "line.b_wiele_brak": {
+  "hash": "8f010ba990d6",
+  "who": "sarenka",
+  "text": "Mother Duck has many ducklings. They all came back from swimming... but one is missing!"
+ },
+ "line.b_gdzie": {
+  "hash": "66ac0004a257",
+  "who": "wiewiorka",
+  "text": "Let's look for it! Where is one duckling, all alone? Point to it."
+ },
+ "line.b_to_wiele": {
+  "hash": "10cd108fa942",
+  "who": "sarenka",
+  "text": "There are many ducklings here. We are looking for the one that is alone."
+ },
+ "line.b_jest": {
+  "hash": "5d10d6f1f1ea",
+  "who": "sarenka",
+  "text": "There it is! One duckling hid in the reeds."
+ },
+ "line.b_dziekuje": {
+  "hash": "d1f218f5ae53",
+  "who": "lisek",
+  "text": "Now all the ducklings are together. Mother Duck says thank you!"
+ },
+ "line.b_zabawa": {
+  "hash": "fd6359be90be",
+  "who": "lisek",
+  "text": "The ducklings want to play hide and seek with you! Catch the duckling when it pops up."
+ },
+ "line.b_do_domu": {
+  "hash": "c1eaf8201b29",
+  "who": "wiewiorka",
+  "text": "That was fun! Now we go home with the store. We'll have a feast!"
+ },
+ "line.p_start": {
+  "hash": "85616d967bd8",
+  "who": "wiewiorka",
+  "text": "Before we eat, let's check my store! I have five games for you."
+ },
+ "line.p_sluchaj": {
+  "hash": "2e5535dc155a",
+  "who": "lisek",
+  "text": "Listen to me clap."
+ },
+ "line.p_ile_razy": {
+  "hash": "4a801620a6ba",
+  "who": "lisek",
+  "text": "Did I clap once or many times? Point to the card."
+ },
+ "line.p_raz": {
+  "hash": "1b68fec2fd66",
+  "who": "wiewiorka",
+  "text": "Once! One clap."
+ },
+ "line.p_wiele_razy": {
+  "hash": "f294ea3758b7",
+  "who": "wiewiorka",
+  "text": "Many times! Clap, clap, clap, and more, and more."
+ },
+ "line.p_kubki": {
+  "hash": "5be63db85cc5",
+  "who": "wiewiorka",
+  "text": "Under one cup I hide one acorn, and under the other many acorns. Watch carefully!"
+ },
+ "line.p_gdzie_wiele": {
+  "hash": "0bb444e54efd",
+  "who": "wiewiorka",
+  "text": "Under which cup are many acorns? Point to it."
+ },
+ "line.p_kubki_nie": {
+  "hash": "2d51d17ebbc2",
+  "who": "wiewiorka",
+  "text": "There is only one acorn here. The many are under the other cup."
+ },
+ "line.p_kubki_ok": {
+  "hash": "98beaa4dd36a",
+  "who": "lisek",
+  "text": "Bravo! Many acorns!"
+ },
+ "line.p_memory": {
+  "hash": "5168d1771b74",
+  "who": "lisek",
+  "text": "Turn the cards and find pairs: one apple with one apple, many apples with many apples."
+ },
+ "line.p_memory_ok": {
+  "hash": "dc929806cc5a",
+  "who": "wiewiorka",
+  "text": "All the pairs found!"
+ },
+ "line.p_cien": {
+  "hash": "fe257ea1ec51",
+  "who": "lisek",
+  "text": "Whose shadow is it: one pear's or many pears'? Point to it."
+ },
+ "line.p_cien_nie": {
+  "hash": "d3a84f77d90e",
+  "who": "lisek",
+  "text": "Look at the shadow again. Is it one pear, or many?"
+ },
+ "line.p_cien_jedna": {
+  "hash": "6c701d018b41",
+  "who": "wiewiorka",
+  "text": "Yes! It is the shadow of one pear."
+ },
+ "line.p_cien_wiele": {
+  "hash": "66804ffa68d8",
+  "who": "wiewiorka",
+  "text": "Yes! It is the shadow of many pears."
+ },
+ "line.p_niebo": {
+  "hash": "07be8b0fbde2",
+  "who": "lisek",
+  "text": "There are many stars in the sky. And what is there only one of? Point to it."
+ },
+ "line.p_niebo_nie": {
+  "hash": "b1ea62c018bf",
+  "who": "lisek",
+  "text": "There are many stars. Look for something there is only one of."
+ },
+ "line.p_niebo_ok": {
+  "hash": "5634a73f1ad4",
+  "who": "wiewiorka",
+  "text": "Yes! There is one moon, and there are many stars."
+ },
+ "line.d_uczta": {
+  "hash": "c24e3ca189b3",
+  "who": "wiewiorka",
+  "text": "The store is home! And now a feast for my friends."
+ },
+ "line.d_nakryj": {
+  "hash": "b72200745fa8",
+  "who": "sarenka",
+  "text": "Help us lay the table. Put the one cake on the plate, and the many cherries into the bowl."
+ },
+ "line.d_pomylka": {
+  "hash": "8f92b4817b81",
+  "who": "sarenka",
+  "text": "There is one cake, so onto the plate. There are many cherries, so into the bowl."
+ },
+ "line.d_gotowe": {
+  "hash": "9d0f1a8bee7f",
+  "who": "sarenka",
+  "text": "One cake and many cherries. Enjoy!"
+ },
+ "line.d_rodzice": {
+  "hash": "cba45164bb83",
+  "who": "lisek",
+  "text": "Look around at home with your parents: what do you have one of, and what many of? One table, and many spoons!"
+ },
+ "line.naklejka_daj": {
+  "hash": "230bbce195b5",
+  "who": "wiewiorka",
+  "text": "Thank you for helping with my store! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "92efc82c70f5",
+  "who": "wiewiorka",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "f1140e0a52cb",
+  "who": "narrator",
+  "text": "These are Squirrel's nuts. She gave them to us when we helped her gather her store and learnt what one and many are."
+ }
+}

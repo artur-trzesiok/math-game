@@ -270,6 +270,33 @@ clouds at its ends; a big shiny golden five-pointed star.
 All six the same size.""",
 }
 
+# one or many (stage 1)
+SHEETS["jeden_wiele"] = {
+    "outline": True,
+    "names": ["kaczatko", "wisnia"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of TWO small illustrated objects for a children's picture book, in ONE ROW of 2 on a fully
+TRANSPARENT background, with generous empty space between them so they do not touch.
+{STYL}
+Left: one fluffy little yellow duckling swimming, seen from the side, facing right, with a tiny orange beak, a bit of
+blue water ripple under it. Right: one pair of red cherries joined by their green stalks with a small leaf.
+Both the same size.""",
+}
+
+SHEETS["kaczka_mama"] = {
+    "outline": True,
+    "names": ["kaczka_mama", "trzcina"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of 2 on a fully
+TRANSPARENT background, with generous empty space between them so they do not touch.
+{STYL}
+Left: one grown-up MOTHER DUCK swimming, seen from the side, facing right - a brown speckled mallard hen with a
+white-and-blue wing patch and an orange beak, clearly bigger and darker than a yellow duckling, a bit of blue water
+ripple under her. Right: one tall clump of green reeds and bulrushes with two brown cattail heads, growing from a
+bit of water, taller than wide.
+Both the same height.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

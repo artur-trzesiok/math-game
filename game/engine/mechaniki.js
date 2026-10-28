@@ -194,6 +194,20 @@ export function wieza(S, { klocki, miejsca = [{ x: 0 }], podloga = GROUND + 0.02
   return wynik;
 }
 
+// ===================================================================== a heap
+// many of one thing as ONE handle (dragged, pointed at, hidden as one): the first sticker shrunk to the middle and the
+// rest around it, children of its group; `dzieci` are the others (a shadow is made of each)
+export async function kupka(S, name, n, { x = 0, y = 1.2, size = 1.1, z = 0.4, cicho = false } = {}) {
+  const h = await S.object(name, { x, y, size, z, cicho });
+  h.icon.scale.setScalar(0.55); h.dzieci = []; h.ile = n;
+  for (let j = 1; j < n; j++) {
+    const a = j / (n - 1) * Math.PI * 2 + 0.5, d = await S.object(name, { size: 1, cicho: true });
+    S.scene.remove(d.mesh); const i = S.objects.indexOf(d); if (i >= 0) S.objects.splice(i, 1);
+    d.mesh.position.set(Math.cos(a) * 0.27, Math.sin(a) * 0.22, 0.01 + j * 0.002); d.mesh.scale.setScalar(0.5); h.mesh.add(d.mesh); h.dzieci.push(d);
+  }
+  return h;
+}
+
 // ===================================================================== 5. cups to hide things under
 // Cups raised over things; `przykryj()` - they come down (the things are hidden), `tasuj(n)` - pairs swap places in
 // arcs (what is under goes along), `odkryj(i)` - a cup lifts. `kubki` are the targets for a task ("where is it?").
@@ -202,7 +216,8 @@ export async function kubki(S, { ile = 3, x = 0, y = -1.95, odstep = 2.3, size =
   const pod = [], cups = [];
   for (let i = 0; i < ile; i++) {
     const r = rzeczy[i];
-    pod.push(r ? await S.object(r, { x: xs[i], y: y - size * 0.22, size: size * 0.48, z: 0.3 }) : null);
+    const o = { x: xs[i], y: y - size * 0.22, size: size * 0.48, z: 0.3 };      // a thing, or {name, ile} - a heap of it
+    pod.push(!r ? null : typeof r === "string" ? await S.object(r, o) : r.ile > 1 ? await kupka(S, r.name, r.ile, { ...o, size: o.size * 1.4 }) : await S.object(r.name, o));
     const c = await S.object("kubeczek", { x: xs[i], y: y + uniesienie, size, z: 0.5 }); c.pod = pod[i]; c.miejsce = i; cups.push(c);
   }
   const ukryj = (c, on) => { if (c.pod) c.pod.mesh.visible = !on; };

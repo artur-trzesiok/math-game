@@ -1,0 +1,213 @@
+{
+  "line.a_zima": {
+    "who": "wiewiorka",
+    "text": "Brr, winter is coming! I must gather a store for the winter. I need lots of food, many nuts!"
+  },
+  "line.a_duzo": {
+    "who": "lisek",
+    "text": "Squirrel, look! I brought you a lot of food!"
+  },
+  "line.a_jedna": {
+    "who": "sarenka",
+    "text": "Fox, that is one pumpkin. Big, but just one."
+  },
+  "line.a_co_wiele": {
+    "who": "wiewiorka",
+    "text": "Just one? Then what does many mean?"
+  },
+  "line.a_wiele": {
+    "who": "sarenka",
+    "text": "Many is when there are lots of things. Look at the nuts: this one, and this, and this, and this..."
+  },
+  "line.a_nazwa": {
+    "who": "sarenka",
+    "text": "There is one pumpkin. And there are many nuts."
+  },
+  "line.a_gdzie_jedna": {
+    "who": "wiewiorka",
+    "text": "Now you. Where is one thing? Point to it.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.a_to_wiele": {
+    "who": "sarenka",
+    "text": "There are many nuts here. And where is there just one?"
+  },
+  "line.a_tak_jedna": {
+    "who": "sarenka",
+    "text": "Yes! There is one pumpkin."
+  },
+  "line.a_gdzie_wiele": {
+    "who": "wiewiorka",
+    "text": "And where are many things? Point to them."
+  },
+  "line.a_to_jedna": {
+    "who": "sarenka",
+    "text": "That is one pumpkin. And where are many things?"
+  },
+  "line.a_tak_wiele": {
+    "who": "sarenka",
+    "text": "Yes! There are many nuts."
+  },
+  "line.a_zbiory": {
+    "who": "wiewiorka",
+    "text": "There is still a lot of harvest in the garden. Will you help me put it away?"
+  },
+  "line.a_sortuj": {
+    "who": "sarenka",
+    "text": "If there is one of something, put it on the plate. If there are many, put them in the basket. Drag every thing."
+  },
+  "line.a_pomylka": {
+    "who": "sarenka",
+    "text": "Look again: is it one thing, or are there many?"
+  },
+  "line.a_dynia_tez": {
+    "who": "lisek",
+    "text": "Then my pumpkin goes into the store too! One huge pumpkin and many nuts."
+  },
+  "line.a_do_strumyka": {
+    "who": "wiewiorka",
+    "text": "Hooray! And now let's go to the brook for water."
+  },
+  "line.b_kaczka": {
+    "who": "sarenka",
+    "text": "Oh dear, look! Mother Duck is very worried."
+  },
+  "line.b_mama": {
+    "who": "wiewiorka",
+    "text": "What happened, Mother Duck?"
+  },
+  "line.b_wiele_brak": {
+    "who": "sarenka",
+    "text": "Mother Duck has many ducklings. They all came back from swimming... but one is missing!"
+  },
+  "line.b_gdzie": {
+    "who": "wiewiorka",
+    "text": "Let's look for it! Where is one duckling, all alone? Point to it."
+  },
+  "line.b_to_wiele": {
+    "who": "sarenka",
+    "text": "There are many ducklings here. We are looking for the one that is alone."
+  },
+  "line.b_jest": {
+    "who": "sarenka",
+    "text": "There it is! One duckling hid in the reeds."
+  },
+  "line.b_dziekuje": {
+    "who": "lisek",
+    "text": "Now all the ducklings are together. Mother Duck says thank you!"
+  },
+  "line.b_zabawa": {
+    "who": "lisek",
+    "text": "The ducklings want to play hide and seek with you! Catch the duckling when it pops up."
+  },
+  "line.b_do_domu": {
+    "who": "wiewiorka",
+    "text": "That was fun! Now we go home with the store. We'll have a feast!"
+  },
+  "line.p_start": {
+    "who": "wiewiorka",
+    "text": "Before we eat, let's check my store! I have five games for you."
+  },
+  "line.p_sluchaj": {
+    "who": "lisek",
+    "text": "Listen to me clap."
+  },
+  "line.p_ile_razy": {
+    "who": "lisek",
+    "text": "Did I clap once or many times? Point to the card."
+  },
+  "line.p_raz": {
+    "who": "wiewiorka",
+    "text": "Once! One clap."
+  },
+  "line.p_wiele_razy": {
+    "who": "wiewiorka",
+    "text": "Many times! Clap, clap, clap, and more, and more."
+  },
+  "line.p_kubki": {
+    "who": "wiewiorka",
+    "text": "Under one cup I hide one acorn, and under the other many acorns. Watch carefully!"
+  },
+  "line.p_gdzie_wiele": {
+    "who": "wiewiorka",
+    "text": "Under which cup are many acorns? Point to it."
+  },
+  "line.p_kubki_nie": {
+    "who": "wiewiorka",
+    "text": "There is only one acorn here. The many are under the other cup."
+  },
+  "line.p_kubki_ok": {
+    "who": "lisek",
+    "text": "Bravo! Many acorns!"
+  },
+  "line.p_memory": {
+    "who": "lisek",
+    "text": "Turn the cards and find pairs: one apple with one apple, many apples with many apples."
+  },
+  "line.p_memory_ok": {
+    "who": "wiewiorka",
+    "text": "All the pairs found!"
+  },
+  "line.p_cien": {
+    "who": "lisek",
+    "text": "Whose shadow is it: one pear's or many pears'? Point to it."
+  },
+  "line.p_cien_nie": {
+    "who": "lisek",
+    "text": "Look at the shadow again. Is it one pear, or many?"
+  },
+  "line.p_cien_jedna": {
+    "who": "wiewiorka",
+    "text": "Yes! It is the shadow of one pear."
+  },
+  "line.p_cien_wiele": {
+    "who": "wiewiorka",
+    "text": "Yes! It is the shadow of many pears."
+  },
+  "line.p_niebo": {
+    "who": "lisek",
+    "text": "There are many stars in the sky. And what is there only one of? Point to it."
+  },
+  "line.p_niebo_nie": {
+    "who": "lisek",
+    "text": "There are many stars. Look for something there is only one of."
+  },
+  "line.p_niebo_ok": {
+    "who": "wiewiorka",
+    "text": "Yes! There is one moon, and there are many stars."
+  },
+  "line.d_uczta": {
+    "who": "wiewiorka",
+    "text": "The store is home! And now a feast for my friends."
+  },
+  "line.d_nakryj": {
+    "who": "sarenka",
+    "text": "Help us lay the table. Put the one cake on the plate, and the many cherries into the bowl."
+  },
+  "line.d_pomylka": {
+    "who": "sarenka",
+    "text": "There is one cake, so onto the plate. There are many cherries, so into the bowl."
+  },
+  "line.d_gotowe": {
+    "who": "sarenka",
+    "text": "One cake and many cherries. Enjoy!"
+  },
+  "line.d_rodzice": {
+    "who": "lisek",
+    "text": "Look around at home with your parents: what do you have one of, and what many of? One table, and many spoons!"
+  },
+  "line.naklejka_daj": {
+    "who": "wiewiorka",
+    "text": "Thank you for helping with my store! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "wiewiorka",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "These are Squirrel's nuts. She gave them to us when we helped her gather her store and learnt what one and many are."
+  }
+}

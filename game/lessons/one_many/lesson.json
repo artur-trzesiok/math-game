@@ -1,0 +1,48 @@
+{
+  "id": "one_many",
+  "title": {
+    "pl": "Jeden czy wiele?",
+    "en": "One or many?"
+  },
+  "goal": "See at a glance whether there is one of something or many, and say it.",
+  "age": "3-4",
+  "characters": [
+    "wiewiorka",
+    "lisek",
+    "sarenka"
+  ],
+  "backgrounds": [
+    "ogrod",
+    "strumyk",
+    "dom"
+  ],
+  "objects": [
+    "dynia",
+    "orzech",
+    "gruszka",
+    "jablko",
+    "grzyb",
+    "zoledz",
+    "marchewka",
+    "listek",
+    "talerz",
+    "koszyk",
+    "kaczatko",
+    "krzak",
+    "ruch_klask",
+    "kubeczek",
+    "karta_rewers",
+    "gwiazdka",
+    "ksiezyc",
+    "szarlotka",
+    "wisnia",
+    "miska",
+    "kaczka_mama",
+    "trzcina"
+  ],
+  "cover": "Squirrel holds a heap of many nuts in her arms while Fox proudly pushes one enormous orange pumpkin beside her and Deer laughs; autumn leaves in the air in a garden.",
+  "naklejka": {
+    "obraz": "objects/orzech",
+    "kto": "wiewiorka"
+  }
+}

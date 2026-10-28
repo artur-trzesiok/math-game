@@ -1,0 +1,213 @@
+{
+  "line.a_zima": {
+    "who": "wiewiorka",
+    "text": "Brr, idzie zima! Muszę zebrać zapasy na zimę. Potrzebuję dużo jedzenia, wiele orzechów!"
+  },
+  "line.a_duzo": {
+    "who": "lisek",
+    "text": "Wiewiórko, popatrz! Przyniosłem ci dużo jedzenia!"
+  },
+  "line.a_jedna": {
+    "who": "sarenka",
+    "text": "Lisku, to jest jedna dynia. Duża, ale jedna."
+  },
+  "line.a_co_wiele": {
+    "who": "wiewiorka",
+    "text": "Jedna? To co to znaczy wiele?"
+  },
+  "line.a_wiele": {
+    "who": "sarenka",
+    "text": "Wiele to wtedy, kiedy jest dużo rzeczy. Popatrz na orzechy: ten, i ten, i ten, i ten..."
+  },
+  "line.a_nazwa": {
+    "who": "sarenka",
+    "text": "Dynia jest jedna. A orzechów jest wiele."
+  },
+  "line.a_gdzie_jedna": {
+    "who": "wiewiorka",
+    "text": "Teraz ty. Gdzie jest jedna rzecz? Wskaż.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.a_to_wiele": {
+    "who": "sarenka",
+    "text": "Tu jest wiele orzechów. A gdzie jest coś jedno?"
+  },
+  "line.a_tak_jedna": {
+    "who": "sarenka",
+    "text": "Tak! Dynia jest jedna."
+  },
+  "line.a_gdzie_wiele": {
+    "who": "wiewiorka",
+    "text": "A gdzie jest wiele rzeczy? Wskaż."
+  },
+  "line.a_to_jedna": {
+    "who": "sarenka",
+    "text": "To jest jedna dynia. A gdzie jest wiele rzeczy?"
+  },
+  "line.a_tak_wiele": {
+    "who": "sarenka",
+    "text": "Tak! Orzechów jest wiele."
+  },
+  "line.a_zbiory": {
+    "who": "wiewiorka",
+    "text": "W ogrodzie jest jeszcze dużo zbiorów. Pomożesz mi je schować?"
+  },
+  "line.a_sortuj": {
+    "who": "sarenka",
+    "text": "Jeśli coś jest jedno, połóż to na talerzu. Jeśli jest tego wiele, włóż do koszyka. Przeciągnij każdą rzecz."
+  },
+  "line.a_pomylka": {
+    "who": "sarenka",
+    "text": "Popatrz jeszcze raz: czy to jest jedna rzecz, czy jest ich wiele?"
+  },
+  "line.a_dynia_tez": {
+    "who": "lisek",
+    "text": "To moja dynia też pójdzie do zapasów! Jedna wielka dynia i wiele orzechów."
+  },
+  "line.a_do_strumyka": {
+    "who": "wiewiorka",
+    "text": "Hurra! A teraz chodźmy nad strumyk po wodę."
+  },
+  "line.b_kaczka": {
+    "who": "sarenka",
+    "text": "Ojej, popatrzcie! Mama kaczka bardzo się martwi."
+  },
+  "line.b_mama": {
+    "who": "wiewiorka",
+    "text": "Co się stało, mamo kaczko?"
+  },
+  "line.b_wiele_brak": {
+    "who": "sarenka",
+    "text": "Mama kaczka ma wiele kaczątek. Wszystkie wróciły z pływania... ale jednego brakuje!"
+  },
+  "line.b_gdzie": {
+    "who": "wiewiorka",
+    "text": "Poszukajmy go! Gdzie jest jedno kaczątko, samo? Wskaż."
+  },
+  "line.b_to_wiele": {
+    "who": "sarenka",
+    "text": "Tu jest wiele kaczątek. Szukamy jednego, które jest samo."
+  },
+  "line.b_jest": {
+    "who": "sarenka",
+    "text": "Jest! Jedno kaczątko schowało się w trzcinach."
+  },
+  "line.b_dziekuje": {
+    "who": "lisek",
+    "text": "Teraz wszystkie kaczątka są razem. Mama kaczka bardzo dziękuje!"
+  },
+  "line.b_zabawa": {
+    "who": "lisek",
+    "text": "Kaczątka chcą się z tobą bawić w chowanego! Złap kaczątko, kiedy wyskoczy."
+  },
+  "line.b_do_domu": {
+    "who": "wiewiorka",
+    "text": "Ale było wesoło! A teraz wracamy do domu z zapasami. Zrobimy ucztę!"
+  },
+  "line.p_start": {
+    "who": "wiewiorka",
+    "text": "Zanim zjemy, sprawdźmy moje zapasy! Mam dla ciebie pięć zabaw."
+  },
+  "line.p_sluchaj": {
+    "who": "lisek",
+    "text": "Posłuchaj, jak klaszczę."
+  },
+  "line.p_ile_razy": {
+    "who": "lisek",
+    "text": "Klasnąłem raz czy wiele razy? Wskaż kartę."
+  },
+  "line.p_raz": {
+    "who": "wiewiorka",
+    "text": "Raz! Jedno klaśnięcie."
+  },
+  "line.p_wiele_razy": {
+    "who": "wiewiorka",
+    "text": "Wiele razy! Klask, klask, klask, i jeszcze, i jeszcze."
+  },
+  "line.p_kubki": {
+    "who": "wiewiorka",
+    "text": "Pod jednym kubkiem chowam jeden żołądź, a pod drugim wiele żołędzi. Patrz uważnie!"
+  },
+  "line.p_gdzie_wiele": {
+    "who": "wiewiorka",
+    "text": "Pod którym kubkiem jest wiele żołędzi? Wskaż."
+  },
+  "line.p_kubki_nie": {
+    "who": "wiewiorka",
+    "text": "Tu jest tylko jeden żołądź. Wiele jest pod drugim kubkiem."
+  },
+  "line.p_kubki_ok": {
+    "who": "lisek",
+    "text": "Brawo! Wiele żołędzi!"
+  },
+  "line.p_memory": {
+    "who": "lisek",
+    "text": "Odwracaj karty i szukaj par: jedno jabłko do jednego jabłka, wiele jabłek do wielu jabłek."
+  },
+  "line.p_memory_ok": {
+    "who": "wiewiorka",
+    "text": "Wszystkie pary znalezione!"
+  },
+  "line.p_cien": {
+    "who": "lisek",
+    "text": "Czyj to cień: jednej gruszki czy wielu gruszek? Wskaż."
+  },
+  "line.p_cien_nie": {
+    "who": "lisek",
+    "text": "Popatrz na cień jeszcze raz. Czy to jedna gruszka, czy wiele?"
+  },
+  "line.p_cien_jedna": {
+    "who": "wiewiorka",
+    "text": "Tak! To cień jednej gruszki."
+  },
+  "line.p_cien_wiele": {
+    "who": "wiewiorka",
+    "text": "Tak! To cień wielu gruszek."
+  },
+  "line.p_niebo": {
+    "who": "lisek",
+    "text": "Na niebie jest wiele gwiazdek. A czego jest tylko jedno? Wskaż."
+  },
+  "line.p_niebo_nie": {
+    "who": "lisek",
+    "text": "Gwiazdek jest wiele. Poszukaj czegoś, co jest jedno."
+  },
+  "line.p_niebo_ok": {
+    "who": "wiewiorka",
+    "text": "Tak! Księżyc jest jeden, a gwiazdek jest wiele."
+  },
+  "line.d_uczta": {
+    "who": "wiewiorka",
+    "text": "Zapasy są już w domu! A teraz uczta dla przyjaciół."
+  },
+  "line.d_nakryj": {
+    "who": "sarenka",
+    "text": "Pomóż nam nakryć do stołu. Jedno ciasto połóż na talerzu, a wiele wisienek wrzuć do miski."
+  },
+  "line.d_pomylka": {
+    "who": "sarenka",
+    "text": "Ciasto jest jedno, więc na talerz. Wisienek jest wiele, więc do miski."
+  },
+  "line.d_gotowe": {
+    "who": "sarenka",
+    "text": "Jedno ciasto i wiele wisienek. Smacznego!"
+  },
+  "line.d_rodzice": {
+    "who": "lisek",
+    "text": "Rozejrzyj się w domu z rodzicami: czego macie jedno, a czego wiele? Jeden stół, a wiele łyżek!"
+  },
+  "line.naklejka_daj": {
+    "who": "wiewiorka",
+    "text": "Dziękuję za pomoc przy zapasach! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "wiewiorka",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To orzechy Wiewiórki. Dostaliśmy je, kiedy pomagaliśmy jej zebrać zapasy i uczyliśmy się, co to jest jeden, a co wiele."
+  }
+}

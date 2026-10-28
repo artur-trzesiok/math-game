@@ -548,6 +548,7 @@ export class Player {
       os: guard((o) => M.os(S, o)),
       wieza: (o) => { const w = M.wieza(S, o); w.gotowe = wDzialaniu(w.gotowe); return w; },
       kubki: guard((o) => M.kubki(S, o)),
+      kupka: guard((name, n, o) => M.kupka(S, name, n, o)),
       dzwieki: guard((n, o = {}) => M.dzwieki(S, n, { ...o, tempo: FAST ? 0.15 : o.tempo })),
       podziel: (obraz, o) => wDzialaniu(M.podziel(S, obraz, o)),
       memory: (pary, o) => wDzialaniu(M2.memory(S, pary, o), "wskaz"),

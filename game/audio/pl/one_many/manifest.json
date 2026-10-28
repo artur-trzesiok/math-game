@@ -1,0 +1,267 @@
+{
+ "line.a_zima": {
+  "hash": "b26cefe5d971",
+  "who": "wiewiorka",
+  "text": "Brr, idzie zima! Muszę zebrać zapasy na zimę. Potrzebuję dużo jedzenia, wiele orzechów!"
+ },
+ "line.a_duzo": {
+  "hash": "202dc8da1085",
+  "who": "lisek",
+  "text": "Wiewiórko, popatrz! Przyniosłem ci dużo jedzenia!"
+ },
+ "line.a_jedna": {
+  "hash": "a7fac024e01f",
+  "who": "sarenka",
+  "text": "Lisku, to jest jedna dynia. Duża, ale jedna."
+ },
+ "line.a_co_wiele": {
+  "hash": "32365cb81ed5",
+  "who": "wiewiorka",
+  "text": "Jedna? To co to znaczy wiele?"
+ },
+ "line.a_wiele": {
+  "hash": "ee25559990ff",
+  "who": "sarenka",
+  "text": "Wiele to wtedy, kiedy jest dużo rzeczy. Popatrz na orzechy: ten, i ten, i ten, i ten..."
+ },
+ "line.a_nazwa": {
+  "hash": "af8e11ee168b",
+  "who": "sarenka",
+  "text": "Dynia jest jedna. A orzechów jest wiele."
+ },
+ "line.a_gdzie_jedna": {
+  "hash": "f9fb217f4c46",
+  "who": "wiewiorka",
+  "text": "Teraz ty. Gdzie jest jedna rzecz? Wskaż."
+ },
+ "line.a_gdzie_jedna.sarenka": {
+  "hash": "3b8b1871c441",
+  "who": "sarenka",
+  "text": "Teraz ty. Gdzie jest jedna rzecz? Wskaż."
+ },
+ "line.a_to_wiele": {
+  "hash": "2153a474a587",
+  "who": "sarenka",
+  "text": "Tu jest wiele orzechów. A gdzie jest coś jedno?"
+ },
+ "line.a_tak_jedna": {
+  "hash": "91ad35f4c001",
+  "who": "sarenka",
+  "text": "Tak! Dynia jest jedna."
+ },
+ "line.a_gdzie_wiele": {
+  "hash": "63f3d247a958",
+  "who": "wiewiorka",
+  "text": "A gdzie jest wiele rzeczy? Wskaż."
+ },
+ "line.a_to_jedna": {
+  "hash": "cdc8c4b9b321",
+  "who": "sarenka",
+  "text": "To jest jedna dynia. A gdzie jest wiele rzeczy?"
+ },
+ "line.a_tak_wiele": {
+  "hash": "17df2f3353e9",
+  "who": "sarenka",
+  "text": "Tak! Orzechów jest wiele."
+ },
+ "line.a_zbiory": {
+  "hash": "096058560284",
+  "who": "wiewiorka",
+  "text": "W ogrodzie jest jeszcze dużo zbiorów. Pomożesz mi je schować?"
+ },
+ "line.a_sortuj": {
+  "hash": "b5b9e5f63124",
+  "who": "sarenka",
+  "text": "Jeśli coś jest jedno, połóż to na talerzu. Jeśli jest tego wiele, włóż do koszyka. Przeciągnij każdą rzecz."
+ },
+ "line.a_pomylka": {
+  "hash": "e86802766f53",
+  "who": "sarenka",
+  "text": "Popatrz jeszcze raz: czy to jest jedna rzecz, czy jest ich wiele?"
+ },
+ "line.a_dynia_tez": {
+  "hash": "7f57714505ad",
+  "who": "lisek",
+  "text": "To moja dynia też pójdzie do zapasów! Jedna wielka dynia i wiele orzechów."
+ },
+ "line.a_do_strumyka": {
+  "hash": "b83aa705b7ff",
+  "who": "wiewiorka",
+  "text": "Hurra! A teraz chodźmy nad strumyk po wodę."
+ },
+ "line.b_kaczka": {
+  "hash": "2af77bee20d2",
+  "who": "sarenka",
+  "text": "Ojej, popatrzcie! Mama kaczka bardzo się martwi."
+ },
+ "line.b_mama": {
+  "hash": "98b162c41205",
+  "who": "wiewiorka",
+  "text": "Co się stało, mamo kaczko?"
+ },
+ "line.b_wiele_brak": {
+  "hash": "fb1e98f51d1d",
+  "who": "sarenka",
+  "text": "Mama kaczka ma wiele kaczątek. Wszystkie wróciły z pływania... ale jednego brakuje!"
+ },
+ "line.b_gdzie": {
+  "hash": "75e7e204fead",
+  "who": "wiewiorka",
+  "text": "Poszukajmy go! Gdzie jest jedno kaczątko, samo? Wskaż."
+ },
+ "line.b_to_wiele": {
+  "hash": "90255ab5fcb2",
+  "who": "sarenka",
+  "text": "Tu jest wiele kaczątek. Szukamy jednego, które jest samo."
+ },
+ "line.b_jest": {
+  "hash": "331cfeabc1a3",
+  "who": "sarenka",
+  "text": "Jest! Jedno kaczątko schowało się w trzcinach."
+ },
+ "line.b_dziekuje": {
+  "hash": "507753590b41",
+  "who": "lisek",
+  "text": "Teraz wszystkie kaczątka są razem. Mama kaczka bardzo dziękuje!"
+ },
+ "line.b_zabawa": {
+  "hash": "8de3684be582",
+  "who": "lisek",
+  "text": "Kaczątka chcą się z tobą bawić w chowanego! Złap kaczątko, kiedy wyskoczy."
+ },
+ "line.b_do_domu": {
+  "hash": "2ba62ba1aba7",
+  "who": "wiewiorka",
+  "text": "Ale było wesoło! A teraz wracamy do domu z zapasami. Zrobimy ucztę!"
+ },
+ "line.p_start": {
+  "hash": "718fc0ea618e",
+  "who": "wiewiorka",
+  "text": "Zanim zjemy, sprawdźmy moje zapasy! Mam dla ciebie pięć zabaw."
+ },
+ "line.p_sluchaj": {
+  "hash": "cd5e5edee6b0",
+  "who": "lisek",
+  "text": "Posłuchaj, jak klaszczę."
+ },
+ "line.p_ile_razy": {
+  "hash": "a68700a0a306",
+  "who": "lisek",
+  "text": "Klasnąłem raz czy wiele razy? Wskaż kartę."
+ },
+ "line.p_raz": {
+  "hash": "cb4b7b361ee2",
+  "who": "wiewiorka",
+  "text": "Raz! Jedno klaśnięcie."
+ },
+ "line.p_wiele_razy": {
+  "hash": "d693ee81ee4d",
+  "who": "wiewiorka",
+  "text": "Wiele razy! Klask, klask, klask, i jeszcze, i jeszcze."
+ },
+ "line.p_kubki": {
+  "hash": "e43e38a6ee0c",
+  "who": "wiewiorka",
+  "text": "Pod jednym kubkiem chowam jeden żołądź, a pod drugim wiele żołędzi. Patrz uważnie!"
+ },
+ "line.p_gdzie_wiele": {
+  "hash": "cae78b5e0ed5",
+  "who": "wiewiorka",
+  "text": "Pod którym kubkiem jest wiele żołędzi? Wskaż."
+ },
+ "line.p_kubki_nie": {
+  "hash": "b6e271042f4a",
+  "who": "wiewiorka",
+  "text": "Tu jest tylko jeden żołądź. Wiele jest pod drugim kubkiem."
+ },
+ "line.p_kubki_ok": {
+  "hash": "bb88dc55dcfa",
+  "who": "lisek",
+  "text": "Brawo! Wiele żołędzi!"
+ },
+ "line.p_memory": {
+  "hash": "1d384a2e12c2",
+  "who": "lisek",
+  "text": "Odwracaj karty i szukaj par: jedno jabłko do jednego jabłka, wiele jabłek do wielu jabłek."
+ },
+ "line.p_memory_ok": {
+  "hash": "3580b502e92c",
+  "who": "wiewiorka",
+  "text": "Wszystkie pary znalezione!"
+ },
+ "line.p_cien": {
+  "hash": "cba08c72584c",
+  "who": "lisek",
+  "text": "Czyj to cień: jednej gruszki czy wielu gruszek? Wskaż."
+ },
+ "line.p_cien_nie": {
+  "hash": "377ee89f8997",
+  "who": "lisek",
+  "text": "Popatrz na cień jeszcze raz. Czy to jedna gruszka, czy wiele?"
+ },
+ "line.p_cien_jedna": {
+  "hash": "1deae20579f4",
+  "who": "wiewiorka",
+  "text": "Tak! To cień jednej gruszki."
+ },
+ "line.p_cien_wiele": {
+  "hash": "77a024a5830e",
+  "who": "wiewiorka",
+  "text": "Tak! To cień wielu gruszek."
+ },
+ "line.p_niebo": {
+  "hash": "4a7f9683d51e",
+  "who": "lisek",
+  "text": "Na niebie jest wiele gwiazdek. A czego jest tylko jedno? Wskaż."
+ },
+ "line.p_niebo_nie": {
+  "hash": "1bcf9cf3818b",
+  "who": "lisek",
+  "text": "Gwiazdek jest wiele. Poszukaj czegoś, co jest jedno."
+ },
+ "line.p_niebo_ok": {
+  "hash": "113f166adea2",
+  "who": "wiewiorka",
+  "text": "Tak! Księżyc jest jeden, a gwiazdek jest wiele."
+ },
+ "line.d_uczta": {
+  "hash": "67324983d91e",
+  "who": "wiewiorka",
+  "text": "Zapasy są już w domu! A teraz uczta dla przyjaciół."
+ },
+ "line.d_nakryj": {
+  "hash": "63fa00762ddd",
+  "who": "sarenka",
+  "text": "Pomóż nam nakryć do stołu. Jedno ciasto połóż na talerzu, a wiele wisienek wrzuć do miski."
+ },
+ "line.d_pomylka": {
+  "hash": "e02c945934c1",
+  "who": "sarenka",
+  "text": "Ciasto jest jedno, więc na talerz. Wisienek jest wiele, więc do miski."
+ },
+ "line.d_gotowe": {
+  "hash": "497af3d35314",
+  "who": "sarenka",
+  "text": "Jedno ciasto i wiele wisienek. Smacznego!"
+ },
+ "line.d_rodzice": {
+  "hash": "98bc4c0afedb",
+  "who": "lisek",
+  "text": "Rozejrzyj się w domu z rodzicami: czego macie jedno, a czego wiele? Jeden stół, a wiele łyżek!"
+ },
+ "line.naklejka_daj": {
+  "hash": "66d82562d88f",
+  "who": "wiewiorka",
+  "text": "Dziękuję za pomoc przy zapasach! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "85dccce7b7f1",
+  "who": "wiewiorka",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "827072509bdd",
+  "who": "narrator",
+  "text": "To orzechy Wiewiórki. Dostaliśmy je, kiedy pomagaliśmy jej zebrać zapasy i uczyliśmy się, co to jest jeden, a co wiele."
+ }
+}
