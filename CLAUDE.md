@@ -61,7 +61,7 @@ for review snapshots of all four puppets at a frozen phase.
 ## Lessons
 
 One folder per lesson, see `guidelines.md` for the contract and
-`game/lessons/bigger_smaller/` as the reference. Order of work for a new lesson:
+`game/lessons/bigger_smaller_pro/` as the reference. Order of work for a new lesson:
 `scenario.md` first (the script, three stages), then `i18n/pl.json` + `en.json`
 (every spoken line as `"line.<stage>_<n>": {who, text}` - `who` is always a character
 of the lesson, never a narrator, the default speaker; `"speakers": [...]` lists the
@@ -248,8 +248,7 @@ hand wobble; a segment has end ticks. A stroke is a handle like a sticker (a wid
 invisible strip takes the tap, so a line can be a task target; `highlight` makes it
 glow; `clear` removes it). `bounds(h)` is a sticker's real drawing (its alpha box, not
 the transparent square), `standOn(items, y)` stands stickers on a line. Lessons build
-with them: the comparison method in bigger_smaller (`porownaj`: a base line, things
-standing on it, a line over each top), the pairing lines in more_fewer. On a tap a
+with them: the pairing lines in more_fewer_pro. On a tap a
 thing beats a character (a character only repeats the instruction, the one said
 before the task - never the last "try again"). This is ONE rule for the whole game: `scene.tapPuppet` (a tap on a
 visible character that no task takes) calls the player's `onPuppetTap`, which repeats the instruction in force,

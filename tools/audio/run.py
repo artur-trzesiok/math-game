@@ -2,7 +2,7 @@
 
   python tools/audio/run.py --voices
   python tools/audio/run.py                 # every lesson, every language
-  python tools/audio/run.py bigger_smaller
+  python tools/audio/run.py bigger_smaller_pro
   python tools/audio/run.py --sfx           # the sound effects (make_sfx.py)
 
 Takes ELEVENLABS_* from the first of ENV_FILES that has the key (the repository's .env first),

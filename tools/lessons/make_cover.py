@@ -1,6 +1,6 @@
 """Lesson covers for the menu: one square picture-book illustration per lesson.
 
-  python tools/lessons/make_cover.py bigger_smaller     # -> game/lessons/bigger_smaller/cover.webp
+  python tools/lessons/make_cover.py bigger_smaller_pro     # -> game/lessons/bigger_smaller_pro/cover.webp
   python tools/lessons/make_cover.py                    # every lesson that has none yet
 
 The prompt is the lesson's `cover` field in lesson.json (what the picture shows);
