@@ -40,9 +40,9 @@
   "text": "Drag both planks to the line, so they start in the same place."
  },
  "line.a_teraz_widac": {
-  "hash": "51b816910cfa",
+  "hash": "1b228acc718f",
   "who": "sarenka",
-  "text": "Now both start at the line. Which plank is longer? Point to it."
+  "text": "The one whose end is further from the line is longer. Which plank is longer? Point to it."
  },
  "line.a_ta_krotsza": {
   "hash": "16747fc3911f",
@@ -238,5 +238,10 @@
   "hash": "80cdc0c85cca",
   "who": "narrator",
   "text": "This is the snail from the race on the meadow. We got it when we built a bridge and compared what is long and what is short."
+ },
+ "line.a_konce": {
+  "hash": "1fd69847674d",
+  "who": "sarenka",
+  "text": "Now look where each plank ends. I'm marking the ends."
  }
 }

@@ -33,7 +33,7 @@
   },
   "line.a_teraz_widac": {
     "who": "sarenka",
-    "text": "Now both start at the line. Which plank is longer? Point to it."
+    "text": "The one whose end is further from the line is longer. Which plank is longer? Point to it."
   },
   "line.a_ta_krotsza": {
     "who": "sarenka",
@@ -190,5 +190,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the snail from the race on the meadow. We got it when we built a bridge and compared what is long and what is short."
+  },
+  "line.a_konce": {
+    "who": "sarenka",
+    "text": "Now look where each plank ends. I'm marking the ends."
   }
 }

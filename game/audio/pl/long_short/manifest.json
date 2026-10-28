@@ -40,9 +40,9 @@
   "text": "Przeciągnij obie deski do kreski, tak żeby zaczynały się w tym samym miejscu."
  },
  "line.a_teraz_widac": {
-  "hash": "09966a5ddef7",
+  "hash": "78512aef69ad",
   "who": "sarenka",
-  "text": "Teraz obie zaczynają się przy kresce. Która deska jest dłuższa? Wskaż."
+  "text": "Ta, której koniec jest dalej od kreski, jest dłuższa. Która deska jest dłuższa? Wskaż."
  },
  "line.a_ta_krotsza": {
   "hash": "ed07da96e5dd",
@@ -238,5 +238,10 @@
   "hash": "03121a9eea09",
   "who": "narrator",
   "text": "To ślimak z wyścigu na łące. Dostaliśmy go, kiedy budowaliśmy kładkę i porównywaliśmy, co jest długie, a co krótkie."
+ },
+ "line.a_konce": {
+  "hash": "00e4b6b1422b",
+  "who": "sarenka",
+  "text": "Teraz popatrz, gdzie każda deska się kończy. Zaznaczam końce."
  }
 }

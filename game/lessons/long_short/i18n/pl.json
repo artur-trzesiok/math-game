@@ -33,7 +33,7 @@
   },
   "line.a_teraz_widac": {
     "who": "sarenka",
-    "text": "Teraz obie zaczynają się przy kresce. Która deska jest dłuższa? Wskaż."
+    "text": "Ta, której koniec jest dalej od kreski, jest dłuższa. Która deska jest dłuższa? Wskaż."
   },
   "line.a_ta_krotsza": {
     "who": "sarenka",
@@ -190,5 +190,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To ślimak z wyścigu na łące. Dostaliśmy go, kiedy budowaliśmy kładkę i porównywaliśmy, co jest długie, a co krótkie."
+  },
+  "line.a_konce": {
+    "who": "sarenka",
+    "text": "Teraz popatrz, gdzie każda deska się kończy. Zaznaczam końce."
   }
 }

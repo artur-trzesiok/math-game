@@ -29,6 +29,13 @@ async function odLinii(c, rzeczy, { x0 = -3.4, ys = [0.9, -0.3], linia = true } 
   return kreska;
 }
 
+// where each one ends: a pencil tick down from every right end, the longer one's tick further out
+async function konce(c, rzeczy, { kolor = "#e8502e" } = {}) {
+  const out = [];
+  for (const h of rzeczy) { const b = c.bounds(h); out.push(await c.line([[b.right, b.top + 0.35], [b.right, b.bottom - 0.35]], { color: kolor, width: 0.07, strong: true, duration: 0.35 })); }
+  return { remove: () => out.forEach((k) => k.remove()) };
+}
+
 export default {
   id: "long_short",
   przejscia: true,
@@ -61,10 +68,12 @@ export default {
         await c.say("sarenka", "line.a_metoda", { anim: "Zgloszenie" });
         await c.say("sarenka", "line.a_przeciagnij");
         const linia = await odLinii(c, [dluga, krotka], { x0: -1.5, ys: [1.1, -0.1] });
+        const k = await konce(c, [dluga, krotka]);
+        await c.say("sarenka", "line.a_konce");
         await c.say("sarenka", "line.a_teraz_widac");
         dobre(dluga); await c.task({ targets: [dluga, krotka], correct: dluga, wrong: "line.a_ta_krotsza" }); dobre(dluga, false);
         await c.say("wiewiorka", "line.a_dluzsza", { anim: "Radosc" });
-        linia?.remove();
+        linia?.remove(); k.remove();
         // the long one across: it reaches the far bank; they walk over it into the picture
         krotka.remove(); dluga.icon.rotation.z = Math.PI / 2;
         await dluga.moveTo(1.2, 0.95, 0.7);
