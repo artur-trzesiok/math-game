@@ -231,13 +231,24 @@ one built on them (if the pro version does not work out, this section goes).
 - **A mini-game without maths now and then** (rock-paper-scissors to decide who starts, a quick "catch it"
   round, a race by stages): rhythm and stakes, a breather between the maths. A principle, written in the
   lesson's own code from the engine's parts, not a separate tool.
+- **A game is taught before it is played.** Rock-paper-scissors: first the three signs, then each pair
+  shown with what happens (the rock moves onto the scissors and they shake: "rock blunts scissors"), then
+  "one, two, three, show!", then each player says what they showed ("I chose rock", "Squirrel chose paper"),
+  the rule decides out loud, and only then who won and what it means. A game started without its rules
+  reads as a jump in the story.
+- **The words follow the picture.** Nobody asks "how do we cross the brook?" while standing on the far bank:
+  before writing a scene, look at every character's spot in that area of the scenery (water, a gate, a tree)
+  and walk them where they belong; something said to have happened ("we crossed!") is said after it is seen.
+- **Sizes in the story match what the child sees.** Look at the render before writing "Owl has a small
+  head": the line, the right answer and the drawing must agree.
 - **Choosing what is useful for a goal** ("what will help us reach the nest?" - the boxes yes, the ball
   no): a principle, a task with several right answers.
 - **A wrong answer has a visible consequence**: the coat that is too big hangs off, the stone too small
   sinks, the tower in the wrong order wobbles and falls, the hat slips over the eyes. The child sees WHY,
   then the hint comes; the bare shake is the fallback.
 - **Emotions read from the sofa**: a character's feeling is shown big (an emotion bubble over the head -
-  anger, sweat, heart, joy, cold, an idea - with the matching animation), not only by the drawn face.
+  anger, sweat, heart, joy, cold, an idea - with the matching animation), not only by the drawn face. The
+  bubble matches the world: wet in the rain is a drop (`mokro`), a snowflake (`zimno`) only in the cold.
 
 ### The picture
 - **Inserts on a plain colour** (`ctx.go({kolor, motyw})`): for a task, a method or a close-up the
@@ -253,16 +264,25 @@ one built on them (if the pro version does not work out, this section goes).
 - **Transitions between adventures** (`przejscia: true` in the lesson, or `ctx.go(bg, {przejscie})`): a
   rainbow of bands with the characters' heads, a pattern, an iris, bubbles - chosen at random unless a scene
   names one. Inside one adventure a cut or a pan, between adventures a transition.
-- **A countdown** (`ctx.odliczanie`) before a race or a quick game; dots instead of digits in lessons that
-  come before the numbers lessons.
+- **A countdown** (`ctx.odliczanie`) before a race or a quick game; the dots style carries its digits too
+  (three bare dots meant nothing to a child).
 - **Practice shows progress**: a bar of stars (`ctx.gwiazdki`) fills as the rounds go, a streak of first-try
   answers is cheered; practice is a few different mini-games, not one task five times.
 - **A right answer is celebrated**: confetti and a big tick (`ctx.konfetti`, `ctx.ptaszek`, or
   `nagrody: true` in the lesson for every right pick).
 - **Weather and light in the air** (`ctx.czastki(rodzaj, {gestosc, wiatr})`): rain over the whole scene,
   snow, fireflies floating and gently pulsing in a forest morning, falling leaves, dust in the sunlight, bubbles.
-  A design tool for the mood of a place (and a story beat: the rain starts, so we need coats); faint and slow
-  enough never to hide a task; it ends with the background, call it again after `go`.
+  A design tool for the mood of a place (and a story beat: the rain starts, so we need coats); never hiding a
+  task, but weather the story talks about must be seen at a glance (rain also dims the day); it ends with the
+  background, call it again after `go`.
+- **Walking into the picture** (`ctx.przejdz(who, [[x, y], ...], {skok})`): higher up the screen is further
+  away, so the character gets smaller and its shadow goes along; across stepping stones it hops. The next pan
+  brings them back to the front (`ctx.pan(k, {cele: {who: x}})`). A brook is crossed along the stones, never
+  by walking sideways through the water.
+- **Things to pick or drag lie where nothing else is**: in the sky or on open grass, not over water, the
+  path or a character (check the area of the panorama); a thing in the hand is drawn over everything.
+- **Signs and icons are drawn in the game's style** (gpt-image stickers through `tools/objects`, e.g. the
+  rock-paper-scissors hands), never emoji.
 - **Dressing up** (`ctx.ubierz(who, rzecz)`, `ctx.ubranie(rzecz)` as a sticker to drag): hats, glasses, a scarf,
   shoes from the wardrobe (`game/assets/ubrania`), fitted to any humanoid by the engine; children love dressing
   games. Quadrupeds are not dressed and a tail never is. A wrong size is shown (`nieUbieraj`: it slips, wobbles

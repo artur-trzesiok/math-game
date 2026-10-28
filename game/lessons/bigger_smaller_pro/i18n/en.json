@@ -102,16 +102,9 @@
     "who": "wiewiorka",
     "text": "And who goes first?"
   },
-  "line.b_papier": {
-    "who": "lisek",
-    "text": "Let's play rock, paper, scissors! Choose a sign for Squirrel.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
   "line.b_wygralas": {
     "who": "lisek",
-    "text": "You win! You go first."
+    "text": "Squirrel wins! She goes first."
   },
   "line.b_most": {
     "who": "lisek",
@@ -154,7 +147,7 @@
   },
   "line.c_glowka": {
     "who": "wiewiorka",
-    "text": "Owl has a small head. Drag the hat that fits onto her."
+    "text": "Owl has a big head. Drag the hat that fits onto her."
   },
   "line.c_szalik": {
     "who": "lisek",
@@ -232,5 +225,64 @@
   "line.d_pa": {
     "who": "wiewiorka",
     "text": "Bye bye! See you!"
+  },
+  "line.b_zagrajmy": {
+    "who": "lisek",
+    "text": "Let's play rock, paper, scissors! Whoever wins goes first."
+  },
+  "line.b_znaki": {
+    "who": "lisek",
+    "text": "A fist is rock, an open hand is paper, and two fingers are scissors."
+  },
+  "line.b_zasada_kamien": {
+    "who": "lisek",
+    "text": "Rock blunts scissors."
+  },
+  "line.b_zasada_nozyce": {
+    "who": "lisek",
+    "text": "Scissors cut paper."
+  },
+  "line.b_zasada_papier": {
+    "who": "lisek",
+    "text": "Paper wraps rock."
+  },
+  "line.b_wybierz": {
+    "who": "lisek",
+    "text": "Choose a sign for Squirrel.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.b_raz_dwa": {
+    "who": "lisek",
+    "text": "One, two, three, show!"
+  },
+  "line.b_pierwsza": {
+    "who": "wiewiorka",
+    "text": "I'll go first! Hop, hop, hop!"
+  },
+  "line.b_ja_kamien": {
+    "who": "lisek",
+    "text": "I chose rock."
+  },
+  "line.b_ja_papier": {
+    "who": "lisek",
+    "text": "I chose paper."
+  },
+  "line.b_ja_nozyce": {
+    "who": "lisek",
+    "text": "I chose scissors."
+  },
+  "line.b_ona_kamien": {
+    "who": "lisek",
+    "text": "Squirrel chose rock."
+  },
+  "line.b_ona_papier": {
+    "who": "lisek",
+    "text": "Squirrel chose paper."
+  },
+  "line.b_ona_nozyce": {
+    "who": "lisek",
+    "text": "Squirrel chose scissors."
   }
 }

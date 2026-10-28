@@ -102,16 +102,9 @@
     "who": "wiewiorka",
     "text": "A kto idzie pierwszy?"
   },
-  "line.b_papier": {
-    "who": "lisek",
-    "text": "Zagrajmy w papier, kamień, nożyce! Wybierz znak dla wiewiórki.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
   "line.b_wygralas": {
     "who": "lisek",
-    "text": "Wygrałaś! Idziesz pierwsza."
+    "text": "Wiewiórka wygrała! Idzie pierwsza."
   },
   "line.b_most": {
     "who": "lisek",
@@ -154,7 +147,7 @@
   },
   "line.c_glowka": {
     "who": "wiewiorka",
-    "text": "Sowa ma małą główkę. Przeciągnij na nią czapkę, która pasuje."
+    "text": "Sowa ma dużą głowę. Przeciągnij na nią czapkę, która pasuje."
   },
   "line.c_szalik": {
     "who": "lisek",
@@ -232,5 +225,64 @@
   "line.d_pa": {
     "who": "wiewiorka",
     "text": "Pa, pa! Do zobaczenia!"
+  },
+  "line.b_zagrajmy": {
+    "who": "lisek",
+    "text": "Zagrajmy w papier, kamień, nożyce! Kto wygra, ten idzie pierwszy."
+  },
+  "line.b_znaki": {
+    "who": "lisek",
+    "text": "Pięść to kamień, otwarta dłoń to papier, a dwa palce to nożyce."
+  },
+  "line.b_zasada_kamien": {
+    "who": "lisek",
+    "text": "Kamień tępi nożyce."
+  },
+  "line.b_zasada_nozyce": {
+    "who": "lisek",
+    "text": "Nożyce tną papier."
+  },
+  "line.b_zasada_papier": {
+    "who": "lisek",
+    "text": "Papier owija kamień."
+  },
+  "line.b_wybierz": {
+    "who": "lisek",
+    "text": "Wybierz znak dla wiewiórki.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.b_raz_dwa": {
+    "who": "lisek",
+    "text": "Raz, dwa, trzy, pokazujemy!"
+  },
+  "line.b_pierwsza": {
+    "who": "wiewiorka",
+    "text": "Idę pierwsza! Hop, hop, hop!"
+  },
+  "line.b_ja_kamien": {
+    "who": "lisek",
+    "text": "Ja wybrałem kamień."
+  },
+  "line.b_ja_papier": {
+    "who": "lisek",
+    "text": "Ja wybrałem papier."
+  },
+  "line.b_ja_nozyce": {
+    "who": "lisek",
+    "text": "Ja wybrałem nożyce."
+  },
+  "line.b_ona_kamien": {
+    "who": "lisek",
+    "text": "Wiewiórka wybrała kamień."
+  },
+  "line.b_ona_papier": {
+    "who": "lisek",
+    "text": "Wiewiórka wybrała papier."
+  },
+  "line.b_ona_nozyce": {
+    "who": "lisek",
+    "text": "Wiewiórka wybrała nożyce."
   }
 }

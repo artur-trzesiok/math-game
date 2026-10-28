@@ -102,6 +102,21 @@ Left to right: a light wicker basket with no handle; an open cardboard box; a
 wide blue ceramic bowl; a small wooden shelf tray with a low rim.
 All four roughly the same width.""",
     },
+    "gesty": {
+        "outline": True,
+        "names": ["gest_kamien", "gest_papier", "gest_nozyce"],
+        "size": "1536x1024",
+        "prompt": f"""A sprite sheet of THREE illustrated hand gestures for the game rock, paper,
+scissors in a children's picture book, arranged in one row of 3 on a fully TRANSPARENT
+background, with generous empty space between them so none of them touch. Each is
+one small child's hand with a short bit of wrist, warm light skin, seen straight on
+from the back of the hand, fingers pointing up, big and readable at a small size.
+{STYL}
+NOT an emoji, NOT yellow, NOT glossy, NO card or frame behind it, NO sleeve.
+Left to right: ROCK - a closed fist; PAPER - an open flat hand, all five fingers
+spread; SCISSORS - the index and middle fingers up in a V, the others folded.
+All three roughly the same size.""",
+    },
 }
 
 

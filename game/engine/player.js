@@ -11,7 +11,7 @@ import { narysujCyfre, liczDotykiem, narysujRownanie } from "./liczby.js";
 import * as G from "./geometria.js";
 import * as E from "./efekty.js";
 import * as U from "./ubior.js";
-import { Stage } from "./scene.js";
+import { Stage, GROUND } from "./scene.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -246,9 +246,11 @@ export class Player {
       stage: S, lang, st, t: this.tl, fast: FAST,
       say,
       enter: guard((who, from) => S.enter(who, from || ((this.lesson.characters[who] || {}).side === "right" ? "right" : "left"))),
-      show: (who) => { alive(); const L = S.puppets[who]; if (L) { L.korzen.visible = true; L.korzen.position.x = L.home; L.patrz("przod"); L.spoczynek(); S.appear(L); } },
+      show: (who) => { alive(); const L = S.puppets[who]; if (L) { L.korzen.visible = true; L.korzen.position.x = L.home; L.korzen.position.y = GROUND; L.korzen.scale.setScalar(1); L.podloga = null; L.patrz("przod"); L.spoczynek(); S.appear(L); } },
       play: guard((who, anim, opts) => S.play(who, anim, opts)),
       walkTo: guard((who, x) => S.walkTo(who, x)),
+      // into the picture: [[x, y], ...] on the ground, higher = further (smaller); { skok } hops (stepping stones)
+      przejdz: guard((who, punkty, opts) => S.przejdz(who, punkty, opts)),
       // travel inside a stage: dip to dark, new scenery, objects cleared; puppets stay at home
       // (visible as before) unless enter: true hides them so the scene can walk them in again
       // bg: a background name, or an insert on a plain colour {kolor, motyw, kolo}; przejscie: true (one at random),

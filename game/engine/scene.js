@@ -116,9 +116,11 @@ export class Stage {
     for (const L of Object.values(this.puppets)) {
       L.update(dt);
       if (L.cien) {                                                           // the shadow stays on the ground under the feet
-        const lift = Math.max(0, L.korzen.position.y - GROUND);
-        L.cien.visible = L.korzen.visible; L.cien.position.x = L.korzen.position.x;
-        const k = Math.max(0.4, 1 - lift * 0.8); L.cien.scale.set(k, k, 1); L.cien.material.opacity = 0.85 * k;
+        // L.podloga: the ground of a puppet walking into the picture (stepping stones): higher up = further away
+        const g = L.podloga ?? GROUND, lift = Math.max(0, L.korzen.position.y - g);
+        if (L.cienDy === undefined) L.cienDy = L.cien.position.y - GROUND;
+        L.cien.visible = L.korzen.visible; L.cien.position.x = L.korzen.position.x; L.cien.position.y = g + L.cienDy;
+        const k = Math.max(0.4, 1 - lift * 0.8); L.cien.scale.set(k * L.korzen.scale.x, k * L.korzen.scale.y, 1); L.cien.material.opacity = 0.85 * k;
       }
     }
     ruszUbiory(this);                                                       // after the legs bent this frame
@@ -257,6 +259,25 @@ export class Stage {
     this.bringToFront(L);
     L.patrz(x > x0 ? "prawo" : "lewo"); L.graj("Chod", true);
     await this.walkLine(L, x0, x);
+    L.patrz("przod"); L.spoczynek();
+  }
+  // walk along points on the ground [x, y]: y above GROUND is further into the picture, so the puppet gets smaller
+  // (glebia per unit) and its shadow goes along (L.podloga); skok > 0 hops from point to point (stepping stones)
+  async przejdz(name, punkty, { skok = 0, glebia = 0.1 } = {}) {
+    const L = this.puppets[name]; if (!L) return;
+    this.bringToFront(L); L.graj("Chod", true);
+    for (const [x1, y1] of punkty) {
+      const x0 = L.korzen.position.x, y0 = L.podloga ?? GROUND, dl = Math.hypot(x1 - x0, y1 - y0); if (dl < 0.02) continue;
+      if (Math.abs(x1 - x0) > 0.02) L.patrz(x1 > x0 ? "prawo" : "lewo");
+      let last = 0;
+      await this.tween(skok ? 0.45 : dl / L.predkoscChodu + 0.15, (q) => {
+        const gy = y0 + (y1 - y0) * q; L.podloga = gy;
+        L.korzen.position.x = x0 + (x1 - x0) * q; L.korzen.position.y = gy + skok * Math.sin(Math.PI * q);
+        L.korzen.scale.setScalar(1 - glebia * (gy - GROUND));
+        L.idz((q - last) * dl); last = q;
+      });
+      if (skok) this.sfx.graj("tap");
+    }
     L.patrz("przod"); L.spoczynek();
   }
   // move a walking puppet from x0 to x1 at its stride speed (gentle start and stop); the stride's phase
@@ -442,6 +463,8 @@ export class Stage {
     best.naWierzch?.();                                     // a picked-up shape lies over the others
     this.drag = { item: best, dx: best.mesh.position.x - p.x, dy: best.mesh.position.y - p.y, from: { x: best.mesh.position.x, y: best.mesh.position.y }, zone: best.zone, t0: performance.now() };
     if (best.zone) best.zone.take(best);
+    // in the hand it is over everything, the characters too (a scarf dragged onto Owl went under her)
+    this.drag.ro = []; best.mesh.traverse((o) => { if (o.isMesh || o.isLine) { this.drag.ro.push([o, o.renderOrder]); o.renderOrder = 50 + (o.renderOrder % 10); } });
     best.mesh.position.z = 0.9; this.bump(best, 0.12);
     this.renderer.domElement.setPointerCapture(e.pointerId);
     return true;
@@ -454,6 +477,7 @@ export class Stage {
     const d = this.drag; if (!d) return; this.drag = null;
     const it = d.item, px = it.mesh.position.x, py = it.mesh.position.y;
     it.mesh.position.z = 0.4;
+    for (const [o, r] of d.ro || []) o.renderOrder = r;
     if (this.dragSet?.free) {
       const ruch = Math.hypot(px - d.from.x, py - d.from.y);
       if (ruch < 0.15 && performance.now() - d.t0 < 450) { it.mesh.position.x = d.from.x; it.mesh.position.y = d.from.y; this.dragSet.onTap?.(it); }
@@ -711,11 +735,13 @@ export class Stage {
     this.sfx.graj("wonder");
     const hook = await this.line({ bezier: [[x - 0.45 * s, y + 0.55 * s], [x - 0.45 * s, y + 1.05 * s], [x + 0.55 * s, y + 1.05 * s], [x + 0.5 * s, y + 0.55 * s],
                                             [x + 0.45 * s, y + 0.2 * s], [x, y + 0.25 * s], [x, y - 0.15 * s]] }, { color: "#2b2622", duration: 0.5, width: 0.14, name: "pytajnik", strong: true });
-    // the dot: a clean disc over a white rim (a pencil stroke this short got a fuzzy halo)
-    const dot = new THREE.Group(); dot.position.set(x, y - 0.46 * s, 0.9);
-    for (const [r, k, o] of [[0.15 * s, 0xffffff, 46], [0.1 * s, 0x2b2622, 46.5]]) { const m = new THREE.Mesh(new THREE.CircleGeometry(r, 40), new THREE.MeshBasicMaterial({ color: k, depthTest: false, depthWrite: false, transparent: true })); m.renderOrder = o; dot.add(m); }
-    this.scene.add(dot);
-    setTimeout(() => { hook.remove(); this.scene.remove(dot); }, na * 1000);
+    // the dot: drawn with the same pencil as the hook - a small circle of Bezier quarters, overlapping where it closes
+    const r = 0.05 * s, k = 0.5523 * r, dx = x, dy = y - 0.46 * s;
+    const kolo = [[dx + r, dy], [dx + r, dy + k], [dx + k, dy + r], [dx, dy + r], [dx - k, dy + r], [dx - r, dy + k], [dx - r, dy],
+                  [dx - r, dy - k], [dx - k, dy - r], [dx, dy - r], [dx + k, dy - r], [dx + r, dy - k], [dx + r, dy],
+                  [dx + r, dy + k], [dx + k, dy + r], [dx, dy + r]];   // a quarter past the start: no notch where it closes
+    const dot = await this.line({ bezier: kolo }, { color: "#2b2622", duration: 0.2, width: 0.14, name: "pytajnik", strong: true });
+    setTimeout(() => { hook.remove(); dot.remove(); }, na * 1000);
     return hook;
   }
 

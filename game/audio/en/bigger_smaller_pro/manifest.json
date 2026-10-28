@@ -139,20 +139,10 @@
   "who": "wiewiorka",
   "text": "And who goes first?"
  },
- "line.b_papier": {
-  "hash": "d195e37449f9",
-  "who": "lisek",
-  "text": "Let's play rock, paper, scissors! Choose a sign for Squirrel."
- },
- "line.b_papier.wiewiorka": {
-  "hash": "a9ff15f25bee",
-  "who": "wiewiorka",
-  "text": "Let's play rock, paper, scissors! Choose a sign for Squirrel."
- },
  "line.b_wygralas": {
-  "hash": "09bea0dc877b",
+  "hash": "b3e10eea5ba2",
   "who": "lisek",
-  "text": "You win! You go first."
+  "text": "Squirrel wins! She goes first."
  },
  "line.b_most": {
   "hash": "9f3524df387b",
@@ -205,9 +195,9 @@
   "text": "That won't keep Owl warm."
  },
  "line.c_glowka": {
-  "hash": "448b018e61a3",
+  "hash": "0b965e61506f",
   "who": "wiewiorka",
-  "text": "Owl has a small head. Drag the hat that fits onto her."
+  "text": "Owl has a big head. Drag the hat that fits onto her."
  },
  "line.c_szalik": {
   "hash": "f7545417ac89",
@@ -308,5 +298,80 @@
   "hash": "3c8231148d14",
   "who": "wiewiorka",
   "text": "Bye bye! See you!"
+ },
+ "line.b_zagrajmy": {
+  "hash": "7438a07e8f02",
+  "who": "lisek",
+  "text": "Let's play rock, paper, scissors! Whoever wins goes first."
+ },
+ "line.b_znaki": {
+  "hash": "a5d8ad49e7ba",
+  "who": "lisek",
+  "text": "A fist is rock, an open hand is paper, and two fingers are scissors."
+ },
+ "line.b_zasada_kamien": {
+  "hash": "f9e88e3aef65",
+  "who": "lisek",
+  "text": "Rock blunts scissors."
+ },
+ "line.b_zasada_nozyce": {
+  "hash": "f22a5836f26f",
+  "who": "lisek",
+  "text": "Scissors cut paper."
+ },
+ "line.b_zasada_papier": {
+  "hash": "cbfa62e90b26",
+  "who": "lisek",
+  "text": "Paper wraps rock."
+ },
+ "line.b_wybierz": {
+  "hash": "c1ffa49f0d55",
+  "who": "lisek",
+  "text": "Choose a sign for Squirrel."
+ },
+ "line.b_wybierz.wiewiorka": {
+  "hash": "2675be37eba2",
+  "who": "wiewiorka",
+  "text": "Choose a sign for Squirrel."
+ },
+ "line.b_raz_dwa": {
+  "hash": "d26c21cb9abc",
+  "who": "lisek",
+  "text": "One, two, three, show!"
+ },
+ "line.b_pierwsza": {
+  "hash": "74a9fbebf06d",
+  "who": "wiewiorka",
+  "text": "I'll go first! Hop, hop, hop!"
+ },
+ "line.b_ja_kamien": {
+  "hash": "c228310c831f",
+  "who": "lisek",
+  "text": "I chose rock."
+ },
+ "line.b_ja_papier": {
+  "hash": "101d4f2fb99a",
+  "who": "lisek",
+  "text": "I chose paper."
+ },
+ "line.b_ja_nozyce": {
+  "hash": "33d810d3e534",
+  "who": "lisek",
+  "text": "I chose scissors."
+ },
+ "line.b_ona_kamien": {
+  "hash": "4ee39e577943",
+  "who": "lisek",
+  "text": "Squirrel chose rock."
+ },
+ "line.b_ona_papier": {
+  "hash": "a3e7608ced12",
+  "who": "lisek",
+  "text": "Squirrel chose paper."
+ },
+ "line.b_ona_nozyce": {
+  "hash": "28c295bad6f7",
+  "who": "lisek",
+  "text": "Squirrel chose scissors."
  }
 }

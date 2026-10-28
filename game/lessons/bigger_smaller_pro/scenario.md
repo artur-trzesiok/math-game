@@ -14,10 +14,15 @@ A thread for the whole lesson: it is Owl's birthday; Fox promises a surprise at 
    big welly sticks out all around. The child points to the smaller one, then drags the big pair to Fox and the
    small one to Squirrel (a wrong one goes on, slips, falls off). Back on the path, a pan to the brook while they
    walk.
-2. **The brook.** Who goes first? Rock-paper-scissors (the child chooses Squirrel's sign, Squirrel wins) - a
-   breather. A countdown in dots, then a bridge of three big stones: a small stone tried sinks. A pan to the oak.
-3. **The oak - helping Owl.** Owl is cold, the wind took her hat. What will warm her (two useful things among
-   four)? The hat that fits her small head (the big one falls over her eyes), a scarf. The rain stops, Owl is
+2. **The brook.** Both reach it on the near bank (Squirrel joined Fox at the gate). Who goes first?
+   Rock-paper-scissors, taught before it is played: Fox shows the three signs, then each pair with what happens
+   (the winner moves onto the loser, which shakes): rock blunts scissors, scissors cut paper, paper wraps rock.
+   The child picks Squirrel's sign; "one, two, three, show!"; Fox: "I chose ...", "Squirrel chose ...", the
+   rule out loud, "Squirrel wins!". A countdown in numbered dots, then a bridge of three big stones across the
+   water (a small stone tried sinks). Squirrel hops across first, into the picture, then Fox; "we crossed!".
+   A pan to the oak brings them back to the front.
+3. **The oak - helping Owl.** Owl is wet and cold (a drop bubble), the wind took her hat. What will warm her (two useful things among
+   four)? The hat that fits her big head (the small one does not go on), a scarf. The rain stops, Owl is
    happy (a heart). Home for the surprise.
 
 ## Stage 2 - practice - an insert (green, drifting shapes), five stars

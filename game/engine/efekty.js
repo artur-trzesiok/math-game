@@ -7,6 +7,7 @@
 
 import * as THREE from "three";
 import { v } from "./v.js";
+import { GROUND } from "./scene.js";
 
 const PARAMS = new URLSearchParams(location.search);
 const FAST = PARAMS.has("szybko");
@@ -260,8 +261,12 @@ export async function odliczanie(S, { od = 3, styl = "cyfry" } = {}) {
   const tlo = new THREE.Mesh(new THREE.PlaneGeometry(4 * a, 4), new THREE.MeshBasicMaterial({ color: 0x0a0a14, transparent: true, opacity: 0, depthTest: false }));
   tlo.renderOrder = 1; g.add(tlo);
   await S.tween(T(0.25), (s) => { tlo.material.opacity = 0.5 * s; });
-  const kropka = canvasTex(256, 256, (x) => { x.scale(2, 2); x.fillStyle = "#fff"; x.beginPath(); x.arc(64, 64, 60, 0, 7); x.fill(); x.fillStyle = "#ffb347"; x.beginPath(); x.arc(64, 64, 46, 0, 7); x.fill(); });
-  const kropki = styl === "kropki" ? [...Array(od)].map((_, i) => { const m = plaski(kropka, 0.32, 0.32, { order: 2 }); m.position.x = (i - (od - 1) / 2) * 0.45; g.add(m); return m; }) : [];
+  // a dot carries its number (1, 2, 3 left to right): the count is heard and seen - three bare dots meant nothing
+  const kropka = (n) => canvasTex(256, 256, (x) => {
+    x.scale(2, 2); x.fillStyle = "#fff"; x.beginPath(); x.arc(64, 64, 60, 0, 7); x.fill(); x.fillStyle = "#ffb347"; x.beginPath(); x.arc(64, 64, 46, 0, 7); x.fill();
+    x.fillStyle = "#fff"; x.font = "900 60px system-ui, sans-serif"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(String(n), 64, 68);
+  });
+  const kropki = styl === "kropki" ? [...Array(od)].map((_, i) => { const m = plaski(kropka(i + 1), 0.42, 0.42, { order: 2 }); m.position.x = (i - (od - 1) / 2) * 0.56; g.add(m); return m; }) : [];
   for (let n = od; n >= 1; n--) {
     S.sfx.graj("tap", { tempo: 0.8 + (od - n) * 0.12 });
     if (styl === "kropki") {
@@ -334,7 +339,7 @@ export async function ptaszek(S, h = null, { na = 1.2 } = {}) {
 
 // ====================================================================== emotion bubbles
 // a small white bubble over the head with a big icon: what the character feels, readable from the sofa
-export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykrzyknik", "zarowka", "zimno", "muzyka", "strach"];
+export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach"];
 function ikonaEmocji(rodzaj) {
   return canvasTex(512, 512, (x) => {
     x.scale(2, 2);                                               // drawn at 256, rendered at twice the pixels
@@ -366,6 +371,12 @@ function ikonaEmocji(rodzaj) {
       C("#ffd23a"); x.lineWidth = 10; for (const a of [-2.4, -1.57, -0.74, -3.1, 0]) { x.beginPath(); x.moveTo(128 + Math.cos(a) * 62, 92 + Math.sin(a) * 62); x.lineTo(128 + Math.cos(a) * 82, 92 + Math.sin(a) * 82); x.stroke(); }
     } else if (rodzaj === "zimno") {
       C("#5bb4f0"); x.lineWidth = 14; for (let j = 0; j < 3; j++) { const a = j * Math.PI / 3; x.beginPath(); x.moveTo(128 - Math.cos(a) * 62, 104 - Math.sin(a) * 62); x.lineTo(128 + Math.cos(a) * 62, 104 + Math.sin(a) * 62); x.stroke(); }
+    } else if (rodzaj === "mokro") {                             // rain on someone: a big drop and two small ones, falling
+      C("#5bb4f0");
+      for (const [cx, cy, q] of [[112, 92, 1], [170, 64, 0.5], [172, 146, 0.45]]) {
+        x.beginPath(); x.moveTo(cx, cy - 58 * q); x.bezierCurveTo(cx + 46 * q, cy + 8 * q, cx + 40 * q, cy + 62 * q, cx, cy + 62 * q); x.bezierCurveTo(cx - 40 * q, cy + 62 * q, cx - 46 * q, cy + 8 * q, cx, cy - 58 * q); x.fill();
+      }
+      x.fillStyle = "#fff"; x.beginPath(); x.ellipse(98, 116, 9, 17, -0.4, 0, 7); x.fill();
     } else if (rodzaj === "muzyka") {
       C("#c77dd6"); x.beginPath(); x.ellipse(96, 150, 26, 20, -0.4, 0, 7); x.fill(); x.beginPath(); x.ellipse(166, 132, 26, 20, -0.4, 0, 7); x.fill();
       x.lineWidth = 12; x.beginPath(); x.moveTo(118, 146); x.lineTo(118, 52); x.lineTo(188, 36); x.lineTo(188, 128); x.stroke();
@@ -472,7 +483,9 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 
   } else if (typ === "dwuujecie" && lista.length >= 2) {
     if (!S.dwuujecie) { S.dwuujecie = lista.map((L) => [L, L.korzen.position.x]); }
     const [A, B] = lista, lewy = A.korzen.position.x <= B.korzen.position.x ? A : B, prawy = lewy === A ? B : A;
-    lewy.korzen.position.x = -2.3; prawy.korzen.position.x = 2.3;
+    // closer together around their own middle (fixed spots at +-2.3 put Squirrel into a brook); near enough: stay
+    const sr = (lewy.korzen.position.x + prawy.korzen.position.x) / 2, rozstaw = prawy.korzen.position.x - lewy.korzen.position.x;
+    if (rozstaw > 4.6) { lewy.korzen.position.x = sr - 2.3; prawy.korzen.position.x = sr + 2.3; }
     const b = obwiednia(S, lista);
     const h = (b.max.y - b.min.y) * 0.72 + 1.0;                           // from the waist up, room over the heads (the HUD)
     z = Math.min(1.9, v.h / h, v.w / ((b.max.x - b.min.x) * 1.15)); cx = (b.min.x + b.max.x) / 2; cy = b.max.y + 0.9 - v.h / 2 / z;
@@ -506,7 +519,9 @@ export function ustawObszar(S, k, s = 1, od = null) {
   for (const m of S.bg) { const u = m.userData.pan; if (u) m.position.x = u.x0 + dx * u.f; }
   if (s >= 1) P.teraz = cel;
 }
-export async function pan(S, k, { d = 2.6, idz = [] } = {}) {
+// cele: { who: x } - those walkers also make their way to x and back to the front ground (out of a walk into the
+// picture, ctx.przejdz) while the scenery goes by
+export async function pan(S, k, { d = 2.6, idz = [], cele = {} } = {}) {
   const P = S.panorama; if (!P) return;
   k = Math.max(0, Math.min(P.n - 1, k));
   const start = P.teraz;
@@ -516,10 +531,16 @@ export async function pan(S, k, { d = 2.6, idz = [] } = {}) {
   // the stride follows the ground going by (the plate's shift seen at the characters' depth), so feet do not slide
   const naPrzod = P.fPrzod;
   let ostatnio = 0;
+  const z = Object.entries(cele).map(([n, x]) => { const L = S.puppets[n]; return L && { L, x0: L.korzen.position.x, x, g0: L.podloga, s0: L.korzen.scale.x }; }).filter(Boolean);
   await S.tween(FAST ? 0.1 : d, (s) => {
     const q = easeInOut(s); ustawObszar(S, k, q, start);
     const droga = Math.abs(cel - start) * q * naPrzod; for (const L of lalki) L.idz((droga - ostatnio) * kier); ostatnio = droga;
+    for (const o of z) {
+      o.L.korzen.position.x = o.x0 + (o.x - o.x0) * q;
+      if (o.g0 != null) { const g = o.g0 + (GROUND - o.g0) * q; o.L.podloga = g; o.L.korzen.position.y = g; o.L.korzen.scale.setScalar(o.s0 + (1 - o.s0) * q); }
+    }
   });
+  for (const o of z) o.L.podloga = null;
   P.teraz = cel;
   for (const L of lalki) { L.droga = false; L.patrz("przod"); L.spoczynek(); }
 }
@@ -537,24 +558,29 @@ function teksturaCzastki(rodzaj) {
     else { const g = x.createRadialGradient(32, 32, 0, 32, 32, 31); const glow = rodzaj === "swietliki"; g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(glow ? 0.18 : 0.5, glow ? "rgba(255,255,230,0.9)" : "rgba(255,255,255,0.85)"); g.addColorStop(1, "rgba(255,255,255,0)"); x.fillStyle = g; x.fillRect(0, 0, 64, 64); }
   });
 }
-const KOLOR_CZASTKI = { deszcz: "#7d9dc0", snieg: "#ffffff", swietliki: "#fff1a8", liscie: ["#e8a23a", "#d9682b", "#9cc24a", "#c9462c"], pylek: "#fff6d8", babelki: "#e8f7ff" };
+const KOLOR_CZASTKI = { deszcz: "#e6f1ff", snieg: "#ffffff", swietliki: "#fff1a8", liscie: ["#e8a23a", "#d9682b", "#9cc24a", "#c9462c"], pylek: "#fff6d8", babelki: "#e8f7ff" };
 export function czastki(S, rodzaj, { gestosc = 1, wiatr = 0 } = {}) {
   if (S.warstwaCzastek) { S.scene.remove(S.warstwaCzastek.grupa); S.warstwaCzastek.grupa.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } }); S.warstwaCzastek = null; }
   if (!rodzaj || !CZASTKI.includes(rodzaj)) return null;
   const d = S.design(0), W = d.w * 1.1, H = d.h * 1.1, grupa = new THREE.Group(); S.scene.add(grupa);
-  const n = Math.round({ deszcz: 160, snieg: 110, swietliki: 26, liscie: 16, pylek: 55, babelki: 18 }[rodzaj] * gestosc);
+  const n = Math.round({ deszcz: 280, snieg: 110, swietliki: 26, liscie: 16, pylek: 55, babelki: 18 }[rodzaj] * gestosc);
   const tex = teksturaCzastki(rodzaj), lista = [];
   for (let i = 0; i < n; i++) {
     const kol = KOLOR_CZASTKI[rodzaj], kolor = Array.isArray(kol) ? kol[i % kol.length] : kol;
-    const r = { deszcz: [0.08, 0.5], snieg: [los(0.06, 0.16), 0], swietliki: [los(0.3, 0.55), 0], liscie: [los(0.22, 0.36), 0], pylek: [los(0.05, 0.12), 0], babelki: [los(0.18, 0.4), 0] }[rodzaj];
+    const r = { deszcz: [0.1, 0.75], snieg: [los(0.06, 0.16), 0], swietliki: [los(0.3, 0.55), 0], liscie: [los(0.22, 0.36), 0], pylek: [los(0.05, 0.12), 0], babelki: [los(0.18, 0.4), 0] }[rodzaj];
     const m = new THREE.Mesh(new THREE.PlaneGeometry(r[0], r[1] || r[0]), new THREE.MeshBasicMaterial({ map: tex, color: kolor, transparent: true, depthTest: false, depthWrite: false, blending: rodzaj === "swietliki" || rodzaj === "pylek" ? THREE.AdditiveBlending : THREE.NormalBlending }));
     m.renderOrder = 44; m.frustumCulled = false;
     // nearer particles (z) are bigger and faster: a little depth
     const blisko = Math.random();
     m.position.set(los(-W / 2, W / 2), los(-H / 2, H / 2), 0.8 + blisko * 0.6);
-    const alfa = { deszcz: los(0.35, 0.6), snieg: los(0.55, 0.85), swietliki: los(0.5, 0.9), liscie: los(0.75, 0.95), pylek: los(0.25, 0.5), babelki: los(0.35, 0.6) }[rodzaj];
+    const alfa = { deszcz: los(0.55, 0.85), snieg: los(0.55, 0.85), swietliki: los(0.5, 0.9), liscie: los(0.75, 0.95), pylek: los(0.25, 0.5), babelki: los(0.35, 0.6) }[rodzaj];
     m.userData = { faza: Math.random() * 6.28, alfa, blisko, wx: los(0.6, 1.4) };
     m.material.opacity = alfa; grupa.add(m); lista.push(m);
+  }
+  // rain also dims the day a little: grey-blue over the scenery, under the characters - drops alone read as nothing
+  if (rodzaj === "deszcz") {
+    const mrok = new THREE.Mesh(new THREE.PlaneGeometry(W * 1.2, H * 1.2), new THREE.MeshBasicMaterial({ color: 0x41506b, transparent: true, opacity: 0.16, depthTest: false, depthWrite: false }));
+    mrok.renderOrder = 8; mrok.position.z = 0.3; mrok.frustumCulled = false; grupa.add(mrok);
   }
   S.warstwaCzastek = { grupa, lista, rodzaj, W, H, wiatr };
   return S.warstwaCzastek;

@@ -321,7 +321,7 @@ Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller_pr
   characters walk on the spot in step with the ground;
 - `ctx.odliczanie({styl: cyfry | kropki})`, `ctx.konfetti(h)`, `ctx.ptaszek(h)` (or `nagrody: true` for every
   right pick), `ctx.emocja(who, rodzaj, {anim})` (zlosc, pot, serce, radosc, smutek, sen, wykrzyknik, zarowka,
-  zimno, muzyka, strach), `ctx.nalozenie(gorny, dolny)` -> {wiekszy, cofnij()}, `ctx.czastki(rodzaj)`
+  zimno, mokro, muzyka, strach), `ctx.nalozenie(gorny, dolny)` -> {wiekszy, cofnij()}, `ctx.czastki(rodzaj)`
   (deszcz, snieg, swietliki, liscie, pylek, babelki; ends with the background), `ctx.gwiazdki(n)` (practice
   stars in the HUD, a streak badge after two first-try answers).
 Overlay effects draw in the stage's orthographic overlay scene (`S.nak`, rendered after the world by `rysuj`),

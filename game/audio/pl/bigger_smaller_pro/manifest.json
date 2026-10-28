@@ -139,20 +139,10 @@
   "who": "wiewiorka",
   "text": "A kto idzie pierwszy?"
  },
- "line.b_papier": {
-  "hash": "83fcc64ebd91",
-  "who": "lisek",
-  "text": "Zagrajmy w papier, kamień, nożyce! Wybierz znak dla wiewiórki."
- },
- "line.b_papier.wiewiorka": {
-  "hash": "070d8f5c9141",
-  "who": "wiewiorka",
-  "text": "Zagrajmy w papier, kamień, nożyce! Wybierz znak dla wiewiórki."
- },
  "line.b_wygralas": {
-  "hash": "5db043244606",
+  "hash": "29fc430c58dd",
   "who": "lisek",
-  "text": "Wygrałaś! Idziesz pierwsza."
+  "text": "Wiewiórka wygrała! Idzie pierwsza."
  },
  "line.b_most": {
   "hash": "9ef152a8ad19",
@@ -205,9 +195,9 @@
   "text": "To nie ogrzeje sowy."
  },
  "line.c_glowka": {
-  "hash": "6ad8c07f41b1",
+  "hash": "72be5e111094",
   "who": "wiewiorka",
-  "text": "Sowa ma małą główkę. Przeciągnij na nią czapkę, która pasuje."
+  "text": "Sowa ma dużą głowę. Przeciągnij na nią czapkę, która pasuje."
  },
  "line.c_szalik": {
   "hash": "e79a3d9e0b4d",
@@ -308,5 +298,80 @@
   "hash": "de5cebfd32fc",
   "who": "wiewiorka",
   "text": "Pa, pa! Do zobaczenia!"
+ },
+ "line.b_zagrajmy": {
+  "hash": "65277f8e71bf",
+  "who": "lisek",
+  "text": "Zagrajmy w papier, kamień, nożyce! Kto wygra, ten idzie pierwszy."
+ },
+ "line.b_znaki": {
+  "hash": "ef7175ed22fc",
+  "who": "lisek",
+  "text": "Pięść to kamień, otwarta dłoń to papier, a dwa palce to nożyce."
+ },
+ "line.b_zasada_kamien": {
+  "hash": "b58eb27c3e3a",
+  "who": "lisek",
+  "text": "Kamień tępi nożyce."
+ },
+ "line.b_zasada_nozyce": {
+  "hash": "5ba4efb8b180",
+  "who": "lisek",
+  "text": "Nożyce tną papier."
+ },
+ "line.b_zasada_papier": {
+  "hash": "a8a59967f390",
+  "who": "lisek",
+  "text": "Papier owija kamień."
+ },
+ "line.b_wybierz": {
+  "hash": "7b5956f268c2",
+  "who": "lisek",
+  "text": "Wybierz znak dla wiewiórki."
+ },
+ "line.b_wybierz.wiewiorka": {
+  "hash": "ca8d9d4657d9",
+  "who": "wiewiorka",
+  "text": "Wybierz znak dla wiewiórki."
+ },
+ "line.b_raz_dwa": {
+  "hash": "629f7568fe4d",
+  "who": "lisek",
+  "text": "Raz, dwa, trzy, pokazujemy!"
+ },
+ "line.b_pierwsza": {
+  "hash": "fee5f7c261cc",
+  "who": "wiewiorka",
+  "text": "Idę pierwsza! Hop, hop, hop!"
+ },
+ "line.b_ja_kamien": {
+  "hash": "301eae36e42b",
+  "who": "lisek",
+  "text": "Ja wybrałem kamień."
+ },
+ "line.b_ja_papier": {
+  "hash": "1787fb45f237",
+  "who": "lisek",
+  "text": "Ja wybrałem papier."
+ },
+ "line.b_ja_nozyce": {
+  "hash": "b8016604c28f",
+  "who": "lisek",
+  "text": "Ja wybrałem nożyce."
+ },
+ "line.b_ona_kamien": {
+  "hash": "dd803d199491",
+  "who": "lisek",
+  "text": "Wiewiórka wybrała kamień."
+ },
+ "line.b_ona_papier": {
+  "hash": "f6d1a6ea6fd5",
+  "who": "lisek",
+  "text": "Wiewiórka wybrała papier."
+ },
+ "line.b_ona_nozyce": {
+  "hash": "e2b4def075f8",
+  "who": "lisek",
+  "text": "Wiewiórka wybrała nożyce."
  }
 }
