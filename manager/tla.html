@@ -39,7 +39,7 @@ for (const n of nazwy) {
   const opis = await json(`/game/assets/backgrounds/${n}/rekwizyty.json`); if (!opis) continue;
   const kto = uzywa(L, n, "backgrounds"), sway = opis.rekwizyty.filter((r) => r.klasa !== "drift").length;
   const d = document.createElement("div"); d.className = "tlo"; d.dataset.szukaj = (n + " " + kto.map((l) => l.title.pl).join(" ")).toLowerCase();
-  d.innerHTML = `<h2>${esc(n)} ${opis.obszary > 1 ? `<span class="chip">panorama: ${opis.obszary} obszary</span>` : ""}</h2>
+  d.innerHTML = `<h2>${esc(n)} <a href="tlo.html?tlo=${encodeURIComponent(n)}" style="font-size:13px">animowane ▶</a> ${opis.obszary > 1 ? `<span class="chip">panorama: ${opis.obszary} obszary</span>` : ""}</h2>
     <div><span class="chip">${opis.szerokosc}×${opis.wysokosc}</span><span class="chip">${opis.rekwizyty.length} rekwizytów (${sway} kołyszących, ${opis.rekwizyty.length - sway} płynących)</span>
     ${kto.length ? kto.map((l) => `<span class="chip">${esc(l.title.pl)}</span>`).join("") : '<span class="chip zle">nieużywane</span>'}</div>
     <div class="podglad"><canvas></canvas></div>
