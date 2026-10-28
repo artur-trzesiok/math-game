@@ -68,9 +68,14 @@ PAUSE = os.environ.get("ELEVENLABS_PAUSE", "0.6s")          # a break after ever
 
 
 def with_pauses(text: str) -> str:
-    """Insert an ElevenLabs break tag after every sentence end; the i18n text stays clean."""
+    """Insert an ElevenLabs break tag after every sentence end; the i18n text stays clean. Not before a one-word
+    sentence after a longer one ("Which one is bigger? Point."): alone after a break it came out garbled."""
     import re
-    return re.sub(r"([.!?])\s+(?=\S)", lambda m: f'{m.group(1)} <break time="{PAUSE}" /> ', text.strip())
+    zdania = re.split(r"(?<=[.!?])\s+", text.strip())
+    out = zdania[0]
+    for poprz, z in zip(zdania, zdania[1:]):              # counting ("One. Two. Three.") keeps its breaks
+        out += (" " if len(z.split()) == 1 and len(poprz.split()) >= 3 else f' <break time="{PAUSE}" /> ') + z
+    return out
 
 
 def api_key() -> str:
