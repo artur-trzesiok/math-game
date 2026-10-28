@@ -44,8 +44,8 @@ SFX = {
     "plansza": ("a short cheerful magical jingle for the title card of a children's cartoon: a quick rising xylophone "
                 "and glockenspiel flourish ending in a warm twinkling sparkle, bright, happy, no voices, no drums", 2.0),
     # rhythm instruments (the rhythm lesson: a sticker that sounds when pointed at or played by ctx.rytm)
-    "beben":   ("one single punchy hit with a wooden stick on a children's toy drum, a clear bright attack and a warm mid tone, a lively 'bum', not boomy, not bassy, dry, close, nothing else", 0.6),
-    "beben_maly": ("one single short high hit on a small toy drum, a bright tight tok, dry, close, nothing else", 0.5),
+    "beben":   ("one single loud crisp hit on a marching snare drum in a street parade, a strong sharp crack of the stick with a tight snare rattle, bright and punchy, close, nothing else", 0.7),
+    "beben_maly": ("one single light crisp hit on a small high-pitched toy snare drum, a short bright tick with a tiny snare rattle, clearly higher and smaller than a marching snare, close, nothing else", 0.5),
     "dzwonek": ("one single clear ring of a small golden hand bell, bright and sweet, short ring, nothing else", 1.0),
     "garnek":  ("one single hit with a wooden spoon on the side of a steel cooking pot, a warm metallic bong, close", 0.7),
     "kubek":   ("one single light tap of a metal teaspoon on a ceramic cup, a clear high clink, close", 0.6),
