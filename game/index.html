@@ -126,6 +126,11 @@
   .topic .klodka.spada { transform: translate(-50%, 90%) rotate(28deg); opacity: 0; }
   .topic.trzesie { animation: trzes .45s; }
   @keyframes trzes { 20% { transform: translateX(-8px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
+  .topic .glowa-mowi { position: absolute; left: calc(50% - var(--k) * 0.66); top: 44%; width: calc(var(--k) * 0.36); z-index: 7; border-radius: 50%; pointer-events: none;
+    border: 4px solid #fff; box-shadow: 0 6px 14px rgba(60,30,0,.35); animation: wysun .35s ease-out, kiwa .5s ease-in-out .35s infinite alternate; }
+  .topic .glowa-mowi.chowa { animation: wysun .3s ease-in reverse forwards; }
+  @keyframes wysun { from { transform: translateY(40%) scale(.2); opacity: 0; } }
+  @keyframes kiwa { to { transform: translateY(-5%) rotate(-5deg); } }
   @keyframes drga { 50% { transform: translate(-50%, -50%) rotate(-4deg); } }
   .topic h2 { align-self: flex-start; margin: 0; padding: calc(var(--k) * 0.035) calc(var(--k) * 0.17) calc(var(--k) * 0.045); font: 800 max(14px, calc(var(--k) * 0.1)) "Baloo 2", system-ui; color: var(--braz);
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }

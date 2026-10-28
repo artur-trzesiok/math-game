@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mechaniki</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; color: #eee; font: 14px/1.45 system-ui, sans-serif; overflow: hidden; }
+  #scena { position: fixed; inset: 0; }
+  #pasek { position: fixed; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 8px 12px; background: rgba(20,20,20,.85); }
+  button { font: inherit; background: #3a3a3a; color: #eee; border: 1px solid #555; border-radius: 4px; padding: 3px 10px; cursor: pointer; }
+  button.on { background: #2d6cdf; border-color: #2d6cdf; }
+  #info { color: #cfc; }
+</style>
+<script>
+  // the engine's modules with one stamp per page load (as the game and the editor do, engine/v.js)
+  window.__T = Date.now();
+  (() => {
+    const im = { imports: { three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki"])
+      im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
+    const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
+  })();
+</script>
+</head>
+<body>
+<div id="scena"></div>
+<div id="pasek">
+  <span>mechanika:</span>
+  <span id="przyciski"></span>
+  <span id="info"></span>
+</div>
+<script type="module">
+// every mechanic of mechaniki.js on a stage of its own, to try by hand (and from the console: mech.uruchom("waga"))
+import { Stage } from "/game/engine/scene.js";
+import * as M from "/game/engine/mechaniki.js";
+const $ = (id) => document.getElementById(id);
+const S = new Stage($("scena"), { tick() {}, say: async () => {}, stop() {} });
+await S.background("laka");
+await Promise.all([S.puppet("lisek", { x: -4.8, side: "left" }), S.puppet("sowa", { x: 4.8, side: "right" })]);
+const info = (t) => { $("info").textContent = t; };
+const pokaz = (...n) => { for (const k of Object.keys(S.puppets)) { const L = S.puppets[k]; L.korzen.visible = n.includes(k); if (L.cien) L.cien.visible = L.korzen.visible; } };
+let bieg = 0;
+const DEMA = {
+  slad: async (nr) => { pokaz("lisek"); info("prowadź palcem po drodze od zielonej kropki"); for (const co of [3, "trojkat", "kolo"]) { if (nr !== bieg) return; await M.slad(S, co, { x: 0.4, y: 0.3 }); info(`gotowe: ${co}`); await new Promise((r) => setTimeout(r, 800)); S.clear(); } },
+  waga: async (nr) => {
+    pokaz("lisek", "sowa"); info("przeciągnij rzeczy na szalki");
+    const w = await M.waga(S, { x: 0, y: -0.9 });
+    const rzeczy = [];
+    for (const [i, [n, m]] of [["jablko", 1], ["jablko", 1], ["dynia", 3], ["orzech", 0.5]].entries()) { const h = await S.object(n, { x: -3.4 + i * 0.9 + (i > 1 ? 4.8 : 0), y: -2.6, size: 0.8 }); h.masa = m; rzeczy.push(h); }
+    const st = await w.przeciagaj({ rzeczy, gotowe: (s) => s.lewa.length + s.prawa.length === rzeczy.length });
+    info(`waga: ${st.wynik()}`);
+  },
+  os: async () => {
+    pokaz("lisek"); info("lisek skacze: 2 + 3");
+    const o = await M.os(S, { od: 0, do: 10 });
+    await o.skocz("lisek", 0, 2); await new Promise((r) => setTimeout(r, 500)); await o.skocz("lisek", 2, 5); info("lisek na 5");
+  },
+  wieza: async () => {
+    pokaz("sowa"); info("zbuduj wieżę: od największego klocka; węższy pod szerszym się przewraca");
+    const w = M.wieza(S, { klocki: [{ w: 2.4, h: 0.6, x: -4, y: -1.0 }, { w: 1.8, h: 0.6, x: -3.4, y: 0.2 }, { w: 1.2, h: 0.6, x: -2.6, y: 1.4 }, { w: 0.7, h: 0.6, x: 3.0, y: 1.4 }], miejsca: [{ x: 0.6 }] });
+    await w.gotowe; info(`wieża: ${w.wysokosc(w.miejsca[0]).toFixed(1)} wysokości`);
+  },
+  kubki: async () => {
+    pokaz("lisek", "sowa"); info("pod którym kubkiem jest gwiazdka?");
+    const k = await M.kubki(S, { ile: 3, rzeczy: [null, "gwiazdka", null] });
+    await new Promise((r) => setTimeout(r, 900)); await k.przykryj(); await k.tasuj(5);
+    const hit = await S.choose(k.kubki); await k.odkryj(hit); info(hit.pod ? "znaleziona!" : "pusto");
+  },
+  dzwieki: async () => { pokaz("lisek"); info("lisek klaszcze 4 razy, potem bęben 3 razy"); await M.dzwieki(S, 4, { kto: "lisek", ruch: "klask" }); await new Promise((r) => setTimeout(r, 700)); await M.dzwieki(S, 3, { dzwiek: "beben" }); info("koniec"); },
+  podziel: async (nr) => {
+    pokaz("lisek", "sowa"); info("przetnij pizzę na pół palcem");
+    let w = await M.podziel(S, "pizza", { x: 0, y: 0.3 }); info(`pizza: ${w.rowne ? "po równo" : "nierówno"} (${w.ulamek.map((u) => Math.round(u * 100) + "%").join(" / ")})`);
+    await new Promise((r) => setTimeout(r, 1500)); if (nr !== bieg) return; w.remove();
+    info("czekolada na cztery: dwa cięcia");
+    w = await M.podziel(S, "czekolada", { x: 0, y: 0.3, ciecia: 2 }); info(`czekolada: ${w.czesci} części, ${w.rowne ? "po równo" : "nierówno"}`);
+  },
+};
+const uruchom = async (n) => {
+  const nr = ++bieg; S.palec = null; S.endSort(); S.clear(); S.pending = null; S.targets = [];
+  document.querySelectorAll("#przyciski button").forEach((b) => b.classList.toggle("on", b.dataset.n === n));
+  try { await DEMA[n](nr); } catch (e) { info("błąd: " + e.message); console.error(e); }
+};
+$("przyciski").innerHTML = Object.keys(DEMA).map((n) => `<button data-n="${n}">${n}</button>`).join(" ");
+$("przyciski").onclick = (e) => { const n = e.target.dataset?.n; if (n) uruchom(n); };
+window.mech = { S, M, uruchom };
+uruchom(new URLSearchParams(location.search).get("m") || "slad");
+</script>
+</body>
+</html>

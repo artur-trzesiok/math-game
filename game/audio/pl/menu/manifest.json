@@ -1,0 +1,42 @@
+{
+ "line.zamkniete_rytm": {
+  "hash": "4d49a9fbb013",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Porównywanie, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_rytm": {
+  "hash": "922fe6eca329",
+  "who": "lisek",
+  "text": "Hurra! Otworzyła się nowa droga: Rytm i porządek!"
+ },
+ "line.zamkniete_liczby": {
+  "hash": "3c8b9022a675",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Rytm i porządek, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_liczby": {
+  "hash": "62820c8a3c2e",
+  "who": "lisek",
+  "text": "Hurra! Otworzyła się nowa droga: Liczby do 5!"
+ },
+ "line.zamkniete_geometria": {
+  "hash": "85670f31f5b1",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Liczby do 5, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_geometria": {
+  "hash": "3b5ef451c7e8",
+  "who": "lisek",
+  "text": "Hurra! Otworzyła się nowa droga: Geometria!"
+ },
+ "line.zamkniete_dodawanie": {
+  "hash": "7f2b3deee8a1",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Geometria, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_dodawanie": {
+  "hash": "d7d41973e08c",
+  "who": "lisek",
+  "text": "Hurra! Otworzyła się nowa droga: Liczby do 10 i dodawanie!"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "line.zamkniete_rytm": {
+  "hash": "2d3f431f058f",
+  "who": "lisek",
+  "text": "This way is still locked. Let's first finish all the adventures in Comparing, and the padlock will open by itself!"
+ },
+ "line.otwarte_rytm": {
+  "hash": "eabaf9b54769",
+  "who": "lisek",
+  "text": "Hooray! A new way has opened: Rhythm and order!"
+ },
+ "line.zamkniete_liczby": {
+  "hash": "a7ab43867f01",
+  "who": "lisek",
+  "text": "This way is still locked. Let's first finish all the adventures in Rhythm and order, and the padlock will open by itself!"
+ },
+ "line.otwarte_liczby": {
+  "hash": "14b2e7abdd23",
+  "who": "lisek",
+  "text": "Hooray! A new way has opened: Numbers to 5!"
+ },
+ "line.zamkniete_geometria": {
+  "hash": "cb5d885ace9c",
+  "who": "lisek",
+  "text": "This way is still locked. Let's first finish all the adventures in Numbers to 5, and the padlock will open by itself!"
+ },
+ "line.otwarte_geometria": {
+  "hash": "cd819a394010",
+  "who": "lisek",
+  "text": "Hooray! A new way has opened: Geometry!"
+ },
+ "line.zamkniete_dodawanie": {
+  "hash": "e0ab08c50862",
+  "who": "lisek",
+  "text": "This way is still locked. Let's first finish all the adventures in Geometry, and the padlock will open by itself!"
+ },
+ "line.otwarte_dodawanie": {
+  "hash": "b7c8945158e6",
+  "who": "lisek",
+  "text": "Hooray! A new way has opened: Numbers to 10 and adding!"
+ }
+}

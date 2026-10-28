@@ -175,22 +175,34 @@ export class Player {
       if (ciag.ruch) pas.scrollLeft = ciag.l - dx;
     };
     pas.onpointerup = pas.onpointercancel = () => { if (ciag?.ruch) { pas.classList.remove("drag"); pas.dataset.przeciagniete = "1"; setTimeout(() => delete pas.dataset.przeciagniete, 0); } ciag = null; };
+    // Fox speaks in the menu (game/menu, tools/menu/make_menu_lines.py): his head badge peeks in beside the padlock
+    // while he says it - never a voice from nowhere; the music steps back meanwhile
+    const powiedz = async (sec, key) => {
+      this.menuLinie = this.menuLinie?.lang === this.lang ? this.menuLinie : { lang: this.lang, t: await fetch(v(`/game/menu/i18n/${this.lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({})) };
+      const l = this.menuLinie.t[key]; if (!l) return;
+      pas.querySelectorAll(".glowa-mowi").forEach((g) => g.remove());
+      const g = document.createElement("img"); g.className = "glowa-mowi"; g.src = v("/game/assets/menu/lisek_glowa.webp"); g.alt = ""; sec.appendChild(g);
+      menuMuzyka.przycisz(0.35);
+      try { await this.speech.say({ lang: this.lang, lessonId: "menu", key, text: l.text, who: "lisek", puppet: null }); } catch { /* a line must never break the menu */ }
+      finally { menuMuzyka.przycisz(1); g.classList.add("chowa"); setTimeout(() => g.remove(), 400); }
+    };
     // the padlock opens: the mist clears from the cards, the shackle lifts, the padlock falls away
-    const otworz = (sec) => {
+    const otworz = (sec, { mow = true } = {}) => {
       dopisz(WIDZIANE, sec.dataset.topic);
       const k = sec.querySelector(".klodka"); dzwiekMenu("right");
       if (k) { k.src = v("/game/assets/menu/klodka_otwarta.webp"); setTimeout(() => k.classList.add("spada"), 500); setTimeout(() => k.remove(), 1200); }
       sec.classList.remove("zamkniety");
+      if (mow) setTimeout(() => powiedz(sec, `line.otwarte_${sec.dataset.topic}`), 900);
     };
     pas.onclick = (e) => {
       if (pas.dataset.przeciagniete) return;
       const zam = e.target.closest(".topic.zamkniety");
-      if (zam) { zam.classList.remove("trzesie"); void zam.offsetWidth; zam.classList.add("trzesie"); dzwiekMenu("wrong"); return; }   // not yet: the topic shakes
+      if (zam) { zam.classList.remove("trzesie"); void zam.offsetWidth; zam.classList.add("trzesie"); dzwiekMenu("wrong"); powiedz(zam, `line.zamkniete_${zam.dataset.topic}`); return; }   // not yet: the topic shakes, Fox says what to finish first
       const b = e.target.closest(".lesson"); if (b) this.start(b.dataset.id);
     };
     for (const k of pas.querySelectorAll(".topic.zamkniety .klodka")) {
       let t = null; const pusc = () => { clearTimeout(t); k.classList.remove("trzyma"); };
-      k.onpointerdown = (e) => { e.stopPropagation(); k.classList.add("trzyma"); t = setTimeout(() => { pusc(); const sec = k.closest(".topic"); dopisz(OTWARTE, sec.dataset.topic); otworz(sec); }, 3000); };
+      k.onpointerdown = (e) => { e.stopPropagation(); k.classList.add("trzyma"); t = setTimeout(() => { pusc(); const sec = k.closest(".topic"); dopisz(OTWARTE, sec.dataset.topic); otworz(sec, { mow: false }); }, 3000); };
       k.onpointerup = k.onpointerleave = k.onpointercancel = pusc;
     }
     pas.scrollLeft = this.menuX || 0; odswiez();                     // back from a lesson: where the child was
