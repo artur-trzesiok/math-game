@@ -325,5 +325,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the red hat from Fox. He gave it to us when, as detectives, we found out who was leaving the red gifts."
+  },
+  "line.naklejka_juz": {
+    "who": "lisek",
+    "text": "You already have the sticker from this adventure. See you soon!"
   }
 }

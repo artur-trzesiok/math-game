@@ -228,5 +228,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To marchewka od sarenki. Dostaliśmy ją, kiedy dodawaliśmy aż do dziesięciu."
+  },
+  "line.naklejka_juz": {
+    "who": "sarenka",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
   }
 }

@@ -315,5 +315,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the pear from Fox. We got it when we learned what is bigger and what is smaller."
+  },
+  "line.naklejka_juz": {
+    "who": "lisek",
+    "text": "You already have the sticker from this adventure. See you soon!"
   }
 }

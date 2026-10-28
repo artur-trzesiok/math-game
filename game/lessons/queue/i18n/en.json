@@ -190,5 +190,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the little hedgehog from Fox. We got it when we learned who is first and who is last in a queue."
+  },
+  "line.naklejka_juz": {
+    "who": "lisek",
+    "text": "You already have the sticker from this adventure. See you soon!"
   }
 }

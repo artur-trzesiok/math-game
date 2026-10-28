@@ -298,5 +298,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the apple from Fox. We got it when we counted all the way to ten."
+  },
+  "line.naklejka_juz": {
+    "who": "lisek",
+    "text": "You already have the sticker from this adventure. See you soon!"
   }
 }

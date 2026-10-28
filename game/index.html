@@ -3,6 +3,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Math Game</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; height: 100%; overflow: hidden; background: #000; font: 16px/1.4 system-ui, sans-serif; touch-action: manipulation; user-select: none; -webkit-user-select: none;
                overscroll-behavior: none; }   /* no pull to refresh, no rubber band */
@@ -12,7 +14,8 @@
   /* the menu: one long strip of lessons scrolled sideways (a finger, the wheel or a mouse drag), the topics marked
      along it as tinted blocks; sized from the height so it fits the 4:3 safe area of a tablet and a phone alike */
   #menu { --k: max(110px, min(36vh, 62vw)); --safe: max(16px, calc((100vw - 133.34vh) / 2 + 16px));
-          position: fixed; inset: 0; display: none; flex-direction: column; justify-content: center; gap: 2.4vh; overflow: hidden; box-sizing: border-box; background: linear-gradient(#bfe4ff, #e9f7d8); opacity: 0; transition: opacity .7s ease; }
+          position: fixed; inset: 0; display: none; flex-direction: column; justify-content: center; gap: 2.4vh; overflow: hidden; box-sizing: border-box; opacity: 0; transition: opacity .7s ease;
+          background: #bfe4ff url(/game/assets/menu/tlo.webp) center / cover no-repeat; font-family: "Baloo 2", system-ui, sans-serif; --braz: #5a3518; }
   #menu.in { opacity: 1; }
   #iris { position: fixed; inset: 0; display: none; background: #2f7fe0; pointer-events: none; }
   #fade { position: fixed; inset: 0; display: none; background: #1a2a3a; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
@@ -23,8 +26,10 @@
   #wczytywanie .pasek div { height: 100%; width: 0; border-radius: 9px; background: #ffb347; transition: width .2s; }
   @keyframes kiw { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg) scale(1.03); } }
   /* the sticker album (engine/album.js): the button on the menu, the giving at a lesson's end, the album */
-  #albumBtn { position: absolute; left: var(--safe); top: 2vh; width: min(130px, 17vh); padding: 0; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 5px 10px rgba(0,0,0,.25)); z-index: 2; }
-  #albumBtn img { width: 100%; display: block; }
+  #albumBtn { justify-self: start; position: relative; width: calc(var(--k) * 0.62); height: calc(var(--k) * 0.58); padding: 0; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 5px 8px rgba(60,30,0,.3)); }
+  #albumBtn .pniak { position: absolute; left: 0; bottom: 0; width: 100%; }
+  #albumBtn .ksiega { position: absolute; left: 20%; bottom: 30%; width: 58%; transform: rotate(-8deg); transition: transform .2s; }
+  #albumBtn:active .ksiega { transform: rotate(-8deg) scale(.94); }
   #albumBtn .ile { position: absolute; top: -6px; right: -6px; min-width: 34px; height: 34px; border-radius: 17px; background: #ff5b5b; color: #fff; font: 800 19px system-ui; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
   #albumBtn .ile:empty { display: none; }
   #albumBtn.nowe { animation: kiw 1.4s ease-in-out infinite; }
@@ -61,33 +66,42 @@
   #album .twarz { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background-size: 200% 100%; overflow: hidden; }
   #album .twarz.prawa { background-position: right center; border-radius: 0 14px 14px 0; } #album .twarz.lewa { background-position: left center; border-radius: 14px 0 0 14px; }
   #album .twarz.tyl { transform: rotateY(180deg); }
-  #menu h1 { margin: 0; font-size: max(22px, calc(var(--k) * 0.19)); color: #2a4a6a; text-align: center; }
-  #langs { text-align: center; }
+  #gora { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 var(--safe); }
+  #menu h1 { margin: 0; line-height: 0; }
+  #menu h1 .szyld { height: calc(var(--k) * 0.5); filter: drop-shadow(0 5px 6px rgba(60,30,0,.3)); animation: kiw 5s ease-in-out infinite; }
+  #menu h1 .napis { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  #langs { justify-self: end; display: flex; gap: calc(var(--k) * 0.03); }
+  #langs button { width: calc(var(--k) * 0.27); aspect-ratio: 1; border: 0; padding: 0; background: url(/game/assets/menu/guzik.webp) center / contain no-repeat; color: var(--braz);
+    font: 800 calc(var(--k) * 0.085) "Baloo 2", system-ui; cursor: pointer; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); transition: transform .2s; }
+  #langs button.on { transform: scale(1.12); filter: drop-shadow(0 0 0 #ffd24a) drop-shadow(0 0 5px #ffd24a) drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
+  #langs button:active { transform: scale(.94); }
   #lessons { display: flex; align-items: stretch; gap: calc(var(--k) * 0.12); overflow-x: auto; overflow-y: hidden; padding: 6px var(--safe) 14px; box-sizing: border-box; width: 100%;
              overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab;
              -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); }
   #lessons::-webkit-scrollbar { display: none; }
   #lessons.drag { cursor: grabbing; }
-  .topic { flex: 0 0 auto; display: flex; flex-direction: column; gap: calc(var(--k) * 0.06); padding: calc(var(--k) * 0.07) calc(var(--k) * 0.08) calc(var(--k) * 0.1); border-radius: calc(var(--k) * 0.16);
-           background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--c) 45%, transparent); }
-  .topic h2 { margin: 0 0 0 4px; font-size: max(14px, calc(var(--k) * 0.1)); color: #2a4a6a; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
-  .topic h2::before { content: ""; width: .6em; height: .6em; border-radius: 50%; background: var(--c); }
+  .topic { flex: 0 0 auto; display: flex; flex-direction: column; gap: calc(var(--k) * 0.05); }
+  .topic h2 { align-self: flex-start; margin: 0; padding: calc(var(--k) * 0.035) calc(var(--k) * 0.17) calc(var(--k) * 0.045); font: 800 max(14px, calc(var(--k) * 0.1)) "Baloo 2", system-ui; color: var(--braz);
+    background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
+  .topic h2::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
   .topic .row { display: flex; gap: calc(var(--k) * 0.08); }
   .topic .lesson { flex: 0 0 auto; }
-  #chips { display: flex; justify-content: center; gap: calc(var(--k) * 0.035); padding: 0 var(--safe); white-space: nowrap; }
-  @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } #chips button { padding: .3em .75em; } }
-  #chips button { font: inherit; font-size: max(11px, min(calc(var(--k) * 0.068), 1.5vw)); font-weight: 700; padding: .35em .9em; border: 0; border-radius: 999px; color: #2a4a6a; background: rgba(255,255,255,.7); cursor: pointer; display: flex; align-items: center; gap: .45em; }
-  #chips button::before { content: ""; width: .7em; height: .7em; border-radius: 50%; background: var(--c); }
-  #chips button.on { background: var(--c); color: #fff; }
-  #chips button.on::before { background: #fff; }
-  .lesson { position: relative; display: flex; flex-direction: column; align-items: center; gap: calc(var(--k) * 0.03); width: calc(var(--k) * 1.16); padding: calc(var(--k) * 0.07) calc(var(--k) * 0.08) calc(var(--k) * 0.09); border: 0; border-radius: calc(var(--k) * 0.11); background: #fff; box-shadow: 0 6px 0 #c7d8e6; font: inherit; cursor: pointer; }
-  .lesson:active { transform: translateY(3px); box-shadow: 0 3px 0 #c7d8e6; }
-  .lesson .cover { width: var(--k); height: var(--k); border-radius: calc(var(--k) * 0.08); object-fit: cover; background: #e9f7d8; pointer-events: none; -webkit-user-drag: none; }
-  .lesson .nr { position: absolute; top: calc(var(--k) * 0.03); left: calc(var(--k) * 0.03); width: calc(var(--k) * 0.19); height: calc(var(--k) * 0.19); border-radius: 50%; background: #ffb347; color: #fff; font-size: calc(var(--k) * 0.105); font-weight: 700; display: grid; place-items: center; box-shadow: 0 2px 4px rgba(0,0,0,.25); }
-  .lesson .name { font-size: max(13px, calc(var(--k) * 0.088)); font-weight: 700; color: #2a4a6a; text-align: center; line-height: 1.15; }
-  .lesson .sub { font-size: max(11px, calc(var(--k) * 0.056)); color: #6a7f94; text-align: center; }
-  #langs button { font: inherit; font-size: max(12px, calc(var(--k) * 0.06)); padding: .3em .8em; border: 2px solid #2a4a6a; border-radius: .7em; background: #fff; color: #2a4a6a; margin: 0 .25em; cursor: pointer; }
-  #langs button.on { background: #2a4a6a; color: #fff; }
+  #chips { display: flex; justify-content: center; gap: calc(var(--k) * 0.02); padding: 0 var(--safe); white-space: nowrap; }
+  @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } }
+  #chips button { font: 800 max(11px, min(calc(var(--k) * 0.068), 1.5vw)) "Baloo 2", system-ui; padding: .35em 1.1em .45em; border: 0; color: var(--braz); cursor: pointer; display: flex; align-items: center; gap: .45em;
+    background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
+  #chips button::before { content: ""; width: .7em; height: .7em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
+  #chips button.on { transform: translateY(-4px) scale(1.08); }
+  .lesson { position: relative; display: flex; flex-direction: column; align-items: center; gap: calc(var(--k) * 0.02); width: calc(var(--k) * 1.22); padding: calc(var(--k) * 0.16) calc(var(--k) * 0.11) calc(var(--k) * 0.12);
+    border: 0; background: url(/game/assets/menu/karta.webp) center / 100% 100% no-repeat; font: inherit; cursor: pointer; filter: drop-shadow(0 6px 6px rgba(60,30,0,.28)); transition: transform .2s; }
+  .lesson:nth-child(odd) { transform: rotate(-1.2deg); } .lesson:nth-child(even) { transform: rotate(1deg); }
+  .lesson:active { transform: translateY(3px) scale(.98); }
+  .lesson .cover { width: var(--k); height: var(--k); border-radius: calc(var(--k) * 0.05); object-fit: cover; background: #e9f7d8; pointer-events: none; -webkit-user-drag: none; box-shadow: 0 0 0 3px rgba(90,53,24,.55); }
+  .lesson .nr { position: absolute; top: calc(var(--k) * 0.1); left: calc(var(--k) * 0.06); width: calc(var(--k) * 0.2); height: calc(var(--k) * 0.2); border-radius: 50%; background: #ffb347; color: #fff;
+    font: 800 calc(var(--k) * 0.115) "Baloo 2", system-ui; display: grid; place-items: center; box-shadow: 0 0 0 3px var(--braz), 0 3px 4px rgba(0,0,0,.25); text-shadow: 0 1px 0 rgba(90,53,24,.6); }
+  .lesson .name { font: 800 max(13px, calc(var(--k) * 0.095)) "Baloo 2", system-ui; color: var(--braz); text-align: center; line-height: 1.05; }
+  .lesson .sub { font: 600 max(11px, calc(var(--k) * 0.06)) "Baloo 2", system-ui; color: #8a6440; text-align: center; line-height: 1.1; }
+  .lesson .mam { position: absolute; top: calc(var(--k) * 0.06); right: calc(var(--k) * 0.02); width: calc(var(--k) * 0.34); transform: rotate(12deg); pointer-events: none; }
   #hud { position: fixed; top: 0; left: 0; right: 0; display: none; align-items: center; gap: 12px; padding: 10px 14px; pointer-events: none; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
   #hud .lesson-name { font-weight: 700; }
   @media (max-width: 900px) { #hud .lesson-name { display: none; } }
@@ -144,7 +158,7 @@
   <button class="ster pauza" aria-label="pauza">❚❚</button><button class="ster dalej" aria-label="dalej">▶▶</button><button class="ster pelny" aria-label="pełny ekran">⛶</button><button class="menu">☰</button></div>
 <div id="seria"></div>
 <div id="pauza"><button aria-label="graj"><svg viewBox="0 0 10 10"><path d="M3 2 L8 5 L3 8 Z" fill="#2a4a6a"/></svg></button></div>
-<div id="menu"><button id="albumBtn" aria-label="album"><img alt=""><span class="ile"></span></button><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div><div id="chips"></div></div>
+<div id="menu"><div id="gora"><button id="albumBtn" aria-label="album"><img class="pniak" alt=""><img class="ksiega" alt=""><span class="ile"></span></button><h1 id="title"><img class="szyld" alt=""><span class="napis"></span></h1><div id="langs"></div></div><div id="lessons"></div><div id="chips"></div></div>
 <div id="subtitle"></div>
 <div id="iris"></div>
 <div id="fade"></div>

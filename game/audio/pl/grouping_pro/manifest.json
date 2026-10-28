@@ -428,5 +428,10 @@
   "hash": "8becd2a874fa",
   "who": "narrator",
   "text": "To czerwona czapka od liska. Dał nam ją, kiedy jako detektywi odkryliśmy, kto zostawia czerwone prezenty."
+ },
+ "line.naklejka_juz": {
+  "hash": "126a203b8c35",
+  "who": "lisek",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
  }
 }

@@ -12,6 +12,7 @@ let stan = wczytaj();
 
 // a lesson's sticker comes in: new, waiting on the tray (a sticker already earned stays where it is)
 export function dodaj(lekcja) { if (!stan.naklejki[lekcja]) { stan.naklejki[lekcja] = { nowa: true }; zapisz(stan); } }
+export const ma = (lekcja) => !!stan.naklejki[lekcja];
 export const nieprzyklejone = () => Object.values(stan.naklejki).filter((n) => n.strona === undefined).length;
 
 let opis = null;                                     // album.json: the pages' boxes in the spread picture

@@ -228,5 +228,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the carrot from Deer. We got it when we added all the way to ten."
+  },
+  "line.naklejka_juz": {
+    "who": "sarenka",
+    "text": "You already have the sticker from this adventure. See you soon!"
   }
 }

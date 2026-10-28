@@ -74,10 +74,11 @@ export class Player {
     this.closeStage();
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
     menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20);
-    $("#title").textContent = this.t("menu.title");
+    $("#title .napis").textContent = this.t("menu.title");
+    $("#title .szyld").src = v(`/game/assets/menu/szyld_${this.lang}.webp`); $("#title .szyld").alt = this.t("menu.title");
     // the album: its button shows how many stickers wait to be stuck in
     const ab = $("#albumBtn"), ile = Album.nieprzyklejone();
-    ab.querySelector("img").src = v("/game/assets/album/okladka.webp"); ab.querySelector(".ile").textContent = ile || ""; ab.classList.toggle("nowe", ile > 0);
+    ab.querySelector(".ksiega").src = v("/game/assets/album/okladka.webp"); ab.querySelector(".pniak").src = v("/game/assets/menu/pniak.webp"); ab.querySelector(".ile").textContent = ile || ""; ab.classList.toggle("nowe", ile > 0);
     ab.onclick = async () => {
       const lekcje = await Promise.all(this.index.lessons.map(async (l) => ({ id: l.id, naklejka: (await fetch(v(`/game/lessons/${l.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}))).naklejka })));
       await Album.otworz({ lekcje, lang: this.lang, speech: this.speech, onZamknij: () => { const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
@@ -118,6 +119,11 @@ export class Player {
       this.menuX = x;
     };
     pas.onscroll = odswiez;
+    // a lesson whose sticker is in the album wears it in its corner
+    for (const b of pas.querySelectorAll(".lesson")) if (Album.ma(b.dataset.id))
+      fetch(v(`/game/lessons/${b.dataset.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).then((m) => {
+        if (m.naklejka && !b.querySelector(".mam")) b.insertAdjacentHTML("beforeend", `<img class="mam wycinek" src="${v(`/game/assets/${m.naklejka.obraz}.webp`)}" alt="">`);
+      }).catch(() => {});
     chips.onclick = (e) => { const c = e.target.closest("button"); if (c) naBlok(bloki.find((b) => b.dataset.topic === c.dataset.topic)); };
     // a mouse wheel turns into sideways scroll; a mouse drag scrolls the strip (a finger does it natively)
     pas.onwheel = (e) => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { pas.scrollLeft += e.deltaY; e.preventDefault(); } };
@@ -183,6 +189,7 @@ export class Player {
     try {
       const L = this.stage.puppets[n.kto]; if (L && !L.korzen.visible) c.show(n.kto);
       c.clear(); await c.ujecie("ogolny");
+      if (Album.ma(this.lessonId)) { await c.say(n.kto, "line.naklejka_juz", { anim: "Machanie" }); return; }   // a second time: no second sticker
       const wziete = Album.wrecz(this.lessonId, n, { szybko: FAST });
       await c.say(n.kto, "line.naklejka_daj", { anim: "Radosc" });
       await wziete; this.stage.sfx.graj("idea");

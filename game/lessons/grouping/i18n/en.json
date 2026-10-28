@@ -237,5 +237,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is the basket from Deer. We got it when we learned to group things and tidied up the mess together."
+  },
+  "line.naklejka_juz": {
+    "who": "sarenka",
+    "text": "You already have the sticker from this adventure. See you soon!"
   }
 }

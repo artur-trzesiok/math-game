@@ -138,5 +138,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To miś od wiewiórki. Dostaliśmy go, kiedy razem układaliśmy rytmy."
+  },
+  "line.naklejka_juz": {
+    "who": "wiewiorka",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
   }
 }

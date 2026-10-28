@@ -145,5 +145,9 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To bucik od sarenki. Dostaliśmy go, kiedy ustawialiśmy rzeczy po kolei."
+  },
+  "line.naklejka_juz": {
+    "who": "sarenka",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
   }
 }
