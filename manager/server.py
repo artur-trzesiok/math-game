@@ -10,6 +10,7 @@ character editor and by browser-side tests:
                                   from the build output (postac.build.json next to it)
                                   in poprawki.json, which the character
                                   pipeline's `install` re-applies after every rebuild
+  POST /api/characters/<name>/ubior  body = the wardrobe's corrections; writes ubior.json
   POST /api/snap?name=x           body = PNG; saved as work/snap/x.png (test screenshots
                                   rendered by the page itself, see CLAUDE.md)
 """
@@ -91,6 +92,17 @@ class Handler(SimpleHTTPRequestHandler):
             SNAPS.mkdir(parents=True, exist_ok=True)
             (SNAPS / f"{name}.png").write_bytes(body)
             return self._json(200, {"ok": True, "file": str(SNAPS / f"{name}.png")})
+        m = re.fullmatch(r"/api/characters/([a-z0-9_]+)/ubior", u.path)
+        if m:                                         # the wardrobe's hand corrections (manager/editor.html)
+            dst = CHARACTERS / m.group(1)
+            if not (dst / "postac.json").exists():
+                return self._json(400, {"error": "no such character"})
+            try:
+                new = json.loads(self._body())
+            except ValueError as e:
+                return self._json(400, {"error": f"bad json: {e}"})
+            (dst / "ubior.json").write_text(json.dumps(new, ensure_ascii=False, indent=1), encoding="utf-8")
+            return self._json(200, {"ok": True})
         m = re.fullmatch(r"/api/characters/([a-z0-9_]+)", u.path)
         if not m:
             return self._json(404, {"error": "unknown path"})

@@ -11,6 +11,8 @@ import { Lalka } from "./lalka.js";
 import { Sfx } from "./sfx.js";
 import { zbudujTlo, czas as bgClock, zginanieTla } from "./tlo.js";
 import { probkuj, wstega, material as olowekMaterial } from "./olowek.js";
+import * as E from "./efekty.js";
+import { ruszUbiory } from "./ubior.js";
 if (new URLSearchParams(location.search).has("sztywnetlo")) zginanieTla.value = 0;   // A/B: the old shearing grass
 
 export const SAFE = { w: 12, h: 9 };
@@ -42,7 +44,8 @@ export class Stage {
     this.scene.background = new THREE.Color(0x9fd0f0);
     this.camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
     this.camera.position.set(0, 0, CAM_Z);
-    this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0;
+    this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0; this.camZ = CAM_Z;
+    this.pauza = false; this.panorama = null; this.otoczenie = []; this.dymki = [];
     this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;
     this.raycaster = new THREE.Raycaster();
     // sound effects: ?cicho mutes them; a hop and a clap come with the puppets' animations
@@ -78,6 +81,7 @@ export class Stage {
     this.camera.fov = 2 * Math.atan(h0 / 2 / CAM_Z) * 180 / Math.PI;
     this.camera.updateProjectionMatrix();
     this.frameRect = { x: (W - w) / 2, y: (H - h) / 2, w, h };
+    E.dopasujNakladke(this);
   }
   visible(z = 0) {                                                        // visible rectangle at depth z
     const h = 2 * (CAM_Z - z) * Math.tan(this.camera.fov / 2 * Math.PI / 180);
@@ -103,7 +107,12 @@ export class Stage {
 
   // ------------------------------------------------------------------ loop
   tick(t) {
-    const dt = Math.min(0.05, (t - this.last) / 1000); this.last = t; this.frame++;
+    const dt0 = Math.min(0.05, (t - this.last) / 1000); this.last = t; this.frame++;
+    if (this.pauza) { this.rysuj(); return; }                               // paused: the picture stands still
+    const dt = dt0;
+    E.ruszOtoczenie(this, dt, t); E.ruszNakladke(this, dt); E.ruszCzastki(this, dt, t);
+    for (const d of this.dymki) d.za();
+    ruszUbiory(this);
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) {
       L.update(dt);
@@ -132,7 +141,15 @@ export class Stage {
     }
     for (const o of this.objects) if (o.pulse && !o.bumping) o.mesh.scale.setScalar(o.base * (1 + 0.08 * Math.sin(t / 150)));
     if (this.speech) this.speech.tick(t);
+    this.rysuj();
+  }
+  // the world, then the overlay (transitions, countdown, confetti) over it
+  rysuj() {
     this.renderer.render(this.scene, this.camera);
+    if (this.nak && this.nak.scena.children.length) {
+      this.renderer.autoClear = false; this.renderer.clearDepth();
+      this.renderer.render(this.nak.scena, this.nak.kam); this.renderer.autoClear = true;
+    }
   }
   tween(d, step, ease = null) { return new Promise((done) => this.tweens.push({ t: 0, d, step, done, ease })); }
   // things grow in from nothing with a little overshoot; not awaited by the caller, so a row appears sticker by sticker
@@ -165,8 +182,18 @@ export class Stage {
     this.bgName = name;
     for (const m of this.bg) this.scene.remove(m);
     const before = new Set(this.scene.children);
-    await zbudujTlo(this.scene, (z) => this.design(z), { katalog: `/game/assets/backgrounds/${name}/`, odlegloscKamery: CAM_Z, srodekY: 0.6 });
+    this.otoczenie = []; this.panorama = null; E.czastki(this, null);          // weather belongs to the place
+    if (typeof name === "object") { await E.plansza(this, name); this.bgName = name.id || this.bgName; return true; }   // an insert on a plain colour
+    const Z_TLA = -9, info = await zbudujTlo(this.scene, (z) => this.design(z), { katalog: `/game/assets/backgrounds/${name}/`, odlegloscKamery: CAM_Z, srodekY: 0.6, zTla: Z_TLA });
     this.bg = this.scene.children.filter((c) => !before.has(c));
+    // a background wider than the design frame is a panorama: areas the scenery slides between (E.pan)
+    const Wp = info.plyta.geometry.parameters.width, pw = this.design(Z_TLA).w;
+    if (Wp > pw * 1.25) {
+      const n = info.obszary || Math.max(2, Math.round((Wp - pw) / (pw * 0.65)) + 1), zakres = (Wp - pw) / 2;
+      this.panorama = { n, teraz: 0, fPrzod: CAM_Z / (CAM_Z - Z_TLA), przesuniecie: (k) => zakres - k * (2 * zakres) / (n - 1) };
+      for (const m of this.bg) m.userData.pan = { x0: m.position.x, f: (CAM_Z - m.position.z) / (CAM_Z - Z_TLA) };
+      E.ustawObszar(this, 0);
+    }
     return true;
   }
 
@@ -437,6 +464,7 @@ export class Stage {
     else it.moveTo(it.home.x, it.home.y, 0.35);
   }
   clear() { for (const L of Object.values(this.puppets)) L.patrzNa(null); this.unfocus(0);
+    for (const d of this.dymki.slice()) d.remove();
     this.endSort();
     for (const o of this.objects.slice()) o.remove();
     this.targets = [];
@@ -758,7 +786,7 @@ export class Stage {
 
   // ------------------------------------------------------------------ tests
   async snap(name) {
-    this.renderer.render(this.scene, this.camera);
+    this.rysuj();
     const blob = await new Promise((ok) => this.renderer.domElement.toBlob(ok, "image/png"));
     await fetch(`/api/snap?name=${name}`, { method: "POST", body: blob });
     return name;

@@ -95,6 +95,7 @@ export class Speech {
           const end = () => { clearTimeout(timer); ok(); };
           const arm = () => { clearTimeout(timer); timer = setTimeout(end, ((a.duration || 10) - a.currentTime + 1.5) * 1000); };
           a.onloadedmetadata = arm; a.onplay = arm; a.onpause = () => clearTimeout(timer); a.onended = end;
+          this.current.koniec = end;                                     // stop() ends the line too
           a.onerror = () => { clearTimeout(timer); bad(new Error("no file")); };
           const vis = () => { if (document.hidden) a.pause(); else a.play().catch(() => {}); };
           document.addEventListener("visibilitychange", vis);
@@ -128,11 +129,16 @@ export class Speech {
     });
   }
 
+  // pause / resume the line being spoken (the HUD's pause button)
+  pause() { const a = this.current?.audio; if (a) { this.wstrzymany = true; a.pause(); } if ("speechSynthesis" in window) speechSynthesis.pause(); }
+  resume() { const a = this.current?.audio; if (a && this.wstrzymany) { this.wstrzymany = false; a.play().catch(() => {}); } if ("speechSynthesis" in window) speechSynthesis.resume(); }
   stop() {
     if (!this.current) return;
     if (this.current.audio) { try { this.current.audio.pause(); } catch (e) { /* ignore */ } }
+    const koniec = this.current.koniec;
     if ("speechSynthesis" in window) speechSynthesis.cancel();
     if (this.current.puppet) this.current.puppet.cicho();
     this.current = null;
+    if (koniec) koniec();
   }
 }

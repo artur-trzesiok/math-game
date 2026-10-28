@@ -208,6 +208,68 @@ that breaks one of them is wrong even if it runs.
 - **Random layouts never give the answer or break the task**: shuffled things never
   lie in the answer order already; random turns that do not fit are replaced.
 
+## Atmosphere and editing (the "pro" lessons)
+
+Learned from a competitor's 7-minute "Big and Small" lesson (`reference/analiza_mniejszy_wiekszy.md`).
+These rules hold for every lesson written from now on; `game/lessons/bigger_smaller_pro/` is the first
+one built on them (if the pro version does not work out, this section goes).
+
+### The story
+- **Less talk, more happening.** Aim for about half of the story stage spoken; between lines something
+  happens on screen (a jump, a splash, something falls, someone runs). Lines stay short; a scene that is
+  mostly talk is a bug, even if it has a task in it.
+- **One goal across all three stages.** The story opens a thread the later stages close: a promise, a
+  reward, a guest expected at home ("you will get a present when we are back" -> the present is the home
+  stage). The child should feel one lesson, not three.
+- **A chain of small adventures, each needing the concept.** The story is two or three short adventures
+  in different places, each with its own everyday problem (getting dressed for the rain, a race, someone
+  in trouble); every one is solved with the lesson's maths, used as a tool to DO something (put on the coat
+  that fits, step on the big stone, build a step to reach) - not only as an answer to "point to".
+- **We help someone thanks to maths.** At least one adventure is helping a character who has a problem.
+  It is never the same rescue twice: a friend who cannot reach, a guest who is cold, a neighbour whose
+  things got mixed up, a little one who is lost - vary who and how.
+- **A mini-game without maths now and then** (rock-paper-scissors to decide who starts, a quick "catch it"
+  round, a race by stages): rhythm and stakes, a breather between the maths. A principle, written in the
+  lesson's own code from the engine's parts, not a separate tool.
+- **Choosing what is useful for a goal** ("what will help us reach the nest?" - the boxes yes, the ball
+  no): a principle, a task with several right answers.
+- **A wrong answer has a visible consequence**: the coat that is too big hangs off, the stone too small
+  sinks, the tower in the wrong order wobbles and falls, the hat slips over the eyes. The child sees WHY,
+  then the hint comes; the bare shake is the fallback.
+- **Emotions read from the sofa**: a character's feeling is shown big (an emotion bubble over the head -
+  anger, sweat, heart, joy, cold, an idea - with the matching animation), not only by the drawn face.
+
+### The picture
+- **Inserts on a plain colour** (`ctx.go({kolor, motyw})`): for a task, a method or a close-up the
+  scenery goes and the characters stand on one soft colour with a light circle behind them; something
+  barely moves in the background (drifting circles, shapes, clouds, rain, digits - very subtle: it is a
+  background). Cheap, readable, and the eye goes to the task. Roughly every other shot of a story can be one.
+- **Editing like a film** (`ctx.ujecie`): cut between a wide shot, a two-shot, a medium shot and a close-up
+  of a face; a new shot every several seconds while the story talks; a close-up for an emotion or a reaction,
+  a wide shot when something moves. A task is shown in the shot where every option is visible.
+- **Wide sceneries and pans** (`ctx.pan`): a background may be wider than the screen (a panorama made of
+  joined tiles); a scene moves to the next area with a pan while the characters walk, instead of a cut to
+  another picture when the place is the same.
+- **Transitions between adventures** (`przejscia: true` in the lesson, or `ctx.go(bg, {przejscie})`): a
+  rainbow of bands with the characters' heads, a pattern, an iris, bubbles - chosen at random unless a scene
+  names one. Inside one adventure a cut or a pan, between adventures a transition.
+- **A countdown** (`ctx.odliczanie`) before a race or a quick game; dots instead of digits in lessons that
+  come before the numbers lessons.
+- **Practice shows progress**: a bar of stars (`ctx.gwiazdki`) fills as the rounds go, a streak of first-try
+  answers is cheered; practice is a few different mini-games, not one task five times.
+- **A right answer is celebrated**: confetti and a big tick (`ctx.konfetti`, `ctx.ptaszek`, or
+  `nagrody: true` in the lesson for every right pick).
+- **Weather and light in the air** (`ctx.czastki(rodzaj, {gestosc, wiatr})`): rain over the whole scene,
+  snow, fireflies floating and gently pulsing in a forest morning, falling leaves, dust in the sunlight, bubbles.
+  A design tool for the mood of a place (and a story beat: the rain starts, so we need coats); faint and slow
+  enough never to hide a task; it ends with the background, call it again after `go`.
+- **Dressing up** (`ctx.ubierz(who, rzecz)`, `ctx.ubranie(rzecz)` as a sticker to drag): hats, glasses, a scarf,
+  shoes from the wardrobe (`game/assets/ubrania`), fitted to any humanoid by the engine; children love dressing
+  games. Quadrupeds are not dressed and a tail never is. A wrong size is shown (`nieUbieraj`: it slips, wobbles
+  and falls off) before the hint.
+- **A second way to compare: overlapping** (`ctx.nalozenie`): one thing laid on the other, the bigger one
+  sticks out all around. Next to the base line, for things that can lie on each other (coats, leaves, hats).
+
 ## How it is made
 
 Everything is scripted and repeatable (see `CLAUDE.md`): characters, backgrounds

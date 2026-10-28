@@ -9,6 +9,8 @@ import * as THREE from "three";
 import { v } from "./v.js";
 import { narysujCyfre, liczDotykiem, narysujRownanie } from "./liczby.js";
 import * as G from "./geometria.js";
+import * as E from "./efekty.js";
+import * as U from "./ubior.js";
 import { Stage } from "./scene.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
@@ -18,12 +20,35 @@ const PARAMS = new URLSearchParams(location.search);
 const STAGES = ["story", "practice", "apply"];
 const DEBUG = PARAMS.has("debug");                   // ?debug=1: the phase icons jump between stages
 
+// a background's identity: a name, or an insert {kolor, motyw}
+const tloId = (bg) => (typeof bg === "object" && bg ? (bg.id || `kolor:${bg.kolor}:${bg.motyw}`) : bg);
+function pelnyEkran() {
+  if (document.fullscreenElement) document.exitFullscreen?.();
+  else (document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen)?.call(document.documentElement);
+}
+const GWIAZDA = (kolor) => `<svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z" fill="${kolor}" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
+// the stars of a practice stage in the HUD: grey until a round is done
+function pasekGwiazdek(n, auto) {
+  const el = $("#hud .gwiazdki"); el.innerHTML = Array.from({ length: n }, () => GWIAZDA("#c9d3dd")).join("");
+  let zrobione = 0;
+  return { auto, get zrobione() { return zrobione; }, dodaj() {
+    const g = el.children[zrobione]; if (!g) return; zrobione++;
+    g.outerHTML = GWIAZDA("#ffc928").replace("<svg", '<svg class="pelna"');
+  }, usun() { el.innerHTML = ""; } };
+}
+// a streak of first-try answers: a badge with one flame per answer (no digits: the youngest cannot read them)
+function pokazSerie(n, S) {
+  const el = $("#seria"), plomien = `<svg viewBox="0 0 24 24"><path d="M12 2c1 4-3 5-3 9a3 3 0 006 0c0-2-1-3-1-3 3 1 5 4 5 7a7 7 0 01-14 0c0-6 7-8 7-13z" fill="#fff"/></svg>`;
+  el.innerHTML = plomien.repeat(Math.min(5, n)); el.classList.add("on"); S.sfx.graj("idea");
+  clearTimeout(pokazSerie.t); pokazSerie.t = setTimeout(() => el.classList.remove("on"), 1500);
+}
+
 export class Player {
   constructor() {
     this.lang = pickLang();
     this.ui = {};
     this.speech = new Speech($("#subtitle"));
-    this.stage = null; this.lesson = null; this.lessonId = null; this.run = 0;
+    this.stage = null; this.lesson = null; this.lessonId = null; this.run = 0; this.scenaNr = 0;
     window.gra = this;                                   // tests and debugging (see CLAUDE.md)
   }
 
@@ -42,8 +67,9 @@ export class Player {
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
     menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20);
     $("#title").textContent = this.t("menu.title");
-    $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("");
-    $("#langs").onclick = (e) => { const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
+    $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("")
+      + `<button class="pelny" aria-label="fullscreen">⛶</button>`;
+    $("#langs").onclick = (e) => { if (e.target.closest(".pelny")) return pelnyEkran(); const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
     // lessons grouped into topics (index.json "topics"; a lesson in no topic goes to a last, untitled row);
     // numbers restart in every topic, the topic's colour marks its cards
     const byId = Object.fromEntries(this.index.lessons.map((l) => [l.id, l]));
@@ -103,6 +129,11 @@ export class Player {
     $("#menu").style.display = "none"; $("#hud").style.display = "flex";
     $("#hud .lesson-name").textContent = meta.title[this.lang] || meta.title.en;
     $("#hud .menu").onclick = () => this.leave();
+    $("#hud .pauza").onclick = () => this.pauza(!this.wPauzie);
+    $("#pauza button").onclick = () => this.pauza(false);
+    $("#hud .dalej").onclick = () => this.dalej();
+    $("#hud .pelny").onclick = () => pelnyEkran();
+    $("#hud .gwiazdki").innerHTML = "";
     this.closeStage();
     const run = ++this.run;                             // every ctx call checks it: leaving the lesson stops the scene
     this.stage = new Stage($("#stage"), this.speech);
@@ -126,15 +157,22 @@ export class Player {
       if (DEBUG) el.onclick = () => { const q = new URLSearchParams(location.search); q.set("lekcja", this.lessonId); q.set("etap", el.dataset.stage); location.search = q.toString(); };
     }
     const bg = (this.lesson.backgrounds || {})[st];
-    if (bg && this.stage.bgName !== bg) {                 // a new scenery: dip to dark instead of a bare frame
-      await this.fade(true); this.stage.clear();
-      for (const L of Object.values(this.stage.puppets)) L.korzen.visible = false;
-      await this.stage.background(bg); await this.fade(false);
+    $("#hud .gwiazdki").innerHTML = ""; this.gwiazdki = null; this.seria = 0;     // a progress bar belongs to one stage
+    if (bg && this.stage.bgName !== tloId(bg)) {          // a new scenery: dip to dark (or a transition) instead of a bare frame
+      const zmien = async () => { this.stage.clear(); for (const L of Object.values(this.stage.puppets)) L.korzen.visible = false; await this.stage.background(bg); this.stage.bgName = tloId(bg); };
+      if (this.lesson.przejscia) await E.przejscie(this.stage, zmien, {});
+      else { await this.fade(true); await zmien(); await this.fade(false); }
     } else this.stage.clear();
-    const ctx = this.context(st, this.run);
     for (const scene of scenes) {
       if (this.abort) return;
-      try { await scene(ctx); }
+      // every scene gets its own context: "next" (dalej) retires it, so whatever it still awaits throws and dies
+      const nr = ++this.scenaNr, ctx = this.context(st, this.run, nr);
+      const pominieto = new Promise((ok) => { this.pomin = () => ok("pomin"); });
+      try {
+        const p = Promise.resolve(scene(ctx)).then(() => "ok");
+        p.catch(() => {});
+        if (await Promise.race([p, pominieto]) === "pomin") { this.posprzataj(); continue; }
+      }
       catch (e) {
         if (e && e.message === "abort") return;        // the child left the lesson
         console.error(`lesson ${this.lessonId} / ${st}:`, e); await this.card(`Błąd sceny (${st}): ${e.message || e}`, this.t("button.menu")); this.abort = true; this.menu(); return;
@@ -143,6 +181,7 @@ export class Player {
   }
 
   leave() {
+    this.pauza(false);
     this.abort = true; this.run++;
     this.speech.stop(); this.stage?.cancelChoice();
     this.menu();
@@ -150,9 +189,24 @@ export class Player {
 
   // the contract every scene gets; `run` is the lesson instance - once the player leaves,
   // every call throws "abort" so the scene cannot keep speaking or showing things
-  context(st, run) {
+  // the HUD's pause: the picture, the tweens and the voice stand still until play
+  pauza(tak) {
+    this.wPauzie = !!tak;
+    if (this.stage) this.stage.pauza = this.wPauzie;
+    $("#pauza").style.display = this.wPauzie ? "flex" : "none";
+    if (this.wPauzie) this.speech.pause(); else this.speech.resume();
+  }
+  // the HUD's "next": the scene being played ends here, the next one starts (for parents and for testing)
+  dalej() { if (this.wPauzie) this.pauza(false); if (this.pomin) this.pomin(); }
+  posprzataj() {
+    const S = this.stage; if (!S) return;
+    this.speech.stop(); S.cancelChoice(); S.endSort(); S.clear();
+    E.ujecie(S, "ogolny");
+  }
+
+  context(st, run, nr = this.scenaNr) {
     const S = this.stage, lang = this.lang, lessonId = this.lessonId, strings = this.strings;
-    const alive = () => { if (this.run !== run) throw new Error("abort"); };
+    const alive = () => { if (this.run !== run || this.scenaNr !== nr) throw new Error("abort"); };
     const guard = (f) => async (...a) => { alive(); const r = await f(...a); alive(); return r; };
     let last = null;                                   // the last line spoken; a task keeps the one said before it as its instruction
     // the instruction in force while an interaction runs: a tapped character repeats it (scene.js tapPuppet), one
@@ -163,13 +217,23 @@ export class Player {
       powtarza = true;
       try { await say(polecenieTeraz.who, polecenieTeraz.key, { anim: polecenieTeraz.anim }); } catch {} finally { powtarza = false; }
     };
+    // a right answer: confetti and a tick when the lesson wants them (nagrody), a star and the streak in practice
+    const nagroda = (h, bezBledu = true) => {
+      if (this.run !== run) return;
+      if (this.lesson.nagrody) { E.konfetti(S, h); if (h) E.ptaszek(S, h); }
+      if (this.gwiazdki) {
+        if (this.gwiazdki.auto) this.gwiazdki.dodaj();
+        this.seria = bezBledu ? (this.seria || 0) + 1 : 0;
+        if (this.seria >= 2) pokazSerie(this.seria, S);
+      }
+    };
     const wDzialaniu = (p) => { const pol = last; polecenieTeraz = pol; const koniec = () => { if (polecenieTeraz === pol) polecenieTeraz = null; }; Promise.resolve(p).then(koniec, koniec); return p; };
     const say = async (who, key, { anim = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
       if (!S.puppets[who]) who = line.who;                            // the scene picks the speaker; the line's `who` is the default
       const stem = who === line.who ? key : `${key}.${who}`;          // a recording exists per allowed speaker (i18n `speakers`)
-      last = { who, key, anim }; this.lastSpeaker = who;
+      last = { who, key, anim }; this.lastSpeaker = who; S.ostatniMowca = who;
       const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
       S.sfx.mowa = true;                                              // effects duck under a line
@@ -187,12 +251,39 @@ export class Player {
       walkTo: guard((who, x) => S.walkTo(who, x)),
       // travel inside a stage: dip to dark, new scenery, objects cleared; puppets stay at home
       // (visible as before) unless enter: true hides them so the scene can walk them in again
-      go: guard(async (bg, { enter = false } = {}) => {
-        if (S.bgName === bg) return;
-        await this.fade(true); S.clear();
-        for (const L of Object.values(S.puppets)) { if (enter) L.korzen.visible = false; else L.korzen.position.x = L.home; }
-        await S.background(bg); await this.fade(false);
+      // bg: a background name, or an insert on a plain colour {kolor, motyw, kolo}; przejscie: true (one at random),
+      // a name (E.PRZEJSCIA) or false; the lesson's `przejscia: true` makes every change a transition
+      go: guard(async (bg, { enter = false, przejscie = undefined, obszar = 0, ciecie = false } = {}) => {
+        if (S.bgName === tloId(bg)) return;
+        const zmien = async () => {
+          S.clear(); E.ujecie(S, "ogolny");
+          for (const L of Object.values(S.puppets)) { if (enter) L.korzen.visible = false; else L.korzen.position.x = L.home; }
+          await S.background(bg); S.bgName = tloId(bg);
+          if (obszar) E.ustawObszar(S, obszar);
+        };
+        const p = przejscie ?? (this.lesson.przejscia && !ciecie ? true : false);
+        if (ciecie) await zmien();                                    // a cut: inside one adventure
+        else if (p) await E.przejscie(S, zmien, { rodzaj: typeof p === "string" ? p : null });
+        else { await this.fade(true); await zmien(); await this.fade(false); }
       }),
+      przejscie: guard((zmiana, rodzaj = null) => E.przejscie(S, async () => { alive(); await zmiana(); }, { rodzaj })),
+      // film tools (efekty.js, guidelines "Atmosphere and editing")
+      ujecie: guard((typ, opts) => E.ujecie(S, typ, opts)),
+      pan: guard((k, opts) => E.pan(S, k, opts)),
+      odliczanie: guard((opts) => E.odliczanie(S, opts)),
+      konfetti: (h, opts) => { alive(); E.konfetti(S, h, opts); },
+      ptaszek: guard((h, opts) => E.ptaszek(S, h, opts)),
+      emocja: guard(async (who, rodzaj, { anim = null, na = 2.2 } = {}) => { if (anim) S.play(who, anim); return E.emocja(S, who, rodzaj, { na }); }),
+      nalozenie: guard((gorny, dolny, opts) => E.nalozenie(S, gorny, dolny, opts)),
+      // particles over the whole scene: deszcz, snieg, swietliki, liscie, pylek, babelki (null stops them)
+      czastki: (rodzaj, opts) => { alive(); return E.czastki(S, rodzaj, opts); },
+      // a bar of stars in the HUD for a practice stage; auto: every finished task adds one
+      gwiazdki: (n, { auto = true } = {}) => { alive(); this.gwiazdki = pasekGwiazdek(n, auto); return this.gwiazdki; },
+      // dressing up (ubior.js): a hat, glasses, shoes ... fitted to any humanoid character
+      ubierz: guard((who, rzecz, opts) => U.ubierz(S, who, rzecz, opts)),
+      zdejmij: (who, slot) => { alive(); return U.zdejmij(S, who, slot); },
+      nieUbieraj: guard((who, rzecz, opts) => U.nieUbieraj(S, who, rzecz, opts)),
+      ubranie: guard((rzecz, opts) => U.ubranieNaNaklejce(S, rzecz, opts)),
       mood: (who, m) => S.mood(who, m),
       look: (who, target, opts) => S.lookAt(who, target, opts),   // a scene may direct a gaze too (null = ahead)
       sfx: (name, opts) => S.sfx.graj(name, opts),                // a sound effect (game/audio/sfx)
@@ -212,12 +303,12 @@ export class Player {
       shape: (kind, opts) => { alive(); return G.ksztalt(S, kind, opts); },
       corners: (h) => G.rogi(S, h),
       piece: (t, opts = {}) => G.ksztalt(S, t, { ...opts, def: G.TANGRAM[t], name: `kawalek_${t}` }),
-      tangram: guard(async (name, opts) => { const t = G.tangram(S, name, opts); const pol = last; t.done = () => wDzialaniu(t.wait()); return t; }),
+      tangram: guard(async (name, opts) => { const t = G.tangram(S, name, opts); const pol = last; t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
       place: guard(async (o) => { const pol = last; return wDzialaniu(G.umiesc(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null })); }),
       behind: (item, ref) => G.zaRzecza(item, ref),
       relation: (item, ref, ref2) => G.relacja(S, item, ref, ref2),
-      symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()); return t; }),
-      slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()); return t; }),
+      symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
+      slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
       put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),
@@ -239,7 +330,7 @@ export class Player {
       // a task: the child must click `correct` among `targets`; a wrong click plays the
       // `wrong` line and, after `hintAfter` misses, pulses the right answer
       task: (o) => wDzialaniu(zadanie(o)),
-      sort: (o) => wDzialaniu(sortuj(o)),
+      sort: (o) => wDzialaniu(sortuj(o)).then((r) => { nagroda(null); return r; }),
       _task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null }) => {
         const ok = Array.isArray(correct) ? correct : [correct];
         const polecenie = last;                          // the instruction: a tapped character repeats it, not the "try again" said since
@@ -257,7 +348,7 @@ export class Player {
           const hit = await S.choose([...targets, ...puppets]);
           alive();
           if (hit && hit.korzen) { if (polecenie) await say(polecenie.who, polecenie.key, { anim: polecenie.anim }); continue; }   // "say it again"
-          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); S.sfx.graj("right"); return hit; }
+          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); S.sfx.graj("right"); nagroda(hit, misses === 0); return hit; }
           misses++;
           S.shake(hit);
           if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);

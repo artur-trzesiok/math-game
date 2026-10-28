@@ -51,7 +51,21 @@
   #hud .phase.done { background: rgba(255,255,255,.75); opacity: .75; }
   #hud .phase.ahead { opacity: .45; filter: grayscale(.4); }
   #hud .phase.debug { pointer-events: auto; cursor: pointer; outline: 2px dashed rgba(255,255,255,.6); }
-  #hud .menu { pointer-events: auto; margin-left: auto; font: inherit; padding: 8px 14px; border: 0; border-radius: 14px; background: rgba(255,255,255,.85); color: #2a4a6a; cursor: pointer; }
+  #hud .menu, #hud .ster { pointer-events: auto; margin-left: auto; font: inherit; padding: 8px 14px; border: 0; border-radius: 14px; background: rgba(255,255,255,.85); color: #2a4a6a; cursor: pointer; }
+  #hud .ster { margin-left: 0; min-width: 2.6em; }
+  #hud .ster:first-of-type { margin-left: auto; }
+  #hud .menu { margin-left: 0; }
+  #hud .gwiazdki { display: flex; gap: 4px; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.55); }
+  #hud .gwiazdki:empty { display: none; }
+  #hud .gwiazdki svg { width: min(30px, 3.6vh); height: min(30px, 3.6vh); transition: transform .3s; }
+  #hud .gwiazdki svg.pelna { animation: gw .45s ease-out; }
+  @keyframes gw { 0% { transform: scale(.3) rotate(-40deg); } 60% { transform: scale(1.35) rotate(10deg); } 100% { transform: scale(1); } }
+  #seria { position: fixed; left: 50%; top: 18%; transform: translateX(-50%) scale(0); display: flex; gap: 6px; align-items: center; padding: 10px 18px; border-radius: 999px; background: #ff9a3c; box-shadow: 0 4px 14px rgba(0,0,0,.25); pointer-events: none; transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+  #seria.on { transform: translateX(-50%) scale(1); }
+  #seria svg { width: 34px; height: 34px; }
+  #pauza { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(10,20,40,.45); }
+  #pauza button { width: min(30vh, 220px); height: min(30vh, 220px); border-radius: 50%; border: 0; background: #fff; box-shadow: 0 8px 0 #c7d8e6; cursor: pointer; }
+  #pauza svg { width: 50%; height: 50%; }
   #subtitle { position: fixed; left: 50%; bottom: 6%; transform: translateX(-50%); display: none; max-width: 80%; padding: 10px 18px; border-radius: 16px; background: rgba(0,0,0,.55); color: #fff; font-size: 20px; text-align: center; pointer-events: none; }
   #card { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.25); }
   #card .box { background: #fff; border-radius: 26px; padding: 30px 36px; max-width: 70%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
@@ -67,7 +81,7 @@
     const im = { imports: {
       three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);
     document.currentScript.after(s);
@@ -76,7 +90,10 @@
 <div id="stage"></div>
 <div id="hud"><span class="lesson-name"></span>
   <span class="phases"><img class="phase" data-stage="story" data-src="/game/assets/objects/ikona_opowiesc.webp" alt=""><img class="phase" data-stage="practice" data-src="/game/assets/objects/ikona_cwiczenia.webp" alt=""><img class="phase" data-stage="apply" data-src="/game/assets/objects/ikona_dom.webp" alt=""></span>
-  <button class="menu">☰</button></div>
+  <span class="gwiazdki"></span>
+  <button class="ster pauza" aria-label="pauza">❚❚</button><button class="ster dalej" aria-label="dalej">▶▶</button><button class="ster pelny" aria-label="pełny ekran">⛶</button><button class="menu">☰</button></div>
+<div id="seria"></div>
+<div id="pauza"><button aria-label="graj"><svg viewBox="0 0 10 10"><path d="M3 2 L8 5 L3 8 Z" fill="#2a4a6a"/></svg></button></div>
 <div id="menu"><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div><div id="chips"></div></div>
 <div id="subtitle"></div>
 <div id="iris"></div>

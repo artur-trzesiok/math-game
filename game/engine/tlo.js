@@ -127,5 +127,5 @@ export async function zbudujTlo(scena, wymiar, opcje = {}) {
     m.renderOrder = r.klasa === "drift" ? 0 : 2;
     scena.add(m);
   }
-  return { rekwizytow: opis.rekwizyty.length, horyzont: opis.horyzont, skala: s0, wysokosc: H, zTla: Z_TLA, plyta, srodekY: opcje.srodekY ?? 0 };
+  return { obszary: opis.obszary || null, rekwizytow: opis.rekwizyty.length, horyzont: opis.horyzont, skala: s0, wysokosc: H, zTla: Z_TLA, plyta, srodekY: opcje.srodekY ?? 0 };
 }

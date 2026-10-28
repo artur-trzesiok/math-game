@@ -34,7 +34,7 @@
     const im = { imports: {
       three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);
     document.currentScript.after(s);
@@ -50,6 +50,18 @@
     <button id="zeruj" title="zeruj ręczne zgięcia">zeruj zgięcia</button></div>
   <div class="wiersz"><button id="zapisz" class="glowny">Zapisz (Ctrl+S)</button><button id="cofnij">Cofnij (Ctrl+Z)</button></div>
   <div id="status">…</div><div id="zmiany"></div>
+  <h3>Ubrania</h3>
+  <div class="wiersz"><select id="ubr_lista"></select><button id="ubr_zaloz">Załóż</button><button id="ubr_zdejmij">Zdejmij</button><button id="ubr_wszystko">Zdejmij wszystko</button></div>
+  <div class="wiersz"><label>Korekta <select id="ubr_kor"><option value="">— załóż coś —</option></select></label>
+    <label>widok <select id="ubr_widok"><option value="przod">przód / ¾</option><option value="tyl">tył</option><option value="profil">profil</option></select></label></div>
+  <div class="wiersz pola">
+    <label>dx <input type="number" id="ubr_dx" step="0.005" value="0" style="width:64px"></label>
+    <label>dy <input type="number" id="ubr_dy" step="0.005" value="0" style="width:64px"></label>
+    <label>skala <input type="number" id="ubr_skala" step="0.02" value="1" style="width:64px"></label>
+    <label>obrót° <input type="number" id="ubr_obrot" step="1" value="0" style="width:56px"></label>
+    <button id="ubr_zeruj" title="bez korekty w tym widoku">zeruj</button></div>
+  <div class="wiersz"><button id="ubr_zapisz" class="glowny">Zapisz ubrania</button><span id="ubr_status"></span></div>
+  <div class="pomoc">Ubrania z <code>game/assets/ubrania</code> dopasowuje silnik sam (głowa, oczy, szyja, stopy). Korekta przesuwa (dx, dy w wysokościach postaci), skaluje i obraca rzecz w jednym widoku; zapis trafia do <code>game/assets/characters/&lt;kto&gt;/ubior.json</code> i gra nakłada go zawsze. Czworonogów nie ubieramy.</div>
   <h3>Element</h3>
   <div class="wiersz"><select id="lista"><option value="">— kliknij na lalce —</option></select><label title="klik i przeciąganie zawsze działają na wybranym elemencie"><input type="checkbox" id="blokada"> zablokuj</label></div>
   <div id="pola" class="pola"></div>
@@ -70,6 +82,7 @@
 import * as THREE from "three";
 import { Lalka } from "../game/engine/lalka.js";
 import { v } from "../game/engine/v.js";
+import * as U from "../game/engine/ubior.js";
 
 const $ = (id) => document.getElementById(id);
 const KOLUMNY = [
@@ -136,6 +149,7 @@ async function wczytajPostac(nazwa) {
   anim = ""; gra = false; $("graj").textContent = "▶";
   $("lista").innerHTML = `<option value="">— kliknij na lalce —</option>` + Object.keys(dane.czesci).map((n) => `<option>${n}</option>`).join("");
   history.replaceState(null, "", `?kto=${kto}`);
+  await wczytajUbrania();
   zbuduj();
   status(`wczytano ${kto}: ${Object.keys(dane.czesci).length} elementów`);
 }
@@ -155,7 +169,53 @@ function zbuduj() {
   });
   rysujNakladke();
   pokazPola();
+  ubierzWszystkie();
 }
+
+// ------------------------------------------------------------ the wardrobe
+// every column's puppet wears what is chosen; the engine's own fitting (ubior.js) plus this character's corrections
+const ubS = { ubiory: new Set() }, zalozone = new Set();
+let korektyKto = {};
+const sztucznaScena = (L) => ({ puppets: { [kto]: L }, sfx: { graj() {} }, tween: (d, f) => { f(1); return Promise.resolve(); }, ubiory: ubS.ubiory });
+async function ubierzWszystkie(tylko = null) {
+  if (dane?.rig === "czworonog") { $("ubr_status").textContent = "czworonogów nie ubieramy"; return; }
+  for (const L of lalki) {
+    L.name = kto; L.korektyUbioru = korektyKto;
+    for (const r of zalozone) if (!tylko || r === tylko) await U.ubierz(sztucznaScena(L), kto, r, { pop: false });
+  }
+}
+async function wczytajUbrania() {
+  const G = await U.galeria();
+  $("ubr_lista").innerHTML = Object.entries(G).map(([n, d]) => `<option value="${n}">${n} (${d.slot})</option>`).join("");
+  korektyKto = await fetch(v(`/game/assets/characters/${kto}/ubior.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+}
+function odswiezKorekte() {
+  $("ubr_kor").innerHTML = zalozone.size ? [...zalozone].map((n) => `<option>${n}</option>`).join("") : `<option value="">— załóż coś —</option>`;
+  pokazKorekte();
+}
+function pokazKorekte() {
+  const r = $("ubr_kor").value, w = $("ubr_widok").value, k = korektyKto[r]?.[w] || {};
+  $("ubr_dx").value = k.dx ?? 0; $("ubr_dy").value = k.dy ?? 0; $("ubr_skala").value = k.skala ?? 1; $("ubr_obrot").value = k.obrot ?? 0;
+}
+async function zmienKorekte() {
+  const r = $("ubr_kor").value, w = $("ubr_widok").value; if (!r) return;
+  const k = { dx: +$("ubr_dx").value || 0, dy: +$("ubr_dy").value || 0, skala: +$("ubr_skala").value || 1, obrot: +$("ubr_obrot").value || 0 };
+  korektyKto[r] = korektyKto[r] || {};
+  if (!k.dx && !k.dy && k.skala === 1 && !k.obrot) delete korektyKto[r][w]; else korektyKto[r][w] = k;
+  await ubierzWszystkie(r);
+  $("ubr_status").textContent = "niezapisane";
+}
+$("ubr_zaloz").onclick = async () => { const r = $("ubr_lista").value; if (!r) return; zalozone.add(r); await ubierzWszystkie(r); odswiezKorekte(); $("ubr_kor").value = r; pokazKorekte(); };
+$("ubr_zdejmij").onclick = () => { const r = $("ubr_lista").value; const G = U.galeria(); zalozone.delete(r); G.then((g) => { for (const L of lalki) U.zdejmij(sztucznaScena(L), kto, g[r]?.slot); }); odswiezKorekte(); };
+$("ubr_wszystko").onclick = () => { zalozone.clear(); for (const L of lalki) U.zdejmij(sztucznaScena(L), kto); odswiezKorekte(); };
+$("ubr_kor").onchange = pokazKorekte; $("ubr_widok").onchange = pokazKorekte;
+for (const id of ["ubr_dx", "ubr_dy", "ubr_skala", "ubr_obrot"]) $(id).oninput = zmienKorekte;
+$("ubr_zeruj").onclick = () => { $("ubr_dx").value = 0; $("ubr_dy").value = 0; $("ubr_skala").value = 1; $("ubr_obrot").value = 0; zmienKorekte(); };
+$("ubr_zapisz").onclick = async () => {
+  for (const [r, w] of Object.entries(korektyKto)) if (!Object.keys(w).length) delete korektyKto[r];
+  const odp = await fetch(`/api/characters/${kto}/ubior`, { method: "POST", body: JSON.stringify(korektyKto) });
+  $("ubr_status").textContent = odp.ok ? "zapisano ubior.json" : `błąd ${odp.status}`;
+};
 
 // ktore kolumny gra pokazalaby z ta animacja: profil tylko przy lokomocji lub kierunku profil,
 // pozostale tylko gdy animacja nie jest profilowa
@@ -180,6 +240,7 @@ function klatka(t, recznie = false) {
     else { const ta = L.ta; L.update(dt); L.ta = ta; }   // poza stoi, ale twarz zyje: mruganie i usta
   }
   if (gra) { czasAnim = lalki[0]?.ta ?? 0; rysujNakladke(); }
+  U.ruszUbiory(ubS);
   rend.render(scena, kam);
   if (!recznie) requestAnimationFrame(klatka);
 }

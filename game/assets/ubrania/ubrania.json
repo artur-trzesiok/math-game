@@ -1,0 +1,70 @@
+{
+  "czapka_zimowa": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "czapka_zimowa_przod.webp",
+      "profil": "czapka_zimowa_profil.webp",
+      "tyl": "czapka_zimowa_tyl.webp"
+    }
+  },
+  "kapelusz": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "kapelusz_przod.webp",
+      "profil": "kapelusz_profil.webp",
+      "tyl": "kapelusz_tyl.webp"
+    },
+    "szer": 1.25,
+    "nasun": 0.22
+  },
+  "czapka_z_daszkiem": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "czapka_z_daszkiem_przod.webp",
+      "profil": "czapka_z_daszkiem_profil.webp",
+      "tyl": "czapka_z_daszkiem_tyl.webp"
+    },
+    "nasun": 0.28
+  },
+  "korona": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "korona_przod.webp",
+      "profil": "korona_profil.webp",
+      "tyl": "korona_tyl.webp"
+    },
+    "szer": 0.85,
+    "nasun": 0.12
+  },
+  "okulary": {
+    "slot": "oczy",
+    "widoki": {
+      "przod": "okulary_przod.webp",
+      "profil": "okulary_profil.webp"
+    }
+  },
+  "szalik": {
+    "slot": "szyja",
+    "widoki": {
+      "przod": "szalik_przod.webp",
+      "profil": "szalik_profil.webp",
+      "tyl": "szalik_tyl.webp"
+    }
+  },
+  "kalosze": {
+    "slot": "stopy",
+    "widoki": {
+      "przod": "kalosze_przod.webp",
+      "profil": "kalosze_profil.webp",
+      "tyl": "kalosze_tyl.webp"
+    }
+  },
+  "trampki": {
+    "slot": "stopy",
+    "widoki": {
+      "przod": "trampki_przod.webp",
+      "profil": "trampki_profil.webp",
+      "tyl": "trampki_tyl.webp"
+    }
+  }
+}
