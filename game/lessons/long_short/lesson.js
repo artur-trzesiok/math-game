@@ -203,14 +203,27 @@ export default {
         for (const n of ["lisek", "wiewiorka", "sarenka"]) { c.show(n); c.zdejmij(n); }        // scarves off: they hang on the hooks now
         const d = await c.object("szalik_dlugi", { x: -1.2, y: 2.15, size: 2.6 }), k = await c.object("szalik_krotki", { x: 1.6, y: 2.15, size: 2.6 });   // on the hooks
         await c.say("lisek", "line.d_wieszaki", { anim: "Zgloszenie" });
-        await c.say("sarenka", "line.d_porownaj");
-        const l = await odLinii(c, [d, k], { x0: -1.8, ys: [1.2, 0.1] });
-        l?.remove();
+        // measuring with blocks: as many blocks as fit along each scarf (a new way, not the line again)
+        await c.say("sarenka", "line.d_klocki", { anim: "Zgloszenie" });
+        await Promise.all([d.moveTo(0.4, 1.15, 0.4), k.moveTo(-0.55, -0.45, 0.4)]);
+        const miara = async (h) => {
+          const b = c.bounds(h), n = Math.max(1, Math.round((b.right - b.left - 0.2) / 0.62)), w = (b.right - b.left - 0.2) / n, hs = [];
+          for (let i = 0; i < n; i++) hs.push(await c.object("klocek", { x: b.left + 0.1 + w * (i + 0.5), y: b.bottom - 0.42, size: w * 1.05, cicho: i > 0 }));
+          await c.count(hs, { who: "sarenka" });
+          return n;
+        };
+        const nd = await miara(d);
+        await c.say("lisek", `line.d_dluga${nd}`);
+        const nk = await miara(k);
+        await c.say("wiewiorka", `line.d_krotka${nk}`);
+        await c.say("sarenka", "line.d_wiecej_klockow");
+        c.clear();
+        const d2 = await c.object("szalik_dlugi", { x: -1.2, y: 2.15, size: 2.6 }), k2 = await c.object("szalik_krotki", { x: 1.6, y: 2.15, size: 2.6 });
         await c.say("lisek", "line.d_daj");
         // drag each scarf onto the one it fits
-        const kto = new Map([[d, "lisek"], [k, "wiewiorka"]]);
+        const kto = new Map([[d2, "lisek"], [k2, "wiewiorka"]]);
         await new Promise((ok) => c.stage.free({
-          items: [d, k], przeloz: null, rozdaj: { wolni: () => [...kto.values()].filter((n) => !c.stage.puppets[n].maSzalik).map((who) => ({ who })), pozycja: (o) => { const L = c.stage.puppets[o.who]; return [L.korzen.position.x, -1.0]; } },
+          items: [d2, k2], przeloz: null, rozdaj: { wolni: () => [...kto.values()].filter((n) => !c.stage.puppets[n].maSzalik).map((who) => ({ who })), pozycja: (o) => { const L = c.stage.puppets[o.who]; return [L.korzen.position.x, -1.0]; } },
           onDrop: async (h, p) => {
             const who = kto.get(h), L = c.stage.puppets[who];
             if (Math.abs(p.x - L.korzen.position.x) > 1.6) { await h.moveTo(h.home.x, h.home.y, 0.35); if (Math.abs(p.x - c.stage.puppets[who === "lisek" ? "wiewiorka" : "lisek"].korzen.position.x) < 1.6) await c.say("sarenka", "line.d_nie_ten"); return; }
@@ -220,6 +233,31 @@ export default {
           onTap: () => {}, onPuppet: () => c.stage.onPuppetTap?.(),
         }));
         await c.say("wiewiorka", "line.d_pasuje", { anim: "Radosc" });
+        // the kitchen: Fox wants the longest pasta, Squirrel the shortest - all five laid from one line
+        await c.go("dom", { enter: true });
+        await Promise.all(["lisek", "wiewiorka", "sarenka"].map((n) => c.enter(n)));
+        await c.say("lisek", "line.k_kuchnia", { anim: "Radosc" });
+        await c.say("lisek", "line.k_ja_najdluzszy");
+        await c.say("wiewiorka", "line.k_ja_najkrotszy", { anim: "Podskok" });
+        const MAK = ["makaron_spaghetti", "makaron_tagliatelle", "makaron_swiderek", "makaron_penne", "makaron_kolanko"];
+        const mak = [];
+        for (const [i, n] of tasuj(MAK).entries()) mak.push(await c.object(n, { x: [-0.4, 1.6, 0.2, 2.4, 1.0][i], y: [-1.9, -2.5, -2.9, -1.7, -2.3][i], size: 4.6 }));
+        for (const h of mak) h.icon.rotation.z = (Math.random() - 0.5) * 0.5;
+        await c.say("sarenka", "line.k_umowa", { anim: "Zgloszenie" });
+        await Promise.all(mak.map((h) => obroc(c, h, 0)));
+        const lm = await odLinii(c, mak, { x0: -1.7, ys: [2.4, 1.7, 1.0, 0.3, -0.4] });
+        const najd = mak.find((h) => h.name === "makaron_spaghetti"), najk = mak.find((h) => h.name === "makaron_kolanko");
+        await c.say("lisek", "line.k_najdluzszy");
+        dobre(najd); await c.task({ targets: mak, correct: najd, wrong: "line.k_najdluzszy_nie" }); dobre(najd, false);
+        await c.say("wiewiorka", "line.k_najkrotszy");
+        dobre(najk); await c.task({ targets: mak, correct: najk, wrong: "line.k_najkrotszy_nie" }); dobre(najk, false);
+        lm?.remove();
+        // they mix the longest with the shortest in the pot
+        await c.say("sarenka", "line.k_pomieszajmy");
+        const garnek = await c.object("garnek", { x: 0.6, y: -1.8, size: 2.2 });
+        for (const h of [najd, najk]) { h.mesh.position.z = garnek.mesh.position.z - 0.05; await h.moveTo(0.6, -1.2, 0.5); c.sfx("plop"); h.mesh.visible = false; }
+        c.stage.bump(garnek);
+        await c.say("lisek", "line.k_pyszne", { anim: "Radosc" });
         await c.say("sarenka", "line.d_rodzice");
       },
     ],

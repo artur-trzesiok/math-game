@@ -497,7 +497,7 @@ export async function ptaszek(S, h = null, { na = 1.2 } = {}) {
 // a small white bubble over the head with a big icon: what the character feels, readable from the sofa
 export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach"];
 // painted faces set into a bubble (a sweat drop read as nothing to a child): a sticker drawn over the bubble once loaded
-const MALOWANE = { pot: "/game/assets/objects/emocja_ojej.webp" };
+const MALOWANE = { pot: "/game/assets/objects/emocja_ojej.webp", smutek: "/game/assets/objects/emocja_smutek.webp" };
 function ikonaEmocji(rodzaj) {
   const tex = rysujDymek(rodzaj);
   if (MALOWANE[rodzaj]) {
@@ -525,8 +525,7 @@ function rysujDymek(rodzaj) {
       C("#ff5b8a"); x.beginPath(); x.moveTo(128, 170); x.bezierCurveTo(40, 112, 70, 40, 128, 78); x.bezierCurveTo(186, 40, 216, 112, 128, 170); x.fill();
     } else if (rodzaj === "radosc") {
       C("#ffc928"); for (const [cx, cy, r] of [[100, 100, 42], [168, 78, 24], [160, 150, 20]]) { x.beginPath(); for (let j = 0; j < 8; j++) { const a = -Math.PI / 2 + j * Math.PI / 4, q = j % 2 ? r * 0.36 : r; x.lineTo(cx + q * Math.cos(a), cy + q * Math.sin(a)); } x.fill(); }
-    } else if (rodzaj === "smutek") {
-      C("#5bb4f0"); for (const [cx, cy, s] of [[100, 74, 1], [150, 116, 0.8]]) { x.beginPath(); x.moveTo(cx, cy - 30 * s); x.bezierCurveTo(cx + 30 * s, cy + 14 * s, cx + 24 * s, cy + 40 * s, cx, cy + 40 * s); x.bezierCurveTo(cx - 24 * s, cy + 40 * s, cx - 30 * s, cy + 14 * s, cx, cy - 30 * s); x.fill(); }
+    } else if (rodzaj === "smutek") {                            // a painted sad face, drawn in when loaded (MALOWANE)
     } else if (rodzaj === "sen") {
       C("#6a7fd6"); x.font = "900 92px system-ui, sans-serif"; x.textAlign = "center"; x.fillText("z", 92, 150); x.font = "900 66px system-ui, sans-serif"; x.fillText("z", 142, 110); x.font = "900 46px system-ui, sans-serif"; x.fillText("z", 180, 78);
     } else if (rodzaj === "wykrzyknik") {

@@ -194,5 +194,143 @@
   "line.a_konce": {
     "who": "sarenka",
     "text": "Now look where each plank ends. I'm marking the ends."
+  },
+  "line.d_klocki": {
+    "who": "sarenka",
+    "text": "At home we'll measure the scarves another way: with blocks. I'll lay blocks along the scarf, and you count them."
+  },
+  "line.d_wiecej_klockow": {
+    "who": "sarenka",
+    "text": "The long scarf took more blocks. The more blocks, the longer it is!"
+  },
+  "line.d_dluga1": {
+    "who": "lisek",
+    "text": "My scarf is one block long!"
+  },
+  "line.d_krotka1": {
+    "who": "wiewiorka",
+    "text": "And mine only one block."
+  },
+  "line.d_dluga2": {
+    "who": "lisek",
+    "text": "My scarf is two blocks long!"
+  },
+  "line.d_krotka2": {
+    "who": "wiewiorka",
+    "text": "And mine only two blocks."
+  },
+  "line.d_dluga3": {
+    "who": "lisek",
+    "text": "My scarf is three blocks long!"
+  },
+  "line.d_krotka3": {
+    "who": "wiewiorka",
+    "text": "And mine only three blocks."
+  },
+  "line.d_dluga4": {
+    "who": "lisek",
+    "text": "My scarf is four blocks long!"
+  },
+  "line.d_krotka4": {
+    "who": "wiewiorka",
+    "text": "And mine only four blocks."
+  },
+  "line.d_dluga5": {
+    "who": "lisek",
+    "text": "My scarf is five blocks long!"
+  },
+  "line.d_krotka5": {
+    "who": "wiewiorka",
+    "text": "And mine only five blocks."
+  },
+  "line.d_dluga6": {
+    "who": "lisek",
+    "text": "My scarf is six blocks long!"
+  },
+  "line.d_krotka6": {
+    "who": "wiewiorka",
+    "text": "And mine only six blocks."
+  },
+  "line.d_dluga7": {
+    "who": "lisek",
+    "text": "My scarf is seven blocks long!"
+  },
+  "line.d_krotka7": {
+    "who": "wiewiorka",
+    "text": "And mine only seven blocks."
+  },
+  "line.n1": {
+    "who": "sarenka",
+    "text": "One!"
+  },
+  "line.n2": {
+    "who": "sarenka",
+    "text": "Two!"
+  },
+  "line.n3": {
+    "who": "sarenka",
+    "text": "Three!"
+  },
+  "line.n4": {
+    "who": "sarenka",
+    "text": "Four!"
+  },
+  "line.n5": {
+    "who": "sarenka",
+    "text": "Five!"
+  },
+  "line.n6": {
+    "who": "sarenka",
+    "text": "Six!"
+  },
+  "line.n7": {
+    "who": "sarenka",
+    "text": "Seven!"
+  },
+  "line.k_kuchnia": {
+    "who": "lisek",
+    "text": "And now to the kitchen! We'll make pasta for dinner."
+  },
+  "line.k_ja_najdluzszy": {
+    "who": "lisek",
+    "text": "I want the longest pasta!"
+  },
+  "line.k_ja_najkrotszy": {
+    "who": "wiewiorka",
+    "text": "And I want the shortest!"
+  },
+  "line.k_umowa": {
+    "who": "sarenka",
+    "text": "Let's agree: we'll lay all the pasta from one line and see which is the longest and which the shortest. Drag each piece to the line."
+  },
+  "line.k_najdluzszy": {
+    "who": "lisek",
+    "text": "Which pasta is the longest? Point to it."
+  },
+  "line.k_najdluzszy_nie": {
+    "who": "lisek",
+    "text": "Look whose end is furthest from the line.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.k_najkrotszy": {
+    "who": "wiewiorka",
+    "text": "And which is the shortest? Point to it."
+  },
+  "line.k_najkrotszy_nie": {
+    "who": "wiewiorka",
+    "text": "Look for the one whose end is closest to the line.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.k_pomieszajmy": {
+    "who": "sarenka",
+    "text": "I've got an idea! Let's mix the longest with the shortest. Everyone gets their own!"
+  },
+  "line.k_pyszne": {
+    "who": "lisek",
+    "text": "Long and short in one pot. Yummy!"
   }
 }

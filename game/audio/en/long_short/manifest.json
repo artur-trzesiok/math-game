@@ -243,5 +243,180 @@
   "hash": "1fd69847674d",
   "who": "sarenka",
   "text": "Now look where each plank ends. I'm marking the ends."
+ },
+ "line.d_klocki": {
+  "hash": "5ee7d9236588",
+  "who": "sarenka",
+  "text": "At home we'll measure the scarves another way: with blocks. I'll lay blocks along the scarf, and you count them."
+ },
+ "line.d_wiecej_klockow": {
+  "hash": "566c1379af6e",
+  "who": "sarenka",
+  "text": "The long scarf took more blocks. The more blocks, the longer it is!"
+ },
+ "line.d_dluga1": {
+  "hash": "d0ba2453ffe2",
+  "who": "lisek",
+  "text": "My scarf is one block long!"
+ },
+ "line.d_krotka1": {
+  "hash": "7dae87203ed5",
+  "who": "wiewiorka",
+  "text": "And mine only one block."
+ },
+ "line.d_dluga2": {
+  "hash": "ed35867332fb",
+  "who": "lisek",
+  "text": "My scarf is two blocks long!"
+ },
+ "line.d_krotka2": {
+  "hash": "735248bc2752",
+  "who": "wiewiorka",
+  "text": "And mine only two blocks."
+ },
+ "line.d_dluga3": {
+  "hash": "86c097ae567d",
+  "who": "lisek",
+  "text": "My scarf is three blocks long!"
+ },
+ "line.d_krotka3": {
+  "hash": "38a79804bbe6",
+  "who": "wiewiorka",
+  "text": "And mine only three blocks."
+ },
+ "line.d_dluga4": {
+  "hash": "4f2081317579",
+  "who": "lisek",
+  "text": "My scarf is four blocks long!"
+ },
+ "line.d_krotka4": {
+  "hash": "f46672d360b7",
+  "who": "wiewiorka",
+  "text": "And mine only four blocks."
+ },
+ "line.d_dluga5": {
+  "hash": "b45fea124678",
+  "who": "lisek",
+  "text": "My scarf is five blocks long!"
+ },
+ "line.d_krotka5": {
+  "hash": "f55322d79bbb",
+  "who": "wiewiorka",
+  "text": "And mine only five blocks."
+ },
+ "line.d_dluga6": {
+  "hash": "e309025de577",
+  "who": "lisek",
+  "text": "My scarf is six blocks long!"
+ },
+ "line.d_krotka6": {
+  "hash": "e8da50c3d692",
+  "who": "wiewiorka",
+  "text": "And mine only six blocks."
+ },
+ "line.d_dluga7": {
+  "hash": "e45a86e053e4",
+  "who": "lisek",
+  "text": "My scarf is seven blocks long!"
+ },
+ "line.d_krotka7": {
+  "hash": "d305ce5ff53e",
+  "who": "wiewiorka",
+  "text": "And mine only seven blocks."
+ },
+ "line.n1": {
+  "hash": "fe1f04809440",
+  "who": "sarenka",
+  "text": "One!"
+ },
+ "line.n2": {
+  "hash": "375458f35a95",
+  "who": "sarenka",
+  "text": "Two!"
+ },
+ "line.n3": {
+  "hash": "bece30255ee6",
+  "who": "sarenka",
+  "text": "Three!"
+ },
+ "line.n4": {
+  "hash": "c0cadba0f56e",
+  "who": "sarenka",
+  "text": "Four!"
+ },
+ "line.n5": {
+  "hash": "2aae65c19a3e",
+  "who": "sarenka",
+  "text": "Five!"
+ },
+ "line.n6": {
+  "hash": "5b14398761e9",
+  "who": "sarenka",
+  "text": "Six!"
+ },
+ "line.n7": {
+  "hash": "79805ce2a057",
+  "who": "sarenka",
+  "text": "Seven!"
+ },
+ "line.k_kuchnia": {
+  "hash": "743c124e3c4e",
+  "who": "lisek",
+  "text": "And now to the kitchen! We'll make pasta for dinner."
+ },
+ "line.k_ja_najdluzszy": {
+  "hash": "749fa9f65883",
+  "who": "lisek",
+  "text": "I want the longest pasta!"
+ },
+ "line.k_ja_najkrotszy": {
+  "hash": "00448333c6a9",
+  "who": "wiewiorka",
+  "text": "And I want the shortest!"
+ },
+ "line.k_umowa": {
+  "hash": "2ea305aef6be",
+  "who": "sarenka",
+  "text": "Let's agree: we'll lay all the pasta from one line and see which is the longest and which the shortest. Drag each piece to the line."
+ },
+ "line.k_najdluzszy": {
+  "hash": "b73036da28ad",
+  "who": "lisek",
+  "text": "Which pasta is the longest? Point to it."
+ },
+ "line.k_najdluzszy_nie": {
+  "hash": "d8b6d5435368",
+  "who": "lisek",
+  "text": "Look whose end is furthest from the line."
+ },
+ "line.k_najdluzszy_nie.sarenka": {
+  "hash": "8fca614c481a",
+  "who": "sarenka",
+  "text": "Look whose end is furthest from the line."
+ },
+ "line.k_najkrotszy": {
+  "hash": "bf703e76c42c",
+  "who": "wiewiorka",
+  "text": "And which is the shortest? Point to it."
+ },
+ "line.k_najkrotszy_nie": {
+  "hash": "15bc130c3867",
+  "who": "wiewiorka",
+  "text": "Look for the one whose end is closest to the line."
+ },
+ "line.k_najkrotszy_nie.sarenka": {
+  "hash": "ab1056e125f2",
+  "who": "sarenka",
+  "text": "Look for the one whose end is closest to the line."
+ },
+ "line.k_pomieszajmy": {
+  "hash": "13d20ec467a1",
+  "who": "sarenka",
+  "text": "I've got an idea! Let's mix the longest with the shortest. Everyone gets their own!"
+ },
+ "line.k_pyszne": {
+  "hash": "908b03d5f664",
+  "who": "lisek",
+  "text": "Long and short in one pot. Yummy!"
  }
 }

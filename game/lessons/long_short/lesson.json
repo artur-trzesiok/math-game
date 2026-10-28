@@ -14,7 +14,8 @@
   "backgrounds": [
     "strumyk",
     "laka",
-    "przedpokoj"
+    "przedpokoj",
+    "dom"
   ],
   "objects": [
     "deska_dluga",
@@ -25,7 +26,14 @@
     "wstazka_krotka",
     "bagietka_dluga",
     "slimak",
-    "kwiatek"
+    "kwiatek",
+    "makaron_spaghetti",
+    "makaron_tagliatelle",
+    "makaron_swiderek",
+    "makaron_penne",
+    "makaron_kolanko",
+    "garnek",
+    "klocek"
   ],
   "cover": "Deer, Fox and Squirrel walk over a long wooden plank laid as a little bridge across a sunny brook; a short plank floats in the water beside it.",
   "naklejka": {

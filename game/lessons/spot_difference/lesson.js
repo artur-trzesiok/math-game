@@ -59,7 +59,7 @@ export default {
         r1.remove();
         // helping: Owl's drawing for her granny, and the copy the pond made
         await c.ujecie("zblizenie", { na: "sowa" });
-        await c.emocja("sowa", "smutek", { anim: "Smutek" });
+        await c.emocja("sowa", "pot", { anim: "Smutek" });
         await c.say("sowa", "line.b_rysunek");
         await c.ujecie("ogolny");
         await c.say("lisek", "line.b_pomoge");
@@ -103,8 +103,11 @@ export default {
           await c.say("lisek", "line.p_zamknij");
           const znika = rzad[Math.floor(Math.random() * 4)];
           await zamknijOczy(c, rzad, async () => { znika.usuniety = true; znika.remove(); });
+          // the row framed, a "?" in the gap: the child sees where to look
+          const ramka = await c.line([[-3.25, 2.05], [2.95, 2.05], [2.95, 0.55], [-3.25, 0.55], [-3.25, 2.05]], { color: "#1f5fbf", width: 0.07, duration: 0.5, strong: true });
+          const pyt = await c.sign("?", { x: znika.mesh.position.x, y: 1.3, size: 1.0 });
           const opcje = [];
-          for (const [i, n] of tasuj([znika.name, "pilka", "kubek"]).entries()) { const h = await c.object(n, { x: -2.0 + i * 2.0, y: -1.8, size: 1.1 }); opcje.push(h); }
+          for (const [i, n] of tasuj([znika.name, "pilka", "kubek"]).entries()) { const h = await c.object(n, { x: -2.0 + i * 2.0, y: -1.8, size: 1.1, plik: n === znika.name ? znika.plik : null }); opcje.push(h); }
           await c.say("lisek", "line.p_co_zniknelo");
           const ok = opcje.find((h) => h.name === znika.name);
           dobre(ok); await c.task({ targets: opcje, correct: ok, wrong: "line.p_co_zniknelo_nie" });

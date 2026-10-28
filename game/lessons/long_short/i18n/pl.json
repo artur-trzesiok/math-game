@@ -194,5 +194,143 @@
   "line.a_konce": {
     "who": "sarenka",
     "text": "Teraz popatrz, gdzie każda deska się kończy. Zaznaczam końce."
+  },
+  "line.d_klocki": {
+    "who": "sarenka",
+    "text": "W domu zmierzymy szaliki inaczej: klockami. Przyłożę klocki wzdłuż szalika, a Ty je policz."
+  },
+  "line.d_wiecej_klockow": {
+    "who": "sarenka",
+    "text": "Długi szalik zmieścił więcej klocków. Im więcej klocków, tym dłuższy!"
+  },
+  "line.d_dluga1": {
+    "who": "lisek",
+    "text": "Mój szalik jest długi na jeden klocek!"
+  },
+  "line.d_krotka1": {
+    "who": "wiewiorka",
+    "text": "A mój jest długi tylko na jeden klocek."
+  },
+  "line.d_dluga2": {
+    "who": "lisek",
+    "text": "Mój szalik jest długi na dwa klocki!"
+  },
+  "line.d_krotka2": {
+    "who": "wiewiorka",
+    "text": "A mój jest długi tylko na dwa klocki."
+  },
+  "line.d_dluga3": {
+    "who": "lisek",
+    "text": "Mój szalik jest długi na trzy klocki!"
+  },
+  "line.d_krotka3": {
+    "who": "wiewiorka",
+    "text": "A mój jest długi tylko na trzy klocki."
+  },
+  "line.d_dluga4": {
+    "who": "lisek",
+    "text": "Mój szalik jest długi na cztery klocki!"
+  },
+  "line.d_krotka4": {
+    "who": "wiewiorka",
+    "text": "A mój jest długi tylko na cztery klocki."
+  },
+  "line.d_dluga5": {
+    "who": "lisek",
+    "text": "Mój szalik jest długi na pięć klocków!"
+  },
+  "line.d_krotka5": {
+    "who": "wiewiorka",
+    "text": "A mój jest długi tylko na pięć klocków."
+  },
+  "line.d_dluga6": {
+    "who": "lisek",
+    "text": "Mój szalik jest długi na sześć klocków!"
+  },
+  "line.d_krotka6": {
+    "who": "wiewiorka",
+    "text": "A mój jest długi tylko na sześć klocków."
+  },
+  "line.d_dluga7": {
+    "who": "lisek",
+    "text": "Mój szalik jest długi na siedem klocków!"
+  },
+  "line.d_krotka7": {
+    "who": "wiewiorka",
+    "text": "A mój jest długi tylko na siedem klocków."
+  },
+  "line.n1": {
+    "who": "sarenka",
+    "text": "Jeden!"
+  },
+  "line.n2": {
+    "who": "sarenka",
+    "text": "Dwa!"
+  },
+  "line.n3": {
+    "who": "sarenka",
+    "text": "Trzy!"
+  },
+  "line.n4": {
+    "who": "sarenka",
+    "text": "Cztery!"
+  },
+  "line.n5": {
+    "who": "sarenka",
+    "text": "Pięć!"
+  },
+  "line.n6": {
+    "who": "sarenka",
+    "text": "Sześć!"
+  },
+  "line.n7": {
+    "who": "sarenka",
+    "text": "Siedem!"
+  },
+  "line.k_kuchnia": {
+    "who": "lisek",
+    "text": "A teraz do kuchni! Zrobimy obiad z makaronu."
+  },
+  "line.k_ja_najdluzszy": {
+    "who": "lisek",
+    "text": "Ja chcę najdłuższy makaron!"
+  },
+  "line.k_ja_najkrotszy": {
+    "who": "wiewiorka",
+    "text": "A ja najkrótszy!"
+  },
+  "line.k_umowa": {
+    "who": "sarenka",
+    "text": "Umówmy się: ułożymy wszystkie makarony od jednej kreski i zobaczymy, który jest najdłuższy, a który najkrótszy. Przeciągnij każdy makaron do kreski."
+  },
+  "line.k_najdluzszy": {
+    "who": "lisek",
+    "text": "Który makaron jest najdłuższy? Wskaż."
+  },
+  "line.k_najdluzszy_nie": {
+    "who": "lisek",
+    "text": "Popatrz, którego koniec jest najdalej od kreski.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.k_najkrotszy": {
+    "who": "wiewiorka",
+    "text": "A który jest najkrótszy? Wskaż."
+  },
+  "line.k_najkrotszy_nie": {
+    "who": "wiewiorka",
+    "text": "Szukaj tego, którego koniec jest najbliżej kreski.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.k_pomieszajmy": {
+    "who": "sarenka",
+    "text": "Mam pomysł! Pomieszajmy najdłuższy z najkrótszym. Każdy dostanie swój!"
+  },
+  "line.k_pyszne": {
+    "who": "lisek",
+    "text": "Długi i krótki w jednym garnku. Pycha!"
   }
 }

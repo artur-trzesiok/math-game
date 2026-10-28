@@ -858,6 +858,37 @@ A round warm-yellow smiley face that looks WORRIED, "oh dear!": eyebrows raised 
 worried eyes, a small round open mouth like an "o", soft rosy cheeks. Friendly and gentle, NOT scary, NOT crying.""",
 }
 
+# long and short at home: five kinds of pasta at their TRUE lengths (one shared scale, not each resized to the sticker)
+SHEETS["makarony"] = {
+    "outline": True,
+    "wspolna_skala": True,
+    "names": ["makaron_spaghetti", "makaron_tagliatelle", "makaron_swiderek", "makaron_penne", "makaron_kolanko"],
+    "kolumna": True,
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of FIVE single pieces of dry uncooked pasta for a children's picture book, on a fully
+TRANSPARENT background, each LYING HORIZONTALLY, stacked one under another with generous empty space between them, all
+drawn at the SAME real-world scale so their lengths differ a lot. NO coloured background, NO glow, NO halo, NO
+vignette, NO light behind them - the space around and between the pieces is completely empty and transparent.
+{STYL}
+Top to bottom: one long straight thin strand of spaghetti, the longest, almost as wide as the sheet; one flat ribbon
+of tagliatelle, about two thirds as long as the spaghetti; one spiral fusilli, about a third as long; one tube of penne
+with slanted ends, about a quarter as long; one small curved macaroni elbow, the shortest, about a tenth as long as
+the spaghetti. All golden-yellow.""",
+}
+
+SHEETS["emocja_smutek"] = {
+    "names": ["emocja_smutek"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow, NO halo, NO background.
+{STYL}
+The same round warm-yellow face as the reference, now SAD: eyebrows tilted down at the sides, eyes looking down, a
+small downturned mouth, ONE small tear on one cheek, soft rosy cheeks. Gentle, NOT scary.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
@@ -910,7 +941,10 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
         print(f"UWAGA: {len(plamy)} plam, oczekiwano {len(names)} - sprawdz arkusz")
     rows = SHEETS[sheet].get("rows", 2 if len(names) > 4 else 1)
     srodek_y = np.median([p[4] for p in plamy])
-    plamy.sort(key=lambda p: ((0 if p[4] < srodek_y else 1) if rows == 2 else 0, p[5]))
+    if SHEETS[sheet].get("kolumna"):                     # one column, top to bottom
+        plamy.sort(key=lambda p: p[4])
+    else:
+        plamy.sort(key=lambda p: ((0 if p[4] < srodek_y else 1) if rows == 2 else 0, p[5]))
     OUT.mkdir(parents=True, exist_ok=True)
     wspolny = max(max(p[1] - p[0], p[3] - p[2]) for p in plamy) + 16 if SHEETS[sheet].get("wspolna_skala") else None
     for nazwa, (y0, y1, x0, x1, _, _) in zip(names, plamy):
