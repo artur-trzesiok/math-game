@@ -27,7 +27,7 @@ export async function korekty(L) {
   return L.korektyUbioru;
 }
 const korekta = (L, rzecz, widok) => ({ dx: 0, dy: 0, skala: 1, obrot: 0, ...(L.korektyUbioru?.[rzecz]?.[widok] || {}) });
-const DOMYSLNE = { glowa: { szer: 0.92, nasun: 0.3 }, oczy: { szer: 1.15, nasun: 0 }, szyja: { szer: 0.8, nasun: 0 }, stopy: { szer: 1.0, nasun: 0 } };
+const DOMYSLNE = { glowa: { szer: 0.92, nasun: 0.3 }, oczy: { szer: 1.15, nasun: 0 }, szyja: { szer: 0.8, nasun: 0 }, stopy: { szer: 1.0, nasun: 0, do: 0.42 } };
 
 // a texture's alpha as a canvas once
 function alfa(tex) {
@@ -158,9 +158,13 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         };
         const K = korekta(L, rzecz, widok), H0 = L.wysokosc;
         const S0 = srodki(R.rest), w = S0.szer * P.szer * skala * K.skala;
-        const xs0 = (widok === "profil" ? S0.fx : S0.ax) + K.dx * H0, ys0 = S0.y0 + m.userData.h * w / 2 - 0.03 + K.dy * H0;
+        // the height comes from the leg, not from the picture (a front boot is tall and narrow, a side one wide):
+        // from the sole up to the leg at s = `do` (a wellington to mid-shin, a sneaker just over the ankle)
+        let gy = 0, gn = 0; for (let i = 0; i < R.B.vs.length; i++) if (Math.abs(R.B.vs[i] - P.do) < 0.04) { gy += R.rest[3 * i + 1]; gn++; }
+        const h = gn ? Math.max(w * 0.5, gy / gn - S0.y0 + 0.03) * K.skala : m.userData.h * w;
+        const xs0 = (widok === "profil" ? S0.fx : S0.ax) + K.dx * H0, ys0 = S0.y0 + h / 2 - 0.03 + K.dy * H0;
         const off = [xs0 - S0.fx, ys0 - S0.fy], kat0 = Math.atan2(S0.fy - S0.ay, S0.fx - S0.ax);
-        m.scale.set(w, w, 1);
+        m.scale.set(w, h / m.userData.h, 1);
         const aktualizuj = () => {
           const T = srodki(R.mesh.geometry.attributes.position.array);
           const d = Math.atan2(T.fy - T.ay, T.fx - T.ax) - kat0, c = Math.cos(d), sn = Math.sin(d);
@@ -247,4 +251,39 @@ export async function ubranieNaNaklejce(S, rzecz, { x = 0, y = 1.2, size = 1.1 }
   const h = await S.object(`../ubrania/${plik.replace(/\.webp$/, "")}`, { x, y, size });
   h.rzecz = rzecz; h.tag = rzecz;
   return h;
+}
+
+// a dressing task: the child drags garment stickers (ubranieNaNaklejce) onto the characters. `pasuje(h, who)`
+// says true, or "za_duze" / "za_male": a wrong one goes on at that wrong size, slips and falls off (and onWrong
+// speaks), then flies home. Resolves when every sticker that has a match is worn (`zostaw` = stickers that
+// belong to nobody, they stay). h.skala = how big it is worn (the same hat at two sizes).
+export function ubieranie(S, { rzeczy, kto, pasuje, onWrong = null, zostaw = [] }) {
+  for (const h of rzeczy) h.home = { x: h.mesh.position.x, y: h.mesh.position.y };
+  const zostalo = new Set(rzeczy.filter((h) => !zostaw.includes(h)));
+  return new Promise((resolve) => {
+    S.free({
+      items: rzeczy, ubieranie: { kto },
+      onTap: () => {},
+      onDrop: async (h, p) => {
+        const L = kto.map((n) => [n, S.puppets[n]]).find(([, L]) => {
+          if (!L?.korzen.visible) return false;
+          const b = new THREE.Box3().setFromObject(L.korzen);
+          return p.x > b.min.x - 0.3 && p.x < b.max.x + 0.3 && p.y > b.min.y - 0.3 && p.y < b.max.y + 0.5;
+        });
+        if (!L) { if (Math.abs(p.x) > 6 || p.y < -4.3) h.moveTo(h.home.x, h.home.y, 0.35); return; }
+        const [who] = L, ocena = pasuje(h, who);
+        if (ocena === true) {
+          h.mesh.visible = false;
+          await ubierz(S, who, h.rzecz, { skala: h.skala || 1 });
+          h.remove(); zostalo.delete(h);
+          if (!zostalo.size) { S.endSort(); S.sfx.graj("right"); resolve(true); }
+          return;
+        }
+        h.mesh.visible = false;
+        await nieUbieraj(S, who, h.rzecz, { skala: (h.skala || 1) * (ocena === "za_male" ? 0.55 : 1.7) });
+        h.mesh.position.set(h.home.x, h.home.y, h.mesh.position.z); h.mesh.visible = true; S.appear(h);
+        if (onWrong) onWrong(h, who, ocena);
+      },
+    });
+  });
 }

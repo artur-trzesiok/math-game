@@ -284,6 +284,8 @@ export class Player {
       zdejmij: (who, slot) => { alive(); return U.zdejmij(S, who, slot); },
       nieUbieraj: guard((who, rzecz, opts) => U.nieUbieraj(S, who, rzecz, opts)),
       ubranie: guard((rzecz, opts) => U.ubranieNaNaklejce(S, rzecz, opts)),
+      // drag garments onto characters: { rzeczy, kto: [names], pasuje(h, who) -> true | "za_duze" | "za_male", wrong(ocena) -> line key, zostaw }
+      ubieranie: guard((o) => wDzialaniu(U.ubieranie(S, { ...o, onWrong: o.wrong ? (h, who, ocena) => say("narrator", typeof o.wrong === "function" ? o.wrong(ocena, h, who) : o.wrong) : null })).then((r) => { nagroda(null); return r; })),
       mood: (who, m) => S.mood(who, m),
       look: (who, target, opts) => S.lookAt(who, target, opts),   // a scene may direct a gaze too (null = ahead)
       sfx: (name, opts) => S.sfx.graj(name, opts),                // a sound effect (game/audio/sfx)

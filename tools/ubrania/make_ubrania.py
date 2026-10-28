@@ -57,7 +57,7 @@ invisible.
 """ + STYL},
     "szalik": {"slot": "szyja", "prompt": _trzy("cosy striped scarf wrapped once around a neck (an empty ring of scarf, nobody inside), blue and white stripes, one fringed end hanging down the front", HAT)},
     "kalosze": {"slot": "stopy", "prompt": _trzy("single short yellow rubber rain boot (ONE boot, not a pair), shiny, with a rounded toe", "Left: seen from the FRONT (toe towards us). Middle: seen from the SIDE, toe pointing right. Right: seen from the BACK (the heel). " + BUT)},
-    "trampki": {"slot": "stopy", "prompt": _trzy("single low children's sneaker (ONE shoe, not a pair), blue with white laces and a white rubber sole", "Left: seen from the FRONT (toe towards us). Middle: seen from the SIDE, toe pointing right. Right: seen from the BACK (the heel). " + BUT)},
+    "trampki": {"slot": "stopy", "do": 0.86, "prompt": _trzy("single low children's sneaker (ONE shoe, not a pair), blue with white laces and a white rubber sole", "Left: seen from the FRONT (toe towards us). Middle: seen from the SIDE, toe pointing right. Right: seen from the BACK (the heel). " + BUT)},
 }
 # children like a choice: three of every kind (the first ones above, two variants each here)
 _WARIANTY = {
@@ -138,7 +138,7 @@ def split(nazwy: list[str]) -> None:
             plik = f"{n}_{w}.webp"; kaw.save(OUT / plik, "WEBP", quality=85, method=6, exact=True)
             pliki[w] = plik
         wpis = {"slot": r["slot"], "widoki": pliki}
-        for k in ("szer", "nasun"):
+        for k in ("szer", "nasun", "do"):
             if k in r: wpis[k] = r[k]
         gal[n] = {**gal.get(n, {}), **wpis}
         print(f"{n}: {', '.join(pliki)}")

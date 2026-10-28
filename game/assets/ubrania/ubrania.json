@@ -65,6 +65,145 @@
       "przod": "trampki_przod.webp",
       "profil": "trampki_profil.webp",
       "tyl": "trampki_tyl.webp"
+    },
+    "do": 0.86
+  },
+  "czapka_zimowa_2": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "czapka_zimowa_2_przod.webp",
+      "profil": "czapka_zimowa_2_profil.webp",
+      "tyl": "czapka_zimowa_2_tyl.webp"
+    }
+  },
+  "czapka_zimowa_3": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "czapka_zimowa_3_przod.webp",
+      "profil": "czapka_zimowa_3_profil.webp",
+      "tyl": "czapka_zimowa_3_tyl.webp"
+    }
+  },
+  "kapelusz_2": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "kapelusz_2_przod.webp",
+      "profil": "kapelusz_2_profil.webp",
+      "tyl": "kapelusz_2_tyl.webp"
+    },
+    "szer": 1.25,
+    "nasun": 0.22
+  },
+  "kapelusz_3": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "kapelusz_3_przod.webp",
+      "profil": "kapelusz_3_profil.webp",
+      "tyl": "kapelusz_3_tyl.webp"
+    },
+    "szer": 1.25,
+    "nasun": 0.22
+  },
+  "czapka_z_daszkiem_2": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "czapka_z_daszkiem_2_przod.webp",
+      "profil": "czapka_z_daszkiem_2_profil.webp",
+      "tyl": "czapka_z_daszkiem_2_tyl.webp"
+    },
+    "nasun": 0.28
+  },
+  "czapka_z_daszkiem_3": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "czapka_z_daszkiem_3_przod.webp",
+      "profil": "czapka_z_daszkiem_3_profil.webp",
+      "tyl": "czapka_z_daszkiem_3_tyl.webp"
+    },
+    "nasun": 0.28
+  },
+  "korona_2": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "korona_2_przod.webp",
+      "profil": "korona_2_profil.webp",
+      "tyl": "korona_2_tyl.webp"
+    },
+    "szer": 0.85,
+    "nasun": 0.12
+  },
+  "korona_3": {
+    "slot": "glowa",
+    "widoki": {
+      "przod": "korona_3_przod.webp",
+      "profil": "korona_3_profil.webp",
+      "tyl": "korona_3_tyl.webp"
+    },
+    "szer": 0.85,
+    "nasun": 0.12
+  },
+  "szalik_2": {
+    "slot": "szyja",
+    "widoki": {
+      "przod": "szalik_2_przod.webp",
+      "profil": "szalik_2_profil.webp",
+      "tyl": "szalik_2_tyl.webp"
+    }
+  },
+  "szalik_3": {
+    "slot": "szyja",
+    "widoki": {
+      "przod": "szalik_3_przod.webp",
+      "profil": "szalik_3_profil.webp",
+      "tyl": "szalik_3_tyl.webp"
+    }
+  },
+  "kalosze_2": {
+    "slot": "stopy",
+    "widoki": {
+      "przod": "kalosze_2_przod.webp",
+      "profil": "kalosze_2_profil.webp",
+      "tyl": "kalosze_2_tyl.webp"
+    }
+  },
+  "kalosze_3": {
+    "slot": "stopy",
+    "widoki": {
+      "przod": "kalosze_3_przod.webp",
+      "profil": "kalosze_3_profil.webp",
+      "tyl": "kalosze_3_tyl.webp"
+    }
+  },
+  "trampki_2": {
+    "slot": "stopy",
+    "widoki": {
+      "przod": "trampki_2_przod.webp",
+      "profil": "trampki_2_profil.webp",
+      "tyl": "trampki_2_tyl.webp"
+    },
+    "do": 0.86
+  },
+  "trampki_3": {
+    "slot": "stopy",
+    "widoki": {
+      "przod": "trampki_3_przod.webp",
+      "profil": "trampki_3_profil.webp",
+      "tyl": "trampki_3_tyl.webp"
+    },
+    "do": 0.86
+  },
+  "okulary_2": {
+    "slot": "oczy",
+    "widoki": {
+      "przod": "okulary_2_przod.webp",
+      "profil": "okulary_2_profil.webp"
+    }
+  },
+  "okulary_3": {
+    "slot": "oczy",
+    "widoki": {
+      "przod": "okulary_3_przod.webp",
+      "profil": "okulary_3_profil.webp"
     }
   }
 }
