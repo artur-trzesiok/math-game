@@ -203,27 +203,11 @@ export default {
         for (const n of ["lisek", "wiewiorka", "sarenka"]) { c.show(n); c.zdejmij(n); }        // scarves off: they hang on the hooks now
         const d = await c.object("szalik_dlugi", { x: -1.2, y: 2.15, size: 2.6 }), k = await c.object("szalik_krotki", { x: 1.6, y: 2.15, size: 2.6 });   // on the hooks
         await c.say("lisek", "line.d_wieszaki", { anim: "Zgloszenie" });
-        // measuring with blocks: as many blocks as fit along each scarf (a new way, not the line again)
-        await c.say("sarenka", "line.d_klocki", { anim: "Zgloszenie" });
-        await Promise.all([d.moveTo(0.4, 1.15, 0.4), k.moveTo(-0.55, -0.45, 0.4)]);
-        const miara = async (h) => {
-          const b = c.bounds(h), n = Math.max(1, Math.round((b.right - b.left - 0.2) / 0.62)), w = (b.right - b.left - 0.2) / n, hs = [];
-          for (let i = 0; i < n; i++) hs.push(await c.object("klocek", { x: b.left + 0.1 + w * (i + 0.5), y: b.bottom - 0.42, size: w * 1.05, cicho: i > 0 }));
-          await c.count(hs, { who: "sarenka" });
-          return n;
-        };
-        const nd = await miara(d);
-        await c.say("lisek", `line.d_dluga${nd}`);
-        const nk = await miara(k);
-        await c.say("wiewiorka", `line.d_krotka${nk}`);
-        await c.say("sarenka", "line.d_wiecej_klockow");
-        c.clear();
-        const d2 = await c.object("szalik_dlugi", { x: -1.2, y: 2.15, size: 2.6 }), k2 = await c.object("szalik_krotki", { x: 1.6, y: 2.15, size: 2.6 });
         await c.say("lisek", "line.d_daj");
         // drag each scarf onto the one it fits
-        const kto = new Map([[d2, "lisek"], [k2, "wiewiorka"]]);
+        const kto = new Map([[d, "lisek"], [k, "wiewiorka"]]);
         await new Promise((ok) => c.stage.free({
-          items: [d2, k2], przeloz: null, rozdaj: { wolni: () => [...kto.values()].filter((n) => !c.stage.puppets[n].maSzalik).map((who) => ({ who })), pozycja: (o) => { const L = c.stage.puppets[o.who]; return [L.korzen.position.x, -1.0]; } },
+          items: [d, k], przeloz: null, rozdaj: { wolni: () => [...kto.values()].filter((n) => !c.stage.puppets[n].maSzalik).map((who) => ({ who })), pozycja: (o) => { const L = c.stage.puppets[o.who]; return [L.korzen.position.x, -1.0]; } },
           onDrop: async (h, p) => {
             const who = kto.get(h), L = c.stage.puppets[who];
             if (Math.abs(p.x - L.korzen.position.x) > 1.6) { await h.moveTo(h.home.x, h.home.y, 0.35); if (Math.abs(p.x - c.stage.puppets[who === "lisek" ? "wiewiorka" : "lisek"].korzen.position.x) < 1.6) await c.say("sarenka", "line.d_nie_ten"); return; }

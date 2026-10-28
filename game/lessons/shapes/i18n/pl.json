@@ -33,11 +33,11 @@
   },
   "line.a_policz": {
     "who": "sowa",
-    "text": "Policzmy jego rogi. Dotknij każdego rogu."
+    "text": "Pokaż jego rogi. Dotknij każdego rogu."
   },
   "line.a_trzy_rogi": {
     "who": "sowa",
-    "text": "Trójkąt ma trzy rogi i trzy boki."
+    "text": "Trójkąt ma trzy rogi. Jest spiczasty jak dach domku."
   },
   "line.a_kwadrat": {
     "who": "sowa",
@@ -45,7 +45,7 @@
   },
   "line.a_cztery_rogi": {
     "who": "sowa",
-    "text": "Kwadrat ma cztery rogi i cztery boki, wszystkie równe."
+    "text": "Kwadrat ma wszystkie boki równe. Jest jak okienko."
   },
   "line.a_budujemy": {
     "who": "lisek",
@@ -61,7 +61,7 @@
   },
   "line.b_dach": {
     "who": "sowa",
-    "text": "Teraz dach. Dach to trójkąt, z trzema rogami. Przeciągnij trójkąt na ściany."
+    "text": "Teraz dach. Dach to trójkąt, spiczasty jak czubek. Przeciągnij trójkąt na ściany."
   },
   "line.b_okno": {
     "who": "lisek",
@@ -73,7 +73,7 @@
   },
   "line.b_nie_ta": {
     "who": "sowa",
-    "text": "Ta figura tu nie pasuje. Policz jej rogi i spróbuj innej.",
+    "text": "Ta figura tu nie pasuje. Popatrz na jej rogi i boki, i spróbuj innej.",
     "speakers": [
       "lisek"
     ]
@@ -96,11 +96,11 @@
   },
   "line.c_ktory_nie": {
     "who": "lisek",
-    "text": "To nie kwadrat. Kwadrat ma cztery równe boki. Policz rogi."
+    "text": "To nie kwadrat. Kwadrat ma wszystkie boki równej długości."
   },
   "line.c_obrocony": {
     "who": "lisek",
-    "text": "Kwadrat jest tylko obrócony, ale dalej ma cztery równe boki. Obrócony kwadrat to nadal kwadrat!"
+    "text": "Kwadrat jest tylko obrócony, ale dalej ma wszystkie boki równe. Obrócony kwadrat to nadal kwadrat!"
   },
   "line.c_dziekuje": {
     "who": "zajac",
@@ -135,7 +135,7 @@
   },
   "line.p_trojkat_nie": {
     "who": "sowa",
-    "text": "To nie trójkąt. Trójkąt ma trzy rogi."
+    "text": "To nie trójkąt. Trójkąt jest spiczasty, jak dach."
   },
   "line.p_prostokat": {
     "who": "lisek",
@@ -188,34 +188,6 @@
     "who": "jez",
     "text": "Poszukaj w domu z rodzicami kół, kwadratów, trójkątów i prostokątów."
   },
-  "line.n1": {
-    "who": "sowa",
-    "text": "Jeden!",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.n2": {
-    "who": "sowa",
-    "text": "Dwa!",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.n3": {
-    "who": "sowa",
-    "text": "Trzy!",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.n4": {
-    "who": "sowa",
-    "text": "Cztery!",
-    "speakers": [
-      "lisek"
-    ]
-  },
   "line.naklejka_daj": {
     "who": "jez",
     "text": "Dziękuję za mój nowy domek! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
@@ -227,5 +199,21 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To Jeżyk. Zbudowaliśmy mu domek z figur: z kwadratu, trójkąta, koła i prostokąta."
+  },
+  "line.a_policz_trojkat": {
+    "who": "sowa",
+    "text": "Policzmy jego rogi. Dotknij każdego rogu."
+  },
+  "line.n1": {
+    "who": "sowa",
+    "text": "Jeden!"
+  },
+  "line.n2": {
+    "who": "sowa",
+    "text": "Dwa!"
+  },
+  "line.n3": {
+    "who": "sowa",
+    "text": "Trzy!"
   }
 }

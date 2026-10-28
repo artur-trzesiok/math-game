@@ -52,6 +52,10 @@ SFX = {
     "falsz":   ("a short funny out-of-tune cartoon clash of a drum and a bell hit together, a gentle sour honk, children's game", 0.7),
     "klask":   ("one single clap of a child's hands, close, crisp, nothing else", 0.5),
     "melodyjka": ("a cheerful bouncy little marimba melody for a children's party game, loopable, 120 bpm, no voices", 4.0),
+    # the lesson's goodbye: the iris closing on a face (player.js outro, 1.8 s): a rising sweep, then a sweet close
+    "koniec":  ("a classic cartoon ending sound: a soft magical slide whistle rising in pitch for one and a half seconds "
+                "while a circle closes, then a sweet short glockenspiel 'ding-ding' closing chord, gentle and happy, "
+                "children's animation, no voices", 2.2),
     "etap":    ("a short bright playful chime announcing the next part of a children's game: three rising "
                 "glockenspiel notes and a little sparkle, warm and happy, no voices", 1.2),
 }

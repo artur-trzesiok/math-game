@@ -20,6 +20,17 @@ const czesci = () => {
   ];
 };
 
+// touch every corner (stage 2: before counting): each touched corner gets a pencil ring, no numbers
+async function rogi(c, ksztalt, wrong) {
+  const r = c.corners(ksztalt), znaczki = [];
+  while (r.some((q) => !q.dotkniety)) {
+    const zostale = r.filter((q) => !q.dotkniety);
+    dobre(zostale); const hit = await c.task({ targets: zostale, correct: zostale, wrong }); dobre(zostale, false);
+    hit.dotkniety = true; znaczki.push(await c.circle(hit, { margin: 0.12, duration: 0.3 }));
+  }
+  return { remove: () => { znaczki.forEach((z) => z.remove()); r.forEach((q) => q.remove?.()); } };
+}
+
 export default {
   id: "shapes",
   przejscia: true,
@@ -48,8 +59,8 @@ export default {
         t = await c.slad("trojkat", { x: 0, y: 0.3, size: 3.0 });
         t.remove();
         const tr = c.shape("trojkat", { x: 0, y: 0.3, size: 3.0, color: KOLOR.trojkat });
-        await c.say("sowa", "line.a_policz");
-        await c.count(c.corners(tr), { who: "sowa" });
+        await c.say("sowa", "line.a_policz_trojkat");
+        await c.count(c.corners(tr), { who: "sowa" });                       // counting to three is known by now; four is not
         await c.say("sowa", "line.a_trzy_rogi");
         tr.remove(); c.clear();
         await c.say("sowa", "line.a_kwadrat");
@@ -57,7 +68,7 @@ export default {
         t.remove();
         const kw = c.shape("kwadrat", { x: 0, y: 0.3, size: 2.8, color: KOLOR.kwadrat });
         await c.say("sowa", "line.a_policz");
-        await c.count(c.corners(kw), { who: "sowa" });
+        await rogi(c, kw, "line.a_policz");
         await c.say("sowa", "line.a_cztery_rogi");
         kw.remove(); c.clear();
         await c.say("lisek", "line.a_budujemy", { anim: "Radosc" });

@@ -33,11 +33,11 @@
   },
   "line.a_policz": {
     "who": "sowa",
-    "text": "Let's count its corners. Touch each corner."
+    "text": "Show its corners. Touch every corner."
   },
   "line.a_trzy_rogi": {
     "who": "sowa",
-    "text": "A triangle has three corners and three sides."
+    "text": "A triangle has three corners. It's pointy like the roof of a house."
   },
   "line.a_kwadrat": {
     "who": "sowa",
@@ -45,7 +45,7 @@
   },
   "line.a_cztery_rogi": {
     "who": "sowa",
-    "text": "A square has four corners and four sides, all the same."
+    "text": "A square has all its sides the same. It looks like a little window."
   },
   "line.a_budujemy": {
     "who": "lisek",
@@ -61,7 +61,7 @@
   },
   "line.b_dach": {
     "who": "sowa",
-    "text": "Now the roof. The roof is a triangle, with three corners. Drag the triangle onto the walls."
+    "text": "Now the roof. A roof is a triangle, pointy at the top. Drag the triangle onto the walls."
   },
   "line.b_okno": {
     "who": "lisek",
@@ -73,7 +73,7 @@
   },
   "line.b_nie_ta": {
     "who": "sowa",
-    "text": "That shape doesn't fit here. Count its corners and try another.",
+    "text": "That shape doesn't fit here. Look at its corners and sides, and try another.",
     "speakers": [
       "lisek"
     ]
@@ -96,11 +96,11 @@
   },
   "line.c_ktory_nie": {
     "who": "lisek",
-    "text": "That's not a square. A square has four equal sides. Count the corners."
+    "text": "That's not a square. A square has all its sides the same length."
   },
   "line.c_obrocony": {
     "who": "lisek",
-    "text": "The square is only turned, but it still has four equal sides. A turned square is still a square!"
+    "text": "The square is only turned, but its sides are still all the same. A turned square is still a square!"
   },
   "line.c_dziekuje": {
     "who": "zajac",
@@ -135,7 +135,7 @@
   },
   "line.p_trojkat_nie": {
     "who": "sowa",
-    "text": "That's not the triangle. A triangle has three corners."
+    "text": "That's not a triangle. A triangle is pointy, like a roof."
   },
   "line.p_prostokat": {
     "who": "lisek",
@@ -188,34 +188,6 @@
     "who": "jez",
     "text": "Look for circles, squares, triangles and rectangles at home with your parents."
   },
-  "line.n1": {
-    "who": "sowa",
-    "text": "One!",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.n2": {
-    "who": "sowa",
-    "text": "Two!",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.n3": {
-    "who": "sowa",
-    "text": "Three!",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.n4": {
-    "who": "sowa",
-    "text": "Four!",
-    "speakers": [
-      "lisek"
-    ]
-  },
   "line.naklejka_daj": {
     "who": "jez",
     "text": "Thank you for my new house! Here is a sticker for your album. Touch it to take it."
@@ -227,5 +199,21 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is Hedgehog. We built him a house from shapes: a square, a triangle, a circle and a rectangle."
+  },
+  "line.a_policz_trojkat": {
+    "who": "sowa",
+    "text": "Let's count its corners. Touch every corner."
+  },
+  "line.n1": {
+    "who": "sowa",
+    "text": "One!"
+  },
+  "line.n2": {
+    "who": "sowa",
+    "text": "Two!"
+  },
+  "line.n3": {
+    "who": "sowa",
+    "text": "Three!"
   }
 }

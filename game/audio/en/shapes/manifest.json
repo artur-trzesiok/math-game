@@ -35,14 +35,14 @@
   "text": "And this is a triangle. Draw it with your finger."
  },
  "line.a_policz": {
-  "hash": "104ab263b9d5",
+  "hash": "8e9abdecf742",
   "who": "sowa",
-  "text": "Let's count its corners. Touch each corner."
+  "text": "Show its corners. Touch every corner."
  },
  "line.a_trzy_rogi": {
-  "hash": "2e7b24e45651",
+  "hash": "e4eeb4052788",
   "who": "sowa",
-  "text": "A triangle has three corners and three sides."
+  "text": "A triangle has three corners. It's pointy like the roof of a house."
  },
  "line.a_kwadrat": {
   "hash": "88116d671caf",
@@ -50,9 +50,9 @@
   "text": "And this is a square. Draw it with your finger."
  },
  "line.a_cztery_rogi": {
-  "hash": "32c382530eff",
+  "hash": "5fec99f24d72",
   "who": "sowa",
-  "text": "A square has four corners and four sides, all the same."
+  "text": "A square has all its sides the same. It looks like a little window."
  },
  "line.a_budujemy": {
   "hash": "1eace7aa6137",
@@ -70,9 +70,9 @@
   "text": "First the walls. The walls are a square. Drag the square into its place."
  },
  "line.b_dach": {
-  "hash": "4525fbcd54c1",
+  "hash": "18a675595143",
   "who": "sowa",
-  "text": "Now the roof. The roof is a triangle, with three corners. Drag the triangle onto the walls."
+  "text": "Now the roof. A roof is a triangle, pointy at the top. Drag the triangle onto the walls."
  },
  "line.b_okno": {
   "hash": "c060f2930b22",
@@ -85,14 +85,14 @@
   "text": "And the door is a rectangle, two long sides and two short ones. Drag the rectangle onto the door."
  },
  "line.b_nie_ta": {
-  "hash": "3cbf3714853a",
+  "hash": "fbdc8af7c722",
   "who": "sowa",
-  "text": "That shape doesn't fit here. Count its corners and try another."
+  "text": "That shape doesn't fit here. Look at its corners and sides, and try another."
  },
  "line.b_nie_ta.lisek": {
-  "hash": "d8052f59229a",
+  "hash": "bae185d08b7f",
   "who": "lisek",
-  "text": "That shape doesn't fit here. Count its corners and try another."
+  "text": "That shape doesn't fit here. Look at its corners and sides, and try another."
  },
  "line.b_gotowy": {
   "hash": "1b50d9f641ba",
@@ -115,14 +115,14 @@
   "text": "Which kite is a square? Point to it."
  },
  "line.c_ktory_nie": {
-  "hash": "59e8e11bde83",
+  "hash": "4894460caf33",
   "who": "lisek",
-  "text": "That's not a square. A square has four equal sides. Count the corners."
+  "text": "That's not a square. A square has all its sides the same length."
  },
  "line.c_obrocony": {
-  "hash": "b5b96bdf7c8a",
+  "hash": "6628b38b0ffb",
   "who": "lisek",
-  "text": "The square is only turned, but it still has four equal sides. A turned square is still a square!"
+  "text": "The square is only turned, but its sides are still all the same. A turned square is still a square!"
  },
  "line.c_dziekuje": {
   "hash": "fb53bcc026e6",
@@ -165,9 +165,9 @@
   "text": "The shapes have turned round. Which one is the triangle? Point to it."
  },
  "line.p_trojkat_nie": {
-  "hash": "0f8428846942",
+  "hash": "6d25aad7f9ce",
   "who": "sowa",
-  "text": "That's not the triangle. A triangle has three corners."
+  "text": "That's not a triangle. A triangle is pointy, like a roof."
  },
  "line.p_prostokat": {
   "hash": "5f3a7cba5584",
@@ -239,40 +239,15 @@
   "who": "sowa",
   "text": "One!"
  },
- "line.n1.lisek": {
-  "hash": "17ef5509f792",
-  "who": "lisek",
-  "text": "One!"
- },
  "line.n2": {
   "hash": "03e0547eb360",
   "who": "sowa",
-  "text": "Two!"
- },
- "line.n2.lisek": {
-  "hash": "b4f95635d899",
-  "who": "lisek",
   "text": "Two!"
  },
  "line.n3": {
   "hash": "1b70b81f1a09",
   "who": "sowa",
   "text": "Three!"
- },
- "line.n3.lisek": {
-  "hash": "4c345f0d5dab",
-  "who": "lisek",
-  "text": "Three!"
- },
- "line.n4": {
-  "hash": "ac53306b5483",
-  "who": "sowa",
-  "text": "Four!"
- },
- "line.n4.lisek": {
-  "hash": "2253e7bcda55",
-  "who": "lisek",
-  "text": "Four!"
  },
  "line.naklejka_daj": {
   "hash": "d82d3e7ed860",
@@ -293,5 +268,10 @@
   "hash": "4a0e23d74632",
   "who": "jez",
   "text": "It's me, Hedgehog... Winter is coming, and I have no house. I have nowhere to hide."
+ },
+ "line.a_policz_trojkat": {
+  "hash": "e29ca08f0fee",
+  "who": "sowa",
+  "text": "Let's count its corners. Touch every corner."
  }
 }

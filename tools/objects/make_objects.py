@@ -864,6 +864,7 @@ SHEETS["makarony"] = {
     "wspolna_skala": True,
     "names": ["makaron_spaghetti", "makaron_tagliatelle", "makaron_swiderek", "makaron_penne", "makaron_kolanko"],
     "kolumna": True,
+    "px": 1024,                 # shown about 4.6 units wide: at 384 px the strands blurred
     "size": "1536x1024",
     "prompt": f"""A sprite sheet of FIVE single pieces of dry uncooked pasta for a children's picture book, on a fully
 TRANSPARENT background, each LYING HORIZONTALLY, stacked one under another with generous empty space between them, all
@@ -923,7 +924,7 @@ def die_cut(im: Image.Image, border: float = 0.055) -> Image.Image:
     The canvas grows so the outline is not clipped; the object is drawn on top."""
     from scipy import ndimage
 
-    r = max(2, int(PX * border)); pad = r + 3
+    n = im.width; r = max(2, int(n * border)); pad = r + 3
     big = Image.new("RGBA", (im.width + 2 * pad, im.height + 2 * pad), (0, 0, 0, 0)); big.paste(im, (pad, pad))
     a = np.asarray(big)[:, :, 3] > 40
     y, x = np.ogrid[-r:r + 1, -r:r + 1]
@@ -933,7 +934,7 @@ def die_cut(im: Image.Image, border: float = 0.055) -> Image.Image:
     white = np.zeros((big.height, big.width, 4), dtype=np.uint8); white[:, :, :3] = 255
     white[:, :, 3] = np.clip(edge * 255, 0, 255).astype(np.uint8)
     out = Image.alpha_composite(Image.fromarray(white, "RGBA"), big)
-    return out.resize((PX, PX), Image.LANCZOS)
+    return out.resize((n, n), Image.LANCZOS)              # the sticker's own size (a sheet's `px`), not always PX
 
 
 def split(sheet: str, min_pikseli: int = 1500) -> None:

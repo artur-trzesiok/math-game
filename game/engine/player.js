@@ -773,6 +773,7 @@ export class Player {
     }
     const r0 = Math.hypot(innerWidth, innerHeight);
     iris.style.display = "block";
+    S.sfx.graj("koniec");                                            // rising as the circle closes, a sweet chord as it shuts
     const t0 = performance.now(), d = FAST ? 400 : 1800;
     await new Promise((ok) => {
       const step = () => {

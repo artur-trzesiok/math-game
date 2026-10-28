@@ -40,14 +40,14 @@
   "text": "A to jest trójkąt. Narysuj go palcem."
  },
  "line.a_policz": {
-  "hash": "0d5c469171ea",
+  "hash": "c3a8152444b0",
   "who": "sowa",
-  "text": "Policzmy jego rogi. Dotknij każdego rogu."
+  "text": "Pokaż jego rogi. Dotknij każdego rogu."
  },
  "line.a_trzy_rogi": {
-  "hash": "0c14c04df18b",
+  "hash": "2bee790abe78",
   "who": "sowa",
-  "text": "Trójkąt ma trzy rogi i trzy boki."
+  "text": "Trójkąt ma trzy rogi. Jest spiczasty jak dach domku."
  },
  "line.a_kwadrat": {
   "hash": "1c306cefd697",
@@ -55,9 +55,9 @@
   "text": "A to jest kwadrat. Narysuj go palcem."
  },
  "line.a_cztery_rogi": {
-  "hash": "71dccdbf1e14",
+  "hash": "210650f90b1d",
   "who": "sowa",
-  "text": "Kwadrat ma cztery rogi i cztery boki, wszystkie równe."
+  "text": "Kwadrat ma wszystkie boki równe. Jest jak okienko."
  },
  "line.a_budujemy": {
   "hash": "bd9b38da9716",
@@ -75,9 +75,9 @@
   "text": "Najpierw ściany. Ściany to kwadrat. Przeciągnij kwadrat na miejsce."
  },
  "line.b_dach": {
-  "hash": "6ddc7590dc63",
+  "hash": "be910b2d3c9d",
   "who": "sowa",
-  "text": "Teraz dach. Dach to trójkąt, z trzema rogami. Przeciągnij trójkąt na ściany."
+  "text": "Teraz dach. Dach to trójkąt, spiczasty jak czubek. Przeciągnij trójkąt na ściany."
  },
  "line.b_okno": {
   "hash": "0f45b8f72d87",
@@ -90,14 +90,14 @@
   "text": "A drzwi to prostokąt, dwa boki długie, dwa krótkie. Przeciągnij prostokąt na drzwi."
  },
  "line.b_nie_ta": {
-  "hash": "8c6c4c23a3b4",
+  "hash": "788bf90027b1",
   "who": "sowa",
-  "text": "Ta figura tu nie pasuje. Policz jej rogi i spróbuj innej."
+  "text": "Ta figura tu nie pasuje. Popatrz na jej rogi i boki, i spróbuj innej."
  },
  "line.b_nie_ta.lisek": {
-  "hash": "d9237b0a768d",
+  "hash": "0a51fe63340e",
   "who": "lisek",
-  "text": "Ta figura tu nie pasuje. Policz jej rogi i spróbuj innej."
+  "text": "Ta figura tu nie pasuje. Popatrz na jej rogi i boki, i spróbuj innej."
  },
  "line.b_gotowy": {
   "hash": "7be5ae6d00da",
@@ -120,14 +120,14 @@
   "text": "Który latawiec jest kwadratem? Wskaż."
  },
  "line.c_ktory_nie": {
-  "hash": "9e76f64c49d0",
+  "hash": "fe0898b6ea32",
   "who": "lisek",
-  "text": "To nie kwadrat. Kwadrat ma cztery równe boki. Policz rogi."
+  "text": "To nie kwadrat. Kwadrat ma wszystkie boki równej długości."
  },
  "line.c_obrocony": {
-  "hash": "bb635bc43429",
+  "hash": "5c4b402e0292",
   "who": "lisek",
-  "text": "Kwadrat jest tylko obrócony, ale dalej ma cztery równe boki. Obrócony kwadrat to nadal kwadrat!"
+  "text": "Kwadrat jest tylko obrócony, ale dalej ma wszystkie boki równe. Obrócony kwadrat to nadal kwadrat!"
  },
  "line.c_dziekuje": {
   "hash": "bebde274d376",
@@ -170,9 +170,9 @@
   "text": "Figury się poobracały. Który to trójkąt? Wskaż."
  },
  "line.p_trojkat_nie": {
-  "hash": "d58b74181049",
+  "hash": "c56b30b6779b",
   "who": "sowa",
-  "text": "To nie trójkąt. Trójkąt ma trzy rogi."
+  "text": "To nie trójkąt. Trójkąt jest spiczasty, jak dach."
  },
  "line.p_prostokat": {
   "hash": "2c1e550be2b1",
@@ -244,40 +244,15 @@
   "who": "sowa",
   "text": "Jeden!"
  },
- "line.n1.lisek": {
-  "hash": "6fbe262bb5aa",
-  "who": "lisek",
-  "text": "Jeden!"
- },
  "line.n2": {
   "hash": "e363b2e5ef6b",
   "who": "sowa",
-  "text": "Dwa!"
- },
- "line.n2.lisek": {
-  "hash": "4ae56520b21c",
-  "who": "lisek",
   "text": "Dwa!"
  },
  "line.n3": {
   "hash": "08bcfaaf489e",
   "who": "sowa",
   "text": "Trzy!"
- },
- "line.n3.lisek": {
-  "hash": "06aeae1887f5",
-  "who": "lisek",
-  "text": "Trzy!"
- },
- "line.n4": {
-  "hash": "8414b0618ffe",
-  "who": "sowa",
-  "text": "Cztery!"
- },
- "line.n4.lisek": {
-  "hash": "9dfcf62ace93",
-  "who": "lisek",
-  "text": "Cztery!"
  },
  "line.naklejka_daj": {
   "hash": "f5ee5c7743d7",
@@ -293,5 +268,10 @@
   "hash": "4574b6063519",
   "who": "narrator",
   "text": "To Jeżyk. Zbudowaliśmy mu domek z figur: z kwadratu, trójkąta, koła i prostokąta."
+ },
+ "line.a_policz_trojkat": {
+  "hash": "0d5c469171ea",
+  "who": "sowa",
+  "text": "Policzmy jego rogi. Dotknij każdego rogu."
  }
 }
