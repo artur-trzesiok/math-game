@@ -26,7 +26,7 @@ export async function korekty(L) {
   if (L.korektyUbioru === undefined) L.korektyUbioru = await fetch(v(`/game/assets/characters/${L.name}/ubior.json`), SWIEZO).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
   return L.korektyUbioru;
 }
-const korekta = (L, rzecz, widok) => ({ dx: 0, dy: 0, skala: 1, obrot: 0, ...(L.korektyUbioru?.[rzecz]?.[widok] || {}) });
+const korekta = (L, rzecz, widok) => ({ dx: 0, dy: 0, skala: 1, obrot: 0, ...(L.korektyUbioru?.[rzecz]?.[widok] || (widok === "bok" ? L.korektyUbioru?.[rzecz]?.przod : null) || {}) });
 const DOMYSLNE = { glowa: { szer: 0.92, nasun: 0.3 }, oczy: { szer: 1.15, nasun: 0 }, szyja: { szer: 0.8, nasun: 0 }, stopy: { szer: 1.0, nasun: 0, do: 0.42 } };
 
 // a texture's alpha as a canvas once
@@ -42,17 +42,28 @@ function alfa(tex) {
 
 // the head of a view: its bone, the piece's box (view-frame pixels) and the anchors in the bone's local units
 function glowaWidoku(L, widok) {
-  const d = L.dane, nazwaKosci = { przod: "glowa", profil: "p_glowa", tyl: "t_glowa" }[widok];
-  const kosc = L.kosci[nazwaKosci]; if (!kosc) return null;
-  const czesc = d.kosci[nazwaKosci].czesc, cz = d.czesci[czesc], tex = L.tex[czesc]; if (!cz || !tex) return null;
-  const os = kosc.userData.os, s = L._skala(widok === "tyl" ? "tyl" : widok === "profil" ? "profil" : "przod");
+  // the host: the head picture of that view itself, so a garment shows and hides with its head (the 3/4 head is
+  // its own picture with its own eyes - "bok"; the front one hides while it shows)
+  const d = L.dane;
+  let kosc, czesc, os, host;
+  if (widok === "bok") {
+    const sub = L.widokiGrupy?.bok; host = L.widoki?.bok; if (!sub || !host) return null;
+    kosc = L.kosci.glowa; czesc = d.glowy.bok; os = sub.userData.os;
+  } else {
+    const nazwaKosci = { przod: "glowa", profil: "p_glowa", tyl: "t_glowa" }[widok];
+    kosc = L.kosci[nazwaKosci]; if (!kosc) return null;
+    czesc = d.kosci[nazwaKosci].czesc; os = kosc.userData.os;
+    host = widok === "przod" ? L.widoki?.przod || kosc : kosc.children.find((o) => o.isMesh) || kosc;
+  }
+  const cz = d.czesci[czesc], tex = L.tex[czesc]; if (!cz || !tex) return null;
+  const s = L._skala(widok === "tyl" ? "tyl" : widok === "profil" ? "profil" : "przod");
   const lok = (px, py) => new THREE.Vector2((px - os[0]) * s, -(py - os[1]) * s);
   if (!L.kotwice) L.kotwice = {};
   if (!L.kotwice[widok]) {
     const A = alfa(tex), kx = cz.w / A.w, ky = cz.h / A.h;
     // the skull's top: the highest opaque pixel in the middle fifth of the piece (ears stand at the sides)
     // the head's width at the eyes (front / profile: the face box; back: 45% down from the skull)
-    const tw = d.twarz?.[widok === "profil" ? "profil" : "przod"]?.oczy;
+    const tw = d.twarz?.[widok === "profil" ? "profil" : widok === "bok" ? "bok" : "przod"]?.oczy;
     // the skull's top over the eyes (in profile the ear stands at the back, in front the ears at the sides): the
     // highest opaque pixel in a narrow band of columns through the eyes' middle (the middle fifth without a face)
     const kol = tw && widok !== "tyl" ? (tw.x + tw.w / 2 - cz.x) / kx : A.w / 2, pas = widok === "profil" ? A.w * 0.05 : A.w * 0.1;
@@ -80,7 +91,7 @@ function glowaWidoku(L, widok) {
     L.kotwice[widok] = { gora: cz.y + gora * ky, szer, srodek, dol: cz.y + cz.h, tw: widok !== "tyl" ? tw : null, uszy };
   }
   const K = L.kotwice[widok];
-  return { kosc, s, lok, K, os };
+  return { kosc, host, s, lok, K, os };
 }
 
 // the legs of a view: the chains whose meshes carry the feet, with the foot vertices (s > 0.86)
@@ -141,8 +152,9 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
   zdejmij(S, who, slot);                 // only once the new pictures are in: a swap never shows an empty frame
   const rzeczy = [];                     // [mesh, update?]
   const ro = warstwaLalki(L);
-  for (const widok of ["przod", "profil", "tyl"]) {
-    const t = tex[widok]; if (!t) continue;
+  for (const widok of ["przod", "bok", "profil", "tyl"]) {
+    const t = tex[widok] || (widok === "bok" ? tex.przod : null); if (!t) continue;   // the 3/4 head wears the front picture
+    if (widok === "bok" && slot === "stopy") continue;                              // feet belong to the front puppet
     if (slot === "stopy") {
       for (const R of stopyWidoku(L, widok)) {
         // the shoe is a grid bent by the same joints as the leg: every vertex takes the chain position s of the
@@ -157,7 +169,12 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
           const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (f1 - f0) * 1.1);
           return { fx: (f0 + f1) / 2, fy: fy / nf, ax: ax / na, y0, szer };
         };
-        const K = korekta(L, rzecz, widok), H0 = L.wysokosc;
+        // each shoe has its own correction (`przod:noga_l` ...), falling back to the view's; dx and the turn are on the
+        // screen's terms - a mirrored leg (the right one) flips them back
+        const K = { ...korekta(L, rzecz, widok), ...(L.korektyUbioru?.[rzecz]?.[`${widok}:${R.kosc}`] || {}) }, H0 = L.wysokosc;
+        R.mesh.updateWorldMatrix(true, false);
+        const lustroX = new THREE.Vector3().setFromMatrixColumn(R.mesh.matrixWorld, 0).x < 0 ? -1 : 1;
+        K.dx *= lustroX; K.obrot *= lustroX;
         const S0 = srodki(R.rest), w = S0.szer * P.szer * skala * K.skala;
         // the height comes from the leg, not from the picture (a front boot is tall and narrow, a side one wide):
         // from the sole up to the leg at s = `do` (a wellington to mid-shin, a sneaker just over the ankle)
@@ -178,7 +195,7 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
           najb[v] = bi; off[2 * v] = rest[3 * v] - R.rest[3 * bi]; off[2 * v + 1] = rest[3 * v + 1] - R.rest[3 * bi + 1];
         }
         const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: t, transparent: true, alphaTest: 0.05, depthTest: false, depthWrite: false, side: THREE.DoubleSide }));
-        m.frustumCulled = false; m.userData.ubior = true; m.userData.rzecz = rzecz; m.userData.widok = widok; m.renderOrder = ro; R.mesh.add(m);
+        m.frustumCulled = false; m.userData.ubior = true; m.userData.rzecz = rzecz; m.userData.widok = widok; m.userData.noga = R.kosc; m.renderOrder = ro; R.mesh.add(m);
         const nl = R.rest.length / 3;
         const aktualizuj = () => {
           const lp = R.mesh.geometry.attributes.position.array, out = g.attributes.position.array;
@@ -226,7 +243,7 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
     cx += Q.dx * L.wysokosc; cy += Q.dy * L.wysokosc; m.rotation.z = -Q.obrot * Math.PI / 180;
     m.position.set(cx, cy, slot === "szyja" ? -0.01 : 0.08);             // a scarf under the head, a hat over the face
     m.userData.ubior = true; m.userData.rzecz = rzecz; m.userData.widok = widok; m.renderOrder = ro;
-    H.kosc.add(m); rzeczy.push([m, null]);
+    H.host.add(m); rzeczy.push([m, null]);
     // no ear redrawn over the hat: it flickered along the brim; the hat covers the ear's base
   }
   const ubrane = { who, slot, rzecz, rzeczy, skala };

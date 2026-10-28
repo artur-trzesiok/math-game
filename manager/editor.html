@@ -53,7 +53,7 @@
   <h3>Ubrania</h3>
   <div class="wiersz"><select id="ubr_lista"></select><button id="ubr_zaloz">Załóż</button><button id="ubr_zdejmij">Zdejmij</button><button id="ubr_wszystko">Zdejmij wszystko</button></div>
   <div class="wiersz"><label>Korekta <select id="ubr_kor"><option value="">— załóż coś —</option></select></label>
-    <label>widok <select id="ubr_widok"><option value="przod">przód / ¾</option><option value="tyl">tył</option><option value="profil">profil</option></select></label></div>
+    <label>widok <span id="ubr_noga"></span> <select id="ubr_widok"><option value="przod">przód</option><option value="bok">¾</option><option value="tyl">tył</option><option value="profil">profil</option></select></label></div>
   <div class="wiersz pola">
     <label>dx <input type="number" id="ubr_dx" step="0.005" value="0" style="width:64px"></label>
     <label>dy <input type="number" id="ubr_dy" step="0.005" value="0" style="width:64px"></label>
@@ -61,7 +61,7 @@
     <label>obrót° <input type="number" id="ubr_obrot" step="1" value="0" style="width:56px"></label>
     <button id="ubr_zeruj" title="bez korekty w tym widoku">zeruj</button></div>
   <div class="wiersz"><button id="ubr_zapisz" class="glowny">Zapisz ubrania</button><span id="ubr_status"></span></div>
-  <div class="pomoc">Ubrania z <code>game/assets/ubrania</code> dopasowuje silnik sam (głowa, oczy, szyja, stopy). Korekta przesuwa (dx, dy w wysokościach postaci), skaluje i obraca rzecz w jednym widoku; zapis trafia do <code>game/assets/characters/&lt;kto&gt;/ubior.json</code> i gra nakłada go zawsze. Czworonogów nie ubieramy.</div>
+  <div class="pomoc">Ubrania z <code>game/assets/ubrania</code> dopasowuje silnik sam (głowa, oczy, szyja, stopy). Korekta przesuwa (dx, dy w wysokościach postaci), skaluje i obraca rzecz w jednym widoku, but każdy osobno (kliknij go); zapis trafia do <code>game/assets/characters/&lt;kto&gt;/ubior.json</code> i gra nakłada go zawsze. Czworonogów nie ubieramy.</div>
   <h3>Element</h3>
   <div class="wiersz"><select id="lista"><option value="">— kliknij na lalce —</option></select><label title="klik i przeciąganie zawsze działają na wybranym elemencie"><input type="checkbox" id="blokada"> zablokuj</label></div>
   <div id="pola" class="pola"></div>
@@ -194,21 +194,24 @@ function odswiezKorekte() {
   pokazKorekte();
 }
 function pokazKorekte() {
-  const r = $("ubr_kor").value, w = $("ubr_widok").value, k = korektyKto[r]?.[w] || {};
+  const r = $("ubr_kor").value, w = $("ubr_widok").value, klucz = ubrWybor?.rzecz === r && ubrWybor.widok === w ? ubrWybor.klucz : w;
+  const k = korektyKto[r]?.[klucz] || korektyKto[r]?.[w] || (w === "bok" ? korektyKto[r]?.przod : null) || {};
+  $("ubr_noga").textContent = klucz.includes(":") ? `(${klucz.split(":")[1]})` : "";
   $("ubr_dx").value = k.dx ?? 0; $("ubr_dy").value = k.dy ?? 0; $("ubr_skala").value = k.skala ?? 1; $("ubr_obrot").value = k.obrot ?? 0;
 }
 async function zmienKorekte() {
   const r = $("ubr_kor").value, w = $("ubr_widok").value; if (!r) return;
   const k = { dx: +$("ubr_dx").value || 0, dy: +$("ubr_dy").value || 0, skala: +$("ubr_skala").value || 1, obrot: +$("ubr_obrot").value || 0 };
+  const klucz = ubrWybor?.rzecz === r && ubrWybor.widok === w ? ubrWybor.klucz : w;
   korektyKto[r] = korektyKto[r] || {};
-  if (!k.dx && !k.dy && k.skala === 1 && !k.obrot) delete korektyKto[r][w]; else korektyKto[r][w] = k;
+  if (!k.dx && !k.dy && k.skala === 1 && !k.obrot) delete korektyKto[r][klucz]; else korektyKto[r][klucz] = k;
   await ubierzWszystkie(r);
   $("ubr_status").textContent = "niezapisane";
 }
 $("ubr_zaloz").onclick = async () => { const r = $("ubr_lista").value; if (!r) return; zalozone.add(r); await ubierzWszystkie(r); odswiezKorekte(); $("ubr_kor").value = r; pokazKorekte(); };
 $("ubr_zdejmij").onclick = () => { const r = $("ubr_lista").value; const G = U.galeria(); zalozone.delete(r); G.then((g) => { for (const L of lalki) U.zdejmij(sztucznaScena(L), kto, g[r]?.slot); }); odswiezKorekte(); };
 $("ubr_wszystko").onclick = () => { zalozone.clear(); for (const L of lalki) U.zdejmij(sztucznaScena(L), kto); odswiezKorekte(); };
-$("ubr_kor").onchange = pokazKorekte; $("ubr_widok").onchange = pokazKorekte;
+$("ubr_kor").onchange = () => { ubrWybor = null; pokazKorekte(); }; $("ubr_widok").onchange = () => { ubrWybor = null; pokazKorekte(); };
 for (const id of ["ubr_dx", "ubr_dy", "ubr_skala", "ubr_obrot"]) $(id).oninput = zmienKorekte;
 $("ubr_zeruj").onclick = () => { $("ubr_dx").value = 0; $("ubr_dy").value = 0; $("ubr_skala").value = 1; $("ubr_obrot").value = 0; zmienKorekte(); };
 $("ubr_zapisz").onclick = async () => {
@@ -470,10 +473,10 @@ function stawPod(e) {
 }
 // ---- garments: drag one to move it (dx, dy), drag a corner of its orange box to scale it; per view, every
 // column showing that view follows
-const WIDOK_KOLUMNY = ["przod", "przod", "tyl", "profil"];
+const WIDOK_KOLUMNY = ["przod", "bok", "tyl", "profil"];
 let ubrWybor = null, ciagU = null, ciagE = null;
 window.edytorUbrania = { get wybor() { return ubrWybor; }, get ciag() { return ciagU; }, trafienie: (e) => trafienieUbioru(e) };   // tests
-function meshUbioru(L, rzecz) { const out = []; L.korzen.traverse((o) => { if (o.isMesh && o.userData.rzecz === rzecz && widoczny(o)) out.push(o); }); return out; }
+function meshUbioru(L, rzecz, noga = ubrWybor?.noga) { const out = []; L.korzen.traverse((o) => { if (o.isMesh && o.userData.rzecz === rzecz && (!noga || o.userData.noga === noga) && widoczny(o)) out.push(o); }); return out; }
 function bbUbioru() {
   if (!ubrWybor) return null;
   const ms = meshUbioru(lalki[ubrWybor.kolumna], ubrWybor.rzecz); if (!ms.length) return null;
@@ -489,7 +492,7 @@ function trafienieUbioru(e) {
       const k = "u:" + h.object.material.map.uuid;
       if (!alfa[k]) { const c = document.createElement("canvas"); c.width = img.width; c.height = img.height; const x = c.getContext("2d"); x.drawImage(img, 0, 0); alfa[k] = { d: x.getImageData(0, 0, img.width, img.height).data, w: img.width, h: img.height }; }
       const a = alfa[k], px = Math.min(a.w - 1, Math.floor(h.uv.x * a.w)), py = Math.min(a.h - 1, Math.floor((1 - h.uv.y) * a.h));
-      if (a.d[(py * a.w + px) * 4 + 3] > 20) return { rzecz: h.object.userData.rzecz, widok: WIDOK_KOLUMNY[i], kolumna: i };
+      if (a.d[(py * a.w + px) * 4 + 3] > 20) { const noga = h.object.userData.noga || null; return { rzecz: h.object.userData.rzecz, widok: WIDOK_KOLUMNY[i], noga, klucz: noga ? `${WIDOK_KOLUMNY[i]}:${noga}` : WIDOK_KOLUMNY[i], kolumna: i }; }
     }
   }
   return null;
@@ -509,7 +512,7 @@ function naUchwycieObrotu(e) {
 // turn the selected garment by d degrees (clockwise); live for hats, glasses and scarves, shoes on release
 function obrocUbior(d) {
   const K = korektaWyboru(); K.obrot = (K.obrot ?? 0) + d;
-  for (const [i, L] of lalki.entries()) if (WIDOK_KOLUMNY[i] === ubrWybor.widok) for (const m of meshUbioru(L, ubrWybor.rzecz)) if (m.parent?.userData?.czesc === undefined || !m.parent.isMesh) m.rotation.z -= d * Math.PI / 180;
+  for (const [i, L] of lalki.entries()) if (WIDOK_KOLUMNY[i] === ubrWybor.widok) for (const m of meshUbioru(L, ubrWybor.rzecz)) if (!m.userData.noga) m.rotation.z -= d * Math.PI / 180;
   pokazKorekte(); $("ubr_status").textContent = "niezapisane";
 }
 function wybierzUbior(t) {
@@ -520,7 +523,8 @@ function wybierzUbior(t) {
 function korektaWyboru() {
   const r = ubrWybor.rzecz, w = ubrWybor.widok;
   korektyKto[r] = korektyKto[r] || {};
-  return (korektyKto[r][w] = korektyKto[r][w] || { dx: 0, dy: 0, skala: 1, obrot: 0 });
+  const k = ubrWybor.klucz || w;
+  return (korektyKto[r][k] = korektyKto[r][k] || (korektyKto[r][w] && k !== w ? { ...korektyKto[r][w] } : w === "bok" && korektyKto[r].przod ? { ...korektyKto[r].przod } : { dx: 0, dy: 0, skala: 1, obrot: 0 }));
 }
 rend.domElement.addEventListener("pointerdown", (e) => {
   if (e.button !== 0) return;
