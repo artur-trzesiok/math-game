@@ -33,7 +33,7 @@
   },
   "line.b_najwieksza": {
     "who": "lisek",
-    "text": "Which hollow is the biggest? Point to it."
+    "text": "So which hollow is the biggest? Point to it."
   },
   "line.b_najwieksza_nie": {
     "who": "lisek",
@@ -214,5 +214,33 @@
   "line.a_drzwiczki": {
     "who": "sowa",
     "text": "Your old hollow has a round little door. It fits it exactly. We can't take the hollow, but we can take the door!"
+  },
+  "line.b_przykladaj": {
+    "who": "sowa",
+    "text": "Hold the door against each hollow in turn. Drag it onto the hole."
+  },
+  "line.b_nastepna": {
+    "who": "sowa",
+    "text": "Now hold the door against another hollow."
+  },
+  "line.b_k_duza": {
+    "who": "lisek",
+    "text": "Oh, there's a huge gap all round the door! This hollow is much bigger than the old one."
+  },
+  "line.b_k_mala": {
+    "who": "lisek",
+    "text": "The door covers the whole hole and still sticks out. This hollow is smaller than the old one!"
+  },
+  "line.b_k_srednia": {
+    "who": "lisek",
+    "text": "There's only a small gap round the door. This hollow is a little bigger than the old one."
+  },
+  "line.b_ostatnia_dla": {
+    "who": "sowa",
+    "text": "Which hollow is just right for Squirrel: a little bigger than the old one? Point to it."
+  },
+  "line.b_ostatnia_nie": {
+    "who": "sowa",
+    "text": "Not that one. We're looking for the one where the door left only a small gap."
   }
 }

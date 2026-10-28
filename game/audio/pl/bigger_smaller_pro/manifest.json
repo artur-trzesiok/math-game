@@ -40,9 +40,9 @@
   "text": "Popatrzcie, w tych drzewach są trzy dziuple."
  },
  "line.b_najwieksza": {
-  "hash": "8338a43e1cd8",
+  "hash": "a77ad08d89a2",
   "who": "lisek",
-  "text": "Która dziupla jest największa? Wskaż."
+  "text": "To która dziupla jest największa? Wskaż."
  },
  "line.b_najwieksza_nie": {
   "hash": "c19bee30d160",
@@ -278,5 +278,40 @@
   "hash": "2d6b28cfd269",
   "who": "sowa",
   "text": "Twoja stara dziupla ma okrągłe drzwiczki. Pasują do niej idealnie. Dziupli nie zabierzemy, ale drzwiczki tak!"
+ },
+ "line.b_przykladaj": {
+  "hash": "e94021993be7",
+  "who": "sowa",
+  "text": "Przyłóż drzwiczki do każdej dziupli po kolei. Przeciągnij je na dziurę."
+ },
+ "line.b_nastepna": {
+  "hash": "c354e93e1d4d",
+  "who": "sowa",
+  "text": "Teraz przyłóż drzwiczki do innej dziupli."
+ },
+ "line.b_k_duza": {
+  "hash": "681e9faace84",
+  "who": "lisek",
+  "text": "Ojej, dookoła drzwiczek jest wielka dziura! Ta dziupla jest dużo większa od starej."
+ },
+ "line.b_k_mala": {
+  "hash": "bacdf43bca4c",
+  "who": "lisek",
+  "text": "Drzwiczki zakrywają całą dziurę i jeszcze wystają. Ta dziupla jest mniejsza od starej!"
+ },
+ "line.b_k_srednia": {
+  "hash": "23068c8f551f",
+  "who": "lisek",
+  "text": "Dookoła drzwiczek jest tylko mała szparka. Ta dziupla jest troszkę większa od starej."
+ },
+ "line.b_ostatnia_dla": {
+  "hash": "53a6cdad3e45",
+  "who": "sowa",
+  "text": "Która dziupla jest w sam raz dla Wiewiórki: troszkę większa od starej? Wskaż."
+ },
+ "line.b_ostatnia_nie": {
+  "hash": "ca9e898935e5",
+  "who": "sowa",
+  "text": "Ta nie. Szukamy tej, przy której drzwiczki miały tylko małą szparkę."
  }
 }

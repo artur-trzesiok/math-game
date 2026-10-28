@@ -25,8 +25,10 @@ const OTWOR = { dx: 0.0, dy: 0.025, d: 0.43 }, DRZWI = 0.94;      // DRZWI: the 
 const otwor = (h) => ({ x: h.mesh.position.x + OTWOR.dx * h.base, y: h.mesh.position.y + OTWOR.dy * h.base, d: OTWOR.d * h.base });
 // the door held against a hollow's hole, centred; an orange pencil ring round the larger of the two (the gap, or the
 // door's edge on the bark); returns {zdejmij()}
+// the door always in front of the hollows (stickers draw at 10): a drag lifts it and puts its own order back
+const przed = (drzwi) => { drzwi.mesh.position.z = 0.6; drzwi.mesh.traverse((m) => { if (m.isMesh) m.renderOrder = 12 + (m.renderOrder % 1); }); };
 async function przyloz(c, drzwi, h) {
-  const o = otwor(h); drzwi.mesh.traverse((m) => { if (m.isMesh) m.renderOrder = 12; });
+  const o = otwor(h); przed(drzwi);
   await drzwi.moveTo(o.x, o.y, 0.6); c.sfx("tap");
   const r = Math.max(o.d, drzwi.base * DRZWI) / 2 + 0.06;
   const kolo = await c.line(Array.from({ length: 49 }, (_, i) => [o.x + r * Math.cos(i / 48 * 2 * Math.PI), o.y + r * Math.sin(i / 48 * 2 * Math.PI)]), { color: "#e8702a", width: 0.07, duration: 0.5, strong: true });
@@ -60,7 +62,7 @@ export default {
         await c.say("sowa", "line.a_nowa", { anim: "Zgloszenie" });
         await c.say("wiewiorka", "line.a_jak");
         // the old hollow's round door: it fits the old hole exactly - a template to carry along
-        const o = otwor(stara), drzwi = await c.object("drzwiczki", { x: o.x, y: o.y, size: o.d / DRZWI });
+        const o = otwor(stara), drzwi = await c.object("drzwiczki", { x: o.x, y: o.y, size: o.d / DRZWI }); przed(drzwi);
         await c.say("sowa", "line.a_drzwiczki", { anim: "Zgloszenie" });
         await c.say("sowa", "line.a_metoda");
         await c.wait(0.5); await drzwi.moveTo(-2.4, 0.9, 0.6);
@@ -75,36 +77,40 @@ export default {
         const sr = await c.object("dziupla", { x: 3.4, y: 1.1, size: 2.1 });
         await c.say("sowa", "line.b_trzy");
         const drzwi = await c.object("drzwiczki", { x: 0.9, y: -1.9, size: OTWOR.d * 1.8 / DRZWI });     // the old door, the size of the old hole
+        przed(drzwi);
         await c.say("sowa", "line.b_stara_ze_soba");
-        // the biggest: a dark gap all round the door - the hole is much bigger than the old one
+        // the child holds the door against each hollow in any order; Fox says what it shows
+        const KOMENTARZ = new Map([[duza, "line.b_k_duza"], [mala, "line.b_k_mala"], [sr, "line.b_k_srednia"]]);
+        const sprawdzone = new Set();
+        await c.say("sowa", "line.b_przykladaj");
+        while (sprawdzone.size < 3) {
+          const h = await new Promise((ok) => c.stage.free({
+            items: [drzwi], przeloz: { x: [duza, mala, sr].find((q) => !sprawdzone.has(q)).mesh.position.x, y: 1.1 },
+            onDrop: async (d, pt) => {
+              const cel = [duza, mala, sr].find((q) => Math.hypot(pt.x - q.mesh.position.x, pt.y - q.mesh.position.y) < q.base * 0.55);
+              if (cel) { c.stage.endSort(); ok(cel); } else await d.moveTo(d.home.x, d.home.y, 0.35);
+            },
+            onTap: () => {}, onPuppet: () => c.stage.onPuppetTap?.(),
+          }));
+          const n = await przyloz(c, drzwi, h);
+          await c.say("lisek", KOMENTARZ.get(h), { anim: "Wskazanie" });
+          await n.zdejmij();
+          if (!sprawdzone.has(h)) sprawdzone.add(h);
+          if (sprawdzone.size < 3) await c.say("sowa", "line.b_nastepna");
+        }
+        // then the question: which is the biggest? the smallest? and which one for Squirrel?
         await c.say("lisek", "line.b_najwieksza");
         dobre(duza); await c.task({ targets: [duza, mala, sr], correct: duza, wrong: "line.b_najwieksza_nie" }); dobre(duza, false);
-        await c.wait(1.4); let n = await przyloz(c, drzwi, duza);
-        await c.say("sowa", "line.b_obwodka");
-        await c.say("sowa", "line.b_duzo_wieksza");
-        await n.zdejmij();
         await c.say("wiewiorka", "line.b_sprobuje");
         c.czastki("liscie", { wiatr: 1.4 });
         await c.emocja("wiewiorka", "zimno", { anim: "Smutek" });
         await c.say("wiewiorka", "line.b_za_duza");
         c.czastki(null);
-        // the smallest: the door covers the whole hole and sticks out over the bark - smaller than the old
         await c.say("lisek", "line.b_najmniejsza");
         dobre(mala); await c.task({ targets: [duza, mala, sr], correct: mala, wrong: "line.b_najmniejsza_nie" }); dobre(mala, false);
-        await c.wait(1.4); n = await przyloz(c, drzwi, mala);
-        await c.say("sowa", "line.b_stara_wystaje");
-        await n.zdejmij();
         await c.say("wiewiorka", "line.b_za_mala");
-        // the last one: the child holds the door against it
-        await c.say("sowa", "line.b_sprawdzmy");
-        await new Promise((ok) => c.stage.free({
-          items: [drzwi], przeloz: { x: sr.mesh.position.x, y: sr.mesh.position.y },
-          onDrop: async (h, p) => { if (Math.hypot(p.x - sr.mesh.position.x, p.y - sr.mesh.position.y) < 1.2) { c.stage.endSort(); ok(); } else await h.moveTo(h.home.x, h.home.y, 0.35); },
-          onTap: () => {}, onPuppet: () => c.stage.onPuppetTap?.(),
-        }));
-        n = await przyloz(c, drzwi, sr);
-        await c.say("sowa", "line.b_wystaje");
-        await n.zdejmij();
+        await c.say("sowa", "line.b_ostatnia_dla");
+        dobre(sr); await c.task({ targets: [duza, mala, sr], correct: sr, wrong: "line.b_ostatnia_nie" }); dobre(sr, false);
         await c.emocja("wiewiorka", "serce", { anim: "Radosc" });
         await c.say("wiewiorka", "line.b_w_sam_raz");
         c.clear();
