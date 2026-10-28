@@ -4,35 +4,30 @@
     "pl": "Po kolei",
     "en": "In order"
   },
-  "goal": "Put three to five things in order by size or length, from the smallest (shortest) or from the biggest, into numbered places.",
+  "goal": "Put things in order by size - from the biggest to the smallest and back - and see why order matters (a tower stands only in order).",
   "age": "4-5",
   "characters": [
-    "sarenka",
-    "lisek"
+    "bobr",
+    "zajac",
+    "sowa"
   ],
   "backgrounds": [
-    "dom",
-    "ogrod",
-    "pokoj",
-    "plac_zabaw",
-    "przedpokoj"
+    "strumyk",
+    "pokoj"
   ],
   "objects": [
-    "kubek",
+    "kamien_schodek",
+    "budka",
+    "sowiatko",
+    "kubek_kolorowy",
     "marchewka",
-    "klocek",
-    "pilka",
     "jablko",
     "listek",
-    "szyszka",
-    "gruszka",
-    "but",
-    "skarpetka",
     "misiu"
   ],
-  "cover": "Between them three blue cups in a row from the smallest to the biggest, with small pencil numbers 1, 2, 3 under them.",
+  "cover": "Beaver proudly stands by a tall tower of four coloured blocks, the biggest at the bottom, by a sunny brook, while Bunny claps beside him.",
   "naklejka": {
-    "obraz": "objects/but",
-    "kto": "sarenka"
+    "obraz": "objects/budka",
+    "kto": "bobr"
   }
 }

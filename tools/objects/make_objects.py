@@ -359,6 +359,21 @@ for a wall, painted with coloured stripes and small notches, NO numbers, NO lett
 platform with a little roof, seen from the front, NO tree under it; one big tall apple tree with red apples.""",
 }
 
+# in order (stage 2): nesting boxes and owlets at three sizes, cups that stack inside each other
+SHEETS["po_kolei"] = {
+    "outline": True,
+    "names": ["budka", "sowiatko", "kubek_kolorowy", "kamien_schodek"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow.
+{STYL}
+Left to right: one wooden bird nesting box with a round hole and a little sloped roof, seen from the front; one fluffy
+baby owl, round, cream and brown, big eyes, seen from the front; one plain round stacking toy cup, bright orange,
+seen from the side, wider at the top; one flat grey river stone standing on its edge, as tall as wide.
+All four the same size.""",
+    "rows": 1,
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

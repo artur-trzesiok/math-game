@@ -1,153 +1,168 @@
 {
-  "line.s_cups": {
-    "who": "sarenka",
-    "text": "We have to put the cups away in the cupboard. Best one inside another."
+  "line.a_wieza": {
+    "who": "bobr",
+    "text": "Hi! I'm Beaver, the builder. I'll build a lookout tower by the brook, to see the whole forest."
   },
-  "line.s_big_into_small": {
-    "who": "lisek",
-    "text": "Easy! I put this big one into the small one."
+  "line.a_ogon": {
+    "who": "bobr",
+    "text": "And if I have no tape, I'll measure everything with my tail!"
   },
-  "line.s_wont_fit": {
-    "who": "sarenka",
-    "text": "A big one will not fit into a small one! That does not work."
+  "line.a_szybko": {
+    "who": "zajac",
+    "text": "I'll help! Quick, quick, I'll pile the blocks any old way!"
   },
-  "line.s_how": {
-    "who": "lisek",
-    "text": "Then how do I do it?"
+  "line.a_spadla": {
+    "who": "zajac",
+    "text": "Oh no! The big block wouldn't stay on the small one and it fell."
   },
-  "line.s_order": {
-    "who": "sarenka",
-    "text": "Put them in order! From the smallest to the biggest."
+  "line.a_po_kolei": {
+    "who": "bobr",
+    "text": "A tower only stands when the blocks are put in order."
   },
-  "line.s_what": {
-    "who": "lisek",
-    "text": "In order? How?"
+  "line.a_jak": {
+    "who": "zajac",
+    "text": "In order? How do you mean?"
   },
-  "line.s_show": {
-    "who": "sarenka",
-    "text": "I will show you. In the first place, here on the left, we put the smallest, then bigger and bigger."
+  "line.a_od_najwiekszego": {
+    "who": "bobr",
+    "text": "At the bottom the biggest block, on it a smaller one, then a smaller one still, and at the top the smallest. Drag the blocks and build the tower."
   },
-  "line.s_fill": {
-    "who": "sarenka",
-    "text": "Drag the cups to their places. The smallest first."
+  "line.a_stoi": {
+    "who": "zajac",
+    "text": "Hooray, the tower stands!"
   },
-  "line.wrong_order": {
-    "who": "sarenka",
-    "text": "That is not its place. Look which one is smaller.",
+  "line.a_dlaczego": {
+    "who": "bobr",
+    "text": "It stands because the blocks are in order: from the biggest to the smallest."
+  },
+  "line.b_schodki": {
+    "who": "bobr",
+    "text": "Now let's make steps down to the water, out of stones."
+  },
+  "line.b_od_najnizszego": {
+    "who": "zajac",
+    "text": "Steps go in order: first the lowest stone, then a higher one, and last the highest. Start where the arrow is."
+  },
+  "line.zla_kolejnosc": {
+    "who": "bobr",
+    "text": "That's not its place. Look at what's next to it, and put them in order.",
     "speakers": [
-      "lisek"
+      "zajac"
     ]
   },
-  "line.wrong_order_big": {
-    "who": "sarenka",
-    "text": "That is not its place. Look which one is bigger.",
+  "line.b_schodki_ok": {
+    "who": "bobr",
+    "text": "Lovely steps! The lowest, higher, the highest."
+  },
+  "line.b_sowiatka": {
+    "who": "sowa",
+    "text": "Please help me! My owlets mixed up their boxes. Each has its own: the biggest owlet lives in the biggest box."
+  },
+  "line.b_do_budek": {
+    "who": "zajac",
+    "text": "Drag each owlet to the box its size: the smallest to the smallest, the biggest to the biggest."
+  },
+  "line.b_nie_ta_budka": {
+    "who": "sowa",
+    "text": "That box is for another owlet. Look which one is bigger and which is smaller."
+  },
+  "line.b_dziekuje": {
+    "who": "sowa",
+    "text": "Every owlet is in its own box. Thank you!"
+  },
+  "line.b_wyscig": {
+    "who": "zajac",
+    "text": "Let's race along the stones, to the finish! Go!"
+  },
+  "line.b_kto_pierwszy": {
+    "who": "bobr",
+    "text": "Who got to the finish first? Point to them."
+  },
+  "line.b_pierwszy": {
+    "who": "zajac",
+    "text": "Me! I'm first, and Beaver is second."
+  },
+  "line.b_do_domu": {
+    "who": "bobr",
+    "text": "Phew, I'm tired. Let's go home."
+  },
+  "line.p_start": {
+    "who": "bobr",
+    "text": "Let's practise putting things in order! I have five games."
+  },
+  "line.p_kubki": {
+    "who": "zajac",
+    "text": "Put the cups in order: from the smallest to the biggest. Start at the arrow."
+  },
+  "line.p_dobrze": {
+    "who": "bobr",
+    "text": "Bravo, all in order!",
     "speakers": [
-      "lisek"
+      "zajac"
     ]
   },
-  "line.s_nest": {
-    "who": "lisek",
-    "text": "Now I see! The small one goes into the middle one, and the middle one into the big one."
+  "line.p_marchewki": {
+    "who": "bobr",
+    "text": "And now the carrots the other way: from the biggest to the smallest. Start at the arrow."
   },
-  "line.s_solved": {
-    "who": "sarenka",
-    "text": "They all fit one inside another. That is how putting things in order works!"
+  "line.p_luka": {
+    "who": "zajac",
+    "text": "The apples grow in order, but one is missing. Which apple fits the gap? Point to it."
   },
-  "line.s_to_garden": {
-    "who": "lisek",
-    "text": "Let's go to the garden and pull out some carrots."
+  "line.p_luka_nie": {
+    "who": "zajac",
+    "text": "That apple is too big or too small. We need one bigger than the one before the gap, and smaller than the one after it."
   },
-  "line.b_carrots": {
-    "who": "lisek",
-    "text": "I pulled out some carrots. Each one is a different length."
+  "line.p_luka_ok": {
+    "who": "bobr",
+    "text": "Yes! Now the apples grow in order."
   },
-  "line.b_fill": {
-    "who": "sarenka",
-    "text": "Put them from the shortest to the longest."
+  "line.p_ktory_rzad": {
+    "who": "bobr",
+    "text": "In which row are the leaves in order? Point to that row."
   },
-  "line.b_done": {
-    "who": "lisek",
-    "text": "From the shortest to the longest, like stairs!"
+  "line.p_ktory_rzad_nie": {
+    "who": "bobr",
+    "text": "In this row the leaves are mixed up. Look at the other row."
   },
-  "line.b_to_room": {
-    "who": "sarenka",
-    "text": "And now to the room, we will build a tower."
+  "line.p_ktory_rzad_ok": {
+    "who": "zajac",
+    "text": "Yes! Here the leaves grow in order."
   },
-  "line.c_tower": {
-    "who": "sarenka",
-    "text": "Let's build a tower of blocks that will not fall over."
+  "line.p_wieza": {
+    "who": "zajac",
+    "text": "Last, build a tower: the biggest block at the bottom."
   },
-  "line.c_fill": {
-    "who": "lisek",
-    "text": "The biggest goes at the bottom and the smallest on top. Drag the blocks."
+  "line.p_wieza_ok": {
+    "who": "bobr",
+    "text": "It stands! What a builder you are!"
   },
-  "line.c_solved": {
-    "who": "sarenka",
-    "text": "The tower stands! The biggest at the bottom, the smallest on top."
+  "line.d_polka": {
+    "who": "zajac",
+    "text": "The teddies must sit on the shelf. We'll put them in order."
   },
-  "line.p_intro": {
-    "who": "lisek",
-    "text": "Let's play putting things in order!"
+  "line.d_od_najwiekszego": {
+    "who": "bobr",
+    "text": "From the biggest teddy to the smallest. Start at the arrow."
   },
-  "line.p_from_small": {
-    "who": "lisek",
-    "text": "Put them from the smallest to the biggest.",
-    "speakers": [
-      "sarenka"
-    ]
+  "line.d_porzadek": {
+    "who": "zajac",
+    "text": "What a tidy shelf!"
   },
-  "line.p_from_big": {
-    "who": "lisek",
-    "text": "Put them from the biggest to the smallest.",
-    "speakers": [
-      "sarenka"
-    ]
-  },
-  "line.good_order": {
-    "who": "sarenka",
-    "text": "Yes! Everything in order.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.a_game": {
-    "who": "sarenka",
-    "text": "Let's play putting things in order in the hallway."
-  },
-  "line.a_ok": {
-    "who": "lisek",
-    "text": "All right! We will sort the whole family's things."
-  },
-  "line.a_shoes": {
-    "who": "sarenka",
-    "text": "Put the shoes from the smallest to the biggest."
-  },
-  "line.a_socks": {
-    "who": "sarenka",
-    "text": "Now the socks, from the biggest to the smallest."
-  },
-  "line.a_bears": {
-    "who": "sarenka",
-    "text": "And the teddies from the smallest to the biggest."
-  },
-  "line.a_ask_parents": {
-    "who": "sarenka",
-    "text": "Ask your parents to line up the whole family's shoes with you, from the smallest to the biggest."
-  },
-  "line.a_bye": {
-    "who": "lisek",
-    "text": "Bye bye! See you!"
+  "line.d_rodzice": {
+    "who": "bobr",
+    "text": "Line up the whole family's shoes with your parents: from the biggest to the smallest."
   },
   "line.naklejka_daj": {
-    "who": "sarenka",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+    "who": "bobr",
+    "text": "Thank you for helping me build! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "bobr",
+    "text": "You already have the sticker from this adventure. See you!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the little shoe from Deer. We got it when we put things in order."
-  },
-  "line.naklejka_juz": {
-    "who": "sarenka",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "This is the owlets' box. We got it when we put everything in order with Beaver and Bunny."
   }
 }

@@ -1,197 +1,212 @@
 {
- "line.s_cups": {
-  "hash": "8772262ab5f8",
-  "who": "sarenka",
-  "text": "Trzeba schować kubki do szafki. Najlepiej jeden w drugim."
+ "line.a_wieza": {
+  "hash": "6df02989cae9",
+  "who": "bobr",
+  "text": "Cześć! Jestem Bóbr, budowniczy. Zbuduję nad strumykiem wieżę widokową, żeby zobaczyć cały las."
  },
- "line.s_big_into_small": {
-  "hash": "99502e886907",
-  "who": "lisek",
-  "text": "To proste! Wkładam ten duży do tego małego."
+ "line.a_ogon": {
+  "hash": "1c464ba5e326",
+  "who": "bobr",
+  "text": "A jak nie mam miarki, zmierzę wszystko ogonem!"
  },
- "line.s_wont_fit": {
-  "hash": "f84058637848",
-  "who": "sarenka",
-  "text": "Duży nie zmieści się w małym! Tak się nie da."
+ "line.a_szybko": {
+  "hash": "6808f9bfb686",
+  "who": "zajac",
+  "text": "Ja pomogę! Szybko, szybko, układam klocki byle jak!"
  },
- "line.s_how": {
-  "hash": "5c19c5244d64",
-  "who": "lisek",
-  "text": "To jak mam to zrobić?"
+ "line.a_spadla": {
+  "hash": "312f6ce06a3e",
+  "who": "zajac",
+  "text": "Ojej! Duży klocek nie utrzymał się na małym i spadł."
  },
- "line.s_order": {
-  "hash": "4aa2f50196d3",
-  "who": "sarenka",
-  "text": "Ułożyć je po kolei! Od najmniejszego do największego."
+ "line.a_po_kolei": {
+  "hash": "98df95d260ec",
+  "who": "bobr",
+  "text": "Wieża stoi tylko wtedy, gdy klocki są ułożone po kolei."
  },
- "line.s_what": {
-  "hash": "f372b57cbce9",
-  "who": "lisek",
+ "line.a_jak": {
+  "hash": "497721fc06e1",
+  "who": "zajac",
   "text": "Po kolei? Czyli jak?"
  },
- "line.s_show": {
-  "hash": "de6ec7ab6cbd",
-  "who": "sarenka",
-  "text": "Pokażę ci. Na pierwszym miejscu, tu z lewej, stawiamy najmniejszy, potem coraz większe."
+ "line.a_od_najwiekszego": {
+  "hash": "640e70d79bae",
+  "who": "bobr",
+  "text": "Na dole największy klocek, na nim trochę mniejszy, potem jeszcze mniejszy, a na górze najmniejszy. Przeciągnij klocki i zbuduj wieżę."
  },
- "line.s_fill": {
-  "hash": "6cd1275fda44",
-  "who": "sarenka",
-  "text": "Przeciągnij kubki na miejsca. Najpierw najmniejszy."
+ "line.a_stoi": {
+  "hash": "ed12e56adcc8",
+  "who": "zajac",
+  "text": "Hurra, wieża stoi!"
  },
- "line.wrong_order": {
-  "hash": "fd8df1b6e4f6",
-  "who": "sarenka",
-  "text": "To nie to miejsce. Popatrz, który jest mniejszy."
+ "line.a_dlaczego": {
+  "hash": "d52b6fc4c8e1",
+  "who": "bobr",
+  "text": "Stoi, bo klocki są po kolei: od największego do najmniejszego."
  },
- "line.wrong_order.lisek": {
-  "hash": "6ec4b3ccb78a",
-  "who": "lisek",
-  "text": "To nie to miejsce. Popatrz, który jest mniejszy."
+ "line.b_schodki": {
+  "hash": "92bd5d33d829",
+  "who": "bobr",
+  "text": "Teraz zróbmy schodki do wody, z kamieni."
  },
- "line.s_nest": {
-  "hash": "93af60e8c567",
-  "who": "lisek",
-  "text": "Teraz widzę! Mały wejdzie do średniego, a średni do dużego."
+ "line.b_od_najnizszego": {
+  "hash": "34e157abb23e",
+  "who": "zajac",
+  "text": "Schodki idą po kolei: najpierw najniższy kamień, potem wyższy, a na końcu najwyższy. Zacznij tam, gdzie strzałka."
  },
- "line.s_solved": {
-  "hash": "a9e924be7353",
-  "who": "sarenka",
-  "text": "Wszystkie zmieściły się jeden w drugim. Tak działa układanie po kolei!"
+ "line.zla_kolejnosc": {
+  "hash": "20513cd76950",
+  "who": "bobr",
+  "text": "To nie to miejsce. Popatrz, co jest obok, i ułóż po kolei."
  },
- "line.s_to_garden": {
-  "hash": "c2be36c4bcc0",
-  "who": "lisek",
-  "text": "Chodźmy do ogrodu, wyrwiemy marchewki."
+ "line.zla_kolejnosc.zajac": {
+  "hash": "72a1e5c8daba",
+  "who": "zajac",
+  "text": "To nie to miejsce. Popatrz, co jest obok, i ułóż po kolei."
  },
- "line.b_carrots": {
-  "hash": "edfd85a11068",
-  "who": "lisek",
-  "text": "Wyrwałem marchewki. Każda ma inną długość."
+ "line.b_schodki_ok": {
+  "hash": "e33abb8e24a5",
+  "who": "bobr",
+  "text": "Piękne schodki! Najniższy, wyższy, najwyższy."
  },
- "line.b_fill": {
-  "hash": "718427ba58c8",
-  "who": "sarenka",
-  "text": "Ułóż je od najkrótszej do najdłuższej."
+ "line.b_sowiatka": {
+  "hash": "240090f835eb",
+  "who": "sowa",
+  "text": "Pomóżcie mi, proszę! Moje sowiątka pomieszały budki. Każde ma swoją: największe sowiątko mieszka w największej budce."
  },
- "line.b_done": {
-  "hash": "028b43cf9737",
-  "who": "lisek",
-  "text": "Od najkrótszej do najdłuższej, jak schodki!"
+ "line.b_do_budek": {
+  "hash": "9f6523362834",
+  "who": "zajac",
+  "text": "Przeciągnij każde sowiątko do budki w jego rozmiarze: najmniejsze do najmniejszej, największe do największej."
  },
- "line.b_to_room": {
-  "hash": "daffe56e3748",
-  "who": "sarenka",
-  "text": "A teraz do pokoju, zbudujemy wieżę."
+ "line.b_nie_ta_budka": {
+  "hash": "70019ee1bcf1",
+  "who": "sowa",
+  "text": "Ta budka jest dla innego sowiątka. Popatrz, które jest większe, a które mniejsze."
  },
- "line.c_tower": {
-  "hash": "95c297d97e4e",
-  "who": "sarenka",
-  "text": "Zbudujmy wieżę z klocków, która się nie przewróci."
+ "line.b_dziekuje": {
+  "hash": "2040e8f85bdc",
+  "who": "sowa",
+  "text": "Każde sowiątko jest w swojej budce. Dziękuję!"
  },
- "line.c_fill": {
-  "hash": "bcde7fe76c86",
-  "who": "lisek",
-  "text": "Na dole kładziemy największy, a na górze najmniejszy. Przeciągaj klocki."
+ "line.b_wyscig": {
+  "hash": "ecaedfc39a4b",
+  "who": "zajac",
+  "text": "Zróbmy wyścig po kamieniach, do mety! Start!"
  },
- "line.c_solved": {
-  "hash": "08f8465e6b8b",
-  "who": "sarenka",
-  "text": "Wieża stoi! Największy na dole, najmniejszy na górze."
+ "line.b_kto_pierwszy": {
+  "hash": "a84b7a0502f0",
+  "who": "bobr",
+  "text": "Kto był pierwszy na mecie? Wskaż."
  },
- "line.p_intro": {
-  "hash": "0d58af2a1513",
-  "who": "lisek",
-  "text": "Pobawmy się w układanie po kolei!"
+ "line.b_pierwszy": {
+  "hash": "fc6eef3f6a39",
+  "who": "zajac",
+  "text": "Ja! Jestem pierwszy, a Bóbr drugi."
  },
- "line.p_from_small": {
-  "hash": "22aaf06ba541",
-  "who": "lisek",
-  "text": "Ułóż od najmniejszego do największego."
+ "line.b_do_domu": {
+  "hash": "d82486e97019",
+  "who": "bobr",
+  "text": "Uff, ale się zmęczyłem. Wracajmy do domu."
  },
- "line.p_from_small.sarenka": {
-  "hash": "e7b6eba6ba7d",
-  "who": "sarenka",
-  "text": "Ułóż od najmniejszego do największego."
+ "line.p_start": {
+  "hash": "38dfbf68031c",
+  "who": "bobr",
+  "text": "Poćwiczmy układanie po kolei! Mam pięć zabaw."
  },
- "line.p_from_big": {
-  "hash": "77f31d5b7b2c",
-  "who": "lisek",
-  "text": "Ułóż od największego do najmniejszego."
+ "line.p_kubki": {
+  "hash": "0a171adbd9cf",
+  "who": "zajac",
+  "text": "Ułóż kubeczki po kolei: od najmniejszego do największego. Zacznij przy strzałce."
  },
- "line.p_from_big.sarenka": {
-  "hash": "9c6bfb7f62df",
-  "who": "sarenka",
-  "text": "Ułóż od największego do najmniejszego."
+ "line.p_dobrze": {
+  "hash": "c277d441dd51",
+  "who": "bobr",
+  "text": "Brawo, wszystko po kolei!"
  },
- "line.good_order": {
-  "hash": "22e28c581286",
-  "who": "sarenka",
-  "text": "Tak! Wszystko po kolei."
+ "line.p_dobrze.zajac": {
+  "hash": "8473f7f4ed23",
+  "who": "zajac",
+  "text": "Brawo, wszystko po kolei!"
  },
- "line.good_order.lisek": {
-  "hash": "389b007bf273",
-  "who": "lisek",
-  "text": "Tak! Wszystko po kolei."
+ "line.p_marchewki": {
+  "hash": "5dd919fa6d36",
+  "who": "bobr",
+  "text": "A teraz marchewki odwrotnie: od największej do najmniejszej. Zacznij przy strzałce."
  },
- "line.a_game": {
-  "hash": "173c87d07d77",
-  "who": "sarenka",
-  "text": "Zagrajmy w układanie po kolei w przedpokoju."
+ "line.p_luka": {
+  "hash": "bf62001aa4cf",
+  "who": "zajac",
+  "text": "Jabłka rosną po kolei, ale jednego brakuje. Które jabłko pasuje w lukę? Wskaż."
  },
- "line.a_ok": {
-  "hash": "c4cc5ddaf063",
-  "who": "lisek",
-  "text": "Dobrze! Ułożymy rzeczy całej rodziny."
+ "line.p_luka_nie": {
+  "hash": "19d0e8c895b4",
+  "who": "zajac",
+  "text": "To jabłko jest za duże albo za małe. Potrzebne jest większe od tego przed luką, a mniejsze od tego za nią."
  },
- "line.a_shoes": {
-  "hash": "709c534b0d89",
-  "who": "sarenka",
-  "text": "Ułóż buty od najmniejszego do największego."
+ "line.p_luka_ok": {
+  "hash": "e22316465371",
+  "who": "bobr",
+  "text": "Tak! Teraz jabłka rosną po kolei."
  },
- "line.a_socks": {
-  "hash": "2932a6d9a5cd",
-  "who": "sarenka",
-  "text": "Teraz skarpetki, od największej do najmniejszej."
+ "line.p_ktory_rzad": {
+  "hash": "c7fe12f4a5c0",
+  "who": "bobr",
+  "text": "W którym rzędzie listki są ułożone po kolei? Wskaż ten rząd."
  },
- "line.a_bears": {
-  "hash": "e8b17782ac34",
-  "who": "sarenka",
-  "text": "A misie od najmniejszego do największego."
+ "line.p_ktory_rzad_nie": {
+  "hash": "9d2c0f096cd6",
+  "who": "bobr",
+  "text": "W tym rzędzie listki są pomieszane. Popatrz na drugi rząd."
  },
- "line.a_ask_parents": {
-  "hash": "49b99a42fe10",
-  "who": "sarenka",
-  "text": "Poproście rodziców, żeby razem z wami ułożyli buty całej rodziny od najmniejszego do największego."
+ "line.p_ktory_rzad_ok": {
+  "hash": "e7d9254d5081",
+  "who": "zajac",
+  "text": "Tak! Tu listki rosną po kolei."
  },
- "line.a_bye": {
-  "hash": "163cfb6abb1b",
-  "who": "lisek",
-  "text": "Pa, pa! Do zobaczenia!"
+ "line.p_wieza": {
+  "hash": "ed31a324025e",
+  "who": "zajac",
+  "text": "Na koniec zbuduj wieżę: największy klocek na dole."
  },
- "line.wrong_order_big": {
-  "hash": "e93f247b0d72",
-  "who": "sarenka",
-  "text": "To nie to miejsce. Popatrz, który jest większy."
+ "line.p_wieza_ok": {
+  "hash": "b4fbf6f84afc",
+  "who": "bobr",
+  "text": "Stoi! Ale z ciebie budowniczy!"
  },
- "line.wrong_order_big.lisek": {
-  "hash": "ae77cb631079",
-  "who": "lisek",
-  "text": "To nie to miejsce. Popatrz, który jest większy."
+ "line.d_polka": {
+  "hash": "cb57bdbba20e",
+  "who": "zajac",
+  "text": "Na półce trzeba posadzić misie. Ułożymy je po kolei."
+ },
+ "line.d_od_najwiekszego": {
+  "hash": "0f18bdb92595",
+  "who": "bobr",
+  "text": "Od największego misia do najmniejszego. Zacznij przy strzałce."
+ },
+ "line.d_porzadek": {
+  "hash": "691fb87dc8a9",
+  "who": "zajac",
+  "text": "Jaki porządek na półce!"
+ },
+ "line.d_rodzice": {
+  "hash": "c6651c522ccd",
+  "who": "bobr",
+  "text": "Ustaw z rodzicami buty całej rodziny po kolei: od największego do najmniejszego."
  },
  "line.naklejka_daj": {
-  "hash": "9de442124747",
-  "who": "sarenka",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "f2b35b53d7a4",
-  "who": "narrator",
-  "text": "To bucik od sarenki. Dostaliśmy go, kiedy ustawialiśmy rzeczy po kolei."
+  "hash": "dc147187a16e",
+  "who": "bobr",
+  "text": "Dziękuję za pomoc przy budowie! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "7b4f384e1970",
-  "who": "sarenka",
+  "hash": "2e93bb84c2cf",
+  "who": "bobr",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "80a226c4a62e",
+  "who": "narrator",
+  "text": "To budka sowiątek. Dostaliśmy ją, kiedy z Bobrem i Zajączkiem układaliśmy wszystko po kolei."
  }
 }

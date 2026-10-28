@@ -1,31 +1,24 @@
-# In order (seriation)
+# In order - Beaver's tower
 
-Goal: three to five things in order by size or length into places in a row (no
-digits: this lesson comes before the numbers lessons; the first place is shown by an
-arrow, "here on the left").
-Characters: Deer (left), Fox (right).
+Goal: put things in order by size, from the biggest to the smallest and back, and see why order matters. Age 3-4.
+Characters: Beaver and Bunny (new), Owl. Stage 2, lesson 6.
 
-## Stage 1 - story - kitchen, garden, children's room
+## Why rethought
+The old lesson was three unconnected rows (cups, carrots, blocks) and five more rows in practice - one drag-into-places
+game eight times, with cups that "did not fit" without showing why. Now one thread with a visible consequence: a tower
+stands only in order.
 
-1. Kitchen, the problem: three cups to put away one inside another; Fox lifts the big
-   one onto the small one (it sits on the rim and bounces off). Deer ("?"): it will
-   not fit - put them in order, from the smallest to the biggest (Deer pictures three
-   cups growing). The child drags the cups into the places, the first marked by an
-   arrow. Solved: the small one goes into the middle one, the
-   middle one into the big one.
-2. Garden: four carrots from the shortest to the longest.
-3. Room: a tower of blocks - the biggest at the bottom; the places stack block on
-   block, so the tower really stands.
+**Misconception:** "a tower is a tower" - Bunny in a hurry piles them anyhow: the big block on the small one tips and falls.
 
-A wrong drop in a row from the biggest says "look which one is bigger". The things never
-lie in the answer order already.
+## Stage 1 - story (the brook)
+A. Beaver (with his "I'll measure it with my tail!") builds a lookout tower; Bunny piles a big block on a small one - it
+tips and falls. In order: the biggest at the bottom ... the smallest on top. **Child** builds the tower (`wieza`: a block
+wider than the one below tips off).
+B. Steps down to the water: three stones from the lowest (an arrow marks the first place). *Helping:* Owl's owlets into
+their nesting boxes by size. *Breather:* a race along the stones - who was first (the characters are the options).
 
-## Stage 2 - practice - playground
+## Stage 2 - practice
+Cups from the smallest; carrots from the biggest; the apple that fits the gap; which row of leaves is in order; a tower of three.
 
-Five rows: balls, apples (from the smallest), leaves, cones (from the biggest), five
-pears.
-
-## Stage 3 - at home - hallway
-
-The family's shoes (from the smallest), socks (from the biggest), teddies. "Ask your
-parents to line up the whole family's shoes with you."
+## Stage 3 - at home (the room)
+Teddies on the shelf from the biggest. "Line up the family's shoes with your parents."
