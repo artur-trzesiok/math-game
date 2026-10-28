@@ -125,6 +125,10 @@ export class Stage {
     for (const d of this.dymki) d.za();
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) {
+      if (L.lustro) {                                                         // a reflection (mechaniki2.js odbicie) moves as its original does
+        const O = L.lustro; L.akcja = O.akcja; L.ta = O.ta; L.przejscie = O.przejscie; L.kierunekBazowy = O.kierunekBazowy;
+        L.mowi = O.mowi; L.amplituda = O.amplituda; L.wiz = O.wiz; L.celSpojrzenia = O.celSpojrzenia; L.korzen.position.x = O.korzen.position.x;
+      }
       L.update(dt);
       if (L.cien) {                                                           // the shadow stays on the ground under the feet
         // L.podloga: the ground of a puppet walking into the picture (stepping stones): higher up = further away
