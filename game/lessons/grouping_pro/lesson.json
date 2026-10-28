@@ -13,7 +13,7 @@
   ],
   "backgrounds": [
     "jesienny_sad",
-    "dom"
+    "pokoj"
   ],
   "objects": [
     "jablko",
@@ -27,16 +27,15 @@
     "miska",
     "pudelko",
     "koszyk",
-    "polka",
     "grzyb",
     "orzech",
     "kasztan",
     "zoledz",
-    "marchewka",
-    "kubek",
-    "talerz",
     "szarlotka",
-    "kokarda"
+    "kokarda",
+    "misiu",
+    "skarpetka",
+    "but"
   ],
   "cover": "In an autumn orchard with falling red and yellow leaves, Squirrel holds a magnifying glass over a small pile of red gifts (a red apple, a red leaf, a red toy block) while Deer looks on curiously; behind a tree trunk the Fox peeks out shyly."
 }

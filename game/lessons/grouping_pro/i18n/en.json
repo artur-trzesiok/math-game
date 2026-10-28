@@ -21,11 +21,11 @@
   },
   "line.a_grupuj": {
     "who": "sarenka",
-    "text": "We'll group them. Grouping means putting together the things that belong together."
+    "text": "To check what the gifts have in common, we'll group everything. Grouping means putting together the things that belong together."
   },
   "line.a_zasada_jedzenie": {
     "who": "wiewiorka",
-    "text": "First rule: food into the bowl, everything else into the box."
+    "text": "Maybe all the gifts are food? Let's check: food into the bowl, everything else into the box."
   },
   "line.a_pomylka": {
     "who": "sarenka",
@@ -40,11 +40,11 @@
   },
   "line.a_nie_ta": {
     "who": "wiewiorka",
-    "text": "In both groups! That's not the rule. Let's try another one."
+    "text": "The gifts are in both groups. So it's not about food. Let's try another rule."
   },
   "line.a_zasada_kolor": {
     "who": "sarenka",
-    "text": "Second rule: red things into the basket, everything else into the box."
+    "text": "Or maybe it's about the colour? Red things into the basket, everything else into the box."
   },
   "line.a_wszystkie_czerwone": {
     "who": "wiewiorka",
@@ -52,7 +52,7 @@
   },
   "line.a_trop": {
     "who": "sarenka",
-    "text": "We have a clue! Someone really loves red."
+    "text": "We have a clue! Whoever leaves the gifts really loves red."
   },
   "line.a_slady": {
     "who": "wiewiorka",
@@ -60,7 +60,7 @@
   },
   "line.a_idziemy": {
     "who": "sarenka",
-    "text": "Let's follow the trail."
+    "text": "Let's follow the trail. Maybe it will lead us to whoever leaves the gifts!"
   },
   "line.b_wieje": {
     "who": "wiewiorka",
@@ -91,7 +91,7 @@
   },
   "line.b_lapiemy": {
     "who": "wiewiorka",
-    "text": "The trail! On the way, let's catch only the red leaves. Get ready!"
+    "text": "Let's keep following the trail! The trail is made of red leaves, so we catch only the red ones. Get ready!"
   },
   "line.b_lap": {
     "who": "wiewiorka",
@@ -106,11 +106,11 @@
   },
   "line.b_las": {
     "who": "sarenka",
-    "text": "The trail leads to the forest!"
+    "text": "The trail leads into the forest! We're getting closer."
   },
   "line.c_drzwi": {
     "who": "wiewiorka",
-    "text": "A red door! Somebody lives here."
+    "text": "Oh! And it has a red door. This must be the place!"
   },
   "line.c_puk": {
     "who": "sarenka",
@@ -118,7 +118,7 @@
   },
   "line.c_to_ja": {
     "who": "lisek",
-    "text": "It was me who left the gifts. I really love red."
+    "text": "Yes, it's me. I really love red."
   },
   "line.c_czemu": {
     "who": "wiewiorka",
@@ -134,11 +134,11 @@
   },
   "line.c_balagan": {
     "who": "lisek",
-    "text": "Hooray! But I can't find my red hat. My things are in a mess."
+    "text": "Hooray! I'd like to wear my red hat for the visit. But my things are in a mess and I can't find it."
   },
   "line.c_pogrupujmy": {
     "who": "wiewiorka",
-    "text": "We'll group them! Hats into the basket, scarves into the box."
+    "text": "We'll help! We'll group your things: hats into the basket, scarves into the box. Then it will be easy to find."
   },
   "line.c_pomylka": {
     "who": "lisek",
@@ -161,11 +161,11 @@
   },
   "line.c_gotowy": {
     "who": "lisek",
-    "text": "My hat! Let's go and have that pie!"
+    "text": "My hat! Thank you. Let's go and have that pie!"
   },
   "line.p_start": {
     "who": "wiewiorka",
-    "text": "Now detective training! We collect stars."
+    "text": "Detectives need practice! Now detective training. We collect stars."
   },
   "line.p_wspolne": {
     "who": "sarenka",
@@ -215,45 +215,17 @@
     "who": "sarenka",
     "text": "Acorns into the basket, chestnuts into the box."
   },
-  "line.d_witaj": {
-    "who": "lisek",
-    "text": "It's so nice here! Where's the apple pie?"
-  },
-  "line.d_najpierw": {
-    "who": "sarenka",
-    "text": "First we bake it. An apple pie needs apples. Point to all the apples."
-  },
-  "line.d_nie_jablko": {
-    "who": "sarenka",
-    "text": "That's not an apple. Keep looking.",
-    "speakers": [
-      "wiewiorka",
-      "lisek"
-    ]
-  },
-  "line.d_naczynia": {
-    "who": "wiewiorka",
-    "text": "Now let's tidy up: cups on the shelf, plates into the box."
-  },
-  "line.d_pomylka": {
-    "who": "wiewiorka",
-    "text": "That one doesn't belong in this group.",
-    "speakers": [
-      "sarenka",
-      "lisek"
-    ]
-  },
   "line.d_szarlotka": {
     "who": "sarenka",
-    "text": "Done! Here's the apple pie we promised!"
+    "text": "And here's the apple pie! It baked while we were tidying."
   },
   "line.d_pycha": {
     "who": "lisek",
-    "text": "Yummy! I have new friends."
+    "text": "Yummy! New friends and a tidy room. The best day!"
   },
   "line.d_rodzice": {
     "who": "wiewiorka",
-    "text": "Play detectives with your parents. Ask them to hide three things that have something in common. Guess what it is!"
+    "text": "Tidy your room with your parents just like we did: toys in one box, clothes in another. You'll see how easy it is to find everything!"
   },
   "line.d_pa": {
     "who": "sarenka",
@@ -266,5 +238,84 @@
   "line.a_pomoze": {
     "who": "sarenka",
     "text": "Maybe that will help us guess who it is!"
+  },
+  "line.c_dab": {
+    "who": "wiewiorka",
+    "text": "Look, what a beautiful red oak!"
+  },
+  "line.c_mieszka": {
+    "who": "sarenka",
+    "text": "I think somebody lives here..."
+  },
+  "line.c_pytanie": {
+    "who": "wiewiorka",
+    "text": "Fox! Is it you who leaves us the red gifts?"
+  },
+  "line.c_otwieraja": {
+    "who": "sarenka",
+    "text": "Shh... The door is opening!"
+  },
+  "line.c_dziekujemy": {
+    "who": "wiewiorka",
+    "text": "You don't have to be shy. Thank you for the gifts! They were lovely."
+  },
+  "line.e_witaj": {
+    "who": "wiewiorka",
+    "text": "Welcome to our home, Fox! The apple pie is still baking."
+  },
+  "line.e_balagan": {
+    "who": "lisek",
+    "text": "Oh my, what a mess! Everything is lying on the rug."
+  },
+  "line.e_posprzatam": {
+    "who": "lisek",
+    "text": "I'll tidy up! Everything into one box!"
+  },
+  "line.e_gotowe": {
+    "who": "lisek",
+    "text": "Done! All tidy!"
+  },
+  "line.e_pilka": {
+    "who": "sarenka",
+    "text": "Fox, let's play ball while the pie is baking! Where's the ball?"
+  },
+  "line.e_nie_ma": {
+    "who": "lisek",
+    "text": "Somewhere in the box... But everything in there is mixed up. I can't find it!"
+  },
+  "line.e_grupujmy": {
+    "who": "wiewiorka",
+    "text": "I know! Let's group them. Toys into the basket, clothes into the box. Then everything will be easy to find."
+  },
+  "line.e_zasada": {
+    "who": "wiewiorka",
+    "text": "Drag the toys into the basket and the clothes into the box."
+  },
+  "line.e_pomylka": {
+    "who": "wiewiorka",
+    "text": "That one doesn't belong in this group.",
+    "speakers": [
+      "sarenka",
+      "lisek"
+    ]
+  },
+  "line.e_porzadek": {
+    "who": "sarenka",
+    "text": "Now that's real tidying!"
+  },
+  "line.e_gdzie_pilka": {
+    "who": "lisek",
+    "text": "So where should I look for the ball? Point to it."
+  },
+  "line.e_nie_tam": {
+    "who": "lisek",
+    "text": "These are clothes. And a ball is a toy.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.e_jest": {
+    "who": "lisek",
+    "text": "There it is! I found it straight away. Grouping is great!"
   }
 }

@@ -22,9 +22,9 @@ async function wRzedzie(c, rzeczy, { y = ROW_Y, size = 0.85 } = {}) {
   return hs;
 }
 // two containers; `lewy` / `prawy` = the tag each takes (the line names them, so the check keeps to them)
-async function pojemniki(c, [obrazL, lewy], [obrazP, prawy], { x = ZR, w = ZW, h = ZH } = {}) {
-  const z = [await c.zone({ x: -x, y: ZY, w, h, image: obrazL, name: obrazL }),
-             await c.zone({ x, y: ZY, w, h, image: obrazP, name: obrazP })];
+async function pojemniki(c, [obrazL, lewy], [obrazP, prawy], { x = ZR, w = ZW, h = ZH, xs = [-x, x] } = {}) {
+  const z = [await c.zone({ x: xs[0], y: ZY, w, h, image: obrazL, name: obrazL }),
+             await c.zone({ x: xs[1], y: ZY, w, h, image: obrazP, name: obrazP })];
   z[0].want = lewy; z[1].want = prawy;
   return z;
 }
@@ -39,6 +39,22 @@ async function doRzedu(c, rzeczy, { y = ROW_Y } = {}) {
   for (const h of rzeczy) if (h.zone) h.zone.take(h, false);
   c.arrange([rzeczy], { y, gap: 0.14, animate: true });
   await c.wait(0.5);
+}
+// the children's room: the rug between the characters (Fox stands left of it at home)
+const DYWAN = { x: 1.0, y: -1.5, w: 4.4, h: 1.1 };
+async function naDywanie(c, rzeczy, size = 0.85) {
+  const miejsca = [];
+  for (let proby = 0; miejsca.length < rzeczy.length && proby < 600; proby++) {
+    const x = DYWAN.x + (Math.random() - 0.5) * (DYWAN.w - 0.9), y = DYWAN.y + (Math.random() - 0.5) * (DYWAN.h - 0.4);
+    if (miejsca.every(([mx, my]) => Math.hypot(mx - x, (my - y) * 1.4) > 0.95)) miejsca.push([x, y]);
+  }
+  const out = [];
+  for (const [i, r] of tasuj(rzeczy).entries()) {
+    const [x, y] = miejsca[i] || [DYWAN.x, DYWAN.y];
+    const h = r.ubranie ? await c.ubranie(r.name, { x, y, size: r.size || size }) : await c.object(r.name, { x, y, size: r.size || size });
+    Object.assign(h, { tag: r.tag }); h.mesh.rotation.z = (Math.random() < 0.5 ? -1 : 1) * (0.3 + Math.random() * 0.8); out.push(h);
+  }
+  return out;
 }
 // the gifts light up one after another wherever they lie now
 async function pokazPrezenty(c, rzeczy) {
@@ -60,7 +76,7 @@ export default {
   przejscia: true,
   nagrody: true,
   characters: { wiewiorka: { side: "left" }, sarenka: { side: "right" }, lisek: { side: "left", x: 0 } },
-  backgrounds: { story: PANO, practice: { kolor: "#f6e1b8", motyw: "liscie" }, apply: "dom" },
+  backgrounds: { story: PANO, practice: { kolor: "#f6e1b8", motyw: "liscie" }, apply: "pokoj" },
   stages: {
     story: [
       // A. the orchard: gifts again under the apple tree; the wind mixes them up; be detectives - which rule shows
@@ -170,21 +186,31 @@ export default {
       // invited for the pie, but cannot find his red hat in the mess: sort hats and scarves, point to the red hat
       async (c) => {
         c.czastki("liscie", { wiatr: 0.4 });
+        // they arrive at the great tree: someone lives here... a red door - it must be here
+        await c.ujecie("ogolny");
+        await c.say("wiewiorka", "line.c_dab", { anim: "Wskazanie" });
+        await c.say("sarenka", "line.c_mieszka", { anim: "Rozgladanie" });
         await c.ujecie("dwuujecie", { na: ["wiewiorka", "sarenka"] });
-        await c.say("wiewiorka", "line.c_drzwi", { anim: "Wskazanie" });
+        await c.emocja("wiewiorka", "wykrzyknik", { anim: "Podskok" });
+        await c.say("wiewiorka", "line.c_drzwi");
         await c.say("sarenka", "line.c_puk");
         c.sfx("tap"); await c.wait(0.25); c.sfx("tap"); await c.wait(0.25); c.sfx("tap");
-        // Fox steps out of his door and walks to the front
+        // the door opens: Fox steps out and walks to the front
         await c.ujecie("ogolny");
+        c.sfx("whoosh");
+        await c.say("sarenka", "line.c_otwieraja", { anim: "Rozgladanie" });
         const L = c.stage.puppets.lisek, G0 = c.stage.puppets.wiewiorka.korzen.position.y;
         L.korzen.position.set(DRZWI.x, DRZWI.y, 0); L.podloga = DRZWI.y; L.korzen.scale.setScalar(1 - GLEBIA * (DRZWI.y - G0));
         L.korzen.visible = true; c.stage.appear(L);
         await c.przejdz("lisek", [[DRZWI.x - 0.2, DRZWI.y - 0.35], [0, G0]], { glebia: GLEBIA });
+        await c.ujecie("dwuujecie", { na: ["wiewiorka", "lisek"] });
+        await c.say("wiewiorka", "line.c_pytanie", { anim: "Zgloszenie" });
         await c.ujecie("zblizenie", { na: "lisek" });
         await c.emocja("lisek", "serce", { anim: "Kiwanie" });
         await c.say("lisek", "line.c_to_ja");
         await c.say("wiewiorka", "line.c_czemu");
         await c.say("lisek", "line.c_wstyd", { anim: "Smutek" });
+        await c.say("wiewiorka", "line.c_dziekujemy", { anim: "Radosc" });
         await c.ujecie("ogolny");
         await c.say("sarenka", "line.c_zapraszamy", { anim: "Radosc" });
         await c.say("lisek", "line.c_balagan", { anim: "Rozgladanie" });
@@ -245,23 +271,61 @@ export default {
       },
     ],
     apply: [
-      // home, with Fox: the promised pie - first only the apples for it, then cups on the shelf and plates into the
-      // box, and the pie is there
+      // home, Fox's first visit: the pie is still baking; the room is a mess. Fox "tidies" - everything into one box;
+      // Deer wants to play ball - where is it? Somewhere in the jumble. Group: toys into the basket, clothes into the
+      // box - and the ball is found at once. Then the promised pie.
       async (c) => {
         c.show("wiewiorka"); c.show("sarenka"); c.show("lisek");
+        const W = c.stage.puppets.wiewiorka, S = c.stage.puppets.sarenka, L = c.stage.puppets.lisek;
+        W.korzen.position.x = -5.0; L.korzen.position.x = -3.2; S.korzen.position.x = 4.9;     // three of them, the rug free between
         await c.ubierz("lisek", "czapka_zimowa");
-        await c.say("lisek", "line.d_witaj", { anim: "Rozgladanie" });
-        const owoce = await wRzedzie(c, [{ name: "jablko", tag: "j" }, { name: "jablko", tag: "j", size: 1.05 }, { name: "jablko", tag: "j", size: 0.7 }, { name: "gruszka", tag: "x" }, { name: "marchewka", tag: "x" }, { name: "grzyb", tag: "x" }]);
-        await c.say("sarenka", "line.d_najpierw");
-        await c.task({ targets: owoce, correct: owoce.filter((h) => h.tag === "j"), wrong: "line.d_nie_jablko", wszystkie: true });
+        const rzeczy = await naDywanie(c, [
+          { name: "klocek", tag: "zabawki" }, { name: "misiu", tag: "zabawki" }, { name: "pilka", tag: "zabawki" },
+          { name: "skarpetka", tag: "ubrania" }, { name: "but", tag: "ubrania" }, { name: "czapka_zimowa_2", ubranie: true, tag: "ubrania" }]);
+        await c.say("wiewiorka", "line.e_witaj", { anim: "Machanie" });
+        await c.ujecie("zblizenie", { na: "lisek" });
+        await c.emocja("lisek", "wykrzyknik", { anim: "Rozgladanie" });
+        await c.say("lisek", "line.e_balagan");
+        await c.say("lisek", "line.e_posprzatam", { anim: "Podskok" });
+        // the naive way: everything flies into one box, anyhow
+        await c.ujecie("ogolny");
+        const pudlo = await c.object("pudelko", { x: DYWAN.x, y: -1.75, size: 2.4 });
+        pudlo.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = 9; });          // under the things falling in
+        for (const h of tasuj(rzeczy)) { await h.moveTo(DYWAN.x + (Math.random() - 0.5) * 1.1, -1.5 + (Math.random() - 0.5) * 0.35, 0.3); h.mesh.rotation.z = (Math.random() - 0.5) * 2; }
+        await c.say("lisek", "line.e_gotowe", { anim: "Radosc" });
+        await c.ujecie("dwuujecie", { na: ["lisek", "sarenka"] });
+        await c.say("sarenka", "line.e_pilka", { anim: "Podskok" });
+        // where is the ball? somewhere in the jumble: Fox rummages, nothing comes out right
+        await c.ujecie("ogolny");
+        for (let i = 0; i < 3; i++) { c.shake(pudlo); await c.wait(0.35); }
+        await c.emocja("lisek", "pot", { anim: "Smutek" });
+        await c.say("lisek", "line.e_nie_ma");
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.emocja("wiewiorka", "zarowka", { anim: "Zgloszenie" });
+        await c.say("wiewiorka", "line.e_grupujmy");
+        // out of the box, into a row; then the two groups
+        await c.ujecie("ogolny");
+        for (const h of rzeczy) h.mesh.rotation.z = 0;
+        await doRzedu(c, rzeczy);
+        pudlo.remove();
+        const zones = await pojemniki(c, ["koszyk", "zabawki"], ["pudelko", "ubrania"], { xs: [-0.15, 2.55], w: 2.4, h: 2.3 });   // right of Fox
+        await c.say("wiewiorka", "line.e_zasada");
+        await c.sort({ items: rzeczy, zones, wrong: "line.e_pomylka" });
+        await c.say("sarenka", "line.e_porzadek", { anim: "Radosc" });
+        // now finding is easy: where to look for the ball?
+        await c.say("lisek", "line.e_gdzie_pilka");
+        const zabawki = zones[0];
+        await c.task({ targets: zones, correct: zabawki, wrong: "line.e_nie_tam" });
+        const pilka = zabawki.items.find((h) => h.name === "pilka");
+        if (pilka) { c.stage.bump(pilka, 0.35); await c.take("lisek", pilka); }                   // straight into his paw
+        await c.ujecie("zblizenie", { na: "lisek" });
+        await c.emocja("lisek", "radosc", { anim: "Radosc" });
+        await c.say("lisek", "line.e_jest");
+        await c.ujecie("ogolny");
+        if (pilka) await c.put("lisek", L.korzen.position.x + 1.3, -1.7);          // the paw is free again for the pie
         c.clear();
-        const items = await wRzedzie(c, [{ name: "kubek", tag: "kubki" }, { name: "kubek", tag: "kubki" }, { name: "talerz", tag: "talerze" }, { name: "talerz", tag: "talerze" }]);
-        const zones = await pojemniki(c, ["polka", "kubki"], ["pudelko", "talerze"], TRZY);
-        await c.say("wiewiorka", "line.d_naczynia");
-        await c.sort({ items, zones, wrong: "line.d_pomylka" });
-        c.clear();
-        // the pie
-        const ciasto = await c.object("szarlotka", { x: 2.3, y: -0.35, size: 1.7 });    // on the table, beside Fox
+        // the promised pie
+        const ciasto = await c.object("szarlotka", { x: 1.2, y: -1.55, size: 1.8 });   // on the rug: a picnic
         c.sfx("idea"); c.konfetti(ciasto, { ile: 90 });
         await c.say("sarenka", "line.d_szarlotka", { anim: "Radosc" });
         await c.emocja("lisek", "serce", { anim: "Radosc" });

@@ -231,6 +231,15 @@ one built on them (if the pro version does not work out, this section goes).
 - **A mini-game without maths now and then** (rock-paper-scissors to decide who starts, a quick "catch it"
   round, a race by stages): rhythm and stakes, a breather between the maths. A principle, written in the
   lesson's own code from the engine's parts, not a separate tool.
+- **For the child it is a story, and the story leads.** Every step is said and linked, never cut short: the
+  problem -> the goal said out loud ("we must find out who it is") -> the plan and WHY ("let's check what the gifts
+  have in common - maybe that helps us guess who left them") -> the action -> what it showed ("all in the basket -
+  they are all red!") -> what it means ("someone loves red") -> the next step and why ("the trail may lead us to
+  them"). Arriving somewhere is narrated too ("look, what a beautiful red oak... somebody lives here... oh, a red
+  door - this must be the place!"); a new character is greeted and asked before he explains himself; a task says
+  why it is needed ("I'd like to wear my red hat for the visit, but my things are in a mess"). Terse, hurried lines
+  that jump from one task to the next read as careless. Before recording, read the whole script in order, aloud, as
+  the child will hear it, and add every missing link.
 - **A game is taught before it is played.** Rock-paper-scissors: first the three signs, then each pair
   shown with what happens (the rock moves onto the scissors and they shake: "rock blunts scissors"), then
   "one, two, three, show!", then each player says what they showed ("I chose rock", "Squirrel chose paper"),

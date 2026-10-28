@@ -20,7 +20,8 @@ for an apple pie (paid out in stage 3).
    onto Squirrel; Deer has her fur (quadrupeds are never dressed). Then the trail, a quick game: countdown, and four
    times red and yellow leaves pop up - catch the red one; every catch is a few steps (a short pan) along the
    trail. It leads to the forest.
-3. **The forest edge.** A red door under a tree. Knock-knock: Fox comes out - it was him, he loves red, he wanted
+3. **The forest edge.** "Look, what a beautiful red oak!" - "Somebody lives here..." - "Oh! And it has a red door.
+   This must be the place!" Knock-knock: Fox comes out - it was him, he loves red, he wanted
    to be friends but was shy. Invited for the pie - but he cannot find his red hat in the mess: sort his things,
    hats into the basket, scarves into the box; point to the red hat; Fox puts it on. Off home.
 
@@ -30,8 +31,11 @@ A detective's training, five different mini-games: what fits this group (three r
 of two joins them); red and yellow leaves into two containers; catch the mushrooms popping up; the odd one out
 (three acorns and a chestnut); acorns and chestnuts into two containers.
 
-## Stage 3 - at home - the kitchen, with Fox
+## Stage 3 - at home - the children's room, with Fox
 
-The promised pie: first only the apples for it (point to all of them among other things), then tidying - cups on
-the shelf, plates into the box - and the pie is there (confetti). Fox is happy: new friends. "Play detectives with
-your parents: they hide three things that have something in common - guess what!"
+Fox's first visit; the pie is still baking. The room is a mess: things lie anyhow on the rug. Fox "tidies" -
+everything into one box. Deer wants to play ball while the pie bakes - where is it? Somewhere in the jumble: Fox
+rummages and cannot find it. Squirrel: group them - toys into the basket, clothes into the box; then finding is
+easy. The child sorts; "where should I look for the ball?" - the toys' basket - Fox finds it at once ("grouping is
+great!"). The pie is ready (baked while they tidied). "Tidy your room with your parents like this: toys in one
+box, clothes in another - you'll see how easy it is to find everything."

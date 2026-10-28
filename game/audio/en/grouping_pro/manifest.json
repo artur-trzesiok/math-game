@@ -25,14 +25,14 @@
   "text": "Oh no, the wind blew other things in. The gifts got all mixed up."
  },
  "line.a_grupuj": {
-  "hash": "c9a9b43bffc1",
+  "hash": "308a51c952c7",
   "who": "sarenka",
-  "text": "We'll group them. Grouping means putting together the things that belong together."
+  "text": "To check what the gifts have in common, we'll group everything. Grouping means putting together the things that belong together."
  },
  "line.a_zasada_jedzenie": {
-  "hash": "3c0abe47a47b",
+  "hash": "97b2d2bbd9f9",
   "who": "wiewiorka",
-  "text": "First rule: food into the bowl, everything else into the box."
+  "text": "Maybe all the gifts are food? Let's check: food into the bowl, everything else into the box."
  },
  "line.a_pomylka": {
   "hash": "20df56772ae9",
@@ -50,14 +50,14 @@
   "text": "Look where the gifts with the bows are."
  },
  "line.a_nie_ta": {
-  "hash": "b27a2c671bd0",
+  "hash": "e2a8c234568f",
   "who": "wiewiorka",
-  "text": "In both groups! That's not the rule. Let's try another one."
+  "text": "The gifts are in both groups. So it's not about food. Let's try another rule."
  },
  "line.a_zasada_kolor": {
-  "hash": "2a0b131a21dc",
+  "hash": "7603f21c5865",
   "who": "sarenka",
-  "text": "Second rule: red things into the basket, everything else into the box."
+  "text": "Or maybe it's about the colour? Red things into the basket, everything else into the box."
  },
  "line.a_wszystkie_czerwone": {
   "hash": "867d1dbce4ce",
@@ -65,9 +65,9 @@
   "text": "All the gifts with bows are in the basket. They're all red!"
  },
  "line.a_trop": {
-  "hash": "fbdc03cd8495",
+  "hash": "78024c695926",
   "who": "sarenka",
-  "text": "We have a clue! Someone really loves red."
+  "text": "We have a clue! Whoever leaves the gifts really loves red."
  },
  "line.a_slady": {
   "hash": "e011cf53fba9",
@@ -75,9 +75,9 @@
   "text": "Look, red leaves! Laid out like a trail!"
  },
  "line.a_idziemy": {
-  "hash": "d08d0b41a431",
+  "hash": "247d2cd168d6",
   "who": "sarenka",
-  "text": "Let's follow the trail."
+  "text": "Let's follow the trail. Maybe it will lead us to whoever leaves the gifts!"
  },
  "line.b_wieje": {
   "hash": "81adcb783fa9",
@@ -115,9 +115,9 @@
   "text": "And I have my warm fur."
  },
  "line.b_lapiemy": {
-  "hash": "cdd93de5c406",
+  "hash": "39fab93ef90a",
   "who": "wiewiorka",
-  "text": "The trail! On the way, let's catch only the red leaves. Get ready!"
+  "text": "Let's keep following the trail! The trail is made of red leaves, so we catch only the red ones. Get ready!"
  },
  "line.b_lap": {
   "hash": "ac54d981ff94",
@@ -135,14 +135,14 @@
   "text": "That one is yellow. We're looking for red ones."
  },
  "line.b_las": {
-  "hash": "91e8be5ca951",
+  "hash": "10a863f7fa4d",
   "who": "sarenka",
-  "text": "The trail leads to the forest!"
+  "text": "The trail leads into the forest! We're getting closer."
  },
  "line.c_drzwi": {
-  "hash": "56c4f375e509",
+  "hash": "a58eb8e31d2c",
   "who": "wiewiorka",
-  "text": "A red door! Somebody lives here."
+  "text": "Oh! And it has a red door. This must be the place!"
  },
  "line.c_puk": {
   "hash": "083e08f94a96",
@@ -150,9 +150,9 @@
   "text": "Knock, knock!"
  },
  "line.c_to_ja": {
-  "hash": "9cc7be949f08",
+  "hash": "2314f93d931d",
   "who": "lisek",
-  "text": "It was me who left the gifts. I really love red."
+  "text": "Yes, it's me. I really love red."
  },
  "line.c_czemu": {
   "hash": "17b377bb97a1",
@@ -170,14 +170,14 @@
   "text": "Come over to our home for apple pie!"
  },
  "line.c_balagan": {
-  "hash": "4b8a2ea58131",
+  "hash": "c3c99db3d0b9",
   "who": "lisek",
-  "text": "Hooray! But I can't find my red hat. My things are in a mess."
+  "text": "Hooray! I'd like to wear my red hat for the visit. But my things are in a mess and I can't find it."
  },
  "line.c_pogrupujmy": {
-  "hash": "b0d3b0880b03",
+  "hash": "20b5a5ea9a7b",
   "who": "wiewiorka",
-  "text": "We'll group them! Hats into the basket, scarves into the box."
+  "text": "We'll help! We'll group your things: hats into the basket, scarves into the box. Then it will be easy to find."
  },
  "line.c_pomylka": {
   "hash": "ac8216d4e8c8",
@@ -210,14 +210,14 @@
   "text": "That one isn't red."
  },
  "line.c_gotowy": {
-  "hash": "d3ec4b0de4ed",
+  "hash": "63c45e29eb61",
   "who": "lisek",
-  "text": "My hat! Let's go and have that pie!"
+  "text": "My hat! Thank you. Let's go and have that pie!"
  },
  "line.p_start": {
-  "hash": "2a1b5d5710b5",
+  "hash": "57769ad12e29",
   "who": "wiewiorka",
-  "text": "Now detective training! We collect stars."
+  "text": "Detectives need practice! Now detective training. We collect stars."
  },
  "line.p_wspolne": {
   "hash": "f579489201d0",
@@ -284,65 +284,20 @@
   "who": "sarenka",
   "text": "Acorns into the basket, chestnuts into the box."
  },
- "line.d_witaj": {
-  "hash": "df775d1b04de",
-  "who": "lisek",
-  "text": "It's so nice here! Where's the apple pie?"
- },
- "line.d_najpierw": {
-  "hash": "3580aeafabcf",
-  "who": "sarenka",
-  "text": "First we bake it. An apple pie needs apples. Point to all the apples."
- },
- "line.d_nie_jablko": {
-  "hash": "adff3c513716",
-  "who": "sarenka",
-  "text": "That's not an apple. Keep looking."
- },
- "line.d_nie_jablko.wiewiorka": {
-  "hash": "a2668caabbcc",
-  "who": "wiewiorka",
-  "text": "That's not an apple. Keep looking."
- },
- "line.d_nie_jablko.lisek": {
-  "hash": "1e2c7dbe5feb",
-  "who": "lisek",
-  "text": "That's not an apple. Keep looking."
- },
- "line.d_naczynia": {
-  "hash": "eb11d1b814f9",
-  "who": "wiewiorka",
-  "text": "Now let's tidy up: cups on the shelf, plates into the box."
- },
- "line.d_pomylka": {
-  "hash": "528a74566fbe",
-  "who": "wiewiorka",
-  "text": "That one doesn't belong in this group."
- },
- "line.d_pomylka.sarenka": {
-  "hash": "d3e65e700272",
-  "who": "sarenka",
-  "text": "That one doesn't belong in this group."
- },
- "line.d_pomylka.lisek": {
-  "hash": "ac8216d4e8c8",
-  "who": "lisek",
-  "text": "That one doesn't belong in this group."
- },
  "line.d_szarlotka": {
-  "hash": "f191d7541306",
+  "hash": "196bbd279ba1",
   "who": "sarenka",
-  "text": "Done! Here's the apple pie we promised!"
+  "text": "And here's the apple pie! It baked while we were tidying."
  },
  "line.d_pycha": {
-  "hash": "9534a91eedc5",
+  "hash": "9fbcf10b8b97",
   "who": "lisek",
-  "text": "Yummy! I have new friends."
+  "text": "Yummy! New friends and a tidy room. The best day!"
  },
  "line.d_rodzice": {
-  "hash": "eaa05ca2ab0b",
+  "hash": "797341bcba6c",
   "who": "wiewiorka",
-  "text": "Play detectives with your parents. Ask them to hide three things that have something in common. Guess what it is!"
+  "text": "Tidy your room with your parents just like we did: toys in one box, clothes in another. You'll see how easy it is to find everything!"
  },
  "line.d_pa": {
   "hash": "2e02cd774f91",
@@ -358,5 +313,110 @@
   "hash": "5d83b01fc61f",
   "who": "sarenka",
   "text": "Maybe that will help us guess who it is!"
+ },
+ "line.c_dab": {
+  "hash": "5024bf3b606a",
+  "who": "wiewiorka",
+  "text": "Look, what a beautiful red oak!"
+ },
+ "line.c_mieszka": {
+  "hash": "b30af1092121",
+  "who": "sarenka",
+  "text": "I think somebody lives here..."
+ },
+ "line.c_pytanie": {
+  "hash": "83a3e0fbdc37",
+  "who": "wiewiorka",
+  "text": "Fox! Is it you who leaves us the red gifts?"
+ },
+ "line.c_otwieraja": {
+  "hash": "08e5efb61001",
+  "who": "sarenka",
+  "text": "Shh... The door is opening!"
+ },
+ "line.c_dziekujemy": {
+  "hash": "d1f7a2ba1cbd",
+  "who": "wiewiorka",
+  "text": "You don't have to be shy. Thank you for the gifts! They were lovely."
+ },
+ "line.e_witaj": {
+  "hash": "5627392cab1f",
+  "who": "wiewiorka",
+  "text": "Welcome to our home, Fox! The apple pie is still baking."
+ },
+ "line.e_balagan": {
+  "hash": "8dbd756f380a",
+  "who": "lisek",
+  "text": "Oh my, what a mess! Everything is lying on the rug."
+ },
+ "line.e_posprzatam": {
+  "hash": "2883ab503d32",
+  "who": "lisek",
+  "text": "I'll tidy up! Everything into one box!"
+ },
+ "line.e_gotowe": {
+  "hash": "4dafb656fc0e",
+  "who": "lisek",
+  "text": "Done! All tidy!"
+ },
+ "line.e_pilka": {
+  "hash": "63740dec3f24",
+  "who": "sarenka",
+  "text": "Fox, let's play ball while the pie is baking! Where's the ball?"
+ },
+ "line.e_nie_ma": {
+  "hash": "78f77f5e2918",
+  "who": "lisek",
+  "text": "Somewhere in the box... But everything in there is mixed up. I can't find it!"
+ },
+ "line.e_grupujmy": {
+  "hash": "9ae34acf483a",
+  "who": "wiewiorka",
+  "text": "I know! Let's group them. Toys into the basket, clothes into the box. Then everything will be easy to find."
+ },
+ "line.e_zasada": {
+  "hash": "f8e825826892",
+  "who": "wiewiorka",
+  "text": "Drag the toys into the basket and the clothes into the box."
+ },
+ "line.e_pomylka": {
+  "hash": "528a74566fbe",
+  "who": "wiewiorka",
+  "text": "That one doesn't belong in this group."
+ },
+ "line.e_pomylka.sarenka": {
+  "hash": "d3e65e700272",
+  "who": "sarenka",
+  "text": "That one doesn't belong in this group."
+ },
+ "line.e_pomylka.lisek": {
+  "hash": "ac8216d4e8c8",
+  "who": "lisek",
+  "text": "That one doesn't belong in this group."
+ },
+ "line.e_porzadek": {
+  "hash": "5d9cb887514c",
+  "who": "sarenka",
+  "text": "Now that's real tidying!"
+ },
+ "line.e_gdzie_pilka": {
+  "hash": "0e7396cc7982",
+  "who": "lisek",
+  "text": "So where should I look for the ball? Point to it."
+ },
+ "line.e_nie_tam": {
+  "hash": "daec40d9242c",
+  "who": "lisek",
+  "text": "These are clothes. And a ball is a toy."
+ },
+ "line.e_nie_tam.sarenka": {
+  "hash": "b8e4315d8d99",
+  "who": "sarenka",
+  "text": "These are clothes. And a ball is a toy."
+ },
+ "line.e_jest": {
+  "hash": "fca77d7c194e",
+  "who": "lisek",
+  "text": "There it is! I found it straight away. Grouping is great!"
  }
 }

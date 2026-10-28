@@ -575,7 +575,7 @@ export async function pan(S, k, { d = 2.6, idz = [], cele = {} } = {}) {
 export const CZASTKI = ["deszcz", "snieg", "swietliki", "liscie", "pylek", "babelki"];
 function teksturaCzastki(rodzaj) {
   return canvasTex(64, 64, (x) => {
-    if (rodzaj === "deszcz") { const g = x.createLinearGradient(0, 0, 0, 64); g.addColorStop(0, "rgba(255,255,255,0)"); g.addColorStop(1, "rgba(255,255,255,0.95)"); x.strokeStyle = g; x.lineWidth = 5; x.lineCap = "round"; x.beginPath(); x.moveTo(36, 2); x.lineTo(28, 62); x.stroke(); }
+    if (rodzaj === "deszcz") { const g = x.createLinearGradient(0, 0, 0, 64); g.addColorStop(0, "rgba(255,255,255,0)"); g.addColorStop(1, "rgba(255,255,255,0.95)"); x.strokeStyle = g; x.lineWidth = 9; x.lineCap = "round"; x.beginPath(); x.moveTo(36, 2); x.lineTo(28, 62); x.stroke(); }
     else if (rodzaj === "liscie") { x.fillStyle = "#fff"; x.beginPath(); x.moveTo(32, 4); x.quadraticCurveTo(62, 32, 32, 60); x.quadraticCurveTo(2, 32, 32, 4); x.fill(); }
     else if (rodzaj === "babelki") { x.strokeStyle = "rgba(255,255,255,0.95)"; x.lineWidth = 4; x.beginPath(); x.arc(32, 32, 26, 0, 7); x.stroke(); x.fillStyle = "rgba(255,255,255,0.8)"; x.beginPath(); x.arc(23, 22, 6, 0, 7); x.fill(); }
     else { const g = x.createRadialGradient(32, 32, 0, 32, 32, 31); const glow = rodzaj === "swietliki"; g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(glow ? 0.18 : 0.5, glow ? "rgba(255,255,230,0.9)" : "rgba(255,255,255,0.85)"); g.addColorStop(1, "rgba(255,255,255,0)"); x.fillStyle = g; x.fillRect(0, 0, 64, 64); }
@@ -586,17 +586,17 @@ export function czastki(S, rodzaj, { gestosc = 1, wiatr = 0 } = {}) {
   if (S.warstwaCzastek) { S.scene.remove(S.warstwaCzastek.grupa); S.warstwaCzastek.grupa.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } }); S.warstwaCzastek = null; }
   if (!rodzaj || !CZASTKI.includes(rodzaj)) return null;
   const d = S.design(0), W = d.w * 1.1, H = d.h * 1.1, grupa = new THREE.Group(); S.scene.add(grupa);
-  const n = Math.round({ deszcz: 280, snieg: 110, swietliki: 26, liscie: 16, pylek: 55, babelki: 18 }[rodzaj] * gestosc);
+  const n = Math.round({ deszcz: 360, snieg: 110, swietliki: 26, liscie: 60, pylek: 55, babelki: 18 }[rodzaj] * gestosc);
   const tex = teksturaCzastki(rodzaj), lista = [];
   for (let i = 0; i < n; i++) {
     const kol = KOLOR_CZASTKI[rodzaj], kolor = Array.isArray(kol) ? kol[i % kol.length] : kol;
-    const r = { deszcz: [0.1, 0.75], snieg: [los(0.06, 0.16), 0], swietliki: [los(0.3, 0.55), 0], liscie: [los(0.22, 0.36), 0], pylek: [los(0.05, 0.12), 0], babelki: [los(0.18, 0.4), 0] }[rodzaj];
+    const r = { deszcz: [0.16, 0.95], snieg: [los(0.06, 0.16), 0], swietliki: [los(0.3, 0.55), 0], liscie: [los(0.3, 0.5), 0], pylek: [los(0.05, 0.12), 0], babelki: [los(0.18, 0.4), 0] }[rodzaj];
     const m = new THREE.Mesh(new THREE.PlaneGeometry(r[0], r[1] || r[0]), new THREE.MeshBasicMaterial({ map: tex, color: kolor, transparent: true, depthTest: false, depthWrite: false, blending: rodzaj === "swietliki" || rodzaj === "pylek" ? THREE.AdditiveBlending : THREE.NormalBlending }));
     m.renderOrder = 44; m.frustumCulled = false;
     // nearer particles (z) are bigger and faster: a little depth
     const blisko = Math.random();
     m.position.set(los(-W / 2, W / 2), los(-H / 2, H / 2), 0.8 + blisko * 0.6);
-    const alfa = { deszcz: los(0.55, 0.85), snieg: los(0.55, 0.85), swietliki: los(0.5, 0.9), liscie: los(0.75, 0.95), pylek: los(0.25, 0.5), babelki: los(0.35, 0.6) }[rodzaj];
+    const alfa = { deszcz: los(0.7, 0.95), snieg: los(0.55, 0.85), swietliki: los(0.5, 0.9), liscie: los(0.75, 0.95), pylek: los(0.25, 0.5), babelki: los(0.35, 0.6) }[rodzaj];
     m.userData = { faza: Math.random() * 6.28, alfa, blisko, wx: los(0.6, 1.4) };
     m.material.opacity = alfa; grupa.add(m); lista.push(m);
   }

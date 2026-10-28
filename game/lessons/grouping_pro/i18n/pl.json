@@ -21,11 +21,11 @@
   },
   "line.a_grupuj": {
     "who": "sarenka",
-    "text": "Pogrupujemy je. Grupować to znaczy: rzeczy, które do siebie pasują, kładziemy razem."
+    "text": "Żeby sprawdzić, co prezenty mają wspólnego, pogrupujemy wszystko. Grupować to znaczy: rzeczy, które do siebie pasują, kładziemy razem."
   },
   "line.a_zasada_jedzenie": {
     "who": "wiewiorka",
-    "text": "Pierwsza zasada: jedzenie do miski, reszta do pudełka."
+    "text": "Może wszystkie prezenty są do jedzenia? Sprawdźmy: jedzenie do miski, reszta do pudełka."
   },
   "line.a_pomylka": {
     "who": "sarenka",
@@ -40,11 +40,11 @@
   },
   "line.a_nie_ta": {
     "who": "wiewiorka",
-    "text": "W obu grupach! To nie ta zasada. Spróbujmy innej."
+    "text": "Prezenty są w obu grupach. Czyli nie chodzi o jedzenie. Spróbujmy innej zasady."
   },
   "line.a_zasada_kolor": {
     "who": "sarenka",
-    "text": "Druga zasada: czerwone do koszyka, reszta do pudełka."
+    "text": "A może chodzi o kolor? Czerwone do koszyka, reszta do pudełka."
   },
   "line.a_wszystkie_czerwone": {
     "who": "wiewiorka",
@@ -52,7 +52,7 @@
   },
   "line.a_trop": {
     "who": "sarenka",
-    "text": "Mamy trop! Ktoś bardzo lubi czerwony kolor."
+    "text": "Mamy trop! Ten, kto zostawia prezenty, bardzo lubi czerwony kolor."
   },
   "line.a_slady": {
     "who": "wiewiorka",
@@ -60,7 +60,7 @@
   },
   "line.a_idziemy": {
     "who": "sarenka",
-    "text": "Chodźmy po śladach."
+    "text": "Chodźmy po śladach. Może zaprowadzą nas do tego, kto zostawia prezenty!"
   },
   "line.b_wieje": {
     "who": "wiewiorka",
@@ -91,7 +91,7 @@
   },
   "line.b_lapiemy": {
     "who": "wiewiorka",
-    "text": "Ślady! Łapmy po drodze tylko czerwone liście. Uwaga!"
+    "text": "Idziemy dalej po śladach! Ślady są z czerwonych liści, więc łapiemy tylko czerwone. Uwaga!"
   },
   "line.b_lap": {
     "who": "wiewiorka",
@@ -106,11 +106,11 @@
   },
   "line.b_las": {
     "who": "sarenka",
-    "text": "Ślady prowadzą do lasu!"
+    "text": "Ślady prowadzą do lasu! Jesteśmy coraz bliżej."
   },
   "line.c_drzwi": {
     "who": "wiewiorka",
-    "text": "Czerwone drzwi! Ktoś tu mieszka."
+    "text": "O! I ma czerwone drzwi. To chyba tutaj!"
   },
   "line.c_puk": {
     "who": "sarenka",
@@ -118,7 +118,7 @@
   },
   "line.c_to_ja": {
     "who": "lisek",
-    "text": "To ja zostawiałem prezenty. Bardzo lubię czerwony."
+    "text": "Tak, to ja. Bardzo lubię czerwony kolor."
   },
   "line.c_czemu": {
     "who": "wiewiorka",
@@ -134,11 +134,11 @@
   },
   "line.c_balagan": {
     "who": "lisek",
-    "text": "Hurra! Tylko nie mogę znaleźć czerwonej czapki. Mam bałagan."
+    "text": "Hurra! Na wizytę chciałbym włożyć moją czerwoną czapkę. Ale mam bałagan i nie mogę jej znaleźć."
   },
   "line.c_pogrupujmy": {
     "who": "wiewiorka",
-    "text": "Pogrupujemy! Czapki do koszyka, szaliki do pudełka."
+    "text": "Pomożemy! Pogrupujemy twoje rzeczy: czapki do koszyka, szaliki do pudełka. Wtedy łatwo ją znajdziemy."
   },
   "line.c_pomylka": {
     "who": "lisek",
@@ -161,11 +161,11 @@
   },
   "line.c_gotowy": {
     "who": "lisek",
-    "text": "Moja czapka! Idziemy na szarlotkę!"
+    "text": "Moja czapka! Dziękuję. Idziemy na szarlotkę!"
   },
   "line.p_start": {
     "who": "wiewiorka",
-    "text": "Teraz trening detektywa! Zbieramy gwiazdki."
+    "text": "Detektywi muszą ćwiczyć! Teraz trening detektywa. Zbieramy gwiazdki."
   },
   "line.p_wspolne": {
     "who": "sarenka",
@@ -215,45 +215,17 @@
     "who": "sarenka",
     "text": "Żołędzie do koszyka, kasztany do pudełka."
   },
-  "line.d_witaj": {
-    "who": "lisek",
-    "text": "Ale tu ładnie! A gdzie szarlotka?"
-  },
-  "line.d_najpierw": {
-    "who": "sarenka",
-    "text": "Najpierw ją upieczemy. Do szarlotki potrzebne są jabłka. Wskaż wszystkie jabłka."
-  },
-  "line.d_nie_jablko": {
-    "who": "sarenka",
-    "text": "To nie jabłko. Szukaj dalej.",
-    "speakers": [
-      "wiewiorka",
-      "lisek"
-    ]
-  },
-  "line.d_naczynia": {
-    "who": "wiewiorka",
-    "text": "A teraz porządek: kubki na półkę, talerze do pudełka."
-  },
-  "line.d_pomylka": {
-    "who": "wiewiorka",
-    "text": "To nie pasuje do tej grupy.",
-    "speakers": [
-      "sarenka",
-      "lisek"
-    ]
-  },
   "line.d_szarlotka": {
     "who": "sarenka",
-    "text": "Gotowe! Oto obiecana szarlotka!"
+    "text": "A oto i szarlotka! Upiekła się, kiedy sprzątaliśmy."
   },
   "line.d_pycha": {
     "who": "lisek",
-    "text": "Pycha! Mam nowych przyjaciół."
+    "text": "Pycha! Mam nowych przyjaciół i porządek. Najlepszy dzień!"
   },
   "line.d_rodzice": {
     "who": "wiewiorka",
-    "text": "Pobawcie się w detektywów z rodzicami. Niech schowają trzy rzeczy, które mają coś wspólnego. Zgadnij, co to jest!"
+    "text": "Posprzątaj z rodzicami swój pokój tak jak my: zabawki do jednego pudła, ubrania do drugiego. Zobaczysz, jak łatwo potem wszystko znaleźć!"
   },
   "line.d_pa": {
     "who": "sarenka",
@@ -266,5 +238,84 @@
   "line.a_pomoze": {
     "who": "sarenka",
     "text": "Może to nam pomoże odgadnąć, kto to jest!"
+  },
+  "line.c_dab": {
+    "who": "wiewiorka",
+    "text": "Zobacz, jaki piękny czerwony dąb!"
+  },
+  "line.c_mieszka": {
+    "who": "sarenka",
+    "text": "Ktoś tu chyba mieszka..."
+  },
+  "line.c_pytanie": {
+    "who": "wiewiorka",
+    "text": "Lisku! Czy to ty zostawiasz nam czerwone prezenty?"
+  },
+  "line.c_otwieraja": {
+    "who": "sarenka",
+    "text": "Ciii... Drzwi się otwierają!"
+  },
+  "line.c_dziekujemy": {
+    "who": "wiewiorka",
+    "text": "Nie musisz się wstydzić. Dziękujemy za prezenty! Były piękne."
+  },
+  "line.e_witaj": {
+    "who": "wiewiorka",
+    "text": "Witaj w naszym domu, lisku! Szarlotka jeszcze się piecze."
+  },
+  "line.e_balagan": {
+    "who": "lisek",
+    "text": "Ojej, ale tu bałagan! Wszystko leży na dywanie."
+  },
+  "line.e_posprzatam": {
+    "who": "lisek",
+    "text": "Ja posprzątam! Wszystko do jednego pudła!"
+  },
+  "line.e_gotowe": {
+    "who": "lisek",
+    "text": "Gotowe! Czysto!"
+  },
+  "line.e_pilka": {
+    "who": "sarenka",
+    "text": "Lisku, zagrajmy w piłkę, zanim upiecze się szarlotka! Gdzie jest piłka?"
+  },
+  "line.e_nie_ma": {
+    "who": "lisek",
+    "text": "Gdzieś w pudle... Ale tam wszystko jest pomieszane. Nie mogę jej znaleźć!"
+  },
+  "line.e_grupujmy": {
+    "who": "wiewiorka",
+    "text": "Wiem! Pogrupujmy. Zabawki do koszyka, ubrania do pudełka. Wtedy wszystko łatwo znajdziemy."
+  },
+  "line.e_zasada": {
+    "who": "wiewiorka",
+    "text": "Przeciągnij zabawki do koszyka, a ubrania do pudełka."
+  },
+  "line.e_pomylka": {
+    "who": "wiewiorka",
+    "text": "To nie pasuje do tej grupy.",
+    "speakers": [
+      "sarenka",
+      "lisek"
+    ]
+  },
+  "line.e_porzadek": {
+    "who": "sarenka",
+    "text": "Teraz to jest prawdziwy porządek!"
+  },
+  "line.e_gdzie_pilka": {
+    "who": "lisek",
+    "text": "To gdzie mam szukać piłki? Wskaż."
+  },
+  "line.e_nie_tam": {
+    "who": "lisek",
+    "text": "Tu są ubrania. A piłka to zabawka.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.e_jest": {
+    "who": "lisek",
+    "text": "Jest! Od razu ją znalazłem. Grupowanie jest super!"
   }
 }
