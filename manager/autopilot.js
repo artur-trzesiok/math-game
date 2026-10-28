@@ -38,6 +38,11 @@ export async function run(maxSteps = 20, prefix = "a") {
             const b = new THREE.Box3().setFromObject(S.puppets[who].korzen);
             S.upusc(h, (b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2); await sleep(900);
           }
+        } else if (ds.rozdaj) {
+          kind = "rozdaj";                                          // give one to each: drop on the next one without
+          for (const h of ds.items.slice()) { const o = ds.rozdaj.wolni()[0]; if (!o) break; const [x, y] = o.pozycja(); S.upusc(h, x, y); await sleep(900); }
+        } else if (ds.przeloz) {
+          kind = "przeloz"; S.upusc(ds.items[0], ds.przeloz.x, ds.przeloz.y);
         } else if (ds.sym) {
           kind = "sym"; const k = ds.items.find((k) => k.ok); S.upusc(k, ds.sym.x + 0.3, ds.sym.y);
         }
@@ -64,6 +69,7 @@ export async function run(maxSteps = 20, prefix = "a") {
     const S = gra.stage, targets = S.targets.slice(), last = (gra.dziennik.slice(-1)[0] || [])[0] || "";
     await snap(`${prefix}${step}`);
     let pick = 0;
+    const dobry = targets.findIndex((t) => t.dobry);                      // a lesson may mark the right answer for tests
     const sizes = targets.map((t) => t.korzen ? NaN : (t.base ?? 1));
     const okSizes = sizes.filter((v) => !isNaN(v));
     const ileObiektow = () => S.objects.filter((o) => o.kind === "object" && o.mesh.visible !== false).length;
@@ -91,6 +97,7 @@ export async function run(maxSteps = 20, prefix = "a") {
     else if (/c1_which_line|c1_wrong_line/.test(last)) { const ls = targets.filter((t) => t.kind === "line"); pick = targets.indexOf(ls.reduce((a, b) => (b.y > a.y ? b : a))); }
     else if (/c1_pick|c1_wrong_pear/.test(last)) pick = sizes.indexOf(Math.max(...okSizes));
     else if (/e_gdzie_pilka|e_nie_tam/.test(last)) pick = targets.findIndex((t) => t.name === "koszyk");
+    if (dobry >= 0) pick = dobry;
     else if (/b_co_przyda|b_nie_grzeje/.test(last)) pick = targets.findIndex((t) => t.rzecz || /ubrania/.test(t.name || ""));   // grouping_pro
     else if (/b_lap|b_nie_ten|b_lapiemy/.test(last)) pick = targets.findIndex((t) => t.name === "lisc_czerwony");
     else if (/c_ktora|c_nie_ta/.test(last)) pick = targets.findIndex((t) => t.kolor === "czerwona");

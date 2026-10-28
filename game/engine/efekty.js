@@ -314,6 +314,76 @@ export async function odliczanie(S, { od = 3, styl = "cyfry" } = {}) {
   N.scena.remove(g);
 }
 
+// ====================================================================== night and light
+// noc(S, {ciemnosc}): the whole picture darkens (the characters too), and around every light (swiatlo) the dark
+// opens in a soft, gently flickering circle with a warm glow - a lantern, a firefly, the moon, a night lamp. A light
+// follows its thing (a sticker, a character, a point). The night ends with the scenery, or with noc(S, {ciemnosc: 0}).
+const MAX_SWIATEL = 16;
+function poswiataTex() {
+  return canvasTex(256, 256, (x) => { const g = x.createRadialGradient(128, 128, 0, 128, 128, 128); g.addColorStop(0, "rgba(255,255,255,0.9)"); g.addColorStop(0.35, "rgba(255,255,255,0.35)"); g.addColorStop(1, "rgba(255,255,255,0)"); x.fillStyle = g; x.fillRect(0, 0, 256, 256); });
+}
+export async function noc(S, { ciemnosc = 0.72, kolor = "#0a1430", d = 1.2 } = {}) {
+  if (!S.noc) {
+    if (!ciemnosc) return null;
+    const mat = new THREE.ShaderMaterial({
+      transparent: true, depthTest: false, depthWrite: false,
+      uniforms: { kolor: { value: new THREE.Color(kolor) }, cieply: { value: new THREE.Color("#ffb35a") }, ciemnosc: { value: 0 },
+        sw: { value: Array.from({ length: MAX_SWIATEL }, () => new THREE.Vector3()) }, moc: { value: new Array(MAX_SWIATEL).fill(0) }, n: { value: 0 } },
+      vertexShader: "varying vec2 vP; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vP = w.xy; gl_Position = projectionMatrix * viewMatrix * w; }",
+      fragmentShader: `uniform vec3 kolor; uniform vec3 cieply; uniform float ciemnosc; uniform vec3 sw[${MAX_SWIATEL}]; uniform float moc[${MAX_SWIATEL}]; uniform int n; varying vec2 vP;
+        void main(){ float l = 0.0; for (int i = 0; i < ${MAX_SWIATEL}; i++) { if (i >= n) break; float d = length(vP - sw[i].xy); l = max(l, moc[i] * (1.0 - smoothstep(sw[i].z * 0.2, sw[i].z, d))); }
+          gl_FragColor = vec4(mix(kolor, cieply, l * 0.4), ciemnosc * (1.0 - l)); }`,
+    });
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), mat); m.renderOrder = 35; m.frustumCulled = false; m.position.z = 0.95;
+    S.scene.add(m);
+    S.noc = { m, mat, swiatla: S.noc?.swiatla || [], ciemnosc: 0 };
+  }
+  const N = S.noc, od = N.mat.uniforms.ciemnosc.value;
+  await S.tween(FAST ? 0.05 : d, (q) => { N.mat.uniforms.ciemnosc.value = od + (ciemnosc - od) * q; });
+  if (!ciemnosc) koniecNocy(S);
+  return N;
+}
+export function koniecNocy(S) {
+  const N = S.noc; if (!N) return;
+  S.scene.remove(N.m); N.m.geometry.dispose(); N.mat.dispose();
+  for (const s of N.swiatla) s.poswiata && S.scene.remove(s.poswiata);
+  S.noc = null;
+}
+export function swiatlo(S, cel, { r = 1.4, moc = 1, migotanie = 0.12, kolor = "#ffd27a", poswiata = true, dy = 0 } = {}) {
+  if (!S.noc) S.noc = { swiatla: [], m: null, mat: null };              // registered before the night: shows when it falls
+  const s = { cel, r, moc, migotanie, dy, faza: Math.random() * 10, zgasza: false, poswiata: null };
+  if (poswiata) {
+    if (!S.texPoswiaty) S.texPoswiaty = poswiataTex();
+    const p = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: S.texPoswiaty, color: kolor, transparent: true, opacity: 0, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending }));
+    p.renderOrder = 36; p.frustumCulled = false; p.position.z = 0.96; S.scene.add(p); s.poswiata = p;
+  }
+  S.noc.swiatla.push(s);
+  return {
+    zgas: async (d = 0.4) => { const m0 = s.moc; await S.tween(FAST ? 0.05 : d, (q) => { s.moc = m0 * (1 - q); }); usun(); },
+    ustaw: (o) => Object.assign(s, o),
+  };
+  function usun() { const L = S.noc?.swiatla; if (L) L.splice(L.indexOf(s), 1); if (s.poswiata) { S.scene.remove(s.poswiata); s.poswiata.material.dispose(); } }
+}
+export function ruszNoc(S, t) {
+  const N = S.noc; if (!N || !N.m) return;
+  const kam = S.camera, v = S.visible(0);
+  N.m.position.x = kam.position.x; N.m.position.y = kam.position.y; N.m.scale.set(v.w / kam.zoom * 1.3, v.h / kam.zoom * 1.3, 1);
+  const s0 = t / 1000, ile = Math.min(MAX_SWIATEL, N.swiatla.length);
+  const p = new THREE.Vector3();
+  for (let i = 0; i < ile; i++) {
+    const s = N.swiatla[i], c = s.cel;
+    if (Array.isArray(c)) p.set(c[0], c[1], 0);
+    else if (c?.korzen) { c.korzen.updateMatrixWorld(true); const b = new THREE.Box3().setFromObject(c.korzen); p.set((b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2, 0); }
+    else if (c?.mesh) c.mesh.getWorldPosition(p);
+    p.y += s.dy;
+    const migot = 1 - s.migotanie * (0.5 + 0.5 * Math.sin(s0 * 6.3 + s.faza) * Math.sin(s0 * 2.1 + s.faza * 1.7));
+    const widac = c?.mesh ? c.mesh.visible !== false && c.mesh.parent !== null : true;
+    N.mat.uniforms.sw.value[i].set(p.x, p.y, s.r); N.mat.uniforms.moc.value[i] = widac ? s.moc * migot : 0;
+    if (s.poswiata) { s.poswiata.position.x = p.x; s.poswiata.position.y = p.y; s.poswiata.scale.setScalar(s.r * 1.6); s.poswiata.material.opacity = widac ? 0.32 * s.moc * migot * Math.min(1, N.mat.uniforms.ciemnosc.value * 1.6) : 0; }
+  }
+  N.mat.uniforms.n.value = ile;
+}
+
 // ====================================================================== comic effects
 // speed lines: thin white wedges from the screen's edges toward its middle, a burst when the camera jumps in close
 export async function linieSzybkosci(S, { d = 0.5, ile = 36 } = {}) {
@@ -639,31 +709,32 @@ export async function pan(S, k, { d = 2.6, idz = [], cele = {} } = {}) {
 // Weather and light in the air: rain, snow, fireflies (floating, gently pulsing lights - a forest morning),
 // falling leaves, dust in the light, bubbles. A layer in front of the scene but faint, so it never hides a task;
 // it belongs to the place: a background change ends it (call again after `go`). `rodzaj` null stops it.
-export const CZASTKI = ["deszcz", "snieg", "swietliki", "liscie", "pylek", "babelki"];
+export const CZASTKI = ["deszcz", "snieg", "swietliki", "liscie", "pylek", "babelki", "piorka"];
 function teksturaCzastki(rodzaj) {
   return canvasTex(64, 64, (x) => {
     if (rodzaj === "deszcz") { const g = x.createLinearGradient(0, 0, 0, 64); g.addColorStop(0, "rgba(255,255,255,0)"); g.addColorStop(1, "rgba(255,255,255,0.95)"); x.strokeStyle = g; x.lineWidth = 9; x.lineCap = "round"; x.beginPath(); x.moveTo(36, 2); x.lineTo(28, 62); x.stroke(); }
     else if (rodzaj === "liscie") { x.fillStyle = "#fff"; x.beginPath(); x.moveTo(32, 4); x.quadraticCurveTo(62, 32, 32, 60); x.quadraticCurveTo(2, 32, 32, 4); x.fill(); }
+    else if (rodzaj === "piorka") { x.fillStyle = "#fff"; x.beginPath(); x.ellipse(32, 32, 9, 28, 0.5, 0, 7); x.fill(); x.strokeStyle = "rgba(200,200,210,0.9)"; x.lineWidth = 2; x.beginPath(); x.moveTo(20, 56); x.lineTo(44, 8); x.stroke(); }
     else if (rodzaj === "babelki") { x.strokeStyle = "rgba(255,255,255,0.95)"; x.lineWidth = 4; x.beginPath(); x.arc(32, 32, 26, 0, 7); x.stroke(); x.fillStyle = "rgba(255,255,255,0.8)"; x.beginPath(); x.arc(23, 22, 6, 0, 7); x.fill(); }
     else { const g = x.createRadialGradient(32, 32, 0, 32, 32, 31); const glow = rodzaj === "swietliki"; g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(glow ? 0.18 : 0.5, glow ? "rgba(255,255,230,0.9)" : "rgba(255,255,255,0.85)"); g.addColorStop(1, "rgba(255,255,255,0)"); x.fillStyle = g; x.fillRect(0, 0, 64, 64); }
   });
 }
-const KOLOR_CZASTKI = { deszcz: "#e6f1ff", snieg: "#ffffff", swietliki: "#fff1a8", liscie: ["#e8a23a", "#d9682b", "#9cc24a", "#c9462c"], pylek: "#fff6d8", babelki: "#e8f7ff" };
+const KOLOR_CZASTKI = { piorka: "#ffffff", deszcz: "#e6f1ff", snieg: "#ffffff", swietliki: "#fff1a8", liscie: ["#e8a23a", "#d9682b", "#9cc24a", "#c9462c"], pylek: "#fff6d8", babelki: "#e8f7ff" };
 export function czastki(S, rodzaj, { gestosc = 1, wiatr = 0 } = {}) {
   if (S.warstwaCzastek) { S.scene.remove(S.warstwaCzastek.grupa); S.warstwaCzastek.grupa.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } }); S.warstwaCzastek = null; }
   if (!rodzaj || !CZASTKI.includes(rodzaj)) return null;
   const d = S.design(0), W = d.w * 1.1, H = d.h * 1.1, grupa = new THREE.Group(); S.scene.add(grupa);
-  const n = Math.round({ deszcz: 360, snieg: 110, swietliki: 26, liscie: 60, pylek: 55, babelki: 18 }[rodzaj] * gestosc);
+  const n = Math.round({ deszcz: 360, snieg: 110, swietliki: 26, liscie: 60, piorka: 45, pylek: 55, babelki: 18 }[rodzaj] * gestosc);
   const tex = teksturaCzastki(rodzaj), lista = [];
   for (let i = 0; i < n; i++) {
     const kol = KOLOR_CZASTKI[rodzaj], kolor = Array.isArray(kol) ? kol[i % kol.length] : kol;
-    const r = { deszcz: [0.16, 0.95], snieg: [los(0.06, 0.16), 0], swietliki: [los(0.3, 0.55), 0], liscie: [los(0.3, 0.5), 0], pylek: [los(0.05, 0.12), 0], babelki: [los(0.18, 0.4), 0] }[rodzaj];
+    const r = { deszcz: [0.16, 0.95], snieg: [los(0.06, 0.16), 0], swietliki: [los(0.3, 0.55), 0], liscie: [los(0.3, 0.5), 0], piorka: [los(0.22, 0.36), 0], pylek: [los(0.05, 0.12), 0], babelki: [los(0.18, 0.4), 0] }[rodzaj];
     const m = new THREE.Mesh(new THREE.PlaneGeometry(r[0], r[1] || r[0]), new THREE.MeshBasicMaterial({ map: tex, color: kolor, transparent: true, depthTest: false, depthWrite: false, blending: rodzaj === "swietliki" || rodzaj === "pylek" ? THREE.AdditiveBlending : THREE.NormalBlending }));
     m.renderOrder = 44; m.frustumCulled = false;
     // nearer particles (z) are bigger and faster: a little depth
     const blisko = Math.random();
     m.position.set(los(-W / 2, W / 2), los(-H / 2, H / 2), 0.8 + blisko * 0.6);
-    const alfa = { deszcz: los(0.7, 0.95), snieg: los(0.55, 0.85), swietliki: los(0.5, 0.9), liscie: los(0.75, 0.95), pylek: los(0.25, 0.5), babelki: los(0.35, 0.6) }[rodzaj];
+    const alfa = { piorka: los(0.75, 0.95), deszcz: los(0.7, 0.95), snieg: los(0.55, 0.85), swietliki: los(0.5, 0.9), liscie: los(0.75, 0.95), pylek: los(0.25, 0.5), babelki: los(0.35, 0.6) }[rodzaj];
     m.userData = { faza: Math.random() * 6.28, alfa, blisko, wx: los(0.6, 1.4) };
     m.material.opacity = alfa; grupa.add(m); lista.push(m);
   }
@@ -688,6 +759,7 @@ export function ruszCzastki(S, dt, t) {
         m.material.opacity = u.alfa * (0.35 + 0.65 * Math.pow(0.5 + 0.5 * Math.sin(s * 1.3 * u.wx + u.faza), 2)); break;
       case "liscie": p.y -= 0.6 * k * dt; p.x += (Math.sin(s * 1.1 * u.wx + u.faza) * 0.6 + C.wiatr + 0.15) * dt; m.rotation.z = Math.sin(s * 1.6 * u.wx + u.faza) * 1.1; m.scale.x = Math.cos(s * 2 * u.wx + u.faza); break;
       case "pylek": p.x += (Math.sin(s * 0.2 * u.wx + u.faza) * 0.06 + C.wiatr * 0.1) * dt; p.y += Math.sin(s * 0.15 * u.wx + u.faza) * 0.05 * dt; m.material.opacity = u.alfa * (0.6 + 0.4 * Math.sin(s * 0.8 + u.faza)); break;
+      case "piorka": p.y -= 0.35 * k * dt; p.x += (Math.sin(s * 0.9 * u.wx + u.faza) * 0.5 + C.wiatr) * dt; m.rotation.z = Math.sin(s * 1.3 * u.wx + u.faza) * 0.9; break;
       case "babelki": p.y += 0.45 * k * dt; p.x += Math.sin(s * 1.2 * u.wx + u.faza) * 0.25 * dt; break;
     }
     if (p.y < -C.H / 2) p.y += C.H; if (p.y > C.H / 2) p.y -= C.H;

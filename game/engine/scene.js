@@ -31,7 +31,7 @@ const FRESH = { cache: "no-store" };
 // one texture per file for the whole game: loaded (and sent to the GPU) once, shared by every sticker of it
 const loader = new THREE.TextureLoader(), TEKSTURY = new Map();
 export function texture(url) {
-  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, bad) => loader.load(v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, (e) => { TEKSTURY.delete(url); bad(e); })));
+  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, bad) => loader.load(url.startsWith("data:") ? url : v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, (e) => { TEKSTURY.delete(url); bad(e); })));
   return TEKSTURY.get(url);
 }
 const easeInOut = (s) => s * s * (3 - 2 * s);
@@ -113,7 +113,7 @@ export class Stage {
     const dt0 = Math.min(0.05, (t - this.last) / 1000); this.last = t; this.frame++;
     if (this.pauza) { this.rysuj(); return; }                               // paused: the picture stands still
     const dt = dt0;
-    E.ruszOtoczenie(this, dt, t); E.ruszNakladke(this, dt); E.ruszCzastki(this, dt, t);
+    E.ruszOtoczenie(this, dt, t); E.ruszNakladke(this, dt); E.ruszCzastki(this, dt, t); E.ruszNoc(this, t);
     for (const d of this.dymki) d.za();
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) {
@@ -186,7 +186,7 @@ export class Stage {
     if (this.bgName === name) return false;                                // same scenery: leave it as it is
     this.bgName = name;
     for (const m of this.bg) this.scene.remove(m);
-    this.otoczenie = []; this.panorama = null; E.czastki(this, null);          // weather belongs to the place
+    this.otoczenie = []; this.panorama = null; E.czastki(this, null); E.koniecNocy(this);   // weather and night belong to the place
     if (typeof name === "object") { await E.plansza(this, name); this.bgName = name.id || this.bgName; return true; }   // an insert on a plain colour
     const t = await this.tlo(name);
     for (const m of t.meshes) this.scene.add(m);
@@ -348,7 +348,8 @@ export class Stage {
 
   // ------------------------------------------------------------------ objects
   // a sticker: the icon with its baked white die-cut outline, so a green pear reads on green grass
-  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = false, z = 0.4, label = null } = {}) {
+  // obraz: a picture of its own (a data: URL made in the page, e.g. the friends' heads) instead of objects/<name>.webp
+  async object(name, { x = 0, y = 1.2, size = 1.1, sticker = false, z = 0.4, label = null, obraz = null } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, z);
     if (sticker) {
       const c = document.createElement("canvas"); c.width = c.height = 512; const ctx = c.getContext("2d");
@@ -357,7 +358,7 @@ export class Stage {
       const m = new THREE.Mesh(new THREE.PlaneGeometry(1.18, 1.18), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false }));
       m.position.z = -0.01; g.add(m);
     }
-    const mapa = await texture(`/game/assets/objects/${name}.webp`), iw = mapa.image.width, ih = mapa.image.height;
+    const mapa = await texture(obraz || `/game/assets/objects/${name}.webp`), iw = mapa.image.width, ih = mapa.image.height;
     // a non-square picture (a garment) keeps its proportions inside the unit square
     const icon = new THREE.Mesh(new THREE.PlaneGeometry(iw >= ih ? 1 : iw / ih, iw >= ih ? ih / iw : 1), new THREE.MeshBasicMaterial({ map: mapa, transparent: true, alphaTest: 0.05, depthWrite: false }));
     g.add(icon);

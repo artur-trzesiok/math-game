@@ -47,7 +47,7 @@
   #plansza.on { display: flex; animation: zanik .3s ease-out; }
   #plansza.out { animation: zanik .35s ease-in reverse forwards; }
   #plansza .karta { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2vh; padding: 9vh 6vh 5vh; width: min(64vh, 80vw);
-    background: url(/game/assets/menu/karta.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 10px 18px rgba(0,0,0,.35)); animation: wskok .55s cubic-bezier(.2,1.5,.4,1) both; }
+    border-image: url(/game/assets/menu/karta.webp) 70 fill / 4vh stretch; filter: drop-shadow(0 10px 18px rgba(0,0,0,.35)); animation: wskok .55s cubic-bezier(.2,1.5,.4,1) both; }
   #plansza .obraz { width: min(40vh, 52vw); aspect-ratio: 1; object-fit: cover; border-radius: 2.4vh; box-shadow: 0 0 0 4px rgba(90,53,24,.55); }
   #plansza .obraz.ikona { object-fit: contain; box-shadow: none; }
   #plansza .napis { padding: .25em 1.4em .35em; font: 800 min(6vh, 7vw) "Baloo 2", system-ui; color: #5a3518; white-space: nowrap; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; }
@@ -107,14 +107,18 @@
   .topic h2::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
   .topic .row { display: flex; gap: calc(var(--k) * 0.14); padding-right: calc(var(--k) * 0.06); }   /* room for the stickers sticking out */
   .topic .lesson { flex: 0 0 auto; }
-  #chips { display: flex; justify-content: center; gap: calc(var(--k) * 0.02); padding: 0 var(--safe); white-space: nowrap; }
+  #chips { display: flex; justify-content: center; gap: max(8px, calc(var(--k) * 0.05)); padding: 0 var(--safe); white-space: nowrap; }
   @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } }
   #chips button { font: 800 max(11px, min(calc(var(--k) * 0.068), 1.5vw)) "Baloo 2", system-ui; padding: .35em 1.1em .45em; border: 0; color: var(--braz); cursor: pointer; display: flex; align-items: center; gap: .45em;
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
   #chips button::before { content: ""; width: .7em; height: .7em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
   #chips button.on { transform: translateY(-4px) scale(1.08); }
   .lesson { position: relative; display: flex; flex-direction: column; align-items: center; gap: calc(var(--k) * 0.02); width: calc(var(--k) * 1.22); padding: calc(var(--k) * 0.16) calc(var(--k) * 0.11) calc(var(--k) * 0.12);
-    border: 0; background: url(/game/assets/menu/karta.webp) center / 100% 100% no-repeat; font: inherit; cursor: pointer; filter: drop-shadow(0 6px 6px rgba(60,30,0,.28)); transition: transform .2s; }
+    border: 0; background: none; border-image: url(/game/assets/menu/karta.webp) 70 fill / calc(var(--k) * 0.1) stretch; font: inherit; cursor: pointer; filter: drop-shadow(0 6px 6px rgba(60,30,0,.28)); transition: transform .2s; }
+  /* the card's tape on its own, so a card of any height keeps both the card's edges and the tape undistorted */
+  .lesson::before, #plansza .karta::before { content: ""; position: absolute; top: calc(var(--k, 30vh) * -0.05); left: 50%; width: calc(var(--k, 30vh) * 0.46); aspect-ratio: 400 / 98;
+    transform: translateX(-50%) rotate(-2deg); background: url(/game/assets/menu/tasma.webp) center / contain no-repeat; z-index: 2; }
+  #plansza .karta::before { --k: 60vh; }
   .lesson:nth-child(odd) { transform: rotate(-1.2deg); } .lesson:nth-child(even) { transform: rotate(1deg); }
   .lesson:active { transform: translateY(3px) scale(.98); }
   .lesson .cover { width: var(--k); height: var(--k); border-radius: calc(var(--k) * 0.05); object-fit: cover; background: #e9f7d8; pointer-events: none; -webkit-user-drag: none; box-shadow: 0 0 0 3px rgba(90,53,24,.55); }

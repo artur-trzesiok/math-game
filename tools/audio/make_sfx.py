@@ -43,11 +43,13 @@ SFX = {
     # the cards before a lesson and before each of its stages (player.js plansza)
     "plansza": ("a short cheerful magical jingle for the title card of a children's cartoon: a quick rising xylophone "
                 "and glockenspiel flourish ending in a warm twinkling sparkle, bright, happy, no voices, no drums", 2.0),
+    "melodyjka": ("a cheerful bouncy little marimba melody for a children's party game, loopable, 120 bpm, no voices", 4.0),
     "etap":    ("a short bright playful chime announcing the next part of a children's game: three rising "
                 "glockenspiel notes and a little sparkle, warm and happy, no voices", 1.2),
 }
 
 SR = 44100
+PETLE = {"melodyjka"}       # music loops (sfx.muzyka): written as WAV, gapless
 WERSJA_SYNTEZY = 1
 
 
@@ -156,6 +158,21 @@ def synth(name: str) -> np.ndarray:
         t = _t(0.5)
         f = (380 + 330 * (t / 0.5) ** 1.5) * (1 + 0.025 * np.sin(2 * np.pi * 7 * t))
         return np.sin(2 * np.pi * np.cumsum(f) / SR) * _env(len(t), 0.03, 0.3)
+    if name == "melodyjka":
+        # 8 beats at 120 bpm (4 s) that loop: a bouncy marimba tune over a soft bass, every note ends inside the bar
+        total, beat = 4.0, 0.5
+        out = np.zeros(int(SR * total))
+        tune = [(0, 784.0), (0.5, 659.3), (1, 784.0), (1.5, 880.0), (2, 784.0), (2.25, 659.3), (2.5, 587.3), (3, 523.3),
+                (4, 659.3), (4.5, 784.0), (5, 880.0), (5.5, 1046.5), (6, 880.0), (6.5, 784.0), (7, 659.3), (7.5, 587.3)]
+        for b, f in tune:
+            t = _t(0.42)
+            ton = np.sin(2 * np.pi * f * t) * _env(len(t), 0.002, 0.16) + 0.3 * np.sin(2 * np.pi * f * 4 * t) * _env(len(t), 0.001, 0.03)
+            out += _at(0.5 * ton, b * beat, total)
+        for b, f in [(0, 130.8), (2, 196.0), (4, 174.6), (6, 196.0)]:
+            t = _t(0.9)
+            out += _at(0.35 * np.sin(2 * np.pi * f * t) * _env(len(t), 0.01, 0.35), b * beat, total)
+        fade = int(SR * 0.01); out[-fade:] *= np.linspace(1, 0, fade); out[:fade] *= np.linspace(0, 1, fade)
+        return out
     if name in ("plansza", "etap"):
         # a marimba-like run (a fundamental and a fast-dying 4x partial) up the major chord, a shimmer on the last note
         nuty = (523.3, 659.3, 784.0, 1046.5, 1318.5) if name == "plansza" else (784.0, 1046.5, 1318.5)
@@ -193,6 +210,12 @@ def _encode(src: Path, dst: Path) -> None:
 def generate_synth(name: str, dst: Path) -> None:
     x = synth(name)
     x = x / (np.abs(x).max() or 1) * 0.9
+    if name in PETLE:                                         # a loop stays WAV, exact length, no trimming
+        x *= 10 ** ((SFX_RMS_DB + 4 - 20 * np.log10(np.sqrt(np.mean(x ** 2)) or 1e-9)) / 20)
+        with wave.open(str(dst.with_suffix(".wav")), "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+            w.writeframes((np.clip(x, -1, 1) * 32767).astype("<i2").tobytes())
+        return
     wav = dst.with_suffix(".tmp.wav")
     with wave.open(str(wav), "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
@@ -227,17 +250,17 @@ def main() -> int:
     backend = "synth" if "--synth" in sys.argv else "elevenlabs"
     done = failed = 0
     for name in (only or SFX):
-        dst = OUT / f"{name}.mp3"
+        dst = OUT / f"{name}.{'wav' if name in PETLE else 'mp3'}"
         if not only and dst.exists() and manifest.get(name) in (digest(name, "synth"), digest(name, "elevenlabs")):
             continue
         try:
-            if backend == "elevenlabs":
+            if backend == "elevenlabs" and name not in PETLE:        # a loop is always synthesised (exact length)
                 try:
                     generate_elevenlabs(name, dst)
                 except BrakUprawnien:
                     print("  the key lacks the sound_generation permission: synthesising instead")
                     backend = "synth"
-            if backend == "synth":
+            if backend == "synth" or name in PETLE:
                 generate_synth(name, dst)
             manifest[name] = digest(name, backend)
             done += 1

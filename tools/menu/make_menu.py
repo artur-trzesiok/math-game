@@ -43,20 +43,32 @@ dark-brown outline, two small green leaves and a little red berry at its ends, a
 "Maths with Fox" painted in big, round, friendly, bold dark-brown letters, perfectly spelled, centred.
 {STYL}
 ONLY these words, exactly spelled: Maths with Fox"""),
-    "czesci": ("1536x1024", "transparent", f"""A sprite sheet of FOUR separate painted parts for a children's game menu, arranged
-in one row of 4 on a fully TRANSPARENT background, with generous empty space between them so none of them touch.
+    # the parts one per picture, each filling its canvas (cut from one sheet they came out too small: the card
+    # was 227 px wide and blurred on the menu)
+    "karta": ("1024x1024", "transparent", f"""ONE BLANK card of thick cream paper filling most of the picture, on a fully
+TRANSPARENT background, a little taller than wide (exactly 4 to 5), slightly rounded corners, a soft painted darker
+edge evenly all around, a fine paper texture. NOTHING on it - no tape, no pictures, no text.
+{STYL}"""),
+    "tasma": ("1536x1024", "transparent", f"""ONE short strip of green washi tape with small white dots, seen from above, with
+softly torn ends, about 3 times wider than tall, filling the middle of the picture, on a fully TRANSPARENT
+background.
 {STYL}
-Left to right:
-1) a BLANK wide short wooden plank sign, warm light wood with a dark-brown outline, wider than tall (about 4 to 1),
-   NOTHING written on it;
-2) a BLANK round wooden button like a thick wooden coin seen from the front, warm light wood, a dark-brown outline,
-   NOTHING on it;
-3) a BLANK card of thick cream paper, taller than wide (about 4 to 5), slightly rounded corners, a soft painted
-   edge and a tiny shadow, a small piece of washi tape at the top, NOTHING on it;
-4) a low wide tree stump with visible rings on its flat top, a little moss and a small mushroom at its foot.
-NO text anywhere."""),
+NOTHING else."""),
+    "deska": ("1536x1024", "transparent", f"""ONE BLANK wide short wooden plank sign filling the width of the picture, on a
+fully TRANSPARENT background, warm light wood with grain and two little knots, a dark-brown outline, about 4 times
+wider than tall, slightly irregular ends. NOTHING written on it.
+{STYL}"""),
+    "guzik": ("1024x1024", "transparent", f"""ONE BLANK round wooden button like a thick wooden coin seen from the front,
+filling most of the picture, on a fully TRANSPARENT background, warm light wood with grain, a darker wooden rim, a
+dark-brown outline. NOTHING on it.
+{STYL}"""),
+    "pniak": ("1536x1024", "transparent", f"""ONE low wide tree stump with visible rings on its flat top, a little moss and a
+small red mushroom at its foot, filling most of the picture, on a fully TRANSPARENT background.
+{STYL}
+NO text."""),
 }
-CZESCI = ["deska", "guzik", "karta", "pniak"]
+CZESCI = ["deska", "guzik", "karta", "pniak", "tasma"]
+DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400}      # the long side kept (the menu draws them big)
 
 
 def gen() -> None:
@@ -74,20 +86,14 @@ def przytnij(im: Image.Image) -> Image.Image:
 
 
 def install() -> None:
-    from scipy import ndimage
     OUT.mkdir(parents=True, exist_ok=True)
     t = Image.open(WORK / "tlo.png").convert("RGB"); t.save(OUT / "tlo.webp", "WEBP", quality=82, method=6)
     for n in ("szyld_pl", "szyld_en"):
         im = przytnij(Image.open(WORK / f"{n}.png").convert("RGBA")); im.thumbnail((1200, 600), Image.LANCZOS)
         im.save(OUT / f"{n}.webp", "WEBP", quality=88, method=6)
-    sheet = Image.open(WORK / "czesci.png").convert("RGBA"); a = np.asarray(sheet)[:, :, 3] > 24
-    lab, n = ndimage.label(ndimage.binary_closing(a, iterations=6))
-    sizes = ndimage.sum(np.ones_like(lab), lab, range(1, n + 1)); big = np.argsort(sizes)[::-1][:4] + 1
-    boxes = sorted([ndimage.find_objects((lab == k).astype(int))[0] for k in big], key=lambda s: s[1].start)
-    for nazwa, (sy, sx) in zip(CZESCI, boxes):
-        im = przytnij(sheet.crop((sx.start, sy.start, sx.stop, sy.stop)))
-        im.save(OUT / f"{nazwa}.webp", "WEBP", quality=88, method=6); print(nazwa, im.size)
-
+    for nazwa in CZESCI:
+        im = przytnij(Image.open(WORK / f"{nazwa}.png").convert("RGBA")); im.thumbnail((DLUGOSC[nazwa], DLUGOSC[nazwa]), Image.LANCZOS)
+        im.save(OUT / f"{nazwa}.webp", "WEBP", quality=90, method=6); print(nazwa, im.size)
 
 if __name__ == "__main__":
     gen()

@@ -40,6 +40,25 @@ The GRASS IS PLAIN - NO tufts, NO flowers, NO reeds.
 NO characters, NO animals, NO text."""
 
 PANORAMY = {
+    "polana_wieczorem": {
+        "kafle": [
+            """A garden at sunset: on the left a big old friendly tree with a round little door and a round window
+high up in its trunk - an owl's home - and a small wooden shed with an open door beside it; a narrow earth path
+starts there and runs to the right across short grass. The SKY is a warm sunset: orange and pink near the
+horizon, soft violet above, no sun visible, no clouds.""",
+            """The path climbs onto a wide open glade on a gentle round hilltop: short soft grass, a few low bushes
+far away at the edges, a big open sunset sky over it (orange and pink at the horizon, violet above). The middle
+of the glade is open and empty.""",
+        ],
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two things have been added, in
+the same style:
+  - THREE or FOUR thin soft pink-and-orange sunset clouds in the sky, none touching each other and none touching
+    the left or the right edge of the picture;
+  - MANY tufts of taller grass, at least twelve, scattered over the foreground and the middle ground, each tuft
+    separate from the others, none on the path, none touching the left or right edge.
+Same colours, same horizon, same path, same everything - only the clouds and the tufts are new. Do NOT move or
+redraw anything that was already there.""",
+    },
     "jesienny_sad": {
         "kafle": [
             """An autumn orchard on a sunny afternoon: on the far left a low wooden fence; three apple trees with red

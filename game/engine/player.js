@@ -395,6 +395,18 @@ export class Player {
       przejscie: guard((zmiana, rodzaj = null) => E.przejscie(S, async () => { alive(); await zmiana(); }, { rodzaj })),
       // film tools (efekty.js, guidelines "Atmosphere and editing")
       ujecie: guard((typ, opts) => E.ujecie(S, typ, opts)),
+      // night and light (efekty.js): noc({ciemnosc}) darkens, swiatlo(cel, {r, moc, migotanie}) opens a light around it
+      noc: guard((o) => E.noc(S, o)),
+      swiatlo: (cel, o) => { alive(); return E.swiatlo(S, typeof cel === "string" ? S.puppets[cel] : cel, o); },
+      // music for a game: plays until stopped (handle.stop()), quieter while someone speaks
+      muzyka: (n, o) => { alive(); return S.sfx.muzyka(n, o); },
+      // the characters' head badges in one picture (a card that means "the friends"), a data: URL for object({obraz})
+      glowy: (kto) => {
+        const g = kto.map((n) => E.glowaObraz(n)).filter(Boolean), k = Math.ceil(Math.sqrt(g.length)), c = document.createElement("canvas");
+        c.width = c.height = 512; const x = c.getContext("2d"), s = 512 / k;
+        g.forEach((im, i) => x.drawImage(im, (i % k) * s, Math.floor(i / k) * s, s, s));
+        return c.toDataURL();
+      },
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
       pan: guard((k, opts) => E.pan(S, k, opts)),
       odliczanie: guard((opts) => E.odliczanie(S, opts)),

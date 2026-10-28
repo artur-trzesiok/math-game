@@ -131,6 +131,23 @@ Row 2, left to right: one bright RED maple leaf; one bright YELLOW birch leaf; a
 stem; one shiny brown horse chestnut.
 All eight objects roughly the same size; the two leaves the same shape size, only the colour and the leaf type differ.""",
     },
+    "noc": {
+        "outline": True,
+        "names": ["latarenka", "latarenka_swieci", "swietlik", "poduszka", "balonik", "przycisk_muzyki", "gwiazdka", "ksiezyc"],
+        "size": "1536x1024",
+        "prompt": f"""A sprite sheet of EIGHT small illustrated objects for a children's picture book, arranged in a neat grid
+of 2 rows and 4 columns on a fully TRANSPARENT background, with generous empty space between objects so none of them
+touch.
+{STYL}
+Row 1, left to right: a small EMPTY glass jar lantern with a wire handle on top, clear glass, nothing inside, not lit;
+the SAME glass jar lantern glowing warm yellow from inside, as if a firefly sits in it, a soft golden glow; one cute
+little firefly beetle with tiny wings and a softly glowing yellow-green tail, seen from the side; one fluffy soft
+white pillow with a little stitched edge.
+Row 2, left to right: one round red balloon with a curly string hanging down; a big round friendly push button,
+bright green, with a white musical note on it; a golden five-pointed star with a soft sparkle; a smiling pale yellow
+crescent moon.
+All eight roughly the same size.""",
+    },
     "kokarda": {
         "outline": True,
         "names": ["kokarda"],
