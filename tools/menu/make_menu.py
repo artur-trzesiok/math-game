@@ -49,6 +49,12 @@ ONLY these words, exactly spelled: Maths with Fox"""),
 TRANSPARENT background, a little taller than wide (exactly 4 to 5), slightly rounded corners, a soft painted darker
 edge evenly all around, a fine paper texture. NOTHING on it - no tape, no pictures, no text.
 {STYL}"""),
+    "drogowskaz": ("1024x1536", "transparent", f"""ONE tall thin wooden signpost standing in a small tuft of grass with a few
+little meadow flowers (daisies, a red poppy) at its foot, on a fully TRANSPARENT background: a straight wooden post
+with a dark-brown outline, and near its top one small BLANK wooden arrow board pointing to the RIGHT, a tiny green
+leafy twig wound around the post. Tall and narrow (about 1 to 4), filling the height of the picture.
+{STYL}
+NOTHING written on it."""),
     "tasma": ("1536x1024", "transparent", f"""ONE short strip of green washi tape with small white dots, seen from above, with
 softly torn ends, about 3 times wider than tall, filling the middle of the picture, on a fully TRANSPARENT
 background.
@@ -67,8 +73,8 @@ small red mushroom at its foot, filling most of the picture, on a fully TRANSPAR
 {STYL}
 NO text."""),
 }
-CZESCI = ["deska", "guzik", "karta", "pniak", "tasma"]
-DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400}      # the long side kept (the menu draws them big)
+CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz"]
+DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900}      # the long side kept (the menu draws them big)
 
 
 def gen() -> None:

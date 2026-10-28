@@ -101,7 +101,8 @@ export class Player {
       </button>`;
     // one long strip, a tinted block per topic; chips under it jump to a topic and show where the strip is
     const pas = $("#lessons"), chips = $("#chips");
-    pas.innerHTML = topics.map((t) => `
+    // between two topics a signpost: the way goes on to a new topic
+    pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
       <section class="topic" data-topic="${t.id}" style="--c:${t.color}">
         ${t.title ? `<h2>${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>

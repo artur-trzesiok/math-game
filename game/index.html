@@ -105,6 +105,8 @@
   .topic h2 { align-self: flex-start; margin: 0; padding: calc(var(--k) * 0.035) calc(var(--k) * 0.17) calc(var(--k) * 0.045); font: 800 max(14px, calc(var(--k) * 0.1)) "Baloo 2", system-ui; color: var(--braz);
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   .topic h2::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
+  .drogowskaz { flex: 0 0 auto; align-self: flex-end; display: flex; align-items: flex-end; margin: 0 calc(var(--k) * -0.02); pointer-events: none; }
+  .drogowskaz img { height: calc(var(--k) * 1.75); filter: drop-shadow(0 5px 5px rgba(60,30,0,.3)); }
   .topic .row { display: flex; gap: calc(var(--k) * 0.14); padding-right: calc(var(--k) * 0.06); }   /* room for the stickers sticking out */
   .topic .lesson { flex: 0 0 auto; }
   #chips { display: flex; justify-content: center; gap: max(8px, calc(var(--k) * 0.05)); padding: 0 var(--safe); white-space: nowrap; }
