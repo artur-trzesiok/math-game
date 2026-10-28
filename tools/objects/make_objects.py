@@ -315,6 +315,20 @@ with a spiral orange shell, seen from the side, facing right.
 The long things are about three times as long as the short ones; all equally thick.""",
 }
 
+# bigger and smaller, rethought (stage 1): a tree hollow (one picture, shown at several sizes), the mice's family
+SHEETS["dziupla"] = {
+    "outline": True,
+    "names": ["dziupla", "myszki"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of 2 on a fully TRANSPARENT
+background, with generous empty space between them so they do not touch.
+{STYL}
+Left: one round tree hollow seen from the front - a round dark opening in a piece of brown tree bark with a little
+wooden ledge under it and a few green leaves around it, cosy, nothing inside the opening. Right: a family of four
+cute little grey mice huddled together, a mother and three babies, seen from the front.
+Both the same size.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

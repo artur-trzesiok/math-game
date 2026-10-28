@@ -1,37 +1,26 @@
-# Bigger, smaller - PRO
+# Bigger and smaller - a new home for Squirrel
 
-The first lesson built on guidelines.md "Atmosphere and editing". Goal: compare sizes (bigger / smaller,
-biggest / smallest) by laying one thing on another - the bigger one sticks out all around - and use it to act.
-Characters: Fox (left), Squirrel (right), Owl (the one we help; at the oak).
+Goal: bigger / smaller, the biggest / the smallest, compared by laying one thing on the other (the bigger one sticks
+out all round). Age 3-4. Characters: Squirrel and Fox (left), Owl (right). Stage 1, lesson 3 - it follows "one or
+many?": the winter store made her hollow too small.
 
-## Stage 1 - story - one walk on the panorama "droga_do_debu" (gate, brook, oak)
+## Why rethought
+The first version was four unconnected things (rain and wellies, rock-paper-scissors at the brook, Owl's hat, a present
+of hats at home - hats twice), and it compared things handed to the characters rather than a problem they had. Now one
+thread with a visible consequence at every step: too small - too big - just right.
 
-A thread for the whole lesson: it is Owl's birthday; Fox promises a surprise at home when they are back.
+## Stage 1 - story (the forest)
+A. Squirrel tries to get into her old hollow - only her head goes in, she bounces back (sweat). Fox: it is too small,
+you have grown and your store is big. Owl: you need a bigger one; how to tell - lay one on the other.
+B. Three hollows. **Child** points to the biggest - Squirrel tries: too big, the wind blows, cold. **Child** points
+to the smallest - too small. The last one: the old hollow laid on it, the new sticks out all round; **child** points
+to the bigger of the two - just right. Helping: the mice moving into the old hollow need a bigger box; **child**
+points to it. Breather: acorns fall - catch the big ones (three times).
 
-1. **The gate, rain.** It starts to rain (particles). Close-up on Squirrel: cold. Two-shot: wellies! The naive
-   try: Squirrel pulls on the first pair - Fox's - they slip and fall off (a visible consequence, a sweat
-   bubble). How to tell whose? Compare: lay one on the other (an insert on a plain colour, a rain motif): the
-   big welly sticks out all around. The child points to the smaller one, then drags the big pair to Fox and the
-   small one to Squirrel (a wrong one goes on, slips, falls off). Back on the path, a pan to the brook while they
-   walk.
-2. **The brook.** Both reach it on the near bank (Squirrel joined Fox at the gate). Who goes first?
-   Rock-paper-scissors, taught before it is played: Fox shows the three signs, then each pair with what happens
-   (the winner moves onto the loser, which shakes): rock blunts scissors, scissors cut paper, paper wraps rock.
-   The child picks Squirrel's sign; "one, two, three, show!"; Fox: "I chose ...", "Squirrel chose ...", the
-   rule out loud, "Squirrel wins!". A countdown in numbered dots, then a bridge of three big stones across the
-   water (a small stone tried sinks). Squirrel hops across first, into the picture, then Fox; "we crossed!".
-   A pan to the oak brings them back to the front.
-3. **The oak - helping Owl.** Owl is wet and cold (a drop bubble), the wind took her hat. What will warm her (two useful things among
-   four)? The hat that fits her big head (the small one does not go on), a scarf. The rain stops, Owl is
-   happy (a heart). Home for the surprise.
+## Stage 2 - practice (an insert, five stars)
+Which is bigger (twice), then the overlap shows it; the biggest of three apples; the shadow of the big or the small pear;
+caps by size onto Fox, Owl and Squirrel (a wrong one slips off or does not go on).
 
-## Stage 2 - practice - an insert (green, drifting shapes), five stars
-
-Twice: which is bigger, then the overlap shows it. Twice: a catching game, things pop up anywhere - point to
-the bigger. Once: drag the big cap to Fox and the small one to Squirrel.
-
-## Stage 3 - at home - the kitchen
-
-The promised surprise: a wrapped present (point to it - it opens) with three of the same hat at three sizes,
-by head: the biggest for the biggest head (Owl), the middle for Fox, the smallest for Squirrel. "Ask your parents to compare the whole family's
-shoes with you - lay one on the other."
+## Stage 3 - at home (the new hollow, the room)
+A house-warming: the big cup to big Fox, the small one to little Squirrel. "Compare the family's shoes with your
+parents: lay one on the other."

@@ -4,33 +4,31 @@
     "pl": "Większy, mniejszy",
     "en": "Bigger, smaller"
   },
-  "goal": "Compare sizes - bigger / smaller, biggest / smallest - by laying one thing on another (the bigger sticks out all around) and use it to act: wellies that fit, the big stones across a brook, a hat that fits.",
+  "goal": "Compare sizes - bigger / smaller, the biggest / the smallest - by laying one thing on the other.",
   "age": "3-4",
   "characters": [
-    "lisek",
     "wiewiorka",
+    "lisek",
     "sowa"
   ],
   "backgrounds": [
-    "droga_do_debu",
-    "dom"
+    "las",
+    "pokoj"
   ],
   "objects": [
-    "kamyk",
-    "pilka",
-    "lyzka",
+    "dziupla",
+    "myszki",
+    "pudelko",
+    "zoledz",
     "listek",
     "talerz",
     "jablko",
-    "prezent",
-    "prezent_otwarty",
-    "gest_kamien",
-    "gest_papier",
-    "gest_nozyce"
+    "gruszka",
+    "kubek"
   ],
-  "cover": "Fox in big yellow wellies and Squirrel in small ones stand on big stones in a shallow brook, rain drops around them; Owl in a red bobble hat and a striped scarf waves from under an old oak.",
+  "cover": "Squirrel peeks happily out of a round tree hollow that is just her size, Fox and Owl stand below; a tiny hollow and a huge one in other trees.",
   "naklejka": {
-    "obraz": "ubrania/kalosze_przod",
+    "obraz": "objects/dziupla",
     "kto": "wiewiorka"
   }
 }

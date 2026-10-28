@@ -1,300 +1,198 @@
 {
-  "line.a_urodziny": {
-    "who": "lisek",
-    "text": "Idziemy do starego dębu. Sowa ma dziś urodziny!"
-  },
-  "line.a_hurra": {
+  "line.a_zapasy": {
     "who": "wiewiorka",
-    "text": "Hurra! Urodziny!"
+    "text": "Mam już całe zapasy na zimę! Schowam je w mojej dziupli."
   },
-  "line.a_obietnica": {
-    "who": "lisek",
-    "text": "A kiedy wrócimy, w domu czeka na nas niespodzianka."
-  },
-  "line.a_pada": {
+  "line.a_nie_mieszcze": {
     "who": "wiewiorka",
-    "text": "Ojej, pada! Zmokniemy."
+    "text": "Ojej! Nie mieszczę się do mojej dziupli. Wchodzi tylko głowa!"
   },
-  "line.a_kalosze": {
+  "line.a_za_mala": {
     "who": "lisek",
-    "text": "Załóżmy kalosze."
+    "text": "Twoja dziupla jest za mała. Ty urosłaś, a zapasów masz teraz dużo."
   },
-  "line.a_biore": {
-    "who": "wiewiorka",
-    "text": "Te są dobre!"
-  },
-  "line.a_za_duze": {
-    "who": "lisek",
-    "text": "Spadają, bo są za duże. To moje kalosze."
+  "line.a_nowa": {
+    "who": "sowa",
+    "text": "Potrzebujesz nowej dziupli, większej od starej. Poszukajmy jej w lesie!"
   },
   "line.a_jak": {
     "who": "wiewiorka",
-    "text": "To jak poznać, które są moje?"
+    "text": "A jak poznamy, która dziupla jest większa?"
   },
-  "line.a_porownaj": {
+  "line.a_metoda": {
+    "who": "sowa",
+    "text": "Położymy jedną na drugiej. Ta, która wystaje dookoła, jest większa. Ta, która się chowa, jest mniejsza."
+  },
+  "line.a_w_droge": {
     "who": "lisek",
-    "text": "Porównamy je! Położymy jeden na drugim."
+    "text": "No to w drogę!"
   },
-  "line.a_co": {
+  "line.b_trzy": {
+    "who": "sowa",
+    "text": "Popatrzcie, w tych drzewach są trzy dziuple."
+  },
+  "line.b_najwieksza": {
+    "who": "lisek",
+    "text": "Która dziupla jest największa? Wskaż."
+  },
+  "line.b_najwieksza_nie": {
+    "who": "lisek",
+    "text": "Ta nie jest największa. Poszukaj tej, która jest większa od wszystkich."
+  },
+  "line.b_sprobuje": {
     "who": "wiewiorka",
-    "text": "Jeden na drugim?"
+    "text": "Największa! Na pewno się zmieszczę. Spróbuję!"
   },
-  "line.a_pokaze": {
-    "who": "lisek",
-    "text": "Pokażę ci."
-  },
-  "line.a_kladziemy": {
-    "who": "lisek",
-    "text": "Kładę mały kalosz na dużym."
-  },
-  "line.a_wystaje": {
-    "who": "lisek",
-    "text": "Widzisz? Duży wystaje dookoła. Ten jest większy."
-  },
-  "line.a_wskaz_maly": {
+  "line.b_za_duza": {
     "who": "wiewiorka",
-    "text": "A który jest mniejszy? Wskaż go."
+    "text": "Brr! Jest za duża. Wieje w niej wiatr i jest zimno."
   },
-  "line.a_nie_ten": {
-    "who": "wiewiorka",
-    "text": "Ten wystawał dookoła. Wskaż ten drugi.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.a_ubierz": {
+  "line.b_najmniejsza": {
     "who": "lisek",
-    "text": "Przeciągnij duże kalosze do mnie, a małe do wiewiórki."
+    "text": "A która jest najmniejsza? Wskaż."
+  },
+  "line.b_najmniejsza_nie": {
+    "who": "lisek",
+    "text": "Ta nie jest najmniejsza. Poszukaj tej, która jest mniejsza od wszystkich."
+  },
+  "line.b_za_mala": {
+    "who": "wiewiorka",
+    "text": "Ta jest za mała, jeszcze mniejsza niż moja stara!"
+  },
+  "line.b_sprawdzmy": {
+    "who": "sowa",
+    "text": "Została jeszcze jedna. Sprawdźmy ją: położymy na niej starą dziuplę."
+  },
+  "line.b_wystaje": {
+    "who": "sowa",
+    "text": "Nowa dziupla wystaje dookoła. Jest większa od starej!"
+  },
+  "line.b_wskaz_wieksza": {
+    "who": "sowa",
+    "text": "Która dziupla jest większa, stara czy nowa? Wskaż."
+  },
+  "line.b_wskaz_wieksza_nie": {
+    "who": "sowa",
+    "text": "To stara, mniejsza dziupla. Ta druga wystawała dookoła."
+  },
+  "line.b_w_sam_raz": {
+    "who": "wiewiorka",
+    "text": "Większa od starej, a mniejsza od tej ogromnej. W sam raz dla mnie!"
+  },
+  "line.b_myszki": {
+    "who": "sowa",
+    "text": "Do starej dziupli Wiewiórki wprowadzi się rodzina myszek. Ale mają za małe pudełko na swoje rzeczy."
+  },
+  "line.b_pudelko": {
+    "who": "lisek",
+    "text": "Które pudełko jest większe? Wskaż, a myszki się zmieszczą."
+  },
+  "line.b_pudelko_nie": {
+    "who": "lisek",
+    "text": "To pudełko jest mniejsze. Myszki potrzebują większego."
+  },
+  "line.b_dziekuja": {
+    "who": "sowa",
+    "text": "Myszki się zmieściły i dziękują!"
+  },
+  "line.b_lapanie": {
+    "who": "lisek",
+    "text": "Z dębu spadają żołędzie! Łap te duże, do nowych zapasów. Wskaż duży żołądź."
+  },
+  "line.b_do_domu": {
+    "who": "wiewiorka",
+    "text": "Mam nową dziuplę i duże żołędzie! Zapraszam was do siebie na parapetówkę."
+  },
+  "line.p_start": {
+    "who": "wiewiorka",
+    "text": "Zanim pójdziemy, pobawmy się w duże i małe!"
+  },
+  "line.p_wiekszy": {
+    "who": "lisek",
+    "text": "Który jest większy? Wskaż."
+  },
+  "line.p_poloz": {
+    "who": "lisek",
+    "text": "Połóżmy jeden na drugim i zobaczymy. Który jest większy?"
+  },
+  "line.p_wystaje": {
+    "who": "wiewiorka",
+    "text": "Widzisz? Większy wystaje dookoła."
+  },
+  "line.p_najwiekszy": {
+    "who": "lisek",
+    "text": "Które jabłko jest największe? Wskaż."
+  },
+  "line.p_najwiekszy_nie": {
+    "who": "lisek",
+    "text": "To jabłko jest mniejsze. Poszukaj największego."
+  },
+  "line.p_cien": {
+    "who": "lisek",
+    "text": "Czyj to cień: dużej gruszki czy małej? Wskaż."
+  },
+  "line.p_cien_nie": {
+    "who": "lisek",
+    "text": "Popatrz na cień jeszcze raz. Czy jest duży, czy mały?"
+  },
+  "line.p_cien_duzy": {
+    "who": "wiewiorka",
+    "text": "Tak! To cień dużej gruszki."
+  },
+  "line.p_cien_maly": {
+    "who": "wiewiorka",
+    "text": "Tak! To cień małej gruszki."
+  },
+  "line.p_czapki": {
+    "who": "lisek",
+    "text": "Trzy czapki: największa dla mnie, średnia dla Sowy, najmniejsza dla Wiewiórki. Przeciągnij każdą czapkę."
   },
   "line.za_duze": {
     "who": "lisek",
-    "text": "Za duże! Spadają.",
+    "text": "Ta czapka jest za duża, zsuwa się. Spróbuj mniejszej.",
     "speakers": [
-      "wiewiorka",
-      "sowa"
+      "sowa",
+      "wiewiorka"
     ]
   },
   "line.za_male": {
     "who": "lisek",
-    "text": "Za małe! Nie wchodzą.",
+    "text": "Ta czapka jest za mała. Spróbuj większej.",
     "speakers": [
-      "wiewiorka",
-      "sowa"
-    ]
-  },
-  "line.a_pasuja": {
-    "who": "wiewiorka",
-    "text": "Pasują! Teraz deszcz nam nie straszny."
-  },
-  "line.a_idziemy": {
-    "who": "lisek",
-    "text": "Idziemy!"
-  },
-  "line.b_strumyk": {
-    "who": "wiewiorka",
-    "text": "Strumyk! Jak go przejdziemy?"
-  },
-  "line.b_kamienie": {
-    "who": "lisek",
-    "text": "Po kamieniach. Ale tylko duży kamień nas utrzyma."
-  },
-  "line.b_kto_pierwszy": {
-    "who": "wiewiorka",
-    "text": "A kto idzie pierwszy?"
-  },
-  "line.b_wygralas": {
-    "who": "lisek",
-    "text": "Wiewiórka wygrała! Idzie pierwsza."
-  },
-  "line.b_most": {
-    "who": "lisek",
-    "text": "Ułóżmy kamienie w wodzie. Uwaga, zaczynamy!"
-  },
-  "line.b_wskaz_duzy": {
-    "who": "wiewiorka",
-    "text": "Który kamień mnie utrzyma? Wskaż duży."
-  },
-  "line.b_jeszcze": {
-    "who": "wiewiorka",
-    "text": "I jeszcze jeden. Wskaż duży kamień."
-  },
-  "line.b_utonal": {
-    "who": "lisek",
-    "text": "Ojej, mały kamień utonął. Potrzebny jest duży."
-  },
-  "line.b_przechodzimy": {
-    "who": "wiewiorka",
-    "text": "Przeszliśmy po dużych kamieniach!"
-  },
-  "line.c_zimno": {
-    "who": "sowa",
-    "text": "Brr, zimno mi. Wiatr porwał moją czapkę."
-  },
-  "line.c_pomozemy": {
-    "who": "wiewiorka",
-    "text": "Nie martw się, sowo! Pomożemy ci."
-  },
-  "line.c_co_ogrzeje": {
-    "who": "lisek",
-    "text": "Co ogrzeje sowę? Wskaż wszystkie takie rzeczy."
-  },
-  "line.c_nie_ogrzeje": {
-    "who": "lisek",
-    "text": "To nie ogrzeje sowy.",
-    "speakers": [
+      "sowa",
       "wiewiorka"
     ]
   },
-  "line.c_glowka": {
+  "line.d_parapetowka": {
     "who": "wiewiorka",
-    "text": "Sowa ma dużą głowę. Przeciągnij na nią czapkę, która pasuje."
+    "text": "Witajcie w mojej nowej dziupli! Zrobię wam herbatkę."
   },
-  "line.c_szalik": {
-    "who": "lisek",
-    "text": "I jeszcze szalik. Przeciągnij go na sowę."
-  },
-  "line.c_dziekuje": {
+  "line.d_kubki": {
     "who": "sowa",
-    "text": "Jak ciepło! Dziękuję, przyjaciele. To najlepszy prezent."
+    "text": "Duży kubek dla dużego Liska, mały dla małej Wiewiórki. Przeciągnij każdy kubek."
   },
-  "line.c_slonce": {
-    "who": "lisek",
-    "text": "Patrzcie, przestało padać!"
-  },
-  "line.c_niespodzianka": {
-    "who": "wiewiorka",
-    "text": "Wracajmy do domu! Czeka niespodzianka!"
-  },
-  "line.p_start": {
-    "who": "wiewiorka",
-    "text": "Teraz zabawa! Zbieramy gwiazdki."
-  },
-  "line.p_wiekszy": {
-    "who": "lisek",
-    "text": "Który jest większy? Wskaż.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.p_poloz": {
-    "who": "lisek",
-    "text": "Popatrz jeszcze raz. Który jest większy?",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.p_wystaje": {
-    "who": "wiewiorka",
-    "text": "Większy wystaje dookoła.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.p_lapanie": {
-    "who": "lisek",
-    "text": "A teraz łapanie! Szybko, wskaż to, co większe."
-  },
-  "line.p_lap": {
-    "who": "wiewiorka",
-    "text": "Łap większe!"
-  },
-  "line.p_czapki": {
-    "who": "lisek",
-    "text": "Przeciągnij dużą czapkę do mnie, a małą do wiewiórki."
-  },
-  "line.d_pudelko": {
-    "who": "lisek",
-    "text": "Niespodzianka! Wskaż pudełko, otworzymy je."
-  },
-  "line.d_trzy": {
-    "who": "wiewiorka",
-    "text": "Trzy kapelusze! Takie same, ale różnej wielkości."
-  },
-  "line.d_zasada": {
-    "who": "lisek",
-    "text": "Największy kapelusz na największą głowę, najmniejszy na najmniejszą. Przeciągnij je."
-  },
-  "line.d_pieknie": {
+  "line.d_nie_ten": {
     "who": "sowa",
-    "text": "Każdy ma kapelusz w sam raz!"
+    "text": "Ten kubek jest dla kogoś innego. Duży dla Liska, mały dla Wiewiórki."
+  },
+  "line.d_pasuje": {
+    "who": "lisek",
+    "text": "Każdy ma kubek w sam raz. Mniam, herbatka!"
   },
   "line.d_rodzice": {
-    "who": "lisek",
-    "text": "Poproście rodziców, żeby porównali z wami buty całej rodziny. Połóżcie jeden na drugim!"
-  },
-  "line.d_pa": {
-    "who": "wiewiorka",
-    "text": "Pa, pa! Do zobaczenia!"
-  },
-  "line.b_zagrajmy": {
-    "who": "lisek",
-    "text": "Zagrajmy w papier, kamień, nożyce! Kto wygra, ten idzie pierwszy."
-  },
-  "line.b_znaki": {
-    "who": "lisek",
-    "text": "Pięść to kamień, otwarta dłoń to papier, a dwa palce to nożyce."
-  },
-  "line.b_zasada_kamien": {
-    "who": "lisek",
-    "text": "Kamień tępi nożyce."
-  },
-  "line.b_zasada_nozyce": {
-    "who": "lisek",
-    "text": "Nożyce tną papier."
-  },
-  "line.b_zasada_papier": {
-    "who": "lisek",
-    "text": "Papier owija kamień."
-  },
-  "line.b_wybierz": {
-    "who": "lisek",
-    "text": "Wybierz znak dla wiewiórki.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.b_raz_dwa": {
-    "who": "lisek",
-    "text": "Raz, dwa, trzy, pokazujemy!"
-  },
-  "line.b_pierwsza": {
-    "who": "wiewiorka",
-    "text": "Idę pierwsza! Hop, hop, hop!"
-  },
-  "line.b_ja_kamien": {
-    "who": "lisek",
-    "text": "Ja wybrałem kamień."
-  },
-  "line.b_ja_papier": {
-    "who": "lisek",
-    "text": "Ja wybrałem papier."
-  },
-  "line.b_ja_nozyce": {
-    "who": "lisek",
-    "text": "Ja wybrałem nożyce."
-  },
-  "line.b_ona_kamien": {
-    "who": "lisek",
-    "text": "Wiewiórka wybrała kamień."
-  },
-  "line.b_ona_papier": {
-    "who": "lisek",
-    "text": "Wiewiórka wybrała papier."
-  },
-  "line.b_ona_nozyce": {
-    "who": "lisek",
-    "text": "Wiewiórka wybrała nożyce."
+    "who": "sowa",
+    "text": "Porównaj z rodzicami buty całej rodziny: połóż jeden na drugim. Który wystaje, ten jest większy!"
   },
   "line.naklejka_daj": {
     "who": "wiewiorka",
-    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
-  },
-  "line.naklejka_opis": {
-    "who": "narrator",
-    "text": "To kalosze od wiewiórki. Dostaliśmy je, kiedy porównywaliśmy, co jest większe, i przeszliśmy przez strumyk po dużych kamieniach."
+    "text": "Dziękuję za pomoc w szukaniu dziupli! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
   },
   "line.naklejka_juz": {
     "who": "wiewiorka",
     "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To nowa dziupla Wiewiórki. Znaleźliśmy ją, kiedy porównywaliśmy, co jest większe, a co mniejsze."
   }
 }

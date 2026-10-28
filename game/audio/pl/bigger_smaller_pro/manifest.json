@@ -1,392 +1,257 @@
 {
- "line.a_urodziny": {
-  "hash": "97668a3d3bf0",
-  "who": "lisek",
-  "text": "Idziemy do starego dębu. Sowa ma dziś urodziny!"
- },
- "line.a_hurra": {
-  "hash": "4fd0e1cc318a",
+ "line.a_zapasy": {
+  "hash": "c04956c47cda",
   "who": "wiewiorka",
-  "text": "Hurra! Urodziny!"
+  "text": "Mam już całe zapasy na zimę! Schowam je w mojej dziupli."
  },
- "line.a_obietnica": {
-  "hash": "094cd2ddd5df",
-  "who": "lisek",
-  "text": "A kiedy wrócimy, w domu czeka na nas niespodzianka."
- },
- "line.a_pada": {
-  "hash": "7f575d47d561",
+ "line.a_nie_mieszcze": {
+  "hash": "25da991b48ac",
   "who": "wiewiorka",
-  "text": "Ojej, pada! Zmokniemy."
+  "text": "Ojej! Nie mieszczę się do mojej dziupli. Wchodzi tylko głowa!"
  },
- "line.a_kalosze": {
-  "hash": "4361c1a55631",
+ "line.a_za_mala": {
+  "hash": "5dc5b08447a0",
   "who": "lisek",
-  "text": "Załóżmy kalosze."
+  "text": "Twoja dziupla jest za mała. Ty urosłaś, a zapasów masz teraz dużo."
  },
- "line.a_biore": {
-  "hash": "f517a612d37f",
-  "who": "wiewiorka",
-  "text": "Te są dobre!"
- },
- "line.a_za_duze": {
-  "hash": "9ded2b94d1e2",
-  "who": "lisek",
-  "text": "Spadają, bo są za duże. To moje kalosze."
+ "line.a_nowa": {
+  "hash": "55ab8e6d7b15",
+  "who": "sowa",
+  "text": "Potrzebujesz nowej dziupli, większej od starej. Poszukajmy jej w lesie!"
  },
  "line.a_jak": {
-  "hash": "a949e41bee4d",
+  "hash": "383af75ef763",
   "who": "wiewiorka",
-  "text": "To jak poznać, które są moje?"
+  "text": "A jak poznamy, która dziupla jest większa?"
  },
- "line.a_porownaj": {
-  "hash": "7dcd0eef5e27",
-  "who": "lisek",
-  "text": "Porównamy je! Położymy jeden na drugim."
- },
- "line.a_co": {
-  "hash": "759970291924",
-  "who": "wiewiorka",
-  "text": "Jeden na drugim?"
- },
- "line.a_pokaze": {
-  "hash": "dbce8962de02",
-  "who": "lisek",
-  "text": "Pokażę ci."
- },
- "line.a_kladziemy": {
-  "hash": "a8312d0e3458",
-  "who": "lisek",
-  "text": "Kładę mały kalosz na dużym."
- },
- "line.a_wystaje": {
-  "hash": "c27d62f2f557",
-  "who": "lisek",
-  "text": "Widzisz? Duży wystaje dookoła. Ten jest większy."
- },
- "line.a_wskaz_maly": {
-  "hash": "6b62322243a4",
-  "who": "wiewiorka",
-  "text": "A który jest mniejszy? Wskaż go."
- },
- "line.a_nie_ten": {
-  "hash": "803b99fa77a4",
-  "who": "wiewiorka",
-  "text": "Ten wystawał dookoła. Wskaż ten drugi."
- },
- "line.a_nie_ten.lisek": {
-  "hash": "aa958fa5c595",
-  "who": "lisek",
-  "text": "Ten wystawał dookoła. Wskaż ten drugi."
- },
- "line.a_ubierz": {
-  "hash": "4727d9839161",
-  "who": "lisek",
-  "text": "Przeciągnij duże kalosze do mnie, a małe do wiewiórki."
- },
- "line.za_duze": {
-  "hash": "c3c512984165",
-  "who": "lisek",
-  "text": "Za duże! Spadają."
- },
- "line.za_duze.wiewiorka": {
-  "hash": "56ff2a41ea9a",
-  "who": "wiewiorka",
-  "text": "Za duże! Spadają."
- },
- "line.za_duze.sowa": {
-  "hash": "4f9b249e3416",
+ "line.a_metoda": {
+  "hash": "51e336da4e38",
   "who": "sowa",
-  "text": "Za duże! Spadają."
+  "text": "Położymy jedną na drugiej. Ta, która wystaje dookoła, jest większa. Ta, która się chowa, jest mniejsza."
  },
- "line.za_male": {
-  "hash": "9adcc72d4d3e",
+ "line.a_w_droge": {
+  "hash": "ee06943fe844",
   "who": "lisek",
-  "text": "Za małe! Nie wchodzą."
+  "text": "No to w drogę!"
  },
- "line.za_male.wiewiorka": {
-  "hash": "be0d99c9feab",
-  "who": "wiewiorka",
-  "text": "Za małe! Nie wchodzą."
- },
- "line.za_male.sowa": {
-  "hash": "71e937c03b44",
+ "line.b_trzy": {
+  "hash": "f1886a45cb78",
   "who": "sowa",
-  "text": "Za małe! Nie wchodzą."
+  "text": "Popatrzcie, w tych drzewach są trzy dziuple."
  },
- "line.a_pasuja": {
-  "hash": "36f110f0c980",
-  "who": "wiewiorka",
-  "text": "Pasują! Teraz deszcz nam nie straszny."
- },
- "line.a_idziemy": {
-  "hash": "09ff3e355c10",
+ "line.b_najwieksza": {
+  "hash": "8338a43e1cd8",
   "who": "lisek",
-  "text": "Idziemy!"
+  "text": "Która dziupla jest największa? Wskaż."
  },
- "line.b_strumyk": {
-  "hash": "4372012b7354",
-  "who": "wiewiorka",
-  "text": "Strumyk! Jak go przejdziemy?"
- },
- "line.b_kamienie": {
-  "hash": "69925608bb91",
+ "line.b_najwieksza_nie": {
+  "hash": "c19bee30d160",
   "who": "lisek",
-  "text": "Po kamieniach. Ale tylko duży kamień nas utrzyma."
+  "text": "Ta nie jest największa. Poszukaj tej, która jest większa od wszystkich."
  },
- "line.b_kto_pierwszy": {
-  "hash": "1deff871dcf1",
+ "line.b_sprobuje": {
+  "hash": "fd7f0112bad4",
   "who": "wiewiorka",
-  "text": "A kto idzie pierwszy?"
+  "text": "Największa! Na pewno się zmieszczę. Spróbuję!"
  },
- "line.b_wygralas": {
-  "hash": "29fc430c58dd",
+ "line.b_za_duza": {
+  "hash": "e7f6ff898f0f",
+  "who": "wiewiorka",
+  "text": "Brr! Jest za duża. Wieje w niej wiatr i jest zimno."
+ },
+ "line.b_najmniejsza": {
+  "hash": "f9359a46805b",
   "who": "lisek",
-  "text": "Wiewiórka wygrała! Idzie pierwsza."
+  "text": "A która jest najmniejsza? Wskaż."
  },
- "line.b_most": {
-  "hash": "9ef152a8ad19",
+ "line.b_najmniejsza_nie": {
+  "hash": "e2a571b3b0dc",
   "who": "lisek",
-  "text": "Ułóżmy kamienie w wodzie. Uwaga, zaczynamy!"
+  "text": "Ta nie jest najmniejsza. Poszukaj tej, która jest mniejsza od wszystkich."
  },
- "line.b_wskaz_duzy": {
-  "hash": "62fcb47686e7",
+ "line.b_za_mala": {
+  "hash": "8931e276f5ae",
   "who": "wiewiorka",
-  "text": "Który kamień mnie utrzyma? Wskaż duży."
+  "text": "Ta jest za mała, jeszcze mniejsza niż moja stara!"
  },
- "line.b_jeszcze": {
-  "hash": "9923b9eee20d",
-  "who": "wiewiorka",
-  "text": "I jeszcze jeden. Wskaż duży kamień."
- },
- "line.b_utonal": {
-  "hash": "24a4ac25da3a",
-  "who": "lisek",
-  "text": "Ojej, mały kamień utonął. Potrzebny jest duży."
- },
- "line.b_przechodzimy": {
-  "hash": "0c31323b0e7b",
-  "who": "wiewiorka",
-  "text": "Przeszliśmy po dużych kamieniach!"
- },
- "line.c_zimno": {
-  "hash": "6a9764687908",
+ "line.b_sprawdzmy": {
+  "hash": "42875b7d7357",
   "who": "sowa",
-  "text": "Brr, zimno mi. Wiatr porwał moją czapkę."
+  "text": "Została jeszcze jedna. Sprawdźmy ją: położymy na niej starą dziuplę."
  },
- "line.c_pomozemy": {
-  "hash": "32b0c12c32df",
-  "who": "wiewiorka",
-  "text": "Nie martw się, sowo! Pomożemy ci."
- },
- "line.c_co_ogrzeje": {
-  "hash": "6b75bd06cad4",
-  "who": "lisek",
-  "text": "Co ogrzeje sowę? Wskaż wszystkie takie rzeczy."
- },
- "line.c_nie_ogrzeje": {
-  "hash": "a216ccafa356",
-  "who": "lisek",
-  "text": "To nie ogrzeje sowy."
- },
- "line.c_nie_ogrzeje.wiewiorka": {
-  "hash": "8a2e98f755fc",
-  "who": "wiewiorka",
-  "text": "To nie ogrzeje sowy."
- },
- "line.c_glowka": {
-  "hash": "72be5e111094",
-  "who": "wiewiorka",
-  "text": "Sowa ma dużą głowę. Przeciągnij na nią czapkę, która pasuje."
- },
- "line.c_szalik": {
-  "hash": "e79a3d9e0b4d",
-  "who": "lisek",
-  "text": "I jeszcze szalik. Przeciągnij go na sowę."
- },
- "line.c_dziekuje": {
-  "hash": "a6fd9856c7fd",
+ "line.b_wystaje": {
+  "hash": "a6d15aaaf149",
   "who": "sowa",
-  "text": "Jak ciepło! Dziękuję, przyjaciele. To najlepszy prezent."
+  "text": "Nowa dziupla wystaje dookoła. Jest większa od starej!"
  },
- "line.c_slonce": {
-  "hash": "1e1067d95f03",
-  "who": "lisek",
-  "text": "Patrzcie, przestało padać!"
+ "line.b_wskaz_wieksza": {
+  "hash": "06b96f7c888e",
+  "who": "sowa",
+  "text": "Która dziupla jest większa, stara czy nowa? Wskaż."
  },
- "line.c_niespodzianka": {
-  "hash": "45e916cf5920",
+ "line.b_wskaz_wieksza_nie": {
+  "hash": "25da7e18f9e7",
+  "who": "sowa",
+  "text": "To stara, mniejsza dziupla. Ta druga wystawała dookoła."
+ },
+ "line.b_w_sam_raz": {
+  "hash": "cd8cf6b4f1d9",
   "who": "wiewiorka",
-  "text": "Wracajmy do domu! Czeka niespodzianka!"
+  "text": "Większa od starej, a mniejsza od tej ogromnej. W sam raz dla mnie!"
+ },
+ "line.b_myszki": {
+  "hash": "8af1a4f502a2",
+  "who": "sowa",
+  "text": "Do starej dziupli Wiewiórki wprowadzi się rodzina myszek. Ale mają za małe pudełko na swoje rzeczy."
+ },
+ "line.b_pudelko": {
+  "hash": "8be8f00ae001",
+  "who": "lisek",
+  "text": "Które pudełko jest większe? Wskaż, a myszki się zmieszczą."
+ },
+ "line.b_pudelko_nie": {
+  "hash": "160ca9be7c07",
+  "who": "lisek",
+  "text": "To pudełko jest mniejsze. Myszki potrzebują większego."
+ },
+ "line.b_dziekuja": {
+  "hash": "a502cfe0bad8",
+  "who": "sowa",
+  "text": "Myszki się zmieściły i dziękują!"
+ },
+ "line.b_lapanie": {
+  "hash": "32f09ed33a39",
+  "who": "lisek",
+  "text": "Z dębu spadają żołędzie! Łap te duże, do nowych zapasów. Wskaż duży żołądź."
+ },
+ "line.b_do_domu": {
+  "hash": "a31ac604dd68",
+  "who": "wiewiorka",
+  "text": "Mam nową dziuplę i duże żołędzie! Zapraszam was do siebie na parapetówkę."
  },
  "line.p_start": {
-  "hash": "c491dbd102ac",
+  "hash": "4c089e25a3d6",
   "who": "wiewiorka",
-  "text": "Teraz zabawa! Zbieramy gwiazdki."
+  "text": "Zanim pójdziemy, pobawmy się w duże i małe!"
  },
  "line.p_wiekszy": {
   "hash": "e5388086c468",
   "who": "lisek",
   "text": "Który jest większy? Wskaż."
  },
- "line.p_wiekszy.wiewiorka": {
-  "hash": "bd31e77d722d",
-  "who": "wiewiorka",
-  "text": "Który jest większy? Wskaż."
- },
  "line.p_poloz": {
-  "hash": "886388fcdc85",
+  "hash": "acb385149282",
   "who": "lisek",
-  "text": "Popatrz jeszcze raz. Który jest większy?"
- },
- "line.p_poloz.wiewiorka": {
-  "hash": "ae34b7fcebdc",
-  "who": "wiewiorka",
-  "text": "Popatrz jeszcze raz. Który jest większy?"
+  "text": "Połóżmy jeden na drugim i zobaczymy. Który jest większy?"
  },
  "line.p_wystaje": {
-  "hash": "cb14aa6db718",
+  "hash": "25ec65e32812",
   "who": "wiewiorka",
-  "text": "Większy wystaje dookoła."
+  "text": "Widzisz? Większy wystaje dookoła."
  },
- "line.p_wystaje.lisek": {
-  "hash": "9d31df659c63",
+ "line.p_najwiekszy": {
+  "hash": "251fdfdb73ca",
   "who": "lisek",
-  "text": "Większy wystaje dookoła."
+  "text": "Które jabłko jest największe? Wskaż."
  },
- "line.p_lapanie": {
-  "hash": "78ce4e7e62ae",
+ "line.p_najwiekszy_nie": {
+  "hash": "080d28a8ba87",
   "who": "lisek",
-  "text": "A teraz łapanie! Szybko, wskaż to, co większe."
+  "text": "To jabłko jest mniejsze. Poszukaj największego."
  },
- "line.p_lap": {
-  "hash": "fb4a78ca9692",
+ "line.p_cien": {
+  "hash": "1b7ea26d6373",
+  "who": "lisek",
+  "text": "Czyj to cień: dużej gruszki czy małej? Wskaż."
+ },
+ "line.p_cien_nie": {
+  "hash": "262bbf3f68c7",
+  "who": "lisek",
+  "text": "Popatrz na cień jeszcze raz. Czy jest duży, czy mały?"
+ },
+ "line.p_cien_duzy": {
+  "hash": "f279d3d79457",
   "who": "wiewiorka",
-  "text": "Łap większe!"
+  "text": "Tak! To cień dużej gruszki."
+ },
+ "line.p_cien_maly": {
+  "hash": "0f56e309cfe3",
+  "who": "wiewiorka",
+  "text": "Tak! To cień małej gruszki."
  },
  "line.p_czapki": {
-  "hash": "5aaffd0ddf5f",
+  "hash": "fbe2d7a0fdd2",
   "who": "lisek",
-  "text": "Przeciągnij dużą czapkę do mnie, a małą do wiewiórki."
+  "text": "Trzy czapki: największa dla mnie, średnia dla Sowy, najmniejsza dla Wiewiórki. Przeciągnij każdą czapkę."
  },
- "line.d_pudelko": {
-  "hash": "5f85646ece42",
+ "line.za_duze": {
+  "hash": "2fc6a7eae784",
   "who": "lisek",
-  "text": "Niespodzianka! Wskaż pudełko, otworzymy je."
+  "text": "Ta czapka jest za duża, zsuwa się. Spróbuj mniejszej."
  },
- "line.d_trzy": {
-  "hash": "c9a5f37057e6",
-  "who": "wiewiorka",
-  "text": "Trzy kapelusze! Takie same, ale różnej wielkości."
- },
- "line.d_zasada": {
-  "hash": "ba035b940231",
-  "who": "lisek",
-  "text": "Największy kapelusz na największą głowę, najmniejszy na najmniejszą. Przeciągnij je."
- },
- "line.d_pieknie": {
-  "hash": "892bf316a6ea",
+ "line.za_duze.sowa": {
+  "hash": "b39876530f0f",
   "who": "sowa",
-  "text": "Każdy ma kapelusz w sam raz!"
+  "text": "Ta czapka jest za duża, zsuwa się. Spróbuj mniejszej."
+ },
+ "line.za_duze.wiewiorka": {
+  "hash": "31a4792db32a",
+  "who": "wiewiorka",
+  "text": "Ta czapka jest za duża, zsuwa się. Spróbuj mniejszej."
+ },
+ "line.za_male": {
+  "hash": "a65be99bef02",
+  "who": "lisek",
+  "text": "Ta czapka jest za mała. Spróbuj większej."
+ },
+ "line.za_male.sowa": {
+  "hash": "7d65361229b8",
+  "who": "sowa",
+  "text": "Ta czapka jest za mała. Spróbuj większej."
+ },
+ "line.za_male.wiewiorka": {
+  "hash": "0815b3851462",
+  "who": "wiewiorka",
+  "text": "Ta czapka jest za mała. Spróbuj większej."
+ },
+ "line.d_parapetowka": {
+  "hash": "fb9dd89682a2",
+  "who": "wiewiorka",
+  "text": "Witajcie w mojej nowej dziupli! Zrobię wam herbatkę."
+ },
+ "line.d_kubki": {
+  "hash": "7f7a1fe678a6",
+  "who": "sowa",
+  "text": "Duży kubek dla dużego Liska, mały dla małej Wiewiórki. Przeciągnij każdy kubek."
+ },
+ "line.d_nie_ten": {
+  "hash": "8a307a73957f",
+  "who": "sowa",
+  "text": "Ten kubek jest dla kogoś innego. Duży dla Liska, mały dla Wiewiórki."
+ },
+ "line.d_pasuje": {
+  "hash": "f2802bb405c2",
+  "who": "lisek",
+  "text": "Każdy ma kubek w sam raz. Mniam, herbatka!"
  },
  "line.d_rodzice": {
-  "hash": "e7fdf1041591",
-  "who": "lisek",
-  "text": "Poproście rodziców, żeby porównali z wami buty całej rodziny. Połóżcie jeden na drugim!"
- },
- "line.d_pa": {
-  "hash": "de5cebfd32fc",
-  "who": "wiewiorka",
-  "text": "Pa, pa! Do zobaczenia!"
- },
- "line.b_zagrajmy": {
-  "hash": "65277f8e71bf",
-  "who": "lisek",
-  "text": "Zagrajmy w papier, kamień, nożyce! Kto wygra, ten idzie pierwszy."
- },
- "line.b_znaki": {
-  "hash": "ef7175ed22fc",
-  "who": "lisek",
-  "text": "Pięść to kamień, otwarta dłoń to papier, a dwa palce to nożyce."
- },
- "line.b_zasada_kamien": {
-  "hash": "b58eb27c3e3a",
-  "who": "lisek",
-  "text": "Kamień tępi nożyce."
- },
- "line.b_zasada_nozyce": {
-  "hash": "5ba4efb8b180",
-  "who": "lisek",
-  "text": "Nożyce tną papier."
- },
- "line.b_zasada_papier": {
-  "hash": "a8a59967f390",
-  "who": "lisek",
-  "text": "Papier owija kamień."
- },
- "line.b_wybierz": {
-  "hash": "7b5956f268c2",
-  "who": "lisek",
-  "text": "Wybierz znak dla wiewiórki."
- },
- "line.b_wybierz.wiewiorka": {
-  "hash": "ca8d9d4657d9",
-  "who": "wiewiorka",
-  "text": "Wybierz znak dla wiewiórki."
- },
- "line.b_raz_dwa": {
-  "hash": "629f7568fe4d",
-  "who": "lisek",
-  "text": "Raz, dwa, trzy, pokazujemy!"
- },
- "line.b_pierwsza": {
-  "hash": "fee5f7c261cc",
-  "who": "wiewiorka",
-  "text": "Idę pierwsza! Hop, hop, hop!"
- },
- "line.b_ja_kamien": {
-  "hash": "301eae36e42b",
-  "who": "lisek",
-  "text": "Ja wybrałem kamień."
- },
- "line.b_ja_papier": {
-  "hash": "1787fb45f237",
-  "who": "lisek",
-  "text": "Ja wybrałem papier."
- },
- "line.b_ja_nozyce": {
-  "hash": "b8016604c28f",
-  "who": "lisek",
-  "text": "Ja wybrałem nożyce."
- },
- "line.b_ona_kamien": {
-  "hash": "dd803d199491",
-  "who": "lisek",
-  "text": "Wiewiórka wybrała kamień."
- },
- "line.b_ona_papier": {
-  "hash": "f6d1a6ea6fd5",
-  "who": "lisek",
-  "text": "Wiewiórka wybrała papier."
- },
- "line.b_ona_nozyce": {
-  "hash": "e2b4def075f8",
-  "who": "lisek",
-  "text": "Wiewiórka wybrała nożyce."
+  "hash": "7fd4d9a6a5bb",
+  "who": "sowa",
+  "text": "Porównaj z rodzicami buty całej rodziny: połóż jeden na drugim. Który wystaje, ten jest większy!"
  },
  "line.naklejka_daj": {
-  "hash": "2634c68df6d9",
+  "hash": "c95abcb3b300",
   "who": "wiewiorka",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "6463977abdb1",
-  "who": "narrator",
-  "text": "To kalosze od wiewiórki. Dostaliśmy je, kiedy porównywaliśmy, co jest większe, i przeszliśmy przez strumyk po dużych kamieniach."
+  "text": "Dziękuję za pomoc w szukaniu dziupli! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
   "hash": "85dccce7b7f1",
   "who": "wiewiorka",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "a699688a0c63",
+  "who": "narrator",
+  "text": "To nowa dziupla Wiewiórki. Znaleźliśmy ją, kiedy porównywaliśmy, co jest większe, a co mniejsze."
  }
 }

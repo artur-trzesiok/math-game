@@ -1,392 +1,257 @@
 {
- "line.a_urodziny": {
-  "hash": "a8ecfffbab56",
-  "who": "lisek",
-  "text": "We're going to the old oak. It's Owl's birthday today!"
- },
- "line.a_hurra": {
-  "hash": "84938d2bba69",
+ "line.a_zapasy": {
+  "hash": "713c00215d5d",
   "who": "wiewiorka",
-  "text": "Hooray! A birthday!"
+  "text": "I have my whole winter store! I'll put it away in my hollow."
  },
- "line.a_obietnica": {
-  "hash": "f31c25b117dd",
-  "who": "lisek",
-  "text": "And when we're back, a surprise is waiting for us at home."
- },
- "line.a_pada": {
-  "hash": "d06c7edbe6e6",
+ "line.a_nie_mieszcze": {
+  "hash": "198900d8eea3",
   "who": "wiewiorka",
-  "text": "Oh no, it's raining! We'll get wet."
+  "text": "Oh no! I don't fit into my hollow. Only my head goes in!"
  },
- "line.a_kalosze": {
-  "hash": "ba80e90eedbc",
+ "line.a_za_mala": {
+  "hash": "6738738013b9",
   "who": "lisek",
-  "text": "Let's put on our wellies."
+  "text": "Your hollow is too small. You have grown, and now you have a big store."
  },
- "line.a_biore": {
-  "hash": "ccb7ffb23be9",
-  "who": "wiewiorka",
-  "text": "These are good!"
- },
- "line.a_za_duze": {
-  "hash": "62b06ee83180",
-  "who": "lisek",
-  "text": "They fall off because they're too big. They're my wellies."
+ "line.a_nowa": {
+  "hash": "0f3ffc44db86",
+  "who": "sowa",
+  "text": "You need a new hollow, bigger than the old one. Let's look for one in the forest!"
  },
  "line.a_jak": {
-  "hash": "f9ac120a2d39",
+  "hash": "3949b4fb6448",
   "who": "wiewiorka",
-  "text": "Then how do I know which ones are mine?"
+  "text": "But how will we know which hollow is bigger?"
  },
- "line.a_porownaj": {
-  "hash": "979c1fd54056",
-  "who": "lisek",
-  "text": "We'll compare them! We'll lay one on the other."
- },
- "line.a_co": {
-  "hash": "f355c6679cd5",
-  "who": "wiewiorka",
-  "text": "One on the other?"
- },
- "line.a_pokaze": {
-  "hash": "0ee4d92c9ab3",
-  "who": "lisek",
-  "text": "I'll show you."
- },
- "line.a_kladziemy": {
-  "hash": "879309496216",
-  "who": "lisek",
-  "text": "I lay the small welly on the big one."
- },
- "line.a_wystaje": {
-  "hash": "837ba9cc9662",
-  "who": "lisek",
-  "text": "See? The big one sticks out all around. This one is bigger."
- },
- "line.a_wskaz_maly": {
-  "hash": "1380fd0eb6cf",
-  "who": "wiewiorka",
-  "text": "And which one is smaller? Point to it."
- },
- "line.a_nie_ten": {
-  "hash": "cf00d64628ec",
-  "who": "wiewiorka",
-  "text": "That one stuck out all around. Point to the other one."
- },
- "line.a_nie_ten.lisek": {
-  "hash": "f0366de84c6f",
-  "who": "lisek",
-  "text": "That one stuck out all around. Point to the other one."
- },
- "line.a_ubierz": {
-  "hash": "abbe28c09c1e",
-  "who": "lisek",
-  "text": "Drag the big wellies to me, and the small ones to Squirrel."
- },
- "line.za_duze": {
-  "hash": "c3ace17c4327",
-  "who": "lisek",
-  "text": "Too big! They fall off."
- },
- "line.za_duze.wiewiorka": {
-  "hash": "6a763125739b",
-  "who": "wiewiorka",
-  "text": "Too big! They fall off."
- },
- "line.za_duze.sowa": {
-  "hash": "29e12adcaf6e",
+ "line.a_metoda": {
+  "hash": "dbdc6086e2d4",
   "who": "sowa",
-  "text": "Too big! They fall off."
+  "text": "We'll lay one on the other. The one that sticks out all round is bigger. The one that hides is smaller."
  },
- "line.za_male": {
-  "hash": "cf21d2eda12f",
+ "line.a_w_droge": {
+  "hash": "26f375d8d75a",
   "who": "lisek",
-  "text": "Too small! They don't fit."
+  "text": "Let's go, then!"
  },
- "line.za_male.wiewiorka": {
-  "hash": "098b134364bc",
-  "who": "wiewiorka",
-  "text": "Too small! They don't fit."
- },
- "line.za_male.sowa": {
-  "hash": "73c8f5e40124",
+ "line.b_trzy": {
+  "hash": "4cbb5e30d1ed",
   "who": "sowa",
-  "text": "Too small! They don't fit."
+  "text": "Look, there are three hollows in these trees."
  },
- "line.a_pasuja": {
-  "hash": "3705b1c64be1",
-  "who": "wiewiorka",
-  "text": "They fit! Now the rain can't bother us."
- },
- "line.a_idziemy": {
-  "hash": "86e8e8dc947c",
+ "line.b_najwieksza": {
+  "hash": "52393ddcf130",
   "who": "lisek",
-  "text": "Let's go!"
+  "text": "Which hollow is the biggest? Point to it."
  },
- "line.b_strumyk": {
-  "hash": "671f1baedcb9",
-  "who": "wiewiorka",
-  "text": "A brook! How do we get across?"
- },
- "line.b_kamienie": {
-  "hash": "e1e85535d62d",
+ "line.b_najwieksza_nie": {
+  "hash": "8705053f8dc7",
   "who": "lisek",
-  "text": "On stones. But only a big stone will hold us."
+  "text": "That one isn't the biggest. Look for the one bigger than all the others."
  },
- "line.b_kto_pierwszy": {
-  "hash": "68671b941a4e",
+ "line.b_sprobuje": {
+  "hash": "103fa1bba728",
   "who": "wiewiorka",
-  "text": "And who goes first?"
+  "text": "The biggest! I'll surely fit in. Let me try!"
  },
- "line.b_wygralas": {
-  "hash": "b3e10eea5ba2",
+ "line.b_za_duza": {
+  "hash": "d4ec9d7c2d93",
+  "who": "wiewiorka",
+  "text": "Brr! It's too big. The wind blows in and it's cold."
+ },
+ "line.b_najmniejsza": {
+  "hash": "54be0119a7a1",
   "who": "lisek",
-  "text": "Squirrel wins! She goes first."
+  "text": "And which one is the smallest? Point to it."
  },
- "line.b_most": {
-  "hash": "9f3524df387b",
+ "line.b_najmniejsza_nie": {
+  "hash": "123827d679df",
   "who": "lisek",
-  "text": "Let's put stones in the water. Ready, here we go!"
+  "text": "That one isn't the smallest. Look for the one smaller than all the others."
  },
- "line.b_wskaz_duzy": {
-  "hash": "505dca4d9b72",
+ "line.b_za_mala": {
+  "hash": "d81d7dfc4d06",
   "who": "wiewiorka",
-  "text": "Which stone will hold me? Point to the big one."
+  "text": "This one is too small, even smaller than my old one!"
  },
- "line.b_jeszcze": {
-  "hash": "a5f21bfc30da",
-  "who": "wiewiorka",
-  "text": "And one more. Point to the big stone."
- },
- "line.b_utonal": {
-  "hash": "63174b168785",
-  "who": "lisek",
-  "text": "Oh dear, the small stone sank. We need a big one."
- },
- "line.b_przechodzimy": {
-  "hash": "9c273046580e",
-  "who": "wiewiorka",
-  "text": "We crossed on the big stones!"
- },
- "line.c_zimno": {
-  "hash": "567e8e20fe40",
+ "line.b_sprawdzmy": {
+  "hash": "bc7862d3b65d",
   "who": "sowa",
-  "text": "Brr, I'm cold. The wind took my hat away."
+  "text": "There's one more left. Let's check it: we'll lay the old hollow on it."
  },
- "line.c_pomozemy": {
-  "hash": "4b12b34c1295",
-  "who": "wiewiorka",
-  "text": "Don't worry, Owl! We'll help you."
- },
- "line.c_co_ogrzeje": {
-  "hash": "95d0fc7a2063",
-  "who": "lisek",
-  "text": "What will keep Owl warm? Point to all of them."
- },
- "line.c_nie_ogrzeje": {
-  "hash": "8737168e407d",
-  "who": "lisek",
-  "text": "That won't keep Owl warm."
- },
- "line.c_nie_ogrzeje.wiewiorka": {
-  "hash": "5c5d21834762",
-  "who": "wiewiorka",
-  "text": "That won't keep Owl warm."
- },
- "line.c_glowka": {
-  "hash": "0b965e61506f",
-  "who": "wiewiorka",
-  "text": "Owl has a big head. Drag the hat that fits onto her."
- },
- "line.c_szalik": {
-  "hash": "f7545417ac89",
-  "who": "lisek",
-  "text": "And a scarf too. Drag it onto Owl."
- },
- "line.c_dziekuje": {
-  "hash": "064ddf88497c",
+ "line.b_wystaje": {
+  "hash": "e0a44a7af2e8",
   "who": "sowa",
-  "text": "So warm! Thank you, friends. That's the best present."
+  "text": "The new hollow sticks out all round. It is bigger than the old one!"
  },
- "line.c_slonce": {
-  "hash": "dea192cc2632",
-  "who": "lisek",
-  "text": "Look, the rain has stopped!"
+ "line.b_wskaz_wieksza": {
+  "hash": "830f1fc59f30",
+  "who": "sowa",
+  "text": "Which hollow is bigger, the old one or the new one? Point to it."
  },
- "line.c_niespodzianka": {
-  "hash": "6bd30e7023c7",
+ "line.b_wskaz_wieksza_nie": {
+  "hash": "280c8ff8cb9a",
+  "who": "sowa",
+  "text": "That's the old, smaller hollow. The other one stuck out all round."
+ },
+ "line.b_w_sam_raz": {
+  "hash": "b11143771829",
   "who": "wiewiorka",
-  "text": "Let's go home! The surprise is waiting!"
+  "text": "Bigger than the old one, and smaller than the huge one. Just right for me!"
+ },
+ "line.b_myszki": {
+  "hash": "68e4d0a1a73c",
+  "who": "sowa",
+  "text": "A mouse family will move into Squirrel's old hollow. But their box is too small for their things."
+ },
+ "line.b_pudelko": {
+  "hash": "5715b93e618a",
+  "who": "lisek",
+  "text": "Which box is bigger? Point to it, and the mice will fit."
+ },
+ "line.b_pudelko_nie": {
+  "hash": "2720a8dc15f5",
+  "who": "lisek",
+  "text": "That box is smaller. The mice need a bigger one."
+ },
+ "line.b_dziekuja": {
+  "hash": "0c2a41522497",
+  "who": "sowa",
+  "text": "The mice fit in and say thank you!"
+ },
+ "line.b_lapanie": {
+  "hash": "4d6edf948fa4",
+  "who": "lisek",
+  "text": "Acorns are falling from the oak! Catch the big ones, for the new store. Point to a big acorn."
+ },
+ "line.b_do_domu": {
+  "hash": "0777b191f148",
+  "who": "wiewiorka",
+  "text": "I have a new hollow and big acorns! Come to my house-warming."
  },
  "line.p_start": {
-  "hash": "d2ec608325a5",
+  "hash": "2e17d98ee52f",
   "who": "wiewiorka",
-  "text": "Now let's play! We collect stars."
+  "text": "Before we go, let's play big and small!"
  },
  "line.p_wiekszy": {
   "hash": "390648ea019f",
   "who": "lisek",
   "text": "Which one is bigger? Point to it."
  },
- "line.p_wiekszy.wiewiorka": {
-  "hash": "703f72c8f39e",
-  "who": "wiewiorka",
-  "text": "Which one is bigger? Point to it."
- },
  "line.p_poloz": {
-  "hash": "00d6cec5c277",
+  "hash": "61fe794c3954",
   "who": "lisek",
-  "text": "Look again. Which one is bigger?"
- },
- "line.p_poloz.wiewiorka": {
-  "hash": "506311880908",
-  "who": "wiewiorka",
-  "text": "Look again. Which one is bigger?"
+  "text": "Let's lay one on the other and see. Which one is bigger?"
  },
  "line.p_wystaje": {
-  "hash": "1f1c77f2ecb0",
+  "hash": "7afc1ba076bc",
   "who": "wiewiorka",
-  "text": "The bigger one sticks out all around."
+  "text": "See? The bigger one sticks out all round."
  },
- "line.p_wystaje.lisek": {
-  "hash": "567df26b5504",
+ "line.p_najwiekszy": {
+  "hash": "4a870d0b0ce2",
   "who": "lisek",
-  "text": "The bigger one sticks out all around."
+  "text": "Which apple is the biggest? Point to it."
  },
- "line.p_lapanie": {
-  "hash": "c63b5bb3eeba",
+ "line.p_najwiekszy_nie": {
+  "hash": "da751d08d225",
   "who": "lisek",
-  "text": "And now a catching game! Quick, point to the bigger one."
+  "text": "That apple is smaller. Look for the biggest one."
  },
- "line.p_lap": {
-  "hash": "c53f46712f88",
+ "line.p_cien": {
+  "hash": "907a04f559f3",
+  "who": "lisek",
+  "text": "Whose shadow is it: the big pear's or the small one's? Point to it."
+ },
+ "line.p_cien_nie": {
+  "hash": "36136fbac8e6",
+  "who": "lisek",
+  "text": "Look at the shadow again. Is it big or small?"
+ },
+ "line.p_cien_duzy": {
+  "hash": "689031d5b67b",
   "who": "wiewiorka",
-  "text": "Catch the bigger one!"
+  "text": "Yes! It's the big pear's shadow."
+ },
+ "line.p_cien_maly": {
+  "hash": "62b9227cb3aa",
+  "who": "wiewiorka",
+  "text": "Yes! It's the small pear's shadow."
  },
  "line.p_czapki": {
-  "hash": "c429b4198d84",
+  "hash": "85310cfb86c6",
   "who": "lisek",
-  "text": "Drag the big cap to me, and the small one to Squirrel."
+  "text": "Three caps: the biggest for me, the middle one for Owl, the smallest for Squirrel. Drag each cap."
  },
- "line.d_pudelko": {
-  "hash": "e4237eaa06db",
+ "line.za_duze": {
+  "hash": "39213c8ab5ca",
   "who": "lisek",
-  "text": "Surprise! Point to the box, let's open it."
+  "text": "That cap is too big, it slips off. Try a smaller one."
  },
- "line.d_trzy": {
-  "hash": "6c6620372747",
-  "who": "wiewiorka",
-  "text": "Three hats! The same, but different sizes."
- },
- "line.d_zasada": {
-  "hash": "7d1cbcf889c5",
-  "who": "lisek",
-  "text": "The biggest hat for the biggest head, the smallest for the smallest. Drag them."
- },
- "line.d_pieknie": {
-  "hash": "6bd06232d4d1",
+ "line.za_duze.sowa": {
+  "hash": "52608d7a0f04",
   "who": "sowa",
-  "text": "Everyone has a hat that's just right!"
+  "text": "That cap is too big, it slips off. Try a smaller one."
+ },
+ "line.za_duze.wiewiorka": {
+  "hash": "ba4777b1fee6",
+  "who": "wiewiorka",
+  "text": "That cap is too big, it slips off. Try a smaller one."
+ },
+ "line.za_male": {
+  "hash": "6e456ff11608",
+  "who": "lisek",
+  "text": "That cap is too small. Try a bigger one."
+ },
+ "line.za_male.sowa": {
+  "hash": "2f8b76c43dd5",
+  "who": "sowa",
+  "text": "That cap is too small. Try a bigger one."
+ },
+ "line.za_male.wiewiorka": {
+  "hash": "ae59adbb55a6",
+  "who": "wiewiorka",
+  "text": "That cap is too small. Try a bigger one."
+ },
+ "line.d_parapetowka": {
+  "hash": "2a29fef2a240",
+  "who": "wiewiorka",
+  "text": "Welcome to my new hollow! I'll make you some tea."
+ },
+ "line.d_kubki": {
+  "hash": "e7f80c6739fe",
+  "who": "sowa",
+  "text": "The big cup for big Fox, the small one for little Squirrel. Drag each cup."
+ },
+ "line.d_nie_ten": {
+  "hash": "0e4742755467",
+  "who": "sowa",
+  "text": "That cup is for someone else. The big one for Fox, the small one for Squirrel."
+ },
+ "line.d_pasuje": {
+  "hash": "c60d4c6734b7",
+  "who": "lisek",
+  "text": "Everyone has a cup that's just right. Yum, tea!"
  },
  "line.d_rodzice": {
-  "hash": "a31e3d3d31cc",
-  "who": "lisek",
-  "text": "Ask your parents to compare the whole family's shoes with you. Lay one on the other!"
- },
- "line.d_pa": {
-  "hash": "3c8231148d14",
-  "who": "wiewiorka",
-  "text": "Bye bye! See you!"
- },
- "line.b_zagrajmy": {
-  "hash": "7438a07e8f02",
-  "who": "lisek",
-  "text": "Let's play rock, paper, scissors! Whoever wins goes first."
- },
- "line.b_znaki": {
-  "hash": "a5d8ad49e7ba",
-  "who": "lisek",
-  "text": "A fist is rock, an open hand is paper, and two fingers are scissors."
- },
- "line.b_zasada_kamien": {
-  "hash": "f9e88e3aef65",
-  "who": "lisek",
-  "text": "Rock blunts scissors."
- },
- "line.b_zasada_nozyce": {
-  "hash": "f22a5836f26f",
-  "who": "lisek",
-  "text": "Scissors cut paper."
- },
- "line.b_zasada_papier": {
-  "hash": "cbfa62e90b26",
-  "who": "lisek",
-  "text": "Paper wraps rock."
- },
- "line.b_wybierz": {
-  "hash": "c1ffa49f0d55",
-  "who": "lisek",
-  "text": "Choose a sign for Squirrel."
- },
- "line.b_wybierz.wiewiorka": {
-  "hash": "2675be37eba2",
-  "who": "wiewiorka",
-  "text": "Choose a sign for Squirrel."
- },
- "line.b_raz_dwa": {
-  "hash": "d26c21cb9abc",
-  "who": "lisek",
-  "text": "One, two, three, show!"
- },
- "line.b_pierwsza": {
-  "hash": "74a9fbebf06d",
-  "who": "wiewiorka",
-  "text": "I'll go first! Hop, hop, hop!"
- },
- "line.b_ja_kamien": {
-  "hash": "c228310c831f",
-  "who": "lisek",
-  "text": "I chose rock."
- },
- "line.b_ja_papier": {
-  "hash": "101d4f2fb99a",
-  "who": "lisek",
-  "text": "I chose paper."
- },
- "line.b_ja_nozyce": {
-  "hash": "33d810d3e534",
-  "who": "lisek",
-  "text": "I chose scissors."
- },
- "line.b_ona_kamien": {
-  "hash": "4ee39e577943",
-  "who": "lisek",
-  "text": "Squirrel chose rock."
- },
- "line.b_ona_papier": {
-  "hash": "a3e7608ced12",
-  "who": "lisek",
-  "text": "Squirrel chose paper."
- },
- "line.b_ona_nozyce": {
-  "hash": "28c295bad6f7",
-  "who": "lisek",
-  "text": "Squirrel chose scissors."
+  "hash": "068cabb4b49d",
+  "who": "sowa",
+  "text": "Compare the whole family's shoes with your parents: lay one on the other. The one that sticks out is bigger!"
  },
  "line.naklejka_daj": {
-  "hash": "09d044a8206f",
+  "hash": "6df20093df6d",
   "who": "wiewiorka",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
- },
- "line.naklejka_opis": {
-  "hash": "649f54e059e9",
-  "who": "narrator",
-  "text": "These are the wellies from Squirrel. We got them when we compared sizes and crossed the brook on the big stones."
+  "text": "Thank you for helping me find a hollow! Here is a sticker for your album. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "a272dae35780",
+  "hash": "92efc82c70f5",
   "who": "wiewiorka",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "94f23de2d1e2",
+  "who": "narrator",
+  "text": "This is Squirrel's new hollow. We found it when we compared what is bigger and what is smaller."
  }
 }

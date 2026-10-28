@@ -1,300 +1,198 @@
 {
-  "line.a_urodziny": {
-    "who": "lisek",
-    "text": "We're going to the old oak. It's Owl's birthday today!"
-  },
-  "line.a_hurra": {
+  "line.a_zapasy": {
     "who": "wiewiorka",
-    "text": "Hooray! A birthday!"
+    "text": "I have my whole winter store! I'll put it away in my hollow."
   },
-  "line.a_obietnica": {
-    "who": "lisek",
-    "text": "And when we're back, a surprise is waiting for us at home."
-  },
-  "line.a_pada": {
+  "line.a_nie_mieszcze": {
     "who": "wiewiorka",
-    "text": "Oh no, it's raining! We'll get wet."
+    "text": "Oh no! I don't fit into my hollow. Only my head goes in!"
   },
-  "line.a_kalosze": {
+  "line.a_za_mala": {
     "who": "lisek",
-    "text": "Let's put on our wellies."
+    "text": "Your hollow is too small. You have grown, and now you have a big store."
   },
-  "line.a_biore": {
-    "who": "wiewiorka",
-    "text": "These are good!"
-  },
-  "line.a_za_duze": {
-    "who": "lisek",
-    "text": "They fall off because they're too big. They're my wellies."
+  "line.a_nowa": {
+    "who": "sowa",
+    "text": "You need a new hollow, bigger than the old one. Let's look for one in the forest!"
   },
   "line.a_jak": {
     "who": "wiewiorka",
-    "text": "Then how do I know which ones are mine?"
+    "text": "But how will we know which hollow is bigger?"
   },
-  "line.a_porownaj": {
+  "line.a_metoda": {
+    "who": "sowa",
+    "text": "We'll lay one on the other. The one that sticks out all round is bigger. The one that hides is smaller."
+  },
+  "line.a_w_droge": {
     "who": "lisek",
-    "text": "We'll compare them! We'll lay one on the other."
+    "text": "Let's go, then!"
   },
-  "line.a_co": {
+  "line.b_trzy": {
+    "who": "sowa",
+    "text": "Look, there are three hollows in these trees."
+  },
+  "line.b_najwieksza": {
+    "who": "lisek",
+    "text": "Which hollow is the biggest? Point to it."
+  },
+  "line.b_najwieksza_nie": {
+    "who": "lisek",
+    "text": "That one isn't the biggest. Look for the one bigger than all the others."
+  },
+  "line.b_sprobuje": {
     "who": "wiewiorka",
-    "text": "One on the other?"
+    "text": "The biggest! I'll surely fit in. Let me try!"
   },
-  "line.a_pokaze": {
-    "who": "lisek",
-    "text": "I'll show you."
-  },
-  "line.a_kladziemy": {
-    "who": "lisek",
-    "text": "I lay the small welly on the big one."
-  },
-  "line.a_wystaje": {
-    "who": "lisek",
-    "text": "See? The big one sticks out all around. This one is bigger."
-  },
-  "line.a_wskaz_maly": {
+  "line.b_za_duza": {
     "who": "wiewiorka",
-    "text": "And which one is smaller? Point to it."
+    "text": "Brr! It's too big. The wind blows in and it's cold."
   },
-  "line.a_nie_ten": {
-    "who": "wiewiorka",
-    "text": "That one stuck out all around. Point to the other one.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.a_ubierz": {
+  "line.b_najmniejsza": {
     "who": "lisek",
-    "text": "Drag the big wellies to me, and the small ones to Squirrel."
+    "text": "And which one is the smallest? Point to it."
+  },
+  "line.b_najmniejsza_nie": {
+    "who": "lisek",
+    "text": "That one isn't the smallest. Look for the one smaller than all the others."
+  },
+  "line.b_za_mala": {
+    "who": "wiewiorka",
+    "text": "This one is too small, even smaller than my old one!"
+  },
+  "line.b_sprawdzmy": {
+    "who": "sowa",
+    "text": "There's one more left. Let's check it: we'll lay the old hollow on it."
+  },
+  "line.b_wystaje": {
+    "who": "sowa",
+    "text": "The new hollow sticks out all round. It is bigger than the old one!"
+  },
+  "line.b_wskaz_wieksza": {
+    "who": "sowa",
+    "text": "Which hollow is bigger, the old one or the new one? Point to it."
+  },
+  "line.b_wskaz_wieksza_nie": {
+    "who": "sowa",
+    "text": "That's the old, smaller hollow. The other one stuck out all round."
+  },
+  "line.b_w_sam_raz": {
+    "who": "wiewiorka",
+    "text": "Bigger than the old one, and smaller than the huge one. Just right for me!"
+  },
+  "line.b_myszki": {
+    "who": "sowa",
+    "text": "A mouse family will move into Squirrel's old hollow. But their box is too small for their things."
+  },
+  "line.b_pudelko": {
+    "who": "lisek",
+    "text": "Which box is bigger? Point to it, and the mice will fit."
+  },
+  "line.b_pudelko_nie": {
+    "who": "lisek",
+    "text": "That box is smaller. The mice need a bigger one."
+  },
+  "line.b_dziekuja": {
+    "who": "sowa",
+    "text": "The mice fit in and say thank you!"
+  },
+  "line.b_lapanie": {
+    "who": "lisek",
+    "text": "Acorns are falling from the oak! Catch the big ones, for the new store. Point to a big acorn."
+  },
+  "line.b_do_domu": {
+    "who": "wiewiorka",
+    "text": "I have a new hollow and big acorns! Come to my house-warming."
+  },
+  "line.p_start": {
+    "who": "wiewiorka",
+    "text": "Before we go, let's play big and small!"
+  },
+  "line.p_wiekszy": {
+    "who": "lisek",
+    "text": "Which one is bigger? Point to it."
+  },
+  "line.p_poloz": {
+    "who": "lisek",
+    "text": "Let's lay one on the other and see. Which one is bigger?"
+  },
+  "line.p_wystaje": {
+    "who": "wiewiorka",
+    "text": "See? The bigger one sticks out all round."
+  },
+  "line.p_najwiekszy": {
+    "who": "lisek",
+    "text": "Which apple is the biggest? Point to it."
+  },
+  "line.p_najwiekszy_nie": {
+    "who": "lisek",
+    "text": "That apple is smaller. Look for the biggest one."
+  },
+  "line.p_cien": {
+    "who": "lisek",
+    "text": "Whose shadow is it: the big pear's or the small one's? Point to it."
+  },
+  "line.p_cien_nie": {
+    "who": "lisek",
+    "text": "Look at the shadow again. Is it big or small?"
+  },
+  "line.p_cien_duzy": {
+    "who": "wiewiorka",
+    "text": "Yes! It's the big pear's shadow."
+  },
+  "line.p_cien_maly": {
+    "who": "wiewiorka",
+    "text": "Yes! It's the small pear's shadow."
+  },
+  "line.p_czapki": {
+    "who": "lisek",
+    "text": "Three caps: the biggest for me, the middle one for Owl, the smallest for Squirrel. Drag each cap."
   },
   "line.za_duze": {
     "who": "lisek",
-    "text": "Too big! They fall off.",
+    "text": "That cap is too big, it slips off. Try a smaller one.",
     "speakers": [
-      "wiewiorka",
-      "sowa"
+      "sowa",
+      "wiewiorka"
     ]
   },
   "line.za_male": {
     "who": "lisek",
-    "text": "Too small! They don't fit.",
+    "text": "That cap is too small. Try a bigger one.",
     "speakers": [
-      "wiewiorka",
-      "sowa"
-    ]
-  },
-  "line.a_pasuja": {
-    "who": "wiewiorka",
-    "text": "They fit! Now the rain can't bother us."
-  },
-  "line.a_idziemy": {
-    "who": "lisek",
-    "text": "Let's go!"
-  },
-  "line.b_strumyk": {
-    "who": "wiewiorka",
-    "text": "A brook! How do we get across?"
-  },
-  "line.b_kamienie": {
-    "who": "lisek",
-    "text": "On stones. But only a big stone will hold us."
-  },
-  "line.b_kto_pierwszy": {
-    "who": "wiewiorka",
-    "text": "And who goes first?"
-  },
-  "line.b_wygralas": {
-    "who": "lisek",
-    "text": "Squirrel wins! She goes first."
-  },
-  "line.b_most": {
-    "who": "lisek",
-    "text": "Let's put stones in the water. Ready, here we go!"
-  },
-  "line.b_wskaz_duzy": {
-    "who": "wiewiorka",
-    "text": "Which stone will hold me? Point to the big one."
-  },
-  "line.b_jeszcze": {
-    "who": "wiewiorka",
-    "text": "And one more. Point to the big stone."
-  },
-  "line.b_utonal": {
-    "who": "lisek",
-    "text": "Oh dear, the small stone sank. We need a big one."
-  },
-  "line.b_przechodzimy": {
-    "who": "wiewiorka",
-    "text": "We crossed on the big stones!"
-  },
-  "line.c_zimno": {
-    "who": "sowa",
-    "text": "Brr, I'm cold. The wind took my hat away."
-  },
-  "line.c_pomozemy": {
-    "who": "wiewiorka",
-    "text": "Don't worry, Owl! We'll help you."
-  },
-  "line.c_co_ogrzeje": {
-    "who": "lisek",
-    "text": "What will keep Owl warm? Point to all of them."
-  },
-  "line.c_nie_ogrzeje": {
-    "who": "lisek",
-    "text": "That won't keep Owl warm.",
-    "speakers": [
+      "sowa",
       "wiewiorka"
     ]
   },
-  "line.c_glowka": {
+  "line.d_parapetowka": {
     "who": "wiewiorka",
-    "text": "Owl has a big head. Drag the hat that fits onto her."
+    "text": "Welcome to my new hollow! I'll make you some tea."
   },
-  "line.c_szalik": {
-    "who": "lisek",
-    "text": "And a scarf too. Drag it onto Owl."
-  },
-  "line.c_dziekuje": {
+  "line.d_kubki": {
     "who": "sowa",
-    "text": "So warm! Thank you, friends. That's the best present."
+    "text": "The big cup for big Fox, the small one for little Squirrel. Drag each cup."
   },
-  "line.c_slonce": {
-    "who": "lisek",
-    "text": "Look, the rain has stopped!"
-  },
-  "line.c_niespodzianka": {
-    "who": "wiewiorka",
-    "text": "Let's go home! The surprise is waiting!"
-  },
-  "line.p_start": {
-    "who": "wiewiorka",
-    "text": "Now let's play! We collect stars."
-  },
-  "line.p_wiekszy": {
-    "who": "lisek",
-    "text": "Which one is bigger? Point to it.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.p_poloz": {
-    "who": "lisek",
-    "text": "Look again. Which one is bigger?",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.p_wystaje": {
-    "who": "wiewiorka",
-    "text": "The bigger one sticks out all around.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.p_lapanie": {
-    "who": "lisek",
-    "text": "And now a catching game! Quick, point to the bigger one."
-  },
-  "line.p_lap": {
-    "who": "wiewiorka",
-    "text": "Catch the bigger one!"
-  },
-  "line.p_czapki": {
-    "who": "lisek",
-    "text": "Drag the big cap to me, and the small one to Squirrel."
-  },
-  "line.d_pudelko": {
-    "who": "lisek",
-    "text": "Surprise! Point to the box, let's open it."
-  },
-  "line.d_trzy": {
-    "who": "wiewiorka",
-    "text": "Three hats! The same, but different sizes."
-  },
-  "line.d_zasada": {
-    "who": "lisek",
-    "text": "The biggest hat for the biggest head, the smallest for the smallest. Drag them."
-  },
-  "line.d_pieknie": {
+  "line.d_nie_ten": {
     "who": "sowa",
-    "text": "Everyone has a hat that's just right!"
+    "text": "That cup is for someone else. The big one for Fox, the small one for Squirrel."
+  },
+  "line.d_pasuje": {
+    "who": "lisek",
+    "text": "Everyone has a cup that's just right. Yum, tea!"
   },
   "line.d_rodzice": {
-    "who": "lisek",
-    "text": "Ask your parents to compare the whole family's shoes with you. Lay one on the other!"
-  },
-  "line.d_pa": {
-    "who": "wiewiorka",
-    "text": "Bye bye! See you!"
-  },
-  "line.b_zagrajmy": {
-    "who": "lisek",
-    "text": "Let's play rock, paper, scissors! Whoever wins goes first."
-  },
-  "line.b_znaki": {
-    "who": "lisek",
-    "text": "A fist is rock, an open hand is paper, and two fingers are scissors."
-  },
-  "line.b_zasada_kamien": {
-    "who": "lisek",
-    "text": "Rock blunts scissors."
-  },
-  "line.b_zasada_nozyce": {
-    "who": "lisek",
-    "text": "Scissors cut paper."
-  },
-  "line.b_zasada_papier": {
-    "who": "lisek",
-    "text": "Paper wraps rock."
-  },
-  "line.b_wybierz": {
-    "who": "lisek",
-    "text": "Choose a sign for Squirrel.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.b_raz_dwa": {
-    "who": "lisek",
-    "text": "One, two, three, show!"
-  },
-  "line.b_pierwsza": {
-    "who": "wiewiorka",
-    "text": "I'll go first! Hop, hop, hop!"
-  },
-  "line.b_ja_kamien": {
-    "who": "lisek",
-    "text": "I chose rock."
-  },
-  "line.b_ja_papier": {
-    "who": "lisek",
-    "text": "I chose paper."
-  },
-  "line.b_ja_nozyce": {
-    "who": "lisek",
-    "text": "I chose scissors."
-  },
-  "line.b_ona_kamien": {
-    "who": "lisek",
-    "text": "Squirrel chose rock."
-  },
-  "line.b_ona_papier": {
-    "who": "lisek",
-    "text": "Squirrel chose paper."
-  },
-  "line.b_ona_nozyce": {
-    "who": "lisek",
-    "text": "Squirrel chose scissors."
+    "who": "sowa",
+    "text": "Compare the whole family's shoes with your parents: lay one on the other. The one that sticks out is bigger!"
   },
   "line.naklejka_daj": {
     "who": "wiewiorka",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
-  },
-  "line.naklejka_opis": {
-    "who": "narrator",
-    "text": "These are the wellies from Squirrel. We got them when we compared sizes and crossed the brook on the big stones."
+    "text": "Thank you for helping me find a hollow! Here is a sticker for your album. Touch it to take it."
   },
   "line.naklejka_juz": {
     "who": "wiewiorka",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is Squirrel's new hollow. We found it when we compared what is bigger and what is smaller."
   }
 }
