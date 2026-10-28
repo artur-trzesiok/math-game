@@ -4,7 +4,7 @@
 <title>Edytor lalek</title>
 <style>
   html, body { margin: 0; height: 100%; background: #6f6f6f; color: #eee; font: 13px/1.4 system-ui, sans-serif; }
-  body { display: grid; grid-template-columns: 250px 1fr; grid-template-rows: 100%; }
+  body { display: grid; grid-template-columns: 360px 1fr; grid-template-rows: 100%; }
   #panel { background: #2b2b2b; padding: 10px; overflow: auto; display: flex; flex-direction: column; gap: 8px; }
   #panel h3 { margin: 6px 0 0; font-size: 12px; text-transform: uppercase; color: #9a9a9a; }
   select, button, input { font: inherit; background: #3a3a3a; color: #eee; border: 1px solid #555; border-radius: 4px; padding: 3px 6px; }
@@ -54,17 +54,17 @@
   <div class="wiersz"><select id="ubr_lista"></select><button id="ubr_zaloz">Załóż</button><button id="ubr_zdejmij">Zdejmij</button><button id="ubr_wszystko">Zdejmij wszystko</button></div>
   <div class="wiersz"><label>Korekta <select id="ubr_kor"><option value="">— załóż coś —</option></select></label>
     <label>widok <span id="ubr_noga"></span> <select id="ubr_widok"><option value="przod">przód</option><option value="bok">¾</option><option value="tyl">tył</option><option value="profil">profil</option></select></label></div>
-  <div class="wiersz pola">
+  <div class="wiersz">
     <label>dx <input type="number" id="ubr_dx" step="0.005" value="0" style="width:64px"></label>
     <label>dy <input type="number" id="ubr_dy" step="0.005" value="0" style="width:64px"></label>
     <label>skala <input type="number" id="ubr_skala" step="0.02" value="1" style="width:64px"></label>
     <label title="rozciągnięcie w poziomie">sx <input type="number" id="ubr_sx" step="0.02" value="1" style="width:58px"></label>
     <label title="rozciągnięcie w pionie">sy <input type="number" id="ubr_sy" step="0.02" value="1" style="width:58px"></label>
     <label>obrót° <input type="number" id="ubr_obrot" step="1" value="0" style="width:56px"></label>
-    <button id="ubr_zeruj" title="bez korekty w tym widoku">zeruj</button>
-    <button id="ubr_wszystkim" title="skopiuj ustawienia tej rzeczy (wszystkie widoki) na każdą rzecz z tego obszaru">do wszystkich</button></div>
+    <button id="ubr_zeruj" title="bez korekty w tym widoku">zeruj</button></div>
+  <div class="wiersz"><button id="ubr_wszystkim" title="skopiuj ustawienia tej rzeczy (wszystkie widoki) na każdą rzecz z tego obszaru">zastosuj do wszystkich</button></div>
   <div class="wiersz"><button id="ubr_zapisz" class="glowny">Zapisz ubrania</button><span id="ubr_status"></span></div>
-  <div class="pomoc">Ubrania z <code>game/assets/ubrania</code> dopasowuje silnik sam (głowa, oczy, szyja, stopy). Korekta przesuwa (dx, dy w wysokościach postaci), skaluje (skala; sx, sy osobno w poziomie i pionie) i obraca rzecz w jednym widoku, but każdy osobno (kliknij go). „Do wszystkich” kopiuje ustawienia tej rzeczy na każdą z jej obszaru (np. wszystkie czapki), potem poprawiasz już tylko pojedyncze; zapis trafia do <code>game/assets/characters/&lt;kto&gt;/ubior.json</code> i gra nakłada go zawsze. Czworonogów nie ubieramy.</div>
+  <div class="pomoc">Ubrania z <code>game/assets/ubrania</code> dopasowuje silnik sam (głowa, oczy, szyja, stopy). Korekta przesuwa (dx, dy w wysokościach postaci), skaluje (skala; sx, sy osobno w poziomie i pionie) i obraca rzecz w jednym widoku, but każdy osobno (kliknij go). „Zastosuj do wszystkich” kopiuje ustawienia tej rzeczy na każdą z jej obszaru (np. wszystkie czapki), potem poprawiasz już tylko pojedyncze; zapis trafia do <code>game/assets/characters/&lt;kto&gt;/ubior.json</code> i gra nakłada go zawsze. Czworonogów nie ubieramy.</div>
   <h3>Element</h3>
   <div class="wiersz"><select id="lista"><option value="">— kliknij na lalce —</option></select><label title="klik i przeciąganie zawsze działają na wybranym elemencie"><input type="checkbox" id="blokada"> zablokuj</label></div>
   <div id="pola" class="pola"></div>
@@ -233,7 +233,7 @@ $("ubr_wszystkim").onclick = async () => {
   for (const n of zalozone) if (inne.includes(n)) await ubierzWszystkie(n);
   $("ubr_status").textContent = `skopiowano na ${inne.length} (${slot}) — niezapisane`;
 };
-const odswiezPrzyciskWszystkim = () => { const sl = galeriaU[$("ubr_kor").value]?.slot; $("ubr_wszystkim").textContent = sl ? `do wszystkich: ${{ glowa: "głowa" }[sl] || sl}` : "do wszystkich"; $("ubr_wszystkim").disabled = !sl; };
+const odswiezPrzyciskWszystkim = () => { const sl = galeriaU[$("ubr_kor").value]?.slot; $("ubr_wszystkim").textContent = sl ? `zastosuj do wszystkich: ${{ glowa: "głowa" }[sl] || sl}` : "zastosuj do wszystkich (załóż coś)"; $("ubr_wszystkim").disabled = !sl; };
 $("ubr_zeruj").onclick = () => { $("ubr_dx").value = 0; $("ubr_dy").value = 0; $("ubr_skala").value = 1; $("ubr_sx").value = 1; $("ubr_sy").value = 1; $("ubr_obrot").value = 0; zmienKorekte(); };
 $("ubr_zapisz").onclick = async () => {
   for (const [r, w] of Object.entries(korektyKto)) if (!Object.keys(w).length) delete korektyKto[r];
