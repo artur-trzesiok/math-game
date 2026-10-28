@@ -170,9 +170,10 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
           const nf = R.stopa.length, na = Math.max(1, R.kostka.length);
           // a little oversize, so no paw shows: in profile the whole foot length and some, from the front the ankle and some
           const kost = R.kostka.length ? k1 - k0 : 0.3;
-          // from the front the paw often points outwards past the ankle: the shoe spans both
-          const u0 = Math.min(f0, R.kostka.length ? k0 : f0), u1 = Math.max(f1, R.kostka.length ? k1 : f1);
-          const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (u1 - u0) * 1.1);
+          // from the front the paw often points outwards past the shin: the shoe spans the whole leg below the knee
+          let u0 = f0, u1 = f1; const sk = R.stawy[0] ? R.stawy[0].sk + R.stawy[0].h / 2 : 0.66;
+          for (let i = 0; i < R.B.vs.length; i++) if (R.B.vs[i] > sk) { u0 = Math.min(u0, arr[3 * i]); u1 = Math.max(u1, arr[3 * i]); }
+          const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (u1 - u0) * 1.04);
           return { fx: (f0 + f1) / 2, fy: fy / nf, ax: ax / na, ux: (u0 + u1) / 2, y0, szer };
         };
         // each shoe has its own correction (`przod:noga_l` ...), falling back to the view's; dx and the turn are on the
@@ -196,13 +197,8 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         const g = new THREE.PlaneGeometry(w2, h, 6, 16), rest = g.attributes.position.array.slice(), uv = g.attributes.uv.array;
         // a row's height from its v: the toe band and the rim at the picture's scale, the shaft between takes the rest
         const wys = (vv) => (vv <= pa ? vv * Hn : vv >= 1 - pb ? h - (1 - vv) * Hn : pa * Hn + (vv - pa) / (1 - pa - pb) * (h - (pa + pb) * Hn)) - h / 2;
-        // the sole covers the paw, the shaft leans along the bone line through the knee and ankle points: each row
-        // shifts towards that line as it rises, so no shin shows beside the shaft (a paw pointing outwards had pulled a
-        // straight box off the leg)
-        const [st0, st1] = R.stawy, os = (yy) => (st0 && st1 && Math.abs(st0.jy - st1.jy) > 1e-4 ? st1.jx + (yy - st1.jy) * (st0.jx - st1.jx) / (st0.jy - st1.jy) : null);
-        const gx = os(cy + h / 2), skos = gx === null ? 0 : gx - cx + K.dx * H0;
         for (let i = 0, j = 0; i < rest.length; i += 3, j += 2) {
-          const y = Hn > h ? wys(uv[j + 1]) : rest[i + 1], x = rest[i] + skos * Math.max(0, (y + h / 2) / h - pa) / (1 - pa);
+          const x = rest[i], y = Hn > h ? wys(uv[j + 1]) : rest[i + 1];
           rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012;
         }
         g.attributes.position.array.set(rest);
