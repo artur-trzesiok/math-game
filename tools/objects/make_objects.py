@@ -530,6 +530,37 @@ tiny iron ring on top.
 The beam widest, the wheel as wide as half the beam, the handle small.""",
 }
 
+# stage 5 (in front and behind, the race): medals and a finish line; big things to hide behind and a little house
+SHEETS["etap5_a"] = {
+    "outline": True,
+    "names": ['medal_zloty', 'medal_srebrny', 'medal_brazowy', 'meta'],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: one round GOLD medal on a short red ribbon, blank (NO number, NO text); the same medal in SILVER; the same
+medal in BRONZE; a finish line: two short wooden posts with a red-and-white chequered ribbon stretched between them.
+Each object fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.
+The three medals exactly the same size.""",
+}
+SHEETS["etap5_b"] = {
+    "outline": True,
+    "names": ['zaslona', 'fotel', 'glaz', 'domek'],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: a tall soft blue window curtain hanging straight down, seen from the front (only the curtain, NO window);
+a cosy round green armchair seen from the front; one big round grey boulder, wider than tall; a small cosy cottage with
+a red roof and a round door, seen from the front.
+Each object fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.
+All four roughly the same size.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

@@ -255,6 +255,7 @@ export function pozycja(S, rel, item, ref, ref2 = null) {
   if (rel === "pod") return { x: rx + ox, y: r.bottom + ih / 2 + oy };
   if (rel === "za") return { x: rx + 0.22 * (r.right - r.left) + ox, y: r.top - 0.3 * ih + oy };   // peeking out over the top
   if (rel === "w") return { x: rx + ox, y: (r.top + r.bottom) / 2 + oy };
+  if (rel === "przed") return { x: rx + ox, y: r.bottom + ih / 2 - 0.25 * ih + oy };   // lower, covering its foot
   if (rel === "obok") return { x: r.right + iw / 2 + 0.15 + ox, y: r.bottom + ih / 2 + oy };
   if (rel === "miedzy") { const r2 = S.bounds(ref2); return { x: ((r.left + r.right) / 2 + (r2.left + r2.right) / 2) / 2 + ox, y: Math.min(r.bottom, r2.bottom) + ih / 2 + oy }; }
   return { x: item.home.x, y: item.home.y };
@@ -279,6 +280,7 @@ export function umiesc(S, { item, ref, ref2 = null, want, onWrong = null }) {
       onDrop: async (k) => {
         let rel = relacja(S, k, ref, ref2);
         if (want === "w" && rel === "za") rel = "w";                     // "inside": the same spot as behind, but in front
+        if (want === "przed" && (rel === "za" || rel === "pod")) rel = "przed";   // "in front of": dropped on it, drawn over its lower part
         if (rel === want) {
           const p = pozycja(S, want, k, ref, ref2);
           if (want === "za") zaRzecza(k, ref); else przedRzecza(k, ref);

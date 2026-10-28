@@ -299,13 +299,13 @@ instruction. `S.upusc(item, x, y)` / `S.stuknij(item)` drive it from tests. On t
   overlapping pieces lie like paper; with shared orders the lower piece's outline showed through the upper one; `ctx.corners(h)` -
   corner dots for `ctx.count` (each puts its number OUTSIDE the shape, `etykieta`).
 - `ctx.tangram(name, {x, y, scale, obroty})` - a grey silhouette with a pencil outline (`UKLADANKI`: kwadrat,
-  domek, ryba, lodka, duzy_kwadrat) and its pieces packed without overlap on the floor between the characters,
+  domek, ryba, lodka, kot, duzy_kwadrat) and its pieces packed without overlap on the floor between the characters,
   over their heads when the floor is full (`rozloz`: biggest first, each piece may take any turn, the preferred
   one first - a big triangle on its tip is taller than the floor, so a random turn left it in a pile). A drop near
   a place of the same piece snaps when the turn matches modulo the piece's symmetry; a tap turns 45 deg; `done()`.
   `ctx.piece(t)` - one piece as a target ("which piece fits the gap?").
 - `ctx.place({item, ref, ref2, want, wrong})` - on / under / beside / behind (peeks out over the top) / between /
-  in ("w" = the centre inside, drawn in front); `relation`, `behind`. Moving a thing in front of or behind another
+  in ("w" = the centre inside, drawn in front) / in front of ("przed" = over its lower part, drawn in front); `relation`, `behind`. Moving a thing in front of or behind another
   shifts its whole draw order past the other's and keeps its own layers (fill, halo, outline) - flattening them
   to one value hid a round window under the square it was dropped into.
 - `ctx.symmetry(name, ...)` - an axis, the left half of a sticker, three halves to add (mirrored = right).
@@ -351,12 +351,12 @@ not stand (wider than the one below) tips and falls back; `ctx.kubki({ile, rzecz
 cut with a finger stroke (near the middle it snaps through it, far from it the pieces come out unequal);
 `ctx.memory(pary)` (faces {obraz | cyfra | kropki}); `ctx.sklepik({towar, cena})` - coins onto a plate, as many as
 the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program of arrows a pawn follows;
-`ctx.cien(h)` - any sticker as its silhouette; `ctx.roznice(name)` - spot the difference (`tools/roznice/make_roznice.py`:
+`ctx.cien(h)` - any sticker as its silhouette; `ctx.zagroda({rzeczy, chcemy, wrong, otwarta})` (mechaniki3.js) - a fence drawn with a finger: a closed line round exactly the wanted things builds it, an open one has a gap a thing walks out through; `ctx.plot(pts)` a pencil fence; `ctx.winda({x, pietra})` -> {doPoziomu(i), jedz, wloz, wyjmij} - a basket on a rope over a painted pulley (parts winda_*.webp; the rope is stacked from pieces of the painted one and drawn behind every sticker); `ctx.roznice(name)` - spot the difference (`tools/roznice/make_roznice.py`:
 gpt-image draws a picture and an edit with the pair's changes spelled out, the code finds the changed areas by a
 blurred difference; review `tools/roznice/work/<name>_roznice.png`); `ctx.kolorowanka(name)` - colour by number
 (`tools/kolorowanki/make_kolorowanka.py`: a flat-coloured page split into regions, colours clustered into a palette).
 A drawing finger takes the stage's pointers while set (`S.palec` {down, move, up}); tests drive them through
-`S.slad.dokoncz()`, `S.podziel.tnij(kat)`, `S.memory.karty`, `S.strzalki`, `S.kolorowanka.dokoncz()`.
+`S.slad.dokoncz()`, `S.zagroda.dokoncz()`, `S.winda.dokoncz()`, `S.podziel.tnij(kat)`, `S.memory.karty`, `S.strzalki`, `S.kolorowanka.dokoncz()`.
 Music: `game/audio/muzyka/` (SOURCES.md says where each tune comes from); the menu's tune is ElevenLabs Music.
 Every lesson also gets, without its code doing anything: a start card (cover + name) and a card before every
 stage (icon + name), the characters' head badges peeking in (`plansza`, 2 s, a tap skips); encouragement when the
