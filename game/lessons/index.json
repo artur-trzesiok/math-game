@@ -1,136 +1,17 @@
 {
   "lessons": [
     {
-      "id": "grouping_pro",
+      "id": "one_many",
       "title": {
-        "pl": "Grupowanie",
-        "en": "Grouping"
+        "pl": "Jeden czy wiele?",
+        "en": "One or many?"
       },
       "subtitle": {
-        "pl": "detektywi grupują",
-        "en": "detectives group things"
-      }
-    },
-    {
-      "id": "bigger_smaller_pro",
-      "title": {
-        "pl": "Większy, mniejszy",
-        "en": "Bigger, smaller"
+        "pl": "jeden, kilka, dużo",
+        "en": "one, a few, many"
       },
-      "subtitle": {
-        "pl": "porównywanie przez nakładanie",
-        "en": "comparing by overlapping"
-      }
-    },
-    {
-      "id": "more_fewer_pro",
-      "title": {
-        "pl": "Więcej, mniej",
-        "en": "More, fewer"
-      },
-      "subtitle": {
-        "pl": "noc świetlików",
-        "en": "the night of the fireflies"
-      }
-    },
-    {
-      "id": "rhythm",
-      "title": {
-        "pl": "Rytm",
-        "en": "Rhythm"
-      },
-      "subtitle": {
-        "pl": "co się powtarza, co dalej",
-        "en": "what repeats, what comes next"
-      }
-    },
-    {
-      "id": "ordering",
-      "title": {
-        "pl": "Po kolei",
-        "en": "In order"
-      },
-      "subtitle": {
-        "pl": "od najmniejszego do największego",
-        "en": "from the smallest to the biggest"
-      }
-    },
-    {
-      "id": "numbers_1_5",
-      "title": {
-        "pl": "Liczby od 1 do 5",
-        "en": "Numbers 1 to 5"
-      },
-      "subtitle": {
-        "pl": "liczenie i cyfry",
-        "en": "counting and digits"
-      }
-    },
-    {
-      "id": "queue",
-      "title": {
-        "pl": "Kolejka",
-        "en": "The queue"
-      },
-      "subtitle": {
-        "pl": "pierwszy, drugi, ostatni",
-        "en": "first, second, last"
-      }
-    },
-    {
-      "id": "shapes",
-      "title": {
-        "pl": "Figury geometryczne",
-        "en": "Shapes"
-      },
-      "subtitle": {
-        "pl": "koło, trójkąt, kwadrat, prostokąt",
-        "en": "circle, triangle, square, rectangle"
-      }
-    },
-    {
-      "id": "tangram",
-      "title": {
-        "pl": "Tangram",
-        "en": "Tangram"
-      },
-      "subtitle": {
-        "pl": "układanie obrazków z kawałków",
-        "en": "pictures from pieces"
-      }
-    },
-    {
-      "id": "numbers_6_10",
-      "title": {
-        "pl": "Liczby od 6 do 10",
-        "en": "Numbers 6 to 10"
-      },
-      "subtitle": {
-        "pl": "liczenie dalej i cyfry",
-        "en": "counting on and digits"
-      }
-    },
-    {
-      "id": "adding_5",
-      "title": {
-        "pl": "Dodawanie do 5",
-        "en": "Adding to 5"
-      },
-      "subtitle": {
-        "pl": "łączymy i liczymy, znak +",
-        "en": "put together and count, the sign +"
-      }
-    },
-    {
-      "id": "adding_10",
-      "title": {
-        "pl": "Dodawanie do 10",
-        "en": "Adding to 10"
-      },
-      "subtitle": {
-        "pl": "doliczanie od znanej liczby",
-        "en": "counting on from a known number"
-      }
+      "wkrotce": true,
+      "temat": "porownywanie"
     },
     {
       "id": "spot_difference",
@@ -142,7 +23,20 @@
         "pl": "co się zmieniło",
         "en": "what has changed"
       },
-      "wkrotce": true
+      "wkrotce": true,
+      "temat": "spostrzeganie"
+    },
+    {
+      "id": "bigger_smaller_pro",
+      "title": {
+        "pl": "Większy, mniejszy",
+        "en": "Bigger, smaller"
+      },
+      "subtitle": {
+        "pl": "porównywanie przez nakładanie",
+        "en": "comparing by overlapping"
+      },
+      "temat": "porownywanie"
     },
     {
       "id": "long_short",
@@ -154,7 +48,8 @@
         "pl": "porównywanie długości",
         "en": "comparing length"
       },
-      "wkrotce": true
+      "wkrotce": true,
+      "temat": "porownywanie"
     },
     {
       "id": "tall_short",
@@ -166,19 +61,45 @@
         "pl": "porównywanie wysokości",
         "en": "comparing height"
       },
-      "wkrotce": true
+      "wkrotce": true,
+      "temat": "porownywanie"
     },
     {
-      "id": "one_many",
+      "id": "ordering",
       "title": {
-        "pl": "Jeden czy wiele?",
-        "en": "One or many?"
+        "pl": "Po kolei",
+        "en": "In order"
       },
       "subtitle": {
-        "pl": "jeden, kilka, dużo",
-        "en": "one, a few, many"
+        "pl": "od najmniejszego do największego",
+        "en": "from the smallest to the biggest"
       },
-      "wkrotce": true
+      "temat": "porownywanie"
+    },
+    {
+      "id": "shapes",
+      "title": {
+        "pl": "Figury geometryczne",
+        "en": "Shapes"
+      },
+      "subtitle": {
+        "pl": "koło, trójkąt, kwadrat, prostokąt",
+        "en": "circle, triangle, square, rectangle"
+      },
+      "temat": "figury"
+    },
+    {
+      "id": "morning_night",
+      "title": {
+        "pl": "Rano i wieczór",
+        "en": "Morning and night"
+      },
+      "subtitle": {
+        "pl": "pory dnia po kolei",
+        "en": "times of the day in order"
+      },
+      "wkrotce": true,
+      "temat": "czas"
     },
     {
       "id": "noticing_order",
@@ -190,7 +111,58 @@
         "pl": "co jest po kolei",
         "en": "what is in order"
       },
-      "wkrotce": true
+      "wkrotce": true,
+      "temat": "spostrzeganie"
+    },
+    {
+      "id": "counting_3",
+      "title": {
+        "pl": "Liczymy do 3",
+        "en": "Counting to 3"
+      },
+      "subtitle": {
+        "pl": "jeden, dwa, trzy",
+        "en": "one, two, three"
+      },
+      "wkrotce": true,
+      "temat": "liczby"
+    },
+    {
+      "id": "more_fewer_pro",
+      "title": {
+        "pl": "Więcej, mniej",
+        "en": "More, fewer"
+      },
+      "subtitle": {
+        "pl": "noc świetlików",
+        "en": "the night of the fireflies"
+      },
+      "temat": "porownywanie"
+    },
+    {
+      "id": "logical_pairs",
+      "title": {
+        "pl": "Co do pary?",
+        "en": "What goes with what?"
+      },
+      "subtitle": {
+        "pl": "rzeczy, które pasują do siebie",
+        "en": "things that belong together"
+      },
+      "wkrotce": true,
+      "temat": "spostrzeganie"
+    },
+    {
+      "id": "numbers_1_5",
+      "title": {
+        "pl": "Liczby od 1 do 5",
+        "en": "Numbers 1 to 5"
+      },
+      "subtitle": {
+        "pl": "liczenie i cyfry",
+        "en": "counting and digits"
+      },
+      "temat": "liczby"
     },
     {
       "id": "up_down",
@@ -202,7 +174,8 @@
         "pl": "gdzie to jest",
         "en": "where it is"
       },
-      "wkrotce": true
+      "wkrotce": true,
+      "temat": "polozenie"
     },
     {
       "id": "in_out",
@@ -214,7 +187,32 @@
         "pl": "gdzie to jest",
         "en": "where it is"
       },
-      "wkrotce": true
+      "wkrotce": true,
+      "temat": "polozenie"
+    },
+    {
+      "id": "tangram",
+      "title": {
+        "pl": "Tangram",
+        "en": "Tangram"
+      },
+      "subtitle": {
+        "pl": "układanie obrazków z kawałków",
+        "en": "pictures from pieces"
+      },
+      "temat": "figury"
+    },
+    {
+      "id": "grouping_pro",
+      "title": {
+        "pl": "Grupowanie",
+        "en": "Grouping"
+      },
+      "subtitle": {
+        "pl": "detektywi grupują",
+        "en": "detectives group things"
+      },
+      "temat": "spostrzeganie"
     },
     {
       "id": "front_back",
@@ -226,109 +224,225 @@
         "pl": "gdzie to jest",
         "en": "where it is"
       },
-      "wkrotce": true
+      "wkrotce": true,
+      "temat": "polozenie"
+    },
+    {
+      "id": "rhythm",
+      "title": {
+        "pl": "Rytm",
+        "en": "Rhythm"
+      },
+      "subtitle": {
+        "pl": "co się powtarza, co dalej",
+        "en": "what repeats, what comes next"
+      },
+      "temat": "rytm"
+    },
+    {
+      "id": "queue",
+      "title": {
+        "pl": "Kolejka",
+        "en": "The queue"
+      },
+      "subtitle": {
+        "pl": "pierwszy, drugi, ostatni",
+        "en": "first, second, last"
+      },
+      "temat": "liczby"
+    },
+    {
+      "id": "numbers_6_10",
+      "title": {
+        "pl": "Liczby od 6 do 10",
+        "en": "Numbers 6 to 10"
+      },
+      "subtitle": {
+        "pl": "liczenie dalej i cyfry",
+        "en": "counting on and digits"
+      },
+      "temat": "liczby"
+    },
+    {
+      "id": "counting_5",
+      "title": {
+        "pl": "Liczymy do 5",
+        "en": "Counting to 5"
+      },
+      "subtitle": {
+        "pl": "liczenie rzeczy do pięciu",
+        "en": "counting things to five"
+      },
+      "wkrotce": true,
+      "temat": "liczby"
+    },
+    {
+      "id": "adding_5",
+      "title": {
+        "pl": "Dodawanie do 5",
+        "en": "Adding to 5"
+      },
+      "subtitle": {
+        "pl": "łączymy i liczymy, znak +",
+        "en": "put together and count, the sign +"
+      },
+      "temat": "dodawanie"
+    },
+    {
+      "id": "adding_10",
+      "title": {
+        "pl": "Dodawanie do 10",
+        "en": "Adding to 10"
+      },
+      "subtitle": {
+        "pl": "doliczanie od znanej liczby",
+        "en": "counting on from a known number"
+      },
+      "temat": "dodawanie"
     }
   ],
   "topics": [
     {
-      "id": "co_pasuje",
+      "id": "etap1",
       "title": {
-        "pl": "Co pasuje?",
-        "en": "What goes together?"
+        "pl": "Etap 1",
+        "en": "Stage 1"
       },
-      "color": "#ffb347",
-      "lessons": [
-        "grouping_pro",
-        "spot_difference"
-      ]
-    },
-    {
-      "id": "wielkosc",
-      "title": {
-        "pl": "Porównujemy wielkość",
-        "en": "Comparing sizes"
-      },
-      "color": "#f28c6b",
-      "lessons": [
-        "bigger_smaller_pro",
-        "long_short",
-        "tall_short"
-      ]
-    },
-    {
-      "id": "ile",
-      "title": {
-        "pl": "Jeden, wiele, więcej",
-        "en": "One, many, more"
-      },
-      "color": "#e3b23c",
+      "color": "#8cc65a",
       "lessons": [
         "one_many",
-        "more_fewer_pro"
+        "spot_difference",
+        "bigger_smaller_pro",
+        "long_short"
       ]
     },
     {
-      "id": "rytm",
+      "id": "etap2",
       "title": {
-        "pl": "Rytm i porządek",
-        "en": "Rhythm and order"
+        "pl": "Etap 2",
+        "en": "Stage 2"
       },
-      "color": "#c77dd6",
+      "color": "#f2a65a",
       "lessons": [
-        "rhythm",
-        "noticing_order",
-        "ordering"
+        "tall_short",
+        "ordering",
+        "shapes",
+        "morning_night"
       ]
     },
     {
-      "id": "liczby",
+      "id": "etap3",
       "title": {
-        "pl": "Liczby do 5",
-        "en": "Numbers to 5"
+        "pl": "Etap 3",
+        "en": "Stage 3"
       },
-      "color": "#6cc4a1",
+      "color": "#5fa86b",
+      "lessons": [
+        "noticing_order",
+        "counting_3",
+        "more_fewer_pro",
+        "logical_pairs"
+      ]
+    },
+    {
+      "id": "etap4",
+      "title": {
+        "pl": "Etap 4",
+        "en": "Stage 4"
+      },
+      "color": "#5aa9d6",
       "lessons": [
         "numbers_1_5",
-        "queue"
-      ]
-    },
-    {
-      "id": "gdzie",
-      "title": {
-        "pl": "Gdzie to jest?",
-        "en": "Where is it?"
-      },
-      "color": "#7fb8e6",
-      "lessons": [
         "up_down",
         "in_out",
-        "front_back"
-      ]
-    },
-    {
-      "id": "geometria",
-      "title": {
-        "pl": "Figury",
-        "en": "Shapes"
-      },
-      "color": "#5b9bd5",
-      "lessons": [
-        "shapes",
         "tangram"
       ]
     },
     {
-      "id": "dodawanie",
+      "id": "etap5",
       "title": {
-        "pl": "Liczby do 10 i dodawanie",
-        "en": "Numbers to 10 and adding"
+        "pl": "Etap 5",
+        "en": "Stage 5"
+      },
+      "color": "#c79a5a",
+      "lessons": [
+        "grouping_pro",
+        "front_back",
+        "rhythm",
+        "queue"
+      ]
+    },
+    {
+      "id": "etap6",
+      "title": {
+        "pl": "Etap 6",
+        "en": "Stage 6"
       },
       "color": "#e07a5f",
       "lessons": [
         "numbers_6_10",
+        "counting_5",
         "adding_5",
         "adding_10"
       ]
     }
-  ]
+  ],
+  "tematy": {
+    "porownywanie": {
+      "title": {
+        "pl": "porównywanie",
+        "en": "comparing"
+      },
+      "color": "#f28c6b"
+    },
+    "spostrzeganie": {
+      "title": {
+        "pl": "uważne oko",
+        "en": "sharp eyes"
+      },
+      "color": "#e3a23c"
+    },
+    "figury": {
+      "title": {
+        "pl": "figury",
+        "en": "shapes"
+      },
+      "color": "#5b9bd5"
+    },
+    "polozenie": {
+      "title": {
+        "pl": "gdzie to jest",
+        "en": "where it is"
+      },
+      "color": "#4fb3c9"
+    },
+    "czas": {
+      "title": {
+        "pl": "czas",
+        "en": "time"
+      },
+      "color": "#9b7fd4"
+    },
+    "rytm": {
+      "title": {
+        "pl": "rytm",
+        "en": "rhythm"
+      },
+      "color": "#c77dd6"
+    },
+    "liczby": {
+      "title": {
+        "pl": "liczby",
+        "en": "numbers"
+      },
+      "color": "#52b788"
+    },
+    "dodawanie": {
+      "title": {
+        "pl": "dodawanie",
+        "en": "adding"
+      },
+      "color": "#e07a5f"
+    }
+  }
 }

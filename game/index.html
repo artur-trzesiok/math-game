@@ -126,6 +126,9 @@
   .topic .klodka.spada { transform: translate(-50%, 90%) rotate(28deg); opacity: 0; }
   .topic.trzesie, .lesson.trzesie { animation: trzes .45s; }
   .lesson.wkrotce .sub { font-style: italic; opacity: .8; }
+  .lesson .temat { position: absolute; top: calc(var(--k) * 0.115); right: calc(var(--k) * 0.06); max-width: 62%; padding: calc(var(--k) * 0.012) calc(var(--k) * 0.05);
+    border-radius: 999px; color: #fff; font-weight: 700; font-size: max(10px, calc(var(--k) * 0.048)); line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    box-shadow: 0 2px 4px rgba(60,30,0,.3); border: 2px solid rgba(255,255,255,.85); z-index: 2; }
   @keyframes trzes { 20% { transform: translateX(-8px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
   .topic .glowa-mowi { position: absolute; left: calc(50% - var(--k) * 0.66); top: 44%; width: calc(var(--k) * 0.36); z-index: 7; border-radius: 50%; pointer-events: none;
     border: 4px solid #fff; box-shadow: 0 6px 14px rgba(60,30,0,.35); animation: wysun .35s ease-out, kiwa .5s ease-in-out .35s infinite alternate; }

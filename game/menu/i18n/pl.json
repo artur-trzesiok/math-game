@@ -1,34 +1,42 @@
 {
-  "line.zamkniete_rytm": {
+  "line.zamkniete_etap2": {
     "who": "lisek",
-    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Porównywanie, a kłódka sama się otworzy!"
+    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z pierwszego etapu, a kłódka sama się otworzy!"
   },
-  "line.otwarte_rytm": {
+  "line.otwarte_etap2": {
     "who": "lisek",
-    "text": "Hurra! Otworzyła się nowa droga: Rytm i porządek!"
+    "text": "Hurra! Otworzył się drugi etap. Nowe przygody czekają!"
   },
-  "line.zamkniete_liczby": {
+  "line.zamkniete_etap3": {
     "who": "lisek",
-    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Rytm i porządek, a kłódka sama się otworzy!"
+    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z drugiego etapu, a kłódka sama się otworzy!"
   },
-  "line.otwarte_liczby": {
+  "line.otwarte_etap3": {
     "who": "lisek",
-    "text": "Hurra! Otworzyła się nowa droga: Liczby do 5!"
+    "text": "Hurra! Otworzył się trzeci etap. Nowe przygody czekają!"
   },
-  "line.zamkniete_geometria": {
+  "line.zamkniete_etap4": {
     "who": "lisek",
-    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Liczby do 5, a kłódka sama się otworzy!"
+    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z trzeciego etapu, a kłódka sama się otworzy!"
   },
-  "line.otwarte_geometria": {
+  "line.otwarte_etap4": {
     "who": "lisek",
-    "text": "Hurra! Otworzyła się nowa droga: Geometria!"
+    "text": "Hurra! Otworzył się czwarty etap. Nowe przygody czekają!"
   },
-  "line.zamkniete_dodawanie": {
+  "line.zamkniete_etap5": {
     "who": "lisek",
-    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Geometria, a kłódka sama się otworzy!"
+    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z czwartego etapu, a kłódka sama się otworzy!"
   },
-  "line.otwarte_dodawanie": {
+  "line.otwarte_etap5": {
     "who": "lisek",
-    "text": "Hurra! Otworzyła się nowa droga: Liczby do 10 i dodawanie!"
+    "text": "Hurra! Otworzył się piąty etap. Nowe przygody czekają!"
+  },
+  "line.zamkniete_etap6": {
+    "who": "lisek",
+    "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z piątego etapu, a kłódka sama się otworzy!"
+  },
+  "line.otwarte_etap6": {
+    "who": "lisek",
+    "text": "Hurra! Otworzył się szósty etap. Nowe przygody czekają!"
   }
 }

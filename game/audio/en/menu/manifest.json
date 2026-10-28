@@ -1,42 +1,52 @@
 {
- "line.zamkniete_rytm": {
-  "hash": "2d3f431f058f",
+ "line.zamkniete_etap2": {
+  "hash": "7684e3254fd1",
   "who": "lisek",
-  "text": "This way is still locked. Let's first finish all the adventures in Comparing, and the padlock will open by itself!"
+  "text": "This way is still locked. Let's first finish all the adventures of the first stage, and the padlock will open by itself!"
  },
- "line.otwarte_rytm": {
-  "hash": "eabaf9b54769",
+ "line.otwarte_etap2": {
+  "hash": "6a501f9f7981",
   "who": "lisek",
-  "text": "Hooray! A new way has opened: Rhythm and order!"
+  "text": "Hooray! The second stage is open. New adventures are waiting!"
  },
- "line.zamkniete_liczby": {
-  "hash": "a7ab43867f01",
+ "line.zamkniete_etap3": {
+  "hash": "70ee3b82c767",
   "who": "lisek",
-  "text": "This way is still locked. Let's first finish all the adventures in Rhythm and order, and the padlock will open by itself!"
+  "text": "This way is still locked. Let's first finish all the adventures of the second stage, and the padlock will open by itself!"
  },
- "line.otwarte_liczby": {
-  "hash": "14b2e7abdd23",
+ "line.otwarte_etap3": {
+  "hash": "5d51a612fda7",
   "who": "lisek",
-  "text": "Hooray! A new way has opened: Numbers to 5!"
+  "text": "Hooray! The third stage is open. New adventures are waiting!"
  },
- "line.zamkniete_geometria": {
-  "hash": "cb5d885ace9c",
+ "line.zamkniete_etap4": {
+  "hash": "b0b8c980f006",
   "who": "lisek",
-  "text": "This way is still locked. Let's first finish all the adventures in Numbers to 5, and the padlock will open by itself!"
+  "text": "This way is still locked. Let's first finish all the adventures of the third stage, and the padlock will open by itself!"
  },
- "line.otwarte_geometria": {
-  "hash": "cd819a394010",
+ "line.otwarte_etap4": {
+  "hash": "d0c5632b59d0",
   "who": "lisek",
-  "text": "Hooray! A new way has opened: Geometry!"
+  "text": "Hooray! The fourth stage is open. New adventures are waiting!"
  },
- "line.zamkniete_dodawanie": {
-  "hash": "e0ab08c50862",
+ "line.zamkniete_etap5": {
+  "hash": "d265a601abe0",
   "who": "lisek",
-  "text": "This way is still locked. Let's first finish all the adventures in Geometry, and the padlock will open by itself!"
+  "text": "This way is still locked. Let's first finish all the adventures of the fourth stage, and the padlock will open by itself!"
  },
- "line.otwarte_dodawanie": {
-  "hash": "b7c8945158e6",
+ "line.otwarte_etap5": {
+  "hash": "4a8fdfcc04d8",
   "who": "lisek",
-  "text": "Hooray! A new way has opened: Numbers to 10 and adding!"
+  "text": "Hooray! The fifth stage is open. New adventures are waiting!"
+ },
+ "line.zamkniete_etap6": {
+  "hash": "d1689c0187fa",
+  "who": "lisek",
+  "text": "This way is still locked. Let's first finish all the adventures of the fifth stage, and the padlock will open by itself!"
+ },
+ "line.otwarte_etap6": {
+  "hash": "266ae4ceac52",
+  "who": "lisek",
+  "text": "Hooray! The sixth stage is open. New adventures are waiting!"
  }
 }

@@ -127,14 +127,21 @@ export class Player {
     const topics = (this.index.topics || []).map((t) => ({ ...t, lessons: t.lessons.filter((id) => byId[id]) })).filter((t) => t.lessons.length);
     const rest = this.index.lessons.map((l) => l.id).filter((id) => !topics.some((t) => t.lessons.includes(id)));
     if (rest.length) topics.push({ id: "inne", title: null, color: "#ffb347", lessons: rest });
-    // a lesson not made yet (index.json "wkrotce"): its place in the topic, a waiting easel for a cover, not playable
-    const card = (l, i, color) => `
+    // a lesson not made yet (index.json "wkrotce"): its place in the stage, a waiting easel for a cover, not playable.
+    // The stages mix subjects in the order they are taught; a lesson's subject (index.json "tematy") colours its
+    // number and names itself on a small badge, so a parent sees what it is about
+    const tematy = this.index.tematy || {};
+    const card = (l, i, color) => {
+      const tm = tematy[l.temat], kol = tm?.color || color;
+      return `
       <button class="lesson${l.wkrotce ? " wkrotce" : ""}" data-id="${l.id}">
         <img class="cover" src="${v(l.wkrotce ? "/game/assets/menu/wkrotce.webp" : `/game/lessons/${l.id}/cover.webp`)}" alt="" onerror="this.style.visibility='hidden'">
-        <span class="nr" style="background:${color}">${i + 1}</span>
+        <span class="nr" style="background:${kol}">${i + 1}</span>
+        ${tm ? `<span class="temat" style="background:${kol}">${tm.title[this.lang] || tm.title.en}</span>` : ""}
         <span class="name">${l.title[this.lang] || l.title.en}</span>
         <span class="sub">${l.wkrotce ? this.t("menu.wkrotce") : l.subtitle?.[this.lang] || ""}</span>
       </button>`;
+    };
     // one long strip, a tinted block per topic; chips under it jump to a topic and show where the strip is
     const pas = $("#lessons"), chips = $("#chips");
     // between two topics a signpost: the way goes on to a new topic

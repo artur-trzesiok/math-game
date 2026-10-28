@@ -1,34 +1,42 @@
 {
-  "line.zamkniete_rytm": {
+  "line.zamkniete_etap2": {
     "who": "lisek",
-    "text": "This way is still locked. Let's first finish all the adventures in Comparing, and the padlock will open by itself!"
+    "text": "This way is still locked. Let's first finish all the adventures of the first stage, and the padlock will open by itself!"
   },
-  "line.otwarte_rytm": {
+  "line.otwarte_etap2": {
     "who": "lisek",
-    "text": "Hooray! A new way has opened: Rhythm and order!"
+    "text": "Hooray! The second stage is open. New adventures are waiting!"
   },
-  "line.zamkniete_liczby": {
+  "line.zamkniete_etap3": {
     "who": "lisek",
-    "text": "This way is still locked. Let's first finish all the adventures in Rhythm and order, and the padlock will open by itself!"
+    "text": "This way is still locked. Let's first finish all the adventures of the second stage, and the padlock will open by itself!"
   },
-  "line.otwarte_liczby": {
+  "line.otwarte_etap3": {
     "who": "lisek",
-    "text": "Hooray! A new way has opened: Numbers to 5!"
+    "text": "Hooray! The third stage is open. New adventures are waiting!"
   },
-  "line.zamkniete_geometria": {
+  "line.zamkniete_etap4": {
     "who": "lisek",
-    "text": "This way is still locked. Let's first finish all the adventures in Numbers to 5, and the padlock will open by itself!"
+    "text": "This way is still locked. Let's first finish all the adventures of the third stage, and the padlock will open by itself!"
   },
-  "line.otwarte_geometria": {
+  "line.otwarte_etap4": {
     "who": "lisek",
-    "text": "Hooray! A new way has opened: Geometry!"
+    "text": "Hooray! The fourth stage is open. New adventures are waiting!"
   },
-  "line.zamkniete_dodawanie": {
+  "line.zamkniete_etap5": {
     "who": "lisek",
-    "text": "This way is still locked. Let's first finish all the adventures in Geometry, and the padlock will open by itself!"
+    "text": "This way is still locked. Let's first finish all the adventures of the fourth stage, and the padlock will open by itself!"
   },
-  "line.otwarte_dodawanie": {
+  "line.otwarte_etap5": {
     "who": "lisek",
-    "text": "Hooray! A new way has opened: Numbers to 10 and adding!"
+    "text": "Hooray! The fifth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap6": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the fifth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap6": {
+    "who": "lisek",
+    "text": "Hooray! The sixth stage is open. New adventures are waiting!"
   }
 }

@@ -1,42 +1,52 @@
 {
- "line.zamkniete_rytm": {
-  "hash": "4d49a9fbb013",
+ "line.zamkniete_etap2": {
+  "hash": "021b9a046a93",
   "who": "lisek",
-  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Porównywanie, a kłódka sama się otworzy!"
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z pierwszego etapu, a kłódka sama się otworzy!"
  },
- "line.otwarte_rytm": {
-  "hash": "922fe6eca329",
+ "line.otwarte_etap2": {
+  "hash": "ef486d9aa5c9",
   "who": "lisek",
-  "text": "Hurra! Otworzyła się nowa droga: Rytm i porządek!"
+  "text": "Hurra! Otworzył się drugi etap. Nowe przygody czekają!"
  },
- "line.zamkniete_liczby": {
-  "hash": "3c8b9022a675",
+ "line.zamkniete_etap3": {
+  "hash": "75da02f9055d",
   "who": "lisek",
-  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Rytm i porządek, a kłódka sama się otworzy!"
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z drugiego etapu, a kłódka sama się otworzy!"
  },
- "line.otwarte_liczby": {
-  "hash": "62820c8a3c2e",
+ "line.otwarte_etap3": {
+  "hash": "0e31d807f2a4",
   "who": "lisek",
-  "text": "Hurra! Otworzyła się nowa droga: Liczby do 5!"
+  "text": "Hurra! Otworzył się trzeci etap. Nowe przygody czekają!"
  },
- "line.zamkniete_geometria": {
-  "hash": "85670f31f5b1",
+ "line.zamkniete_etap4": {
+  "hash": "19af9c472b84",
   "who": "lisek",
-  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Liczby do 5, a kłódka sama się otworzy!"
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z trzeciego etapu, a kłódka sama się otworzy!"
  },
- "line.otwarte_geometria": {
-  "hash": "3b5ef451c7e8",
+ "line.otwarte_etap4": {
+  "hash": "bafb7e21c53f",
   "who": "lisek",
-  "text": "Hurra! Otworzyła się nowa droga: Geometria!"
+  "text": "Hurra! Otworzył się czwarty etap. Nowe przygody czekają!"
  },
- "line.zamkniete_dodawanie": {
-  "hash": "7f2b3deee8a1",
+ "line.zamkniete_etap5": {
+  "hash": "61cbd535f3a6",
   "who": "lisek",
-  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z działu Geometria, a kłódka sama się otworzy!"
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z czwartego etapu, a kłódka sama się otworzy!"
  },
- "line.otwarte_dodawanie": {
-  "hash": "d7d41973e08c",
+ "line.otwarte_etap5": {
+  "hash": "37c8445e2eb2",
   "who": "lisek",
-  "text": "Hurra! Otworzyła się nowa droga: Liczby do 10 i dodawanie!"
+  "text": "Hurra! Otworzył się piąty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap6": {
+  "hash": "62fe875d70d1",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z piątego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap6": {
+  "hash": "5ec83585456c",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się szósty etap. Nowe przygody czekają!"
  }
 }
