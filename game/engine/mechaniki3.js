@@ -150,7 +150,9 @@ export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz
   const kolo = await S.object("winda_kolo", { x: cx, y: yK, size: szer * 1.25, cicho: true });
   const raczka = await S.object("winda_uchwyt", { x: xP, y: 0, size: 0.55, cicho: true });
   const map = await texture("/game/assets/objects/winda_lina.webp"), rl = ramkaAlfy(map.image);
-  const lina1 = lina(map, rl), lina2 = lina(map, rl); S.scene.add(lina1, lina2);
+  const lina1 = lina(map, rl), lina2 = lina(map, rl), liny = new THREE.Group(); liny.add(lina1, lina2); S.scene.add(liny);
+  const linyH = { mesh: liny, kind: "lina", name: "lina", base: 1, remove: () => { S.scene.remove(liny); const i = S.objects.indexOf(linyH); if (i >= 0) S.objects.splice(i, 1); } };
+  S.objects.push(linyH);                                                 // clear() takes the ropes with the stickers
   const wiezie = [];                                                     // [handle, dx, dy]
   const gornaKosza = () => S.bounds(h).top - 0.08;
   const L = (yK - (dol + size * 0.4)) + (yK - gora);                     // rope length: basket down = toggle up
@@ -196,7 +198,7 @@ export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz
       };
       S.winda = { dokoncz: async () => { await jedz(i); S.palec = null; S.winda = null; ok(); } };
     }),
-    remove: () => { S.scene.remove(lina1, lina2); [h, belka, kolo, raczka].forEach((q) => q.remove()); },
+    remove: () => [h, belka, kolo, raczka, linyH].forEach((q) => q.remove()),
   };
   return W;
 }

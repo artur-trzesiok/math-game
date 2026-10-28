@@ -1,0 +1,193 @@
+{
+  "line.a_jablka": {
+    "who": "wiewiorka",
+    "text": "The apples are ripe! They hang high up, at the top of my apple tree."
+  },
+  "line.a_inaczej": {
+    "who": "zajac",
+    "text": "I'll look at them another way! Hop, I'm standing on my head!"
+  },
+  "line.a_na_dole": {
+    "who": "zajac",
+    "text": "Now the apples are down and the grass is up!"
+  },
+  "line.a_niebo": {
+    "who": "lisek",
+    "text": "Bunny, up is always where the sky is, and down is where the grass is. Even when you stand on your head."
+  },
+  "line.a_rozumiem": {
+    "who": "zajac",
+    "text": "I see! The sky up, the grass down. Always."
+  },
+  "line.a_co_na_gorze": {
+    "who": "lisek",
+    "text": "What is up in the tree? Point to it."
+  },
+  "line.a_gora_nie": {
+    "who": "lisek",
+    "text": "That's down in the grass. Look higher, up where the sky is."
+  },
+  "line.a_co_na_dole": {
+    "who": "lisek",
+    "text": "And what is down in the grass? Point to it."
+  },
+  "line.a_dol_nie": {
+    "who": "lisek",
+    "text": "That's up high. Look lower, at the grass."
+  },
+  "line.a_dobrze": {
+    "who": "wiewiorka",
+    "text": "The bird up high, the mushroom down below!"
+  },
+  "line.a_winda": {
+    "who": "lisek",
+    "text": "The apples are high up. I built a lift: a basket on a rope!"
+  },
+  "line.a_do_gory": {
+    "who": "lisek",
+    "text": "Send the basket up to the apples. Pull the rope or move the basket."
+  },
+  "line.a_winda_nie": {
+    "who": "lisek",
+    "text": "Not here yet. Listen: up or down?"
+  },
+  "line.a_wkladam": {
+    "who": "wiewiorka",
+    "text": "I'm putting the apples into the basket!"
+  },
+  "line.a_na_dol": {
+    "who": "lisek",
+    "text": "And now bring the basket down to Bunny."
+  },
+  "line.a_mam": {
+    "who": "zajac",
+    "text": "I've got the apples! They came from up to down."
+  },
+  "line.b_wiatr": {
+    "who": "wiewiorka",
+    "text": "How windy! The wind blew everything about."
+  },
+  "line.b_sortuj": {
+    "who": "lisek",
+    "text": "What flies up to the sky? And what falls down to the grass? Drag each thing."
+  },
+  "line.nie_tu": {
+    "who": "lisek",
+    "text": "Does it really go there? Think: does it fly up or fall down?",
+    "speakers": [
+      "zajac",
+      "wiewiorka"
+    ]
+  },
+  "line.b_dobrze": {
+    "who": "zajac",
+    "text": "The balloon, the bird and the butterfly fly up. The apple, the stone and the cone fall down!"
+  },
+  "line.b_skok": {
+    "who": "lisek",
+    "text": "A game! When I say: jump up, you jump high. Jump up!"
+  },
+  "line.b_kto": {
+    "who": "lisek",
+    "text": "Who got it wrong and didn't jump up? Point to them."
+  },
+  "line.b_pomylka_wiewiorka": {
+    "who": "wiewiorka",
+    "text": "Oops, I clapped instead of jumping!"
+  },
+  "line.b_pomylka_zajac": {
+    "who": "zajac",
+    "text": "Oops, I clapped instead of jumping!"
+  },
+  "line.b_do_domu": {
+    "who": "wiewiorka",
+    "text": "The wind is calming down. Let's go home with the apples!"
+  },
+  "line.p_start": {
+    "who": "lisek",
+    "text": "Let's play up and down! I have five games."
+  },
+  "line.p_polki": {
+    "who": "zajac",
+    "text": "Put the jar on the top shelf and the shoe on the bottom one."
+  },
+  "line.p_polki_nie": {
+    "who": "zajac",
+    "text": "Not that shelf. The jar up, the shoe down."
+  },
+  "line.p_dobrze": {
+    "who": "lisek",
+    "text": "Bravo!",
+    "speakers": [
+      "zajac"
+    ]
+  },
+  "line.p_winda_gora": {
+    "who": "zajac",
+    "text": "Teddy wants to ride the lift to the very top. Send him up!"
+  },
+  "line.p_winda_dol": {
+    "who": "zajac",
+    "text": "And now all the way down!"
+  },
+  "line.p_winda_nie": {
+    "who": "zajac",
+    "text": "Not yet. To the very top or to the very bottom?"
+  },
+  "line.p_wyzej": {
+    "who": "lisek",
+    "text": "Which bird is higher? Point to it."
+  },
+  "line.p_wyzej_nie": {
+    "who": "lisek",
+    "text": "That one is lower. Higher means closer to the sky."
+  },
+  "line.p_wieza_gora": {
+    "who": "zajac",
+    "text": "What is at the very top of the tower? Point to it."
+  },
+  "line.p_wieza_gora_nie": {
+    "who": "zajac",
+    "text": "Look at the very top of the tower."
+  },
+  "line.p_wieza_dol": {
+    "who": "zajac",
+    "text": "And what is at the very bottom? Point to it."
+  },
+  "line.p_wieza_dol_nie": {
+    "who": "zajac",
+    "text": "Look at the very bottom, right by the ground."
+  },
+  "line.p_niebo_ziemia": {
+    "who": "lisek",
+    "text": "What is up in the sky and what is down on the ground? Drag each thing."
+  },
+  "line.h_przedpokoj": {
+    "who": "wiewiorka",
+    "text": "The hallway is a mess after the wind. Hang the hat, the scarf and the backpack up on the hooks. Put the shoe and the ball down on the floor."
+  },
+  "line.h_nie_tu": {
+    "who": "wiewiorka",
+    "text": "Not that place. Up on the hooks or down on the floor?"
+  },
+  "line.h_porzadek": {
+    "who": "zajac",
+    "text": "Up: the hat, the scarf and the backpack. Down: the shoe and the ball. All tidy!"
+  },
+  "line.h_rodzice": {
+    "who": "wiewiorka",
+    "text": "Play with your parents: hands up to the sky! Hands down to the floor!"
+  },
+  "line.naklejka_daj": {
+    "who": "wiewiorka",
+    "text": "Thank you for helping with the apples! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "wiewiorka",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the bird from Squirrel's apple tree. We got it when we learnt what is up and what is down."
+  }
+}

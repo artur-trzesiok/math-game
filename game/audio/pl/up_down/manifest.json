@@ -1,0 +1,247 @@
+{
+ "line.a_jablka": {
+  "hash": "475aa60a6040",
+  "who": "wiewiorka",
+  "text": "Jabłka dojrzały! Wiszą wysoko, na górze, na mojej jabłoni."
+ },
+ "line.a_inaczej": {
+  "hash": "a3922ad2ae7f",
+  "who": "zajac",
+  "text": "A ja popatrzę na nie inaczej! Hop, staję na głowie!"
+ },
+ "line.a_na_dole": {
+  "hash": "0c2fc96b8d9e",
+  "who": "zajac",
+  "text": "Teraz jabłka są na dole, a trawa na górze!"
+ },
+ "line.a_niebo": {
+  "hash": "ba6c18a25bb1",
+  "who": "lisek",
+  "text": "Zajączku, góra jest zawsze tam, gdzie niebo, a dół tam, gdzie trawa. Nawet kiedy stoisz na głowie."
+ },
+ "line.a_rozumiem": {
+  "hash": "86961147e60a",
+  "who": "zajac",
+  "text": "Aha! Niebo na górze, trawa na dole. Zawsze."
+ },
+ "line.a_co_na_gorze": {
+  "hash": "06047edd8afb",
+  "who": "lisek",
+  "text": "Co jest na górze, na drzewie? Wskaż."
+ },
+ "line.a_gora_nie": {
+  "hash": "348be241d2ab",
+  "who": "lisek",
+  "text": "To jest na dole, w trawie. Popatrz wyżej, tam gdzie niebo."
+ },
+ "line.a_co_na_dole": {
+  "hash": "c4fa363a4a81",
+  "who": "lisek",
+  "text": "A co jest na dole, w trawie? Wskaż."
+ },
+ "line.a_dol_nie": {
+  "hash": "1858f4c0454d",
+  "who": "lisek",
+  "text": "To jest na górze. Popatrz niżej, na trawę."
+ },
+ "line.a_dobrze": {
+  "hash": "34a74a845d96",
+  "who": "wiewiorka",
+  "text": "Ptaszek na górze, grzybek na dole!"
+ },
+ "line.a_winda": {
+  "hash": "08e062cca615",
+  "who": "lisek",
+  "text": "Jabłka są wysoko. Zbudowałem windę: koszyk na linie!"
+ },
+ "line.a_do_gory": {
+  "hash": "3a2032f3e636",
+  "who": "lisek",
+  "text": "Wyślij koszyk do góry, do jabłek. Pociągnij linę albo przesuń koszyk."
+ },
+ "line.a_winda_nie": {
+  "hash": "e663a242fdea",
+  "who": "lisek",
+  "text": "Jeszcze nie tutaj. Posłuchaj: do góry czy na dół?"
+ },
+ "line.a_wkladam": {
+  "hash": "f9630f2c7573",
+  "who": "wiewiorka",
+  "text": "Wkładam jabłka do koszyka!"
+ },
+ "line.a_na_dol": {
+  "hash": "717a22912fb4",
+  "who": "lisek",
+  "text": "A teraz sprowadź koszyk na dół, do Zajączka."
+ },
+ "line.a_mam": {
+  "hash": "e7079796b923",
+  "who": "zajac",
+  "text": "Mam jabłka! Przyjechały z góry na dół."
+ },
+ "line.b_wiatr": {
+  "hash": "ab0ec17be61c",
+  "who": "wiewiorka",
+  "text": "Ale wieje! Wiatr wszystko porozrzucał."
+ },
+ "line.b_sortuj": {
+  "hash": "5eb837d08c9d",
+  "who": "lisek",
+  "text": "Co leci do góry, do nieba? A co spada na dół, na trawę? Przeciągnij każdą rzecz."
+ },
+ "line.nie_tu": {
+  "hash": "c8d79d37badd",
+  "who": "lisek",
+  "text": "Czy to naprawdę tam? Pomyśl: leci do góry czy spada na dół?"
+ },
+ "line.nie_tu.zajac": {
+  "hash": "ce41085450dd",
+  "who": "zajac",
+  "text": "Czy to naprawdę tam? Pomyśl: leci do góry czy spada na dół?"
+ },
+ "line.nie_tu.wiewiorka": {
+  "hash": "3f9b58045e3d",
+  "who": "wiewiorka",
+  "text": "Czy to naprawdę tam? Pomyśl: leci do góry czy spada na dół?"
+ },
+ "line.b_dobrze": {
+  "hash": "6e2d6c197be2",
+  "who": "zajac",
+  "text": "Balonik, ptaszek i motyl lecą do góry. Jabłko, kamyk i szyszka spadają na dół!"
+ },
+ "line.b_skok": {
+  "hash": "b0c1c569b638",
+  "who": "lisek",
+  "text": "Zabawa! Kiedy powiem: skok w górę, skaczecie wysoko. Skok w górę!"
+ },
+ "line.b_kto": {
+  "hash": "bb63c30fb5a7",
+  "who": "lisek",
+  "text": "Kto się pomylił i nie skoczył w górę? Wskaż."
+ },
+ "line.b_pomylka_wiewiorka": {
+  "hash": "10aa3c4dfa1c",
+  "who": "wiewiorka",
+  "text": "Ups, zamiast skoczyć, klasnęłam!"
+ },
+ "line.b_pomylka_zajac": {
+  "hash": "2e0c62e0d7b6",
+  "who": "zajac",
+  "text": "Ups, zamiast skoczyć, klasnąłem!"
+ },
+ "line.b_do_domu": {
+  "hash": "d7449be249f0",
+  "who": "wiewiorka",
+  "text": "Wiatr się uspokaja. Wracajmy do domu z jabłkami!"
+ },
+ "line.p_start": {
+  "hash": "4a24ff4871ce",
+  "who": "lisek",
+  "text": "Pobawmy się w górę i dół! Mam pięć zabaw."
+ },
+ "line.p_polki": {
+  "hash": "22b3f71eddc4",
+  "who": "zajac",
+  "text": "Postaw słoik na górnej półce, a but na dolnej."
+ },
+ "line.p_polki_nie": {
+  "hash": "66c9f5a69e5a",
+  "who": "zajac",
+  "text": "Nie ta półka. Słoik na górę, but na dół."
+ },
+ "line.p_dobrze": {
+  "hash": "f7093e2881e0",
+  "who": "lisek",
+  "text": "Brawo!"
+ },
+ "line.p_dobrze.zajac": {
+  "hash": "fc0b36bf7d2c",
+  "who": "zajac",
+  "text": "Brawo!"
+ },
+ "line.p_winda_gora": {
+  "hash": "e951f80f6766",
+  "who": "zajac",
+  "text": "Misio chce jechać windą na samą górę. Wyślij go!"
+ },
+ "line.p_winda_dol": {
+  "hash": "cb0ce9eebcfe",
+  "who": "zajac",
+  "text": "A teraz na sam dół!"
+ },
+ "line.p_winda_nie": {
+  "hash": "d51988f27fea",
+  "who": "zajac",
+  "text": "Jeszcze nie. Na samą górę czy na sam dół?"
+ },
+ "line.p_wyzej": {
+  "hash": "2d796e8dde8a",
+  "who": "lisek",
+  "text": "Który ptaszek jest wyżej? Wskaż."
+ },
+ "line.p_wyzej_nie": {
+  "hash": "5c8e3a8f7cf1",
+  "who": "lisek",
+  "text": "Ten jest niżej. Wyżej znaczy bliżej nieba."
+ },
+ "line.p_wieza_gora": {
+  "hash": "e21f8a132dcb",
+  "who": "zajac",
+  "text": "Co jest na samej górze wieży? Wskaż."
+ },
+ "line.p_wieza_gora_nie": {
+  "hash": "3b4cbbcdf60d",
+  "who": "zajac",
+  "text": "Popatrz na sam szczyt wieży."
+ },
+ "line.p_wieza_dol": {
+  "hash": "8a5b92a39148",
+  "who": "zajac",
+  "text": "A co jest na samym dole? Wskaż."
+ },
+ "line.p_wieza_dol_nie": {
+  "hash": "98d6bc00712a",
+  "who": "zajac",
+  "text": "Popatrz na sam spód, tuż przy ziemi."
+ },
+ "line.p_niebo_ziemia": {
+  "hash": "fc8b96933488",
+  "who": "lisek",
+  "text": "Co jest w górze, na niebie, a co na dole, na ziemi? Przeciągnij każdą rzecz."
+ },
+ "line.h_przedpokoj": {
+  "hash": "3c5dc73738d4",
+  "who": "wiewiorka",
+  "text": "W przedpokoju bałagan po wietrze. Czapkę, szalik i plecak powieś na górze, na wieszaku. But i piłkę połóż na dole, na podłodze."
+ },
+ "line.h_nie_tu": {
+  "hash": "101e4edbe7d7",
+  "who": "wiewiorka",
+  "text": "To nie to miejsce. Na górę na wieszak czy na dół na podłogę?"
+ },
+ "line.h_porzadek": {
+  "hash": "ca0e303d8b58",
+  "who": "zajac",
+  "text": "Na górze czapka, szalik i plecak. Na dole but i piłka. Porządek!"
+ },
+ "line.h_rodzice": {
+  "hash": "0ad6e782a002",
+  "who": "wiewiorka",
+  "text": "Pobaw się z rodzicami: ręce do góry, do nieba! Ręce na dół, do podłogi!"
+ },
+ "line.naklejka_daj": {
+  "hash": "cbb312faa197",
+  "who": "wiewiorka",
+  "text": "Dziękuję za pomoc przy jabłkach! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "85dccce7b7f1",
+  "who": "wiewiorka",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "0b9989962705",
+  "who": "narrator",
+  "text": "To ptaszek z jabłoni Wiewiórki. Dostaliśmy go, kiedy uczyliśmy się, co jest na górze, a co na dole."
+ }
+}

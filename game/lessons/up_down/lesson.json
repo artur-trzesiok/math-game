@@ -1,0 +1,50 @@
+{
+  "id": "up_down",
+  "title": {
+    "pl": "U góry i na dole",
+    "en": "Up and down"
+  },
+  "goal": "Up and down: up is towards the sky, down towards the ground, whichever way you stand; at the top, at the bottom, higher.",
+  "age": "3-4",
+  "characters": [
+    "wiewiorka",
+    "lisek",
+    "zajac"
+  ],
+  "backgrounds": [
+    "sad",
+    "jesienny_sad",
+    "przedpokoj"
+  ],
+  "objects": [
+    "jablko",
+    "ptak",
+    "grzyb",
+    "koszyk",
+    "winda_belka",
+    "winda_kolo",
+    "winda_lina",
+    "winda_uchwyt",
+    "balonik",
+    "motyl",
+    "kamyk",
+    "szyszka",
+    "polka",
+    "sloik",
+    "but",
+    "misiu",
+    "pudelko",
+    "klocek",
+    "znak_slonce",
+    "gwiazdka",
+    "czapka",
+    "szalik_dlugi",
+    "plecak",
+    "pilka"
+  ],
+  "cover": "A sunny orchard: Bunny stands on his head, laughing, under an apple tree; Squirrel and Fox send a basket of red apples down on a rope lift hanging from a branch, a little blue bird watches from the top of the tree.",
+  "naklejka": {
+    "obraz": "objects/ptak",
+    "kto": "wiewiorka"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "line.a_jablka": {
+    "who": "wiewiorka",
+    "text": "Jabłka dojrzały! Wiszą wysoko, na górze, na mojej jabłoni."
+  },
+  "line.a_inaczej": {
+    "who": "zajac",
+    "text": "A ja popatrzę na nie inaczej! Hop, staję na głowie!"
+  },
+  "line.a_na_dole": {
+    "who": "zajac",
+    "text": "Teraz jabłka są na dole, a trawa na górze!"
+  },
+  "line.a_niebo": {
+    "who": "lisek",
+    "text": "Zajączku, góra jest zawsze tam, gdzie niebo, a dół tam, gdzie trawa. Nawet kiedy stoisz na głowie."
+  },
+  "line.a_rozumiem": {
+    "who": "zajac",
+    "text": "Aha! Niebo na górze, trawa na dole. Zawsze."
+  },
+  "line.a_co_na_gorze": {
+    "who": "lisek",
+    "text": "Co jest na górze, na drzewie? Wskaż."
+  },
+  "line.a_gora_nie": {
+    "who": "lisek",
+    "text": "To jest na dole, w trawie. Popatrz wyżej, tam gdzie niebo."
+  },
+  "line.a_co_na_dole": {
+    "who": "lisek",
+    "text": "A co jest na dole, w trawie? Wskaż."
+  },
+  "line.a_dol_nie": {
+    "who": "lisek",
+    "text": "To jest na górze. Popatrz niżej, na trawę."
+  },
+  "line.a_dobrze": {
+    "who": "wiewiorka",
+    "text": "Ptaszek na górze, grzybek na dole!"
+  },
+  "line.a_winda": {
+    "who": "lisek",
+    "text": "Jabłka są wysoko. Zbudowałem windę: koszyk na linie!"
+  },
+  "line.a_do_gory": {
+    "who": "lisek",
+    "text": "Wyślij koszyk do góry, do jabłek. Pociągnij linę albo przesuń koszyk."
+  },
+  "line.a_winda_nie": {
+    "who": "lisek",
+    "text": "Jeszcze nie tutaj. Posłuchaj: do góry czy na dół?"
+  },
+  "line.a_wkladam": {
+    "who": "wiewiorka",
+    "text": "Wkładam jabłka do koszyka!"
+  },
+  "line.a_na_dol": {
+    "who": "lisek",
+    "text": "A teraz sprowadź koszyk na dół, do Zajączka."
+  },
+  "line.a_mam": {
+    "who": "zajac",
+    "text": "Mam jabłka! Przyjechały z góry na dół."
+  },
+  "line.b_wiatr": {
+    "who": "wiewiorka",
+    "text": "Ale wieje! Wiatr wszystko porozrzucał."
+  },
+  "line.b_sortuj": {
+    "who": "lisek",
+    "text": "Co leci do góry, do nieba? A co spada na dół, na trawę? Przeciągnij każdą rzecz."
+  },
+  "line.nie_tu": {
+    "who": "lisek",
+    "text": "Czy to naprawdę tam? Pomyśl: leci do góry czy spada na dół?",
+    "speakers": [
+      "zajac",
+      "wiewiorka"
+    ]
+  },
+  "line.b_dobrze": {
+    "who": "zajac",
+    "text": "Balonik, ptaszek i motyl lecą do góry. Jabłko, kamyk i szyszka spadają na dół!"
+  },
+  "line.b_skok": {
+    "who": "lisek",
+    "text": "Zabawa! Kiedy powiem: skok w górę, skaczecie wysoko. Skok w górę!"
+  },
+  "line.b_kto": {
+    "who": "lisek",
+    "text": "Kto się pomylił i nie skoczył w górę? Wskaż."
+  },
+  "line.b_pomylka_wiewiorka": {
+    "who": "wiewiorka",
+    "text": "Ups, zamiast skoczyć, klasnęłam!"
+  },
+  "line.b_pomylka_zajac": {
+    "who": "zajac",
+    "text": "Ups, zamiast skoczyć, klasnąłem!"
+  },
+  "line.b_do_domu": {
+    "who": "wiewiorka",
+    "text": "Wiatr się uspokaja. Wracajmy do domu z jabłkami!"
+  },
+  "line.p_start": {
+    "who": "lisek",
+    "text": "Pobawmy się w górę i dół! Mam pięć zabaw."
+  },
+  "line.p_polki": {
+    "who": "zajac",
+    "text": "Postaw słoik na górnej półce, a but na dolnej."
+  },
+  "line.p_polki_nie": {
+    "who": "zajac",
+    "text": "Nie ta półka. Słoik na górę, but na dół."
+  },
+  "line.p_dobrze": {
+    "who": "lisek",
+    "text": "Brawo!",
+    "speakers": [
+      "zajac"
+    ]
+  },
+  "line.p_winda_gora": {
+    "who": "zajac",
+    "text": "Misio chce jechać windą na samą górę. Wyślij go!"
+  },
+  "line.p_winda_dol": {
+    "who": "zajac",
+    "text": "A teraz na sam dół!"
+  },
+  "line.p_winda_nie": {
+    "who": "zajac",
+    "text": "Jeszcze nie. Na samą górę czy na sam dół?"
+  },
+  "line.p_wyzej": {
+    "who": "lisek",
+    "text": "Który ptaszek jest wyżej? Wskaż."
+  },
+  "line.p_wyzej_nie": {
+    "who": "lisek",
+    "text": "Ten jest niżej. Wyżej znaczy bliżej nieba."
+  },
+  "line.p_wieza_gora": {
+    "who": "zajac",
+    "text": "Co jest na samej górze wieży? Wskaż."
+  },
+  "line.p_wieza_gora_nie": {
+    "who": "zajac",
+    "text": "Popatrz na sam szczyt wieży."
+  },
+  "line.p_wieza_dol": {
+    "who": "zajac",
+    "text": "A co jest na samym dole? Wskaż."
+  },
+  "line.p_wieza_dol_nie": {
+    "who": "zajac",
+    "text": "Popatrz na sam spód, tuż przy ziemi."
+  },
+  "line.p_niebo_ziemia": {
+    "who": "lisek",
+    "text": "Co jest w górze, na niebie, a co na dole, na ziemi? Przeciągnij każdą rzecz."
+  },
+  "line.h_przedpokoj": {
+    "who": "wiewiorka",
+    "text": "W przedpokoju bałagan po wietrze. Czapkę, szalik i plecak powieś na górze, na wieszaku. But i piłkę połóż na dole, na podłodze."
+  },
+  "line.h_nie_tu": {
+    "who": "wiewiorka",
+    "text": "To nie to miejsce. Na górę na wieszak czy na dół na podłogę?"
+  },
+  "line.h_porzadek": {
+    "who": "zajac",
+    "text": "Na górze czapka, szalik i plecak. Na dole but i piłka. Porządek!"
+  },
+  "line.h_rodzice": {
+    "who": "wiewiorka",
+    "text": "Pobaw się z rodzicami: ręce do góry, do nieba! Ręce na dół, do podłogi!"
+  },
+  "line.naklejka_daj": {
+    "who": "wiewiorka",
+    "text": "Dziękuję za pomoc przy jabłkach! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "wiewiorka",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To ptaszek z jabłoni Wiewiórki. Dostaliśmy go, kiedy uczyliśmy się, co jest na górze, a co na dole."
+  }
+}

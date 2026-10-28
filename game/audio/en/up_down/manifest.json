@@ -1,0 +1,247 @@
+{
+ "line.a_jablka": {
+  "hash": "5a27061e6536",
+  "who": "wiewiorka",
+  "text": "The apples are ripe! They hang high up, at the top of my apple tree."
+ },
+ "line.a_inaczej": {
+  "hash": "122629ca8263",
+  "who": "zajac",
+  "text": "I'll look at them another way! Hop, I'm standing on my head!"
+ },
+ "line.a_na_dole": {
+  "hash": "328e308bf443",
+  "who": "zajac",
+  "text": "Now the apples are down and the grass is up!"
+ },
+ "line.a_niebo": {
+  "hash": "ef15fc885f19",
+  "who": "lisek",
+  "text": "Bunny, up is always where the sky is, and down is where the grass is. Even when you stand on your head."
+ },
+ "line.a_rozumiem": {
+  "hash": "a93a37e84ce8",
+  "who": "zajac",
+  "text": "I see! The sky up, the grass down. Always."
+ },
+ "line.a_co_na_gorze": {
+  "hash": "b391555b4383",
+  "who": "lisek",
+  "text": "What is up in the tree? Point to it."
+ },
+ "line.a_gora_nie": {
+  "hash": "a3a6444b1ee2",
+  "who": "lisek",
+  "text": "That's down in the grass. Look higher, up where the sky is."
+ },
+ "line.a_co_na_dole": {
+  "hash": "09f4b60b2934",
+  "who": "lisek",
+  "text": "And what is down in the grass? Point to it."
+ },
+ "line.a_dol_nie": {
+  "hash": "5d1eb39da8bc",
+  "who": "lisek",
+  "text": "That's up high. Look lower, at the grass."
+ },
+ "line.a_dobrze": {
+  "hash": "b38ce35680b0",
+  "who": "wiewiorka",
+  "text": "The bird up high, the mushroom down below!"
+ },
+ "line.a_winda": {
+  "hash": "03e727c3039f",
+  "who": "lisek",
+  "text": "The apples are high up. I built a lift: a basket on a rope!"
+ },
+ "line.a_do_gory": {
+  "hash": "d4fbd2f9fbbd",
+  "who": "lisek",
+  "text": "Send the basket up to the apples. Pull the rope or move the basket."
+ },
+ "line.a_winda_nie": {
+  "hash": "36adba298a59",
+  "who": "lisek",
+  "text": "Not here yet. Listen: up or down?"
+ },
+ "line.a_wkladam": {
+  "hash": "60135bc788c2",
+  "who": "wiewiorka",
+  "text": "I'm putting the apples into the basket!"
+ },
+ "line.a_na_dol": {
+  "hash": "ecd9f262ef30",
+  "who": "lisek",
+  "text": "And now bring the basket down to Bunny."
+ },
+ "line.a_mam": {
+  "hash": "3d48195dd740",
+  "who": "zajac",
+  "text": "I've got the apples! They came from up to down."
+ },
+ "line.b_wiatr": {
+  "hash": "ef60ec056989",
+  "who": "wiewiorka",
+  "text": "How windy! The wind blew everything about."
+ },
+ "line.b_sortuj": {
+  "hash": "e218f6a04182",
+  "who": "lisek",
+  "text": "What flies up to the sky? And what falls down to the grass? Drag each thing."
+ },
+ "line.nie_tu": {
+  "hash": "05b2bfc8f710",
+  "who": "lisek",
+  "text": "Does it really go there? Think: does it fly up or fall down?"
+ },
+ "line.nie_tu.zajac": {
+  "hash": "bab5e3487104",
+  "who": "zajac",
+  "text": "Does it really go there? Think: does it fly up or fall down?"
+ },
+ "line.nie_tu.wiewiorka": {
+  "hash": "8f1dd9a4a755",
+  "who": "wiewiorka",
+  "text": "Does it really go there? Think: does it fly up or fall down?"
+ },
+ "line.b_dobrze": {
+  "hash": "7d9b846c7d92",
+  "who": "zajac",
+  "text": "The balloon, the bird and the butterfly fly up. The apple, the stone and the cone fall down!"
+ },
+ "line.b_skok": {
+  "hash": "a59682ae15cd",
+  "who": "lisek",
+  "text": "A game! When I say: jump up, you jump high. Jump up!"
+ },
+ "line.b_kto": {
+  "hash": "e011ada7de32",
+  "who": "lisek",
+  "text": "Who got it wrong and didn't jump up? Point to them."
+ },
+ "line.b_pomylka_wiewiorka": {
+  "hash": "ee42b6e5ae09",
+  "who": "wiewiorka",
+  "text": "Oops, I clapped instead of jumping!"
+ },
+ "line.b_pomylka_zajac": {
+  "hash": "c2e775515e1d",
+  "who": "zajac",
+  "text": "Oops, I clapped instead of jumping!"
+ },
+ "line.b_do_domu": {
+  "hash": "e87da3746398",
+  "who": "wiewiorka",
+  "text": "The wind is calming down. Let's go home with the apples!"
+ },
+ "line.p_start": {
+  "hash": "b875dce4ae2d",
+  "who": "lisek",
+  "text": "Let's play up and down! I have five games."
+ },
+ "line.p_polki": {
+  "hash": "fda1f1aaf7e4",
+  "who": "zajac",
+  "text": "Put the jar on the top shelf and the shoe on the bottom one."
+ },
+ "line.p_polki_nie": {
+  "hash": "fea4212b91c1",
+  "who": "zajac",
+  "text": "Not that shelf. The jar up, the shoe down."
+ },
+ "line.p_dobrze": {
+  "hash": "5a54aa6e56ed",
+  "who": "lisek",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.zajac": {
+  "hash": "a7313a7ece36",
+  "who": "zajac",
+  "text": "Bravo!"
+ },
+ "line.p_winda_gora": {
+  "hash": "fcc78ae2ab62",
+  "who": "zajac",
+  "text": "Teddy wants to ride the lift to the very top. Send him up!"
+ },
+ "line.p_winda_dol": {
+  "hash": "e8964c131c3e",
+  "who": "zajac",
+  "text": "And now all the way down!"
+ },
+ "line.p_winda_nie": {
+  "hash": "b1361e67d42f",
+  "who": "zajac",
+  "text": "Not yet. To the very top or to the very bottom?"
+ },
+ "line.p_wyzej": {
+  "hash": "98c638471254",
+  "who": "lisek",
+  "text": "Which bird is higher? Point to it."
+ },
+ "line.p_wyzej_nie": {
+  "hash": "4144305d8cd2",
+  "who": "lisek",
+  "text": "That one is lower. Higher means closer to the sky."
+ },
+ "line.p_wieza_gora": {
+  "hash": "2a1f851ded16",
+  "who": "zajac",
+  "text": "What is at the very top of the tower? Point to it."
+ },
+ "line.p_wieza_gora_nie": {
+  "hash": "fde26bebb1e4",
+  "who": "zajac",
+  "text": "Look at the very top of the tower."
+ },
+ "line.p_wieza_dol": {
+  "hash": "c5d1beb1cbbc",
+  "who": "zajac",
+  "text": "And what is at the very bottom? Point to it."
+ },
+ "line.p_wieza_dol_nie": {
+  "hash": "47f4a9489f7d",
+  "who": "zajac",
+  "text": "Look at the very bottom, right by the ground."
+ },
+ "line.p_niebo_ziemia": {
+  "hash": "184fc6b6f0bc",
+  "who": "lisek",
+  "text": "What is up in the sky and what is down on the ground? Drag each thing."
+ },
+ "line.h_przedpokoj": {
+  "hash": "9f1749385fe0",
+  "who": "wiewiorka",
+  "text": "The hallway is a mess after the wind. Hang the hat, the scarf and the backpack up on the hooks. Put the shoe and the ball down on the floor."
+ },
+ "line.h_nie_tu": {
+  "hash": "56515dc88eb1",
+  "who": "wiewiorka",
+  "text": "Not that place. Up on the hooks or down on the floor?"
+ },
+ "line.h_porzadek": {
+  "hash": "e91ad1429cdd",
+  "who": "zajac",
+  "text": "Up: the hat, the scarf and the backpack. Down: the shoe and the ball. All tidy!"
+ },
+ "line.h_rodzice": {
+  "hash": "e5485b727d21",
+  "who": "wiewiorka",
+  "text": "Play with your parents: hands up to the sky! Hands down to the floor!"
+ },
+ "line.naklejka_daj": {
+  "hash": "c97ef9123b1e",
+  "who": "wiewiorka",
+  "text": "Thank you for helping with the apples! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "92efc82c70f5",
+  "who": "wiewiorka",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "501ef5fcc48f",
+  "who": "narrator",
+  "text": "This is the bird from Squirrel's apple tree. We got it when we learnt what is up and what is down."
+ }
+}
