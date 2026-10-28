@@ -9,7 +9,7 @@
   },
   "line.a_obietnica": {
     "who": "sarenka",
-    "text": "When we find who it is, we'll invite them home for apple pie."
+    "text": "We must find out who it is. We'll invite them home for apple pie!"
   },
   "line.a_detektywi": {
     "who": "wiewiorka",
@@ -17,7 +17,7 @@
   },
   "line.a_pomieszane": {
     "who": "sarenka",
-    "text": "Oh no, the wind mixed the gifts up with other things."
+    "text": "Oh no, the wind blew other things in. The gifts got all mixed up."
   },
   "line.a_grupuj": {
     "who": "sarenka",
@@ -36,7 +36,7 @@
   },
   "line.a_gdzie_prezenty": {
     "who": "sarenka",
-    "text": "Look where the gifts are."
+    "text": "Look where the gifts with the bows are."
   },
   "line.a_nie_ta": {
     "who": "wiewiorka",
@@ -48,7 +48,7 @@
   },
   "line.a_wszystkie_czerwone": {
     "who": "wiewiorka",
-    "text": "All the gifts are in the basket. They're all red!"
+    "text": "All the gifts with bows are in the basket. They're all red!"
   },
   "line.a_trop": {
     "who": "sarenka",
@@ -258,5 +258,13 @@
   "line.d_pa": {
     "who": "sarenka",
     "text": "Bye bye! See you!"
+  },
+  "line.a_wymien": {
+    "who": "wiewiorka",
+    "text": "An apple, a leaf, a block and a ball. Each one with a golden bow!"
+  },
+  "line.a_pomoze": {
+    "who": "sarenka",
+    "text": "Maybe that will help us guess who it is!"
   }
 }

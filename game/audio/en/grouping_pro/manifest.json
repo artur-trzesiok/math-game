@@ -10,9 +10,9 @@
   "text": "That's the third time! Who leaves them for us?"
  },
  "line.a_obietnica": {
-  "hash": "9819682487a9",
+  "hash": "1a410ac13349",
   "who": "sarenka",
-  "text": "When we find who it is, we'll invite them home for apple pie."
+  "text": "We must find out who it is. We'll invite them home for apple pie!"
  },
  "line.a_detektywi": {
   "hash": "52601aadb82c",
@@ -20,9 +20,9 @@
   "text": "Let's be detectives! Let's find out what the gifts have in common."
  },
  "line.a_pomieszane": {
-  "hash": "0ae00b10eac3",
+  "hash": "a72fc6555954",
   "who": "sarenka",
-  "text": "Oh no, the wind mixed the gifts up with other things."
+  "text": "Oh no, the wind blew other things in. The gifts got all mixed up."
  },
  "line.a_grupuj": {
   "hash": "c9a9b43bffc1",
@@ -45,9 +45,9 @@
   "text": "That one doesn't belong in this group. Try again."
  },
  "line.a_gdzie_prezenty": {
-  "hash": "6a8535cd7027",
+  "hash": "717bf1042682",
   "who": "sarenka",
-  "text": "Look where the gifts are."
+  "text": "Look where the gifts with the bows are."
  },
  "line.a_nie_ta": {
   "hash": "b27a2c671bd0",
@@ -60,9 +60,9 @@
   "text": "Second rule: red things into the basket, everything else into the box."
  },
  "line.a_wszystkie_czerwone": {
-  "hash": "005fb913e8c0",
+  "hash": "867d1dbce4ce",
   "who": "wiewiorka",
-  "text": "All the gifts are in the basket. They're all red!"
+  "text": "All the gifts with bows are in the basket. They're all red!"
  },
  "line.a_trop": {
   "hash": "fbdc03cd8495",
@@ -348,5 +348,15 @@
   "hash": "2e02cd774f91",
   "who": "sarenka",
   "text": "Bye bye! See you!"
+ },
+ "line.a_wymien": {
+  "hash": "0676d12de3aa",
+  "who": "wiewiorka",
+  "text": "An apple, a leaf, a block and a ball. Each one with a golden bow!"
+ },
+ "line.a_pomoze": {
+  "hash": "5d83b01fc61f",
+  "who": "sarenka",
+  "text": "Maybe that will help us guess who it is!"
  }
 }

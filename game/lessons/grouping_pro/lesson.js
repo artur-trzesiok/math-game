@@ -28,6 +28,18 @@ async function pojemniki(c, [obrazL, lewy], [obrazP, prawy], { x = ZR, w = ZW, h
   z[0].want = lewy; z[1].want = prawy;
   return z;
 }
+// a gift wears a golden bow (a child of its sticker, so it goes wherever the gift goes - into a container too)
+async function kokarda(c, h) {
+  const k = await c.object("kokarda", { size: 0.45 });
+  c.stage.scene.remove(k.mesh); k.mesh.position.set(0.32, 0.36, 0.05); k.mesh.scale.setScalar(0.5); h.mesh.add(k.mesh);   // in the sticker's own units
+  return h;
+}
+// things already on screen up into a row (out of their containers too) - the same things, ready for another rule
+async function doRzedu(c, rzeczy, { y = ROW_Y } = {}) {
+  for (const h of rzeczy) if (h.zone) h.zone.take(h, false);
+  c.arrange([rzeczy], { y, gap: 0.14, animate: true });
+  await c.wait(0.5);
+}
 // the gifts light up one after another wherever they lie now
 async function pokazPrezenty(c, rzeczy) {
   for (const h of rzeczy.filter((h) => h.prezent)) { c.stage.bump(h, 0.3); c.sfx("tap"); await c.wait(0.35); }
@@ -56,12 +68,16 @@ export default {
       async (c) => {
         c.czastki("liscie", { wiatr: 0.5 });
         await Promise.all([c.enter("wiewiorka"), c.enter("sarenka")]);
-        // the gifts, lying together under the tree
+        // the gifts under the apple tree, each with a golden bow: shown, named one by one
         const prezenty = [];
         for (const [i, n] of ["jablko", "lisc_czerwony", "klocek", "pilka"].entries()) {
-          const h = await c.object(n, { x: -1.6 + i * 1.05, y: -1.9, size: 0.85 }); h.prezent = true; prezenty.push(h);
+          const h = await c.object(n, { x: -1.7 + i * 1.15, y: -1.95, size: 0.95 });
+          Object.assign(h, { prezent: true, tag: n === "jablko" ? "jedzenie" : "inne", kolor: "czerwone" }); await kokarda(c, h); prezenty.push(h);
         }
         await c.say("sarenka", "line.a_rano", { anim: "Radosc" });
+        await c.ujecie("sredni", { na: prezenty });
+        await c.say("wiewiorka", "line.a_wymien");
+        for (const h of prezenty) { c.stage.bump(h, 0.3); await c.wait(0.45); }
         await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "wykrzyknik", { anim: "Podskok" });
         await c.say("wiewiorka", "line.a_kto");
@@ -69,26 +85,28 @@ export default {
         await c.say("sarenka", "line.a_obietnica");
         await c.emocja("wiewiorka", "zarowka", { anim: "Zgloszenie" });
         await c.say("wiewiorka", "line.a_detektywi");
-        // a gust: other things blow in and everything goes up in a whirl
+        await c.say("sarenka", "line.a_pomoze", { anim: "Kiwanie" });
+        // a gust blows other things in from the side: they land among the gifts (the gifts keep their bows)
         await c.ujecie("ogolny");
         c.czastki("liscie", { wiatr: 2.2, gestosc: 1.6 }); c.sfx("whoosh");
-        for (const h of prezenty) h.moveTo(h.mesh.position.x + (Math.random() - 0.5) * 3, 1.2 + Math.random(), 0.6);
-        await c.wait(0.7);
-        c.clear(); c.czastki("liscie", { wiatr: 0.5 });
+        const inne = [];
+        for (const [i, [n, tag]] of [["gruszka", "jedzenie"], ["lisc_zolty", "inne"], ["szyszka", "inne"]].entries()) {
+          const h = await c.object(n, { x: -7, y: 1.5 + i * 0.4, size: 0.95 }); Object.assign(h, { tag, kolor: "inne" }); inne.push(h);
+        }
+        // everything lands on its own spot, gifts and the rest shuffled together
+        const miejsca = tasuj([-2.9, -1.95, -1.0, -0.05, 0.9, 1.85, 2.8]);
+        [...prezenty, ...inne].forEach((h, i) => { h.moveTo(miejsca[i], -1.75 - (i % 3) * 0.28, 0.7); h.mesh.rotation.z = (i % 2 ? 0.3 : -0.25); });
+        await c.wait(0.8);
+        c.czastki("liscie", { wiatr: 0.5 });
         await c.say("sarenka", "line.a_pomieszane", { anim: "Smutek" });
-        // the method on a plain colour: things that belong together go together
-        await c.go({ kolor: "#f6dcae", motyw: "liscie" }, { ciecie: true });
-        await c.ujecie("ogolny");
+        // the method in a thought: things that belong together go together
         const pomysl = await c.idea("sarenka", [["jablko", "jablko", "jablko"], ["szyszka", "szyszka"]]);
         await c.say("sarenka", "line.a_grupuj");
         pomysl.remove();
-        await c.go(PANO, { ciecie: true }); c.czastki("liscie", { wiatr: 0.5 });
-        const rzeczy = [
-          { name: "jablko", prezent: true, tag: "jedzenie", kolor: "czerwone" }, { name: "lisc_czerwony", prezent: true, tag: "inne", kolor: "czerwone" },
-          { name: "klocek", prezent: true, tag: "inne", kolor: "czerwone" }, { name: "pilka", prezent: true, tag: "inne", kolor: "czerwone" },
-          { name: "gruszka", tag: "jedzenie", kolor: "inne" }, { name: "lisc_zolty", tag: "inne", kolor: "inne" }, { name: "szyszka", tag: "inne", kolor: "inne" }];
-        // rule one: food / the rest
-        let items = await wRzedzie(c, rzeczy);
+        // rule one: food / the rest - the very things lying there rise into a row
+        const items = [...prezenty, ...inne];
+        for (const h of items) h.mesh.rotation.z = 0;
+        await doRzedu(c, items);
         let zones = await pojemniki(c, ["miska", "jedzenie"], ["pudelko", "inne"]);
         await c.say("wiewiorka", "line.a_zasada_jedzenie");
         await c.sort({ items, zones, wrong: "line.a_pomylka" });
@@ -96,9 +114,10 @@ export default {
         await pokazPrezenty(c, items);
         await c.emocja("wiewiorka", "pot");
         await c.say("wiewiorka", "line.a_nie_ta");
-        c.clear();
-        // rule two: red / the rest - the same things
-        items = await wRzedzie(c, rzeczy.map((r) => ({ ...r, tag: r.kolor })));
+        // rule two: red / the rest - the same things come back out of the containers
+        await doRzedu(c, items);
+        for (const z of zones) z.remove();
+        for (const h of items) h.tag = h.kolor;
         zones = await pojemniki(c, ["koszyk", "czerwone"], ["pudelko", "inne"]);
         await c.say("sarenka", "line.a_zasada_kolor");
         await c.sort({ items, zones, wrong: "line.a_pomylka" });

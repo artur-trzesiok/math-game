@@ -10,8 +10,9 @@ panorama "jesienny_sad" (orchard - meadow - forest edge); autumn leaves in the a
 The thread: every morning someone leaves gifts under the apple tree. Deer: when we find who, we invite them home
 for an apple pie (paid out in stage 3).
 
-1. **The orchard.** Gifts again under the apple tree (they glow a moment: these are the gifts). A gust mixes them
-   with things the wind brought. Be detectives: what do the gifts have in common? The method on a plain colour:
+1. **The orchard.** Gifts again under the apple tree, each with a golden bow (named one by one). We must find out
+   who it is: be detectives, check what the gifts have in common - maybe it helps us guess who left them. A gust
+   blows other things in among them (the gifts keep their bows). The method in Deer's thought bubble:
    grouping = things that belong together go together (an idea bubble). Rule one: food into the bowl, the rest
    into the box - the gifts end up in BOTH groups: not this rule. Rule two: red into the basket, the rest into the
    box - every gift is in the basket: they are all red! A clue: someone loves red. A trail of red leaves...

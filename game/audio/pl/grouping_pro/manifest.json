@@ -10,9 +10,9 @@
   "text": "Już trzeci raz! Kto nam je zostawia?"
  },
  "line.a_obietnica": {
-  "hash": "3bebdf6815ba",
+  "hash": "986e8bacfc6e",
   "who": "sarenka",
-  "text": "Jak go znajdziemy, zaprosimy go do domu na szarlotkę."
+  "text": "Musimy się dowiedzieć, kto to jest. Zaprosimy go do domu na szarlotkę!"
  },
  "line.a_detektywi": {
   "hash": "b05f9190d489",
@@ -20,9 +20,9 @@
   "text": "Zostańmy detektywami! Sprawdźmy, co prezenty mają wspólnego."
  },
  "line.a_pomieszane": {
-  "hash": "099289cf8f46",
+  "hash": "a77eb9f942f5",
   "who": "sarenka",
-  "text": "Ojej, wiatr pomieszał prezenty z innymi rzeczami."
+  "text": "Ojej, wiatr nawiał innych rzeczy. Prezenty się pomieszały."
  },
  "line.a_grupuj": {
   "hash": "b29a6f343156",
@@ -45,9 +45,9 @@
   "text": "Ta rzecz nie pasuje do tej grupy. Spróbuj jeszcze raz."
  },
  "line.a_gdzie_prezenty": {
-  "hash": "42fc0917e5b1",
+  "hash": "0b197575c541",
   "who": "sarenka",
-  "text": "Popatrz, gdzie są prezenty."
+  "text": "Popatrz, gdzie są prezenty z kokardkami."
  },
  "line.a_nie_ta": {
   "hash": "7acb57d23e37",
@@ -60,9 +60,9 @@
   "text": "Druga zasada: czerwone do koszyka, reszta do pudełka."
  },
  "line.a_wszystkie_czerwone": {
-  "hash": "aa8a9d68a621",
+  "hash": "a9e09ff945f1",
   "who": "wiewiorka",
-  "text": "Wszystkie prezenty są w koszyku. Wszystkie są czerwone!"
+  "text": "Wszystkie prezenty z kokardkami są w koszyku. Wszystkie są czerwone!"
  },
  "line.a_trop": {
   "hash": "daf5013788aa",
@@ -348,5 +348,15 @@
   "hash": "6b0b053d3570",
   "who": "sarenka",
   "text": "Pa, pa! Do zobaczenia!"
+ },
+ "line.a_wymien": {
+  "hash": "f9a7ee14d77b",
+  "who": "wiewiorka",
+  "text": "Jabłko, listek, klocek i piłka. Każdy ze złotą kokardką!"
+ },
+ "line.a_pomoze": {
+  "hash": "83923fae2a04",
+  "who": "sarenka",
+  "text": "Może to nam pomoże odgadnąć, kto to jest!"
  }
 }

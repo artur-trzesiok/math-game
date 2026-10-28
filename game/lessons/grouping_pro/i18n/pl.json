@@ -9,7 +9,7 @@
   },
   "line.a_obietnica": {
     "who": "sarenka",
-    "text": "Jak go znajdziemy, zaprosimy go do domu na szarlotkę."
+    "text": "Musimy się dowiedzieć, kto to jest. Zaprosimy go do domu na szarlotkę!"
   },
   "line.a_detektywi": {
     "who": "wiewiorka",
@@ -17,7 +17,7 @@
   },
   "line.a_pomieszane": {
     "who": "sarenka",
-    "text": "Ojej, wiatr pomieszał prezenty z innymi rzeczami."
+    "text": "Ojej, wiatr nawiał innych rzeczy. Prezenty się pomieszały."
   },
   "line.a_grupuj": {
     "who": "sarenka",
@@ -36,7 +36,7 @@
   },
   "line.a_gdzie_prezenty": {
     "who": "sarenka",
-    "text": "Popatrz, gdzie są prezenty."
+    "text": "Popatrz, gdzie są prezenty z kokardkami."
   },
   "line.a_nie_ta": {
     "who": "wiewiorka",
@@ -48,7 +48,7 @@
   },
   "line.a_wszystkie_czerwone": {
     "who": "wiewiorka",
-    "text": "Wszystkie prezenty są w koszyku. Wszystkie są czerwone!"
+    "text": "Wszystkie prezenty z kokardkami są w koszyku. Wszystkie są czerwone!"
   },
   "line.a_trop": {
     "who": "sarenka",
@@ -258,5 +258,13 @@
   "line.d_pa": {
     "who": "sarenka",
     "text": "Pa, pa! Do zobaczenia!"
+  },
+  "line.a_wymien": {
+    "who": "wiewiorka",
+    "text": "Jabłko, listek, klocek i piłka. Każdy ze złotą kokardką!"
+  },
+  "line.a_pomoze": {
+    "who": "sarenka",
+    "text": "Może to nam pomoże odgadnąć, kto to jest!"
   }
 }
