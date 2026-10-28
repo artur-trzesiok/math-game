@@ -170,10 +170,9 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
           const nf = R.stopa.length, na = Math.max(1, R.kostka.length);
           // a little oversize, so no paw shows: in profile the whole foot length and some, from the front the ankle and some
           const kost = R.kostka.length ? k1 - k0 : 0.3;
-          // from the front the paw often points outwards past the shin: the shoe spans the whole leg below the knee
-          let u0 = f0, u1 = f1; const sk = R.stawy[0] ? R.stawy[0].sk + R.stawy[0].h / 2 : 0.66;
-          for (let i = 0; i < R.B.vs.length; i++) if (R.B.vs[i] > sk) { u0 = Math.min(u0, arr[3 * i]); u1 = Math.max(u1, arr[3 * i]); }
-          const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (u1 - u0) * 1.04);
+          // from the front the paw often points outwards past the ankle: the shoe spans both
+          const u0 = Math.min(f0, R.kostka.length ? k0 : f0), u1 = Math.max(f1, R.kostka.length ? k1 : f1);
+          const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (u1 - u0) * 1.1);
           return { fx: (f0 + f1) / 2, fy: fy / nf, ax: ax / na, ux: (u0 + u1) / 2, y0, szer };
         };
         // each shoe has its own correction (`przod:noga_l` ...), falling back to the view's; dx and the turn are on the
@@ -200,6 +199,18 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         for (let i = 0, j = 0; i < rest.length; i += 3, j += 2) {
           const x = rest[i], y = Hn > h ? wys(uv[j + 1]) : rest[i + 1];
           rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012;
+        }
+        // the rest pose already sits on the bones: the sole stays on the paw and level, the shaft above the ankle is
+        // moved onto the ankle point and turned to the shin's own angle (knee -> ankle), blended over the ankle's band
+        const [st0, st1] = R.stawy;
+        if (st0 && st1) {
+          const vx = st0.jx - st1.jx, vy = st0.jy - st1.jy, kat = Math.atan2(-vx, vy), dx0 = st1.jx + K.dx * H0 - cx;
+          for (let i = 0; i < rest.length; i += 3) {
+            const t = Math.max(0, Math.min(1, (rest[i + 1] - (S0.y0 - 0.05)) / Math.max(1e-4, h)));
+            const q = 1 - waga(1 - t, 1 - pa, pa);          // 0 in the toe band, rising to 1 up the shaft
+            const x = rest[i] + dx0 * q - st1.jx, y = rest[i + 1] - st1.jy, c = Math.cos(kat * q), sn = Math.sin(kat * q);
+            rest[i] = st1.jx + x * c - y * sn; rest[i + 1] = st1.jy + x * sn + y * c;
+          }
         }
         g.attributes.position.array.set(rest);
         // skinned to the leg's own joints: every shoe vertex gets a chain position s from where it lies along the
