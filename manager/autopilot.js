@@ -8,6 +8,9 @@ export async function run(maxSteps = 20, prefix = "a") {
   for (let step = 0; step < maxSteps; step++) {
     let t0 = performance.now();
     while (!gra.cele.length) {
+      const G = gra.stage;                                        // a finger drawing (mechaniki.js): trace or colour it in at once
+      if (G?.slad) { await sleep(300); await snap(`${prefix}slad${step}`); G.slad.dokoncz(); log.push("slad"); await sleep(400); continue; }
+      if (G?.kolorowanka) { await sleep(300); G.kolorowanka.dokoncz(); log.push("kolorowanka"); await sleep(400); continue; }
       const ds = gra.stage && gra.stage.dragSet;
       if (ds && ds.free) {                                        // free dragging (geometria.js): solve it like a child would
         const S = gra.stage; let kind = "free"; await sleep(300); await snap(`${prefix}pre${step}`);

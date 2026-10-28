@@ -237,7 +237,7 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6 } = 
         return true;
       },
     });
-    S.kolorowanka = { meta, dokoncz: () => { for (const r of zostalo()) barwy.set(r.id, hex(meta.paleta[r.kolor - 1])); rysuj(); if (S.palec === oddaj) S.palec = null; ok(); } };   // tests
+    S.kolorowanka = { meta, dokoncz: () => { for (const r of zostalo()) barwy.set(r.id, hex(meta.paleta[r.kolor - 1])); rysuj(); if (S.palec === oddaj) S.palec = null; S.kolorowanka = null; ok(); } };   // tests
   });
   return { obraz, kredki, remove: () => { S.scene.remove(obraz); kredki.forEach((k) => k.remove()); } };
 }

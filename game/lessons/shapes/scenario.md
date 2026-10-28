@@ -1,30 +1,24 @@
-# Shapes
+# Shapes - a house for Hedgehog
 
-Goal: circle, triangle, square, rectangle - told by corners and sides, not by colour
-or turn. Characters: Fox (left), Owl (right).
+Goal: circle, triangle, square, rectangle - told by corners and sides, not by colour or turn. Age 3-4. Characters:
+Hedgehog (new), Fox, Owl, Bunny. Stage 2, lesson 7.
 
-## Stage 1 - story - children's room, playground, orchard
+## Why rethought
+Good content (corners and sides, a turned square) told as a lecture over Owl's birdhouse, with quiz rounds in practice.
+Now the shapes are used to build something a friend needs, and drawn with a finger first.
 
-1. Room, the problem: Owl asks for a round window for her birdhouse; Fox brings a
-   square - "a window is a window". Owl ("?"): every shape is different - she wanted
-   a window round like the moon, and this one has corners. How to tell? By corners and sides (Owl pictures a ball and a
-   block). Circle (no corners); triangle - the child counts its corners by touch
-   (numbers appear); square - four corners, four equal sides; rectangle - two sides
-   longer. The child points to the circle (circled). Solved: a round window is a circle.
-2. Playground: six shape blocks lying about in mixed colours - circles into the basket,
-   triangles into the box (colour gives nothing away). A square turned 45 degrees: the
-   child still points to the square.
-3. Orchard: the birdhouse - the child drags the triangle ON the square (roof), the
-   circle INTO the middle of the square (window). Owl is happy.
+**Misconception:** a turned square is not a square any more; the colour tells the shape.
 
-## Stage 2 - practice - lake meadow
+## Stage 1 - story
+A. *Meadow.* Hedgehog, shy, hides; winter is coming and he has no house. Owl: we'll build one from shapes - known by
+corners and sides. **Child** traces a circle (no corners), a triangle and a square (`slad`) and counts their corners.
+B. The pieces lie in the grass (a spare triangle among them); each part's place is marked in pencil and **child**
+finds the right shape: walls (square), roof (triangle), window (circle), door (rectangle). Hedgehog moves in.
+C. *Playground, helping:* Bunny's kite is a turned square among turned shapes - **child** points to it; "a turned square
+is still a square". *Breather:* Hedgehog rolls into a ball - catch him (three times).
 
-Five rounds: three shapes in random colours and turns; point to the one named. Mixing
-up the square and the rectangle gets a hint about the sides (both have four corners).
+## Stage 2 - practice
+Tangram house; the triangle among turned shapes; trace a rectangle; the shape with no corners; colour by number.
 
-## Stage 3 - at home - kitchen
-
-What shape is a plate, a block, a cookie (point to the shape - a ball is a sphere, not
-a circle); which shape has three corners, four corners, no corners (point to it; no
-digit cards needed: the corners were counted in the story). "Ask your parents to look for circles,
-squares and triangles at home with you."
+## Stage 3 - at home (kitchen)
+What shape is the plate (circle), the chocolate bar (rectangle). "Look for shapes at home with your parents."

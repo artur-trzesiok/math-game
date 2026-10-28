@@ -1,149 +1,169 @@
-// Lesson: geometric shapes - circle, triangle, square, rectangle, told apart by their corners and sides (counted
-// by touch), not by colour or by how they are turned. Script in scenario.md.
+// Lesson: shapes - circle, triangle, square, rectangle, told by corners and sides (not by colour, not by turn). Shy
+// Hedgehog has no house for the winter; the friends build one from shapes: the shapes traced with a finger, the
+// corners counted, then walls, roof, window and door each found and put in place. Bunny's kite is a turned square;
+// Hedgehog rolls about (a catching game). Practice: tangram, a turned triangle, a traced rectangle, the shape with no
+// corners, colour by number. At home: what shape is a plate, a chocolate bar. Script in scenario.md.
 
-const Y = 1.2;
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
-const KOLORY = ["#e8604c", "#3f8ce0", "#f5c341", "#58bd68", "#9b6fd6"];
-const kolor = () => KOLORY[Math.floor(Math.random() * KOLORY.length)];
+const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
+const KOLOR = { kolo: "#e8604c", trojkat: "#f5c341", kwadrat: "#3f8ce0", prostokat: "#58bd68" };
 
-// a row of shapes in random colours and turns; returns the handles in the given order
-async function rzadFigur(c, kinds, { y = Y, size = 1.5, gap = 2.6, obroc = true } = {}) {
-  const x0 = -((kinds.length - 1) * gap) / 2;
-  const hs = [];
-  for (const [i, k] of kinds.entries()) hs.push(c.shape(k, { x: x0 + i * gap, y, size, color: kolor(), rot: obroc && k !== "kolo" ? [0, 15, -20, 30][Math.floor(Math.random() * 4)] : 0 }));
-  await c.wait(0.4);
-  return hs;
-}
-// a wrong pick: square and rectangle both have four corners, so between them the hint is the sides
-const zle = (c, want) => async (hit) => {
-  const boki = (want === "kwadrat" && hit.tag === "prostokat") || (want === "prostokat" && hit.tag === "kwadrat");
-  await c.say("sowa", boki ? "line.wrong_sides" : "line.wrong_shape");
+// the house: walls (a square), roof (a triangle on top), window (a circle), door (an upright rectangle)
+const DOM = { x: 1.3, dol: -2.45, bok: 1.6 };
+const czesci = () => {
+  const s = DOM.bok, gora = DOM.dol + s, dach = 1.8;
+  return [
+    { kind: "kwadrat", x: DOM.x, y: DOM.dol + s / 2, size: s, rot: 0, linia: "line.b_sciany" },
+    { kind: "trojkat", x: DOM.x, y: gora + 0.45 * dach, size: dach, rot: 0, linia: "line.b_dach" },
+    { kind: "kolo", x: DOM.x + 0.45, y: DOM.dol + s * 0.62, size: 0.6, rot: 0, linia: "line.b_okno" },
+    { kind: "prostokat", x: DOM.x - 0.45, y: DOM.dol + 0.68, size: 0.85, rot: 90, linia: "line.b_drzwi" },
+  ];
 };
 
 export default {
   id: "shapes",
-  characters: { lisek: { side: "left" }, sowa: { side: "right" } },
-  backgrounds: { story: "pokoj", practice: "laka", apply: "dom" },
+  przejscia: true,
+  nagrody: true,
+  characters: { lisek: { side: "left", x: -4.9 }, jez: { side: "right", x: 4.9 }, sowa: { side: "right", x: 3.0 }, zajac: { side: "right", x: 3.0 } },
+  backgrounds: { story: "laka", practice: { kolor: "#eef3d9", motyw: "figury" }, apply: "dom" },
   stages: {
     story: [
-      // A. the problem: Owl asks for a round window for her birdhouse, Fox brings a square - "a window is a window".
-      // Owl: every shape is different - tell them by corners and sides. Circle, triangle, square, rectangle.
+      // A. the meadow: Hedgehog has no house; the shapes are traced and their corners counted
       async (c) => {
+        c.show("jez");
+        const krzak = await c.object("krzak", { x: 4.9, y: -2.1, size: 2.2, z: 0.6 });
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
-        await c.say("sowa", "line.s_ask");
-        const okno = c.shape("kwadrat", { x: -2.2, y: Y, size: 1.5, color: "#3f8ce0" });
-        await c.say("lisek", "line.s_here", { anim: "Wskazanie" });
-        await c.wonder("sowa");
-        await c.say("sowa", "line.s_not_round");
-        await c.say("lisek", "line.s_same");
-        await c.say("sowa", "line.s_differ");
-        await c.say("lisek", "line.s_how");
-        const pomysl = await c.idea("sowa", [["pilka", "klocek"]]);
-        await c.say("sowa", "line.s_corners", { anim: "Zgloszenie" });
-        pomysl.remove(); okno.remove();
-        // the four shapes, one after another
-        const kolo = c.shape("kolo", { x: -4.0, y: Y, size: 1.5 });
-        await c.say("sowa", "line.s_circle");
-        const tr = c.shape("trojkat", { x: -1.6, y: Y, size: 1.6 });
-        await c.say("sowa", "line.s_triangle");
+        await c.say("lisek", "line.a_kto_tam");
+        krzak.remove(); c.stage.bump(c.stage.puppets.jez);
+        await c.say("jez", "line.a_nie_mam_domu", { anim: "Smutek" });
+        await c.say("sowa", "line.a_zbudujemy", { anim: "Zgloszenie" });
+        await c.say("lisek", "line.a_z_czego");
+        await c.say("sowa", "line.a_z_figur");
+        // trace them: a circle (no corners), a triangle (count its corners), a square (count them)
+        await c.say("sowa", "line.a_kolo");
+        let t = await c.slad("kolo", { x: 0, y: 0.4, size: 3.0 });
+        await c.say("sowa", "line.a_kolo_ok");
+        t.remove();
+        await c.say("sowa", "line.a_trojkat");
+        t = await c.slad("trojkat", { x: 0, y: 0.3, size: 3.0 });
+        t.remove();
+        const tr = c.shape("trojkat", { x: 0, y: 0.3, size: 3.0, color: KOLOR.trojkat });
+        await c.say("sowa", "line.a_policz");
         await c.count(c.corners(tr), { who: "sowa" });
-        await c.say("sowa", "line.s_three_corners");
-        const kw = c.shape("kwadrat", { x: 1.6, y: Y, size: 1.4 });
-        await c.say("sowa", "line.s_square");
-        await c.count(c.corners(kw), { who: "lisek" });
-        await c.say("lisek", "line.s_four_corners");
-        c.shape("prostokat", { x: 4.0, y: Y, size: 1.25 });
-        await c.say("sowa", "line.s_rectangle");
-        await c.say("lisek", "line.s_point_circle");
-        await c.task({ targets: [kolo, tr, kw], correct: kolo, wrong: "line.wrong_shape" });
-        await c.circle(kolo);
-        await c.say("lisek", "line.s_solved", { anim: "Radosc" });
-        await c.say("sowa", "line.s_to_playground");
-        c.clear();
+        await c.say("sowa", "line.a_trzy_rogi");
+        tr.remove(); c.clear();
+        await c.say("sowa", "line.a_kwadrat");
+        t = await c.slad("kwadrat", { x: 0, y: 0.3, size: 2.8 });
+        t.remove();
+        const kw = c.shape("kwadrat", { x: 0, y: 0.3, size: 2.8, color: KOLOR.kwadrat });
+        await c.say("sowa", "line.a_policz");
+        await c.count(c.corners(kw), { who: "sowa" });
+        await c.say("sowa", "line.a_cztery_rogi");
+        kw.remove(); c.clear();
+        await c.say("lisek", "line.a_budujemy", { anim: "Radosc" });
       },
-      // B. playground: blocks of two shapes left lying about - circles into the basket, triangles into the box;
-      // a turned square is still a square
+      // B. building: each part's place drawn in pencil, the child finds the right shape among them all
+      async (c) => {
+        const S = c.stage;
+        S.puppets.sowa.korzen.position.x = 3.5; S.puppets.jez.korzen.position.x = 5.4;                         // by Hedgehog: the pieces lie on the left, over Fox's head
+        const plan = czesci();
+        // the pieces lie in the grass, in a row on the left (a turned rectangle and a spare triangle among them)
+        const lez = [];
+        for (const [i, k] of tasuj(["kwadrat", "trojkat", "kolo", "prostokat", "trojkat"]).entries()) {
+          const h = c.shape(k, { x: -3.9 + (i % 3) * 1.65, y: 2.45 - Math.floor(i / 3) * 1.45, size: k === "kwadrat" ? 1.6 : k === "trojkat" ? 1.8 : k === "kolo" ? 0.6 : 0.85, color: KOLOR[k], rot: k === "prostokat" ? 90 : 0 });
+          lez.push(h);
+        }
+        await c.say("lisek", "line.b_plan");
+        for (const p of plan) {
+          await c.say(p.kind === "kwadrat" || p.kind === "trojkat" ? "sowa" : "lisek", p.linia);
+          const items = lez.filter((h) => !h.wDomu);
+          const t = await c.slots({ items, slots: [{ x: p.x, y: p.y, w: p.size * (p.kind === "prostokat" ? 0.9 : 1.05), h: p.size * (p.kind === "prostokat" ? 1.7 : 1.05), accept: (it) => it.ksztalt === p.kind }], wrong: "line.b_nie_ta" });
+          await t.done();
+          const h = items.find((it) => it.slot); h.wDomu = true; h.naWierzch?.(); t.remove();
+        }
+        lez.filter((h) => !h.wDomu).forEach((h) => h.remove());
+        await c.say("sowa", "line.b_gotowy", { anim: "Brawo" });
+        // Hedgehog walks into the house
+        await c.przejdz("jez", [[DOM.x - 0.45, -2.6]]);
+        await c.emocja("jez", "serce", { anim: "Radosc" });
+        await c.say("jez", "line.b_dziekuje");
+        c.clear();
+        await c.przejdz("jez", [[4.9, -3.3]]);
+      },
+      // C. the playground: Bunny's kite got turned - a square is a square however it is turned; a catching game
       async (c) => {
         await c.go("plac_zabaw", { enter: true });
-        await Promise.all([c.enter("lisek"), c.enter("sowa")]);
-        await c.say("lisek", "line.b_blocks");
-        const kinds = tasuj(["kolo", "kolo", "kolo", "trojkat", "trojkat", "trojkat"]);
-        // left lying about: not a neat row - each a little off, at its own height and turn
-        const items = kinds.map((k, i) => { const x = -3.6 + i * 1.45 + (Math.random() - 0.5) * 0.4, y = 0.9 + Math.random() * 1.1; const h = c.shape(k, { x, y, size: 1.0, color: kolor(), rot: k === "trojkat" ? 15 + 45 * Math.floor(Math.random() * 3) : 0 }); h.home = { x, y }; return h; });
-        const zones = [await c.zone({ x: -1.75, y: -1.95, w: 3.3, h: 2.6, image: "koszyk", name: "koszyk" }), await c.zone({ x: 1.75, y: -1.95, w: 3.3, h: 2.6, image: "pudelko", name: "pudelko" })];
-        zones[0].want = "kolo"; zones[1].want = "trojkat";   // the line names the containers, so they are fixed
-        await c.say("sowa", "line.b_sort");
-        await c.sort({ items, zones, wrong: "line.b_mixed" });
-        await c.say("sowa", "line.b_done", { anim: "Brawo" });
+        c.show("zajac");
+        await Promise.all(["lisek", "jez"].map((n) => c.enter(n)));
+        await c.say("zajac", "line.c_latawiec", { anim: "Smutek" });
+        const hs = [];
+        for (const [i, k] of tasuj(["kwadrat", "trojkat", "prostokat", "kolo"]).entries()) hs.push(c.shape(k, { x: -2.4 + i * 1.6, y: 1.3, size: 1.3, color: tasuj(Object.values(KOLOR))[0], rot: k === "kwadrat" ? 45 : (i * 30) % 90 }));
+        await c.say("lisek", "line.c_ktory");
+        const ok = hs.find((h) => h.ksztalt === "kwadrat");
+        dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.c_ktory_nie" });
+        await c.say("lisek", "line.c_obrocony", { anim: "Zgloszenie" });
+        await c.say("zajac", "line.c_dziekuje", { anim: "Podskok" });
         c.clear();
-        const [kw, pr, tr] = await rzadFigur(c, ["kwadrat", "prostokat", "trojkat"], { obroc: false });
-        await kw.rotateTo(45, 0.6);
-        await c.say("sowa", "line.b_turned");
-        await c.task({ targets: tasuj([kw, pr, tr]), correct: kw, onWrong: zle(c, "kwadrat") });
-        await c.say("lisek", "line.b_still_square", { anim: "Radosc" });
-        await c.say("sowa", "line.b_to_orchard");
-        c.clear();
-      },
-      // C. orchard: the birdhouse from shapes - the triangle roof ON the square, the round window IN the square
-      async (c) => {
-        await c.go("sad", { enter: true });
-        await Promise.all([c.enter("lisek"), c.enter("sowa")]);
-        const sciany = c.shape("kwadrat", { x: 0.6, y: 0.2, size: 2.0, color: "#d99a5b" });
-        await c.say("lisek", "line.c_build");
-        const dach = c.shape("trojkat", { x: -2.8, y: 1.9, size: 2.3, color: "#e8604c" }); dach.home = { x: -2.8, y: 1.9 };   // under the phase icons
-        await c.say("sowa", "line.c_roof");
-        await c.place({ item: dach, ref: sciany, want: "na", wrong: "line.c_roof_wrong" });
-        const okno = c.shape("kolo", { x: -2.4, y: -2.3, size: 0.8, color: "#fbe9a0" }); okno.home = { x: -2.4, y: -2.3 };
-        await c.say("lisek", "line.c_window");
-        await c.place({ item: okno, ref: sciany, want: "w", wrong: "line.c_window_wrong" });
-        await c.say("sowa", "line.c_solved", { anim: "Radosc" });
-        c.clear();
+        // the breather: Hedgehog rolls into a ball and bounces about - catch him three times
+        await c.say("jez", "line.c_turlam", { anim: "Radosc" });
+        for (const [x, y] of tasuj([[-2.2, 1.2], [0.4, 0.4], [2.4, 1.6], [-0.8, -0.6], [1.6, -0.8]]).slice(0, 3)) {
+          const k = await c.object("jez", { x, y, size: 1.0 });
+          dobre(k); await c.task({ targets: [k], correct: k, wrong: "line.c_turlam" });
+          c.sfx("hop"); k.remove();
+        }
+        await c.say("lisek", "line.c_do_domu");
       },
     ],
     practice: [
-      // five rounds: three shapes in random colours and turns, point to the one named
       async (c) => {
+        const S = c.stage;
         c.show("lisek"); c.show("sowa");
-        await c.say("sowa", "line.p_intro");
-        for (const want of ["trojkat", "kolo", "kwadrat", "prostokat", "trojkat"]) {
-          const inne = tasuj(["kolo", "kwadrat", "trojkat", "prostokat"].filter((k) => k !== want)).slice(0, 2);
-          const kinds = tasuj([want, ...inne]);
-          const hs = await rzadFigur(c, kinds);
-          await c.say("sowa", `line.p_${want}`);
-          await c.task({ targets: hs, correct: hs[kinds.indexOf(want)], onWrong: zle(c, want) });
-          await c.say("lisek", "line.good_shape", { anim: "Brawo" });
-          c.clear();
+        S.puppets.lisek.korzen.position.x = -5.3; S.puppets.sowa.korzen.position.x = 5.3;
+        const gw = c.gwiazdki(5, { auto: false });
+        await c.say("sowa", "line.p_start", { anim: "Radosc" });
+        // 1. tangram: the little house from pieces
+        { await c.say("lisek", "line.p_tangram"); const t = await c.tangram("domek", { x: 0.4, y: 0.6, scale: 3.0 }); await t.done(); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        // 2. the triangle among turned shapes
+        {
+          const hs = [];
+          for (const [i, k] of tasuj(["trojkat", "kwadrat", "prostokat", "kolo"]).entries()) hs.push(c.shape(k, { x: -2.4 + i * 1.6, y: 0.8, size: 1.3, color: tasuj(Object.values(KOLOR))[0], rot: (i * 47) % 180 }));
+          await c.say("sowa", "line.p_trojkat");
+          const ok = hs.find((h) => h.ksztalt === "trojkat");
+          dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.p_trojkat_nie" });
+          await c.say("lisek", "line.p_dobrze"); gw.dodaj(); c.clear();
         }
+        // 3. trace a rectangle
+        { await c.say("lisek", "line.p_prostokat"); const t = await c.slad("prostokat", { x: 0.3, y: 0.4, size: 3.0 }); t.remove(); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        // 4. the shape with no corners
+        {
+          const hs = [];
+          for (const [i, k] of tasuj(["kolo", "kwadrat", "trojkat"]).entries()) hs.push(c.shape(k, { x: -2.0 + i * 2.0, y: 0.8, size: 1.5, color: tasuj(Object.values(KOLOR))[0] }));
+          await c.say("sowa", "line.p_bez_rogow");
+          const ok = hs.find((h) => h.ksztalt === "kolo");
+          dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.p_bez_rogow_nie" });
+          await c.say("lisek", "line.p_dobrze"); gw.dodaj(); c.clear();
+        }
+        // 5. colour the house by numbers
+        { await c.say("sowa", "line.p_kolorowanka"); const k = await c.kolorowanka("domek", { x: 0.2, y: 0.55, size: 5.0 }); await c.say("lisek", "line.p_kolorowanka_ok"); k.remove(); gw.dodaj(); }
         await c.praise("sowa");
       },
     ],
     apply: [
-      // the home game: what shape is a plate, a block, a ball? and how many corners does it have?
+      // home, the kitchen: what shape is the plate, the chocolate bar?
       async (c) => {
-        c.show("lisek"); c.show("sowa");
-        await c.say("lisek", "line.a_game");
-        await c.say("sowa", "line.a_ok");
-        for (const [rzecz, ksztalt] of [["talerz", "kolo"], ["klocek", "kwadrat"], ["ciastko", "kolo"]]) {   // a ball is a sphere, a cookie is flat
-          await c.object(rzecz, { x: 0, y: 1.5, size: 1.6 });
-          const kinds = tasuj(["kolo", "kwadrat", "trojkat"]);
-          const hs = await rzadFigur(c, kinds, { y: -1.9, size: 1.1, gap: 2.0 });
-          await c.say("sowa", `line.a_${rzecz}`);
-          await c.task({ targets: hs, correct: hs[kinds.indexOf(ksztalt)], onWrong: zle(c, ksztalt) });
-          await c.say("lisek", "line.good_shape", { anim: "Brawo" });
-          c.clear();
+        for (const n of ["lisek", "jez"]) c.show(n);
+        await c.say("lisek", "line.d_kuchnia", { anim: "Zgloszenie" });
+        for (const [rzecz, kind, linia] of [["talerz", "kolo", "line.d_talerz"], ["czekolada", "prostokat", "line.d_czekolada"]]) {
+          const r = await c.object(rzecz, { x: 0, y: 1.5, size: 1.9 });
+          const hs = [];
+          for (const [i, k] of tasuj(["kolo", "kwadrat", "trojkat", "prostokat"]).entries()) hs.push(c.shape(k, { x: -2.4 + i * 1.6, y: -1.6, size: 1.1, color: KOLOR[k] }));
+          await c.say("jez", linia);
+          const ok = hs.find((h) => h.ksztalt === kind);
+          dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.d_nie" });
+          await c.say("lisek", kind === "kolo" ? "line.d_kolo" : "line.d_prostokat");
+          r.remove(); c.clear();
         }
-        // corners: which shape has three / four / no corners? (pointing at a shape, the counting done in the story)
-        for (const [key, ksztalt] of [["line.a_three_corners", "trojkat"], ["line.a_four_corners", "kwadrat"], ["line.a_no_corners", "kolo"]]) {
-          const kinds = tasuj(["kolo", "kwadrat", "trojkat"]);
-          const hs = await rzadFigur(c, kinds, { y: 1.2, size: 1.5, gap: 2.6 });
-          await c.say("lisek", key);
-          await c.task({ targets: hs, correct: hs[kinds.indexOf(ksztalt)], wrong: "line.wrong_corners" });
-          await c.say("sowa", "line.good_shape", { anim: "Brawo" });
-          c.clear();
-        }
-        await c.say("sowa", "line.a_ask_parents");
-        await c.say("lisek", "line.a_bye");
-        await c.play("lisek", "Machanie"); await c.play("sowa", "Machanie");
+        await c.say("jez", "line.d_rodzice");
       },
     ],
   },

@@ -1,223 +1,243 @@
 {
- "line.s_ask": {
-  "hash": "daba12047f81",
-  "who": "sowa",
-  "text": "Lisku, zrobisz mi okrągłe okienko do mojej budki?"
- },
- "line.s_here": {
-  "hash": "1f4da6a69e08",
+ "line.a_kto_tam": {
+  "hash": "00aff1a6d1b0",
   "who": "lisek",
-  "text": "Już mam! Proszę, oto twoje okienko."
+  "text": "Hej, kto się chowa za tym krzakiem?"
  },
- "line.s_not_round": {
-  "hash": "5fa8beba3e00",
+ "line.a_nie_mam_domu": {
+  "hash": "6bd74b93329b",
+  "who": "jez",
+  "text": "To ja, Jeżyk... Idzie zima, a ja nie mam domku. Nie mam gdzie się schować."
+ },
+ "line.a_zbudujemy": {
+  "hash": "dad29b46424d",
   "who": "sowa",
-  "text": "Ależ to okienko wcale nie jest okrągłe! Ma rogi i proste boki."
+  "text": "Nie martw się, Jeżyku! Zbudujemy ci domek."
  },
- "line.s_same": {
-  "hash": "740e6fc4fb33",
+ "line.a_z_czego": {
+  "hash": "87a0f89120b3",
   "who": "lisek",
-  "text": "Okienko to okienko. Czy to nie wszystko jedno?"
+  "text": "Ale z czego go zbudujemy?"
  },
- "line.s_differ": {
-  "hash": "1b2ced09816a",
+ "line.a_z_figur": {
+  "hash": "c715d7d48758",
   "who": "sowa",
-  "text": "Nie! Każda figura jest inna. Chciałam okienko okrągłe jak księżyc, a to ma rogi i proste boki."
+  "text": "Z figur! Każda figura jest inna, a poznamy je po rogach i bokach. Najpierw je narysujmy."
  },
- "line.s_how": {
-  "hash": "af734f2a2b33",
-  "who": "lisek",
-  "text": "To jak poznać, która figura jest która?"
- },
- "line.s_corners": {
-  "hash": "fd0f56f0d104",
+ "line.a_kolo": {
+  "hash": "19110a3c08c2",
   "who": "sowa",
-  "text": "Po rogach i bokach! Pokażę ci, to fajna zabawa."
+  "text": "To jest koło. Poprowadź palcem po drodze, od zielonej kropki."
  },
- "line.s_circle": {
-  "hash": "fb80df200ef8",
+ "line.a_kolo_ok": {
+  "hash": "aeadc9236d15",
   "who": "sowa",
-  "text": "To jest koło. Jest okrągłe jak piłka i nie ma żadnego rogu."
+  "text": "Koło jest okrągłe i nie ma żadnych rogów."
  },
- "line.s_triangle": {
-  "hash": "a1281a730f8b",
+ "line.a_trojkat": {
+  "hash": "34ce18d49933",
   "who": "sowa",
-  "text": "To jest trójkąt. Policz jego rogi. Wskaż każdy róg po kolei."
+  "text": "A to jest trójkąt. Narysuj go palcem."
  },
- "line.s_three_corners": {
+ "line.a_policz": {
+  "hash": "0d5c469171ea",
+  "who": "sowa",
+  "text": "Policzmy jego rogi. Dotknij każdego rogu."
+ },
+ "line.a_trzy_rogi": {
   "hash": "0c14c04df18b",
   "who": "sowa",
   "text": "Trójkąt ma trzy rogi i trzy boki."
  },
- "line.s_square": {
-  "hash": "e623a62ec62d",
+ "line.a_kwadrat": {
+  "hash": "1c306cefd697",
   "who": "sowa",
-  "text": "To jest kwadrat. Teraz ty policz rogi."
+  "text": "A to jest kwadrat. Narysuj go palcem."
  },
- "line.s_four_corners": {
-  "hash": "9da918c50d13",
+ "line.a_cztery_rogi": {
+  "hash": "71dccdbf1e14",
+  "who": "sowa",
+  "text": "Kwadrat ma cztery rogi i cztery boki, wszystkie równe."
+ },
+ "line.a_budujemy": {
+  "hash": "bd9b38da9716",
   "who": "lisek",
-  "text": "Cztery rogi! Kwadrat ma cztery równe boki."
+  "text": "Znamy już figury. Budujemy domek dla Jeżyka!"
  },
- "line.s_rectangle": {
-  "hash": "09e3b84b5073",
-  "who": "sowa",
-  "text": "To jest prostokąt. Też ma cztery rogi, ale dwa boki są dłuższe, a dwa krótsze."
- },
- "line.s_point_circle": {
-  "hash": "4a2f55ce082c",
+ "line.b_plan": {
+  "hash": "2ece914100c4",
   "who": "lisek",
-  "text": "Sowa chciała okrągłe okienko. Wskaż koło."
+  "text": "Na trawie leżą figury. Ołówkiem zaznaczymy, gdzie co ma być."
  },
- "line.wrong_shape": {
-  "hash": "9960c73adb3e",
+ "line.b_sciany": {
+  "hash": "fda66f4d8840",
   "who": "sowa",
-  "text": "To inna figura. Popatrz na rogi."
+  "text": "Najpierw ściany. Ściany to kwadrat. Przeciągnij kwadrat na miejsce."
  },
- "line.wrong_shape.lisek": {
-  "hash": "7aeb6d089ece",
+ "line.b_dach": {
+  "hash": "6ddc7590dc63",
+  "who": "sowa",
+  "text": "Teraz dach. Dach to trójkąt, z trzema rogami. Przeciągnij trójkąt na ściany."
+ },
+ "line.b_okno": {
+  "hash": "0f45b8f72d87",
   "who": "lisek",
-  "text": "To inna figura. Popatrz na rogi."
+  "text": "Okienko będzie okrągłe. Która figura nie ma rogów? Przeciągnij ją na okno."
  },
- "line.s_solved": {
-  "hash": "edd3c51a712e",
+ "line.b_drzwi": {
+  "hash": "e239de807da0",
   "who": "lisek",
-  "text": "Już wiem! Okrągłe okienko to koło. Takie zrobię."
+  "text": "A drzwi to prostokąt, dwa boki długie, dwa krótkie. Przeciągnij prostokąt na drzwi."
  },
- "line.s_to_playground": {
-  "hash": "936d4bd73f63",
+ "line.b_nie_ta": {
+  "hash": "8c6c4c23a3b4",
   "who": "sowa",
-  "text": "Chodźmy na plac zabaw. Tam też są figury."
+  "text": "Ta figura tu nie pasuje. Policz jej rogi i spróbuj innej."
  },
- "line.b_blocks": {
-  "hash": "d88d7b886af1",
+ "line.b_nie_ta.lisek": {
+  "hash": "d9237b0a768d",
   "who": "lisek",
-  "text": "Ktoś zostawił klocki w dwóch kształtach. Posprzątajmy."
+  "text": "Ta figura tu nie pasuje. Policz jej rogi i spróbuj innej."
  },
- "line.b_sort": {
-  "hash": "f0c512f8d218",
+ "line.b_gotowy": {
+  "hash": "7be5ae6d00da",
   "who": "sowa",
-  "text": "Koła do koszyka, trójkąty do pudełka. Patrz na rogi, nie na kolory!"
+  "text": "Domek jest gotowy! Kwadratowe ściany, trójkątny dach, okrągłe okienko i prostokątne drzwi."
  },
- "line.b_mixed": {
-  "hash": "98f746798924",
-  "who": "sowa",
-  "text": "Coś się pomieszało. Koło nie ma rogów, a trójkąt ma trzy."
+ "line.b_dziekuje": {
+  "hash": "d0b44fd69edb",
+  "who": "jez",
+  "text": "Mój własny domek! Dziękuję wam!"
  },
- "line.b_done": {
-  "hash": "61d634359b91",
-  "who": "sowa",
-  "text": "Brawo! Wszystkie koła razem, wszystkie trójkąty razem."
+ "line.c_latawiec": {
+  "hash": "b9f5e52fccc6",
+  "who": "zajac",
+  "text": "Mój latawiec się obrócił i nie wiem już, który to. Mój był kwadratowy."
  },
- "line.b_turned": {
-  "hash": "eeb2bd3dee01",
-  "who": "sowa",
-  "text": "Uwaga, jedną figurę obróciłam. Ale nadal ma cztery równe boki. Wskaż kwadrat."
- },
- "line.b_still_square": {
-  "hash": "9007eb4f15ea",
+ "line.c_ktory": {
+  "hash": "5c8d28bde482",
   "who": "lisek",
-  "text": "Obrócony kwadrat dalej jest kwadratem!"
+  "text": "Który latawiec jest kwadratem? Wskaż."
  },
- "line.b_to_orchard": {
-  "hash": "c178de7753ae",
-  "who": "sowa",
-  "text": "A teraz do sadu. Zbudujemy budkę na drzewie."
- },
- "line.c_build": {
-  "hash": "d4f31b9289e9",
+ "line.c_ktory_nie": {
+  "hash": "9e76f64c49d0",
   "who": "lisek",
-  "text": "Zbudujmy sowie budkę. Ściany już są, to kwadrat."
+  "text": "To nie kwadrat. Kwadrat ma cztery równe boki. Policz rogi."
  },
- "line.c_roof": {
-  "hash": "179727b3f65f",
-  "who": "sowa",
-  "text": "Teraz dach. Przeciągnij trójkąt na kwadrat."
- },
- "line.c_roof_wrong": {
-  "hash": "fe5175df0179",
-  "who": "sowa",
-  "text": "Dach musi być na górze, na kwadracie."
- },
- "line.c_window": {
-  "hash": "9d5b79ace987",
+ "line.c_obrocony": {
+  "hash": "bb635bc43429",
   "who": "lisek",
-  "text": "A teraz okrągłe okienko. Przeciągnij koło do środka kwadratu."
+  "text": "Kwadrat jest tylko obrócony, ale dalej ma cztery równe boki. Obrócony kwadrat to nadal kwadrat!"
  },
- "line.c_window_wrong": {
-  "hash": "631a7ad1b1ef",
+ "line.c_dziekuje": {
+  "hash": "bebde274d376",
+  "who": "zajac",
+  "text": "To mój latawiec! Dzięki!"
+ },
+ "line.c_turlam": {
+  "hash": "49bc55edb69b",
+  "who": "jez",
+  "text": "A teraz zwijam się w kulkę i turlam! Złap mnie, wskaż mnie."
+ },
+ "line.c_do_domu": {
+  "hash": "e9e6096b2636",
   "who": "lisek",
-  "text": "Okienko musi być w środku ściany."
+  "text": "Ale było wesoło! Wracamy do domu."
  },
- "line.c_solved": {
-  "hash": "38b8e5195cae",
+ "line.p_start": {
+  "hash": "e9eced9fa8b5",
   "who": "sowa",
-  "text": "Moja budka! Trójkątny dach i okrągłe okienko. Dziękuję!"
+  "text": "Poćwiczmy figury! Mam pięć zabaw."
  },
- "line.p_intro": {
-  "hash": "e81a85987b3d",
+ "line.p_tangram": {
+  "hash": "2a721a87a3e8",
+  "who": "lisek",
+  "text": "Ułóż domek z kawałków. Przeciągaj je, a dotknięciem obracaj."
+ },
+ "line.p_dobrze": {
+  "hash": "671b319f1b8d",
   "who": "sowa",
-  "text": "Pobawmy się w szukanie figur! Kolory mogą być różne."
+  "text": "Brawo!"
+ },
+ "line.p_dobrze.lisek": {
+  "hash": "f7093e2881e0",
+  "who": "lisek",
+  "text": "Brawo!"
  },
  "line.p_trojkat": {
-  "hash": "8533b50bec59",
+  "hash": "8767512bb5a1",
   "who": "sowa",
-  "text": "Wskaż trójkąt."
+  "text": "Figury się poobracały. Który to trójkąt? Wskaż."
  },
- "line.p_kolo": {
-  "hash": "588c59b24c1a",
+ "line.p_trojkat_nie": {
+  "hash": "d58b74181049",
   "who": "sowa",
-  "text": "Wskaż koło."
- },
- "line.p_kwadrat": {
-  "hash": "7ff62e675a80",
-  "who": "sowa",
-  "text": "Wskaż kwadrat."
+  "text": "To nie trójkąt. Trójkąt ma trzy rogi."
  },
  "line.p_prostokat": {
-  "hash": "5248fc9640a9",
-  "who": "sowa",
-  "text": "Wskaż prostokąt."
- },
- "line.good_shape": {
-  "hash": "f64efd09cbb5",
+  "hash": "2c1e550be2b1",
   "who": "lisek",
-  "text": "Tak! To ta figura."
+  "text": "Narysuj palcem prostokąt, od zielonej kropki."
  },
- "line.good_shape.sowa": {
-  "hash": "411808cc7d2a",
+ "line.p_bez_rogow": {
+  "hash": "50c0575d28a5",
   "who": "sowa",
-  "text": "Tak! To ta figura."
+  "text": "Która figura nie ma żadnych rogów? Wskaż."
  },
- "line.a_game": {
-  "hash": "19b69c3e685e",
+ "line.p_bez_rogow_nie": {
+  "hash": "fa65ef5463b2",
+  "who": "sowa",
+  "text": "Ta figura ma rogi. Poszukaj okrągłej."
+ },
+ "line.p_kolorowanka": {
+  "hash": "d6931f540fb9",
+  "who": "sowa",
+  "text": "Pokoloruj domek. Wybierz kredkę z cyfrą, a potem pole z tą samą cyfrą."
+ },
+ "line.p_kolorowanka_ok": {
+  "hash": "d3d5e44dbd4f",
   "who": "lisek",
-  "text": "Zagrajmy w szukanie figur w domu."
+  "text": "Piękny kolorowy domek!"
  },
- "line.a_ok": {
-  "hash": "847e45fca43f",
-  "who": "sowa",
-  "text": "Dobrze! Ja pokazuję rzecz, a ty szukasz jej kształtu."
- },
- "line.a_talerz": {
-  "hash": "c6d61e1698f3",
-  "who": "sowa",
-  "text": "Jaki kształt ma talerz? Wskaż figurę."
- },
- "line.a_klocek": {
-  "hash": "c93e611f0fe0",
-  "who": "sowa",
-  "text": "Jaki kształt ma ściana klocka? Wskaż figurę."
- },
- "line.a_ask_parents": {
-  "hash": "19ac34678ad6",
-  "who": "sowa",
-  "text": "Poproście rodziców, żeby razem z wami poszukali w domu kół, kwadratów i trójkątów."
- },
- "line.a_bye": {
-  "hash": "163cfb6abb1b",
+ "line.d_kuchnia": {
+  "hash": "abc0ba8bd388",
   "who": "lisek",
-  "text": "Pa, pa! Do zobaczenia!"
+  "text": "W kuchni też są figury. Poszukajmy ich!"
+ },
+ "line.d_talerz": {
+  "hash": "340cdbfbf3fb",
+  "who": "jez",
+  "text": "Jaką figurą jest talerz? Wskaż."
+ },
+ "line.d_czekolada": {
+  "hash": "7209599579b5",
+  "who": "jez",
+  "text": "A jaką figurą jest tabliczka czekolady? Wskaż."
+ },
+ "line.d_nie": {
+  "hash": "2c74f637a6e4",
+  "who": "jez",
+  "text": "Popatrz jeszcze raz na rogi i boki."
+ },
+ "line.d_nie.lisek": {
+  "hash": "c9769a996710",
+  "who": "lisek",
+  "text": "Popatrz jeszcze raz na rogi i boki."
+ },
+ "line.d_kolo": {
+  "hash": "0e22c1cbc5a6",
+  "who": "lisek",
+  "text": "Tak! Talerz jest okrągły jak koło."
+ },
+ "line.d_prostokat": {
+  "hash": "63649d2b2302",
+  "who": "lisek",
+  "text": "Tak! Czekolada jest prostokątem: dwa boki długie, dwa krótkie."
+ },
+ "line.d_rodzice": {
+  "hash": "5d00708235e5",
+  "who": "jez",
+  "text": "Poszukaj w domu z rodzicami kół, kwadratów, trójkątów i prostokątów."
  },
  "line.n1": {
   "hash": "4fae823a23d6",
@@ -259,59 +279,19 @@
   "who": "lisek",
   "text": "Cztery!"
  },
- "line.wrong_sides": {
-  "hash": "56d4cedf6224",
-  "who": "sowa",
-  "text": "Popatrz na boki. Kwadrat ma wszystkie boki równe, a prostokąt ma dwa dłuższe."
- },
- "line.wrong_sides.lisek": {
-  "hash": "a97862a8c0c5",
-  "who": "lisek",
-  "text": "Popatrz na boki. Kwadrat ma wszystkie boki równe, a prostokąt ma dwa dłuższe."
- },
- "line.a_ciastko": {
-  "hash": "45767ede4333",
-  "who": "sowa",
-  "text": "Jaki kształt ma ciastko? Wskaż figurę."
- },
- "line.a_three_corners": {
-  "hash": "62ebd9c47e2c",
-  "who": "lisek",
-  "text": "Która figura ma trzy rogi? Wskaż ją."
- },
- "line.a_four_corners": {
-  "hash": "6a1683c5e4b0",
-  "who": "lisek",
-  "text": "Która figura ma cztery rogi? Wskaż ją."
- },
- "line.a_no_corners": {
-  "hash": "130f77b1b772",
-  "who": "lisek",
-  "text": "A która nie ma żadnego rogu?"
- },
- "line.wrong_corners": {
-  "hash": "3c59de4933e9",
-  "who": "lisek",
-  "text": "Policz rogi jeszcze raz."
- },
- "line.wrong_corners.sowa": {
-  "hash": "7dc73bab8e84",
-  "who": "sowa",
-  "text": "Policz rogi jeszcze raz."
- },
  "line.naklejka_daj": {
-  "hash": "bc5b2c586047",
-  "who": "sowa",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "3518a63ace0b",
-  "who": "narrator",
-  "text": "To okrągły talerz od sowy. Dostaliśmy go, kiedy poznawaliśmy figury."
+  "hash": "f5ee5c7743d7",
+  "who": "jez",
+  "text": "Dziękuję za mój nowy domek! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "c5a826aa0ed3",
-  "who": "sowa",
+  "hash": "461aede36fc5",
+  "who": "jez",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "4574b6063519",
+  "who": "narrator",
+  "text": "To Jeżyk. Zbudowaliśmy mu domek z figur: z kwadratu, trójkąta, koła i prostokąta."
  }
 }
