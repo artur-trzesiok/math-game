@@ -355,8 +355,11 @@ export class Player {
       // `wrong` line and, after `hintAfter` misses, pulses the right answer
       task: (o) => wDzialaniu(zadanie(o)),
       sort: (o) => wDzialaniu(sortuj(o)).then((r) => { nagroda(null); return r; }),
-      _task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null }) => {
+      // wszystkie: every right one must be found ("point to all the apples"); each found one keeps a pencil ring
+      _task: async ({ targets, correct, wrong, hintAfter = 2, onWrong = null, wszystkie = false }) => {
         const ok = Array.isArray(correct) ? correct : [correct];
+        const znalezione = new Set(), obrysy = [];
+        const szukane = () => ok.filter((h) => !znalezione.has(h));
         const polecenie = last;                          // the instruction: a tapped character repeats it, not the "try again" said since
         let misses = 0;
         const podpowiedzi = [];                          // pencil hints drawn on the way; wiped when the task ends
@@ -369,23 +372,26 @@ export class Player {
         try {
         for (;;) {
           alive();
-          const hit = await S.choose([...targets, ...puppets]);
+          const hit = await S.choose([...targets.filter((h) => !znalezione.has(h)), ...puppets]);
           alive();
           if (hit && hit.korzen) { if (polecenie) await say(polecenie.who, polecenie.key, { anim: polecenie.anim }); continue; }   // "say it again"
-          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); S.sfx.graj("right"); nagroda(hit, misses === 0); return hit; }
+          if (ok.includes(hit) && wszystkie && szukane().length > 1) {     // one of several found: ring it, look for the rest
+            znalezione.add(hit); hit.highlight?.(false); S.sfx.graj("right"); E.ptaszek(S, hit); obrysy.push(await S.circle(hit)); continue;
+          }
+          if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); S.sfx.graj("right"); nagroda(hit, misses === 0); return wszystkie ? ok : hit; }
           misses++;
           S.shake(hit);
           if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);
           // the hint ladder: first the answer pulses, then a pencil arrow points at it, then the character shows it
-          if (misses >= hintAfter) for (const h of ok) h.highlight?.(true);
-          if (misses === hintAfter + 1 && !podpowiedzi.length) podpowiedzi.push(await S.arrow(ok[0]));
+          if (misses >= hintAfter) for (const h of szukane()) h.highlight?.(true);
+          if (misses === hintAfter + 1 && !podpowiedzi.length) podpowiedzi.push(await S.arrow(szukane()[0]));
           if (misses === hintAfter + 2) {
             const kto = polecenie?.who && S.puppets[polecenie.who] ? polecenie.who : Object.keys(S.puppets).find((n) => S.puppets[n].korzen.visible);
-            if (kto) { S.lookAt(kto, ok[0]); S.puppets[kto].graj("Wskazanie"); }
-            podpowiedzi.push(await S.circle(ok[0]));
+            if (kto) { S.lookAt(kto, szukane()[0]); S.puppets[kto].graj("Wskazanie"); }
+            podpowiedzi.push(await S.circle(szukane()[0]));
           }
         }
-        } finally { clearInterval(gazeTimer); for (const p of podpowiedzi) p.remove(); }
+        } finally { clearInterval(gazeTimer); for (const p of [...podpowiedzi, ...obrysy]) p.remove(); }
       },
       // free sorting: every item must end up in a zone and every zone must hold one kind
       // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line

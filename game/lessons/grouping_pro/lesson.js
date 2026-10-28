@@ -234,7 +234,7 @@ export default {
         await c.say("lisek", "line.d_witaj", { anim: "Rozgladanie" });
         const owoce = await wRzedzie(c, [{ name: "jablko", tag: "j" }, { name: "jablko", tag: "j", size: 1.05 }, { name: "jablko", tag: "j", size: 0.7 }, { name: "gruszka", tag: "x" }, { name: "marchewka", tag: "x" }, { name: "grzyb", tag: "x" }]);
         await c.say("sarenka", "line.d_najpierw");
-        await c.task({ targets: owoce, correct: owoce.filter((h) => h.tag === "j"), wrong: "line.d_nie_jablko" });
+        await c.task({ targets: owoce, correct: owoce.filter((h) => h.tag === "j"), wrong: "line.d_nie_jablko", wszystkie: true });
         c.clear();
         const items = await wRzedzie(c, [{ name: "kubek", tag: "kubki" }, { name: "kubek", tag: "kubki" }, { name: "talerz", tag: "talerze" }, { name: "talerz", tag: "talerze" }]);
         const zones = await pojemniki(c, ["polka", "kubki"], ["pudelko", "talerze"], TRZY);
