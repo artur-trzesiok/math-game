@@ -365,9 +365,12 @@ export class Lalka {
       const L1 = Math.hypot(kx, ky), L2 = Math.hypot(ax, ay), beta = Math.atan2(ay, ax) - Math.atan2(ky, kx);
       const c = Math.max(-1, Math.min(1, (d * d - L1 * L1 - L2 * L2) / (2 * L1 * L2))), gam = Math.acos(c);
       const norm = (a) => Math.atan2(Math.sin(a), Math.cos(a));
-      const hint = p[k0.nazwa] || 0, jakKat = (psi) => (L.lustro ? 1 : -1) * psi / DEG;
+      // the knee folds the way it folded a frame ago (the track's value only picks the side at the start): choosing
+      // the solution nearest to the track's 0 every frame flipped a deer's leg between two bends mid-stride
+      const hint = L.ikPoprz ?? (p[k0.nazwa] || 0), jakKat = (psi) => (L.lustro ? 1 : -1) * psi / DEG;
       const ocena = (psi) => { const kat = jakKat(psi); return (kat < k0.zakres[0] || kat > k0.zakres[1] ? 1000 : 0) + Math.abs(kat - hint); };
       const a1 = norm(gam - beta), a2 = norm(-gam - beta), psi = ocena(a1) <= ocena(a2) ? a1 : a2;
+      L.ikPoprz = jakKat(psi);
       const vx = kx + Math.cos(psi) * ax - Math.sin(psi) * ay, vy = ky + Math.sin(psi) * ax + Math.cos(psi) * ay;
       g.rotation.z = Math.atan2(uy, ux) - Math.atan2(vy, vx);
       const rodzic = this._obrotWidoku(g) - g.rotation.z;
@@ -598,7 +601,7 @@ export class Lalka {
     this._niesDzieci();
     const stopy = a?.stopy ?? (this.przejscie?.stopy === "ik" ? "ik" : undefined);   // planted feet stay planted while the hips blend back
     if (a?.krok && this.wProfilu) this._krok(u, a.krok);
-    else if (stopy === "ik") this._ik(p); else for (const L of this.nogi) L.ikKaty = null;
+    else if (stopy === "ik") this._ik(p); else for (const L of this.nogi) { L.ikKaty = null; L.ikPoprz = null; }
     this._zginaj(p, (L) => nogi.has(L));
     if (stopy === "ziemia" && Lalka.zginanie) this._naZiemi();
   }
