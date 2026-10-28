@@ -196,14 +196,21 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         const g = new THREE.PlaneGeometry(w2, h, 6, 16), rest = g.attributes.position.array.slice(), uv = g.attributes.uv.array;
         // a row's height from its v: the toe band and the rim at the picture's scale, the shaft between takes the rest
         const wys = (vv) => (vv <= pa ? vv * Hn : vv >= 1 - pb ? h - (1 - vv) * Hn : pa * Hn + (vv - pa) / (1 - pa - pb) * (h - (pa + pb) * Hn)) - h / 2;
-        // the sole covers the paw, the shaft leans along the bone line through the knee and ankle points: each row
-        // shifts towards that line as it rises, so no shin shows beside the shaft (a paw pointing outwards had pulled a
-        // straight box off the leg)
-        const [st0, st1] = R.stawy, os = (yy) => (st0 && st1 && Math.abs(st0.jy - st1.jy) > 1e-4 ? st1.jx + (yy - st1.jy) * (st0.jx - st1.jx) / (st0.jy - st1.jy) : null);
-        const gx = os(cy + h / 2), skos = gx === null ? 0 : gx - cx + K.dx * H0;
         for (let i = 0, j = 0; i < rest.length; i += 3, j += 2) {
-          const y = Hn > h ? wys(uv[j + 1]) : rest[i + 1], x = rest[i] + skos * Math.max(0, (y + h / 2) / h - pa) / (1 - pa);
+          const x = rest[i], y = Hn > h ? wys(uv[j + 1]) : rest[i + 1];
           rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012;
+        }
+        // the rest pose already sits on the bones: the sole stays on the paw and level, the shaft above the ankle is
+        // moved onto the ankle point and turned to the shin's own angle (knee -> ankle), blended over the ankle's band
+        const [st0, st1] = R.stawy;
+        if (st0 && st1) {
+          const vx = st0.jx - st1.jx, vy = st0.jy - st1.jy, kat = Math.atan2(-vx, vy), dx0 = st1.jx + K.dx * H0 - cx;
+          for (let i = 0; i < rest.length; i += 3) {
+            const t = Math.max(0, Math.min(1, (rest[i + 1] - (S0.y0 - 0.05)) / Math.max(1e-4, h)));
+            const q = 1 - waga(1 - t, 1 - pa, pa);          // 0 in the toe band, rising to 1 up the shaft
+            const x = rest[i] + dx0 * q - st1.jx, y = rest[i + 1] - st1.jy, c = Math.cos(kat * q), sn = Math.sin(kat * q);
+            rest[i] = st1.jx + x * c - y * sn; rest[i + 1] = st1.jy + x * sn + y * c;
+          }
         }
         g.attributes.position.array.set(rest);
         // skinned to the leg's own joints: every shoe vertex gets a chain position s from where it lies along the
