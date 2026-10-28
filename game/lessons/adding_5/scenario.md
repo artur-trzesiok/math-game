@@ -1,28 +1,20 @@
-# Adding to 5
+# Adding to 5 - Fox's picnic
 
-Goal: add two groups up to five - put them together, count them all - and read the
-equation a + b = c; the signs + and =. Characters: Fox (left), Owl (right).
+Goal: adding is putting two groups together and counting them all; the signs + and =; the order does not matter
+(1 + 4 = 4 + 1). Age 5-6. Characters: Fox, Bunny, Deer. Stage 6, lesson 23.
 
-## Stage 1 - story - orchard, lake, home
+**Misconception:** counting only the newcomers - Bunny sees the duckling arrive: "one guest!".
 
-1. Orchard, the problem: three hedgehogs come for a snack, an apple each. Fox has two
-   in his basket, Owl one. Fox (the misconception "the bigger part counts"):
-   "together that is two - mine are more". Owl ("?"): nothing vanishes - put
-   together, there are more. How many then? By adding (Owl pictures 2 and 1): put two
-   piles into one and count all. The child drags Owl's apple into the basket and
-   counts all: three. Owl writes 2 + 1 = 3 in pencil; plus is a little cross that
-   says "put together", and the equal lines are the "as many" sign the child knows. Solved: three apples for three hedgehogs.
-2. Lake picnic: Fox's two cups, the child drags Owl's two over to them, counts all;
-   2 + 2 = _ is written and the child's 4 card flies into the gap.
-3. Home: three cookies and two more; "count all the cookies together"; the child
-   completes 3 + 2 = _ by flying the 5 card into the gap.
+## Stage 1 - story
+A. *Meadow.* Two guests on Fox's blanket, the duckling comes; Bunny: "one!". Deer: adding is putting together.
+**Child** brings the duckling onto the blanket and counts everyone (three); 2 + 1 = 3 written, plus = put together.
+Two more come: **child** brings them, counts five, picks the card for the gap in 3 + 2 = _.
+B. *Orchard.* Dominoes (`domino`, new): which has four. The order trick: 1 + 4, the tile turns round - 4 + 1 = _
+(still five). *Breather:* Fox claps twice, Bunny once - how many claps.
 
-## Stage 2 - practice - forest
+## Stage 2 - practice
+Two apples and two more into the basket, count them; 2 + 2 = _; which domino has five; pay "two coins and one more";
+4 + 1 = _.
 
-Five rounds: two small piles with a pencil plus between them (1+1, 2+1, 1+3, 2+3,
-4+1); how many together? the digit from three cards.
-
-## Stage 3 - at home - children's room
-
-Adding toys: a group in the box, the rest dragged in, all counted, the digit (2+1
-teddies, 3+2 blocks, 1+3 balls). "Ask your parents to play adding with you."
+## Stage 3 - at home (kitchen)
+Two cups on the tray, two more brought: 2 + 2 = _. "Add with your parents: two apples and one more."

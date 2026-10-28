@@ -1,202 +1,237 @@
 {
- "line.s_guests": {
-  "hash": "961c94edcb94",
-  "who": "sowa",
-  "text": "Na podwieczorek przyjdą trzy jeżyki. Każdy dostanie jedno jabłko."
- },
- "line.s_fox_has": {
-  "hash": "959de5585fff",
+ "line.a_piknik": {
+  "hash": "119b267f24dd",
   "who": "lisek",
-  "text": "Ja mam w koszyku dwa jabłka."
+  "text": "Urządzam piknik na łące! Zaprosiłem gości."
  },
- "line.s_owl_has": {
-  "hash": "688e92aba8cc",
-  "who": "sowa",
-  "text": "A ja mam jedno."
- },
- "line.s_naive": {
-  "hash": "68bb09aab627",
+ "line.a_dwoje": {
+  "hash": "da04872eac0c",
   "who": "lisek",
-  "text": "Czyli razem mamy dwa! Moich jest więcej, więc liczą się moje."
+  "text": "Na kocyku siedzą już dwaj goście: Jeżyk i Myszka."
  },
- "line.s_not": {
-  "hash": "cfcd89d43063",
-  "who": "sowa",
-  "text": "Nic nie znika! Kiedy wkładamy jabłka razem, jest ich więcej niż dwa."
+ "line.a_ktos_idzie": {
+  "hash": "884c93e5ba0a",
+  "who": "sarenka",
+  "text": "Ktoś jeszcze idzie! To kaczuszka."
  },
- "line.s_how": {
-  "hash": "f5408f8c64b2",
+ "line.a_jeden": {
+  "hash": "5b46341d5998",
+  "who": "zajac",
+  "text": "Jeden gość! Mamy jednego gościa!"
+ },
+ "line.a_nie_jeden": {
+  "hash": "ddc2bc43f3a0",
+  "who": "sarenka",
+  "text": "Zajączku, policzyłeś tylko kaczuszkę. A Jeżyk i Myszka nie zniknęli!"
+ },
+ "line.a_dodawanie": {
+  "hash": "2a962bae38c5",
+  "who": "sarenka",
+  "text": "Dodawanie to łączenie razem. Najpierw zaprowadźmy kaczuszkę na kocyk, a potem policzmy wszystkich."
+ },
+ "line.a_na_koc": {
+  "hash": "78fc05721ae0",
+  "who": "sarenka",
+  "text": "Goście siedzą na kocyku. Przeciągnij gościa na kocyk."
+ },
+ "line.a_na_koc.lisek": {
+  "hash": "99cf76573d3f",
   "who": "lisek",
-  "text": "To ile ich mamy razem?"
+  "text": "Goście siedzą na kocyku. Przeciągnij gościa na kocyk."
  },
- "line.s_add": {
-  "hash": "5d648f3b1e6b",
-  "who": "sowa",
-  "text": "Dodajemy! Łączymy dwie kupki w jedną i liczymy wszystko."
+ "line.a_policz": {
+  "hash": "34133839413c",
+  "who": "sarenka",
+  "text": "A teraz policz wszystkich gości na kocyku."
  },
- "line.s_what": {
-  "hash": "4eb4cf2b2f1d",
+ "line.a_troje": {
+  "hash": "15aa332a1473",
+  "who": "zajac",
+  "text": "Trzech gości! Dwóch i jeszcze jeden to trzech."
+ },
+ "line.a_plus": {
+  "hash": "5584a97e7efe",
+  "who": "sarenka",
+  "text": "Zapisujemy to tak: dwa plus jeden równa się trzy. Plus znaczy: łączymy razem."
+ },
+ "line.a_wiecej_gosci": {
+  "hash": "264a75c3a4d5",
   "who": "lisek",
-  "text": "Dodajemy? Co to znaczy dodawać?"
+  "text": "Przychodzą następni goście: ślimak i motylek!"
  },
- "line.s_show": {
-  "hash": "14605b148a12",
-  "who": "sowa",
-  "text": "Pokażę ci, to proste. Przeciągnij moje jabłko do koszyka liska."
- },
- "line.s_count_all": {
-  "hash": "3bb868bfff97",
-  "who": "sowa",
-  "text": "Teraz policz wszystkie jabłka w koszyku."
- },
- "line.s_three": {
-  "hash": "b8c141eccddc",
+ "line.a_przyprowadz": {
+  "hash": "acc18c434dc1",
   "who": "lisek",
-  "text": "Trzy! Dwa i jeszcze jedno to razem trzy."
+  "text": "Przeprowadź ich na kocyk, do pozostałych gości."
  },
- "line.s_write": {
-  "hash": "0cd17eacd9c6",
-  "who": "sowa",
-  "text": "Dodawanie można zapisać. Dwa, plus, jeden, równa się trzy."
+ "line.a_ktora_karta": {
+  "hash": "a93adb5270b3",
+  "who": "sarenka",
+  "text": "Trzy plus dwa równa się... Która karta pasuje do pustego miejsca? Wskaż."
  },
- "line.s_plus": {
-  "hash": "fff8d780f072",
-  "who": "sowa",
-  "text": "Plus wygląda jak mały krzyżyk. Mówi nam: połącz razem."
+ "line.a_ktora_karta_nie": {
+  "hash": "8f7705ed881f",
+  "who": "sarenka",
+  "text": "Policz wszystkich gości na kocyku jeszcze raz."
  },
- "line.s_solved": {
-  "hash": "17354086bfdb",
+ "line.a_pieciu": {
+  "hash": "569f2655141f",
   "who": "lisek",
-  "text": "Trzy jabłka dla trzech jeżyków! Starczy dla każdego."
+  "text": "Pięciu gości! Trzech i jeszcze dwóch. Brawo!"
  },
- "line.s_to_meadow": {
-  "hash": "fc2ee1e31789",
-  "who": "sowa",
-  "text": "Chodźmy nad jezioro, na piknik."
+ "line.b_domino": {
+  "hash": "8bfe62f6e769",
+  "who": "zajac",
+  "text": "Po pikniku gramy w domino!"
  },
- "line.b_picnic": {
-  "hash": "98389aaebcd4",
+ "line.b_cztery": {
+  "hash": "a7dee220f694",
+  "who": "sarenka",
+  "text": "Na którym domino są razem cztery kropki? Wskaż."
+ },
+ "line.b_cztery_nie": {
+  "hash": "8c26a6555304",
+  "who": "sarenka",
+  "text": "Dodaj kropki z góry i z dołu."
+ },
+ "line.b_jeden_i_trzy": {
+  "hash": "61244abb31b8",
+  "who": "zajac",
+  "text": "Jedna kropka i trzy kropki. Razem cztery!"
+ },
+ "line.b_jeden_cztery": {
+  "hash": "15fc2b4722a2",
   "who": "lisek",
-  "text": "Mam dwa kubki na piknik."
+  "text": "Na tym domino jest jedna kropka i cztery kropki. Jeden plus cztery to pięć."
  },
- "line.b_owl": {
-  "hash": "ca0cc0a89b9d",
-  "who": "sowa",
-  "text": "Ja też mam dwa. Przeciągnij moje kubki do kubków liska."
- },
- "line.b_count": {
-  "hash": "a5e3b37f73a9",
+ "line.b_obracam": {
+  "hash": "00d2e1e477ca",
   "who": "lisek",
-  "text": "Policz wszystkie kubki razem."
+  "text": "A teraz obracam domino! Na górze są cztery, na dole jedna."
  },
- "line.b_pick": {
-  "hash": "5dcbe45b8a1e",
-  "who": "sowa",
-  "text": "Ile jest razem? Wskaż cyfrę."
+ "line.b_ile_teraz": {
+  "hash": "cdd4bddda66c",
+  "who": "sarenka",
+  "text": "Cztery plus jeden równa się... Ile teraz jest kropek? Wskaż kartę."
  },
- "line.b_write": {
-  "hash": "ccdc3e4453a2",
-  "who": "sowa",
-  "text": "Dwa plus dwa równa się cztery."
+ "line.b_ile_teraz_nie": {
+  "hash": "3b232b25674c",
+  "who": "sarenka",
+  "text": "Kropki się nie zmieniły, tylko domino się obróciło. Policz je."
  },
- "line.b_to_home": {
-  "hash": "0934d2186de0",
+ "line.b_tyle_samo": {
+  "hash": "aebe7fb9b020",
+  "who": "sarenka",
+  "text": "Pięć! Jeden plus cztery i cztery plus jeden to tyle samo."
+ },
+ "line.b_klaszczemy": {
+  "hash": "15836cfba062",
+  "who": "zajac",
+  "text": "Klaszczemy dla gospodarza! Posłuchaj: Lisek klaszcze, a potem ja."
+ },
+ "line.b_ile_klasniec": {
+  "hash": "5f2982fbf1f7",
+  "who": "sarenka",
+  "text": "Ile było wszystkich klaśnięć? Wskaż kartę."
+ },
+ "line.b_ile_klasniec_nie": {
+  "hash": "195185f3c17f",
+  "who": "sarenka",
+  "text": "Lisek klasnął dwa razy, a Zajączek raz. Ile razem?"
+ },
+ "line.b_koniec": {
+  "hash": "32d17995bc6e",
   "who": "lisek",
-  "text": "Cztery kubki! Wracajmy do domu, upiekę ciastka."
+  "text": "Dwa i jeden to trzy. Wspaniały piknik!"
  },
- "line.c_bake": {
-  "hash": "e0267a62e609",
+ "line.p_start": {
+  "hash": "5bc16ba11ec9",
+  "who": "sarenka",
+  "text": "Poćwiczmy dodawanie! Mam pięć zabaw."
+ },
+ "line.p_kosz": {
+  "hash": "7f508acc8909",
   "who": "lisek",
-  "text": "Upiekłem trzy ciastka."
+  "text": "W koszyku są dwa jabłka. Dołóż jeszcze dwa i policz wszystkie."
  },
- "line.c_owl": {
-  "hash": "8f7e09893250",
-  "who": "sowa",
-  "text": "A ja dwa. Przeciągnij moje ciastka do ciastek liska."
+ "line.p_cztery": {
+  "hash": "b90e4044a794",
+  "who": "sarenka",
+  "text": "Dwa i dwa to cztery!"
  },
- "line.c_slot": {
-  "hash": "2227c60a991a",
-  "who": "sowa",
-  "text": "Trzy plus dwa równa się ile? Wskaż cyfrę, która pasuje na końcu."
- },
- "line.c_read": {
-  "hash": "cf2238874ac8",
-  "who": "sowa",
-  "text": "Trzy plus dwa równa się pięć!"
- },
- "line.c_solved": {
-  "hash": "82596d3a3467",
+ "line.p_karta": {
+  "hash": "07e452668073",
   "who": "lisek",
-  "text": "Teraz umiesz dodawać! Łączymy razem i liczymy wszystko."
+  "text": "Która karta pasuje do pustego miejsca? Wskaż."
  },
- "line.wrong_digit": {
-  "hash": "75fddab25da5",
-  "who": "sowa",
-  "text": "To inna cyfra. Policz jeszcze raz."
+ "line.p_karta.sarenka": {
+  "hash": "54c259744b32",
+  "who": "sarenka",
+  "text": "Która karta pasuje do pustego miejsca? Wskaż."
  },
- "line.wrong_digit.lisek": {
-  "hash": "6d495e4dfa5c",
+ "line.p_karta_nie": {
+  "hash": "ceb435bd8b0c",
   "who": "lisek",
-  "text": "To inna cyfra. Policz jeszcze raz."
+  "text": "Policz jeszcze raz: najpierw pierwsza liczba, potem dokładamy drugą."
  },
- "line.good_digit": {
-  "hash": "33629b7de4aa",
+ "line.p_karta_nie.sarenka": {
+  "hash": "0a16a628a826",
+  "who": "sarenka",
+  "text": "Policz jeszcze raz: najpierw pierwsza liczba, potem dokładamy drugą."
+ },
+ "line.p_dobrze": {
+  "hash": "d75425f6c769",
+  "who": "sarenka",
+  "text": "Brawo!"
+ },
+ "line.p_dobrze.lisek": {
+  "hash": "f7093e2881e0",
   "who": "lisek",
-  "text": "Tak! Dobrze dodane."
+  "text": "Brawo!"
  },
- "line.good_digit.sowa": {
-  "hash": "18e2c3744420",
-  "who": "sowa",
-  "text": "Tak! Dobrze dodane."
+ "line.p_domino": {
+  "hash": "3ab3735a2585",
+  "who": "sarenka",
+  "text": "Na którym domino jest razem pięć kropek? Wskaż."
  },
- "line.p_intro": {
-  "hash": "17138cce5919",
-  "who": "sowa",
-  "text": "Pobawmy się w dodawanie! Dwie kupki, a pomiędzy nimi plus."
+ "line.p_domino_nie": {
+  "hash": "8c26a6555304",
+  "who": "sarenka",
+  "text": "Dodaj kropki z góry i z dołu."
  },
- "line.p_together": {
-  "hash": "5dcbe45b8a1e",
-  "who": "sowa",
-  "text": "Ile jest razem? Wskaż cyfrę."
- },
- "line.a_game": {
-  "hash": "0e31cf5d774b",
+ "line.p_sklep": {
+  "hash": "96e32e6bb788",
   "who": "lisek",
-  "text": "Zagrajmy w dodawanie zabawek, tak jak w domu."
+  "text": "Jabłko kosztuje dwie monety i jeszcze jedną. Zapłać za nie."
  },
- "line.a_ok": {
-  "hash": "3f62d6593d64",
-  "who": "sowa",
-  "text": "Dobrze! Wkładamy zabawki do pudełka i liczymy wszystkie."
- },
- "line.a_put": {
-  "hash": "dbcef30172ba",
-  "who": "sowa",
-  "text": "Przeciągnij zabawki do pudełka, a potem policz wszystkie."
- },
- "line.a_which_digit": {
-  "hash": "5dcbe45b8a1e",
-  "who": "sowa",
-  "text": "Ile jest razem? Wskaż cyfrę."
- },
- "line.a_which_digit.lisek": {
-  "hash": "e99fa0e61ebb",
+ "line.h_kubki": {
+  "hash": "49d69da5600f",
   "who": "lisek",
-  "text": "Ile jest razem? Wskaż cyfrę."
+  "text": "Goście przyszli do domu na herbatkę! Na tacy są dwa kubki."
  },
- "line.a_ask_parents": {
-  "hash": "5a017d32ed3e",
-  "who": "sowa",
-  "text": "Poproście rodziców o zabawę w dodawanie. Ile łyżek będzie, gdy dołożycie jeszcze jedną?"
+ "line.h_dostaw": {
+  "hash": "72a49b506bd1",
+  "who": "zajac",
+  "text": "Dostaw jeszcze dwa kubki na tacę."
  },
- "line.a_bye": {
-  "hash": "163cfb6abb1b",
+ "line.h_ile": {
+  "hash": "33e43e04ce82",
   "who": "lisek",
-  "text": "Pa, pa! Do zobaczenia!"
+  "text": "Dwa plus dwa równa się... Ile jest kubków? Wskaż kartę."
+ },
+ "line.h_cztery": {
+  "hash": "6374c1e0282b",
+  "who": "zajac",
+  "text": "Cztery kubki dla czterech gości!"
+ },
+ "line.h_rodzice": {
+  "hash": "882d569a2886",
+  "who": "lisek",
+  "text": "Dodawaj z rodzicami: dwa jabłka i jeszcze jedno, ile razem?"
  },
  "line.n1": {
-  "hash": "4fae823a23d6",
-  "who": "sowa",
+  "hash": "0468680a5368",
+  "who": "zajac",
   "text": "Jeden!"
  },
  "line.n1.lisek": {
@@ -204,9 +239,14 @@
   "who": "lisek",
   "text": "Jeden!"
  },
+ "line.n1.sarenka": {
+  "hash": "fa74c8ce122d",
+  "who": "sarenka",
+  "text": "Jeden!"
+ },
  "line.n2": {
-  "hash": "e363b2e5ef6b",
-  "who": "sowa",
+  "hash": "0f8ff9d18748",
+  "who": "zajac",
   "text": "Dwa!"
  },
  "line.n2.lisek": {
@@ -214,9 +254,14 @@
   "who": "lisek",
   "text": "Dwa!"
  },
+ "line.n2.sarenka": {
+  "hash": "7f4a57f70df5",
+  "who": "sarenka",
+  "text": "Dwa!"
+ },
  "line.n3": {
-  "hash": "08bcfaaf489e",
-  "who": "sowa",
+  "hash": "87e6d36448ae",
+  "who": "zajac",
   "text": "Trzy!"
  },
  "line.n3.lisek": {
@@ -224,9 +269,14 @@
   "who": "lisek",
   "text": "Trzy!"
  },
+ "line.n3.sarenka": {
+  "hash": "4f6d31a2ee36",
+  "who": "sarenka",
+  "text": "Trzy!"
+ },
  "line.n4": {
-  "hash": "8414b0618ffe",
-  "who": "sowa",
+  "hash": "3c54ab8fd429",
+  "who": "zajac",
   "text": "Cztery!"
  },
  "line.n4.lisek": {
@@ -234,9 +284,14 @@
   "who": "lisek",
   "text": "Cztery!"
  },
+ "line.n4.sarenka": {
+  "hash": "8918276949e6",
+  "who": "sarenka",
+  "text": "Cztery!"
+ },
  "line.n5": {
-  "hash": "4ec94c6a823a",
-  "who": "sowa",
+  "hash": "8b44287be64b",
+  "who": "zajac",
   "text": "Pięć!"
  },
  "line.n5.lisek": {
@@ -244,29 +299,24 @@
   "who": "lisek",
   "text": "Pięć!"
  },
- "line.s_equals": {
-  "hash": "607b9dd24615",
-  "who": "sowa",
-  "text": "A równe kreski już znasz. Mówią: tyle samo. Dwa i jeden to tyle samo, co trzy."
- },
- "line.c_count": {
-  "hash": "9bb5bd94f67b",
-  "who": "lisek",
-  "text": "Policz wszystkie ciastka razem."
+ "line.n5.sarenka": {
+  "hash": "e9ca2a9ab4ab",
+  "who": "sarenka",
+  "text": "Pięć!"
  },
  "line.naklejka_daj": {
-  "hash": "bc5b2c586047",
-  "who": "sowa",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "7f5531d21339",
-  "who": "narrator",
-  "text": "To ciastko od sowy. Dostaliśmy je, kiedy uczyliśmy się dodawać."
+  "hash": "083cf8fad0ea",
+  "who": "lisek",
+  "text": "Dziękuję za wspaniały piknik! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "c5a826aa0ed3",
-  "who": "sowa",
+  "hash": "126a203b8c35",
+  "who": "lisek",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "f3b77bd6411e",
+  "who": "narrator",
+  "text": "To piknikowy kocyk Liska. Dostaliśmy go, kiedy uczyliśmy się dodawać."
  }
 }

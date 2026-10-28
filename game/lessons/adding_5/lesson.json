@@ -4,35 +4,36 @@
     "pl": "Dodawanie do 5",
     "en": "Adding to 5"
   },
-  "goal": "Add two groups up to five: put them together and count all; read and write a + b = c with the signs + and =.",
+  "goal": "Adding is putting two groups together and counting them all; the signs + and =; the order does not matter (1 + 4 = 4 + 1).",
   "age": "5-6",
   "characters": [
     "lisek",
-    "sowa"
+    "zajac",
+    "sarenka"
   ],
   "backgrounds": [
-    "sad",
     "laka",
-    "dom",
-    "las",
-    "pokoj"
+    "sad",
+    "dom"
   ],
   "objects": [
+    "kocyk",
+    "jez",
+    "mysz",
+    "kaczatko_stoi",
+    "slimak",
+    "motyl",
     "jablko",
-    "kubek",
-    "ciastko",
-    "szyszka",
-    "gruszka",
-    "kwiatek",
-    "pilka",
-    "misiu",
-    "klocek",
     "koszyk",
-    "pudelko"
+    "moneta",
+    "metka",
+    "talerz",
+    "kubek",
+    "taca"
   ],
-  "cover": "Between them a wicker basket with two red apples, an owl's wing adding a third apple; above, a pencil-drawn 2 + 1 = 3.",
+  "cover": "A sunny picnic on a meadow: Fox, Bunny and Deer on a red-and-white checked blanket with a hedgehog, a mouse and a duckling; a snail and a butterfly are just arriving to join them.",
   "naklejka": {
-    "obraz": "objects/ciastko",
-    "kto": "sowa"
+    "obraz": "objects/kocyk",
+    "kto": "lisek"
   }
 }

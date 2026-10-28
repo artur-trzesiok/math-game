@@ -1,210 +1,234 @@
 {
-  "line.s_guests": {
-    "who": "sowa",
-    "text": "Three little hedgehogs are coming for a snack. Each one gets an apple."
-  },
-  "line.s_fox_has": {
+  "line.a_piknik": {
     "who": "lisek",
-    "text": "I have two apples in my basket."
+    "text": "I'm having a picnic on the meadow! I've invited guests."
   },
-  "line.s_owl_has": {
-    "who": "sowa",
-    "text": "And I have one."
-  },
-  "line.s_naive": {
+  "line.a_dwoje": {
     "who": "lisek",
-    "text": "So together we have two! Mine are more, so mine count."
+    "text": "Two guests are already sitting on the blanket: Hedgehog and Mouse."
   },
-  "line.s_not": {
-    "who": "sowa",
-    "text": "Nothing vanishes! When we put the apples together, there are more than two."
+  "line.a_ktos_idzie": {
+    "who": "sarenka",
+    "text": "Someone else is coming! It's the duckling."
   },
-  "line.s_how": {
-    "who": "lisek",
-    "text": "Then how many do we have together?"
+  "line.a_jeden": {
+    "who": "zajac",
+    "text": "One guest! We have one guest!"
   },
-  "line.s_add": {
-    "who": "sowa",
-    "text": "We add! We put two piles into one and count them all."
+  "line.a_nie_jeden": {
+    "who": "sarenka",
+    "text": "Bunny, you only counted the duckling. Hedgehog and Mouse haven't disappeared!"
   },
-  "line.s_what": {
-    "who": "lisek",
-    "text": "Add? What does adding mean?"
+  "line.a_dodawanie": {
+    "who": "sarenka",
+    "text": "Adding is putting together. First let's bring the duckling onto the blanket, then count everyone."
   },
-  "line.s_show": {
-    "who": "sowa",
-    "text": "I will show you, it is easy. Drag my apple into Fox's basket."
-  },
-  "line.s_count_all": {
-    "who": "sowa",
-    "text": "Now count all the apples in the basket."
-  },
-  "line.s_three": {
-    "who": "lisek",
-    "text": "Three! Two and one more make three."
-  },
-  "line.s_write": {
-    "who": "sowa",
-    "text": "Adding can be written down. Two, plus, one, equals three."
-  },
-  "line.s_plus": {
-    "who": "sowa",
-    "text": "Plus looks like a little cross. It tells us: put them together."
-  },
-  "line.s_equals": {
-    "who": "sowa",
-    "text": "And you know the equal lines. They say: as many. Two and one is as many as three."
-  },
-  "line.s_solved": {
-    "who": "lisek",
-    "text": "Three apples for three hedgehogs! Enough for everyone."
-  },
-  "line.s_to_meadow": {
-    "who": "sowa",
-    "text": "Let's go to the lake, for a picnic."
-  },
-  "line.b_picnic": {
-    "who": "lisek",
-    "text": "I have two cups for the picnic."
-  },
-  "line.b_owl": {
-    "who": "sowa",
-    "text": "I have two too. Drag my cups over to Fox's cups."
-  },
-  "line.b_count": {
-    "who": "lisek",
-    "text": "Count all the cups together."
-  },
-  "line.b_pick": {
-    "who": "sowa",
-    "text": "How many are there together? Point to the digit."
-  },
-  "line.b_write": {
-    "who": "sowa",
-    "text": "Two plus two equals four."
-  },
-  "line.b_to_home": {
-    "who": "lisek",
-    "text": "Four cups! Let's go home, I'll bake cookies."
-  },
-  "line.c_bake": {
-    "who": "lisek",
-    "text": "I baked three cookies."
-  },
-  "line.c_owl": {
-    "who": "sowa",
-    "text": "And I baked two. Drag my cookies over to Fox's cookies."
-  },
-  "line.c_count": {
-    "who": "lisek",
-    "text": "Count all the cookies together."
-  },
-  "line.c_slot": {
-    "who": "sowa",
-    "text": "Three plus two equals what? Point to the digit that fits at the end."
-  },
-  "line.c_read": {
-    "who": "sowa",
-    "text": "Three plus two equals five!"
-  },
-  "line.c_solved": {
-    "who": "lisek",
-    "text": "Now you can add! We put things together and count them all."
-  },
-  "line.wrong_digit": {
-    "who": "sowa",
+  "line.a_na_koc": {
+    "who": "sarenka",
+    "text": "The guests sit on the blanket. Drag the guest onto the blanket.",
     "speakers": [
       "lisek"
-    ],
-    "text": "That is another digit. Count again."
+    ]
   },
-  "line.good_digit": {
+  "line.a_policz": {
+    "who": "sarenka",
+    "text": "Now count all the guests on the blanket."
+  },
+  "line.a_troje": {
+    "who": "zajac",
+    "text": "Three guests! Two and one more make three."
+  },
+  "line.a_plus": {
+    "who": "sarenka",
+    "text": "We write it like this: two plus one equals three. Plus means: put together."
+  },
+  "line.a_wiecej_gosci": {
     "who": "lisek",
+    "text": "More guests are coming: the snail and the butterfly!"
+  },
+  "line.a_przyprowadz": {
+    "who": "lisek",
+    "text": "Bring them onto the blanket, to the other guests."
+  },
+  "line.a_ktora_karta": {
+    "who": "sarenka",
+    "text": "Three plus two equals... Which card fits the empty place? Point to it."
+  },
+  "line.a_ktora_karta_nie": {
+    "who": "sarenka",
+    "text": "Count all the guests on the blanket again."
+  },
+  "line.a_pieciu": {
+    "who": "lisek",
+    "text": "Five guests! Three and two more. Well done!"
+  },
+  "line.b_domino": {
+    "who": "zajac",
+    "text": "After the picnic we play dominoes!"
+  },
+  "line.b_cztery": {
+    "who": "sarenka",
+    "text": "Which domino has four dots altogether? Point to it."
+  },
+  "line.b_cztery_nie": {
+    "who": "sarenka",
+    "text": "Add the dots at the top and at the bottom."
+  },
+  "line.b_jeden_i_trzy": {
+    "who": "zajac",
+    "text": "One dot and three dots. Four altogether!"
+  },
+  "line.b_jeden_cztery": {
+    "who": "lisek",
+    "text": "This domino has one dot and four dots. One plus four is five."
+  },
+  "line.b_obracam": {
+    "who": "lisek",
+    "text": "Now I turn the domino round! Four at the top, one at the bottom."
+  },
+  "line.b_ile_teraz": {
+    "who": "sarenka",
+    "text": "Four plus one equals... How many dots are there now? Point to the card."
+  },
+  "line.b_ile_teraz_nie": {
+    "who": "sarenka",
+    "text": "The dots haven't changed, only the domino turned round. Count them."
+  },
+  "line.b_tyle_samo": {
+    "who": "sarenka",
+    "text": "Five! One plus four and four plus one are the same."
+  },
+  "line.b_klaszczemy": {
+    "who": "zajac",
+    "text": "Let's clap for the host! Listen: Fox claps, and then me."
+  },
+  "line.b_ile_klasniec": {
+    "who": "sarenka",
+    "text": "How many claps were there altogether? Point to the card."
+  },
+  "line.b_ile_klasniec_nie": {
+    "who": "sarenka",
+    "text": "Fox clapped twice and Bunny once. How many altogether?"
+  },
+  "line.b_koniec": {
+    "who": "lisek",
+    "text": "Two and one make three. A wonderful picnic!"
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Let's practise adding! I have five games."
+  },
+  "line.p_kosz": {
+    "who": "lisek",
+    "text": "There are two apples in the basket. Add two more and count them all."
+  },
+  "line.p_cztery": {
+    "who": "sarenka",
+    "text": "Two and two make four!"
+  },
+  "line.p_karta": {
+    "who": "lisek",
+    "text": "Which card fits the empty place? Point to it.",
     "speakers": [
-      "sowa"
-    ],
-    "text": "Yes! Well added."
+      "sarenka"
+    ]
   },
-  "line.p_intro": {
-    "who": "sowa",
-    "text": "Let's play adding! Two piles, and a plus between them."
-  },
-  "line.p_together": {
-    "who": "sowa",
-    "text": "How many are there together? Point to the digit."
-  },
-  "line.a_game": {
+  "line.p_karta_nie": {
     "who": "lisek",
-    "text": "Let's play adding toys, just like at home."
+    "text": "Count again: first the first number, then add the second.",
+    "speakers": [
+      "sarenka"
+    ]
   },
-  "line.a_ok": {
-    "who": "sowa",
-    "text": "All right! We put the toys in the box and count them all."
-  },
-  "line.a_put": {
-    "who": "sowa",
-    "text": "Drag the toys into the box, then count them all."
-  },
-  "line.a_which_digit": {
-    "who": "sowa",
+  "line.p_dobrze": {
+    "who": "sarenka",
+    "text": "Bravo!",
     "speakers": [
       "lisek"
-    ],
-    "text": "How many are there together? Point to the digit."
+    ]
   },
-  "line.a_ask_parents": {
-    "who": "sowa",
-    "text": "Ask your parents to play adding with you. How many spoons will there be when you add one more?"
+  "line.p_domino": {
+    "who": "sarenka",
+    "text": "Which domino has five dots altogether? Point to it."
   },
-  "line.a_bye": {
+  "line.p_domino_nie": {
+    "who": "sarenka",
+    "text": "Add the dots at the top and at the bottom."
+  },
+  "line.p_sklep": {
     "who": "lisek",
-    "text": "Bye bye! See you!"
+    "text": "The apple costs two coins and one more. Pay for it."
+  },
+  "line.h_kubki": {
+    "who": "lisek",
+    "text": "The guests came home for tea! There are two cups on the tray."
+  },
+  "line.h_dostaw": {
+    "who": "zajac",
+    "text": "Put two more cups on the tray."
+  },
+  "line.h_ile": {
+    "who": "lisek",
+    "text": "Two plus two equals... How many cups are there? Point to the card."
+  },
+  "line.h_cztery": {
+    "who": "zajac",
+    "text": "Four cups for four guests!"
+  },
+  "line.h_rodzice": {
+    "who": "lisek",
+    "text": "Add with your parents: two apples and one more, how many altogether?"
   },
   "line.n1": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "One!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "One!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n2": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Two!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Two!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n3": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Three!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Three!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n4": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Four!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Four!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n5": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Five!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Five!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.naklejka_daj": {
-    "who": "sowa",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+    "who": "lisek",
+    "text": "Thank you for a wonderful picnic! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "lisek",
+    "text": "You already have the sticker from this adventure. See you!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the cookie from Owl. We got it when we learned to add."
-  },
-  "line.naklejka_juz": {
-    "who": "sowa",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "This is Fox's picnic blanket. We got it when we learnt to add."
   }
 }

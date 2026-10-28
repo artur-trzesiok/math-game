@@ -1,202 +1,237 @@
 {
- "line.s_guests": {
-  "hash": "359052929578",
-  "who": "sowa",
-  "text": "Three little hedgehogs are coming for a snack. Each one gets an apple."
- },
- "line.s_fox_has": {
-  "hash": "7c6709b0f0bd",
+ "line.a_piknik": {
+  "hash": "cb2662417ec0",
   "who": "lisek",
-  "text": "I have two apples in my basket."
+  "text": "I'm having a picnic on the meadow! I've invited guests."
  },
- "line.s_owl_has": {
-  "hash": "16f66369050b",
-  "who": "sowa",
-  "text": "And I have one."
- },
- "line.s_naive": {
-  "hash": "1de1f33655ec",
+ "line.a_dwoje": {
+  "hash": "34f928f0144e",
   "who": "lisek",
-  "text": "So together we have two! Mine are more, so mine count."
+  "text": "Two guests are already sitting on the blanket: Hedgehog and Mouse."
  },
- "line.s_not": {
-  "hash": "aabe718a5654",
-  "who": "sowa",
-  "text": "Nothing vanishes! When we put the apples together, there are more than two."
+ "line.a_ktos_idzie": {
+  "hash": "a6c5c3a513b3",
+  "who": "sarenka",
+  "text": "Someone else is coming! It's the duckling."
  },
- "line.s_how": {
-  "hash": "c5cd65cd8ee1",
+ "line.a_jeden": {
+  "hash": "e3c26bdf0a95",
+  "who": "zajac",
+  "text": "One guest! We have one guest!"
+ },
+ "line.a_nie_jeden": {
+  "hash": "8c3531f89fb4",
+  "who": "sarenka",
+  "text": "Bunny, you only counted the duckling. Hedgehog and Mouse haven't disappeared!"
+ },
+ "line.a_dodawanie": {
+  "hash": "eb334f54711f",
+  "who": "sarenka",
+  "text": "Adding is putting together. First let's bring the duckling onto the blanket, then count everyone."
+ },
+ "line.a_na_koc": {
+  "hash": "5160ebfadb2b",
+  "who": "sarenka",
+  "text": "The guests sit on the blanket. Drag the guest onto the blanket."
+ },
+ "line.a_na_koc.lisek": {
+  "hash": "e17a79f84ba1",
   "who": "lisek",
-  "text": "Then how many do we have together?"
+  "text": "The guests sit on the blanket. Drag the guest onto the blanket."
  },
- "line.s_add": {
-  "hash": "da24efe2ebab",
-  "who": "sowa",
-  "text": "We add! We put two piles into one and count them all."
+ "line.a_policz": {
+  "hash": "c185be6dcf61",
+  "who": "sarenka",
+  "text": "Now count all the guests on the blanket."
  },
- "line.s_what": {
-  "hash": "e8c9b655d505",
+ "line.a_troje": {
+  "hash": "4de7b2c299f1",
+  "who": "zajac",
+  "text": "Three guests! Two and one more make three."
+ },
+ "line.a_plus": {
+  "hash": "a330ab93599a",
+  "who": "sarenka",
+  "text": "We write it like this: two plus one equals three. Plus means: put together."
+ },
+ "line.a_wiecej_gosci": {
+  "hash": "683f0fbab974",
   "who": "lisek",
-  "text": "Add? What does adding mean?"
+  "text": "More guests are coming: the snail and the butterfly!"
  },
- "line.s_show": {
-  "hash": "849fe4971da2",
-  "who": "sowa",
-  "text": "I will show you, it is easy. Drag my apple into Fox's basket."
- },
- "line.s_count_all": {
-  "hash": "c8969005dbc1",
-  "who": "sowa",
-  "text": "Now count all the apples in the basket."
- },
- "line.s_three": {
-  "hash": "603c1b272b9e",
+ "line.a_przyprowadz": {
+  "hash": "c5e6d3284de7",
   "who": "lisek",
-  "text": "Three! Two and one more make three."
+  "text": "Bring them onto the blanket, to the other guests."
  },
- "line.s_write": {
-  "hash": "d68c3976476e",
-  "who": "sowa",
-  "text": "Adding can be written down. Two, plus, one, equals three."
+ "line.a_ktora_karta": {
+  "hash": "725322c39caa",
+  "who": "sarenka",
+  "text": "Three plus two equals... Which card fits the empty place? Point to it."
  },
- "line.s_plus": {
-  "hash": "5e5eef67ab62",
-  "who": "sowa",
-  "text": "Plus looks like a little cross. It tells us: put them together."
+ "line.a_ktora_karta_nie": {
+  "hash": "2f38f2871f6f",
+  "who": "sarenka",
+  "text": "Count all the guests on the blanket again."
  },
- "line.s_solved": {
-  "hash": "3d03877297b2",
+ "line.a_pieciu": {
+  "hash": "bc3218c0b328",
   "who": "lisek",
-  "text": "Three apples for three hedgehogs! Enough for everyone."
+  "text": "Five guests! Three and two more. Well done!"
  },
- "line.s_to_meadow": {
-  "hash": "df86f339f553",
-  "who": "sowa",
-  "text": "Let's go to the lake, for a picnic."
+ "line.b_domino": {
+  "hash": "aebe0f25889b",
+  "who": "zajac",
+  "text": "After the picnic we play dominoes!"
  },
- "line.b_picnic": {
-  "hash": "fd8aa79a6279",
+ "line.b_cztery": {
+  "hash": "66cdaa0427e7",
+  "who": "sarenka",
+  "text": "Which domino has four dots altogether? Point to it."
+ },
+ "line.b_cztery_nie": {
+  "hash": "a2d4439f2a6e",
+  "who": "sarenka",
+  "text": "Add the dots at the top and at the bottom."
+ },
+ "line.b_jeden_i_trzy": {
+  "hash": "9a83a4ce56d9",
+  "who": "zajac",
+  "text": "One dot and three dots. Four altogether!"
+ },
+ "line.b_jeden_cztery": {
+  "hash": "049a7b6f2233",
   "who": "lisek",
-  "text": "I have two cups for the picnic."
+  "text": "This domino has one dot and four dots. One plus four is five."
  },
- "line.b_owl": {
-  "hash": "c307b5343e6a",
-  "who": "sowa",
-  "text": "I have two too. Drag my cups over to Fox's cups."
- },
- "line.b_count": {
-  "hash": "2208bf36cef9",
+ "line.b_obracam": {
+  "hash": "6a8bc8b1c7f4",
   "who": "lisek",
-  "text": "Count all the cups together."
+  "text": "Now I turn the domino round! Four at the top, one at the bottom."
  },
- "line.b_pick": {
-  "hash": "704bf7201617",
-  "who": "sowa",
-  "text": "How many are there together? Point to the digit."
+ "line.b_ile_teraz": {
+  "hash": "699cd6a8f7f6",
+  "who": "sarenka",
+  "text": "Four plus one equals... How many dots are there now? Point to the card."
  },
- "line.b_write": {
-  "hash": "9583f7eb2abc",
-  "who": "sowa",
-  "text": "Two plus two equals four."
+ "line.b_ile_teraz_nie": {
+  "hash": "bd289279d6e6",
+  "who": "sarenka",
+  "text": "The dots haven't changed, only the domino turned round. Count them."
  },
- "line.b_to_home": {
-  "hash": "5fc9b651d481",
+ "line.b_tyle_samo": {
+  "hash": "bb37d43163b8",
+  "who": "sarenka",
+  "text": "Five! One plus four and four plus one are the same."
+ },
+ "line.b_klaszczemy": {
+  "hash": "d7d4f2cf6ceb",
+  "who": "zajac",
+  "text": "Let's clap for the host! Listen: Fox claps, and then me."
+ },
+ "line.b_ile_klasniec": {
+  "hash": "9e48344068ee",
+  "who": "sarenka",
+  "text": "How many claps were there altogether? Point to the card."
+ },
+ "line.b_ile_klasniec_nie": {
+  "hash": "c1b9bb636dbe",
+  "who": "sarenka",
+  "text": "Fox clapped twice and Bunny once. How many altogether?"
+ },
+ "line.b_koniec": {
+  "hash": "ca60a565bc42",
   "who": "lisek",
-  "text": "Four cups! Let's go home, I'll bake cookies."
+  "text": "Two and one make three. A wonderful picnic!"
  },
- "line.c_bake": {
-  "hash": "38ca1ebd2780",
+ "line.p_start": {
+  "hash": "41c410b4aef7",
+  "who": "sarenka",
+  "text": "Let's practise adding! I have five games."
+ },
+ "line.p_kosz": {
+  "hash": "1465903b24aa",
   "who": "lisek",
-  "text": "I baked three cookies."
+  "text": "There are two apples in the basket. Add two more and count them all."
  },
- "line.c_owl": {
-  "hash": "2896ba5e802c",
-  "who": "sowa",
-  "text": "And I baked two. Drag my cookies over to Fox's cookies."
+ "line.p_cztery": {
+  "hash": "b217b2bf6ea6",
+  "who": "sarenka",
+  "text": "Two and two make four!"
  },
- "line.c_slot": {
-  "hash": "655c3e830b10",
-  "who": "sowa",
-  "text": "Three plus two equals what? Point to the digit that fits at the end."
- },
- "line.c_read": {
-  "hash": "3708137e69dc",
-  "who": "sowa",
-  "text": "Three plus two equals five!"
- },
- "line.c_solved": {
-  "hash": "d43fbed12cbf",
+ "line.p_karta": {
+  "hash": "9ed6193baafe",
   "who": "lisek",
-  "text": "Now you can add! We put things together and count them all."
+  "text": "Which card fits the empty place? Point to it."
  },
- "line.wrong_digit": {
-  "hash": "0b52fc5f359e",
-  "who": "sowa",
-  "text": "That is another digit. Count again."
+ "line.p_karta.sarenka": {
+  "hash": "c12214b371d7",
+  "who": "sarenka",
+  "text": "Which card fits the empty place? Point to it."
  },
- "line.wrong_digit.lisek": {
-  "hash": "08138185b088",
+ "line.p_karta_nie": {
+  "hash": "92f68b7f0c28",
   "who": "lisek",
-  "text": "That is another digit. Count again."
+  "text": "Count again: first the first number, then add the second."
  },
- "line.good_digit": {
-  "hash": "f468add04661",
+ "line.p_karta_nie.sarenka": {
+  "hash": "cc3b02ef4754",
+  "who": "sarenka",
+  "text": "Count again: first the first number, then add the second."
+ },
+ "line.p_dobrze": {
+  "hash": "ceb0ef83b223",
+  "who": "sarenka",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.lisek": {
+  "hash": "5a54aa6e56ed",
   "who": "lisek",
-  "text": "Yes! Well added."
+  "text": "Bravo!"
  },
- "line.good_digit.sowa": {
-  "hash": "e3f41abcda3f",
-  "who": "sowa",
-  "text": "Yes! Well added."
+ "line.p_domino": {
+  "hash": "d8d97761f402",
+  "who": "sarenka",
+  "text": "Which domino has five dots altogether? Point to it."
  },
- "line.p_intro": {
-  "hash": "c3c9d3ac7c3e",
-  "who": "sowa",
-  "text": "Let's play adding! Two piles, and a plus between them."
+ "line.p_domino_nie": {
+  "hash": "a2d4439f2a6e",
+  "who": "sarenka",
+  "text": "Add the dots at the top and at the bottom."
  },
- "line.p_together": {
-  "hash": "704bf7201617",
-  "who": "sowa",
-  "text": "How many are there together? Point to the digit."
- },
- "line.a_game": {
-  "hash": "e230c72de0df",
+ "line.p_sklep": {
+  "hash": "1ecfa86ea9c1",
   "who": "lisek",
-  "text": "Let's play adding toys, just like at home."
+  "text": "The apple costs two coins and one more. Pay for it."
  },
- "line.a_ok": {
-  "hash": "1fab2de46465",
-  "who": "sowa",
-  "text": "All right! We put the toys in the box and count them all."
- },
- "line.a_put": {
-  "hash": "5d9689782cbd",
-  "who": "sowa",
-  "text": "Drag the toys into the box, then count them all."
- },
- "line.a_which_digit": {
-  "hash": "704bf7201617",
-  "who": "sowa",
-  "text": "How many are there together? Point to the digit."
- },
- "line.a_which_digit.lisek": {
-  "hash": "0226421d1e0d",
+ "line.h_kubki": {
+  "hash": "2e6ac3135a7e",
   "who": "lisek",
-  "text": "How many are there together? Point to the digit."
+  "text": "The guests came home for tea! There are two cups on the tray."
  },
- "line.a_ask_parents": {
-  "hash": "dcb1dcf95cca",
-  "who": "sowa",
-  "text": "Ask your parents to play adding with you. How many spoons will there be when you add one more?"
+ "line.h_dostaw": {
+  "hash": "2f580fe4a433",
+  "who": "zajac",
+  "text": "Put two more cups on the tray."
  },
- "line.a_bye": {
-  "hash": "5fdcbfe15d1f",
+ "line.h_ile": {
+  "hash": "a538f07279d3",
   "who": "lisek",
-  "text": "Bye bye! See you!"
+  "text": "Two plus two equals... How many cups are there? Point to the card."
+ },
+ "line.h_cztery": {
+  "hash": "475ea29b846f",
+  "who": "zajac",
+  "text": "Four cups for four guests!"
+ },
+ "line.h_rodzice": {
+  "hash": "69286c818529",
+  "who": "lisek",
+  "text": "Add with your parents: two apples and one more, how many altogether?"
  },
  "line.n1": {
-  "hash": "13ecf4f502e6",
-  "who": "sowa",
+  "hash": "4ce0e448ad7f",
+  "who": "zajac",
   "text": "One!"
  },
  "line.n1.lisek": {
@@ -204,9 +239,14 @@
   "who": "lisek",
   "text": "One!"
  },
+ "line.n1.sarenka": {
+  "hash": "fe1f04809440",
+  "who": "sarenka",
+  "text": "One!"
+ },
  "line.n2": {
-  "hash": "03e0547eb360",
-  "who": "sowa",
+  "hash": "6c6624372ec8",
+  "who": "zajac",
   "text": "Two!"
  },
  "line.n2.lisek": {
@@ -214,9 +254,14 @@
   "who": "lisek",
   "text": "Two!"
  },
+ "line.n2.sarenka": {
+  "hash": "375458f35a95",
+  "who": "sarenka",
+  "text": "Two!"
+ },
  "line.n3": {
-  "hash": "1b70b81f1a09",
-  "who": "sowa",
+  "hash": "5437a6f9507e",
+  "who": "zajac",
   "text": "Three!"
  },
  "line.n3.lisek": {
@@ -224,9 +269,14 @@
   "who": "lisek",
   "text": "Three!"
  },
+ "line.n3.sarenka": {
+  "hash": "bece30255ee6",
+  "who": "sarenka",
+  "text": "Three!"
+ },
  "line.n4": {
-  "hash": "ac53306b5483",
-  "who": "sowa",
+  "hash": "d2a7907a3178",
+  "who": "zajac",
   "text": "Four!"
  },
  "line.n4.lisek": {
@@ -234,9 +284,14 @@
   "who": "lisek",
   "text": "Four!"
  },
+ "line.n4.sarenka": {
+  "hash": "c0cadba0f56e",
+  "who": "sarenka",
+  "text": "Four!"
+ },
  "line.n5": {
-  "hash": "f7dbf2ce5c8d",
-  "who": "sowa",
+  "hash": "992cceb88ebd",
+  "who": "zajac",
   "text": "Five!"
  },
  "line.n5.lisek": {
@@ -244,29 +299,24 @@
   "who": "lisek",
   "text": "Five!"
  },
- "line.s_equals": {
-  "hash": "a40871e7ef86",
-  "who": "sowa",
-  "text": "And you know the equal lines. They say: as many. Two and one is as many as three."
- },
- "line.c_count": {
-  "hash": "5f673e7cd50c",
-  "who": "lisek",
-  "text": "Count all the cookies together."
+ "line.n5.sarenka": {
+  "hash": "2aae65c19a3e",
+  "who": "sarenka",
+  "text": "Five!"
  },
  "line.naklejka_daj": {
-  "hash": "b3f88c152150",
-  "who": "sowa",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
- },
- "line.naklejka_opis": {
-  "hash": "003f3958997a",
-  "who": "narrator",
-  "text": "This is the cookie from Owl. We got it when we learned to add."
+  "hash": "84b903f6e23f",
+  "who": "lisek",
+  "text": "Thank you for a wonderful picnic! Here is a sticker for your album. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "9590c79bf596",
-  "who": "sowa",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "hash": "a5062eeb48a2",
+  "who": "lisek",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "20650aefcd35",
+  "who": "narrator",
+  "text": "This is Fox's picnic blanket. We got it when we learnt to add."
  }
 }

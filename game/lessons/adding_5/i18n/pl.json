@@ -1,210 +1,234 @@
 {
-  "line.s_guests": {
-    "who": "sowa",
-    "text": "Na podwieczorek przyjdą trzy jeżyki. Każdy dostanie jedno jabłko."
-  },
-  "line.s_fox_has": {
+  "line.a_piknik": {
     "who": "lisek",
-    "text": "Ja mam w koszyku dwa jabłka."
+    "text": "Urządzam piknik na łące! Zaprosiłem gości."
   },
-  "line.s_owl_has": {
-    "who": "sowa",
-    "text": "A ja mam jedno."
-  },
-  "line.s_naive": {
+  "line.a_dwoje": {
     "who": "lisek",
-    "text": "Czyli razem mamy dwa! Moich jest więcej, więc liczą się moje."
+    "text": "Na kocyku siedzą już dwaj goście: Jeżyk i Myszka."
   },
-  "line.s_not": {
-    "who": "sowa",
-    "text": "Nic nie znika! Kiedy wkładamy jabłka razem, jest ich więcej niż dwa."
+  "line.a_ktos_idzie": {
+    "who": "sarenka",
+    "text": "Ktoś jeszcze idzie! To kaczuszka."
   },
-  "line.s_how": {
-    "who": "lisek",
-    "text": "To ile ich mamy razem?"
+  "line.a_jeden": {
+    "who": "zajac",
+    "text": "Jeden gość! Mamy jednego gościa!"
   },
-  "line.s_add": {
-    "who": "sowa",
-    "text": "Dodajemy! Łączymy dwie kupki w jedną i liczymy wszystko."
+  "line.a_nie_jeden": {
+    "who": "sarenka",
+    "text": "Zajączku, policzyłeś tylko kaczuszkę. A Jeżyk i Myszka nie zniknęli!"
   },
-  "line.s_what": {
-    "who": "lisek",
-    "text": "Dodajemy? Co to znaczy dodawać?"
+  "line.a_dodawanie": {
+    "who": "sarenka",
+    "text": "Dodawanie to łączenie razem. Najpierw zaprowadźmy kaczuszkę na kocyk, a potem policzmy wszystkich."
   },
-  "line.s_show": {
-    "who": "sowa",
-    "text": "Pokażę ci, to proste. Przeciągnij moje jabłko do koszyka liska."
-  },
-  "line.s_count_all": {
-    "who": "sowa",
-    "text": "Teraz policz wszystkie jabłka w koszyku."
-  },
-  "line.s_three": {
-    "who": "lisek",
-    "text": "Trzy! Dwa i jeszcze jedno to razem trzy."
-  },
-  "line.s_write": {
-    "who": "sowa",
-    "text": "Dodawanie można zapisać. Dwa, plus, jeden, równa się trzy."
-  },
-  "line.s_plus": {
-    "who": "sowa",
-    "text": "Plus wygląda jak mały krzyżyk. Mówi nam: połącz razem."
-  },
-  "line.s_equals": {
-    "who": "sowa",
-    "text": "A równe kreski już znasz. Mówią: tyle samo. Dwa i jeden to tyle samo, co trzy."
-  },
-  "line.s_solved": {
-    "who": "lisek",
-    "text": "Trzy jabłka dla trzech jeżyków! Starczy dla każdego."
-  },
-  "line.s_to_meadow": {
-    "who": "sowa",
-    "text": "Chodźmy nad jezioro, na piknik."
-  },
-  "line.b_picnic": {
-    "who": "lisek",
-    "text": "Mam dwa kubki na piknik."
-  },
-  "line.b_owl": {
-    "who": "sowa",
-    "text": "Ja też mam dwa. Przeciągnij moje kubki do kubków liska."
-  },
-  "line.b_count": {
-    "who": "lisek",
-    "text": "Policz wszystkie kubki razem."
-  },
-  "line.b_pick": {
-    "who": "sowa",
-    "text": "Ile jest razem? Wskaż cyfrę."
-  },
-  "line.b_write": {
-    "who": "sowa",
-    "text": "Dwa plus dwa równa się cztery."
-  },
-  "line.b_to_home": {
-    "who": "lisek",
-    "text": "Cztery kubki! Wracajmy do domu, upiekę ciastka."
-  },
-  "line.c_bake": {
-    "who": "lisek",
-    "text": "Upiekłem trzy ciastka."
-  },
-  "line.c_owl": {
-    "who": "sowa",
-    "text": "A ja dwa. Przeciągnij moje ciastka do ciastek liska."
-  },
-  "line.c_count": {
-    "who": "lisek",
-    "text": "Policz wszystkie ciastka razem."
-  },
-  "line.c_slot": {
-    "who": "sowa",
-    "text": "Trzy plus dwa równa się ile? Wskaż cyfrę, która pasuje na końcu."
-  },
-  "line.c_read": {
-    "who": "sowa",
-    "text": "Trzy plus dwa równa się pięć!"
-  },
-  "line.c_solved": {
-    "who": "lisek",
-    "text": "Teraz umiesz dodawać! Łączymy razem i liczymy wszystko."
-  },
-  "line.wrong_digit": {
-    "who": "sowa",
+  "line.a_na_koc": {
+    "who": "sarenka",
+    "text": "Goście siedzą na kocyku. Przeciągnij gościa na kocyk.",
     "speakers": [
       "lisek"
-    ],
-    "text": "To inna cyfra. Policz jeszcze raz."
+    ]
   },
-  "line.good_digit": {
+  "line.a_policz": {
+    "who": "sarenka",
+    "text": "A teraz policz wszystkich gości na kocyku."
+  },
+  "line.a_troje": {
+    "who": "zajac",
+    "text": "Trzech gości! Dwóch i jeszcze jeden to trzech."
+  },
+  "line.a_plus": {
+    "who": "sarenka",
+    "text": "Zapisujemy to tak: dwa plus jeden równa się trzy. Plus znaczy: łączymy razem."
+  },
+  "line.a_wiecej_gosci": {
     "who": "lisek",
+    "text": "Przychodzą następni goście: ślimak i motylek!"
+  },
+  "line.a_przyprowadz": {
+    "who": "lisek",
+    "text": "Przeprowadź ich na kocyk, do pozostałych gości."
+  },
+  "line.a_ktora_karta": {
+    "who": "sarenka",
+    "text": "Trzy plus dwa równa się... Która karta pasuje do pustego miejsca? Wskaż."
+  },
+  "line.a_ktora_karta_nie": {
+    "who": "sarenka",
+    "text": "Policz wszystkich gości na kocyku jeszcze raz."
+  },
+  "line.a_pieciu": {
+    "who": "lisek",
+    "text": "Pięciu gości! Trzech i jeszcze dwóch. Brawo!"
+  },
+  "line.b_domino": {
+    "who": "zajac",
+    "text": "Po pikniku gramy w domino!"
+  },
+  "line.b_cztery": {
+    "who": "sarenka",
+    "text": "Na którym domino są razem cztery kropki? Wskaż."
+  },
+  "line.b_cztery_nie": {
+    "who": "sarenka",
+    "text": "Dodaj kropki z góry i z dołu."
+  },
+  "line.b_jeden_i_trzy": {
+    "who": "zajac",
+    "text": "Jedna kropka i trzy kropki. Razem cztery!"
+  },
+  "line.b_jeden_cztery": {
+    "who": "lisek",
+    "text": "Na tym domino jest jedna kropka i cztery kropki. Jeden plus cztery to pięć."
+  },
+  "line.b_obracam": {
+    "who": "lisek",
+    "text": "A teraz obracam domino! Na górze są cztery, na dole jedna."
+  },
+  "line.b_ile_teraz": {
+    "who": "sarenka",
+    "text": "Cztery plus jeden równa się... Ile teraz jest kropek? Wskaż kartę."
+  },
+  "line.b_ile_teraz_nie": {
+    "who": "sarenka",
+    "text": "Kropki się nie zmieniły, tylko domino się obróciło. Policz je."
+  },
+  "line.b_tyle_samo": {
+    "who": "sarenka",
+    "text": "Pięć! Jeden plus cztery i cztery plus jeden to tyle samo."
+  },
+  "line.b_klaszczemy": {
+    "who": "zajac",
+    "text": "Klaszczemy dla gospodarza! Posłuchaj: Lisek klaszcze, a potem ja."
+  },
+  "line.b_ile_klasniec": {
+    "who": "sarenka",
+    "text": "Ile było wszystkich klaśnięć? Wskaż kartę."
+  },
+  "line.b_ile_klasniec_nie": {
+    "who": "sarenka",
+    "text": "Lisek klasnął dwa razy, a Zajączek raz. Ile razem?"
+  },
+  "line.b_koniec": {
+    "who": "lisek",
+    "text": "Dwa i jeden to trzy. Wspaniały piknik!"
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Poćwiczmy dodawanie! Mam pięć zabaw."
+  },
+  "line.p_kosz": {
+    "who": "lisek",
+    "text": "W koszyku są dwa jabłka. Dołóż jeszcze dwa i policz wszystkie."
+  },
+  "line.p_cztery": {
+    "who": "sarenka",
+    "text": "Dwa i dwa to cztery!"
+  },
+  "line.p_karta": {
+    "who": "lisek",
+    "text": "Która karta pasuje do pustego miejsca? Wskaż.",
     "speakers": [
-      "sowa"
-    ],
-    "text": "Tak! Dobrze dodane."
+      "sarenka"
+    ]
   },
-  "line.p_intro": {
-    "who": "sowa",
-    "text": "Pobawmy się w dodawanie! Dwie kupki, a pomiędzy nimi plus."
-  },
-  "line.p_together": {
-    "who": "sowa",
-    "text": "Ile jest razem? Wskaż cyfrę."
-  },
-  "line.a_game": {
+  "line.p_karta_nie": {
     "who": "lisek",
-    "text": "Zagrajmy w dodawanie zabawek, tak jak w domu."
+    "text": "Policz jeszcze raz: najpierw pierwsza liczba, potem dokładamy drugą.",
+    "speakers": [
+      "sarenka"
+    ]
   },
-  "line.a_ok": {
-    "who": "sowa",
-    "text": "Dobrze! Wkładamy zabawki do pudełka i liczymy wszystkie."
-  },
-  "line.a_put": {
-    "who": "sowa",
-    "text": "Przeciągnij zabawki do pudełka, a potem policz wszystkie."
-  },
-  "line.a_which_digit": {
-    "who": "sowa",
+  "line.p_dobrze": {
+    "who": "sarenka",
+    "text": "Brawo!",
     "speakers": [
       "lisek"
-    ],
-    "text": "Ile jest razem? Wskaż cyfrę."
+    ]
   },
-  "line.a_ask_parents": {
-    "who": "sowa",
-    "text": "Poproście rodziców o zabawę w dodawanie. Ile łyżek będzie, gdy dołożycie jeszcze jedną?"
+  "line.p_domino": {
+    "who": "sarenka",
+    "text": "Na którym domino jest razem pięć kropek? Wskaż."
   },
-  "line.a_bye": {
+  "line.p_domino_nie": {
+    "who": "sarenka",
+    "text": "Dodaj kropki z góry i z dołu."
+  },
+  "line.p_sklep": {
     "who": "lisek",
-    "text": "Pa, pa! Do zobaczenia!"
+    "text": "Jabłko kosztuje dwie monety i jeszcze jedną. Zapłać za nie."
+  },
+  "line.h_kubki": {
+    "who": "lisek",
+    "text": "Goście przyszli do domu na herbatkę! Na tacy są dwa kubki."
+  },
+  "line.h_dostaw": {
+    "who": "zajac",
+    "text": "Dostaw jeszcze dwa kubki na tacę."
+  },
+  "line.h_ile": {
+    "who": "lisek",
+    "text": "Dwa plus dwa równa się... Ile jest kubków? Wskaż kartę."
+  },
+  "line.h_cztery": {
+    "who": "zajac",
+    "text": "Cztery kubki dla czterech gości!"
+  },
+  "line.h_rodzice": {
+    "who": "lisek",
+    "text": "Dodawaj z rodzicami: dwa jabłka i jeszcze jedno, ile razem?"
   },
   "line.n1": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Jeden!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Jeden!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n2": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Dwa!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Dwa!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n3": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Trzy!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Trzy!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n4": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Cztery!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Cztery!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.n5": {
-    "who": "sowa",
+    "who": "zajac",
+    "text": "Pięć!",
     "speakers": [
-      "lisek"
-    ],
-    "text": "Pięć!"
+      "lisek",
+      "sarenka"
+    ]
   },
   "line.naklejka_daj": {
-    "who": "sowa",
-    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+    "who": "lisek",
+    "text": "Dziękuję za wspaniały piknik! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "lisek",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To ciastko od sowy. Dostaliśmy je, kiedy uczyliśmy się dodawać."
-  },
-  "line.naklejka_juz": {
-    "who": "sowa",
-    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+    "text": "To piknikowy kocyk Liska. Dostaliśmy go, kiedy uczyliśmy się dodawać."
   }
 }
