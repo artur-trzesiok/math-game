@@ -411,7 +411,9 @@ opened a little more when loud; without visemes it falls back to loudness. A bre
 time, so the i18n text stays clean. Every recording is normalised
 to -20 dBFS RMS of its voiced frames (`--normalize` redoes all), and each character's
 `meta.json` (`game/assets/characters/<who>/`) holds its ElevenLabs voice per language
-and a `volume` trim the game multiplies in. Keys live in the repository's `.env`
+and a `volume` trim the game multiplies in, plus its natural height `wysokosc` (scene units: Fox 3.6, Squirrel
+2.7 = three quarters of him, Owl 3.6 with the biggest head) - the game always draws it at that size, whatever a
+lesson says. Keys live in the repository's `.env`
 (`OPENAI_API_KEY`, `ELEVENLABS_API_KEY`, `ELEVENLABS_MODEL_ID`,
 `ELEVENLABS_OUTPUT_FORMAT`; git-ignored, never printed). Voices per speaker per language in `VOICES`. Without an mp3 the game
 uses the browser's voice and shows a subtitle - fine for testing, not for a child.

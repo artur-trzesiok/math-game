@@ -26,14 +26,15 @@ function pelnyEkran() {
   if (document.fullscreenElement) document.exitFullscreen?.();
   else (document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen)?.call(document.documentElement);
 }
-const GWIAZDA = (kolor) => `<svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z" fill="${kolor}" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
+// an empty star: pale glass on the dark bar; a won one: gold with a dark edge - both read on any background
+const GWIAZDA = (kolor, brzeg = "#fff") => `<svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z" fill="${kolor}" stroke="${brzeg}" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
 // the stars of a practice stage in the HUD: grey until a round is done
 function pasekGwiazdek(n, auto) {
-  const el = $("#hud .gwiazdki"); el.innerHTML = Array.from({ length: n }, () => GWIAZDA("#c9d3dd")).join("");
+  const el = $("#hud .gwiazdki"); el.innerHTML = Array.from({ length: n }, () => GWIAZDA("rgba(255,255,255,.45)")).join("");
   let zrobione = 0;
   return { auto, get zrobione() { return zrobione; }, dodaj() {
     const g = el.children[zrobione]; if (!g) return; zrobione++;
-    g.outerHTML = GWIAZDA("#ffc928").replace("<svg", '<svg class="pelna"');
+    g.outerHTML = GWIAZDA("#ffc928", "#a86b00").replace("<svg", '<svg class="pelna"');
   }, usun() { el.innerHTML = ""; } };
 }
 // a streak of first-try answers: a badge with one flame per answer (no digits: the youngest cannot read them)

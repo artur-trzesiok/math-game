@@ -6,7 +6,8 @@
 const PANO = "droga_do_debu";
 const BRZEG = -2.45;                     // the floor where stickers lie between the characters
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
-const MIEJSCE = { lisek: 0, wiewiorka: 1, sowa: 2 };      // the biggest character first
+const MIEJSCE = { lisek: 0, wiewiorka: 1, sowa: 2 };      // by body (shoes, caps): the biggest character first
+const GLOWA = { sowa: 0, lisek: 1, wiewiorka: 2 };         // by head (the hats at home): Owl's head is the biggest
 
 // garment stickers of one kind at sizes (biggest first); h.ranga = 0 for the biggest
 async function rzeczy(c, rzecz, rozmiary, { x0 = 0, y = BRZEG, odstep = 2.0 } = {}) {
@@ -17,14 +18,15 @@ async function rzeczy(c, rzecz, rozmiary, { x0 = 0, y = BRZEG, odstep = 2.0 } = 
   }
   return out;
 }
-const pasujeRozmiar = (h, who) => (h.ranga === MIEJSCE[who] ? true : h.ranga < MIEJSCE[who] ? "za_duze" : "za_male");
+const pasujeRozmiar = (h, who, wg = MIEJSCE) => (h.ranga === wg[who] ? true : h.ranga < wg[who] ? "za_duze" : "za_male");
+const pasujeGlowie = (h, who) => pasujeRozmiar(h, who, GLOWA);
 const zleRozmiar = (o) => (o === "za_duze" ? "line.za_duze" : "line.za_male");
 
 export default {
   id: "bigger_smaller_pro",
   przejscia: true,                       // every change of place is a transition
   nagrody: true,                         // confetti and a tick on every right pick
-  characters: { lisek: { side: "left" }, wiewiorka: { side: "right", height: 3.0 }, sowa: { side: "left", x: 0.2, height: 2.5 } },
+  characters: { lisek: { side: "left" }, wiewiorka: { side: "right" }, sowa: { side: "left", x: 0.2 } },
   backgrounds: { story: PANO, practice: { kolor: "#c7ecc0", motyw: "figury" }, apply: "dom" },
   stages: {
     story: [
@@ -147,7 +149,7 @@ export default {
         await c.przejdz("lisek", [...naKamieniach, [4.6, -1.9]], { skok: 0.45 });
         await c.say("wiewiorka", "line.b_przechodzimy", { anim: "Radosc" });
         c.clear();
-        await c.pan(2, { idz: ["lisek", "wiewiorka"], d: 3.2, cele: { lisek: 2.4, wiewiorka: 4.6 } });
+        await c.pan(2, { idz: ["lisek", "wiewiorka"], d: 3.2, cele: { lisek: 2.9, wiewiorka: 4.95 } });
       },
       // C. the oak: Owl is cold, her hat blew away - we help her: what will warm her? the hat that fits her
       // big head, a scarf. The rain stops; she is happy.
@@ -162,8 +164,8 @@ export default {
         // what is useful here: two right answers, two wrong - up on the left, where nobody stands (all three are
         // on the far bank, the brook runs along the bottom left)
         const miejsca = tasuj([-4.4, -2.8, -1.2, 0.4]);
-        const pomoc = [await c.ubranie("czapka_zimowa", { x: miejsca[0], y: 1.5, size: 1.1 }), await c.ubranie("szalik", { x: miejsca[1], y: 1.5, size: 1.1 })];
-        const nie = [await c.object("pilka", { x: miejsca[2], y: 1.5, size: 1.0 }), await c.object("lyzka", { x: miejsca[3], y: 1.5, size: 1.0 })];
+        const pomoc = [await c.ubranie("czapka_zimowa", { x: miejsca[0], y: 2.1, size: 1.1 }), await c.ubranie("szalik", { x: miejsca[1], y: 2.1, size: 1.1 })];
+        const nie = [await c.object("pilka", { x: miejsca[2], y: 2.1, size: 1.0 }), await c.object("lyzka", { x: miejsca[3], y: 2.1, size: 1.0 })];
         await c.say("lisek", "line.c_co_ogrzeje");
         await c.task({ targets: [...pomoc, ...nie], correct: pomoc, wrong: "line.c_nie_ogrzeje" });
         c.clear();
@@ -219,13 +221,20 @@ export default {
         c.show("lisek"); c.show("wiewiorka"); c.show("sowa");
         for (const n of ["lisek", "wiewiorka", "sowa"]) c.zdejmij(n);
         await c.say("lisek", "line.d_pudelko", { anim: "Radosc" });
-        const pud = await c.object("pudelko", { x: 0, y: 0.6, size: 1.8 });
+        // a wrapped present, closed; pointed to, it opens and the three hats fly out of it to their spots
+        const pud = await c.object("prezent", { x: 0, y: 0.6, size: 1.8 });
         await c.task({ targets: [pud], correct: pud, wrong: "line.d_pudelko" });
-        pud.remove();
-        const kapelusze = await rzeczy(c, "kapelusz", [1.6, 1.25, 0.9], { y: 1.3, odstep: 2.4 });
+        pud.remove(); c.sfx("pop");
+        const otw = await c.object("prezent_otwarty", { x: 0, y: 0.6, size: 1.8 });
+        const kapelusze = await rzeczy(c, "kapelusz", [1.6, 1.25, 0.9], { y: 1.6, odstep: 2.6 });
+        await Promise.all(kapelusze.map(async (h, i) => {
+          const { x, y } = h.home; h.mesh.position.set(0, 0.8, h.mesh.position.z);
+          await c.wait(0.12 * i); c.sfx("whoosh"); await h.moveTo(x, y, 0.45);
+        }));
+        otw.remove();
         await c.say("wiewiorka", "line.d_trzy");
         await c.say("lisek", "line.d_zasada");
-        await c.ubieranie({ rzeczy: kapelusze, kto: ["lisek", "wiewiorka", "sowa"], pasuje: pasujeRozmiar, wrong: zleRozmiar });
+        await c.ubieranie({ rzeczy: kapelusze, kto: ["lisek", "wiewiorka", "sowa"], pasuje: pasujeGlowie, wrong: zleRozmiar });
         await c.say("sowa", "line.d_pieknie", { anim: "Radosc" });
         await c.say("lisek", "line.d_rodzice");
         await c.say("wiewiorka", "line.d_pa");

@@ -32,6 +32,6 @@ the bigger. Once: drag the big cap to Fox and the small one to Squirrel.
 
 ## Stage 3 - at home - the kitchen
 
-The promised surprise: a box (point to it) with three of the same hat at three sizes - the biggest for the
-biggest (Fox), the middle for Squirrel, the smallest for Owl. "Ask your parents to compare the whole family's
+The promised surprise: a wrapped present (point to it - it opens) with three of the same hat at three sizes,
+by head: the biggest for the biggest head (Owl), the middle for Fox, the smallest for Squirrel. "Ask your parents to compare the whole family's
 shoes with you - lay one on the other."

@@ -117,6 +117,21 @@ Left to right: ROCK - a closed fist; PAPER - an open flat hand, all five fingers
 spread; SCISSORS - the index and middle fingers up in a V, the others folded.
 All three roughly the same size.""",
     },
+    "prezent": {
+        "outline": True,
+        "names": ["prezent", "prezent_otwarty"],
+        "size": "1536x1024",
+        "prompt": f"""A sprite sheet of TWO illustrations of the SAME birthday present for a children's picture book,
+arranged in one row of 2 on a fully TRANSPARENT background, with generous empty space between them so they do
+not touch.
+{STYL}
+The present: a square box wrapped in sky-blue paper with small white dots, a wide red ribbon crossing it, seen
+slightly from above and from the front.
+Left: the present CLOSED - its lid on, a big red bow on top, nothing inside visible.
+Right: the SAME present OPENED - the lid with the bow taken off and leaning against the box's side, the box's
+inside dark and EMPTY, nothing coming out of it.
+Both the same size.""",
+    },
 }
 
 

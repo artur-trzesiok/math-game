@@ -31,6 +31,13 @@ STYL = ("STYLE: exactly the style of the reference images - a modern children's 
         "colours, thin soft outlines. NOT flat vector, NOT 3D render.")
 
 
+# the characters' sizes are the same in every lesson (meta.json "wysokosc") and on every cover
+WZROST = {
+    "wiewiorka": "the squirrel is clearly smaller than the fox - three quarters of the fox's height",
+    "sowa": "the owl is as tall as the fox and has the biggest head of all",
+}
+
+
 def cover(lesson: Path) -> None:
     meta = json.loads((lesson / "lesson.json").read_text(encoding="utf-8"))
     chars = meta["characters"]
@@ -40,11 +47,13 @@ def cover(lesson: Path) -> None:
         if not r.exists():
             raise SystemExit(f"missing reference {r}")
     names = " and ".join(f"the {k}" for k in chars)
+    sizes = "; ".join(WZROST[k] for k in chars if k in WZROST and ("lisek" in chars or len(chars) > 1))
+    sizes = f" SIZES: {sizes}." if sizes else ""
     prompt = (f"A SQUARE cover illustration for a children's lesson card. The characters are "
               f"{names} from the reference images - draw them exactly as in the references "
               f"(same design, same colours, same proportions), both standing close together in "
               f"the foreground, looking at the viewer, friendly. The setting is the place from the "
-              f"last reference image (same colours, same mood), simplified. {meta['cover']} "
+              f"last reference image (same colours, same mood), simplified.{sizes} {meta['cover']} "
               f"{STYL} Square composition, the characters large and centred, no border, NO text, "
               f"NO letters, NO numbers.")
     WORK.mkdir(parents=True, exist_ok=True)

@@ -200,9 +200,13 @@ export class Stage {
   }
 
   // ------------------------------------------------------------------ puppets
-  async puppet(name, { x = 0, side = "left", height = 3.6 } = {}) {
+  // height: the character's natural size, the same in every lesson - meta.json "wysokosc" in scene units (Fox 3.6,
+  // Squirrel three quarters of him); a lesson's height only for a character with none of its own
+  async puppet(name, { x = 0, side = "left", height = null } = {}) {
+    const meta = await fetch(v(`/game/assets/characters/${name}/meta.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    height = meta.wysokosc ?? height ?? 3.6;
     const L = await Lalka.wczytaj(`/game/assets/characters/${name}/`, { strona: side === "left" ? "lewo" : "prawo", wysokosc: height });
-    L.meta = await fetch(v(`/game/assets/characters/${name}/meta.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    L.meta = meta;
     L.korzen.position.set(x, GROUND, 0);
     L.korzen.visible = false; L.home = x; L.name = name;
     L.cien = this.shadow(height * 0.42);
