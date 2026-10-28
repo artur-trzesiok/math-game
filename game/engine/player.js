@@ -13,11 +13,32 @@ import * as E from "./efekty.js";
 import * as U from "./ubior.js";
 import { Stage, GROUND } from "./scene.js";
 import * as Album from "./album.js";
+import { naPierwszyDotyk } from "./odblokuj.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
 const $ = (s) => document.querySelector(s);
 const PARAMS = new URLSearchParams(location.search);
+// the menu's music (game/audio/muzyka/menu.mp3, see SOURCES.md): waits for the first tap (iPad), ducks while the
+// album talks, fades out when a lesson starts
+const MENU_GLOS = 0.3;
+const menuMuzyka = {
+  a: null, gra: false, fade: 0,
+  graj() {
+    if (PARAMS.has("cicho")) return;
+    this.gra = true; clearInterval(this.fade);
+    if (!this.a) { this.a = new Audio(v("/game/audio/muzyka/menu.mp3")); this.a.loop = true; }
+    this.a.volume = MENU_GLOS;
+    const sprobuj = () => { if (this.gra && this.a.paused) this.a.play()?.catch(() => {}); };
+    sprobuj(); naPierwszyDotyk(sprobuj);
+  },
+  przycisz(k) { if (this.a) this.a.volume = MENU_GLOS * k; },
+  stop() {
+    this.gra = false; const a = this.a; if (!a || a.paused) return;
+    let k = 0; clearInterval(this.fade);
+    this.fade = setInterval(() => { k++; a.volume = MENU_GLOS * Math.max(0, 1 - k / 8); if (k >= 8) { clearInterval(this.fade); a.pause(); } }, 50);
+  },
+};
 const STAGES = ["story", "practice", "apply"];
 const DEBUG = PARAMS.has("debug");
 // ?scenariusz: the story preview (manager/opowiesc.html) - the autopilot plays the lesson and every line, shot and
@@ -73,6 +94,7 @@ export class Player {
   menu() {
     this.closeStage();
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
+    menuMuzyka.graj();
     menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20);
     $("#title .napis").textContent = this.t("menu.title");
     $("#title .szyld").src = v(`/game/assets/menu/szyld_${this.lang}.webp`); $("#title .szyld").alt = this.t("menu.title");
@@ -81,7 +103,8 @@ export class Player {
     ab.querySelector(".ksiega").src = v("/game/assets/album/okladka.webp"); ab.querySelector(".pniak").src = v("/game/assets/menu/pniak.webp"); ab.querySelector(".ile").textContent = ile || ""; ab.classList.toggle("nowe", ile > 0);
     ab.onclick = async () => {
       const lekcje = await Promise.all(this.index.lessons.map(async (l) => ({ id: l.id, naklejka: (await fetch(v(`/game/lessons/${l.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}))).naklejka })));
-      await Album.otworz({ lekcje, lang: this.lang, speech: this.speech, onZamknij: () => { const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
+      menuMuzyka.przycisz(0.35);
+      await Album.otworz({ lekcje, lang: this.lang, speech: this.speech, onZamknij: () => { menuMuzyka.przycisz(1); const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
     };
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("")
       + `<button class="pelny" aria-label="fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="#5a3518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6"/></svg></button>`;
@@ -144,6 +167,7 @@ export class Player {
 
   // ------------------------------------------------------------------ lesson
   async start(id, fromStage = null) {
+    menuMuzyka.stop();
     this.lessonId = id;
     const meta = this.index.lessons.find((l) => l.id === id);
     const mod = await import(v(`/game/lessons/${id}/lesson.js`));
