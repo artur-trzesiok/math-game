@@ -64,8 +64,11 @@ POSTACIE = {
     # the second cast (2026-10-28): the biggest and the smallest, the hasty one, the builder, the one who feels his way
     "mis": {
         "rig": "humanoid", "wysokosc": 1.6,
-        "opis": "a big, cuddly, friendly brown bear cub with a round tummy in a lighter tan, small round ears, "
-                "a light tan muzzle with a dark nose, big soft paws",
+        # v1 drew a tiny face low on a big head (front) and the nose between the eyes (3/4): the face is spelled out
+        "opis": "a big, cuddly, friendly brown bear cub with a round tummy in a lighter tan, small round ears on top of "
+                "a big round head; the face fills the front of the head: two big friendly round dark eyes with a white "
+                "shine set wide apart at the middle of the head, under them a wide light tan muzzle with a small dark nose "
+                "and a smiling mouth, rosy cheeks; big soft paws",
         "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": False,
     },
     "jez": {
@@ -88,8 +91,11 @@ POSTACIE = {
     },
     "kret": {
         "rig": "humanoid", "wysokosc": 1.4,
-        "opis": "a friendly, round little dark grey mole with soft velvety fur, small round dark eyes with a white "
-                "shine, a big pink nose, large pink digging paws with little claws",
+        # v1 and v2 drew a featureless head with a tiny face low on it, and a huge nose in profile: the face is spelled out
+        "opis": "a chubby, cheerful cartoon mole from a children's picture book, soft dark grey velvety fur, a round head "
+                "with the face filling its front: two big friendly round dark eyes with a white shine set wide apart in the "
+                "middle of the face, a SMALL short pink snout between and just below them, a wide smiling mouth under it, "
+                "rosy cheeks, NO whiskers, large pink digging paws with short claws",
         "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": False,
     },
 }

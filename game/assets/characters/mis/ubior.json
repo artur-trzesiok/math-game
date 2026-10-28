@@ -1,0 +1,548 @@
+{
+ "czapka_zimowa": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "czapka_zimowa_2": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "czapka_zimowa_3": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "kapelusz": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "kapelusz_2": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "kapelusz_3": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "czapka_z_daszkiem": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "czapka_z_daszkiem_2": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "czapka_z_daszkiem_3": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "korona": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "korona_2": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "korona_3": {
+  "przod": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": -0.035,
+   "skala": 0.85,
+   "obrot": 0
+  }
+ },
+ "okulary": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  }
+ },
+ "okulary_2": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  }
+ },
+ "okulary_3": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 1.35,
+   "obrot": 0
+  }
+ },
+ "kalosze": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  }
+ },
+ "kalosze_2": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  }
+ },
+ "kalosze_3": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.75,
+   "obrot": 0
+  }
+ },
+ "trampki": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  }
+ },
+ "trampki_2": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  }
+ },
+ "trampki_3": {
+  "przod": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "bok": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "profil": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  },
+  "tyl": {
+   "dx": 0,
+   "dy": 0,
+   "skala": 0.8,
+   "obrot": 0
+  }
+ }
+}

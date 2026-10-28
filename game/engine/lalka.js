@@ -380,11 +380,12 @@ export class Lalka {
       L.ikKaty = [psi, chi];
     }
   }
-  // leg length (pivot - knee - ankle) of the legs of a view: a stride is measured in it
+  // leg length (pivot - knee - ankle) of the legs of a view: a stride is measured in it - the SHORTER leg's, so it can
+  // reach every step (stocky characters draw their far leg much shorter; the average made the hips drop each step)
   _dlugoscNogi(widok) {
     const n = this.nogi.filter((L) => L.widok === widok);
     if (!n.length) return this.wysokosc * 0.3;
-    return n.reduce((a, L) => { const [k0, k1] = L.stawy; return a + Math.hypot(k0.jx, k0.jy) + Math.hypot(k1.jx - k0.jx, k1.jy - k0.jy); }, 0) / n.length;
+    return Math.min(...n.map((L) => { const [k0, k1] = L.stawy; return Math.hypot(k0.jx, k0.jy) + Math.hypot(k1.jx - k0.jx, k1.jy - k0.jy); }));
   }
   // a walk with planted feet (animation `krok`): each leg runs its own phase; in stance its ankle slides back
   // in a straight line exactly as fast as the body moves forward (so it stays put on the floor), in swing it
@@ -394,7 +395,10 @@ export class Lalka {
     if (!nogi.length || !Lalka.zginanie || !this.widokGrupy.profil.visible) return;
     const D = this._dlugoscNogi(widok), S = (k.dlugosc ?? 0.9) * D, lift = (k.uniesienie ?? 0.2) * D, duty = k.podpora ?? 0.6;
     // a stride swings around the pair's common centre (legs drawn standing apart would limp), on each leg's own floor
-    const para = (L) => (k.pary || [nogi.map((n) => n.kosc)]).find((pr) => pr.includes(L.kosc)) || [L.kosc];
+    // ... unless the feet stand far apart at rest (a stocky character's short far leg stands well forward): then each
+    // leg strides around its own foot, or the far one would have to reach across and the hips would sink every step
+    const xs = nogi.map((n) => n.cel.x), osobno = !k.pary && Math.max(...xs) - Math.min(...xs) > 0.5 * D;
+    const para = (L) => (osobno ? [[L.kosc]] : k.pary || [nogi.map((n) => n.kosc)]).find((pr) => pr.includes(L.kosc)) || [L.kosc];
     const cele = new Map();
     for (const L of nogi) {
       const pr = nogi.filter((n) => para(L).includes(n.kosc)), cx = pr.reduce((a, n) => a + n.cel.x, 0) / pr.length;
