@@ -75,16 +75,16 @@ function materialRuchu(mapa, moc, faza, sway, linie = null) {
 // a lamp's glow (rekwizyty.json `poswiaty`: {x, y, r} in plate pixels, `kolor`): an additive radial light over the
 // plate whose radius and strength breathe a little, like a warm light that is alive
 function poswiata(p, s, z, W, H, srodekY) {
-  const m = new THREE.Mesh(new THREE.PlaneGeometry(p.r * 2.4 * s, p.r * 2.4 * s), new THREE.ShaderMaterial({
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(p.r * 2.6 * s, p.r * 2.6 * s), new THREE.ShaderMaterial({
     uniforms: { czas, kolor: { value: new THREE.Color(p.kolor || "#ffcf7a") }, moc: { value: p.moc ?? 0.55 }, faza: { value: p.faza ?? 0 } },
     vertexShader: "varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
     fragmentShader: `uniform float czas, moc, faza; uniform vec3 kolor; varying vec2 vUv;
       void main() {
         float t = czas + faza * 6.2831;
-        // 0..1: a slow swell, a slower drift under it and a faint quick flicker
-        float oddech = clamp(0.5 + 0.32 * sin(t * 1.1) + 0.12 * sin(t * 0.43 + 1.7) + 0.06 * sin(t * 9.7) * sin(t * 5.3), 0.0, 1.0);
-        float r = length(vUv - 0.5) * 2.4 / (0.8 + 0.3 * oddech);
-        float a = pow(max(0.0, 1.0 - r), 1.8) * moc * (0.35 + 0.9 * oddech);
+        // 0..1, smooth: a slow swell with a slower drift under it (a quick flicker term read as stutter)
+        float oddech = 0.5 + 0.38 * sin(t * 1.1) + 0.12 * sin(t * 0.43 + 1.7);
+        float r = length(vUv - 0.5) * 2.6 / (0.7 + 0.55 * oddech);          // the plane holds the widest breath (1.25 r)
+        float a = pow(max(0.0, 1.0 - r), 2.0) * moc * (0.2 + 1.1 * oddech);
         gl_FragColor = vec4(kolor * a, a);
       }`,
     transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
