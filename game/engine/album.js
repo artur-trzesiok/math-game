@@ -103,10 +103,23 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
     ta.innerHTML = `<img src="${v(`/game/lessons/${id}/cover.webp`)}" alt=""><i class="k1"></i><i class="k2"></i>`;
     const cel = (przy || el.querySelector(`.nakl[data-id="${id}"]`))?.getBoundingClientRect(), W = innerWidth;
     if (cel) {
-      const wPrawo = cel.right + W * 0.24 < W, x = wPrawo ? cel.right + 18 : cel.left - 18, y = Math.max(16, Math.min(innerHeight - W * 0.22, cel.top - cel.height * 0.4));
+      const odstep = Math.max(56, cel.width * 0.85);                   // room for the thought's circles between them
+      const wPrawo = cel.right + odstep + W * 0.26 < W, x = wPrawo ? cel.right + odstep : cel.left - odstep, y = Math.max(16, Math.min(innerHeight - W * 0.22, cel.top - cel.height * 0.4));
       Object.assign(ta.style, { top: `${y}px`, [wPrawo ? "left" : "right"]: `${wPrawo ? x : W - x}px` }); ta.classList.add(wPrawo ? "z-lewej" : "z-prawej");
     }
     el.appendChild(ta);
+    // the thought's little circles lead from the cloud to the sticker it is about
+    if (cel) {
+      const r = { left: ta.offsetLeft, top: ta.offsetTop, width: ta.offsetWidth, height: ta.offsetHeight };   // the layout box: it is still growing in
+      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      const px = cel.left + cel.width / 2, py = cel.top + cel.height / 2, dx = px - cx, dy = py - cy, l = Math.hypot(dx, dy) || 1, ux = dx / l, uy = dy / l;
+      const t = Math.min(r.width / 2 / Math.max(1e-6, Math.abs(ux)), r.height / 2 / Math.max(1e-6, Math.abs(uy)));     // cloud edge
+      const luka = Math.max(0, l - t - Math.min(cel.width, cel.height) * 0.45);                                       // to the sticker's edge
+      for (const [kl, f, d] of [["k1", 0.3, 0.18], ["k2", 0.72, 0.09]]) {
+        const k = ta.querySelector(`.${kl}`), s = r.width * d, x = cx + ux * (t + luka * f) - r.left - s / 2, y = cy + uy * (t + luka * f) - r.top - s / 2;
+        Object.assign(k.style, { left: `${x}px`, top: `${y}px`, right: "auto", bottom: "auto", width: `${s}px` });
+      }
+    }
     await speech.say({ lang, lessonId: id, key: "line.naklejka_opis", text: l.text, who: "narrator" }).catch(() => {});
     if (chmurka === ta) { ta.classList.add("znika"); setTimeout(() => ta.remove(), 300); chmurka = null; }
   };
