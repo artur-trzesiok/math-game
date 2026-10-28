@@ -84,7 +84,8 @@
   #menu h1 .napis { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   #langs { justify-self: end; display: flex; gap: calc(var(--k) * 0.03); }
   #langs button { width: calc(var(--k) * 0.27); aspect-ratio: 1; border: 0; padding: 0; background: url(/game/assets/menu/guzik.webp) center / contain no-repeat; color: var(--braz);
-    font: 800 calc(var(--k) * 0.085) "Baloo 2", system-ui; cursor: pointer; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); transition: transform .2s; }
+    font: 800 calc(var(--k) * 0.085) / 1 "Baloo 2", system-ui; cursor: pointer; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); transition: transform .2s; display: grid; place-items: center; }
+  #langs button svg { width: 34%; display: block; }
   #langs button.on { transform: scale(1.12); filter: drop-shadow(0 0 0 #ffd24a) drop-shadow(0 0 5px #ffd24a) drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   #langs button:active { transform: scale(.94); }
   #lessons { display: flex; align-items: stretch; gap: calc(var(--k) * 0.12); overflow-x: auto; overflow-y: hidden; padding: 6px var(--safe) 14px; box-sizing: border-box; width: 100%;
@@ -96,7 +97,7 @@
   .topic h2 { align-self: flex-start; margin: 0; padding: calc(var(--k) * 0.035) calc(var(--k) * 0.17) calc(var(--k) * 0.045); font: 800 max(14px, calc(var(--k) * 0.1)) "Baloo 2", system-ui; color: var(--braz);
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   .topic h2::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
-  .topic .row { display: flex; gap: calc(var(--k) * 0.08); }
+  .topic .row { display: flex; gap: calc(var(--k) * 0.2); padding-right: calc(var(--k) * 0.12); }   /* room for the stickers sticking out */
   .topic .lesson { flex: 0 0 auto; }
   #chips { display: flex; justify-content: center; gap: calc(var(--k) * 0.02); padding: 0 var(--safe); white-space: nowrap; }
   @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } }
@@ -113,12 +114,10 @@
     font: 800 calc(var(--k) * 0.115) "Baloo 2", system-ui; display: grid; place-items: center; box-shadow: 0 0 0 3px var(--braz), 0 3px 4px rgba(0,0,0,.25); text-shadow: 0 1px 0 rgba(90,53,24,.6); }
   .lesson .name { font: 800 max(13px, calc(var(--k) * 0.095)) "Baloo 2", system-ui; color: var(--braz); text-align: center; line-height: 1.05; }
   .lesson .sub { font: 600 max(11px, calc(var(--k) * 0.06)) "Baloo 2", system-ui; color: #8a6440; text-align: center; line-height: 1.1; }
-  /* the lesson's sticker waits in the card's lower corner; once taken to the album a paler patch of its shape stays,
-     as if it had been peeled off */
-  .lesson .nakl-karty { position: absolute; right: calc(var(--k) * -0.02); top: calc(var(--k) * 0.86); width: calc(var(--k) * 0.32); aspect-ratio: 1; transform: rotate(9deg); pointer-events: none; }
+  /* the sticker still to be won sticks out of the card's right edge beside the cover's lower corner (covering neither
+     the picture nor the name); once it is in the album it is gone from the card */
+  .lesson .nakl-karty { position: absolute; right: calc(var(--k) * -0.17); top: calc(var(--k) * 0.82); width: calc(var(--k) * 0.27); aspect-ratio: 1; transform: rotate(10deg); pointer-events: none; }
   .lesson .nakl-karty img { width: 100%; height: 100%; object-fit: contain; }
-  .lesson .nakl-karty.oderwana { background: #fffaf0; -webkit-mask: var(--ksztalt) center / contain no-repeat; mask: var(--ksztalt) center / contain no-repeat;
-    filter: drop-shadow(0 0 1px rgba(90,53,24,.45)); opacity: .9; }
   #hud { position: fixed; top: 0; left: 0; right: 0; display: none; align-items: center; gap: 12px; padding: 10px 14px; pointer-events: none; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
   #hud .lesson-name { font-weight: 700; }
   @media (max-width: 900px) { #hud .lesson-name { display: none; } }

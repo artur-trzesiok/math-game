@@ -84,7 +84,7 @@ export class Player {
       await Album.otworz({ lekcje, lang: this.lang, speech: this.speech, onZamknij: () => { const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
     };
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("")
-      + `<button class="pelny" aria-label="fullscreen">⛶</button>`;
+      + `<button class="pelny" aria-label="fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="#5a3518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6"/></svg></button>`;
     $("#langs").onclick = (e) => { if (e.target.closest(".pelny")) return pelnyEkran(); const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
     // lessons grouped into topics (index.json "topics"; a lesson in no topic goes to a last, untitled row);
     // numbers restart in every topic, the topic's colour marks its cards
@@ -119,13 +119,12 @@ export class Player {
       this.menuX = x;
     };
     pas.onscroll = odswiez;
-    // every card carries its lesson's sticker in the lower corner; once it is in the album a paler patch of its
-    // shape stays there, as if peeled off
+    // a card carries the sticker still to be won from its lesson; once it is in the album the card has none
     for (const b of pas.querySelectorAll(".lesson"))
       fetch(v(`/game/lessons/${b.dataset.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).then((m) => {
         if (!m.naklejka || b.querySelector(".nakl-karty")) return;
         const url = v(`/game/assets/${m.naklejka.obraz}.webp`);
-        b.insertAdjacentHTML("beforeend", Album.ma(b.dataset.id) ? `<span class="nakl-karty oderwana" style="--ksztalt:url('${url}')"></span>` : `<span class="nakl-karty"><img class="wycinek" src="${url}" alt=""></span>`);
+        if (!Album.ma(b.dataset.id)) b.insertAdjacentHTML("beforeend", `<span class="nakl-karty"><img class="wycinek" src="${url}" alt=""></span>`);
       }).catch(() => {});
     chips.onclick = (e) => { const c = e.target.closest("button"); if (c) naBlok(bloki.find((b) => b.dataset.topic === c.dataset.topic)); };
     // a mouse wheel turns into sideways scroll; a mouse drag scrolls the strip (a finger does it natively)

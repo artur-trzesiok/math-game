@@ -100,12 +100,27 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
     speech.say({ lang, lessonId: id, key: "line.naklejka_opis", text: l.text, who: "narrator" }).catch(() => {});
   };
 
-  // dragging: a sticker from the tray (or from a page) follows the finger; dropped on a page it sticks there,
-  // anywhere else it goes back. A tap without moving tells about it. A swipe on the book turns the page.
+  // a free spot for a sticker on a page, nearest to where it was dropped: stickers never go one on another
+  // (positions in % of the page; a sticker is 27% of the page's width, the page about 0.72 as wide as tall)
+  const SZ = 27, WYS = 27 * 0.72;
+  const wolne = (strona, x0, y0) => {
+    const inne = Object.values(stan.naklejki).filter((n) => n.strona === strona);
+    const pasuje = (x, y) => inne.every((n) => Math.abs(n.x - x) > SZ * 0.9 || Math.abs(n.y - y) > WYS * 0.95);
+    let best = null, bd = Infinity;
+    for (let x = 14; x <= 86; x += 3) for (let y = 12; y <= 88; y += 3) {
+      if (!pasuje(x, y)) continue;
+      const d = Math.hypot(x - x0, (y - y0) * 0.72); if (d < bd) { bd = d; best = [x, y]; }
+    }
+    return pasuje(x0, y0) ? [x0, y0] : best;
+  };
+
+  // dragging: a sticker from the tray follows the finger; dropped on a page it sticks there for good (a stuck one
+  // cannot be peeled off again - a tap tells about it); anywhere else it goes back. A swipe on the book turns the page.
   let ciag = null;
   el.addEventListener("pointerdown", (e) => {
     const nakl = e.target.closest(".nakl");
-    if (!nakl) { if (e.target.closest(".ksiazka")) ciag = { swipe: true, x0: e.clientX }; return; }
+    if (nakl && !nakl.classList.contains("na-tacce")) { ciag = { swipe: true, x0: e.clientX, y0: e.clientY, stuk: nakl }; return; }
+    if (!nakl) { if (e.target.closest(".ksiazka")) ciag = { swipe: true, x0: e.clientX, y0: e.clientY }; return; }
     e.preventDefault();
     const r = nakl.getBoundingClientRect(), duch = nakl.cloneNode(); duch.className = "nakl duch";
     Object.assign(duch.style, { left: `${r.left + r.width / 2}px`, top: `${r.top + r.height / 2}px`, width: `${r.width}px`, transform: "translate(-50%,-50%) scale(1.12)" });
@@ -120,17 +135,22 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
   });
   el.addEventListener("pointerup", (e) => {
     const c = ciag; ciag = null; if (!c) return;
-    if (c.swipe) { const dx = e.clientX - c.x0; if (Math.abs(dx) > 60) kartkuj(dx < 0 ? 1 : -1); return; }
+    if (c.swipe) {
+      const dx = e.clientX - c.x0;
+      if (Math.abs(dx) > 60) kartkuj(dx < 0 ? 1 : -1);
+      else if (c.stuk && Math.hypot(dx, e.clientY - c.y0) < 10) { opowiedz(c.stuk.dataset.id); c.stuk.classList.add("stuk"); setTimeout(() => c.stuk.classList.remove("stuk"), 400); }
+      return;
+    }
     c.duch.remove();
-    if (!c.ruch) { c.nakl.style.visibility = ""; opowiedz(c.id); c.nakl.classList.add("stuk"); setTimeout(() => c.nakl.classList.remove("stuk"), 400); return; }
+    if (!c.ruch) { c.nakl.style.visibility = ""; opowiedz(c.id); c.nakl.classList.add("stuk"); setTimeout(() => c.nakl.classList.remove("stuk"), 400); return; }   // a tap on the tray
     const bok = strony.findIndex((s) => { const r = s.getBoundingClientRect(); return e.clientX > r.left && e.clientX < r.right && e.clientY > r.top && e.clientY < r.bottom; });
     if (bok >= 0) {
-      const r = strony[bok].getBoundingClientRect(), n = stan.naklejki[c.id];
-      const x = Math.max(12, Math.min(88, ((e.clientX - r.left) / r.width) * 100)), y = Math.max(12, Math.min(88, ((e.clientY - r.top) / r.height) * 100));
-      const nowa = n.strona === undefined;
-      Object.assign(n, { strona: rozklad * 2 + bok, x, y, obrot: n.obrot ?? Math.round((Math.random() - 0.5) * 16) }); delete n.nowa;
+      const r = strony[bok].getBoundingClientRect(), n = stan.naklejki[c.id], strona = rozklad * 2 + bok;
+      const miejsce = wolne(strona, Math.max(14, Math.min(86, ((e.clientX - r.left) / r.width) * 100)), Math.max(12, Math.min(88, ((e.clientY - r.top) / r.height) * 100)));
+      if (!miejsce) { c.nakl.style.visibility = ""; c.nakl.classList.add("stuk"); return; }   // the page is full: back to the tray
+      Object.assign(n, { strona, x: miejsce[0], y: miejsce[1], obrot: Math.round((Math.random() - 0.5) * 16) }); delete n.nowa;
       zapisz(stan); rysuj();
-      if (nowa) opowiedz(c.id);                                     // freshly stuck: say where it came from
+      opowiedz(c.id);                                               // freshly stuck: say where it came from
     } else c.nakl.style.visibility = "";
   });
 
