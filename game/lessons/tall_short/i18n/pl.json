@@ -65,11 +65,11 @@
   },
   "line.b_mam": {
     "who": "mis",
-    "text": "Mam wysoki kij! Naprawię drabinkę. Hop, już jestem w domku!"
+    "text": "Mam wysoki kij! Naprawię drabinkę. Wchodzimy do domku!"
   },
   "line.b_jez": {
     "who": "jez",
-    "text": "Dzień dobry... Jestem Jeżyk. Chciałbym zerwać jabłko, ale jestem bardzo niski."
+    "text": "Dzień dobry! Chciałbym zerwać jabłko, ale jestem bardzo niski."
   },
   "line.b_najnizsze": {
     "who": "lisek",
@@ -157,18 +157,19 @@
   },
   "line.d_miarka": {
     "who": "lisek",
-    "text": "W przedpokoju wisi miarka. Stańmy przy niej i sprawdźmy, kto jest wysoki, a kto niski."
+    "text": "W przedpokoju wisi miarka. Każdy stanie przy niej, a ja narysuję kreskę nad jego głową."
   },
   "line.d_najwyzszy": {
     "who": "mis",
-    "text": "Kto jest najwyższy? Wskaż."
+    "text": "Popatrz na kreski na miarce. Kto jest najwyższy? Wskaż."
   },
   "line.d_nie": {
     "who": "lisek",
-    "text": "Popatrz na miarkę i na nasze głowy.",
+    "text": "Popatrz, czyja kreska jest najwyżej, a czyja najniżej.",
     "speakers": [
       "mis",
-      "wiewiorka"
+      "wiewiorka",
+      "jez"
     ]
   },
   "line.d_najnizszy": {
@@ -177,7 +178,7 @@
   },
   "line.d_rosne": {
     "who": "jez",
-    "text": "To ja! Ale ciągle rosnę."
+    "text": "Jestem najniższy, ale ciągle rosnę. Za rok moja kreska będzie wyżej!"
   },
   "line.d_rodzice": {
     "who": "lisek",
@@ -194,5 +195,65 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To domek na drzewie Misia. Dostaliśmy go, kiedy porównywaliśmy, kto jest wysoki, a kto niski."
+  },
+  "line.c_skrzynia": {
+    "who": "wiewiorka",
+    "text": "Ojej, w domku stoi stara skrzynia!"
+  },
+  "line.c_zamknieta": {
+    "who": "lisek",
+    "text": "Jest zamknięta na klucz. Gdzie jest klucz?"
+  },
+  "line.c_klucz": {
+    "who": "wiewiorka",
+    "text": "Tam, na samej górze, na haczyku! Hop! Nie sięgam."
+  },
+  "line.c_kto": {
+    "who": "lisek",
+    "text": "Klucz wisi bardzo wysoko. Zdejmie go najwyższy z nas. Kto to? Wskaż."
+  },
+  "line.c_kto_nie": {
+    "who": "lisek",
+    "text": "Popatrz na nasze głowy. Czyja jest najwyżej?"
+  },
+  "line.c_zdejmuje": {
+    "who": "mis",
+    "text": "Jestem najwyższy, sięgam! Zdejmuję klucz."
+  },
+  "line.c_luneta": {
+    "who": "wiewiorka",
+    "text": "W skrzyni jest luneta! Prawdziwa luneta!"
+  },
+  "line.c_patrze": {
+    "who": "lisek",
+    "text": "Popatrzmy przez lunetę na sad pod drzewem."
+  },
+  "line.c_myszki": {
+    "who": "lisek",
+    "text": "W sadzie schowało się sześć myszek. Znajdź je wszystkie! Dotknij każdej myszki."
+  },
+  "line.c_wszystkie": {
+    "who": "mis",
+    "text": "Wszystkie myszki znalezione!"
+  },
+  "line.c_jezyk": {
+    "who": "lisek",
+    "text": "A tam w sadzie macha do nas Jeżyk. Chodźmy do niego!"
+  },
+  "line.d_jez_ksiazki": {
+    "who": "jez",
+    "text": "A ja stanę na książkach! Wtedy będę wyższy od Wiewiórki!"
+  },
+  "line.d_zabierz": {
+    "who": "wiewiorka",
+    "text": "Jeżyku, książki tylko cię podnoszą! Zabierz książki spod Jeżyka. Przeciągnij je na bok."
+  },
+  "line.d_na_podlodze": {
+    "who": "lisek",
+    "text": "Teraz Jeżyk stoi na podłodze, jak wszyscy. Rysuję jego kreskę."
+  },
+  "line.d_kto_wyzszy": {
+    "who": "jez",
+    "text": "A kto jest wyższy: Lisek czy Wiewiórka? Wskaż."
   }
 }

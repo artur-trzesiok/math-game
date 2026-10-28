@@ -50,9 +50,9 @@ export default {
         maly.remove(); duzy.remove();
         await c.say("bobr", "line.a_po_kolei", { anim: "Zgloszenie" });
         await c.say("zajac", "line.a_jak");
-        await c.say("bobr", "line.a_od_najwiekszego");
-        // the child builds it: four blocks, a wrong one tips off
+        // the child builds it: four blocks, a wrong one tips off; the line on the ground first, then the instruction names it
         const w = c.wieza({ klocki: [{ w: 2.6, h: 0.6, x: -2.6, y: 1.5 }, { w: 1.9, h: 0.6, x: 2.4, y: 1.2 }, { w: 1.3, h: 0.6, x: -0.4, y: 1.9 }, { w: 0.8, h: 0.6, x: 1.0, y: -0.2 }].map((k, i) => ({ ...k, kolor: KOLORY[i] })), miejsca: [{ x: 0.2 }] });
+        await c.say("bobr", "line.a_od_najwiekszego");
         await w.gotowe;
         await c.say("zajac", "line.a_stoi", { anim: "Radosc" });
         await c.say("bobr", "line.a_dlaczego");
@@ -132,8 +132,8 @@ export default {
         }
         // 5. a tower of three
         {
-          await c.say("zajac", "line.p_wieza");
           const w = c.wieza({ klocki: [{ w: 2.2, h: 0.6, x: -2.4, y: 1.4 }, { w: 1.5, h: 0.6, x: 2.2, y: 1.6 }, { w: 0.9, h: 0.6, x: 0, y: 2.0 }].map((k, i) => ({ ...k, kolor: KOLORY[i] })), miejsca: [{ x: 0 }] });
+          await c.say("zajac", "line.p_wieza");                         // after the line on the ground is drawn: it names it
           await w.gotowe; await c.say("bobr", "line.p_wieza_ok"); gw.dodaj(); c.clear();
         }
         await c.praise("bobr");

@@ -6,17 +6,19 @@ Age 3-4. Characters: Bear (new, the tallest), Squirrel, Fox; Hedgehog (new, the 
 **Misconception:** whoever stands higher up is taller (Squirrel on a stump: "now I'm the tallest!").
 
 ## Stage 1 - story
-A. *Forest.* A treehouse up in a tree; who reaches the branch? Squirrel climbs a stump - "the tallest now" - jumps,
-does not reach (sad). Fox: the stump only lifted you; stand on the same ground. **Child** points to the tallest (Bear)
-and the shortest (Squirrel), the characters themselves the options.
-B. The ladder's poles are gone: two sticks - **child** stands them on a pencil ground line and points to the taller.
-*Orchard, helping:* Hedgehog can only reach the shortest of three trees; **child** points to it. *Breather:* catch the
-tall sunflower (three times).
+A. *Forest.* Bear wants to reach the treehouse; Squirrel on a stump "is the tallest now" - she jumps and does not
+reach; Fox: stand on ONE ground. **Child** points to the tallest and the shortest (characters as targets).
+B. The ladder is broken: **child** stands two sticks on one line and points to the taller one; the ladder mended.
+C. *Inside the treehouse* (new scenery). An old chest, its key on the highest peg: Squirrel jumps, cannot reach;
+**child** points to the tallest - Bear takes it down, the chest opens: a spyglass. Through it the orchard below -
+**child** finds six hidden mice (`szukaj`, new). Hedgehog waves from the orchard.
+D. *Orchard.* Hedgehog reaches only the shortest tree - **child** points to it. *Breather:* catch the tall sunflowers.
 
 ## Stage 2 - practice
-Two candles; a sunflower higher up stood on the line first; the shortest of three sticks; shadows; the friends -
-who is the shortest (Hedgehog).
+Two candles on one shelf; a sunflower on a stump - first onto one ground; the shortest of three sticks; whose shadow;
+who is taller among the friends.
 
 ## Stage 3 - at home (hallway)
-The height chart: everyone stands by it; **child** points to the tallest and the shortest. "Measure yourself by the
-door with your parents."
+The height chart: everyone in turn, a pencil line over each head. Hedgehog climbs a pile of books "to be taller" -
+**child** takes the books away, then his line is drawn. The tallest, the shortest, Fox or Squirrel. "Measure yourself
+with your parents by the door."

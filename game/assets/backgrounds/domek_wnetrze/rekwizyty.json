@@ -1,0 +1,44 @@
+{
+ "plyta": "plyta.webp",
+ "szerokosc": 1536,
+ "wysokosc": 1024,
+ "horyzont": 341,
+ "rekwizyty": [
+  {
+   "plik": "rekwizyt_00.webp",
+   "klasa": "sway",
+   "x": 1463,
+   "y": 309,
+   "w": 48,
+   "h": 57,
+   "faza": 0.0
+  },
+  {
+   "plik": "rekwizyt_01.webp",
+   "klasa": "sway",
+   "x": 1431,
+   "y": 220,
+   "w": 42,
+   "h": 27,
+   "faza": 0.618
+  },
+  {
+   "plik": "rekwizyt_02.webp",
+   "klasa": "sway",
+   "x": 1371,
+   "y": 425,
+   "w": 44,
+   "h": 33,
+   "faza": 0.2361
+  },
+  {
+   "plik": "rekwizyt_03.webp",
+   "klasa": "sway",
+   "x": 1439,
+   "y": 468,
+   "w": 40,
+   "h": 24,
+   "faza": 0.8541
+  }
+ ]
+}

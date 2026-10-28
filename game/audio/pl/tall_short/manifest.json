@@ -80,14 +80,14 @@
   "text": "Ten kij jest niższy. Wskaż ten, który sięga wyżej."
  },
  "line.b_mam": {
-  "hash": "60f9c2dd61e2",
+  "hash": "0f80883c8fca",
   "who": "mis",
-  "text": "Mam wysoki kij! Naprawię drabinkę. Hop, już jestem w domku!"
+  "text": "Mam wysoki kij! Naprawię drabinkę. Wchodzimy do domku!"
  },
  "line.b_jez": {
-  "hash": "e1fec1b1c34f",
+  "hash": "34f6a408a692",
   "who": "jez",
-  "text": "Dzień dobry... Jestem Jeżyk. Chciałbym zerwać jabłko, ale jestem bardzo niski."
+  "text": "Dzień dobry! Chciałbym zerwać jabłko, ale jestem bardzo niski."
  },
  "line.b_najnizsze": {
   "hash": "a03cd674e0a3",
@@ -195,29 +195,29 @@
   "text": "To ja, Jeżyk! Jestem najniższy."
  },
  "line.d_miarka": {
-  "hash": "49c829aa7803",
+  "hash": "4d45920af707",
   "who": "lisek",
-  "text": "W przedpokoju wisi miarka. Stańmy przy niej i sprawdźmy, kto jest wysoki, a kto niski."
+  "text": "W przedpokoju wisi miarka. Każdy stanie przy niej, a ja narysuję kreskę nad jego głową."
  },
  "line.d_najwyzszy": {
-  "hash": "daeee434dd93",
+  "hash": "6becdf05539f",
   "who": "mis",
-  "text": "Kto jest najwyższy? Wskaż."
+  "text": "Popatrz na kreski na miarce. Kto jest najwyższy? Wskaż."
  },
  "line.d_nie": {
-  "hash": "902821a246d8",
+  "hash": "54e22399709c",
   "who": "lisek",
-  "text": "Popatrz na miarkę i na nasze głowy."
+  "text": "Popatrz, czyja kreska jest najwyżej, a czyja najniżej."
  },
  "line.d_nie.mis": {
-  "hash": "6824f7c3837a",
+  "hash": "9c68f9a09100",
   "who": "mis",
-  "text": "Popatrz na miarkę i na nasze głowy."
+  "text": "Popatrz, czyja kreska jest najwyżej, a czyja najniżej."
  },
  "line.d_nie.wiewiorka": {
-  "hash": "edf068d0b2fc",
+  "hash": "08e3e5dd428d",
   "who": "wiewiorka",
-  "text": "Popatrz na miarkę i na nasze głowy."
+  "text": "Popatrz, czyja kreska jest najwyżej, a czyja najniżej."
  },
  "line.d_najnizszy": {
   "hash": "db7d8e2f1a4d",
@@ -225,9 +225,9 @@
   "text": "A kto jest najniższy? Wskaż."
  },
  "line.d_rosne": {
-  "hash": "00b841c8142e",
+  "hash": "b7b543e0e488",
   "who": "jez",
-  "text": "To ja! Ale ciągle rosnę."
+  "text": "Jestem najniższy, ale ciągle rosnę. Za rok moja kreska będzie wyżej!"
  },
  "line.d_rodzice": {
   "hash": "98fb66ce80fe",
@@ -248,5 +248,85 @@
   "hash": "908baec92b66",
   "who": "narrator",
   "text": "To domek na drzewie Misia. Dostaliśmy go, kiedy porównywaliśmy, kto jest wysoki, a kto niski."
+ },
+ "line.d_nie.jez": {
+  "hash": "26fd75456d4c",
+  "who": "jez",
+  "text": "Popatrz, czyja kreska jest najwyżej, a czyja najniżej."
+ },
+ "line.c_skrzynia": {
+  "hash": "321a0ecdfbf9",
+  "who": "wiewiorka",
+  "text": "Ojej, w domku stoi stara skrzynia!"
+ },
+ "line.c_zamknieta": {
+  "hash": "a33e657e77e2",
+  "who": "lisek",
+  "text": "Jest zamknięta na klucz. Gdzie jest klucz?"
+ },
+ "line.c_klucz": {
+  "hash": "e6dc0f008992",
+  "who": "wiewiorka",
+  "text": "Tam, na samej górze, na haczyku! Hop! Nie sięgam."
+ },
+ "line.c_kto": {
+  "hash": "462f8ea7f9e9",
+  "who": "lisek",
+  "text": "Klucz wisi bardzo wysoko. Zdejmie go najwyższy z nas. Kto to? Wskaż."
+ },
+ "line.c_kto_nie": {
+  "hash": "da9f63a5bae4",
+  "who": "lisek",
+  "text": "Popatrz na nasze głowy. Czyja jest najwyżej?"
+ },
+ "line.c_zdejmuje": {
+  "hash": "2bd7f299d8c1",
+  "who": "mis",
+  "text": "Jestem najwyższy, sięgam! Zdejmuję klucz."
+ },
+ "line.c_luneta": {
+  "hash": "cfda9421a20a",
+  "who": "wiewiorka",
+  "text": "W skrzyni jest luneta! Prawdziwa luneta!"
+ },
+ "line.c_patrze": {
+  "hash": "bce9a2a80b13",
+  "who": "lisek",
+  "text": "Popatrzmy przez lunetę na sad pod drzewem."
+ },
+ "line.c_myszki": {
+  "hash": "4beebfad46d3",
+  "who": "lisek",
+  "text": "W sadzie schowało się sześć myszek. Znajdź je wszystkie! Dotknij każdej myszki."
+ },
+ "line.c_wszystkie": {
+  "hash": "8be5ce673b45",
+  "who": "mis",
+  "text": "Wszystkie myszki znalezione!"
+ },
+ "line.c_jezyk": {
+  "hash": "97a50130eaa2",
+  "who": "lisek",
+  "text": "A tam w sadzie macha do nas Jeżyk. Chodźmy do niego!"
+ },
+ "line.d_jez_ksiazki": {
+  "hash": "4873bd047952",
+  "who": "jez",
+  "text": "A ja stanę na książkach! Wtedy będę wyższy od Wiewiórki!"
+ },
+ "line.d_zabierz": {
+  "hash": "26f1af11259f",
+  "who": "wiewiorka",
+  "text": "Jeżyku, książki tylko cię podnoszą! Zabierz książki spod Jeżyka. Przeciągnij je na bok."
+ },
+ "line.d_na_podlodze": {
+  "hash": "36dd3c3a090f",
+  "who": "lisek",
+  "text": "Teraz Jeżyk stoi na podłodze, jak wszyscy. Rysuję jego kreskę."
+ },
+ "line.d_kto_wyzszy": {
+  "hash": "5451f85c078e",
+  "who": "jez",
+  "text": "A kto jest wyższy: Lisek czy Wiewiórka? Wskaż."
  }
 }

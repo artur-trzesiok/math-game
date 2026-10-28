@@ -27,7 +27,7 @@ const kreskaMaterialy = (h) => { const out = []; h.mesh.traverse((o) => { if (o.
 // `co` a digit (0-9: the strokes a child writes, in order) or a shape (kolo, trojkat, kwadrat, prostokat). A light
 // road shows the way and draws itself in the stroke's direction; a green dot marks where the finger starts; the
 // pencil follows the finger along the road (only forward, only near it - off the road it simply stops, and the dot
-// waits where it stopped). Resolves when every stroke is traced; the ink stays (`remove()` on the result).
+// waits where it stopped); a shape's outline may be traced either way round. Resolves when every stroke is traced; the ink stays (`remove()` on the result).
 function drogi(co, x, y, size) {
   if (typeof co === "number") {
     const k = size / 1.4, ox = x - 0.45 * k, oy = y - size / 2, map = ([px, py]) => [ox + px * k, oy + py * k];
@@ -41,13 +41,19 @@ function drogi(co, x, y, size) {
 export async function slad(S, co, { x = 0, y = 0.4, size = 3.4, tolerancja = 0.5, kolor = "#3f7fe0" } = {}) {
   const kreski = drogi(co, x, y, size), drogiH = [], tusz = [];
   for (const pts of kreski) drogiH.push(await S.line(pts, { color: "#e2d6c2", width: 0.34, duration: FAST ? 0.05 : 0.5, halo: true, strong: false, wobble: 0 }));
-  for (const [ki, pts] of kreski.entries()) {
-    const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + dl(pts[i], pts[i - 1]));
-    // the ink waits for the finger: hidden until its draw-in has been reset to nothing (it would flash in full)
-    const ink = await S.line(pts, { color: kolor, width: 0.17, duration: 0.01, strong: true, wobble: 0.004, wait: false });
-    ink.mesh.visible = false; await czekaj(0.06);
-    const postep = kreskaMaterialy(ink); postep.forEach((u) => (u.value = 0)); ink.mesh.visible = true; tusz.push(ink);
-    let i = 0, aktywny = false, kr = kropka(S, pts[0]);
+  const zamkniety = typeof co !== "number";                       // a shape: its outline may be traced either way round
+  for (const [ki, pts0] of kreski.entries()) {
+    let pts = pts0, cum = [], ink = null, postep = [];
+    const przygotuj = async () => {                                  // the ink along pts, waiting for the finger
+      cum = [0]; for (let k = 1; k < pts.length; k++) cum.push(cum[k - 1] + dl(pts[k], pts[k - 1]));
+      if (ink) { ink.remove(); tusz.splice(tusz.indexOf(ink), 1); }
+      // hidden until its draw-in has been reset to nothing (it would flash in full)
+      ink = await S.line(pts, { color: kolor, width: 0.17, duration: 0.01, strong: true, wobble: 0.004, wait: false });
+      ink.mesh.visible = false; await czekaj(0.06);
+      postep = kreskaMaterialy(ink); postep.forEach((u) => (u.value = 0)); ink.mesh.visible = true; tusz.push(ink);
+    };
+    await przygotuj();
+    let i = 0, aktywny = false, kierunek = !zamkniety, kr = kropka(S, pts[0]);
     const tetno = setInterval(() => { const s = 1 + 0.18 * Math.sin(performance.now() / 160); kr.mesh.scale.setScalar(aktywny ? 1 : s); }, 40);
     await new Promise((gotowe) => {
       const ustaw = (j) => { i = j; postep.forEach((u) => (u.value = cum[i] / cum[cum.length - 1])); kr.mesh.position.set(pts[i][0], pts[i][1], 0.6); if (i >= pts.length - 3) koniec(); };
@@ -56,6 +62,15 @@ export async function slad(S, co, { x = 0, y = 0.4, size = 3.4, tolerancja = 0.5
         down: ([px, py]) => { if (dl([px, py], pts[i]) > tolerancja * 1.4) return false; aktywny = true; S.sfx.graj("pencil", { dlugosc: 0.3 }); return true; },
         move: ([px, py]) => {
           if (!aktywny) return;
+          // a closed outline: the first move from the dot says which way round - the other way, the road turns over
+          if (!kierunek) {
+            if (dl([px, py], pts[0]) < 0.25) return;
+            const blisko = (od, doo) => { let bd = Infinity; for (let j = od; j < doo; j++) bd = Math.min(bd, dl([px, py], pts[j])); return bd; };
+            const n = pts.length, wPrzod = blisko(1, Math.min(n, 40)), wTyl = blisko(Math.max(1, n - 40), n - 1);
+            kierunek = true;
+            if (wTyl < wPrzod) { pts = pts.slice().reverse(); przygotuj(); }
+            return;
+          }
           let best = -1, bd = Infinity;
           for (let j = i; j < Math.min(pts.length, i + 40); j++) { const d = dl([px, py], pts[j]); if (d < bd) { bd = d; best = j; } }
           if (bd > tolerancja) { aktywny = false; S.sfx.graj("wrong", { glosnosc: 0.5 }); return; }   // off the road: the pencil stops, the dot waits

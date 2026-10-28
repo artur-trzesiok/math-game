@@ -56,17 +56,17 @@ export default {
         await c.say("sowa", "line.a_kolo_ok");
         t.remove();
         await c.say("sowa", "line.a_trojkat");
-        t = await c.slad("trojkat", { x: 0, y: 0.3, size: 3.0 });
+        t = await c.slad("trojkat", { x: -0.8, y: 0.3, size: 3.0 });
         t.remove();
-        const tr = c.shape("trojkat", { x: 0, y: 0.3, size: 3.0, color: KOLOR.trojkat });
+        const tr = c.shape("trojkat", { x: -0.8, y: 0.3, size: 3.0, color: KOLOR.trojkat });
         await c.say("sowa", "line.a_policz_trojkat");
         await c.count(c.corners(tr), { who: "sowa" });                       // counting to three is known by now; four is not
         await c.say("sowa", "line.a_trzy_rogi");
         tr.remove(); c.clear();
         await c.say("sowa", "line.a_kwadrat");
-        t = await c.slad("kwadrat", { x: 0, y: 0.3, size: 2.8 });
+        t = await c.slad("kwadrat", { x: -0.8, y: 0.3, size: 2.8 });
         t.remove();
-        const kw = c.shape("kwadrat", { x: 0, y: 0.3, size: 2.8, color: KOLOR.kwadrat });
+        const kw = c.shape("kwadrat", { x: -0.8, y: 0.3, size: 2.8, color: KOLOR.kwadrat });
         await c.say("sowa", "line.a_policz");
         await rogi(c, kw, "line.a_policz");
         await c.say("sowa", "line.a_cztery_rogi");
@@ -88,7 +88,7 @@ export default {
         for (const p of plan) {
           await c.say(p.kind === "kwadrat" || p.kind === "trojkat" ? "sowa" : "lisek", p.linia);
           const items = lez.filter((h) => !h.wDomu);
-          const t = await c.slots({ items, slots: [{ x: p.x, y: p.y, w: p.size * (p.kind === "prostokat" ? 0.9 : 1.05), h: p.size * (p.kind === "prostokat" ? 1.7 : 1.05), accept: (it) => it.ksztalt === p.kind }], wrong: "line.b_nie_ta" });
+          const t = await c.slots({ items, slots: [{ x: p.x, y: p.y, w: p.size * (p.kind === "prostokat" ? 0.9 : 1.6), h: p.size * (p.kind === "prostokat" ? 1.7 : 1.1), ksztalt: p.kind, size: p.size, rot: p.rot, accept: (it) => it.ksztalt === p.kind }], wrong: "line.b_nie_ta" });
           await t.done();
           const h = items.find((it) => it.slot); h.wDomu = true; h.naWierzch?.(); t.remove();
         }
@@ -107,12 +107,22 @@ export default {
         c.show("zajac");
         await Promise.all(["lisek", "jez"].map((n) => c.enter(n)));
         await c.say("zajac", "line.c_latawiec", { anim: "Smutek" });
+        // four painted kites well apart (shapes laid side by side covered each other); the square one stands on a corner
         const hs = [];
-        for (const [i, k] of tasuj(["kwadrat", "trojkat", "prostokat", "kolo"]).entries()) hs.push(c.shape(k, { x: -2.4 + i * 1.6, y: 1.3, size: 1.3, color: tasuj(Object.values(KOLOR))[0], rot: k === "kwadrat" ? 45 : (i * 30) % 90 }));
+        for (const [i, k] of tasuj(["kwadrat", "prostokat", "trojkat", "kolo"]).entries()) { const h = await c.object(`latawiec_${k}`, { x: -2.9 + i * 2.0, y: 1.1, size: 2.7 }); h.ksztalt = k; hs.push(h); }
         await c.say("lisek", "line.c_ktory");
         const ok = hs.find((h) => h.ksztalt === "kwadrat");
         dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.c_ktory_nie" });
+        // the geometric square laid on the chosen kite, the others gone; to the middle, and it turns round and round
+        const b = c.bounds(ok), bok = (b.right - b.left) * 0.62;      // the sail: the upper part of the picture (the tail hangs below)
+        const kw = c.shape("kwadrat", { x: ok.mesh.position.x, y: b.top - (b.top - b.bottom) * 0.27, size: bok, color: KOLOR.kwadrat, rot: 45 });
+        for (const h of hs) if (h !== ok) h.remove();
+        await c.wait(0.5);
+        ok.remove();
+        await Promise.all([kw.moveTo(0.2, 0.8, 0.6), (async () => { const s0 = kw.mesh.scale.x; await c.stage.tween(0.6, (s) => kw.mesh.scale.setScalar(s0 * (1 + 0.6 * s))); })()]);
+        const kreci = (async () => { for (let r = 1; r <= 4; r++) await kw.rotateTo(45 + r * 45, 0.7); })();
         await c.say("lisek", "line.c_obrocony", { anim: "Zgloszenie" });
+        await kreci;
         await c.say("zajac", "line.c_dziekuje", { anim: "Podskok" });
         c.clear();
         // the breather: Hedgehog rolls into a ball and bounces about - catch him three times

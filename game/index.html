@@ -63,7 +63,7 @@
   #plansza .obraz { width: min(40vh, 52vw); aspect-ratio: 1; object-fit: cover; border-radius: 2.4vh; box-shadow: 0 0 0 4px rgba(90,53,24,.55); }
   #plansza .obraz.ikona { object-fit: contain; box-shadow: none; }
   #plansza .napis { padding: .25em 1.4em .35em; font: 800 min(6vh, 7vw) "Baloo 2", system-ui; color: #5a3518; white-space: nowrap; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; }
-  #plansza .glowa { position: absolute; bottom: 4vh; width: min(17vh, 20vw); filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); animation: bujaj 1.8s ease-in-out infinite; }
+  #plansza .glowa { position: absolute; top: 24vh; width: min(17vh, 20vw);   /* beside the picture: at the name they covered a long one */ filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); animation: bujaj 1.8s ease-in-out infinite; }
   #plansza .glowa.l { left: -6vh; } #plansza .glowa.p { right: -6vh; animation-delay: -.9s; }
   @keyframes zanik { from { opacity: 0; } to { opacity: 1; } }
   @keyframes wskok { from { transform: scale(.1) rotate(-25deg); opacity: 0; } to { transform: scale(1); opacity: 1; } }

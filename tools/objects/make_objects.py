@@ -1016,6 +1016,37 @@ most of the image. NO glow outside it, NO halo, NO background, NO speech bubble,
 The same painted style as the reference: a round warm-yellow face that is SCARED - very wide eyes with small pupils, eyebrows high, the mouth wide open in a gasp, two little shiver lines on each side of the face; cute, not scary.""",
 }
 
+SHEETS["domek_skarb"] = {
+    "outline": True,
+    "names": ["skrzynia", "skrzynia_otwarta", "luneta", "klucz_stary"],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left to right: one small old wooden treasure chest with brass corners, CLOSED, with a keyhole; the SAME chest OPEN,
+its lid up, EMPTY inside, a soft golden glimmer inside; one old brass telescope (a spyglass) lying sideways; one big
+old iron key with a round bow.
+Each object fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.""",
+}
+
+# shapes: four kites, each one clear simple shape (the geometric shape is laid on the chosen one in the game)
+SHEETS["latawce"] = {
+    "outline": True,
+    "names": ["latawiec_kwadrat", "latawiec_prostokat", "latawiec_trojkat", "latawiec_kolo"],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated toy kites for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO sky, NO clouds.
+{STYL}
+Each kite is seen flat from the front, its sail ONE clear simple shape with a thin wooden frame, a short tail of little
+bows hanging down: left to right - a SQUARE kite standing on one corner (a diamond, all four sides equal); a long
+RECTANGLE kite, twice as tall as wide; a TRIANGLE kite, point up; a ROUND kite, a perfect circle.
+All four the same size, bright different colours.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

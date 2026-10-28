@@ -58,6 +58,20 @@ on the floor, a red ball, a round rug, a window with green curtains, a picture o
 {STYL}""",
         "zmiany": ["the red toy car on the shelf is GONE", "the red ball is GONE", "the boat picture shows a HOUSE instead"],
     },
+    # tall and short: the view through the spyglass (mechaniki3.js szukaj) - six mice hidden in the orchard; the code
+    # finds each where the two pictures differ, the game shows only the second one
+    "luneta_sad": {
+        "obraz": f"""A square picture of a sunny orchard seen from high up in a treehouse: three apple trees of different
+heights with red apples, a wooden fence, a wheelbarrow, a basket of apples on the grass, a little pond, a bush, flowers,
+a stone and a tree stump. Lots of small details, everything well apart.
+{STYL}""",
+        "zmiany": ["a small grey mouse peeks out from behind the trunk of the tallest apple tree",
+                   "a small grey mouse sits inside the wheelbarrow, only its head showing",
+                   "a small grey mouse hides among the flowers",
+                   "a small grey mouse sits on top of the tree stump",
+                   "a small grey mouse peeks over the edge of the apple basket",
+                   "a small grey mouse sits by the pond behind the stone"],
+    },
 }
 ROZMYCIE = 3.0
 PROG = 38

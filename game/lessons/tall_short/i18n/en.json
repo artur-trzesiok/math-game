@@ -65,11 +65,11 @@
   },
   "line.b_mam": {
     "who": "mis",
-    "text": "I have a tall stick! I'll fix the ladder. Hop, I'm in the treehouse!"
+    "text": "I've got a tall stick! I'll mend the ladder. Let's go into the treehouse!"
   },
   "line.b_jez": {
     "who": "jez",
-    "text": "Hello... I'm Hedgehog. I'd like to pick an apple, but I'm very short."
+    "text": "Hello! I'd like to pick an apple, but I'm very short."
   },
   "line.b_najnizsze": {
     "who": "lisek",
@@ -157,18 +157,19 @@
   },
   "line.d_miarka": {
     "who": "lisek",
-    "text": "There's a height chart in the hallway. Let's stand by it and check who is tall and who is short."
+    "text": "There's a height chart in the hallway. Everyone stands by it, and I draw a line over their head."
   },
   "line.d_najwyzszy": {
     "who": "mis",
-    "text": "Who is the tallest? Point to them."
+    "text": "Look at the lines on the chart. Who is the tallest? Point to them."
   },
   "line.d_nie": {
     "who": "lisek",
-    "text": "Look at the chart and at our heads.",
+    "text": "Look whose line is the highest and whose is the lowest.",
     "speakers": [
       "mis",
-      "wiewiorka"
+      "wiewiorka",
+      "jez"
     ]
   },
   "line.d_najnizszy": {
@@ -177,7 +178,7 @@
   },
   "line.d_rosne": {
     "who": "jez",
-    "text": "That's me! But I'm still growing."
+    "text": "I'm the shortest, but I'm still growing. Next year my line will be higher!"
   },
   "line.d_rodzice": {
     "who": "lisek",
@@ -194,5 +195,65 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is Bear's treehouse. We got it when we compared who is tall and who is short."
+  },
+  "line.c_skrzynia": {
+    "who": "wiewiorka",
+    "text": "Oh, there's an old chest in the treehouse!"
+  },
+  "line.c_zamknieta": {
+    "who": "lisek",
+    "text": "It's locked. Where's the key?"
+  },
+  "line.c_klucz": {
+    "who": "wiewiorka",
+    "text": "Up there, at the very top, on the peg! Hop! I can't reach."
+  },
+  "line.c_kto": {
+    "who": "lisek",
+    "text": "The key hangs very high. The tallest of us will take it down. Who is that? Point to them."
+  },
+  "line.c_kto_nie": {
+    "who": "lisek",
+    "text": "Look at our heads. Whose is the highest?"
+  },
+  "line.c_zdejmuje": {
+    "who": "mis",
+    "text": "I'm the tallest, I can reach! I'm taking the key down."
+  },
+  "line.c_luneta": {
+    "who": "wiewiorka",
+    "text": "There's a spyglass in the chest! A real spyglass!"
+  },
+  "line.c_patrze": {
+    "who": "lisek",
+    "text": "Let's look through the spyglass at the orchard below."
+  },
+  "line.c_myszki": {
+    "who": "lisek",
+    "text": "Six mice are hiding in the orchard. Find them all! Touch each mouse."
+  },
+  "line.c_wszystkie": {
+    "who": "mis",
+    "text": "All the mice found!"
+  },
+  "line.c_jezyk": {
+    "who": "lisek",
+    "text": "And over there in the orchard Hedgehog is waving to us. Let's go to him!"
+  },
+  "line.d_jez_ksiazki": {
+    "who": "jez",
+    "text": "I'll stand on books! Then I'll be taller than Squirrel!"
+  },
+  "line.d_zabierz": {
+    "who": "wiewiorka",
+    "text": "Hedgehog, the books only lift you up! Take the books from under Hedgehog. Drag them aside."
+  },
+  "line.d_na_podlodze": {
+    "who": "lisek",
+    "text": "Now Hedgehog stands on the floor, like everyone. I'm drawing his line."
+  },
+  "line.d_kto_wyzszy": {
+    "who": "jez",
+    "text": "And who is taller: Fox or Squirrel? Point to them."
   }
 }

@@ -305,7 +305,7 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null } = 
   // the count: empty circles at the side, filled one by one
   const licznik = [];
   for (let i = 0; i < rzeczy.length; i++) {
-    const ky = y + ((rzeczy.length - 1) / 2 - i) * 0.62, kx = size / 2 + 0.85;
+    const ky = y + ((rzeczy.length - 1) / 2 - i) * 0.62, kx = Math.min(size / 2 + 0.85, 5.6);
     const k = new THREE.Mesh(new THREE.CircleGeometry(0.24, 32), new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, depthWrite: false }));
     const o = new THREE.Mesh(new THREE.RingGeometry(0.24, 0.3, 32), new THREE.MeshBasicMaterial({ color: "#3a332d", transparent: true, depthWrite: false }));
     k.position.set(kx, ky - y, 0.01); o.position.set(kx, ky - y, 0.02); k.renderOrder = o.renderOrder = 10.2; grp.add(k, o); licznik.push(k);

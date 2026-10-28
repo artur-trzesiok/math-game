@@ -14,6 +14,7 @@
   ],
   "backgrounds": [
     "las",
+    "domek_wnetrze",
     "sad",
     "przedpokoj"
   ],
@@ -28,7 +29,12 @@
     "slonecznik_niski",
     "swieca_wysoka",
     "swieca_niska",
-    "miarka_scienna"
+    "miarka_scienna",
+    "skrzynia",
+    "skrzynia_otwarta",
+    "luneta",
+    "klucz_stary",
+    "ksiazeczka"
   ],
   "cover": "Big Bear reaches up to a little treehouse in a tall tree in a forest while small Squirrel stands on a tree stump on tiptoe beside him and Fox laughs.",
   "naklejka": {

@@ -427,7 +427,9 @@ export class Stage {
   // a zone: an area objects are sorted into - a dashed outline, optionally drawn over a
   // container picture (a basket, a box). Items inside are laid out in rows by their real
   // widths, a little smaller than loose (0.8), so even the big ones fit.
-  async zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff", image = null, name = "zone" } = {}) {
+  // `obrys`: a polygon (points in units, around the zone's centre) drawn dashed instead of the rounded rectangle - a
+  // place for a triangle looks like a triangle; it is drawn over what already lies there (a window on a wall)
+  async zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff", image = null, name = "zone", obrys = null } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, 0.3);
     if (image) {
       const side = Math.max(w, h) * 1.05;
@@ -438,9 +440,13 @@ export class Stage {
     const PPU = 200, c = document.createElement("canvas"); c.width = Math.round(w * PPU); c.height = Math.round(h * PPU); const ctx = c.getContext("2d");
     const lw = 16, r = 44;
     ctx.fillStyle = image ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.22)"; ctx.strokeStyle = color; ctx.lineWidth = lw; ctx.setLineDash([44, 28]); ctx.lineCap = "round";
-    ctx.beginPath(); ctx.roundRect(lw, lw, c.width - 2 * lw, c.height - 2 * lw, r); ctx.fill(); ctx.stroke();
+    ctx.beginPath();
+    if (obrys) { obrys.forEach(([px, py], i) => { const X = c.width / 2 + px * PPU, Y = c.height / 2 - py * PPU; if (i) ctx.lineTo(X, Y); else ctx.moveTo(X, Y); }); ctx.closePath(); }
+    else ctx.roundRect(lw, lw, c.width - 2 * lw, c.height - 2 * lw, r);
+    ctx.fill(); ctx.stroke();
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
     const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true, opacity: image ? 0.7 : 1, depthWrite: false }));
+    if (obrys) { m.renderOrder = 13; m.position.z = 0.3; }
     g.add(m);
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 9; });                  // zones under the stickers, over the props
     const handle = { mesh: g, name, kind: "zone", x, y, w, h, base: 1, pulse: false, items: [],

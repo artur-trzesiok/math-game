@@ -339,6 +339,21 @@ style: a little potted plant on the windowsill.
 Same colours, same oven, same counter, same shelves. Do NOT move or redraw anything that was already there.""",
 }
 
+# tall and short: inside the treehouse - a cosy wooden room high in a tree, a round window with leaves outside
+SCENY["domek_wnetrze"] = {
+    "wnetrze": True,
+    "plyta": f"""A background illustration for a children's game: the inside of a cosy little wooden treehouse, seen
+straight on: walls of rough planks, a big round window on the right with green leaves and a branch outside and blue
+sky, a few old drawings pinned to the wall, a small rug, a low shelf with pine cones on the left. On the wall high in
+the middle a row of little wooden pegs, EMPTY. The floor in the lower middle is EMPTY where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO chest, NO key, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
+style: a few green leaves swaying outside the round window.
+Same colours, same walls, same pegs. Do NOT move or redraw anything that was already there.""",
+}
+
 
 def gen(nazwa: str, jakosc: str = "high") -> None:
     kat = KORZEN / nazwa

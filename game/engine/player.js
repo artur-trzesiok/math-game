@@ -27,6 +27,7 @@ const PARAMS = new URLSearchParams(location.search);
 // album is the record of what was played); the first is always open. A 3 s press on a padlock opens that topic for
 // good (a parent's way through), ?wszystko opens them all (tests); a topic seen open for the first time unlocks
 // on screen (the mist clears, the padlock opens and falls)
+const PRZEWINIECIE = "math_game.menu_x";                             // how far the menu strip was scrolled
 const OTWARTE = "math_game.otwarte", WIDZIANE = "math_game.widziane_otwarte", UKONCZONE = "math_game.etapy_ukonczone";
 const lista = (k) => { try { return JSON.parse(localStorage.getItem(k)) || []; } catch { return []; } };
 const dopisz = (k, id) => { try { const l = lista(k); if (!l.includes(id)) localStorage.setItem(k, JSON.stringify([...l, id])); } catch { /* private mode */ } };
@@ -192,7 +193,7 @@ export class Player {
       let akt = bloki[0]; for (const b of bloki) if (b.offsetLeft <= srodek) akt = b;
       if (x >= max - 4) akt = bloki[bloki.length - 1];
       chips.querySelectorAll("button").forEach((c) => c.classList.toggle("on", c.dataset.topic === akt?.dataset.topic));
-      this.menuX = x;
+      this.menuX = x; try { localStorage.setItem(PRZEWINIECIE, String(Math.round(x))); } catch { /* private mode */ }
     };
     pas.onscroll = odswiez;
     // a card carries the sticker still to be won from its lesson; once it is in the album the card has none
@@ -245,7 +246,13 @@ export class Player {
       k.onpointerdown = (e) => { e.stopPropagation(); k.classList.add("trzyma"); t = setTimeout(() => { pusc(); const sec = k.closest(".topic"); dopisz(OTWARTE, sec.dataset.topic); otworz(sec, { mow: false }); }, 3000); };
       k.onpointerup = k.onpointerleave = k.onpointercancel = pusc;
     }
-    pas.scrollLeft = this.menuX || 0; odswiez();                     // back from a lesson: where the child was
+    // back from a lesson, or a new visit: where the child was (localStorage); set again while the cards still lay out -
+    // set once at once, the strip was not wide yet and the browser clamped it to the start
+    const cel = this.menuX ?? (() => { try { return +localStorage.getItem(PRZEWINIECIE) || 0; } catch { return 0; } })();
+    let sam = false; for (const ev of ["pointerdown", "wheel", "touchstart"]) pas.addEventListener(ev, () => { sam = true; }, { once: true, passive: true });
+    const ustaw = () => { if (!sam && Math.abs(pas.scrollLeft - cel) > 2 && pas.scrollWidth - pas.clientWidth >= cel - 2) pas.scrollLeft = cel; };   // never against a finger
+    pas.scrollLeft = cel; odswiez();
+    for (const ms of [50, 200, 600, 1500]) setTimeout(ustaw, ms);
     // a topic open for the first time (not the first one, not ?wszystko): the strip goes there and it unlocks
     const nowy = bloki.find((b, i) => i > 0 && otwarty[i] && !PARAMS.has("wszystko") && !lista(WIDZIANE).includes(b.dataset.topic));
     if (nowy) { nowy.classList.add("zamkniety"); if (!nowy.querySelector(".klodka")) nowy.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`); }
