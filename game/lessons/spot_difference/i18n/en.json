@@ -117,7 +117,7 @@
   },
   "line.p_co_zniknelo_nie": {
     "who": "lisek",
-    "text": "That wasn't there before. What was in the row and has gone?"
+    "text": "Not that one. Look at the row: which thing isn't there any more?"
   },
   "line.p_co_zniknelo_ok": {
     "who": "sowa",
@@ -186,5 +186,9 @@
   "line.d_druga_nie": {
     "who": "sowa",
     "text": "That one is in its own place. Which other one moved?"
+  },
+  "line.p_jeszcze_raz": {
+    "who": "lisek",
+    "text": "Once more! Remember all the things in the row."
   }
 }

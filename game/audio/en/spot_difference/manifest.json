@@ -150,9 +150,9 @@
   "text": "Up at the top, in the row, one thing is missing. Something was where the question mark is. What has gone? Point to it."
  },
  "line.p_co_zniknelo_nie": {
-  "hash": "ff091342b730",
+  "hash": "b9eeb333caee",
   "who": "lisek",
-  "text": "That wasn't there before. What was in the row and has gone?"
+  "text": "Not that one. Look at the row: which thing isn't there any more?"
  },
  "line.p_co_zniknelo_ok": {
   "hash": "aede569c512c",
@@ -238,5 +238,10 @@
   "hash": "c0ca3f9e29d1",
   "who": "sowa",
   "text": "That one is in its own place. Which other one moved?"
+ },
+ "line.p_jeszcze_raz": {
+  "hash": "fafda8323c1f",
+  "who": "lisek",
+  "text": "Once more! Remember all the things in the row."
  }
 }

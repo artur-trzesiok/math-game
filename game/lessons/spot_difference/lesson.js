@@ -94,26 +94,29 @@ export default {
           await c.say(i % 2 ? "sowa" : "lisek", "line.p_para_ok");
           r.remove(); gw.dodaj();
         }
-        // what is gone: a row of four; eyes closed; one disappears
-        {
-          const nazwy = tasuj(["jablko", "gruszka", "marchewka", "grzyb"]), rzad = [];
-          for (const [i, n] of nazwy.entries()) rzad.push(await c.object(n, { x: -2.4 + i * 1.6, y: 1.3, size: 1.1 }));
-          await c.say("lisek", "line.p_zapamietaj");
-          await c.wait(1.5);
+        // what is gone: three rounds, the row grows (four, then five things); eyes closed; one disappears
+        for (const [runda, zestaw] of [["jablko", "gruszka", "marchewka", "grzyb"], ["pilka", "misiu", "klocek", "kubek", "but"], ["szyszka", "zoledz", "kasztan", "lisc_czerwony", "kwiatek"]].entries()) {
+          const nazwy = tasuj(zestaw), krok = nazwy.length > 4 ? 1.35 : 1.6, x0 = -0.15 - ((nazwy.length - 1) * krok) / 2, rzad = [];
+          for (const [i, n] of nazwy.entries()) rzad.push(await c.object(n, { x: x0 + i * krok, y: 1.3, size: 1.05 }));
+          await c.say("lisek", runda ? "line.p_jeszcze_raz" : "line.p_zapamietaj");
+          await c.wait(1.5 + runda * 0.5);
           await c.say("lisek", "line.p_zamknij");
-          const znika = rzad[Math.floor(Math.random() * 4)];
+          const znika = rzad[Math.floor(Math.random() * rzad.length)];
           await zamknijOczy(c, rzad, async () => { znika.usuniety = true; znika.remove(); });
           // the row framed, a "?" in the gap: the child sees where to look
-          const ramka = await c.line([[-3.25, 2.05], [2.95, 2.05], [2.95, 0.55], [-3.25, 0.55], [-3.25, 2.05]], { color: "#1f5fbf", width: 0.07, duration: 0.5, strong: true });
-          const pyt = await c.sign("?", { x: znika.mesh.position.x, y: 1.3, size: 1.0 });
+          const xa = x0 - 0.85, xb = x0 + (nazwy.length - 1) * krok + 0.85;
+          await c.line([[xa, 2.05], [xb, 2.05], [xb, 0.55], [xa, 0.55], [xa, 2.05]], { color: "#1f5fbf", width: 0.07, duration: 0.5, strong: true });
+          await c.sign("?", { x: znika.mesh.position.x, y: 1.3, size: 1.0 });
+          const inne = tasuj(zestaw.filter((n) => n !== znika.name)).slice(0, 1).concat(tasuj(["pilka", "kubek", "misiu", "jablko", "lyzka"].filter((n) => !zestaw.includes(n))).slice(0, 1));
           const opcje = [];
-          for (const [i, n] of tasuj([znika.name, "pilka", "kubek"]).entries()) { const h = await c.object(n, { x: -2.0 + i * 2.0, y: -1.8, size: 1.1, plik: n === znika.name ? znika.plik : null }); opcje.push(h); }
+          for (const [i, n] of tasuj([znika.name, ...inne]).entries()) { const h = await c.object(n, { x: -2.0 + i * 2.0, y: -1.8, size: 1.1, plik: rzad.find((q) => q.name === n)?.plik ?? null }); opcje.push(h); }   // the very picture of the row
           await c.say("lisek", "line.p_co_zniknelo");
           const ok = opcje.find((h) => h.name === znika.name);
           dobre(ok); await c.task({ targets: opcje, correct: ok, wrong: "line.p_co_zniknelo_nie" });
           await c.say("sowa", "line.p_co_zniknelo_ok");
-          gw.dodaj(); c.clear();
+          c.clear();
         }
+        gw.dodaj();
         // which one is not like the others: four shadows, one of another thing
         {
           const inny = Math.floor(Math.random() * 4), cienie = [];

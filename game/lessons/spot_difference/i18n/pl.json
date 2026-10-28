@@ -117,7 +117,7 @@
   },
   "line.p_co_zniknelo_nie": {
     "who": "lisek",
-    "text": "Tego tam wcześniej nie było. Co było w rzędzie, a zniknęło?"
+    "text": "To nie to. Popatrz na rząd: której rzeczy już tam nie ma?"
   },
   "line.p_co_zniknelo_ok": {
     "who": "sowa",
@@ -186,5 +186,9 @@
   "line.d_druga_nie": {
     "who": "sowa",
     "text": "Ta stoi na swoim miejscu. Która jeszcze się przesunęła?"
+  },
+  "line.p_jeszcze_raz": {
+    "who": "lisek",
+    "text": "Jeszcze raz! Zapamiętaj wszystkie rzeczy w rzędzie."
   }
 }

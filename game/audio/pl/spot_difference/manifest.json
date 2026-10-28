@@ -150,9 +150,9 @@
   "text": "Na górze, w rzędzie, jednej rzeczy brakuje. W miejscu ze znakiem zapytania coś było. Co zniknęło? Wskaż."
  },
  "line.p_co_zniknelo_nie": {
-  "hash": "51bb37333070",
+  "hash": "ef47f1a77f4b",
   "who": "lisek",
-  "text": "Tego tam wcześniej nie było. Co było w rzędzie, a zniknęło?"
+  "text": "To nie to. Popatrz na rząd: której rzeczy już tam nie ma?"
  },
  "line.p_co_zniknelo_ok": {
   "hash": "b4ef5d09922a",
@@ -238,5 +238,10 @@
   "hash": "57c7bd726017",
   "who": "sowa",
   "text": "Ta stoi na swoim miejscu. Która jeszcze się przesunęła?"
+ },
+ "line.p_jeszcze_raz": {
+  "hash": "37c51e341119",
+  "who": "lisek",
+  "text": "Jeszcze raz! Zapamiętaj wszystkie rzeczy w rzędzie."
  }
 }
