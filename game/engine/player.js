@@ -472,6 +472,20 @@ export class Player {
       Promise.resolve(p).then(koniec, koniec); return p;
     };
     wDzialaniu.dotknij = (p) => wDzialaniu(p, "dotknij");                 // counting by touch
+    // a lesson's own dragging (S.free, not a ctx mechanic) gets the same rule: the last line is its instruction
+    // until the drag ends - a tapped character repeated nothing there
+    if (!S._freeBezPolecenia) {                                          // patched once; each run hooks its own closures
+      const free0 = S.free.bind(S), end0 = S.endSort.bind(S);
+      S.free = (set) => { free0(set); S._naFree?.(); };
+      S.endSort = () => { end0(); S._wlasnyDrag?.(); S._wlasnyDrag = null; };
+      S._freeBezPolecenia = true;
+    }
+    S._wlasnyDrag?.(); S._wlasnyDrag = null;
+    S._naFree = () => {
+      if (polecenieTeraz || !last || this.run !== run) return;
+      const pol = last; polecenieTeraz = pol; const koniecZachet = zachecaj("przeciagnij");
+      S._wlasnyDrag = () => { koniecZachet(); if (polecenieTeraz === pol) polecenieTeraz = null; };
+    };
     // the recorder: what kind of line this is (the story, a wrong answer, a repeat on a tap)
     let zrodloMowy = "opowiesc";
     const zapisz = (ev) => {

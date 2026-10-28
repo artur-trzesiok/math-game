@@ -5,6 +5,7 @@
 // Script in scenario.md.
 
 const ROW_Y = 1.45;
+const MOST = { x: 1.03, y: -0.25, kat: -0.52 };       // the bridge: from the near bank (lower right) to the rock on the far bank
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
 const polowa = (c, h) => { const b = c.bounds(h); return (b.right - b.left) / 2; };
@@ -29,6 +30,8 @@ async function odLinii(c, rzeczy, { x0 = -3.4, ys = [0.9, -0.3], linia = true } 
   return kreska;
 }
 
+// a sticker turned smoothly (a jump from one angle to another read as a glitch)
+const obroc = (c, h, kat, d = 0.4) => { const a0 = h.icon.rotation.z; return c.stage.tween(d, (s) => { h.icon.rotation.z = a0 + (kat - a0) * s; }); };
 // where each one ends: a pencil tick down from every right end, the longer one's tick further out
 async function konce(c, rzeczy, { kolor = "#e8502e" } = {}) {
   const out = [];
@@ -55,8 +58,7 @@ export default {
         await c.say("sarenka", "line.a_deski");
         await c.say("wiewiorka", "line.a_ta", { anim: "Wskazanie" });
         // the naive try: the short one across the water - it does not reach and falls in
-        krotka.icon.rotation.z = Math.PI / 2;
-        await krotka.moveTo(1.2, 0.75, 0.7);
+        await Promise.all([obroc(c, krotka, MOST.kat, 0.6), krotka.moveTo(MOST.x + 0.55, MOST.y - 0.32, 0.7)]);     // from the near bank: its end ends in the water
         await c.wait(0.4);
         c.sfx("plop"); await krotka.moveTo(1.2, 0.35, 0.4); krotka.mesh.visible = false;
         await c.emocja("wiewiorka", "smutek", { anim: "Smutek" });
@@ -75,11 +77,11 @@ export default {
         await c.say("wiewiorka", "line.a_dluzsza", { anim: "Radosc" });
         linia?.remove(); k.remove();
         // the long one across: it reaches the far bank; they walk over it into the picture
-        krotka.remove(); dluga.icon.rotation.z = Math.PI / 2;
-        await dluga.moveTo(1.2, 0.95, 0.7);
+        krotka.remove();
+        await Promise.all([obroc(c, dluga, MOST.kat, 0.6), dluga.moveTo(MOST.x, MOST.y, 0.7)]);           // from bank to bank, across the water
         c.sfx("plop");
         await c.say("lisek", "line.a_siega");
-        for (const n of ["wiewiorka", "lisek", "sarenka"]) await c.przejdz(n, [[1.2, -0.1], [1.2, 1.75]], { glebia: 0.12 });
+        for (const n of ["wiewiorka", "lisek", "sarenka"]) await c.przejdz(n, [[2.3, -0.95], [-0.2, 0.5], [-0.6, 0.9]], { glebia: 0.12 });
         await c.say("sarenka", "line.a_przeszlismy");
         c.clear();
       },
@@ -136,7 +138,7 @@ export default {
           const d = await c.object("wstazka_dluga", { x: 1.0, y: -1.7, size: 3.0 }), k = await c.object("wstazka_krotka", { x: 2.4, y: 1.3, size: 3.0 });
           d.icon.rotation.z = 0.3; k.icon.rotation.z = -0.2;
           await c.say("sarenka", "line.p_wstazki");
-          d.icon.rotation.z = 0; k.icon.rotation.z = 0;
+          await Promise.all([obroc(c, d, 0), obroc(c, k, 0)]);
           const l = await odLinii(c, tasuj([d, k]), { x0: -2.8, ys: [1.0, -0.4] });
           await c.say("sarenka", "line.p_dluzsza");
           dobre(d); await c.task({ targets: [d, k], correct: d, wrong: "line.p_dluzsza_nie" });
