@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tła</title>
+<style id="styl"></style>
+<style>
+  .tlo { background: #333; border-radius: 8px; padding: 12px; margin-bottom: 14px; }
+  .tlo h2 { margin: 0 0 6px; font-size: 16px; }
+  .podglad { overflow-x: auto; border-radius: 6px; background: #000; }
+  .podglad canvas { display: block; height: 260px; }
+  .opcje { margin: 8px 0 0; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; color: #ccc; }
+</style>
+</head>
+<body>
+<header><h1>Tła</h1><input id="szukaj" placeholder="szukaj…"><span id="status">wczytuję…</span></header>
+<main id="lista"></main>
+<script type="module">
+import { lekcje, katalog, json, uzywa, esc, STYL } from "./dane.js";
+document.getElementById("styl").textContent = STYL;
+const L = await lekcje();
+const nazwy = (await katalog("/game/assets/backgrounds/")).filter((n) => n.endsWith("/")).map((n) => n.slice(0, -1));
+const obraz = (src) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
+const lista = document.getElementById("lista");
+
+// the plate with its cut-out props drawn back where they sit (or the plate alone: what the props cover)
+async function rysuj(canvas, n, opis, zRekwizytami, ramki) {
+  const plyta = await obraz(`/game/assets/backgrounds/${n}/${opis.plyta}`); if (!plyta) return;
+  canvas.width = opis.szerokosc; canvas.height = opis.wysokosc;
+  const x = canvas.getContext("2d"); x.drawImage(plyta, 0, 0, opis.szerokosc, opis.wysokosc);
+  if (zRekwizytami) for (const r of opis.rekwizyty) { const im = await obraz(`/game/assets/backgrounds/${n}/${r.plik}`); if (im) x.drawImage(im, r.x, r.y, r.w, r.h); }
+  if (ramki) { x.lineWidth = 3; for (const r of opis.rekwizyty) { x.strokeStyle = r.klasa === "drift" ? "#4fc3ff" : "#ffb347"; x.strokeRect(r.x, r.y, r.w, r.h); } }
+  if (opis.horyzont) { x.strokeStyle = "#ff4d6d"; x.setLineDash([12, 8]); x.beginPath(); x.moveTo(0, opis.horyzont); x.lineTo(opis.szerokosc, opis.horyzont); x.stroke(); x.setLineDash([]); }
+  const obszary = opis.obszary || 1;
+  if (obszary > 1) { x.fillStyle = "rgba(255,255,255,.85)"; x.font = "bold 40px system-ui"; for (let k = 0; k < obszary; k++) x.fillText(`obszar ${k}`, 20 + k * (opis.szerokosc - 360) / (obszary - 1), 54); }
+}
+for (const n of nazwy) {
+  const opis = await json(`/game/assets/backgrounds/${n}/rekwizyty.json`); if (!opis) continue;
+  const kto = uzywa(L, n, "backgrounds"), sway = opis.rekwizyty.filter((r) => r.klasa !== "drift").length;
+  const d = document.createElement("div"); d.className = "tlo"; d.dataset.szukaj = (n + " " + kto.map((l) => l.title.pl).join(" ")).toLowerCase();
+  d.innerHTML = `<h2>${esc(n)} ${opis.obszary > 1 ? `<span class="chip">panorama: ${opis.obszary} obszary</span>` : ""}</h2>
+    <div><span class="chip">${opis.szerokosc}×${opis.wysokosc}</span><span class="chip">${opis.rekwizyty.length} rekwizytów (${sway} kołyszących, ${opis.rekwizyty.length - sway} płynących)</span>
+    ${kto.length ? kto.map((l) => `<span class="chip">${esc(l.title.pl)}</span>`).join("") : '<span class="chip zle">nieużywane</span>'}</div>
+    <div class="podglad"><canvas></canvas></div>
+    <div class="opcje"><label><input type="checkbox" class="rek" checked> rekwizyty</label><label><input type="checkbox" class="ramki"> ramki rekwizytów (pomarańczowe kołyszą się, niebieskie płyną)</label>
+    <span>czerwona linia: horyzont</span></div>`;
+  lista.appendChild(d);
+  const odswiez = () => rysuj(d.querySelector("canvas"), n, opis, d.querySelector(".rek").checked, d.querySelector(".ramki").checked);
+  d.querySelector(".rek").onchange = odswiez; d.querySelector(".ramki").onchange = odswiez;
+  await odswiez();
+}
+document.getElementById("status").textContent = `${lista.children.length} teł`;
+document.getElementById("szukaj").oninput = (e) => { const q = e.target.value.toLowerCase(); for (const d of lista.children) d.style.display = d.dataset.szukaj.includes(q) ? "" : "none"; };
+</script>
+</body>
+</html>

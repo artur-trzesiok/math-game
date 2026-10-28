@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obiekty</title>
+<style id="styl"></style>
+<style>
+  .siatka { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .rzecz { background: #333; border-radius: 8px; padding: 8px; text-align: center; }
+  .rzecz .obraz { height: 110px; display: flex; align-items: center; justify-content: center; border-radius: 6px;
+    background: repeating-conic-gradient(#444 0 25%, #3a3a3a 0 50%) 0 0 / 16px 16px; }
+  .rzecz img { max-width: 100%; max-height: 104px; }
+  .nazwa { font-weight: 600; margin-top: 6px; word-break: break-all; }
+  .wym { color: #888; font-size: 12px; }
+  .nieuzywana { opacity: .55; }
+  h2 { font-size: 15px; color: #ffb347; text-transform: uppercase; letter-spacing: .04em; margin: 18px 0 8px; }
+</style>
+</head>
+<body>
+<header><h1>Obiekty</h1><input id="szukaj" placeholder="szukaj… (nazwa albo lekcja)"><label><input type="checkbox" id="nieuzyte"> tylko nieużywane</label><span id="status">wczytuję…</span></header>
+<main><h2>Naklejki (game/assets/objects)</h2><div class="siatka" id="naklejki"></div>
+<h2>Ubrania (game/assets/ubrania)</h2><div class="siatka" id="ubrania"></div></main>
+<script type="module">
+import { lekcje, katalog, json, uzywa, esc, STYL } from "./dane.js";
+document.getElementById("styl").textContent = STYL;
+const L = await lekcje();
+const karta = (nazwa, src, kto, extra = "") => `<div class="rzecz ${kto.length ? "" : "nieuzywana"}" data-szukaj="${esc((nazwa + " " + kto.map((l) => l.id + " " + l.title.pl).join(" ")).toLowerCase())}" data-uzyta="${kto.length ? 1 : 0}">
+  <div class="obraz"><img src="${src}" alt="" loading="lazy" onload="this.closest('.rzecz').querySelector('.wym').textContent = this.naturalWidth + '×' + this.naturalHeight"></div>
+  <div class="nazwa">${esc(nazwa)}</div><div class="wym"></div>${extra}
+  <div>${kto.length ? kto.map((l) => `<span class="chip">${esc(l.title.pl)}</span>`).join("") : '<span class="chip">nieużywana</span>'}</div></div>`;
+const pliki = (await katalog("/game/assets/objects/")).filter((n) => n.endsWith(".webp")).map((n) => n.slice(0, -5)).filter((n) => !n.startsWith("ikona_"));
+document.getElementById("naklejki").innerHTML = pliki.map((n) => karta(n, `/game/assets/objects/${n}.webp`, uzywa(L, n, "objects"))).join("");
+const G = await json("/game/assets/ubrania/ubrania.json") || {};
+document.getElementById("ubrania").innerHTML = Object.entries(G).map(([n, d]) => karta(n, `/game/assets/ubrania/${d.widoki?.przod || Object.values(d.widoki || {})[0]}`, uzywa(L, n, "ubrania"), `<div class="wym">${esc(d.slot)} · ${Object.keys(d.widoki || {}).join(", ")}</div>`)).join("");
+document.getElementById("status").textContent = `${pliki.length} naklejek, ${Object.keys(G).length} ubrań`;
+const filtr = () => {
+  const q = document.getElementById("szukaj").value.toLowerCase(), tylko = document.getElementById("nieuzyte").checked;
+  for (const d of document.querySelectorAll(".rzecz")) d.style.display = d.dataset.szukaj.includes(q) && (!tylko || d.dataset.uzyta === "0") ? "" : "none";
+};
+document.getElementById("szukaj").oninput = filtr; document.getElementById("nieuzyte").onchange = filtr;
+</script>
+</body>
+</html>

@@ -18,7 +18,12 @@ import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 const $ = (s) => document.querySelector(s);
 const PARAMS = new URLSearchParams(location.search);
 const STAGES = ["story", "practice", "apply"];
-const DEBUG = PARAMS.has("debug");                   // ?debug=1: the phase icons jump between stages
+const DEBUG = PARAMS.has("debug");
+// ?scenariusz: the story preview (manager/opowiesc.html) - the autopilot plays the lesson and every line, shot and
+// task is written down in order with a thumbnail of the frame (gra.scenariusz)
+const NAGRAJ = PARAMS.has("scenariusz");
+const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie"]);
+const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose"]);                   // ?debug=1: the phase icons jump between stages
 
 // a background's identity: a name, or an insert {kolor, motyw}
 const tloId = (bg) => (typeof bg === "object" && bg ? (bg.id || `kolor:${bg.kolor}:${bg.motyw}`) : bg);
@@ -58,6 +63,7 @@ export class Player {
     this.t = translator([this.ui]);
     this.index = await (await fetch(v("/game/lessons/index.json"), { cache: "no-store" })).json();
     const wanted = PARAMS.get("lekcja");
+    if (wanted && NAGRAJ) setTimeout(async () => { try { await (await import(v("/manager/autopilot.js"))).run(400, "scen"); } catch (e) { console.warn(e); } this.scenariuszKoniec = true; }, 1500);
     if (wanted && this.index.lessons.some((l) => l.id === wanted)) await this.start(wanted, PARAMS.get("etap"));
     else this.menu();
   }
@@ -155,7 +161,7 @@ export class Player {
       await this.runStage(st);
       if (this.abort) return;
     }
-    if (!this.abort && this.run === run) { await this.outro(); if (this.run === run) this.menu(); }
+    if (!this.abort && this.run === run) { await this.outro(); if (NAGRAJ) this.scenariuszKoniec = true; if (this.run === run) this.menu(); }
   }
 
   // what a lesson shows: its sceneries (stages + lesson.json), stickers (lesson.json "objects") and the garments
@@ -183,7 +189,9 @@ export class Player {
       if (this.lesson.przejscia) await E.przejscie(this.stage, zmien, {});
       else { await this.fade(true); await zmien(); await this.fade(false); }
     } else this.stage.clear();
+    let scenaW = 0;
     for (const scene of scenes) {
+      this.scenaW = scenaW++;
       if (this.abort) return;
       // every scene gets its own context: "next" (dalej) retires it, so whatever it still awaits throws and dies
       const nr = ++this.scenaNr, ctx = this.context(st, this.run, nr);
@@ -235,7 +243,8 @@ export class Player {
     S.onPuppetTap = async () => {
       if (!polecenieTeraz || powtarza || S.sfx.mowa || this.run !== run) return;   // never over a line being spoken
       powtarza = true;
-      try { await say(polecenieTeraz.who, polecenieTeraz.key, { anim: polecenieTeraz.anim }); } catch {} finally { powtarza = false; }
+      zrodloMowy = "powtorka";
+      try { await say(polecenieTeraz.who, polecenieTeraz.key, { anim: polecenieTeraz.anim }); } catch {} finally { powtarza = false; zrodloMowy = "opowiesc"; }
     };
     // a right answer: confetti and a tick when the lesson wants them (nagrody), a star and the streak in practice
     const nagroda = (h, bezBledu = true) => {
@@ -248,12 +257,25 @@ export class Player {
       }
     };
     const wDzialaniu = (p) => { const pol = last; polecenieTeraz = pol; const koniec = () => { if (polecenieTeraz === pol) polecenieTeraz = null; }; Promise.resolve(p).then(koniec, koniec); return p; };
+    // the recorder: what kind of line this is (the story, a wrong answer, a repeat on a tap)
+    let zrodloMowy = "opowiesc";
+    const zapisz = (ev) => {
+      if (!this.scenariusz) this.scenariusz = [];
+      let miniatura = null;
+      try {
+        S.rysuj ? S.rysuj() : S.renderer.render(S.scene, S.camera);
+        const c = document.createElement("canvas"), src = S.renderer.domElement; c.width = 220; c.height = Math.round(220 * src.height / src.width);
+        c.getContext("2d").drawImage(src, 0, 0, c.width, c.height); miniatura = c.toDataURL("image/jpeg", 0.6);
+      } catch { /* no picture */ }
+      this.scenariusz.push({ ...ev, etap: st, scena: this.scenaW ?? 0, t: performance.now() | 0, miniatura });
+    };
     const say = async (who, key, { anim = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
       if (!S.puppets[who]) who = line.who;                            // the scene picks the speaker; the line's `who` is the default
       const stem = who === line.who ? key : `${key}.${who}`;          // a recording exists per allowed speaker (i18n `speakers`)
       last = { who, key, anim }; this.lastSpeaker = who; S.ostatniMowca = who;
+      if (NAGRAJ) zapisz({ typ: "kwestia", who, key, stem: who === line.who ? key : `${key}.${who}`, text: line.text, anim, zrodlo: zrodloMowy });
       const puppet = S.puppets[who] || null;
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
       S.sfx.mowa = true;                                              // effects duck under a line
@@ -427,6 +449,16 @@ export class Player {
       praise: guard(async (who) => { const L = S.puppets[who]; if (L && L.korzen.visible) { L.graj("Radosc"); } await S.wait(FAST ? 0.2 : 1.2); }),
     };
     const zadanie = ctx._task, sortuj = ctx._sort;   // task/sort run under the instruction rule (wDzialaniu)
+    if (NAGRAJ) for (const k of [...OBRAZ, ...INTERAKCJE]) {
+      const f = ctx[k]; if (typeof f !== "function") continue;
+      const opis = (a) => a.map((x) => (typeof x === "string" ? x : typeof x === "number" ? String(x) : Array.isArray(x) ? `[${x.length}]` : x && typeof x === "object" ? (x.name || x.rodzaj || "") : "")).filter(Boolean).join(" ").slice(0, 60);
+      ctx[k] = (...a) => {
+        zapisz({ typ: INTERAKCJE.has(k) ? "interakcja" : "obraz", co: k, opis: opis(a), polecenie: last?.key || null });
+        if (!INTERAKCJE.has(k)) return f(...a);
+        zrodloMowy = "blad";                                         // what is said while the child works is a wrong-answer line
+        const r = f(...a); Promise.resolve(r).finally(() => { zrodloMowy = "opowiesc"; }); return r;
+      };
+    }
     return ctx;
   }
 

@@ -16,18 +16,25 @@
 <nav>
   <h1>Manager</h1>
   <a href="#postacie" class="aktywny" data-src="editor.html">Postacie</a>
-  <a class="wkrotce">Tła <small>(wkrótce)</small></a>
-  <a class="wkrotce">Obiekty <small>(wkrótce)</small></a>
-  <a class="wkrotce">Lekcje <small>(wkrótce)</small></a>
+  <a href="#lekcje" data-src="lekcje.html">Lekcje</a>
+  <a href="#opowiesc" data-src="opowiesc.html">Opowieść</a>
+  <a href="#tla" data-src="tla.html">Tła</a>
+  <a href="#obiekty" data-src="obiekty.html">Obiekty</a>
   <a href="../game/" target="_blank">Gra ↗</a>
 </nav>
 <iframe id="modul" src="editor.html"></iframe>
 <script>
-  // one module today (the character editor); the shell is here so the next ones have a home
-  for (const a of document.querySelectorAll("nav a[data-src]")) a.onclick = (e) => {
-    e.preventDefault();
+  // the modules; the address keeps the open one (#lekcje), a module may ask the shell to open another
+  // (a lesson's "story preview" link) with postMessage({otworz: "opowiesc.html?lekcja=..."})
+  const otworz = (a, src) => {
     document.querySelectorAll("nav a").forEach((x) => x.classList.remove("aktywny")); a.classList.add("aktywny");
-    document.getElementById("modul").src = a.dataset.src + location.search;
+    document.getElementById("modul").src = src; history.replaceState(null, "", a.getAttribute("href"));
   };
+  for (const a of document.querySelectorAll("nav a[data-src]")) a.onclick = (e) => { e.preventDefault(); otworz(a, a.dataset.src + location.search); };
+  const start = document.querySelector(`nav a[href="${location.hash}"]`); if (start) otworz(start, start.dataset.src + location.search);
+  addEventListener("message", (e) => {
+    const src = e.data?.otworz; if (!src) return;
+    const a = document.querySelector(`nav a[data-src="${src.split("?")[0]}"]`); if (a) otworz(a, src);
+  });
 </script>
 </html>

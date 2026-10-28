@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podgląd opowieści</title>
+<style>
+  html, body { margin: 0; background: #2b2b2b; color: #eee; font: 14px/1.45 system-ui, sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 10px 16px; background: #1f1f1f; border-bottom: 1px solid #444; }
+  header h1 { font-size: 16px; margin: 0 10px 0 0; }
+  select, button { font: inherit; background: #3a3a3a; color: #eee; border: 1px solid #555; border-radius: 4px; padding: 4px 10px; }
+  button.glowny { background: #2d6cdf; border-color: #2d6cdf; }
+  #status { color: #bbb; }
+  main { display: grid; grid-template-columns: 1fr 360px; gap: 16px; padding: 16px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  aside { position: sticky; top: 70px; align-self: start; }
+  iframe { width: 100%; aspect-ratio: 4 / 3; border: 1px solid #444; border-radius: 6px; background: #000; }
+  .podsumowanie { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 16px; }
+  .podsumowanie span { background: #3a3a3a; border-radius: 12px; padding: 3px 10px; }
+  .podsumowanie .zle { background: #8a3b12; }
+  h2 { font-size: 15px; margin: 22px 0 6px; color: #ffb347; text-transform: uppercase; letter-spacing: .04em; }
+  h3 { font-size: 13px; margin: 14px 0 4px; color: #9a9a9a; font-weight: 600; }
+  .wiersz { display: grid; grid-template-columns: 120px 90px 1fr 54px; gap: 10px; align-items: center; padding: 4px 0; border-bottom: 1px solid #353535; }
+  .wiersz img { width: 120px; border-radius: 4px; display: block; }
+  .kto { border-radius: 10px; padding: 1px 8px; font-size: 12px; text-align: center; color: #1b1b1b; font-weight: 600; }
+  .czas { color: #9a9a9a; text-align: right; font-variant-numeric: tabular-nums; }
+  .obraz { color: #8fa3b8; font-size: 12px; padding: 2px 0 2px 130px; }
+  .interakcja { background: #23364f; border-radius: 6px; padding: 6px 10px; margin: 6px 0; display: flex; gap: 10px; align-items: center; }
+  .interakcja img { width: 90px; border-radius: 4px; }
+  .uwaga { background: #5a2a10; border-left: 4px solid #ff7a1a; border-radius: 4px; padding: 5px 10px; margin: 4px 0 8px 130px; color: #ffd9b8; }
+  .uwaga.lekka { background: #4a4214; border-left-color: #e8c33a; color: #f3e7b0; }
+  .wtracona { opacity: .55; }
+  .pomoc { color: #9a9a9a; font-size: 13px; max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Podgląd opowieści</h1>
+  <select id="lekcja"></select>
+  <select id="jezyk"><option value="pl">pl</option><option value="en">en</option></select>
+  <button id="nagraj" class="glowny">Nagraj przebieg</button>
+  <span id="status">Wybierz lekcję i nagraj: automat przejdzie ją całą, a tu pojawi się skrypt tak, jak usłyszy go dziecko.</span>
+</header>
+<main>
+  <section id="raport"><p class="pomoc">Każda kwestia ma miniaturę kadru z chwili, gdy pada, i czas nagrania. Pomarańczowe ramki to braki w opowieści:
+    zadanie bez słowa wstępu, dwa zadania z rzędu, zadanie bez komentarza po nim, nowe miejsce bez słowa, długa rozmowa bez akcji,
+    brak nagrania. Żółte to słabsze sygnały (tylko jedno zdanie przed zadaniem). Kwestie przy błędach i powtórki są wyszarzone i nie liczą się.</p></section>
+  <aside><iframe id="gra" title="przebieg"></iframe></aside>
+</main>
+<script type="module">
+const $ = (id) => document.getElementById(id);
+const KOLOR = { lisek: "#ff9d5c", wiewiorka: "#f4c06a", sowa: "#c9b28a", sarenka: "#e0b48a", narrator: "#b8c4d6" };
+const ETAP = { story: "Opowieść", practice: "Ćwiczenia", apply: "W domu" };
+const index = await fetch("/game/lessons/index.json", { cache: "no-store" }).then((r) => r.json());
+$("lekcja").innerHTML = index.lessons.map((l) => `<option value="${l.id}">${l.title.pl}</option>`).join("");
+const q = new URLSearchParams(location.search); if (q.get("lekcja")) $("lekcja").value = q.get("lekcja");
+const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+// durations from the recordings' envelopes (the mp3 itself is not needed)
+const czasy = new Map();
+async function czas(lang, lekcja, stem) {
+  const k = `${lang}/${lekcja}/${stem}`;
+  if (!czasy.has(k)) czasy.set(k, fetch(`/game/audio/${k}.json`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).then((j) => j?.duration ?? null).catch(() => null));
+  return czasy.get(k);
+}
+
+// what is missing in the telling: warnings attached to events
+function analizuj(ev) {
+  const uwagi = new Map(), dodaj = (i, tekst, lekka = false) => { if (!uwagi.has(i)) uwagi.set(i, []); uwagi.get(i).push({ tekst, lekka }); };
+  const opowiesc = (e) => e.typ === "kwestia" && e.zrodlo === "opowiesc";
+  let odOstatniej = 0, ostatniaInterakcja = -1, poZmianieMiejsca = false, ciagMowy = [];
+  for (let i = 0; i < ev.length; i++) {
+    const e = ev[i], prev = ev[i - 1];
+    const nowaScena = !prev || prev.etap !== e.etap || prev.scena !== e.scena;
+    if (nowaScena) {
+      if (ostatniaInterakcja >= 0 && odOstatniej === 0) dodaj(ostatniaInterakcja, "Zadanie bez komentarza: nikt nie mówi, co z niego wyszło ani co dalej.");
+      odOstatniej = 0; ostatniaInterakcja = -1; poZmianieMiejsca = false; ciagMowy = [];
+    }
+    if (opowiesc(e)) {
+      if (e.dur === null) dodaj(i, "Brak nagrania tej kwestii.");
+      odOstatniej++; poZmianieMiejsca = false;
+      if (!e.anim) ciagMowy.push(i); else ciagMowy = [];
+      if (ciagMowy.length === 5) dodaj(i, "Długa rozmowa bez akcji: pięć kwestii z rzędu, a na ekranie nic się nie dzieje (bez ujęcia, ruchu, emocji).");
+    } else if (e.typ === "obraz") {
+      ciagMowy = [];
+      if (["go", "pan", "przejscie"].includes(e.co)) poZmianieMiejsca = true;
+    } else if (e.typ === "interakcja") {
+      ciagMowy = [];
+      // the next round of the same quick game (the same instruction stands): a series, not a jump
+      const runda = ostatniaInterakcja >= 0 && e.polecenie && ev[ostatniaInterakcja].polecenie === e.polecenie && ev[ostatniaInterakcja].co === e.co;
+      if (runda) { odOstatniej = 0; ostatniaInterakcja = i; poZmianieMiejsca = false; continue; }
+      if (ostatniaInterakcja >= 0 && odOstatniej === 0) dodaj(i, "Dwa zadania z rzędu bez zdania pomiędzy.");
+      else if (odOstatniej === 0) dodaj(i, "Zadanie bez słowa wstępu: dziecko nie wie, co i po co ma zrobić.");
+      else if (odOstatniej === 1 && ostatniaInterakcja >= 0) dodaj(i, "Tylko jedno zdanie między zadaniami: czy padło, po co to robimy?", true);
+      if (poZmianieMiejsca) dodaj(i, "Nowe miejsce bez słowa: nikt nie mówi, gdzie jesteśmy, a już jest zadanie.");
+      odOstatniej = 0; ostatniaInterakcja = i; poZmianieMiejsca = false;
+    }
+  }
+  if (ostatniaInterakcja >= 0 && odOstatniej === 0) dodaj(ostatniaInterakcja, "Zadanie bez komentarza: nikt nie mówi, co z niego wyszło ani co dalej.");
+  return uwagi;
+}
+
+function rysuj(ev, lekcja, koniec) {
+  const uwagi = analizuj(ev);
+  const mowa = {}; let kwestii = 0, ileUwag = 0, lekkich = 0;
+  for (const e of ev) if (e.typ === "kwestia" && e.zrodlo === "opowiesc") { kwestii++; mowa[e.etap] = (mowa[e.etap] || 0) + (e.dur || 0); }
+  for (const u of uwagi.values()) for (const x of u) x.lekka ? lekkich++ : ileUwag++;
+  let h = `<div class="podsumowanie"><span>${kwestii} kwestii</span>`
+    + Object.entries(mowa).map(([k, s]) => `<span>${ETAP[k] || k}: mowa ${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}</span>`).join("")
+    + `<span class="${ileUwag ? "zle" : ""}">${ileUwag} braków</span><span>${lekkich} sygnałów</span>${koniec ? "" : "<span>nagrywanie trwa…</span>"}</div>`;
+  let etap = null, scena = null;
+  ev.forEach((e, i) => {
+    if (e.etap !== etap) { etap = e.etap; scena = null; h += `<h2>${ETAP[etap] || etap}</h2>`; }
+    if (e.scena !== scena) { scena = e.scena; h += `<h3>Scena ${scena + 1}</h3>`; }
+    if (e.typ === "kwestia") {
+      h += `<div class="wiersz ${e.zrodlo !== "opowiesc" ? "wtracona" : ""}">${e.miniatura ? `<img src="${e.miniatura}" alt="">` : "<span></span>"}`
+        + `<span class="kto" style="background:${KOLOR[e.who] || "#ccc"}">${esc(e.who)}</span>`
+        + `<span>${esc(e.text)}${e.zrodlo === "blad" ? " <i>(przy błędzie)</i>" : e.zrodlo === "powtorka" ? " <i>(powtórka)</i>" : ""}</span>`
+        + `<span class="czas">${e.dur ? e.dur.toFixed(1) + " s" : "—"}</span></div>`;
+    } else if (e.typ === "obraz") h += `<div class="obraz">▸ ${esc(e.co)} ${esc(e.opis)}</div>`;
+    else h += `<div class="interakcja">${e.miniatura ? `<img src="${e.miniatura}" alt="">` : ""}<span>✋ <b>${esc(e.co)}</b> ${esc(e.opis)}</span></div>`;
+    for (const u of uwagi.get(i) || []) h += `<div class="uwaga ${u.lekka ? "lekka" : ""}">${esc(u.tekst)}</div>`;
+  });
+  $("raport").innerHTML = h;
+}
+
+let timer = null;
+$("nagraj").onclick = () => {
+  const lekcja = $("lekcja").value, lang = $("jezyk").value;
+  clearInterval(timer);
+  history.replaceState(null, "", `?lekcja=${lekcja}`);
+  $("status").textContent = "Nagrywam: automat gra lekcję…";
+  $("raport").innerHTML = "";
+  const f = $("gra"); f.src = `/game/index.html?lekcja=${lekcja}&lang=${lang}&szybko&cicho&scenariusz`;
+  let ile = -1;
+  timer = setInterval(async () => {
+    const g = f.contentWindow?.gra; if (!g) return;
+    const ev = g.scenariusz || [];
+    const blad = f.contentDocument?.body?.innerText?.includes("Błąd sceny");
+    const koniec = !!g.scenariuszKoniec || blad;
+    if (ev.length !== ile || koniec) {
+      ile = ev.length;
+      for (const e of ev) if (e.typ === "kwestia" && e.dur === undefined) e.dur = await czas(lang, lekcja, e.stem);
+      rysuj(ev, lekcja, koniec);
+    }
+    if (koniec) {
+      clearInterval(timer);
+      $("status").textContent = blad ? "Lekcja przerwała się błędem sceny (patrz podgląd obok)." : `Gotowe: ${ev.length} zdarzeń.`;
+    }
+  }, 800);
+};
+if (q.has("nagraj")) $("nagraj").click();                // opened from the lessons page: record at once
+</script>
+</body>
+</html>

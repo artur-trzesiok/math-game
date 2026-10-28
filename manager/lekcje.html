@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lekcje</title>
+<style id="styl"></style>
+<style>
+  .lekcja { display: grid; grid-template-columns: 150px 1fr; gap: 14px; padding: 12px; margin-bottom: 12px; background: #333; border-radius: 8px; border-left: 6px solid var(--c, #777); }
+  .lekcja img { width: 150px; border-radius: 8px; display: block; }
+  .lekcja h2 { margin: 0 0 2px; font-size: 16px; }
+  .sub { color: #aaa; margin-bottom: 6px; }
+  .cel { color: #ccc; font-size: 13px; margin: 4px 0 8px; max-width: 90ch; }
+  .akcje { margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .akcje a, .akcje button { text-decoration: none; background: #3f4a5c; color: #eee; border: 0; border-radius: 4px; padding: 3px 10px; cursor: pointer; font: inherit; }
+  .temat { color: #ffb347; text-transform: uppercase; font-size: 12px; letter-spacing: .05em; }
+</style>
+</head>
+<body>
+<header><h1>Lekcje</h1><input id="szukaj" placeholder="szukaj…"><span id="status">wczytuję…</span></header>
+<main id="lista"></main>
+<script type="module">
+import { lekcje, json, istnieje, esc, STYL } from "./dane.js";
+document.getElementById("styl").textContent = STYL;
+const L = await lekcje();
+const ETAPY = { story: "opowieść", practice: "ćwiczenia", apply: "dom" };
+
+// recordings: every line (and every allowed extra speaker of it) should have its mp3 in the manifest
+async function nagrania(id, lang) {
+  const i18n = await json(`/game/lessons/${id}/i18n/${lang}.json`) || {}, man = await json(`/game/audio/${lang}/${id}/manifest.json`) || {};
+  const klucze = []; for (const [k, v] of Object.entries(i18n)) if (k.startsWith("line.") && v?.text) { klucze.push(k); for (const s of v.speakers || []) klucze.push(`${k}.${s}`); }
+  return { jest: klucze.filter((k) => man[k]).length, wszystkich: klucze.length };
+}
+async function karta(l) {
+  const m = l.meta, braki = [];
+  for (const b of m.backgrounds || []) if (!(await istnieje(`/game/assets/backgrounds/${b}/rekwizyty.json`))) braki.push(`tło ${b}`);
+  for (const o of m.objects || []) if (!(await istnieje(`/game/assets/objects/${o}.webp`))) braki.push(`naklejka ${o}`);
+  if (!(await istnieje(`/game/lessons/${l.id}/cover.webp`))) braki.push("okładka");
+  const audio = await Promise.all(["pl", "en"].map(async (lang) => [lang, await nagrania(l.id, lang)]));
+  const gra = (etap) => `/game/index.html?lekcja=${l.id}${etap ? `&etap=${etap}` : ""}`;
+  return `<div class="lekcja" style="--c:${l.temat?.color || "#777"}" data-szukaj="${esc((l.id + " " + l.title.pl + " " + (l.subtitle?.pl || "")).toLowerCase())}">
+    <img src="/game/lessons/${l.id}/cover.webp" alt="" onerror="this.style.visibility='hidden'">
+    <div>
+      <div class="temat">${esc(l.temat?.title?.pl || "bez tematu")}</div>
+      <h2>${esc(l.title.pl)} <small style="color:#888">${esc(l.id)}</small></h2>
+      <div class="sub">${esc(l.subtitle?.pl || "")}</div>
+      <div class="cel">${esc(m.goal || "")}</div>
+      <div>${(m.characters || []).map((c) => `<span class="chip">${esc(c)}</span>`).join("")}
+        ${(m.backgrounds || []).map((b) => `<span class="chip">tło: ${esc(b)}</span>`).join("")}
+        <span class="chip">${(m.objects || []).length} naklejek</span>
+        ${audio.map(([lang, a]) => `<span class="chip ${a.jest === a.wszystkich ? "ok" : "zle"}">${lang}: ${a.jest}/${a.wszystkich} nagrań</span>`).join("")}
+        ${braki.map((b) => `<span class="chip zle">brak: ${esc(b)}</span>`).join("")}</div>
+      <div class="akcje">
+        <a href="${gra()}" target="_blank">Zagraj ↗</a>
+        ${Object.entries(ETAPY).map(([e, n]) => `<a href="${gra(e)}" target="_blank">od: ${n} ↗</a>`).join("")}
+        <button data-opowiesc="${l.id}">Podgląd opowieści</button>
+      </div>
+    </div></div>`;
+}
+const lista = document.getElementById("lista");
+lista.innerHTML = (await Promise.all(L.map(karta))).join("");
+document.getElementById("status").textContent = `${L.length} lekcji`;
+lista.onclick = (e) => { const id = e.target.dataset.opowiesc; if (!id) return; const src = `opowiesc.html?lekcja=${id}&nagraj`; if (parent !== window) parent.postMessage({ otworz: src }, "*"); else location.href = src; };
+document.getElementById("szukaj").oninput = (e) => { const q = e.target.value.toLowerCase(); for (const d of lista.children) d.style.display = d.dataset.szukaj.includes(q) ? "" : "none"; };
+</script>
+</body>
+</html>

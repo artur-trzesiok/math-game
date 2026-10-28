@@ -25,7 +25,7 @@ game/                       the runtime a tablet loads (static, three.js via imp
   assets/backgrounds/<sc>/  plyta.webp, rekwizyt_NN.webp, rekwizyty.json
   assets/objects/*.webp     256 px stickers
   audio/<lang>/<lesson>/    <key>.mp3 + manifest.json (made by tools/audio)
-manager/                    the manager app (today: the character editor) + dev server
+manager/                    the manager: lessons, story preview, sceneries, stickers, character editor + dev server
 tools/                      pipelines; never shipped. Each has work/ (gpt-image outputs,
                             git-ignored: the cache that lets us rebuild without paying again)
   common/figgen.py          gpt-image client (key from the repo's .env, never printed)
@@ -426,7 +426,18 @@ uses the browser's voice and shows a subtitle - fine for testing, not for a chil
 
 ## The manager
 
-`/manager/` is the shell for internal tools; today it holds the character editor
+`/manager/` is the shell for internal tools (modules in an iframe, `#lekcje` in the address opens one):
+- `lekcje.html`: every lesson with its cover, goal, characters, sceneries, stickers, recordings complete per
+  language (`pl: 70/70`), missing files, links to play it from any stage and to its story preview;
+- `opowiesc.html?lekcja=<id>`: the story preview - the game runs the lesson with `?scenariusz` (the autopilot,
+  `manager/autopilot.js`, plays it; `work/_auto.js` re-exports it) and writes down every line with a thumbnail of
+  the frame and its recording's length, every shot and task; the page flags what the telling misses (a task with
+  no word before it, two tasks in a row, a task nobody comments on, a new place with no word, five lines with
+  nothing happening, a missing recording). Run it on every new lesson before calling it done;
+- `tla.html`: every scenery, the plate with or without its props, prop boxes, horizon, panorama areas, who uses it;
+- `obiekty.html`: every sticker and garment, its size, which lessons use it (or none).
+
+The character editor
 (`editor.html`): all four puppets at once, any animation, a phase slider, lip-sync
 and blinking, click-to-select with alpha test, drag (pivot travels; a head carries
 its face targets), Shift-drag pivot, Alt-drag rotation (Q/E), arrows, numeric
