@@ -233,3 +233,41 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6 } = 
   });
   return { obraz, kredki, remove: () => { S.scene.remove(obraz); kredki.forEach((k) => k.remove()); } };
 }
+
+// ===================================================================== spot the difference
+// game/assets/roznice/<name> (tools/roznice): two pictures side by side; every difference is a target in BOTH (an
+// invisible disc); a found one is circled with the pencil in both pictures. Resolves when all are found.
+export async function roznice(S, nazwa, { y = 0.45, size = 4.9, odstep = 0.35 } = {}) {
+  const kat = `/game/assets/roznice/${nazwa}/`;
+  const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
+  const [ta, tb] = await Promise.all([texture(kat + "a.webp"), texture(kat + "b.webp")]);
+  const xs = [-(size + odstep) / 2, (size + odstep) / 2], obrazy = [];
+  for (const [i, t] of [ta, tb].entries()) {
+    const ramka = new THREE.Mesh(new THREE.PlaneGeometry(size + 0.16, size + 0.16), new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, depthWrite: false }));
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false }));
+    ramka.renderOrder = 9.8; m.renderOrder = 9.9; m.position.z = 0.01;
+    const g = new THREE.Group(); g.add(ramka, m); g.position.set(xs[i], y, 0.3); S.scene.add(g);
+    obrazy.push(uchwyt(S, g, { name: "obrazek" }));
+  }
+  const punkt = (r, i) => [xs[i] + (r.x - 0.5) * size, y + (0.5 - r.y) * size];
+  // one target per difference per picture; either finds it
+  const cele = [];
+  for (const [k, r] of meta.roznice.entries()) for (const i of [0, 1]) {
+    const [px, py] = punkt(r, i), rr = Math.max(0.35, r.r * size);
+    const m = new THREE.Mesh(new THREE.CircleGeometry(rr, 24), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+    const g = new THREE.Group(); g.add(m); g.position.set(px, py, 0.5); S.scene.add(g);
+    cele.push(uchwyt(S, g, { name: "roznica", nr: k, r: rr, dobry: true }));
+  }
+  const znalezione = new Set(), kolka = [];
+  const kolo = ([cx, cy], r) => Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6, w = 1 + 0.06 * Math.sin(j * 1.7); return [cx + Math.cos(a) * r * w, cy + Math.sin(a) * r * 0.92 * w]; });
+  Object.defineProperty(S, "zachetaCel", { configurable: true, get: () => cele.find((c) => !znalezione.has(c.nr)) || null });
+  while (znalezione.size < meta.roznice.length) {
+    const hit = await S.choose(cele.filter((c) => !znalezione.has(c.nr)));
+    znalezione.add(hit.nr); S.sfx.graj("right");
+    const r = meta.roznice[hit.nr];
+    for (const i of [0, 1]) kolka.push(await S.line(kolo(punkt(r, i), Math.max(0.35, r.r * size)), { color: "#e8502e", width: 0.09, duration: 0.35, strong: true }));
+  }
+  Object.defineProperty(S, "zachetaCel", { configurable: true, value: null, writable: true });
+  cele.forEach((c) => c.remove());
+  return { obrazy, kolka, remove: () => [...obrazy, ...kolka].forEach((h) => h.remove()) };
+}

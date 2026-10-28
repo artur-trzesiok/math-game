@@ -554,6 +554,7 @@ export class Player {
       sklepik: (o) => wDzialaniu(M2.sklepik(S, o)),
       strzalki: (o) => wDzialaniu(M2.strzalki(S, o), "wskaz"),
       cien: (h, on, o) => M2.cien(S, h, on, o),
+      roznice: (nazwa, o) => wDzialaniu(M2.roznice(S, nazwa, o), "wskaz"),
       kolorowanka: (nazwa, o) => wDzialaniu(M2.kolorowanka(S, nazwa, o), "wskaz"),
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
       pan: guard((k, opts) => E.pan(S, k, opts)),

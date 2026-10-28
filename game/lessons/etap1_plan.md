@@ -88,13 +88,13 @@ further along looks longer - it was only pushed ahead.
      short, it falls into the water (a splash, a consequence). Deer: put them side by side, ends on one line, then
      see which is longer. **Child** drags planks to the start line, points to the long one; it reaches across.
   2. Crossing (`przejdz` over the plank).
-  3. *Helping.* Deer's scarf is too short for her long neck and she is cold; choose the long one of two scarves
-     (dragged on - she is a quadruped, so it is laid around her neck as a sticker... see tools).
+  3. *Helping.* Squirrel's scarf is too short to wrap around her neck and she is cold; choose the long one of two
+     scarves and drag it onto her (`ubieranie`; quadrupeds are never dressed, so not Deer).
   4. *Breather:* a race of two snails on the meadow - cheer, no maths.
   5. Picnic: a long baguette and a short one - the long one for everybody.
 - **Practice:** which is longer (two ribbons, then aligned at the line); the shortest of three; a snake longer
   than the other; a long and a short train (memory pairs?); trace a long and a short line (`slad`).
-- **Home (hallway):** scarves on the hooks - the long for Deer, the short for Squirrel; shoelaces. "Compare
+- **Home (hallway):** scarves on the hooks - the long one for Fox, the short one for Squirrel; shoelaces. "Compare
   shoelaces or spaghetti with your parents - from one line."
 
 ## What is needed
@@ -108,8 +108,7 @@ Already in the engine: sorting zones, tasks, `nalozenie`, `ubieranie`, `przejdz`
    backgrounds' split) and the game makes them targets in both pictures, circling a found one in both.
 2. `odbicie` - a character's reflection in water: the puppet drawn again upside down under the bank with a water
    ripple, and able to show differences (a garment off, a colour) - lesson 2's opening.
-3. A garment for a quadruped laid on as a sticker (a scarf around Deer's neck) - today quadrupeds are never dressed.
-   Or the scarf goes to Squirrel and lesson 4 avoids it.
+Accepted 2026-10-28: `roznice` and `odbicie`; the scarf in lesson 4 goes to Squirrel (quadrupeds stay undressed).
 
 **New pictures (the usual pipelines):** ducklings and a mother duck, a cabbage, cherries, three tree hollows (or
 doors), a mouse family, beds big and small, planks long and short, ribbons, baguettes, snails, scarves long and

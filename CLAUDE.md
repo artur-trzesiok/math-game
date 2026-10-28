@@ -351,7 +351,9 @@ not stand (wider than the one below) tips and falls back; `ctx.kubki({ile, rzecz
 cut with a finger stroke (near the middle it snaps through it, far from it the pieces come out unequal);
 `ctx.memory(pary)` (faces {obraz | cyfra | kropki}); `ctx.sklepik({towar, cena})` - coins onto a plate, as many as
 the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program of arrows a pawn follows;
-`ctx.cien(h)` - any sticker as its silhouette; `ctx.kolorowanka(name)` - colour by number
+`ctx.cien(h)` - any sticker as its silhouette; `ctx.roznice(name)` - spot the difference (`tools/roznice/make_roznice.py`:
+gpt-image draws a picture and an edit with the pair's changes spelled out, the code finds the changed areas by a
+blurred difference; review `tools/roznice/work/<name>_roznice.png`); `ctx.kolorowanka(name)` - colour by number
 (`tools/kolorowanki/make_kolorowanka.py`: a flat-coloured page split into regions, colours clustered into a palette).
 A drawing finger takes the stage's pointers while set (`S.palec` {down, move, up}); tests drive them through
 `S.slad.dokoncz()`, `S.podziel.tnij(kat)`, `S.memory.karty`, `S.strzalki`, `S.kolorowanka.dokoncz()`.

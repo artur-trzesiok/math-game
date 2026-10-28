@@ -85,6 +85,7 @@ const DEMA = {
     const opcje = []; for (const [i, n] of ["jablko", "gruszka", "marchewka"].entries()) opcje.push(await S.object(n, { x: -2 + i * 2, y: -2.3, size: 1.1 }));
     const hit = await S.choose(opcje); info(hit.name === "gruszka" ? "tak, gruszka!" : "to nie ten"); if (hit.name === "gruszka") M2.cien(S, c, false);
   },
+  roznice: async () => { pokaz(); info("znajdź 3 różnice"); await M2.roznice(S, "laka"); info("wszystkie różnice!"); },
   kolorowanka: async () => { pokaz(); info("wybierz kredkę, potem pole z tą cyfrą"); await M2.kolorowanka(S, "domek"); info("pokolorowane!"); },
 };
 const uruchom = async (n) => {
