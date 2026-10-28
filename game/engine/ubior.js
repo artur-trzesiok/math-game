@@ -15,7 +15,17 @@ import { waga, deformuj } from "./siatka.js";
 
 const SWIEZO = { cache: "no-store" };
 const ladowacz = new THREE.TextureLoader();
-const tekstura = (url) => new Promise((ok, zle) => ladowacz.load(v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, zle));
+const TEKSTURY = new Map();                // one per picture, shared: a garment put on again is not loaded again
+const tekstura = (url) => {
+  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, zle) => ladowacz.load(v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, (e) => { TEKSTURY.delete(url); zle(e); })));
+  return TEKSTURY.get(url);
+};
+// load every view of these garments now (the lesson's loading screen), so dressing later is instant
+export async function wczytajUbrania(nazwy) {
+  const G = await galeria(), out = [];
+  for (const n of nazwy) for (const plik of Object.values(G[n]?.widoki || {})) out.push(await tekstura(`/game/assets/ubrania/${plik}`).catch(() => null));
+  return out.filter(Boolean);
+}
 let GALERIA = null;
 export async function galeria() {
   if (!GALERIA) GALERIA = await fetch(v("/game/assets/ubrania/ubrania.json"), SWIEZO).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));

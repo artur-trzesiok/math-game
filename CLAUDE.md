@@ -74,6 +74,12 @@ field of lesson.json says what the square menu picture shows; style and cast com
 from the character and background references), then a run with `?szybko` and snapshots of every scene, then
 `python tools/audio/make_audio.py <id>` once the lines are final.
 
+**Everything is loaded before a lesson starts** (the loading screen, `Stage.prepare`): its sceneries (the
+stages' backgrounds + lesson.json `backgrounds`), its stickers (lesson.json `objects` - list every sticker the
+lesson shows), the garments its code names, the characters and the transitions' bands and head badges, all sent
+to the GPU. A scenery is built once and kept (going back to it is a swap); textures are one per file and shared.
+Loading during a lesson (a sticker missing from `objects`) still works, but stutters on a tablet.
+
 Scenes are plain async functions; keep each one a screen's worth. Every stage
 (story, practice, at home) has about five interactions - a story that only talks
 is a bug. Positions are

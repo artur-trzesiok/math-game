@@ -14,6 +14,12 @@
   #menu.in { opacity: 1; }
   #iris { position: fixed; inset: 0; display: none; background: #2f7fe0; pointer-events: none; }
   #fade { position: fixed; inset: 0; display: none; background: #1a2a3a; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+  /* the lesson's loading screen: everything is fetched and sent to the GPU before it starts */
+  #wczytywanie { position: fixed; inset: 0; z-index: 40; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px; background: #cfe9c8; }
+  #wczytywanie img { width: min(220px, 30vh); height: min(220px, 30vh); border-radius: 28px; box-shadow: 0 6px 20px rgba(0,0,0,.2); animation: kiw 1.6s ease-in-out infinite; }
+  #wczytywanie .pasek { width: min(420px, 60vw); height: 18px; border-radius: 9px; background: rgba(255,255,255,.7); overflow: hidden; }
+  #wczytywanie .pasek div { height: 100%; width: 0; border-radius: 9px; background: #ffb347; transition: width .2s; }
+  @keyframes kiw { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg) scale(1.03); } }
   #menu h1 { margin: 0; font-size: max(22px, calc(var(--k) * 0.19)); color: #2a4a6a; text-align: center; }
   #langs { text-align: center; }
   #lessons { display: flex; align-items: stretch; gap: calc(var(--k) * 0.12); overflow-x: auto; overflow-y: hidden; padding: 6px var(--safe) 14px; box-sizing: border-box; width: 100%;
@@ -99,6 +105,7 @@
 <div id="subtitle"></div>
 <div id="iris"></div>
 <div id="fade"></div>
+<div id="wczytywanie"><img alt=""><div class="pasek"><div></div></div></div>
 <div id="card"><div class="box"><div class="text"></div><button></button></div></div>
 <script type="module">
   import { Player } from "./engine/player.js";

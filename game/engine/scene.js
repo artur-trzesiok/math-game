@@ -13,6 +13,7 @@ import { zbudujTlo, czas as bgClock, zginanieTla } from "./tlo.js";
 import { probkuj, wstega, material as olowekMaterial } from "./olowek.js";
 import * as E from "./efekty.js";
 import { ruszUbiory } from "./ubior.js";
+import * as U from "./ubior.js";
 if (new URLSearchParams(location.search).has("sztywnetlo")) zginanieTla.value = 0;   // A/B: the old shearing grass
 
 export const SAFE = { w: 12, h: 9 };
@@ -27,9 +28,11 @@ const ZAKRESLACZ = "#ff5a1f";          // pencil annotations: a bold saturated o
 const PARAMS = new URLSearchParams(location.search);
 const FRESH = { cache: "no-store" };
 
-const loader = new THREE.TextureLoader();
-function texture(url) {
-  return new Promise((ok, bad) => loader.load(v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, bad));
+// one texture per file for the whole game: loaded (and sent to the GPU) once, shared by every sticker of it
+const loader = new THREE.TextureLoader(), TEKSTURY = new Map();
+export function texture(url) {
+  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, bad) => loader.load(v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, (e) => { TEKSTURY.delete(url); bad(e); })));
+  return TEKSTURY.get(url);
 }
 const easeInOut = (s) => s * s * (3 - 2 * s);
 const easeOutBack = (s) => { const c = 1.7; return 1 + (c + 1) * Math.pow(s - 1, 3) + c * Math.pow(s - 1, 2); };   // a small overshoot
@@ -183,20 +186,52 @@ export class Stage {
     if (this.bgName === name) return false;                                // same scenery: leave it as it is
     this.bgName = name;
     for (const m of this.bg) this.scene.remove(m);
-    const before = new Set(this.scene.children);
     this.otoczenie = []; this.panorama = null; E.czastki(this, null);          // weather belongs to the place
     if (typeof name === "object") { await E.plansza(this, name); this.bgName = name.id || this.bgName; return true; }   // an insert on a plain colour
-    const Z_TLA = -9, info = await zbudujTlo(this.scene, (z) => this.design(z), { katalog: `/game/assets/backgrounds/${name}/`, odlegloscKamery: CAM_Z, srodekY: 0.6, zTla: Z_TLA });
-    this.bg = this.scene.children.filter((c) => !before.has(c));
-    // a background wider than the design frame is a panorama: areas the scenery slides between (E.pan)
-    const Wp = info.plyta.geometry.parameters.width, pw = this.design(Z_TLA).w;
-    if (Wp > pw * 1.25) {
-      const n = info.obszary || Math.max(2, Math.round((Wp - pw) / (pw * 0.65)) + 1), zakres = (Wp - pw) / 2;
-      this.panorama = { n, teraz: 0, fPrzod: CAM_Z / (CAM_Z - Z_TLA), przesuniecie: (k) => zakres - k * (2 * zakres) / (n - 1) };
-      for (const m of this.bg) m.userData.pan = { x0: m.position.x, f: (CAM_Z - m.position.z) / (CAM_Z - Z_TLA) };
-      E.ustawObszar(this, 0);
-    }
+    const t = await this.tlo(name);
+    for (const m of t.meshes) this.scene.add(m);
+    this.bg = t.meshes;
+    if (t.panorama) { this.panorama = { ...t.panorama, teraz: 0 }; E.ustawObszar(this, 0); }
     return true;
+  }
+  // a scenery is built once per lesson and kept (coming back to it is only a swap - rebuilding the panorama's 143
+  // textures every time stuttered on the iPad); built into its own group, so it can be made ahead (prepare)
+  tlo(name) {
+    this.tla = this.tla || {};
+    if (!this.tla[name]) this.tla[name] = (async () => {
+      const grupa = new THREE.Group(), Z_TLA = -9;
+      const info = await zbudujTlo(grupa, (z) => this.design(z), { katalog: `/game/assets/backgrounds/${name}/`, odlegloscKamery: CAM_Z, srodekY: 0.6, zTla: Z_TLA });
+      const meshes = grupa.children.slice(); for (const m of meshes) grupa.remove(m);
+      // a background wider than the design frame is a panorama: areas the scenery slides between (E.pan)
+      let panorama = null;
+      const Wp = info.plyta.geometry.parameters.width, pw = this.design(Z_TLA).w;
+      if (Wp > pw * 1.25) {
+        const n = info.obszary || Math.max(2, Math.round((Wp - pw) / (pw * 0.65)) + 1), zakres = (Wp - pw) / 2;
+        panorama = { n, fPrzod: CAM_Z / (CAM_Z - Z_TLA), przesuniecie: (k) => zakres - k * (2 * zakres) / (n - 1) };
+        for (const m of meshes) m.userData.pan = { x0: m.position.x, f: (CAM_Z - m.position.z) / (CAM_Z - Z_TLA) };
+      }
+      return { meshes, panorama };
+    })();
+    this.tla[name].catch(() => { delete this.tla[name]; });          // a scenery that failed is tried again next time
+    return this.tla[name];
+  }
+  // everything a lesson will show, loaded and sent to the GPU before it starts (a loading screen is fine; a stutter
+  // in a transition is not): its sceneries, stickers, garments, the transitions' bands, the characters
+  async prepare({ tla = [], obiekty = [], ubrania = [] } = {}, postep = () => {}) {
+    const zadania = [...tla.map((n) => () => this.tlo(n)), ...obiekty.map((n) => () => texture(`/game/assets/objects/${n}.webp`).catch(() => null)), () => U.wczytajUbrania(ubrania)];
+    let zrobione = 0;
+    for (const z of zadania) { await z(); postep(++zrobione / (zadania.length + 1)); }
+    E.przygotujGlowy(this);                                          // the transitions' head badges, with faces
+    const tex = new Set(E.teksturyEfektow());
+    const zbierz = (o) => o.traverse((m) => { const map = m.material?.map || m.material?.uniforms?.mapa?.value || m.material?.uniforms?.map?.value; if (map?.isTexture) tex.add(map); });
+    for (const n of tla) for (const m of (await this.tlo(n)).meshes) zbierz(m);
+    for (const L of Object.values(this.puppets)) zbierz(L.korzen);
+    for (const p of TEKSTURY.values()) { const t = await p.catch(() => null); if (t) tex.add(t); }
+    for (const t of await U.wczytajUbrania(ubrania)) tex.add(t);
+    for (const t of tex) this.renderer.initTexture(t);
+    // the shaders too: one render of each scenery, off screen
+    for (const n of tla) { const g = new THREE.Group(); for (const m of (await this.tlo(n)).meshes) g.add(m); this.scene.add(g); this.renderer.compile(this.scene, this.camera); this.scene.remove(g); for (const m of g.children.slice()) g.remove(m); }
+    postep(1);
   }
 
   // ------------------------------------------------------------------ puppets

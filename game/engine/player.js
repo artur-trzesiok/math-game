@@ -138,7 +138,16 @@ export class Player {
     this.closeStage();
     const run = ++this.run;                             // every ctx call checks it: leaving the lesson stops the scene
     this.stage = new Stage($("#stage"), this.speech);
-    for (const [name, o] of Object.entries(this.lesson.characters || {})) await this.stage.puppet(name, { x: o.x ?? (o.side === "right" ? 4.6 : -4.6), side: o.side, height: o.height });
+    // the loading screen: the characters, then everything the lesson will show, sent to the GPU - no loading
+    // (and no stutter) once it runs
+    const ekran = $("#wczytywanie"), pasek = $("#wczytywanie .pasek div");
+    ekran.querySelector("img").src = v(`/game/lessons/${id}/cover.webp`); pasek.style.width = "0"; ekran.style.display = "flex";
+    const postaci = Object.entries(this.lesson.characters || {});
+    for (const [i, [name, o]] of postaci.entries()) { await this.stage.puppet(name, { x: o.x ?? (o.side === "right" ? 4.6 : -4.6), side: o.side, height: o.height }); pasek.style.width = `${(i + 1) / postaci.length * 30}%`; }
+    try { await this.stage.prepare(await this.coWczytac(id), (p) => { pasek.style.width = `${30 + p * 70}%`; }); }
+    catch (e) { console.warn("prepare:", e); }
+    ekran.style.display = "none";
+    if (run !== this.run) return;
     this.abort = false;
     const order = fromStage && STAGES.includes(fromStage) ? STAGES.slice(STAGES.indexOf(fromStage)) : STAGES;
     for (const st of order) {
@@ -147,6 +156,16 @@ export class Player {
       if (this.abort) return;
     }
     if (!this.abort && this.run === run) { await this.outro(); if (this.run === run) this.menu(); }
+  }
+
+  // what a lesson shows: its sceneries (stages + lesson.json), stickers (lesson.json "objects") and the garments
+  // its code names
+  async coWczytac(id) {
+    const meta = await fetch(v(`/game/lessons/${id}/lesson.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    const zrodlo = await fetch(v(`/game/lessons/${id}/lesson.js`), { cache: "no-store" }).then((r) => (r.ok ? r.text() : "")).catch(() => "");
+    const tla = new Set([...Object.values(this.lesson.backgrounds || {}).filter((b) => typeof b === "string"), ...(meta.backgrounds || [])]);
+    const G = await U.galeria(), slowa = new Set(zrodlo.match(/[a-z_0-9]+/g) || []);
+    return { tla: [...tla], obiekty: meta.objects || [], ubrania: Object.keys(G).filter((n) => slowa.has(n)) };
   }
 
   async runStage(st) {

@@ -21,6 +21,15 @@ function canvasTex(w, h, draw) {
   const c = document.createElement("canvas"); c.width = w; c.height = h; draw(c.getContext("2d"), w, h);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
+// a canvas texture made once for the whole game (transition bands, patterns): never disposed, warmed up front
+const TRWALE = new Map();
+function trwaly(w, h, draw, klucz = null) {
+  if (klucz && TRWALE.has(klucz)) return TRWALE.get(klucz);
+  const t = canvasTex(w, h, draw); t.userData.trwala = true;
+  if (klucz) TRWALE.set(klucz, t);
+  return t;
+}
+export function teksturyEfektow() { pasTeczy(); for (const k of TECZA) wzorTex(k); return [...TRWALE.values(), ...GLOWY.values()]; }
 function plaski(tex, w, h, { opacity = 1, order = 0, color = null } = {}) {
   const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity, depthTest: false, depthWrite: false, color: color || 0xffffff }));
   m.renderOrder = order; m.frustumCulled = false; return m;
@@ -136,26 +145,49 @@ function punktRzeczy(S, h) {
 // cover -> change (await) -> uncover; `rodzaj` null = one at random
 export const PRZEJSCIA = ["tecza", "wzor", "irys", "babelki"];
 const TECZA = ["#f7868f", "#f4e55a", "#95d837", "#2fa8f0"];
+function pasTeczy(k = null) {
+  for (const c of k ? [k] : TECZA) trwaly(4096, 512, (x) => {
+    x.fillStyle = c; x.beginPath(); x.roundRect(0, 0, 4400, 512, 256); x.fill();
+    x.fillStyle = odcien(c, -0.1); for (let j = 0; j < 6; j++) { x.beginPath(); x.arc(680 + j * 560, 160 + (j % 2) * 200, 72 + (j % 3) * 32, 0, 7); x.fill(); }
+  }, "tecza" + c).anisotropy = 8;
+  return k ? TRWALE.get("tecza" + k) : null;
+}
+function wzorTex(k) {
+  const t = trwaly(1024, 1024, (x) => {
+    x.fillStyle = k; x.fillRect(0, 0, 1024, 1024); x.fillStyle = odcien(k, 0.28);
+    for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) { const cx = 128 + c * 256 + (r % 2) * 128, cy = 128 + r * 256; x.beginPath(); if ((r + c) % 2) x.arc(cx, cy, 60, 0, 7); else { x.moveTo(cx, cy - 68); x.lineTo(cx + 64, cy + 52); x.lineTo(cx - 64, cy + 52); x.closePath(); } x.fill(); }
+  }, "wzor" + k);
+  t.anisotropy = 8; t.generateMipmaps = true; t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  return t;
+}
 
-// the characters' heads as round badges, cut out of the current frame (they have their faces on)
-function glowyPostaci(S) {
-  const out = [], kan = S.renderer.domElement;
+// the characters' heads as round badges with their faces on, cut out of a rendered frame - once, on the loading
+// screen (rendering and reading the frame back at every transition stalled the iPad's GPU)
+const GLOWY = new Map();
+export function przygotujGlowy(S) {
+  const L0 = Object.values(S.puppets).filter((L) => !GLOWY.has(L.name)); if (!L0.length) return;
+  const bylo = L0.map((L) => L.korzen.visible);
+  for (const L of L0) { L.korzen.visible = true; L.korzen.updateMatrixWorld(true); }
+  const kan = S.renderer.domElement;
   S.renderer.render(S.scene, S.camera);
-  for (const L of Object.values(S.puppets)) {
-    if (!L.korzen.visible) continue;
+  for (const L of L0) {
     const gl = L.kosci.glowa && L.widokGrupy.przod.visible ? L.kosci.glowa : L.kosci.p_glowa && L.widokGrupy.profil.visible ? L.kosci.p_glowa : L.kosci.t_glowa;
     if (!gl) continue;
     const b = new THREE.Box3().setFromObject(gl), c = new THREE.Vector3((b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2, 0), r = Math.max(b.max.x - b.min.x, b.max.y - b.min.y) * 0.55;
     const p = c.clone().project(S.camera), q = new THREE.Vector3(c.x + r, c.y, 0).project(S.camera);
     const px = (p.x + 1) / 2 * kan.width, py = (1 - p.y) / 2 * kan.height, pr = Math.abs(q.x - p.x) / 2 * kan.width;
-    out.push(canvasTex(512, 512, (x) => {
+    GLOWY.set(L.name, trwaly(512, 512, (x) => {
       x.scale(2, 2);
       x.fillStyle = "#fff"; x.beginPath(); x.arc(128, 128, 124, 0, 7); x.fill();
       x.save(); x.beginPath(); x.arc(128, 128, 112, 0, 7); x.clip();
       x.drawImage(kan, px - pr, py - pr, 2 * pr, 2 * pr, 16, 16, 224, 224); x.restore();
     }));
   }
-  return out;
+  L0.forEach((L, i) => { L.korzen.visible = bylo[i]; });
+}
+function glowyPostaci(S) {
+  if (Object.values(S.puppets).some((L) => !GLOWY.has(L.name))) przygotujGlowy(S);     // a character added later
+  return Object.values(S.puppets).filter((L) => L.korzen.visible && GLOWY.has(L.name)).map((L) => GLOWY.get(L.name));
 }
 
 // a disc drawn by a shader: a crisp edge at any size (a canvas circle stretched over the screen was pixelated)
@@ -181,11 +213,7 @@ export async function przejscie(S, zmiana, { rodzaj = null } = {}) {
     zielen.position.x = 2 * a + 0.2; g.add(zielen);
     const koniec = [-a + 0.85, -a + 0.35, -a + 0.75, -a + 0.45];
     const pasy = TECZA.map((k, i) => {
-      const t = canvasTex(4096, 512, (x) => {
-        x.fillStyle = k; x.beginPath(); x.roundRect(0, 0, 4400, 512, 256); x.fill();
-        x.fillStyle = odcien(k, -0.1); for (let j = 0; j < 6; j++) { x.beginPath(); x.arc(680 + j * 560, 160 + (j % 2) * 200, 72 + (j % 3) * 32, 0, 7); x.fill(); }
-      });
-      t.anisotropy = 8;
+      const t = pasTeczy(k);
       const L = 2 * a * 1.6;
       const m = plaski(t, L, 0.5, { order: 1 }); m.geometry.translate(L / 2, 0, 0);
       m.position.set(a + 0.3, 0.75 - i * 0.5, 0); g.add(m);
@@ -205,12 +233,7 @@ export async function przejscie(S, zmiana, { rodzaj = null } = {}) {
   } else if (rodzaj === "wzor") {
     // a layer of one colour with a pattern of shapes sweeps in diagonally and out the other side
     const k = TECZA[Math.floor(Math.random() * 4)];
-    const t = canvasTex(1024, 1024, (x) => {
-      x.fillStyle = k; x.fillRect(0, 0, 1024, 1024); x.fillStyle = odcien(k, 0.28);
-      for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) { const cx = 128 + c * 256 + (r % 2) * 128, cy = 128 + r * 256; x.beginPath(); if ((r + c) % 2) x.arc(cx, cy, 60, 0, 7); else { x.moveTo(cx, cy - 68); x.lineTo(cx + 64, cy + 52); x.lineTo(cx - 64, cy + 52); x.closePath(); } x.fill(); }
-    });
-    t.anisotropy = 8; t.generateMipmaps = true;
-    t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(3 * a, 3);
+    const t = wzorTex(k); t.repeat.set(3 * a, 3);
     const m = plaski(t, 2 * a * 1.5, 2 * 1.5, { order: 1 }); m.rotation.z = -0.35; g.add(m);
     const start = new THREE.Vector2(3.2 * a, 2.2), srodek = new THREE.Vector2(0, 0), koniec = new THREE.Vector2(-3.2 * a, -2.2);
     m.position.set(start.x, start.y, 0);
@@ -242,7 +265,7 @@ export async function przejscie(S, zmiana, { rodzaj = null } = {}) {
   try { await zmiana(); } finally {
     await odkryj();
     N.scena.remove(g);
-    g.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.map?.dispose(); o.material.dispose(); } });
+    g.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); if (!o.material.map?.userData?.trwala) o.material.map?.dispose(); o.material.dispose(); } });
   }
 }
 
