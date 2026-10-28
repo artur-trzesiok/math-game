@@ -4,8 +4,8 @@ import { naPierwszyDotyk } from "./odblokuj.js";
 // WebAudio (the tablet), a small pool per effect so they can overlap, a gap so a burst of identical
 // events is one sound, and ducking under speech so an effect never covers what a character says.
 
-const NAZWY = ["pop", "tap", "wrong", "right", "pencil", "hop", "clap", "plop", "whoosh", "idea", "zoom", "wonder"];
-const GLOSNOSC = { pop: 0.55, tap: 0.6, wrong: 0.7, right: 0.7, pencil: 0.45, hop: 0.6, clap: 0.55, plop: 0.6, whoosh: 0.5, idea: 0.7, zoom: 0.5, wonder: 0.6 };
+const NAZWY = ["pop", "tap", "wrong", "right", "pencil", "hop", "clap", "plop", "whoosh", "idea", "zoom", "wonder", "plansza", "etap"];
+const GLOSNOSC = { pop: 0.55, tap: 0.6, wrong: 0.7, right: 0.7, pencil: 0.45, hop: 0.6, clap: 0.55, plop: 0.6, whoosh: 0.5, idea: 0.7, zoom: 0.5, wonder: 0.6, plansza: 0.85, etap: 0.8 };
 const ODSTEP = 0.06;                     // s: the same effect again within this is dropped (five stickers popping in = a ripple, not a blast)
 
 export class Sfx {

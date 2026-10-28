@@ -97,7 +97,7 @@
   .topic h2 { align-self: flex-start; margin: 0; padding: calc(var(--k) * 0.035) calc(var(--k) * 0.17) calc(var(--k) * 0.045); font: 800 max(14px, calc(var(--k) * 0.1)) "Baloo 2", system-ui; color: var(--braz);
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   .topic h2::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
-  .topic .row { display: flex; gap: calc(var(--k) * 0.2); padding-right: calc(var(--k) * 0.12); }   /* room for the stickers sticking out */
+  .topic .row { display: flex; gap: calc(var(--k) * 0.14); padding-right: calc(var(--k) * 0.06); }   /* room for the stickers sticking out */
   .topic .lesson { flex: 0 0 auto; }
   #chips { display: flex; justify-content: center; gap: calc(var(--k) * 0.02); padding: 0 var(--safe); white-space: nowrap; }
   @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } }
@@ -116,7 +116,7 @@
   .lesson .sub { font: 600 max(11px, calc(var(--k) * 0.06)) "Baloo 2", system-ui; color: #8a6440; text-align: center; line-height: 1.1; }
   /* the sticker still to be won sticks out of the card's right edge beside the cover's lower corner (covering neither
      the picture nor the name); once it is in the album it is gone from the card */
-  .lesson .nakl-karty { position: absolute; right: calc(var(--k) * -0.17); top: calc(var(--k) * 0.82); width: calc(var(--k) * 0.27); aspect-ratio: 1; transform: rotate(10deg); pointer-events: none; }
+  .lesson .nakl-karty { position: absolute; right: calc(var(--k) * -0.07); top: calc(var(--k) * 0.82); width: calc(var(--k) * 0.27); aspect-ratio: 1; transform: rotate(10deg); pointer-events: none; }
   .lesson .nakl-karty img { width: 100%; height: 100%; object-fit: contain; }
   #hud { position: fixed; top: 0; left: 0; right: 0; display: none; align-items: center; gap: 12px; padding: 10px 14px; pointer-events: none; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
   #hud .lesson-name { font-weight: 700; }

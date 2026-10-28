@@ -40,6 +40,11 @@ SFX = {
     "idea":    ("a soft twinkle pop, a cartoon thought bubble appearing, magical and light", 0.7),
     "zoom":    ("a soft airy magical swish, a camera gently zooming in, children's animation", 0.7),
     "wonder":  ("a short curious cartoon 'hmm?' sound made by a soft rising slide whistle, no voice", 0.6),
+    # the cards before a lesson and before each of its stages (player.js plansza)
+    "plansza": ("a short cheerful magical jingle for the title card of a children's cartoon: a quick rising xylophone "
+                "and glockenspiel flourish ending in a warm twinkling sparkle, bright, happy, no voices, no drums", 2.0),
+    "etap":    ("a short bright playful chime announcing the next part of a children's game: three rising "
+                "glockenspiel notes and a little sparkle, warm and happy, no voices", 1.2),
 }
 
 SR = 44100
@@ -151,6 +156,23 @@ def synth(name: str) -> np.ndarray:
         t = _t(0.5)
         f = (380 + 330 * (t / 0.5) ** 1.5) * (1 + 0.025 * np.sin(2 * np.pi * 7 * t))
         return np.sin(2 * np.pi * np.cumsum(f) / SR) * _env(len(t), 0.03, 0.3)
+    if name in ("plansza", "etap"):
+        # a marimba-like run (a fundamental and a fast-dying 4x partial) up the major chord, a shimmer on the last note
+        nuty = (523.3, 659.3, 784.0, 1046.5, 1318.5) if name == "plansza" else (784.0, 1046.5, 1318.5)
+        krok, total = (0.085, 2.0) if name == "plansza" else (0.11, 1.3)
+        out = np.zeros(int(SR * total))
+        for k, f in enumerate(nuty):
+            t = _t(1.0)
+            ton = np.sin(2 * np.pi * f * t) * _env(len(t), 0.002, 0.35) + 0.35 * np.sin(2 * np.pi * f * 4 * t) * _env(len(t), 0.001, 0.05)
+            ton += 0.18 * np.sin(2 * np.pi * f * 2.76 * t) * _env(len(t), 0.002, 0.25)       # the glockenspiel's bell
+            out += _at(0.45 * ton, k * krok, total)
+        t0 = len(nuty) * krok
+        for j in range(9 if name == "plansza" else 5):                                   # the twinkle
+            f = rng.uniform(2600, 4200)
+            out += _at(0.12 * np.sin(2 * np.pi * f * _t(0.25)) * _env(int(SR * 0.25), 0.002, 0.08), t0 + j * 0.06, total)
+        if name == "plansza":
+            out += _at(0.2 * _band(_noise(0.5, rng), 600, 3000) * np.sin(np.pi * _t(0.5) / 0.5) ** 2, 0.0, total)   # a soft swoosh in
+        return out
     raise KeyError(name)
 
 
