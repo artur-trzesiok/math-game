@@ -1,4 +1,5 @@
 import { v } from "./v.js";
+import { naPierwszyDotyk } from "./odblokuj.js";
 // Sound effects (game/audio/sfx/*.mp3, made by tools/audio/make_sfx.py): plain <audio> elements, no
 // WebAudio (the tablet), a small pool per effect so they can overlap, a gap so a burst of identical
 // events is one sound, and ducking under speech so an effect never covers what a character says.
@@ -14,10 +15,12 @@ export class Sfx {
     this.mowa = false;                     // set by the speech while a line plays: effects duck
     this.pule = {}; this.ostatnio = {};
     for (const n of NAZWY) this.pule[n] = [];
+    // iPad: an element plays only once started inside a tap - start two of each, muted, in the first one
+    naPierwszyDotyk(() => { for (const n of NAZWY) for (let i = 0; i < 2; i++) { const a = this._audio(n, true); a.muted = true; const p = a.play(); if (p) p.then(() => { a.pause(); a.muted = false; }).catch(() => { a.muted = false; }); } });
   }
-  _audio(n) {
+  _audio(n, nowy = false) {
     const pula = this.pule[n];
-    let a = pula.find((x) => x.paused || x.ended);
+    let a = nowy ? null : pula.find((x) => x.paused || x.ended);
     if (!a && pula.length < 4) { a = new Audio(v(`/game/audio/sfx/${n}.mp3`)); a.preload = "auto"; pula.push(a); }
     return a || pula[0];
   }

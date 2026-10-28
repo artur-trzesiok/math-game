@@ -1,4 +1,5 @@
 import { v } from "./v.js";
+import { naPierwszyDotyk, CISZA, poprosODotyk } from "./odblokuj.js";
 // Spoken lines: an mp3 made by tools/audio/make_audio.py when there is one, the
 // browser's speech synthesis otherwise. The speaking puppet gets an amplitude every
 // frame (mow()), so its mouth moves with the sound. The amplitude comes from the
@@ -13,9 +14,15 @@ const FORCE_SUBS = PARAMS.has("napisy");
 const CICHO = PARAMS.has("cicho");          // tests: everything plays (timing, lip-sync) but nothing is heard
 const LOCALE = { pl: "pl-PL", en: "en-US" };
 
-let audioCtx = null, analyser = null, buf = null;
+// one element for every line, started inside the first tap (iPad: a new element per line was refused)
+const GLOS = new Audio();
+naPierwszyDotyk(() => { if (GLOS.src) return; GLOS.src = CISZA; const p = GLOS.play(); if (p) p.then(() => { if (GLOS.src === CISZA) GLOS.pause(); }).catch(() => {}); });   // a line already waiting: its own play button starts it
+
+let audioCtx = null, analyser = null, buf = null, podpiety = false;
 function attachAnalyser(audio) {
+  if (podpiety) return !!analyser;
   try {
+    podpiety = true;
     if (!audioCtx) {
       audioCtx = new AudioContext(); analyser = audioCtx.createAnalyser(); analyser.fftSize = 256;
       analyser.connect(audioCtx.destination); buf = new Uint8Array(analyser.fftSize);
@@ -84,7 +91,8 @@ export class Speech {
     try {
       if (FAST) { subtitle(FORCE_SUBS); await new Promise((r) => setTimeout(r, 400)); return; }
       if (m[key]) {
-        const a = new Audio(v(`/game/audio/${lang}/${lessonId}/${key}.mp3`));
+        const a = GLOS; a.onloadedmetadata = a.onplay = a.onpause = a.onended = a.onerror = null;
+        a.src = v(`/game/audio/${lang}/${lessonId}/${key}.mp3`);
         a.volume = Math.max(0, Math.min(1, volume));                      // the character's trim (recordings are normalised already)
         a.muted = CICHO;
         this.current.envelope = await fetch(v(`/game/audio/${lang}/${lessonId}/${key}.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -92,16 +100,16 @@ export class Speech {
         subtitle(FORCE_SUBS);
         await new Promise((ok, bad) => {
           let timer = null;
-          const end = () => { clearTimeout(timer); ok(); };
+          const end = () => { clearTimeout(timer); document.removeEventListener("visibilitychange", vis); ok(); };
           const arm = () => { clearTimeout(timer); timer = setTimeout(end, ((a.duration || 10) - a.currentTime + 1.5) * 1000); };
           a.onloadedmetadata = arm; a.onplay = arm; a.onpause = () => clearTimeout(timer); a.onended = end;
           this.current.koniec = end;                                     // stop() ends the line too
           a.onerror = () => { clearTimeout(timer); bad(new Error("no file")); };
           const vis = () => { if (document.hidden) a.pause(); else a.play().catch(() => {}); };
           document.addEventListener("visibilitychange", vis);
-          a.addEventListener("ended", () => document.removeEventListener("visibilitychange", vis));
           this.current.audio = a;
-          a.play().catch(bad);
+          // still refused (no tap yet): a play button, and the line goes on from that tap - never a broken scene
+          a.play().catch((e) => { if (e?.name === "NotAllowedError") poprosODotyk(() => a.play().catch(() => end())); else bad(e); });
         });
         return;
       }
