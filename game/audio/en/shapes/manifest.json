@@ -1,0 +1,282 @@
+{
+ "line.s_ask": {
+  "hash": "44258129f4b6",
+  "who": "sowa",
+  "text": "Fox, will you make me a round window for my birdhouse?"
+ },
+ "line.s_here": {
+  "hash": "3453cf860e1d",
+  "who": "lisek",
+  "text": "Done! Here you are, your window."
+ },
+ "line.s_not_round": {
+  "hash": "abbd761349ab",
+  "who": "sowa",
+  "text": "But this window is not round at all! It has corners and straight sides."
+ },
+ "line.s_same": {
+  "hash": "02d0f055a138",
+  "who": "lisek",
+  "text": "A window is a window. Does it matter?"
+ },
+ "line.s_differ": {
+  "hash": "b2095d3648b9",
+  "who": "sowa",
+  "text": "Yes! Every shape is different. My round head will not fit through a window with corners."
+ },
+ "line.s_how": {
+  "hash": "ad64a53d1860",
+  "who": "lisek",
+  "text": "Then how do I tell which shape is which?"
+ },
+ "line.s_corners": {
+  "hash": "6e3016eddba3",
+  "who": "sowa",
+  "text": "By the corners and the sides! I will show you, it is fun."
+ },
+ "line.s_circle": {
+  "hash": "404e63536b9b",
+  "who": "sowa",
+  "text": "This is a circle. It is round like a ball and has no corners at all."
+ },
+ "line.s_triangle": {
+  "hash": "e2a6ec6f521c",
+  "who": "sowa",
+  "text": "This is a triangle. Count its corners. Point to each corner in turn."
+ },
+ "line.s_three_corners": {
+  "hash": "2e7b24e45651",
+  "who": "sowa",
+  "text": "A triangle has three corners and three sides."
+ },
+ "line.s_square": {
+  "hash": "b16e3f8d882a",
+  "who": "sowa",
+  "text": "This is a square. Now you count the corners."
+ },
+ "line.s_four_corners": {
+  "hash": "1f9b75383cc7",
+  "who": "lisek",
+  "text": "Four corners! A square has four equal sides."
+ },
+ "line.s_rectangle": {
+  "hash": "45e97b0fc5a1",
+  "who": "sowa",
+  "text": "This is a rectangle. It has four corners too, but two sides are longer and two are shorter."
+ },
+ "line.s_point_circle": {
+  "hash": "bf148dab269e",
+  "who": "lisek",
+  "text": "Owl wanted a round window. Point to the circle."
+ },
+ "line.wrong_shape": {
+  "hash": "dcbf79ba4956",
+  "who": "sowa",
+  "text": "That is another shape. Look at the corners."
+ },
+ "line.wrong_shape.lisek": {
+  "hash": "d8f7fcfb7d9b",
+  "who": "lisek",
+  "text": "That is another shape. Look at the corners."
+ },
+ "line.s_solved": {
+  "hash": "f7c822593b68",
+  "who": "lisek",
+  "text": "Now I know! A round window is a circle. I will make one."
+ },
+ "line.s_to_playground": {
+  "hash": "5d122d802f62",
+  "who": "sowa",
+  "text": "Let's go to the playground. There are shapes there too."
+ },
+ "line.b_blocks": {
+  "hash": "721e474cbec6",
+  "who": "lisek",
+  "text": "Someone left blocks of two shapes here. Let's tidy up."
+ },
+ "line.b_sort": {
+  "hash": "27bc67bad45e",
+  "who": "sowa",
+  "text": "Circles into the basket, triangles into the box. Look at the corners, not the colours!"
+ },
+ "line.b_mixed": {
+  "hash": "daa6a4572cb6",
+  "who": "sowa",
+  "text": "Something got mixed up. A circle has no corners and a triangle has three."
+ },
+ "line.b_done": {
+  "hash": "11cc6b7009f1",
+  "who": "sowa",
+  "text": "Well done! All the circles together, all the triangles together."
+ },
+ "line.b_turned": {
+  "hash": "77e801e4c10c",
+  "who": "sowa",
+  "text": "Careful, I turned one shape. But it still has four equal sides. Point to the square."
+ },
+ "line.b_still_square": {
+  "hash": "6b50739db744",
+  "who": "lisek",
+  "text": "A turned square is still a square!"
+ },
+ "line.b_to_orchard": {
+  "hash": "5c4496d09509",
+  "who": "sowa",
+  "text": "And now to the orchard. We will build a birdhouse in the tree."
+ },
+ "line.c_build": {
+  "hash": "0221f9fe2403",
+  "who": "lisek",
+  "text": "Let's build Owl a birdhouse. The walls are ready, that is a square."
+ },
+ "line.c_roof": {
+  "hash": "ed6f634b47ae",
+  "who": "sowa",
+  "text": "Now the roof. Drag the triangle onto the square."
+ },
+ "line.c_roof_wrong": {
+  "hash": "c3587341b98a",
+  "who": "sowa",
+  "text": "The roof goes on top, on the square."
+ },
+ "line.c_window": {
+  "hash": "c15c9328b99b",
+  "who": "lisek",
+  "text": "And now the round window. Drag the circle into the middle of the square."
+ },
+ "line.c_window_wrong": {
+  "hash": "920df87b6da0",
+  "who": "lisek",
+  "text": "The window goes in the middle of the wall."
+ },
+ "line.c_solved": {
+  "hash": "b15075cdc8e1",
+  "who": "sowa",
+  "text": "My birdhouse! A triangle roof and a round window. Thank you!"
+ },
+ "line.p_intro": {
+  "hash": "c35fe2cad04f",
+  "who": "sowa",
+  "text": "Let's play finding shapes! The colours can be different."
+ },
+ "line.p_trojkat": {
+  "hash": "5f6fb21f9b3c",
+  "who": "sowa",
+  "text": "Point to the triangle."
+ },
+ "line.p_kolo": {
+  "hash": "f4d92ecea379",
+  "who": "sowa",
+  "text": "Point to the circle."
+ },
+ "line.p_kwadrat": {
+  "hash": "52f6cf10e4a8",
+  "who": "sowa",
+  "text": "Point to the square."
+ },
+ "line.p_prostokat": {
+  "hash": "766d0576b628",
+  "who": "sowa",
+  "text": "Point to the rectangle."
+ },
+ "line.good_shape": {
+  "hash": "959ed02342c9",
+  "who": "lisek",
+  "text": "Yes! That is the shape."
+ },
+ "line.good_shape.sowa": {
+  "hash": "f0aedd1bc849",
+  "who": "sowa",
+  "text": "Yes! That is the shape."
+ },
+ "line.a_game": {
+  "hash": "aad7770f9acf",
+  "who": "lisek",
+  "text": "Let's play finding shapes at home."
+ },
+ "line.a_ok": {
+  "hash": "9dd03b87e37f",
+  "who": "sowa",
+  "text": "All right! I show a thing and you find its shape."
+ },
+ "line.a_talerz": {
+  "hash": "ae97d6915c8a",
+  "who": "sowa",
+  "text": "What shape is a plate? Point to the shape."
+ },
+ "line.a_klocek": {
+  "hash": "ce91d0938a5c",
+  "who": "sowa",
+  "text": "What shape is the side of a block? Point to the shape."
+ },
+ "line.a_pilka": {
+  "hash": "c6f19f23e418",
+  "who": "sowa",
+  "text": "What shape is a ball? Point to the shape."
+ },
+ "line.a_how_many_corners": {
+  "hash": "c7db37d5ce25",
+  "who": "lisek",
+  "text": "How many corners does this shape have? Point to the number."
+ },
+ "line.wrong_number": {
+  "hash": "6a3c15c0cbb9",
+  "who": "lisek",
+  "text": "Count the corners again."
+ },
+ "line.wrong_number.sowa": {
+  "hash": "bb5c4bcc3e75",
+  "who": "sowa",
+  "text": "Count the corners again."
+ },
+ "line.a_ask_parents": {
+  "hash": "5fdaba26da04",
+  "who": "sowa",
+  "text": "Ask your parents to look for circles, squares and triangles at home with you."
+ },
+ "line.a_bye": {
+  "hash": "5fdcbfe15d1f",
+  "who": "lisek",
+  "text": "Bye bye! See you!"
+ },
+ "line.n1": {
+  "hash": "13ecf4f502e6",
+  "who": "sowa",
+  "text": "One!"
+ },
+ "line.n1.lisek": {
+  "hash": "17ef5509f792",
+  "who": "lisek",
+  "text": "One!"
+ },
+ "line.n2": {
+  "hash": "03e0547eb360",
+  "who": "sowa",
+  "text": "Two!"
+ },
+ "line.n2.lisek": {
+  "hash": "b4f95635d899",
+  "who": "lisek",
+  "text": "Two!"
+ },
+ "line.n3": {
+  "hash": "1b70b81f1a09",
+  "who": "sowa",
+  "text": "Three!"
+ },
+ "line.n3.lisek": {
+  "hash": "4c345f0d5dab",
+  "who": "lisek",
+  "text": "Three!"
+ },
+ "line.n4": {
+  "hash": "ac53306b5483",
+  "who": "sowa",
+  "text": "Four!"
+ },
+ "line.n4.lisek": {
+  "hash": "2253e7bcda55",
+  "who": "lisek",
+  "text": "Four!"
+ }
+}

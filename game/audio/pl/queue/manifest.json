@@ -1,0 +1,207 @@
+{
+ "line.s_stand": {
+  "hash": "da49025cb81b",
+  "who": "sarenka",
+  "text": "Otworzyłam stoisko z lemoniadą! Patrz, ustawiła się kolejka."
+ },
+ "line.s_biggest": {
+  "hash": "520b9ee22837",
+  "who": "lisek",
+  "text": "Najpierw obsłużę zająca. Jest największy!"
+ },
+ "line.s_not_biggest": {
+  "hash": "959bf458649d",
+  "who": "sarenka",
+  "text": "W kolejce nie liczy się, kto jest największy! Liczy się, kto stoi pierwszy."
+ },
+ "line.s_how": {
+  "hash": "903e30a310f6",
+  "who": "lisek",
+  "text": "A kto stoi pierwszy?"
+ },
+ "line.s_order": {
+  "hash": "40ab4359bf03",
+  "who": "sarenka",
+  "text": "Ten, kto stoi najbliżej stoiska. Potem drugi, trzeci, i tak dalej."
+ },
+ "line.s_what": {
+  "hash": "63e669cd8417",
+  "who": "lisek",
+  "text": "Pierwszy, drugi, trzeci? Pokażesz mi?"
+ },
+ "line.s_show": {
+  "hash": "16ccdfd70a3b",
+  "who": "sarenka",
+  "text": "Liczymy od stoiska. Popatrz na numerki."
+ },
+ "line.s_point_first": {
+  "hash": "0e5804ddcb35",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi pierwszy."
+ },
+ "line.wrong_place": {
+  "hash": "60e7afaa40c0",
+  "who": "sarenka",
+  "text": "To nie to miejsce. Licz od stoiska."
+ },
+ "line.wrong_place.lisek": {
+  "hash": "590e1e360aa3",
+  "who": "lisek",
+  "text": "To nie to miejsce. Licz od stoiska."
+ },
+ "line.s_point_last": {
+  "hash": "e1ec63b5ecbc",
+  "who": "lisek",
+  "text": "A kto stoi ostatni, na samym końcu?"
+ },
+ "line.s_point_third": {
+  "hash": "c6c4a5d384e7",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi trzeci."
+ },
+ "line.s_serve": {
+  "hash": "d074c242bc07",
+  "who": "lisek",
+  "text": "Proszę, lemoniada dla pierwszego!"
+ },
+ "line.s_first_now": {
+  "hash": "cce6a5862d77",
+  "who": "sarenka",
+  "text": "Jeżyk odszedł i wszyscy się przesunęli. Kto jest teraz pierwszy?"
+ },
+ "line.s_solved": {
+  "hash": "461ecb35f2f0",
+  "who": "lisek",
+  "text": "Teraz rozumiem! Obsługuję po kolei, od pierwszego."
+ },
+ "line.s_to_playground": {
+  "hash": "e21573459a78",
+  "who": "sarenka",
+  "text": "Chodźmy na plac zabaw. Tam też stoi kolejka."
+ },
+ "line.b_slide": {
+  "hash": "2d6f3bcf9903",
+  "who": "lisek",
+  "text": "Wszyscy chcą zjechać ze zjeżdżalni. Zjeżdżalnia jest z lewej strony."
+ },
+ "line.b_point_second": {
+  "hash": "4225b0b87e5d",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi drugi."
+ },
+ "line.b_mouse_back": {
+  "hash": "24a10feb66aa",
+  "who": "lisek",
+  "text": "Myszka chce zjechać jeszcze raz. Idzie na koniec kolejki."
+ },
+ "line.b_point_last": {
+  "hash": "12a3fe8d090a",
+  "who": "sarenka",
+  "text": "Kto jest teraz ostatni?"
+ },
+ "line.b_done": {
+  "hash": "383579b7dbc0",
+  "who": "lisek",
+  "text": "Myszka jest ostatnia! Grzecznie czeka na swoją kolej."
+ },
+ "line.b_to_home": {
+  "hash": "4e1cd337e7c7",
+  "who": "sarenka",
+  "text": "Wracajmy do domu. Będą ciastka!"
+ },
+ "line.c_cookies": {
+  "hash": "88ad48d86008",
+  "who": "sarenka",
+  "text": "Po ciastka ustawiło się pięcioro gości. Liczymy od stołu."
+ },
+ "line.c_point_fifth": {
+  "hash": "abf6136fb710",
+  "who": "lisek",
+  "text": "Wskaż, kto stoi piąty."
+ },
+ "line.c_between": {
+  "hash": "59295f5cd5fa",
+  "who": "sarenka",
+  "text": "Kto stoi pomiędzy drugim a czwartym?"
+ },
+ "line.c_solved": {
+  "hash": "0743e698108b",
+  "who": "lisek",
+  "text": "Trzeci! Teraz znasz miejsca w kolejce."
+ },
+ "line.p_intro": {
+  "hash": "2c80e0b08d69",
+  "who": "sarenka",
+  "text": "Pobawmy się w kolejkę! Liczymy zawsze od początku kolejki, z lewej."
+ },
+ "line.p_first": {
+  "hash": "0e5804ddcb35",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi pierwszy."
+ },
+ "line.p_second": {
+  "hash": "4225b0b87e5d",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi drugi."
+ },
+ "line.p_third": {
+  "hash": "c6c4a5d384e7",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi trzeci."
+ },
+ "line.p_fourth": {
+  "hash": "d3592fff502f",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi czwarty."
+ },
+ "line.p_last": {
+  "hash": "b08f20277505",
+  "who": "sarenka",
+  "text": "Wskaż, kto stoi ostatni."
+ },
+ "line.good_place": {
+  "hash": "2785ba3deeb9",
+  "who": "lisek",
+  "text": "Tak! To to miejsce."
+ },
+ "line.good_place.sarenka": {
+  "hash": "b54af04c209b",
+  "who": "sarenka",
+  "text": "Tak! To to miejsce."
+ },
+ "line.a_game": {
+  "hash": "7c60390b55f1",
+  "who": "lisek",
+  "text": "Zagrajmy w kolejkę zabawek na półce."
+ },
+ "line.a_ok": {
+  "hash": "eb32f0203880",
+  "who": "sarenka",
+  "text": "Dobrze! Liczymy od strzałki."
+ },
+ "line.a_second": {
+  "hash": "a7ead83f6ed8",
+  "who": "lisek",
+  "text": "Która zabawka jest druga?"
+ },
+ "line.a_last": {
+  "hash": "0e501a4c8a40",
+  "who": "lisek",
+  "text": "Która zabawka jest ostatnia?"
+ },
+ "line.a_first": {
+  "hash": "b7c0fb1359f7",
+  "who": "lisek",
+  "text": "Która zabawka jest pierwsza?"
+ },
+ "line.a_ask_parents": {
+  "hash": "38ad150206ac",
+  "who": "sarenka",
+  "text": "Poproście rodziców, żeby ustawili z wami zabawki w kolejce. Która jest pierwsza, a która ostatnia?"
+ },
+ "line.a_bye": {
+  "hash": "163cfb6abb1b",
+  "who": "lisek",
+  "text": "Pa, pa! Do zobaczenia!"
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "line.s_garland": {
+  "hash": "50f860c61f26",
+  "who": "sowa",
+  "text": "Robię girlandę na przyjęcie. Jabłko, gruszka, jabłko, gruszka."
+ },
+ "line.s_go_on": {
+  "hash": "fdff6aa3e3a9",
+  "who": "sowa",
+  "text": "Muszę przynieść nitkę. Dokończysz za mnie?"
+ },
+ "line.s_anything": {
+  "hash": "36d7533404c2",
+  "who": "wiewiorka",
+  "text": "Jasne! Dołożę cokolwiek, byle było kolorowo. Hop, hop!"
+ },
+ "line.s_broken": {
+  "hash": "b6c3d310fa6d",
+  "who": "sowa",
+  "text": "Ojej, zepsułaś wzór! Popatrz: jabłko, gruszka, jabłko, gruszka. Coś się powtarza."
+ },
+ "line.s_how": {
+  "hash": "575fff87dda7",
+  "who": "wiewiorka",
+  "text": "To co mam dokładać?"
+ },
+ "line.s_rhythm": {
+  "hash": "aa504144b9be",
+  "who": "sowa",
+  "text": "To, co pasuje do rytmu! Rytm to coś, co się powtarza po kolei."
+ },
+ "line.s_what": {
+  "hash": "4daaa6fa9618",
+  "who": "wiewiorka",
+  "text": "Rytm? Pokażesz mi?"
+ },
+ "line.s_listen": {
+  "hash": "07d04dd260bf",
+  "who": "sowa",
+  "text": "Posłuchaj. Klask, hop, klask, hop."
+ },
+ "line.s_same_garland": {
+  "hash": "29978be562d4",
+  "who": "sowa",
+  "text": "Girlanda ma taki sam rytm. Jabłko, gruszka, jabłko, gruszka. Zacznijmy od nowa."
+ },
+ "line.s_fill": {
+  "hash": "0ff5983d3a6d",
+  "who": "wiewiorka",
+  "text": "Przeciągnij, co będzie dalej. Uwaga, jedna rzecz nie pasuje!"
+ },
+ "line.wrong_pattern": {
+  "hash": "3ad417ba5913",
+  "who": "sowa",
+  "text": "To nie pasuje do rytmu. Co było przed tym miejscem?"
+ },
+ "line.wrong_pattern.wiewiorka": {
+  "hash": "515ade540f88",
+  "who": "wiewiorka",
+  "text": "To nie pasuje do rytmu. Co było przed tym miejscem?"
+ },
+ "line.s_solved": {
+  "hash": "61f2ce85619b",
+  "who": "sowa",
+  "text": "Girlanda gotowa! Jabłko, gruszka, jabłko, gruszka, aż do końca."
+ },
+ "line.s_to_garden": {
+  "hash": "bd8af22cd355",
+  "who": "wiewiorka",
+  "text": "Chodźmy do ogrodu. Tam też są rytmy."
+ },
+ "line.b_bed": {
+  "hash": "ab8fc0955326",
+  "who": "wiewiorka",
+  "text": "Na grządce rośnie: kwiatek, kwiatek, marchewka. I znowu: kwiatek, kwiatek, marchewka."
+ },
+ "line.b_fill": {
+  "hash": "074736da5300",
+  "who": "sowa",
+  "text": "Dosadź to, co będzie dalej."
+ },
+ "line.b_done": {
+  "hash": "f91166b63d95",
+  "who": "wiewiorka",
+  "text": "Kwiatek, kwiatek, marchewka! Rytm się zgadza."
+ },
+ "line.b_to_meadow": {
+  "hash": "d83448272398",
+  "who": "sowa",
+  "text": "Teraz piknik nad jeziorem."
+ },
+ "line.c_picnic": {
+  "hash": "978b8a48acbc",
+  "who": "sowa",
+  "text": "Nakrywam: kubek, talerz, łyżka. Kubek, talerz, łyżka."
+ },
+ "line.c_fill": {
+  "hash": "910c9085f5c2",
+  "who": "wiewiorka",
+  "text": "Przeciągnij, co będzie dalej."
+ },
+ "line.c_solved": {
+  "hash": "1ba5944307a5",
+  "who": "sowa",
+  "text": "Kubek, talerz, łyżka! Teraz umiesz dokończyć każdy rytm."
+ },
+ "line.p_intro": {
+  "hash": "1b60ec9e83d1",
+  "who": "sowa",
+  "text": "Pobawmy się w rytmy! Popatrz, co się powtarza."
+ },
+ "line.p_fill": {
+  "hash": "159a5bcc4b6b",
+  "who": "sowa",
+  "text": "Co będzie dalej? Przeciągnij na puste miejsca."
+ },
+ "line.p_fill.wiewiorka": {
+  "hash": "b20736c12bc5",
+  "who": "wiewiorka",
+  "text": "Co będzie dalej? Przeciągnij na puste miejsca."
+ },
+ "line.good_pattern": {
+  "hash": "ff1d46649aaa",
+  "who": "wiewiorka",
+  "text": "Tak! Rytm się zgadza."
+ },
+ "line.good_pattern.sowa": {
+  "hash": "b9c5ef0bb04f",
+  "who": "sowa",
+  "text": "Tak! Rytm się zgadza."
+ },
+ "line.a_game": {
+  "hash": "ce19de64894d",
+  "who": "wiewiorka",
+  "text": "Zagrajmy w rytmy z zabawek."
+ },
+ "line.a_ok": {
+  "hash": "27ac7ffa8de2",
+  "who": "sowa",
+  "text": "Dobrze! Ja zaczynam, a ty kończysz."
+ },
+ "line.a_fill": {
+  "hash": "d699a97e4113",
+  "who": "sowa",
+  "text": "Co będzie dalej? Przeciągnij zabawki."
+ },
+ "line.a_fill.wiewiorka": {
+  "hash": "c84fefa822ba",
+  "who": "wiewiorka",
+  "text": "Co będzie dalej? Przeciągnij zabawki."
+ },
+ "line.a_ask_parents": {
+  "hash": "19631ec6ec0e",
+  "who": "sowa",
+  "text": "Poproście rodziców, żeby ułożyli z wami rytm z łyżek i widelców. Możecie też razem wyklaskać rytm."
+ },
+ "line.a_bye": {
+  "hash": "de5cebfd32fc",
+  "who": "wiewiorka",
+  "text": "Pa, pa! Do zobaczenia!"
+ }
+}

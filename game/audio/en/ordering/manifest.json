@@ -1,0 +1,172 @@
+{
+ "line.s_cups": {
+  "hash": "232bb5cfa116",
+  "who": "sarenka",
+  "text": "We have to put the cups away in the cupboard. Best one inside another."
+ },
+ "line.s_big_into_small": {
+  "hash": "dd8e537d7c0f",
+  "who": "lisek",
+  "text": "Easy! I put this big one into the small one."
+ },
+ "line.s_wont_fit": {
+  "hash": "63c0c6bc2a39",
+  "who": "sarenka",
+  "text": "A big one will not fit into a small one! That does not work."
+ },
+ "line.s_how": {
+  "hash": "9882149ed9d3",
+  "who": "lisek",
+  "text": "Then how do I do it?"
+ },
+ "line.s_order": {
+  "hash": "78be64202b96",
+  "who": "sarenka",
+  "text": "Put them in order! From the smallest to the biggest."
+ },
+ "line.s_what": {
+  "hash": "549233d4d42f",
+  "who": "lisek",
+  "text": "In order? How?"
+ },
+ "line.s_show": {
+  "hash": "c10cbfd81b93",
+  "who": "sarenka",
+  "text": "I will show you. The smallest goes in place number one, then bigger and bigger."
+ },
+ "line.s_fill": {
+  "hash": "d940eae8476c",
+  "who": "sarenka",
+  "text": "Drag the cups to their places. The smallest first."
+ },
+ "line.wrong_order": {
+  "hash": "60156c0f3a01",
+  "who": "sarenka",
+  "text": "That is not its place. Look which one is smaller."
+ },
+ "line.wrong_order.lisek": {
+  "hash": "96dacb5c6db6",
+  "who": "lisek",
+  "text": "That is not its place. Look which one is smaller."
+ },
+ "line.s_nest": {
+  "hash": "45238fbb9c4c",
+  "who": "lisek",
+  "text": "Now I see! The small one goes into the middle one, and the middle one into the big one."
+ },
+ "line.s_solved": {
+  "hash": "d984e2335c47",
+  "who": "sarenka",
+  "text": "They all fit one inside another. That is putting things in order!"
+ },
+ "line.s_to_garden": {
+  "hash": "b40284993f13",
+  "who": "lisek",
+  "text": "Let's go to the garden and pull out some carrots."
+ },
+ "line.b_carrots": {
+  "hash": "2e1bc0a87e9f",
+  "who": "lisek",
+  "text": "I pulled out four carrots. Each one is a different length."
+ },
+ "line.b_fill": {
+  "hash": "420800d045f8",
+  "who": "sarenka",
+  "text": "Put them from the shortest to the longest."
+ },
+ "line.b_done": {
+  "hash": "7badfb9c5406",
+  "who": "lisek",
+  "text": "From the shortest to the longest, like stairs!"
+ },
+ "line.b_to_room": {
+  "hash": "2a519951a2c4",
+  "who": "sarenka",
+  "text": "And now to the room, we will build a tower."
+ },
+ "line.c_tower": {
+  "hash": "8a8eeff272a5",
+  "who": "sarenka",
+  "text": "Let's build a tower of blocks that will not fall over."
+ },
+ "line.c_fill": {
+  "hash": "1b1b1f6a333c",
+  "who": "lisek",
+  "text": "The biggest goes at the bottom and the smallest on top. Drag the blocks."
+ },
+ "line.c_solved": {
+  "hash": "b97f2f1d480f",
+  "who": "sarenka",
+  "text": "The tower stands! The biggest at the bottom, the smallest on top."
+ },
+ "line.p_intro": {
+  "hash": "80ffdb82ad2f",
+  "who": "lisek",
+  "text": "Let's play putting things in order!"
+ },
+ "line.p_from_small": {
+  "hash": "9075c54ba83e",
+  "who": "lisek",
+  "text": "Put them from the smallest to the biggest."
+ },
+ "line.p_from_small.sarenka": {
+  "hash": "f340d07099ad",
+  "who": "sarenka",
+  "text": "Put them from the smallest to the biggest."
+ },
+ "line.p_from_big": {
+  "hash": "75fe8feb796f",
+  "who": "lisek",
+  "text": "Put them from the biggest to the smallest."
+ },
+ "line.p_from_big.sarenka": {
+  "hash": "c279b55302a4",
+  "who": "sarenka",
+  "text": "Put them from the biggest to the smallest."
+ },
+ "line.good_order": {
+  "hash": "169fd8242878",
+  "who": "sarenka",
+  "text": "Yes! Everything in order."
+ },
+ "line.good_order.lisek": {
+  "hash": "162648135923",
+  "who": "lisek",
+  "text": "Yes! Everything in order."
+ },
+ "line.a_game": {
+  "hash": "8839a572e37f",
+  "who": "sarenka",
+  "text": "Let's play putting things in order in the hallway."
+ },
+ "line.a_ok": {
+  "hash": "d5067aa84a63",
+  "who": "lisek",
+  "text": "All right! We will sort the whole family's things."
+ },
+ "line.a_shoes": {
+  "hash": "ef7342874c14",
+  "who": "sarenka",
+  "text": "Put the shoes from the smallest to the biggest."
+ },
+ "line.a_socks": {
+  "hash": "e266f31235b6",
+  "who": "sarenka",
+  "text": "Now the socks, from the biggest to the smallest."
+ },
+ "line.a_bears": {
+  "hash": "ef527e95dff2",
+  "who": "sarenka",
+  "text": "And the teddies from the smallest to the biggest."
+ },
+ "line.a_ask_parents": {
+  "hash": "788bad7283bc",
+  "who": "sarenka",
+  "text": "Ask your parents to line up the whole family's shoes with you, from the smallest to the biggest."
+ },
+ "line.a_bye": {
+  "hash": "5fdcbfe15d1f",
+  "who": "lisek",
+  "text": "Bye bye! See you!"
+ }
+}

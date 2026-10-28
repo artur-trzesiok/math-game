@@ -1,0 +1,162 @@
+{
+ "line.s_garland": {
+  "hash": "32f555df8bd5",
+  "who": "sowa",
+  "text": "I am making a garland for the party. Apple, pear, apple, pear."
+ },
+ "line.s_go_on": {
+  "hash": "5c0020afb66f",
+  "who": "sowa",
+  "text": "I have to fetch some string. Will you finish it for me?"
+ },
+ "line.s_anything": {
+  "hash": "7c3931b71a5b",
+  "who": "wiewiorka",
+  "text": "Sure! I'll add anything, as long as it is colourful. Hop, hop!"
+ },
+ "line.s_broken": {
+  "hash": "1a0dc50a0674",
+  "who": "sowa",
+  "text": "Oh no, you broke the pattern! Look: apple, pear, apple, pear. Something repeats."
+ },
+ "line.s_how": {
+  "hash": "198c7c2a2697",
+  "who": "wiewiorka",
+  "text": "Then what should I add?"
+ },
+ "line.s_rhythm": {
+  "hash": "79f2d70dbe11",
+  "who": "sowa",
+  "text": "What fits the rhythm! A rhythm is something that repeats in order."
+ },
+ "line.s_what": {
+  "hash": "bba2f3e7c3c8",
+  "who": "wiewiorka",
+  "text": "A rhythm? Will you show me?"
+ },
+ "line.s_listen": {
+  "hash": "fa76052b3b53",
+  "who": "sowa",
+  "text": "Listen. Clap, hop, clap, hop."
+ },
+ "line.s_same_garland": {
+  "hash": "a09597c7dd00",
+  "who": "sowa",
+  "text": "The garland has the same kind of rhythm. Apple, pear, apple, pear. Let's start again."
+ },
+ "line.s_fill": {
+  "hash": "a550767f8dc1",
+  "who": "wiewiorka",
+  "text": "Drag what comes next. Careful, one thing does not fit!"
+ },
+ "line.wrong_pattern": {
+  "hash": "63fd8ad53030",
+  "who": "sowa",
+  "text": "That does not fit the rhythm. What came before this place?"
+ },
+ "line.wrong_pattern.wiewiorka": {
+  "hash": "860cd4919aee",
+  "who": "wiewiorka",
+  "text": "That does not fit the rhythm. What came before this place?"
+ },
+ "line.s_solved": {
+  "hash": "a65c44d60807",
+  "who": "sowa",
+  "text": "The garland is ready! Apple, pear, apple, pear, all the way."
+ },
+ "line.s_to_garden": {
+  "hash": "99b00c4ae62c",
+  "who": "wiewiorka",
+  "text": "Let's go to the garden. There are rhythms there too."
+ },
+ "line.b_bed": {
+  "hash": "690211ab4517",
+  "who": "wiewiorka",
+  "text": "In the bed there grows: flower, flower, carrot. And again: flower, flower, carrot."
+ },
+ "line.b_fill": {
+  "hash": "1a74965fe132",
+  "who": "sowa",
+  "text": "Plant what comes next."
+ },
+ "line.b_done": {
+  "hash": "60132cd97ba3",
+  "who": "wiewiorka",
+  "text": "Flower, flower, carrot! The rhythm is right."
+ },
+ "line.b_to_meadow": {
+  "hash": "1b6ada794ff8",
+  "who": "sowa",
+  "text": "Now a picnic by the lake."
+ },
+ "line.c_picnic": {
+  "hash": "17fd2d639252",
+  "who": "sowa",
+  "text": "I am laying the table: cup, plate, spoon. Cup, plate, spoon."
+ },
+ "line.c_fill": {
+  "hash": "5723fd15993a",
+  "who": "wiewiorka",
+  "text": "Drag what comes next."
+ },
+ "line.c_solved": {
+  "hash": "e2a407ebf885",
+  "who": "sowa",
+  "text": "Cup, plate, spoon! Now you can finish any rhythm."
+ },
+ "line.p_intro": {
+  "hash": "c8df03aeab09",
+  "who": "sowa",
+  "text": "Let's play rhythms! Look at what repeats."
+ },
+ "line.p_fill": {
+  "hash": "b180b74171d1",
+  "who": "sowa",
+  "text": "What comes next? Drag it into the empty places."
+ },
+ "line.p_fill.wiewiorka": {
+  "hash": "a149cd8c59c1",
+  "who": "wiewiorka",
+  "text": "What comes next? Drag it into the empty places."
+ },
+ "line.good_pattern": {
+  "hash": "c108e154e9c8",
+  "who": "wiewiorka",
+  "text": "Yes! The rhythm is right."
+ },
+ "line.good_pattern.sowa": {
+  "hash": "5478a6c22a6b",
+  "who": "sowa",
+  "text": "Yes! The rhythm is right."
+ },
+ "line.a_game": {
+  "hash": "4841b14c8516",
+  "who": "wiewiorka",
+  "text": "Let's play rhythms with toys."
+ },
+ "line.a_ok": {
+  "hash": "0fb2fef15bab",
+  "who": "sowa",
+  "text": "All right! I start and you finish."
+ },
+ "line.a_fill": {
+  "hash": "faed9272093e",
+  "who": "sowa",
+  "text": "What comes next? Drag the toys."
+ },
+ "line.a_fill.wiewiorka": {
+  "hash": "7b4cec8e59a6",
+  "who": "wiewiorka",
+  "text": "What comes next? Drag the toys."
+ },
+ "line.a_ask_parents": {
+  "hash": "0bed81df178b",
+  "who": "sowa",
+  "text": "Ask your parents to make a rhythm of spoons and forks with you. You can also clap a rhythm together."
+ },
+ "line.a_bye": {
+  "hash": "3c8231148d14",
+  "who": "wiewiorka",
+  "text": "Bye bye! See you!"
+ }
+}

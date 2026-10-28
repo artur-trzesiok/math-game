@@ -1,0 +1,182 @@
+{
+ "line.s_my_puzzle": {
+  "hash": "8c59ca0b9e54",
+  "who": "wiewiorka",
+  "text": "Look at my puzzle! A square of coloured pieces."
+ },
+ "line.s_broken": {
+  "hash": "99e4fe5e4fc7",
+  "who": "wiewiorka",
+  "text": "Oh no! It fell and broke into pieces!"
+ },
+ "line.s_throw": {
+  "hash": "93ec383194ff",
+  "who": "wiewiorka",
+  "text": "It is broken. I think I have to throw it away."
+ },
+ "line.s_not_broken": {
+  "hash": "cc1ec03ac1af",
+  "who": "lisek",
+  "text": "Nothing is broken! These pieces are meant to come apart."
+ },
+ "line.s_how": {
+  "hash": "806a56de7432",
+  "who": "wiewiorka",
+  "text": "How so? It is not a square any more."
+ },
+ "line.s_tangram": {
+  "hash": "3709cc3dfc89",
+  "who": "lisek",
+  "text": "It is a tangram! You can build a square from these pieces, and lots of pictures."
+ },
+ "line.s_what": {
+  "hash": "9f9453a8797c",
+  "who": "wiewiorka",
+  "text": "A tangram? How do you play it?"
+ },
+ "line.s_show": {
+  "hash": "b4cf29fe5578",
+  "who": "lisek",
+  "text": "I will show you. Every piece has its own place in the picture."
+ },
+ "line.s_two": {
+  "hash": "590c56f838a8",
+  "who": "lisek",
+  "text": "Let's start with two triangles. Drag them onto the grey places."
+ },
+ "line.s_tap_turns": {
+  "hash": "2f83213bd74c",
+  "who": "lisek",
+  "text": "If a piece does not fit, tap it. Then it turns."
+ },
+ "line.s_square_done": {
+  "hash": "df00b7f5a4d1",
+  "who": "wiewiorka",
+  "text": "Two triangles made a square!"
+ },
+ "line.s_house": {
+  "hash": "f9f43f8da69a",
+  "who": "lisek",
+  "text": "And now a house. The square is the walls and the triangle is the roof."
+ },
+ "line.s_solved": {
+  "hash": "e8ca48676e71",
+  "who": "wiewiorka",
+  "text": "A house! My puzzle is not broken at all. It is even more fun!"
+ },
+ "line.s_to_forest": {
+  "hash": "39c7190636f8",
+  "who": "lisek",
+  "text": "Let's take the tangram to the forest, by the brook."
+ },
+ "line.b_fish": {
+  "hash": "09f35d279155",
+  "who": "wiewiorka",
+  "text": "Let's build a little fish to swim down the brook."
+ },
+ "line.b_fish_done": {
+  "hash": "3213619652e1",
+  "who": "lisek",
+  "text": "The fish is ready! Its tail is a triangle."
+ },
+ "line.b_to_brook": {
+  "hash": "d0fd1bffdb3c",
+  "who": "wiewiorka",
+  "text": "Let's take it to the water!"
+ },
+ "line.c_boat": {
+  "hash": "fb29268e561e",
+  "who": "lisek",
+  "text": "And now a boat with a sail. We will float it on the water."
+ },
+ "line.c_boat_done": {
+  "hash": "152cb4ba4077",
+  "who": "wiewiorka",
+  "text": "The boat is sailing!"
+ },
+ "line.c_square_again": {
+  "hash": "64b2ed10740e",
+  "who": "wiewiorka",
+  "text": "Can we build the whole square again? All seven pieces!"
+ },
+ "line.c_solved": {
+  "hash": "2ae91f6b9b4c",
+  "who": "lisek",
+  "text": "The whole square! The tangram is back in its box, ready to play."
+ },
+ "line.wrong_piece": {
+  "hash": "9e8a46fe0942",
+  "who": "wiewiorka",
+  "text": "This piece has another shape. Look at the gap."
+ },
+ "line.wrong_piece.lisek": {
+  "hash": "b4e6aeb95d78",
+  "who": "lisek",
+  "text": "This piece has another shape. Look at the gap."
+ },
+ "line.good_build": {
+  "hash": "f275e81fc6f9",
+  "who": "lisek",
+  "text": "It fits! Beautifully built."
+ },
+ "line.good_build.wiewiorka": {
+  "hash": "e91eca1d9ab4",
+  "who": "wiewiorka",
+  "text": "It fits! Beautifully built."
+ },
+ "line.p_intro": {
+  "hash": "864c3b009aa5",
+  "who": "lisek",
+  "text": "Let's play tangram! Drag the pieces, and tap to turn them when you need to."
+ },
+ "line.p_domek": {
+  "hash": "2dff7e45dd86",
+  "who": "wiewiorka",
+  "text": "Build the house."
+ },
+ "line.p_ryba": {
+  "hash": "c8ec614f52cf",
+  "who": "wiewiorka",
+  "text": "Build the fish."
+ },
+ "line.p_lodka": {
+  "hash": "88b0f66549ca",
+  "who": "wiewiorka",
+  "text": "Build the boat."
+ },
+ "line.p_gap": {
+  "hash": "b3679238b150",
+  "who": "wiewiorka",
+  "text": "One piece is missing. Point to the one that fits the gap."
+ },
+ "line.a_game": {
+  "hash": "79a3e2f735c1",
+  "who": "wiewiorka",
+  "text": "Let's play tangram, just like at home."
+ },
+ "line.a_paper": {
+  "hash": "1f6c1c46f827",
+  "who": "lisek",
+  "text": "First a square from two triangles. At home you can cut it out of paper."
+ },
+ "line.a_house": {
+  "hash": "a3b48b6cff98",
+  "who": "lisek",
+  "text": "Now the house."
+ },
+ "line.a_fish": {
+  "hash": "4535d2c5d6d5",
+  "who": "lisek",
+  "text": "And last, the fish."
+ },
+ "line.a_ask_parents": {
+  "hash": "183085fad7ce",
+  "who": "wiewiorka",
+  "text": "Ask your parents to cut a square out of paper with you and cut it into triangles. What will you build?"
+ },
+ "line.a_bye": {
+  "hash": "5fdcbfe15d1f",
+  "who": "lisek",
+  "text": "Bye bye! See you!"
+ }
+}

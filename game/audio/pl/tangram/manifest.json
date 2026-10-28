@@ -1,0 +1,182 @@
+{
+ "line.s_my_puzzle": {
+  "hash": "7598b1971c94",
+  "who": "wiewiorka",
+  "text": "Zobacz moją układankę! Kwadrat z kolorowych kawałków."
+ },
+ "line.s_broken": {
+  "hash": "bf97e81685c7",
+  "who": "wiewiorka",
+  "text": "Ojej! Spadła i rozsypała się na kawałki!"
+ },
+ "line.s_throw": {
+  "hash": "c14d21fe8134",
+  "who": "wiewiorka",
+  "text": "Jest zepsuta. Chyba muszę ją wyrzucić."
+ },
+ "line.s_not_broken": {
+  "hash": "a983776ccc3f",
+  "who": "lisek",
+  "text": "Nic się nie zepsuło! Te kawałki tak mają."
+ },
+ "line.s_how": {
+  "hash": "72d7ceae0fce",
+  "who": "wiewiorka",
+  "text": "Jak to? Przecież nie jest już kwadratem."
+ },
+ "line.s_tangram": {
+  "hash": "1c1a285fd6f0",
+  "who": "lisek",
+  "text": "To jest tangram! Z tych kawałków można ułożyć kwadrat i mnóstwo obrazków."
+ },
+ "line.s_what": {
+  "hash": "c6a5a5287668",
+  "who": "wiewiorka",
+  "text": "Tangram? A jak się w niego gra?"
+ },
+ "line.s_show": {
+  "hash": "2c8f6b726905",
+  "who": "lisek",
+  "text": "Pokażę ci. Każdy kawałek ma swoje miejsce na obrazku."
+ },
+ "line.s_two": {
+  "hash": "ea4f8f296e11",
+  "who": "lisek",
+  "text": "Zacznijmy od dwóch trójkątów. Przeciągnij je na szare miejsca."
+ },
+ "line.s_tap_turns": {
+  "hash": "e4c872308070",
+  "who": "lisek",
+  "text": "Jeśli kawałek nie pasuje, dotknij go. Wtedy się obróci."
+ },
+ "line.s_square_done": {
+  "hash": "a5255e446bfd",
+  "who": "wiewiorka",
+  "text": "Dwa trójkąty zrobiły kwadrat!"
+ },
+ "line.s_house": {
+  "hash": "5674d70acd82",
+  "who": "lisek",
+  "text": "A teraz domek. Kwadrat to ściany, a trójkąt to dach."
+ },
+ "line.s_solved": {
+  "hash": "94eda36bc4f1",
+  "who": "wiewiorka",
+  "text": "Domek! Moja układanka wcale nie jest zepsuta. Jest jeszcze fajniejsza!"
+ },
+ "line.s_to_forest": {
+  "hash": "f64d2a399c15",
+  "who": "lisek",
+  "text": "Chodźmy z tangramem do lasu, nad strumyk."
+ },
+ "line.b_fish": {
+  "hash": "06ece7e33069",
+  "who": "wiewiorka",
+  "text": "Ułóżmy rybkę, która popłynie strumykiem."
+ },
+ "line.b_fish_done": {
+  "hash": "f349941eb17f",
+  "who": "lisek",
+  "text": "Rybka gotowa! Ma ogon z trójkąta."
+ },
+ "line.b_to_brook": {
+  "hash": "4f2ae144a648",
+  "who": "wiewiorka",
+  "text": "Zanieśmy ją nad wodę!"
+ },
+ "line.c_boat": {
+  "hash": "8fc7798e57d8",
+  "who": "lisek",
+  "text": "A teraz łódka z żaglem. Puścimy ją na wodę."
+ },
+ "line.c_boat_done": {
+  "hash": "6bef2f47d8d3",
+  "who": "wiewiorka",
+  "text": "Łódka płynie!"
+ },
+ "line.c_square_again": {
+  "hash": "30adc896aaa2",
+  "who": "wiewiorka",
+  "text": "A czy umiemy z powrotem ułożyć cały kwadrat? Wszystkie siedem kawałków!"
+ },
+ "line.c_solved": {
+  "hash": "920aa193de82",
+  "who": "lisek",
+  "text": "Cały kwadrat! Tangram znowu jest w pudełku, gotowy do zabawy."
+ },
+ "line.wrong_piece": {
+  "hash": "6b1342994e68",
+  "who": "wiewiorka",
+  "text": "Ten kawałek ma inny kształt. Popatrz na lukę."
+ },
+ "line.wrong_piece.lisek": {
+  "hash": "6f353f0c48df",
+  "who": "lisek",
+  "text": "Ten kawałek ma inny kształt. Popatrz na lukę."
+ },
+ "line.good_build": {
+  "hash": "d17519f76fa2",
+  "who": "lisek",
+  "text": "Pasuje! Pięknie ułożone."
+ },
+ "line.good_build.wiewiorka": {
+  "hash": "9bce35a6ef66",
+  "who": "wiewiorka",
+  "text": "Pasuje! Pięknie ułożone."
+ },
+ "line.p_intro": {
+  "hash": "38e6b3b2dd42",
+  "who": "lisek",
+  "text": "Pobawmy się w tangram! Przeciągaj kawałki, a jeśli trzeba, dotknij i obróć."
+ },
+ "line.p_domek": {
+  "hash": "39ee806aa031",
+  "who": "wiewiorka",
+  "text": "Ułóż domek."
+ },
+ "line.p_ryba": {
+  "hash": "61db46629e1b",
+  "who": "wiewiorka",
+  "text": "Ułóż rybkę."
+ },
+ "line.p_lodka": {
+  "hash": "5231223858cb",
+  "who": "wiewiorka",
+  "text": "Ułóż łódkę."
+ },
+ "line.p_gap": {
+  "hash": "1e278192d74b",
+  "who": "wiewiorka",
+  "text": "Jednego kawałka brakuje. Wskaż ten, który pasuje do luki."
+ },
+ "line.a_game": {
+  "hash": "6971a3842d74",
+  "who": "wiewiorka",
+  "text": "Zagrajmy w tangram, tak jak w domu."
+ },
+ "line.a_paper": {
+  "hash": "de3cbdfec98e",
+  "who": "lisek",
+  "text": "Najpierw kwadrat z dwóch trójkątów. W domu można go wyciąć z papieru."
+ },
+ "line.a_house": {
+  "hash": "5858b046b704",
+  "who": "lisek",
+  "text": "Teraz domek."
+ },
+ "line.a_fish": {
+  "hash": "27b17eea4a3e",
+  "who": "lisek",
+  "text": "A na koniec rybka."
+ },
+ "line.a_ask_parents": {
+  "hash": "094c3cd5eda6",
+  "who": "wiewiorka",
+  "text": "Poproście rodziców, żeby razem z wami wycięli kwadrat z papieru i pocięli go na trójkąty. Co z nich ułożycie?"
+ },
+ "line.a_bye": {
+  "hash": "163cfb6abb1b",
+  "who": "lisek",
+  "text": "Pa, pa! Do zobaczenia!"
+ }
+}
