@@ -221,6 +221,7 @@ all one connected shape, centred, on a fully TRANSPARENT background with plenty 
 SHEETS["mechaniki"] = {
     "outline": True,
     "names": ["waga_podstawa", "waga_belka", "waga_szalka", "kubeczek", "pizza", "czekolada"],
+    "bez_obwodki": ["waga_podstawa", "waga_belka", "waga_szalka"],    # parts of one thing: an outline of each ran over the next
     "size": "1536x1024",
     "prompt": f"""A sprite sheet of SIX separate illustrated parts for a children's picture book, arranged in a neat
 grid of 2 rows and 3 columns on a fully TRANSPARENT background, with generous empty space between them so none of
@@ -297,7 +298,7 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
         kw = Image.new("RGBA", (bok, bok), (0, 0, 0, 0))
         kw.paste(kaw, ((bok - kaw.width) // 2, (bok - kaw.height) // 2))
         kw = kw.resize((PX, PX), Image.LANCZOS)
-        if SHEETS[sheet].get("outline"):
+        if SHEETS[sheet].get("outline") and nazwa not in SHEETS[sheet].get("bez_obwodki", []):
             kw = die_cut(kw)
         kw.save(OUT / f"{nazwa}.webp", "WEBP", quality=80, method=6, exact=True)
         print(f"  {nazwa:10s} {kaw.width}x{kaw.height}")
