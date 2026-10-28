@@ -6,6 +6,7 @@
 // x in [-6, 6], y in [-4.5, 4.5], ground at GROUND. ?safe draws the rectangle.
 
 import * as THREE from "three";
+import { Muzyka } from "./muzyka.js";
 import { losuj, warianty } from "./warianty.js";
 import { v } from "./v.js";
 import { Lalka } from "./lalka.js";
@@ -38,6 +39,7 @@ export function texture(url) {
 const easeInOut = (s) => s * s * (3 - 2 * s);
 const easeOutBack = (s) => { const c = 1.7; return 1 + (c + 1) * Math.pow(s - 1, 3) + c * Math.pow(s - 1, 2); };   // a small overshoot
 
+const KADENCJA = 1.5;                  // a capped walk steps at most this many times its natural speed, then glides
 export class Stage {
   constructor(container, speech) {
     this.container = container; this.speech = speech;
@@ -54,6 +56,7 @@ export class Stage {
     this.raycaster = new THREE.Raycaster();
     // sound effects: ?cicho mutes them; a hop and a clap come with the puppets' animations
     this.sfx = new Sfx({ wycisz: PARAMS.has("cicho") }); this.sfx.wczytaj();
+    this.muzyka = new Muzyka({ wycisz: PARAMS.has("cicho"), sfx: this.sfx });     // the place's music and the weather (muzyka.js)
     Lalka.naGraj = (L, nazwa) => { if (L.bezDzwieku) return; if (nazwa === "Podskok") this.sfx.graj("hop"); else if (nazwa === "Brawo") this.sfx.graj("clap", { glosnosc: 0.8 }); };
     this.onResize = () => this.resize();
     window.addEventListener("resize", this.onResize); this.resize();
@@ -204,6 +207,7 @@ export class Stage {
     this.bgName = name;
     for (const m of this.bg) this.scene.remove(m);
     this.otoczenie = []; this.panorama = null; E.czastki(this, null); E.koniecNocy(this);   // weather and night belong to the place
+    this.muzyka.miejsce(name);
     if (typeof name === "object") { await E.plansza(this, name); this.bgName = name.id || this.bgName; return true; }   // an insert on a plain colour
     const t = await this.tlo(name);
     for (const m of t.meshes) this.scene.add(m);
@@ -327,11 +331,12 @@ export class Stage {
       const x0 = L.korzen.position.x, y0 = L.podloga ?? GROUND, dl = Math.hypot(x1 - x0, y1 - y0); if (dl < 0.02) continue;
       if (Math.abs(x1 - x0) > 0.02) L.patrz(x1 > x0 ? "prawo" : "lewo");
       let last = 0;
-      await this.tween(skok ? 0.45 : dl / L.predkoscChodu + 0.15, (q) => {
+      const nat = dl / L.predkoscChodu + 0.15, d = skok ? 0.45 : Math.min(nat, 0.7 + dl * 0.3), k = skok ? 1 : Math.min(1, KADENCJA * d / nat);   // as walkLine
+      await this.tween(d, (q) => {
         const gy = y0 + (y1 - y0) * q; L.podloga = gy;
         L.korzen.position.x = x0 + (x1 - x0) * q; L.korzen.position.y = gy + skok * Math.sin(Math.PI * q);
         L.korzen.scale.setScalar(1 - glebia * (gy - GROUND));
-        L.idz((q - last) * dl); last = q;
+        L.idz((q - last) * dl * k); last = q;
       });
       if (skok) this.sfx.graj("tap");
     }
@@ -340,9 +345,12 @@ export class Stage {
   // move a walking puppet from x0 to x1 at its stride speed (gentle start and stop); the stride's phase
   // follows the distance covered, so a planted foot stays where it stands
   async walkLine(L, x0, x1) {
-    const d = Math.abs(x1 - x0) / L.predkoscChodu + 0.25;
+    // the natural pace (stride / stance) made short legs crawl - the owl took 23 s to come in, the fox 7: the walk is
+    // capped, and the steps go at most KADENCJA times their natural speed - the rest of the way the feet slide a little
+    // (quick tiny steps looked odd; a glide reads as a cartoon walk)
+    const dist = Math.abs(x1 - x0), nat = dist / L.predkoscChodu + 0.25, d = Math.min(nat, 0.9 + dist * 0.22), k = Math.min(1, KADENCJA * d / nat);
     let last = x0; L.droga = true;
-    await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { const x = x0 + (x1 - x0) * s; L.idz(x - last); last = x; L.korzen.position.x = x; });
+    await this.tween(PARAMS.has("szybko") ? 0.2 : d, (s) => { const x = x0 + (x1 - x0) * s; L.idz((x - last) * k); last = x; L.korzen.position.x = x; });
     L.droga = false;
   }
   // where a thing is now (a sticker, a sign, a zone or a puppet's head), for a gaze
@@ -907,5 +915,6 @@ export class Stage {
     await fetch(`/api/snap?name=${name}`, { method: "POST", body: blob });
     return name;
   }
-  dispose() { for (const L of Object.values(this.puppets)) if (L.cien) this.scene.remove(L.cien); this.running = false; clearInterval(this.watchdog); window.removeEventListener("resize", this.onResize); this.renderer.dispose(); this.renderer.domElement.remove(); }
+  dispose() { this.muzyka?.stop(); clearInterval(this.muzyka?.t);   // the music goes with the lesson
+    for (const L of Object.values(this.puppets)) if (L.cien) this.scene.remove(L.cien); this.running = false; clearInterval(this.watchdog); window.removeEventListener("resize", this.onResize); this.renderer.dispose(); this.renderer.domElement.remove(); }
 }
