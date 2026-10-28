@@ -807,6 +807,44 @@ writing).
 Each object fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.""",
 }
 
+# the stage icons again, one per image at 1024 px: on the stage cards they are shown big and the 256 px sheet blurred
+SHEETS["ikona_opowiesc_hd"] = {
+    "names": ["ikona_opowiesc"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 1024,
+    "refs": ["ikona_opowiesc"],
+    "prompt": f"""ONE illustrated icon for a children's game in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow, NO halo outside it.
+{STYL}
+The reference image shows the same icon small: paint it again, the same design, colours and soft white rounded-square
+card behind it, with crisp clean detail: an open picture book with a tiny fox on its pages (the STORY).""",
+}
+SHEETS["ikona_cwiczenia_hd"] = {
+    "names": ["ikona_cwiczenia"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 1024,
+    "refs": ["ikona_cwiczenia"],
+    "prompt": f"""ONE illustrated icon for a children's game in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow, NO halo outside it.
+{STYL}
+The reference image shows the same icon small: paint it again, the same design, colours and soft white rounded-square
+card behind it, with crisp clean detail: a child's hand with the index finger pointing, tapping (the PRACTICE).""",
+}
+SHEETS["ikona_dom_hd"] = {
+    "names": ["ikona_dom"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 1024,
+    "refs": ["ikona_dom"],
+    "prompt": f"""ONE illustrated icon for a children's game in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow, NO halo outside it.
+{STYL}
+The reference image shows the same icon small: paint it again, the same design, colours and soft white rounded-square
+card behind it, with crisp clean detail: a small cosy house with a red roof and a window (AT HOME).""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
