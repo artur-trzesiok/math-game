@@ -429,6 +429,15 @@ export class Stage {
     const handle = { mesh: g, name, kind: "zone", x, y, w, h, base: 1, pulse: false, items: [],
       contains: (px, py) => Math.abs(px - x) < w / 2 + 0.2 && Math.abs(py - y) < h / 2 + 0.3,
       layout: (animate = true) => {
+        // everything must fit: the things inside shrink together until the rows fill the container no more than it holds
+        // (a sort is about kinds, not sizes); never above their own size
+        const uklad = (k) => {
+          const rows = [[]]; let rowW = 0;
+          for (const it of handle.items) { const iw = 1.18 * it.size0 * 0.8 * k; if (rowW + iw > w - 0.25 && rows[rows.length - 1].length) { rows.push([]); rowW = 0; } rows[rows.length - 1].push(it); rowW += iw + 0.08; }
+          return rows.reduce((a, r) => a + Math.max(...r.map((it) => 1.18 * it.size0 * 0.8 * k)) + 0.08, 0) - 0.08;
+        };
+        let k = 1; while (k > 0.3 && handle.items.length && uklad(k) > h - 0.24) k *= 0.88;
+        for (const it of handle.items) { it.base = it.size0 * 0.8 * k; if (!animate) it.mesh.scale.setScalar(it.base); else { const s0 = it.mesh.scale.x, s1 = it.base; this.tween(0.3, (s) => it.mesh.scale.setScalar(s0 + (s1 - s0) * s)); } }
         const gap = 0.08, maxW = w - 0.25, rows = [[]]; let rowW = 0;
         for (const it of handle.items) {
           const iw = 1.18 * it.base;
@@ -449,7 +458,7 @@ export class Stage {
           top -= rh + gap;
         }
       },
-      put: (it) => { if (it.zone && it.zone !== handle) it.zone.take(it); if (!handle.items.includes(it)) handle.items.push(it); it.zone = handle; it.base = it.size0 * 0.8; it.mesh.scale.setScalar(it.base); handle.layout(); },
+      put: (it) => { if (it.zone && it.zone !== handle) it.zone.take(it); if (!handle.items.includes(it)) handle.items.push(it); it.zone = handle; handle.layout(); },
       take: (it, relayout = true) => { const i = handle.items.indexOf(it); if (i >= 0) handle.items.splice(i, 1); it.zone = null; it.base = it.size0; it.mesh.scale.setScalar(it.base); if (relayout) handle.layout(); },
       // kept for scenes that place things one by one
       slot: () => { const i = handle.items.length + (handle.slots = (handle.slots || 0) + 1) - 1; const cols = Math.max(2, Math.round(w / 1.05)); return { x: x - w / 2 + 0.6 + (i % cols) * (w - 1.2) / (cols - 1), y: y + h / 2 - 0.65 - Math.floor(i / cols) * 0.8 }; },

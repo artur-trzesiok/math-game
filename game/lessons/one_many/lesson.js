@@ -77,8 +77,8 @@ export default {
         await c.say("wiewiorka", "line.b_mama");
         const grupa = await c.kupka("kaczatko", 5, { x: 1.3, y: 0.6, size: 1.5 });
         await c.say("sarenka", "line.b_wiele_brak");
-        const sam = await c.object("kaczatko", { x: -4.0, y: 1.25, size: 0.75 });             // far from the others, by the reeds
-        const trzcina = await c.object("trzcina", { x: -4.6, y: 1.45, size: 1.5, z: 0.45 });
+        const sam = await c.object("kaczatko", { x: -3.1, y: 0.05, size: 0.75 });             // far from the others, in the water by the reeds
+        const trzcina = await c.object("trzcina", { x: -3.75, y: 0.3, size: 1.5, z: 0.45 });
         await c.say("wiewiorka", "line.b_gdzie");
         dobre(sam); await c.task({ targets: [grupa, sam], correct: sam, wrong: "line.b_to_wiele" }); dobre(sam, false);
         await c.say("sarenka", "line.b_jest", { anim: "Radosc" });

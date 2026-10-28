@@ -330,6 +330,35 @@ cute little grey mice huddled together, a mother and three babies, seen from the
 Both the same size.""",
 }
 
+# tall and short (stage 2): each thing twice, the SAME thing at two heights, standing upright on one ground line
+SHEETS["wysoki_niski"] = {
+    "outline": True,
+    "wspolna_skala": True,
+    "names": ["slonecznik_wysoki", "slonecznik_niski", "swieca_wysoka", "swieca_niska", "drzewko_wysokie", "drzewko_niskie", "patyk_wysoki", "patyk_niski"],
+    "rows": 1,
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of EIGHT illustrated objects for a children's picture book, in ONE ROW of 8 on a fully
+TRANSPARENT background, with empty space between them so none of them touch. Every object stands UPRIGHT, its foot on
+the same invisible ground line at the bottom.
+{STYL}
+Left to right: one TALL sunflower on a long green stem; the SAME sunflower but SHORT (a stem a third as long, the same
+flower head); one TALL white candle with a little flame; the SAME candle but SHORT; one TALL slim young apple tree; the
+SAME young tree but SHORT; one TALL straight wooden stick standing upright; the SAME stick but SHORT.
+The tall things are about three times as tall as the short ones; the same width.
+The background is fully TRANSPARENT: NO coloured background, NO glow, NO light halo around anything.""",
+}
+SHEETS["wysoki_niski2"] = {
+    "outline": True,
+    "names": ["pieniek_niski", "miarka_scienna", "domek_na_drzewie", "jablon_wysoka"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of FOUR illustrated objects for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch.
+{STYL}
+Left to right: one low round tree stump with rings on its flat top, a little moss; a tall narrow wooden height chart
+for a wall, painted with coloured stripes and small notches, NO numbers, NO letters; a small cosy wooden treehouse on a
+platform with a little roof, seen from the front, NO tree under it; one big tall apple tree with red apples.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
