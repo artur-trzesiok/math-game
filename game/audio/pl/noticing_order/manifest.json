@@ -1,0 +1,232 @@
+{
+ "line.a_ksiazka": {
+  "hash": "163d5a2d4284",
+  "who": "sowa",
+  "text": "Zajączku, mam nową książeczkę z obrazkami. Przeczytam ci ją!"
+ },
+ "line.a_szybko": {
+  "hash": "2f0067542e53",
+  "who": "zajac",
+  "text": "Daj, daj, szybko, chcę zobaczyć!"
+ },
+ "line.a_ojej": {
+  "hash": "e6812564e498",
+  "who": "zajac",
+  "text": "Ojej! Kartki się wysypały. Zaraz je poukładam!"
+ },
+ "line.a_czyta_zle": {
+  "hash": "275526dd3ac9",
+  "who": "sowa",
+  "text": "Przeczytajmy. Najpierw była kura, potem jajko, a na końcu z jajka wykluło się pisklę... Hmm."
+ },
+ "line.a_smieszne": {
+  "hash": "3872d47522cc",
+  "who": "zajac",
+  "text": "Hihi, coś tu się nie zgadza. Pisklę wykluwa się na końcu, a kura była na początku?"
+ },
+ "line.a_po_kolei": {
+  "hash": "359c011b5456",
+  "who": "sowa",
+  "text": "Bo kartki są pomieszane. Historyjka dzieje się po kolei: najpierw, potem i na końcu."
+ },
+ "line.a_uloz": {
+  "hash": "ffaa4ca73aa0",
+  "who": "sowa",
+  "text": "Pomóż nam ułożyć kartki po kolei. Co było najpierw? Zacznij przy strzałce."
+ },
+ "line.zla_kolejnosc": {
+  "hash": "0b7c0ce92112",
+  "who": "sowa",
+  "text": "To nie to miejsce. Co dzieje się wcześniej, a co później?"
+ },
+ "line.zla_kolejnosc.lisek": {
+  "hash": "cb2ae5d20da7",
+  "who": "lisek",
+  "text": "To nie to miejsce. Co dzieje się wcześniej, a co później?"
+ },
+ "line.zla_kolejnosc.zajac": {
+  "hash": "047aa6666a7f",
+  "who": "zajac",
+  "text": "To nie to miejsce. Co dzieje się wcześniej, a co później?"
+ },
+ "line.a_czyta_dobrze": {
+  "hash": "b00364593029",
+  "who": "sowa",
+  "text": "Najpierw było jajko, potem z jajka wykluło się pisklę, a na końcu pisklę urosło i jest kurą."
+ },
+ "line.a_ma_sens": {
+  "hash": "255486ea730b",
+  "who": "zajac",
+  "text": "Teraz to ma sens! Jajko, pisklę, kura."
+ },
+ "line.b_nasiono": {
+  "hash": "bc3d000f4c4e",
+  "who": "lisek",
+  "text": "W ogródku też wszystko dzieje się po kolei. Popatrzcie, sadzę nasionko."
+ },
+ "line.b_najpierw": {
+  "hash": "e11443ad7dfb",
+  "who": "sowa",
+  "text": "Najpierw nasionko w ziemi."
+ },
+ "line.b_potem": {
+  "hash": "0fbfd0fbc81e",
+  "who": "sowa",
+  "text": "Potem wyrasta kiełek."
+ },
+ "line.b_na_koncu": {
+  "hash": "289d5e817be8",
+  "who": "sowa",
+  "text": "A na końcu kwiatek! Tulipan."
+ },
+ "line.b_uloz": {
+  "hash": "97f397ff912c",
+  "who": "lisek",
+  "text": "Obrazki się pomieszały. Ułóż je po kolei, zacznij przy strzałce."
+ },
+ "line.b_dobrze": {
+  "hash": "8607b7a4cfda",
+  "who": "lisek",
+  "text": "Nasionko, kiełek, kwiatek. Brawo!"
+ },
+ "line.b_balwan": {
+  "hash": "7c100a59d520",
+  "who": "lisek",
+  "text": "Narysowałem historyjkę o bałwanku, ale zgubiłem jedną kartkę ze środka."
+ },
+ "line.b_ktora": {
+  "hash": "50da37ba6171",
+  "who": "sowa",
+  "text": "Najpierw jedna kula, na końcu gotowy bałwan. Co było pomiędzy? Wskaż."
+ },
+ "line.b_ktora_nie": {
+  "hash": "61186d70ae52",
+  "who": "sowa",
+  "text": "Ta kartka jest z innej historyjki. Szukamy bałwanka."
+ },
+ "line.b_balwan_ok": {
+  "hash": "15d5d84a53f4",
+  "who": "lisek",
+  "text": "Tak! Dwie kule, a potem dopiero kapelusz i szalik. Historyjka jest cała."
+ },
+ "line.b_wyscig": {
+  "hash": "40e70d36b5c9",
+  "who": "zajac",
+  "text": "A teraz wyścig! Kto pierwszy dobiegnie do drzewa?"
+ },
+ "line.b_kto_pierwszy": {
+  "hash": "96287305f865",
+  "who": "lisek",
+  "text": "Kto był pierwszy? Wskaż."
+ },
+ "line.b_kto_ostatni": {
+  "hash": "08df3f3dbfd5",
+  "who": "lisek",
+  "text": "A kto był ostatni? Wskaż."
+ },
+ "line.b_ostatnia": {
+  "hash": "c626bd13015d",
+  "who": "sowa",
+  "text": "Ja byłam ostatnia. Mam krótkie nóżki!"
+ },
+ "line.b_do_domu": {
+  "hash": "3d0287e4204f",
+  "who": "zajac",
+  "text": "Wracamy do domu!"
+ },
+ "line.p_start": {
+  "hash": "cf6879afe356",
+  "who": "sowa",
+  "text": "Pobawmy się w historyjki! Mam pięć zabaw."
+ },
+ "line.p_ciasto": {
+  "hash": "8a3060deb4eb",
+  "who": "zajac",
+  "text": "Jak się piecze ciasto? Ułóż obrazki po kolei."
+ },
+ "line.p_dobrze": {
+  "hash": "427a7d044fbf",
+  "who": "sowa",
+  "text": "Brawo, wszystko po kolei!"
+ },
+ "line.p_dobrze.zajac": {
+  "hash": "8473f7f4ed23",
+  "who": "zajac",
+  "text": "Brawo, wszystko po kolei!"
+ },
+ "line.p_co_pierwsze": {
+  "hash": "f0d3012f9b02",
+  "who": "sowa",
+  "text": "Co było pierwsze: kura czy jajko? W naszej książeczce. Wskaż."
+ },
+ "line.p_co_pierwsze_nie": {
+  "hash": "f9ad4b6dcbad",
+  "who": "sowa",
+  "text": "W naszej historyjce najpierw było jajko."
+ },
+ "line.p_jajko": {
+  "hash": "d488b0f33d54",
+  "who": "zajac",
+  "text": "Jajko! A z jajka pisklę."
+ },
+ "line.p_balwan": {
+  "hash": "fe67e3667f6c",
+  "who": "zajac",
+  "text": "Ułóż bałwanka po kolei."
+ },
+ "line.p_ostatnie": {
+  "hash": "0bacef8e748f",
+  "who": "sowa",
+  "text": "Co jest na końcu tej historyjki? Wskaż."
+ },
+ "line.p_ostatnie_nie": {
+  "hash": "08d50128fae2",
+  "who": "sowa",
+  "text": "To jest wcześniej. Co wyrasta na samym końcu?"
+ },
+ "line.p_kwiat": {
+  "hash": "90de72298ddb",
+  "who": "zajac",
+  "text": "Kwiatek! Na końcu jest kwiatek."
+ },
+ "line.p_memory": {
+  "hash": "5e85e2720a88",
+  "who": "zajac",
+  "text": "Odwracaj karty i szukaj par."
+ },
+ "line.d_kanapka": {
+  "hash": "4d9155b9b743",
+  "who": "zajac",
+  "text": "Na kolację zrobimy kanapkę."
+ },
+ "line.d_uloz": {
+  "hash": "2e09e4bae511",
+  "who": "sowa",
+  "text": "Najpierw chleb, potem masło, a na końcu ser. Ułóż obrazki po kolei."
+ },
+ "line.d_mniam": {
+  "hash": "9e65023d9755",
+  "who": "zajac",
+  "text": "Chleb, masło, ser. Mniam!"
+ },
+ "line.d_rodzice": {
+  "hash": "c92b5f12c006",
+  "who": "sowa",
+  "text": "Opowiedz rodzicom historyjkę w trzech obrazkach: co było najpierw, co potem, a co na końcu."
+ },
+ "line.naklejka_daj": {
+  "hash": "9595ee0d7e2d",
+  "who": "sowa",
+  "text": "Dziękuję za pomoc z książeczką! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "c5a826aa0ed3",
+  "who": "sowa",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "6fd2e27549db",
+  "who": "narrator",
+  "text": "To pisklę z książeczki Sowy. Dostaliśmy je, kiedy układaliśmy historyjki po kolei."
+ }
+}

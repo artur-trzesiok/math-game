@@ -1,0 +1,232 @@
+{
+ "line.a_ksiazka": {
+  "hash": "4b1211524ccb",
+  "who": "sowa",
+  "text": "Bunny, I have a new picture book. I'll read it to you!"
+ },
+ "line.a_szybko": {
+  "hash": "801e82de1c2f",
+  "who": "zajac",
+  "text": "Give it, give it, quick, I want to see!"
+ },
+ "line.a_ojej": {
+  "hash": "47790d9a62f1",
+  "who": "zajac",
+  "text": "Oh no! The pages fell out. I'll put them back right now!"
+ },
+ "line.a_czyta_zle": {
+  "hash": "2a307f3bb283",
+  "who": "sowa",
+  "text": "Let's read. First there was the hen, then the egg, and last a chick hatched out of the egg... Hmm."
+ },
+ "line.a_smieszne": {
+  "hash": "fe1e34263e16",
+  "who": "zajac",
+  "text": "Hee hee, something's wrong here. The chick hatches at the end, but the hen was at the start?"
+ },
+ "line.a_po_kolei": {
+  "hash": "89e60ca08727",
+  "who": "sowa",
+  "text": "Because the pages are mixed up. A story happens in order: first, then, and last."
+ },
+ "line.a_uloz": {
+  "hash": "e108e32d9562",
+  "who": "sowa",
+  "text": "Help us put the pages in order. What came first? Start at the arrow."
+ },
+ "line.zla_kolejnosc": {
+  "hash": "a41f7f18164d",
+  "who": "sowa",
+  "text": "That's not its place. What happens earlier, and what later?"
+ },
+ "line.zla_kolejnosc.lisek": {
+  "hash": "9ec825334eab",
+  "who": "lisek",
+  "text": "That's not its place. What happens earlier, and what later?"
+ },
+ "line.zla_kolejnosc.zajac": {
+  "hash": "905371940b30",
+  "who": "zajac",
+  "text": "That's not its place. What happens earlier, and what later?"
+ },
+ "line.a_czyta_dobrze": {
+  "hash": "97c795dd43ae",
+  "who": "sowa",
+  "text": "First there was an egg, then a chick hatched out of the egg, and last the chick grew up into a hen."
+ },
+ "line.a_ma_sens": {
+  "hash": "6e4fd145095c",
+  "who": "zajac",
+  "text": "Now it makes sense! Egg, chick, hen."
+ },
+ "line.b_nasiono": {
+  "hash": "1e99eddc281f",
+  "who": "lisek",
+  "text": "In the garden everything happens in order too. Look, I'm planting a seed."
+ },
+ "line.b_najpierw": {
+  "hash": "6ab7fc06ccb2",
+  "who": "sowa",
+  "text": "First a seed in the soil."
+ },
+ "line.b_potem": {
+  "hash": "298ff8008964",
+  "who": "sowa",
+  "text": "Then a sprout grows."
+ },
+ "line.b_na_koncu": {
+  "hash": "6551a640349d",
+  "who": "sowa",
+  "text": "And last a flower! A tulip."
+ },
+ "line.b_uloz": {
+  "hash": "5e0113cf4dcd",
+  "who": "lisek",
+  "text": "The pictures got mixed up. Put them in order, start at the arrow."
+ },
+ "line.b_dobrze": {
+  "hash": "0697c2d41f98",
+  "who": "lisek",
+  "text": "Seed, sprout, flower. Bravo!"
+ },
+ "line.b_balwan": {
+  "hash": "9265047ebc66",
+  "who": "lisek",
+  "text": "I drew a story about a snowman, but I lost one page from the middle."
+ },
+ "line.b_ktora": {
+  "hash": "45d6b2ad302e",
+  "who": "sowa",
+  "text": "First one snowball, last a finished snowman. What came in between? Point to it."
+ },
+ "line.b_ktora_nie": {
+  "hash": "d1e777f09a88",
+  "who": "sowa",
+  "text": "That page is from another story. We're looking for the snowman."
+ },
+ "line.b_balwan_ok": {
+  "hash": "02c1f34c796c",
+  "who": "lisek",
+  "text": "Yes! Two snowballs, and only then the hat and the scarf. The story is whole."
+ },
+ "line.b_wyscig": {
+  "hash": "a206c330851b",
+  "who": "zajac",
+  "text": "And now a race! Who'll get to the tree first?"
+ },
+ "line.b_kto_pierwszy": {
+  "hash": "3e4368060bf0",
+  "who": "lisek",
+  "text": "Who was first? Point to them."
+ },
+ "line.b_kto_ostatni": {
+  "hash": "601bbfdc1bd4",
+  "who": "lisek",
+  "text": "And who was last? Point to them."
+ },
+ "line.b_ostatnia": {
+  "hash": "84713fe4c303",
+  "who": "sowa",
+  "text": "I was last. I have short little legs!"
+ },
+ "line.b_do_domu": {
+  "hash": "6c9b9bd3734b",
+  "who": "zajac",
+  "text": "Let's go home!"
+ },
+ "line.p_start": {
+  "hash": "d1410bd40aff",
+  "who": "sowa",
+  "text": "Let's play with stories! I have five games."
+ },
+ "line.p_ciasto": {
+  "hash": "45286ed41563",
+  "who": "zajac",
+  "text": "How do you bake a cake? Put the pictures in order."
+ },
+ "line.p_dobrze": {
+  "hash": "9e7a98ca461f",
+  "who": "sowa",
+  "text": "Bravo, all in order!"
+ },
+ "line.p_dobrze.zajac": {
+  "hash": "cf1bd5a32845",
+  "who": "zajac",
+  "text": "Bravo, all in order!"
+ },
+ "line.p_co_pierwsze": {
+  "hash": "790786b719a6",
+  "who": "sowa",
+  "text": "What came first: the hen or the egg? In our book. Point to it."
+ },
+ "line.p_co_pierwsze_nie": {
+  "hash": "919449bea136",
+  "who": "sowa",
+  "text": "In our story the egg came first."
+ },
+ "line.p_jajko": {
+  "hash": "66ffe2764a2c",
+  "who": "zajac",
+  "text": "The egg! And out of the egg a chick."
+ },
+ "line.p_balwan": {
+  "hash": "78afd98eb722",
+  "who": "zajac",
+  "text": "Put the snowman in order."
+ },
+ "line.p_ostatnie": {
+  "hash": "f2bfb45a0b70",
+  "who": "sowa",
+  "text": "What comes last in this story? Point to it."
+ },
+ "line.p_ostatnie_nie": {
+  "hash": "25ade2d4e648",
+  "who": "sowa",
+  "text": "That comes earlier. What grows at the very end?"
+ },
+ "line.p_kwiat": {
+  "hash": "cd9b9a9a75e4",
+  "who": "zajac",
+  "text": "The flower! The flower comes last."
+ },
+ "line.p_memory": {
+  "hash": "7bba9789fdbf",
+  "who": "zajac",
+  "text": "Turn the cards and find the pairs."
+ },
+ "line.d_kanapka": {
+  "hash": "c12959dd06fd",
+  "who": "zajac",
+  "text": "Let's make a sandwich for supper."
+ },
+ "line.d_uloz": {
+  "hash": "1fa3e712f644",
+  "who": "sowa",
+  "text": "First bread, then butter, and last cheese. Put the pictures in order."
+ },
+ "line.d_mniam": {
+  "hash": "758a75bde8d9",
+  "who": "zajac",
+  "text": "Bread, butter, cheese. Yum!"
+ },
+ "line.d_rodzice": {
+  "hash": "35677fca7191",
+  "who": "sowa",
+  "text": "Tell your parents a story in three pictures: what came first, what next, and what last."
+ },
+ "line.naklejka_daj": {
+  "hash": "1560618ab219",
+  "who": "sowa",
+  "text": "Thank you for helping with my book! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "4035416334d1",
+  "who": "sowa",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "9bbf69fc0a55",
+  "who": "narrator",
+  "text": "This is the chick from Owl's book. We got it when we put stories in order."
+ }
+}

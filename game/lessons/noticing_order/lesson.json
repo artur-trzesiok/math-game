@@ -1,0 +1,42 @@
+{
+  "id": "noticing_order",
+  "title": {
+    "pl": "Zauważanie porządku",
+    "en": "Noticing order"
+  },
+  "goal": "Things happen in order - first, then, last; a story told from its pictures, a missing step found.",
+  "age": "3-4",
+  "characters": [
+    "sowa",
+    "zajac",
+    "lisek"
+  ],
+  "backgrounds": [
+    "las",
+    "ogrod",
+    "dom"
+  ],
+  "objects": [
+    "jajko",
+    "piskle",
+    "kura",
+    "nasiono",
+    "kielek",
+    "kwiat_rozkwit",
+    "balwan_1",
+    "balwan_2",
+    "balwan_3",
+    "ciasto_1",
+    "ciasto_2",
+    "ciasto_3",
+    "kanapka_1",
+    "kanapka_2",
+    "kanapka_3",
+    "karta_rewers"
+  ],
+  "cover": "Owl reads a picture book to Bunny in a forest; three of its pages float in the air in order: an egg in a nest, a chick hatching, a hen.",
+  "naklejka": {
+    "obraz": "objects/piskle",
+    "kto": "sowa"
+  }
+}
