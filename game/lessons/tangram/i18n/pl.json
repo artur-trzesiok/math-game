@@ -1,163 +1,164 @@
 {
-  "line.s_my_puzzle": {
+  "line.a_teatr": {
+    "who": "sowa",
+    "text": "Dziś wieczorem urządzamy teatr cieni!"
+  },
+  "line.a_lalki": {
     "who": "wiewiorka",
-    "text": "Zobacz moją układankę! Kwadrat z kolorowych kawałków."
+    "text": "Ale nie mamy żadnych lalek."
   },
-  "line.s_broken": {
+  "line.a_z_ksztaltow": {
+    "who": "sowa",
+    "text": "Zrobimy je z kształtów. Każdy kawałek ma swoje miejsce. Najpierw domek."
+  },
+  "line.a_pomoge": {
+    "who": "mis",
+    "text": "Pomogę! Ten trójkąt pójdzie na dach."
+  },
+  "line.a_nie_pasuje": {
+    "who": "mis",
+    "text": "Nie pasuje! Ten trójkąt jest zły. Wyrzucam go."
+  },
+  "line.a_nie_wyrzucaj": {
+    "who": "sowa",
+    "text": "Misiu, nie wyrzucaj! Ten trójkąt jest dobry, tylko jest obrócony."
+  },
+  "line.a_obroc": {
+    "who": "sowa",
+    "text": "Stuknij kawałek, a się obróci. Obracaj, aż będzie pasował, i przeciągnij go na miejsce."
+  },
+  "line.a_pasuje": {
+    "who": "mis",
+    "text": "Pasuje! Wystarczyło go obrócić."
+  },
+  "line.a_do_teatru": {
+    "who": "sowa",
+    "text": "Pierwsza lalka gotowa. Chodźmy do teatru!"
+  },
+  "line.b_ekran": {
     "who": "wiewiorka",
-    "text": "Ojej! Spadła i rozsypała się na kawałki!"
+    "text": "Jaki wielki ekran! Za nim świeci lampa."
   },
-  "line.s_throw": {
+  "line.b_ryba": {
+    "who": "sowa",
+    "text": "Ułóż na ekranie rybkę. Stukaj, żeby obrócić, i przeciągaj kawałki na miejsca."
+  },
+  "line.b_plynie": {
     "who": "wiewiorka",
-    "text": "Jest zepsuta. Chyba muszę ją wyrzucić."
+    "text": "Patrzcie, cień rybki pływa!"
   },
-  "line.s_not_broken": {
-    "who": "lisek",
-    "text": "Nic się nie zepsuło! Te kawałki tak mają."
+  "line.b_lodka": {
+    "who": "mis",
+    "text": "Teraz łódka! Ułóż ją z kawałków."
   },
-  "line.s_how": {
+  "line.b_plynie_lodka": {
+    "who": "mis",
+    "text": "Łódka kołysze się na falach!"
+  },
+  "line.b_kot": {
+    "who": "sowa",
+    "text": "Z tych samych kształtów zrobimy coś zupełnie nowego: kotka!"
+  },
+  "line.b_miau": {
     "who": "wiewiorka",
-    "text": "Jak to? Przecież nie jest już kwadratem."
+    "text": "Miau! Kotek kiwa głową."
   },
-  "line.s_tangram": {
-    "who": "lisek",
-    "text": "To jest tangram! Z tych kawałków można ułożyć kwadrat i mnóstwo obrazków."
+  "line.b_czyj": {
+    "who": "sowa",
+    "text": "Czyj to cień? Wskaż."
   },
-  "line.s_what": {
-    "who": "wiewiorka",
-    "text": "Tangram? A jak się w niego gra?"
-  },
-  "line.s_show": {
-    "who": "lisek",
-    "text": "Pokażę ci. Każdy kawałek ma swoje miejsce na obrazku."
-  },
-  "line.s_two": {
-    "who": "lisek",
-    "text": "Zacznijmy od dwóch trójkątów. Przeciągnij je na szare miejsca."
-  },
-  "line.s_tap_turns": {
-    "who": "lisek",
-    "text": "Jeśli kawałek nie pasuje, dotknij go. Wtedy się obróci."
-  },
-  "line.s_square_done": {
-    "who": "wiewiorka",
-    "text": "Dwa trójkąty zrobiły kwadrat!"
-  },
-  "line.s_house": {
-    "who": "lisek",
-    "text": "A teraz domek. Kwadrat to ściany, a trójkąt to dach."
-  },
-  "line.s_solved": {
-    "who": "wiewiorka",
-    "text": "Domek! Moja układanka wcale nie jest zepsuta. Jest jeszcze fajniejsza!"
-  },
-  "line.s_to_forest": {
-    "who": "lisek",
-    "text": "Chodźmy z tangramem do lasu, nad strumyk."
-  },
-  "line.b_fish": {
-    "who": "wiewiorka",
-    "text": "Ułóżmy rybkę, która popłynie strumykiem."
-  },
-  "line.b_fish_done": {
-    "who": "lisek",
-    "text": "Rybka gotowa! Ma ogon z trójkąta."
-  },
-  "line.b_to_brook": {
-    "who": "wiewiorka",
-    "text": "Zanieśmy ją nad wodę!"
-  },
-  "line.c_boat": {
-    "who": "lisek",
-    "text": "A teraz łódka z żaglem. Puścimy ją na wodę."
-  },
-  "line.c_boat_done": {
-    "who": "wiewiorka",
-    "text": "Łódka płynie!"
-  },
-  "line.c_square_again": {
-    "who": "wiewiorka",
-    "text": "A czy umiemy z powrotem ułożyć cały kwadrat? Wszystkie siedem kawałków!"
-  },
-  "line.c_solved": {
-    "who": "lisek",
-    "text": "Cały kwadrat! Tangram jest znowu cały, gotowy do zabawy."
-  },
-  "line.wrong_piece": {
-    "who": "wiewiorka",
-    "text": "Ten kawałek ma inny kształt. Popatrz na lukę.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.wrong_big": {
-    "who": "wiewiorka",
-    "text": "Ten trójkąt jest za duży. Popatrz na lukę.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.good_build": {
-    "who": "lisek",
-    "text": "Pasuje! Pięknie ułożone.",
+  "line.b_czyj_nie": {
+    "who": "sowa",
+    "text": "Popatrz na kształt cienia: uszy, ogonek, łapki.",
     "speakers": [
       "wiewiorka"
     ]
   },
-  "line.p_intro": {
-    "who": "lisek",
-    "text": "Pobawmy się w tangram! Przeciągaj kawałki, a jeśli trzeba, dotknij i obróć."
-  },
-  "line.p_domek": {
+  "line.b_zajac": {
     "who": "wiewiorka",
-    "text": "Ułóż domek."
+    "text": "To cień zajączka! Ma długie uszy."
+  },
+  "line.b_przedstawienie": {
+    "who": "sowa",
+    "text": "Przedstawienie gotowe! Brawo dla aktorów!"
+  },
+  "line.b_koniec": {
+    "who": "mis",
+    "text": "Najlepszy teatr na świecie!"
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Poukładajmy obrazki z kawałków! Mam pięć zabaw."
   },
   "line.p_ryba": {
     "who": "wiewiorka",
     "text": "Ułóż rybkę."
   },
+  "line.p_dobrze": {
+    "who": "sowa",
+    "text": "Brawo!",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_luka": {
+    "who": "wiewiorka",
+    "text": "W domku brakuje kawałka. Który pasuje do dziury? Wskaż."
+  },
+  "line.p_za_duzy": {
+    "who": "wiewiorka",
+    "text": "Ten trójkąt ma dobry kształt, ale jest za duży. Szukaj mniejszego."
+  },
+  "line.p_inny": {
+    "who": "wiewiorka",
+    "text": "Ten kawałek ma inny kształt niż dziura."
+  },
   "line.p_lodka": {
+    "who": "sowa",
+    "text": "Ułóż łódkę. Kawałki trzeba poobracać."
+  },
+  "line.p_czyj": {
+    "who": "sowa",
+    "text": "A to czyj cień? Wskaż."
+  },
+  "line.p_jez": {
     "who": "wiewiorka",
-    "text": "Ułóż łódkę."
+    "text": "To cień jeżyka! Ma kolce."
   },
-  "line.p_gap": {
+  "line.p_kot": {
     "who": "wiewiorka",
-    "text": "Jednego kawałka brakuje. Wskaż ten, który pasuje do luki."
+    "text": "A teraz ułóż kotka."
   },
-  "line.a_game": {
-    "who": "wiewiorka",
-    "text": "Zagrajmy w tangram, tak jak w domu."
+  "line.h_kuchnia": {
+    "who": "mis",
+    "text": "W kuchni też możemy układać! Najpierw kwadrat z dwóch trójkątów."
   },
-  "line.a_paper": {
-    "who": "lisek",
-    "text": "Najpierw kwadrat z dwóch trójkątów. W domu można go wyciąć z papieru."
+  "line.h_kwadrat": {
+    "who": "sowa",
+    "text": "Dwa trójkąty to kwadrat!"
   },
-  "line.a_house": {
-    "who": "lisek",
-    "text": "Teraz domek."
+  "line.h_domek": {
+    "who": "mis",
+    "text": "A teraz domek."
   },
-  "line.a_fish": {
-    "who": "lisek",
-    "text": "A na koniec rybka."
+  "line.h_dobrze": {
+    "who": "sowa",
+    "text": "Pięknie! Te same kawałki, różne obrazki."
   },
-  "line.a_ask_parents": {
-    "who": "wiewiorka",
-    "text": "Poproście rodziców, żeby razem z wami wycięli kwadrat z papieru i pocięli go na trójkąty. Co z nich ułożycie?"
-  },
-  "line.a_bye": {
-    "who": "lisek",
-    "text": "Pa, pa! Do zobaczenia!"
+  "line.h_rodzice": {
+    "who": "mis",
+    "text": "Wytnij z rodzicami kwadrat z papieru, przetnij go na trójkąty i ułóżcie razem obrazki. A wieczorem zróbcie teatr cieni z latarką!"
   },
   "line.naklejka_daj": {
-    "who": "lisek",
-    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+    "who": "sowa",
+    "text": "Dziękuję za wspaniały teatr! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "sowa",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To klocek od liska. Dostaliśmy go, kiedy układaliśmy obrazki z trójkątów."
-  },
-  "line.naklejka_juz": {
-    "who": "lisek",
-    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+    "text": "To kolorowy klocek. Dostaliśmy go, kiedy robiliśmy z kawałków lalki do teatru cieni Sowy."
   }
 }

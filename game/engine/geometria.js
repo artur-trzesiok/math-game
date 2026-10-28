@@ -33,6 +33,9 @@ export const UKLADANKI = {
   domek: [{ t: "Q", x: 0, y: -0.12, rot: 0 }, { t: "M", x: 0, y: 0.1747, rot: 225 }],
   ryba: [{ t: "Q", x: 0.12, y: 0, rot: 45 }, { t: "M", x: -0.3657, y: 0, rot: 135 }],
   lodka: [{ t: "P", x: 0, y: -0.16, rot: 0 }, { t: "M", x: -0.1333, y: 0.1317, rot: 0 }],
+  // a cat sitting sideways: the big triangle as the body (right angle bottom right, the slope its back), the square turned
+  // to a diamond as the head on the body's top corner, two small triangles as the ears on the diamond's upper edges
+  kot: [{ t: "L", x: 0, y: -0.4929, rot: 90 }, { t: "Q", x: 0.2357, y: 0.2285, rot: 45 }, { t: "S", x: 0.069, y: 0.4785, rot: 135 }, { t: "S", x: 0.4024, y: 0.4785, rot: 315 }],
   duzy_kwadrat: [
     { t: "L", x: 0.0, y: -0.3333, rot: 225 }, { t: "L", x: -0.3333, y: 0.0, rot: 135 }, { t: "M", x: 0.3333, y: 0.3333, rot: 180 },
     { t: "Q", x: 0.25, y: 0.0, rot: 45 }, { t: "S", x: 0.0, y: 0.1667, rot: 45 }, { t: "S", x: 0.4167, y: -0.25, rot: 315 },

@@ -1,207 +1,207 @@
 {
- "line.s_my_puzzle": {
-  "hash": "8c59ca0b9e54",
+ "line.a_teatr": {
+  "hash": "ee3cfc5f7ee6",
+  "who": "sowa",
+  "text": "Tonight we're putting on a shadow theatre!"
+ },
+ "line.a_lalki": {
+  "hash": "159a109085af",
   "who": "wiewiorka",
-  "text": "Look at my puzzle! A square of coloured pieces."
+  "text": "But we don't have any puppets."
  },
- "line.s_broken": {
-  "hash": "99e4fe5e4fc7",
+ "line.a_z_ksztaltow": {
+  "hash": "c5f37f69b8e0",
+  "who": "sowa",
+  "text": "We'll make them from shapes. Every piece has its place. A house first."
+ },
+ "line.a_pomoge": {
+  "hash": "216bdc20a1ea",
+  "who": "mis",
+  "text": "I'll help! This triangle goes on the roof."
+ },
+ "line.a_nie_pasuje": {
+  "hash": "68ef87fa5c77",
+  "who": "mis",
+  "text": "It doesn't fit! This triangle is wrong. I'm throwing it away."
+ },
+ "line.a_nie_wyrzucaj": {
+  "hash": "a464b9677175",
+  "who": "sowa",
+  "text": "Bear, don't throw it away! The triangle is fine, it's just turned the wrong way."
+ },
+ "line.a_obroc": {
+  "hash": "eb21e1ddaa1d",
+  "who": "sowa",
+  "text": "Tap a piece and it turns. Turn it until it fits, then drag it into place."
+ },
+ "line.a_pasuje": {
+  "hash": "11b01d801aca",
+  "who": "mis",
+  "text": "It fits! It only needed turning."
+ },
+ "line.a_do_teatru": {
+  "hash": "203a5e4264ec",
+  "who": "sowa",
+  "text": "The first puppet is ready. Let's go to the theatre!"
+ },
+ "line.b_ekran": {
+  "hash": "d450cb0c341f",
   "who": "wiewiorka",
-  "text": "Oh no! It fell and broke into pieces!"
+  "text": "What a big screen! There's a lamp shining behind it."
  },
- "line.s_throw": {
-  "hash": "93ec383194ff",
+ "line.b_ryba": {
+  "hash": "5d363b3522a9",
+  "who": "sowa",
+  "text": "Make a fish on the screen. Tap to turn and drag the pieces into place."
+ },
+ "line.b_plynie": {
+  "hash": "2a1757a77d7f",
   "who": "wiewiorka",
-  "text": "It is broken. I think I have to throw it away."
+  "text": "Look, the fish's shadow is swimming!"
  },
- "line.s_not_broken": {
-  "hash": "cc1ec03ac1af",
-  "who": "lisek",
-  "text": "Nothing is broken! These pieces are meant to come apart."
+ "line.b_lodka": {
+  "hash": "93513f36aa40",
+  "who": "mis",
+  "text": "Now a boat! Make it from the pieces."
  },
- "line.s_how": {
-  "hash": "806a56de7432",
+ "line.b_plynie_lodka": {
+  "hash": "fb031993ab06",
+  "who": "mis",
+  "text": "The boat is rocking on the waves!"
+ },
+ "line.b_kot": {
+  "hash": "fdffd588ead4",
+  "who": "sowa",
+  "text": "From the same shapes we'll make something completely new: a cat!"
+ },
+ "line.b_miau": {
+  "hash": "e23e06b40943",
   "who": "wiewiorka",
-  "text": "How so? It is not a square any more."
+  "text": "Meow! The cat is nodding."
  },
- "line.s_tangram": {
-  "hash": "3709cc3dfc89",
-  "who": "lisek",
-  "text": "It is a tangram! You can build a square from these pieces, and lots of pictures."
+ "line.b_czyj": {
+  "hash": "921b0a41d70a",
+  "who": "sowa",
+  "text": "Whose shadow is this? Point to it."
  },
- "line.s_what": {
-  "hash": "9f9453a8797c",
+ "line.b_czyj_nie": {
+  "hash": "6279ec1c7ba6",
+  "who": "sowa",
+  "text": "Look at the shadow's shape: the ears, the tail, the paws."
+ },
+ "line.b_czyj_nie.wiewiorka": {
+  "hash": "11252878d324",
   "who": "wiewiorka",
-  "text": "A tangram? How do you play it?"
+  "text": "Look at the shadow's shape: the ears, the tail, the paws."
  },
- "line.s_show": {
-  "hash": "b4cf29fe5578",
-  "who": "lisek",
-  "text": "I will show you. Every piece has its own place in the picture."
- },
- "line.s_two": {
-  "hash": "590c56f838a8",
-  "who": "lisek",
-  "text": "Let's start with two triangles. Drag them onto the grey places."
- },
- "line.s_tap_turns": {
-  "hash": "2f83213bd74c",
-  "who": "lisek",
-  "text": "If a piece does not fit, tap it. Then it turns."
- },
- "line.s_square_done": {
-  "hash": "df00b7f5a4d1",
+ "line.b_zajac": {
+  "hash": "cc9dc61c3d3e",
   "who": "wiewiorka",
-  "text": "Two triangles made a square!"
+  "text": "It's the bunny's shadow! It has long ears."
  },
- "line.s_house": {
-  "hash": "f9f43f8da69a",
-  "who": "lisek",
-  "text": "And now a house. The square is the walls and the triangle is the roof."
+ "line.b_przedstawienie": {
+  "hash": "001c31d47733",
+  "who": "sowa",
+  "text": "The show is ready! A round of applause for the actors!"
  },
- "line.s_solved": {
-  "hash": "e8ca48676e71",
-  "who": "wiewiorka",
-  "text": "A house! My puzzle is not broken at all. It is even more fun!"
+ "line.b_koniec": {
+  "hash": "7279ea08dccf",
+  "who": "mis",
+  "text": "The best theatre in the world!"
  },
- "line.s_to_forest": {
-  "hash": "39c7190636f8",
-  "who": "lisek",
-  "text": "Let's take the tangram to the forest, by the brook."
- },
- "line.b_fish": {
-  "hash": "09f35d279155",
-  "who": "wiewiorka",
-  "text": "Let's build a little fish to swim down the brook."
- },
- "line.b_fish_done": {
-  "hash": "3213619652e1",
-  "who": "lisek",
-  "text": "The fish is ready! Its tail is a triangle."
- },
- "line.b_to_brook": {
-  "hash": "d0fd1bffdb3c",
-  "who": "wiewiorka",
-  "text": "Let's take it to the water!"
- },
- "line.c_boat": {
-  "hash": "fb29268e561e",
-  "who": "lisek",
-  "text": "And now a boat with a sail. We will float it on the water."
- },
- "line.c_boat_done": {
-  "hash": "152cb4ba4077",
-  "who": "wiewiorka",
-  "text": "The boat is sailing!"
- },
- "line.c_square_again": {
-  "hash": "64b2ed10740e",
-  "who": "wiewiorka",
-  "text": "Can we build the whole square again? All seven pieces!"
- },
- "line.c_solved": {
-  "hash": "7866034b31b0",
-  "who": "lisek",
-  "text": "The whole square! The tangram is whole again, ready to play."
- },
- "line.wrong_piece": {
-  "hash": "9e8a46fe0942",
-  "who": "wiewiorka",
-  "text": "This piece has another shape. Look at the gap."
- },
- "line.wrong_piece.lisek": {
-  "hash": "b4e6aeb95d78",
-  "who": "lisek",
-  "text": "This piece has another shape. Look at the gap."
- },
- "line.good_build": {
-  "hash": "f275e81fc6f9",
-  "who": "lisek",
-  "text": "It fits! Beautifully built."
- },
- "line.good_build.wiewiorka": {
-  "hash": "e91eca1d9ab4",
-  "who": "wiewiorka",
-  "text": "It fits! Beautifully built."
- },
- "line.p_intro": {
-  "hash": "864c3b009aa5",
-  "who": "lisek",
-  "text": "Let's play tangram! Drag the pieces, and tap to turn them when you need to."
- },
- "line.p_domek": {
-  "hash": "2dff7e45dd86",
-  "who": "wiewiorka",
-  "text": "Build the house."
+ "line.p_start": {
+  "hash": "dd549846db2c",
+  "who": "sowa",
+  "text": "Let's make pictures from pieces! I have five games."
  },
  "line.p_ryba": {
-  "hash": "c8ec614f52cf",
+  "hash": "aab3339bf356",
   "who": "wiewiorka",
-  "text": "Build the fish."
+  "text": "Make a fish."
+ },
+ "line.p_dobrze": {
+  "hash": "c72d06c98857",
+  "who": "sowa",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.wiewiorka": {
+  "hash": "b078bb8b91d9",
+  "who": "wiewiorka",
+  "text": "Bravo!"
+ },
+ "line.p_luka": {
+  "hash": "ecdf298fe968",
+  "who": "wiewiorka",
+  "text": "A piece is missing from the house. Which one fits the gap? Point to it."
+ },
+ "line.p_za_duzy": {
+  "hash": "d0e1457dfe6e",
+  "who": "wiewiorka",
+  "text": "That triangle has the right shape, but it's too big. Look for a smaller one."
+ },
+ "line.p_inny": {
+  "hash": "f404e07b6963",
+  "who": "wiewiorka",
+  "text": "That piece has a different shape from the gap."
  },
  "line.p_lodka": {
-  "hash": "88b0f66549ca",
+  "hash": "4d929b26f6fa",
+  "who": "sowa",
+  "text": "Make a boat. The pieces need turning."
+ },
+ "line.p_czyj": {
+  "hash": "34422b3b3a3b",
+  "who": "sowa",
+  "text": "And whose shadow is this? Point to it."
+ },
+ "line.p_jez": {
+  "hash": "b837cadfd9f0",
   "who": "wiewiorka",
-  "text": "Build the boat."
+  "text": "It's the hedgehog's shadow! It has spikes."
  },
- "line.p_gap": {
-  "hash": "b3679238b150",
+ "line.p_kot": {
+  "hash": "1ba0aed2328c",
   "who": "wiewiorka",
-  "text": "One piece is missing. Point to the one that fits the gap."
+  "text": "And now make the cat."
  },
- "line.a_game": {
-  "hash": "79a3e2f735c1",
-  "who": "wiewiorka",
-  "text": "Let's play tangram, just like at home."
+ "line.h_kuchnia": {
+  "hash": "d62b658aa923",
+  "who": "mis",
+  "text": "We can make pictures in the kitchen too! First a square from two triangles."
  },
- "line.a_paper": {
-  "hash": "1f6c1c46f827",
-  "who": "lisek",
-  "text": "First a square from two triangles. At home you can cut it out of paper."
+ "line.h_kwadrat": {
+  "hash": "dadf9dbcba4f",
+  "who": "sowa",
+  "text": "Two triangles make a square!"
  },
- "line.a_house": {
-  "hash": "a3b48b6cff98",
-  "who": "lisek",
-  "text": "Now the house."
+ "line.h_domek": {
+  "hash": "bb9c10c8a8bd",
+  "who": "mis",
+  "text": "And now a house."
  },
- "line.a_fish": {
-  "hash": "4535d2c5d6d5",
-  "who": "lisek",
-  "text": "And last, the fish."
+ "line.h_dobrze": {
+  "hash": "11fa90bafcdd",
+  "who": "sowa",
+  "text": "Lovely! The same pieces, different pictures."
  },
- "line.a_ask_parents": {
-  "hash": "183085fad7ce",
-  "who": "wiewiorka",
-  "text": "Ask your parents to cut a square out of paper with you and cut it into triangles. What will you build?"
- },
- "line.a_bye": {
-  "hash": "5fdcbfe15d1f",
-  "who": "lisek",
-  "text": "Bye bye! See you!"
- },
- "line.wrong_big": {
-  "hash": "21ae1afd5622",
-  "who": "wiewiorka",
-  "text": "That triangle is too big. Look at the gap."
- },
- "line.wrong_big.lisek": {
-  "hash": "0e0aedc8368f",
-  "who": "lisek",
-  "text": "That triangle is too big. Look at the gap."
+ "line.h_rodzice": {
+  "hash": "6943c141ee3d",
+  "who": "mis",
+  "text": "Cut a square out of paper with your parents, cut it into triangles and make pictures together. And in the evening put on a shadow theatre with a torch!"
  },
  "line.naklejka_daj": {
-  "hash": "f4f0467dd725",
-  "who": "lisek",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
- },
- "line.naklejka_opis": {
-  "hash": "896f25bf8ead",
-  "who": "narrator",
-  "text": "This is the block from Fox. We got it when we made pictures out of triangles."
+  "hash": "55ed2bdd1743",
+  "who": "sowa",
+  "text": "Thank you for a wonderful theatre! Here is a sticker for your album. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "1634fc955eb2",
-  "who": "lisek",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "hash": "4035416334d1",
+  "who": "sowa",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "fce9db82ddcf",
+  "who": "narrator",
+  "text": "This is a colourful block. We got it when we made puppets from pieces for Owl's shadow theatre."
  }
 }

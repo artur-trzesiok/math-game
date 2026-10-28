@@ -1,27 +1,22 @@
-# Tangram
+# Tangram - Owl's shadow theatre
 
-Goal: pictures from tangram pieces - every piece has its place; a piece that does not
-fit is turned (a tap turns it 45 degrees) until it does. Characters: Squirrel (left),
-Fox (right).
+Goal: a picture from pieces - every piece has its place; a piece that does not fit is turned (a tap turns it 45
+degrees), not thrown away; the same pieces make different pictures. Age 4-5. Characters: Owl, Bear, Squirrel.
+Stage 4, lesson 16.
 
-## Stage 1 - story - children's room, forest, brook
+**Misconception:** "this piece is wrong" - Bear tries the roof triangle turned the wrong way and throws it away.
 
-1. Room, the problem: Squirrel's square puzzle falls apart (the seven pieces fly
-   across the floor, each landing turned its own way, none on another) - "it is broken, I'll throw it away". Fox ("?"): nothing broke,
-   it is a tangram - a square and lots of pictures. Every piece has its place; tap to
-   turn. The child builds a square from two big triangles (one must be turned), then a
-   house (square walls, triangle roof). Solved: the puzzle is not broken, it is better.
-2. Forest: a fish (a square turned to a diamond, a triangle tail).
-3. Brook: a boat (a parallelogram hull, a triangle sail); then the whole square of
-   seven pieces again (half of them already turned right) - the tangram is whole.
+## Stage 1 - story
+A. *Room at night.* A shadow theatre tonight, but no puppets: Owl makes them from shapes. Bear's triangle "does not
+fit" - Owl: it is only turned; tap to turn. **Child** builds the house; it turns into its shadow and nods.
+B. *Theatre* (new scenery: a lit sheet). **Child** builds on the sheet a fish (its shadow swims), a boat (it rocks)
+and, from the same kind of pieces, a cat (new silhouette, four pieces). *Breather:* whose shadow (a sticker's
+silhouette, three stickers). The show; the audience claps.
 
-## Stage 2 - practice - hallway
+## Stage 2 - practice
+A fish; which piece fits the gap in the house (the big triangle: "the right shape, but too big"); a boat with its
+pieces turned; whose shadow; a cat.
 
-Three silhouettes (house, fish, boat) with randomly turned pieces; two "which piece
-fits the gap?" (point to it among three; the big triangle in the house's roof gap is
-"too big", not "another shape").
-
-## Stage 3 - at home - kitchen
-
-A square from two triangles, a house, a fish. "Ask your parents to cut a square out of
-paper with you and cut it into triangles."
+## Stage 3 - at home (kitchen)
+A square from two triangles, then a house. "Cut a square of paper into triangles with your parents; a shadow theatre
+with a torch in the evening."

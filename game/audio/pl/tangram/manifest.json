@@ -1,207 +1,207 @@
 {
- "line.s_my_puzzle": {
-  "hash": "7598b1971c94",
+ "line.a_teatr": {
+  "hash": "6458bbbb0f67",
+  "who": "sowa",
+  "text": "Dziś wieczorem urządzamy teatr cieni!"
+ },
+ "line.a_lalki": {
+  "hash": "084039397ec3",
   "who": "wiewiorka",
-  "text": "Zobacz moją układankę! Kwadrat z kolorowych kawałków."
+  "text": "Ale nie mamy żadnych lalek."
  },
- "line.s_broken": {
-  "hash": "bf97e81685c7",
+ "line.a_z_ksztaltow": {
+  "hash": "562c7f554956",
+  "who": "sowa",
+  "text": "Zrobimy je z kształtów. Każdy kawałek ma swoje miejsce. Najpierw domek."
+ },
+ "line.a_pomoge": {
+  "hash": "c1cd598eac57",
+  "who": "mis",
+  "text": "Pomogę! Ten trójkąt pójdzie na dach."
+ },
+ "line.a_nie_pasuje": {
+  "hash": "4df8ff6cb8d0",
+  "who": "mis",
+  "text": "Nie pasuje! Ten trójkąt jest zły. Wyrzucam go."
+ },
+ "line.a_nie_wyrzucaj": {
+  "hash": "2a56a683b7e2",
+  "who": "sowa",
+  "text": "Misiu, nie wyrzucaj! Ten trójkąt jest dobry, tylko jest obrócony."
+ },
+ "line.a_obroc": {
+  "hash": "11f455dfaa7c",
+  "who": "sowa",
+  "text": "Stuknij kawałek, a się obróci. Obracaj, aż będzie pasował, i przeciągnij go na miejsce."
+ },
+ "line.a_pasuje": {
+  "hash": "b21b43ba20f7",
+  "who": "mis",
+  "text": "Pasuje! Wystarczyło go obrócić."
+ },
+ "line.a_do_teatru": {
+  "hash": "f3de2a1d3879",
+  "who": "sowa",
+  "text": "Pierwsza lalka gotowa. Chodźmy do teatru!"
+ },
+ "line.b_ekran": {
+  "hash": "2095a4f1aa33",
   "who": "wiewiorka",
-  "text": "Ojej! Spadła i rozsypała się na kawałki!"
+  "text": "Jaki wielki ekran! Za nim świeci lampa."
  },
- "line.s_throw": {
-  "hash": "c14d21fe8134",
+ "line.b_ryba": {
+  "hash": "f533b9ad27f2",
+  "who": "sowa",
+  "text": "Ułóż na ekranie rybkę. Stukaj, żeby obrócić, i przeciągaj kawałki na miejsca."
+ },
+ "line.b_plynie": {
+  "hash": "64d0ea825889",
   "who": "wiewiorka",
-  "text": "Jest zepsuta. Chyba muszę ją wyrzucić."
+  "text": "Patrzcie, cień rybki pływa!"
  },
- "line.s_not_broken": {
-  "hash": "a983776ccc3f",
-  "who": "lisek",
-  "text": "Nic się nie zepsuło! Te kawałki tak mają."
+ "line.b_lodka": {
+  "hash": "3463777a51cd",
+  "who": "mis",
+  "text": "Teraz łódka! Ułóż ją z kawałków."
  },
- "line.s_how": {
-  "hash": "72d7ceae0fce",
+ "line.b_plynie_lodka": {
+  "hash": "91716c6079a9",
+  "who": "mis",
+  "text": "Łódka kołysze się na falach!"
+ },
+ "line.b_kot": {
+  "hash": "07d7ca3eede5",
+  "who": "sowa",
+  "text": "Z tych samych kształtów zrobimy coś zupełnie nowego: kotka!"
+ },
+ "line.b_miau": {
+  "hash": "cb2d29ee1b47",
   "who": "wiewiorka",
-  "text": "Jak to? Przecież nie jest już kwadratem."
+  "text": "Miau! Kotek kiwa głową."
  },
- "line.s_tangram": {
-  "hash": "1c1a285fd6f0",
-  "who": "lisek",
-  "text": "To jest tangram! Z tych kawałków można ułożyć kwadrat i mnóstwo obrazków."
+ "line.b_czyj": {
+  "hash": "81e012d783a0",
+  "who": "sowa",
+  "text": "Czyj to cień? Wskaż."
  },
- "line.s_what": {
-  "hash": "c6a5a5287668",
+ "line.b_czyj_nie": {
+  "hash": "9f4fc9b7cdb2",
+  "who": "sowa",
+  "text": "Popatrz na kształt cienia: uszy, ogonek, łapki."
+ },
+ "line.b_czyj_nie.wiewiorka": {
+  "hash": "3e8b22b3caa0",
   "who": "wiewiorka",
-  "text": "Tangram? A jak się w niego gra?"
+  "text": "Popatrz na kształt cienia: uszy, ogonek, łapki."
  },
- "line.s_show": {
-  "hash": "2c8f6b726905",
-  "who": "lisek",
-  "text": "Pokażę ci. Każdy kawałek ma swoje miejsce na obrazku."
- },
- "line.s_two": {
-  "hash": "ea4f8f296e11",
-  "who": "lisek",
-  "text": "Zacznijmy od dwóch trójkątów. Przeciągnij je na szare miejsca."
- },
- "line.s_tap_turns": {
-  "hash": "e4c872308070",
-  "who": "lisek",
-  "text": "Jeśli kawałek nie pasuje, dotknij go. Wtedy się obróci."
- },
- "line.s_square_done": {
-  "hash": "a5255e446bfd",
+ "line.b_zajac": {
+  "hash": "4a946af26c3a",
   "who": "wiewiorka",
-  "text": "Dwa trójkąty zrobiły kwadrat!"
+  "text": "To cień zajączka! Ma długie uszy."
  },
- "line.s_house": {
-  "hash": "5674d70acd82",
-  "who": "lisek",
-  "text": "A teraz domek. Kwadrat to ściany, a trójkąt to dach."
+ "line.b_przedstawienie": {
+  "hash": "6e4d283615a4",
+  "who": "sowa",
+  "text": "Przedstawienie gotowe! Brawo dla aktorów!"
  },
- "line.s_solved": {
-  "hash": "94eda36bc4f1",
-  "who": "wiewiorka",
-  "text": "Domek! Moja układanka wcale nie jest zepsuta. Jest jeszcze fajniejsza!"
+ "line.b_koniec": {
+  "hash": "2df31561bd13",
+  "who": "mis",
+  "text": "Najlepszy teatr na świecie!"
  },
- "line.s_to_forest": {
-  "hash": "f64d2a399c15",
-  "who": "lisek",
-  "text": "Chodźmy z tangramem do lasu, nad strumyk."
- },
- "line.b_fish": {
-  "hash": "06ece7e33069",
-  "who": "wiewiorka",
-  "text": "Ułóżmy rybkę, która popłynie strumykiem."
- },
- "line.b_fish_done": {
-  "hash": "f349941eb17f",
-  "who": "lisek",
-  "text": "Rybka gotowa! Ma ogon z trójkąta."
- },
- "line.b_to_brook": {
-  "hash": "4f2ae144a648",
-  "who": "wiewiorka",
-  "text": "Zanieśmy ją nad wodę!"
- },
- "line.c_boat": {
-  "hash": "8fc7798e57d8",
-  "who": "lisek",
-  "text": "A teraz łódka z żaglem. Puścimy ją na wodę."
- },
- "line.c_boat_done": {
-  "hash": "6bef2f47d8d3",
-  "who": "wiewiorka",
-  "text": "Łódka płynie!"
- },
- "line.c_square_again": {
-  "hash": "30adc896aaa2",
-  "who": "wiewiorka",
-  "text": "A czy umiemy z powrotem ułożyć cały kwadrat? Wszystkie siedem kawałków!"
- },
- "line.c_solved": {
-  "hash": "4a875837f221",
-  "who": "lisek",
-  "text": "Cały kwadrat! Tangram jest znowu cały, gotowy do zabawy."
- },
- "line.wrong_piece": {
-  "hash": "6b1342994e68",
-  "who": "wiewiorka",
-  "text": "Ten kawałek ma inny kształt. Popatrz na lukę."
- },
- "line.wrong_piece.lisek": {
-  "hash": "6f353f0c48df",
-  "who": "lisek",
-  "text": "Ten kawałek ma inny kształt. Popatrz na lukę."
- },
- "line.good_build": {
-  "hash": "d17519f76fa2",
-  "who": "lisek",
-  "text": "Pasuje! Pięknie ułożone."
- },
- "line.good_build.wiewiorka": {
-  "hash": "9bce35a6ef66",
-  "who": "wiewiorka",
-  "text": "Pasuje! Pięknie ułożone."
- },
- "line.p_intro": {
-  "hash": "38e6b3b2dd42",
-  "who": "lisek",
-  "text": "Pobawmy się w tangram! Przeciągaj kawałki, a jeśli trzeba, dotknij i obróć."
- },
- "line.p_domek": {
-  "hash": "39ee806aa031",
-  "who": "wiewiorka",
-  "text": "Ułóż domek."
+ "line.p_start": {
+  "hash": "a9e33acc4354",
+  "who": "sowa",
+  "text": "Poukładajmy obrazki z kawałków! Mam pięć zabaw."
  },
  "line.p_ryba": {
   "hash": "61db46629e1b",
   "who": "wiewiorka",
   "text": "Ułóż rybkę."
  },
+ "line.p_dobrze": {
+  "hash": "671b319f1b8d",
+  "who": "sowa",
+  "text": "Brawo!"
+ },
+ "line.p_dobrze.wiewiorka": {
+  "hash": "380ec0c47b57",
+  "who": "wiewiorka",
+  "text": "Brawo!"
+ },
+ "line.p_luka": {
+  "hash": "eb633310d171",
+  "who": "wiewiorka",
+  "text": "W domku brakuje kawałka. Który pasuje do dziury? Wskaż."
+ },
+ "line.p_za_duzy": {
+  "hash": "df04400ecbd7",
+  "who": "wiewiorka",
+  "text": "Ten trójkąt ma dobry kształt, ale jest za duży. Szukaj mniejszego."
+ },
+ "line.p_inny": {
+  "hash": "05491ba51822",
+  "who": "wiewiorka",
+  "text": "Ten kawałek ma inny kształt niż dziura."
+ },
  "line.p_lodka": {
-  "hash": "5231223858cb",
+  "hash": "283c66ec2732",
+  "who": "sowa",
+  "text": "Ułóż łódkę. Kawałki trzeba poobracać."
+ },
+ "line.p_czyj": {
+  "hash": "424354b770b7",
+  "who": "sowa",
+  "text": "A to czyj cień? Wskaż."
+ },
+ "line.p_jez": {
+  "hash": "6e4808defd28",
   "who": "wiewiorka",
-  "text": "Ułóż łódkę."
+  "text": "To cień jeżyka! Ma kolce."
  },
- "line.p_gap": {
-  "hash": "1e278192d74b",
+ "line.p_kot": {
+  "hash": "a2d619dc8908",
   "who": "wiewiorka",
-  "text": "Jednego kawałka brakuje. Wskaż ten, który pasuje do luki."
+  "text": "A teraz ułóż kotka."
  },
- "line.a_game": {
-  "hash": "6971a3842d74",
-  "who": "wiewiorka",
-  "text": "Zagrajmy w tangram, tak jak w domu."
+ "line.h_kuchnia": {
+  "hash": "3188951c4743",
+  "who": "mis",
+  "text": "W kuchni też możemy układać! Najpierw kwadrat z dwóch trójkątów."
  },
- "line.a_paper": {
-  "hash": "de3cbdfec98e",
-  "who": "lisek",
-  "text": "Najpierw kwadrat z dwóch trójkątów. W domu można go wyciąć z papieru."
+ "line.h_kwadrat": {
+  "hash": "933fa682e0f9",
+  "who": "sowa",
+  "text": "Dwa trójkąty to kwadrat!"
  },
- "line.a_house": {
-  "hash": "5858b046b704",
-  "who": "lisek",
-  "text": "Teraz domek."
+ "line.h_domek": {
+  "hash": "96e2899a0d0a",
+  "who": "mis",
+  "text": "A teraz domek."
  },
- "line.a_fish": {
-  "hash": "27b17eea4a3e",
-  "who": "lisek",
-  "text": "A na koniec rybka."
+ "line.h_dobrze": {
+  "hash": "8d26f768ee2e",
+  "who": "sowa",
+  "text": "Pięknie! Te same kawałki, różne obrazki."
  },
- "line.a_ask_parents": {
-  "hash": "094c3cd5eda6",
-  "who": "wiewiorka",
-  "text": "Poproście rodziców, żeby razem z wami wycięli kwadrat z papieru i pocięli go na trójkąty. Co z nich ułożycie?"
- },
- "line.a_bye": {
-  "hash": "163cfb6abb1b",
-  "who": "lisek",
-  "text": "Pa, pa! Do zobaczenia!"
- },
- "line.wrong_big": {
-  "hash": "6c6adc4b5163",
-  "who": "wiewiorka",
-  "text": "Ten trójkąt jest za duży. Popatrz na lukę."
- },
- "line.wrong_big.lisek": {
-  "hash": "68653e75621c",
-  "who": "lisek",
-  "text": "Ten trójkąt jest za duży. Popatrz na lukę."
+ "line.h_rodzice": {
+  "hash": "5184b269389f",
+  "who": "mis",
+  "text": "Wytnij z rodzicami kwadrat z papieru, przetnij go na trójkąty i ułóżcie razem obrazki. A wieczorem zróbcie teatr cieni z latarką!"
  },
  "line.naklejka_daj": {
-  "hash": "8738618c65d0",
-  "who": "lisek",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "50ef9ec60d72",
-  "who": "narrator",
-  "text": "To klocek od liska. Dostaliśmy go, kiedy układaliśmy obrazki z trójkątów."
+  "hash": "f18697111ee5",
+  "who": "sowa",
+  "text": "Dziękuję za wspaniały teatr! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "126a203b8c35",
-  "who": "lisek",
+  "hash": "c5a826aa0ed3",
+  "who": "sowa",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "75b6c2b7bbf4",
+  "who": "narrator",
+  "text": "To kolorowy klocek. Dostaliśmy go, kiedy robiliśmy z kawałków lalki do teatru cieni Sowy."
  }
 }

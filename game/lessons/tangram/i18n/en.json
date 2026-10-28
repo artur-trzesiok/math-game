@@ -1,163 +1,164 @@
 {
-  "line.s_my_puzzle": {
+  "line.a_teatr": {
+    "who": "sowa",
+    "text": "Tonight we're putting on a shadow theatre!"
+  },
+  "line.a_lalki": {
     "who": "wiewiorka",
-    "text": "Look at my puzzle! A square of coloured pieces."
+    "text": "But we don't have any puppets."
   },
-  "line.s_broken": {
+  "line.a_z_ksztaltow": {
+    "who": "sowa",
+    "text": "We'll make them from shapes. Every piece has its place. A house first."
+  },
+  "line.a_pomoge": {
+    "who": "mis",
+    "text": "I'll help! This triangle goes on the roof."
+  },
+  "line.a_nie_pasuje": {
+    "who": "mis",
+    "text": "It doesn't fit! This triangle is wrong. I'm throwing it away."
+  },
+  "line.a_nie_wyrzucaj": {
+    "who": "sowa",
+    "text": "Bear, don't throw it away! The triangle is fine, it's just turned the wrong way."
+  },
+  "line.a_obroc": {
+    "who": "sowa",
+    "text": "Tap a piece and it turns. Turn it until it fits, then drag it into place."
+  },
+  "line.a_pasuje": {
+    "who": "mis",
+    "text": "It fits! It only needed turning."
+  },
+  "line.a_do_teatru": {
+    "who": "sowa",
+    "text": "The first puppet is ready. Let's go to the theatre!"
+  },
+  "line.b_ekran": {
     "who": "wiewiorka",
-    "text": "Oh no! It fell and broke into pieces!"
+    "text": "What a big screen! There's a lamp shining behind it."
   },
-  "line.s_throw": {
+  "line.b_ryba": {
+    "who": "sowa",
+    "text": "Make a fish on the screen. Tap to turn and drag the pieces into place."
+  },
+  "line.b_plynie": {
     "who": "wiewiorka",
-    "text": "It is broken. I think I have to throw it away."
+    "text": "Look, the fish's shadow is swimming!"
   },
-  "line.s_not_broken": {
-    "who": "lisek",
-    "text": "Nothing is broken! These pieces are meant to come apart."
+  "line.b_lodka": {
+    "who": "mis",
+    "text": "Now a boat! Make it from the pieces."
   },
-  "line.s_how": {
+  "line.b_plynie_lodka": {
+    "who": "mis",
+    "text": "The boat is rocking on the waves!"
+  },
+  "line.b_kot": {
+    "who": "sowa",
+    "text": "From the same shapes we'll make something completely new: a cat!"
+  },
+  "line.b_miau": {
     "who": "wiewiorka",
-    "text": "How so? It is not a square any more."
+    "text": "Meow! The cat is nodding."
   },
-  "line.s_tangram": {
-    "who": "lisek",
-    "text": "It is a tangram! You can build a square from these pieces, and lots of pictures."
+  "line.b_czyj": {
+    "who": "sowa",
+    "text": "Whose shadow is this? Point to it."
   },
-  "line.s_what": {
-    "who": "wiewiorka",
-    "text": "A tangram? How do you play it?"
-  },
-  "line.s_show": {
-    "who": "lisek",
-    "text": "I will show you. Every piece has its own place in the picture."
-  },
-  "line.s_two": {
-    "who": "lisek",
-    "text": "Let's start with two triangles. Drag them onto the grey places."
-  },
-  "line.s_tap_turns": {
-    "who": "lisek",
-    "text": "If a piece does not fit, tap it. Then it turns."
-  },
-  "line.s_square_done": {
-    "who": "wiewiorka",
-    "text": "Two triangles made a square!"
-  },
-  "line.s_house": {
-    "who": "lisek",
-    "text": "And now a house. The square is the walls and the triangle is the roof."
-  },
-  "line.s_solved": {
-    "who": "wiewiorka",
-    "text": "A house! My puzzle is not broken at all. It is even more fun!"
-  },
-  "line.s_to_forest": {
-    "who": "lisek",
-    "text": "Let's take the tangram to the forest, by the brook."
-  },
-  "line.b_fish": {
-    "who": "wiewiorka",
-    "text": "Let's build a little fish to swim down the brook."
-  },
-  "line.b_fish_done": {
-    "who": "lisek",
-    "text": "The fish is ready! Its tail is a triangle."
-  },
-  "line.b_to_brook": {
-    "who": "wiewiorka",
-    "text": "Let's take it to the water!"
-  },
-  "line.c_boat": {
-    "who": "lisek",
-    "text": "And now a boat with a sail. We will float it on the water."
-  },
-  "line.c_boat_done": {
-    "who": "wiewiorka",
-    "text": "The boat is sailing!"
-  },
-  "line.c_square_again": {
-    "who": "wiewiorka",
-    "text": "Can we build the whole square again? All seven pieces!"
-  },
-  "line.c_solved": {
-    "who": "lisek",
-    "text": "The whole square! The tangram is whole again, ready to play."
-  },
-  "line.wrong_piece": {
-    "who": "wiewiorka",
-    "text": "This piece has another shape. Look at the gap.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.wrong_big": {
-    "who": "wiewiorka",
-    "text": "That triangle is too big. Look at the gap.",
-    "speakers": [
-      "lisek"
-    ]
-  },
-  "line.good_build": {
-    "who": "lisek",
-    "text": "It fits! Beautifully built.",
+  "line.b_czyj_nie": {
+    "who": "sowa",
+    "text": "Look at the shadow's shape: the ears, the tail, the paws.",
     "speakers": [
       "wiewiorka"
     ]
   },
-  "line.p_intro": {
-    "who": "lisek",
-    "text": "Let's play tangram! Drag the pieces, and tap to turn them when you need to."
-  },
-  "line.p_domek": {
+  "line.b_zajac": {
     "who": "wiewiorka",
-    "text": "Build the house."
+    "text": "It's the bunny's shadow! It has long ears."
+  },
+  "line.b_przedstawienie": {
+    "who": "sowa",
+    "text": "The show is ready! A round of applause for the actors!"
+  },
+  "line.b_koniec": {
+    "who": "mis",
+    "text": "The best theatre in the world!"
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Let's make pictures from pieces! I have five games."
   },
   "line.p_ryba": {
     "who": "wiewiorka",
-    "text": "Build the fish."
+    "text": "Make a fish."
+  },
+  "line.p_dobrze": {
+    "who": "sowa",
+    "text": "Bravo!",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_luka": {
+    "who": "wiewiorka",
+    "text": "A piece is missing from the house. Which one fits the gap? Point to it."
+  },
+  "line.p_za_duzy": {
+    "who": "wiewiorka",
+    "text": "That triangle has the right shape, but it's too big. Look for a smaller one."
+  },
+  "line.p_inny": {
+    "who": "wiewiorka",
+    "text": "That piece has a different shape from the gap."
   },
   "line.p_lodka": {
+    "who": "sowa",
+    "text": "Make a boat. The pieces need turning."
+  },
+  "line.p_czyj": {
+    "who": "sowa",
+    "text": "And whose shadow is this? Point to it."
+  },
+  "line.p_jez": {
     "who": "wiewiorka",
-    "text": "Build the boat."
+    "text": "It's the hedgehog's shadow! It has spikes."
   },
-  "line.p_gap": {
+  "line.p_kot": {
     "who": "wiewiorka",
-    "text": "One piece is missing. Point to the one that fits the gap."
+    "text": "And now make the cat."
   },
-  "line.a_game": {
-    "who": "wiewiorka",
-    "text": "Let's play tangram, just like at home."
+  "line.h_kuchnia": {
+    "who": "mis",
+    "text": "We can make pictures in the kitchen too! First a square from two triangles."
   },
-  "line.a_paper": {
-    "who": "lisek",
-    "text": "First a square from two triangles. At home you can cut it out of paper."
+  "line.h_kwadrat": {
+    "who": "sowa",
+    "text": "Two triangles make a square!"
   },
-  "line.a_house": {
-    "who": "lisek",
-    "text": "Now the house."
+  "line.h_domek": {
+    "who": "mis",
+    "text": "And now a house."
   },
-  "line.a_fish": {
-    "who": "lisek",
-    "text": "And last, the fish."
+  "line.h_dobrze": {
+    "who": "sowa",
+    "text": "Lovely! The same pieces, different pictures."
   },
-  "line.a_ask_parents": {
-    "who": "wiewiorka",
-    "text": "Ask your parents to cut a square out of paper with you and cut it into triangles. What will you build?"
-  },
-  "line.a_bye": {
-    "who": "lisek",
-    "text": "Bye bye! See you!"
+  "line.h_rodzice": {
+    "who": "mis",
+    "text": "Cut a square out of paper with your parents, cut it into triangles and make pictures together. And in the evening put on a shadow theatre with a torch!"
   },
   "line.naklejka_daj": {
-    "who": "lisek",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+    "who": "sowa",
+    "text": "Thank you for a wonderful theatre! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "sowa",
+    "text": "You already have the sticker from this adventure. See you!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the block from Fox. We got it when we made pictures out of triangles."
-  },
-  "line.naklejka_juz": {
-    "who": "lisek",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "This is a colourful block. We got it when we made puppets from pieces for Owl's shadow theatre."
   }
 }
