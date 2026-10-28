@@ -42,7 +42,8 @@ export default {
       // A. the meadow: Hedgehog has no house; the shapes are traced and their corners counted
       async (c) => {
         c.show("jez");
-        const krzak = await c.object("krzak", { x: 4.9, y: -2.1, size: 2.2, z: 0.6 });
+        const krzak = await c.object("krzak", { x: 4.9, y: -1.9, size: 2.9, z: 0.6 });
+        krzak.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = 35; });   // stickers draw under puppets (10 < 20): the bush must hide Hedgehog
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
         await c.say("lisek", "line.a_kto_tam");
         krzak.remove(); c.stage.bump(c.stage.puppets.jez);
