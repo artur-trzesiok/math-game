@@ -316,7 +316,8 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
     for (const m of [tafla, fale]) { m.material.uniforms.czas.value += 0.05; m.position.x = L.korzen.position.x; }
     O.korzen.scale.x = k * (1 + 0.015 * Math.sin(performance.now() / 300));
   }, 40);
-  const remove = () => { clearInterval(fala); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = L.podloga = null; L.podloga = null; };
+  const narysowane = [];                                              // the circles of znajdz(): they go with the pond
+  const remove = () => { clearInterval(fala); narysowane.forEach((k) => k.remove()); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = L.podloga = null; L.podloga = null; };
   // the differences: a target on the garment and on the place it would be in the water
   const znajdz = async () => {
     const cele = [];
@@ -342,7 +343,7 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
       for (const p of hit.punkty) {
         const k = await S.line(kolo(p, hit.r), { color: "#e8502e", width: 0.09, duration: 0.35, strong: true, wait: false });
         k.mesh.traverse((o) => { if (o.isMesh) o.renderOrder += 30; });                        // over the character and the water
-        kolka.push(k); await czekaj(0.35);
+        kolka.push(k); narysowane.push(k); await czekaj(0.35);
       }
     }
     cele.forEach((c) => c.remove());
