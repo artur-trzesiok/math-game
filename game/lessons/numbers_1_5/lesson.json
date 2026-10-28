@@ -4,35 +4,49 @@
     "pl": "Liczby od 1 do 5",
     "en": "Numbers 1 to 5"
   },
-  "goal": "Count up to five (every thing once, the last number says how many) and recognise the digits 1-5.",
+  "goal": "Count to five, every thing once; the digits 4 and 5; a number says how many to give; five spread out is still five.",
   "age": "4-5",
   "characters": [
-    "wiewiorka",
+    "kret",
+    "mis",
     "sowa"
   ],
   "backgrounds": [
+    "stacyjka",
     "las",
-    "strumyk",
-    "dom",
     "laka",
     "pokoj"
   ],
   "objects": [
-    "szyszka",
-    "kamyk",
-    "ciastko",
+    "bilet",
+    "moneta",
+    "metka",
+    "talerz",
+    "wagon",
+    "mysz",
+    "zajac",
+    "jez",
+    "kaczatko_stoi",
+    "slimak",
     "jablko",
-    "kwiatek",
-    "pilka",
     "gruszka",
-    "marchewka",
+    "dzwonek",
+    "szyszka",
+    "zoledz",
+    "grzyb",
+    "kamyk",
+    "plecak",
+    "kanapka_1",
+    "czapka",
+    "pilka",
+    "ksiazeczka",
+    "skarpetka",
     "kubek",
-    "klocek",
-    "misiu"
+    "gest_papier"
   ],
-  "cover": "Between them a row of three pine cones on the forest floor, and above them a big hand-drawn pencil digit 3.",
+  "cover": "A tiny red forest train at a little wooden station: Mole in a conductor's cap waves from the locomotive, Bear and Owl hold paper tickets, five little passengers peek out of five wagons.",
   "naklejka": {
-    "obraz": "objects/szyszka",
-    "kto": "wiewiorka"
+    "obraz": "objects/wagon",
+    "kto": "kret"
   }
 }

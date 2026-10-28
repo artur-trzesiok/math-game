@@ -86,7 +86,7 @@ export async function sklepik(S, { towar, cena, monet = cena + 2, pokaz = cena <
   const uloz = () => na.forEach((m, i) => m.moveTo(x - ((na.length - 1) / 2) * 0.5 + i * 0.5, -1.35 + (i % 2) * 0.06, 0.2));
   await new Promise((ok) => {
     S.free({
-      items: monety.slice(), sklepik: { cena, na },
+      items: monety.slice(), sklepik: { cena, na, x },
       onDrop: (m, p) => {
         const i = na.indexOf(m); if (i >= 0) na.splice(i, 1);
         if (Math.hypot(p.x - x, p.y + 1.45) < 1.4) {

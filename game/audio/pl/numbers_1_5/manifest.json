@@ -1,372 +1,357 @@
 {
- "line.s_store": {
-  "hash": "a11094823700",
-  "who": "wiewiorka",
-  "text": "Zbieram szyszki na zimę. Zobacz, ile już mam!"
+ "line.a_pociag": {
+  "hash": "7d07e3b0d3ea",
+  "who": "kret",
+  "text": "Tuu-tuu! To mój pociąg. Dziś jedzie przez las nad jezioro!"
  },
- "line.s_how_many": {
-  "hash": "47a250b44837",
+ "line.a_chce": {
+  "hash": "ccff324c0b74",
+  "who": "mis",
+  "text": "Ja chcę jechać! I Sowa też!"
+ },
+ "line.a_bilet": {
+  "hash": "474bf2243d53",
+  "who": "kret",
+  "text": "Najpierw trzeba kupić bilet. Bilet kosztuje tyle monet, ile pokazuje cyfra."
+ },
+ "line.a_cztery": {
+  "hash": "25dedb642f39",
+  "who": "kret",
+  "text": "Twój bilet, Misiu, kosztuje cztery monety. Popatrz, tak wygląda cyfra cztery."
+ },
+ "line.a_to_cztery": {
+  "hash": "5dd58daf8634",
+  "who": "kret",
+  "text": "To jest cztery."
+ },
+ "line.a_zaplac": {
+  "hash": "1a9bb0cb3cc3",
   "who": "sowa",
-  "text": "Piękne! A ile dokładnie ich masz?"
+  "text": "Pomóż Misiowi zapłacić. Przeciągnij na talerzyk cztery monety."
  },
- "line.s_lots": {
-  "hash": "801dbce8bf6e",
-  "who": "wiewiorka",
-  "text": "Dużo! Mam ich bardzo, bardzo dużo!"
+ "line.a_za_duzo": {
+  "hash": "687620584d09",
+  "who": "kret",
+  "text": "Wystarczy, więcej nie trzeba!"
  },
- "line.s_lots_not": {
-  "hash": "0c54e2cc5d6b",
+ "line.a_cztery_monety": {
+  "hash": "aba6e1e78f3f",
+  "who": "kret",
+  "text": "Jeden, dwa, trzy, cztery. Cztery monety, w sam raz!"
+ },
+ "line.a_napisz": {
+  "hash": "d228dcb601d9",
+  "who": "kret",
+  "text": "Napisz czwórkę na bilecie Misia. Poprowadź palcem od zielonej kropki."
+ },
+ "line.a_moj_bilet": {
+  "hash": "a3818a7c9bd6",
+  "who": "mis",
+  "text": "Mój bilet z czwórką! Jadę!"
+ },
+ "line.b_wagony": {
+  "hash": "46303ff00d1f",
+  "who": "kret",
+  "text": "Mój pociąg ma pięć wagonów. Każdy ma swój numer: jeden, dwa, trzy, cztery, pięć."
+ },
+ "line.b_bilet2": {
+  "hash": "c60f9a0e3707",
+  "who": "kret",
+  "text": "Myszka ma bilet z numerem dwa. Do którego wagonu wsiada? Wskaż."
+ },
+ "line.b_bilet5": {
+  "hash": "f8f3763af2c0",
+  "who": "kret",
+  "text": "Zajączek ma bilet z numerem pięć. Który to wagon? Wskaż."
+ },
+ "line.b_bilet3": {
+  "hash": "def264897658",
+  "who": "kret",
+  "text": "Jeżyk ma bilet z numerem trzy. Który to wagon? Wskaż."
+ },
+ "line.zly_wagon": {
+  "hash": "17087849d1f3",
+  "who": "kret",
+  "text": "To nie ten wagon. Popatrz na cyfrę na bilecie."
+ },
+ "line.b_wsiada": {
+  "hash": "cd191ac3cd3c",
+  "who": "kret",
+  "text": "Wsiadaj! Dobrej podróży!"
+ },
+ "line.b_odjazd": {
+  "hash": "35db4b92bf15",
+  "who": "kret",
+  "text": "Wszyscy na miejscach? Odjeżdżamy!"
+ },
+ "line.c_jablka": {
+  "hash": "30dee5ee5c37",
   "who": "sowa",
-  "text": "Dużo to nie odpowiedź. Jutro nie będziesz wiedziała, czy jakaś nie zginęła."
+  "text": "Postój w lesie! Miś nazbierał jabłek, a ja gruszek."
  },
- "line.s_how": {
-  "hash": "cab7cbb170bc",
-  "who": "wiewiorka",
-  "text": "To jak mam to sprawdzić?"
+ "line.c_wiecej": {
+  "hash": "be0f0a2f1658",
+  "who": "mis",
+  "text": "Ja mam więcej! Popatrz, jaki długi rządek!"
  },
- "line.s_count": {
-  "hash": "faa0d7280187",
+ "line.c_policz": {
+  "hash": "2eb7409fb020",
   "who": "sowa",
-  "text": "Licząc! Wtedy wiesz dokładnie, ile ich jest."
+  "text": "Długi rządek to jeszcze nie więcej. Policzmy. Dotykaj po kolei jabłek Misia."
  },
- "line.s_what": {
-  "hash": "d798a7c3f187",
-  "who": "wiewiorka",
-  "text": "Licząc? A co to jest liczenie?"
- },
- "line.s_show": {
-  "hash": "f85e568bba77",
+ "line.c_piec_misia": {
+  "hash": "ffd60a040e65",
   "who": "sowa",
-  "text": "Pokażę ci, to fajna zabawa. Każdą szyszkę wskazujemy tylko raz i mówimy po kolei liczby."
+  "text": "Pięć jabłek. A teraz policz moje gruszki."
  },
- "line.s_last": {
-  "hash": "8b14d0966d0d",
+ "line.c_tyle_samo": {
+  "hash": "70199907888d",
   "who": "sowa",
-  "text": "Ostatnia liczba mówi, ile ich jest. Masz trzy szyszki!"
+  "text": "Też pięć! Pięć i pięć to tyle samo, nawet kiedy leżą daleko od siebie."
  },
- "line.s_digits": {
-  "hash": "160f1de3b1d7",
+ "line.c_rozumiem": {
+  "hash": "fc397c708fb8",
+  "who": "mis",
+  "text": "Aha! Mój rządek był dłuższy, ale jabłek nie było więcej."
+ },
+ "line.c_cyfra5": {
+  "hash": "6b6184ebf0e1",
   "who": "sowa",
-  "text": "Liczbę można też zapisać. Zapisujemy ją cyfrą. Popatrz."
+  "text": "A tak wygląda cyfra pięć."
  },
- "line.s_point_3": {
-  "hash": "c1d7d0e3e608",
-  "who": "wiewiorka",
-  "text": "Mam trzy szyszki. Wskaż cyfrę trzy."
- },
- "line.wrong_digit": {
-  "hash": "707661e2a86e",
+ "line.c_to_piec": {
+  "hash": "75cb6e871f97",
   "who": "sowa",
-  "text": "To inna cyfra. Popatrz jeszcze raz."
+  "text": "To jest pięć."
  },
- "line.wrong_digit.wiewiorka": {
-  "hash": "5a9af79af576",
-  "who": "wiewiorka",
-  "text": "To inna cyfra. Popatrz jeszcze raz."
+ "line.c_dzwonek": {
+  "hash": "6a23be089674",
+  "who": "kret",
+  "text": "Posłuchaj mojego dzwonka i policz, ile razy zadzwoni."
  },
- "line.s_solved": {
-  "hash": "04f36cbfd650",
-  "who": "wiewiorka",
-  "text": "Zapiszę trójkę przy mojej spiżarni. Jutro policzę i sprawdzę, czy wszystkie są!"
- },
- "line.s_to_brook": {
-  "hash": "c98e9e970321",
+ "line.c_ile_dzwonkow": {
+  "hash": "3e3c16ea444d",
   "who": "sowa",
-  "text": "Chodźmy nad strumyk. Tam też jest co liczyć."
+  "text": "Ile razy zadzwonił dzwonek? Wskaż cyfrę."
  },
- "line.b_pebbles": {
-  "hash": "b1ac3a4c95a6",
-  "who": "wiewiorka",
-  "text": "Zbierzemy kamyki do gry w klasy. Mam ich kilka."
+ "line.c_dzwonek3": {
+  "hash": "56fcdaf0b3e6",
+  "who": "kret",
+  "text": "Trzy razy!"
  },
- "line.b_count": {
-  "hash": "cdada523c362",
+ "line.c_dzwonek4": {
+  "hash": "5a6934057b37",
+  "who": "kret",
+  "text": "Cztery razy!"
+ },
+ "line.c_dzwonek5": {
+  "hash": "b91aefbbd927",
+  "who": "kret",
+  "text": "Pięć razy!"
+ },
+ "line.d_jezioro": {
+  "hash": "ce9302caabae",
+  "who": "kret",
+  "text": "Jezioro! Koniec podróży, wysiadamy!"
+ },
+ "line.d_ilu": {
+  "hash": "7d1a1a8a4020",
+  "who": "mis",
+  "text": "Ilu pasażerów przyjechało? Policz ich, dotykając każdego."
+ },
+ "line.d_pieciu": {
+  "hash": "159fd0148f8b",
   "who": "sowa",
-  "text": "Policz je. Wskaż każdy kamyk tylko raz."
+  "text": "Pięciu pasażerów! Wszyscy dojechali."
  },
- "line.b_four": {
-  "hash": "bbf7076d739b",
-  "who": "wiewiorka",
-  "text": "Cztery kamyki! Ostatnia liczba to cztery."
- },
- "line.b_pick_4": {
-  "hash": "ea8c47940e95",
+ "line.p_start": {
+  "hash": "64960039a844",
   "who": "sowa",
-  "text": "Wśród kart jest czwórka. Wskaż cyfrę cztery."
+  "text": "Poćwiczmy liczby do pięciu! Mam pięć zabaw."
  },
- "line.good_digit": {
-  "hash": "487242c0a2fc",
+ "line.p_ile": {
+  "hash": "05852bf9e09e",
+  "who": "kret",
+  "text": "Ile ich jest? Policz i wskaż cyfrę."
+ },
+ "line.p_ile_nie": {
+  "hash": "ad5e4e1b44bf",
+  "who": "kret",
+  "text": "Policz jeszcze raz, dotykając każdej rzeczy."
+ },
+ "line.p_dobrze": {
+  "hash": "671b319f1b8d",
   "who": "sowa",
-  "text": "Tak! To ta cyfra. Świetnie!"
+  "text": "Brawo!"
  },
- "line.good_digit.wiewiorka": {
-  "hash": "d2a3a7b91efa",
-  "who": "wiewiorka",
-  "text": "Tak! To ta cyfra. Świetnie!"
+ "line.p_dobrze.kret": {
+  "hash": "707aad081120",
+  "who": "kret",
+  "text": "Brawo!"
  },
- "line.b_to_home": {
-  "hash": "a00fc8d6b8b4",
-  "who": "wiewiorka",
-  "text": "Wracajmy do domu. Czekają na nas ciastka!"
+ "line.p_bilet5": {
+  "hash": "b7b91decd54e",
+  "who": "kret",
+  "text": "Ten bilet kosztuje pięć monet. Przeciągnij pięć monet na talerzyk."
  },
- "line.c_cookies": {
-  "hash": "8451354dd0e5",
+ "line.p_napisz5": {
+  "hash": "f5931e480aaf",
   "who": "sowa",
-  "text": "Upiekłam ciastka dla gości. Policzmy, ile ich upiekłam."
+  "text": "Napisz palcem piątkę. Zacznij od zielonej kropki."
  },
- "line.c_five": {
-  "hash": "90373f28c127",
+ "line.p_cztery": {
+  "hash": "bb70a79577b5",
   "who": "sowa",
-  "text": "Pięć ciastek! Ostatnia liczba to pięć."
+  "text": "Gdzie są cztery jabłka? Wskaż."
  },
- "line.c_two_plates": {
-  "hash": "f980c477d992",
-  "who": "wiewiorka",
-  "text": "Teraz są dwie grupy ciastek. W jednej jest pięć."
- },
- "line.c_pick_5": {
-  "hash": "24e1fdcfd420",
-  "who": "wiewiorka",
-  "text": "Wskaż grupę, w której jest pięć ciastek. Możesz je policzyć."
- },
- "line.c_wrong_5": {
-  "hash": "50a9577ce637",
-  "who": "wiewiorka",
-  "text": "Policz jeszcze raz. Tutaj jest mniej niż pięć."
- },
- "line.c_solved": {
-  "hash": "223f087e8e73",
+ "line.p_cztery_nie": {
+  "hash": "3f48798bd2ab",
   "who": "sowa",
-  "text": "Brawo! Teraz umiesz liczyć do pięciu i znasz pięć cyfr."
+  "text": "Policz jabłka jeszcze raz. Szukamy czterech."
  },
- "line.p_intro": {
-  "hash": "ba4ed4feacab",
-  "who": "sowa",
-  "text": "Pobawmy się w liczenie! Policz rzeczy i znajdź ich cyfrę."
+ "line.p_kamienie": {
+  "hash": "1749f88f2553",
+  "who": "kret",
+  "text": "Chcę doskoczyć do kamienia z cyfrą cztery. Który to? Wskaż."
  },
- "line.p_how_many": {
-  "hash": "aae8ed90e712",
-  "who": "sowa",
-  "text": "Ile ich jest? Wskaż właściwą cyfrę."
+ "line.p_kamienie_nie": {
+  "hash": "2f36c44a4bbe",
+  "who": "kret",
+  "text": "To nie cztery. Popatrz na cyfry pod kamieniami."
  },
- "line.p_group_1": {
-  "hash": "1fe602bcf24a",
-  "who": "wiewiorka",
-  "text": "Wskaż grupę, w której jest tylko jedna rzecz."
+ "line.p_doskoczylem": {
+  "hash": "c083669ca66d",
+  "who": "kret",
+  "text": "Jeden, dwa, trzy, cztery! Jestem na czwórce!"
  },
- "line.p_group_4": {
-  "hash": "e08ea2ac3638",
-  "who": "wiewiorka",
-  "text": "Wskaż grupę, w której są cztery rzeczy."
+ "line.h_jutro": {
+  "hash": "465ab6196c76",
+  "who": "kret",
+  "text": "Jutro znowu jedziemy pociągiem. Trzeba spakować plecak."
  },
- "line.p_wrong_group": {
-  "hash": "81f6d97176ed",
-  "who": "wiewiorka",
-  "text": "Policz jeszcze raz, każdą rzecz tylko raz."
+ "line.h_spakuj": {
+  "hash": "aef97ce95b0f",
+  "who": "kret",
+  "text": "Włóż do plecaka pięć rzeczy. Przeciągaj je po jednej, a ja policzę."
  },
- "line.good_group": {
-  "hash": "3e9ed32c74cf",
-  "who": "sowa",
-  "text": "Tak! Dobrze policzone."
+ "line.h_za_duzo": {
+  "hash": "aa974ac78b2e",
+  "who": "kret",
+  "text": "Już jest pięć! Plecak jest pełny."
  },
- "line.good_group.wiewiorka": {
-  "hash": "21eea1c8324c",
-  "who": "wiewiorka",
-  "text": "Tak! Dobrze policzone."
+ "line.h_spakowane": {
+  "hash": "711f68ea5030",
+  "who": "mis",
+  "text": "Pięć rzeczy w plecaku. Gotowe!"
  },
- "line.a_game": {
-  "hash": "470c846a53c3",
-  "who": "wiewiorka",
-  "text": "Zagrajmy w liczenie zabawek, tak jak w domu."
+ "line.h_palce": {
+  "hash": "7bfb387cc7d0",
+  "who": "mis",
+  "text": "Ile palców ma ta dłoń? Policz i wskaż cyfrę."
  },
- "line.a_ok": {
-  "hash": "e57f28905305",
-  "who": "sowa",
-  "text": "Dobrze! Ja pokazuję zabawki, a ty liczysz."
+ "line.h_palce_nie": {
+  "hash": "8e0fd34d7c2d",
+  "who": "mis",
+  "text": "Policz palce jeszcze raz, każdy po kolei."
  },
- "line.a_count_klocek": {
-  "hash": "b316fcc80201",
-  "who": "sowa",
-  "text": "Policz klocki. Wskaż każdy po kolei."
+ "line.h_piec_palcow": {
+  "hash": "e82af467bd0a",
+  "who": "kret",
+  "text": "Pięć palców! Na każdej dłoni masz pięć palców."
  },
- "line.a_count_misiu": {
-  "hash": "86fdd3e0e4d0",
-  "who": "sowa",
-  "text": "Teraz misie. Ile ich jest?"
- },
- "line.a_count_pilka": {
-  "hash": "a67f1bd6a5d7",
-  "who": "sowa",
-  "text": "A teraz piłki. Policz je wszystkie."
- },
- "line.a_which_digit": {
-  "hash": "2261af79ef5a",
-  "who": "wiewiorka",
-  "text": "Wskaż cyfrę, która mówi, ile ich jest."
- },
- "line.a_which_digit.sowa": {
-  "hash": "80f3f9561dd8",
-  "who": "sowa",
-  "text": "Wskaż cyfrę, która mówi, ile ich jest."
- },
- "line.a_ask_parents": {
-  "hash": "7f984f3c701a",
-  "who": "sowa",
-  "text": "Poproście rodziców, żeby razem z wami policzyli zabawki albo talerze na stole."
- },
- "line.a_bye": {
-  "hash": "de5cebfd32fc",
-  "who": "wiewiorka",
-  "text": "Pa, pa! Do zobaczenia!"
+ "line.h_rodzice": {
+  "hash": "54be7ee938a4",
+  "who": "mis",
+  "text": "Policz z rodzicami do pięciu: pięć schodów, pięć łyżek, pięć klaśnięć!"
  },
  "line.n1": {
+  "hash": "dd37be380031",
+  "who": "kret",
+  "text": "Jeden!"
+ },
+ "line.n1.sowa": {
   "hash": "4fae823a23d6",
   "who": "sowa",
   "text": "Jeden!"
  },
- "line.n1.wiewiorka": {
-  "hash": "ba57f5b09fb8",
-  "who": "wiewiorka",
+ "line.n1.mis": {
+  "hash": "6d44dbf15322",
+  "who": "mis",
   "text": "Jeden!"
  },
  "line.n2": {
+  "hash": "27efeb68b5ac",
+  "who": "kret",
+  "text": "Dwa!"
+ },
+ "line.n2.sowa": {
   "hash": "e363b2e5ef6b",
   "who": "sowa",
   "text": "Dwa!"
  },
- "line.n2.wiewiorka": {
-  "hash": "1fe22df41e61",
-  "who": "wiewiorka",
+ "line.n2.mis": {
+  "hash": "285ad82008e7",
+  "who": "mis",
   "text": "Dwa!"
  },
  "line.n3": {
+  "hash": "ed7a96791c7b",
+  "who": "kret",
+  "text": "Trzy!"
+ },
+ "line.n3.sowa": {
   "hash": "08bcfaaf489e",
   "who": "sowa",
   "text": "Trzy!"
  },
- "line.n3.wiewiorka": {
-  "hash": "de660ab27bd0",
-  "who": "wiewiorka",
+ "line.n3.mis": {
+  "hash": "c51b1d268de5",
+  "who": "mis",
   "text": "Trzy!"
  },
  "line.n4": {
+  "hash": "4df5e041e69e",
+  "who": "kret",
+  "text": "Cztery!"
+ },
+ "line.n4.sowa": {
   "hash": "8414b0618ffe",
   "who": "sowa",
   "text": "Cztery!"
  },
- "line.n4.wiewiorka": {
-  "hash": "55526c232825",
-  "who": "wiewiorka",
+ "line.n4.mis": {
+  "hash": "5a0bc83e6a41",
+  "who": "mis",
   "text": "Cztery!"
  },
  "line.n5": {
+  "hash": "6a8a8f8f6183",
+  "who": "kret",
+  "text": "Pięć!"
+ },
+ "line.n5.sowa": {
   "hash": "4ec94c6a823a",
   "who": "sowa",
   "text": "Pięć!"
  },
- "line.n5.wiewiorka": {
-  "hash": "f368640872aa",
-  "who": "wiewiorka",
+ "line.n5.mis": {
+  "hash": "300b0380fce5",
+  "who": "mis",
   "text": "Pięć!"
  },
- "line.d1": {
-  "hash": "672f2188bd6b",
-  "who": "sowa",
-  "text": "To jest jedynka. Wygląda jak patyk z małym noskiem."
- },
- "line.d1.wiewiorka": {
-  "hash": "4ee729b27bee",
-  "who": "wiewiorka",
-  "text": "To jest jedynka. Wygląda jak patyk z małym noskiem."
- },
- "line.d2": {
-  "hash": "c432d53d393b",
-  "who": "sowa",
-  "text": "To jest dwójka. Wygląda jak łabędź, który płynie po wodzie."
- },
- "line.d2.wiewiorka": {
-  "hash": "4bc4b304de89",
-  "who": "wiewiorka",
-  "text": "To jest dwójka. Wygląda jak łabędź, który płynie po wodzie."
- },
- "line.d3": {
-  "hash": "1b532e74372d",
-  "who": "sowa",
-  "text": "To jest trójka. Ma dwa brzuszki, jeden nad drugim."
- },
- "line.d3.wiewiorka": {
-  "hash": "afd148dbb260",
-  "who": "wiewiorka",
-  "text": "To jest trójka. Ma dwa brzuszki, jeden nad drugim."
- },
- "line.d4": {
-  "hash": "fdc3f0c2e630",
-  "who": "sowa",
-  "text": "To jest czwórka. Wygląda jak krzesełko odwrócone do góry nogami."
- },
- "line.d4.wiewiorka": {
-  "hash": "ac2e273b08c9",
-  "who": "wiewiorka",
-  "text": "To jest czwórka. Wygląda jak krzesełko odwrócone do góry nogami."
- },
- "line.d5": {
-  "hash": "d7c6166d878b",
-  "who": "sowa",
-  "text": "To jest piątka. Ma prosty daszek i okrągły brzuszek."
- },
- "line.d5.wiewiorka": {
-  "hash": "c80a5e8fcad1",
-  "who": "wiewiorka",
-  "text": "To jest piątka. Ma prosty daszek i okrągły brzuszek."
- },
- "line.s_start_one": {
-  "hash": "7950315e4d20",
-  "who": "sowa",
-  "text": "Zacznijmy od jednej szyszki. Wskaż ją."
- },
- "line.s_one": {
-  "hash": "f7440813bd07",
-  "who": "sowa",
-  "text": "Masz jedną szyszkę."
- },
- "line.s_add_2": {
-  "hash": "bf42b28c933e",
-  "who": "wiewiorka",
-  "text": "Dokładam jeszcze jedną szyszkę!"
- },
- "line.s_add_3": {
-  "hash": "66718f881e74",
-  "who": "wiewiorka",
-  "text": "I jeszcze jedną!"
- },
- "line.s_count_again": {
-  "hash": "b3bd84af1502",
-  "who": "sowa",
-  "text": "Policz od początku. Każdą szyszkę wskaż tylko raz."
- },
- "line.s_two": {
-  "hash": "c7a777600a0e",
-  "who": "sowa",
-  "text": "Ostatnia liczba mówi, ile ich jest. Masz dwie szyszki!"
- },
- "line.s_point_2": {
-  "hash": "6090c2961f0e",
-  "who": "wiewiorka",
-  "text": "Mam dwie szyszki. Wskaż cyfrę dwa."
- },
  "line.naklejka_daj": {
-  "hash": "2634c68df6d9",
-  "who": "wiewiorka",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "bf6e12f66ace",
-  "who": "narrator",
-  "text": "To szyszka od wiewiórki. Dostaliśmy ją, kiedy uczyliśmy się liczyć do pięciu."
+  "hash": "90cb96f14ce6",
+  "who": "kret",
+  "text": "Dziękuję za wspólną podróż! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "85dccce7b7f1",
-  "who": "wiewiorka",
+  "hash": "8556c4423588",
+  "who": "kret",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "cce20a828c67",
+  "who": "narrator",
+  "text": "To wagonik z pociągu Kreta. Dostaliśmy go, kiedy liczyliśmy do pięciu."
  }
 }

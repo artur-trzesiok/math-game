@@ -1,284 +1,265 @@
 {
-  "line.s_store": {
-    "who": "wiewiorka",
-    "text": "I am collecting pine cones for winter. Look how many I have!"
+  "line.a_pociag": {
+    "who": "kret",
+    "text": "Choo-choo! This is my train. Today it goes through the forest to the lake!"
   },
-  "line.s_how_many": {
+  "line.a_chce": {
+    "who": "mis",
+    "text": "I want to ride! And Owl too!"
+  },
+  "line.a_bilet": {
+    "who": "kret",
+    "text": "First you need a ticket. A ticket costs as many coins as its number shows."
+  },
+  "line.a_cztery": {
+    "who": "kret",
+    "text": "Your ticket, Bear, costs four coins. Look, this is what the number four looks like."
+  },
+  "line.a_to_cztery": {
+    "who": "kret",
+    "text": "This is four."
+  },
+  "line.a_zaplac": {
     "who": "sowa",
-    "text": "Lovely! And how many exactly do you have?"
+    "text": "Help Bear pay. Drag four coins onto the plate."
   },
-  "line.s_lots": {
-    "who": "wiewiorka",
-    "text": "Lots! I have lots and lots of them!"
+  "line.a_za_duzo": {
+    "who": "kret",
+    "text": "That's enough, no more needed!"
   },
-  "line.s_lots_not": {
+  "line.a_cztery_monety": {
+    "who": "kret",
+    "text": "One, two, three, four. Four coins, just right!"
+  },
+  "line.a_napisz": {
+    "who": "kret",
+    "text": "Write a four on Bear's ticket. Run your finger from the green dot."
+  },
+  "line.a_moj_bilet": {
+    "who": "mis",
+    "text": "My ticket with a four! I'm going!"
+  },
+  "line.b_wagony": {
+    "who": "kret",
+    "text": "My train has five wagons. Each has its number: one, two, three, four, five."
+  },
+  "line.b_bilet2": {
+    "who": "kret",
+    "text": "Mouse has a ticket with the number two. Which wagon does she get into? Point to it."
+  },
+  "line.b_bilet5": {
+    "who": "kret",
+    "text": "Bunny has a ticket with the number five. Which wagon is it? Point to it."
+  },
+  "line.b_bilet3": {
+    "who": "kret",
+    "text": "Hedgehog has a ticket with the number three. Which wagon is it? Point to it."
+  },
+  "line.zly_wagon": {
+    "who": "kret",
+    "text": "Not that wagon. Look at the number on the ticket."
+  },
+  "line.b_wsiada": {
+    "who": "kret",
+    "text": "All aboard! Have a good trip!"
+  },
+  "line.b_odjazd": {
+    "who": "kret",
+    "text": "Everyone in their seats? Off we go!"
+  },
+  "line.c_jablka": {
     "who": "sowa",
-    "text": "Lots is not an answer. Tomorrow you will not know if one went missing."
+    "text": "A stop in the forest! Bear picked apples and I picked pears."
   },
-  "line.s_how": {
-    "who": "wiewiorka",
-    "text": "Then how can I check?"
+  "line.c_wiecej": {
+    "who": "mis",
+    "text": "I have more! Look how long my row is!"
   },
-  "line.s_count": {
+  "line.c_policz": {
     "who": "sowa",
-    "text": "By counting! Then you know exactly how many there are."
+    "text": "A long row isn't more yet. Let's count. Touch Bear's apples one by one."
   },
-  "line.s_what": {
-    "who": "wiewiorka",
-    "text": "Counting? What is counting?"
-  },
-  "line.s_show": {
+  "line.c_piec_misia": {
     "who": "sowa",
-    "text": "I will show you, it is fun. We point to each cone only once and say the numbers in order."
+    "text": "Five apples. Now count my pears."
   },
-  "line.s_start_one": {
+  "line.c_tyle_samo": {
     "who": "sowa",
-    "text": "Let's start with one cone. Point to it."
+    "text": "Five too! Five and five are the same, even when they lie far apart."
   },
-  "line.s_one": {
+  "line.c_rozumiem": {
+    "who": "mis",
+    "text": "I see! My row was longer, but there weren't more apples."
+  },
+  "line.c_cyfra5": {
     "who": "sowa",
-    "text": "You have one cone."
+    "text": "And this is what the number five looks like."
   },
-  "line.s_add_2": {
-    "who": "wiewiorka",
-    "text": "I'm adding one more cone!"
-  },
-  "line.s_add_3": {
-    "who": "wiewiorka",
-    "text": "And one more!"
-  },
-  "line.s_count_again": {
+  "line.c_to_piec": {
     "who": "sowa",
-    "text": "Count from the start. Point to every cone only once."
+    "text": "This is five."
   },
-  "line.s_two": {
+  "line.c_dzwonek": {
+    "who": "kret",
+    "text": "Listen to my bell and count how many times it rings."
+  },
+  "line.c_ile_dzwonkow": {
     "who": "sowa",
-    "text": "The last number tells how many there are. You have two cones!"
+    "text": "How many times did the bell ring? Point to the number."
   },
-  "line.s_point_2": {
-    "who": "wiewiorka",
-    "text": "I have two cones. Point to the digit two."
+  "line.c_dzwonek3": {
+    "who": "kret",
+    "text": "Three times!"
   },
-  "line.s_last": {
+  "line.c_dzwonek4": {
+    "who": "kret",
+    "text": "Four times!"
+  },
+  "line.c_dzwonek5": {
+    "who": "kret",
+    "text": "Five times!"
+  },
+  "line.d_jezioro": {
+    "who": "kret",
+    "text": "The lake! End of the trip, everybody off!"
+  },
+  "line.d_ilu": {
+    "who": "mis",
+    "text": "How many passengers came? Count them, touching each one."
+  },
+  "line.d_pieciu": {
     "who": "sowa",
-    "text": "The last number tells how many there are. You have three cones!"
+    "text": "Five passengers! Everybody got here."
   },
-  "line.s_digits": {
+  "line.p_start": {
     "who": "sowa",
-    "text": "A number can also be written down. We write it with a digit. Look."
+    "text": "Let's practise numbers up to five! I have five games."
   },
-  "line.s_point_3": {
-    "who": "wiewiorka",
-    "text": "I have three cones. Point to the digit three."
+  "line.p_ile": {
+    "who": "kret",
+    "text": "How many are there? Count and point to the number."
   },
-  "line.wrong_digit": {
+  "line.p_ile_nie": {
+    "who": "kret",
+    "text": "Count again, touching each thing."
+  },
+  "line.p_dobrze": {
     "who": "sowa",
+    "text": "Bravo!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "That is another digit. Look again."
+      "kret"
+    ]
   },
-  "line.s_solved": {
-    "who": "wiewiorka",
-    "text": "I will write a three by my store. Tomorrow I will count and check that they are all there!"
+  "line.p_bilet5": {
+    "who": "kret",
+    "text": "This ticket costs five coins. Drag five coins onto the plate."
   },
-  "line.s_to_brook": {
+  "line.p_napisz5": {
     "who": "sowa",
-    "text": "Let's go to the brook. There is something to count there too."
+    "text": "Write a five with your finger. Start at the green dot."
   },
-  "line.b_pebbles": {
-    "who": "wiewiorka",
-    "text": "Let's collect pebbles for hopscotch. I have a few."
-  },
-  "line.b_count": {
+  "line.p_cztery": {
     "who": "sowa",
-    "text": "Count them. Point to each pebble only once."
+    "text": "Where are four apples? Point to them."
   },
-  "line.b_four": {
-    "who": "wiewiorka",
-    "text": "Four pebbles! The last number is four."
-  },
-  "line.b_pick_4": {
+  "line.p_cztery_nie": {
     "who": "sowa",
-    "text": "There is a four among the cards. Point to the digit four."
+    "text": "Count the apples again. We're looking for four."
   },
-  "line.good_digit": {
-    "who": "sowa",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Yes! That is the digit. Great!"
+  "line.p_kamienie": {
+    "who": "kret",
+    "text": "I want to hop to the stone with the number four. Which one is it? Point to it."
   },
-  "line.b_to_home": {
-    "who": "wiewiorka",
-    "text": "Let's go home. Cookies are waiting for us!"
+  "line.p_kamienie_nie": {
+    "who": "kret",
+    "text": "That's not four. Look at the numbers under the stones."
   },
-  "line.c_cookies": {
-    "who": "sowa",
-    "text": "I baked cookies for the guests. Let's count how many I baked."
+  "line.p_doskoczylem": {
+    "who": "kret",
+    "text": "One, two, three, four! I'm on the four!"
   },
-  "line.c_five": {
-    "who": "sowa",
-    "text": "Five cookies! The last number is five."
+  "line.h_jutro": {
+    "who": "kret",
+    "text": "Tomorrow we ride the train again. The backpack needs packing."
   },
-  "line.c_two_plates": {
-    "who": "wiewiorka",
-    "text": "Now there are two groups of cookies. One of them has five."
+  "line.h_spakuj": {
+    "who": "kret",
+    "text": "Put five things in the backpack. Drag them one at a time and I'll count."
   },
-  "line.c_pick_5": {
-    "who": "wiewiorka",
-    "text": "Point to the group with five cookies. You can count them."
+  "line.h_za_duzo": {
+    "who": "kret",
+    "text": "That's five already! The backpack is full."
   },
-  "line.c_wrong_5": {
-    "who": "wiewiorka",
-    "text": "Count again. There are fewer than five here."
+  "line.h_spakowane": {
+    "who": "mis",
+    "text": "Five things in the backpack. Ready!"
   },
-  "line.c_solved": {
-    "who": "sowa",
-    "text": "Well done! Now you can count to five and you know five digits."
+  "line.h_palce": {
+    "who": "mis",
+    "text": "How many fingers does this hand have? Count and point to the number."
   },
-  "line.p_intro": {
-    "who": "sowa",
-    "text": "Let's play counting! Count the things and find their digit."
+  "line.h_palce_nie": {
+    "who": "mis",
+    "text": "Count the fingers again, one by one."
   },
-  "line.p_how_many": {
-    "who": "sowa",
-    "text": "How many are there? Point to the right digit."
+  "line.h_piec_palcow": {
+    "who": "kret",
+    "text": "Five fingers! You have five fingers on each hand."
   },
-  "line.p_group_1": {
-    "who": "wiewiorka",
-    "text": "Point to the group with only one thing."
-  },
-  "line.p_group_4": {
-    "who": "wiewiorka",
-    "text": "Point to the group with four things."
-  },
-  "line.p_wrong_group": {
-    "who": "wiewiorka",
-    "text": "Count again, each thing only once."
-  },
-  "line.good_group": {
-    "who": "sowa",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Yes! Well counted."
-  },
-  "line.a_game": {
-    "who": "wiewiorka",
-    "text": "Let's play counting toys, just like at home."
-  },
-  "line.a_ok": {
-    "who": "sowa",
-    "text": "All right! I show the toys and you count."
-  },
-  "line.a_count_klocek": {
-    "who": "sowa",
-    "text": "Count the blocks. Point to each one in turn."
-  },
-  "line.a_count_misiu": {
-    "who": "sowa",
-    "text": "Now the teddy bears. How many are there?"
-  },
-  "line.a_count_pilka": {
-    "who": "sowa",
-    "text": "And now the balls. Count them all."
-  },
-  "line.a_which_digit": {
-    "who": "wiewiorka",
-    "speakers": [
-      "sowa"
-    ],
-    "text": "Point to the digit that tells how many there are."
-  },
-  "line.a_ask_parents": {
-    "who": "sowa",
-    "text": "Ask your parents to count toys or the plates on the table with you."
-  },
-  "line.a_bye": {
-    "who": "wiewiorka",
-    "text": "Bye bye! See you!"
+  "line.h_rodzice": {
+    "who": "mis",
+    "text": "Count to five with your parents: five stairs, five spoons, five claps!"
   },
   "line.n1": {
-    "who": "sowa",
+    "who": "kret",
+    "text": "One!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "One!"
+      "sowa",
+      "mis"
+    ]
   },
   "line.n2": {
-    "who": "sowa",
+    "who": "kret",
+    "text": "Two!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Two!"
+      "sowa",
+      "mis"
+    ]
   },
   "line.n3": {
-    "who": "sowa",
+    "who": "kret",
+    "text": "Three!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Three!"
+      "sowa",
+      "mis"
+    ]
   },
   "line.n4": {
-    "who": "sowa",
+    "who": "kret",
+    "text": "Four!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Four!"
+      "sowa",
+      "mis"
+    ]
   },
   "line.n5": {
-    "who": "sowa",
+    "who": "kret",
+    "text": "Five!",
     "speakers": [
-      "wiewiorka"
-    ],
-    "text": "Five!"
-  },
-  "line.d1": {
-    "who": "sowa",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "This is a one. It looks like a stick with a little nose."
-  },
-  "line.d2": {
-    "who": "sowa",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "This is a two. It looks like a swan swimming on the water."
-  },
-  "line.d3": {
-    "who": "sowa",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "This is a three. It has two tummies, one on top of the other."
-  },
-  "line.d4": {
-    "who": "sowa",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "This is a four. It looks like a little chair turned upside down."
-  },
-  "line.d5": {
-    "who": "sowa",
-    "speakers": [
-      "wiewiorka"
-    ],
-    "text": "This is a five. It has a straight hat and a round tummy."
+      "sowa",
+      "mis"
+    ]
   },
   "line.naklejka_daj": {
-    "who": "wiewiorka",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+    "who": "kret",
+    "text": "Thank you for riding with me! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "kret",
+    "text": "You already have the sticker from this adventure. See you!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the pine cone from Squirrel. We got it when we learned to count to five."
-  },
-  "line.naklejka_juz": {
-    "who": "wiewiorka",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "This is a wagon from Mole's train. We got it when we counted to five."
   }
 }

@@ -44,6 +44,9 @@ export async function run(maxSteps = 20, prefix = "a") {
             const b = new THREE.Box3().setFromObject(S.puppets[who].korzen);
             S.upusc(h, (b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2); await sleep(900);
           }
+        } else if (ds.sklepik) {
+          kind = "sklepik";                                         // the shop: as many coins onto the plate as the price
+          for (const h of ds.items.slice()) { if (!S.dragSet || ds.sklepik.na.length >= ds.sklepik.cena) break; if (ds.sklepik.na.includes(h)) continue; S.upusc(h, ds.sklepik.x, -1.45); await sleep(400); }
         } else if (ds.rozdaj) {
           kind = "rozdaj";                                          // give one to each: drop on the next one without
           for (const h of ds.items.slice()) { const o = ds.rozdaj.wolni()[0]; if (!o) break; const [x, y] = ds.rozdaj.pozycja(o); S.upusc(h, x, y); await sleep(900); }

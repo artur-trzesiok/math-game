@@ -1,372 +1,357 @@
 {
- "line.s_store": {
-  "hash": "82c5099d645f",
-  "who": "wiewiorka",
-  "text": "I am collecting pine cones for winter. Look how many I have!"
+ "line.a_pociag": {
+  "hash": "d939f90414d7",
+  "who": "kret",
+  "text": "Choo-choo! This is my train. Today it goes through the forest to the lake!"
  },
- "line.s_how_many": {
-  "hash": "f77e07f84cb8",
+ "line.a_chce": {
+  "hash": "b3a6ab0ae998",
+  "who": "mis",
+  "text": "I want to ride! And Owl too!"
+ },
+ "line.a_bilet": {
+  "hash": "a99e67bab91e",
+  "who": "kret",
+  "text": "First you need a ticket. A ticket costs as many coins as its number shows."
+ },
+ "line.a_cztery": {
+  "hash": "007a64a23eb2",
+  "who": "kret",
+  "text": "Your ticket, Bear, costs four coins. Look, this is what the number four looks like."
+ },
+ "line.a_to_cztery": {
+  "hash": "7d1c0378e0f0",
+  "who": "kret",
+  "text": "This is four."
+ },
+ "line.a_zaplac": {
+  "hash": "81360bf81092",
   "who": "sowa",
-  "text": "Lovely! And how many exactly do you have?"
+  "text": "Help Bear pay. Drag four coins onto the plate."
  },
- "line.s_lots": {
-  "hash": "15b4eeeeca5b",
-  "who": "wiewiorka",
-  "text": "Lots! I have lots and lots of them!"
+ "line.a_za_duzo": {
+  "hash": "191136f303bc",
+  "who": "kret",
+  "text": "That's enough, no more needed!"
  },
- "line.s_lots_not": {
-  "hash": "8fc95c42a118",
+ "line.a_cztery_monety": {
+  "hash": "72c6abf6afad",
+  "who": "kret",
+  "text": "One, two, three, four. Four coins, just right!"
+ },
+ "line.a_napisz": {
+  "hash": "53d1984d8263",
+  "who": "kret",
+  "text": "Write a four on Bear's ticket. Run your finger from the green dot."
+ },
+ "line.a_moj_bilet": {
+  "hash": "1ce069d620e4",
+  "who": "mis",
+  "text": "My ticket with a four! I'm going!"
+ },
+ "line.b_wagony": {
+  "hash": "c53ae20f514c",
+  "who": "kret",
+  "text": "My train has five wagons. Each has its number: one, two, three, four, five."
+ },
+ "line.b_bilet2": {
+  "hash": "245a6efdd030",
+  "who": "kret",
+  "text": "Mouse has a ticket with the number two. Which wagon does she get into? Point to it."
+ },
+ "line.b_bilet5": {
+  "hash": "e4384dcc1166",
+  "who": "kret",
+  "text": "Bunny has a ticket with the number five. Which wagon is it? Point to it."
+ },
+ "line.b_bilet3": {
+  "hash": "717116674a87",
+  "who": "kret",
+  "text": "Hedgehog has a ticket with the number three. Which wagon is it? Point to it."
+ },
+ "line.zly_wagon": {
+  "hash": "ef66707cf9b0",
+  "who": "kret",
+  "text": "Not that wagon. Look at the number on the ticket."
+ },
+ "line.b_wsiada": {
+  "hash": "c1cdc2815a63",
+  "who": "kret",
+  "text": "All aboard! Have a good trip!"
+ },
+ "line.b_odjazd": {
+  "hash": "ec3adffbe77c",
+  "who": "kret",
+  "text": "Everyone in their seats? Off we go!"
+ },
+ "line.c_jablka": {
+  "hash": "944b2c477d10",
   "who": "sowa",
-  "text": "Lots is not an answer. Tomorrow you will not know if one went missing."
+  "text": "A stop in the forest! Bear picked apples and I picked pears."
  },
- "line.s_how": {
-  "hash": "9d2de29fc3a6",
-  "who": "wiewiorka",
-  "text": "Then how can I check?"
+ "line.c_wiecej": {
+  "hash": "9ed614c3ca10",
+  "who": "mis",
+  "text": "I have more! Look how long my row is!"
  },
- "line.s_count": {
-  "hash": "81d1fa4da5e9",
+ "line.c_policz": {
+  "hash": "de52f2492ad9",
   "who": "sowa",
-  "text": "By counting! Then you know exactly how many there are."
+  "text": "A long row isn't more yet. Let's count. Touch Bear's apples one by one."
  },
- "line.s_what": {
-  "hash": "d31b2c8f7035",
-  "who": "wiewiorka",
-  "text": "Counting? What is counting?"
- },
- "line.s_show": {
-  "hash": "399390e3704b",
+ "line.c_piec_misia": {
+  "hash": "bb55945e2c70",
   "who": "sowa",
-  "text": "I will show you, it is fun. We point to each cone only once and say the numbers in order."
+  "text": "Five apples. Now count my pears."
  },
- "line.s_last": {
-  "hash": "ea3fd1084f05",
+ "line.c_tyle_samo": {
+  "hash": "4de701804b5e",
   "who": "sowa",
-  "text": "The last number tells how many there are. You have three cones!"
+  "text": "Five too! Five and five are the same, even when they lie far apart."
  },
- "line.s_digits": {
-  "hash": "bb302e1f062e",
+ "line.c_rozumiem": {
+  "hash": "9396bcd1a72b",
+  "who": "mis",
+  "text": "I see! My row was longer, but there weren't more apples."
+ },
+ "line.c_cyfra5": {
+  "hash": "1405c668795b",
   "who": "sowa",
-  "text": "A number can also be written down. We write it with a digit. Look."
+  "text": "And this is what the number five looks like."
  },
- "line.s_point_3": {
-  "hash": "d2d3df4a8fe5",
-  "who": "wiewiorka",
-  "text": "I have three cones. Point to the digit three."
- },
- "line.wrong_digit": {
-  "hash": "9998ff738234",
+ "line.c_to_piec": {
+  "hash": "a56eb392345d",
   "who": "sowa",
-  "text": "That is another digit. Look again."
+  "text": "This is five."
  },
- "line.wrong_digit.wiewiorka": {
-  "hash": "b0cebfd59e50",
-  "who": "wiewiorka",
-  "text": "That is another digit. Look again."
+ "line.c_dzwonek": {
+  "hash": "b7048765cbd7",
+  "who": "kret",
+  "text": "Listen to my bell and count how many times it rings."
  },
- "line.s_solved": {
-  "hash": "06ed9de73f52",
-  "who": "wiewiorka",
-  "text": "I will write a three by my store. Tomorrow I will count and check that they are all there!"
- },
- "line.s_to_brook": {
-  "hash": "e258615f0295",
+ "line.c_ile_dzwonkow": {
+  "hash": "bb223f2c93ad",
   "who": "sowa",
-  "text": "Let's go to the brook. There is something to count there too."
+  "text": "How many times did the bell ring? Point to the number."
  },
- "line.b_pebbles": {
-  "hash": "6d7a2e9fa898",
-  "who": "wiewiorka",
-  "text": "Let's collect pebbles for hopscotch. I have a few."
+ "line.c_dzwonek3": {
+  "hash": "a61366d6b6ed",
+  "who": "kret",
+  "text": "Three times!"
  },
- "line.b_count": {
-  "hash": "291e3ed1c5a6",
+ "line.c_dzwonek4": {
+  "hash": "154dc5a28565",
+  "who": "kret",
+  "text": "Four times!"
+ },
+ "line.c_dzwonek5": {
+  "hash": "cddf997e4ecb",
+  "who": "kret",
+  "text": "Five times!"
+ },
+ "line.d_jezioro": {
+  "hash": "bb22998cdb68",
+  "who": "kret",
+  "text": "The lake! End of the trip, everybody off!"
+ },
+ "line.d_ilu": {
+  "hash": "36daf1ddf532",
+  "who": "mis",
+  "text": "How many passengers came? Count them, touching each one."
+ },
+ "line.d_pieciu": {
+  "hash": "93b993afef6e",
   "who": "sowa",
-  "text": "Count them. Point to each pebble only once."
+  "text": "Five passengers! Everybody got here."
  },
- "line.b_four": {
-  "hash": "1cf2f2555193",
-  "who": "wiewiorka",
-  "text": "Four pebbles! The last number is four."
- },
- "line.b_pick_4": {
-  "hash": "5e65b627c893",
+ "line.p_start": {
+  "hash": "77a83bbfb378",
   "who": "sowa",
-  "text": "There is a four among the cards. Point to the digit four."
+  "text": "Let's practise numbers up to five! I have five games."
  },
- "line.good_digit": {
-  "hash": "1ac6f424869b",
+ "line.p_ile": {
+  "hash": "be519d518e40",
+  "who": "kret",
+  "text": "How many are there? Count and point to the number."
+ },
+ "line.p_ile_nie": {
+  "hash": "b73340a8b225",
+  "who": "kret",
+  "text": "Count again, touching each thing."
+ },
+ "line.p_dobrze": {
+  "hash": "c72d06c98857",
   "who": "sowa",
-  "text": "Yes! That is the digit. Great!"
+  "text": "Bravo!"
  },
- "line.good_digit.wiewiorka": {
-  "hash": "8ddd5a1bbbe3",
-  "who": "wiewiorka",
-  "text": "Yes! That is the digit. Great!"
+ "line.p_dobrze.kret": {
+  "hash": "960458c5116f",
+  "who": "kret",
+  "text": "Bravo!"
  },
- "line.b_to_home": {
-  "hash": "0d89ab72e0fd",
-  "who": "wiewiorka",
-  "text": "Let's go home. Cookies are waiting for us!"
+ "line.p_bilet5": {
+  "hash": "2f6579f44857",
+  "who": "kret",
+  "text": "This ticket costs five coins. Drag five coins onto the plate."
  },
- "line.c_cookies": {
-  "hash": "1029ca7563ae",
+ "line.p_napisz5": {
+  "hash": "a5eb666d433d",
   "who": "sowa",
-  "text": "I baked cookies for the guests. Let's count how many I baked."
+  "text": "Write a five with your finger. Start at the green dot."
  },
- "line.c_five": {
-  "hash": "f049ca5a9fc6",
+ "line.p_cztery": {
+  "hash": "34d627175d92",
   "who": "sowa",
-  "text": "Five cookies! The last number is five."
+  "text": "Where are four apples? Point to them."
  },
- "line.c_two_plates": {
-  "hash": "de98dd165659",
-  "who": "wiewiorka",
-  "text": "Now there are two groups of cookies. One of them has five."
- },
- "line.c_pick_5": {
-  "hash": "d853450dc2b7",
-  "who": "wiewiorka",
-  "text": "Point to the group with five cookies. You can count them."
- },
- "line.c_wrong_5": {
-  "hash": "629bb2225e16",
-  "who": "wiewiorka",
-  "text": "Count again. There are fewer than five here."
- },
- "line.c_solved": {
-  "hash": "7f4160db36c4",
+ "line.p_cztery_nie": {
+  "hash": "456020658830",
   "who": "sowa",
-  "text": "Well done! Now you can count to five and you know five digits."
+  "text": "Count the apples again. We're looking for four."
  },
- "line.p_intro": {
-  "hash": "0b2ee8908c4d",
-  "who": "sowa",
-  "text": "Let's play counting! Count the things and find their digit."
+ "line.p_kamienie": {
+  "hash": "2932eea4471e",
+  "who": "kret",
+  "text": "I want to hop to the stone with the number four. Which one is it? Point to it."
  },
- "line.p_how_many": {
-  "hash": "a08a6ffbfd1b",
-  "who": "sowa",
-  "text": "How many are there? Point to the right digit."
+ "line.p_kamienie_nie": {
+  "hash": "cd9ff3607e05",
+  "who": "kret",
+  "text": "That's not four. Look at the numbers under the stones."
  },
- "line.p_group_1": {
-  "hash": "66889e0cf37b",
-  "who": "wiewiorka",
-  "text": "Point to the group with only one thing."
+ "line.p_doskoczylem": {
+  "hash": "c6dcac622e5f",
+  "who": "kret",
+  "text": "One, two, three, four! I'm on the four!"
  },
- "line.p_group_4": {
-  "hash": "405321611e1f",
-  "who": "wiewiorka",
-  "text": "Point to the group with four things."
+ "line.h_jutro": {
+  "hash": "bc148a23cc13",
+  "who": "kret",
+  "text": "Tomorrow we ride the train again. The backpack needs packing."
  },
- "line.p_wrong_group": {
-  "hash": "92012f5b9bc8",
-  "who": "wiewiorka",
-  "text": "Count again, each thing only once."
+ "line.h_spakuj": {
+  "hash": "bfab4ff87512",
+  "who": "kret",
+  "text": "Put five things in the backpack. Drag them one at a time and I'll count."
  },
- "line.good_group": {
-  "hash": "ab91cc567108",
-  "who": "sowa",
-  "text": "Yes! Well counted."
+ "line.h_za_duzo": {
+  "hash": "7f3042c49e95",
+  "who": "kret",
+  "text": "That's five already! The backpack is full."
  },
- "line.good_group.wiewiorka": {
-  "hash": "1447fb9b3d06",
-  "who": "wiewiorka",
-  "text": "Yes! Well counted."
+ "line.h_spakowane": {
+  "hash": "b7f5e9b83959",
+  "who": "mis",
+  "text": "Five things in the backpack. Ready!"
  },
- "line.a_game": {
-  "hash": "c51cf1595c95",
-  "who": "wiewiorka",
-  "text": "Let's play counting toys, just like at home."
+ "line.h_palce": {
+  "hash": "808b14fee685",
+  "who": "mis",
+  "text": "How many fingers does this hand have? Count and point to the number."
  },
- "line.a_ok": {
-  "hash": "2be8ddf1b90f",
-  "who": "sowa",
-  "text": "All right! I show the toys and you count."
+ "line.h_palce_nie": {
+  "hash": "7eb3ad944896",
+  "who": "mis",
+  "text": "Count the fingers again, one by one."
  },
- "line.a_count_klocek": {
-  "hash": "dc1eac46fda9",
-  "who": "sowa",
-  "text": "Count the blocks. Point to each one in turn."
+ "line.h_piec_palcow": {
+  "hash": "e01799c9f1e6",
+  "who": "kret",
+  "text": "Five fingers! You have five fingers on each hand."
  },
- "line.a_count_misiu": {
-  "hash": "77a1d3bea719",
-  "who": "sowa",
-  "text": "Now the teddy bears. How many are there?"
- },
- "line.a_count_pilka": {
-  "hash": "da69497e4616",
-  "who": "sowa",
-  "text": "And now the balls. Count them all."
- },
- "line.a_which_digit": {
-  "hash": "3c5df646eba4",
-  "who": "wiewiorka",
-  "text": "Point to the digit that tells how many there are."
- },
- "line.a_which_digit.sowa": {
-  "hash": "2a49b7bb478b",
-  "who": "sowa",
-  "text": "Point to the digit that tells how many there are."
- },
- "line.a_ask_parents": {
-  "hash": "5417eb570ce2",
-  "who": "sowa",
-  "text": "Ask your parents to count toys or the plates on the table with you."
- },
- "line.a_bye": {
-  "hash": "3c8231148d14",
-  "who": "wiewiorka",
-  "text": "Bye bye! See you!"
+ "line.h_rodzice": {
+  "hash": "19298e797251",
+  "who": "mis",
+  "text": "Count to five with your parents: five stairs, five spoons, five claps!"
  },
  "line.n1": {
+  "hash": "5bf8bad8c9ff",
+  "who": "kret",
+  "text": "One!"
+ },
+ "line.n1.sowa": {
   "hash": "13ecf4f502e6",
   "who": "sowa",
   "text": "One!"
  },
- "line.n1.wiewiorka": {
-  "hash": "b450b7ae1d7d",
-  "who": "wiewiorka",
+ "line.n1.mis": {
+  "hash": "2fe167afcc42",
+  "who": "mis",
   "text": "One!"
  },
  "line.n2": {
+  "hash": "4761a655783b",
+  "who": "kret",
+  "text": "Two!"
+ },
+ "line.n2.sowa": {
   "hash": "03e0547eb360",
   "who": "sowa",
   "text": "Two!"
  },
- "line.n2.wiewiorka": {
-  "hash": "9ffb03ee7b98",
-  "who": "wiewiorka",
+ "line.n2.mis": {
+  "hash": "26682c6714eb",
+  "who": "mis",
   "text": "Two!"
  },
  "line.n3": {
+  "hash": "753ad598bdeb",
+  "who": "kret",
+  "text": "Three!"
+ },
+ "line.n3.sowa": {
   "hash": "1b70b81f1a09",
   "who": "sowa",
   "text": "Three!"
  },
- "line.n3.wiewiorka": {
-  "hash": "5641cc4a1ea8",
-  "who": "wiewiorka",
+ "line.n3.mis": {
+  "hash": "9ce81f0ef518",
+  "who": "mis",
   "text": "Three!"
  },
  "line.n4": {
+  "hash": "be6016fcc05c",
+  "who": "kret",
+  "text": "Four!"
+ },
+ "line.n4.sowa": {
   "hash": "ac53306b5483",
   "who": "sowa",
   "text": "Four!"
  },
- "line.n4.wiewiorka": {
-  "hash": "f09afa4cffab",
-  "who": "wiewiorka",
+ "line.n4.mis": {
+  "hash": "2cb2f62821eb",
+  "who": "mis",
   "text": "Four!"
  },
  "line.n5": {
+  "hash": "531228d92028",
+  "who": "kret",
+  "text": "Five!"
+ },
+ "line.n5.sowa": {
   "hash": "f7dbf2ce5c8d",
   "who": "sowa",
   "text": "Five!"
  },
- "line.n5.wiewiorka": {
-  "hash": "288f44558ee1",
-  "who": "wiewiorka",
+ "line.n5.mis": {
+  "hash": "01a8a7ad7811",
+  "who": "mis",
   "text": "Five!"
  },
- "line.d1": {
-  "hash": "b0799080c5b5",
-  "who": "sowa",
-  "text": "This is a one. It looks like a stick with a little nose."
- },
- "line.d1.wiewiorka": {
-  "hash": "0e243e71a210",
-  "who": "wiewiorka",
-  "text": "This is a one. It looks like a stick with a little nose."
- },
- "line.d2": {
-  "hash": "9111a0eba68e",
-  "who": "sowa",
-  "text": "This is a two. It looks like a swan swimming on the water."
- },
- "line.d2.wiewiorka": {
-  "hash": "8d93f1ae5e22",
-  "who": "wiewiorka",
-  "text": "This is a two. It looks like a swan swimming on the water."
- },
- "line.d3": {
-  "hash": "beedf09790b0",
-  "who": "sowa",
-  "text": "This is a three. It has two tummies, one on top of the other."
- },
- "line.d3.wiewiorka": {
-  "hash": "bb305f1c1b97",
-  "who": "wiewiorka",
-  "text": "This is a three. It has two tummies, one on top of the other."
- },
- "line.d4": {
-  "hash": "fe2f692c37a0",
-  "who": "sowa",
-  "text": "This is a four. It looks like a little chair turned upside down."
- },
- "line.d4.wiewiorka": {
-  "hash": "047f9f4c752a",
-  "who": "wiewiorka",
-  "text": "This is a four. It looks like a little chair turned upside down."
- },
- "line.d5": {
-  "hash": "b224799c7fd3",
-  "who": "sowa",
-  "text": "This is a five. It has a straight hat and a round tummy."
- },
- "line.d5.wiewiorka": {
-  "hash": "ad819d28b6aa",
-  "who": "wiewiorka",
-  "text": "This is a five. It has a straight hat and a round tummy."
- },
- "line.s_start_one": {
-  "hash": "48c2d70ebfa2",
-  "who": "sowa",
-  "text": "Let's start with one cone. Point to it."
- },
- "line.s_one": {
-  "hash": "9c8aedb89c76",
-  "who": "sowa",
-  "text": "You have one cone."
- },
- "line.s_add_2": {
-  "hash": "bffb5b4558b1",
-  "who": "wiewiorka",
-  "text": "I'm adding one more cone!"
- },
- "line.s_add_3": {
-  "hash": "c3ceb57820af",
-  "who": "wiewiorka",
-  "text": "And one more!"
- },
- "line.s_count_again": {
-  "hash": "ed26dc18e8ba",
-  "who": "sowa",
-  "text": "Count from the start. Point to every cone only once."
- },
- "line.s_two": {
-  "hash": "380eaf90b208",
-  "who": "sowa",
-  "text": "The last number tells how many there are. You have two cones!"
- },
- "line.s_point_2": {
-  "hash": "399076340a3d",
-  "who": "wiewiorka",
-  "text": "I have two cones. Point to the digit two."
- },
  "line.naklejka_daj": {
-  "hash": "09d044a8206f",
-  "who": "wiewiorka",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
- },
- "line.naklejka_opis": {
-  "hash": "1372c2e38aff",
-  "who": "narrator",
-  "text": "This is the pine cone from Squirrel. We got it when we learned to count to five."
+  "hash": "d2744210bfe2",
+  "who": "kret",
+  "text": "Thank you for riding with me! Here is a sticker for your album. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "a272dae35780",
-  "who": "wiewiorka",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "hash": "9b58a4117beb",
+  "who": "kret",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "d2dbb498db0c",
+  "who": "narrator",
+  "text": "This is a wagon from Mole's train. We got it when we counted to five."
  }
 }

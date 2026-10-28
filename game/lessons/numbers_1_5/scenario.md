@@ -1,34 +1,22 @@
-# Numbers 1 to 5
+# Numbers 1 to 5 - Mole's train
 
-Goal: count up to five - every thing once, the last number says how many - and know
-the digits 1-5. Characters: Squirrel (left), Owl (right).
+Goal: count to five, every thing once; the digits 4 and 5 (1-3 are known from stage 3); a number says how many to give,
+not only how many there are; five spread out is still five. Age 4-5. Characters: Mole, Bear, Owl. Stage 4, lesson 13.
 
-## Stage 1 - story - forest, brook, home
+**Misconception:** a longer row has more - Bear's five apples lie far apart, Owl's five pears close: "I have more!".
 
-1. Forest, the problem: Squirrel stores pine cones for winter and has "lots".
-   Owl: "lots" is no answer - tomorrow you won't know if one is missing. How then?
-   By counting (Owl pictures three cones). "What is counting?" - every thing once,
-   the numbers in order. One cone first (the other two wait by Squirrel): the child
-   touches it, "one", Owl draws the 1 with its rhyme. Squirrel adds a second: the child
-   counts from the start, the last number says how many - two; the 1 goes, the 2 is
-   drawn, the child finds the 2 among the cards 1 and 2. The same with the third: 3,
-   found among 1, 2, 3. Solved: Squirrel writes a 3 by her store and will check tomorrow.
-2. Brook: pebbles for hopscotch, counted by the child (Squirrel says the numbers):
-   four; Owl draws the 4; the child picks the 4 among the cards 2, 3, 4.
+## Stage 1 - story
+A. *Station* (new scenery). Mole's little train goes to the lake. A ticket costs as many coins as its number: the digit
+4 drawn; **child** pays four coins for Bear's ticket (`sklepik`, a fifth jumps back) and writes the 4 on it (`slad`).
+B. Five wagons numbered 1-5: **child** points to the wagon of each passenger's ticket (2, 5, 3); they hop in.
+C. *Forest, a stop.* Bear's apples in a long row, Owl's pears close: "mine are more!" - **child** counts both
+(`count`): five and five. The digit 5 drawn. *Breather:* the conductor's bell rings 3-5 times - point to the digit.
+D. *The lake.* **Child** counts the five passengers getting off.
 
-The digits come one by one, 1 to 5, each drawn and described before a child is asked
-to find it; the cards offered are only digits already met, and only one big digit is
-on the stage at a time.
-3. Home: cookies for the guests, five; Squirrel draws the 5. Two plates of
-   cookies: the child points to the one with five.
+## Stage 2 - practice
+How many (4-5 things) - a digit card; a ticket for five coins; write the 5; which basket has four; which stone is 4 -
+Mole hops there along the stepping stones (`os`).
 
-## Stage 2 - practice - lake meadow
-
-Three rounds "how many? point to the digit" (2, 3, 5 things, three cards each),
-two rounds "point to the group with 1 / 4" (two groups).
-
-## Stage 3 - at home - children's room
-
-The home game: counting toys. Three rounds (3 blocks, 2 teddies, 5 balls): the child
-counts by touch, then points to the digit. "Ask your parents to count toys or the
-plates on the table with you."
+## Stage 3 - at home (room)
+Pack five things for tomorrow's trip (a sixth: "the backpack is full"); how many fingers on a hand (the "paper" hand,
+gest_papier). "Count to five with your parents: stairs, spoons, claps."
