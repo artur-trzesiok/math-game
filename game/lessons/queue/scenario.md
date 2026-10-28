@@ -1,29 +1,23 @@
-# The queue
+# The queue - the great forest race
 
-Goal: ordinal numbers - first, second ... fifth, last - counted from the front of a
-queue. Characters: Fox (left), Deer (right).
+Goal: ordinal numbers - first, second, third ... last - say place in order, counted from the front (the finish, the
+head of a queue), not size. Age 4-5. Characters: Mole, Owl, Beaver. Stage 5, lesson 20.
 
-## Stage 1 - story - lake meadow, playground, kitchen
+**Misconception:** the biggest is first - Mole: "Bunny won, he's the biggest!", but the little hedgehog crossed the
+line first.
 
-1. Meadow, the problem: Deer opens a lemonade stand, animals queue (hedgehog, mouse,
-   bunny, duckling). Fox wants to serve the biggest first. Deer ("?"): in a queue the
-   first is the one nearest the stand - first, second, third... Pencil numbers over
-   the heads; the child points to the first (circled), the last, the third. The first
-   is served and leaves, everyone moves up: who is first now? Solved: serve in order.
-2. Playground: the queue to the slide (on the left), the mouse first; point to the
-   second. "The mouse is first, so it goes down first!" - it goes up the slide and
-   down; "it wants another go, so it goes to the end of the queue"; everyone moves up:
-   who is first now? who is last? (Wrong picks: "count from the front of the queue" -
-   only scene A has a stand to count from.)
-3. Kitchen: five guests queue for cookies, counted from the front of the queue, on
-   the left; point to the fifth; who stands between the
-   second and the fourth?
+## Stage 1 - story
+A. *Meadow.* The race: four animals run their lanes to the finish, each at its own pace. Mole's mistake; Owl: first is
+who reached the finish first. **Child** points to the first and to the last; puts the first three on the podium (1 in
+the middle and highest, 2 left, 3 right; `slots` with numbers).
+B. *Playground.* A queue for the slide, counted from the arrow at the front: **child** points to the third; the first
+slides down and joins the end - who is first now? *Breather:* Mole and Owl race to the swings, Beaver judges - who got
+there first (the one who really arrived first, whoever started first).
 
-## Stage 2 - practice - forest
+## Stage 2 - practice
+The second in a queue; the last; a race and its podium; which medal is for second place (gold, silver, bronze); the
+bronze medal for the third in the queue.
 
-Five queues in random order: first, third, last, second, fourth.
-
-## Stage 3 - at home - children's room
-
-Toys standing in a row, counted from a pencil arrow: the second, the last, the
-first. "Ask your parents to line up toys in a queue with you."
+## Stage 3 - at home (room)
+The toys queue for bed in the order Mole says (teddy, ball, block into numbered places). "At dinner tell who sat down
+first, second and last."

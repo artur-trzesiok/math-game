@@ -1,252 +1,262 @@
 {
- "line.s_stand": {
-  "hash": "1430d5f03b75",
-  "who": "sarenka",
-  "text": "I opened a lemonade stand! Look, a queue has formed."
+ "line.a_wyscig": {
+  "hash": "6992bb4c709d",
+  "who": "bobr",
+  "text": "Today is the great forest race! There are medals for the winners."
  },
- "line.s_biggest": {
-  "hash": "b14f34b53b8a",
-  "who": "lisek",
-  "text": "I will serve the bunny first. It is the biggest!"
+ "line.a_start": {
+  "hash": "35bb9319c227",
+  "who": "sowa",
+  "text": "On your marks, get set, go!"
  },
- "line.s_not_biggest": {
-  "hash": "0fc5f07a0222",
-  "who": "sarenka",
-  "text": "In a queue it does not matter who is the biggest! What matters is who stands first."
+ "line.a_zajac_wygral": {
+  "hash": "c303192d3e23",
+  "who": "kret",
+  "text": "Bunny won! He's the biggest, so he's first!"
  },
- "line.s_how": {
-  "hash": "507120c6f199",
-  "who": "lisek",
-  "text": "And who stands first?"
+ "line.a_nie_najwiekszy": {
+  "hash": "32c1482b919c",
+  "who": "sowa",
+  "text": "Mole, in a race it doesn't matter who is the biggest."
  },
- "line.s_order": {
-  "hash": "031235a9ac70",
-  "who": "sarenka",
-  "text": "The one standing nearest the stand. Then the second, the third, and so on."
+ "line.a_pierwszy": {
+  "hash": "324a40320741",
+  "who": "sowa",
+  "text": "First is the one who reached the finish first. Then second, third, and at the end the last."
  },
- "line.s_what": {
-  "hash": "386e10f74ad8",
-  "who": "lisek",
-  "text": "First, second, third? Will you show me?"
+ "line.a_kto_pierwszy": {
+  "hash": "672e52957829",
+  "who": "bobr",
+  "text": "Who reached the finish first? Point to them."
  },
- "line.s_show": {
-  "hash": "2b310e09d478",
-  "who": "sarenka",
-  "text": "We count from the stand. Look at the numbers."
+ "line.a_kto_pierwszy_nie": {
+  "hash": "92346f33531d",
+  "who": "bobr",
+  "text": "Look who touched the finish line first."
  },
- "line.s_point_first": {
-  "hash": "40a807719154",
-  "who": "sarenka",
-  "text": "Point to the one standing first."
+ "line.a_jezyk": {
+  "hash": "a4e97884ca37",
+  "who": "kret",
+  "text": "Hedgehog! So small, and first!"
  },
- "line.wrong_place": {
-  "hash": "b20f9fd38696",
-  "who": "sarenka",
-  "text": "That is not the place. Count from the stand."
+ "line.a_kto_ostatni": {
+  "hash": "38d73c4ee9b9",
+  "who": "bobr",
+  "text": "And who came in last? Point to them."
  },
- "line.wrong_place.lisek": {
-  "hash": "ae9feddeaac6",
-  "who": "lisek",
-  "text": "That is not the place. Count from the stand."
+ "line.a_kto_ostatni_nie": {
+  "hash": "ba5845074dd9",
+  "who": "bobr",
+  "text": "That one was faster. Who arrived at the very end?"
  },
- "line.s_point_last": {
-  "hash": "1a351bcab1ef",
-  "who": "lisek",
-  "text": "And who stands last, at the very end?"
+ "line.a_ostatnia": {
+  "hash": "4ad49539e448",
+  "who": "sowa",
+  "text": "Mouse was last, but she got there too. Well done!"
  },
- "line.s_point_third": {
-  "hash": "7dc815617374",
-  "who": "sarenka",
-  "text": "Point to the one standing third."
+ "line.a_podium": {
+  "hash": "a5e794361a91",
+  "who": "bobr",
+  "text": "Onto the podium! Put the first at the very top, on the one. The second on the two, the third on the three."
  },
- "line.s_serve": {
-  "hash": "87656f540e02",
-  "who": "lisek",
-  "text": "Here you are, lemonade for the first one!"
+ "line.a_podium_nie": {
+  "hash": "94d63fa88b61",
+  "who": "bobr",
+  "text": "That's not his place. Who came first, second, third?"
  },
- "line.s_first_now": {
-  "hash": "ebea6dfabf18",
-  "who": "sarenka",
-  "text": "The hedgehog left and everyone moved up. Who is first now?"
+ "line.a_podium_nie.sowa": {
+  "hash": "932f33c86559",
+  "who": "sowa",
+  "text": "That's not his place. Who came first, second, third?"
  },
- "line.s_solved": {
-  "hash": "8ad758a58e3b",
-  "who": "lisek",
-  "text": "Now I understand! I serve them in order, from the first."
+ "line.a_podium_nie.kret": {
+  "hash": "820a698a4b29",
+  "who": "kret",
+  "text": "That's not his place. Who came first, second, third?"
  },
- "line.s_to_playground": {
-  "hash": "1b228d9fb93b",
-  "who": "sarenka",
-  "text": "Let's go to the playground. There is a queue there too."
+ "line.a_podium_ok": {
+  "hash": "ad0064a2dc55",
+  "who": "sowa",
+  "text": "First, second and third on the podium. Well done, everyone!"
  },
- "line.b_slide": {
-  "hash": "2a35c0223605",
-  "who": "lisek",
-  "text": "Everyone wants to go down the slide. The slide is on the left."
+ "line.b_zjezdzalnia": {
+  "hash": "9e0609e74a89",
+  "who": "kret",
+  "text": "Now the playground! There's a queue for the slide."
  },
- "line.b_point_second": {
-  "hash": "1f50010b1f55",
-  "who": "sarenka",
-  "text": "Point to the one standing second."
+ "line.b_od_przodu": {
+  "hash": "c16b7b184316",
+  "who": "sowa",
+  "text": "In a queue we count from the front, from the arrow: first, second, third, fourth."
  },
- "line.b_point_last": {
-  "hash": "ff034261b699",
-  "who": "sarenka",
-  "text": "Who is last now?"
+ "line.b_trzeci": {
+  "hash": "06b45f66d85d",
+  "who": "kret",
+  "text": "Who is third in the queue? Point to them."
  },
- "line.b_done": {
-  "hash": "30b3289fde8c",
-  "who": "lisek",
-  "text": "The mouse is last! It waits nicely for its turn."
+ "line.b_trzeci_nie": {
+  "hash": "0c518b6e9989",
+  "who": "kret",
+  "text": "Count from the arrow: first, second, third."
  },
- "line.b_to_home": {
-  "hash": "8e3ef7083d81",
-  "who": "sarenka",
-  "text": "Let's go home. There will be cookies!"
+ "line.b_zjezdza": {
+  "hash": "e335bb873e74",
+  "who": "bobr",
+  "text": "The first one slides down! And then goes to the end of the queue."
  },
- "line.c_cookies": {
-  "hash": "214aa3b2caf0",
-  "who": "sarenka",
-  "text": "Five guests are queuing for cookies. We count from the front of the queue, on the left."
+ "line.b_kto_teraz": {
+  "hash": "3fcac7b0bc71",
+  "who": "bobr",
+  "text": "Who is first now? Point to them."
  },
- "line.c_point_fifth": {
-  "hash": "4440b34b12b3",
-  "who": "lisek",
-  "text": "Point to the one standing fifth."
+ "line.b_kto_teraz_nie": {
+  "hash": "35e234d2d63d",
+  "who": "bobr",
+  "text": "Look who is standing by the arrow now."
  },
- "line.c_between": {
-  "hash": "88a41894d1ba",
-  "who": "sarenka",
-  "text": "Who stands between the second and the fourth?"
+ "line.b_teraz_pierwszy": {
+  "hash": "35b3ad556576",
+  "who": "sowa",
+  "text": "When the first one leaves, everybody moves up."
  },
- "line.c_solved": {
-  "hash": "1ee4a69d9fe3",
-  "who": "lisek",
-  "text": "The third! Now you know the places in a queue."
+ "line.b_my": {
+  "hash": "8a8b690c2ae9",
+  "who": "bobr",
+  "text": "And now Mole and Owl race to the swings! I'm the judge."
  },
- "line.p_intro": {
-  "hash": "f84ee9c28d4f",
-  "who": "sarenka",
-  "text": "Let's play queues! We always count from the front of the queue, on the left."
+ "line.b_kto_pierwszy": {
+  "hash": "596fd8bdb9e7",
+  "who": "bobr",
+  "text": "Who got there first? Point to them."
  },
- "line.p_first": {
-  "hash": "40a807719154",
-  "who": "sarenka",
-  "text": "Point to the one standing first."
+ "line.b_kto_pierwszy_nie": {
+  "hash": "3bd8d1be65d7",
+  "who": "bobr",
+  "text": "That one came second. Who was first?"
  },
- "line.p_second": {
-  "hash": "1f50010b1f55",
-  "who": "sarenka",
-  "text": "Point to the one standing second."
+ "line.b_pierwszy_kret": {
+  "hash": "630534d93fc3",
+  "who": "kret",
+  "text": "I'm first!"
  },
- "line.p_third": {
-  "hash": "7dc815617374",
-  "who": "sarenka",
-  "text": "Point to the one standing third."
+ "line.b_pierwszy_sowa": {
+  "hash": "2f25c9be5f47",
+  "who": "sowa",
+  "text": "I'm first!"
  },
- "line.p_fourth": {
-  "hash": "7e6b106aafef",
-  "who": "sarenka",
-  "text": "Point to the one standing fourth."
+ "line.b_koniec": {
+  "hash": "1443cb3a885f",
+  "who": "kret",
+  "text": "Now I know: first is the one who gets there first, not the biggest."
  },
- "line.p_last": {
-  "hash": "0ba7ed40e9c0",
-  "who": "sarenka",
-  "text": "Point to the one standing last."
+ "line.p_start": {
+  "hash": "9cf8c61985e1",
+  "who": "bobr",
+  "text": "Let's practise: first, second, third, last! I have five games."
  },
- "line.good_place": {
-  "hash": "5a380181d008",
-  "who": "lisek",
-  "text": "Yes! That is the place."
+ "line.p_drugi": {
+  "hash": "9bdab7cf86dc",
+  "who": "kret",
+  "text": "Who is second in the queue? Point to them."
  },
- "line.good_place.sarenka": {
-  "hash": "b21d3bd472b4",
-  "who": "sarenka",
-  "text": "Yes! That is the place."
+ "line.p_drugi_nie": {
+  "hash": "06dd100ead2c",
+  "who": "kret",
+  "text": "We count from the arrow: first, second."
  },
- "line.a_game": {
-  "hash": "886453084ba9",
-  "who": "lisek",
-  "text": "Let's play a queue of toys. They stand in a row."
+ "line.p_dobrze": {
+  "hash": "443840bb6e59",
+  "who": "bobr",
+  "text": "Bravo!"
  },
- "line.a_ok": {
-  "hash": "3546e83f09a2",
-  "who": "sarenka",
-  "text": "All right! We count from the arrow."
+ "line.p_dobrze.kret": {
+  "hash": "960458c5116f",
+  "who": "kret",
+  "text": "Bravo!"
  },
- "line.a_second": {
-  "hash": "294bfa16e11b",
-  "who": "lisek",
-  "text": "Which toy is second?"
+ "line.p_ostatni": {
+  "hash": "32d8e1b572d2",
+  "who": "bobr",
+  "text": "Who is last in the queue? Point to them."
  },
- "line.a_last": {
-  "hash": "1f40b25f894f",
-  "who": "lisek",
-  "text": "Which toy is last?"
+ "line.p_ostatni_nie": {
+  "hash": "7f8c3dd42fca",
+  "who": "bobr",
+  "text": "The last one stands at the very end, furthest from the arrow."
  },
- "line.a_first": {
-  "hash": "8f184667bba3",
-  "who": "lisek",
-  "text": "Which toy is first?"
+ "line.p_wyscig": {
+  "hash": "d8794ff1c617",
+  "who": "kret",
+  "text": "One more race! Watch carefully who gets there first."
  },
- "line.a_ask_parents": {
-  "hash": "fbc106716801",
-  "who": "sarenka",
-  "text": "Ask your parents to line up toys in a queue with you. Which one is first, and which one is last?"
+ "line.p_podium": {
+  "hash": "3a871e51c350",
+  "who": "bobr",
+  "text": "Put the winners on the podium: first, second and third."
  },
- "line.a_bye": {
-  "hash": "5fdcbfe15d1f",
-  "who": "lisek",
-  "text": "Bye bye! See you!"
+ "line.p_medale": {
+  "hash": "4fb32f28a9bd",
+  "who": "bobr",
+  "text": "The gold medal is for first place, silver for second, bronze for third. Which medal does the second get? Point to it."
  },
- "line.b_first_now": {
-  "hash": "2196bf21b367",
-  "who": "sarenka",
-  "text": "Everyone moved up. Who is first now?"
+ "line.p_medale_nie": {
+  "hash": "0ede55bd3da8",
+  "who": "bobr",
+  "text": "That one is for another place. The second gets silver."
  },
- "line.wrong_place_q": {
-  "hash": "0e1c95a495b4",
-  "who": "sarenka",
-  "text": "That is not the place. Count from the front of the queue."
+ "line.p_srebrny": {
+  "hash": "b06ff5ffe1c1",
+  "who": "kret",
+  "text": "A silver medal for second place!"
  },
- "line.wrong_place_q.lisek": {
-  "hash": "cdcc0bba1a9e",
-  "who": "lisek",
-  "text": "That is not the place. Count from the front of the queue."
+ "line.p_trzeci": {
+  "hash": "62affb714e4b",
+  "who": "kret",
+  "text": "The bronze medal is for the third in the queue. Who gets it? Point to them."
  },
- "line.wrong_place_arrow": {
-  "hash": "043f4bce9a82",
-  "who": "sarenka",
-  "text": "That is not the place. Count from the arrow."
+ "line.p_trzeci_nie": {
+  "hash": "d6f4eabc5b5e",
+  "who": "kret",
+  "text": "Count from the arrow to three."
  },
- "line.wrong_place_arrow.lisek": {
-  "hash": "fec2d96ca59a",
-  "who": "lisek",
-  "text": "That is not the place. Count from the arrow."
+ "line.h_zabawki": {
+  "hash": "3b67bcbb9b82",
+  "who": "kret",
+  "text": "The toys are queueing up for bed."
  },
- "line.b_mouse_goes": {
-  "hash": "4337e7d6b99c",
-  "who": "lisek",
-  "text": "The mouse is first, so it goes down first!"
+ "line.h_kolejnosc": {
+  "hash": "7fdb23b83cb1",
+  "who": "kret",
+  "text": "Teddy first, the ball second, the block third. Drag each toy to its place."
  },
- "line.b_mouse_again": {
-  "hash": "232c4584bbf5",
-  "who": "lisek",
-  "text": "It wants another go, so it goes to the end of the queue."
+ "line.h_nie": {
+  "hash": "a2aae9035203",
+  "who": "kret",
+  "text": "Listen again: teddy first, the ball second, the block third."
+ },
+ "line.h_dobrze": {
+  "hash": "1ba5f9f0102e",
+  "who": "bobr",
+  "text": "First, second, third. Good night, toys!"
+ },
+ "line.h_rodzice": {
+  "hash": "a340147ae708",
+  "who": "kret",
+  "text": "At dinner, tell your parents who sat down at the table first, who second and who last!"
  },
  "line.naklejka_daj": {
-  "hash": "f4f0467dd725",
-  "who": "lisek",
-  "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
- },
- "line.naklejka_opis": {
-  "hash": "ed7cd938054d",
-  "who": "narrator",
-  "text": "This is the little hedgehog from Fox. We got it when we learned who is first and who is last in a queue."
+  "hash": "dc80c20921df",
+  "who": "kret",
+  "text": "Thank you for a wonderful race! Here is a sticker for your album. Touch it to take it."
  },
  "line.naklejka_juz": {
-  "hash": "1634fc955eb2",
-  "who": "lisek",
-  "text": "You already have the sticker from this adventure. See you soon!"
+  "hash": "9b58a4117beb",
+  "who": "kret",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "fa687b0c639b",
+  "who": "narrator",
+  "text": "This is the gold medal from the forest race. We got it when we learnt who is first, second and last."
  }
 }

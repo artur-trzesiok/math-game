@@ -1,198 +1,205 @@
 {
-  "line.s_stand": {
-    "who": "sarenka",
-    "text": "Otworzyłam stoisko z lemoniadą! Patrz, ustawiła się kolejka."
+  "line.a_wyscig": {
+    "who": "bobr",
+    "text": "Dziś wielki leśny wyścig! Dla zwycięzców są medale."
   },
-  "line.s_biggest": {
-    "who": "lisek",
-    "text": "Najpierw obsłużę zająca. Jest największy!"
+  "line.a_start": {
+    "who": "sowa",
+    "text": "Do biegu, gotowi, start!"
   },
-  "line.s_not_biggest": {
-    "who": "sarenka",
-    "text": "W kolejce nie liczy się, kto jest największy! Liczy się, kto stoi pierwszy."
+  "line.a_zajac_wygral": {
+    "who": "kret",
+    "text": "Zajączek wygrał! Jest największy, więc jest pierwszy!"
   },
-  "line.s_how": {
-    "who": "lisek",
-    "text": "A kto stoi pierwszy?"
+  "line.a_nie_najwiekszy": {
+    "who": "sowa",
+    "text": "Krecie, w wyścigu nie liczy się, kto jest największy."
   },
-  "line.s_order": {
-    "who": "sarenka",
-    "text": "Ten, kto stoi najbliżej stoiska. Potem drugi, trzeci, i tak dalej."
+  "line.a_pierwszy": {
+    "who": "sowa",
+    "text": "Pierwszy jest ten, kto pierwszy dobiegł do mety. Potem drugi, trzeci, a na końcu ostatni."
   },
-  "line.s_what": {
-    "who": "lisek",
-    "text": "Pierwszy, drugi, trzeci? Pokażesz mi?"
+  "line.a_kto_pierwszy": {
+    "who": "bobr",
+    "text": "Kto pierwszy dobiegł do mety? Wskaż."
   },
-  "line.s_show": {
-    "who": "sarenka",
-    "text": "Liczymy od stoiska. Popatrz na numerki."
+  "line.a_kto_pierwszy_nie": {
+    "who": "bobr",
+    "text": "Popatrz, kto pierwszy dotknął mety."
   },
-  "line.s_point_first": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi pierwszy."
+  "line.a_jezyk": {
+    "who": "kret",
+    "text": "Jeżyk! Taki mały, a pierwszy!"
   },
-  "line.wrong_place": {
-    "who": "sarenka",
-    "text": "To nie to miejsce. Licz od stoiska.",
+  "line.a_kto_ostatni": {
+    "who": "bobr",
+    "text": "A kto dobiegł ostatni? Wskaż."
+  },
+  "line.a_kto_ostatni_nie": {
+    "who": "bobr",
+    "text": "Ten był szybszy. Kto dobiegł na samym końcu?"
+  },
+  "line.a_ostatnia": {
+    "who": "sowa",
+    "text": "Myszka była ostatnia, ale też dobiegła. Brawo!"
+  },
+  "line.a_podium": {
+    "who": "bobr",
+    "text": "Na podium! Postaw pierwszego na samej górze, z jedynką. Drugiego na dwójce, trzeciego na trójce."
+  },
+  "line.a_podium_nie": {
+    "who": "bobr",
+    "text": "To nie jego miejsce. Kto dobiegł pierwszy, drugi, trzeci?",
     "speakers": [
-      "lisek"
+      "sowa",
+      "kret"
     ]
   },
-  "line.wrong_place_q": {
-    "who": "sarenka",
-    "text": "To nie to miejsce. Licz od początku kolejki.",
+  "line.a_podium_ok": {
+    "who": "sowa",
+    "text": "Pierwszy, drugi i trzeci na podium. Brawo dla wszystkich!"
+  },
+  "line.b_zjezdzalnia": {
+    "who": "kret",
+    "text": "Teraz plac zabaw! Do zjeżdżalni ustawiła się kolejka."
+  },
+  "line.b_od_przodu": {
+    "who": "sowa",
+    "text": "W kolejce liczymy od przodu, od strzałki: pierwszy, drugi, trzeci, czwarty."
+  },
+  "line.b_trzeci": {
+    "who": "kret",
+    "text": "Kto jest trzeci w kolejce? Wskaż."
+  },
+  "line.b_trzeci_nie": {
+    "who": "kret",
+    "text": "Policz od strzałki: pierwszy, drugi, trzeci."
+  },
+  "line.b_zjezdza": {
+    "who": "bobr",
+    "text": "Pierwszy zjeżdża! A potem staje na końcu kolejki."
+  },
+  "line.b_kto_teraz": {
+    "who": "bobr",
+    "text": "Kto jest teraz pierwszy? Wskaż."
+  },
+  "line.b_kto_teraz_nie": {
+    "who": "bobr",
+    "text": "Popatrz, kto stoi teraz przy strzałce."
+  },
+  "line.b_teraz_pierwszy": {
+    "who": "sowa",
+    "text": "Kiedy pierwszy odchodzi, wszyscy przesuwają się do przodu."
+  },
+  "line.b_my": {
+    "who": "bobr",
+    "text": "A teraz Krecik i Sowa ścigają się do huśtawek! Ja jestem sędzią."
+  },
+  "line.b_kto_pierwszy": {
+    "who": "bobr",
+    "text": "Kto dobiegł pierwszy? Wskaż."
+  },
+  "line.b_kto_pierwszy_nie": {
+    "who": "bobr",
+    "text": "Ten dobiegł drugi. Kto był pierwszy?"
+  },
+  "line.b_pierwszy_kret": {
+    "who": "kret",
+    "text": "Jestem pierwszy!"
+  },
+  "line.b_pierwszy_sowa": {
+    "who": "sowa",
+    "text": "Jestem pierwsza!"
+  },
+  "line.b_koniec": {
+    "who": "kret",
+    "text": "Teraz wiem: pierwszy jest ten, kto pierwszy dobiegnie, a nie największy."
+  },
+  "line.p_start": {
+    "who": "bobr",
+    "text": "Poćwiczmy: pierwszy, drugi, trzeci, ostatni! Mam pięć zabaw."
+  },
+  "line.p_drugi": {
+    "who": "kret",
+    "text": "Kto jest drugi w kolejce? Wskaż."
+  },
+  "line.p_drugi_nie": {
+    "who": "kret",
+    "text": "Liczymy od strzałki: pierwszy, drugi."
+  },
+  "line.p_dobrze": {
+    "who": "bobr",
+    "text": "Brawo!",
     "speakers": [
-      "lisek"
+      "kret"
     ]
   },
-  "line.wrong_place_arrow": {
-    "who": "sarenka",
-    "text": "To nie to miejsce. Licz od strzałki.",
-    "speakers": [
-      "lisek"
-    ]
+  "line.p_ostatni": {
+    "who": "bobr",
+    "text": "Kto jest ostatni w kolejce? Wskaż."
   },
-  "line.b_mouse_goes": {
-    "who": "lisek",
-    "text": "Myszka stoi pierwsza, więc zjeżdża pierwsza!"
+  "line.p_ostatni_nie": {
+    "who": "bobr",
+    "text": "Ostatni stoi na samym końcu, najdalej od strzałki."
   },
-  "line.b_mouse_again": {
-    "who": "lisek",
-    "text": "Chce zjechać jeszcze raz, więc idzie na koniec kolejki."
+  "line.p_wyscig": {
+    "who": "kret",
+    "text": "Jeszcze jeden wyścig! Patrz uważnie, kto dobiegnie pierwszy."
   },
-  "line.s_point_last": {
-    "who": "lisek",
-    "text": "A kto stoi ostatni, na samym końcu?"
+  "line.p_podium": {
+    "who": "bobr",
+    "text": "Postaw zwycięzców na podium: pierwszego, drugiego i trzeciego."
   },
-  "line.s_point_third": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi trzeci."
+  "line.p_medale": {
+    "who": "bobr",
+    "text": "Złoty medal jest za pierwsze miejsce, srebrny za drugie, brązowy za trzecie. Który medal dostanie drugi? Wskaż."
   },
-  "line.s_serve": {
-    "who": "lisek",
-    "text": "Proszę, lemoniada dla pierwszego!"
+  "line.p_medale_nie": {
+    "who": "bobr",
+    "text": "Ten jest za inne miejsce. Drugi dostaje srebrny."
   },
-  "line.s_first_now": {
-    "who": "sarenka",
-    "text": "Jeżyk odszedł i wszyscy się przesunęli. Kto jest teraz pierwszy?"
+  "line.p_srebrny": {
+    "who": "kret",
+    "text": "Srebrny medal za drugie miejsce!"
   },
-  "line.s_solved": {
-    "who": "lisek",
-    "text": "Teraz rozumiem! Obsługuję po kolei, od pierwszego."
+  "line.p_trzeci": {
+    "who": "kret",
+    "text": "Brązowy medal jest dla trzeciego w kolejce. Komu go dać? Wskaż."
   },
-  "line.s_to_playground": {
-    "who": "sarenka",
-    "text": "Chodźmy na plac zabaw. Tam też stoi kolejka."
+  "line.p_trzeci_nie": {
+    "who": "kret",
+    "text": "Policz od strzałki do trzech."
   },
-  "line.b_slide": {
-    "who": "lisek",
-    "text": "Wszyscy chcą zjechać ze zjeżdżalni. Zjeżdżalnia jest z lewej strony."
+  "line.h_zabawki": {
+    "who": "kret",
+    "text": "Zabawki ustawiają się w kolejce do spania."
   },
-  "line.b_point_second": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi drugi."
+  "line.h_kolejnosc": {
+    "who": "kret",
+    "text": "Misio pierwszy, piłka druga, klocek trzeci. Przeciągnij każdą zabawkę na jej miejsce."
   },
-  "line.b_first_now": {
-    "who": "sarenka",
-    "text": "Wszyscy przesunęli się do przodu. Kto jest teraz pierwszy?"
+  "line.h_nie": {
+    "who": "kret",
+    "text": "Posłuchaj jeszcze raz: misio pierwszy, piłka druga, klocek trzeci."
   },
-  "line.b_point_last": {
-    "who": "sarenka",
-    "text": "Kto jest teraz ostatni?"
+  "line.h_dobrze": {
+    "who": "bobr",
+    "text": "Pierwszy, drugi, trzeci. Dobranoc, zabawki!"
   },
-  "line.b_done": {
-    "who": "lisek",
-    "text": "Myszka jest ostatnia! Grzecznie czeka na swoją kolej."
-  },
-  "line.b_to_home": {
-    "who": "sarenka",
-    "text": "Wracajmy do domu. Będą ciastka!"
-  },
-  "line.c_cookies": {
-    "who": "sarenka",
-    "text": "Po ciastka ustawiło się pięcioro gości. Liczymy od początku kolejki, z lewej."
-  },
-  "line.c_point_fifth": {
-    "who": "lisek",
-    "text": "Wskaż, kto stoi piąty."
-  },
-  "line.c_between": {
-    "who": "sarenka",
-    "text": "Kto stoi pomiędzy drugim a czwartym?"
-  },
-  "line.c_solved": {
-    "who": "lisek",
-    "text": "Trzeci! Teraz znasz miejsca w kolejce."
-  },
-  "line.p_intro": {
-    "who": "sarenka",
-    "text": "Pobawmy się w kolejkę! Liczymy zawsze od początku kolejki, z lewej."
-  },
-  "line.p_first": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi pierwszy."
-  },
-  "line.p_second": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi drugi."
-  },
-  "line.p_third": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi trzeci."
-  },
-  "line.p_fourth": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi czwarty."
-  },
-  "line.p_last": {
-    "who": "sarenka",
-    "text": "Wskaż, kto stoi ostatni."
-  },
-  "line.good_place": {
-    "who": "lisek",
-    "text": "Tak! To to miejsce.",
-    "speakers": [
-      "sarenka"
-    ]
-  },
-  "line.a_game": {
-    "who": "lisek",
-    "text": "Zagrajmy w kolejkę zabawek. Stoją w rzędzie."
-  },
-  "line.a_ok": {
-    "who": "sarenka",
-    "text": "Dobrze! Liczymy od strzałki."
-  },
-  "line.a_second": {
-    "who": "lisek",
-    "text": "Która zabawka jest druga?"
-  },
-  "line.a_last": {
-    "who": "lisek",
-    "text": "Która zabawka jest ostatnia?"
-  },
-  "line.a_first": {
-    "who": "lisek",
-    "text": "Która zabawka jest pierwsza?"
-  },
-  "line.a_ask_parents": {
-    "who": "sarenka",
-    "text": "Poproście rodziców, żeby ustawili z wami zabawki w kolejce. Która jest pierwsza, a która ostatnia?"
-  },
-  "line.a_bye": {
-    "who": "lisek",
-    "text": "Pa, pa! Do zobaczenia!"
+  "line.h_rodzice": {
+    "who": "kret",
+    "text": "Przy kolacji powiedz rodzicom, kto usiadł do stołu pierwszy, kto drugi, a kto ostatni!"
   },
   "line.naklejka_daj": {
-    "who": "lisek",
-    "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+    "who": "kret",
+    "text": "Dziękuję za wspaniały wyścig! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "kret",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To jeżyk od liska. Dostaliśmy go, kiedy uczyliśmy się, kto stoi w kolejce pierwszy, a kto ostatni."
-  },
-  "line.naklejka_juz": {
-    "who": "lisek",
-    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+    "text": "To złoty medal z leśnego wyścigu. Dostaliśmy go, kiedy uczyliśmy się, kto jest pierwszy, drugi i ostatni."
   }
 }

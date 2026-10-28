@@ -1,252 +1,262 @@
 {
- "line.s_stand": {
-  "hash": "da49025cb81b",
-  "who": "sarenka",
-  "text": "Otworzyłam stoisko z lemoniadą! Patrz, ustawiła się kolejka."
+ "line.a_wyscig": {
+  "hash": "500850e0508d",
+  "who": "bobr",
+  "text": "Dziś wielki leśny wyścig! Dla zwycięzców są medale."
  },
- "line.s_biggest": {
-  "hash": "520b9ee22837",
-  "who": "lisek",
-  "text": "Najpierw obsłużę zająca. Jest największy!"
+ "line.a_start": {
+  "hash": "0f0b64262fa7",
+  "who": "sowa",
+  "text": "Do biegu, gotowi, start!"
  },
- "line.s_not_biggest": {
-  "hash": "959bf458649d",
-  "who": "sarenka",
-  "text": "W kolejce nie liczy się, kto jest największy! Liczy się, kto stoi pierwszy."
+ "line.a_zajac_wygral": {
+  "hash": "c140117b2f75",
+  "who": "kret",
+  "text": "Zajączek wygrał! Jest największy, więc jest pierwszy!"
  },
- "line.s_how": {
-  "hash": "903e30a310f6",
-  "who": "lisek",
-  "text": "A kto stoi pierwszy?"
+ "line.a_nie_najwiekszy": {
+  "hash": "7625f0dfb042",
+  "who": "sowa",
+  "text": "Krecie, w wyścigu nie liczy się, kto jest największy."
  },
- "line.s_order": {
-  "hash": "40ab4359bf03",
-  "who": "sarenka",
-  "text": "Ten, kto stoi najbliżej stoiska. Potem drugi, trzeci, i tak dalej."
+ "line.a_pierwszy": {
+  "hash": "86c70e6967a3",
+  "who": "sowa",
+  "text": "Pierwszy jest ten, kto pierwszy dobiegł do mety. Potem drugi, trzeci, a na końcu ostatni."
  },
- "line.s_what": {
-  "hash": "63e669cd8417",
-  "who": "lisek",
-  "text": "Pierwszy, drugi, trzeci? Pokażesz mi?"
+ "line.a_kto_pierwszy": {
+  "hash": "45021ba3ca33",
+  "who": "bobr",
+  "text": "Kto pierwszy dobiegł do mety? Wskaż."
  },
- "line.s_show": {
-  "hash": "16ccdfd70a3b",
-  "who": "sarenka",
-  "text": "Liczymy od stoiska. Popatrz na numerki."
+ "line.a_kto_pierwszy_nie": {
+  "hash": "54dde9a243e7",
+  "who": "bobr",
+  "text": "Popatrz, kto pierwszy dotknął mety."
  },
- "line.s_point_first": {
-  "hash": "0e5804ddcb35",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi pierwszy."
+ "line.a_jezyk": {
+  "hash": "82b9ed821842",
+  "who": "kret",
+  "text": "Jeżyk! Taki mały, a pierwszy!"
  },
- "line.wrong_place": {
-  "hash": "60e7afaa40c0",
-  "who": "sarenka",
-  "text": "To nie to miejsce. Licz od stoiska."
+ "line.a_kto_ostatni": {
+  "hash": "5cefe2e4d562",
+  "who": "bobr",
+  "text": "A kto dobiegł ostatni? Wskaż."
  },
- "line.wrong_place.lisek": {
-  "hash": "590e1e360aa3",
-  "who": "lisek",
-  "text": "To nie to miejsce. Licz od stoiska."
+ "line.a_kto_ostatni_nie": {
+  "hash": "ef02bae78d5c",
+  "who": "bobr",
+  "text": "Ten był szybszy. Kto dobiegł na samym końcu?"
  },
- "line.s_point_last": {
-  "hash": "e1ec63b5ecbc",
-  "who": "lisek",
-  "text": "A kto stoi ostatni, na samym końcu?"
+ "line.a_ostatnia": {
+  "hash": "2281e53c4fe4",
+  "who": "sowa",
+  "text": "Myszka była ostatnia, ale też dobiegła. Brawo!"
  },
- "line.s_point_third": {
-  "hash": "c6c4a5d384e7",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi trzeci."
+ "line.a_podium": {
+  "hash": "cf6f81ae9791",
+  "who": "bobr",
+  "text": "Na podium! Postaw pierwszego na samej górze, z jedynką. Drugiego na dwójce, trzeciego na trójce."
  },
- "line.s_serve": {
-  "hash": "d074c242bc07",
-  "who": "lisek",
-  "text": "Proszę, lemoniada dla pierwszego!"
+ "line.a_podium_nie": {
+  "hash": "7c8515b9020e",
+  "who": "bobr",
+  "text": "To nie jego miejsce. Kto dobiegł pierwszy, drugi, trzeci?"
  },
- "line.s_first_now": {
-  "hash": "cce6a5862d77",
-  "who": "sarenka",
-  "text": "Jeżyk odszedł i wszyscy się przesunęli. Kto jest teraz pierwszy?"
+ "line.a_podium_nie.sowa": {
+  "hash": "29e705d0fdf4",
+  "who": "sowa",
+  "text": "To nie jego miejsce. Kto dobiegł pierwszy, drugi, trzeci?"
  },
- "line.s_solved": {
-  "hash": "461ecb35f2f0",
-  "who": "lisek",
-  "text": "Teraz rozumiem! Obsługuję po kolei, od pierwszego."
+ "line.a_podium_nie.kret": {
+  "hash": "b259a9dfdccb",
+  "who": "kret",
+  "text": "To nie jego miejsce. Kto dobiegł pierwszy, drugi, trzeci?"
  },
- "line.s_to_playground": {
-  "hash": "e21573459a78",
-  "who": "sarenka",
-  "text": "Chodźmy na plac zabaw. Tam też stoi kolejka."
+ "line.a_podium_ok": {
+  "hash": "7eab2472a1f7",
+  "who": "sowa",
+  "text": "Pierwszy, drugi i trzeci na podium. Brawo dla wszystkich!"
  },
- "line.b_slide": {
-  "hash": "2d6f3bcf9903",
-  "who": "lisek",
-  "text": "Wszyscy chcą zjechać ze zjeżdżalni. Zjeżdżalnia jest z lewej strony."
+ "line.b_zjezdzalnia": {
+  "hash": "ceaad6ecaee7",
+  "who": "kret",
+  "text": "Teraz plac zabaw! Do zjeżdżalni ustawiła się kolejka."
  },
- "line.b_point_second": {
-  "hash": "4225b0b87e5d",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi drugi."
+ "line.b_od_przodu": {
+  "hash": "dd50706b8a42",
+  "who": "sowa",
+  "text": "W kolejce liczymy od przodu, od strzałki: pierwszy, drugi, trzeci, czwarty."
  },
- "line.b_point_last": {
-  "hash": "12a3fe8d090a",
-  "who": "sarenka",
-  "text": "Kto jest teraz ostatni?"
+ "line.b_trzeci": {
+  "hash": "e51298e7bd56",
+  "who": "kret",
+  "text": "Kto jest trzeci w kolejce? Wskaż."
  },
- "line.b_done": {
-  "hash": "383579b7dbc0",
-  "who": "lisek",
-  "text": "Myszka jest ostatnia! Grzecznie czeka na swoją kolej."
+ "line.b_trzeci_nie": {
+  "hash": "315c2577bcc6",
+  "who": "kret",
+  "text": "Policz od strzałki: pierwszy, drugi, trzeci."
  },
- "line.b_to_home": {
-  "hash": "4e1cd337e7c7",
-  "who": "sarenka",
-  "text": "Wracajmy do domu. Będą ciastka!"
+ "line.b_zjezdza": {
+  "hash": "cc49ce3ec71f",
+  "who": "bobr",
+  "text": "Pierwszy zjeżdża! A potem staje na końcu kolejki."
  },
- "line.c_cookies": {
-  "hash": "11d998ed53aa",
-  "who": "sarenka",
-  "text": "Po ciastka ustawiło się pięcioro gości. Liczymy od początku kolejki, z lewej."
+ "line.b_kto_teraz": {
+  "hash": "b79ea92ce872",
+  "who": "bobr",
+  "text": "Kto jest teraz pierwszy? Wskaż."
  },
- "line.c_point_fifth": {
-  "hash": "abf6136fb710",
-  "who": "lisek",
-  "text": "Wskaż, kto stoi piąty."
+ "line.b_kto_teraz_nie": {
+  "hash": "867304fc0d69",
+  "who": "bobr",
+  "text": "Popatrz, kto stoi teraz przy strzałce."
  },
- "line.c_between": {
-  "hash": "59295f5cd5fa",
-  "who": "sarenka",
-  "text": "Kto stoi pomiędzy drugim a czwartym?"
+ "line.b_teraz_pierwszy": {
+  "hash": "ee93102d4b2a",
+  "who": "sowa",
+  "text": "Kiedy pierwszy odchodzi, wszyscy przesuwają się do przodu."
  },
- "line.c_solved": {
-  "hash": "0743e698108b",
-  "who": "lisek",
-  "text": "Trzeci! Teraz znasz miejsca w kolejce."
+ "line.b_my": {
+  "hash": "cef8b737a383",
+  "who": "bobr",
+  "text": "A teraz Krecik i Sowa ścigają się do huśtawek! Ja jestem sędzią."
  },
- "line.p_intro": {
-  "hash": "2c80e0b08d69",
-  "who": "sarenka",
-  "text": "Pobawmy się w kolejkę! Liczymy zawsze od początku kolejki, z lewej."
+ "line.b_kto_pierwszy": {
+  "hash": "2ae665d5b9cf",
+  "who": "bobr",
+  "text": "Kto dobiegł pierwszy? Wskaż."
  },
- "line.p_first": {
-  "hash": "0e5804ddcb35",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi pierwszy."
+ "line.b_kto_pierwszy_nie": {
+  "hash": "3d786388c1b9",
+  "who": "bobr",
+  "text": "Ten dobiegł drugi. Kto był pierwszy?"
  },
- "line.p_second": {
-  "hash": "4225b0b87e5d",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi drugi."
+ "line.b_pierwszy_kret": {
+  "hash": "a7a2e4ef6c89",
+  "who": "kret",
+  "text": "Jestem pierwszy!"
  },
- "line.p_third": {
-  "hash": "c6c4a5d384e7",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi trzeci."
+ "line.b_pierwszy_sowa": {
+  "hash": "4a4fd3d0e614",
+  "who": "sowa",
+  "text": "Jestem pierwsza!"
  },
- "line.p_fourth": {
-  "hash": "d3592fff502f",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi czwarty."
+ "line.b_koniec": {
+  "hash": "523496d95b99",
+  "who": "kret",
+  "text": "Teraz wiem: pierwszy jest ten, kto pierwszy dobiegnie, a nie największy."
  },
- "line.p_last": {
-  "hash": "b08f20277505",
-  "who": "sarenka",
-  "text": "Wskaż, kto stoi ostatni."
+ "line.p_start": {
+  "hash": "f3f8c910de49",
+  "who": "bobr",
+  "text": "Poćwiczmy: pierwszy, drugi, trzeci, ostatni! Mam pięć zabaw."
  },
- "line.good_place": {
-  "hash": "2785ba3deeb9",
-  "who": "lisek",
-  "text": "Tak! To to miejsce."
+ "line.p_drugi": {
+  "hash": "6f055d5a00a4",
+  "who": "kret",
+  "text": "Kto jest drugi w kolejce? Wskaż."
  },
- "line.good_place.sarenka": {
-  "hash": "b54af04c209b",
-  "who": "sarenka",
-  "text": "Tak! To to miejsce."
+ "line.p_drugi_nie": {
+  "hash": "8fccbe22cafe",
+  "who": "kret",
+  "text": "Liczymy od strzałki: pierwszy, drugi."
  },
- "line.a_game": {
-  "hash": "0f2987dd6678",
-  "who": "lisek",
-  "text": "Zagrajmy w kolejkę zabawek. Stoją w rzędzie."
+ "line.p_dobrze": {
+  "hash": "fac351ca4a2a",
+  "who": "bobr",
+  "text": "Brawo!"
  },
- "line.a_ok": {
-  "hash": "eb32f0203880",
-  "who": "sarenka",
-  "text": "Dobrze! Liczymy od strzałki."
+ "line.p_dobrze.kret": {
+  "hash": "707aad081120",
+  "who": "kret",
+  "text": "Brawo!"
  },
- "line.a_second": {
-  "hash": "a7ead83f6ed8",
-  "who": "lisek",
-  "text": "Która zabawka jest druga?"
+ "line.p_ostatni": {
+  "hash": "36022c9b1f70",
+  "who": "bobr",
+  "text": "Kto jest ostatni w kolejce? Wskaż."
  },
- "line.a_last": {
-  "hash": "0e501a4c8a40",
-  "who": "lisek",
-  "text": "Która zabawka jest ostatnia?"
+ "line.p_ostatni_nie": {
+  "hash": "8b479271641e",
+  "who": "bobr",
+  "text": "Ostatni stoi na samym końcu, najdalej od strzałki."
  },
- "line.a_first": {
-  "hash": "b7c0fb1359f7",
-  "who": "lisek",
-  "text": "Która zabawka jest pierwsza?"
+ "line.p_wyscig": {
+  "hash": "f2d937f53232",
+  "who": "kret",
+  "text": "Jeszcze jeden wyścig! Patrz uważnie, kto dobiegnie pierwszy."
  },
- "line.a_ask_parents": {
-  "hash": "38ad150206ac",
-  "who": "sarenka",
-  "text": "Poproście rodziców, żeby ustawili z wami zabawki w kolejce. Która jest pierwsza, a która ostatnia?"
+ "line.p_podium": {
+  "hash": "397fcb580015",
+  "who": "bobr",
+  "text": "Postaw zwycięzców na podium: pierwszego, drugiego i trzeciego."
  },
- "line.a_bye": {
-  "hash": "163cfb6abb1b",
-  "who": "lisek",
-  "text": "Pa, pa! Do zobaczenia!"
+ "line.p_medale": {
+  "hash": "f93679524d76",
+  "who": "bobr",
+  "text": "Złoty medal jest za pierwsze miejsce, srebrny za drugie, brązowy za trzecie. Który medal dostanie drugi? Wskaż."
  },
- "line.b_first_now": {
-  "hash": "8d2aee5e9e87",
-  "who": "sarenka",
-  "text": "Wszyscy przesunęli się do przodu. Kto jest teraz pierwszy?"
+ "line.p_medale_nie": {
+  "hash": "e39627f4b7a7",
+  "who": "bobr",
+  "text": "Ten jest za inne miejsce. Drugi dostaje srebrny."
  },
- "line.wrong_place_q": {
-  "hash": "90cbe51eba6f",
-  "who": "sarenka",
-  "text": "To nie to miejsce. Licz od początku kolejki."
+ "line.p_srebrny": {
+  "hash": "1b113d5fe31a",
+  "who": "kret",
+  "text": "Srebrny medal za drugie miejsce!"
  },
- "line.wrong_place_q.lisek": {
-  "hash": "b65da431c7e2",
-  "who": "lisek",
-  "text": "To nie to miejsce. Licz od początku kolejki."
+ "line.p_trzeci": {
+  "hash": "d827fdf37b87",
+  "who": "kret",
+  "text": "Brązowy medal jest dla trzeciego w kolejce. Komu go dać? Wskaż."
  },
- "line.wrong_place_arrow": {
-  "hash": "a20b6711948d",
-  "who": "sarenka",
-  "text": "To nie to miejsce. Licz od strzałki."
+ "line.p_trzeci_nie": {
+  "hash": "5f94a1361504",
+  "who": "kret",
+  "text": "Policz od strzałki do trzech."
  },
- "line.wrong_place_arrow.lisek": {
-  "hash": "b4f706080cf4",
-  "who": "lisek",
-  "text": "To nie to miejsce. Licz od strzałki."
+ "line.h_zabawki": {
+  "hash": "8054ca291251",
+  "who": "kret",
+  "text": "Zabawki ustawiają się w kolejce do spania."
  },
- "line.b_mouse_goes": {
-  "hash": "6898b8d5a7fc",
-  "who": "lisek",
-  "text": "Myszka stoi pierwsza, więc zjeżdża pierwsza!"
+ "line.h_kolejnosc": {
+  "hash": "c7a9a122b132",
+  "who": "kret",
+  "text": "Misio pierwszy, piłka druga, klocek trzeci. Przeciągnij każdą zabawkę na jej miejsce."
  },
- "line.b_mouse_again": {
-  "hash": "cde70f5aed71",
-  "who": "lisek",
-  "text": "Chce zjechać jeszcze raz, więc idzie na koniec kolejki."
+ "line.h_nie": {
+  "hash": "15ac0f46a00d",
+  "who": "kret",
+  "text": "Posłuchaj jeszcze raz: misio pierwszy, piłka druga, klocek trzeci."
+ },
+ "line.h_dobrze": {
+  "hash": "1ca326845be1",
+  "who": "bobr",
+  "text": "Pierwszy, drugi, trzeci. Dobranoc, zabawki!"
+ },
+ "line.h_rodzice": {
+  "hash": "0800c3ced03a",
+  "who": "kret",
+  "text": "Przy kolacji powiedz rodzicom, kto usiadł do stołu pierwszy, kto drugi, a kto ostatni!"
  },
  "line.naklejka_daj": {
-  "hash": "8738618c65d0",
-  "who": "lisek",
-  "text": "Dziękujemy Ci za wspólną przygodę! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
- },
- "line.naklejka_opis": {
-  "hash": "64ee18822511",
-  "who": "narrator",
-  "text": "To jeżyk od liska. Dostaliśmy go, kiedy uczyliśmy się, kto stoi w kolejce pierwszy, a kto ostatni."
+  "hash": "78fc638f176a",
+  "who": "kret",
+  "text": "Dziękuję za wspaniały wyścig! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
  },
  "line.naklejka_juz": {
-  "hash": "126a203b8c35",
-  "who": "lisek",
+  "hash": "8556c4423588",
+  "who": "kret",
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "ead7bdb7fbd9",
+  "who": "narrator",
+  "text": "To złoty medal z leśnego wyścigu. Dostaliśmy go, kiedy uczyliśmy się, kto jest pierwszy, drugi i ostatni."
  }
 }

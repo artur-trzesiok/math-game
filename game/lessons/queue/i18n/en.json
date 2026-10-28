@@ -1,198 +1,205 @@
 {
-  "line.s_stand": {
-    "who": "sarenka",
-    "text": "I opened a lemonade stand! Look, a queue has formed."
+  "line.a_wyscig": {
+    "who": "bobr",
+    "text": "Today is the great forest race! There are medals for the winners."
   },
-  "line.s_biggest": {
-    "who": "lisek",
-    "text": "I will serve the bunny first. It is the biggest!"
+  "line.a_start": {
+    "who": "sowa",
+    "text": "On your marks, get set, go!"
   },
-  "line.s_not_biggest": {
-    "who": "sarenka",
-    "text": "In a queue it does not matter who is the biggest! What matters is who stands first."
+  "line.a_zajac_wygral": {
+    "who": "kret",
+    "text": "Bunny won! He's the biggest, so he's first!"
   },
-  "line.s_how": {
-    "who": "lisek",
-    "text": "And who stands first?"
+  "line.a_nie_najwiekszy": {
+    "who": "sowa",
+    "text": "Mole, in a race it doesn't matter who is the biggest."
   },
-  "line.s_order": {
-    "who": "sarenka",
-    "text": "The one standing nearest the stand. Then the second, the third, and so on."
+  "line.a_pierwszy": {
+    "who": "sowa",
+    "text": "First is the one who reached the finish first. Then second, third, and at the end the last."
   },
-  "line.s_what": {
-    "who": "lisek",
-    "text": "First, second, third? Will you show me?"
+  "line.a_kto_pierwszy": {
+    "who": "bobr",
+    "text": "Who reached the finish first? Point to them."
   },
-  "line.s_show": {
-    "who": "sarenka",
-    "text": "We count from the stand. Look at the numbers."
+  "line.a_kto_pierwszy_nie": {
+    "who": "bobr",
+    "text": "Look who touched the finish line first."
   },
-  "line.s_point_first": {
-    "who": "sarenka",
-    "text": "Point to the one standing first."
+  "line.a_jezyk": {
+    "who": "kret",
+    "text": "Hedgehog! So small, and first!"
   },
-  "line.wrong_place": {
-    "who": "sarenka",
-    "text": "That is not the place. Count from the stand.",
+  "line.a_kto_ostatni": {
+    "who": "bobr",
+    "text": "And who came in last? Point to them."
+  },
+  "line.a_kto_ostatni_nie": {
+    "who": "bobr",
+    "text": "That one was faster. Who arrived at the very end?"
+  },
+  "line.a_ostatnia": {
+    "who": "sowa",
+    "text": "Mouse was last, but she got there too. Well done!"
+  },
+  "line.a_podium": {
+    "who": "bobr",
+    "text": "Onto the podium! Put the first at the very top, on the one. The second on the two, the third on the three."
+  },
+  "line.a_podium_nie": {
+    "who": "bobr",
+    "text": "That's not his place. Who came first, second, third?",
     "speakers": [
-      "lisek"
+      "sowa",
+      "kret"
     ]
   },
-  "line.wrong_place_q": {
-    "who": "sarenka",
-    "text": "That is not the place. Count from the front of the queue.",
+  "line.a_podium_ok": {
+    "who": "sowa",
+    "text": "First, second and third on the podium. Well done, everyone!"
+  },
+  "line.b_zjezdzalnia": {
+    "who": "kret",
+    "text": "Now the playground! There's a queue for the slide."
+  },
+  "line.b_od_przodu": {
+    "who": "sowa",
+    "text": "In a queue we count from the front, from the arrow: first, second, third, fourth."
+  },
+  "line.b_trzeci": {
+    "who": "kret",
+    "text": "Who is third in the queue? Point to them."
+  },
+  "line.b_trzeci_nie": {
+    "who": "kret",
+    "text": "Count from the arrow: first, second, third."
+  },
+  "line.b_zjezdza": {
+    "who": "bobr",
+    "text": "The first one slides down! And then goes to the end of the queue."
+  },
+  "line.b_kto_teraz": {
+    "who": "bobr",
+    "text": "Who is first now? Point to them."
+  },
+  "line.b_kto_teraz_nie": {
+    "who": "bobr",
+    "text": "Look who is standing by the arrow now."
+  },
+  "line.b_teraz_pierwszy": {
+    "who": "sowa",
+    "text": "When the first one leaves, everybody moves up."
+  },
+  "line.b_my": {
+    "who": "bobr",
+    "text": "And now Mole and Owl race to the swings! I'm the judge."
+  },
+  "line.b_kto_pierwszy": {
+    "who": "bobr",
+    "text": "Who got there first? Point to them."
+  },
+  "line.b_kto_pierwszy_nie": {
+    "who": "bobr",
+    "text": "That one came second. Who was first?"
+  },
+  "line.b_pierwszy_kret": {
+    "who": "kret",
+    "text": "I'm first!"
+  },
+  "line.b_pierwszy_sowa": {
+    "who": "sowa",
+    "text": "I'm first!"
+  },
+  "line.b_koniec": {
+    "who": "kret",
+    "text": "Now I know: first is the one who gets there first, not the biggest."
+  },
+  "line.p_start": {
+    "who": "bobr",
+    "text": "Let's practise: first, second, third, last! I have five games."
+  },
+  "line.p_drugi": {
+    "who": "kret",
+    "text": "Who is second in the queue? Point to them."
+  },
+  "line.p_drugi_nie": {
+    "who": "kret",
+    "text": "We count from the arrow: first, second."
+  },
+  "line.p_dobrze": {
+    "who": "bobr",
+    "text": "Bravo!",
     "speakers": [
-      "lisek"
+      "kret"
     ]
   },
-  "line.wrong_place_arrow": {
-    "who": "sarenka",
-    "text": "That is not the place. Count from the arrow.",
-    "speakers": [
-      "lisek"
-    ]
+  "line.p_ostatni": {
+    "who": "bobr",
+    "text": "Who is last in the queue? Point to them."
   },
-  "line.b_mouse_goes": {
-    "who": "lisek",
-    "text": "The mouse is first, so it goes down first!"
+  "line.p_ostatni_nie": {
+    "who": "bobr",
+    "text": "The last one stands at the very end, furthest from the arrow."
   },
-  "line.b_mouse_again": {
-    "who": "lisek",
-    "text": "It wants another go, so it goes to the end of the queue."
+  "line.p_wyscig": {
+    "who": "kret",
+    "text": "One more race! Watch carefully who gets there first."
   },
-  "line.s_point_last": {
-    "who": "lisek",
-    "text": "And who stands last, at the very end?"
+  "line.p_podium": {
+    "who": "bobr",
+    "text": "Put the winners on the podium: first, second and third."
   },
-  "line.s_point_third": {
-    "who": "sarenka",
-    "text": "Point to the one standing third."
+  "line.p_medale": {
+    "who": "bobr",
+    "text": "The gold medal is for first place, silver for second, bronze for third. Which medal does the second get? Point to it."
   },
-  "line.s_serve": {
-    "who": "lisek",
-    "text": "Here you are, lemonade for the first one!"
+  "line.p_medale_nie": {
+    "who": "bobr",
+    "text": "That one is for another place. The second gets silver."
   },
-  "line.s_first_now": {
-    "who": "sarenka",
-    "text": "The hedgehog left and everyone moved up. Who is first now?"
+  "line.p_srebrny": {
+    "who": "kret",
+    "text": "A silver medal for second place!"
   },
-  "line.s_solved": {
-    "who": "lisek",
-    "text": "Now I understand! I serve them in order, from the first."
+  "line.p_trzeci": {
+    "who": "kret",
+    "text": "The bronze medal is for the third in the queue. Who gets it? Point to them."
   },
-  "line.s_to_playground": {
-    "who": "sarenka",
-    "text": "Let's go to the playground. There is a queue there too."
+  "line.p_trzeci_nie": {
+    "who": "kret",
+    "text": "Count from the arrow to three."
   },
-  "line.b_slide": {
-    "who": "lisek",
-    "text": "Everyone wants to go down the slide. The slide is on the left."
+  "line.h_zabawki": {
+    "who": "kret",
+    "text": "The toys are queueing up for bed."
   },
-  "line.b_point_second": {
-    "who": "sarenka",
-    "text": "Point to the one standing second."
+  "line.h_kolejnosc": {
+    "who": "kret",
+    "text": "Teddy first, the ball second, the block third. Drag each toy to its place."
   },
-  "line.b_first_now": {
-    "who": "sarenka",
-    "text": "Everyone moved up. Who is first now?"
+  "line.h_nie": {
+    "who": "kret",
+    "text": "Listen again: teddy first, the ball second, the block third."
   },
-  "line.b_point_last": {
-    "who": "sarenka",
-    "text": "Who is last now?"
+  "line.h_dobrze": {
+    "who": "bobr",
+    "text": "First, second, third. Good night, toys!"
   },
-  "line.b_done": {
-    "who": "lisek",
-    "text": "The mouse is last! It waits nicely for its turn."
-  },
-  "line.b_to_home": {
-    "who": "sarenka",
-    "text": "Let's go home. There will be cookies!"
-  },
-  "line.c_cookies": {
-    "who": "sarenka",
-    "text": "Five guests are queuing for cookies. We count from the front of the queue, on the left."
-  },
-  "line.c_point_fifth": {
-    "who": "lisek",
-    "text": "Point to the one standing fifth."
-  },
-  "line.c_between": {
-    "who": "sarenka",
-    "text": "Who stands between the second and the fourth?"
-  },
-  "line.c_solved": {
-    "who": "lisek",
-    "text": "The third! Now you know the places in a queue."
-  },
-  "line.p_intro": {
-    "who": "sarenka",
-    "text": "Let's play queues! We always count from the front of the queue, on the left."
-  },
-  "line.p_first": {
-    "who": "sarenka",
-    "text": "Point to the one standing first."
-  },
-  "line.p_second": {
-    "who": "sarenka",
-    "text": "Point to the one standing second."
-  },
-  "line.p_third": {
-    "who": "sarenka",
-    "text": "Point to the one standing third."
-  },
-  "line.p_fourth": {
-    "who": "sarenka",
-    "text": "Point to the one standing fourth."
-  },
-  "line.p_last": {
-    "who": "sarenka",
-    "text": "Point to the one standing last."
-  },
-  "line.good_place": {
-    "who": "lisek",
-    "text": "Yes! That is the place.",
-    "speakers": [
-      "sarenka"
-    ]
-  },
-  "line.a_game": {
-    "who": "lisek",
-    "text": "Let's play a queue of toys. They stand in a row."
-  },
-  "line.a_ok": {
-    "who": "sarenka",
-    "text": "All right! We count from the arrow."
-  },
-  "line.a_second": {
-    "who": "lisek",
-    "text": "Which toy is second?"
-  },
-  "line.a_last": {
-    "who": "lisek",
-    "text": "Which toy is last?"
-  },
-  "line.a_first": {
-    "who": "lisek",
-    "text": "Which toy is first?"
-  },
-  "line.a_ask_parents": {
-    "who": "sarenka",
-    "text": "Ask your parents to line up toys in a queue with you. Which one is first, and which one is last?"
-  },
-  "line.a_bye": {
-    "who": "lisek",
-    "text": "Bye bye! See you!"
+  "line.h_rodzice": {
+    "who": "kret",
+    "text": "At dinner, tell your parents who sat down at the table first, who second and who last!"
   },
   "line.naklejka_daj": {
-    "who": "lisek",
-    "text": "Thank you for our adventure together! Here's a sticker for your album, to remember it by. Touch it to take it."
+    "who": "kret",
+    "text": "Thank you for a wonderful race! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "kret",
+    "text": "You already have the sticker from this adventure. See you!"
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the little hedgehog from Fox. We got it when we learned who is first and who is last in a queue."
-  },
-  "line.naklejka_juz": {
-    "who": "lisek",
-    "text": "You already have the sticker from this adventure. See you soon!"
+    "text": "This is the gold medal from the forest race. We got it when we learnt who is first, second and last."
   }
 }

@@ -4,34 +4,35 @@
     "pl": "Kolejka",
     "en": "The queue"
   },
-  "goal": "Ordinal numbers: first, second, third, fourth, fifth, last - counted from the front of a queue; the queue changes, the places move.",
+  "goal": "Ordinal numbers - first, second, third ... last - say place in order, counted from the front (the finish, the head of a queue), not size.",
   "age": "4-5",
   "characters": [
-    "lisek",
-    "sarenka"
+    "kret",
+    "sowa",
+    "bobr"
   ],
   "backgrounds": [
     "laka",
     "plac_zabaw",
-    "dom",
-    "las",
     "pokoj"
   ],
   "objects": [
-    "stol",
-    "jez",
-    "mysz",
+    "meta",
     "zajac",
+    "jez",
     "kaczatko_stoi",
-    "motyl",
-    "kubek",
+    "mysz",
+    "slimak",
+    "medal_zloty",
+    "medal_srebrny",
+    "medal_brazowy",
     "misiu",
     "pilka",
     "klocek"
   ],
-  "cover": "Between them a little lemonade stand (a small wooden table with a jug) and a queue of a hedgehog, a mouse, a bunny and a duckling facing it, small pencil numbers 1, 2, 3, 4 over their heads.",
+  "cover": "The great forest race on a sunny meadow: a little hedgehog bursts through a red-and-white finish ribbon first, a big bunny and a duckling just behind; Beaver waves a flag, Owl holds three medals, Mole cheers.",
   "naklejka": {
-    "obraz": "objects/jez",
-    "kto": "lisek"
+    "obraz": "objects/medal_zloty",
+    "kto": "kret"
   }
 }
