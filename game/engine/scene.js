@@ -402,13 +402,15 @@ export class Stage {
     const set = this.dragSet; if (!set) return false;
     const n = this.ndc(e); this.raycaster.setFromCamera(n, this.camera);
     let best = null, bestD = Infinity;
-    for (const it of set.items) { const hits = this.raycaster.intersectObject(it.mesh, true); if (hits.length && hits[0].distance < bestD) { best = it; bestD = hits[0].distance; } }
+    // the topmost thing under the finger: a shape's own layer first (overlapping pieces), then distance
+    for (const it of set.items) { const hits = this.raycaster.intersectObject(it.mesh, true); if (!hits.length) continue; const d = hits[0].distance - (it.warstwa ?? 0) * 1e3; if (d < bestD) { best = it; bestD = d; } }
     if (!best) {
       for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.raycaster.intersectObject(L.korzen, true).some((i) => i.object.visible)) { this.bump(L); if (set.free) set.onPuppet?.(L); else set.onTap?.(L); return true; }
       return false;
     }
     if (set.free && best.zablokowany) return true;
     const p = this.worldAt(n);
+    best.naWierzch?.();                                     // a picked-up shape lies over the others
     this.drag = { item: best, dx: best.mesh.position.x - p.x, dy: best.mesh.position.y - p.y, from: { x: best.mesh.position.x, y: best.mesh.position.y }, zone: best.zone, t0: performance.now() };
     if (best.zone) best.zone.take(best);
     best.mesh.position.z = 0.9; this.bump(best, 0.12);

@@ -285,7 +285,10 @@ Geometry, positions and rows (`geometria.js`). Free dragging (`S.free(set)`): a 
 without moving (< 0.15 units, < 450 ms) is `onTap`, otherwise `onDrop`; a tap on a character repeats the
 instruction. `S.upusc(item, x, y)` / `S.stuknij(item)` drive it from tests. On top of it:
 - `ctx.shape(kind, {x, y, size, color, rot})` - circle / triangle / square / rectangle drawn as a filled sticker
-  with a white halo and a pencil outline (synchronous, a handle with `rotateTo`, `corners()`); `ctx.corners(h)` -
+  with a white rim and a pencil outline (synchronous, a handle with `rotateTo`, `corners()`). The rim is geometry
+  (`obwodka`: the polygon grown by a disc, even width, round corners) - the pencil ribbon wobbled and broke at the
+  corners. Each shape has its own band of draw orders and comes on top when picked up or turned (`naWierzch`), so
+  overlapping pieces lie like paper; with shared orders the lower piece's outline showed through the upper one; `ctx.corners(h)` -
   corner dots for `ctx.count` (each puts its number OUTSIDE the shape, `etykieta`).
 - `ctx.tangram(name, {x, y, scale, obroty})` - a grey silhouette with a pencil outline (`UKLADANKI`: kwadrat,
   domek, ryba, lodka, duzy_kwadrat) and its pieces packed without overlap on the floor between the characters,

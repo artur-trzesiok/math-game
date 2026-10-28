@@ -42,6 +42,25 @@ export const UKLADANKI = {
 
 const obroc = (pts, deg) => { const a = deg * Math.PI / 180, c = Math.cos(a), s = Math.sin(a); return pts.map(([x, y]) => [x * c - y * s, x * s + y * c]); };
 
+// a clean white sticker rim: a ring of constant width d around a convex polygon, rounded at the corners (the polygon
+// grown by a disc). The pencil ribbon used before wobbled and broke at the corners.
+function obwodka(pts, d, color = "#ffffff", opacity = 1) {
+  const pole = pts.reduce((a, p, i) => { const q = pts[(i + 1) % pts.length]; return a + p[0] * q[1] - q[0] * p[1]; }, 0);
+  const P = pole >= 0 ? pts : pts.slice().reverse();                       // counter-clockwise
+  const n = P.length, nor = P.map((p, i) => { const q = P[(i + 1) % n], ex = q[0] - p[0], ey = q[1] - p[1], l = Math.hypot(ex, ey) || 1; return [ey / l, -ex / l]; });
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    const a0 = Math.atan2(nor[(i - 1 + n) % n][1], nor[(i - 1 + n) % n][0]); let a1 = Math.atan2(nor[i][1], nor[i][0]);
+    while (a1 < a0) a1 += 2 * Math.PI;
+    const k = Math.max(1, Math.ceil((a1 - a0) / 0.2));
+    for (let j = 0; j <= k; j++) { const t = a0 + ((a1 - a0) * j) / k; out.push(new THREE.Vector2(P[i][0] + d * Math.cos(t), P[i][1] + d * Math.sin(t))); }
+  }
+  const shp = new THREE.Shape(out);
+  shp.holes.push(new THREE.Path(P.map(([x, y]) => new THREE.Vector2(x, y))));
+  const m = new THREE.Mesh(new THREE.ShapeGeometry(shp, 1), new THREE.MeshBasicMaterial({ color, transparent: true, opacity, depthWrite: false, side: THREE.DoubleSide }));
+  m.renderOrder = 10.5; m.frustumCulled = false;
+  return m;
+}
 // a ribbon mesh along a closed polygon (the pencil rim, or its white outline under it)
 function obrys(pts, width, color, seed, halo) {
   const zamk = [...pts, pts[0], pts[1]];
@@ -61,15 +80,28 @@ export function ksztalt(S, kind, { x = 0, y = 1.2, size = 1.3, color = null, rot
   const fill = new THREE.Mesh(new THREE.ShapeGeometry(shp, 24), new THREE.MeshBasicMaterial({ color: color || d.kolor, transparent: true, depthWrite: false, side: THREE.DoubleSide }));
   fill.renderOrder = 10.6;
   const seed = Math.random() * 1000;
-  inner.add(obrys(pts, 0.07 + 0.11 * 2, "#ffffff", seed, true), fill, obrys(pts, 0.06, "#2b2622", seed, false));
+  const warstwy = [obwodka(pts, 0.13), fill, obrys(pts, 0.06, "#2b2622", seed, false)];
+  inner.add(...warstwy);
   const handle = { mesh: g, inner, name, tag: kind, kind: "object", ksztalt: kind, base: 1, size0: 1, size, pts, rot, home: { x, y }, zone: null, pulse: false,
     remove: () => { S.scene.remove(g); const i = S.objects.indexOf(handle); if (i >= 0) S.objects.splice(i, 1); S.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },
     highlight: (on) => { handle.pulse = on; if (!on) g.scale.setScalar(handle.base); },
     moveTo: (nx, ny, dd = 0.5) => { const x0 = g.position.x, y0 = g.position.y; return S.tween(dd, (s) => { g.position.x = x0 + (nx - x0) * s; g.position.y = y0 + (ny - y0) * s; }); },
     rotateTo: (deg, dd = 0.22) => { const r0 = handle.rot; handle.rot = deg; return S.tween(dd, (s) => { inner.rotation.z = (r0 + (deg - r0) * s) * Math.PI / 180; }); },
+    // the whole shape (halo, fill, outline) above every other shape: overlapping pieces lie like paper, one on
+    // another - with shared orders the lower piece's outline showed through the upper piece
+    naWierzch: () => {
+      const inne = S.objects.filter((o) => o !== handle && o.warstwa != null).sort((p, q) => p.warstwa - q.warstwa);
+      if (inne.length && inne[inne.length - 1].warstwa > 60) inne.forEach((o, i) => o.ustawWarstwe(i));   // compact: stay under the puppets (20)
+      handle.ustawWarstwe(inne.length ? inne[inne.length - 1].warstwa + 1 : 0);
+    },
+    ustawWarstwe: (j) => {
+      handle.warstwa = j;
+      warstwy.forEach((m, k) => { m.renderOrder = 10.5 + j * 0.03 + k * 0.01; m.userData.ro0 = m.renderOrder; });
+    },
     // corners in world coordinates, as drawn now
     corners: () => { g.updateMatrixWorld(true); return obroc(pts, handle.rot).map(([a, b]) => new THREE.Vector3(a, b, 0).applyMatrix4(g.matrixWorld)); },
   };
+  handle.naWierzch();
   S.scene.add(g); S.objects.push(handle); S.appear(handle);
   return handle;
 }
@@ -140,7 +172,7 @@ export function tangram(S, nazwa, { x = 0, y = 1.0, scale = 3.2, rozsyp = null, 
     const m = new THREE.Mesh(new THREE.ShapeGeometry(shp), new THREE.MeshBasicMaterial({ color: "#4a423b", transparent: true, opacity: 0.42, depthWrite: false }));
     m.position.set(s.x, s.y, 0.3); m.renderOrder = 9; grupa.add(m); tlo.push(m);
     if (kontur) {                                          // white halo + dark pencil line: the faint grey alone vanished on light plates
-      const o = obrys(pts, 0.1, "#ffffff", 3, true); o.material.opacity = 0.9; o.renderOrder = 9.1; o.position.set(s.x, s.y, 0.31); grupa.add(o); tlo.push(o);
+      const o = obwodka(pts, 0.06, "#ffffff", 0.9); o.renderOrder = 9.1; o.position.set(s.x, s.y, 0.31); grupa.add(o); tlo.push(o);
       const d = obrys(pts, 0.04, "#3a332d", 3, false); d.renderOrder = 9.2; d.position.set(s.x, s.y, 0.32); grupa.add(d); tlo.push(d);
     }
   }
@@ -169,7 +201,7 @@ export function tangram(S, nazwa, { x = 0, y = 1.0, scale = 3.2, rozsyp = null, 
       const wolne = () => kawalki.filter((k) => !k.na);
       S.free({
         items: kawalki, tangram: sloty,
-        onTap: (k) => { if (k.na) return; S.sfx.graj("tap"); k.rotateTo(k.rot + 45); },
+        onTap: (k) => { if (k.na) return; S.sfx.graj("tap"); k.naWierzch(); k.rotateTo(k.rot + 45); },
         onDrop: async (k, p) => {
           // the nearest free place of the same piece type
           let best = null, bd = Infinity;
