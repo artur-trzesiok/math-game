@@ -21,12 +21,15 @@ export async function galeria() {
   return GALERIA;
 }
 // hand corrections from the manager's wardrobe: per character, per garment, per view; dx, dy in the character's
-// heights (so they hold at any stage size), skala multiplies, obrot in degrees
+// heights (so they hold at any stage size), skala multiplies, sx / sy stretch one axis, obrot in degrees
 export async function korekty(L) {
   if (L.korektyUbioru === undefined) L.korektyUbioru = await fetch(v(`/game/assets/characters/${L.name}/ubior.json`), SWIEZO).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
   return L.korektyUbioru;
 }
-const korekta = (L, rzecz, widok) => ({ dx: 0, dy: 0, skala: 1, obrot: 0, ...(L.korektyUbioru?.[rzecz]?.[widok] || (widok === "bok" ? L.korektyUbioru?.[rzecz]?.przod : null) || {}) });
+const ZERO = { dx: 0, dy: 0, skala: 1, sx: 1, sy: 1, obrot: 0 };
+// one level: the shoe's own key, then the view's, the 3/4 view falling back to the front
+const wpisKorekty = (o, widok, noga) => (noga && o?.[`${widok}:${noga}`]) || o?.[widok] || (widok === "bok" ? (noga && o?.[`przod:${noga}`]) || o?.przod : null) || {};
+const korekta = (L, rzecz, widok, noga = null) => ({ ...ZERO, ...wpisKorekty(L.korektyUbioru?.[rzecz], widok, noga) });
 const DOMYSLNE = { glowa: { szer: 0.92, nasun: 0.3 }, oczy: { szer: 1.15, nasun: 0 }, szyja: { szer: 0.8, nasun: 0 }, stopy: { szer: 1.0, nasun: 0, do: 0.42 } };
 
 // a texture's alpha as a canvas once
@@ -171,7 +174,7 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         };
         // each shoe has its own correction (`przod:noga_l` ...), falling back to the view's; dx and the turn are on the
         // screen's terms - a mirrored leg (the right one) flips them back
-        const K = { ...korekta(L, rzecz, widok), ...(L.korektyUbioru?.[rzecz]?.[`${widok}:${R.kosc}`] || {}) }, H0 = L.wysokosc;
+        const K = korekta(L, rzecz, widok, R.kosc), H0 = L.wysokosc;
         R.mesh.updateWorldMatrix(true, false);
         const lustroX = new THREE.Vector3().setFromMatrixColumn(R.mesh.matrixWorld, 0).x < 0 ? -1 : 1;
         K.dx *= lustroX; K.obrot *= lustroX;
@@ -179,10 +182,15 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         // the height comes from the leg, not from the picture (a front boot is tall and narrow, a side one wide):
         // from the sole up to the leg at s = `do` (a wellington to mid-shin, a sneaker just over the ankle)
         let gy = 0, gn = 0; for (let i = 0; i < R.B.vs.length; i++) if (Math.abs(R.B.vs[i] - P.do) < 0.04) { gy += R.rest[3 * i + 1]; gn++; }
-        const h = gn ? Math.max(w * 0.5, gy / gn - S0.y0 + 0.07) * K.skala : (t.image.height / t.image.width) * w;
+        // the picture's own proportions, always: as wide as the foot asks, and if that makes it taller than the leg
+        // allows (up to s = `do`), smaller as a whole - never squashed
+        const prop = t.image.height / t.image.width, hMax = gn ? (gy / gn - S0.y0 + 0.07) * K.skala : Infinity;
+        let w2 = w, h = w * prop;
+        if (h > hMax) { h = hMax; w2 = h / prop; }
+        w2 *= K.sx; h *= K.sy;
         const cx = (widok === "profil" ? S0.fx : S0.ax) + K.dx * H0, cy = S0.y0 + h / 2 - 0.05 + K.dy * H0;
         const obrot = K.obrot * Math.PI / 180, co = Math.cos(obrot), si = Math.sin(obrot);
-        const g = new THREE.PlaneGeometry(w, h, 6, 12), rest = g.attributes.position.array.slice();
+        const g = new THREE.PlaneGeometry(w2, h, 6, 12), rest = g.attributes.position.array.slice();
         for (let i = 0; i < rest.length; i += 3) { const x = rest[i], y = rest[i + 1]; rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012; }
         g.attributes.position.array.set(rest);
         // every shoe vertex is glued to its nearest leg vertex at rest: it keeps its offset from it, turned by the
@@ -239,7 +247,7 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
       const c = lok(K.srodek, K.dol); cx = c.x; cy = c.y - m.userData.h * 0.22;   // the ring just under the chin, the end hanging down
     } else continue;
     const Q = korekta(L, rzecz, widok);
-    if (Q.skala !== 1) { m.scale.setScalar(Q.skala); m.userData.h *= Q.skala; }
+    m.scale.set(Q.skala * Q.sx, Q.skala * Q.sy, 1); m.userData.h *= Q.skala * Q.sy;
     cx += Q.dx * L.wysokosc; cy += Q.dy * L.wysokosc; m.rotation.z = -Q.obrot * Math.PI / 180;
     m.position.set(cx, cy, slot === "szyja" ? -0.01 : 0.08);             // a scarf under the head, a hat over the face
     m.userData.ubior = true; m.userData.rzecz = rzecz; m.userData.widok = widok; m.renderOrder = ro;
@@ -251,9 +259,9 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
   (S.ubiory = S.ubiory || new Set()).add(L);
   if (pop) {
     S.sfx.graj("pop");
-    const baza = rzeczy.map(([m]) => m.scale.x);
-    await S.tween(0.25, (s) => { const q = 0.6 + 0.4 * s + 0.15 * Math.sin(s * Math.PI); rzeczy.forEach(([m, a], i) => { if (!a) m.scale.setScalar(baza[i] * q); }); });
-    rzeczy.forEach(([m, a], i) => { if (!a) m.scale.setScalar(baza[i]); });
+    const baza = rzeczy.map(([m]) => m.scale.clone());
+    await S.tween(0.25, (s) => { const q = 0.6 + 0.4 * s + 0.15 * Math.sin(s * Math.PI); rzeczy.forEach(([m, a], i) => { if (!a) m.scale.copy(baza[i]).multiplyScalar(q); }); });
+    rzeczy.forEach(([m, a], i) => { if (!a) m.scale.copy(baza[i]); });
   }
   return ubrane;
 }

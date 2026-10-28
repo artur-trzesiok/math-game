@@ -58,15 +58,18 @@
     <label>dx <input type="number" id="ubr_dx" step="0.005" value="0" style="width:64px"></label>
     <label>dy <input type="number" id="ubr_dy" step="0.005" value="0" style="width:64px"></label>
     <label>skala <input type="number" id="ubr_skala" step="0.02" value="1" style="width:64px"></label>
+    <label title="rozciągnięcie w poziomie">sx <input type="number" id="ubr_sx" step="0.02" value="1" style="width:58px"></label>
+    <label title="rozciągnięcie w pionie">sy <input type="number" id="ubr_sy" step="0.02" value="1" style="width:58px"></label>
     <label>obrót° <input type="number" id="ubr_obrot" step="1" value="0" style="width:56px"></label>
-    <button id="ubr_zeruj" title="bez korekty w tym widoku">zeruj</button></div>
+    <button id="ubr_zeruj" title="bez korekty w tym widoku">zeruj</button>
+    <button id="ubr_wszystkim" title="skopiuj ustawienia tej rzeczy (wszystkie widoki) na każdą rzecz z tego obszaru">do wszystkich</button></div>
   <div class="wiersz"><button id="ubr_zapisz" class="glowny">Zapisz ubrania</button><span id="ubr_status"></span></div>
-  <div class="pomoc">Ubrania z <code>game/assets/ubrania</code> dopasowuje silnik sam (głowa, oczy, szyja, stopy). Korekta przesuwa (dx, dy w wysokościach postaci), skaluje i obraca rzecz w jednym widoku, but każdy osobno (kliknij go); zapis trafia do <code>game/assets/characters/&lt;kto&gt;/ubior.json</code> i gra nakłada go zawsze. Czworonogów nie ubieramy.</div>
+  <div class="pomoc">Ubrania z <code>game/assets/ubrania</code> dopasowuje silnik sam (głowa, oczy, szyja, stopy). Korekta przesuwa (dx, dy w wysokościach postaci), skaluje (skala; sx, sy osobno w poziomie i pionie) i obraca rzecz w jednym widoku, but każdy osobno (kliknij go). „Do wszystkich” kopiuje ustawienia tej rzeczy na każdą z jej obszaru (np. wszystkie czapki), potem poprawiasz już tylko pojedyncze; zapis trafia do <code>game/assets/characters/&lt;kto&gt;/ubior.json</code> i gra nakłada go zawsze. Czworonogów nie ubieramy.</div>
   <h3>Element</h3>
   <div class="wiersz"><select id="lista"><option value="">— kliknij na lalce —</option></select><label title="klik i przeciąganie zawsze działają na wybranym elemencie"><input type="checkbox" id="blokada"> zablokuj</label></div>
   <div id="pola" class="pola"></div>
   <div class="pomoc">
-    Przeciągnij element, by go przesunąć (oś idzie z nim); przeciągnij narożnik ramki, by zmienić jego wielkość. Ubranie też przeciągasz myszą (pomarańczowa ramka: narożnik = skala, kółko nad ramką albo <kbd>Alt</kbd>+przeciągnij = obrót, <kbd>Q</kbd>/<kbd>E</kbd> o 1°). <kbd>Shift</kbd>+przeciągnij przesuwa samą oś obrotu.
+    Przeciągnij element, by go przesunąć (oś idzie z nim); przeciągnij narożnik ramki, by zmienić jego wielkość (każda oś osobno; z <kbd>Shift</kbd> albo <kbd>Ctrl</kbd> trzyma proporcje). Ubranie też przeciągasz myszą (pomarańczowa ramka: narożnik = skala jak wyżej, kółko nad ramką albo <kbd>Alt</kbd>+przeciągnij = obrót, <kbd>Q</kbd>/<kbd>E</kbd> o 1°). <kbd>Shift</kbd>+przeciągnij przesuwa samą oś obrotu.
     <kbd>Alt</kbd>+przeciągnij obraca wokół osi (bazowy obrót, <kbd>Q</kbd>/<kbd>E</kbd> o 1°, z <kbd>Shift</kbd> 5°).
     Animacja gra tylko w rzutach, które gra by pokazała (Skradanie: sam profil).
     Oczy i usta przeciągasz i obracasz jako cel (wszystkie warianty razem); ich <b>w</b>/<b>h</b> zmieniają rozmiar.
@@ -175,7 +178,14 @@ function zbuduj() {
 // ------------------------------------------------------------ the wardrobe
 // every column's puppet wears what is chosen; the engine's own fitting (ubior.js) plus this character's corrections
 const ubS = { ubiory: new Set() }, zalozone = new Set();
-let korektyKto = {};
+let korektyKto = {}, galeriaU = {};
+const ZERO_U = { dx: 0, dy: 0, skala: 1, sx: 1, sy: 1, obrot: 0 };
+function wpisU(r, k, w, utworz) {
+  const o = korektyKto[r] = korektyKto[r] || {};
+  const z = o[k] || (o[w] && k !== w ? o[w] : null) || (w === "bok" ? o[k.replace("bok", "przod")] || o.przod : null);
+  if (!utworz) return z || {};
+  return (o[k] = o[k] || { ...ZERO_U, ...(z || {}) });
+}
 const sztucznaScena = (L) => ({ puppets: { [kto]: L }, sfx: { graj() {} }, tween: (d, f) => { f(1); return Promise.resolve(); }, ubiory: ubS.ubiory });
 async function ubierzWszystkie(tylko = null) {
   if (dane?.rig === "czworonog") { $("ubr_status").textContent = "czworonogów nie ubieramy"; return; }
@@ -185,7 +195,7 @@ async function ubierzWszystkie(tylko = null) {
   }
 }
 async function wczytajUbrania() {
-  const G = await U.galeria();
+  const G = await U.galeria(); galeriaU = G;
   $("ubr_lista").innerHTML = Object.entries(G).map(([n, d]) => `<option value="${n}">${n} (${d.slot})</option>`).join("");
   korektyKto = await fetch(v(`/game/assets/characters/${kto}/ubior.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
 }
@@ -195,16 +205,18 @@ function odswiezKorekte() {
 }
 function pokazKorekte() {
   const r = $("ubr_kor").value, w = $("ubr_widok").value, klucz = ubrWybor?.rzecz === r && ubrWybor.widok === w ? ubrWybor.klucz : w;
-  const k = korektyKto[r]?.[klucz] || korektyKto[r]?.[w] || (w === "bok" ? korektyKto[r]?.przod : null) || {};
+  const k = r ? wpisU(r, klucz, w, false) : {};
   $("ubr_noga").textContent = klucz.includes(":") ? `(${klucz.split(":")[1]})` : "";
   $("ubr_dx").value = k.dx ?? 0; $("ubr_dy").value = k.dy ?? 0; $("ubr_skala").value = k.skala ?? 1; $("ubr_obrot").value = k.obrot ?? 0;
+  $("ubr_sx").value = k.sx ?? 1; $("ubr_sy").value = k.sy ?? 1;
+  odswiezPrzyciskWszystkim();
 }
 async function zmienKorekte() {
   const r = $("ubr_kor").value, w = $("ubr_widok").value; if (!r) return;
-  const k = { dx: +$("ubr_dx").value || 0, dy: +$("ubr_dy").value || 0, skala: +$("ubr_skala").value || 1, obrot: +$("ubr_obrot").value || 0 };
+  const k = { dx: +$("ubr_dx").value || 0, dy: +$("ubr_dy").value || 0, skala: +$("ubr_skala").value || 1, sx: +$("ubr_sx").value || 1, sy: +$("ubr_sy").value || 1, obrot: +$("ubr_obrot").value || 0 };
   const klucz = ubrWybor?.rzecz === r && ubrWybor.widok === w ? ubrWybor.klucz : w;
   korektyKto[r] = korektyKto[r] || {};
-  if (!k.dx && !k.dy && k.skala === 1 && !k.obrot) delete korektyKto[r][klucz]; else korektyKto[r][klucz] = k;
+  if (!k.dx && !k.dy && k.skala === 1 && k.sx === 1 && k.sy === 1 && !k.obrot) delete korektyKto[r][klucz]; else korektyKto[r][klucz] = k;
   await ubierzWszystkie(r);
   $("ubr_status").textContent = "niezapisane";
 }
@@ -212,8 +224,17 @@ $("ubr_zaloz").onclick = async () => { const r = $("ubr_lista").value; if (!r) r
 $("ubr_zdejmij").onclick = () => { const r = $("ubr_lista").value; const G = U.galeria(); zalozone.delete(r); G.then((g) => { for (const L of lalki) U.zdejmij(sztucznaScena(L), kto, g[r]?.slot); }); odswiezKorekte(); };
 $("ubr_wszystko").onclick = () => { zalozone.clear(); for (const L of lalki) U.zdejmij(sztucznaScena(L), kto); odswiezKorekte(); };
 $("ubr_kor").onchange = () => { ubrWybor = null; pokazKorekte(); }; $("ubr_widok").onchange = () => { ubrWybor = null; pokazKorekte(); };
-for (const id of ["ubr_dx", "ubr_dy", "ubr_skala", "ubr_obrot"]) $(id).oninput = zmienKorekte;
-$("ubr_zeruj").onclick = () => { $("ubr_dx").value = 0; $("ubr_dy").value = 0; $("ubr_skala").value = 1; $("ubr_obrot").value = 0; zmienKorekte(); };
+for (const id of ["ubr_dx", "ubr_dy", "ubr_skala", "ubr_sx", "ubr_sy", "ubr_obrot"]) $(id).oninput = zmienKorekte;
+// this garment's settings, every view, onto every garment of its slot (all the hats...): then only fine-tuning
+$("ubr_wszystkim").onclick = async () => {
+  const r = $("ubr_kor").value, slot = galeriaU[r]?.slot; if (!slot) return;
+  const inne = Object.keys(galeriaU).filter((n) => n !== r && galeriaU[n].slot === slot);
+  for (const n of inne) { if (korektyKto[r]) korektyKto[n] = JSON.parse(JSON.stringify(korektyKto[r])); else delete korektyKto[n]; }
+  for (const n of zalozone) if (inne.includes(n)) await ubierzWszystkie(n);
+  $("ubr_status").textContent = `skopiowano na ${inne.length} (${slot}) — niezapisane`;
+};
+const odswiezPrzyciskWszystkim = () => { const sl = galeriaU[$("ubr_kor").value]?.slot; $("ubr_wszystkim").textContent = sl ? `do wszystkich: ${{ glowa: "głowa" }[sl] || sl}` : "do wszystkich"; $("ubr_wszystkim").disabled = !sl; };
+$("ubr_zeruj").onclick = () => { $("ubr_dx").value = 0; $("ubr_dy").value = 0; $("ubr_skala").value = 1; $("ubr_sx").value = 1; $("ubr_sy").value = 1; $("ubr_obrot").value = 0; zmienKorekte(); };
 $("ubr_zapisz").onclick = async () => {
   for (const [r, w] of Object.entries(korektyKto)) if (!Object.keys(w).length) delete korektyKto[r];
   const odp = await fetch(`/api/characters/${kto}/ubior`, { method: "POST", body: JSON.stringify(korektyKto) });
@@ -520,11 +541,15 @@ function wybierzUbior(t) {
   $("ubr_kor").value = t.rzecz; $("ubr_widok").value = t.widok; pokazKorekte();
   rysujNakladke(); rysujUbior();
 }
-function korektaWyboru() {
-  const r = ubrWybor.rzecz, w = ubrWybor.widok;
-  korektyKto[r] = korektyKto[r] || {};
-  const k = ubrWybor.klucz || w;
-  return (korektyKto[r][k] = korektyKto[r][k] || (korektyKto[r][w] && k !== w ? { ...korektyKto[r][w] } : w === "bok" && korektyKto[r].przod ? { ...korektyKto[r].przod } : { dx: 0, dy: 0, skala: 1, obrot: 0 }));
+function korektaWyboru() { return wpisU(ubrWybor.rzecz, ubrWybor.klucz || ubrWybor.widok, ubrWybor.widok, true); }
+// a corner drag as scale factors along an object's own axes (it may be turned): each axis alone, or with
+// Shift / Ctrl one factor for both
+const katSwiata = (m) => { m.updateWorldMatrix(true, false); const c = new THREE.Vector3().setFromMatrixColumn(m.matrixWorld, 0); return Math.atan2(c.y, c.x); };
+function czynnikiRogu(e, od, p, c, kat) {
+  const lok = (q) => { const x = q.x - c.x, y = q.y - c.y, co = Math.cos(-kat), si = Math.sin(-kat); return [Math.abs(x * co - y * si), Math.abs(x * si + y * co)]; };
+  if (e.shiftKey || e.ctrlKey) { const f = Math.hypot(p.x - c.x, p.y - c.y) / Math.max(1e-4, Math.hypot(od.x - c.x, od.y - c.y)); return [f, f, true]; }
+  const [x0, y0] = lok(od), [x1, y1] = lok(p);
+  return [x0 > 1e-3 ? x1 / x0 : 1, y0 > 1e-3 ? y1 / y0 : 1, false];
 }
 rend.domElement.addEventListener("pointerdown", (e) => {
   if (e.button !== 0) return;
@@ -555,10 +580,12 @@ rend.domElement.addEventListener("pointermove", (e) => {
     if (ciagU.rog) {
       const bb = bbUbioru(); if (!bb) return;
       const c = new THREE.Vector3((bb.min.x + bb.max.x) / 2, (bb.min.y + bb.max.y) / 2, 0);
-      const f = Math.hypot(p.x - c.x, p.y - c.y) / Math.max(1e-4, Math.hypot(ciagU.od.x - c.x, ciagU.od.y - c.y));
-      if (!isFinite(f) || Math.abs(f - 1) < 0.005) return;
-      K.skala = Math.max(0.2, (K.skala ?? 1) * f);
-      for (const L of kolumny) for (const m of meshUbioru(L, ubrWybor.rzecz)) m.scale.multiplyScalar(f);
+      const ms = meshUbioru(lalki[ubrWybor.kolumna], ubrWybor.rzecz);
+      const [fx, fy, razem] = czynnikiRogu(e, ciagU.od, p, c, ms[0] && !ms[0].userData.noga ? katSwiata(ms[0]) : 0);
+      if (!isFinite(fx) || !isFinite(fy) || (Math.abs(fx - 1) < 0.005 && Math.abs(fy - 1) < 0.005)) return;
+      if (razem) K.skala = Math.max(0.2, (K.skala ?? 1) * fx);
+      else { K.sx = Math.max(0.2, (K.sx ?? 1) * fx); K.sy = Math.max(0.2, (K.sy ?? 1) * fy); }
+      for (const L of kolumny) for (const m of meshUbioru(L, ubrWybor.rzecz)) { m.scale.x *= fx; m.scale.y *= fy; }
     } else {
       const dx = (p.x - ciagU.od.x) / ciagU.H, dy = (p.y - ciagU.od.y) / ciagU.H; if (!dx && !dy) return;
       K.dx = (K.dx ?? 0) + dx; K.dy = (K.dy ?? 0) + dy;
@@ -576,10 +603,11 @@ rend.domElement.addEventListener("pointermove", (e) => {
   }
   if (ciagE) {
     const p = swiat(e), c = ciagE.srodek;
-    const f = Math.hypot(p.x - c.x, p.y - c.y) / Math.max(1e-4, Math.hypot(ciagE.od.x - c.x, ciagE.od.y - c.y));
-    if (!isFinite(f) || Math.abs(f - 1) < 0.003) return;
+    const m = siatki(lalki[wybor.kolumna]).find((m) => m.userData.czesc === wybor.nazwa && widoczny(m));
+    const [fx, fy] = czynnikiRogu(e, ciagE.od, p, c, m ? katSwiata(m) : 0);
+    if (!isFinite(fx) || !isFinite(fy) || (Math.abs(fx - 1) < 0.003 && Math.abs(fy - 1) < 0.003)) return;
     const cz = dane.czesci[wybor.nazwa], w0 = cz.w, h0 = cz.h;
-    cz.w = Math.max(4, w0 * f); cz.h = Math.max(4, h0 * f); cz.x -= (cz.w - w0) / 2; cz.y -= (cz.h - h0) / 2;
+    cz.w = Math.max(4, w0 * fx); cz.h = Math.max(4, h0 * fy); cz.x -= (cz.w - w0) / 2; cz.y -= (cz.h - h0) / 2;
     ciagE.od = p; ciagE.ruszyl = true; zbuduj(); zaznaczZmiane();
     e.stopImmediatePropagation(); return;
   }
