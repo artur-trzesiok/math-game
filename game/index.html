@@ -7,23 +7,39 @@
   html, body { margin: 0; height: 100%; overflow: hidden; background: #000; font: 16px/1.4 system-ui, sans-serif; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
   #stage { position: fixed; inset: 0; background: #000; }
   #stage canvas { display: block; }
-  #menu { position: fixed; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: safe center; gap: 24px; overflow-y: auto; padding-top: 28px; box-sizing: border-box; background: linear-gradient(#bfe4ff, #e9f7d8); opacity: 0; transition: opacity .7s ease; }
+  /* the menu: one long strip of lessons scrolled sideways (a finger, the wheel or a mouse drag), the topics marked
+     along it as tinted blocks; sized from the height so it fits the 4:3 safe area of a tablet and a phone alike */
+  #menu { --k: max(110px, min(38vh, 62vw)); --safe: max(16px, calc((100vw - 133.34vh) / 2 + 16px));
+          position: fixed; inset: 0; display: none; flex-direction: column; justify-content: center; gap: 2.4vh; overflow: hidden; box-sizing: border-box; background: linear-gradient(#bfe4ff, #e9f7d8); opacity: 0; transition: opacity .7s ease; }
   #menu.in { opacity: 1; }
   #iris { position: fixed; inset: 0; display: none; background: #2f7fe0; pointer-events: none; }
   #fade { position: fixed; inset: 0; display: none; background: #1a2a3a; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
-  #menu h1 { margin: 0; font-size: 44px; color: #2a4a6a; }
-  #lessons { display: flex; flex-direction: column; gap: 22px; width: min(100%, 1060px); padding: 0 16px 32px; box-sizing: border-box; }
-  .topic h2 { margin: 0 0 12px; font-size: 24px; color: #2a4a6a; display: flex; align-items: center; gap: 10px; }
-  .topic h2::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--c); }
-  .topic .row { display: flex; gap: 18px; overflow-x: auto; padding: 4px 4px 10px; scroll-snap-type: x mandatory; }
-  .topic .lesson { flex: 0 0 auto; scroll-snap-align: start; }
-  .lesson { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 230px; padding: 16px 16px 20px; border: 0; border-radius: 22px; background: #fff; box-shadow: 0 6px 0 #c7d8e6; font: inherit; cursor: pointer; }
+  #menu h1 { margin: 0; font-size: max(22px, calc(var(--k) * 0.19)); color: #2a4a6a; text-align: center; }
+  #langs { text-align: center; }
+  #lessons { display: flex; align-items: stretch; gap: calc(var(--k) * 0.12); overflow-x: auto; overflow-y: hidden; padding: 6px var(--safe) 14px; box-sizing: border-box; width: 100%;
+             scroll-snap-type: x proximity; scroll-padding-inline: var(--safe); overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab;
+             -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); }
+  #lessons::-webkit-scrollbar { display: none; }
+  #lessons.drag { cursor: grabbing; scroll-snap-type: none; }
+  .topic { flex: 0 0 auto; display: flex; flex-direction: column; gap: calc(var(--k) * 0.06); padding: calc(var(--k) * 0.07) calc(var(--k) * 0.08) calc(var(--k) * 0.1); border-radius: calc(var(--k) * 0.16);
+           background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--c) 45%, transparent); scroll-snap-align: start; }
+  .topic h2 { margin: 0 0 0 4px; font-size: max(14px, calc(var(--k) * 0.1)); color: #2a4a6a; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+  .topic h2::before { content: ""; width: .6em; height: .6em; border-radius: 50%; background: var(--c); }
+  .topic .row { display: flex; gap: calc(var(--k) * 0.08); }
+  .topic .lesson { flex: 0 0 auto; }
+  #chips { display: flex; justify-content: center; gap: calc(var(--k) * 0.035); padding: 0 var(--safe); white-space: nowrap; }
+  @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } #chips button { padding: .3em .75em; } }
+  #chips button { font: inherit; font-size: max(12px, calc(var(--k) * 0.068)); font-weight: 700; padding: .35em .9em; border: 0; border-radius: 999px; color: #2a4a6a; background: rgba(255,255,255,.7); cursor: pointer; display: flex; align-items: center; gap: .45em; }
+  #chips button::before { content: ""; width: .7em; height: .7em; border-radius: 50%; background: var(--c); }
+  #chips button.on { background: var(--c); color: #fff; }
+  #chips button.on::before { background: #fff; }
+  .lesson { position: relative; display: flex; flex-direction: column; align-items: center; gap: calc(var(--k) * 0.03); width: calc(var(--k) * 1.16); padding: calc(var(--k) * 0.07) calc(var(--k) * 0.08) calc(var(--k) * 0.09); border: 0; border-radius: calc(var(--k) * 0.11); background: #fff; box-shadow: 0 6px 0 #c7d8e6; font: inherit; cursor: pointer; }
   .lesson:active { transform: translateY(3px); box-shadow: 0 3px 0 #c7d8e6; }
-  .lesson .cover { width: 198px; height: 198px; border-radius: 16px; object-fit: cover; background: #e9f7d8; }
-  .lesson .nr { position: absolute; top: 6px; left: 6px; width: 40px; height: 40px; border-radius: 50%; background: #ffb347; color: #fff; font-size: 22px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 2px 4px rgba(0,0,0,.25); }
-  .lesson .name { font-size: 20px; font-weight: 700; color: #2a4a6a; text-align: center; }
-  .lesson .sub { font-size: 13px; color: #6a7f94; text-align: center; }
-  #langs button { font: inherit; padding: 6px 14px; border: 2px solid #2a4a6a; border-radius: 12px; background: #fff; color: #2a4a6a; margin: 0 4px; cursor: pointer; }
+  .lesson .cover { width: var(--k); height: var(--k); border-radius: calc(var(--k) * 0.08); object-fit: cover; background: #e9f7d8; pointer-events: none; -webkit-user-drag: none; }
+  .lesson .nr { position: absolute; top: calc(var(--k) * 0.03); left: calc(var(--k) * 0.03); width: calc(var(--k) * 0.19); height: calc(var(--k) * 0.19); border-radius: 50%; background: #ffb347; color: #fff; font-size: calc(var(--k) * 0.105); font-weight: 700; display: grid; place-items: center; box-shadow: 0 2px 4px rgba(0,0,0,.25); }
+  .lesson .name { font-size: max(13px, calc(var(--k) * 0.088)); font-weight: 700; color: #2a4a6a; text-align: center; line-height: 1.15; }
+  .lesson .sub { font-size: max(11px, calc(var(--k) * 0.056)); color: #6a7f94; text-align: center; }
+  #langs button { font: inherit; font-size: max(12px, calc(var(--k) * 0.06)); padding: .3em .8em; border: 2px solid #2a4a6a; border-radius: .7em; background: #fff; color: #2a4a6a; margin: 0 .25em; cursor: pointer; }
   #langs button.on { background: #2a4a6a; color: #fff; }
   #hud { position: fixed; top: 0; left: 0; right: 0; display: none; align-items: center; gap: 12px; padding: 10px 14px; pointer-events: none; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
   #hud .lesson-name { font-weight: 700; }
@@ -61,7 +77,7 @@
 <div id="hud"><span class="lesson-name"></span>
   <span class="phases"><img class="phase" data-stage="story" data-src="/game/assets/objects/ikona_opowiesc.webp" alt=""><img class="phase" data-stage="practice" data-src="/game/assets/objects/ikona_cwiczenia.webp" alt=""><img class="phase" data-stage="apply" data-src="/game/assets/objects/ikona_dom.webp" alt=""></span>
   <button class="menu">☰</button></div>
-<div id="menu"><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div></div>
+<div id="menu"><h1 id="title"></h1><div id="langs"></div><div id="lessons"></div><div id="chips"></div></div>
 <div id="subtitle"></div>
 <div id="iris"></div>
 <div id="fade"></div>

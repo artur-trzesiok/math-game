@@ -57,12 +57,39 @@ export class Player {
         <span class="name">${l.title[this.lang] || l.title.en}</span>
         <span class="sub">${l.subtitle?.[this.lang] || ""}</span>
       </button>`;
-    $("#lessons").innerHTML = topics.map((t) => `
-      <section class="topic">
-        ${t.title ? `<h2 style="--c:${t.color}">${t.title[this.lang] || t.title.en}</h2>` : ""}
+    // one long strip, a tinted block per topic; chips under it jump to a topic and show where the strip is
+    const pas = $("#lessons"), chips = $("#chips");
+    pas.innerHTML = topics.map((t) => `
+      <section class="topic" data-topic="${t.id}" style="--c:${t.color}">
+        ${t.title ? `<h2>${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
       </section>`).join("");
-    $("#lessons").onclick = (e) => { const b = e.target.closest(".lesson"); if (b) this.start(b.dataset.id); };
+    chips.innerHTML = topics.filter((t) => t.title).map((t) => `<button data-topic="${t.id}" style="--c:${t.color}">${t.title[this.lang] || t.title.en}</button>`).join("");
+    const bloki = [...pas.querySelectorAll(".topic")];
+    const naBlok = (sec) => pas.scrollTo({ left: sec.offsetLeft - parseFloat(getComputedStyle(pas).paddingLeft), behavior: "smooth" });
+    const odswiez = () => {
+      const x = pas.scrollLeft, max = pas.scrollWidth - pas.clientWidth;
+      pas.style.setProperty("--fade-l", x > 4 ? "40px" : "0px"); pas.style.setProperty("--fade-r", x < max - 4 ? "40px" : "0px");   // more this way
+      const srodek = x + pas.clientWidth * 0.35;
+      let akt = bloki[0]; for (const b of bloki) if (b.offsetLeft <= srodek) akt = b;
+      if (x >= max - 4) akt = bloki[bloki.length - 1];
+      chips.querySelectorAll("button").forEach((c) => c.classList.toggle("on", c.dataset.topic === akt?.dataset.topic));
+      this.menuX = x;
+    };
+    pas.onscroll = odswiez;
+    chips.onclick = (e) => { const c = e.target.closest("button"); if (c) naBlok(bloki.find((b) => b.dataset.topic === c.dataset.topic)); };
+    // a mouse wheel turns into sideways scroll; a mouse drag scrolls the strip (a finger does it natively)
+    pas.onwheel = (e) => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { pas.scrollLeft += e.deltaY; e.preventDefault(); } };
+    let ciag = null;
+    pas.onpointerdown = (e) => { if (e.pointerType !== "mouse" || e.button !== 0) return; ciag = { x: e.clientX, l: pas.scrollLeft, ruch: false }; };
+    pas.onpointermove = (e) => {
+      if (!ciag) return; const dx = e.clientX - ciag.x;
+      if (!ciag.ruch && Math.abs(dx) > 8) { ciag.ruch = true; pas.classList.add("drag"); try { pas.setPointerCapture(e.pointerId); } catch {} }
+      if (ciag.ruch) pas.scrollLeft = ciag.l - dx;
+    };
+    pas.onpointerup = pas.onpointercancel = () => { if (ciag?.ruch) { pas.classList.remove("drag"); pas.dataset.przeciagniete = "1"; setTimeout(() => delete pas.dataset.przeciagniete, 0); } ciag = null; };
+    pas.onclick = (e) => { if (pas.dataset.przeciagniete) return; const b = e.target.closest(".lesson"); if (b) this.start(b.dataset.id); };
+    pas.scrollLeft = this.menuX || 0; odswiez();                     // back from a lesson: where the child was
   }
 
   // ------------------------------------------------------------------ lesson

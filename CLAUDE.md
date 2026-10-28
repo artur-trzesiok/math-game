@@ -308,8 +308,12 @@ Rows and queues are laid out by the things' drawn widths (`c.bounds`), never a f
 the heads at full width (8 things at 1.3), ordering puts things on the floor within x +-3.1 and the places
 over the heads, the queue lesson stands animals feet on the floor, the bunny clearly the biggest.
 
-Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}); the menu shows
-one row per topic, numbers restart per topic, a lesson in no topic goes to a last row.
+Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}), in the order a child should take them
+(topics by the age of their easiest lesson, lessons by difficulty). The menu is ONE strip scrolled sideways (a
+finger, the mouse wheel, a mouse drag; no visible scrollbar, edges fade where there is more), each topic a tinted
+block with its name, chips under the strip jump to a topic and mark the current one; numbers restart per topic, a
+lesson in no topic goes to a last block. Everything is sized from the height (`--k` = 38vh, 31vh under 520 px) with
+pixel floors for text only: pixel caps made it tiny on a big screen. The strip keeps its place after a lesson.
 
 Transitions: `graj` remembers the pose of the last frame (every numeric channel,
 before the gaze) and the new animation blends in from it over `Lalka.przejscie`
