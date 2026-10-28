@@ -391,7 +391,7 @@ shakes it, a 3 s press on the padlock opens it for good (localStorage math_game.
 Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}), in the order a child should take them
 (topics by the age of their easiest lesson, lessons by difficulty). The menu is ONE strip scrolled sideways (a
 finger, the mouse wheel, a mouse drag; no visible scrollbar, edges fade where there is more), each topic a tinted
-block with its name, chips under the strip jump to a topic and mark the current one; numbers restart per topic, a
+block with its name on a plank, a signpost between two topics (no row of chips: it read as a web menu); numbers restart per topic, a
 lesson in no topic goes to a last block. Everything is sized from the height (`--k` = 38vh, 31vh under 520 px) with
 pixel floors for text only: pixel caps made it tiny on a big screen. The strip keeps its place after a lesson.
 

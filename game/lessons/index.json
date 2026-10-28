@@ -131,19 +131,139 @@
         "pl": "doliczanie od znanej liczby",
         "en": "counting on from a known number"
       }
+    },
+    {
+      "id": "spot_difference",
+      "title": {
+        "pl": "Znajdź różnice",
+        "en": "Spot the difference"
+      },
+      "subtitle": {
+        "pl": "co się zmieniło",
+        "en": "what has changed"
+      },
+      "wkrotce": true
+    },
+    {
+      "id": "long_short",
+      "title": {
+        "pl": "Krótki i długi",
+        "en": "Long and short"
+      },
+      "subtitle": {
+        "pl": "porównywanie długości",
+        "en": "comparing length"
+      },
+      "wkrotce": true
+    },
+    {
+      "id": "tall_short",
+      "title": {
+        "pl": "Wysoki i niski",
+        "en": "Tall and short"
+      },
+      "subtitle": {
+        "pl": "porównywanie wysokości",
+        "en": "comparing height"
+      },
+      "wkrotce": true
+    },
+    {
+      "id": "one_many",
+      "title": {
+        "pl": "Jeden czy wiele?",
+        "en": "One or many?"
+      },
+      "subtitle": {
+        "pl": "jeden, kilka, dużo",
+        "en": "one, a few, many"
+      },
+      "wkrotce": true
+    },
+    {
+      "id": "noticing_order",
+      "title": {
+        "pl": "Zauważanie porządku",
+        "en": "Noticing order"
+      },
+      "subtitle": {
+        "pl": "co jest po kolei",
+        "en": "what is in order"
+      },
+      "wkrotce": true
+    },
+    {
+      "id": "up_down",
+      "title": {
+        "pl": "U góry i na dole",
+        "en": "Up and down"
+      },
+      "subtitle": {
+        "pl": "gdzie to jest",
+        "en": "where it is"
+      },
+      "wkrotce": true
+    },
+    {
+      "id": "in_out",
+      "title": {
+        "pl": "W środku i na zewnątrz",
+        "en": "Inside and outside"
+      },
+      "subtitle": {
+        "pl": "gdzie to jest",
+        "en": "where it is"
+      },
+      "wkrotce": true
+    },
+    {
+      "id": "front_back",
+      "title": {
+        "pl": "Z przodu i z tyłu",
+        "en": "In front and behind"
+      },
+      "subtitle": {
+        "pl": "gdzie to jest",
+        "en": "where it is"
+      },
+      "wkrotce": true
     }
   ],
   "topics": [
     {
-      "id": "porownywanie",
+      "id": "co_pasuje",
       "title": {
-        "pl": "Porównywanie",
-        "en": "Comparing"
+        "pl": "Co pasuje?",
+        "en": "What goes together?"
       },
       "color": "#ffb347",
       "lessons": [
         "grouping_pro",
+        "spot_difference"
+      ]
+    },
+    {
+      "id": "wielkosc",
+      "title": {
+        "pl": "Porównujemy wielkość",
+        "en": "Comparing sizes"
+      },
+      "color": "#f28c6b",
+      "lessons": [
         "bigger_smaller_pro",
+        "long_short",
+        "tall_short"
+      ]
+    },
+    {
+      "id": "ile",
+      "title": {
+        "pl": "Jeden, wiele, więcej",
+        "en": "One, many, more"
+      },
+      "color": "#e3b23c",
+      "lessons": [
+        "one_many",
         "more_fewer_pro"
       ]
     },
@@ -156,6 +276,7 @@
       "color": "#c77dd6",
       "lessons": [
         "rhythm",
+        "noticing_order",
         "ordering"
       ]
     },
@@ -172,10 +293,23 @@
       ]
     },
     {
+      "id": "gdzie",
+      "title": {
+        "pl": "Gdzie to jest?",
+        "en": "Where is it?"
+      },
+      "color": "#7fb8e6",
+      "lessons": [
+        "up_down",
+        "in_out",
+        "front_back"
+      ]
+    },
+    {
       "id": "geometria",
       "title": {
-        "pl": "Geometria",
-        "en": "Geometry"
+        "pl": "Figury",
+        "en": "Shapes"
       },
       "color": "#5b9bd5",
       "lessons": [

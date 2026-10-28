@@ -85,6 +85,12 @@ keyhole, a dark-brown outline, friendly and toy-like, seen straight from the fro
 picture, on a fully TRANSPARENT background.
 {STYL}
 NO key, NO chain, NO text."""),
+    # the cover of a lesson that is not made yet (a placeholder in the menu)
+    "wkrotce": ("1024x1024", "opaque", f"""A square cover illustration: a small wooden painter's easel standing on a sunny
+meadow, a BLANK white canvas on it, a few paint brushes in a jar and a palette with bright paint blobs beside it,
+a little butterfly. Calm and friendly, waiting to be painted.
+{STYL}
+NO characters, NO animals except the butterfly, NO text."""),
 }
 CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz", "klodka", "klodka_otwarta"]
 DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900, "klodka": 420, "klodka_otwarta": 420}      # the long side kept (the menu draws them big)
@@ -107,6 +113,8 @@ def przytnij(im: Image.Image) -> Image.Image:
 def install() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     t = Image.open(WORK / "tlo.png").convert("RGB"); t.save(OUT / "tlo.webp", "WEBP", quality=82, method=6)
+    if (WORK / "wkrotce.png").exists():
+        Image.open(WORK / "wkrotce.png").convert("RGB").resize((512, 512), Image.LANCZOS).save(OUT / "wkrotce.webp", "WEBP", quality=82, method=6)
     for n in ("szyld_pl", "szyld_en"):
         im = przytnij(Image.open(WORK / f"{n}.png").convert("RGBA")); im.thumbnail((1200, 600), Image.LANCZOS)
         im.save(OUT / f"{n}.webp", "WEBP", quality=88, method=6)

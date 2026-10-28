@@ -98,7 +98,7 @@ export class Player {
     this.index = await (await fetch(v("/game/lessons/index.json"), { cache: "no-store" })).json();
     const wanted = PARAMS.get("lekcja");
     if (wanted && NAGRAJ) setTimeout(async () => { try { await (await import(v("/manager/autopilot.js"))).run(400, "scen"); } catch (e) { console.warn(e); } this.scenariuszKoniec = true; }, 1500);
-    if (wanted && this.index.lessons.some((l) => l.id === wanted)) await this.start(wanted, PARAMS.get("etap"));
+    if (wanted && this.index.lessons.some((l) => l.id === wanted && !l.wkrotce)) await this.start(wanted, PARAMS.get("etap"));
     else this.menu();
   }
 
@@ -127,25 +127,27 @@ export class Player {
     const topics = (this.index.topics || []).map((t) => ({ ...t, lessons: t.lessons.filter((id) => byId[id]) })).filter((t) => t.lessons.length);
     const rest = this.index.lessons.map((l) => l.id).filter((id) => !topics.some((t) => t.lessons.includes(id)));
     if (rest.length) topics.push({ id: "inne", title: null, color: "#ffb347", lessons: rest });
+    // a lesson not made yet (index.json "wkrotce"): its place in the topic, a waiting easel for a cover, not playable
     const card = (l, i, color) => `
-      <button class="lesson" data-id="${l.id}">
-        <img class="cover" src="${v(`/game/lessons/${l.id}/cover.webp`)}" alt="" onerror="this.style.visibility='hidden'">
+      <button class="lesson${l.wkrotce ? " wkrotce" : ""}" data-id="${l.id}">
+        <img class="cover" src="${v(l.wkrotce ? "/game/assets/menu/wkrotce.webp" : `/game/lessons/${l.id}/cover.webp`)}" alt="" onerror="this.style.visibility='hidden'">
         <span class="nr" style="background:${color}">${i + 1}</span>
         <span class="name">${l.title[this.lang] || l.title.en}</span>
-        <span class="sub">${l.subtitle?.[this.lang] || ""}</span>
+        <span class="sub">${l.wkrotce ? this.t("menu.wkrotce") : l.subtitle?.[this.lang] || ""}</span>
       </button>`;
     // one long strip, a tinted block per topic; chips under it jump to a topic and show where the strip is
     const pas = $("#lessons"), chips = $("#chips");
     // between two topics a signpost: the way goes on to a new topic
-    const skonczony = (t) => t.lessons.every((id) => Album.ma(id));
-    const otwarty = topics.map((t, i) => i === 0 || PARAMS.has("wszystko") || lista(OTWARTE).includes(t.id) || skonczony(topics[i - 1]));
+    const skonczony = (t) => t.lessons.filter((id) => !byId[id].wkrotce).every((id) => Album.ma(id));   // a placeholder never holds the way
+    const otwarty = [];                                              // a chain: the one before must be open AND finished
+    topics.forEach((t, i) => otwarty.push(i === 0 || PARAMS.has("wszystko") || lista(OTWARTE).includes(t.id) || (otwarty[i - 1] && skonczony(topics[i - 1]))));
     pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
       <section class="topic${otwarty[i] ? "" : " zamkniety"}" data-topic="${t.id}" style="--c:${t.color}">
         ${t.title ? `<h2>${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
         ${i ? `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">` : ""}
       </section>`).join("");
-    chips.innerHTML = topics.filter((t) => t.title).map((t) => `<button data-topic="${t.id}" style="--c:${t.color}">${t.title[this.lang] || t.title.en}</button>`).join("");
+    chips.innerHTML = ""; chips.style.display = "none";            // no row of topic chips: the planks over the cards and the signposts say where you are
     const bloki = [...pas.querySelectorAll(".topic")];
     const naBlok = (sec) => pas.scrollTo({ left: sec.offsetLeft - parseFloat(getComputedStyle(pas).paddingLeft), behavior: "smooth" });
     const odswiez = () => {
@@ -159,7 +161,7 @@ export class Player {
     };
     pas.onscroll = odswiez;
     // a card carries the sticker still to be won from its lesson; once it is in the album the card has none
-    for (const b of pas.querySelectorAll(".lesson"))
+    for (const b of pas.querySelectorAll(".lesson:not(.wkrotce)"))
       fetch(v(`/game/lessons/${b.dataset.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).then((m) => {
         if (!m.naklejka || b.querySelector(".nakl-karty")) return;
         const url = v(`/game/assets/${m.naklejka.obraz}.webp`);
@@ -199,7 +201,9 @@ export class Player {
       if (pas.dataset.przeciagniete) return;
       const zam = e.target.closest(".topic.zamkniety");
       if (zam) { zam.classList.remove("trzesie"); void zam.offsetWidth; zam.classList.add("trzesie"); dzwiekMenu("wrong"); powiedz(zam, `line.zamkniete_${zam.dataset.topic}`); return; }   // not yet: the topic shakes, Fox says what to finish first
-      const b = e.target.closest(".lesson"); if (b) this.start(b.dataset.id);
+      const b = e.target.closest(".lesson"); if (!b) return;
+      if (b.classList.contains("wkrotce")) { b.classList.remove("trzesie"); void b.offsetWidth; b.classList.add("trzesie"); return; }   // not made yet
+      this.start(b.dataset.id);
     };
     for (const k of pas.querySelectorAll(".topic.zamkniety .klodka")) {
       let t = null; const pusc = () => { clearTimeout(t); k.classList.remove("trzyma"); };

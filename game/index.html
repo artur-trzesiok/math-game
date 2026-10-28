@@ -124,7 +124,8 @@
     filter: drop-shadow(0 6px 8px rgba(60,30,0,.35)); transition: transform .7s ease-in, opacity .7s ease-in; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
   .topic .klodka.trzyma { animation: drga .18s infinite; }
   .topic .klodka.spada { transform: translate(-50%, 90%) rotate(28deg); opacity: 0; }
-  .topic.trzesie { animation: trzes .45s; }
+  .topic.trzesie, .lesson.trzesie { animation: trzes .45s; }
+  .lesson.wkrotce .sub { font-style: italic; opacity: .8; }
   @keyframes trzes { 20% { transform: translateX(-8px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
   .topic .glowa-mowi { position: absolute; left: calc(50% - var(--k) * 0.66); top: 44%; width: calc(var(--k) * 0.36); z-index: 7; border-radius: 50%; pointer-events: none;
     border: 4px solid #fff; box-shadow: 0 6px 14px rgba(60,30,0,.35); animation: wysun .35s ease-out, kiwa .5s ease-in-out .35s infinite alternate; }
