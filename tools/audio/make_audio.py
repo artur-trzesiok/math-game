@@ -287,6 +287,8 @@ def main() -> int:
     if (menu / "i18n").exists() and (not wanted or "menu" in wanted): lessons.append(menu)
     zachety = LESSONS.parent / "zachety"                        # encouragements when a child waits, every voice -> audio/<lang>/zachety
     if (zachety / "i18n").exists() and (not wanted or "zachety" in wanted): lessons.append(zachety)
+    etapy = LESSONS.parent / "etapy"                            # the narrator on the stage cards ("here comes the story!") -> audio/<lang>/etapy
+    if (etapy / "i18n").exists() and (not wanted or "etapy" in wanted): lessons.append(etapy)
     total = [0, 0, 0]
     for lesson in lessons:
         for lang in LANGS:

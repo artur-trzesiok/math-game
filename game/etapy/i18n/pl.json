@@ -1,0 +1,14 @@
+{
+  "line.etap_story": {
+    "who": "narrator",
+    "text": "Poznaj opowieść!"
+  },
+  "line.etap_practice": {
+    "who": "narrator",
+    "text": "Teraz ćwiczenia!"
+  },
+  "line.etap_apply": {
+    "who": "narrator",
+    "text": "Wracamy do domu!"
+  }
+}

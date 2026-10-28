@@ -1,0 +1,17 @@
+{
+ "line.etap_story": {
+  "hash": "2fa8c0862936",
+  "who": "narrator",
+  "text": "Poznaj opowieść!"
+ },
+ "line.etap_practice": {
+  "hash": "bdcb4dda4b65",
+  "who": "narrator",
+  "text": "Teraz ćwiczenia!"
+ },
+ "line.etap_apply": {
+  "hash": "3df9995c3552",
+  "who": "narrator",
+  "text": "Wracamy do domu!"
+ }
+}

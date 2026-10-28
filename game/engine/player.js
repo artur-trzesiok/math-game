@@ -282,6 +282,7 @@ export class Player {
     this.lesson = mod.default;
     this.strings = await loadStrings(`/game/lessons/${id}/i18n/${this.lang}.json`);
     this.zachety = this.zachety?.lang === this.lang ? this.zachety : { lang: this.lang, t: await loadStrings(`/game/zachety/i18n/${this.lang}.json`) };
+    if (this.etapyLang !== this.lang) { this.etapy = await loadStrings(`/game/etapy/i18n/${this.lang}.json`).catch(() => ({})); this.etapyLang = this.lang; }
     this.tl = translator([this.strings, this.ui]);
     $("#menu").style.display = "none"; $("#hud").style.display = "flex";
     $("#hud .lesson-name").textContent = meta.title[this.lang] || meta.title.en;
@@ -334,13 +335,17 @@ export class Player {
 
   // a card for about two seconds (a tap skips it): the lesson's start (cover + name) or a stage (icon + name),
   // the lesson's characters peeking in from the sides
-  async plansza({ obraz, ikona = false, napis, dzwiek = "etap" }) {
+  async plansza({ obraz, ikona = false, napis, dzwiek = "etap", linia = null }) {
     const el = $("#plansza"), glowy = Object.keys(this.lesson.characters || {}).map((n) => E.glowaObraz(n)).filter(Boolean).slice(0, 2);
     el.innerHTML = `<div class="karta"><img class="obraz ${ikona ? "ikona" : ""}" src="${obraz}" alt=""><div class="napis"></div>`
       + glowy.map((g, i) => `<img class="glowa ${i ? "p" : "l"}" src="${g.toDataURL()}" alt="">`).join("") + "</div>";
     el.querySelector(".napis").textContent = napis;
     el.className = "on"; this.stage?.sfx.graj(dzwiek);
-    await new Promise((ok) => { const t = setTimeout(ok, FAST ? 150 : 2100); el.onclick = () => { clearTimeout(t); ok(); }; });
+    // the narrator says the stage's name ("here comes the story!", game/etapy): the card stays until both are done
+    const tekst = linia && this.etapy?.[linia];
+    const mowa = tekst && !FAST ? this.speech.say({ lang: this.lang, lessonId: "etapy", key: linia, text: tekst.text, who: "narrator" }).catch(() => {}) : null;
+    await new Promise((ok) => { const t = setTimeout(ok, FAST ? 150 : 2100); el.onclick = () => { clearTimeout(t); this.speech.stop?.(); ok(); }; });
+    if (mowa) await Promise.race([mowa, new Promise((ok) => setTimeout(ok, 3500))]);
     el.className = "on out"; await new Promise((ok) => setTimeout(ok, FAST ? 30 : 330)); el.className = ""; el.innerHTML = "";
   }
 
@@ -356,7 +361,7 @@ export class Player {
   async runStage(st) {
     const scenes = this.lesson.stages[st] || [];
     const IKONA = { story: "ikona_opowiesc", practice: "ikona_cwiczenia", apply: "ikona_dom" };
-    if (scenes.length) await this.plansza({ obraz: v(`/game/assets/objects/${IKONA[st]}.webp`), ikona: true, napis: this.t(`stage.${st}`) });
+    if (scenes.length) await this.plansza({ obraz: v(`/game/assets/objects/${IKONA[st]}.webp`), ikona: true, napis: this.t(`stage.${st}`), linia: `line.etap_${st}` });
     if (this.abort) return;
     for (const el of document.querySelectorAll("#hud .phase")) {           // the phase strip: done / current / ahead
       const i = STAGES.indexOf(el.dataset.stage), j = STAGES.indexOf(st);

@@ -1,0 +1,17 @@
+{
+ "line.etap_story": {
+  "hash": "ac855b49ff57",
+  "who": "narrator",
+  "text": "Here comes the story!"
+ },
+ "line.etap_practice": {
+  "hash": "a42b02142a21",
+  "who": "narrator",
+  "text": "Now let's practise!"
+ },
+ "line.etap_apply": {
+  "hash": "b9ce573b60ad",
+  "who": "narrator",
+  "text": "Back home we go!"
+ }
+}
