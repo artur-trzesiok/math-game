@@ -446,9 +446,9 @@ export class Stage {
     ctx.fill(); ctx.stroke();
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
     const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: t, transparent: true, opacity: image ? 0.7 : 1, depthWrite: false }));
-    if (obrys) { m.renderOrder = 13; m.position.z = 0.3; }
     g.add(m);
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 9; });                  // zones under the stickers, over the props
+    if (obrys) { m.renderOrder = 13; m.position.z = 0.3; }                    // after the traverse, which reset it to 9
     const handle = { mesh: g, name, kind: "zone", x, y, w, h, base: 1, pulse: false, items: [],
       contains: (px, py) => Math.abs(px - x) < w / 2 + 0.2 && Math.abs(py - y) < h / 2 + 0.3,
       layout: (animate = true) => {
