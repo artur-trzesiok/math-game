@@ -34,6 +34,30 @@ fluffy clouds, a butterfly. Big simple clear shapes, everything well apart.
         "zmiany": ["the little bird on the fence is GONE (just the fence there)", "the three tulips are BLUE instead of red",
                    "the round window of the cottage is now a SQUARE window"],
     },
+    "rysunek": {
+        "obraz": f"""A square picture of a child's crayon drawing pinned to a wall: a house with a red roof, a big yellow sun with
+rays, a green tree, two flowers and a small cat, drawn with wax crayons on white paper, simple and cheerful.
+{STYL.replace("NO characters, ", "")}""",
+        "zmiany": ["the small cat is GONE", "the sun has NO rays", "the door of the house is RED instead of blue"],
+    },
+    "ogrodek": {
+        "obraz": f"""A square picture of a vegetable garden: a wooden watering can, a row of three orange carrots sticking out of the
+soil, a red ladybird on a big green leaf, a scarecrow with a straw hat, a blue bucket, a white fence behind.
+{STYL}""",
+        "zmiany": ["the ladybird is GONE", "the bucket is RED instead of blue", "the scarecrow has NO hat"],
+    },
+    "plaza": {
+        "obraz": f"""A square picture of a sunny sandy beach by the sea: a red-and-white beach umbrella, a yellow bucket and spade, a
+big sandcastle with one flag, a starfish on the sand, a sailing boat far on the sea, a seagull in the sky.
+{STYL}""",
+        "zmiany": ["the sandcastle's flag is GONE", "the starfish is PURPLE instead of orange", "the sailing boat is GONE"],
+    },
+    "pokoik": {
+        "obraz": f"""A square picture of a cosy children's room corner: a shelf with three books and a toy car, a teddy bear sitting
+on the floor, a red ball, a round rug, a window with green curtains, a picture of a boat on the wall.
+{STYL}""",
+        "zmiany": ["the red toy car on the shelf is GONE", "the red ball is GONE", "the boat picture shows a HOUSE instead"],
+    },
 }
 ROZMYCIE = 3.0
 PROG = 38
@@ -63,11 +87,26 @@ def build(n: str) -> None:
     ile_zmian = len(PARY[n]["zmiany"])
     h, w = m.shape
     roznice = []
-    for pole, i in pola[:ile_zmian]:
+    # every changed area as a circle; overlapping circles are one change (the rays around a sun come in pieces)
+    kola = []
+    for pole, i in pola:
         ys, xs = np.nonzero(lab == i)
-        cx, cy = xs.mean(), ys.mean(),
-        r = max(xs.max() - xs.min(), ys.max() - ys.min()) / 2 + 18
-        roznice.append({"x": round(cx / w, 4), "y": round(cy / h, 4), "r": round(max(r, 40) / w, 4), "pole": pole})
+        kola.append([xs.mean(), ys.mean(), max(xs.max() - xs.min(), ys.max() - ys.min()) / 2 + 18, pole])
+    zlane = True
+    while zlane:
+        zlane = False
+        for i1 in range(len(kola)):
+            for i2 in range(i1 + 1, len(kola)):
+                k1, k2 = kola[i1], kola[i2]
+                if np.hypot(k1[0] - k2[0], k1[1] - k2[1]) < k1[2] + k2[2]:
+                    x0, x1 = min(k1[0] - k1[2], k2[0] - k2[2]), max(k1[0] + k1[2], k2[0] + k2[2])
+                    y0, y1 = min(k1[1] - k1[2], k2[1] - k2[2]), max(k1[1] + k1[2], k2[1] + k2[2])
+                    kola[i1] = [(x0 + x1) / 2, (y0 + y1) / 2, max(x1 - x0, y1 - y0) / 2, k1[3] + k2[3]]
+                    kola.pop(i2); zlane = True; break
+            if zlane: break
+    kola.sort(key=lambda k: -k[3]); pola = kola
+    for cx, cy, r, pole in kola[:ile_zmian]:
+        roznice.append({"x": round(cx / w, 4), "y": round(cy / h, 4), "r": round(max(r, 40) / w, 4), "pole": int(pole)})
     if len(pola) != ile_zmian:
         print(f"  {n}: {len(pola)} changed areas found for {ile_zmian} changes (the largest kept) - check work/{n}_roznice.png")
     out = OUT / n; out.mkdir(parents=True, exist_ok=True)
