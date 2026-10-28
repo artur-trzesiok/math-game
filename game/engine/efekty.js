@@ -310,13 +310,26 @@ export function ruszNakladke(S, dt) {
     if (u.zycie <= 0) { N.scena.remove(m); m.geometry.dispose(); m.material.dispose(); N.czastki.splice(N.czastki.indexOf(m), 1); }
   }
 }
-// a big green tick drawn in, on the thing (or over a character)
+// a big green tick on the thing (or over a character): vector geometry - two thick strokes with round ends and
+// joins over a white rim - crisp at any size (the pencil ribbon's grain looked pixelated this thick); pops in
+function grubaLinia(pts, w, kolor, order) {
+  const g = new THREE.Group(), mat = new THREE.MeshBasicMaterial({ color: kolor, depthTest: false, depthWrite: false, transparent: true });
+  for (let i = 0; i < pts.length - 1; i++) {
+    const [ax, ay] = pts[i], [bx, by] = pts[i + 1], dl = Math.hypot(bx - ax, by - ay);
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(dl, w), mat); m.position.set((ax + bx) / 2, (ay + by) / 2, 0); m.rotation.z = Math.atan2(by - ay, bx - ax); m.renderOrder = order; g.add(m);
+  }
+  for (const [x, y] of pts) { const c = new THREE.Mesh(new THREE.CircleGeometry(w / 2, 40), mat); c.position.set(x, y, 0); c.renderOrder = order; g.add(c); }
+  return g;
+}
 export async function ptaszek(S, h = null, { na = 1.2 } = {}) {
-  const p = punktRzeczy(S, h), s = 0.9;
-  const kreska = await S.line([[p.x - 0.42 * s, p.y], [p.x - 0.1 * s, p.y - 0.33 * s], [p.x + 0.5 * s, p.y + 0.42 * s]], { color: "#3fbf3f", width: 0.22, duration: 0.3, strong: true, name: "ptaszek" });
-  kreska.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = 47; });
-  if (na) setTimeout(() => kreska.remove(), na * 1000);
-  return kreska;
+  const p = punktRzeczy(S, h), k = 0.9, pts = [[-0.42 * k, 0], [-0.1 * k, -0.33 * k], [0.5 * k, 0.42 * k]];
+  const g = new THREE.Group(); g.position.set(p.x, p.y, 0.95);
+  g.add(grubaLinia(pts, 0.34, 0xffffff, 47), grubaLinia(pts, 0.2, 0x3fbf3f, 47.5));
+  g.scale.setScalar(0.001); S.scene.add(g);
+  const handle = { mesh: g, remove: () => { S.scene.remove(g); g.traverse((o) => { if (o.isMesh) o.geometry.dispose(); }); } };
+  await S.tween(T(0.32), (s) => g.scale.setScalar(Math.max(0.001, easeOutBack(s))));
+  if (na) setTimeout(async () => { await S.tween(T(0.2), (s) => g.scale.setScalar(Math.max(0.001, 1 - s))); handle.remove(); }, na * 1000);
+  return handle;
 }
 
 // ====================================================================== emotion bubbles
