@@ -497,7 +497,8 @@ export async function ptaszek(S, h = null, { na = 1.2 } = {}) {
 // a small white bubble over the head with a big icon: what the character feels, readable from the sofa
 export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach"];
 // painted faces set into a bubble (a sweat drop read as nothing to a child): a sticker drawn over the bubble once loaded
-const MALOWANE = { pot: "/game/assets/objects/emocja_ojej.webp", smutek: "/game/assets/objects/emocja_smutek.webp" };
+const MALOWANE = Object.fromEntries(["serce", "radosc", "zlosc", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach", "smutek"].map((n) => [n, `/game/assets/objects/emocja_${n}.webp`]));
+MALOWANE.pot = "/game/assets/objects/emocja_ojej.webp";
 function ikonaEmocji(rodzaj) {
   const tex = rysujDymek(rodzaj);
   if (MALOWANE[rodzaj]) {
@@ -517,6 +518,7 @@ function rysujDymek(rodzaj) {
     x.fillStyle = "#fff"; x.beginPath(); x.ellipse(128, 112, 98, 86, 0, 0, 7); x.fill();
     x.lineCap = "round"; x.lineJoin = "round";
     const C = (k) => { x.fillStyle = k; x.strokeStyle = k; };
+    if (MALOWANE[rodzaj]) return;                                  // only the bubble: the painted sign goes in when loaded
     if (rodzaj === "zlosc") {                                    // the comic anger vein: four curved brackets around a gap
       C("#e2453c"); x.lineWidth = 20;
       for (const [dx, dy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { x.beginPath(); x.moveTo(128 + dx * 16, 112 + dy * 62); x.quadraticCurveTo(128 + dx * 16, 112 + dy * 16, 128 + dx * 62, 112 + dy * 16); x.stroke(); }
@@ -730,6 +732,7 @@ function teksturaCzastki(rodzaj) {
 const KOLOR_CZASTKI = { piorka: "#ffffff", deszcz: "#e6f1ff", snieg: "#ffffff", swietliki: "#fff1a8", liscie: ["#e8a23a", "#d9682b", "#9cc24a", "#c9462c"], pylek: "#fff6d8", babelki: "#e8f7ff" };
 export function czastki(S, rodzaj, { gestosc = 1, wiatr = 0 } = {}) {
   if (S.warstwaCzastek) { S.scene.remove(S.warstwaCzastek.grupa); S.warstwaCzastek.grupa.traverse((o) => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } }); S.warstwaCzastek = null; }
+  S.muzyka?.pogoda(rodzaj && CZASTKI.includes(rodzaj) ? rodzaj : null);       // the weather is heard too, quietly
   if (!rodzaj || !CZASTKI.includes(rodzaj)) return null;
   const d = S.design(0), W = d.w * 1.1, H = d.h * 1.1, grupa = new THREE.Group(); S.scene.add(grupa);
   const n = Math.round({ deszcz: 360, snieg: 110, swietliki: 26, liscie: 60, piorka: 45, pylek: 55, babelki: 18 }[rodzaj] * gestosc);

@@ -4,6 +4,7 @@
   python tools/audio/run.py                 # every lesson, every language
   python tools/audio/run.py bigger_smaller_pro
   python tools/audio/run.py --sfx           # the sound effects (make_sfx.py)
+  python tools/audio/run.py --music         # the places' music and the weather loops (make_music.py)
 
 Takes ELEVENLABS_* from the first of ENV_FILES that has the key (the repository's .env first),
 falling back to the environment.
@@ -31,6 +32,8 @@ if not os.environ.get("ELEVENLABS_API_KEY"):
 # --sfx: the sound effects (make_sfx.py) instead of the voices
 if sys.argv[1:2] == ["--sfx"]:
     sys.argv = [str(Path(__file__).with_name("make_sfx.py")), *sys.argv[2:]]
+elif sys.argv[1:2] == ["--music"]:                  # the places' music and the weather loops (make_music.py)
+    sys.argv = [str(Path(__file__).with_name("make_music.py")), *sys.argv[2:]]
 else:
     sys.argv = [str(Path(__file__).with_name("make_audio.py")), *sys.argv[1:]]
 runpy.run_path(sys.argv[0], run_name="__main__")

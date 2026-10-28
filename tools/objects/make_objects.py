@@ -904,6 +904,118 @@ A small ROUND wooden door for the tree hollow in the reference, seen straight on
 a thin darker rim, a tiny round knob and a little leaf painted on it. Only the door - NO tree, NO frame.""",
 }
 
+# the speech bubbles' signs painted (efekty.js MALOWANE): the vector ones looked foreign next to the painted faces
+SHEETS["emocja_serce"] = {
+    "names": ["emocja_serce"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: one plump glossy red heart, soft highlight.""",
+}
+SHEETS["emocja_radosc"] = {
+    "names": ["emocja_radosc"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: three sparkling golden stars of different sizes, twinkling, happy.""",
+}
+SHEETS["emocja_zlosc"] = {
+    "names": ["emocja_zlosc"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: a little angry red cartoon storm cloud with a tiny lightning zigzag, cute, not scary.""",
+}
+SHEETS["emocja_sen"] = {
+    "names": ["emocja_sen"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: a small blue crescent moon with three soft 'z' letters floating up, sleepy.""",
+}
+SHEETS["emocja_wykrzyknik"] = {
+    "names": ["emocja_wykrzyknik"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: one big bold red exclamation mark, cheerful and round.""",
+}
+SHEETS["emocja_zarowka"] = {
+    "names": ["emocja_zarowka"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: one glowing yellow light bulb with little rays around it, a bright idea.""",
+}
+SHEETS["emocja_zimno"] = {
+    "names": ["emocja_zimno"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: one pale blue snowflake with a few tiny frost sparkles, cold.""",
+}
+SHEETS["emocja_mokro"] = {
+    "names": ["emocja_mokro"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: ONE single big soft blue water drop, nothing else (no other drops).""",
+}
+SHEETS["emocja_muzyka"] = {
+    "names": ["emocja_muzyka"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: two joined purple music notes with a little sparkle, cheerful.""",
+}
+SHEETS["emocja_strach"] = {
+    "names": ["emocja_strach"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_ojej"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: a round warm-yellow face that is SCARED - very wide eyes with small pupils, eyebrows high, the mouth wide open in a gasp, two little shiver lines on each side of the face; cute, not scary.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

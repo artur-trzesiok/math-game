@@ -7,7 +7,7 @@
 const ROW_Y = 1.4;
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
-const MIEJSCE = { lisek: 0, sowa: 1, wiewiorka: 2 };       // by size: the biggest first (Owl is as tall as Fox, Squirrel the smallest)
+const MIEJSCE = { sowa: 0, lisek: 1, wiewiorka: 2 };       // head sizes, biggest first: Owl has much the biggest head, Squirrel the smallest
 
 // garment stickers of one kind at sizes (biggest first); h.ranga = 0 for the biggest
 async function rzeczy(c, rzecz, rozmiary, { y = -2.4, odstep = 2.2 } = {}) {
@@ -169,8 +169,8 @@ export default {
           c.cien(cien, false); await c.say("wiewiorka", duzy ? "line.p_cien_duzy" : "line.p_cien_maly");
           gw.dodaj(); c.clear();
         }
-        // 5. caps by size: the biggest for Fox, the middle for Owl, the smallest for Squirrel
-        const czapki = await rzeczy(c, "czapka_z_daszkiem", [1.5, 1.2, 0.9], { odstep: 2.2 });
+        // 5. caps by size: the biggest for Owl, the middle for Fox, the smallest for Squirrel (over the heads, not on the floor)
+        const czapki = await rzeczy(c, "czapka_z_daszkiem", [1.5, 1.2, 0.9], { y: 1.4, odstep: 2.2 });
         await c.say("lisek", "line.p_czapki");
         await c.ubieranie({ rzeczy: czapki, kto: ["lisek", "sowa", "wiewiorka"], pasuje: pasujeRozmiar, wrong: zleRozmiar });
         gw.dodaj();

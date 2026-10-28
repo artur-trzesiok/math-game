@@ -39,6 +39,8 @@ export function texture(url) {
 const easeInOut = (s) => s * s * (3 - 2 * s);
 const easeOutBack = (s) => { const c = 1.7; return 1 + (c + 1) * Math.pow(s - 1, 3) + c * Math.pow(s - 1, 2); };   // a small overshoot
 
+// stickers with a handle, and the side it is drawn on (1 = right): a carried one turns its handle to the paw
+const UCHO = { kubek: 1, kubek_czerwony: 1, filizanka: 1, kubek_lyzka: 1 };
 const KADENCJA = 1.5;                  // a capped walk steps at most this many times its natural speed, then glides
 export class Stage {
   constructor(container, speech) {
@@ -152,6 +154,7 @@ export class Stage {
       if (na === "plecy") { h.mesh.position.set(p.x, p.y + h.base * 0.35, L.korzen.position.z + 0.2); h.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = ro + 1; }); continue; }
       // the paw holds its near edge: the thing sits a little in front (profile) or beside (front), under the paw
       const dx = kier * h.base * (widok === "profil" ? 0.3 : 0.34), dy = widok === "profil" ? -h.base * 0.05 : -h.base * 0.18;
+      if (UCHO[h.name] && h.icon) { const z = UCHO[h.name] === kier ? -1 : 1; if (Math.sign(h.icon.scale.x) !== z) { h.icon.scale.x *= -1; h.icon.material.side = THREE.DoubleSide; } }   // the handle towards the paw
       h.mesh.position.set(p.x + dx, p.y + dy, L.korzen.position.z + (widok === "profil" ? 0.02 : 0.07));
       h.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = ro + 0.5; });          // in front of its carrier, never hidden behind
     }
@@ -915,6 +918,6 @@ export class Stage {
     await fetch(`/api/snap?name=${name}`, { method: "POST", body: blob });
     return name;
   }
-  dispose() { this.muzyka?.stop(); clearInterval(this.muzyka?.t);   // the music goes with the lesson
+  dispose() { this.muzyka?.zamknij();                                  // the music fades out with the lesson
     for (const L of Object.values(this.puppets)) if (L.cien) this.scene.remove(L.cien); this.running = false; clearInterval(this.watchdog); window.removeEventListener("resize", this.onResize); this.renderer.dispose(); this.renderer.domElement.remove(); }
 }

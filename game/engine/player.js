@@ -40,7 +40,14 @@ const menuMuzyka = {
   graj() {
     if (PARAMS.has("cicho")) return;
     this.gra = true; clearInterval(this.fade);
-    if (!this.a) { this.a = new Audio(v("/game/audio/muzyka/menu.mp3")); this.a.loop = true; }
+    // two ~150 s versions in turn (tools/audio/make_music.py "menu"); the old 45 s tune if they are not made yet
+    if (!this.a) {
+      this.n = Math.floor(Math.random() * 2);
+      const nast = () => { this.n = (this.n + 1) % 2; this.a.src = v(`/game/audio/muzyka/menu_${this.n + 1}.mp3`); if (this.gra) this.a.play()?.catch(() => {}); };
+      this.a = new Audio(v(`/game/audio/muzyka/menu_${this.n + 1}.mp3`));
+      this.a.onended = nast;
+      this.a.onerror = () => { if (!this.a.src.endsWith("menu.mp3")) { this.a.onended = null; this.a.loop = true; this.a.src = v("/game/audio/muzyka/menu.mp3"); if (this.gra) this.a.play()?.catch(() => {}); } };
+    }
     this.a.volume = MENU_GLOS;
     const sprobuj = () => { if (this.gra && this.a.paused) this.a.play()?.catch(() => {}); };
     sprobuj(); naPierwszyDotyk(sprobuj);
@@ -553,7 +560,7 @@ export class Player {
       noc: guard((o) => E.noc(S, o)),
       swiatlo: (cel, o) => { alive(); return E.swiatlo(S, typeof cel === "string" ? S.puppets[cel] : cel, o); },
       // music for a game: plays until stopped (handle.stop()), quieter while someone speaks
-      muzyka: (n, o) => { alive(); return S.sfx.muzyka(n, o); },
+      muzyka: (n, o) => { alive(); const m = S.sfx.muzyka(n, o); S.muzyka.cicho++; const st = m.stop; let raz = false; m.stop = (ms) => { if (!raz) { raz = true; S.muzyka.cicho--; } st(ms); }; return m; },   // a scene's own tune: the place's music gives way
       // the characters' head badges in one picture (a card that means "the friends"), a data: URL for object({obraz})
       glowy: (kto) => {
         const g = kto.map((n) => E.glowaObraz(n)).filter(Boolean), k = Math.ceil(Math.sqrt(g.length)), c = document.createElement("canvas");
@@ -565,13 +572,13 @@ export class Player {
       // with `linia` the row is read aloud: `kto` says the line and each thing bumps as its name is said (h.slowo:
       // {pl: [...], en: [...]} or `slowo(h)`); without the words' times (no recording, ?szybko) the row runs by the clock
       rytm: guard(async (items, o = {}) => {
-        if (!o.linia) return R.rytm(S, items, { ...o, tempo: FAST ? 0.15 : o.tempo });
+        if (!o.linia) return S.muzyka.ucisz(R.rytm(S, items, { ...o, tempo: FAST ? 0.15 : o.tempo }));
         const slowa = (h) => [].concat((o.slowo ? o.slowo(h) : h.slowo?.[lang] ?? h.slowo) || []).map((w) => String(w).toLowerCase());
         let i = 0;
         await say(o.kto, o.linia, { anim: o.anim, onSlowo: (w) => { const h = items[i]; if (h && slowa(h).includes(w)) { i++; R.stuk(S, h); } } });
         if (!i) await R.rytm(S, items, { tempo: FAST ? 0.15 : 0.5, bezDzwieku: true });
       }),
-      taniec: guard((who, ruchy, o = {}) => R.taniec(S, who, ruchy, { ...o, tempo: FAST ? 0.25 : o.tempo })),
+      taniec: guard((who, ruchy, o = {}) => S.muzyka.ucisz(R.taniec(S, who, ruchy, { ...o, tempo: FAST ? 0.25 : o.tempo }))),
       ruch: (who, nazwa, o = {}) => R.ruch(S, who, nazwa, o),
       potknij: guard((who) => R.potknij(S, who)),
       zamroz: (who, on = true) => R.zamroz(S, who, on),
@@ -582,7 +589,7 @@ export class Player {
       wieza: (o) => { const w = M.wieza(S, o); w.gotowe = wDzialaniu(w.gotowe); return w; },
       kubki: guard((o) => M.kubki(S, o)),
       kupka: guard((name, n, o) => M.kupka(S, name, n, o)),
-      dzwieki: guard((n, o = {}) => M.dzwieki(S, n, { ...o, tempo: FAST ? 0.15 : o.tempo })),
+      dzwieki: guard((n, o = {}) => S.muzyka.ucisz(M.dzwieki(S, n, { ...o, tempo: FAST ? 0.15 : o.tempo }))),   // counting by ear: the music falls silent
       podziel: (obraz, o) => wDzialaniu(M.podziel(S, obraz, o)),
       memory: (pary, o) => wDzialaniu(M2.memory(S, pary, o), "wskaz"),
       sklepik: (o) => wDzialaniu(M2.sklepik(S, o)),

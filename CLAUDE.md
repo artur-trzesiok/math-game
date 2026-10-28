@@ -357,7 +357,7 @@ blurred difference; review `tools/roznice/work/<name>_roznice.png`); `ctx.koloro
 (`tools/kolorowanki/make_kolorowanka.py`: a flat-coloured page split into regions, colours clustered into a palette).
 A drawing finger takes the stage's pointers while set (`S.palec` {down, move, up}); tests drive them through
 `S.slad.dokoncz()`, `S.zagroda.dokoncz()`, `S.winda.dokoncz()`, `S.podziel.tnij(kat)`, `S.memory.karty`, `S.strzalki`, `S.kolorowanka.dokoncz()`.
-Music: `game/audio/muzyka/` (SOURCES.md says where each tune comes from); the menu's tune is ElevenLabs Music.
+Music: `game/audio/muzyka/` (SOURCES.md says where each tune comes from), all ElevenLabs (`python tools/audio/run.py --music`, make_music.py - through run.py: a stale ELEVENLABS_API_KEY sits in the user's environment and the repo's .env must win). Every scenery belongs to a theme (`muzyka.js` MOTYW: laka, las, woda, dom, noc, teatr; inserts on a plain colour: cwiczenia), each theme has two ~150 s versions played in turn (a 30-45 s loop got tiring over long use); a change of place crossfades, the same theme plays on. The weather particles have a quiet loop each (`game/audio/pogoda/<rodzaj>.mp3`, ~20 s) next to the music. Both duck under speech and fall silent while a scene listens (`dzwieki`, `rytm`, `taniec`, a scene's own `ctx.muzyka`); `?cicho` mutes them. The menu: menu_1 / menu_2 in turn.
 Every lesson also gets, without its code doing anything: a start card (cover + name) and a card before every
 stage (icon + name), the characters' head badges peeking in (`plansza`, 2 s, a tap skips); encouragement when the
 child waits 9 s without a touch (game/zachety: invitations, never praise, in the instructing character's voice;
