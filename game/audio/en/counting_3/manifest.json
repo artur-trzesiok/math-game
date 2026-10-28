@@ -1,0 +1,282 @@
+{
+ "line.a_urodziny": {
+  "hash": "bf18eef8df91",
+  "who": "jez",
+  "text": "Today is my birthday!"
+ },
+ "line.a_ile_lat": {
+  "hash": "f06762575cd3",
+  "who": "wiewiorka",
+  "text": "Happy birthday, Hedgehog! How old are you?"
+ },
+ "line.a_trzy": {
+  "hash": "0eec81d9dc96",
+  "who": "jez",
+  "text": "I'm three years old!"
+ },
+ "line.a_swieczki": {
+  "hash": "c903f5f07f64",
+  "who": "mis",
+  "text": "I brought candles for the cake. I'll count them!"
+ },
+ "line.a_licze_zle": {
+  "hash": "c33c01912608",
+  "who": "mis",
+  "text": "One, two, three, four..."
+ },
+ "line.a_cztery": {
+  "hash": "fbbcad8db515",
+  "who": "mis",
+  "text": "Four candles!"
+ },
+ "line.a_dwa_razy": {
+  "hash": "f2fb53339667",
+  "who": "wiewiorka",
+  "text": "Bear, you counted the middle one twice!"
+ },
+ "line.a_kazda_raz": {
+  "hash": "e118699b776a",
+  "who": "wiewiorka",
+  "text": "When we count, we touch each thing only once. The last number tells how many there are."
+ },
+ "line.a_ty_policz": {
+  "hash": "bee6f1765912",
+  "who": "jez",
+  "text": "Count my candles. Touch each one in turn."
+ },
+ "line.a_trzy_swieczki": {
+  "hash": "3cd20a0161da",
+  "who": "wiewiorka",
+  "text": "Three candles! As many as Hedgehog's years."
+ },
+ "line.a_rozumiem": {
+  "hash": "aced657cd68d",
+  "who": "mis",
+  "text": "Each only once. Now I understand."
+ },
+ "line.a_cyfry": {
+  "hash": "9b9089e2b080",
+  "who": "wiewiorka",
+  "text": "Numbers can also be written with digits. Look."
+ },
+ "line.a_cyfra1": {
+  "hash": "f2a6aa99c089",
+  "who": "wiewiorka",
+  "text": "This is one."
+ },
+ "line.a_cyfra2": {
+  "hash": "92704e2e8c74",
+  "who": "wiewiorka",
+  "text": "This is two."
+ },
+ "line.a_cyfra3": {
+  "hash": "c1d204c15425",
+  "who": "wiewiorka",
+  "text": "And this is three."
+ },
+ "line.a_narysuj_trzy": {
+  "hash": "abb723b6b8e2",
+  "who": "jez",
+  "text": "Draw a three for my cake. Run your finger from the green dot."
+ },
+ "line.a_moja_trojka": {
+  "hash": "12c87d3608c0",
+  "who": "jez",
+  "text": "My three! Because I'm three years old."
+ },
+ "line.b_maliny": {
+  "hash": "58158422297a",
+  "who": "mis",
+  "text": "Raspberries grow in the forest. We need three for the cake."
+ },
+ "line.b_daj": {
+  "hash": "19e3ac9f73e4",
+  "who": "wiewiorka",
+  "text": "Give Bear three raspberries. Drag them one at a time and count."
+ },
+ "line.b_za_duzo": {
+  "hash": "c8deac33aa45",
+  "who": "mis",
+  "text": "I already have three! No more needed."
+ },
+ "line.b_trzy": {
+  "hash": "3867b43b28de",
+  "who": "mis",
+  "text": "One, two, three raspberries. Just right for the cake!"
+ },
+ "line.b_klaszcze": {
+  "hash": "0f3a294caa53",
+  "who": "jez",
+  "text": "I'm clapping for my guests! Listen and count."
+ },
+ "line.b_ile_klasniec": {
+  "hash": "ac8ff1ed7fb4",
+  "who": "wiewiorka",
+  "text": "How many times did Hedgehog clap? Point to the number."
+ },
+ "line.b_klask1": {
+  "hash": "caad88e1af67",
+  "who": "jez",
+  "text": "One time!"
+ },
+ "line.b_klask2": {
+  "hash": "84d2d5bbc164",
+  "who": "jez",
+  "text": "Two times!"
+ },
+ "line.b_klask3": {
+  "hash": "3855d495d08e",
+  "who": "jez",
+  "text": "Three times!"
+ },
+ "line.b_do_domu": {
+  "hash": "b6589fcb2f6c",
+  "who": "mis",
+  "text": "We have the raspberries. Let's go home and bake the cake!"
+ },
+ "line.p_start": {
+  "hash": "bf24a60ff05c",
+  "who": "wiewiorka",
+  "text": "Let's practise counting to three! I have five games."
+ },
+ "line.p_ile_jablek": {
+  "hash": "44a4f72f9cf8",
+  "who": "mis",
+  "text": "How many apples are there? Count and point to the number."
+ },
+ "line.p_ile_jablek_nie": {
+  "hash": "4c8626fe2bb6",
+  "who": "mis",
+  "text": "Count again, touching each apple."
+ },
+ "line.p_dobrze": {
+  "hash": "b078bb8b91d9",
+  "who": "wiewiorka",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.mis": {
+  "hash": "2c107cf2e33b",
+  "who": "mis",
+  "text": "Bravo!"
+ },
+ "line.p_dwa": {
+  "hash": "1126102db741",
+  "who": "wiewiorka",
+  "text": "Give me two acorns. Drag them one at a time."
+ },
+ "line.p_dwa_juz": {
+  "hash": "c54244425a5d",
+  "who": "wiewiorka",
+  "text": "I already have two, that's enough!"
+ },
+ "line.p_dwa_ok": {
+  "hash": "414f622ce0b4",
+  "who": "wiewiorka",
+  "text": "One, two. Thank you!"
+ },
+ "line.p_rysuj": {
+  "hash": "7a553e2a2820",
+  "who": "mis",
+  "text": "Draw a one and a two with your finger."
+ },
+ "line.p_sluchaj": {
+  "hash": "87b57b3ee762",
+  "who": "mis",
+  "text": "Listen to the drum."
+ },
+ "line.p_ile_bum": {
+  "hash": "d049bc275087",
+  "who": "mis",
+  "text": "How many times did the drum play? Point to the number."
+ },
+ "line.p_trzy": {
+  "hash": "ed9f9e9e00ab",
+  "who": "wiewiorka",
+  "text": "Where are three pears? Point to them."
+ },
+ "line.p_trzy_nie": {
+  "hash": "a1cf2d435873",
+  "who": "wiewiorka",
+  "text": "Count the pears again. We're looking for three."
+ },
+ "line.d_tort": {
+  "hash": "6275fc9aa4d5",
+  "who": "mis",
+  "text": "The cake is ready! Count the candles."
+ },
+ "line.d_trzy_lata": {
+  "hash": "a348e869100d",
+  "who": "jez",
+  "text": "Three candles, because I'm three! Hooray!"
+ },
+ "line.d_lyzki": {
+  "hash": "149a2169ca33",
+  "who": "wiewiorka",
+  "text": "We need spoons for the cake. Count them."
+ },
+ "line.d_kazdy": {
+  "hash": "61a0685b4bea",
+  "who": "wiewiorka",
+  "text": "Three spoons for three friends!"
+ },
+ "line.d_rodzice": {
+  "hash": "6cd35f0622bc",
+  "who": "mis",
+  "text": "Count to three with your parents: three stairs, three apples, three jumps!"
+ },
+ "line.za_duzo": {
+  "hash": "d77e15ae574f",
+  "who": "mis",
+  "text": "That's enough!"
+ },
+ "line.za_duzo.wiewiorka": {
+  "hash": "b374ccd58b57",
+  "who": "wiewiorka",
+  "text": "That's enough!"
+ },
+ "line.n1": {
+  "hash": "b450b7ae1d7d",
+  "who": "wiewiorka",
+  "text": "One!"
+ },
+ "line.n1.mis": {
+  "hash": "2fe167afcc42",
+  "who": "mis",
+  "text": "One!"
+ },
+ "line.n2": {
+  "hash": "9ffb03ee7b98",
+  "who": "wiewiorka",
+  "text": "Two!"
+ },
+ "line.n2.mis": {
+  "hash": "26682c6714eb",
+  "who": "mis",
+  "text": "Two!"
+ },
+ "line.n3": {
+  "hash": "5641cc4a1ea8",
+  "who": "wiewiorka",
+  "text": "Three!"
+ },
+ "line.n3.mis": {
+  "hash": "9ce81f0ef518",
+  "who": "mis",
+  "text": "Three!"
+ },
+ "line.naklejka_daj": {
+  "hash": "77c0b27b3894",
+  "who": "jez",
+  "text": "Thank you for my birthday! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "2028c3a69b19",
+  "who": "jez",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "b22450fa3fe4",
+  "who": "narrator",
+  "text": "This is Hedgehog's birthday cake with three candles. We got it when we learnt to count to three."
+ }
+}

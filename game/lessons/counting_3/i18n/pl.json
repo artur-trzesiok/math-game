@@ -1,0 +1,221 @@
+{
+  "line.a_urodziny": {
+    "who": "jez",
+    "text": "Dziś są moje urodziny!"
+  },
+  "line.a_ile_lat": {
+    "who": "wiewiorka",
+    "text": "Wszystkiego najlepszego, Jeżyku! Ile masz lat?"
+  },
+  "line.a_trzy": {
+    "who": "jez",
+    "text": "Mam trzy lata!"
+  },
+  "line.a_swieczki": {
+    "who": "mis",
+    "text": "Przyniosłem świeczki na tort. Policzę je!"
+  },
+  "line.a_licze_zle": {
+    "who": "mis",
+    "text": "Jeden, dwa, trzy, cztery..."
+  },
+  "line.a_cztery": {
+    "who": "mis",
+    "text": "Cztery świeczki!"
+  },
+  "line.a_dwa_razy": {
+    "who": "wiewiorka",
+    "text": "Misiu, tę środkową policzyłeś dwa razy!"
+  },
+  "line.a_kazda_raz": {
+    "who": "wiewiorka",
+    "text": "Kiedy liczymy, dotykamy każdej rzeczy tylko raz. Ostatnia liczba mówi, ile ich jest."
+  },
+  "line.a_ty_policz": {
+    "who": "jez",
+    "text": "Policz moje świeczki. Dotknij każdej po kolei."
+  },
+  "line.a_trzy_swieczki": {
+    "who": "wiewiorka",
+    "text": "Trzy świeczki! Tyle, ile lat ma Jeżyk."
+  },
+  "line.a_rozumiem": {
+    "who": "mis",
+    "text": "Każda tylko raz. Teraz rozumiem."
+  },
+  "line.a_cyfry": {
+    "who": "wiewiorka",
+    "text": "Liczby można też zapisać cyframi. Popatrz."
+  },
+  "line.a_cyfra1": {
+    "who": "wiewiorka",
+    "text": "To jest jeden."
+  },
+  "line.a_cyfra2": {
+    "who": "wiewiorka",
+    "text": "To jest dwa."
+  },
+  "line.a_cyfra3": {
+    "who": "wiewiorka",
+    "text": "A to jest trzy."
+  },
+  "line.a_narysuj_trzy": {
+    "who": "jez",
+    "text": "Narysuj trójkę na moim torcie. Poprowadź palcem od zielonej kropki."
+  },
+  "line.a_moja_trojka": {
+    "who": "jez",
+    "text": "Moja trójka! Bo mam trzy lata."
+  },
+  "line.b_maliny": {
+    "who": "mis",
+    "text": "W lesie rosną maliny. Na tort potrzebujemy trzech."
+  },
+  "line.b_daj": {
+    "who": "wiewiorka",
+    "text": "Daj Misiowi trzy maliny. Przeciągaj je po jednej i licz."
+  },
+  "line.b_za_duzo": {
+    "who": "mis",
+    "text": "Już mam trzy! Więcej nie potrzeba."
+  },
+  "line.b_trzy": {
+    "who": "mis",
+    "text": "Jeden, dwa, trzy maliny. W sam raz na tort!"
+  },
+  "line.b_klaszcze": {
+    "who": "jez",
+    "text": "Klaszczę dla moich gości! Posłuchaj i policz."
+  },
+  "line.b_ile_klasniec": {
+    "who": "wiewiorka",
+    "text": "Ile razy klasnął Jeżyk? Wskaż cyfrę."
+  },
+  "line.b_klask1": {
+    "who": "jez",
+    "text": "Jeden raz!"
+  },
+  "line.b_klask2": {
+    "who": "jez",
+    "text": "Dwa razy!"
+  },
+  "line.b_klask3": {
+    "who": "jez",
+    "text": "Trzy razy!"
+  },
+  "line.b_do_domu": {
+    "who": "mis",
+    "text": "Mamy maliny. Chodźmy do domu, upieczemy tort!"
+  },
+  "line.p_start": {
+    "who": "wiewiorka",
+    "text": "Poćwiczmy liczenie do trzech! Mam pięć zabaw."
+  },
+  "line.p_ile_jablek": {
+    "who": "mis",
+    "text": "Ile jest jabłek? Policz i wskaż cyfrę."
+  },
+  "line.p_ile_jablek_nie": {
+    "who": "mis",
+    "text": "Policz jeszcze raz, dotykając każdego jabłka."
+  },
+  "line.p_dobrze": {
+    "who": "wiewiorka",
+    "text": "Brawo!",
+    "speakers": [
+      "mis"
+    ]
+  },
+  "line.p_dwa": {
+    "who": "wiewiorka",
+    "text": "Daj mi dwa żołędzie. Przeciągaj po jednym."
+  },
+  "line.p_dwa_juz": {
+    "who": "wiewiorka",
+    "text": "Mam już dwa, wystarczy!"
+  },
+  "line.p_dwa_ok": {
+    "who": "wiewiorka",
+    "text": "Jeden, dwa. Dziękuję!"
+  },
+  "line.p_rysuj": {
+    "who": "mis",
+    "text": "Narysuj palcem jedynkę i dwójkę."
+  },
+  "line.p_sluchaj": {
+    "who": "mis",
+    "text": "Posłuchaj bębna."
+  },
+  "line.p_ile_bum": {
+    "who": "mis",
+    "text": "Ile razy zagrał bęben? Wskaż cyfrę."
+  },
+  "line.p_trzy": {
+    "who": "wiewiorka",
+    "text": "Gdzie są trzy gruszki? Wskaż."
+  },
+  "line.p_trzy_nie": {
+    "who": "wiewiorka",
+    "text": "Policz gruszki jeszcze raz. Szukamy trzech."
+  },
+  "line.d_tort": {
+    "who": "mis",
+    "text": "Tort jest gotowy! Policz świeczki."
+  },
+  "line.d_trzy_lata": {
+    "who": "jez",
+    "text": "Trzy świeczki, bo mam trzy lata! Sto lat!"
+  },
+  "line.d_lyzki": {
+    "who": "wiewiorka",
+    "text": "Do tortu potrzebujemy łyżeczek. Policz je."
+  },
+  "line.d_kazdy": {
+    "who": "wiewiorka",
+    "text": "Trzy łyżeczki dla trzech przyjaciół!"
+  },
+  "line.d_rodzice": {
+    "who": "mis",
+    "text": "Policz z rodzicami do trzech: trzy schody, trzy jabłka, trzy podskoki!"
+  },
+  "line.za_duzo": {
+    "who": "mis",
+    "text": "Już wystarczy!",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.n1": {
+    "who": "wiewiorka",
+    "text": "Jeden!",
+    "speakers": [
+      "mis"
+    ]
+  },
+  "line.n2": {
+    "who": "wiewiorka",
+    "text": "Dwa!",
+    "speakers": [
+      "mis"
+    ]
+  },
+  "line.n3": {
+    "who": "wiewiorka",
+    "text": "Trzy!",
+    "speakers": [
+      "mis"
+    ]
+  },
+  "line.naklejka_daj": {
+    "who": "jez",
+    "text": "Dziękuję za moje urodziny! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "jez",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To urodzinowy tort Jeżyka z trzema świeczkami. Dostaliśmy go, kiedy uczyliśmy się liczyć do trzech."
+  }
+}

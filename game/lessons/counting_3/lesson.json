@@ -1,0 +1,34 @@
+{
+  "id": "counting_3",
+  "title": {
+    "pl": "Liczymy do 3",
+    "en": "Counting to 3"
+  },
+  "goal": "Count to three by touch, each thing once; the last number tells how many; the digits 1, 2, 3.",
+  "age": "3-4",
+  "characters": [
+    "jez",
+    "mis",
+    "wiewiorka"
+  ],
+  "backgrounds": [
+    "laka",
+    "las",
+    "dom"
+  ],
+  "objects": [
+    "swieczka",
+    "malina",
+    "jablko",
+    "zoledz",
+    "gruszka",
+    "tort",
+    "lyzka",
+    "ruch_klask"
+  ],
+  "cover": "Hedgehog's third birthday on a meadow: a pink cake with three lit candles, Hedgehog beaming, Bear and Squirrel clapping beside it.",
+  "naklejka": {
+    "obraz": "objects/tort",
+    "kto": "jez"
+  }
+}
