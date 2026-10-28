@@ -180,11 +180,15 @@ export class Stage {
   }
   // touch feedback: the tapped thing pops (scale up and back); a wrong answer also shakes
   async bump(h, amount = 0.25, dzwiek = true) {
-    const m = this.meshOf(h), base = h.base ?? 1, k = h.korzen ? 0.08 : amount;
+    const m = this.meshOf(h), k = h.korzen ? 0.08 : amount;
     if (dzwiek) this.sfx.graj(h.dzwiek || "tap");
+    if (h.bumping) return;
+    // a puppet keeps its own scale (a reflection is flipped, one further up the bank smaller): set to base, the
+    // reflection stood up and vanished behind the fox
+    const s0 = h.korzen ? m.scale.clone() : null, base = h.base ?? 1;
     h.bumping = true;
-    await this.tween(0.28, (s) => { const q = base * (1 + k * Math.sin(s * Math.PI)); m.scale.set(q, q, h.korzen ? 1 : q); });
-    m.scale.set(base, base, h.korzen ? 1 : base); h.bumping = false;
+    await this.tween(0.28, (s) => { const q = 1 + k * Math.sin(s * Math.PI); if (s0) m.scale.set(s0.x * q, s0.y * q, s0.z); else m.scale.setScalar(base * q); });
+    if (s0) m.scale.copy(s0); else m.scale.setScalar(base); h.bumping = false;
   }
   async shake(h) {
     const m = this.meshOf(h), x0 = m.position.x;

@@ -318,7 +318,10 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
     O.korzen.scale.x = k * (1 + 0.015 * Math.sin(performance.now() / 300));
   }, 40);
   const narysowane = [];                                              // the circles of znajdz(): they go with the pond
-  const remove = () => { clearInterval(fala); L.bezCienia = false; narysowane.forEach((k) => k.remove()); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = GROUND; L.podloga = null; };   // back on the front ground
+  let usuniete = false;
+  const remove = () => { if (usuniete) return; usuniete = true; const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); clearInterval(fala); L.bezCienia = false; narysowane.forEach((k) => k.remove()); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = GROUND; L.podloga = null; };   // back on the front ground
+  const h = { mesh: tafla, kind: "staw", name: "staw", base: 1, remove };       // a stage object: clear() (a skipped scene too) takes the pond and the reflection
+  S.objects.push(h);
   // the differences: a target on the garment and on the place it would be in the water
   const znajdz = async () => {
     const cele = [];
