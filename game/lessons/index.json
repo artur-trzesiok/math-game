@@ -308,13 +308,14 @@
         "pl": "Etap 1",
         "en": "Stage 1"
       },
-      "color": "#8cc65a",
+      "color": "#f07fb0",
       "lessons": [
         "one_many",
         "spot_difference",
         "bigger_smaller_pro",
         "long_short"
-      ]
+      ],
+      "znak": "znak_kwiatek"
     },
     {
       "id": "etap2",
@@ -322,13 +323,14 @@
         "pl": "Etap 2",
         "en": "Stage 2"
       },
-      "color": "#f2a65a",
+      "color": "#f2b632",
       "lessons": [
         "tall_short",
         "ordering",
         "shapes",
         "morning_night"
-      ]
+      ],
+      "znak": "znak_slonce"
     },
     {
       "id": "etap3",
@@ -336,13 +338,14 @@
         "pl": "Etap 3",
         "en": "Stage 3"
       },
-      "color": "#5fa86b",
+      "color": "#e8763a",
       "lessons": [
         "noticing_order",
         "counting_3",
         "more_fewer_pro",
         "logical_pairs"
-      ]
+      ],
+      "znak": "znak_lisc"
     },
     {
       "id": "etap4",
@@ -350,13 +353,14 @@
         "pl": "Etap 4",
         "en": "Stage 4"
       },
-      "color": "#5aa9d6",
+      "color": "#5aa9e6",
       "lessons": [
         "numbers_1_5",
         "up_down",
         "in_out",
         "tangram"
-      ]
+      ],
+      "znak": "znak_platek"
     },
     {
       "id": "etap5",
@@ -364,13 +368,14 @@
         "pl": "Etap 5",
         "en": "Stage 5"
       },
-      "color": "#c79a5a",
+      "color": "#9b7fd4",
       "lessons": [
         "grouping_pro",
         "front_back",
         "rhythm",
         "queue"
-      ]
+      ],
+      "znak": "znak_tecza"
     },
     {
       "id": "etap6",
@@ -378,13 +383,14 @@
         "pl": "Etap 6",
         "en": "Stage 6"
       },
-      "color": "#e07a5f",
+      "color": "#e0b83c",
       "lessons": [
         "numbers_6_10",
         "counting_5",
         "adding_5",
         "adding_10"
-      ]
+      ],
+      "znak": "znak_gwiazda"
     }
   ],
   "tematy": {

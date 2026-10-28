@@ -48,5 +48,65 @@
   "hash": "266ae4ceac52",
   "who": "lisek",
   "text": "Hooray! The sixth stage is open. New adventures are waiting!"
+ },
+ "line.etap_koniec_etap1": {
+  "hash": "ce7945386284",
+  "who": "lisek",
+  "text": "Bravo! We finished the whole first stage! Here is a special sticker for your album."
+ },
+ "line.naklejka_opis_etap1": {
+  "hash": "82c02b91da27",
+  "who": "narrator",
+  "text": "This is the prize for finishing the first stage. We went through all its adventures together."
+ },
+ "line.etap_koniec_etap2": {
+  "hash": "ad71effbd3df",
+  "who": "lisek",
+  "text": "Bravo! We finished the whole second stage! Here is a special sticker for your album."
+ },
+ "line.naklejka_opis_etap2": {
+  "hash": "59c651a398d4",
+  "who": "narrator",
+  "text": "This is the prize for finishing the second stage. We went through all its adventures together."
+ },
+ "line.etap_koniec_etap3": {
+  "hash": "31c988994686",
+  "who": "lisek",
+  "text": "Bravo! We finished the whole third stage! Here is a special sticker for your album."
+ },
+ "line.naklejka_opis_etap3": {
+  "hash": "d51a33615c87",
+  "who": "narrator",
+  "text": "This is the prize for finishing the third stage. We went through all its adventures together."
+ },
+ "line.etap_koniec_etap4": {
+  "hash": "4798b2329b11",
+  "who": "lisek",
+  "text": "Bravo! We finished the whole fourth stage! Here is a special sticker for your album."
+ },
+ "line.naklejka_opis_etap4": {
+  "hash": "fa2c10230067",
+  "who": "narrator",
+  "text": "This is the prize for finishing the fourth stage. We went through all its adventures together."
+ },
+ "line.etap_koniec_etap5": {
+  "hash": "e1cc98a4a6a4",
+  "who": "lisek",
+  "text": "Bravo! We finished the whole fifth stage! Here is a special sticker for your album."
+ },
+ "line.naklejka_opis_etap5": {
+  "hash": "272cd940f997",
+  "who": "narrator",
+  "text": "This is the prize for finishing the fifth stage. We went through all its adventures together."
+ },
+ "line.etap_koniec_etap6": {
+  "hash": "508df960267e",
+  "who": "lisek",
+  "text": "Bravo! We finished the whole sixth stage! Here is a special sticker for your album."
+ },
+ "line.naklejka_opis_etap6": {
+  "hash": "106acaf193f6",
+  "who": "narrator",
+  "text": "This is the prize for finishing the sixth stage. We went through all its adventures together."
  }
 }

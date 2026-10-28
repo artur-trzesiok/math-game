@@ -1,4 +1,52 @@
 {
+  "line.etap_koniec_etap1": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole first stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap1": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the first stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap2": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole second stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap2": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the second stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap3": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole third stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap3": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the third stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap4": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole fourth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap4": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the fourth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap5": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole fifth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap5": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the fifth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap6": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole sixth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap6": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the sixth stage. We went through all its adventures together."
+  },
   "line.zamkniete_etap2": {
     "who": "lisek",
     "text": "This way is still locked. Let's first finish all the adventures of the first stage, and the padlock will open by itself!"

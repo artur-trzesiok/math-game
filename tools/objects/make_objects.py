@@ -254,6 +254,22 @@ friendly green arrow pointing to the RIGHT, thick and rounded.
 All four roughly the same size.""",
 }
 
+# the stages' signs (menu): on a stage's plank, and as the special sticker for finishing a stage
+SHEETS["znaki"] = {
+    "outline": True,
+    "names": ["znak_kwiatek", "znak_slonce", "znak_lisc", "znak_platek", "znak_tecza", "znak_gwiazda"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of SIX bold, simple, cheerful emblems for a children's game, arranged in a neat grid of 2 rows
+and 3 columns on a fully TRANSPARENT background, with generous empty space between them so none of them touch. Each
+one big, round-ish, readable at a small size, with a soft golden glow at its edge like a little medal.
+{STYL}
+Row 1, left to right: a pink five-petal flower with a yellow middle; a smiling golden sun with short rays; a red-and-
+orange autumn maple leaf.
+Row 2, left to right: a white-and-light-blue snowflake with six arms; a small arch of rainbow with two little white
+clouds at its ends; a big shiny golden five-pointed star.
+All six the same size.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

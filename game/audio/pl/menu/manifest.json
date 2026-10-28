@@ -48,5 +48,65 @@
   "hash": "5ec83585456c",
   "who": "lisek",
   "text": "Hurra! Otworzył się szósty etap. Nowe przygody czekają!"
+ },
+ "line.etap_koniec_etap1": {
+  "hash": "2b17ab9ed25e",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały pierwszy etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap1": {
+  "hash": "e6a0d2b06229",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie pierwszego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap2": {
+  "hash": "8ecb6a32f57d",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały drugi etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap2": {
+  "hash": "57f8f45f0bb2",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie drugiego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap3": {
+  "hash": "42f78b8879e9",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały trzeci etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap3": {
+  "hash": "bebd7757e200",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie trzeciego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap4": {
+  "hash": "b64464ca6c1f",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały czwarty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap4": {
+  "hash": "dab6a35e3c97",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie czwartego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap5": {
+  "hash": "143d9a5325b9",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały piąty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap5": {
+  "hash": "06be7ffbf5eb",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie piątego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap6": {
+  "hash": "dbc4b5e3f122",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały szósty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap6": {
+  "hash": "6d89ab454612",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie szóstego etapu. Wszystkie jego przygody przeszliśmy razem."
  }
 }

@@ -1,4 +1,52 @@
 {
+  "line.etap_koniec_etap1": {
+    "who": "lisek",
+    "text": "Brawo! Ukończyliśmy cały pierwszy etap! Za to dostajesz specjalną naklejkę do albumu."
+  },
+  "line.naklejka_opis_etap1": {
+    "who": "narrator",
+    "text": "To nagroda za ukończenie pierwszego etapu. Wszystkie jego przygody przeszliśmy razem."
+  },
+  "line.etap_koniec_etap2": {
+    "who": "lisek",
+    "text": "Brawo! Ukończyliśmy cały drugi etap! Za to dostajesz specjalną naklejkę do albumu."
+  },
+  "line.naklejka_opis_etap2": {
+    "who": "narrator",
+    "text": "To nagroda za ukończenie drugiego etapu. Wszystkie jego przygody przeszliśmy razem."
+  },
+  "line.etap_koniec_etap3": {
+    "who": "lisek",
+    "text": "Brawo! Ukończyliśmy cały trzeci etap! Za to dostajesz specjalną naklejkę do albumu."
+  },
+  "line.naklejka_opis_etap3": {
+    "who": "narrator",
+    "text": "To nagroda za ukończenie trzeciego etapu. Wszystkie jego przygody przeszliśmy razem."
+  },
+  "line.etap_koniec_etap4": {
+    "who": "lisek",
+    "text": "Brawo! Ukończyliśmy cały czwarty etap! Za to dostajesz specjalną naklejkę do albumu."
+  },
+  "line.naklejka_opis_etap4": {
+    "who": "narrator",
+    "text": "To nagroda za ukończenie czwartego etapu. Wszystkie jego przygody przeszliśmy razem."
+  },
+  "line.etap_koniec_etap5": {
+    "who": "lisek",
+    "text": "Brawo! Ukończyliśmy cały piąty etap! Za to dostajesz specjalną naklejkę do albumu."
+  },
+  "line.naklejka_opis_etap5": {
+    "who": "narrator",
+    "text": "To nagroda za ukończenie piątego etapu. Wszystkie jego przygody przeszliśmy razem."
+  },
+  "line.etap_koniec_etap6": {
+    "who": "lisek",
+    "text": "Brawo! Ukończyliśmy cały szósty etap! Za to dostajesz specjalną naklejkę do albumu."
+  },
+  "line.naklejka_opis_etap6": {
+    "who": "narrator",
+    "text": "To nagroda za ukończenie szóstego etapu. Wszystkie jego przygody przeszliśmy razem."
+  },
   "line.zamkniete_etap2": {
     "who": "lisek",
     "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z pierwszego etapu, a kłódka sama się otworzy!"

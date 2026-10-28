@@ -96,11 +96,13 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
   // thought cloud beside the sticker shows that lesson's picture
   let chmurka = null;
   const opowiedz = async (id, przy = null) => {
-    const tab = await fetch(v(`/game/lessons/${id}/i18n/${lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}));
-    const l = tab["line.naklejka_opis"]; if (!l) return;
+    // a stage's own sticker (index.json topics) is told about from the menu's lines, its sign in the cloud
+    const etap = !!naklejkiLekcji[id]?.obraz?.startsWith("objects/znak_"), klucz = etap ? `line.naklejka_opis_${id}` : "line.naklejka_opis";
+    const tab = await fetch(v(etap ? `/game/menu/i18n/${lang}.json` : `/game/lessons/${id}/i18n/${lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}));
+    const l = tab[klucz]; if (!l) return;
     speech.stop?.(); chmurka?.remove();
     const ta = chmurka = document.createElement("div"); ta.className = "chmurka";
-    ta.innerHTML = `<img src="${v(`/game/lessons/${id}/cover.webp`)}" alt=""><i class="k1"></i><i class="k2"></i>`;
+    ta.innerHTML = `<img src="${v(etap ? `/game/assets/${naklejkiLekcji[id].obraz}.webp` : `/game/lessons/${id}/cover.webp`)}" alt=""><i class="k1"></i><i class="k2"></i>`;
     const cel = (przy || el.querySelector(`.nakl[data-id="${id}"]`))?.getBoundingClientRect(), W = innerWidth;
     if (cel) {
       const odstep = Math.max(56, cel.width * 0.85);                   // room for the thought's circles between them
@@ -120,7 +122,7 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
         Object.assign(k.style, { left: `${x}px`, top: `${y}px`, right: "auto", bottom: "auto", width: `${s}px` });
       }
     }
-    await speech.say({ lang, lessonId: id, key: "line.naklejka_opis", text: l.text, who: "narrator" }).catch(() => {});
+    await speech.say({ lang, lessonId: etap ? "menu" : id, key: klucz, text: l.text, who: "narrator" }).catch(() => {});
     if (chmurka === ta) { ta.classList.add("znika"); setTimeout(() => ta.remove(), 300); chmurka = null; }
   };
 

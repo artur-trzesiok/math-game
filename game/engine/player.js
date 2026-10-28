@@ -26,7 +26,7 @@ const PARAMS = new URLSearchParams(location.search);
 // album is the record of what was played); the first is always open. A 3 s press on a padlock opens that topic for
 // good (a parent's way through), ?wszystko opens them all (tests); a topic seen open for the first time unlocks
 // on screen (the mist clears, the padlock opens and falls)
-const OTWARTE = "math_game.otwarte", WIDZIANE = "math_game.widziane_otwarte";
+const OTWARTE = "math_game.otwarte", WIDZIANE = "math_game.widziane_otwarte", UKONCZONE = "math_game.etapy_ukonczone";
 const lista = (k) => { try { return JSON.parse(localStorage.getItem(k)) || []; } catch { return []; } };
 const dopisz = (k, id) => { try { const l = lista(k); if (!l.includes(id)) localStorage.setItem(k, JSON.stringify([...l, id])); } catch { /* private mode */ } };
 const dzwiekMenu = (n) => { if (PARAMS.has("cicho")) return; try { const a = new Audio(v(`/game/audio/sfx/${n}.mp3`)); a.volume = 0.7; a.play().catch(() => {}); } catch { /* ignore */ } };
@@ -114,7 +114,8 @@ export class Player {
     const ab = $("#albumBtn"), ile = Album.nieprzyklejone();
     ab.querySelector(".ksiega").src = v("/game/assets/album/okladka.webp"); ab.querySelector(".pniak").src = v("/game/assets/menu/pniak.webp"); ab.querySelector(".ile").textContent = ile || ""; ab.classList.toggle("nowe", ile > 0);
     ab.onclick = async () => {
-      const lekcje = await Promise.all(this.index.lessons.map(async (l) => ({ id: l.id, naklejka: (await fetch(v(`/game/lessons/${l.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}))).naklejka })));
+      const lekcje = await Promise.all(this.index.lessons.filter((l) => !l.wkrotce).map(async (l) => ({ id: l.id, naklejka: (await fetch(v(`/game/lessons/${l.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}))).naklejka })));
+      for (const t of this.index.topics || []) if (t.znak) lekcje.push({ id: t.id, naklejka: { obraz: `objects/${t.znak}`, kto: "lisek" } });   // a stage's own sticker
       menuMuzyka.przycisz(0.35);
       await Album.otworz({ lekcje, lang: this.lang, speech: this.speech, onZamknij: () => { menuMuzyka.przycisz(1); const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
     };
@@ -145,12 +146,18 @@ export class Player {
     // one long strip, a tinted block per topic; chips under it jump to a topic and show where the strip is
     const pas = $("#lessons"), chips = $("#chips");
     // between two topics a signpost: the way goes on to a new topic
+    // the tape on the cards is green: turned around the colour wheel to the stage's own colour
+    const odcien = (hex) => {
+      const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255), mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+      const h = !d ? 0 : mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+      return Math.round(h * 60 - 105);
+    };
     const skonczony = (t) => t.lessons.filter((id) => !byId[id].wkrotce).every((id) => Album.ma(id));   // a placeholder never holds the way
     const otwarty = [];                                              // a chain: the one before must be open AND finished
     topics.forEach((t, i) => otwarty.push(i === 0 || PARAMS.has("wszystko") || lista(OTWARTE).includes(t.id) || (otwarty[i - 1] && skonczony(topics[i - 1]))));
     pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
-      <section class="topic${otwarty[i] ? "" : " zamkniety"}" data-topic="${t.id}" style="--c:${t.color}">
-        ${t.title ? `<h2>${t.title[this.lang] || t.title.en}</h2>` : ""}
+      <section class="topic${otwarty[i] ? "" : " zamkniety"}${t.znak ? " ze-znakiem" : ""}" data-topic="${t.id}" style="--c:${t.color};--odcien:${odcien(t.color)}deg">
+        ${t.title ? `<h2>${t.znak ? `<img class="znak" src="${v(`/game/assets/objects/${t.znak}.webp`)}" alt="">` : ""}${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
         ${i ? `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">` : ""}
       </section>`).join("");
@@ -220,11 +227,36 @@ export class Player {
     pas.scrollLeft = this.menuX || 0; odswiez();                     // back from a lesson: where the child was
     // a topic open for the first time (not the first one, not ?wszystko): the strip goes there and it unlocks
     const nowy = bloki.find((b, i) => i > 0 && otwarty[i] && !PARAMS.has("wszystko") && !lista(WIDZIANE).includes(b.dataset.topic));
-    if (nowy) {
-      nowy.classList.add("zamkniety"); if (!nowy.querySelector(".klodka")) nowy.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`);
-      setTimeout(() => { naBlok(nowy); setTimeout(() => otworz(nowy), 900); }, 700);
-    }
+    if (nowy) { nowy.classList.add("zamkniety"); if (!nowy.querySelector(".klodka")) nowy.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`); }
+    const odblokuj = () => { if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => otworz(nowy), 900); }, 400); };
+    // a stage just finished (every lesson made so far has its sticker; once): its sign comes big to the middle with rays
+    // and confetti, Fox cheers, the sign flies into the album as the stage's own sticker; then the next stage opens
+    const swieto = topics.findIndex((t, i) => t.znak && otwarty[i] && !PARAMS.has("wszystko") && t.lessons.some((id) => !byId[id].wkrotce) && skonczony(t) && !lista(UKONCZONE).includes(t.id));
+    if (swieto >= 0) setTimeout(() => this.swietoEtapu(topics[swieto], () => { dopisz(UKONCZONE, topics[swieto].id); odblokuj(); }), 700);
+    else odblokuj();
     for (const b of bloki) if (!b.classList.contains("zamkniety") && b !== nowy) b.querySelector(".klodka")?.remove();
+  }
+
+  async swietoEtapu(t, gotowe) {
+    const el = document.createElement("div"); el.id = "swieto";
+    const konfetti = Array.from({ length: 36 }, (_, i) => `<i style="left:${(i * 37) % 100}%;background:hsl(${(i * 47) % 360} 80% 60%);animation-delay:${(i % 9) * 0.12}s;animation-duration:${2.2 + (i % 5) * 0.3}s"></i>`).join("");
+    el.innerHTML = `<div class="promienie"></div><img class="znak" src="${v(`/game/assets/objects/${t.znak}.webp`)}" alt=""><img class="glowa" src="${v("/game/assets/menu/lisek_glowa.webp")}" alt="">${konfetti}`;
+    document.body.appendChild(el); dzwiekMenu("plansza");
+    menuMuzyka.przycisz(0.35);
+    this.menuLinie = this.menuLinie?.lang === this.lang ? this.menuLinie : { lang: this.lang, t: await fetch(v(`/game/menu/i18n/${this.lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({})) };
+    const klucz = `line.etap_koniec_${t.id}`, l = this.menuLinie.t[klucz];
+    await new Promise((r) => setTimeout(r, 600));
+    if (l) await this.speech.say({ lang: this.lang, lessonId: "menu", key: klucz, text: l.text, who: "lisek", puppet: null }).catch(() => {});
+    else await new Promise((r) => setTimeout(r, 1800));
+    menuMuzyka.przycisz(1);
+    // the sign flies into the album on the stump
+    Album.dodaj(t.id);
+    const z = el.querySelector(".znak"), ab = $("#albumBtn"), a = ab.getBoundingClientRect(), b = z.getBoundingClientRect();
+    z.style.animation = "none"; z.style.transition = "transform .9s cubic-bezier(.5,-0.3,.6,1)"; el.classList.add("odlot");
+    z.style.transform = `translate(${a.left + a.width / 2 - (b.left + b.width / 2)}px, ${a.top + a.height / 2 - (b.top + b.height / 2)}px) scale(.18)`;
+    await new Promise((r) => setTimeout(r, 950));
+    const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); dzwiekMenu("pop");
+    el.remove(); gotowe();
   }
 
   // ------------------------------------------------------------------ lesson
