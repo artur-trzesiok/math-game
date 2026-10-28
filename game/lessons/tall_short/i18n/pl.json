@@ -1,0 +1,198 @@
+{
+  "line.a_domek": {
+    "who": "mis",
+    "text": "Popatrzcie, na drzewie jest domek! Chciałbym tam wejść i zobaczyć cały las z góry."
+  },
+  "line.a_kto": {
+    "who": "lisek",
+    "text": "Najniższa gałąź jest wysoko. Kto z nas jest najwyższy i do niej dosięgnie?"
+  },
+  "line.a_najwyzsza": {
+    "who": "wiewiorka",
+    "text": "Ja! Stoję na pieńku, więc teraz jestem najwyższa!"
+  },
+  "line.a_nie_siegam": {
+    "who": "wiewiorka",
+    "text": "Ojej, nie sięgam. Byłam wyżej, a i tak jestem za niska."
+  },
+  "line.a_metoda": {
+    "who": "lisek",
+    "text": "Pieniek tylko cię podniósł. Żeby sprawdzić, kto jest wysoki, a kto niski, trzeba stanąć na tej samej ziemi."
+  },
+  "line.a_wszyscy": {
+    "who": "lisek",
+    "text": "Teraz wszyscy stoimy na trawie."
+  },
+  "line.a_najwyzszy": {
+    "who": "lisek",
+    "text": "Kto z nas jest najwyższy? Wskaż."
+  },
+  "line.a_najwyzszy_nie": {
+    "who": "lisek",
+    "text": "Popatrz na nasze głowy. Czyja jest najwyżej?"
+  },
+  "line.a_ja": {
+    "who": "mis",
+    "text": "Ja jestem najwyższy! Dosięgnę gałęzi."
+  },
+  "line.a_najnizszy": {
+    "who": "lisek",
+    "text": "A kto jest najniższy? Wskaż."
+  },
+  "line.a_najnizszy_nie": {
+    "who": "lisek",
+    "text": "Popatrz na nasze głowy. Czyja jest najniżej?"
+  },
+  "line.a_ja_najnizsza": {
+    "who": "wiewiorka",
+    "text": "To ja! Jestem najniższa, ale za to najszybciej wspinam się po drzewach."
+  },
+  "line.b_drabina": {
+    "who": "mis",
+    "text": "Ojej, drabinka do domku jest połamana. Potrzebujemy wysokiego kija."
+  },
+  "line.b_postaw": {
+    "who": "lisek",
+    "text": "Postaw oba kije na kresce, na tej samej ziemi. Przeciągnij je."
+  },
+  "line.b_ktory": {
+    "who": "lisek",
+    "text": "Który kij jest wyższy? Wskaż."
+  },
+  "line.b_ktory_nie": {
+    "who": "lisek",
+    "text": "Ten kij jest niższy. Wskaż ten, który sięga wyżej."
+  },
+  "line.b_mam": {
+    "who": "mis",
+    "text": "Mam wysoki kij! Naprawię drabinkę. Hop, już jestem w domku!"
+  },
+  "line.b_jez": {
+    "who": "jez",
+    "text": "Dzień dobry... Jestem Jeżyk. Chciałbym zerwać jabłko, ale jestem bardzo niski."
+  },
+  "line.b_najnizsze": {
+    "who": "lisek",
+    "text": "Jeżyk dosięgnie tylko do najniższego drzewka. Które jest najniższe? Wskaż."
+  },
+  "line.b_najnizsze_nie": {
+    "who": "lisek",
+    "text": "To drzewko jest za wysokie dla Jeżyka. Poszukaj najniższego."
+  },
+  "line.b_dziekuje": {
+    "who": "jez",
+    "text": "Dosięgnąłem! Dziękuję."
+  },
+  "line.b_lapanie": {
+    "who": "mis",
+    "text": "Wyrastają słoneczniki! Łap wysoki słonecznik, wskaż go."
+  },
+  "line.b_do_domu": {
+    "who": "lisek",
+    "text": "Ale było fajnie! Chodźmy do domu."
+  },
+  "line.p_start": {
+    "who": "lisek",
+    "text": "Pobawmy się w wysokie i niskie! Mam pięć zabaw."
+  },
+  "line.p_wyzsza": {
+    "who": "mis",
+    "text": "Która świeca jest wyższa? Wskaż."
+  },
+  "line.p_wyzsza_nie": {
+    "who": "mis",
+    "text": "Ta świeca jest niższa. Wskaż wyższą."
+  },
+  "line.p_wyzsza_ok": {
+    "who": "lisek",
+    "text": "Tak! Ta świeca jest wyższa."
+  },
+  "line.p_na_ziemi": {
+    "who": "lisek",
+    "text": "Jeden słonecznik jest wyżej, ale czy jest wyższy? Postaw oba na kresce."
+  },
+  "line.p_ktory": {
+    "who": "lisek",
+    "text": "Który słonecznik jest wyższy? Wskaż."
+  },
+  "line.p_ktory_nie": {
+    "who": "lisek",
+    "text": "Ten jest niższy. Wskaż wyższy słonecznik."
+  },
+  "line.p_najnizszy": {
+    "who": "mis",
+    "text": "Który kij jest najniższy? Wskaż."
+  },
+  "line.p_najnizszy_nie": {
+    "who": "mis",
+    "text": "Ten kij jest wyższy. Poszukaj najniższego."
+  },
+  "line.p_najnizszy_ok": {
+    "who": "lisek",
+    "text": "Tak! To najniższy kij."
+  },
+  "line.p_cien": {
+    "who": "lisek",
+    "text": "Czyj to cień: wysokiego drzewka czy niskiego? Wskaż."
+  },
+  "line.p_cien_nie": {
+    "who": "lisek",
+    "text": "Popatrz na cień jeszcze raz. Czy jest wysoki, czy niski?"
+  },
+  "line.p_cien_ok": {
+    "who": "mis",
+    "text": "Tak! Cień pasuje do drzewka."
+  },
+  "line.p_kto": {
+    "who": "lisek",
+    "text": "Teraz my! Kto z nas jest najniższy? Wskaż."
+  },
+  "line.p_kto_nie": {
+    "who": "lisek",
+    "text": "Popatrz na nasze głowy. Czyja jest najniżej?"
+  },
+  "line.p_kto_ok": {
+    "who": "jez",
+    "text": "To ja, Jeżyk! Jestem najniższy."
+  },
+  "line.d_miarka": {
+    "who": "lisek",
+    "text": "W przedpokoju wisi miarka. Stańmy przy niej i sprawdźmy, kto jest wysoki, a kto niski."
+  },
+  "line.d_najwyzszy": {
+    "who": "mis",
+    "text": "Kto jest najwyższy? Wskaż."
+  },
+  "line.d_nie": {
+    "who": "lisek",
+    "text": "Popatrz na miarkę i na nasze głowy.",
+    "speakers": [
+      "mis",
+      "wiewiorka"
+    ]
+  },
+  "line.d_najnizszy": {
+    "who": "wiewiorka",
+    "text": "A kto jest najniższy? Wskaż."
+  },
+  "line.d_rosne": {
+    "who": "jez",
+    "text": "To ja! Ale ciągle rosnę."
+  },
+  "line.d_rodzice": {
+    "who": "lisek",
+    "text": "Zmierz się z rodzicami przy drzwiach i zaznacz kreskę. Kto w domu jest najwyższy, a kto najniższy?"
+  },
+  "line.naklejka_daj": {
+    "who": "mis",
+    "text": "Dziękuję za pomoc z domkiem na drzewie! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "mis",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To domek na drzewie Misia. Dostaliśmy go, kiedy porównywaliśmy, kto jest wysoki, a kto niski."
+  }
+}

@@ -135,7 +135,7 @@ export class Stage {
         const g = L.podloga ?? GROUND, lift = Math.max(0, L.korzen.position.y - g);
         if (L.cienDy === undefined) L.cienDy = L.cien.position.y - GROUND;
         L.cien.visible = L.korzen.visible; L.cien.position.x = L.korzen.position.x; L.cien.position.y = g + L.cienDy;
-        const k = Math.max(0.4, 1 - lift * 0.8); L.cien.scale.set(k * L.korzen.scale.x, k * L.korzen.scale.y, 1); L.cien.material.opacity = 0.85 * k;
+        const k = Math.max(0.4, 1 - lift * 0.8); L.cien.scale.set(k * L.korzen.scale.x, k * L.korzen.scale.y, 1); L.cien.material.opacity = L.bezCienia ? 0 : 0.85 * k;
       }
     }
     ruszUbiory(this);                                                       // after the legs bent this frame

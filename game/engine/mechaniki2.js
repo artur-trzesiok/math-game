@@ -288,6 +288,7 @@ export async function roznice(S, nazwa, { y = 0.45, size = 4.9, odstep = 0.35 } 
 export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } = {}) {
   const L = S.puppets[who]; if (!L) return null;
   L.korzen.position.y = woda; L.podloga = woda; L.lustroOn = true;
+  L.bezCienia = true;                                                   // the pond is its shadow (the hatched one flickered across the water)
   const O = await Lalka.wczytaj(`/game/assets/characters/${who}/`, { strona: L.strona ?? "lewo", wysokosc: L.meta?.wysokosc ?? 3.6 });
   const klucz = `${who}_odbicie`;
   O.name = who; O.meta = L.meta; O.lustro = L; O.home = L.home;
@@ -317,7 +318,7 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
     O.korzen.scale.x = k * (1 + 0.015 * Math.sin(performance.now() / 300));
   }, 40);
   const narysowane = [];                                              // the circles of znajdz(): they go with the pond
-  const remove = () => { clearInterval(fala); narysowane.forEach((k) => k.remove()); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = L.podloga = null; L.podloga = null; };
+  const remove = () => { clearInterval(fala); L.bezCienia = false; narysowane.forEach((k) => k.remove()); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = L.podloga = null; L.podloga = null; };
   // the differences: a target on the garment and on the place it would be in the water
   const znajdz = async () => {
     const cele = [];

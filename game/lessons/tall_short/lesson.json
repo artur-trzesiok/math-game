@@ -1,0 +1,38 @@
+{
+  "id": "tall_short",
+  "title": {
+    "pl": "Wysoki i niski",
+    "en": "Tall and short"
+  },
+  "goal": "Compare height - tall / short, taller / shorter, the tallest / the shortest - standing on one ground.",
+  "age": "3-4",
+  "characters": [
+    "mis",
+    "wiewiorka",
+    "lisek",
+    "jez"
+  ],
+  "backgrounds": [
+    "las",
+    "sad",
+    "przedpokoj"
+  ],
+  "objects": [
+    "domek_na_drzewie",
+    "pieniek_niski",
+    "patyk_wysoki",
+    "patyk_niski",
+    "drzewko_wysokie",
+    "drzewko_niskie",
+    "slonecznik_wysoki",
+    "slonecznik_niski",
+    "swieca_wysoka",
+    "swieca_niska",
+    "miarka_scienna"
+  ],
+  "cover": "Big Bear reaches up to a little treehouse in a tall tree in a forest while small Squirrel stands on a tree stump on tiptoe beside him and Fox laughs.",
+  "naklejka": {
+    "obraz": "objects/domek_na_drzewie",
+    "kto": "mis"
+  }
+}

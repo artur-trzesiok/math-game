@@ -1,0 +1,252 @@
+{
+ "line.a_domek": {
+  "hash": "9d230feb997a",
+  "who": "mis",
+  "text": "Look, there's a house up in the tree! I'd love to climb up and see the whole forest from above."
+ },
+ "line.a_kto": {
+  "hash": "594e1b6f659a",
+  "who": "lisek",
+  "text": "The lowest branch is high up. Which of us is the tallest and can reach it?"
+ },
+ "line.a_najwyzsza": {
+  "hash": "0fb789797fc5",
+  "who": "wiewiorka",
+  "text": "Me! I'm standing on a stump, so now I'm the tallest!"
+ },
+ "line.a_nie_siegam": {
+  "hash": "3fe64e830144",
+  "who": "wiewiorka",
+  "text": "Oh no, I can't reach. I was higher up, and I'm still too short."
+ },
+ "line.a_metoda": {
+  "hash": "69d3bb8bb7d6",
+  "who": "lisek",
+  "text": "The stump only lifted you up. To check who is tall and who is short, we must stand on the same ground."
+ },
+ "line.a_wszyscy": {
+  "hash": "7fd9124e4fff",
+  "who": "lisek",
+  "text": "Now we're all standing on the grass."
+ },
+ "line.a_najwyzszy": {
+  "hash": "4ed595c677ed",
+  "who": "lisek",
+  "text": "Which of us is the tallest? Point to them."
+ },
+ "line.a_najwyzszy_nie": {
+  "hash": "0c900a777c81",
+  "who": "lisek",
+  "text": "Look at our heads. Whose is the highest?"
+ },
+ "line.a_ja": {
+  "hash": "9788052808d1",
+  "who": "mis",
+  "text": "I'm the tallest! I can reach the branch."
+ },
+ "line.a_najnizszy": {
+  "hash": "8c298f8d4714",
+  "who": "lisek",
+  "text": "And who is the shortest? Point to them."
+ },
+ "line.a_najnizszy_nie": {
+  "hash": "228e77e4759e",
+  "who": "lisek",
+  "text": "Look at our heads. Whose is the lowest?"
+ },
+ "line.a_ja_najnizsza": {
+  "hash": "6959f5154a3f",
+  "who": "wiewiorka",
+  "text": "That's me! I'm the shortest, but I climb trees the fastest."
+ },
+ "line.b_drabina": {
+  "hash": "ed57e4f0eda3",
+  "who": "mis",
+  "text": "Oh dear, the ladder to the treehouse is broken. We need a tall stick."
+ },
+ "line.b_postaw": {
+  "hash": "ea3529a6a114",
+  "who": "lisek",
+  "text": "Stand both sticks on the line, on the same ground. Drag them."
+ },
+ "line.b_ktory": {
+  "hash": "d62df42ee8d2",
+  "who": "lisek",
+  "text": "Which stick is taller? Point to it."
+ },
+ "line.b_ktory_nie": {
+  "hash": "721cbdace4e3",
+  "who": "lisek",
+  "text": "This stick is shorter. Point to the one that reaches higher."
+ },
+ "line.b_mam": {
+  "hash": "97622e0ba1b5",
+  "who": "mis",
+  "text": "I have a tall stick! I'll fix the ladder. Hop, I'm in the treehouse!"
+ },
+ "line.b_jez": {
+  "hash": "53549b0c6c38",
+  "who": "jez",
+  "text": "Hello... I'm Hedgehog. I'd like to pick an apple, but I'm very short."
+ },
+ "line.b_najnizsze": {
+  "hash": "1ac09ac4c237",
+  "who": "lisek",
+  "text": "Hedgehog can only reach the shortest tree. Which one is the shortest? Point to it."
+ },
+ "line.b_najnizsze_nie": {
+  "hash": "c0dd1f25f5a0",
+  "who": "lisek",
+  "text": "That tree is too tall for Hedgehog. Look for the shortest one."
+ },
+ "line.b_dziekuje": {
+  "hash": "1f92ed19d60c",
+  "who": "jez",
+  "text": "I reached it! Thank you."
+ },
+ "line.b_lapanie": {
+  "hash": "9d76d5e6ffa2",
+  "who": "mis",
+  "text": "Sunflowers are popping up! Catch the tall sunflower, point to it."
+ },
+ "line.b_do_domu": {
+  "hash": "af001b68241f",
+  "who": "lisek",
+  "text": "That was fun! Let's go home."
+ },
+ "line.p_start": {
+  "hash": "896c0d1c938b",
+  "who": "lisek",
+  "text": "Let's play tall and short! I have five games."
+ },
+ "line.p_wyzsza": {
+  "hash": "c2941ea083f5",
+  "who": "mis",
+  "text": "Which candle is taller? Point to it."
+ },
+ "line.p_wyzsza_nie": {
+  "hash": "bb450f8d576d",
+  "who": "mis",
+  "text": "This candle is shorter. Point to the taller one."
+ },
+ "line.p_wyzsza_ok": {
+  "hash": "35bf1dc52e35",
+  "who": "lisek",
+  "text": "Yes! This candle is taller."
+ },
+ "line.p_na_ziemi": {
+  "hash": "e66a453035a1",
+  "who": "lisek",
+  "text": "One sunflower is higher up, but is it taller? Stand both on the line."
+ },
+ "line.p_ktory": {
+  "hash": "aa645f736801",
+  "who": "lisek",
+  "text": "Which sunflower is taller? Point to it."
+ },
+ "line.p_ktory_nie": {
+  "hash": "15143dab0c13",
+  "who": "lisek",
+  "text": "This one is shorter. Point to the taller sunflower."
+ },
+ "line.p_najnizszy": {
+  "hash": "69d0f12408db",
+  "who": "mis",
+  "text": "Which stick is the shortest? Point to it."
+ },
+ "line.p_najnizszy_nie": {
+  "hash": "93ed03b5777d",
+  "who": "mis",
+  "text": "This stick is taller. Look for the shortest one."
+ },
+ "line.p_najnizszy_ok": {
+  "hash": "1d3255143b04",
+  "who": "lisek",
+  "text": "Yes! That's the shortest stick."
+ },
+ "line.p_cien": {
+  "hash": "8cafd8d50b77",
+  "who": "lisek",
+  "text": "Whose shadow is it: the tall tree's or the short one's? Point to it."
+ },
+ "line.p_cien_nie": {
+  "hash": "b4d8215f6c02",
+  "who": "lisek",
+  "text": "Look at the shadow again. Is it tall or short?"
+ },
+ "line.p_cien_ok": {
+  "hash": "3efc45c22720",
+  "who": "mis",
+  "text": "Yes! The shadow fits the tree."
+ },
+ "line.p_kto": {
+  "hash": "50c19c0f3f6a",
+  "who": "lisek",
+  "text": "Now us! Which of us is the shortest? Point to them."
+ },
+ "line.p_kto_nie": {
+  "hash": "228e77e4759e",
+  "who": "lisek",
+  "text": "Look at our heads. Whose is the lowest?"
+ },
+ "line.p_kto_ok": {
+  "hash": "947b32d6c34f",
+  "who": "jez",
+  "text": "That's me, Hedgehog! I'm the shortest."
+ },
+ "line.d_miarka": {
+  "hash": "f9f003f06a06",
+  "who": "lisek",
+  "text": "There's a height chart in the hallway. Let's stand by it and check who is tall and who is short."
+ },
+ "line.d_najwyzszy": {
+  "hash": "b41b64501b23",
+  "who": "mis",
+  "text": "Who is the tallest? Point to them."
+ },
+ "line.d_nie": {
+  "hash": "97cc706a051e",
+  "who": "lisek",
+  "text": "Look at the chart and at our heads."
+ },
+ "line.d_nie.mis": {
+  "hash": "ba76ac9948fb",
+  "who": "mis",
+  "text": "Look at the chart and at our heads."
+ },
+ "line.d_nie.wiewiorka": {
+  "hash": "d09b5242cf02",
+  "who": "wiewiorka",
+  "text": "Look at the chart and at our heads."
+ },
+ "line.d_najnizszy": {
+  "hash": "3fbf10490ffd",
+  "who": "wiewiorka",
+  "text": "And who is the shortest? Point to them."
+ },
+ "line.d_rosne": {
+  "hash": "02d35ecfe017",
+  "who": "jez",
+  "text": "That's me! But I'm still growing."
+ },
+ "line.d_rodzice": {
+  "hash": "454b33d1faad",
+  "who": "lisek",
+  "text": "Measure yourself by the door with your parents and mark a line. Who at home is the tallest, and who is the shortest?"
+ },
+ "line.naklejka_daj": {
+  "hash": "51ec00b17c95",
+  "who": "mis",
+  "text": "Thank you for helping with the treehouse! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "69a9d3a7a15a",
+  "who": "mis",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "421e3b2e0ebc",
+  "who": "narrator",
+  "text": "This is Bear's treehouse. We got it when we compared who is tall and who is short."
+ }
+}
