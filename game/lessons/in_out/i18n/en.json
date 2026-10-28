@@ -1,0 +1,201 @@
+{
+  "line.a_burza": {
+    "who": "jez",
+    "text": "A storm is coming! Tonight everybody must be at home."
+  },
+  "line.a_kurki": {
+    "who": "jez",
+    "text": "And my hens are walking on the meadow. They must go back into the pen."
+  },
+  "line.a_plot": {
+    "who": "bobr",
+    "text": "I'll build them a fence! All around, like this."
+  },
+  "line.a_gotowe": {
+    "who": "bobr",
+    "text": "Done! The hens are inside."
+  },
+  "line.a_uciekla": {
+    "who": "jez",
+    "text": "Oh no, a hen got out!"
+  },
+  "line.a_dziura": {
+    "who": "sarenka",
+    "text": "There's a gap in the fence. You can get out through a gap."
+  },
+  "line.a_zamkniety": {
+    "who": "sarenka",
+    "text": "A fence must be closed all the way round. Then what is inside stays inside."
+  },
+  "line.a_narysuj": {
+    "who": "jez",
+    "text": "Draw a fence around all the hens with your finger. Bring your finger back to where you started."
+  },
+  "line.a_otwarta": {
+    "who": "jez",
+    "text": "There's a gap left in the fence! Close it all the way round to the start.",
+    "speakers": [
+      "bobr",
+      "sarenka"
+    ]
+  },
+  "line.a_nie_wszystkie": {
+    "who": "jez",
+    "text": "Not all the hens are inside. Draw the fence around all of them."
+  },
+  "line.a_w_srodku": {
+    "who": "jez",
+    "text": "All the hens are inside the pen. Thank you!"
+  },
+  "line.a_kaczuszka": {
+    "who": "bobr",
+    "text": "And the duckling is in the basket!"
+  },
+  "line.a_obok": {
+    "who": "sarenka",
+    "text": "Beaver, the duckling is standing next to the basket, not inside it."
+  },
+  "line.a_wloz": {
+    "who": "sarenka",
+    "text": "Put the duckling inside the basket. Drag it."
+  },
+  "line.a_wloz_nie": {
+    "who": "sarenka",
+    "text": "Not inside yet. Drag the duckling right into the basket."
+  },
+  "line.a_teraz_w_srodku": {
+    "who": "bobr",
+    "text": "Now I see. Next to is not inside!"
+  },
+  "line.b_zabawa": {
+    "who": "sarenka",
+    "text": "A game before the rain! I'm drawing a circle on the grass. The circle is our little house."
+  },
+  "line.b_wskakujcie": {
+    "who": "sarenka",
+    "text": "Everybody into the circle!"
+  },
+  "line.b_kto": {
+    "who": "sarenka",
+    "text": "Who is still outside? Point to them."
+  },
+  "line.b_kto_nie": {
+    "who": "sarenka",
+    "text": "That one is inside the circle. Who is standing outside it?"
+  },
+  "line.b_biegne": {
+    "who": "jez",
+    "text": "I'm running in!"
+  },
+  "line.b_wszyscy": {
+    "who": "bobr",
+    "text": "Everybody inside!"
+  },
+  "line.b_deszcz": {
+    "who": "sarenka",
+    "text": "It's raining! Quick, into Hedgehog's burrow!"
+  },
+  "line.b_norka": {
+    "who": "jez",
+    "text": "It's dry and warm in the burrow. The rain stayed outside."
+  },
+  "line.b_kubki": {
+    "who": "jez",
+    "text": "Let's play cups! I'm hiding an acorn under a cup. Watch carefully."
+  },
+  "line.b_gdzie": {
+    "who": "jez",
+    "text": "Which cup is the acorn in? Point to it."
+  },
+  "line.b_gdzie_nie": {
+    "who": "jez",
+    "text": "This one is empty. Try again."
+  },
+  "line.b_jest": {
+    "who": "bobr",
+    "text": "There it is! The acorn was inside the cup."
+  },
+  "line.b_koniec": {
+    "who": "sarenka",
+    "text": "Outside there's a storm, and we're inside, in the warm burrow."
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Let's play inside and outside! I have five games."
+  },
+  "line.p_owce": {
+    "who": "bobr",
+    "text": "Draw a fence around the sheep. The wolf must stay outside."
+  },
+  "line.p_owce_nie": {
+    "who": "bobr",
+    "text": "Look: inside there must be only the sheep, all of them. The wolf outside."
+  },
+  "line.p_dobrze": {
+    "who": "sarenka",
+    "text": "Bravo!",
+    "speakers": [
+      "bobr"
+    ]
+  },
+  "line.p_jablka": {
+    "who": "sarenka",
+    "text": "Put three apples into the basket. Drag them one at a time."
+  },
+  "line.p_poza": {
+    "who": "bobr",
+    "text": "Which star is outside the circle? Point to it."
+  },
+  "line.p_poza_nie": {
+    "who": "bobr",
+    "text": "That star is inside the circle. Look for the one outside it."
+  },
+  "line.p_kubki": {
+    "who": "sarenka",
+    "text": "I'm hiding a ball under a cup. Watch carefully!"
+  },
+  "line.p_gdzie_pilka": {
+    "who": "sarenka",
+    "text": "Which cup is the ball in? Point to it."
+  },
+  "line.p_gdzie_pilka_nie": {
+    "who": "sarenka",
+    "text": "This cup is empty. Try again."
+  },
+  "line.p_rybka": {
+    "who": "bobr",
+    "text": "The goldfish wants to swim. Let her into the bowl."
+  },
+  "line.p_rybka_nie": {
+    "who": "bobr",
+    "text": "The goldfish is still outside. Drag her into the water, inside the bowl."
+  },
+  "line.p_rybka_ok": {
+    "who": "sarenka",
+    "text": "The goldfish is swimming inside the bowl!"
+  },
+  "line.h_zabawki": {
+    "who": "jez",
+    "text": "Before bed the toys go back into the box. Drag each one inside the box."
+  },
+  "line.h_w_pudle": {
+    "who": "sarenka",
+    "text": "All the toys are inside the box!"
+  },
+  "line.h_rodzice": {
+    "who": "jez",
+    "text": "Play with your parents: a toy into the box, a toy out of the box. Inside or outside?"
+  },
+  "line.naklejka_daj": {
+    "who": "jez",
+    "text": "Thank you for getting everybody safely home! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "jez",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is Hedgehog's hen. We got it when we closed the pen before the storm."
+  }
+}

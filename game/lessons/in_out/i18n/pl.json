@@ -1,0 +1,201 @@
+{
+  "line.a_burza": {
+    "who": "jez",
+    "text": "Idzie burza! Wieczorem wszyscy muszą być w domu."
+  },
+  "line.a_kurki": {
+    "who": "jez",
+    "text": "A moje kurki chodzą po łące. Muszą wrócić do zagrody."
+  },
+  "line.a_plot": {
+    "who": "bobr",
+    "text": "Zbuduję im płot! Dookoła, o tak."
+  },
+  "line.a_gotowe": {
+    "who": "bobr",
+    "text": "Gotowe! Kurki są w środku."
+  },
+  "line.a_uciekla": {
+    "who": "jez",
+    "text": "Ojej, kurka uciekła!"
+  },
+  "line.a_dziura": {
+    "who": "sarenka",
+    "text": "W płocie jest dziura. Przez dziurę można wyjść na zewnątrz."
+  },
+  "line.a_zamkniety": {
+    "who": "sarenka",
+    "text": "Płot musi być zamknięty dookoła. Wtedy to, co w środku, zostaje w środku."
+  },
+  "line.a_narysuj": {
+    "who": "jez",
+    "text": "Narysuj palcem płot dookoła wszystkich kurek. Wróć palcem do miejsca, gdzie zaczynasz."
+  },
+  "line.a_otwarta": {
+    "who": "jez",
+    "text": "W płocie została dziura! Zamknij go dookoła, aż do początku.",
+    "speakers": [
+      "bobr",
+      "sarenka"
+    ]
+  },
+  "line.a_nie_wszystkie": {
+    "who": "jez",
+    "text": "Nie wszystkie kurki są w środku. Narysuj płot dookoła wszystkich."
+  },
+  "line.a_w_srodku": {
+    "who": "jez",
+    "text": "Wszystkie kurki są w środku, w zagrodzie. Dziękuję!"
+  },
+  "line.a_kaczuszka": {
+    "who": "bobr",
+    "text": "A kaczuszka jest w koszyku!"
+  },
+  "line.a_obok": {
+    "who": "sarenka",
+    "text": "Bobrze, kaczuszka stoi obok koszyka, a nie w środku."
+  },
+  "line.a_wloz": {
+    "who": "sarenka",
+    "text": "Włóż kaczuszkę do środka koszyka. Przeciągnij ją."
+  },
+  "line.a_wloz_nie": {
+    "who": "sarenka",
+    "text": "Jeszcze nie w środku. Przeciągnij kaczuszkę do samego koszyka."
+  },
+  "line.a_teraz_w_srodku": {
+    "who": "bobr",
+    "text": "Teraz rozumiem. Obok to nie w środku!"
+  },
+  "line.b_zabawa": {
+    "who": "sarenka",
+    "text": "Zanim spadnie deszcz, zabawa! Rysuję kółko na trawie. Kółko to nasz domek."
+  },
+  "line.b_wskakujcie": {
+    "who": "sarenka",
+    "text": "Wszyscy do środka kółka!"
+  },
+  "line.b_kto": {
+    "who": "sarenka",
+    "text": "Kto jest jeszcze na zewnątrz? Wskaż."
+  },
+  "line.b_kto_nie": {
+    "who": "sarenka",
+    "text": "Ten jest w środku kółka. Kto stoi poza kółkiem?"
+  },
+  "line.b_biegne": {
+    "who": "jez",
+    "text": "Już biegnę do środka!"
+  },
+  "line.b_wszyscy": {
+    "who": "bobr",
+    "text": "Wszyscy w środku!"
+  },
+  "line.b_deszcz": {
+    "who": "sarenka",
+    "text": "Pada deszcz! Szybko do norki Jeżyka!"
+  },
+  "line.b_norka": {
+    "who": "jez",
+    "text": "W norce jest sucho i ciepło. Deszcz został na zewnątrz."
+  },
+  "line.b_kubki": {
+    "who": "jez",
+    "text": "Zagrajmy w kubeczki! Chowam żołądź pod kubeczkiem. Patrz uważnie."
+  },
+  "line.b_gdzie": {
+    "who": "jez",
+    "text": "W którym kubeczku jest żołądź? Wskaż."
+  },
+  "line.b_gdzie_nie": {
+    "who": "jez",
+    "text": "Tu jest pusto. Spróbuj jeszcze raz."
+  },
+  "line.b_jest": {
+    "who": "bobr",
+    "text": "Jest! Żołądź był w środku kubeczka."
+  },
+  "line.b_koniec": {
+    "who": "sarenka",
+    "text": "Na zewnątrz burza, a my w środku, w ciepłej norce."
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Pobawmy się w środek i na zewnątrz! Mam pięć zabaw."
+  },
+  "line.p_owce": {
+    "who": "bobr",
+    "text": "Narysuj płot dookoła owieczek. Wilk ma zostać na zewnątrz."
+  },
+  "line.p_owce_nie": {
+    "who": "bobr",
+    "text": "Popatrz: w środku mają być same owieczki, wszystkie. Wilk na zewnątrz."
+  },
+  "line.p_dobrze": {
+    "who": "sarenka",
+    "text": "Brawo!",
+    "speakers": [
+      "bobr"
+    ]
+  },
+  "line.p_jablka": {
+    "who": "sarenka",
+    "text": "Włóż trzy jabłka do koszyka. Przeciągaj je po jednym."
+  },
+  "line.p_poza": {
+    "who": "bobr",
+    "text": "Która gwiazdka jest na zewnątrz kółka? Wskaż."
+  },
+  "line.p_poza_nie": {
+    "who": "bobr",
+    "text": "Ta gwiazdka jest w środku kółka. Szukaj tej poza kółkiem."
+  },
+  "line.p_kubki": {
+    "who": "sarenka",
+    "text": "Chowam piłkę pod kubeczkiem. Patrz uważnie!"
+  },
+  "line.p_gdzie_pilka": {
+    "who": "sarenka",
+    "text": "W którym kubeczku jest piłka? Wskaż."
+  },
+  "line.p_gdzie_pilka_nie": {
+    "who": "sarenka",
+    "text": "Ten kubeczek jest pusty. Spróbuj jeszcze raz."
+  },
+  "line.p_rybka": {
+    "who": "bobr",
+    "text": "Rybka chce pływać. Wpuść ją do środka akwarium."
+  },
+  "line.p_rybka_nie": {
+    "who": "bobr",
+    "text": "Rybka jest jeszcze na zewnątrz. Przeciągnij ją do wody, do środka akwarium."
+  },
+  "line.p_rybka_ok": {
+    "who": "sarenka",
+    "text": "Rybka pływa w środku akwarium!"
+  },
+  "line.h_zabawki": {
+    "who": "jez",
+    "text": "Przed snem zabawki wracają do pudła. Przeciągnij każdą do środka pudła."
+  },
+  "line.h_w_pudle": {
+    "who": "sarenka",
+    "text": "Wszystkie zabawki są w środku pudła!"
+  },
+  "line.h_rodzice": {
+    "who": "jez",
+    "text": "Pobaw się z rodzicami: zabawka do pudełka, zabawka z pudełka. W środku czy na zewnątrz?"
+  },
+  "line.naklejka_daj": {
+    "who": "jez",
+    "text": "Dziękuję, że wszyscy są bezpieczni w domu! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "jez",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To kurka Jeżyka. Dostaliśmy ją, kiedy zamykaliśmy zagrodę przed burzą."
+  }
+}

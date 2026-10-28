@@ -1,0 +1,257 @@
+{
+ "line.a_burza": {
+  "hash": "83a33015721a",
+  "who": "jez",
+  "text": "A storm is coming! Tonight everybody must be at home."
+ },
+ "line.a_kurki": {
+  "hash": "894c0c161b2d",
+  "who": "jez",
+  "text": "And my hens are walking on the meadow. They must go back into the pen."
+ },
+ "line.a_plot": {
+  "hash": "4a64270ab69d",
+  "who": "bobr",
+  "text": "I'll build them a fence! All around, like this."
+ },
+ "line.a_gotowe": {
+  "hash": "d477d8d19c88",
+  "who": "bobr",
+  "text": "Done! The hens are inside."
+ },
+ "line.a_uciekla": {
+  "hash": "36e4af15ba27",
+  "who": "jez",
+  "text": "Oh no, a hen got out!"
+ },
+ "line.a_dziura": {
+  "hash": "8ce5e099ffda",
+  "who": "sarenka",
+  "text": "There's a gap in the fence. You can get out through a gap."
+ },
+ "line.a_zamkniety": {
+  "hash": "8701587e824b",
+  "who": "sarenka",
+  "text": "A fence must be closed all the way round. Then what is inside stays inside."
+ },
+ "line.a_narysuj": {
+  "hash": "29307886ea67",
+  "who": "jez",
+  "text": "Draw a fence around all the hens with your finger. Bring your finger back to where you started."
+ },
+ "line.a_otwarta": {
+  "hash": "36c3d146af5f",
+  "who": "jez",
+  "text": "There's a gap left in the fence! Close it all the way round to the start."
+ },
+ "line.a_otwarta.bobr": {
+  "hash": "00cba0fe8822",
+  "who": "bobr",
+  "text": "There's a gap left in the fence! Close it all the way round to the start."
+ },
+ "line.a_otwarta.sarenka": {
+  "hash": "c280c81a2499",
+  "who": "sarenka",
+  "text": "There's a gap left in the fence! Close it all the way round to the start."
+ },
+ "line.a_nie_wszystkie": {
+  "hash": "d0f510f7ed4d",
+  "who": "jez",
+  "text": "Not all the hens are inside. Draw the fence around all of them."
+ },
+ "line.a_w_srodku": {
+  "hash": "de3bd384c61f",
+  "who": "jez",
+  "text": "All the hens are inside the pen. Thank you!"
+ },
+ "line.a_kaczuszka": {
+  "hash": "05404f8577c9",
+  "who": "bobr",
+  "text": "And the duckling is in the basket!"
+ },
+ "line.a_obok": {
+  "hash": "ae5c797061fe",
+  "who": "sarenka",
+  "text": "Beaver, the duckling is standing next to the basket, not inside it."
+ },
+ "line.a_wloz": {
+  "hash": "b5541eadfc6d",
+  "who": "sarenka",
+  "text": "Put the duckling inside the basket. Drag it."
+ },
+ "line.a_wloz_nie": {
+  "hash": "05a9a258c908",
+  "who": "sarenka",
+  "text": "Not inside yet. Drag the duckling right into the basket."
+ },
+ "line.a_teraz_w_srodku": {
+  "hash": "328dd491827e",
+  "who": "bobr",
+  "text": "Now I see. Next to is not inside!"
+ },
+ "line.b_zabawa": {
+  "hash": "98b7709cbefa",
+  "who": "sarenka",
+  "text": "A game before the rain! I'm drawing a circle on the grass. The circle is our little house."
+ },
+ "line.b_wskakujcie": {
+  "hash": "20f4277d74a0",
+  "who": "sarenka",
+  "text": "Everybody into the circle!"
+ },
+ "line.b_kto": {
+  "hash": "ffcf85dbd507",
+  "who": "sarenka",
+  "text": "Who is still outside? Point to them."
+ },
+ "line.b_kto_nie": {
+  "hash": "e4092b0c3dcf",
+  "who": "sarenka",
+  "text": "That one is inside the circle. Who is standing outside it?"
+ },
+ "line.b_biegne": {
+  "hash": "a4b949553aa2",
+  "who": "jez",
+  "text": "I'm running in!"
+ },
+ "line.b_wszyscy": {
+  "hash": "ca60c2f84523",
+  "who": "bobr",
+  "text": "Everybody inside!"
+ },
+ "line.b_deszcz": {
+  "hash": "0c4b8f09b2fb",
+  "who": "sarenka",
+  "text": "It's raining! Quick, into Hedgehog's burrow!"
+ },
+ "line.b_norka": {
+  "hash": "b5a5f2ea87aa",
+  "who": "jez",
+  "text": "It's dry and warm in the burrow. The rain stayed outside."
+ },
+ "line.b_kubki": {
+  "hash": "8ee72eaa315c",
+  "who": "jez",
+  "text": "Let's play cups! I'm hiding an acorn under a cup. Watch carefully."
+ },
+ "line.b_gdzie": {
+  "hash": "ddd49341b5a3",
+  "who": "jez",
+  "text": "Which cup is the acorn in? Point to it."
+ },
+ "line.b_gdzie_nie": {
+  "hash": "bd000d7e9fa8",
+  "who": "jez",
+  "text": "This one is empty. Try again."
+ },
+ "line.b_jest": {
+  "hash": "35476d0595f8",
+  "who": "bobr",
+  "text": "There it is! The acorn was inside the cup."
+ },
+ "line.b_koniec": {
+  "hash": "152016b2f8cc",
+  "who": "sarenka",
+  "text": "Outside there's a storm, and we're inside, in the warm burrow."
+ },
+ "line.p_start": {
+  "hash": "399b8ba7c3f2",
+  "who": "sarenka",
+  "text": "Let's play inside and outside! I have five games."
+ },
+ "line.p_owce": {
+  "hash": "3581e1191cf7",
+  "who": "bobr",
+  "text": "Draw a fence around the sheep. The wolf must stay outside."
+ },
+ "line.p_owce_nie": {
+  "hash": "c503e26171f4",
+  "who": "bobr",
+  "text": "Look: inside there must be only the sheep, all of them. The wolf outside."
+ },
+ "line.p_dobrze": {
+  "hash": "ceb0ef83b223",
+  "who": "sarenka",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.bobr": {
+  "hash": "443840bb6e59",
+  "who": "bobr",
+  "text": "Bravo!"
+ },
+ "line.p_jablka": {
+  "hash": "aa88a2edeceb",
+  "who": "sarenka",
+  "text": "Put three apples into the basket. Drag them one at a time."
+ },
+ "line.p_poza": {
+  "hash": "3f8dd2a7fa87",
+  "who": "bobr",
+  "text": "Which star is outside the circle? Point to it."
+ },
+ "line.p_poza_nie": {
+  "hash": "bf6258242d31",
+  "who": "bobr",
+  "text": "That star is inside the circle. Look for the one outside it."
+ },
+ "line.p_kubki": {
+  "hash": "57be35abf506",
+  "who": "sarenka",
+  "text": "I'm hiding a ball under a cup. Watch carefully!"
+ },
+ "line.p_gdzie_pilka": {
+  "hash": "c009614537cf",
+  "who": "sarenka",
+  "text": "Which cup is the ball in? Point to it."
+ },
+ "line.p_gdzie_pilka_nie": {
+  "hash": "15679c899985",
+  "who": "sarenka",
+  "text": "This cup is empty. Try again."
+ },
+ "line.p_rybka": {
+  "hash": "fd89b1a0c54c",
+  "who": "bobr",
+  "text": "The goldfish wants to swim. Let her into the bowl."
+ },
+ "line.p_rybka_nie": {
+  "hash": "2b53fcaf896e",
+  "who": "bobr",
+  "text": "The goldfish is still outside. Drag her into the water, inside the bowl."
+ },
+ "line.p_rybka_ok": {
+  "hash": "e87df555830b",
+  "who": "sarenka",
+  "text": "The goldfish is swimming inside the bowl!"
+ },
+ "line.h_zabawki": {
+  "hash": "690d40a64b1a",
+  "who": "jez",
+  "text": "Before bed the toys go back into the box. Drag each one inside the box."
+ },
+ "line.h_w_pudle": {
+  "hash": "5795dd8666fa",
+  "who": "sarenka",
+  "text": "All the toys are inside the box!"
+ },
+ "line.h_rodzice": {
+  "hash": "302714892386",
+  "who": "jez",
+  "text": "Play with your parents: a toy into the box, a toy out of the box. Inside or outside?"
+ },
+ "line.naklejka_daj": {
+  "hash": "95cfb6e20062",
+  "who": "jez",
+  "text": "Thank you for getting everybody safely home! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "2028c3a69b19",
+  "who": "jez",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "efa6d1bf0913",
+  "who": "narrator",
+  "text": "This is Hedgehog's hen. We got it when we closed the pen before the storm."
+ }
+}

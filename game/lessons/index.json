@@ -175,10 +175,9 @@
         "en": "Inside and outside"
       },
       "subtitle": {
-        "pl": "gdzie to jest",
-        "en": "where it is"
+        "pl": "wieczór przed burzą",
+        "en": "the evening before the storm"
       },
-      "wkrotce": true,
       "temat": "polozenie"
     },
     {
@@ -188,8 +187,8 @@
         "en": "Tangram"
       },
       "subtitle": {
-        "pl": "układanie obrazków z kawałków",
-        "en": "pictures from pieces"
+        "pl": "teatr cieni Sowy",
+        "en": "Owl's shadow theatre"
       },
       "temat": "figury"
     },
