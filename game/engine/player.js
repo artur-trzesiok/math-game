@@ -105,6 +105,19 @@ export class Player {
   // ------------------------------------------------------------------ menu
   menu() {
     this.closeStage();
+    // typing "admin" on the menu (a keyboard; a tablet has none): every sticker into the album, every stage open
+    if (!this.adminSluch) {
+      this.adminSluch = true; let bufor = "";
+      document.addEventListener("keydown", (e) => {
+        if ($("#menu").style.display === "none" || e.key.length !== 1) return;
+        bufor = (bufor + e.key.toLowerCase()).slice(-5);
+        if (bufor !== "admin") return;
+        bufor = "";
+        for (const l of this.index.lessons) if (!l.wkrotce) Album.dodaj(l.id);
+        for (const t of this.index.topics || []) { dopisz(OTWARTE, t.id); dopisz(WIDZIANE, t.id); dopisz(UKONCZONE, t.id); if (t.znak) Album.dodaj(t.id); }
+        dzwiekMenu("right"); this.menu();
+      });
+    }
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
     menuMuzyka.graj();
     menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20);
