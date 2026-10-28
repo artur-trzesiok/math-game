@@ -211,8 +211,9 @@ function pokazKorekte() {
   $("ubr_sx").value = k.sx ?? 1; $("ubr_sy").value = k.sy ?? 1;
   odswiezPrzyciskWszystkim();
 }
-async function zmienKorekte() {
+async function zmienKorekte(e) {
   const r = $("ubr_kor").value, w = $("ubr_widok").value; if (!r) return;
+  zapamietajU(e?.target?.id || "pola");
   const k = { dx: +$("ubr_dx").value || 0, dy: +$("ubr_dy").value || 0, skala: +$("ubr_skala").value || 1, sx: +$("ubr_sx").value || 1, sy: +$("ubr_sy").value || 1, obrot: +$("ubr_obrot").value || 0 };
   const klucz = ubrWybor?.rzecz === r && ubrWybor.widok === w ? ubrWybor.klucz : w;
   korektyKto[r] = korektyKto[r] || {};
@@ -229,12 +230,13 @@ for (const id of ["ubr_dx", "ubr_dy", "ubr_skala", "ubr_sx", "ubr_sy", "ubr_obro
 $("ubr_wszystkim").onclick = async () => {
   const r = $("ubr_kor").value, slot = galeriaU[r]?.slot; if (!slot) return;
   const inne = Object.keys(galeriaU).filter((n) => n !== r && galeriaU[n].slot === slot);
+  zapamietajU();
   for (const n of inne) { if (korektyKto[r]) korektyKto[n] = JSON.parse(JSON.stringify(korektyKto[r])); else delete korektyKto[n]; }
   for (const n of zalozone) if (inne.includes(n)) await ubierzWszystkie(n);
   $("ubr_status").textContent = `skopiowano na ${inne.length} (${slot}) — niezapisane`;
 };
 const odswiezPrzyciskWszystkim = () => { const sl = galeriaU[$("ubr_kor").value]?.slot; $("ubr_wszystkim").textContent = sl ? `zastosuj do wszystkich: ${{ glowa: "głowa" }[sl] || sl}` : "zastosuj do wszystkich (załóż coś)"; $("ubr_wszystkim").disabled = !sl; };
-$("ubr_zeruj").onclick = () => { $("ubr_dx").value = 0; $("ubr_dy").value = 0; $("ubr_skala").value = 1; $("ubr_sx").value = 1; $("ubr_sy").value = 1; $("ubr_obrot").value = 0; zmienKorekte(); };
+$("ubr_zeruj").onclick = () => { zapamietajU(); $("ubr_dx").value = 0; $("ubr_dy").value = 0; $("ubr_skala").value = 1; $("ubr_sx").value = 1; $("ubr_sy").value = 1; $("ubr_obrot").value = 0; zmienKorekte(); };
 $("ubr_zapisz").onclick = async () => {
   for (const [r, w] of Object.entries(korektyKto)) if (!Object.keys(w).length) delete korektyKto[r];
   const odp = await fetch(`/api/characters/${kto}/ubior`, { method: "POST", body: JSON.stringify(korektyKto) });
@@ -416,9 +418,23 @@ function polaStawow(el) {
 
 // ------------------------------------------------------------ edycja
 function zapamietaj() { historia.push(JSON.stringify(dane)); if (historia.length > 100) historia.shift(); }
+// the wardrobe's corrections go into the same history; a run of the same small step (wheel, Q/E, typing in one
+// field) within a moment is one entry
+let ostatniU = null;
+function zapamietajU(rodzaj = null) {
+  const t = performance.now(), top = historia[historia.length - 1];
+  if (rodzaj && ostatniU && ostatniU.rodzaj === rodzaj && top === ostatniU.wpis && t - ostatniU.t < 800) { ostatniU.t = t; return; }
+  const wpis = { u: JSON.stringify(korektyKto) }; historia.push(wpis); if (historia.length > 100) historia.shift();
+  ostatniU = { rodzaj, wpis, t };
+}
 function cofnij() {
   if (!historia.length) return status("nie ma czego cofać");
-  dane = JSON.parse(historia.pop()); zbuduj(); zaznaczZmiane(); status("cofnięto");
+  const w = historia.pop();
+  if (typeof w === "object") {
+    korektyKto = JSON.parse(w.u); $("ubr_status").textContent = "niezapisane";
+    ubierzWszystkie().then(() => { pokazKorekte(); rysujNakladke(); rysujUbior(); }); status("cofnięto (ubrania)"); return;
+  }
+  dane = JSON.parse(w); zbuduj(); zaznaczZmiane(); status("cofnięto");
 }
 function zaznaczZmiane() { zmieniono = true; $("zmiany").textContent = "niezapisane zmiany"; }
 function przesun(dx, dy, tylkoOs = false) {
@@ -557,6 +573,7 @@ rend.domElement.addEventListener("pointerdown", (e) => {
   if (tu) {
     if (!rogU && !os) wybierzUbior(tu);
     const bb = bbUbioru();
+    zapamietajU();
     ciagU = { od: swiat(e), rog: !!rogU, obrot: !!os || e.altKey, srodek: os || (bb ? new THREE.Vector3((bb.min.x + bb.max.x) / 2, (bb.min.y + bb.max.y) / 2, 0) : null), H: lalki[tu.kolumna].wysokosc, ruszyl: false };
     rend.domElement.setPointerCapture(e.pointerId); e.stopImmediatePropagation(); return;
   }
@@ -585,7 +602,13 @@ rend.domElement.addEventListener("pointermove", (e) => {
       if (!isFinite(fx) || !isFinite(fy) || (Math.abs(fx - 1) < 0.005 && Math.abs(fy - 1) < 0.005)) return;
       if (razem) K.skala = Math.max(0.2, (K.skala ?? 1) * fx);
       else { K.sx = Math.max(0.2, (K.sx ?? 1) * fx); K.sy = Math.max(0.2, (K.sy ?? 1) * fy); }
-      for (const L of kolumny) for (const m of meshUbioru(L, ubrWybor.rzecz)) { m.scale.x *= fx; m.scale.y *= fy; }
+      // around the box's centre: a shoe's mesh sits at the leg's origin, scaling it there slid the shoe off the paw
+      for (const L of kolumny) for (const m of meshUbioru(L, ubrWybor.rzecz)) {
+        const par = m.parent; par.updateWorldMatrix(true, false);
+        const bm = new THREE.Box3().setFromObject(m), q = par.worldToLocal(new THREE.Vector3((bm.min.x + bm.max.x) / 2, m.userData.noga ? bm.min.y : (bm.min.y + bm.max.y) / 2, 0));   // a shoe keeps its sole down
+        m.position.x = q.x + (m.position.x - q.x) * fx; m.position.y = q.y + (m.position.y - q.y) * fy;
+        m.scale.x *= fx; m.scale.y *= fy;
+      }
     } else {
       const dx = (p.x - ciagU.od.x) / ciagU.H, dy = (p.y - ciagU.od.y) / ciagU.H; if (!dx && !dy) return;
       K.dx = (K.dx ?? 0) + dx; K.dy = (K.dy ?? 0) + dy;
@@ -613,7 +636,7 @@ rend.domElement.addEventListener("pointermove", (e) => {
   }
 }, true);
 rend.domElement.addEventListener("pointerup", (e) => {
-  if (ciagU) { const r = ubrWybor.rzecz; ciagU = null; ubierzWszystkie(r).then(() => { rysujNakladke(); rysujUbior(); }); e.stopImmediatePropagation(); return; }
+  if (ciagU) { const r = ubrWybor.rzecz; if (!ciagU.ruszyl && typeof historia[historia.length - 1] === "object") historia.pop(); ciagU = null; ubierzWszystkie(r).then(() => { rysujNakladke(); rysujUbior(); }); e.stopImmediatePropagation(); return; }
   if (ciagE) {
     if (!ciagE.ruszyl) historia.pop();
     else { const cz = dane.czesci[wybor.nazwa]; for (const k of ["x", "y", "w", "h"]) cz[k] = Math.round(cz[k]); zbuduj(); }
@@ -665,7 +688,7 @@ rend.domElement.addEventListener("pointerup", () => {
 rend.domElement.addEventListener("wheel", (e) => {
   e.preventDefault();
   const d = Math.sign(e.deltaY) * (e.shiftKey ? 5 : 2); if (!d) return;
-  if (ubrWybor) { obrocUbior(d); clearTimeout(kolkoUbr); kolkoUbr = setTimeout(() => ubierzWszystkie(ubrWybor.rzecz).then(() => { rysujNakladke(); rysujUbior(); }), 250); rysujNakladke(); rysujUbior(); return; }
+  if (ubrWybor) { zapamietajU("obrot"); obrocUbior(d); clearTimeout(kolkoUbr); kolkoUbr = setTimeout(() => ubierzWszystkie(ubrWybor.rzecz).then(() => { rysujNakladke(); rysujUbior(); }), 250); rysujNakladke(); rysujUbior(); return; }
   if (wybor) { zapamietaj(); obroc(d); }
 }, { passive: false });
 let kolkoUbr = null;
@@ -674,7 +697,7 @@ let kolkoUbr = null;
 window.addEventListener("keydown", (e) => {
   if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
   if (ubrWybor && (e.key === "q" || e.key === "Q" || e.key === "e" || e.key === "E")) {
-    obrocUbior((e.key.toLowerCase() === "q" ? -1 : 1) * (e.shiftKey ? 5 : 1)); ubierzWszystkie(ubrWybor.rzecz).then(() => { rysujNakladke(); rysujUbior(); });
+    zapamietajU("obrot"); obrocUbior((e.key.toLowerCase() === "q" ? -1 : 1) * (e.shiftKey ? 5 : 1)); ubierzWszystkie(ubrWybor.rzecz).then(() => { rysujNakladke(); rysujUbior(); });
     e.preventDefault(); e.stopImmediatePropagation(); return;
   }
   const krok = e.shiftKey ? 10 : 1;

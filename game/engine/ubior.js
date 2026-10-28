@@ -11,6 +11,7 @@
 //   stopy  - one per foot: follows the foot (the tip of the leg mesh) every frame, as wide as the foot
 import * as THREE from "three";
 import { v } from "./v.js";
+import { waga, deformuj } from "./siatka.js";
 
 const SWIEZO = { cache: "no-store" };
 const ladowacz = new THREE.TextureLoader();
@@ -195,29 +196,41 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         const g = new THREE.PlaneGeometry(w2, h, 6, 16), rest = g.attributes.position.array.slice(), uv = g.attributes.uv.array;
         // a row's height from its v: the toe band and the rim at the picture's scale, the shaft between takes the rest
         const wys = (vv) => (vv <= pa ? vv * Hn : vv >= 1 - pb ? h - (1 - vv) * Hn : pa * Hn + (vv - pa) / (1 - pa - pb) * (h - (pa + pb) * Hn)) - h / 2;
-        for (let i = 0, j = 0; i < rest.length; i += 3, j += 2) { const x = rest[i], y = Hn > h ? wys(uv[j + 1]) : rest[i + 1]; rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012; }
+        // the sole covers the paw, the shaft leans along the bone line through the knee and ankle points: each row
+        // shifts towards that line as it rises, so no shin shows beside the shaft (a paw pointing outwards had pulled a
+        // straight box off the leg)
+        const [st0, st1] = R.stawy, os = (yy) => (st0 && st1 && Math.abs(st0.jy - st1.jy) > 1e-4 ? st1.jx + (yy - st1.jy) * (st0.jx - st1.jx) / (st0.jy - st1.jy) : null);
+        const gx = os(cy + h / 2), skos = gx === null ? 0 : gx - cx + K.dx * H0;
+        for (let i = 0, j = 0; i < rest.length; i += 3, j += 2) {
+          const y = Hn > h ? wys(uv[j + 1]) : rest[i + 1], x = rest[i] + skos * Math.max(0, (y + h / 2) / h - pa) / (1 - pa);
+          rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012;
+        }
         g.attributes.position.array.set(rest);
-        // every shoe vertex is glued to its nearest leg vertex at rest: it keeps its offset from it, turned by the
-        // same angle that vertex turns by (the sum of its joints' angles x weights) - the shoe bends exactly like
-        // the leg under it (giving it the leg's s instead tore it apart across the joint bands at a bent ankle)
-        const n = rest.length / 3, najb = new Int32Array(n), off = new Float32Array(2 * n);
+        // skinned to the leg's own joints: every shoe vertex gets a chain position s from where it lies along the
+        // bone line hip -> knee -> ankle -> toe (the joints' points), blended over the segments by distance so it is
+        // smooth everywhere, and turns around the same joints with the same weights as the leg (gluing each vertex
+        // to its nearest leg vertex tore the shaft and the rim apart at a bent knee)
+        const n = rest.length / 3, stawy = R.biodro ? [R.biodro, ...R.stawy] : R.stawy;
+        let tx = 0, ty = 0, tn = 0; for (let i = 0; i < R.B.vs.length; i++) if (R.B.vs[i] > 0.97) { tx += R.rest[3 * i]; ty += R.rest[3 * i + 1]; tn++; }
+        const kosc = [[0, 0, 0], ...R.stawy.map((st) => [st.jx, st.jy, st.sk]), tn ? [tx / tn, ty / tn, 1] : [S0.fx, S0.y0, 1]];
+        const wagiB = new Float32Array(stawy.length * n);
         for (let v = 0; v < n; v++) {
-          let best = Infinity, bi = 0;
-          for (let i = 0; i < R.B.vs.length; i++) { const dx = R.rest[3 * i] - rest[3 * v], dy = R.rest[3 * i + 1] - rest[3 * v + 1], d = dx * dx + dy * dy; if (d < best) { best = d; bi = i; } }
-          najb[v] = bi; off[2 * v] = rest[3 * v] - R.rest[3 * bi]; off[2 * v + 1] = rest[3 * v + 1] - R.rest[3 * bi + 1];
+          const x = rest[3 * v], y = rest[3 * v + 1];
+          let sw = 0, ss = 0;
+          for (let j = 0; j + 1 < kosc.length; j++) {
+            const [ax, ay, as] = kosc[j], [bx, by, bs] = kosc[j + 1], ex = bx - ax, ey = by - ay;
+            const u = Math.max(0, Math.min(1, ((x - ax) * ex + (y - ay) * ey) / Math.max(1e-9, ex * ex + ey * ey)));
+            const d2 = (x - ax - u * ex) ** 2 + (y - ay - u * ey) ** 2, w = 1 / (d2 + 1e-4);
+            sw += w; ss += w * (as + u * (bs - as));
+          }
+          // rubber does not bend at the knee: the whole shoe is past the knee's band, only the ankle bends it
+          const sv = Math.max(ss / sw, R.stawy[0] ? R.stawy[0].sk + R.stawy[0].h / 2 : 0);
+          stawy.forEach((st, k) => { wagiB[k * n + v] = waga(sv, st.sk, st.h); });
         }
         const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: t, transparent: true, alphaTest: 0.05, depthTest: false, depthWrite: false, side: THREE.DoubleSide }));
         m.frustumCulled = false; m.userData.ubior = true; m.userData.rzecz = rzecz; m.userData.widok = widok; m.userData.noga = R.kosc; m.renderOrder = ro; R.mesh.add(m);
-        const nl = R.rest.length / 3;
         const aktualizuj = () => {
-          const lp = R.mesh.geometry.attributes.position.array, out = g.attributes.position.array;
-          const stawy = R.biodro ? [R.katBiodra, ...R.katy] : R.katy, wagi = R.biodro ? R.wagiD : R.wagi;
-          for (let v = 0; v < n; v++) {
-            const i = najb[v]; let kat = 0;
-            if (wagi) for (let k = 0; k < stawy.length; k++) kat += stawy[k] * wagi[k * nl + i];
-            const c = Math.cos(kat), sn = Math.sin(kat), ox = off[2 * v], oy = off[2 * v + 1];
-            out[3 * v] = lp[3 * i] + ox * c - oy * sn; out[3 * v + 1] = lp[3 * i + 1] + ox * sn + oy * c;
-          }
+          deformuj(rest, g.attributes.position.array, wagiB, stawy, R.biodro ? [R.katBiodra, ...R.katy] : R.katy);
           g.attributes.position.needsUpdate = true;
         };
         aktualizuj(); rzeczy.push([m, aktualizuj]);
