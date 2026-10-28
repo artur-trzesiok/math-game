@@ -217,6 +217,26 @@ all one connected shape, centred, on a fully TRANSPARENT background with plenty 
 {STYL}""",
 }
 
+# the engine's mechanics (mechaniki.js): a balance scale in three parts, a cup to hide things under, things to cut
+SHEETS["mechaniki"] = {
+    "outline": True,
+    "names": ["waga_podstawa", "waga_belka", "waga_szalka", "kubeczek", "pizza", "czekolada"],
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of SIX separate illustrated parts for a children's picture book, arranged in a neat
+grid of 2 rows and 3 columns on a fully TRANSPARENT background, with generous empty space between them so none of
+them touch.
+{STYL}
+Row 1, left to right: the STAND of an old-fashioned golden balance scale alone - a round wooden foot and a straight
+golden post with a small round knob on top, NO beam, NO pans; the BEAM of the same scale alone - one long thin
+straight golden bar lying flat, with a small ring at its middle and a small hook at each end; ONE PAN of the same
+scale alone - a shallow round golden dish seen from the side with three thin chains meeting in a ring above it.
+Row 2, left to right: one small round RED plastic cup turned UPSIDE DOWN (the opening at the bottom), opaque, with a
+little white dot pattern, seen from the side; one whole round pizza seen straight from ABOVE, tomato and cheese
+with a few round slices of salami, not cut; one whole bar of milk chocolate seen straight from ABOVE, a rectangle of
+4 by 2 squares, unwrapped.
+The beam is long and thin; the other parts roughly the same size.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

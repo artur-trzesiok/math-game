@@ -15,11 +15,21 @@ import { Stage, GROUND } from "./scene.js";
 import * as Album from "./album.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
 import * as R from "./rytm.js";
+import * as M from "./mechaniki.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
 const $ = (s) => document.querySelector(s);
 const PARAMS = new URLSearchParams(location.search);
+// topics open one after another: a topic opens when every lesson of the one before has its sticker in the album (the
+// album is the record of what was played); the first is always open. A 3 s press on a padlock opens that topic for
+// good (a parent's way through), ?wszystko opens them all (tests); a topic seen open for the first time unlocks
+// on screen (the mist clears, the padlock opens and falls)
+const OTWARTE = "math_game.otwarte", WIDZIANE = "math_game.widziane_otwarte";
+const lista = (k) => { try { return JSON.parse(localStorage.getItem(k)) || []; } catch { return []; } };
+const dopisz = (k, id) => { try { const l = lista(k); if (!l.includes(id)) localStorage.setItem(k, JSON.stringify([...l, id])); } catch { /* private mode */ } };
+const dzwiekMenu = (n) => { if (PARAMS.has("cicho")) return; try { const a = new Audio(v(`/game/audio/sfx/${n}.mp3`)); a.volume = 0.7; a.play().catch(() => {}); } catch { /* ignore */ } };
+
 // the menu's music (game/audio/muzyka/menu.mp3, see SOURCES.md): waits for the first tap (iPad), ducks while the
 // album talks, fades out when a lesson starts
 const MENU_GLOS = 0.3;
@@ -126,10 +136,13 @@ export class Player {
     // one long strip, a tinted block per topic; chips under it jump to a topic and show where the strip is
     const pas = $("#lessons"), chips = $("#chips");
     // between two topics a signpost: the way goes on to a new topic
+    const skonczony = (t) => t.lessons.every((id) => Album.ma(id));
+    const otwarty = topics.map((t, i) => i === 0 || PARAMS.has("wszystko") || lista(OTWARTE).includes(t.id) || skonczony(topics[i - 1]));
     pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
-      <section class="topic" data-topic="${t.id}" style="--c:${t.color}">
+      <section class="topic${otwarty[i] ? "" : " zamkniety"}" data-topic="${t.id}" style="--c:${t.color}">
         ${t.title ? `<h2>${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
+        ${i ? `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">` : ""}
       </section>`).join("");
     chips.innerHTML = topics.filter((t) => t.title).map((t) => `<button data-topic="${t.id}" style="--c:${t.color}">${t.title[this.lang] || t.title.en}</button>`).join("");
     const bloki = [...pas.querySelectorAll(".topic")];
@@ -162,8 +175,32 @@ export class Player {
       if (ciag.ruch) pas.scrollLeft = ciag.l - dx;
     };
     pas.onpointerup = pas.onpointercancel = () => { if (ciag?.ruch) { pas.classList.remove("drag"); pas.dataset.przeciagniete = "1"; setTimeout(() => delete pas.dataset.przeciagniete, 0); } ciag = null; };
-    pas.onclick = (e) => { if (pas.dataset.przeciagniete) return; const b = e.target.closest(".lesson"); if (b) this.start(b.dataset.id); };
+    // the padlock opens: the mist clears from the cards, the shackle lifts, the padlock falls away
+    const otworz = (sec) => {
+      dopisz(WIDZIANE, sec.dataset.topic);
+      const k = sec.querySelector(".klodka"); dzwiekMenu("right");
+      if (k) { k.src = v("/game/assets/menu/klodka_otwarta.webp"); setTimeout(() => k.classList.add("spada"), 500); setTimeout(() => k.remove(), 1200); }
+      sec.classList.remove("zamkniety");
+    };
+    pas.onclick = (e) => {
+      if (pas.dataset.przeciagniete) return;
+      const zam = e.target.closest(".topic.zamkniety");
+      if (zam) { zam.classList.remove("trzesie"); void zam.offsetWidth; zam.classList.add("trzesie"); dzwiekMenu("wrong"); return; }   // not yet: the topic shakes
+      const b = e.target.closest(".lesson"); if (b) this.start(b.dataset.id);
+    };
+    for (const k of pas.querySelectorAll(".topic.zamkniety .klodka")) {
+      let t = null; const pusc = () => { clearTimeout(t); k.classList.remove("trzyma"); };
+      k.onpointerdown = (e) => { e.stopPropagation(); k.classList.add("trzyma"); t = setTimeout(() => { pusc(); const sec = k.closest(".topic"); dopisz(OTWARTE, sec.dataset.topic); otworz(sec); }, 3000); };
+      k.onpointerup = k.onpointerleave = k.onpointercancel = pusc;
+    }
     pas.scrollLeft = this.menuX || 0; odswiez();                     // back from a lesson: where the child was
+    // a topic open for the first time (not the first one, not ?wszystko): the strip goes there and it unlocks
+    const nowy = bloki.find((b, i) => i > 0 && otwarty[i] && !PARAMS.has("wszystko") && !lista(WIDZIANE).includes(b.dataset.topic));
+    if (nowy) {
+      nowy.classList.add("zamkniety"); if (!nowy.querySelector(".klodka")) nowy.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`);
+      setTimeout(() => { naBlok(nowy); setTimeout(() => otworz(nowy), 900); }, 700);
+    }
+    for (const b of bloki) if (!b.classList.contains("zamkniety") && b !== nowy) b.querySelector(".klodka")?.remove();
   }
 
   // ------------------------------------------------------------------ lesson
@@ -449,6 +486,14 @@ export class Player {
       ruch: (who, nazwa, o = {}) => R.ruch(S, who, nazwa, o),
       potknij: guard((who) => R.potknij(S, who)),
       zamroz: (who, on = true) => R.zamroz(S, who, on),
+      // mechanics (mechaniki.js): the child's interactions run under the instruction rule (wDzialaniu)
+      slad: (co, o) => wDzialaniu(M.slad(S, co, o)),
+      waga: guard(async (o) => { const w = await M.waga(S, o); const p0 = w.przeciagaj; w.przeciagaj = (q) => wDzialaniu(p0(q)); return w; }),
+      os: guard((o) => M.os(S, o)),
+      wieza: (o) => { const w = M.wieza(S, o); w.gotowe = wDzialaniu(w.gotowe); return w; },
+      kubki: guard((o) => M.kubki(S, o)),
+      dzwieki: guard((n, o = {}) => M.dzwieki(S, n, { ...o, tempo: FAST ? 0.15 : o.tempo })),
+      podziel: (obraz, o) => wDzialaniu(M.podziel(S, obraz, o)),
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
       pan: guard((k, opts) => E.pan(S, k, opts)),
       odliczanie: guard((opts) => E.odliczanie(S, opts)),

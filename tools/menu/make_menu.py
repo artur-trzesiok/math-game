@@ -72,9 +72,22 @@ dark-brown outline. NOTHING on it.
 small red mushroom at its foot, filling most of the picture, on a fully TRANSPARENT background.
 {STYL}
 NO text."""),
+    # a topic not open yet (its cards lie in a mist): a padlock, closed, and the same one open for the moment it opens
+    "klodka": ("1024x1024", "transparent", f"""ONE old-fashioned padlock, CLOSED, filling most of the picture, on a fully
+TRANSPARENT background: a chunky rounded body of warm golden brass with a dark keyhole in the middle and a few
+scratches, a thick silver-grey shackle on top, a dark-brown outline, friendly and toy-like, seen straight from the
+front, centred.
+{STYL}
+NO key, NO chain, NO text."""),
+    "klodka_otwarta": ("1024x1024", "transparent", f"""The SAME old-fashioned padlock, now OPEN: the thick silver-grey
+shackle lifted up and turned to the side, released from the body; the chunky rounded golden brass body with its dark
+keyhole, a dark-brown outline, friendly and toy-like, seen straight from the front, centred, filling most of the
+picture, on a fully TRANSPARENT background.
+{STYL}
+NO key, NO chain, NO text."""),
 }
-CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz"]
-DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900}      # the long side kept (the menu draws them big)
+CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz", "klodka", "klodka_otwarta"]
+DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900, "klodka": 420, "klodka_otwarta": 420}      # the long side kept (the menu draws them big)
 
 
 def gen() -> None:

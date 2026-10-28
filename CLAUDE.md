@@ -370,6 +370,10 @@ character and view in `game/assets/characters/<kto>/ubior.json` (dx, dy in heigh
 manager's wardrobe panel. `ctx.ubieranie({rzeczy, kto, pasuje, wrong})` - drag garments onto characters; a wrong
 size goes on, slips and falls off. Quadrupeds are not dressed, tails never.
 
+Topics open one after another (player.js menu): a topic opens when every lesson of the one before has its sticker in
+the album; until then its cards lie in a mist under a painted padlock (tools/menu: klodka, klodka_otwarta), a tap
+shakes it, a 3 s press on the padlock opens it for good (localStorage math_game.otwarte - a parent's way through),
+`?wszystko` opens all; the first time a topic is seen open it unlocks on screen (math_game.widziane_otwarte).
 Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}), in the order a child should take them
 (topics by the age of their easiest lesson, lessons by difficulty). The menu is ONE strip scrolled sideways (a
 finger, the mouse wheel, a mouse drag; no visible scrollbar, edges fade where there is more), each topic a tinted

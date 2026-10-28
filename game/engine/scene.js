@@ -56,10 +56,18 @@ export class Stage {
     Lalka.naGraj = (L, nazwa) => { if (L.bezDzwieku) return; if (nazwa === "Podskok") this.sfx.graj("hop"); else if (nazwa === "Brawo") this.sfx.graj("clap", { glosnosc: 0.8 }); };
     this.onResize = () => this.resize();
     window.addEventListener("resize", this.onResize); this.resize();
-    this.renderer.domElement.addEventListener("pointerdown", (e) => { if (e.button !== 0 && e.pointerType === "mouse") return; if (!this.dragStart(e)) this.pointer(e); });
-    this.renderer.domElement.addEventListener("pointermove", (e) => this.dragMove(e));
-    this.renderer.domElement.addEventListener("pointerup", () => this.dragEnd());
-    this.renderer.domElement.addEventListener("pointercancel", () => this.dragEnd());
+    // a finger drawing on the stage (mechaniki.js: tracing, cutting) takes every pointer while it is set; its down()
+    // returns false for a touch it does not want (a tap on a character still repeats the instruction then)
+    const naScenie = (e) => { const w = this.worldAt(this.ndc(e)); return [w.x, w.y]; };
+    this.renderer.domElement.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0 && e.pointerType === "mouse") return;
+      if (this.palec && this.palec.down?.(naScenie(e)) !== false) { this.palecWcisniety = true; try { this.renderer.domElement.setPointerCapture(e.pointerId); } catch { /* ignore */ } return; }
+      if (!this.dragStart(e)) this.pointer(e);
+    });
+    this.renderer.domElement.addEventListener("pointermove", (e) => { if (this.palec && this.palecWcisniety) return this.palec.move?.(naScenie(e)); this.dragMove(e); });
+    const puszczony = () => { if (this.palecWcisniety) { this.palecWcisniety = false; return this.palec?.up?.(); } this.dragEnd(); };
+    this.renderer.domElement.addEventListener("pointerup", puszczony);
+    this.renderer.domElement.addEventListener("pointercancel", puszczony);
     if (PARAMS.has("safe")) this.showSafe();
     this.last = performance.now(); this.lastRaf = this.last;
     this.running = true;

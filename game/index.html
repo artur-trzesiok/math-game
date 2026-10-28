@@ -113,7 +113,20 @@
              -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); }
   #lessons::-webkit-scrollbar { display: none; }
   #lessons.drag { cursor: grabbing; }
-  .topic { flex: 0 0 auto; display: flex; flex-direction: column; gap: calc(var(--k) * 0.05); }
+  .topic { flex: 0 0 auto; display: flex; flex-direction: column; gap: calc(var(--k) * 0.05); position: relative; }
+  /* a topic not open yet: its cards lie in a mist under a painted padlock (player.js menu) */
+  .topic .lesson { transition: filter 1.4s ease; }
+  .topic.zamkniety .lesson { filter: blur(3.5px) saturate(.45) brightness(1.08); }
+  .topic::after { content: ""; position: absolute; left: 0; right: 0; top: calc(var(--k) * 0.22); bottom: 0; pointer-events: none; border-radius: 24px; opacity: 0; transition: opacity 1.4s ease;
+    background: radial-gradient(ellipse at 50% 55%, rgba(255,255,255,.55), rgba(255,255,255,.25) 70%, rgba(255,255,255,0)); }
+  .topic.zamkniety::after { opacity: 1; }
+  .topic .klodka { position: absolute; left: 50%; top: 56%; width: calc(var(--k) * 0.42); transform: translate(-50%, -50%); z-index: 6; cursor: pointer;
+    filter: drop-shadow(0 6px 8px rgba(60,30,0,.35)); transition: transform .7s ease-in, opacity .7s ease-in; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  .topic .klodka.trzyma { animation: drga .18s infinite; }
+  .topic .klodka.spada { transform: translate(-50%, 90%) rotate(28deg); opacity: 0; }
+  .topic.trzesie { animation: trzes .45s; }
+  @keyframes trzes { 20% { transform: translateX(-8px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
+  @keyframes drga { 50% { transform: translate(-50%, -50%) rotate(-4deg); } }
   .topic h2 { align-self: flex-start; margin: 0; padding: calc(var(--k) * 0.035) calc(var(--k) * 0.17) calc(var(--k) * 0.045); font: 800 max(14px, calc(var(--k) * 0.1)) "Baloo 2", system-ui; color: var(--braz);
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   .topic h2::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
@@ -187,7 +200,7 @@
     const im = { imports: {
       three: "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);
     document.currentScript.after(s);
