@@ -510,6 +510,26 @@ one glass jar of honey with a cloth lid; one red knitted winter hat with a pompo
 All four roughly the same size.""",
 }
 
+# the lift (mechaniki3.js winda): its parts painted, the code only moves them - the wheel turns, the rope is stacked
+# from pieces of `winda_lina` to any length
+SHEETS["winda"] = {
+    "outline": True,
+    "bez_obwodki": ["winda_lina"],
+    "names": ["winda_belka", "winda_kolo", "winda_lina", "winda_uchwyt"],
+    "size": "1536x1024",
+    "rows": 1,
+    "prompt": f"""A sprite sheet of FOUR illustrated parts of a simple wooden rope lift for a children's picture book, in ONE
+ROW of 4 on a fully TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured
+background, NO glow, NO halo, NO vignette - the space around and between the parts is completely empty and transparent.
+{STYL}
+Left to right: a short thick horizontal wooden beam (a log plank) with a small iron bracket hanging down from its middle,
+NOTHING hanging from the bracket; a round wooden pulley wheel seen flat from the front, with a dark groove around its
+rim, four spokes and a metal axle in the centre; one short STRAIGHT VERTICAL piece of thick twisted brown rope, cut
+clean at both ends, perfectly upright, as tall as the beam is wide; a small round wooden pull-handle (a toggle) with a
+tiny iron ring on top.
+The beam widest, the wheel as wide as half the beam, the handle small.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)

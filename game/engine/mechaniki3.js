@@ -2,6 +2,7 @@
 // and the lift (a basket on a rope over a pulley, stopping at levels). The player wraps them as ctx calls.
 
 import * as THREE from "three";
+import { texture } from "./scene.js";
 
 const FAST = new URLSearchParams(location.search).has("szybko");
 const DREWNO = "#7a5530";
@@ -109,32 +110,49 @@ function otoczka(p) {
 }
 
 // ===================================================================== the lift
-// A basket (sticker `kosz`) hangs on a rope from a pulley over (x, top); the rope runs over the wheel and down its
-// other side to a wooden toggle. Pull the toggle down and the basket rises, or drag the basket itself; let go and it
-// settles on the nearest of `pietra` (y of the basket's centre, bottom first). Things put in ride along.
+// A basket (sticker `kosz`) hangs on a rope from a painted pulley (winda_kolo) under a beam (winda_belka) over (x, top);
+// the rope (pieces of winda_lina stacked to any length, drawn behind every sticker) runs over the wheel and down its
+// other side to a wooden toggle (winda_uchwyt). Pull the toggle down and the basket rises, or drag the basket itself;
+// let go and it settles on the nearest of `pietra` (y of the basket's centre, bottom first). Things put in ride along.
 // doPoziomu(i) waits for the child to bring it to level i. Tests: S.winda.dokoncz().
+const ramkaAlfy = (img) => {
+  const c = document.createElement("canvas"); c.width = img.width; c.height = img.height;
+  const g = c.getContext("2d", { willReadFrequently: true }); g.drawImage(img, 0, 0);
+  const d = g.getImageData(0, 0, img.width, img.height).data; let x0 = img.width, y0 = img.height, x1 = 0, y1 = 0;
+  for (let y = 0; y < img.height; y++) for (let x = 0; x < img.width; x++) if (d[(y * img.width + x) * 4 + 3] > 40) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+  return { u0: x0 / img.width, u1: (x1 + 1) / img.width, v0: 1 - (y1 + 1) / img.height, v1: 1 - y0 / img.height, asp: (y1 + 1 - y0) / (x1 + 1 - x0) };
+};
+// a rope from a (top) down to b: pieces of the painted rope, the last one cut short; ro below the stickers' 10
+function lina(map, r, grubosc = 0.13) {
+  const grp = new THREE.Group(), kawalek = grubosc * r.asp, pula = [];
+  const mat = new THREE.MeshBasicMaterial({ map, transparent: true, depthTest: false, depthWrite: false });
+  grp.ustaw = (a, b) => {
+    const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy), n = Math.ceil(l / kawalek);
+    grp.position.set(a[0], a[1], 0.3); grp.rotation.z = Math.atan2(dy, dx) + Math.PI / 2;
+    while (pula.length < n) {
+      const g = new THREE.PlaneGeometry(grubosc, 1); const m = new THREE.Mesh(g, mat); m.renderOrder = 9.6; m.frustumCulled = false; grp.add(m); pula.push(m);
+    }
+    pula.forEach((m, i) => {
+      m.visible = i < n; if (!m.visible) return;
+      const h = Math.min(kawalek, l - i * kawalek), f = h / kawalek, uv = m.geometry.attributes.uv;
+      m.scale.y = h; m.position.y = -(i * kawalek + h / 2);
+      uv.setXY(0, r.u0, r.v1); uv.setXY(1, r.u1, r.v1); uv.setXY(2, r.u0, r.v1 - (r.v1 - r.v0) * f); uv.setXY(3, r.u1, r.v1 - (r.v1 - r.v0) * f); uv.needsUpdate = true;
+    });
+  };
+  return grp;
+}
 export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz = "koszyk", size = 1.2, szer = 0.8, onZly = null } = {}) {
+  const r = szer / 2, yK = Math.min(3.25 - r - 0.3, pietra[pietra.length - 1] + size * 0.5 + 0.5), xL = x, xP = x + szer, cx = x + r;
+  pietra = pietra.map((p) => Math.min(p, yK - r - 0.3 - size * 0.4));    // the top level stops the basket under the wheel
   const dol = pietra[0], gora = pietra[pietra.length - 1];
-  const yK = Math.min(3.2, gora + size * 0.5 + 0.55), r = szer / 2, xL = x, xP = x + szer, cx = x + r;
   const h = await S.object(kosz, { x, y: pietra[start], size });
-  const grp = new THREE.Group(); S.scene.add(grp);
-  // the beam and the wheel
-  const belka = pasek(DREWNO, 0.16, 0.5, 13); belka.ustaw([cx - r - 0.6, yK + r + 0.1], [cx + r + 0.6, yK + r + 0.1]); grp.add(belka);
-  const uchwyt = pasek("#5b3d22", 0.07, 0.5, 13); uchwyt.ustaw([cx, yK + r + 0.1], [cx, yK]); grp.add(uchwyt);
-  const kolo = new THREE.Mesh(new THREE.CircleGeometry(r + 0.04, 32), new THREE.MeshBasicMaterial({ color: "#5b3d22", transparent: true, depthWrite: false }));
-  const tarcza = new THREE.Mesh(new THREE.CircleGeometry(r - 0.06, 32), new THREE.MeshBasicMaterial({ color: "#b07c4a", transparent: true, depthWrite: false }));
-  const os = new THREE.Mesh(new THREE.CircleGeometry(0.07, 16), new THREE.MeshBasicMaterial({ color: "#3a2716", transparent: true, depthWrite: false }));
-  kolo.position.set(cx, yK, 0.5); tarcza.position.set(cx, yK, 0.51); os.position.set(cx, yK, 0.52);
-  kolo.renderOrder = 13.1; tarcza.renderOrder = 13.2; os.renderOrder = 13.3; grp.add(kolo, tarcza, os);
-  const szprychy = new THREE.Group(); szprychy.position.set(cx, yK, 0.515);
-  for (let i = 0; i < 3; i++) { const s = pasek("#7a5530", 0.04, 0, 13.25); s.ustaw([-(r - 0.08), 0], [r - 0.08, 0]); s.rotation.z = (i * Math.PI) / 3; szprychy.add(s); }
-  grp.add(szprychy);
-  const lina1 = pasek("#6b4a2a", 0.045, 0.49, 12.9), lina2 = pasek("#6b4a2a", 0.045, 0.49, 12.9); grp.add(lina1, lina2);
-  const raczka = new THREE.Mesh(new THREE.CircleGeometry(0.2, 24), new THREE.MeshBasicMaterial({ color: "#c58b4e", transparent: true, depthWrite: false }));
-  const obw = new THREE.Mesh(new THREE.CircleGeometry(0.25, 24), new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, depthWrite: false }));
-  raczka.renderOrder = 13.6; obw.renderOrder = 13.5; grp.add(obw, raczka);
+  const belka = await S.object("winda_belka", { x: cx, y: yK + r * 0.55, size: szer * 2.6, cicho: true });
+  const kolo = await S.object("winda_kolo", { x: cx, y: yK, size: szer * 1.25, cicho: true });
+  const raczka = await S.object("winda_uchwyt", { x: xP, y: 0, size: 0.55, cicho: true });
+  const map = await texture("/game/assets/objects/winda_lina.webp"), rl = ramkaAlfy(map.image);
+  const lina1 = lina(map, rl), lina2 = lina(map, rl); S.scene.add(lina1, lina2);
   const wiezie = [];                                                     // [handle, dx, dy]
-  const gornaKosza = () => S.bounds(h).top - 0.05;
+  const gornaKosza = () => S.bounds(h).top - 0.08;
   const L = (yK - (dol + size * 0.4)) + (yK - gora);                     // rope length: basket down = toggle up
   let y = pietra[start];
   const ustaw = (ny) => {
@@ -142,8 +160,8 @@ export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz
     for (const [t, ox, oy] of wiezie) { t.mesh.position.set(x + ox, ny + oy, t.mesh.position.z); t.home = { x: x + ox, y: ny + oy }; }
     const top = gornaKosza(), yr = yK - (L - (yK - top));
     lina1.ustaw([xL, yK], [x, top]); lina2.ustaw([xP, yK], [xP, yr]);
-    raczka.position.set(xP, yr - 0.18, 0.5); obw.position.set(xP, yr - 0.18, 0.5);
-    szprychy.rotation.z -= dy / r;                                       // the wheel turns as the rope runs over it
+    raczka.mesh.position.set(xP, yr - 0.16, raczka.mesh.position.z); raczka.home = { x: xP, y: yr - 0.16 };
+    kolo.mesh.rotation.z -= dy / r;                                      // the wheel turns as the rope runs over it
   };
   ustaw(y);
   const najblizszy = () => pietra.reduce((b, p, i) => (Math.abs(p - y) < Math.abs(pietra[b] - y) ? i : b), 0);
@@ -152,22 +170,22 @@ export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz
     kosz: h, pietra,
     poziom: () => najblizszy(),
     jedz,
-    // a thing into the basket (it sits on its rim and rides along), out again to (nx, ny)
-    wloz: async (t, dx = 0) => { const ty = gornaKosza() - h.mesh.position.y + 0.15; await t.moveTo(x + dx, y + ty, FAST ? 0.05 : 0.4); wiezie.push([t, dx, ty]); S.sfx.graj("plop"); },
+    // a thing into the basket (it sits in it, its lower part hidden by the rim), out again to (nx, ny)
+    wloz: async (t, dx = 0) => { const ty = gornaKosza() - h.mesh.position.y + 0.05; t.mesh.position.z = h.mesh.position.z - 0.02; await t.moveTo(x + dx, y + ty, FAST ? 0.05 : 0.4); wiezie.push([t, dx, ty]); S.sfx.graj("plop"); },
     wyjmij: async (t, nx, ny) => { const i = wiezie.findIndex((q) => q[0] === t); if (i >= 0) wiezie.splice(i, 1); await t.moveTo(nx, ny, FAST ? 0.05 : 0.4); },
     // the child works the lift until it stands at level i
     doPoziomu: (i) => new Promise((ok) => {
       let chwyt = null, dy0 = 0;
       S.palec = {
         down: (p) => {
-          const b = S.bounds(h), [rx, ry] = [raczka.position.x, raczka.position.y];
-          if (Math.hypot(p[0] - rx, p[1] - ry) < 0.6) { chwyt = "lina"; dy0 = p[1] - ry; return true; }
+          const b = S.bounds(h), rb = S.bounds(raczka);
+          if (p[0] >= rb.left - 0.35 && p[0] <= rb.right + 0.35 && p[1] >= rb.bottom - 0.35 && p[1] <= rb.top + 0.35) { chwyt = "lina"; dy0 = p[1] - raczka.mesh.position.y; return true; }
           if (p[0] >= b.left - 0.2 && p[0] <= b.right + 0.2 && p[1] >= b.bottom - 0.2 && p[1] <= b.top + 0.2) { chwyt = "kosz"; dy0 = p[1] - y; return true; }
           return false;
         },
         move: (p) => {
           if (!chwyt) return;
-          let ny = chwyt === "kosz" ? p[1] - dy0 : (() => { const yr = p[1] - dy0; const top = yK - (L - (yK - yr)); return y + (top - gornaKosza()); })();
+          const ny = chwyt === "kosz" ? p[1] - dy0 : (() => { const yr = p[1] - dy0 + 0.16, top = yK - (L - (yK - yr)); return y + (top - gornaKosza()); })();
           ustaw(Math.max(dol, Math.min(gora, ny)));
         },
         up: async () => {
@@ -178,7 +196,7 @@ export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz
       };
       S.winda = { dokoncz: async () => { await jedz(i); S.palec = null; S.winda = null; ok(); } };
     }),
-    remove: () => { S.scene.remove(grp); h.remove(); },
+    remove: () => { S.scene.remove(lina1, lina2); [h, belka, kolo, raczka].forEach((q) => q.remove()); },
   };
   return W;
 }
