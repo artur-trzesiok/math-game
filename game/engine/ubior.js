@@ -169,8 +169,10 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
           const nf = R.stopa.length, na = Math.max(1, R.kostka.length);
           // a little oversize, so no paw shows: in profile the whole foot length and some, from the front the ankle and some
           const kost = R.kostka.length ? k1 - k0 : 0.3;
-          const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (f1 - f0) * 1.1);
-          return { fx: (f0 + f1) / 2, fy: fy / nf, ax: ax / na, y0, szer };
+          // from the front the paw often points outwards past the ankle: the shoe spans both
+          const u0 = Math.min(f0, R.kostka.length ? k0 : f0), u1 = Math.max(f1, R.kostka.length ? k1 : f1);
+          const szer = widok === "profil" ? Math.max(kost * 1.35, (f1 - f0) * 1.3) : Math.max(kost * 1.35, (u1 - u0) * 1.1);
+          return { fx: (f0 + f1) / 2, fy: fy / nf, ax: ax / na, ux: (u0 + u1) / 2, y0, szer };
         };
         // each shoe has its own correction (`przod:noga_l` ...), falling back to the view's; dx and the turn are on the
         // screen's terms - a mirrored leg (the right one) flips them back
@@ -182,16 +184,18 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
         // the height comes from the leg, not from the picture (a front boot is tall and narrow, a side one wide):
         // from the sole up to the leg at s = `do` (a wellington to mid-shin, a sneaker just over the ankle)
         let gy = 0, gn = 0; for (let i = 0; i < R.B.vs.length; i++) if (Math.abs(R.B.vs[i] - P.do) < 0.04) { gy += R.rest[3 * i + 1]; gn++; }
-        // the picture's own proportions, always: as wide as the foot asks, and if that makes it taller than the leg
-        // allows (up to s = `do`), smaller as a whole - never squashed
+        // as wide as the paw asks (it never shows), at the picture's own proportions; when that is taller than the
+        // leg allows (up to s = `do` - short legs), only the plain shaft gets shorter: the toe band and the rim keep
+        // the picture's shape (`pasma`: their shares of the picture's height)
         const prop = t.image.height / t.image.width, hMax = gn ? (gy / gn - S0.y0 + 0.07) * K.skala : Infinity;
-        let w2 = w, h = w * prop;
-        if (h > hMax) { h = hMax; w2 = h / prop; }
-        w2 *= K.sx; h *= K.sy;
-        const cx = (widok === "profil" ? S0.fx : S0.ax) + K.dx * H0, cy = S0.y0 + h / 2 - 0.05 + K.dy * H0;
+        const [pa, pb] = P.pasma || [0.38, 0.14], Hn = w * prop * K.sy, w2 = w * K.sx;
+        const h = Math.max(Math.min(Hn, hMax * K.sy), (pa + pb) * Hn);
+        const cx = (widok === "profil" ? S0.fx : S0.ux) + K.dx * H0, cy = S0.y0 + h / 2 - 0.05 + K.dy * H0;
         const obrot = K.obrot * Math.PI / 180, co = Math.cos(obrot), si = Math.sin(obrot);
-        const g = new THREE.PlaneGeometry(w2, h, 6, 12), rest = g.attributes.position.array.slice();
-        for (let i = 0; i < rest.length; i += 3) { const x = rest[i], y = rest[i + 1]; rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012; }
+        const g = new THREE.PlaneGeometry(w2, h, 6, 16), rest = g.attributes.position.array.slice(), uv = g.attributes.uv.array;
+        // a row's height from its v: the toe band and the rim at the picture's scale, the shaft between takes the rest
+        const wys = (vv) => (vv <= pa ? vv * Hn : vv >= 1 - pb ? h - (1 - vv) * Hn : pa * Hn + (vv - pa) / (1 - pa - pb) * (h - (pa + pb) * Hn)) - h / 2;
+        for (let i = 0, j = 0; i < rest.length; i += 3, j += 2) { const x = rest[i], y = Hn > h ? wys(uv[j + 1]) : rest[i + 1]; rest[i] = cx + x * co - y * si; rest[i + 1] = cy + x * si + y * co; rest[i + 2] = 0.012; }
         g.attributes.position.array.set(rest);
         // every shoe vertex is glued to its nearest leg vertex at rest: it keeps its offset from it, turned by the
         // same angle that vertex turns by (the sum of its joints' angles x weights) - the shoe bends exactly like
