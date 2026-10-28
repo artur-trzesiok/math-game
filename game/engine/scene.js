@@ -853,6 +853,7 @@ export class Stage {
   // an interaction runs). Here it covers what a task does not: no choice open, or a choice among things only
   tapPuppet(L) { if (!L) return null; this.bump(L); this.onPuppetTap?.(L); return L; }
   click(nx, ny) {                                   // normalised device coords; also used by tests (gra.klik)
+    this.scene.updateMatrixWorld(); this.camera.updateMatrixWorld();   // things moved since the last frame (no frame while the page is hidden)
     this.raycaster.setFromCamera(new THREE.Vector2(nx, ny), this.camera);
     if (!this.pending) return this.tapPuppet(this.puppetAt());
     // a thing beats a character: tapping a character only repeats the instruction, so where a sticker and a
@@ -876,8 +877,10 @@ export class Stage {
     return best;
   }
   clickOn(handle) {                                 // tests: click the centre of a target
+    this.scene.updateMatrixWorld(); this.camera.updateMatrixWorld();
     const p = new THREE.Vector3(); this.meshOf(handle).getWorldPosition(p);
     if (handle.korzen) p.y += 1.2;
+    p.x += 0.013; p.y += 0.007;                     // a hair off the centre: a ray through a disc's centre vertex can miss every triangle
     const s = p.project(this.camera);
     return this.click(s.x, s.y);
   }

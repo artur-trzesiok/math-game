@@ -1,0 +1,232 @@
+{
+ "line.a_staw": {
+  "hash": "5f2c356d33a3",
+  "who": "sowa",
+  "text": "Fox, come here! This is the magic pond. Look at yourself in the water!"
+ },
+ "line.a_takie_samo": {
+  "hash": "3e4c448fc6e8",
+  "who": "lisek",
+  "text": "I can see myself in the water! My reflection is just the same as me."
+ },
+ "line.a_uwaznie": {
+  "hash": "12e01a61a74e",
+  "who": "sowa",
+  "text": "At a first glance, yes. But this pond plays tricks: it always changes something. You must look carefully."
+ },
+ "line.a_znajdz": {
+  "hash": "7a5fe4245e95",
+  "who": "sowa",
+  "text": "Look at Fox and at his reflection. How are they different? Point to it."
+ },
+ "line.a_bez_szalika": {
+  "hash": "76144e061849",
+  "who": "lisek",
+  "text": "Oh my! My reflection has no scarf!"
+ },
+ "line.a_roznica": {
+  "hash": "f9b136fcf901",
+  "who": "sowa",
+  "text": "That is a difference: something that is not the same in two pictures. Looking for differences is a fun game!"
+ },
+ "line.a_jeszcze": {
+  "hash": "65be45b73d74",
+  "who": "lisek",
+  "text": "Let's do it again! I'll put on a hat and glasses."
+ },
+ "line.a_dwie": {
+  "hash": "c24a0801b8b2",
+  "who": "sowa",
+  "text": "Now the pond changed two things. Find both differences."
+ },
+ "line.a_dwie_ok": {
+  "hash": "b62f7f9dc3d1",
+  "who": "lisek",
+  "text": "The reflection has no hat and no glasses! What a clever pond."
+ },
+ "line.b_gra": {
+  "hash": "667c35b54f5c",
+  "who": "sowa",
+  "text": "The pond wants to play with us. It shows two pictures of the meadow, but it changed something on one. Find three differences."
+ },
+ "line.b_gra_ok": {
+  "hash": "c4036c23fbba",
+  "who": "lisek",
+  "text": "All three found! You have sharp eyes."
+ },
+ "line.b_rysunek": {
+  "hash": "adc20af98c76",
+  "who": "sowa",
+  "text": "Oh dear, trouble! I drew a card for my granny, and the pond made a copy of it. Now I have two, and I don't know which is mine."
+ },
+ "line.b_pomoge": {
+  "hash": "6a5d9b3c1f8c",
+  "who": "lisek",
+  "text": "We'll help you! Let's find the differences between the drawings."
+ },
+ "line.b_ktory": {
+  "hash": "47cdc2064647",
+  "who": "sowa",
+  "text": "My drawing had a kitten and a sun with rays. Which drawing is mine? Point to it."
+ },
+ "line.b_ktory_nie": {
+  "hash": "a036c910e730",
+  "who": "sowa",
+  "text": "This one has no kitten and no rays. It's the pond's copy. Which one is the real one?"
+ },
+ "line.b_moj": {
+  "hash": "e01d487f9485",
+  "who": "sowa",
+  "text": "That's my drawing! Thank you, granny will be so happy."
+ },
+ "line.b_motyle": {
+  "hash": "1c1356657299",
+  "who": "lisek",
+  "text": "Look, butterflies! Catch a butterfly when it lands. Point to it."
+ },
+ "line.b_do_domu": {
+  "hash": "6ed59fd868b4",
+  "who": "sowa",
+  "text": "That was fun. Let's go home, we'll play differences there too!"
+ },
+ "line.p_start": {
+  "hash": "4be94f25061b",
+  "who": "sowa",
+  "text": "Let's train our sharp eyes! I have five games."
+ },
+ "line.p_para_ogrodek": {
+  "hash": "07284e76aab7",
+  "who": "sowa",
+  "text": "Two pictures of the garden. Find three differences."
+ },
+ "line.p_para_ogrodek.lisek": {
+  "hash": "f25efb18d917",
+  "who": "lisek",
+  "text": "Two pictures of the garden. Find three differences."
+ },
+ "line.p_para_plaza": {
+  "hash": "41cd145f5dfd",
+  "who": "lisek",
+  "text": "Two pictures of the beach. Find three differences."
+ },
+ "line.p_para_plaza.sowa": {
+  "hash": "642795e5a90b",
+  "who": "sowa",
+  "text": "Two pictures of the beach. Find three differences."
+ },
+ "line.p_para_pokoik": {
+  "hash": "38c106ffd409",
+  "who": "sowa",
+  "text": "Two pictures of a room. Find three differences."
+ },
+ "line.p_para_pokoik.lisek": {
+  "hash": "fa2d0a1cb3e7",
+  "who": "lisek",
+  "text": "Two pictures of a room. Find three differences."
+ },
+ "line.p_para_ok": {
+  "hash": "9b3343b941ef",
+  "who": "lisek",
+  "text": "Bravo, all the differences found!"
+ },
+ "line.p_para_ok.sowa": {
+  "hash": "adb0796fa661",
+  "who": "sowa",
+  "text": "Bravo, all the differences found!"
+ },
+ "line.p_zapamietaj": {
+  "hash": "09c880a6ecac",
+  "who": "lisek",
+  "text": "Look carefully at these things and remember them."
+ },
+ "line.p_zamknij": {
+  "hash": "c3c5d04675f0",
+  "who": "lisek",
+  "text": "And now close your eyes! No peeking."
+ },
+ "line.p_co_zniknelo": {
+  "hash": "60a9c8214c4a",
+  "who": "lisek",
+  "text": "One thing is missing. What has gone? Point to it."
+ },
+ "line.p_co_zniknelo_nie": {
+  "hash": "ff091342b730",
+  "who": "lisek",
+  "text": "That wasn't there before. What was in the row and has gone?"
+ },
+ "line.p_co_zniknelo_ok": {
+  "hash": "aede569c512c",
+  "who": "sowa",
+  "text": "Yes! That's what disappeared. Well remembered."
+ },
+ "line.p_inny": {
+  "hash": "0766d2a981cb",
+  "who": "sowa",
+  "text": "Four shadows. One isn't like the others. Which one? Point to it."
+ },
+ "line.p_inny_nie": {
+  "hash": "663d7d927971",
+  "who": "sowa",
+  "text": "This shadow is the same as the others. Look for the one that's different."
+ },
+ "line.p_inny_ok": {
+  "hash": "04ee2b256e2e",
+  "who": "lisek",
+  "text": "Yes! That's a pear, and the rest are apples."
+ },
+ "line.d_zabawa": {
+  "hash": "c3fa49350d29",
+  "who": "lisek",
+  "text": "At home we'll play a game: what has changed?"
+ },
+ "line.d_zapamietaj": {
+  "hash": "8ed46c7ec840",
+  "who": "sowa",
+  "text": "Look at where the toys are, and remember."
+ },
+ "line.d_jeszcze": {
+  "hash": "ef7cc521e199",
+  "who": "sowa",
+  "text": "Once more! Remember where the toys are."
+ },
+ "line.d_zamknij": {
+  "hash": "e8db44e1d271",
+  "who": "lisek",
+  "text": "Close your eyes! I'll move something."
+ },
+ "line.d_co": {
+  "hash": "c55fcfb70dc8",
+  "who": "sowa",
+  "text": "Two toys swapped places. Point to one of them."
+ },
+ "line.d_nie": {
+  "hash": "c89acb4f8428",
+  "who": "sowa",
+  "text": "This toy is where it was. Which one moved?"
+ },
+ "line.d_tak": {
+  "hash": "12af0bc5ea2d",
+  "who": "lisek",
+  "text": "Yes! Those two swapped places."
+ },
+ "line.d_rodzice": {
+  "hash": "d0cd97a94fcc",
+  "who": "sowa",
+  "text": "Play it at home with your parents: one closes their eyes, the other moves one thing. What has changed?"
+ },
+ "line.naklejka_daj": {
+  "hash": "25ef35aefc69",
+  "who": "sowa",
+  "text": "Thank you for finding my drawing! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "4035416334d1",
+  "who": "sowa",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "548cc21862c1",
+  "who": "narrator",
+  "text": "This is the butterfly from the magic pond. We got it when we looked for differences."
+ }
+}

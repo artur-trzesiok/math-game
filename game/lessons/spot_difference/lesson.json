@@ -1,0 +1,33 @@
+{
+  "id": "spot_difference",
+  "title": {
+    "pl": "Znajdź różnice",
+    "en": "Spot the difference"
+  },
+  "goal": "Look carefully at two pictures and find what is not the same.",
+  "age": "3-4",
+  "characters": [
+    "lisek",
+    "sowa"
+  ],
+  "backgrounds": [
+    "laka",
+    "pokoj"
+  ],
+  "objects": [
+    "motyl",
+    "jablko",
+    "gruszka",
+    "marchewka",
+    "grzyb",
+    "pilka",
+    "kubek",
+    "misiu",
+    "klocek"
+  ],
+  "cover": "Fox looks into a round magic pond on a meadow and his reflection has no scarf while he wears a striped scarf; Owl beside him points at the water, surprised.",
+  "naklejka": {
+    "obraz": "objects/motyl",
+    "kto": "sowa"
+  }
+}

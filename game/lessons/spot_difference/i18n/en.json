@@ -1,0 +1,182 @@
+{
+  "line.a_staw": {
+    "who": "sowa",
+    "text": "Fox, come here! This is the magic pond. Look at yourself in the water!"
+  },
+  "line.a_takie_samo": {
+    "who": "lisek",
+    "text": "I can see myself in the water! My reflection is just the same as me."
+  },
+  "line.a_uwaznie": {
+    "who": "sowa",
+    "text": "At a first glance, yes. But this pond plays tricks: it always changes something. You must look carefully."
+  },
+  "line.a_znajdz": {
+    "who": "sowa",
+    "text": "Look at Fox and at his reflection. How are they different? Point to it."
+  },
+  "line.a_bez_szalika": {
+    "who": "lisek",
+    "text": "Oh my! My reflection has no scarf!"
+  },
+  "line.a_roznica": {
+    "who": "sowa",
+    "text": "That is a difference: something that is not the same in two pictures. Looking for differences is a fun game!"
+  },
+  "line.a_jeszcze": {
+    "who": "lisek",
+    "text": "Let's do it again! I'll put on a hat and glasses."
+  },
+  "line.a_dwie": {
+    "who": "sowa",
+    "text": "Now the pond changed two things. Find both differences."
+  },
+  "line.a_dwie_ok": {
+    "who": "lisek",
+    "text": "The reflection has no hat and no glasses! What a clever pond."
+  },
+  "line.b_gra": {
+    "who": "sowa",
+    "text": "The pond wants to play with us. It shows two pictures of the meadow, but it changed something on one. Find three differences."
+  },
+  "line.b_gra_ok": {
+    "who": "lisek",
+    "text": "All three found! You have sharp eyes."
+  },
+  "line.b_rysunek": {
+    "who": "sowa",
+    "text": "Oh dear, trouble! I drew a card for my granny, and the pond made a copy of it. Now I have two, and I don't know which is mine."
+  },
+  "line.b_pomoge": {
+    "who": "lisek",
+    "text": "We'll help you! Let's find the differences between the drawings."
+  },
+  "line.b_ktory": {
+    "who": "sowa",
+    "text": "My drawing had a kitten and a sun with rays. Which drawing is mine? Point to it."
+  },
+  "line.b_ktory_nie": {
+    "who": "sowa",
+    "text": "This one has no kitten and no rays. It's the pond's copy. Which one is the real one?"
+  },
+  "line.b_moj": {
+    "who": "sowa",
+    "text": "That's my drawing! Thank you, granny will be so happy."
+  },
+  "line.b_motyle": {
+    "who": "lisek",
+    "text": "Look, butterflies! Catch a butterfly when it lands. Point to it."
+  },
+  "line.b_do_domu": {
+    "who": "sowa",
+    "text": "That was fun. Let's go home, we'll play differences there too!"
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Let's train our sharp eyes! I have five games."
+  },
+  "line.p_para_ogrodek": {
+    "who": "sowa",
+    "text": "Two pictures of the garden. Find three differences.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.p_para_plaza": {
+    "who": "lisek",
+    "text": "Two pictures of the beach. Find three differences.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.p_para_pokoik": {
+    "who": "sowa",
+    "text": "Two pictures of a room. Find three differences.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.p_para_ok": {
+    "who": "lisek",
+    "text": "Bravo, all the differences found!",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.p_zapamietaj": {
+    "who": "lisek",
+    "text": "Look carefully at these things and remember them."
+  },
+  "line.p_zamknij": {
+    "who": "lisek",
+    "text": "And now close your eyes! No peeking."
+  },
+  "line.p_co_zniknelo": {
+    "who": "lisek",
+    "text": "One thing is missing. What has gone? Point to it."
+  },
+  "line.p_co_zniknelo_nie": {
+    "who": "lisek",
+    "text": "That wasn't there before. What was in the row and has gone?"
+  },
+  "line.p_co_zniknelo_ok": {
+    "who": "sowa",
+    "text": "Yes! That's what disappeared. Well remembered."
+  },
+  "line.p_inny": {
+    "who": "sowa",
+    "text": "Four shadows. One isn't like the others. Which one? Point to it."
+  },
+  "line.p_inny_nie": {
+    "who": "sowa",
+    "text": "This shadow is the same as the others. Look for the one that's different."
+  },
+  "line.p_inny_ok": {
+    "who": "lisek",
+    "text": "Yes! That's a pear, and the rest are apples."
+  },
+  "line.d_zabawa": {
+    "who": "lisek",
+    "text": "At home we'll play a game: what has changed?"
+  },
+  "line.d_zapamietaj": {
+    "who": "sowa",
+    "text": "Look at where the toys are, and remember."
+  },
+  "line.d_jeszcze": {
+    "who": "sowa",
+    "text": "Once more! Remember where the toys are."
+  },
+  "line.d_zamknij": {
+    "who": "lisek",
+    "text": "Close your eyes! I'll move something."
+  },
+  "line.d_co": {
+    "who": "sowa",
+    "text": "Two toys swapped places. Point to one of them."
+  },
+  "line.d_nie": {
+    "who": "sowa",
+    "text": "This toy is where it was. Which one moved?"
+  },
+  "line.d_tak": {
+    "who": "lisek",
+    "text": "Yes! Those two swapped places."
+  },
+  "line.d_rodzice": {
+    "who": "sowa",
+    "text": "Play it at home with your parents: one closes their eyes, the other moves one thing. What has changed?"
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Thank you for finding my drawing! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "sowa",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the butterfly from the magic pond. We got it when we looked for differences."
+  }
+}

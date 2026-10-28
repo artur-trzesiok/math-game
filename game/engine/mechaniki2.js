@@ -262,7 +262,7 @@ export async function roznice(S, nazwa, { y = 0.45, size = 4.9, odstep = 0.35 } 
   const cele = [];
   for (const [k, r] of meta.roznice.entries()) for (const i of [0, 1]) {
     const [px, py] = punkt(r, i), rr = Math.max(0.35, r.r * size);
-    const m = new THREE.Mesh(new THREE.CircleGeometry(rr, 24), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+    const m = new THREE.Mesh(new THREE.CircleGeometry(rr, 24), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide }));
     const g = new THREE.Group(); g.add(m); g.position.set(px, py, 0.5); S.scene.add(g);
     cele.push(uchwyt(S, g, { name: "roznica", nr: k, r: rr, dobry: true }));
   }
@@ -287,18 +287,19 @@ export async function roznice(S, nazwa, { y = 0.45, size = 4.9, odstep = 0.35 } 
 // (the garment on the character and its mirror image) and circles a found one on both.
 export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } = {}) {
   const L = S.puppets[who]; if (!L) return null;
-  L.korzen.position.y = woda; L.podloga = woda;
+  L.korzen.position.y = woda; L.podloga = woda; L.lustroOn = true;
   const O = await Lalka.wczytaj(`/game/assets/characters/${who}/`, { strona: L.strona ?? "lewo", wysokosc: L.meta?.wysokosc ?? 3.6 });
   const klucz = `${who}_odbicie`;
   O.name = who; O.meta = L.meta; O.lustro = L; O.home = L.home;
-  O.korzen.position.set(L.korzen.position.x, woda, -0.1); O.korzen.scale.set(1, -1, 1); O.korzen.visible = L.korzen.visible;
+  const k = L.korzen.scale.x;                                           // a character further up the bank is drawn smaller
+  O.korzen.position.set(L.korzen.position.x, woda, -0.1); O.korzen.scale.set(k, -k, 1); O.korzen.visible = L.korzen.visible;
   S.scene.add(O.korzen); S.puppets[klucz] = O;
   const dwustronnie = () => O.korzen.traverse((o) => { if (o.isMesh) { o.material.depthTest = false; o.material.depthWrite = false; o.material.side = THREE.DoubleSide; } });
   dwustronnie(); S.layer(O, false);
   for (const r of ubrania) { await U.ubierz(S, who, r, { pop: false }); if (!rozne.includes(r)) await U.ubierz(S, klucz, r, { pop: false }); }
   dwustronnie();
   // the pond: an oval of water under the reflection, and a light rippling veil over it
-  const wys = (L.meta?.wysokosc ?? 3.6) * 1.12, szer = 4.8;
+  const wys = (L.meta?.wysokosc ?? 3.6) * 1.12 * k, szer = 4.8 * k;
   const shader = (alfa) => new THREE.ShaderMaterial({
     uniforms: { czas: { value: 0 } }, transparent: true, depthTest: false, depthWrite: false,
     vertexShader: "varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
@@ -313,7 +314,7 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
   for (const [m, ro] of [[tafla, 19], [fale, 26]]) { m.position.set(L.korzen.position.x, woda - wys / 2 + 0.1, 0.2); m.renderOrder = ro; S.scene.add(m); }
   const fala = setInterval(() => {
     for (const m of [tafla, fale]) { m.material.uniforms.czas.value += 0.05; m.position.x = L.korzen.position.x; }
-    O.korzen.scale.x = 1 + 0.015 * Math.sin(performance.now() / 300);
+    O.korzen.scale.x = k * (1 + 0.015 * Math.sin(performance.now() / 300));
   }, 40);
   const remove = () => { clearInterval(fala); S.scene.remove(tafla); S.scene.remove(fale); U.zdejmij(S, klucz); S.scene.remove(O.korzen); delete S.puppets[klucz]; L.korzen.position.y = L.podloga = null; L.podloga = null; };
   // the differences: a target on the garment and on the place it would be in the water
@@ -321,11 +322,13 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
     const cele = [];
     for (const [k, r] of rozne.entries()) {
       const u = Object.values(L.ubior || {}).find((q) => q.rzecz === r); if (!u) continue;
-      const b = new THREE.Box3(); for (const [m] of u.rzeczy) if (m.visible && m.parent?.visible !== false) b.expandByObject(m);
+      const widac = (o) => { for (; o; o = o.parent) if (!o.visible) return false; return true; };   // only the view on show
+      L.korzen.updateMatrixWorld(true);
+      const b = new THREE.Box3(); for (const [m] of u.rzeczy) if (widac(m)) b.expandByObject(m);
       if (b.isEmpty()) continue;
       const c = b.getCenter(new THREE.Vector3()), rr = Math.max(0.4, (b.max.x - b.min.x) * 0.6);
       for (const [px, py] of [[c.x, c.y], [c.x, 2 * woda - c.y]]) {
-        const m = new THREE.Mesh(new THREE.CircleGeometry(rr, 24), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+        const m = new THREE.Mesh(new THREE.CircleGeometry(rr, 24), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide }));
         const g = new THREE.Group(); g.add(m); g.position.set(px, py, 0.9); S.scene.add(g);
         cele.push(uchwyt(S, g, { name: "roznica", nr: k, r: rr, dobry: true, punkty: [[c.x, c.y], [c.x, 2 * woda - c.y]] }));
       }

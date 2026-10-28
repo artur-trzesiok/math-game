@@ -1,0 +1,232 @@
+{
+ "line.a_staw": {
+  "hash": "9cbca637ab09",
+  "who": "sowa",
+  "text": "Lisku, chodź tutaj! To zaczarowany staw. Przejrzyj się w wodzie!"
+ },
+ "line.a_takie_samo": {
+  "hash": "d4d4e7737312",
+  "who": "lisek",
+  "text": "Widzę siebie w wodzie! Moje odbicie jest takie samo jak ja."
+ },
+ "line.a_uwaznie": {
+  "hash": "fe32f67f3d8b",
+  "who": "sowa",
+  "text": "Na pierwszy rzut oka tak. Ale ten staw płata figle: zawsze coś zmienia. Trzeba popatrzeć uważnie."
+ },
+ "line.a_znajdz": {
+  "hash": "6c07b4b49a20",
+  "who": "sowa",
+  "text": "Popatrz na Liska i na jego odbicie. Czym się różnią? Wskaż."
+ },
+ "line.a_bez_szalika": {
+  "hash": "84ec1cbcef16",
+  "who": "lisek",
+  "text": "Ojej! Moje odbicie nie ma szalika!"
+ },
+ "line.a_roznica": {
+  "hash": "e9903245342a",
+  "who": "sowa",
+  "text": "To jest różnica: coś, czym dwa obrazki się nie zgadzają. Szukanie różnic to fajna zabawa!"
+ },
+ "line.a_jeszcze": {
+  "hash": "7640c16666c6",
+  "who": "lisek",
+  "text": "Zróbmy jeszcze raz! Założę kapelusz i okulary."
+ },
+ "line.a_dwie": {
+  "hash": "cd0460d4c84e",
+  "who": "sowa",
+  "text": "Teraz staw zmienił aż dwie rzeczy. Znajdź obie różnice."
+ },
+ "line.a_dwie_ok": {
+  "hash": "d47aa7ef4175",
+  "who": "lisek",
+  "text": "Odbicie nie ma kapelusza ani okularów! Ale sprytny staw."
+ },
+ "line.b_gra": {
+  "hash": "2a04fa4218c0",
+  "who": "sowa",
+  "text": "Staw chce się z nami bawić. Pokazuje dwa obrazki łąki, ale na jednym coś zmienił. Znajdź trzy różnice."
+ },
+ "line.b_gra_ok": {
+  "hash": "360acb94b275",
+  "who": "lisek",
+  "text": "Wszystkie trzy znalezione! Masz bystre oczy."
+ },
+ "line.b_rysunek": {
+  "hash": "0aad5a2e6e6f",
+  "who": "sowa",
+  "text": "Ojej, kłopot! Narysowałam laurkę dla babci, a staw zrobił z niej kopię. Teraz mam dwie i nie wiem, która jest moja."
+ },
+ "line.b_pomoge": {
+  "hash": "6a5c518a681a",
+  "who": "lisek",
+  "text": "Pomożemy ci! Znajdźmy różnice między rysunkami."
+ },
+ "line.b_ktory": {
+  "hash": "d2da83739957",
+  "who": "sowa",
+  "text": "Mój rysunek miał kotka i słońce z promieniami. Który rysunek jest mój? Wskaż."
+ },
+ "line.b_ktory_nie": {
+  "hash": "a29509615c72",
+  "who": "sowa",
+  "text": "Na tym nie ma kotka ani promieni. To kopia stawu. Który jest prawdziwy?"
+ },
+ "line.b_moj": {
+  "hash": "7f5e1e8b42fc",
+  "who": "sowa",
+  "text": "To mój rysunek! Dziękuję, babcia się ucieszy."
+ },
+ "line.b_motyle": {
+  "hash": "25944c00501d",
+  "who": "lisek",
+  "text": "Popatrzcie, motyle! Złap motyla, kiedy usiądzie. Wskaż go."
+ },
+ "line.b_do_domu": {
+  "hash": "98b8b2202cfe",
+  "who": "sowa",
+  "text": "Ale było wesoło. Chodźmy do domu, tam też zagramy w różnice!"
+ },
+ "line.p_start": {
+  "hash": "f22de995de24",
+  "who": "sowa",
+  "text": "Poćwiczmy bystre oczy! Mam pięć zabaw."
+ },
+ "line.p_para_ogrodek": {
+  "hash": "e5173888d246",
+  "who": "sowa",
+  "text": "Dwa obrazki ogródka. Znajdź trzy różnice."
+ },
+ "line.p_para_ogrodek.lisek": {
+  "hash": "6761f570a687",
+  "who": "lisek",
+  "text": "Dwa obrazki ogródka. Znajdź trzy różnice."
+ },
+ "line.p_para_plaza": {
+  "hash": "f9068c4cc3a0",
+  "who": "lisek",
+  "text": "Dwa obrazki plaży. Znajdź trzy różnice."
+ },
+ "line.p_para_plaza.sowa": {
+  "hash": "fd2019b49593",
+  "who": "sowa",
+  "text": "Dwa obrazki plaży. Znajdź trzy różnice."
+ },
+ "line.p_para_pokoik": {
+  "hash": "590e9b0d12cb",
+  "who": "sowa",
+  "text": "Dwa obrazki pokoju. Znajdź trzy różnice."
+ },
+ "line.p_para_pokoik.lisek": {
+  "hash": "d951b3b56bdf",
+  "who": "lisek",
+  "text": "Dwa obrazki pokoju. Znajdź trzy różnice."
+ },
+ "line.p_para_ok": {
+  "hash": "ed09560bed7e",
+  "who": "lisek",
+  "text": "Brawo, wszystkie różnice znalezione!"
+ },
+ "line.p_para_ok.sowa": {
+  "hash": "483035e149e8",
+  "who": "sowa",
+  "text": "Brawo, wszystkie różnice znalezione!"
+ },
+ "line.p_zapamietaj": {
+  "hash": "7cecf63afaa3",
+  "who": "lisek",
+  "text": "Popatrz uważnie na te rzeczy i zapamiętaj je."
+ },
+ "line.p_zamknij": {
+  "hash": "298a550dc81e",
+  "who": "lisek",
+  "text": "A teraz zamknij oczy! Nie podglądaj."
+ },
+ "line.p_co_zniknelo": {
+  "hash": "eb67d0b46aa9",
+  "who": "lisek",
+  "text": "Jednej rzeczy brakuje. Co zniknęło? Wskaż."
+ },
+ "line.p_co_zniknelo_nie": {
+  "hash": "51bb37333070",
+  "who": "lisek",
+  "text": "Tego tam wcześniej nie było. Co było w rzędzie, a zniknęło?"
+ },
+ "line.p_co_zniknelo_ok": {
+  "hash": "b4ef5d09922a",
+  "who": "sowa",
+  "text": "Tak! To zniknęło. Dobrze zapamiętane."
+ },
+ "line.p_inny": {
+  "hash": "e9ffa5bb1f2e",
+  "who": "sowa",
+  "text": "Cztery cienie. Jeden nie pasuje do pozostałych. Który? Wskaż."
+ },
+ "line.p_inny_nie": {
+  "hash": "0aa72756ce35",
+  "who": "sowa",
+  "text": "Ten cień jest taki sam jak inne. Poszukaj tego, który się różni."
+ },
+ "line.p_inny_ok": {
+  "hash": "cf1c59588feb",
+  "who": "lisek",
+  "text": "Tak! To gruszka, a reszta to jabłka."
+ },
+ "line.d_zabawa": {
+  "hash": "8a584bd4575c",
+  "who": "lisek",
+  "text": "W domu zagramy w zabawę: co się zmieniło?"
+ },
+ "line.d_zapamietaj": {
+  "hash": "694fafb22364",
+  "who": "sowa",
+  "text": "Popatrz, jak leżą zabawki, i zapamiętaj."
+ },
+ "line.d_jeszcze": {
+  "hash": "30bd7a8b45b3",
+  "who": "sowa",
+  "text": "Jeszcze raz! Zapamiętaj, gdzie leżą zabawki."
+ },
+ "line.d_zamknij": {
+  "hash": "bac2d4afe676",
+  "who": "lisek",
+  "text": "Zamknij oczy! Coś przestawię."
+ },
+ "line.d_co": {
+  "hash": "d67f72b52dcd",
+  "who": "sowa",
+  "text": "Dwie zabawki zamieniły się miejscami. Wskaż jedną z nich."
+ },
+ "line.d_nie": {
+  "hash": "da26bb3ebd76",
+  "who": "sowa",
+  "text": "Ta zabawka leży tam, gdzie leżała. Która się przesunęła?"
+ },
+ "line.d_tak": {
+  "hash": "6fef9373d53a",
+  "who": "lisek",
+  "text": "Tak! Te dwie zamieniły się miejscami."
+ },
+ "line.d_rodzice": {
+  "hash": "3fe1dbe88133",
+  "who": "sowa",
+  "text": "Zagraj w to w domu z rodzicami: jedna osoba zamyka oczy, druga przestawia jedną rzecz. Co się zmieniło?"
+ },
+ "line.naklejka_daj": {
+  "hash": "cb38b126c59f",
+  "who": "sowa",
+  "text": "Dziękuję za pomoc w odnalezieniu mojego rysunku! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "c5a826aa0ed3",
+  "who": "sowa",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "391ea4a99551",
+  "who": "narrator",
+  "text": "To motyl znad zaczarowanego stawu. Dostaliśmy go, kiedy szukaliśmy różnic."
+ }
+}

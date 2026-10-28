@@ -1,0 +1,182 @@
+{
+  "line.a_staw": {
+    "who": "sowa",
+    "text": "Lisku, chodź tutaj! To zaczarowany staw. Przejrzyj się w wodzie!"
+  },
+  "line.a_takie_samo": {
+    "who": "lisek",
+    "text": "Widzę siebie w wodzie! Moje odbicie jest takie samo jak ja."
+  },
+  "line.a_uwaznie": {
+    "who": "sowa",
+    "text": "Na pierwszy rzut oka tak. Ale ten staw płata figle: zawsze coś zmienia. Trzeba popatrzeć uważnie."
+  },
+  "line.a_znajdz": {
+    "who": "sowa",
+    "text": "Popatrz na Liska i na jego odbicie. Czym się różnią? Wskaż."
+  },
+  "line.a_bez_szalika": {
+    "who": "lisek",
+    "text": "Ojej! Moje odbicie nie ma szalika!"
+  },
+  "line.a_roznica": {
+    "who": "sowa",
+    "text": "To jest różnica: coś, czym dwa obrazki się nie zgadzają. Szukanie różnic to fajna zabawa!"
+  },
+  "line.a_jeszcze": {
+    "who": "lisek",
+    "text": "Zróbmy jeszcze raz! Założę kapelusz i okulary."
+  },
+  "line.a_dwie": {
+    "who": "sowa",
+    "text": "Teraz staw zmienił aż dwie rzeczy. Znajdź obie różnice."
+  },
+  "line.a_dwie_ok": {
+    "who": "lisek",
+    "text": "Odbicie nie ma kapelusza ani okularów! Ale sprytny staw."
+  },
+  "line.b_gra": {
+    "who": "sowa",
+    "text": "Staw chce się z nami bawić. Pokazuje dwa obrazki łąki, ale na jednym coś zmienił. Znajdź trzy różnice."
+  },
+  "line.b_gra_ok": {
+    "who": "lisek",
+    "text": "Wszystkie trzy znalezione! Masz bystre oczy."
+  },
+  "line.b_rysunek": {
+    "who": "sowa",
+    "text": "Ojej, kłopot! Narysowałam laurkę dla babci, a staw zrobił z niej kopię. Teraz mam dwie i nie wiem, która jest moja."
+  },
+  "line.b_pomoge": {
+    "who": "lisek",
+    "text": "Pomożemy ci! Znajdźmy różnice między rysunkami."
+  },
+  "line.b_ktory": {
+    "who": "sowa",
+    "text": "Mój rysunek miał kotka i słońce z promieniami. Który rysunek jest mój? Wskaż."
+  },
+  "line.b_ktory_nie": {
+    "who": "sowa",
+    "text": "Na tym nie ma kotka ani promieni. To kopia stawu. Który jest prawdziwy?"
+  },
+  "line.b_moj": {
+    "who": "sowa",
+    "text": "To mój rysunek! Dziękuję, babcia się ucieszy."
+  },
+  "line.b_motyle": {
+    "who": "lisek",
+    "text": "Popatrzcie, motyle! Złap motyla, kiedy usiądzie. Wskaż go."
+  },
+  "line.b_do_domu": {
+    "who": "sowa",
+    "text": "Ale było wesoło. Chodźmy do domu, tam też zagramy w różnice!"
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Poćwiczmy bystre oczy! Mam pięć zabaw."
+  },
+  "line.p_para_ogrodek": {
+    "who": "sowa",
+    "text": "Dwa obrazki ogródka. Znajdź trzy różnice.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.p_para_plaza": {
+    "who": "lisek",
+    "text": "Dwa obrazki plaży. Znajdź trzy różnice.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.p_para_pokoik": {
+    "who": "sowa",
+    "text": "Dwa obrazki pokoju. Znajdź trzy różnice.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.p_para_ok": {
+    "who": "lisek",
+    "text": "Brawo, wszystkie różnice znalezione!",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.p_zapamietaj": {
+    "who": "lisek",
+    "text": "Popatrz uważnie na te rzeczy i zapamiętaj je."
+  },
+  "line.p_zamknij": {
+    "who": "lisek",
+    "text": "A teraz zamknij oczy! Nie podglądaj."
+  },
+  "line.p_co_zniknelo": {
+    "who": "lisek",
+    "text": "Jednej rzeczy brakuje. Co zniknęło? Wskaż."
+  },
+  "line.p_co_zniknelo_nie": {
+    "who": "lisek",
+    "text": "Tego tam wcześniej nie było. Co było w rzędzie, a zniknęło?"
+  },
+  "line.p_co_zniknelo_ok": {
+    "who": "sowa",
+    "text": "Tak! To zniknęło. Dobrze zapamiętane."
+  },
+  "line.p_inny": {
+    "who": "sowa",
+    "text": "Cztery cienie. Jeden nie pasuje do pozostałych. Który? Wskaż."
+  },
+  "line.p_inny_nie": {
+    "who": "sowa",
+    "text": "Ten cień jest taki sam jak inne. Poszukaj tego, który się różni."
+  },
+  "line.p_inny_ok": {
+    "who": "lisek",
+    "text": "Tak! To gruszka, a reszta to jabłka."
+  },
+  "line.d_zabawa": {
+    "who": "lisek",
+    "text": "W domu zagramy w zabawę: co się zmieniło?"
+  },
+  "line.d_zapamietaj": {
+    "who": "sowa",
+    "text": "Popatrz, jak leżą zabawki, i zapamiętaj."
+  },
+  "line.d_jeszcze": {
+    "who": "sowa",
+    "text": "Jeszcze raz! Zapamiętaj, gdzie leżą zabawki."
+  },
+  "line.d_zamknij": {
+    "who": "lisek",
+    "text": "Zamknij oczy! Coś przestawię."
+  },
+  "line.d_co": {
+    "who": "sowa",
+    "text": "Dwie zabawki zamieniły się miejscami. Wskaż jedną z nich."
+  },
+  "line.d_nie": {
+    "who": "sowa",
+    "text": "Ta zabawka leży tam, gdzie leżała. Która się przesunęła?"
+  },
+  "line.d_tak": {
+    "who": "lisek",
+    "text": "Tak! Te dwie zamieniły się miejscami."
+  },
+  "line.d_rodzice": {
+    "who": "sowa",
+    "text": "Zagraj w to w domu z rodzicami: jedna osoba zamyka oczy, druga przestawia jedną rzecz. Co się zmieniło?"
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Dziękuję za pomoc w odnalezieniu mojego rysunku! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "sowa",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To motyl znad zaczarowanego stawu. Dostaliśmy go, kiedy szukaliśmy różnic."
+  }
+}
