@@ -1,0 +1,50 @@
+{
+  "id": "logical_pairs",
+  "title": {
+    "pl": "Co do pary?",
+    "en": "What goes with what?"
+  },
+  "goal": "Logical pairs: things that belong together because we use them together, not because they look alike.",
+  "age": "3-4",
+  "characters": [
+    "bobr",
+    "kret",
+    "sarenka"
+  ],
+  "backgrounds": [
+    "strumyk",
+    "warsztat",
+    "przedpokoj"
+  ],
+  "objects": [
+    "kubek_czerwony",
+    "jablko",
+    "filizanka",
+    "spodek",
+    "pedzel",
+    "farby",
+    "pszczola",
+    "kwiatek",
+    "mlotek",
+    "gwozdz",
+    "drzwi_gwiazda",
+    "klucz_gwiazda",
+    "klucz_kolo",
+    "klucz_kwadrat",
+    "lisc_czerwony",
+    "lisc_zolty",
+    "skarpetka",
+    "but",
+    "lyzka",
+    "miska",
+    "kubek",
+    "kura",
+    "jajko",
+    "karta_rewers"
+  ],
+  "cover": "In a cosy wooden workshop by a brook, Beaver, Mole and Deer sort things into pairs: a cup on its saucer, a brush by a box of paints, a key by a little round door with a star keyhole.",
+  "naklejka": {
+    "obraz": "objects/klucz_gwiazda",
+    "kto": "bobr"
+  }
+}

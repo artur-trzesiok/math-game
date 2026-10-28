@@ -1,0 +1,148 @@
+{
+  "line.a_burza": {
+    "who": "bobr",
+    "text": "Ojej, w nocy była burza! Wiatr porozrzucał wszystkie rzeczy po okolicy."
+  },
+  "line.a_pomoge": {
+    "who": "kret",
+    "text": "Ja pomogę! Ułożę rzeczy w pary."
+  },
+  "line.a_kolor": {
+    "who": "kret",
+    "text": "Czerwony kubek i czerwone jabłko. Oba są czerwone, więc to para!"
+  },
+  "line.a_nie": {
+    "who": "sarenka",
+    "text": "Krecie, one tylko mają ten sam kolor. Ale do niczego razem nie służą."
+  },
+  "line.a_razem": {
+    "who": "sarenka",
+    "text": "Para to dwie rzeczy, których używamy razem. Popatrz: filiżanka i spodek."
+  },
+  "line.a_filizanka": {
+    "who": "sarenka",
+    "text": "Filiżankę stawiamy na spodku. Pasują do siebie, chociaż wyglądają inaczej."
+  },
+  "line.a_rozumiem": {
+    "who": "kret",
+    "text": "Aha! Para to rzeczy, które pasują do siebie, bo używamy ich razem."
+  },
+  "line.a_do_warsztatu": {
+    "who": "bobr",
+    "text": "Wiatr zawiał resztę rzeczy do mojego warsztatu. Chodźmy!"
+  },
+  "line.b_rzeczy": {
+    "who": "bobr",
+    "text": "Tyle rzeczy! Trzeba je połączyć w pary."
+  },
+  "line.b_polacz": {
+    "who": "bobr",
+    "text": "Połącz palcem rzeczy, które pasują do siebie. Poprowadź kreskę od jednej do drugiej."
+  },
+  "line.nie_para": {
+    "who": "bobr",
+    "text": "Te dwie nie pasują do siebie. Czego używamy razem?",
+    "speakers": [
+      "sarenka",
+      "kret"
+    ]
+  },
+  "line.b_pasuja": {
+    "who": "kret",
+    "text": "Pędzel i farby, pszczoła i kwiatek, młotek i gwóźdź!"
+  },
+  "line.b_drzwi": {
+    "who": "sarenka",
+    "text": "A ja nie mogę otworzyć moich drzwi. Burza pomieszała moje klucze."
+  },
+  "line.b_klucz": {
+    "who": "bobr",
+    "text": "Drzwi mają dziurkę w kształcie gwiazdki. Który klucz do nich pasuje? Wskaż."
+  },
+  "line.b_klucz_nie": {
+    "who": "bobr",
+    "text": "Ten klucz nie pasuje do dziurki. Popatrz na jego końcówkę."
+  },
+  "line.b_otwarte": {
+    "who": "sarenka",
+    "text": "Klucz z gwiazdką pasuje do drzwi z gwiazdką! Otwarte, dziękuję."
+  },
+  "line.b_liscie": {
+    "who": "kret",
+    "text": "Spadają ostatnie liście po burzy. Złap liść, wskaż go."
+  },
+  "line.b_koniec": {
+    "who": "bobr",
+    "text": "Wszystko posprzątane. Wracajmy do domu!"
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Pobawmy się w pary! Mam pięć zabaw."
+  },
+  "line.p_polacz": {
+    "who": "bobr",
+    "text": "Połącz palcem rzeczy, które pasują do siebie.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.p_dobrze": {
+    "who": "sarenka",
+    "text": "Brawo!",
+    "speakers": [
+      "bobr"
+    ]
+  },
+  "line.p_pszczola": {
+    "who": "sarenka",
+    "text": "Co pasuje do pszczoły? Wskaż."
+  },
+  "line.p_pszczola_nie": {
+    "who": "sarenka",
+    "text": "Pszczoła tego nie potrzebuje. Gdzie pszczoła zbiera miód?"
+  },
+  "line.p_kwiatek": {
+    "who": "bobr",
+    "text": "Kwiatek! Pszczoła siada na kwiatku."
+  },
+  "line.p_memory": {
+    "who": "bobr",
+    "text": "Odwracaj karty i szukaj par: rzeczy, które pasują do siebie."
+  },
+  "line.p_nie_pasuje": {
+    "who": "sarenka",
+    "text": "Która rzecz tu nie pasuje? Wskaż."
+  },
+  "line.p_nie_pasuje_nie": {
+    "who": "sarenka",
+    "text": "Filiżanka i spodek to para. Co do nich nie pasuje?"
+  },
+  "line.p_mlotek": {
+    "who": "bobr",
+    "text": "Młotek! Pasuje do gwoździa, nie do filiżanki."
+  },
+  "line.d_przedpokoj": {
+    "who": "kret",
+    "text": "W przedpokoju też są pomieszane rzeczy. Połącz je w pary."
+  },
+  "line.d_porzadek": {
+    "who": "kret",
+    "text": "Każda rzecz ma swoją parę. Porządek!"
+  },
+  "line.d_rodzice": {
+    "who": "sarenka",
+    "text": "Zagraj z rodzicami w zabawę „co pasuje do czego”: łyżka do zupy, szczoteczka do pasty."
+  },
+  "line.naklejka_daj": {
+    "who": "bobr",
+    "text": "Dziękuję za pomoc po burzy! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "bobr",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To klucz z gwiazdką od Sarenki. Dostaliśmy go, kiedy szukaliśmy rzeczy, które pasują do siebie."
+  }
+}

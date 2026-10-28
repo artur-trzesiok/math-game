@@ -1,0 +1,148 @@
+{
+  "line.a_burza": {
+    "who": "bobr",
+    "text": "Oh dear, there was a storm last night! The wind blew everybody's things all over the place."
+  },
+  "line.a_pomoge": {
+    "who": "kret",
+    "text": "I'll help! I'll put the things in pairs."
+  },
+  "line.a_kolor": {
+    "who": "kret",
+    "text": "A red cup and a red apple. Both are red, so they're a pair!"
+  },
+  "line.a_nie": {
+    "who": "sarenka",
+    "text": "Mole, they only have the same colour. But we don't use them for anything together."
+  },
+  "line.a_razem": {
+    "who": "sarenka",
+    "text": "A pair is two things we use together. Look: a cup and a saucer."
+  },
+  "line.a_filizanka": {
+    "who": "sarenka",
+    "text": "We put the cup on the saucer. They go together, even though they look different."
+  },
+  "line.a_rozumiem": {
+    "who": "kret",
+    "text": "I see! A pair is things that go together because we use them together."
+  },
+  "line.a_do_warsztatu": {
+    "who": "bobr",
+    "text": "The wind blew the rest of the things into my workshop. Let's go!"
+  },
+  "line.b_rzeczy": {
+    "who": "bobr",
+    "text": "So many things! We must join them into pairs."
+  },
+  "line.b_polacz": {
+    "who": "bobr",
+    "text": "Join the things that go together with your finger. Draw a line from one to the other."
+  },
+  "line.nie_para": {
+    "who": "bobr",
+    "text": "Those two don't go together. What do we use together?",
+    "speakers": [
+      "sarenka",
+      "kret"
+    ]
+  },
+  "line.b_pasuja": {
+    "who": "kret",
+    "text": "A brush and paints, a bee and a flower, a hammer and a nail!"
+  },
+  "line.b_drzwi": {
+    "who": "sarenka",
+    "text": "And I can't open my door. The storm mixed up my keys."
+  },
+  "line.b_klucz": {
+    "who": "bobr",
+    "text": "The door has a star-shaped keyhole. Which key fits it? Point to it."
+  },
+  "line.b_klucz_nie": {
+    "who": "bobr",
+    "text": "That key doesn't fit the keyhole. Look at its end."
+  },
+  "line.b_otwarte": {
+    "who": "sarenka",
+    "text": "The star key fits the star door! It's open, thank you."
+  },
+  "line.b_liscie": {
+    "who": "kret",
+    "text": "The last leaves of the storm are falling. Catch a leaf, point to it."
+  },
+  "line.b_koniec": {
+    "who": "bobr",
+    "text": "All tidy. Let's go home!"
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Let's play pairs! I have five games."
+  },
+  "line.p_polacz": {
+    "who": "bobr",
+    "text": "Join the things that go together with your finger.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.p_dobrze": {
+    "who": "sarenka",
+    "text": "Bravo!",
+    "speakers": [
+      "bobr"
+    ]
+  },
+  "line.p_pszczola": {
+    "who": "sarenka",
+    "text": "What goes with the bee? Point to it."
+  },
+  "line.p_pszczola_nie": {
+    "who": "sarenka",
+    "text": "The bee doesn't need that. Where does the bee get its honey?"
+  },
+  "line.p_kwiatek": {
+    "who": "bobr",
+    "text": "The flower! The bee sits on the flower."
+  },
+  "line.p_memory": {
+    "who": "bobr",
+    "text": "Turn the cards and find pairs: things that go together."
+  },
+  "line.p_nie_pasuje": {
+    "who": "sarenka",
+    "text": "Which thing doesn't belong here? Point to it."
+  },
+  "line.p_nie_pasuje_nie": {
+    "who": "sarenka",
+    "text": "The cup and the saucer are a pair. What doesn't go with them?"
+  },
+  "line.p_mlotek": {
+    "who": "bobr",
+    "text": "The hammer! It goes with a nail, not with a cup."
+  },
+  "line.d_przedpokoj": {
+    "who": "kret",
+    "text": "Things are mixed up in the hallway too. Join them into pairs."
+  },
+  "line.d_porzadek": {
+    "who": "kret",
+    "text": "Every thing has its pair. All tidy!"
+  },
+  "line.d_rodzice": {
+    "who": "sarenka",
+    "text": "Play “what goes with what” with your parents: a spoon with soup, a toothbrush with toothpaste."
+  },
+  "line.naklejka_daj": {
+    "who": "bobr",
+    "text": "Thank you for helping after the storm! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "bobr",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is Deer's star key. We got it when we looked for things that go together."
+  }
+}

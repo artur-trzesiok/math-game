@@ -1,0 +1,192 @@
+{
+ "line.a_burza": {
+  "hash": "2921f9888492",
+  "who": "bobr",
+  "text": "Oh dear, there was a storm last night! The wind blew everybody's things all over the place."
+ },
+ "line.a_pomoge": {
+  "hash": "fcb1b9dff12c",
+  "who": "kret",
+  "text": "I'll help! I'll put the things in pairs."
+ },
+ "line.a_kolor": {
+  "hash": "14dd8a22c9f7",
+  "who": "kret",
+  "text": "A red cup and a red apple. Both are red, so they're a pair!"
+ },
+ "line.a_nie": {
+  "hash": "5cb644f0bf25",
+  "who": "sarenka",
+  "text": "Mole, they only have the same colour. But we don't use them for anything together."
+ },
+ "line.a_razem": {
+  "hash": "f8df10155f8b",
+  "who": "sarenka",
+  "text": "A pair is two things we use together. Look: a cup and a saucer."
+ },
+ "line.a_filizanka": {
+  "hash": "228c9fc3adf0",
+  "who": "sarenka",
+  "text": "We put the cup on the saucer. They go together, even though they look different."
+ },
+ "line.a_rozumiem": {
+  "hash": "24fb9c5940e3",
+  "who": "kret",
+  "text": "I see! A pair is things that go together because we use them together."
+ },
+ "line.a_do_warsztatu": {
+  "hash": "5eda4aea402b",
+  "who": "bobr",
+  "text": "The wind blew the rest of the things into my workshop. Let's go!"
+ },
+ "line.b_rzeczy": {
+  "hash": "a0453a51b93b",
+  "who": "bobr",
+  "text": "So many things! We must join them into pairs."
+ },
+ "line.b_polacz": {
+  "hash": "64b37d904c43",
+  "who": "bobr",
+  "text": "Join the things that go together with your finger. Draw a line from one to the other."
+ },
+ "line.nie_para": {
+  "hash": "93343726b4df",
+  "who": "bobr",
+  "text": "Those two don't go together. What do we use together?"
+ },
+ "line.nie_para.sarenka": {
+  "hash": "f138d320ae60",
+  "who": "sarenka",
+  "text": "Those two don't go together. What do we use together?"
+ },
+ "line.nie_para.kret": {
+  "hash": "ac26bc677a7b",
+  "who": "kret",
+  "text": "Those two don't go together. What do we use together?"
+ },
+ "line.b_pasuja": {
+  "hash": "e4cb62b9bbb4",
+  "who": "kret",
+  "text": "A brush and paints, a bee and a flower, a hammer and a nail!"
+ },
+ "line.b_drzwi": {
+  "hash": "27f1e6edce0d",
+  "who": "sarenka",
+  "text": "And I can't open my door. The storm mixed up my keys."
+ },
+ "line.b_klucz": {
+  "hash": "1acea364dffb",
+  "who": "bobr",
+  "text": "The door has a star-shaped keyhole. Which key fits it? Point to it."
+ },
+ "line.b_klucz_nie": {
+  "hash": "88930dcbe898",
+  "who": "bobr",
+  "text": "That key doesn't fit the keyhole. Look at its end."
+ },
+ "line.b_otwarte": {
+  "hash": "b63ffae1233d",
+  "who": "sarenka",
+  "text": "The star key fits the star door! It's open, thank you."
+ },
+ "line.b_liscie": {
+  "hash": "cc54aad1c3b9",
+  "who": "kret",
+  "text": "The last leaves of the storm are falling. Catch a leaf, point to it."
+ },
+ "line.b_koniec": {
+  "hash": "dd70a500d4a2",
+  "who": "bobr",
+  "text": "All tidy. Let's go home!"
+ },
+ "line.p_start": {
+  "hash": "d50f8d631559",
+  "who": "sarenka",
+  "text": "Let's play pairs! I have five games."
+ },
+ "line.p_polacz": {
+  "hash": "3add8d3ffbe7",
+  "who": "bobr",
+  "text": "Join the things that go together with your finger."
+ },
+ "line.p_polacz.sarenka": {
+  "hash": "07f6c4a4c03d",
+  "who": "sarenka",
+  "text": "Join the things that go together with your finger."
+ },
+ "line.p_dobrze": {
+  "hash": "ceb0ef83b223",
+  "who": "sarenka",
+  "text": "Bravo!"
+ },
+ "line.p_dobrze.bobr": {
+  "hash": "443840bb6e59",
+  "who": "bobr",
+  "text": "Bravo!"
+ },
+ "line.p_pszczola": {
+  "hash": "0fa991b08e08",
+  "who": "sarenka",
+  "text": "What goes with the bee? Point to it."
+ },
+ "line.p_pszczola_nie": {
+  "hash": "9597e8650e81",
+  "who": "sarenka",
+  "text": "The bee doesn't need that. Where does the bee get its honey?"
+ },
+ "line.p_kwiatek": {
+  "hash": "a5e61dcf8554",
+  "who": "bobr",
+  "text": "The flower! The bee sits on the flower."
+ },
+ "line.p_memory": {
+  "hash": "ab3e39028fc2",
+  "who": "bobr",
+  "text": "Turn the cards and find pairs: things that go together."
+ },
+ "line.p_nie_pasuje": {
+  "hash": "51b5205e0749",
+  "who": "sarenka",
+  "text": "Which thing doesn't belong here? Point to it."
+ },
+ "line.p_nie_pasuje_nie": {
+  "hash": "58cb6dcf7151",
+  "who": "sarenka",
+  "text": "The cup and the saucer are a pair. What doesn't go with them?"
+ },
+ "line.p_mlotek": {
+  "hash": "69a5c93ab82d",
+  "who": "bobr",
+  "text": "The hammer! It goes with a nail, not with a cup."
+ },
+ "line.d_przedpokoj": {
+  "hash": "bd17d7ccf84a",
+  "who": "kret",
+  "text": "Things are mixed up in the hallway too. Join them into pairs."
+ },
+ "line.d_porzadek": {
+  "hash": "52fc05d73a33",
+  "who": "kret",
+  "text": "Every thing has its pair. All tidy!"
+ },
+ "line.d_rodzice": {
+  "hash": "83ab2e60fd70",
+  "who": "sarenka",
+  "text": "Play “what goes with what” with your parents: a spoon with soup, a toothbrush with toothpaste."
+ },
+ "line.naklejka_daj": {
+  "hash": "45c71d993a35",
+  "who": "bobr",
+  "text": "Thank you for helping after the storm! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "46b7b6d44f2f",
+  "who": "bobr",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "90799691e6fc",
+  "who": "narrator",
+  "text": "This is Deer's star key. We got it when we looked for things that go together."
+ }
+}
