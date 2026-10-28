@@ -147,7 +147,8 @@ function glowyPostaci(S) {
     const b = new THREE.Box3().setFromObject(gl), c = new THREE.Vector3((b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2, 0), r = Math.max(b.max.x - b.min.x, b.max.y - b.min.y) * 0.55;
     const p = c.clone().project(S.camera), q = new THREE.Vector3(c.x + r, c.y, 0).project(S.camera);
     const px = (p.x + 1) / 2 * kan.width, py = (1 - p.y) / 2 * kan.height, pr = Math.abs(q.x - p.x) / 2 * kan.width;
-    out.push(canvasTex(256, 256, (x) => {
+    out.push(canvasTex(512, 512, (x) => {
+      x.scale(2, 2);
       x.fillStyle = "#fff"; x.beginPath(); x.arc(128, 128, 124, 0, 7); x.fill();
       x.save(); x.beginPath(); x.arc(128, 128, 112, 0, 7); x.clip();
       x.drawImage(kan, px - pr, py - pr, 2 * pr, 2 * pr, 16, 16, 224, 224); x.restore();
@@ -156,6 +157,15 @@ function glowyPostaci(S) {
   return out;
 }
 
+// a disc drawn by a shader: a crisp edge at any size (a canvas circle stretched over the screen was pixelated)
+function dysk(kolor, order) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({
+    transparent: true, depthTest: false, depthWrite: false, uniforms: { kolor: { value: new THREE.Color(kolor) }, alfa: { value: 1 } },
+    vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+    fragmentShader: "uniform vec3 kolor; uniform float alfa; varying vec2 vUv; void main(){ float r = length(vUv - 0.5); float w = fwidth(r); float a = 1.0 - smoothstep(0.5 - w, 0.5, r); if (a <= 0.0) discard; gl_FragColor = vec4(kolor, a * alfa); }",
+  }));
+  m.renderOrder = order; m.frustumCulled = false; return m;
+}
 export async function przejscie(S, zmiana, { rodzaj = null } = {}) {
   const N = nakladka(S), a = N.a || S.camera.aspect;
   rodzaj = rodzaj && PRZEJSCIA.includes(rodzaj) ? rodzaj : PRZEJSCIA[Math.floor(Math.random() * PRZEJSCIA.length)];
@@ -170,10 +180,11 @@ export async function przejscie(S, zmiana, { rodzaj = null } = {}) {
     zielen.position.x = 2 * a + 0.2; g.add(zielen);
     const koniec = [-a + 0.85, -a + 0.35, -a + 0.75, -a + 0.45];
     const pasy = TECZA.map((k, i) => {
-      const t = canvasTex(1024, 128, (x) => {
-        x.fillStyle = k; x.beginPath(); x.roundRect(0, 0, 1100, 128, 64); x.fill();
-        x.fillStyle = odcien(k, -0.1); for (let j = 0; j < 6; j++) { x.beginPath(); x.arc(170 + j * 140, 40 + (j % 2) * 50, 18 + (j % 3) * 8, 0, 7); x.fill(); }
+      const t = canvasTex(4096, 512, (x) => {
+        x.fillStyle = k; x.beginPath(); x.roundRect(0, 0, 4400, 512, 256); x.fill();
+        x.fillStyle = odcien(k, -0.1); for (let j = 0; j < 6; j++) { x.beginPath(); x.arc(680 + j * 560, 160 + (j % 2) * 200, 72 + (j % 3) * 32, 0, 7); x.fill(); }
       });
+      t.anisotropy = 8;
       const L = 2 * a * 1.6;
       const m = plaski(t, L, 0.5, { order: 1 }); m.geometry.translate(L / 2, 0, 0);
       m.position.set(a + 0.3, 0.75 - i * 0.5, 0); g.add(m);
@@ -193,10 +204,11 @@ export async function przejscie(S, zmiana, { rodzaj = null } = {}) {
   } else if (rodzaj === "wzor") {
     // a layer of one colour with a pattern of shapes sweeps in diagonally and out the other side
     const k = TECZA[Math.floor(Math.random() * 4)];
-    const t = canvasTex(512, 512, (x) => {
-      x.fillStyle = k; x.fillRect(0, 0, 512, 512); x.fillStyle = odcien(k, 0.28);
-      for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) { const cx = 64 + c * 128 + (r % 2) * 64, cy = 64 + r * 128; x.beginPath(); if ((r + c) % 2) x.arc(cx, cy, 30, 0, 7); else { x.moveTo(cx, cy - 34); x.lineTo(cx + 32, cy + 26); x.lineTo(cx - 32, cy + 26); x.closePath(); } x.fill(); }
+    const t = canvasTex(1024, 1024, (x) => {
+      x.fillStyle = k; x.fillRect(0, 0, 1024, 1024); x.fillStyle = odcien(k, 0.28);
+      for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) { const cx = 128 + c * 256 + (r % 2) * 128, cy = 128 + r * 256; x.beginPath(); if ((r + c) % 2) x.arc(cx, cy, 60, 0, 7); else { x.moveTo(cx, cy - 68); x.lineTo(cx + 64, cy + 52); x.lineTo(cx - 64, cy + 52); x.closePath(); } x.fill(); }
     });
+    t.anisotropy = 8; t.generateMipmaps = true;
     t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(3 * a, 3);
     const m = plaski(t, 2 * a * 1.5, 2 * 1.5, { order: 1 }); m.rotation.z = -0.35; g.add(m);
     const start = new THREE.Vector2(3.2 * a, 2.2), srodek = new THREE.Vector2(0, 0), koniec = new THREE.Vector2(-3.2 * a, -2.2);
@@ -216,15 +228,14 @@ export async function przejscie(S, zmiana, { rodzaj = null } = {}) {
   } else {
     // bubbles in the rainbow colours grow from all over until they meet, then shrink away
     const kolka = [];
-    const t = canvasTex(128, 128, (x) => { x.fillStyle = "#fff"; x.beginPath(); x.arc(64, 64, 62, 0, 7); x.fill(); });
     for (let i = 0; i < 26; i++) {
-      const m = plaski(t, 1, 1, { order: 1 + i * 0.01, color: new THREE.Color(TECZA[i % 4]) });
+      const m = dysk(TECZA[i % 4], 1 + i * 0.01);
       m.position.set(los(-a, a), los(-1, 1), 0); m.scale.setScalar(0.001); m.userData = { r: los(0.9, 1.5), d: Math.random() * 0.35 };
       g.add(m); kolka.push(m);
     }
-    const tlo = plaski(t, 1, 1, { order: 2, color: new THREE.Color(TECZA[3]) }); tlo.scale.set(0.001, 0.001, 1); g.add(tlo);
+    const tlo = dysk(TECZA[3], 2); tlo.scale.set(0.001, 0.001, 1); g.add(tlo);
     zakryj = () => S.tween(T(0.75), (s) => { for (const m of kolka) { const q = easeOutBack(Math.max(0, Math.min(1, (s - m.userData.d) / 0.65))); m.scale.setScalar(Math.max(0.001, q * m.userData.r)); } const q = Math.max(0.001, Math.max(0, s - 0.6) / 0.4 * 6 * a); tlo.scale.set(q, q, 1); });
-    odkryj = () => S.tween(T(0.6), (s) => { g.children.forEach((m) => { m.material.opacity = 1 - easeInOut(s); }); });
+    odkryj = () => S.tween(T(0.6), (s) => { g.children.forEach((m) => { m.material.uniforms.alfa.value = 1 - easeInOut(s); }); });
   }
   await zakryj();
   try { await zmiana(); } finally {
@@ -249,7 +260,7 @@ export async function odliczanie(S, { od = 3, styl = "cyfry" } = {}) {
   const tlo = new THREE.Mesh(new THREE.PlaneGeometry(4 * a, 4), new THREE.MeshBasicMaterial({ color: 0x0a0a14, transparent: true, opacity: 0, depthTest: false }));
   tlo.renderOrder = 1; g.add(tlo);
   await S.tween(T(0.25), (s) => { tlo.material.opacity = 0.5 * s; });
-  const kropka = canvasTex(128, 128, (x) => { x.fillStyle = "#fff"; x.beginPath(); x.arc(64, 64, 60, 0, 7); x.fill(); x.fillStyle = "#ffb347"; x.beginPath(); x.arc(64, 64, 46, 0, 7); x.fill(); });
+  const kropka = canvasTex(256, 256, (x) => { x.scale(2, 2); x.fillStyle = "#fff"; x.beginPath(); x.arc(64, 64, 60, 0, 7); x.fill(); x.fillStyle = "#ffb347"; x.beginPath(); x.arc(64, 64, 46, 0, 7); x.fill(); });
   const kropki = styl === "kropki" ? [...Array(od)].map((_, i) => { const m = plaski(kropka, 0.32, 0.32, { order: 2 }); m.position.x = (i - (od - 1) / 2) * 0.45; g.add(m); return m; }) : [];
   for (let n = od; n >= 1; n--) {
     S.sfx.graj("tap", { tempo: 0.8 + (od - n) * 0.12 });
@@ -268,7 +279,7 @@ export async function odliczanie(S, { od = 3, styl = "cyfry" } = {}) {
   }
   // go: a green flash ring
   S.sfx.graj("right");
-  const ring = plaski(canvasTex(256, 256, (x) => { x.strokeStyle = "#6bd66b"; x.lineWidth = 34; x.beginPath(); x.arc(128, 128, 100, 0, 7); x.stroke(); }), 1, 1, { order: 2 }); g.add(ring);
+  const ring = plaski(canvasTex(1024, 1024, (x) => { x.scale(4, 4); x.strokeStyle = "#6bd66b"; x.lineWidth = 34; x.beginPath(); x.arc(128, 128, 100, 0, 7); x.stroke(); }), 1, 1, { order: 2 }); g.add(ring);
   await S.tween(T(0.4), (s) => { ring.scale.setScalar(0.3 + 2.2 * s); ring.material.opacity = 1 - s; tlo.material.opacity = 0.5 * (1 - s); });
   N.scena.remove(g);
 }
@@ -312,7 +323,8 @@ export async function ptaszek(S, h = null, { na = 1.2 } = {}) {
 // a small white bubble over the head with a big icon: what the character feels, readable from the sofa
 export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykrzyknik", "zarowka", "zimno", "muzyka", "strach"];
 function ikonaEmocji(rodzaj) {
-  return canvasTex(256, 256, (x) => {
+  return canvasTex(512, 512, (x) => {
+    x.scale(2, 2);                                               // drawn at 256, rendered at twice the pixels
     // the bubble
     x.fillStyle = "#fff"; x.strokeStyle = "#4a433c"; x.lineWidth = 8;
     x.beginPath(); x.ellipse(128, 112, 104, 92, 0, 0, 7); x.fill(); x.stroke();
@@ -361,14 +373,23 @@ export async function emocja(S, who, rodzaj, { na = 2.2 } = {}) {
   handle.za = () => {                                                   // follows the head every frame
     const gl = L.kosci.glowa && L.widokGrupy.przod.visible ? L.kosci.glowa : L.kosci.p_glowa && L.widokGrupy.profil.visible ? L.kosci.p_glowa : L.kosci.t_glowa;
     const b = new THREE.Box3().setFromObject(gl || L.korzen);
-    m.position.set(Math.max(-5.4, Math.min(5.4, (b.min.x + b.max.x) / 2 + strona * 0.75)), Math.min(3.3 - 0.6, b.max.y + 0.45), 0.9);
-    m.scale.x = strona;                                                  // the tail points to the head
+    // inside what the camera sees now (a close-up zooms in): under the phase icons, beside the head when there
+    // is no room above it; a little smaller in a close-up so it does not fill the frame
+    const kam = S.camera, v = S.visible(0), z = kam.zoom, hw = v.w / 2 / z, hh = v.h / 2 / z;
+    const k = 1 / Math.sqrt(z), r = 0.6 * k * (handle.q ?? 1);
+    const gora = kam.position.y + hh - 2 * hh * 0.11 - r, lewo = kam.position.x - hw + r, prawo = kam.position.x + hw - r;
+    let x = (b.min.x + b.max.x) / 2 + strona * 0.75, y = b.max.y + 0.45;
+    if (y > gora) { y = gora; x = strona > 0 ? b.max.x + r * 0.9 : b.min.x - r * 0.9; }
+    m.position.set(Math.max(lewo, Math.min(prawo, x)), y, 0.9);
+    handle.k = k;
+    m.scale.set(strona * k * (handle.q ?? 1), k * (handle.q ?? 1), 1);   // the tail points to the head
   };
-  handle.za();
+  handle.q = 0.001; handle.za();
   (S.dymki = S.dymki || []).push(handle);
   S.sfx.graj(rodzaj === "zarowka" ? "idea" : "pop");
-  await S.tween(T(0.3), (s) => { const q = Math.max(0.001, easeOutBack(s)); m.scale.set(q * strona, q, 1); });
-  if (na) setTimeout(async () => { await S.tween(T(0.2), (s) => { const q = Math.max(0.001, 1 - s); m.scale.set(q * strona, q, 1); }); handle.remove(); }, na * 1000);
+  await S.tween(T(0.3), (s) => { handle.q = Math.max(0.001, easeOutBack(s)); });
+  handle.q = 1;
+  if (na) setTimeout(async () => { await S.tween(T(0.2), (s) => { handle.q = Math.max(0.001, 1 - s); }); handle.remove(); }, na * 1000);
   return handle;
 }
 
