@@ -66,7 +66,7 @@
   <div class="wiersz"><select id="lista"><option value="">— kliknij na lalce —</option></select><label title="klik i przeciąganie zawsze działają na wybranym elemencie"><input type="checkbox" id="blokada"> zablokuj</label></div>
   <div id="pola" class="pola"></div>
   <div class="pomoc">
-    Przeciągnij element, by go przesunąć (oś idzie z nim). <kbd>Shift</kbd>+przeciągnij przesuwa samą oś obrotu.
+    Przeciągnij element, by go przesunąć (oś idzie z nim); przeciągnij narożnik ramki, by zmienić jego wielkość. Ubranie też przeciągasz myszą (pomarańczowa ramka, narożnik = skala). <kbd>Shift</kbd>+przeciągnij przesuwa samą oś obrotu.
     <kbd>Alt</kbd>+przeciągnij obraca wokół osi (bazowy obrót, <kbd>Q</kbd>/<kbd>E</kbd> o 1°, z <kbd>Shift</kbd> 5°).
     Animacja gra tylko w rzutach, które gra by pokazała (Skradanie: sam profil).
     Oczy i usta przeciągasz i obracasz jako cel (wszystkie warianty razem); ich <b>w</b>/<b>h</b> zmieniają rozmiar.
@@ -291,12 +291,32 @@ function rysujNakladke() {
   for (const m of siatki(L)) {
     if (m.userData.czesc !== wybor.nazwa || !widoczny(m)) continue;
     m.updateWorldMatrix(true, false);
-    nakladka.add(prostokat(new THREE.Box3().setFromObject(m), 0x40c0ff));
+    const bb = new THREE.Box3().setFromObject(m);
+    nakladka.add(prostokat(bb, 0x40c0ff));
+    for (const r of rogi(bb)) nakladka.add(kwadracik(r, 0x40c0ff));
     nakladka.add(krzyz(new THREE.Vector3().setFromMatrixPosition(m.parent.matrixWorld), 0xffe040));
   }
   for (const st of L.stawyCzesci(wybor.nazwa)) nakladka.add(kolko(st.swiat, R_STAWU / kam.zoom, 0xff40d0));
 }
-const R_STAWU = 0.022;
+const R_STAWU = 0.022, R_ROGU = 0.02;
+const rogi = (bb) => [[bb.min.x, bb.min.y], [bb.max.x, bb.min.y], [bb.max.x, bb.max.y], [bb.min.x, bb.max.y]].map(([x, y]) => new THREE.Vector3(x, y, 0.8));
+function kwadracik(p, kolor) {
+  const r = R_ROGU / kam.zoom * 0.6;
+  return new THREE.Line(new THREE.BufferGeometry().setFromPoints([[-r, -r], [r, -r], [r, r], [-r, r], [-r, -r]].map(([x, y]) => new THREE.Vector3(p.x + x, p.y + y, 0.8))),
+    new THREE.LineBasicMaterial({ color: kolor, depthTest: false }));
+}
+// a corner of a box under the cursor: scaling goes around the box's centre
+function rogPod(e, bb) {
+  if (!bb) return null;
+  const p = swiat(e);
+  for (const r of rogi(bb)) if (Math.hypot(p.x - r.x, p.y - r.y) < 1.8 * R_ROGU / kam.zoom) return { srodek: new THREE.Vector3((bb.min.x + bb.max.x) / 2, (bb.min.y + bb.max.y) / 2, 0) };
+  return null;
+}
+function bbWyboru() {
+  if (!wybor || wybor.twarz) return null;
+  const m = siatki(lalki[wybor.kolumna]).find((m) => m.userData.czesc === wybor.nazwa && widoczny(m));
+  return m ? new THREE.Box3().setFromObject(m) : null;
+}
 function kolko(p, r, kolor) {
   const pts = []; for (let a = 0; a <= 24; a++) pts.push(new THREE.Vector3(p.x + r * Math.cos(a / 24 * 2 * Math.PI), p.y + r * Math.sin(a / 24 * 2 * Math.PI), 0.8));
   const g = new THREE.Group();
@@ -448,6 +468,93 @@ function stawPod(e) {
   for (const st of lalki[wybor.kolumna].stawyCzesci(wybor.nazwa)) if (Math.hypot(p.x - st.swiat.x, p.y - st.swiat.y) < 1.6 * R_STAWU / kam.zoom) return st.i;
   return null;
 }
+// ---- garments: drag one to move it (dx, dy), drag a corner of its orange box to scale it; per view, every
+// column showing that view follows
+const WIDOK_KOLUMNY = ["przod", "przod", "tyl", "profil"];
+let ubrWybor = null, ciagU = null, ciagE = null;
+function meshUbioru(L, rzecz) { const out = []; L.korzen.traverse((o) => { if (o.isMesh && o.userData.rzecz === rzecz && widoczny(o)) out.push(o); }); return out; }
+function bbUbioru() {
+  if (!ubrWybor) return null;
+  const ms = meshUbioru(lalki[ubrWybor.kolumna], ubrWybor.rzecz); if (!ms.length) return null;
+  const bb = new THREE.Box3(); for (const m of ms) bb.union(new THREE.Box3().setFromObject(m)); return bb;
+}
+function trafienieUbioru(e) {
+  const r = rend.domElement.getBoundingClientRect();
+  ray.setFromCamera(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1), kam);
+  for (const [i, L] of lalki.entries()) {
+    const ms = []; L.korzen.traverse((o) => { if (o.isMesh && o.userData.rzecz && widoczny(o)) ms.push(o); });
+    for (const h of ray.intersectObjects(ms, false)) {
+      const img = h.object.material.map?.image; if (!img || !h.uv) continue;
+      const k = "u:" + h.object.material.map.uuid;
+      if (!alfa[k]) { const c = document.createElement("canvas"); c.width = img.width; c.height = img.height; const x = c.getContext("2d"); x.drawImage(img, 0, 0); alfa[k] = { d: x.getImageData(0, 0, img.width, img.height).data, w: img.width, h: img.height }; }
+      const a = alfa[k], px = Math.min(a.w - 1, Math.floor(h.uv.x * a.w)), py = Math.min(a.h - 1, Math.floor((1 - h.uv.y) * a.h));
+      if (a.d[(py * a.w + px) * 4 + 3] > 20) return { rzecz: h.object.userData.rzecz, widok: WIDOK_KOLUMNY[i], kolumna: i };
+    }
+  }
+  return null;
+}
+function rysujUbior() {
+  const bb = bbUbioru(); if (!bb) return;
+  nakladka.add(prostokat(bb, 0xffa030)); for (const r of rogi(bb)) nakladka.add(kwadracik(r, 0xffa030));
+}
+function wybierzUbior(t) {
+  ubrWybor = t;
+  $("ubr_kor").value = t.rzecz; $("ubr_widok").value = t.widok; pokazKorekte();
+  rysujNakladke(); rysujUbior();
+}
+function korektaWyboru() {
+  const r = ubrWybor.rzecz, w = ubrWybor.widok;
+  korektyKto[r] = korektyKto[r] || {};
+  return (korektyKto[r][w] = korektyKto[r][w] || { dx: 0, dy: 0, skala: 1, obrot: 0 });
+}
+rend.domElement.addEventListener("pointerdown", (e) => {
+  if (e.button !== 0) return;
+  const rogU = rogPod(e, bbUbioru()), tu = rogU ? ubrWybor : trafienieUbioru(e);
+  if (tu) {
+    if (!rogU) wybierzUbior(tu);
+    ciagU = { od: swiat(e), rog: !!rogU, H: lalki[tu.kolumna].wysokosc, ruszyl: false };
+    rend.domElement.setPointerCapture(e.pointerId); e.stopImmediatePropagation(); return;
+  }
+  const rogE = rogPod(e, bbWyboru());
+  if (rogE) { zapamietaj(); ciagE = { od: swiat(e), srodek: rogE.srodek, ruszyl: false }; rend.domElement.setPointerCapture(e.pointerId); e.stopImmediatePropagation(); return; }
+  ubrWybor = null;
+}, true);
+rend.domElement.addEventListener("pointermove", (e) => {
+  if (ciagU) {
+    const p = swiat(e), K = korektaWyboru();
+    if (ciagU.rog) {
+      const bb = bbUbioru(); if (!bb) return;
+      const c = new THREE.Vector3((bb.min.x + bb.max.x) / 2, (bb.min.y + bb.max.y) / 2, 0);
+      const f = Math.hypot(p.x - c.x, p.y - c.y) / Math.max(1e-4, Math.hypot(ciagU.od.x - c.x, ciagU.od.y - c.y));
+      if (!isFinite(f) || Math.abs(f - 1) < 0.005) return;
+      K.skala = Math.max(0.2, (K.skala ?? 1) * f);
+    } else {
+      const dx = (p.x - ciagU.od.x) / ciagU.H, dy = (p.y - ciagU.od.y) / ciagU.H; if (!dx && !dy) return;
+      K.dx = (K.dx ?? 0) + dx; K.dy = (K.dy ?? 0) + dy;
+    }
+    ciagU.od = p; ciagU.ruszyl = true;
+    pokazKorekte(); $("ubr_status").textContent = "niezapisane";
+    if (!ciagU.czeka) { ciagU.czeka = true; ubierzWszystkie(ubrWybor.rzecz).then(() => { if (ciagU) ciagU.czeka = false; rysujNakladke(); rysujUbior(); }); }
+    e.stopImmediatePropagation(); return;
+  }
+  if (ciagE) {
+    const p = swiat(e), c = ciagE.srodek;
+    const f = Math.hypot(p.x - c.x, p.y - c.y) / Math.max(1e-4, Math.hypot(ciagE.od.x - c.x, ciagE.od.y - c.y));
+    if (!isFinite(f) || Math.abs(f - 1) < 0.003) return;
+    const cz = dane.czesci[wybor.nazwa], w0 = cz.w, h0 = cz.h;
+    cz.w = Math.max(4, w0 * f); cz.h = Math.max(4, h0 * f); cz.x -= (cz.w - w0) / 2; cz.y -= (cz.h - h0) / 2;
+    ciagE.od = p; ciagE.ruszyl = true; zbuduj(); zaznaczZmiane();
+    e.stopImmediatePropagation(); return;
+  }
+}, true);
+rend.domElement.addEventListener("pointerup", (e) => {
+  if (ciagU) { const r = ubrWybor.rzecz; ciagU = null; ubierzWszystkie(r).then(() => { rysujNakladke(); rysujUbior(); }); e.stopImmediatePropagation(); return; }
+  if (ciagE) {
+    if (!ciagE.ruszyl) historia.pop();
+    else { const cz = dane.czesci[wybor.nazwa]; for (const k of ["x", "y", "w", "h"]) cz[k] = Math.round(cz[k]); zbuduj(); }
+    ciagE = null; e.stopImmediatePropagation(); return;
+  }
+}, true);
 rend.domElement.addEventListener("pointerdown", (e) => {
   if (e.button !== 0) return;
   const blokada = $("blokada").checked && wybor;

@@ -23,6 +23,17 @@
       }
     },
     {
+      "id": "bigger_smaller_pro",
+      "title": {
+        "pl": "Większy, mniejszy PRO",
+        "en": "Bigger, smaller PRO"
+      },
+      "subtitle": {
+        "pl": "porównywanie przez nakładanie",
+        "en": "comparing by overlapping"
+      }
+    },
+    {
       "id": "more_fewer",
       "title": {
         "pl": "Więcej, mniej",
@@ -144,6 +155,7 @@
       "lessons": [
         "grouping",
         "bigger_smaller",
+        "bigger_smaller_pro",
         "more_fewer"
       ]
     },

@@ -1,0 +1,236 @@
+{
+  "line.a_urodziny": {
+    "who": "lisek",
+    "text": "Idziemy do starego dębu. Sowa ma dziś urodziny!"
+  },
+  "line.a_hurra": {
+    "who": "wiewiorka",
+    "text": "Hurra! Urodziny!"
+  },
+  "line.a_obietnica": {
+    "who": "lisek",
+    "text": "A kiedy wrócimy, w domu czeka na nas niespodzianka."
+  },
+  "line.a_pada": {
+    "who": "wiewiorka",
+    "text": "Ojej, pada! Zmokniemy."
+  },
+  "line.a_kalosze": {
+    "who": "lisek",
+    "text": "Załóżmy kalosze."
+  },
+  "line.a_biore": {
+    "who": "wiewiorka",
+    "text": "Te są dobre!"
+  },
+  "line.a_za_duze": {
+    "who": "lisek",
+    "text": "Spadają, bo są za duże. To moje kalosze."
+  },
+  "line.a_jak": {
+    "who": "wiewiorka",
+    "text": "To jak poznać, które są moje?"
+  },
+  "line.a_porownaj": {
+    "who": "lisek",
+    "text": "Porównamy je! Położymy jeden na drugim."
+  },
+  "line.a_co": {
+    "who": "wiewiorka",
+    "text": "Jeden na drugim?"
+  },
+  "line.a_pokaze": {
+    "who": "lisek",
+    "text": "Pokażę ci."
+  },
+  "line.a_kladziemy": {
+    "who": "lisek",
+    "text": "Kładę mały kalosz na dużym."
+  },
+  "line.a_wystaje": {
+    "who": "lisek",
+    "text": "Widzisz? Duży wystaje dookoła. Ten jest większy."
+  },
+  "line.a_wskaz_maly": {
+    "who": "wiewiorka",
+    "text": "A który jest mniejszy? Wskaż go."
+  },
+  "line.a_nie_ten": {
+    "who": "wiewiorka",
+    "text": "Ten wystawał dookoła. Wskaż ten drugi.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.a_ubierz": {
+    "who": "lisek",
+    "text": "Przeciągnij duże kalosze do mnie, a małe do wiewiórki."
+  },
+  "line.za_duze": {
+    "who": "lisek",
+    "text": "Za duże! Spadają.",
+    "speakers": [
+      "wiewiorka",
+      "sowa"
+    ]
+  },
+  "line.za_male": {
+    "who": "lisek",
+    "text": "Za małe! Nie wchodzą.",
+    "speakers": [
+      "wiewiorka",
+      "sowa"
+    ]
+  },
+  "line.a_pasuja": {
+    "who": "wiewiorka",
+    "text": "Pasują! Teraz deszcz nam nie straszny."
+  },
+  "line.a_idziemy": {
+    "who": "lisek",
+    "text": "Idziemy!"
+  },
+  "line.b_strumyk": {
+    "who": "wiewiorka",
+    "text": "Strumyk! Jak go przejdziemy?"
+  },
+  "line.b_kamienie": {
+    "who": "lisek",
+    "text": "Po kamieniach. Ale tylko duży kamień nas utrzyma."
+  },
+  "line.b_kto_pierwszy": {
+    "who": "wiewiorka",
+    "text": "A kto idzie pierwszy?"
+  },
+  "line.b_papier": {
+    "who": "lisek",
+    "text": "Zagrajmy w papier, kamień, nożyce! Wybierz znak dla wiewiórki.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.b_wygralas": {
+    "who": "lisek",
+    "text": "Wygrałaś! Idziesz pierwsza."
+  },
+  "line.b_most": {
+    "who": "lisek",
+    "text": "Ułóżmy kamienie w wodzie. Uwaga, zaczynamy!"
+  },
+  "line.b_wskaz_duzy": {
+    "who": "wiewiorka",
+    "text": "Który kamień mnie utrzyma? Wskaż duży."
+  },
+  "line.b_jeszcze": {
+    "who": "wiewiorka",
+    "text": "I jeszcze jeden. Wskaż duży kamień."
+  },
+  "line.b_utonal": {
+    "who": "lisek",
+    "text": "Ojej, mały kamień utonął. Potrzebny jest duży."
+  },
+  "line.b_przechodzimy": {
+    "who": "wiewiorka",
+    "text": "Przeszliśmy po dużych kamieniach!"
+  },
+  "line.c_zimno": {
+    "who": "sowa",
+    "text": "Brr, zimno mi. Wiatr porwał moją czapkę."
+  },
+  "line.c_pomozemy": {
+    "who": "wiewiorka",
+    "text": "Nie martw się, sowo! Pomożemy ci."
+  },
+  "line.c_co_ogrzeje": {
+    "who": "lisek",
+    "text": "Co ogrzeje sowę? Wskaż."
+  },
+  "line.c_nie_ogrzeje": {
+    "who": "lisek",
+    "text": "To nie ogrzeje sowy.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.c_glowka": {
+    "who": "wiewiorka",
+    "text": "Sowa ma małą główkę. Przeciągnij na nią czapkę, która pasuje."
+  },
+  "line.c_szalik": {
+    "who": "lisek",
+    "text": "I jeszcze szalik. Przeciągnij go na sowę."
+  },
+  "line.c_dziekuje": {
+    "who": "sowa",
+    "text": "Jak ciepło! Dziękuję, przyjaciele. To najlepszy prezent."
+  },
+  "line.c_slonce": {
+    "who": "lisek",
+    "text": "Patrzcie, przestało padać!"
+  },
+  "line.c_niespodzianka": {
+    "who": "wiewiorka",
+    "text": "Wracajmy do domu! Czeka niespodzianka!"
+  },
+  "line.p_start": {
+    "who": "wiewiorka",
+    "text": "Teraz zabawa! Zbieramy gwiazdki."
+  },
+  "line.p_wiekszy": {
+    "who": "lisek",
+    "text": "Który jest większy? Wskaż.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_poloz": {
+    "who": "lisek",
+    "text": "Popatrz jeszcze raz. Który jest większy?",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_wystaje": {
+    "who": "wiewiorka",
+    "text": "Większy wystaje dookoła.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.p_lapanie": {
+    "who": "lisek",
+    "text": "A teraz łapanie! Szybko, wskaż to, co większe."
+  },
+  "line.p_lap": {
+    "who": "wiewiorka",
+    "text": "Łap większe!"
+  },
+  "line.p_czapki": {
+    "who": "lisek",
+    "text": "Przeciągnij dużą czapkę do mnie, a małą do wiewiórki."
+  },
+  "line.d_pudelko": {
+    "who": "lisek",
+    "text": "Niespodzianka! Wskaż pudełko, otworzymy je."
+  },
+  "line.d_trzy": {
+    "who": "wiewiorka",
+    "text": "Trzy kapelusze! Takie same, ale różnej wielkości."
+  },
+  "line.d_zasada": {
+    "who": "lisek",
+    "text": "Największy dla największego, najmniejszy dla najmniejszego. Przeciągnij je."
+  },
+  "line.d_pieknie": {
+    "who": "sowa",
+    "text": "Każdy ma kapelusz w sam raz!"
+  },
+  "line.d_rodzice": {
+    "who": "lisek",
+    "text": "Poproście rodziców, żeby porównali z wami buty całej rodziny. Połóżcie jeden na drugim!"
+  },
+  "line.d_pa": {
+    "who": "wiewiorka",
+    "text": "Pa, pa! Do zobaczenia!"
+  }
+}

@@ -297,7 +297,9 @@ export class Stage {
       const m = new THREE.Mesh(new THREE.PlaneGeometry(1.18, 1.18), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false }));
       m.position.z = -0.01; g.add(m);
     }
-    const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${name}.webp`), transparent: true, alphaTest: 0.05, depthWrite: false }));
+    const mapa = await texture(`/game/assets/objects/${name}.webp`), iw = mapa.image.width, ih = mapa.image.height;
+    // a non-square picture (a garment) keeps its proportions inside the unit square
+    const icon = new THREE.Mesh(new THREE.PlaneGeometry(iw >= ih ? 1 : iw / ih, iw >= ih ? ih / iw : 1), new THREE.MeshBasicMaterial({ map: mapa, transparent: true, alphaTest: 0.05, depthWrite: false }));
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 10; });                 // the foreground draws after every background prop
@@ -719,8 +721,8 @@ export class Stage {
         b = { u0: x0 / img.width, u1: (x1 + 1) / img.width, v0: y0 / img.height, v1: (y1 + 1) / img.height };
         this.alphaBoxes.set(img, b);
       }
-      const p = h.mesh.position, s = h.base ?? 1;
-      return { left: p.x + (b.u0 - 0.5) * s, right: p.x + (b.u1 - 0.5) * s, top: p.y + (0.5 - b.v0) * s, bottom: p.y + (0.5 - b.v1) * s, x: p.x, y: p.y };
+      const p = h.mesh.position, s = h.base ?? 1, gw = s * (h.icon.geometry.parameters.width ?? 1), gh = s * (h.icon.geometry.parameters.height ?? 1);
+      return { left: p.x + (b.u0 - 0.5) * gw, right: p.x + (b.u1 - 0.5) * gw, top: p.y + (0.5 - b.v0) * gh, bottom: p.y + (0.5 - b.v1) * gh, x: p.x, y: p.y };
     }
     const box = new THREE.Box3().setFromObject(this.meshOf(h));
     return { left: box.min.x, right: box.max.x, top: box.max.y, bottom: box.min.y, x: (box.min.x + box.max.x) / 2, y: (box.min.y + box.max.y) / 2 };

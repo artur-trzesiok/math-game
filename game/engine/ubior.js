@@ -178,7 +178,7 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
           najb[v] = bi; off[2 * v] = rest[3 * v] - R.rest[3 * bi]; off[2 * v + 1] = rest[3 * v + 1] - R.rest[3 * bi + 1];
         }
         const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: t, transparent: true, alphaTest: 0.05, depthTest: false, depthWrite: false, side: THREE.DoubleSide }));
-        m.frustumCulled = false; m.userData.ubior = true; m.renderOrder = ro; R.mesh.add(m);
+        m.frustumCulled = false; m.userData.ubior = true; m.userData.rzecz = rzecz; m.userData.widok = widok; m.renderOrder = ro; R.mesh.add(m);
         const nl = R.rest.length / 3;
         const aktualizuj = () => {
           const lp = R.mesh.geometry.attributes.position.array, out = g.attributes.position.array;
@@ -225,11 +225,9 @@ export async function ubierz(S, who, rzecz, { skala = 1, nasun = null, pop = tru
     if (Q.skala !== 1) { m.scale.setScalar(Q.skala); m.userData.h *= Q.skala; }
     cx += Q.dx * L.wysokosc; cy += Q.dy * L.wysokosc; m.rotation.z = -Q.obrot * Math.PI / 180;
     m.position.set(cx, cy, slot === "szyja" ? -0.01 : 0.08);             // a scarf under the head, a hat over the face
-    m.userData.ubior = true; m.renderOrder = ro;
+    m.userData.ubior = true; m.userData.rzecz = rzecz; m.userData.widok = widok; m.renderOrder = ro;
     H.kosc.add(m); rzeczy.push([m, null]);
-    // ears stick out through the hat: the head drawn once more over it, only where its ears are
-    // (in front and back the hat sits between the ears, nothing to redraw; in profile the ear stands at the back)
-    if (slot === "glowa" && (widok === "profil" || !K.uszy)) { const u = uszyNaCzapce(L, widok, H, cy - m.userData.h / 2); if (u) { u.renderOrder = ro; H.kosc.add(u); rzeczy.push([u, null]); } }
+    // no ear redrawn over the hat: it flickered along the brim; the hat covers the ear's base
   }
   const ubrane = { who, slot, rzecz, rzeczy, skala };
   (L.ubior = L.ubior || {})[slot] = ubrane;
@@ -282,7 +280,7 @@ export function ubieranie(S, { rzeczy, kto, pasuje, onWrong = null, zostaw = [] 
   const zostalo = new Set(rzeczy.filter((h) => !zostaw.includes(h)));
   return new Promise((resolve) => {
     S.free({
-      items: rzeczy, ubieranie: { kto },
+      items: rzeczy, ubieranie: { kto, pasuje, zostaw },
       onTap: () => {},
       onDrop: async (h, p) => {
         const L = kto.map((n) => [n, S.puppets[n]]).find(([, L]) => {

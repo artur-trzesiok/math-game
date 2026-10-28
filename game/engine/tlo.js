@@ -79,7 +79,9 @@ export async function zbudujTlo(scena, wymiar, opcje = {}) {
   const opis = await (await fetch(v(kat + "rekwizyty.json"), SWIEZO)).json();
   const W = opis.szerokosc, H = opis.wysokosc;
   const { w: pw, h: ph } = wymiar(Z_TLA);
-  const s0 = Math.max(pw / W, ph / H) * 1.02;        // cover
+  // cover, with the plate's raised centre (srodekY) still covering the bottom edge - a panorama is scaled by its
+  // height, and without the margin a blue strip showed under it
+  const s0 = Math.max(pw / W, (ph + 2 * Math.abs(opcje.srodekY ?? 0)) / H) * 1.02;
 
   const plyta = new THREE.Mesh(new THREE.PlaneGeometry(W * s0, H * s0),
     new THREE.MeshBasicMaterial({ map: await tekstura(kat + opis.plyta) }));

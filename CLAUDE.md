@@ -311,6 +311,40 @@ Rows and queues are laid out by the things' drawn widths (`c.bounds`), never a f
 the heads at full width (8 things at 1.3), ordering puts things on the floor within x +-3.1 and the places
 over the heads, the queue lesson stands animals feet on the floor, the bunny clearly the biggest.
 
+Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller_pro` uses them all):
+- inserts on a plain colour: `ctx.go({kolor, motyw, kolo})` (motyw kola, figury, chmurki, deszcz, cyfry,
+  gwiazdki, liscie - drifting very faintly; `ciecie: true` inside one adventure);
+- transitions `E.przejscie` (tecza with the characters' heads cut from the frame, wzor, irys, babelki; random
+  unless named): the lesson's `przejscia: true` makes every stage and `go` change one;
+- `ctx.ujecie(ogolny | sredni | zblizenie | dwuujecie, {na})` cuts the camera (a two-shot steps the two closer
+  until the next wide shot); `ctx.pan(k, {idz})` slides a panorama to area k (fractions allowed), the named
+  characters walk on the spot in step with the ground;
+- `ctx.odliczanie({styl: cyfry | kropki})`, `ctx.konfetti(h)`, `ctx.ptaszek(h)` (or `nagrody: true` for every
+  right pick), `ctx.emocja(who, rodzaj, {anim})` (zlosc, pot, serce, radosc, smutek, sen, wykrzyknik, zarowka,
+  zimno, muzyka, strach), `ctx.nalozenie(gorny, dolny)` -> {wiekszy, cofnij()}, `ctx.czastki(rodzaj)`
+  (deszcz, snieg, swietliki, liscie, pylek, babelki; ends with the background), `ctx.gwiazdki(n)` (practice
+  stars in the HUD, a streak badge after two first-try answers).
+Overlay effects draw in the stage's orthographic overlay scene (`S.nak`, rendered after the world by `rysuj`),
+so they cover the letterboxed frame exactly and are in snapshots.
+HUD: pause (the picture, tweens and the voice stop), next (the scene's context is retired - every ctx call of the
+skipped scene throws "abort", so nothing of it keeps running), fullscreen (also in the menu).
+
+Panoramas: `tools/backgrounds/make_panorama.py all <name>` - tiles of 1536 px, each next one an edit of a canvas
+whose left third is the previous tile's right third ("keep it, continue to the right"), stitched with a smooth
+ramp in the overlap; the movers pass runs on screen-wide windows; the usual split; `obszary` in rekwizyty.json.
+A plate wider than 1.25 design frames is a panorama for the stage (`S.panorama`).
+
+Dressing up (`ubior.js`): garments from `game/assets/ubrania/ubrania.json` (`tools/ubrania/make_ubrania.py`: one
+picture per garment with front / side / back views, prompted WITHOUT visible insides - a hat's opening or a
+boot's top showed as a dark hole). Fitted from the character's own pieces: a hat between the ears (the dome
+width where the ears join; in profile the ear is redrawn over it with a soft mask), glasses on the eyes' box, a
+scarf at the neck (capped for small characters), shoes as a grid glued vertex by vertex to the nearest leg
+vertex at rest and turned by that vertex's angle - so they bend with knee and ankle (giving them the leg's s tore
+them apart at a bent ankle); a little oversize so no paw shows, as high as `do` (s on the leg). Corrections per
+character and view in `game/assets/characters/<kto>/ubior.json` (dx, dy in heights, skala, obrot), edited in the
+manager's wardrobe panel. `ctx.ubieranie({rzeczy, kto, pasuje, wrong})` - drag garments onto characters; a wrong
+size goes on, slips and falls off. Quadrupeds are not dressed, tails never.
+
 Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}), in the order a child should take them
 (topics by the age of their easiest lesson, lessons by difficulty). The menu is ONE strip scrolled sideways (a
 finger, the mouse wheel, a mouse drag; no visible scrollbar, edges fade where there is more), each topic a tinted

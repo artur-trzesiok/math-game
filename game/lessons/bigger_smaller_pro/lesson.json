@@ -1,0 +1,28 @@
+{
+  "id": "bigger_smaller_pro",
+  "title": {
+    "pl": "Większy, mniejszy PRO",
+    "en": "Bigger, smaller PRO"
+  },
+  "goal": "Compare sizes - bigger / smaller, biggest / smallest - by laying one thing on another (the bigger sticks out all around) and use it to act: wellies that fit, the big stones across a brook, a hat that fits.",
+  "age": "3-4",
+  "characters": [
+    "lisek",
+    "wiewiorka",
+    "sowa"
+  ],
+  "backgrounds": [
+    "droga_do_debu",
+    "dom"
+  ],
+  "objects": [
+    "kamyk",
+    "pilka",
+    "lyzka",
+    "pudelko",
+    "listek",
+    "talerz",
+    "jablko"
+  ],
+  "cover": "Fox in big yellow wellies and Squirrel in small ones stand on big stones in a shallow brook, rain drops around them; Owl in a red bobble hat and a striped scarf waves from under an old oak."
+}
