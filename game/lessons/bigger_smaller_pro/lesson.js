@@ -167,7 +167,7 @@ export default {
         const pomoc = [await c.ubranie("czapka_zimowa", { x: miejsca[0], y: 2.1, size: 1.1 }), await c.ubranie("szalik", { x: miejsca[1], y: 2.1, size: 1.1 })];
         const nie = [await c.object("pilka", { x: miejsca[2], y: 2.1, size: 1.0 }), await c.object("lyzka", { x: miejsca[3], y: 2.1, size: 1.0 })];
         await c.say("lisek", "line.c_co_ogrzeje");
-        await c.task({ targets: [...pomoc, ...nie], correct: pomoc, wrong: "line.c_nie_ogrzeje" });
+        await c.task({ targets: [...pomoc, ...nie], correct: pomoc, wrong: "line.c_nie_ogrzeje", wszystkie: true });
         c.clear();
         // the hat that fits: Owl's head is big - the small hat does not go on
         await c.say("wiewiorka", "line.c_glowka");

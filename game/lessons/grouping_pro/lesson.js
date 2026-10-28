@@ -128,7 +128,7 @@ export default {
         await c.sort({ items, zones, wrong: "line.a_pomylka" });
         await c.say("sarenka", "line.a_gdzie_prezenty");
         await pokazPrezenty(c, items);
-        await c.emocja("wiewiorka", "pot");
+        c.play("wiewiorka", "Rozgladanie"); await c.wonder("wiewiorka");                // puzzled: in both groups?
         await c.say("wiewiorka", "line.a_nie_ta");
         // rule two: red / the rest - the same things come back out of the containers
         await doRzedu(c, items);
@@ -165,7 +165,7 @@ export default {
         const pomoc = [await c.ubranie("czapka_zimowa_3", { x: miejsca[0], y: ROW_Y, size: 1.0 }), await c.ubranie("szalik_3", { x: miejsca[1], y: ROW_Y, size: 1.0 })];
         const nie = [await c.object("pilka", { x: miejsca[2], y: ROW_Y, size: 0.9 }), await c.object("lyzka", { x: miejsca[3], y: ROW_Y, size: 0.9 })];
         await c.say("sarenka", "line.b_co_przyda");
-        await c.task({ targets: [...pomoc, ...nie], correct: pomoc, wrong: "line.b_nie_grzeje" });
+        await c.task({ targets: [...pomoc, ...nie], correct: pomoc, wrong: "line.b_nie_grzeje", wszystkie: true });
         for (const h of nie) h.remove();
         await c.say("sarenka", "line.b_ubierz");
         await c.ubieranie({ rzeczy: pomoc, kto: ["wiewiorka"], pasuje: () => true });
@@ -298,7 +298,7 @@ export default {
         // where is the ball? somewhere in the jumble: Fox rummages, nothing comes out right
         await c.ujecie("ogolny");
         for (let i = 0; i < 3; i++) { c.shake(pudlo); await c.wait(0.35); }
-        await c.emocja("lisek", "pot", { anim: "Smutek" });
+        c.play("lisek", "Smutek"); await c.wonder("lisek");
         await c.say("lisek", "line.e_nie_ma");
         await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "zarowka", { anim: "Zgloszenie" });

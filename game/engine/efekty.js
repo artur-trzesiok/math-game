@@ -508,7 +508,9 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 
     const [A, B] = lista, lewy = A.korzen.position.x <= B.korzen.position.x ? A : B, prawy = lewy === A ? B : A;
     // closer together around their own middle (fixed spots at +-2.3 put Squirrel into a brook); near enough: stay
     const sr = (lewy.korzen.position.x + prawy.korzen.position.x) / 2, rozstaw = prawy.korzen.position.x - lewy.korzen.position.x;
-    if (rozstaw > 4.6) { lewy.korzen.position.x = sr - 2.3; prawy.korzen.position.x = sr + 2.3; }
+    // never onto things on the ground: with containers or stickers between them they stay, the camera frames them
+    const cosMiedzy = S.objects.some((o) => o.mesh?.visible !== false && (o.kind === "zone" || o.kind === "object") && o.mesh.position.x > lewy.korzen.position.x && o.mesh.position.x < prawy.korzen.position.x);
+    if (rozstaw > 4.6 && !cosMiedzy) { lewy.korzen.position.x = sr - 2.3; prawy.korzen.position.x = sr + 2.3; }
     const b = obwiednia(S, lista);
     const h = (b.max.y - b.min.y) * 0.72 + 1.0;                           // from the waist up, room over the heads (the HUD)
     z = Math.min(1.9, v.h / h, v.w / ((b.max.x - b.min.x) * 1.15)); cx = (b.min.x + b.max.x) / 2; cy = b.max.y + 0.9 - v.h / 2 / z;
