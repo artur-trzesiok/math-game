@@ -1,6 +1,17 @@
 {
   "lessons": [
     {
+      "id": "grouping",
+      "title": {
+        "pl": "Grupowanie",
+        "en": "Grouping"
+      },
+      "subtitle": {
+        "pl": "co do czego pasuje",
+        "en": "what goes with what"
+      }
+    },
+    {
       "id": "bigger_smaller",
       "title": {
         "pl": "Większy, mniejszy",
@@ -23,14 +34,47 @@
       }
     },
     {
-      "id": "grouping",
+      "id": "rhythm",
       "title": {
-        "pl": "Grupowanie",
-        "en": "Grouping"
+        "pl": "Rytm",
+        "en": "Rhythm"
       },
       "subtitle": {
-        "pl": "co do czego pasuje",
-        "en": "what goes with what"
+        "pl": "co się powtarza, co dalej",
+        "en": "what repeats, what comes next"
+      }
+    },
+    {
+      "id": "ordering",
+      "title": {
+        "pl": "Po kolei",
+        "en": "In order"
+      },
+      "subtitle": {
+        "pl": "od najmniejszego do największego",
+        "en": "from the smallest to the biggest"
+      }
+    },
+    {
+      "id": "shapes",
+      "title": {
+        "pl": "Figury geometryczne",
+        "en": "Shapes"
+      },
+      "subtitle": {
+        "pl": "koło, trójkąt, kwadrat, prostokąt",
+        "en": "circle, triangle, square, rectangle"
+      }
+    },
+    {
+      "id": "tangram",
+      "title": {
+        "pl": "Tangram",
+        "en": "Tangram"
+      },
+      "subtitle": {
+        "pl": "układanie obrazków z kawałków",
+        "en": "pictures from pieces"
       }
     },
     {
@@ -42,6 +86,17 @@
       "subtitle": {
         "pl": "liczenie i cyfry",
         "en": "counting and digits"
+      }
+    },
+    {
+      "id": "queue",
+      "title": {
+        "pl": "Kolejka",
+        "en": "The queue"
+      },
+      "subtitle": {
+        "pl": "pierwszy, drugi, ostatni",
+        "en": "first, second, last"
       }
     },
     {
@@ -76,61 +131,6 @@
         "pl": "doliczanie od znanej liczby",
         "en": "counting on from a known number"
       }
-    },
-    {
-      "id": "shapes",
-      "title": {
-        "pl": "Figury geometryczne",
-        "en": "Shapes"
-      },
-      "subtitle": {
-        "pl": "koło, trójkąt, kwadrat, prostokąt",
-        "en": "circle, triangle, square, rectangle"
-      }
-    },
-    {
-      "id": "tangram",
-      "title": {
-        "pl": "Tangram",
-        "en": "Tangram"
-      },
-      "subtitle": {
-        "pl": "układanie obrazków z kawałków",
-        "en": "pictures from pieces"
-      }
-    },
-    {
-      "id": "rhythm",
-      "title": {
-        "pl": "Rytm",
-        "en": "Rhythm"
-      },
-      "subtitle": {
-        "pl": "co się powtarza, co dalej",
-        "en": "what repeats, what comes next"
-      }
-    },
-    {
-      "id": "ordering",
-      "title": {
-        "pl": "Po kolei",
-        "en": "In order"
-      },
-      "subtitle": {
-        "pl": "od najmniejszego do największego",
-        "en": "from the smallest to the biggest"
-      }
-    },
-    {
-      "id": "queue",
-      "title": {
-        "pl": "Kolejka",
-        "en": "The queue"
-      },
-      "subtitle": {
-        "pl": "pierwszy, drugi, ostatni",
-        "en": "first, second, last"
-      }
     }
   ],
   "topics": [
@@ -142,23 +142,21 @@
       },
       "color": "#ffb347",
       "lessons": [
+        "grouping",
         "bigger_smaller",
-        "more_fewer",
-        "grouping"
+        "more_fewer"
       ]
     },
     {
-      "id": "liczby",
+      "id": "rytm",
       "title": {
-        "pl": "Liczby i dodawanie",
-        "en": "Numbers and adding"
+        "pl": "Rytm i porządek",
+        "en": "Rhythm and order"
       },
-      "color": "#6cc4a1",
+      "color": "#c77dd6",
       "lessons": [
-        "numbers_1_5",
-        "numbers_6_10",
-        "adding_5",
-        "adding_10"
+        "rhythm",
+        "ordering"
       ]
     },
     {
@@ -174,16 +172,18 @@
       ]
     },
     {
-      "id": "rytm",
+      "id": "liczby",
       "title": {
-        "pl": "Rytm i porządek",
-        "en": "Rhythm and order"
+        "pl": "Liczby i dodawanie",
+        "en": "Numbers and adding"
       },
-      "color": "#c77dd6",
+      "color": "#6cc4a1",
       "lessons": [
-        "rhythm",
-        "ordering",
-        "queue"
+        "numbers_1_5",
+        "queue",
+        "numbers_6_10",
+        "adding_5",
+        "adding_10"
       ]
     }
   ]
