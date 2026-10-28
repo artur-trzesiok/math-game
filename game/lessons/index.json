@@ -1,21 +1,10 @@
 {
   "lessons": [
     {
-      "id": "grouping",
+      "id": "grouping_pro",
       "title": {
         "pl": "Grupowanie",
         "en": "Grouping"
-      },
-      "subtitle": {
-        "pl": "co do czego pasuje",
-        "en": "what goes with what"
-      }
-    },
-    {
-      "id": "grouping_pro",
-      "title": {
-        "pl": "Grupowanie PRO",
-        "en": "Grouping PRO"
       },
       "subtitle": {
         "pl": "detektywi grupują",
@@ -23,21 +12,10 @@
       }
     },
     {
-      "id": "bigger_smaller",
+      "id": "bigger_smaller_pro",
       "title": {
         "pl": "Większy, mniejszy",
         "en": "Bigger, smaller"
-      },
-      "subtitle": {
-        "pl": "porównywanie wielkości",
-        "en": "comparing size"
-      }
-    },
-    {
-      "id": "bigger_smaller_pro",
-      "title": {
-        "pl": "Większy, mniejszy PRO",
-        "en": "Bigger, smaller PRO"
       },
       "subtitle": {
         "pl": "porównywanie przez nakładanie",
@@ -45,21 +23,10 @@
       }
     },
     {
-      "id": "more_fewer",
+      "id": "more_fewer_pro",
       "title": {
         "pl": "Więcej, mniej",
         "en": "More, fewer"
-      },
-      "subtitle": {
-        "pl": "porównywanie ilości i znaki =, <, >",
-        "en": "comparing amounts and the signs =, <, >"
-      }
-    },
-    {
-      "id": "more_fewer_pro",
-      "title": {
-        "pl": "Więcej, mniej PRO",
-        "en": "More, fewer PRO"
       },
       "subtitle": {
         "pl": "noc świetlików",
@@ -175,11 +142,8 @@
       },
       "color": "#ffb347",
       "lessons": [
-        "grouping",
         "grouping_pro",
-        "bigger_smaller",
         "bigger_smaller_pro",
-        "more_fewer",
         "more_fewer_pro"
       ]
     },

@@ -1,8 +1,8 @@
 {
   "id": "grouping_pro",
   "title": {
-    "pl": "Grupowanie PRO",
-    "en": "Grouping PRO"
+    "pl": "Grupowanie",
+    "en": "Grouping"
   },
   "goal": "Group things by a named rule (food, colour, kind) and see that the same things can be grouped by different rules - the right rule explains a mystery (who leaves the red gifts).",
   "age": "3-4",
