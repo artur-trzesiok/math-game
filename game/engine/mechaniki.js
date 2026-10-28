@@ -273,12 +273,13 @@ export async function podziel(S, obraz, { x = 0, y = 0.4, size = 3.4, ksztalt: r
     ? Array.from({ length: 72 }, (_, i) => { const a = i / 72 * Math.PI * 2, rr = Math.min(bx1 - bx0, by1 - by0) / 2 * 0.99; return [(bx0 + bx1) / 2 + rr * Math.cos(a), (by0 + by1) / 2 + rr * Math.sin(a)]; })
     : [[bx0, by0], [bx1, by0], [bx1, by1], [bx0, by1]];
   const C = srodek(caly), poleCale = pole(caly);
-  const kawalek = (P) => {
+  // a piece: its polygon in the picture's own coordinates (the texture stays on it), drawn moved by `off`
+  const kawalek = (P, off = [0, 0]) => {
     const c = srodek(P), shp = new THREE.Shape(P.map(([a, b]) => new THREE.Vector2(a - c[0], b - c[1])));
     const g = new THREE.ShapeGeometry(shp), pos = g.attributes.position, uv = g.attributes.uv;
     for (let i = 0; i < pos.count; i++) uv.setXY(i, (pos.getX(i) + c[0] - L) / size, (pos.getY(i) + c[1] - D) / size);
     const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map, transparent: true, depthWrite: false, side: THREE.DoubleSide })); m.renderOrder = 10;
-    const grp = new THREE.Group(); grp.add(m); grp.position.set(c[0], c[1], 0.4); S.scene.add(grp);
+    const grp = new THREE.Group(); grp.add(m); grp.position.set(c[0] + off[0], c[1] + off[1], 0.4); S.scene.add(grp);
     const h = { mesh: grp, icon: null, name: `kawalek_${obraz}`, kind: "object", base: 1, size0: 1, pulse: false, P, pole: pole(P), home: { x: c[0], y: c[1] }, zone: null,
       remove: () => { S.scene.remove(grp); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); S.untarget(h); },
       highlight: (on) => { h.pulse = on; if (!on) grp.scale.setScalar(1); },
@@ -294,11 +295,14 @@ export async function podziel(S, obraz, { x = 0, y = 0.4, size = 3.4, ksztalt: r
     if (Math.abs(odl) < przyciag * size) p = C;                       // near the middle: through it - a fair cut
     const nowe = [];
     for (const k of kawalki) {
-      const P = k.P.map(([u, v]) => [u + k.mesh.position.x - k.home.x, v + k.mesh.position.y - k.home.y]);
-      const w = przetnij(P, p, [nx, ny]);
+      const c = srodek(k.P), off = [k.mesh.position.x - c[0], k.mesh.position.y - c[1]];   // where it lies now (moved apart, dragged)
+      const w = przetnij(k.P, [p[0] - off[0], p[1] - off[1]], [nx, ny]);
       if (!w) { nowe.push(k); continue; }
       k.remove();
-      for (const [j, Q] of w.entries()) { const h = kawalek(Q), zn = j ? -1 : 1; nowe.push(h); h.moveTo(h.mesh.position.x + zn * nx * 0.09, h.mesh.position.y + zn * ny * 0.09, 0.25); h.home = { x: h.mesh.position.x + zn * nx * 0.09, y: h.mesh.position.y + zn * ny * 0.09 }; }
+      for (const [j, Q] of w.entries()) {
+        const h = kawalek(Q, off), zn = j ? -1 : 1, tx = h.mesh.position.x + zn * nx * 0.09, ty = h.mesh.position.y + zn * ny * 0.09;
+        nowe.push(h); h.moveTo(tx, ty, 0.25); h.home = { x: tx, y: ty };
+      }
     }
     if (nowe.length !== kawalki.length) S.sfx.graj("whoosh", { glosnosc: 0.6 });
     const bylo = kawalki.length; kawalki = nowe; return kawalki.length > bylo;
