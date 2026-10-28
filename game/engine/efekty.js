@@ -496,7 +496,18 @@ export async function ptaszek(S, h = null, { na = 1.2 } = {}) {
 // ====================================================================== emotion bubbles
 // a small white bubble over the head with a big icon: what the character feels, readable from the sofa
 export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach"];
+// painted faces set into a bubble (a sweat drop read as nothing to a child): a sticker drawn over the bubble once loaded
+const MALOWANE = { pot: "/game/assets/objects/emocja_ojej.webp" };
 function ikonaEmocji(rodzaj) {
+  const tex = rysujDymek(rodzaj);
+  if (MALOWANE[rodzaj]) {
+    const img = new Image();
+    img.onload = () => { const x = tex.image.getContext("2d"); x.drawImage(img, 256 - 150, 224 - 150, 300, 300); tex.needsUpdate = true; };
+    img.src = MALOWANE[rodzaj];
+  }
+  return tex;
+}
+function rysujDymek(rodzaj) {
   return canvasTex(512, 512, (x) => {
     x.scale(2, 2);                                               // drawn at 256, rendered at twice the pixels
     // the bubble
@@ -509,11 +520,7 @@ function ikonaEmocji(rodzaj) {
     if (rodzaj === "zlosc") {                                    // the comic anger vein: four curved brackets around a gap
       C("#e2453c"); x.lineWidth = 20;
       for (const [dx, dy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { x.beginPath(); x.moveTo(128 + dx * 16, 112 + dy * 62); x.quadraticCurveTo(128 + dx * 16, 112 + dy * 16, 128 + dx * 62, 112 + dy * 16); x.stroke(); }
-    } else if (rodzaj === "pot") {                               // "oh dear": a worried face (a sweat drop read as nothing to a child)
-      x.fillStyle = "#ffd34e"; x.strokeStyle = "#c99a1c"; x.lineWidth = 6; x.beginPath(); x.arc(128, 110, 70, 0, 7); x.fill(); x.stroke();
-      C("#3a2a1e"); for (const ex of [100, 156]) { x.beginPath(); x.ellipse(ex, 100, 9, 12, 0, 0, 7); x.fill(); }
-      x.lineWidth = 8; x.beginPath(); x.moveTo(86, 82); x.lineTo(112, 72); x.stroke(); x.beginPath(); x.moveTo(144, 72); x.lineTo(170, 82); x.stroke();
-      x.fillStyle = "#7a2a1e"; x.beginPath(); x.ellipse(128, 146, 14, 17, 0, 0, 7); x.fill();
+    } else if (rodzaj === "pot") {                               // "oh dear": a painted worried face, drawn in when loaded (below)
     } else if (rodzaj === "serce") {
       C("#ff5b8a"); x.beginPath(); x.moveTo(128, 170); x.bezierCurveTo(40, 112, 70, 40, 128, 78); x.bezierCurveTo(186, 40, 216, 112, 128, 170); x.fill();
     } else if (rodzaj === "radosc") {

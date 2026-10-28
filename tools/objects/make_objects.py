@@ -845,6 +845,19 @@ The reference image shows the same icon small: paint it again, the same design, 
 card behind it, with crisp clean detail: a small cosy house with a red roof and a window (AT HOME).""",
 }
 
+# the "oh dear" bubble (efekty.js emocja "pot"): a painted worried face, set into the drawn speech bubble
+SHEETS["emocja_ojej"] = {
+    "names": ["emocja_ojej"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow, NO halo, NO background.
+{STYL}
+A round warm-yellow smiley face that looks WORRIED, "oh dear!": eyebrows raised and tilted up in the middle, big round
+worried eyes, a small round open mouth like an "o", soft rosy cheeks. Friendly and gentle, NOT scary, NOT crying.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
