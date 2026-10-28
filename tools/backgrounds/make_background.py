@@ -152,7 +152,7 @@ NO toys lying around, NO people, NO animals, NO text.""",
         # no movers: a second pass redrew the window frame and the pictures, and they swung with the mobile; the
         # night lives in the lamp's breathing glow instead (plate pixels of the lampshade)
         "ruch": None,
-        "poswiaty": [{"x": 448, "y": 495, "r": 300, "kolor": "#ffc66e", "moc": 0.5}],
+        "poswiaty": [{"x": 448, "y": 495, "r": 300, "kolor": "#ffc66e", "moc": 0.85}],
     },
     "plac_zabaw": {
         "plyta": f"""A background illustration for a children's game: a sunny small playground

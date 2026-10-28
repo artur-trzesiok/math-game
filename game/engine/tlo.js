@@ -81,9 +81,10 @@ function poswiata(p, s, z, W, H, srodekY) {
     fragmentShader: `uniform float czas, moc, faza; uniform vec3 kolor; varying vec2 vUv;
       void main() {
         float t = czas + faza * 6.2831;
-        float oddech = 0.5 + 0.5 * sin(t * 1.3) * 0.7 + 0.15 * sin(t * 3.1 + 1.7) + 0.08 * sin(t * 7.9);   // slow swell, a faint flicker
-        float r = length(vUv - 0.5) * 2.4 / (0.9 + 0.12 * oddech);
-        float a = pow(max(0.0, 1.0 - r), 2.2) * moc * (0.75 + 0.35 * oddech);
+        // 0..1: a slow swell, a slower drift under it and a faint quick flicker
+        float oddech = clamp(0.5 + 0.32 * sin(t * 1.1) + 0.12 * sin(t * 0.43 + 1.7) + 0.06 * sin(t * 9.7) * sin(t * 5.3), 0.0, 1.0);
+        float r = length(vUv - 0.5) * 2.4 / (0.8 + 0.3 * oddech);
+        float a = pow(max(0.0, 1.0 - r), 1.8) * moc * (0.35 + 0.9 * oddech);
         gl_FragColor = vec4(kolor * a, a);
       }`,
     transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
