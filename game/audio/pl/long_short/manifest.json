@@ -1,0 +1,242 @@
+{
+ "line.a_piknik": {
+  "hash": "f1f183ddda2d",
+  "who": "sarenka",
+  "text": "Co za piękny dzień! Zróbmy piknik na łące, po drugiej stronie strumyka."
+ },
+ "line.a_most": {
+  "hash": "776979bfcd81",
+  "who": "lisek",
+  "text": "Most jest daleko, aż tam. Zróbmy sobie kładkę tutaj, z deski!"
+ },
+ "line.a_deski": {
+  "hash": "6e93bf644c97",
+  "who": "sarenka",
+  "text": "Na trawie leżą dwie deski. Potrzebujemy długiej, żeby sięgnęła na drugi brzeg."
+ },
+ "line.a_ta": {
+  "hash": "3702dcf495e0",
+  "who": "wiewiorka",
+  "text": "Ta jest dłuższa! Popatrzcie, sięga aż tam, dalej niż tamta."
+ },
+ "line.a_wpadla": {
+  "hash": "2696cebc5e4f",
+  "who": "wiewiorka",
+  "text": "Ojej! Deska nie sięgnęła i wpadła do wody. Była za krótka!"
+ },
+ "line.a_wylowilem": {
+  "hash": "f006121a1304",
+  "who": "lisek",
+  "text": "Nic się nie stało, wyłowiłem ją. Ale skąd wiedzieć, która deska jest dłuższa?"
+ },
+ "line.a_metoda": {
+  "hash": "d54c243785b8",
+  "who": "sarenka",
+  "text": "Ta deska tylko leżała dalej, więc wyglądała na dłuższą. Żeby porównać długość, trzeba ustawić deski od jednej linii."
+ },
+ "line.a_przeciagnij": {
+  "hash": "1eb96fc85925",
+  "who": "sarenka",
+  "text": "Przeciągnij obie deski do kreski, tak żeby zaczynały się w tym samym miejscu."
+ },
+ "line.a_teraz_widac": {
+  "hash": "09966a5ddef7",
+  "who": "sarenka",
+  "text": "Teraz obie zaczynają się przy kresce. Która deska jest dłuższa? Wskaż."
+ },
+ "line.a_ta_krotsza": {
+  "hash": "ed07da96e5dd",
+  "who": "sarenka",
+  "text": "Ta deska kończy się wcześniej, jest krótsza. Która sięga dalej od kreski?"
+ },
+ "line.a_dluzsza": {
+  "hash": "d80d57c3d624",
+  "who": "wiewiorka",
+  "text": "Ta jest dłuższa! A tamta jest krótsza. Teraz to widzę."
+ },
+ "line.a_siega": {
+  "hash": "97d8342bfdbc",
+  "who": "lisek",
+  "text": "Długa deska sięga na drugi brzeg. Mamy kładkę!"
+ },
+ "line.a_przeszlismy": {
+  "hash": "62444724475f",
+  "who": "sarenka",
+  "text": "Przeszliśmy na drugą stronę! Hurra, na łąkę!"
+ },
+ "line.b_zimno": {
+  "hash": "21447adb999f",
+  "who": "wiewiorka",
+  "text": "Brr, ale wieje! Mój szalik jest za krótki, nie mogę go owinąć wokół szyi."
+ },
+ "line.b_szaliki": {
+  "hash": "05e0a3184787",
+  "who": "lisek",
+  "text": "Mam drugi szalik. Ustaw oba od kreski i zobaczymy, który jest dłuższy."
+ },
+ "line.b_ktory": {
+  "hash": "8a69449089af",
+  "who": "lisek",
+  "text": "Który szalik jest dłuższy? Wskaż go, a Wiewiórka go założy."
+ },
+ "line.b_za_krotki": {
+  "hash": "8bed7f32ee88",
+  "who": "lisek",
+  "text": "To ten krótki szalik, on się nie owinie. Wskaż dłuższy."
+ },
+ "line.b_cieplo": {
+  "hash": "ec72f8810e55",
+  "who": "wiewiorka",
+  "text": "Długi szalik owija się dookoła! Już mi ciepło."
+ },
+ "line.b_wyscig": {
+  "hash": "98359c3fa300",
+  "who": "sarenka",
+  "text": "Popatrzcie, ślimaki robią wyścig do kwiatka! Wskazuj ślimaka, żeby go dopingować."
+ },
+ "line.b_meta": {
+  "hash": "325d652d0a70",
+  "who": "lisek",
+  "text": "Jest na mecie! Brawo, ślimaczku!"
+ },
+ "line.b_piknik": {
+  "hash": "1ba9a7735930",
+  "who": "sarenka",
+  "text": "A teraz piknik! Mamy jedną długą bagietkę, starczy dla wszystkich."
+ },
+ "line.b_do_domu": {
+  "hash": "e13a443ba39d",
+  "who": "wiewiorka",
+  "text": "Mniam! A po pikniku wracamy do domu."
+ },
+ "line.p_start": {
+  "hash": "8a4951cda496",
+  "who": "sarenka",
+  "text": "Pobawmy się w długie i krótkie! Mam pięć zabaw."
+ },
+ "line.p_wstazki": {
+  "hash": "e779347ce12d",
+  "who": "sarenka",
+  "text": "Wstążki leżą byle jak. Ustaw je od kreski, żeby je porównać."
+ },
+ "line.p_dluzsza": {
+  "hash": "9f3bdee96761",
+  "who": "sarenka",
+  "text": "Która wstążka jest dłuższa? Wskaż."
+ },
+ "line.p_dluzsza_nie": {
+  "hash": "2bb55b6a42c8",
+  "who": "sarenka",
+  "text": "Ta wstążka jest krótsza. Wskaż tę, która sięga dalej od kreski."
+ },
+ "line.p_dluzsza_ok": {
+  "hash": "2f3dae1c46dd",
+  "who": "wiewiorka",
+  "text": "Tak! Ta wstążka jest dłuższa."
+ },
+ "line.p_najkrotsza": {
+  "hash": "3afab2c497c0",
+  "who": "wiewiorka",
+  "text": "Trzy deski zaczynają się od kreski. Która jest najkrótsza? Wskaż."
+ },
+ "line.p_najkrotsza_nie": {
+  "hash": "f5558e4f893c",
+  "who": "wiewiorka",
+  "text": "Ta deska jest dłuższa. Szukamy tej, która kończy się najwcześniej."
+ },
+ "line.p_najkrotsza_ok": {
+  "hash": "5e6d58a29da0",
+  "who": "sarenka",
+  "text": "Tak! To najkrótsza deska."
+ },
+ "line.p_weze": {
+  "hash": "dea6db7a9dae",
+  "who": "sarenka",
+  "text": "Narysowałam dwa węże. Który wąż jest dłuższy? Wskaż."
+ },
+ "line.p_weze_nie": {
+  "hash": "0deb1fc5c6a7",
+  "who": "sarenka",
+  "text": "Ten wąż jest krótszy. Który ciągnie się dłużej?"
+ },
+ "line.p_weze_ok": {
+  "hash": "79237c7ecaf1",
+  "who": "wiewiorka",
+  "text": "Tak! Ten wąż jest dłuższy."
+ },
+ "line.p_cien_dlugi": {
+  "hash": "93e95475adea",
+  "who": "wiewiorka",
+  "text": "To cień długiego szalika. Który to szalik? Wskaż."
+ },
+ "line.p_cien_krotki": {
+  "hash": "98b2b6364582",
+  "who": "wiewiorka",
+  "text": "To cień krótkiego szalika. Który to szalik? Wskaż."
+ },
+ "line.p_cien_nie": {
+  "hash": "fe3216500f33",
+  "who": "wiewiorka",
+  "text": "Popatrz na cień jeszcze raz. Czy jest długi, czy krótki?"
+ },
+ "line.p_cien_ok": {
+  "hash": "41130cdabb43",
+  "who": "sarenka",
+  "text": "Tak! Cień pasuje do szalika."
+ },
+ "line.p_lap": {
+  "hash": "7bacc9393eb8",
+  "who": "sarenka",
+  "text": "Wstążki wyskakują! Łap długą wstążkę, wskaż ją."
+ },
+ "line.p_lap_ok": {
+  "hash": "6a00c55ad3b1",
+  "who": "wiewiorka",
+  "text": "Złapane! Jesteś szybki jak wiatr."
+ },
+ "line.d_wieszaki": {
+  "hash": "4b3f675ae130",
+  "who": "lisek",
+  "text": "Wróciliśmy do domu. Na wieszakach wiszą dwa szaliki: długi i krótki. Komu który?"
+ },
+ "line.d_porownaj": {
+  "hash": "0c60a51393d0",
+  "who": "sarenka",
+  "text": "Najpierw porównajmy szaliki. Ustaw je od kreski."
+ },
+ "line.d_daj": {
+  "hash": "cff66f2ac362",
+  "who": "lisek",
+  "text": "Długi szalik jest dla mnie, bo jestem wysoki, a krótki dla małej Wiewiórki. Przeciągnij każdy szalik do właściwej osoby."
+ },
+ "line.d_nie_ten": {
+  "hash": "032ec362418e",
+  "who": "sarenka",
+  "text": "Ten szalik jest dla kogoś innego. Długi dla Liska, krótki dla Wiewiórki."
+ },
+ "line.d_pasuje": {
+  "hash": "b6101126f675",
+  "who": "wiewiorka",
+  "text": "Każdy ma szalik w sam raz!"
+ },
+ "line.d_rodzice": {
+  "hash": "192f13f03c6d",
+  "who": "sarenka",
+  "text": "Porównaj z rodzicami sznurówki albo makaron. Pamiętaj: zawsze od jednej linii!"
+ },
+ "line.naklejka_daj": {
+  "hash": "572b230f2897",
+  "who": "sarenka",
+  "text": "Dziękujemy za wspólny piknik! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "7b4f384e1970",
+  "who": "sarenka",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "03121a9eea09",
+  "who": "narrator",
+  "text": "To ślimak z wyścigu na łące. Dostaliśmy go, kiedy budowaliśmy kładkę i porównywaliśmy, co jest długie, a co krótkie."
+ }
+}

@@ -41,6 +41,9 @@ export async function run(maxSteps = 20, prefix = "a") {
         } else if (ds.rozdaj) {
           kind = "rozdaj";                                          // give one to each: drop on the next one without
           for (const h of ds.items.slice()) { const o = ds.rozdaj.wolni()[0]; if (!o) break; const [x, y] = ds.rozdaj.pozycja(o); S.upusc(h, x, y); await sleep(900); }
+        } else if (ds.doLinii) {
+          kind = "doLinii";                                         // from one line: drop each where it snaps
+          for (const h of ds.items.slice()) { const [x, y] = ds.doLinii(h); S.upusc(h, x, y); await sleep(500); }
         } else if (ds.przeloz) {
           kind = "przeloz"; S.upusc(ds.items[0], ds.przeloz.x, ds.przeloz.y);
         } else if (ds.sym) {

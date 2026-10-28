@@ -295,6 +295,7 @@ export class Stage {
     const edge = this.visible(0).w / 2 + 1.2;
     const x0 = from === "left" ? -edge : edge;
     L.korzen.position.x = x0; L.korzen.visible = true; this.bringToFront(L);
+    L.korzen.position.y = GROUND; L.korzen.scale.setScalar(1); L.podloga = null;   // back on the front ground (after walking into the picture)
     L.patrz(from === "left" ? "prawo" : "lewo"); L.graj("Chod", true);
     await this.walkLine(L, x0, L.home);
     L.patrz("przod"); L.spoczynek();
@@ -856,8 +857,11 @@ export class Stage {
     for (const h of this.targets) {
       const hits = this.raycaster.intersectObject(this.meshOf(h), true).filter((i) => i.object.visible);
       if (!hits.length) continue;
-      if (h.korzen) { if (hits[0].distance < bestPD) { bestP = h; bestPD = hits[0].distance; } }
-      else if (hits[0].distance < bestD) { best = h; bestD = hits[0].distance; }
+      if (h.korzen) { if (hits[0].distance < bestPD) { bestP = h; bestPD = hits[0].distance; } continue; }
+      // a sticker is a square: where squares overlap (long things in rows), the one whose drawing holds the point wins
+      const p = hits[0].point, b = h.icon ? this.bounds(h) : null, wSrodku = !b || (p.x >= b.left && p.x <= b.right && p.y >= b.bottom && p.y <= b.top);
+      const d = hits[0].distance + (wSrodku ? 0 : 100);
+      if (d < bestD) { best = h; bestD = d; }
     }
     best = best || bestP;
     this.lastHit = best;

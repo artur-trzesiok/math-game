@@ -1,0 +1,35 @@
+{
+  "id": "long_short",
+  "title": {
+    "pl": "Krótki i długi",
+    "en": "Long and short"
+  },
+  "goal": "Compare length - long / short, longer / shorter - always from one line.",
+  "age": "3-4",
+  "characters": [
+    "sarenka",
+    "lisek",
+    "wiewiorka"
+  ],
+  "backgrounds": [
+    "strumyk",
+    "laka",
+    "przedpokoj"
+  ],
+  "objects": [
+    "deska_dluga",
+    "deska_krotka",
+    "szalik_dlugi",
+    "szalik_krotki",
+    "wstazka_dluga",
+    "wstazka_krotka",
+    "bagietka_dluga",
+    "slimak",
+    "kwiatek"
+  ],
+  "cover": "Deer, Fox and Squirrel walk over a long wooden plank laid as a little bridge across a sunny brook; a short plank floats in the water beside it.",
+  "naklejka": {
+    "obraz": "objects/slimak",
+    "kto": "sarenka"
+  }
+}

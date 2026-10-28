@@ -297,6 +297,24 @@ bit of water, taller than wide.
 Both the same height.""",
 }
 
+# long and short (stage 1): each thing twice, the SAME thing at two lengths (a length compared, never a size)
+SHEETS["dlugi_krotki"] = {
+    "outline": True,
+    "names": ["deska_dluga", "deska_krotka", "wstazka_dluga", "wstazka_krotka", "szalik_dlugi", "szalik_krotki", "bagietka_dluga", "slimak"],
+    "wspolna_skala": True,      # one scale for the whole sheet: a short plank stays short next to the long one
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of EIGHT illustrated objects for a children's picture book, in a neat grid of 2 rows and 4 columns
+on a fully TRANSPARENT background, with generous empty space between them so none of them touch. Every object lies
+flat and HORIZONTAL, seen from the front.
+{STYL}
+Row 1, left to right: one LONG wooden plank lying horizontally (very long and narrow); the SAME wooden plank but
+SHORT (a third as long, same width); one LONG red ribbon lying straight and horizontal; the SAME red ribbon but SHORT.
+Row 2, left to right: one LONG striped knitted scarf laid out straight and horizontal, blue and white stripes with a
+fringe at both ends; the SAME scarf but SHORT; one LONG baguette of bread lying horizontally; one cute little snail
+with a spiral orange shell, seen from the side, facing right.
+The long things are about three times as long as the short ones; all equally thick.""",
+}
+
 
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
@@ -350,10 +368,11 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
     srodek_y = np.median([p[4] for p in plamy])
     plamy.sort(key=lambda p: ((0 if p[4] < srodek_y else 1) if rows == 2 else 0, p[5]))
     OUT.mkdir(parents=True, exist_ok=True)
+    wspolny = max(max(p[1] - p[0], p[3] - p[2]) for p in plamy) + 16 if SHEETS[sheet].get("wspolna_skala") else None
     for nazwa, (y0, y1, x0, x1, _, _) in zip(names, plamy):
         pad = 8
         kaw = im.crop((max(0, x0 - pad), max(0, y0 - pad), min(im.width, x1 + pad), min(im.height, y1 + pad)))
-        bok = max(kaw.width, kaw.height)
+        bok = wspolny or max(kaw.width, kaw.height)
         kw = Image.new("RGBA", (bok, bok), (0, 0, 0, 0))
         kw.paste(kaw, ((bok - kaw.width) // 2, (bok - kaw.height) // 2))
         kw = kw.resize((PX, PX), Image.LANCZOS)

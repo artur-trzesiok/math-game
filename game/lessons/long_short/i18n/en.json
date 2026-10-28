@@ -1,0 +1,194 @@
+{
+  "line.a_piknik": {
+    "who": "sarenka",
+    "text": "What a lovely day! Let's have a picnic on the meadow, on the other side of the brook."
+  },
+  "line.a_most": {
+    "who": "lisek",
+    "text": "The bridge is far away, over there. Let's make our own little bridge here, from a plank!"
+  },
+  "line.a_deski": {
+    "who": "sarenka",
+    "text": "Two planks are lying on the grass. We need a long one, so it reaches the other bank."
+  },
+  "line.a_ta": {
+    "who": "wiewiorka",
+    "text": "This one is longer! Look, it reaches all the way there, further than that one."
+  },
+  "line.a_wpadla": {
+    "who": "wiewiorka",
+    "text": "Oh no! The plank didn't reach and fell into the water. It was too short!"
+  },
+  "line.a_wylowilem": {
+    "who": "lisek",
+    "text": "Never mind, I fished it out. But how can we tell which plank is longer?"
+  },
+  "line.a_metoda": {
+    "who": "sarenka",
+    "text": "That plank only lay further out, so it looked longer. To compare length, put the planks side by side from one line."
+  },
+  "line.a_przeciagnij": {
+    "who": "sarenka",
+    "text": "Drag both planks to the line, so they start in the same place."
+  },
+  "line.a_teraz_widac": {
+    "who": "sarenka",
+    "text": "Now both start at the line. Which plank is longer? Point to it."
+  },
+  "line.a_ta_krotsza": {
+    "who": "sarenka",
+    "text": "This plank ends sooner, it is shorter. Which one reaches further from the line?"
+  },
+  "line.a_dluzsza": {
+    "who": "wiewiorka",
+    "text": "This one is longer! And that one is shorter. Now I can see it."
+  },
+  "line.a_siega": {
+    "who": "lisek",
+    "text": "The long plank reaches the other bank. We have a bridge!"
+  },
+  "line.a_przeszlismy": {
+    "who": "sarenka",
+    "text": "We crossed to the other side! Hooray, to the meadow!"
+  },
+  "line.b_zimno": {
+    "who": "wiewiorka",
+    "text": "Brr, it's so windy! My scarf is too short, I can't wrap it around my neck."
+  },
+  "line.b_szaliki": {
+    "who": "lisek",
+    "text": "I have another scarf. Put both from the line and we'll see which one is longer."
+  },
+  "line.b_ktory": {
+    "who": "lisek",
+    "text": "Which scarf is longer? Point to it, and Squirrel will put it on."
+  },
+  "line.b_za_krotki": {
+    "who": "lisek",
+    "text": "That is the short scarf, it won't wrap around. Point to the longer one."
+  },
+  "line.b_cieplo": {
+    "who": "wiewiorka",
+    "text": "The long scarf wraps all around! Now I'm warm."
+  },
+  "line.b_wyscig": {
+    "who": "sarenka",
+    "text": "Look, the snails are racing to the flower! Point to a snail to cheer it on."
+  },
+  "line.b_meta": {
+    "who": "lisek",
+    "text": "It's at the finish! Bravo, little snail!"
+  },
+  "line.b_piknik": {
+    "who": "sarenka",
+    "text": "And now the picnic! We have one long baguette, enough for everybody."
+  },
+  "line.b_do_domu": {
+    "who": "wiewiorka",
+    "text": "Yum! And after the picnic we go back home."
+  },
+  "line.p_start": {
+    "who": "sarenka",
+    "text": "Let's play long and short! I have five games."
+  },
+  "line.p_wstazki": {
+    "who": "sarenka",
+    "text": "The ribbons are lying every which way. Put them from the line to compare them."
+  },
+  "line.p_dluzsza": {
+    "who": "sarenka",
+    "text": "Which ribbon is longer? Point to it."
+  },
+  "line.p_dluzsza_nie": {
+    "who": "sarenka",
+    "text": "This ribbon is shorter. Point to the one that reaches further from the line."
+  },
+  "line.p_dluzsza_ok": {
+    "who": "wiewiorka",
+    "text": "Yes! This ribbon is longer."
+  },
+  "line.p_najkrotsza": {
+    "who": "wiewiorka",
+    "text": "Three planks start at the line. Which one is the shortest? Point to it."
+  },
+  "line.p_najkrotsza_nie": {
+    "who": "wiewiorka",
+    "text": "This plank is longer. We are looking for the one that ends soonest."
+  },
+  "line.p_najkrotsza_ok": {
+    "who": "sarenka",
+    "text": "Yes! That is the shortest plank."
+  },
+  "line.p_weze": {
+    "who": "sarenka",
+    "text": "I drew two snakes. Which snake is longer? Point to it."
+  },
+  "line.p_weze_nie": {
+    "who": "sarenka",
+    "text": "This snake is shorter. Which one goes on longer?"
+  },
+  "line.p_weze_ok": {
+    "who": "wiewiorka",
+    "text": "Yes! This snake is longer."
+  },
+  "line.p_cien_dlugi": {
+    "who": "wiewiorka",
+    "text": "This is the shadow of the long scarf. Which scarf is it? Point to it."
+  },
+  "line.p_cien_krotki": {
+    "who": "wiewiorka",
+    "text": "This is the shadow of the short scarf. Which scarf is it? Point to it."
+  },
+  "line.p_cien_nie": {
+    "who": "wiewiorka",
+    "text": "Look at the shadow again. Is it long or short?"
+  },
+  "line.p_cien_ok": {
+    "who": "sarenka",
+    "text": "Yes! The shadow fits the scarf."
+  },
+  "line.p_lap": {
+    "who": "sarenka",
+    "text": "Ribbons are popping up! Catch the long ribbon, point to it."
+  },
+  "line.p_lap_ok": {
+    "who": "wiewiorka",
+    "text": "Caught! You're as quick as the wind."
+  },
+  "line.d_wieszaki": {
+    "who": "lisek",
+    "text": "We're back home. Two scarves hang on the hooks: a long one and a short one. Whose is which?"
+  },
+  "line.d_porownaj": {
+    "who": "sarenka",
+    "text": "First let's compare the scarves. Put them from the line."
+  },
+  "line.d_daj": {
+    "who": "lisek",
+    "text": "The long scarf is for me, because I'm tall, and the short one for little Squirrel. Drag each scarf to the right friend."
+  },
+  "line.d_nie_ten": {
+    "who": "sarenka",
+    "text": "That scarf is for someone else. The long one for Fox, the short one for Squirrel."
+  },
+  "line.d_pasuje": {
+    "who": "wiewiorka",
+    "text": "Everyone has a scarf that is just right!"
+  },
+  "line.d_rodzice": {
+    "who": "sarenka",
+    "text": "Compare shoelaces or spaghetti with your parents. Remember: always from one line!"
+  },
+  "line.naklejka_daj": {
+    "who": "sarenka",
+    "text": "Thank you for the picnic together! Here is a sticker for your album. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "sarenka",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is the snail from the race on the meadow. We got it when we built a bridge and compared what is long and what is short."
+  }
+}
