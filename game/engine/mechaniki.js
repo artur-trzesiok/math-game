@@ -209,7 +209,7 @@ export async function kupka(S, name, n, { x = 0, y = 1.2, size = 1.1, z = 0.4, c
   for (let j = 1; j < n; j++) {
     const a = j / (n - 1) * Math.PI * 2 + 0.5, d = await S.object(name, { size: 1, cicho: true });
     S.scene.remove(d.mesh); const i = S.objects.indexOf(d); if (i >= 0) S.objects.splice(i, 1);
-    d.mesh.position.set(Math.cos(a) * 0.27, Math.sin(a) * 0.22, 0.01 + j * 0.002); d.mesh.scale.setScalar(0.5); h.mesh.add(d.mesh); h.dzieci.push(d);
+    d.mesh.position.set(Math.cos(a) * 0.34, Math.sin(a) * 0.27, 0.01 + j * 0.002); d.mesh.scale.setScalar(0.48); h.mesh.add(d.mesh); h.dzieci.push(d);   // spread a little: stuck together they read as one blob
   }
   return h;
 }

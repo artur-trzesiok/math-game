@@ -71,13 +71,13 @@ export default {
         await c.go("strumyk", { enter: true });
         await Promise.all(["wiewiorka", "lisek", "sarenka"].map((n) => c.enter(n)));
         // the family swims on the brook (the water runs across the middle of the picture)
-        const mama = await c.object("kaczka_mama", { x: -0.7, y: 0.75, size: 1.6 });
+        const mama = await c.object("kaczka_mama", { x: -0.9, y: 0.75, size: 1.9 });
         await c.emocja("sarenka", "wykrzyknik");
         await c.say("sarenka", "line.b_kaczka");
         await c.say("wiewiorka", "line.b_mama");
-        const grupa = await c.kupka("kaczatko", 5, { x: 1.3, y: 0.6, size: 1.5 });
+        const grupa = await c.kupka("kaczatko", 5, { x: 1.6, y: 0.55, size: 1.0 });       // ducklings half their mother's size
         await c.say("sarenka", "line.b_wiele_brak");
-        const sam = await c.object("kaczatko", { x: -3.1, y: 0.05, size: 0.75 });             // far from the others, in the water by the reeds
+        const sam = await c.object("kaczatko", { x: -3.1, y: 0.05, size: 0.6 });             // far from the others, in the water by the reeds
         const trzcina = await c.object("trzcina", { x: -3.75, y: 0.3, size: 1.5, z: 0.45 });
         await c.say("wiewiorka", "line.b_gdzie");
         dobre(sam); await c.task({ targets: [grupa, sam], correct: sam, wrong: "line.b_to_wiele" }); dobre(sam, false);
@@ -90,7 +90,7 @@ export default {
         trzcina.remove(); sam.remove();
         await c.say("lisek", "line.b_zabawa", { anim: "Podskok" });
         for (const [x, y] of tasuj([[-2.6, 1.3], [0.4, 1.8], [2.6, 0.9], [-0.8, 0.6]]).slice(0, 3)) {
-          const k = await c.object("kaczatko", { x, y, size: 0.9 });
+          const k = await c.object("kaczatko", { x, y, size: 0.75 });
           dobre(k); await c.task({ targets: [k], correct: k, wrong: "line.b_zabawa" });
           c.sfx("pop"); k.remove();
         }
@@ -109,12 +109,14 @@ export default {
         // 1. listen: one clap or many claps
         {
           const raz = await c.object("ruch_klask", { x: -1.6, y: 0.9, size: 1.3 }), wiele = await c.kupka("ruch_klask", 5, { x: 1.6, y: 0.9, size: 1.7 });
-          const ile = Math.random() < 0.5 ? 1 : 6, ok = ile === 1 ? raz : wiele;
-          await c.say("lisek", "line.p_sluchaj");
-          await c.dzwieki(ile, { kto: "lisek", ruch: "klask", tempo: 0.55 });
-          await c.say("lisek", "line.p_ile_razy");
-          dobre(ok); await c.task({ targets: [raz, wiele], correct: ok, wrong: "line.p_ile_razy" });
-          await c.say("wiewiorka", ile === 1 ? "line.p_raz" : "line.p_wiele_razy");
+          for (const ile of tasuj([1, 6])) {                                 // both, in a random order: a guess is not enough
+            const ok = ile === 1 ? raz : wiele;
+            await c.say("lisek", "line.p_sluchaj");
+            await c.dzwieki(ile, { kto: "lisek", ruch: "klask", tempo: 0.55 });
+            await c.say("lisek", "line.p_ile_razy");
+            dobre(ok); await c.task({ targets: [raz, wiele], correct: ok, wrong: "line.p_ile_razy" }); dobre(ok, false);
+            await c.say("wiewiorka", ile === 1 ? "line.p_raz" : "line.p_wiele_razy");
+          }
           gw.dodaj(); c.clear();
         }
         // 2. cups: one acorn under one, many under the other
