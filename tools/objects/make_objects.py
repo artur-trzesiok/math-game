@@ -117,6 +117,20 @@ Left to right: ROCK - a closed fist; PAPER - an open flat hand, all five fingers
 spread; SCISSORS - the index and middle fingers up in a V, the others folded.
 All three roughly the same size.""",
     },
+    "jesien": {
+        "outline": True,
+        "names": ["szarlotka", "grzyb", "zoledz", "orzech", "lisc_czerwony", "lisc_zolty", "dynia", "kasztan"],
+        "size": "1536x1024",
+        "prompt": f"""A sprite sheet of EIGHT small illustrated autumn objects for a children's picture book, arranged in
+a neat grid of 2 rows and 4 columns on a fully TRANSPARENT background, with generous empty space between objects so
+none of them touch.
+{STYL}
+Row 1, left to right: a whole round apple pie with a golden lattice crust on a simple plate; a brown-capped forest
+mushroom (a cep) with a thick white stem; one acorn with its little cap; one hazelnut in its brown shell.
+Row 2, left to right: one bright RED maple leaf; one bright YELLOW birch leaf; a round orange pumpkin with a short
+stem; one shiny brown horse chestnut.
+All eight objects roughly the same size; the two leaves the same shape size, only the colour and the leaf type differ.""",
+    },
     "prezent": {
         "outline": True,
         "names": ["prezent", "prezent_otwarty"],

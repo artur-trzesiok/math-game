@@ -12,6 +12,17 @@
       }
     },
     {
+      "id": "grouping_pro",
+      "title": {
+        "pl": "Grupowanie PRO",
+        "en": "Grouping PRO"
+      },
+      "subtitle": {
+        "pl": "detektywi grupują",
+        "en": "detectives group things"
+      }
+    },
+    {
       "id": "bigger_smaller",
       "title": {
         "pl": "Większy, mniejszy",
@@ -154,6 +165,7 @@
       "color": "#ffb347",
       "lessons": [
         "grouping",
+        "grouping_pro",
         "bigger_smaller",
         "bigger_smaller_pro",
         "more_fewer"

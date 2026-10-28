@@ -40,6 +40,28 @@ The GRASS IS PLAIN - NO tufts, NO flowers, NO reeds.
 NO characters, NO animals, NO text."""
 
 PANORAMY = {
+    "jesienny_sad": {
+        "kafle": [
+            """An autumn orchard on a sunny afternoon: on the far left a low wooden fence; three apple trees with red
+apples and one pear tree with yellow-green pears, their leaves turning yellow and orange; a narrow earth path
+starts at the fence and runs to the right across the grass.""",
+            """The path leaves the orchard and crosses an open autumn meadow: golden-green grass, a few small
+orange and yellow bushes far away, gentle hills with autumn trees on the horizon; the middle of the picture is
+open and empty.""",
+            """The path reaches the edge of an autumn forest: tall trees with orange, red and yellow crowns. In the
+MIDDLE of this new part, not near its right edge, stands the biggest tree; at its foot, between its roots, a
+mossy mound with a round bright RED wooden door and a little window - a tiny cosy home, clearly visible, about as
+tall as a child; a heap of fallen leaves beside it.""",
+        ],
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two things have been added, in
+the same style:
+  - FOUR or FIVE soft white cartoon clouds in the sky, big and small, none touching each other and none
+    touching the left or the right edge of the picture;
+  - MANY tufts of taller autumn grass, at least twelve, scattered over the foreground and the middle ground, each
+    tuft separate from the others, none on the path, none touching the left or right edge.
+Same colours, same horizon, same path, same everything - only the clouds and the tufts are new. Do NOT move or
+redraw anything that was already there.""",
+    },
     "droga_do_debu": {
         "kafle": [
             """A sunny meadow at the start of a walk: on the far left a small wooden garden gate and a low hedge;

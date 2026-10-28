@@ -1,0 +1,41 @@
+{
+  "id": "grouping_pro",
+  "title": {
+    "pl": "Grupowanie PRO",
+    "en": "Grouping PRO"
+  },
+  "goal": "Group things by a named rule (food, colour, kind) and see that the same things can be grouped by different rules - the right rule explains a mystery (who leaves the red gifts).",
+  "age": "3-4",
+  "characters": [
+    "wiewiorka",
+    "sarenka",
+    "lisek"
+  ],
+  "backgrounds": [
+    "jesienny_sad",
+    "dom"
+  ],
+  "objects": [
+    "jablko",
+    "gruszka",
+    "lisc_czerwony",
+    "lisc_zolty",
+    "klocek",
+    "pilka",
+    "szyszka",
+    "lyzka",
+    "miska",
+    "pudelko",
+    "koszyk",
+    "polka",
+    "grzyb",
+    "orzech",
+    "kasztan",
+    "zoledz",
+    "marchewka",
+    "kubek",
+    "talerz",
+    "szarlotka"
+  ],
+  "cover": "In an autumn orchard with falling red and yellow leaves, Squirrel holds a magnifying glass over a small pile of red gifts (a red apple, a red leaf, a red toy block) while Deer looks on curiously; behind a tree trunk the Fox peeks out shyly."
+}
