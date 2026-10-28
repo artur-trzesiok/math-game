@@ -1,0 +1,33 @@
+{
+  "id": "queue",
+  "title": {
+    "pl": "Kolejka",
+    "en": "The queue"
+  },
+  "goal": "Ordinal numbers: first, second, third, fourth, fifth, last - counted from the front of a queue; the queue changes, the places move.",
+  "age": "4-5",
+  "characters": [
+    "lisek",
+    "sarenka"
+  ],
+  "backgrounds": [
+    "laka",
+    "plac_zabaw",
+    "dom",
+    "las",
+    "pokoj"
+  ],
+  "objects": [
+    "stol",
+    "jez",
+    "mysz",
+    "zajac",
+    "kaczka",
+    "motyl",
+    "kubek",
+    "misiu",
+    "pilka",
+    "klocek"
+  ],
+  "cover": "Between them a little lemonade stand (a small wooden table with a jug) and a queue of a hedgehog, a mouse, a bunny and a duckling facing it, small pencil numbers 1, 2, 3, 4 over their heads."
+}

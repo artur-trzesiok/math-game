@@ -1,0 +1,134 @@
+{
+  "line.s_cups": {
+    "who": "sarenka",
+    "text": "We have to put the cups away in the cupboard. Best one inside another."
+  },
+  "line.s_big_into_small": {
+    "who": "lisek",
+    "text": "Easy! I put this big one into the small one."
+  },
+  "line.s_wont_fit": {
+    "who": "sarenka",
+    "text": "A big one will not fit into a small one! That does not work."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "Then how do I do it?"
+  },
+  "line.s_order": {
+    "who": "sarenka",
+    "text": "Put them in order! From the smallest to the biggest."
+  },
+  "line.s_what": {
+    "who": "lisek",
+    "text": "In order? How?"
+  },
+  "line.s_show": {
+    "who": "sarenka",
+    "text": "I will show you. The smallest goes in place number one, then bigger and bigger."
+  },
+  "line.s_fill": {
+    "who": "sarenka",
+    "text": "Drag the cups to their places. The smallest first."
+  },
+  "line.wrong_order": {
+    "who": "sarenka",
+    "text": "That is not its place. Look which one is smaller.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.s_nest": {
+    "who": "lisek",
+    "text": "Now I see! The small one goes into the middle one, and the middle one into the big one."
+  },
+  "line.s_solved": {
+    "who": "sarenka",
+    "text": "They all fit one inside another. That is putting things in order!"
+  },
+  "line.s_to_garden": {
+    "who": "lisek",
+    "text": "Let's go to the garden and pull out some carrots."
+  },
+  "line.b_carrots": {
+    "who": "lisek",
+    "text": "I pulled out four carrots. Each one is a different length."
+  },
+  "line.b_fill": {
+    "who": "sarenka",
+    "text": "Put them from the shortest to the longest."
+  },
+  "line.b_done": {
+    "who": "lisek",
+    "text": "From the shortest to the longest, like stairs!"
+  },
+  "line.b_to_room": {
+    "who": "sarenka",
+    "text": "And now to the room, we will build a tower."
+  },
+  "line.c_tower": {
+    "who": "sarenka",
+    "text": "Let's build a tower of blocks that will not fall over."
+  },
+  "line.c_fill": {
+    "who": "lisek",
+    "text": "The biggest goes at the bottom and the smallest on top. Drag the blocks."
+  },
+  "line.c_solved": {
+    "who": "sarenka",
+    "text": "The tower stands! The biggest at the bottom, the smallest on top."
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Let's play putting things in order!"
+  },
+  "line.p_from_small": {
+    "who": "lisek",
+    "text": "Put them from the smallest to the biggest.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.p_from_big": {
+    "who": "lisek",
+    "text": "Put them from the biggest to the smallest.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.good_order": {
+    "who": "sarenka",
+    "text": "Yes! Everything in order.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.a_game": {
+    "who": "sarenka",
+    "text": "Let's play putting things in order in the hallway."
+  },
+  "line.a_ok": {
+    "who": "lisek",
+    "text": "All right! We will sort the whole family's things."
+  },
+  "line.a_shoes": {
+    "who": "sarenka",
+    "text": "Put the shoes from the smallest to the biggest."
+  },
+  "line.a_socks": {
+    "who": "sarenka",
+    "text": "Now the socks, from the biggest to the smallest."
+  },
+  "line.a_bears": {
+    "who": "sarenka",
+    "text": "And the teddies from the smallest to the biggest."
+  },
+  "line.a_ask_parents": {
+    "who": "sarenka",
+    "text": "Ask your parents to line up the whole family's shoes with you, from the smallest to the biggest."
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Bye bye! See you!"
+  }
+}

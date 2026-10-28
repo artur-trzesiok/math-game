@@ -81,7 +81,7 @@ safe-area units (x -6..6, y -4.5..4.5, ground -3.3); puppets (3.6 units tall, 40
 the object layer (stickers, signs) floats at y = 1.2, above the puppets' heads, so
 nothing ever covers a character; zones lie on the ground between them (y -2.3). The two characters of a lesson stand
 left/right as `characters[name].side` says; the player preloads them and hides
-them until `enter`/`show`. Never block on anything but `ctx` calls.
+them until `enter`/`show`. Never block on anything but `ctx` calls. Nothing is drawn above `SUFIT` (y 3.3): the phase icons sit there.
 
 ## Characters (the cut-out pipeline)
 
@@ -280,6 +280,30 @@ and spoken by `who` from the lesson's own `line.n1..n10`; `od` counts on (from 5
 8), `rzad` moves each counted thing into a row so nothing is counted twice. Number
 lessons keep things BIG (stickers ~1.0, counting badges 0.7, digit cards 1.2 on the floor,
 containers raised between the characters): the first layout at 0.5-0.7 was unreadable.
+
+Geometry, positions and rows (`geometria.js`). Free dragging (`S.free(set)`): a thing goes anywhere; a tap
+without moving (< 0.15 units, < 450 ms) is `onTap`, otherwise `onDrop`; a tap on a character repeats the
+instruction. `S.upusc(item, x, y)` / `S.stuknij(item)` drive it from tests. On top of it:
+- `ctx.shape(kind, {x, y, size, color, rot})` - circle / triangle / square / rectangle drawn as a filled sticker
+  with a white halo and a pencil outline (synchronous, a handle with `rotateTo`, `corners()`); `ctx.corners(h)` -
+  corner dots for `ctx.count` (each puts its number OUTSIDE the shape, `etykieta`).
+- `ctx.tangram(name, {x, y, scale, obroty})` - a grey silhouette with a pencil outline (`UKLADANKI`: kwadrat,
+  domek, ryba, lodka, duzy_kwadrat) and its pieces packed without overlap on the floor between the characters,
+  over their heads when the floor is full (`rozloz`: biggest first, each piece may take any turn, the preferred
+  one first - a big triangle on its tip is taller than the floor, so a random turn left it in a pile). A drop near
+  a place of the same piece snaps when the turn matches modulo the piece's symmetry; a tap turns 45 deg; `done()`.
+  `ctx.piece(t)` - one piece as a target ("which piece fits the gap?").
+- `ctx.place({item, ref, ref2, want, wrong})` - on / under / beside / behind (peeks out over the top) / between /
+  in ("w" = the centre inside, drawn in front); `relation`, `behind`. Moving a thing in front of or behind another
+  shifts its whole draw order past the other's and keeps its own layers (fill, halo, outline) - flattening them
+  to one value hid a round window under the square it was dropped into.
+- `ctx.symmetry(name, ...)` - an axis, the left half of a sticker, three halves to add (mirrored = right).
+- `ctx.slots({items, slots: [{x, y, w, h, accept}], numery, numeryNad})` - dashed places (patterns with a gap,
+  seriation into numbered places, numbers under or over them); `done()` resolves when every place is filled.
+- A sort zone may name the kind it takes (`zone.want = "kolo"`) when the line names the containers.
+Rows and queues are laid out by the things' drawn widths (`c.bounds`), never a fixed step: rhythm rows run over
+the heads at full width (8 things at 1.3), ordering puts things on the floor within x +-3.1 and the places
+over the heads, the queue lesson stands animals feet on the floor, the bunny clearly the biggest.
 
 Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}); the menu shows
 one row per topic, numbers restart per topic, a lesson in no topic goes to a last row.

@@ -83,7 +83,8 @@ export function liczDotykiem(S, items, { say, kolor = "#1f5fbf", size = 0.7, od 
       policzone.add(hit); hit.policzony = true; k++;
       if (rzad) { hit.mesh.rotation.z = 0; await hit.moveTo(rzad.x + (k - 1) * (rzad.gap ?? 0.95), rzad.y, 0.35); }
       const b = S.bounds(hit);
-      znaczki.push(await narysujCyfre(S, od + k, { x: (b.left + b.right) / 2, y: b.top + size * 0.75, size, color: kolor, duration: 0.25 }));
+      const gdzie = hit.etykieta || { x: (b.left + b.right) / 2, y: b.top + size * 0.75 };   // a corner puts its number outside the shape
+      znaczki.push(await narysujCyfre(S, od + k, { x: gdzie.x, y: gdzie.y, size, color: kolor, duration: 0.25 }));
       await say(od + k);
       tura();
     };

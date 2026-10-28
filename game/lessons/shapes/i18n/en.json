@@ -1,0 +1,219 @@
+{
+  "line.s_ask": {
+    "who": "sowa",
+    "text": "Fox, will you make me a round window for my birdhouse?"
+  },
+  "line.s_here": {
+    "who": "lisek",
+    "text": "Done! Here you are, your window."
+  },
+  "line.s_not_round": {
+    "who": "sowa",
+    "text": "But this window is not round at all! It has corners and straight sides."
+  },
+  "line.s_same": {
+    "who": "lisek",
+    "text": "A window is a window. Does it matter?"
+  },
+  "line.s_differ": {
+    "who": "sowa",
+    "text": "Yes! Every shape is different. My round head will not fit through a window with corners."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "Then how do I tell which shape is which?"
+  },
+  "line.s_corners": {
+    "who": "sowa",
+    "text": "By the corners and the sides! I will show you, it is fun."
+  },
+  "line.s_circle": {
+    "who": "sowa",
+    "text": "This is a circle. It is round like a ball and has no corners at all."
+  },
+  "line.s_triangle": {
+    "who": "sowa",
+    "text": "This is a triangle. Count its corners. Point to each corner in turn."
+  },
+  "line.s_three_corners": {
+    "who": "sowa",
+    "text": "A triangle has three corners and three sides."
+  },
+  "line.s_square": {
+    "who": "sowa",
+    "text": "This is a square. Now you count the corners."
+  },
+  "line.s_four_corners": {
+    "who": "lisek",
+    "text": "Four corners! A square has four equal sides."
+  },
+  "line.s_rectangle": {
+    "who": "sowa",
+    "text": "This is a rectangle. It has four corners too, but two sides are longer and two are shorter."
+  },
+  "line.s_point_circle": {
+    "who": "lisek",
+    "text": "Owl wanted a round window. Point to the circle."
+  },
+  "line.wrong_shape": {
+    "who": "sowa",
+    "text": "That is another shape. Look at the corners.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.s_solved": {
+    "who": "lisek",
+    "text": "Now I know! A round window is a circle. I will make one."
+  },
+  "line.s_to_playground": {
+    "who": "sowa",
+    "text": "Let's go to the playground. There are shapes there too."
+  },
+  "line.b_blocks": {
+    "who": "lisek",
+    "text": "Someone left blocks of two shapes here. Let's tidy up."
+  },
+  "line.b_sort": {
+    "who": "sowa",
+    "text": "Circles into the basket, triangles into the box. Look at the corners, not the colours!"
+  },
+  "line.b_mixed": {
+    "who": "sowa",
+    "text": "Something got mixed up. A circle has no corners and a triangle has three."
+  },
+  "line.b_done": {
+    "who": "sowa",
+    "text": "Well done! All the circles together, all the triangles together."
+  },
+  "line.b_turned": {
+    "who": "sowa",
+    "text": "Careful, I turned one shape. But it still has four equal sides. Point to the square."
+  },
+  "line.b_still_square": {
+    "who": "lisek",
+    "text": "A turned square is still a square!"
+  },
+  "line.b_to_orchard": {
+    "who": "sowa",
+    "text": "And now to the orchard. We will build a birdhouse in the tree."
+  },
+  "line.c_build": {
+    "who": "lisek",
+    "text": "Let's build Owl a birdhouse. The walls are ready, that is a square."
+  },
+  "line.c_roof": {
+    "who": "sowa",
+    "text": "Now the roof. Drag the triangle onto the square."
+  },
+  "line.c_roof_wrong": {
+    "who": "sowa",
+    "text": "The roof goes on top, on the square."
+  },
+  "line.c_window": {
+    "who": "lisek",
+    "text": "And now the round window. Drag the circle into the middle of the square."
+  },
+  "line.c_window_wrong": {
+    "who": "lisek",
+    "text": "The window goes in the middle of the wall."
+  },
+  "line.c_solved": {
+    "who": "sowa",
+    "text": "My birdhouse! A triangle roof and a round window. Thank you!"
+  },
+  "line.p_intro": {
+    "who": "sowa",
+    "text": "Let's play finding shapes! The colours can be different."
+  },
+  "line.p_trojkat": {
+    "who": "sowa",
+    "text": "Point to the triangle."
+  },
+  "line.p_kolo": {
+    "who": "sowa",
+    "text": "Point to the circle."
+  },
+  "line.p_kwadrat": {
+    "who": "sowa",
+    "text": "Point to the square."
+  },
+  "line.p_prostokat": {
+    "who": "sowa",
+    "text": "Point to the rectangle."
+  },
+  "line.good_shape": {
+    "who": "lisek",
+    "text": "Yes! That is the shape.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.a_game": {
+    "who": "lisek",
+    "text": "Let's play finding shapes at home."
+  },
+  "line.a_ok": {
+    "who": "sowa",
+    "text": "All right! I show a thing and you find its shape."
+  },
+  "line.a_talerz": {
+    "who": "sowa",
+    "text": "What shape is a plate? Point to the shape."
+  },
+  "line.a_klocek": {
+    "who": "sowa",
+    "text": "What shape is the side of a block? Point to the shape."
+  },
+  "line.a_pilka": {
+    "who": "sowa",
+    "text": "What shape is a ball? Point to the shape."
+  },
+  "line.a_how_many_corners": {
+    "who": "lisek",
+    "text": "How many corners does this shape have? Point to the number."
+  },
+  "line.wrong_number": {
+    "who": "lisek",
+    "text": "Count the corners again.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.a_ask_parents": {
+    "who": "sowa",
+    "text": "Ask your parents to look for circles, squares and triangles at home with you."
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Bye bye! See you!"
+  },
+  "line.n1": {
+    "who": "sowa",
+    "text": "One!",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.n2": {
+    "who": "sowa",
+    "text": "Two!",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.n3": {
+    "who": "sowa",
+    "text": "Three!",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.n4": {
+    "who": "sowa",
+    "text": "Four!",
+    "speakers": [
+      "lisek"
+    ]
+  }
+}

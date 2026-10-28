@@ -1,0 +1,164 @@
+{
+  "line.s_stand": {
+    "who": "sarenka",
+    "text": "I opened a lemonade stand! Look, a queue has formed."
+  },
+  "line.s_biggest": {
+    "who": "lisek",
+    "text": "I will serve the bunny first. It is the biggest!"
+  },
+  "line.s_not_biggest": {
+    "who": "sarenka",
+    "text": "In a queue it does not matter who is the biggest! What matters is who stands first."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "And who stands first?"
+  },
+  "line.s_order": {
+    "who": "sarenka",
+    "text": "The one standing nearest the stand. Then the second, the third, and so on."
+  },
+  "line.s_what": {
+    "who": "lisek",
+    "text": "First, second, third? Will you show me?"
+  },
+  "line.s_show": {
+    "who": "sarenka",
+    "text": "We count from the stand. Look at the numbers."
+  },
+  "line.s_point_first": {
+    "who": "sarenka",
+    "text": "Point to the one standing first."
+  },
+  "line.wrong_place": {
+    "who": "sarenka",
+    "text": "That is not the place. Count from the stand.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.s_point_last": {
+    "who": "lisek",
+    "text": "And who stands last, at the very end?"
+  },
+  "line.s_point_third": {
+    "who": "sarenka",
+    "text": "Point to the one standing third."
+  },
+  "line.s_serve": {
+    "who": "lisek",
+    "text": "Here you are, lemonade for the first one!"
+  },
+  "line.s_first_now": {
+    "who": "sarenka",
+    "text": "The hedgehog left and everyone moved up. Who is first now?"
+  },
+  "line.s_solved": {
+    "who": "lisek",
+    "text": "Now I understand! I serve them in order, from the first."
+  },
+  "line.s_to_playground": {
+    "who": "sarenka",
+    "text": "Let's go to the playground. There is a queue there too."
+  },
+  "line.b_slide": {
+    "who": "lisek",
+    "text": "Everyone wants to go down the slide. The slide is on the left."
+  },
+  "line.b_point_second": {
+    "who": "sarenka",
+    "text": "Point to the one standing second."
+  },
+  "line.b_mouse_back": {
+    "who": "lisek",
+    "text": "The mouse wants another go. It goes to the end of the queue."
+  },
+  "line.b_point_last": {
+    "who": "sarenka",
+    "text": "Who is last now?"
+  },
+  "line.b_done": {
+    "who": "lisek",
+    "text": "The mouse is last! It waits nicely for its turn."
+  },
+  "line.b_to_home": {
+    "who": "sarenka",
+    "text": "Let's go home. There will be cookies!"
+  },
+  "line.c_cookies": {
+    "who": "sarenka",
+    "text": "Five guests are queuing for cookies. We count from the table."
+  },
+  "line.c_point_fifth": {
+    "who": "lisek",
+    "text": "Point to the one standing fifth."
+  },
+  "line.c_between": {
+    "who": "sarenka",
+    "text": "Who stands between the second and the fourth?"
+  },
+  "line.c_solved": {
+    "who": "lisek",
+    "text": "The third! Now you know the places in a queue."
+  },
+  "line.p_intro": {
+    "who": "sarenka",
+    "text": "Let's play queues! We always count from the front of the queue, on the left."
+  },
+  "line.p_first": {
+    "who": "sarenka",
+    "text": "Point to the one standing first."
+  },
+  "line.p_second": {
+    "who": "sarenka",
+    "text": "Point to the one standing second."
+  },
+  "line.p_third": {
+    "who": "sarenka",
+    "text": "Point to the one standing third."
+  },
+  "line.p_fourth": {
+    "who": "sarenka",
+    "text": "Point to the one standing fourth."
+  },
+  "line.p_last": {
+    "who": "sarenka",
+    "text": "Point to the one standing last."
+  },
+  "line.good_place": {
+    "who": "lisek",
+    "text": "Yes! That is the place.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.a_game": {
+    "who": "lisek",
+    "text": "Let's play a queue of toys on the shelf."
+  },
+  "line.a_ok": {
+    "who": "sarenka",
+    "text": "All right! We count from the arrow."
+  },
+  "line.a_second": {
+    "who": "lisek",
+    "text": "Which toy is second?"
+  },
+  "line.a_last": {
+    "who": "lisek",
+    "text": "Which toy is last?"
+  },
+  "line.a_first": {
+    "who": "lisek",
+    "text": "Which toy is first?"
+  },
+  "line.a_ask_parents": {
+    "who": "sarenka",
+    "text": "Ask your parents to line up toys in a queue with you. Which one is first, and which one is last?"
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Bye bye! See you!"
+  }
+}

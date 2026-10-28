@@ -1,0 +1,144 @@
+{
+  "line.s_my_puzzle": {
+    "who": "wiewiorka",
+    "text": "Zobacz moją układankę! Kwadrat z kolorowych kawałków."
+  },
+  "line.s_broken": {
+    "who": "wiewiorka",
+    "text": "Ojej! Spadła i rozsypała się na kawałki!"
+  },
+  "line.s_throw": {
+    "who": "wiewiorka",
+    "text": "Jest zepsuta. Chyba muszę ją wyrzucić."
+  },
+  "line.s_not_broken": {
+    "who": "lisek",
+    "text": "Nic się nie zepsuło! Te kawałki tak mają."
+  },
+  "line.s_how": {
+    "who": "wiewiorka",
+    "text": "Jak to? Przecież nie jest już kwadratem."
+  },
+  "line.s_tangram": {
+    "who": "lisek",
+    "text": "To jest tangram! Z tych kawałków można ułożyć kwadrat i mnóstwo obrazków."
+  },
+  "line.s_what": {
+    "who": "wiewiorka",
+    "text": "Tangram? A jak się w niego gra?"
+  },
+  "line.s_show": {
+    "who": "lisek",
+    "text": "Pokażę ci. Każdy kawałek ma swoje miejsce na obrazku."
+  },
+  "line.s_two": {
+    "who": "lisek",
+    "text": "Zacznijmy od dwóch trójkątów. Przeciągnij je na szare miejsca."
+  },
+  "line.s_tap_turns": {
+    "who": "lisek",
+    "text": "Jeśli kawałek nie pasuje, dotknij go. Wtedy się obróci."
+  },
+  "line.s_square_done": {
+    "who": "wiewiorka",
+    "text": "Dwa trójkąty zrobiły kwadrat!"
+  },
+  "line.s_house": {
+    "who": "lisek",
+    "text": "A teraz domek. Kwadrat to ściany, a trójkąt to dach."
+  },
+  "line.s_solved": {
+    "who": "wiewiorka",
+    "text": "Domek! Moja układanka wcale nie jest zepsuta. Jest jeszcze fajniejsza!"
+  },
+  "line.s_to_forest": {
+    "who": "lisek",
+    "text": "Chodźmy z tangramem do lasu, nad strumyk."
+  },
+  "line.b_fish": {
+    "who": "wiewiorka",
+    "text": "Ułóżmy rybkę, która popłynie strumykiem."
+  },
+  "line.b_fish_done": {
+    "who": "lisek",
+    "text": "Rybka gotowa! Ma ogon z trójkąta."
+  },
+  "line.b_to_brook": {
+    "who": "wiewiorka",
+    "text": "Zanieśmy ją nad wodę!"
+  },
+  "line.c_boat": {
+    "who": "lisek",
+    "text": "A teraz łódka z żaglem. Puścimy ją na wodę."
+  },
+  "line.c_boat_done": {
+    "who": "wiewiorka",
+    "text": "Łódka płynie!"
+  },
+  "line.c_square_again": {
+    "who": "wiewiorka",
+    "text": "A czy umiemy z powrotem ułożyć cały kwadrat? Wszystkie siedem kawałków!"
+  },
+  "line.c_solved": {
+    "who": "lisek",
+    "text": "Cały kwadrat! Tangram znowu jest w pudełku, gotowy do zabawy."
+  },
+  "line.wrong_piece": {
+    "who": "wiewiorka",
+    "text": "Ten kawałek ma inny kształt. Popatrz na lukę.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.good_build": {
+    "who": "lisek",
+    "text": "Pasuje! Pięknie ułożone.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Pobawmy się w tangram! Przeciągaj kawałki, a jeśli trzeba, dotknij i obróć."
+  },
+  "line.p_domek": {
+    "who": "wiewiorka",
+    "text": "Ułóż domek."
+  },
+  "line.p_ryba": {
+    "who": "wiewiorka",
+    "text": "Ułóż rybkę."
+  },
+  "line.p_lodka": {
+    "who": "wiewiorka",
+    "text": "Ułóż łódkę."
+  },
+  "line.p_gap": {
+    "who": "wiewiorka",
+    "text": "Jednego kawałka brakuje. Wskaż ten, który pasuje do luki."
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Zagrajmy w tangram, tak jak w domu."
+  },
+  "line.a_paper": {
+    "who": "lisek",
+    "text": "Najpierw kwadrat z dwóch trójkątów. W domu można go wyciąć z papieru."
+  },
+  "line.a_house": {
+    "who": "lisek",
+    "text": "Teraz domek."
+  },
+  "line.a_fish": {
+    "who": "lisek",
+    "text": "A na koniec rybka."
+  },
+  "line.a_ask_parents": {
+    "who": "wiewiorka",
+    "text": "Poproście rodziców, żeby razem z wami wycięli kwadrat z papieru i pocięli go na trójkąty. Co z nich ułożycie?"
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Pa, pa! Do zobaczenia!"
+  }
+}

@@ -76,6 +76,61 @@
         "pl": "doliczanie od znanej liczby",
         "en": "counting on from a known number"
       }
+    },
+    {
+      "id": "shapes",
+      "title": {
+        "pl": "Figury geometryczne",
+        "en": "Shapes"
+      },
+      "subtitle": {
+        "pl": "koło, trójkąt, kwadrat, prostokąt",
+        "en": "circle, triangle, square, rectangle"
+      }
+    },
+    {
+      "id": "tangram",
+      "title": {
+        "pl": "Tangram",
+        "en": "Tangram"
+      },
+      "subtitle": {
+        "pl": "układanie obrazków z kawałków",
+        "en": "pictures from pieces"
+      }
+    },
+    {
+      "id": "rhythm",
+      "title": {
+        "pl": "Rytm",
+        "en": "Rhythm"
+      },
+      "subtitle": {
+        "pl": "co się powtarza, co dalej",
+        "en": "what repeats, what comes next"
+      }
+    },
+    {
+      "id": "ordering",
+      "title": {
+        "pl": "Po kolei",
+        "en": "In order"
+      },
+      "subtitle": {
+        "pl": "od najmniejszego do największego",
+        "en": "from the smallest to the biggest"
+      }
+    },
+    {
+      "id": "queue",
+      "title": {
+        "pl": "Kolejka",
+        "en": "The queue"
+      },
+      "subtitle": {
+        "pl": "pierwszy, drugi, ostatni",
+        "en": "first, second, last"
+      }
     }
   ],
   "topics": [
@@ -104,6 +159,31 @@
         "numbers_6_10",
         "adding_5",
         "adding_10"
+      ]
+    },
+    {
+      "id": "geometria",
+      "title": {
+        "pl": "Geometria",
+        "en": "Geometry"
+      },
+      "color": "#5b9bd5",
+      "lessons": [
+        "shapes",
+        "tangram"
+      ]
+    },
+    {
+      "id": "rytm",
+      "title": {
+        "pl": "Rytm i porządek",
+        "en": "Rhythm and order"
+      },
+      "color": "#c77dd6",
+      "lessons": [
+        "rhythm",
+        "ordering",
+        "queue"
       ]
     }
   ]

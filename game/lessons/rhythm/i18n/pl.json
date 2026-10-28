@@ -1,0 +1,126 @@
+{
+  "line.s_garland": {
+    "who": "sowa",
+    "text": "Robię girlandę na przyjęcie. Jabłko, gruszka, jabłko, gruszka."
+  },
+  "line.s_go_on": {
+    "who": "sowa",
+    "text": "Muszę przynieść nitkę. Dokończysz za mnie?"
+  },
+  "line.s_anything": {
+    "who": "wiewiorka",
+    "text": "Jasne! Dołożę cokolwiek, byle było kolorowo. Hop, hop!"
+  },
+  "line.s_broken": {
+    "who": "sowa",
+    "text": "Ojej, zepsułaś wzór! Popatrz: jabłko, gruszka, jabłko, gruszka. Coś się powtarza."
+  },
+  "line.s_how": {
+    "who": "wiewiorka",
+    "text": "To co mam dokładać?"
+  },
+  "line.s_rhythm": {
+    "who": "sowa",
+    "text": "To, co pasuje do rytmu! Rytm to coś, co się powtarza po kolei."
+  },
+  "line.s_what": {
+    "who": "wiewiorka",
+    "text": "Rytm? Pokażesz mi?"
+  },
+  "line.s_listen": {
+    "who": "sowa",
+    "text": "Posłuchaj. Klask, hop, klask, hop."
+  },
+  "line.s_same_garland": {
+    "who": "sowa",
+    "text": "Girlanda ma taki sam rytm. Jabłko, gruszka, jabłko, gruszka. Zacznijmy od nowa."
+  },
+  "line.s_fill": {
+    "who": "wiewiorka",
+    "text": "Przeciągnij, co będzie dalej. Uwaga, jedna rzecz nie pasuje!"
+  },
+  "line.wrong_pattern": {
+    "who": "sowa",
+    "text": "To nie pasuje do rytmu. Co było przed tym miejscem?",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.s_solved": {
+    "who": "sowa",
+    "text": "Girlanda gotowa! Jabłko, gruszka, jabłko, gruszka, aż do końca."
+  },
+  "line.s_to_garden": {
+    "who": "wiewiorka",
+    "text": "Chodźmy do ogrodu. Tam też są rytmy."
+  },
+  "line.b_bed": {
+    "who": "wiewiorka",
+    "text": "Na grządce rośnie: kwiatek, kwiatek, marchewka. I znowu: kwiatek, kwiatek, marchewka."
+  },
+  "line.b_fill": {
+    "who": "sowa",
+    "text": "Dosadź to, co będzie dalej."
+  },
+  "line.b_done": {
+    "who": "wiewiorka",
+    "text": "Kwiatek, kwiatek, marchewka! Rytm się zgadza."
+  },
+  "line.b_to_meadow": {
+    "who": "sowa",
+    "text": "Teraz piknik nad jeziorem."
+  },
+  "line.c_picnic": {
+    "who": "sowa",
+    "text": "Nakrywam: kubek, talerz, łyżka. Kubek, talerz, łyżka."
+  },
+  "line.c_fill": {
+    "who": "wiewiorka",
+    "text": "Przeciągnij, co będzie dalej."
+  },
+  "line.c_solved": {
+    "who": "sowa",
+    "text": "Kubek, talerz, łyżka! Teraz umiesz dokończyć każdy rytm."
+  },
+  "line.p_intro": {
+    "who": "sowa",
+    "text": "Pobawmy się w rytmy! Popatrz, co się powtarza."
+  },
+  "line.p_fill": {
+    "who": "sowa",
+    "text": "Co będzie dalej? Przeciągnij na puste miejsca.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.good_pattern": {
+    "who": "wiewiorka",
+    "text": "Tak! Rytm się zgadza.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Zagrajmy w rytmy z zabawek."
+  },
+  "line.a_ok": {
+    "who": "sowa",
+    "text": "Dobrze! Ja zaczynam, a ty kończysz."
+  },
+  "line.a_fill": {
+    "who": "sowa",
+    "text": "Co będzie dalej? Przeciągnij zabawki.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.a_ask_parents": {
+    "who": "sowa",
+    "text": "Poproście rodziców, żeby ułożyli z wami rytm z łyżek i widelców. Możecie też razem wyklaskać rytm."
+  },
+  "line.a_bye": {
+    "who": "wiewiorka",
+    "text": "Pa, pa! Do zobaczenia!"
+  }
+}

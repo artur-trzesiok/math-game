@@ -1,0 +1,28 @@
+{
+  "id": "shapes",
+  "title": {
+    "pl": "Figury geometryczne",
+    "en": "Shapes"
+  },
+  "goal": "Recognise and name the circle, triangle, square and rectangle by their corners and sides, whatever their colour or turn.",
+  "age": "4-5",
+  "characters": [
+    "lisek",
+    "sowa"
+  ],
+  "backgrounds": [
+    "pokoj",
+    "plac_zabaw",
+    "sad",
+    "laka",
+    "dom"
+  ],
+  "objects": [
+    "pilka",
+    "klocek",
+    "talerz",
+    "koszyk",
+    "pudelko"
+  ],
+  "cover": "Between them big shapes cut from coloured paper with pencil outlines: a red circle, a yellow triangle, a blue square and a green rectangle; a little wooden birdhouse with a triangle roof and a round window."
+}

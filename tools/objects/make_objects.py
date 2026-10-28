@@ -74,6 +74,21 @@ Row 2, left to right: a single child's red shoe seen from the side; a wooden
 spoon; a small brown teddy bear; a red wooden toy block.
 All eight objects roughly the same size.""",
     },
+    "objects3": {
+        "outline": True,
+        "names": ["stol", "krzeslo", "krzak", "jez", "zajac", "mysz", "kaczka", "motyl"],
+        "size": "1536x1024",
+        "prompt": f"""A sprite sheet of EIGHT small illustrated things for a children's picture book, arranged in a
+neat grid of 2 rows and 4 columns on a fully TRANSPARENT background, with generous empty space between them
+so none of them touch.
+{STYL}
+Row 1, left to right: a small wooden kitchen table with four legs, seen from the front; a small wooden chair
+seen from the side; a round green bush; a cute little hedgehog standing, side view facing left.
+Row 2, left to right: a cute little grey bunny sitting, side view facing left; a cute little grey mouse,
+side view facing left; a cute little yellow duckling, side view facing left; a colourful butterfly with open
+wings seen straight from above, its two wings mirror images of each other.
+All eight roughly the same size.""",
+    },
     "containers": {
         "names": ["koszyk", "pudelko", "miska", "polka"],
         "size": "1536x1024",

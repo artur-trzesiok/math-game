@@ -1,0 +1,126 @@
+{
+  "line.s_garland": {
+    "who": "sowa",
+    "text": "I am making a garland for the party. Apple, pear, apple, pear."
+  },
+  "line.s_go_on": {
+    "who": "sowa",
+    "text": "I have to fetch some string. Will you finish it for me?"
+  },
+  "line.s_anything": {
+    "who": "wiewiorka",
+    "text": "Sure! I'll add anything, as long as it is colourful. Hop, hop!"
+  },
+  "line.s_broken": {
+    "who": "sowa",
+    "text": "Oh no, you broke the pattern! Look: apple, pear, apple, pear. Something repeats."
+  },
+  "line.s_how": {
+    "who": "wiewiorka",
+    "text": "Then what should I add?"
+  },
+  "line.s_rhythm": {
+    "who": "sowa",
+    "text": "What fits the rhythm! A rhythm is something that repeats in order."
+  },
+  "line.s_what": {
+    "who": "wiewiorka",
+    "text": "A rhythm? Will you show me?"
+  },
+  "line.s_listen": {
+    "who": "sowa",
+    "text": "Listen. Clap, hop, clap, hop."
+  },
+  "line.s_same_garland": {
+    "who": "sowa",
+    "text": "The garland has the same kind of rhythm. Apple, pear, apple, pear. Let's start again."
+  },
+  "line.s_fill": {
+    "who": "wiewiorka",
+    "text": "Drag what comes next. Careful, one thing does not fit!"
+  },
+  "line.wrong_pattern": {
+    "who": "sowa",
+    "text": "That does not fit the rhythm. What came before this place?",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.s_solved": {
+    "who": "sowa",
+    "text": "The garland is ready! Apple, pear, apple, pear, all the way."
+  },
+  "line.s_to_garden": {
+    "who": "wiewiorka",
+    "text": "Let's go to the garden. There are rhythms there too."
+  },
+  "line.b_bed": {
+    "who": "wiewiorka",
+    "text": "In the bed there grows: flower, flower, carrot. And again: flower, flower, carrot."
+  },
+  "line.b_fill": {
+    "who": "sowa",
+    "text": "Plant what comes next."
+  },
+  "line.b_done": {
+    "who": "wiewiorka",
+    "text": "Flower, flower, carrot! The rhythm is right."
+  },
+  "line.b_to_meadow": {
+    "who": "sowa",
+    "text": "Now a picnic by the lake."
+  },
+  "line.c_picnic": {
+    "who": "sowa",
+    "text": "I am laying the table: cup, plate, spoon. Cup, plate, spoon."
+  },
+  "line.c_fill": {
+    "who": "wiewiorka",
+    "text": "Drag what comes next."
+  },
+  "line.c_solved": {
+    "who": "sowa",
+    "text": "Cup, plate, spoon! Now you can finish any rhythm."
+  },
+  "line.p_intro": {
+    "who": "sowa",
+    "text": "Let's play rhythms! Look at what repeats."
+  },
+  "line.p_fill": {
+    "who": "sowa",
+    "text": "What comes next? Drag it into the empty places.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.good_pattern": {
+    "who": "wiewiorka",
+    "text": "Yes! The rhythm is right.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Let's play rhythms with toys."
+  },
+  "line.a_ok": {
+    "who": "sowa",
+    "text": "All right! I start and you finish."
+  },
+  "line.a_fill": {
+    "who": "sowa",
+    "text": "What comes next? Drag the toys.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.a_ask_parents": {
+    "who": "sowa",
+    "text": "Ask your parents to make a rhythm of spoons and forks with you. You can also clap a rhythm together."
+  },
+  "line.a_bye": {
+    "who": "wiewiorka",
+    "text": "Bye bye! See you!"
+  }
+}

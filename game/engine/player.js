@@ -8,6 +8,7 @@
 import * as THREE from "three";
 import { v } from "./v.js";
 import { narysujCyfre, liczDotykiem, narysujRownanie } from "./liczby.js";
+import * as G from "./geometria.js";
 import { Stage } from "./scene.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
@@ -159,6 +160,7 @@ export class Player {
       mood: (who, m) => S.mood(who, m),
       look: (who, target, opts) => S.lookAt(who, target, opts),   // a scene may direct a gaze too (null = ahead)
       sfx: (name, opts) => S.sfx.graj(name, opts),                // a sound effect (game/audio/sfx)
+      shake: (h) => { alive(); return S.shake(h); },                  // a wrong try: the thing shakes (and buzzes)
       // the camera closes in on things and dims the rest; unfocus brings the whole stage back
       focus: guard((items, opts) => S.focus(items, opts)),
       // carrying: take a thing into a character's paw (onto a quadruped's back), walk with it, put it down
@@ -170,6 +172,16 @@ export class Player {
       digit: guard((n, opts) => narysujCyfre(S, n, opts)),
       count: guard((items, { who, od = 0, rzad = null } = {}) => liczDotykiem(S, items, { od, rzad, say: (k) => say(who, `line.n${k}`) })),
       equation: guard((tokens, opts) => narysujRownanie(S, tokens, opts)),
+      // geometry and order (geometria.js); the waits repeat the instruction when a character is tapped
+      shape: (kind, opts) => { alive(); return G.ksztalt(S, kind, opts); },
+      corners: (h) => G.rogi(S, h),
+      piece: (t, opts = {}) => G.ksztalt(S, t, { ...opts, def: G.TANGRAM[t], name: `kawalek_${t}` }),
+      tangram: guard(async (name, opts) => { const t = G.tangram(S, name, opts); const pol = last; t.done = () => { const p = t.wait(); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }; return t; }),
+      place: guard(async (o) => { const pol = last; const p = G.umiesc(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }),
+      behind: (item, ref) => G.zaRzecza(item, ref),
+      relation: (item, ref, ref2) => G.relacja(S, item, ref, ref2),
+      symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => { const p = t.wait(); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }; return t; }),
+      slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => { const p = t.wait(); S.dragSet.onPuppet = () => pol && say(pol.who, pol.key); return p; }; return t; }),
       put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),
@@ -237,7 +249,7 @@ export class Player {
               const odd = [];
               for (const z of zones) {
                 const count = {}; for (const i of z.items) count[i.tag] = (count[i.tag] || 0) + 1;
-                const main = Object.keys(count).sort((a, b) => count[b] - count[a])[0];
+                const main = z.want || Object.keys(count).sort((a, b) => count[b] - count[a])[0];
                 for (const i of z.items) if (i.tag !== main) odd.push(i);
               }
               if (!odd.length) { S.endSort(); S.lookAt(null, null); S.sfx.graj("right"); resolve(true); return; }

@@ -1,0 +1,164 @@
+{
+  "line.s_stand": {
+    "who": "sarenka",
+    "text": "Otworzyłam stoisko z lemoniadą! Patrz, ustawiła się kolejka."
+  },
+  "line.s_biggest": {
+    "who": "lisek",
+    "text": "Najpierw obsłużę zająca. Jest największy!"
+  },
+  "line.s_not_biggest": {
+    "who": "sarenka",
+    "text": "W kolejce nie liczy się, kto jest największy! Liczy się, kto stoi pierwszy."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "A kto stoi pierwszy?"
+  },
+  "line.s_order": {
+    "who": "sarenka",
+    "text": "Ten, kto stoi najbliżej stoiska. Potem drugi, trzeci, i tak dalej."
+  },
+  "line.s_what": {
+    "who": "lisek",
+    "text": "Pierwszy, drugi, trzeci? Pokażesz mi?"
+  },
+  "line.s_show": {
+    "who": "sarenka",
+    "text": "Liczymy od stoiska. Popatrz na numerki."
+  },
+  "line.s_point_first": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi pierwszy."
+  },
+  "line.wrong_place": {
+    "who": "sarenka",
+    "text": "To nie to miejsce. Licz od stoiska.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.s_point_last": {
+    "who": "lisek",
+    "text": "A kto stoi ostatni, na samym końcu?"
+  },
+  "line.s_point_third": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi trzeci."
+  },
+  "line.s_serve": {
+    "who": "lisek",
+    "text": "Proszę, lemoniada dla pierwszego!"
+  },
+  "line.s_first_now": {
+    "who": "sarenka",
+    "text": "Jeżyk odszedł i wszyscy się przesunęli. Kto jest teraz pierwszy?"
+  },
+  "line.s_solved": {
+    "who": "lisek",
+    "text": "Teraz rozumiem! Obsługuję po kolei, od pierwszego."
+  },
+  "line.s_to_playground": {
+    "who": "sarenka",
+    "text": "Chodźmy na plac zabaw. Tam też stoi kolejka."
+  },
+  "line.b_slide": {
+    "who": "lisek",
+    "text": "Wszyscy chcą zjechać ze zjeżdżalni. Zjeżdżalnia jest z lewej strony."
+  },
+  "line.b_point_second": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi drugi."
+  },
+  "line.b_mouse_back": {
+    "who": "lisek",
+    "text": "Myszka chce zjechać jeszcze raz. Idzie na koniec kolejki."
+  },
+  "line.b_point_last": {
+    "who": "sarenka",
+    "text": "Kto jest teraz ostatni?"
+  },
+  "line.b_done": {
+    "who": "lisek",
+    "text": "Myszka jest ostatnia! Grzecznie czeka na swoją kolej."
+  },
+  "line.b_to_home": {
+    "who": "sarenka",
+    "text": "Wracajmy do domu. Będą ciastka!"
+  },
+  "line.c_cookies": {
+    "who": "sarenka",
+    "text": "Po ciastka ustawiło się pięcioro gości. Liczymy od stołu."
+  },
+  "line.c_point_fifth": {
+    "who": "lisek",
+    "text": "Wskaż, kto stoi piąty."
+  },
+  "line.c_between": {
+    "who": "sarenka",
+    "text": "Kto stoi pomiędzy drugim a czwartym?"
+  },
+  "line.c_solved": {
+    "who": "lisek",
+    "text": "Trzeci! Teraz znasz miejsca w kolejce."
+  },
+  "line.p_intro": {
+    "who": "sarenka",
+    "text": "Pobawmy się w kolejkę! Liczymy zawsze od początku kolejki, z lewej."
+  },
+  "line.p_first": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi pierwszy."
+  },
+  "line.p_second": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi drugi."
+  },
+  "line.p_third": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi trzeci."
+  },
+  "line.p_fourth": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi czwarty."
+  },
+  "line.p_last": {
+    "who": "sarenka",
+    "text": "Wskaż, kto stoi ostatni."
+  },
+  "line.good_place": {
+    "who": "lisek",
+    "text": "Tak! To to miejsce.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.a_game": {
+    "who": "lisek",
+    "text": "Zagrajmy w kolejkę zabawek na półce."
+  },
+  "line.a_ok": {
+    "who": "sarenka",
+    "text": "Dobrze! Liczymy od strzałki."
+  },
+  "line.a_second": {
+    "who": "lisek",
+    "text": "Która zabawka jest druga?"
+  },
+  "line.a_last": {
+    "who": "lisek",
+    "text": "Która zabawka jest ostatnia?"
+  },
+  "line.a_first": {
+    "who": "lisek",
+    "text": "Która zabawka jest pierwsza?"
+  },
+  "line.a_ask_parents": {
+    "who": "sarenka",
+    "text": "Poproście rodziców, żeby ustawili z wami zabawki w kolejce. Która jest pierwsza, a która ostatnia?"
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Pa, pa! Do zobaczenia!"
+  }
+}

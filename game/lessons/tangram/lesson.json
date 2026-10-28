@@ -1,0 +1,22 @@
+{
+  "id": "tangram",
+  "title": {
+    "pl": "Tangram",
+    "en": "Tangram"
+  },
+  "goal": "Build pictures from tangram pieces: match each piece to its place by shape, turn it until it fits; the pieces of a square make many pictures.",
+  "age": "5-6",
+  "characters": [
+    "wiewiorka",
+    "lisek"
+  ],
+  "backgrounds": [
+    "pokoj",
+    "las",
+    "strumyk",
+    "przedpokoj",
+    "dom"
+  ],
+  "objects": [],
+  "cover": "Between them a classic seven-piece tangram square in bright paper colours, a few pieces lifted out and turned, and next to it a little house made of a blue square and a yellow triangle roof."
+}

@@ -1,0 +1,219 @@
+{
+  "line.s_ask": {
+    "who": "sowa",
+    "text": "Lisku, zrobisz mi okrągłe okienko do mojej budki?"
+  },
+  "line.s_here": {
+    "who": "lisek",
+    "text": "Już mam! Proszę, oto twoje okienko."
+  },
+  "line.s_not_round": {
+    "who": "sowa",
+    "text": "Ależ to okienko wcale nie jest okrągłe! Ma rogi i proste boki."
+  },
+  "line.s_same": {
+    "who": "lisek",
+    "text": "Okienko to okienko. Czy to nie wszystko jedno?"
+  },
+  "line.s_differ": {
+    "who": "sowa",
+    "text": "Nie! Każda figura jest inna. Przez kanciaste okienko moja okrągła głowa się nie zmieści."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "To jak poznać, która figura jest która?"
+  },
+  "line.s_corners": {
+    "who": "sowa",
+    "text": "Po rogach i bokach! Pokażę ci, to fajna zabawa."
+  },
+  "line.s_circle": {
+    "who": "sowa",
+    "text": "To jest koło. Jest okrągłe jak piłka i nie ma żadnego rogu."
+  },
+  "line.s_triangle": {
+    "who": "sowa",
+    "text": "To jest trójkąt. Policz jego rogi. Wskaż każdy róg po kolei."
+  },
+  "line.s_three_corners": {
+    "who": "sowa",
+    "text": "Trójkąt ma trzy rogi i trzy boki."
+  },
+  "line.s_square": {
+    "who": "sowa",
+    "text": "To jest kwadrat. Teraz ty policz rogi."
+  },
+  "line.s_four_corners": {
+    "who": "lisek",
+    "text": "Cztery rogi! Kwadrat ma cztery równe boki."
+  },
+  "line.s_rectangle": {
+    "who": "sowa",
+    "text": "To jest prostokąt. Też ma cztery rogi, ale dwa boki są dłuższe, a dwa krótsze."
+  },
+  "line.s_point_circle": {
+    "who": "lisek",
+    "text": "Sowa chciała okrągłe okienko. Wskaż koło."
+  },
+  "line.wrong_shape": {
+    "who": "sowa",
+    "text": "To inna figura. Popatrz na rogi.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.s_solved": {
+    "who": "lisek",
+    "text": "Już wiem! Okrągłe okienko to koło. Takie zrobię."
+  },
+  "line.s_to_playground": {
+    "who": "sowa",
+    "text": "Chodźmy na plac zabaw. Tam też są figury."
+  },
+  "line.b_blocks": {
+    "who": "lisek",
+    "text": "Ktoś zostawił klocki w dwóch kształtach. Posprzątajmy."
+  },
+  "line.b_sort": {
+    "who": "sowa",
+    "text": "Koła do koszyka, trójkąty do pudełka. Patrz na rogi, nie na kolory!"
+  },
+  "line.b_mixed": {
+    "who": "sowa",
+    "text": "Coś się pomieszało. Koło nie ma rogów, a trójkąt ma trzy."
+  },
+  "line.b_done": {
+    "who": "sowa",
+    "text": "Brawo! Wszystkie koła razem, wszystkie trójkąty razem."
+  },
+  "line.b_turned": {
+    "who": "sowa",
+    "text": "Uwaga, jedną figurę obróciłam. Ale nadal ma cztery równe boki. Wskaż kwadrat."
+  },
+  "line.b_still_square": {
+    "who": "lisek",
+    "text": "Obrócony kwadrat dalej jest kwadratem!"
+  },
+  "line.b_to_orchard": {
+    "who": "sowa",
+    "text": "A teraz do sadu. Zbudujemy budkę na drzewie."
+  },
+  "line.c_build": {
+    "who": "lisek",
+    "text": "Zbudujmy sowie budkę. Ściany już są, to kwadrat."
+  },
+  "line.c_roof": {
+    "who": "sowa",
+    "text": "Teraz dach. Przeciągnij trójkąt na kwadrat."
+  },
+  "line.c_roof_wrong": {
+    "who": "sowa",
+    "text": "Dach musi być na górze, na kwadracie."
+  },
+  "line.c_window": {
+    "who": "lisek",
+    "text": "A teraz okrągłe okienko. Przeciągnij koło do środka kwadratu."
+  },
+  "line.c_window_wrong": {
+    "who": "lisek",
+    "text": "Okienko musi być w środku ściany."
+  },
+  "line.c_solved": {
+    "who": "sowa",
+    "text": "Moja budka! Trójkątny dach i okrągłe okienko. Dziękuję!"
+  },
+  "line.p_intro": {
+    "who": "sowa",
+    "text": "Pobawmy się w szukanie figur! Kolory mogą być różne."
+  },
+  "line.p_trojkat": {
+    "who": "sowa",
+    "text": "Wskaż trójkąt."
+  },
+  "line.p_kolo": {
+    "who": "sowa",
+    "text": "Wskaż koło."
+  },
+  "line.p_kwadrat": {
+    "who": "sowa",
+    "text": "Wskaż kwadrat."
+  },
+  "line.p_prostokat": {
+    "who": "sowa",
+    "text": "Wskaż prostokąt."
+  },
+  "line.good_shape": {
+    "who": "lisek",
+    "text": "Tak! To ta figura.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.a_game": {
+    "who": "lisek",
+    "text": "Zagrajmy w szukanie figur w domu."
+  },
+  "line.a_ok": {
+    "who": "sowa",
+    "text": "Dobrze! Ja pokazuję rzecz, a ty szukasz jej kształtu."
+  },
+  "line.a_talerz": {
+    "who": "sowa",
+    "text": "Jaki kształt ma talerz? Wskaż figurę."
+  },
+  "line.a_klocek": {
+    "who": "sowa",
+    "text": "Jaki kształt ma ściana klocka? Wskaż figurę."
+  },
+  "line.a_pilka": {
+    "who": "sowa",
+    "text": "Jaki kształt ma piłka? Wskaż figurę."
+  },
+  "line.a_how_many_corners": {
+    "who": "lisek",
+    "text": "Ile rogów ma ta figura? Wskaż liczbę."
+  },
+  "line.wrong_number": {
+    "who": "lisek",
+    "text": "Policz rogi jeszcze raz.",
+    "speakers": [
+      "sowa"
+    ]
+  },
+  "line.a_ask_parents": {
+    "who": "sowa",
+    "text": "Poproście rodziców, żeby razem z wami poszukali w domu kół, kwadratów i trójkątów."
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Pa, pa! Do zobaczenia!"
+  },
+  "line.n1": {
+    "who": "sowa",
+    "text": "Jeden!",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.n2": {
+    "who": "sowa",
+    "text": "Dwa!",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.n3": {
+    "who": "sowa",
+    "text": "Trzy!",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.n4": {
+    "who": "sowa",
+    "text": "Cztery!",
+    "speakers": [
+      "lisek"
+    ]
+  }
+}

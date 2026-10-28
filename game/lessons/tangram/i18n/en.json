@@ -1,0 +1,144 @@
+{
+  "line.s_my_puzzle": {
+    "who": "wiewiorka",
+    "text": "Look at my puzzle! A square of coloured pieces."
+  },
+  "line.s_broken": {
+    "who": "wiewiorka",
+    "text": "Oh no! It fell and broke into pieces!"
+  },
+  "line.s_throw": {
+    "who": "wiewiorka",
+    "text": "It is broken. I think I have to throw it away."
+  },
+  "line.s_not_broken": {
+    "who": "lisek",
+    "text": "Nothing is broken! These pieces are meant to come apart."
+  },
+  "line.s_how": {
+    "who": "wiewiorka",
+    "text": "How so? It is not a square any more."
+  },
+  "line.s_tangram": {
+    "who": "lisek",
+    "text": "It is a tangram! You can build a square from these pieces, and lots of pictures."
+  },
+  "line.s_what": {
+    "who": "wiewiorka",
+    "text": "A tangram? How do you play it?"
+  },
+  "line.s_show": {
+    "who": "lisek",
+    "text": "I will show you. Every piece has its own place in the picture."
+  },
+  "line.s_two": {
+    "who": "lisek",
+    "text": "Let's start with two triangles. Drag them onto the grey places."
+  },
+  "line.s_tap_turns": {
+    "who": "lisek",
+    "text": "If a piece does not fit, tap it. Then it turns."
+  },
+  "line.s_square_done": {
+    "who": "wiewiorka",
+    "text": "Two triangles made a square!"
+  },
+  "line.s_house": {
+    "who": "lisek",
+    "text": "And now a house. The square is the walls and the triangle is the roof."
+  },
+  "line.s_solved": {
+    "who": "wiewiorka",
+    "text": "A house! My puzzle is not broken at all. It is even more fun!"
+  },
+  "line.s_to_forest": {
+    "who": "lisek",
+    "text": "Let's take the tangram to the forest, by the brook."
+  },
+  "line.b_fish": {
+    "who": "wiewiorka",
+    "text": "Let's build a little fish to swim down the brook."
+  },
+  "line.b_fish_done": {
+    "who": "lisek",
+    "text": "The fish is ready! Its tail is a triangle."
+  },
+  "line.b_to_brook": {
+    "who": "wiewiorka",
+    "text": "Let's take it to the water!"
+  },
+  "line.c_boat": {
+    "who": "lisek",
+    "text": "And now a boat with a sail. We will float it on the water."
+  },
+  "line.c_boat_done": {
+    "who": "wiewiorka",
+    "text": "The boat is sailing!"
+  },
+  "line.c_square_again": {
+    "who": "wiewiorka",
+    "text": "Can we build the whole square again? All seven pieces!"
+  },
+  "line.c_solved": {
+    "who": "lisek",
+    "text": "The whole square! The tangram is back in its box, ready to play."
+  },
+  "line.wrong_piece": {
+    "who": "wiewiorka",
+    "text": "This piece has another shape. Look at the gap.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.good_build": {
+    "who": "lisek",
+    "text": "It fits! Beautifully built.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Let's play tangram! Drag the pieces, and tap to turn them when you need to."
+  },
+  "line.p_domek": {
+    "who": "wiewiorka",
+    "text": "Build the house."
+  },
+  "line.p_ryba": {
+    "who": "wiewiorka",
+    "text": "Build the fish."
+  },
+  "line.p_lodka": {
+    "who": "wiewiorka",
+    "text": "Build the boat."
+  },
+  "line.p_gap": {
+    "who": "wiewiorka",
+    "text": "One piece is missing. Point to the one that fits the gap."
+  },
+  "line.a_game": {
+    "who": "wiewiorka",
+    "text": "Let's play tangram, just like at home."
+  },
+  "line.a_paper": {
+    "who": "lisek",
+    "text": "First a square from two triangles. At home you can cut it out of paper."
+  },
+  "line.a_house": {
+    "who": "lisek",
+    "text": "Now the house."
+  },
+  "line.a_fish": {
+    "who": "lisek",
+    "text": "And last, the fish."
+  },
+  "line.a_ask_parents": {
+    "who": "wiewiorka",
+    "text": "Ask your parents to cut a square out of paper with you and cut it into triangles. What will you build?"
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Bye bye! See you!"
+  }
+}

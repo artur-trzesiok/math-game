@@ -1,0 +1,134 @@
+{
+  "line.s_cups": {
+    "who": "sarenka",
+    "text": "Trzeba schować kubki do szafki. Najlepiej jeden w drugim."
+  },
+  "line.s_big_into_small": {
+    "who": "lisek",
+    "text": "To proste! Wkładam ten duży do tego małego."
+  },
+  "line.s_wont_fit": {
+    "who": "sarenka",
+    "text": "Duży nie zmieści się w małym! Tak się nie da."
+  },
+  "line.s_how": {
+    "who": "lisek",
+    "text": "To jak mam to zrobić?"
+  },
+  "line.s_order": {
+    "who": "sarenka",
+    "text": "Ułożyć je po kolei! Od najmniejszego do największego."
+  },
+  "line.s_what": {
+    "who": "lisek",
+    "text": "Po kolei? Czyli jak?"
+  },
+  "line.s_show": {
+    "who": "sarenka",
+    "text": "Pokażę ci. Na miejscu numer jeden stawiamy najmniejszy, potem coraz większe."
+  },
+  "line.s_fill": {
+    "who": "sarenka",
+    "text": "Przeciągnij kubki na miejsca. Najpierw najmniejszy."
+  },
+  "line.wrong_order": {
+    "who": "sarenka",
+    "text": "To nie to miejsce. Popatrz, który jest mniejszy.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.s_nest": {
+    "who": "lisek",
+    "text": "Teraz widzę! Mały wejdzie do średniego, a średni do dużego."
+  },
+  "line.s_solved": {
+    "who": "sarenka",
+    "text": "Wszystkie zmieściły się jeden w drugim. Tak działa szeregowanie!"
+  },
+  "line.s_to_garden": {
+    "who": "lisek",
+    "text": "Chodźmy do ogrodu, wyrwiemy marchewki."
+  },
+  "line.b_carrots": {
+    "who": "lisek",
+    "text": "Wyrwałem cztery marchewki. Każda ma inną długość."
+  },
+  "line.b_fill": {
+    "who": "sarenka",
+    "text": "Ułóż je od najkrótszej do najdłuższej."
+  },
+  "line.b_done": {
+    "who": "lisek",
+    "text": "Od najkrótszej do najdłuższej, jak schodki!"
+  },
+  "line.b_to_room": {
+    "who": "sarenka",
+    "text": "A teraz do pokoju, zbudujemy wieżę."
+  },
+  "line.c_tower": {
+    "who": "sarenka",
+    "text": "Zbudujmy wieżę z klocków, która się nie przewróci."
+  },
+  "line.c_fill": {
+    "who": "lisek",
+    "text": "Na dole kładziemy największy, a na górze najmniejszy. Przeciągaj klocki."
+  },
+  "line.c_solved": {
+    "who": "sarenka",
+    "text": "Wieża stoi! Największy na dole, najmniejszy na górze."
+  },
+  "line.p_intro": {
+    "who": "lisek",
+    "text": "Pobawmy się w układanie po kolei!"
+  },
+  "line.p_from_small": {
+    "who": "lisek",
+    "text": "Ułóż od najmniejszego do największego.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.p_from_big": {
+    "who": "lisek",
+    "text": "Ułóż od największego do najmniejszego.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.good_order": {
+    "who": "sarenka",
+    "text": "Tak! Wszystko po kolei.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.a_game": {
+    "who": "sarenka",
+    "text": "Zagrajmy w układanie po kolei w przedpokoju."
+  },
+  "line.a_ok": {
+    "who": "lisek",
+    "text": "Dobrze! Ułożymy rzeczy całej rodziny."
+  },
+  "line.a_shoes": {
+    "who": "sarenka",
+    "text": "Ułóż buty od najmniejszego do największego."
+  },
+  "line.a_socks": {
+    "who": "sarenka",
+    "text": "Teraz skarpetki, od największej do najmniejszej."
+  },
+  "line.a_bears": {
+    "who": "sarenka",
+    "text": "A misie od najmniejszego do największego."
+  },
+  "line.a_ask_parents": {
+    "who": "sarenka",
+    "text": "Poproście rodziców, żeby razem z wami ułożyli buty całej rodziny od najmniejszego do największego."
+  },
+  "line.a_bye": {
+    "who": "lisek",
+    "text": "Pa, pa! Do zobaczenia!"
+  }
+}

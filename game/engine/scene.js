@@ -384,6 +384,12 @@ export class Stage {
   // and may take it out again; onDrop(item, zone) after every drop, onTap(puppet) for a tap
   // on a character (repeat the instruction). endSort() when the lesson is satisfied.
   sort(set) { this.dragSet = set; this.drag = null; }
+  // free dragging (geometria.js): things move anywhere; a short tap without moving is a tap (it turns a tangram
+  // piece), a drop goes to set.onDrop(item, {x, y}); a tapped character repeats the instruction (set.onPuppet)
+  free(set) { this.dragSet = { ...set, free: true, zones: [] }; this.drag = null; }
+  // tests: drop a thing at (x, y) as the child would
+  upusc(item, x, y) { const set = this.dragSet; if (!set?.free) return; item.mesh.position.x = x; item.mesh.position.y = y; set.onDrop(item, { x, y }); }
+  stuknij(item) { const set = this.dragSet; if (set?.free) set.onTap(item); }
   endSort() { this.dragSet = null; this.drag = null; }
   dropInto(item, zone) { zone.put(item); this.bump(zone, 0.06, false); this.sfx.graj("plop"); if (this.dragSet) this.dragSet.onDrop(item, zone); }
   ndc(e) { const r = this.renderer.domElement.getBoundingClientRect(); return new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); }
@@ -398,11 +404,12 @@ export class Stage {
     let best = null, bestD = Infinity;
     for (const it of set.items) { const hits = this.raycaster.intersectObject(it.mesh, true); if (hits.length && hits[0].distance < bestD) { best = it; bestD = hits[0].distance; } }
     if (!best) {
-      for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.raycaster.intersectObject(L.korzen, true).some((i) => i.object.visible)) { this.bump(L); set.onTap?.(L); return true; }
+      for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.raycaster.intersectObject(L.korzen, true).some((i) => i.object.visible)) { this.bump(L); if (set.free) set.onPuppet?.(L); else set.onTap?.(L); return true; }
       return false;
     }
+    if (set.free && best.zablokowany) return true;
     const p = this.worldAt(n);
-    this.drag = { item: best, dx: best.mesh.position.x - p.x, dy: best.mesh.position.y - p.y, from: { x: best.mesh.position.x, y: best.mesh.position.y }, zone: best.zone };
+    this.drag = { item: best, dx: best.mesh.position.x - p.x, dy: best.mesh.position.y - p.y, from: { x: best.mesh.position.x, y: best.mesh.position.y }, zone: best.zone, t0: performance.now() };
     if (best.zone) best.zone.take(best);
     best.mesh.position.z = 0.9; this.bump(best, 0.12);
     this.renderer.domElement.setPointerCapture(e.pointerId);
@@ -416,6 +423,12 @@ export class Stage {
     const d = this.drag; if (!d) return; this.drag = null;
     const it = d.item, px = it.mesh.position.x, py = it.mesh.position.y;
     it.mesh.position.z = 0.4;
+    if (this.dragSet?.free) {
+      const ruch = Math.hypot(px - d.from.x, py - d.from.y);
+      if (ruch < 0.15 && performance.now() - d.t0 < 450) { it.mesh.position.x = d.from.x; it.mesh.position.y = d.from.y; this.dragSet.onTap?.(it); }
+      else this.dragSet.onDrop?.(it, { x: px, y: py });
+      return;
+    }
     const zone = (this.dragSet?.zones || []).find((z) => z.contains(px, py));
     if (zone) this.dropInto(it, zone);
     else if (d.zone) { d.zone.put(it); }                              // dropped nowhere: back where it was
