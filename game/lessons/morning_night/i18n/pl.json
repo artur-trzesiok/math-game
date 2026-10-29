@@ -78,6 +78,30 @@
     "who": "sarenka",
     "text": "Jest! Mały Jeżyk się znalazł."
   },
+  "line.c_dom": {
+    "who": "wiewiorka",
+    "text": "Znam go! Mieszka pod starym dębem, po drugiej stronie lasu."
+  },
+  "line.c_zdazyc": {
+    "who": "kret",
+    "text": "Ale robi się coraz ciemniej. Po wieczorze przychodzi noc! Musimy zdążyć."
+  },
+  "line.c_latarenka": {
+    "who": "sarenka",
+    "text": "W lesie jest dużo ścieżek. Weźmy latarenkę i poprowadźmy go dobrą ścieżką do domu."
+  },
+  "line.c_prowadz": {
+    "who": "sarenka",
+    "text": "Prowadź Jeżyka palcem po ścieżce, aż do jego drzwiczek. Przez krzaki nie przejdzie."
+  },
+  "line.c_dab": {
+    "who": "sarenka",
+    "text": "Jesteśmy pod starym dębem. Tu są drzwiczki Jeżyka, w okienku świeci się światło."
+  },
+  "line.c_w_domu": {
+    "who": "wiewiorka",
+    "text": "Jesteś w domu, mały Jeżyku. Zdążyliśmy przed nocą. Dobranoc!"
+  },
   "line.c_noc_swietliki": {
     "who": "kret",
     "text": "Teraz jest noc! Popatrzcie, świetliki. Łap świetlika, wskaż go."

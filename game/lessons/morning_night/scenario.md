@@ -12,7 +12,12 @@ B. *Meadow.* The dark lifts as the sun rises (`noc` fading out). Morning: **chil
 (breakfast, among the bed and pyjamas). The day on four cards - **child** puts them in order (morning, midday, evening,
 night; an arrow marks the first place).
 C. Evening falls (`noc`). *Helping:* little Hedgehog is lost in the bushes - **child** shines a light on a bush
-(`swiatlo`); an empty one stays lit. Night: catch three fireflies. Mole: after the night comes the morning again.
+(`swiatlo`); an empty one stays lit. Squirrel knows him: he lives under the old oak across the wood; Mole: it is
+getting darker, after the evening comes the night - we must hurry. Deer: many paths, a lantern, the right path. **Child**
+leads the little hedgehog through the forest paths at dusk to his door (`labirynt` las_o_zmierzchu).
+D. *The old oak at night* (`dab_noc`, the dedicated last place: moon, stars, a little lit door in the roots). The
+little hedgehog walks in through his door - home before the night. Night: catch three fireflies. Mole: after the
+night comes the morning again.
 
 ## Stage 2 - practice
 What comes after evening; what we do at night; three cards in order; memory of day cards; what comes after night.

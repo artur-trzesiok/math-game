@@ -218,5 +218,35 @@
   "hash": "ba652896d7b7",
   "who": "narrator",
   "text": "This is the night with the moon. Mole gave it to us when we learnt the times of day in order."
+ },
+ "line.c_dom": {
+  "hash": "14fb8af79271",
+  "who": "wiewiorka",
+  "text": "I know him! He lives under the old oak, on the other side of the wood."
+ },
+ "line.c_zdazyc": {
+  "hash": "3df65f6eac2a",
+  "who": "kret",
+  "text": "But it's getting darker. After the evening comes the night! We must hurry."
+ },
+ "line.c_latarenka": {
+  "hash": "84d1b88233ad",
+  "who": "sarenka",
+  "text": "There are lots of paths in the wood. Let's take a lantern and lead him home along the right path."
+ },
+ "line.c_prowadz": {
+  "hash": "e360b4733e25",
+  "who": "sarenka",
+  "text": "Lead the little hedgehog with your finger along the path, all the way to his door. He can't go through the bushes."
+ },
+ "line.c_dab": {
+  "hash": "9114c252a20d",
+  "who": "sarenka",
+  "text": "Here we are under the old oak. There is the little hedgehog's door, with a light in the window."
+ },
+ "line.c_w_domu": {
+  "hash": "bdeced2791b7",
+  "who": "wiewiorka",
+  "text": "You're home, little hedgehog. We made it before the night. Good night!"
  }
 }

@@ -1,7 +1,8 @@
 // Lesson: inside and outside - a closed fence makes an inside, a gap lets things out; next to is not inside. The evening
 // before the storm, Hedgehog wants everybody home: Beaver's fence has a gap and a hen walks out, the child draws a
-// closed one (zagroda); Beaver's duckling "in" the basket is next to it; who is still outside in the rain; the shell
-// game in the warm burrow. At home: toys into the toy box. Script in scenario.md.
+// closed one (zagroda); Beaver's duckling "in" the basket is next to it; who is still outside; in the rain the duckling
+// runs off and the child leads it home through the bushes (a maze); the shell game in the warm burrow, the storm
+// outside the window. At home: toys into the toy box. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
@@ -71,7 +72,8 @@ export default {
         await c.ujecie("ogolny");
         c.clear();
       },
-      // B. a game in a circle on the grass: who is still outside? the rain - into the warm burrow, the shell game
+      // B. a game in a circle on the grass: who is still outside? the rain - the duckling runs off, the child leads it home
+      // through the bushes (labirynt); the warm burrow with the storm outside, the shell game
       async (c) => {
         const S = c.stage;
         await c.ujecie("zblizenie", { na: "sarenka" });
@@ -95,13 +97,39 @@ export default {
         await c.ujecie("zblizenie", { na: "sarenka" });
         await c.emocja("sarenka", "mokro");
         await c.say("sarenka", "line.b_deszcz");
-        await c.go("nora", { enter: true });
+        // the thunder: the duckling jumps out of the basket and runs off into the bushes
+        await c.ujecie("ogolny");
+        const kosz = await c.object("koszyk", { x: 3.3, y: -2.2, size: 1.5 }), kacz = await c.object("kaczatko_stoi", { x: 3.3, y: -2.2, size: 0.85 });
+        await wSrodku(kacz, kosz);
+        await c.wait(0.4);
+        c.sfx("hop"); await kacz.moveTo(4.0, 0.2, 0.3);
+        c.sfx("whoosh"); await kacz.moveTo(9.0, 0.6, 0.5);
+        await c.ujecie("zblizenie", { na: "bobr" });
+        await c.emocja("bobr", "strach", { anim: "Smutek" });
+        await c.say("bobr", "line.b_grzmot");
+        await c.ujecie("sredni", { na: ["jez"] });
+        await c.say("jez", "line.b_krete");
+        await c.ujecie("dwuujecie", { na: ["sarenka", "jez"] });
+        await c.say("sarenka", "line.b_poprowadzmy", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
+        kosz.remove(); kacz.remove();
+        await c.say("sarenka", "line.b_labirynt");
+        const lab = await c.labirynt("sciezki_do_norki", { pionek: "kaczatko_stoi", cel: "drzwiczki" });
+        await lab.remove();
+        await c.ujecie("zblizenie", { na: "jez" });
+        await c.say("jez", "line.b_kaczuszka_dom", { anim: "Podskok" });
+        // the end of the story: inside Hedgehog's warm burrow, the storm seen through the round window
+        await c.go("norka_burza", { enter: true });
+        const kacz2 = await c.object("kaczatko_stoi", { x: -1.7, y: -2.7, size: 0.75 });
         await Promise.all(["jez", "bobr", "sarenka"].map((n) => c.enter(n, n === "sarenka" ? "right" : "left")));
+        await c.ujecie("sredni", { na: ["bobr", kacz2] });
+        await c.rozblysk(kacz2);
+        await c.say("bobr", "line.b_kaczuszko", { anim: "Radosc" });
         await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.b_norka", { anim: "Radosc" });
         await c.ujecie("ogolny");
         await c.say("jez", "line.b_kubki");
-        const k = await c.kubki({ ile: 3, x: 1.2, odstep: 2.0, rzeczy: tasuj(["zoledz", null, null]) });
+        const k = await c.kubki({ ile: 3, x: 1.3, odstep: 2.0, rzeczy: tasuj(["zoledz", null, null]) });
         await c.wait(1.2); await k.przykryj(); await k.tasuj(4);
         const ok = k.kubki.find((q) => q.pod);
         await c.say("jez", "line.b_gdzie");

@@ -7,11 +7,11 @@ import { v } from "./v.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
 
 export const MOTYW = {
-  laka: "laka", sad: "laka", ogrod: "laka", plac_zabaw: "laka", stacyjka: "laka",
+  laka: "laka", sad: "laka", ogrod: "laka", plac_zabaw: "laka", stacyjka: "laka", podium_wyscigu: "laka", ogrod_labirynt: "laka",
   las: "las", droga_do_debu: "las", jesienny_sad: "las",
   strumyk: "woda",
-  dom: "dom", pokoj: "dom", przedpokoj: "dom", nora: "dom", piekarnia: "dom", warsztat: "dom",
-  pokoj_noc: "noc", polana_wieczorem: "noc",
+  dom: "dom", pokoj: "dom", przedpokoj: "dom", nora: "dom", piekarnia: "dom", warsztat: "dom", lisia_nora: "dom",
+  pokoj_noc: "noc", polana_wieczorem: "noc", polana_koncert: "noc", dab_noc: "noc", norka_burza: "dom",
   teatrzyk: "teatr",
 };
 const WERSJE = 2, GLOS_MUZ = 0.32, GLOS_POG = 0.45, POD_MOWA = 0.45, FADE = 1400;

@@ -253,5 +253,35 @@
   "hash": "391025b1dbb6",
   "who": "narrator",
   "text": "To kurka Jeżyka. Dostaliśmy ją, kiedy zamykaliśmy zagrodę przed burzą."
+ },
+ "line.b_grzmot": {
+  "hash": "dcf4611cd6b4",
+  "who": "bobr",
+  "text": "Ojej! Grzmot przestraszył kaczuszkę. Wyskoczyła z koszyka i uciekła między krzaki!"
+ },
+ "line.b_krete": {
+  "hash": "db33599788bd",
+  "who": "jez",
+  "text": "Między krzakami są kręte ścieżki. Kaczuszka sama nie trafi do mojej norki."
+ },
+ "line.b_poprowadzmy": {
+  "hash": "59a4c9f07cd7",
+  "who": "sarenka",
+  "text": "Poprowadźmy ją! W środku norki deszcz jej nie zmoczy."
+ },
+ "line.b_labirynt": {
+  "hash": "41d7739bed3b",
+  "who": "sarenka",
+  "text": "Prowadź kaczuszkę palcem po ścieżce, aż do drzwi norki. Przez krzaki nie przejdzie."
+ },
+ "line.b_kaczuszka_dom": {
+  "hash": "9faae022c4dd",
+  "who": "jez",
+  "text": "Kaczuszka jest w norce, w środku! Teraz my, biegiem!"
+ },
+ "line.b_kaczuszko": {
+  "hash": "db1821440164",
+  "who": "bobr",
+  "text": "Kaczuszko, tu jesteś! Siedzisz w środku, sucha i w cieple."
  }
 }

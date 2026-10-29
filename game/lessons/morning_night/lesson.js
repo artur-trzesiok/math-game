@@ -1,11 +1,13 @@
 // Lesson: morning and night - the parts of the day in order (morning, midday, evening, night) and what we do in each.
 // Mole, who lives underground and sees badly, thinks it is always night; Deer and Squirrel take him up for one long day:
 // the morning (breakfast), the day passing (the cards put in order), a lost little hedgehog found with a lantern at
-// dusk, fireflies at night. At home: the evening routine in order. Script in scenario.md.
+// dusk and led home through the forest paths before the night (a maze), fireflies by his oak at night.
+// At home: the evening routine in order. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
 const PORY = ["pora_rano", "pora_poludnie", "pora_wieczor", "pora_noc"];
+const DRZWI = [-5.35, 0.0];                       // the little hedgehog's door under the oak in the dab_noc plate
 
 // cards to put in order into a row of places (the first marked by an arrow); never already lying in order
 async function wKolejce(c, nazwy, { y = 1.5, yK = -2.2, krok = 2.0, size = 1.8, wrong = "line.zla_kolejnosc" } = {}) {
@@ -80,7 +82,7 @@ export default {
         await c.ujecie("ogolny");
         c.clear();
       },
-      // C. dusk: a little hedgehog lost - lanterns light the bushes; night: fireflies; Mole understands
+      // C. dusk: a little hedgehog lost - lanterns light the bushes; the maze home; the oak at night: fireflies; Mole understands
       async (c) => {
         await c.noc({ ciemnosc: 0.6, d: 2.0 });
         await c.ujecie("zblizenie", { na: "kret" });
@@ -96,13 +98,41 @@ export default {
         await c.task({ targets: krzaki, correct: krzaki[gdzie], wrong: "line.c_pusto", onWrong: async (h) => { c.swiatlo(h, { r: 1.4, moc: 0.9 }); await c.say("wiewiorka", "line.c_pusto"); } });
         c.swiatlo(krzaki[gdzie], { r: 1.6, moc: 1 });
         maly.mesh.visible = true; await maly.moveTo(maly.mesh.position.x, -2.4, 0.5);
+        maly.mesh.position.z = 0.7; await maly.moveTo(0.2, -2.7, 0.5);       // out into the open, in front of the bushes
         await c.ujecie("sredni", { na: [krzaki[gdzie], maly] });
         await c.rozblysk(maly);
         await c.say("sarenka", "line.c_jest", { anim: "Radosc" });
+        // his home is across the wood, and the night is coming: the way through the forest paths (a maze)
+        await c.ujecie("sredni", { na: ["wiewiorka", maly] });
+        await c.say("wiewiorka", "line.c_dom", { anim: "Zgloszenie" });
+        await c.ujecie("zblizenie", { na: "kret" });
+        await c.emocja("kret", "pot");
+        await c.say("kret", "line.c_zdazyc");
+        await c.ujecie("sredni", { na: ["sarenka"] });
+        await c.say("sarenka", "line.c_latarenka");
         await c.ujecie("ogolny");
         c.clear();
+        await c.say("sarenka", "line.c_prowadz");
+        const lab = await c.labirynt("las_o_zmierzchu", { pionek: "jez", cel: "drzwiczki" });
+        await lab.remove();
+        // the end of the story: the old oak at night, the little hedgehog's door
+        await c.go("dab_noc", { enter: true });
+        await c.noc({ ciemnosc: 0.3, d: 0.1 });
+        await Promise.all(["kret", "wiewiorka", "sarenka"].map((n) => c.enter(n)));
+        await c.walkTo("kret", -1.2);                                       // off the way to the little door under the roots
+        const jezyk = await c.object("jez", { x: -7.5, y: -2.7, size: 0.8 });
+        await jezyk.moveTo(-3.3, -2.7, 0.6);
+        await c.say("sarenka", "line.c_dab", { anim: "Wskazanie" });
+        // he goes home: along the grass to his door, smaller as it is further away, and in
+        const s0 = jezyk.base;
+        await Promise.all([jezyk.moveTo(DRZWI[0], DRZWI[1], 1.2), c.stage.tween(1.2, (s) => jezyk.mesh.scale.setScalar(s0 * (1 - 0.5 * s)))]);
+        await c.stage.tween(0.4, (s) => jezyk.mesh.scale.setScalar(s0 * 0.5 * (1 - s)));
+        jezyk.remove();
+        await c.ujecie("dwuujecie", { na: ["wiewiorka", "sarenka"] });
+        await c.say("wiewiorka", "line.c_w_domu", { anim: "Machanie" });
+        await c.ujecie("ogolny");
         // night: catch the fireflies
-        await c.noc({ ciemnosc: 0.78, d: 1.5 });
+        await c.noc({ ciemnosc: 0.5, d: 1.5 });
         await c.say("kret", "line.c_noc_swietliki");
         for (const [x, y] of tasuj([[-2.4, 1.3], [0.2, 2.0], [2.4, 0.9], [-0.8, 0.4], [1.4, 1.6]]).slice(0, 3)) {
           const s = await c.object("swietlik", { x, y, size: 0.9 }); const l = c.swiatlo(s, { r: 0.9, moc: 0.9 });

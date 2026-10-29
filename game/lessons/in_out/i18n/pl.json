@@ -95,6 +95,30 @@
     "who": "sarenka",
     "text": "Pada deszcz! Szybko do norki Jeżyka!"
   },
+  "line.b_grzmot": {
+    "who": "bobr",
+    "text": "Ojej! Grzmot przestraszył kaczuszkę. Wyskoczyła z koszyka i uciekła między krzaki!"
+  },
+  "line.b_krete": {
+    "who": "jez",
+    "text": "Między krzakami są kręte ścieżki. Kaczuszka sama nie trafi do mojej norki."
+  },
+  "line.b_poprowadzmy": {
+    "who": "sarenka",
+    "text": "Poprowadźmy ją! W środku norki deszcz jej nie zmoczy."
+  },
+  "line.b_labirynt": {
+    "who": "sarenka",
+    "text": "Prowadź kaczuszkę palcem po ścieżce, aż do drzwi norki. Przez krzaki nie przejdzie."
+  },
+  "line.b_kaczuszka_dom": {
+    "who": "jez",
+    "text": "Kaczuszka jest w norce, w środku! Teraz my, biegiem!"
+  },
+  "line.b_kaczuszko": {
+    "who": "bobr",
+    "text": "Kaczuszko, tu jesteś! Siedzisz w środku, sucha i w cieple."
+  },
   "line.b_norka": {
     "who": "jez",
     "text": "W norce jest sucho i ciepło. Deszcz został na zewnątrz."

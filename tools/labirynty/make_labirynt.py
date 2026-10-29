@@ -28,6 +28,33 @@ OUT = TU.parent.parent / "game" / "assets" / "labirynty"
 W, H = 1536, 1024
 RAMKA = (0.08, 0.1, 0.92, 0.9)          # the grid inside the picture: a border of scenery around it
 LABIRYNTY = {
+    # front_back: the garden hedge maze - Hedgehog's way in to the mouse hiding behind the hedges
+    "labirynt_chowany": {
+        "kolumny": 5, "wiersze": 4, "ziarno": 23, "start": (0, 3), "cel": (4, 0),
+        "styl": """a sunny park garden hedge maze seen from straight above for a children's picture book: the dark areas
+of the plan are tall neatly trimmed hedges of rich dark green leaves with a few tiny white flowers, the light areas are a
+pale sandy garden path, clearly lighter than the hedges. Around the maze a bright lawn with a few round flower beds.
+Picture-book illustration, soft painterly shading, fine paper grain, warm friendly colours. The hedges stay clearly
+green and dark, the path stays clearly light.""",
+    },
+    # in_out: the storm is coming - the duckling's way home between the meadow bushes to Hedgehog's burrow
+    "sciezki_do_norki": {
+        "kolumny": 5, "wiersze": 4, "ziarno": 11, "start": (0, 0), "cel": (4, 3),
+        "styl": """a meadow seen from straight above for a children's picture book, in the grey-blue light of an evening
+before a storm: the dark areas of the plan are thick round bushes of rich dark green leaves, packed close together like a
+hedge, the light areas are a pale sandy footpath, clearly lighter than the bushes. Around the maze short grass with a
+few daisies. Picture-book illustration, soft painterly shading, fine paper grain. The bushes stay clearly green and dark,
+the path stays clearly light.""",
+    },
+    # morning_night: at dusk, the little hedgehog's way home through the forest paths
+    "las_o_zmierzchu": {
+        "kolumny": 5, "wiersze": 4, "ziarno": 5, "start": (0, 3), "cel": (4, 0),
+        "styl": """a forest seen from straight above for a children's picture book at dusk, warm orange-pink evening light
+from the low sun: the dark areas of the plan are dense dark green fir and bush thickets with a few ferns, the light
+areas are a pale warm sandy forest path glowing in the evening light, clearly lighter than the thickets. Around the maze
+mossy forest floor. Picture-book illustration, soft painterly shading, fine paper grain. The thickets stay clearly green
+and dark, the path stays clearly light.""",
+    },
     "zywoplot": {
         "kolumny": 6, "wiersze": 4, "ziarno": 7, "start": (0, 3), "cel": (5, 0),
         "styl": """a garden hedge maze seen from straight above for a children's picture book: the dark areas of the

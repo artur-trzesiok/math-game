@@ -218,5 +218,35 @@
   "hash": "28f1abfb8f17",
   "who": "narrator",
   "text": "To noc z księżycem. Dostaliśmy ją od Kreta, kiedy poznawaliśmy pory dnia po kolei."
+ },
+ "line.c_dom": {
+  "hash": "de62b2b2788a",
+  "who": "wiewiorka",
+  "text": "Znam go! Mieszka pod starym dębem, po drugiej stronie lasu."
+ },
+ "line.c_zdazyc": {
+  "hash": "0bec1d8912a1",
+  "who": "kret",
+  "text": "Ale robi się coraz ciemniej. Po wieczorze przychodzi noc! Musimy zdążyć."
+ },
+ "line.c_latarenka": {
+  "hash": "5782cbea270f",
+  "who": "sarenka",
+  "text": "W lesie jest dużo ścieżek. Weźmy latarenkę i poprowadźmy go dobrą ścieżką do domu."
+ },
+ "line.c_prowadz": {
+  "hash": "71099248319c",
+  "who": "sarenka",
+  "text": "Prowadź Jeżyka palcem po ścieżce, aż do jego drzwiczek. Przez krzaki nie przejdzie."
+ },
+ "line.c_dab": {
+  "hash": "3b79278f3a81",
+  "who": "sarenka",
+  "text": "Jesteśmy pod starym dębem. Tu są drzwiczki Jeżyka, w okienku świeci się światło."
+ },
+ "line.c_w_domu": {
+  "hash": "af691acf7d43",
+  "who": "wiewiorka",
+  "text": "Jesteś w domu, mały Jeżyku. Zdążyliśmy przed nocą. Dobranoc!"
  }
 }

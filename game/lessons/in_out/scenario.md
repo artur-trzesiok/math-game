@@ -11,7 +11,12 @@ A. *Meadow.* A storm is coming; Hedgehog's hens must go into the pen. Beaver's f
 Deer: a fence must be closed all the way round. **Child** draws a closed fence around the hens (`zagroda`, new; an
 open line: a hen walks out through the gap). Beaver's duckling stands next to the basket - **child** puts it in.
 B. *Breather:* Deer draws a circle on the grass - "everybody inside!"; Hedgehog stays out - **child** points to who is
-outside. The rain: into Hedgehog's *burrow*; the shell game - which cup is the acorn in (`kubki`).
+outside. The rain starts; a thunderclap scares the duckling out of the basket and into the bushes - between them the
+paths wind, she will not find the burrow alone; inside it the rain cannot reach her. **Child** leads her with a finger
+along the paths to the burrow door (`labirynt` sciezki_do_norki, a meadow hedge maze in storm light).
+C. *Hedgehog's burrow in the storm* (`norka_burza`, the dedicated last place: warm stove inside, rain beyond the round
+window). The duckling is there, inside, dry; inside is dry and warm, the rain stayed outside. The shell game - which
+cup is the acorn in (`kubki`).
 
 ## Stage 2 - practice
 A fence around the sheep, the wolf outside; three apples into the basket; which star is outside the circle; which cup

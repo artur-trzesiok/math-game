@@ -348,7 +348,7 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 5.6, r
   const mat = (o) => new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, ...o });
   // the veil: the scene goes quiet behind the picture
   const welon = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), mat({ color: "#1d1a17", opacity: 0 }));
-  welon.position.set(0, 0, 0.42); welon.renderOrder = 38;             // over the characters (20-30): the picture is all there is S.scene.add(welon);
+  welon.position.set(0, 0, 0.42); welon.renderOrder = 38; S.scene.add(welon);   // over the characters (20-30): the picture is all there is
   const grp = new THREE.Group(); S.scene.add(grp);
   const karta = new THREE.Group(); karta.rotation.z = obrot * Math.PI / 180; grp.add(karta);
   const cien = new THREE.Mesh(new THREE.PlaneGeometry(W + b, H + b), mat({ color: "#000000", opacity: 0.28 }));

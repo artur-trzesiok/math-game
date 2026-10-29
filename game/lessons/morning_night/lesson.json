@@ -14,7 +14,8 @@
   "backgrounds": [
     "nora",
     "laka",
-    "pokoj_noc"
+    "pokoj_noc",
+    "dab_noc"
   ],
   "objects": [
     "pora_rano",
@@ -30,7 +31,8 @@
     "krzak",
     "jez",
     "swietlik",
-    "karta_rewers"
+    "karta_rewers",
+    "drzwiczki"
   ],
   "cover": "Little Mole peeks out of his burrow on a meadow at sunrise, surprised by the light; Deer and Squirrel wave to him; the sky goes from morning pink on one side to a starry night with a moon on the other.",
   "naklejka": {

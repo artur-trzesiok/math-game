@@ -95,6 +95,30 @@
     "who": "sarenka",
     "text": "It's raining! Quick, into Hedgehog's burrow!"
   },
+  "line.b_grzmot": {
+    "who": "bobr",
+    "text": "Oh no! The thunder scared the duckling. She jumped out of the basket and ran off into the bushes!"
+  },
+  "line.b_krete": {
+    "who": "jez",
+    "text": "There are winding paths between the bushes. The duckling won't find my burrow on her own."
+  },
+  "line.b_poprowadzmy": {
+    "who": "sarenka",
+    "text": "Let's lead her there! Inside the burrow the rain can't get her wet."
+  },
+  "line.b_labirynt": {
+    "who": "sarenka",
+    "text": "Lead the duckling with your finger along the path, all the way to the burrow door. She can't go through the bushes."
+  },
+  "line.b_kaczuszka_dom": {
+    "who": "jez",
+    "text": "The duckling is inside the burrow! Now us, let's run!"
+  },
+  "line.b_kaczuszko": {
+    "who": "bobr",
+    "text": "Little duckling, there you are! Inside, dry and warm."
+  },
   "line.b_norka": {
     "who": "jez",
     "text": "It's dry and warm in the burrow. The rain stayed outside."

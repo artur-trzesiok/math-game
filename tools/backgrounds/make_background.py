@@ -354,6 +354,37 @@ same style: at least fifteen tufts of grass across the ground, and three soft cl
 Same colours, same stage, same lanterns. Do NOT move or redraw anything that was already there.""",
 }
 
+SCENY["podium_wyscigu"] = {
+    "plyta": f"""A background illustration for a children's game: a festive sunny meadow at the edge of a forest, ready for
+a prize-giving after a race. In the MIDDLE of the picture, standing on the grass in the lower half, a wooden winners'
+podium of three plain wide blocks side by side, touching, painted in soft colours (the middle one golden yellow, the
+left one silver grey, the right one warm bronze brown): the MIDDLE block is clearly the tallest, the LEFT block is a
+little lower, the RIGHT block is the lowest; their tops are flat and EMPTY. The whole podium is about one third of the
+picture wide. Behind it, between two tall wooden poles, a garland of little colourful triangular flags; flowering bushes
+at both sides, tall trees at the far edges, blue sky. The grass at the far left and the far right of the lower part is
+EMPTY and open where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO medals, NO numbers, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the ground, and six or seven soft white clouds in the blue sky.
+Same colours, same podium, same flags. Do NOT move or redraw anything that was already there.""",
+}
+
+SCENY["ogrod_labirynt"] = {
+    "plyta": f"""A background illustration for a children's game: a sunny park garden with a hedge maze. Across the upper
+middle of the picture runs the outer wall of a big hedge maze made of tall neatly trimmed green hedges, with one arched
+opening in the hedge in the middle leading inside, where more hedges are seen. A small wooden bench at the left side,
+round flower beds with red and yellow flowers, a sandy path leading to the maze opening. Blue sky and round trees above
+the hedges. The grass in the lower part of the picture is EMPTY and open where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the lawn, and six or seven soft white clouds in the blue sky.
+Same colours, same hedges, same bench. Do NOT move or redraw anything that was already there.""",
+}
+
 SCENY["domek_wnetrze"] = {
     "wnetrze": True,
     "plyta": f"""A background illustration for a children's game: the inside of a cosy little wooden treehouse, seen
@@ -366,6 +397,52 @@ NO characters, NO animals, NO chest, NO key, NO text.""",
     "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
 style: a few green leaves swaying outside the round window.
 Same colours, same walls, same pegs. Do NOT move or redraw anything that was already there.""",
+}
+
+# grouping_pro: inside Fox's home in the big oak (the end of the story) - everything he loves is red
+SCENY["lisia_nora"] = {
+    "wnetrze": True,
+    "plyta": f"""A background illustration for a children's game: the inside of a cosy little home in the hollow of a big
+old oak tree, seen straight on: curved walls of warm golden wood with tree rings, roots on the left wall, a small round
+window high on the right with orange autumn leaves outside, red checked curtains at the window, a small red armchair
+with a red cushion on the far left, a low wooden shelf on the right with a few red cups, a red round rug on the wooden
+floor, a little lantern glowing warm. Many things are red. The floor in the lower middle is EMPTY where characters
+will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO hats, NO scarves, NO clothes, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
+style: a little potted plant on the windowsill.
+Same colours, same walls, same curtains, same armchair. Do NOT move or redraw anything that was already there.""",
+}
+
+# inside and outside: Hedgehog's warm burrow while the storm rages outside (the end of the story)
+SCENY["norka_burza"] = {
+    "wnetrze": True,
+    "plyta": f"""A background illustration for a children's game: the inside of a hedgehog's cosy little burrow under a
+meadow, seen straight on: a round room of warm brown earth with roots on the ceiling, a small glowing stove with a
+kettle on the left, a soft leaf bed, a shelf with apples and mushrooms. In the wall on the right a big round window
+with a wooden frame: OUTSIDE it a dark stormy evening, heavy rain falling, grey clouds and bent wet grass. Inside
+everything is warm, dry and golden. The floor in the lower middle is EMPTY where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO text.""",
+    "ruch": None,
+}
+
+# morning and night: the old oak at night where the little hedgehog lives (the end of the story)
+SCENY["dab_noc"] = {
+    "plyta": f"""A background illustration for a children's game: a small forest glade at night under a big old oak, deep
+blue night sky with a bright crescent moon and many stars, dark trees around. Between the oak's big roots on the left
+a little round wooden door with a tiny round window glowing warm yellow - a hedgehog's home. Soft moonlight on the
+grass. The grassy ground in the lower part of the picture is EMPTY and open where characters will stand. A clear night
+picture, dark but readable, not black.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the ground, and three thin soft clouds in the night sky.
+Same colours, same oak, same door, same moon. Do NOT move or redraw anything that was already there.""",
 }
 
 
