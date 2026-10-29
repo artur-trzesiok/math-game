@@ -188,13 +188,13 @@
   #lessons.wjazd { animation: wjazd .7s cubic-bezier(.2,.8,.3,1); }
   @keyframes wjazd { from { transform: translateX(40vw); opacity: 0; } }
   .brama { flex: 0 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; cursor: pointer; padding: 0 calc(var(--k) * 0.1); }
-  .brama > img { height: calc(var(--k) * 1.25); filter: drop-shadow(0 6px 8px rgba(60,30,0,.3)); transition: transform .3s; }
-  .brama:hover > img { transform: scale(1.04); }
+  .brama > img.slupy { height: calc(var(--k) * 1.25); filter: drop-shadow(0 6px 8px rgba(60,30,0,.3)); transition: transform .3s; }
+  .brama:hover > img.slupy { transform: scale(1.04); }
   .brama .dokad { display: flex; align-items: center; gap: .4em; font: 800 max(12px, calc(var(--k) * 0.075)) "Baloo 2", system-ui; color: var(--braz); padding: .15em 1em .25em; white-space: nowrap;
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   .brama .dokad img { width: 1.6em; }
-  .brama.zamknieta > img { filter: grayscale(.7) blur(1.5px) brightness(1.1); }
-  .brama .klodka { position: absolute; left: 50%; top: 42%; width: calc(var(--k) * 0.36); transform: translate(-50%, -50%); }
+  .brama.zamknieta > img.slupy { filter: grayscale(.7) blur(1.5px) brightness(1.1); }
+  .brama .klodka { position: absolute; left: 50%; top: 42%; width: calc(var(--k) * 0.34); height: auto; transform: translate(-50%, -50%); filter: drop-shadow(0 6px 8px rgba(60,30,0,.35)); }
   .brama.trzesie { animation: trzes .45s; }
   #chips button { font: 800 max(11px, min(calc(var(--k) * 0.068), 1.5vw)) "Baloo 2", system-ui; padding: .35em 1.1em .45em; border: 0; color: var(--braz); cursor: pointer; display: flex; align-items: center; gap: .45em;
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }

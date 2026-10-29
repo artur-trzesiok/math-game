@@ -239,7 +239,7 @@ export class Player {
     const nastepny = swiaty[nrSwiata + 1] || null;
     // at the end of a world's strip, the gate to the next world (in a mist under a padlock until it opens)
     const brama = nastepny ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>
-      <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><img src="${v("/game/assets/menu/brama.webp")}" alt="">
+      <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><img class="slupy" src="${v("/game/assets/menu/brama.webp")}" alt="">
         <div class="dokad"><img src="${v(`/game/assets/menu/odznaka_${nastepny.id}.webp`)}" alt="">${nastepny.title?.[this.lang] || nastepny.title?.en || ""}</div>
         ${otwartySwiat(nastepny) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}</div>` : "";
     pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
