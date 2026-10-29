@@ -15,8 +15,8 @@ Every one is one gesture a three-year-old gets at once, taught by a character be
 | 4 | **wyścig ślimaków** (exists) | points to a snail to cheer it on | cheer | crawl, cheer | long_short code (built) | a meadow |
 | 5 | **kamień, papier, nożyce** (NEW) | picks a hand sign against a character to decide who goes first; taught first (each pair shown, "rock blunts scissors") | count "one, two, three", show, say what they chose, the rule decides out loud | whoosh, a cheer | new code; the hand stickers `gest_kamien/papier/nozyce` exist | anywhere two want the same thing |
 | 6 | **karmienie** (NEW) | drags food (crumbs, seeds, a carrot) to a hungry animal (ducks, fish, birds, hens); it eats with a funny face; one thing it does not like - it spits it out | the animal is a sticker that wobbles and munches; the characters laugh | munch, splash, a yuck | new code; animal and food stickers (some exist, some to paint) | a pond, a farm, a lake, a garden |
-| 7 | **huśtawka** (NEW) | swipes in time to push a swing; each push in time swings it higher, too early it slows | a character (or a little one) on the swing laughs "higher!" | creak, whoosh, laughter | new code; a painted swing sticker; the rider is a sticker or a puppet's head | a playground, a tree with a branch |
-| 8 | **puszczanie kaczek** (NEW) | flicks a flat stone across the water; it skips 2-5 times, rings spread on each hop | count nothing - just "wow, it skipped so far!" | splash, plop | new code; stone sticker exists (`kamyk`); rings drawn as ripples | a brook, a lake, a pond |
+| 7 | ~~huśtawka~~ (REJECTED by the user 2026-10-29: a rigid sticker swinging in the air looked fake) | swipes in time to push a swing; each push in time swings it higher, too early it slows | a character (or a little one) on the swing laughs "higher!" | creak, whoosh, laughter | new code; a painted swing sticker; the rider is a sticker or a puppet's head | a playground, a tree with a branch |
+| 8 | ~~puszczanie kaczek~~ (NOT built - the user's choice, 2026-10-29) | flicks a flat stone across the water; it skips 2-5 times, rings spread on each hop | count nothing - just "wow, it skipped so far!" | splash, plop | new code; stone sticker exists (`kamyk`); rings drawn as ripples | a brook, a lake, a pond |
 | 9 | **latawiec** (NEW) | drags the kite's string against the wind; the kite climbs, wobbles, does a loop | run with it, cheer | wind, flapping | new code; kite stickers exist (`latawiec_*`) | a windy meadow, a picnic |
 | 10 | **lustro min** (NEW) | a character pulls a face (happy, surprised, sleepy, cross - the emotion bubble shows it); the child points to the same face among three | the prankster pulls faces, the others laugh | boing | new code; faces from the emotion bubbles (painted) | Bunny, a theatre |
 | 11 | **kto to powiedział?** (NEW) | hears a voice from behind one of three bushes / in the dark; points where it came from; that one pops out | hide, call out, pop out | rustle, a laugh | new code; each character's recordings (a line per character) | hide and seek, the night, a dark burrow |
@@ -28,11 +28,11 @@ Not again: catch what pops up (overused); counting claps / hops / bells (that is
 
 | | lesson | today | proposed breather | where in the story |
 |---|---|---|---|---|
-| 1 | one_many | catch a duckling | puszczanie kaczek | at the brook, after the duckling is found |
+| 1 | one_many | catch a duckling | latawiec (the autumn wind in the garden) | the garden, before the brook |
 | 2 | spot_difference | catch butterflies | karmienie (fish in the magic pond) | at the pond |
 | 3 | bigger_smaller_pro | catch big acorns | kamień, papier, nożyce (who carries the first box) | before the move to the new hollow |
 | 4 | long_short | snail race | wyścig ślimaków (keep) | the meadow |
-| 5 | tall_short | catch tall sunflowers | huśtawka (on the orchard tree's branch) | in the orchard with Hedgehog |
+| 5 | tall_short | catch tall sunflowers | kto to powiedział? (hiding in the orchard) | in the orchard with Hedgehog |
 | 6 | ordering | (the choir song) | malowanie palcem - light on the evening sky | before the concert |
 | 7 | shapes | (removed catch game) | latawiec (Bunny's kite flies again) | the playground, after the kite is found |
 | 8 | morning_night | catch fireflies | zdrapka - the fogged morning window | Mole's first morning |
@@ -47,12 +47,12 @@ Not again: catch what pops up (overused); counting claps / hops / bells (that is
 | 17 | grouping_pro | catch the red leaf, mushrooms | zdrapka - rake leaves off to find footprints | on the trail |
 | 18 | front_back | - | kto to powiedział? (who calls from behind the bush) | the hide-and-seek |
 | 19 | rhythm | statues | posągi (keep) | before Deer |
-| 20 | queue | race to the swings | huśtawka | the playground |
+| 20 | queue | race to the swings | lustro min (Bunny pulls faces in the queue) | the playground |
 | 21 | counting_5 | count hops | karmienie (birds at the bakery door) | the orchard |
-| 22 | numbers_6_10 | stones (maths) | puszczanie kaczek (on the dam's pond) | the dam |
+| 22 | numbers_6_10 | stones (maths) | zdrapka - mud off the logs | the dam |
 | 23 | adding_5 | count claps | latawiec (the picnic meadow) | after the guests arrive |
 | 24 | adding_10 | - | kamień, papier, nożyce (who jumps first) | the tournament |
 
-To decide: which of the eight NEW breathers to build (5-12). Each needs a yes; each gets a demo on the mechanics page
+Decided 2026-10-29: build 5, 6, 9, 10, 11, 12 (six new ones); the swing was built, tried and dropped; skipping stones not built. Each needs a yes; each gets a demo on the mechanics page
 and an entry in game_mechanics.md section 8. lesson.json gets `"oddech": "<name>"`, so the story preview checks
 neighbours.

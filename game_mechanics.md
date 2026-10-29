@@ -141,16 +141,28 @@ A start card and a card before every stage; head badges peeking in; encouragemen
 (`game/zachety`, in the instructing character's voice); a tap on a character repeats the instruction in force; the
 lesson's sticker for the album at the end; the goodbye iris; HUD pause / next / fullscreen; music per place.
 
-## 8. Breathers in use (non-maths mini-games)
+## 8. Breathers (non-maths mini-games, oddechy.js)
 
-Built in each lesson's own code from the parts above:
-- **catch what pops up** (a `task` loop on things that pop in and out): one_many (duckling), spot_difference
-  (butterflies), bigger_smaller_pro (acorns), tall_short (sunflowers), logical_pairs (leaves), morning_night
-  (fireflies), grouping_pro (red leaf, mushrooms), long_short practice (ribbons) - overused, being replaced;
-- **statues** (`zamroz`): rhythm;
-- **snail race** (cheer a snail by pointing): long_short;
-- **stumps / musical chairs**: more_fewer_pro (it is maths there);
-- **hide-and-seek**: front_back (part of the topic).
+Every story has ONE breather, never maths, never the same as the lesson before or after it (lesson.json `oddech`,
+checked by the story preview). The proposed assignment per lesson is in `game/lessons/oddechy_plan.md`. Their words
+come from the shared pool `game/oddechy` (every line in all nine voices: `python tools/audio/run.py oddechy`). Tests:
+`S.oddech.dokoncz()` finishes the running one. Demos on `manager/mechaniki.html?m=<name>`.
+
+| call | what the child does |
+|---|---|
+| `c.kpn({kto, naucz})` -> "dziecko" / who | rock, paper, scissors against `kto` to decide who goes first; taught first (each sign beats one, shown and said), then "kamień, papier, nożyce!", both say what they chose, the rule decides out loud; a draw is played again (after two the child wins). Hand stickers `gest_*` |
+| `c.lustro({kto, rundy})` | copy the face: `kto` pulls a face (an emotion bubble that is a face: joy, sad, cross, sleepy, scared, worried), the child points to the same face among three |
+| `c.karmienie({zwierze, jedzenie, fuj, kto})` | drags food to a hungry animal sticker: it gulps the good food, spits the odd one back |
+| `c.latawiec({ksztalt, kto})` | drags up anywhere: the kite on a string from `kto`'s paw climbs, sways, sinks when nobody pulls; at the top it loops the loop |
+| `c.ktoPowiedzial({gospodarz, kryjowki})` | the hiders walk behind painted bushes (one bush stays empty) and are gone; one calls "a kuku!" in its own voice (the only line said by a hidden character - the game is the voice), the host asks, the child points to that bush and the hider jumps out |
+| `c.malowanie({tlo: noc / szyba, zdrapka, kto})` | free finger drawing: glowing gold on the night sky, or wiping a painted steamy window (a scratch-off pair: its painted mist on the glass, its view behind); ends a while after the first stroke and is admired |
+| `c.zdrapka(name)` (section 6) | a reveal for fun: what is under the snow |
+| `c.kropki(name, {znaki: "wielkosc"})` (section 6) | a surprise picture from dots |
+| statues (`c.zamroz`, rhythm) | dance, freeze, point to who still moves |
+| the snail race (long_short's own code) | point to a snail to cheer it on |
+
+Not breathers any more: catch what pops up (it was in eight lessons), counting claps / hops / bells (that is practice).
+Tried and dropped (2026-10-29): a swing (a rigid sticker swinging in the air looked fake). Not built: skipping stones.
 
 ---------------------------------------------------------------------------------------------------------------------
 

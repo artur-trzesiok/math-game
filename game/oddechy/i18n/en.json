@@ -1,0 +1,324 @@
+{
+  "line.rps_haslo": {
+    "who": "lisek",
+    "text": "Rock, paper, scissors!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_wybierz": {
+    "who": "lisek",
+    "text": "Choose your hand. Point to rock, paper or scissors.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_kamien": {
+    "who": "lisek",
+    "text": "I've got rock!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_papier": {
+    "who": "lisek",
+    "text": "I've got paper!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_nozyce": {
+    "who": "lisek",
+    "text": "I've got scissors!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_kamien_nozyce": {
+    "who": "lisek",
+    "text": "Rock blunts scissors.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_nozyce_papier": {
+    "who": "lisek",
+    "text": "Scissors cut paper.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_papier_kamien": {
+    "who": "lisek",
+    "text": "Paper wraps rock.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_remis": {
+    "who": "lisek",
+    "text": "We've got the same! Once more.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_ty": {
+    "who": "lisek",
+    "text": "You win! Well done!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.rps_ja": {
+    "who": "lisek",
+    "text": "This time I win!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.mina_pokaz": {
+    "who": "lisek",
+    "text": "Look at my face. Point to the same face.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.mina_tak": {
+    "who": "lisek",
+    "text": "Yes! The same face!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.mina_jeszcze": {
+    "who": "lisek",
+    "text": "And now this face!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.kto_tu": {
+    "who": "lisek",
+    "text": "Peekaboo! Here I am!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.kto_pytanie": {
+    "who": "lisek",
+    "text": "Who called? Point to the bush the voice came from.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.kto_znalazles": {
+    "who": "lisek",
+    "text": "Hee hee! Here I am!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.maluj": {
+    "who": "lisek",
+    "text": "Draw something with your finger!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.maluj_ladne": {
+    "who": "lisek",
+    "text": "What a lovely drawing!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.latawiec": {
+    "who": "lisek",
+    "text": "Pull the string up and the kite will fly higher.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.latawiec_hura": {
+    "who": "lisek",
+    "text": "Look how high it flies!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.karm_mniam": {
+    "who": "lisek",
+    "text": "Yum! Tasty!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.karm_fuj": {
+    "who": "lisek",
+    "text": "Yuck, you can't eat that!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  }
+}

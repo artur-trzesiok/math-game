@@ -1,0 +1,1037 @@
+{
+ "line.rps_haslo": {
+  "hash": "46697c2436a1",
+  "who": "lisek",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.bobr": {
+  "hash": "16524f2de741",
+  "who": "bobr",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.jez": {
+  "hash": "07edaf6d8f7c",
+  "who": "jez",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.kret": {
+  "hash": "bfbb8c14c9f1",
+  "who": "kret",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.mis": {
+  "hash": "f13d846e07d3",
+  "who": "mis",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.sarenka": {
+  "hash": "cc6ab07e9702",
+  "who": "sarenka",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.sowa": {
+  "hash": "9541269a9a1e",
+  "who": "sowa",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.wiewiorka": {
+  "hash": "288c5237b9bb",
+  "who": "wiewiorka",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_haslo.zajac": {
+  "hash": "724e6b04235a",
+  "who": "zajac",
+  "text": "Rock, paper, scissors!"
+ },
+ "line.rps_wybierz": {
+  "hash": "1a49cabf7256",
+  "who": "lisek",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.bobr": {
+  "hash": "ce069ca90ffd",
+  "who": "bobr",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.jez": {
+  "hash": "203397dd9959",
+  "who": "jez",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.kret": {
+  "hash": "ed005a3702f7",
+  "who": "kret",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.mis": {
+  "hash": "ad2501de3266",
+  "who": "mis",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.sarenka": {
+  "hash": "249d47d644ed",
+  "who": "sarenka",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.sowa": {
+  "hash": "4c3c228d8584",
+  "who": "sowa",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.wiewiorka": {
+  "hash": "e2107cc2b5f5",
+  "who": "wiewiorka",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_wybierz.zajac": {
+  "hash": "1f2b03523a02",
+  "who": "zajac",
+  "text": "Choose your hand. Point to rock, paper or scissors."
+ },
+ "line.rps_kamien": {
+  "hash": "15f3b16946fa",
+  "who": "lisek",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.bobr": {
+  "hash": "123c27baad6a",
+  "who": "bobr",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.jez": {
+  "hash": "981f970e6ab3",
+  "who": "jez",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.kret": {
+  "hash": "2528a000abb6",
+  "who": "kret",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.mis": {
+  "hash": "1bf3b73f863b",
+  "who": "mis",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.sarenka": {
+  "hash": "9bcf6c99f8b0",
+  "who": "sarenka",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.sowa": {
+  "hash": "a670aabb9ede",
+  "who": "sowa",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.wiewiorka": {
+  "hash": "ea26586677e4",
+  "who": "wiewiorka",
+  "text": "I've got rock!"
+ },
+ "line.rps_kamien.zajac": {
+  "hash": "a1fe487ad4b0",
+  "who": "zajac",
+  "text": "I've got rock!"
+ },
+ "line.rps_papier": {
+  "hash": "79600aab4c9f",
+  "who": "lisek",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.bobr": {
+  "hash": "24d916c8b04a",
+  "who": "bobr",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.jez": {
+  "hash": "d1be0f224fa0",
+  "who": "jez",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.kret": {
+  "hash": "1b2148c17633",
+  "who": "kret",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.mis": {
+  "hash": "53e851b512dd",
+  "who": "mis",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.sarenka": {
+  "hash": "0a67dc992ef2",
+  "who": "sarenka",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.sowa": {
+  "hash": "3e263aaf5cdb",
+  "who": "sowa",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.wiewiorka": {
+  "hash": "bd8629d57871",
+  "who": "wiewiorka",
+  "text": "I've got paper!"
+ },
+ "line.rps_papier.zajac": {
+  "hash": "ba70a4a64495",
+  "who": "zajac",
+  "text": "I've got paper!"
+ },
+ "line.rps_nozyce": {
+  "hash": "17d8be66c12d",
+  "who": "lisek",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.bobr": {
+  "hash": "7896c0d5df9d",
+  "who": "bobr",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.jez": {
+  "hash": "cec2404823a1",
+  "who": "jez",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.kret": {
+  "hash": "61588116d86b",
+  "who": "kret",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.mis": {
+  "hash": "ca68292934ab",
+  "who": "mis",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.sarenka": {
+  "hash": "ee239326080b",
+  "who": "sarenka",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.sowa": {
+  "hash": "bf63a3703ad0",
+  "who": "sowa",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.wiewiorka": {
+  "hash": "9b315d7f12e1",
+  "who": "wiewiorka",
+  "text": "I've got scissors!"
+ },
+ "line.rps_nozyce.zajac": {
+  "hash": "1beb246bdf78",
+  "who": "zajac",
+  "text": "I've got scissors!"
+ },
+ "line.rps_kamien_nozyce": {
+  "hash": "f9e88e3aef65",
+  "who": "lisek",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.bobr": {
+  "hash": "4677844cd9cb",
+  "who": "bobr",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.jez": {
+  "hash": "eb799799f738",
+  "who": "jez",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.kret": {
+  "hash": "3d1598722215",
+  "who": "kret",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.mis": {
+  "hash": "de04bc043540",
+  "who": "mis",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.sarenka": {
+  "hash": "33d35885df4a",
+  "who": "sarenka",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.sowa": {
+  "hash": "cfe60aef46c4",
+  "who": "sowa",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.wiewiorka": {
+  "hash": "6e44f2fc0503",
+  "who": "wiewiorka",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_kamien_nozyce.zajac": {
+  "hash": "856e0311a61f",
+  "who": "zajac",
+  "text": "Rock blunts scissors."
+ },
+ "line.rps_nozyce_papier": {
+  "hash": "f22a5836f26f",
+  "who": "lisek",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.bobr": {
+  "hash": "e5464c1f3ef8",
+  "who": "bobr",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.jez": {
+  "hash": "b174557de066",
+  "who": "jez",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.kret": {
+  "hash": "a7dd0f0ce88e",
+  "who": "kret",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.mis": {
+  "hash": "411f0d9bffa5",
+  "who": "mis",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.sarenka": {
+  "hash": "913dcc50bf0e",
+  "who": "sarenka",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.sowa": {
+  "hash": "ee952e3b4ea0",
+  "who": "sowa",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.wiewiorka": {
+  "hash": "946fd6b88305",
+  "who": "wiewiorka",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_nozyce_papier.zajac": {
+  "hash": "62e14db2851d",
+  "who": "zajac",
+  "text": "Scissors cut paper."
+ },
+ "line.rps_papier_kamien": {
+  "hash": "cbfa62e90b26",
+  "who": "lisek",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.bobr": {
+  "hash": "6aafb037402e",
+  "who": "bobr",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.jez": {
+  "hash": "209f0091267b",
+  "who": "jez",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.kret": {
+  "hash": "67197eff0c30",
+  "who": "kret",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.mis": {
+  "hash": "ae4f588e6ca7",
+  "who": "mis",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.sarenka": {
+  "hash": "e06971534aaa",
+  "who": "sarenka",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.sowa": {
+  "hash": "34f7f4695c25",
+  "who": "sowa",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.wiewiorka": {
+  "hash": "2e3f325edef2",
+  "who": "wiewiorka",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_papier_kamien.zajac": {
+  "hash": "de049266f73e",
+  "who": "zajac",
+  "text": "Paper wraps rock."
+ },
+ "line.rps_remis": {
+  "hash": "40bb7d21a54e",
+  "who": "lisek",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.bobr": {
+  "hash": "a41140454a72",
+  "who": "bobr",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.jez": {
+  "hash": "553b5b56a02a",
+  "who": "jez",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.kret": {
+  "hash": "13b3c2f0be53",
+  "who": "kret",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.mis": {
+  "hash": "fbb3ddd922a3",
+  "who": "mis",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.sarenka": {
+  "hash": "15ac824fd42b",
+  "who": "sarenka",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.sowa": {
+  "hash": "66bfc6c3f8d3",
+  "who": "sowa",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.wiewiorka": {
+  "hash": "e98dae5320b2",
+  "who": "wiewiorka",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_remis.zajac": {
+  "hash": "f134b8068eb4",
+  "who": "zajac",
+  "text": "We've got the same! Once more."
+ },
+ "line.rps_ty": {
+  "hash": "af3c6431313e",
+  "who": "lisek",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.bobr": {
+  "hash": "b59ea7e6bcff",
+  "who": "bobr",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.jez": {
+  "hash": "59d6269284c3",
+  "who": "jez",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.kret": {
+  "hash": "7d88cfef9f3b",
+  "who": "kret",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.mis": {
+  "hash": "47042050aec0",
+  "who": "mis",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.sarenka": {
+  "hash": "cb60cb270059",
+  "who": "sarenka",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.sowa": {
+  "hash": "9189056ee6ec",
+  "who": "sowa",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.wiewiorka": {
+  "hash": "368c6f76ed3c",
+  "who": "wiewiorka",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ty.zajac": {
+  "hash": "13d06399e102",
+  "who": "zajac",
+  "text": "You win! Well done!"
+ },
+ "line.rps_ja": {
+  "hash": "5db5f18c6f80",
+  "who": "lisek",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.bobr": {
+  "hash": "33b4fea972a3",
+  "who": "bobr",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.jez": {
+  "hash": "a953bbbc3a85",
+  "who": "jez",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.kret": {
+  "hash": "b51f62ef664c",
+  "who": "kret",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.mis": {
+  "hash": "ab88dd413554",
+  "who": "mis",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.sarenka": {
+  "hash": "b94a062ccfc3",
+  "who": "sarenka",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.sowa": {
+  "hash": "401dc09b58b5",
+  "who": "sowa",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.wiewiorka": {
+  "hash": "30bbd941c07f",
+  "who": "wiewiorka",
+  "text": "This time I win!"
+ },
+ "line.rps_ja.zajac": {
+  "hash": "f6ae831312ae",
+  "who": "zajac",
+  "text": "This time I win!"
+ },
+ "line.mina_pokaz": {
+  "hash": "7be97c87653d",
+  "who": "lisek",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.bobr": {
+  "hash": "261ea638c659",
+  "who": "bobr",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.jez": {
+  "hash": "2457b038e6a1",
+  "who": "jez",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.kret": {
+  "hash": "b4d2859559ee",
+  "who": "kret",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.mis": {
+  "hash": "79e10925af94",
+  "who": "mis",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.sarenka": {
+  "hash": "a1d178d71d6b",
+  "who": "sarenka",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.sowa": {
+  "hash": "17fbd98c5004",
+  "who": "sowa",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.wiewiorka": {
+  "hash": "c6e01b9d7bd0",
+  "who": "wiewiorka",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_pokaz.zajac": {
+  "hash": "8cda175d1b5e",
+  "who": "zajac",
+  "text": "Look at my face. Point to the same face."
+ },
+ "line.mina_tak": {
+  "hash": "4b8f27afee72",
+  "who": "lisek",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.bobr": {
+  "hash": "b5c5c4f255f8",
+  "who": "bobr",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.jez": {
+  "hash": "704cf2c238bd",
+  "who": "jez",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.kret": {
+  "hash": "15c0f5ac2993",
+  "who": "kret",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.mis": {
+  "hash": "de2c2b7762fd",
+  "who": "mis",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.sarenka": {
+  "hash": "d614e372a741",
+  "who": "sarenka",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.sowa": {
+  "hash": "a1b69aa7f982",
+  "who": "sowa",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.wiewiorka": {
+  "hash": "fd9d1d270280",
+  "who": "wiewiorka",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_tak.zajac": {
+  "hash": "ec4c57c21b83",
+  "who": "zajac",
+  "text": "Yes! The same face!"
+ },
+ "line.mina_jeszcze": {
+  "hash": "85bf2cb18c63",
+  "who": "lisek",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.bobr": {
+  "hash": "6005c03f11a1",
+  "who": "bobr",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.jez": {
+  "hash": "894e167bc60a",
+  "who": "jez",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.kret": {
+  "hash": "15a9817d1cdf",
+  "who": "kret",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.mis": {
+  "hash": "35c2defd0806",
+  "who": "mis",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.sarenka": {
+  "hash": "aff12c5ee98d",
+  "who": "sarenka",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.sowa": {
+  "hash": "144c616102cb",
+  "who": "sowa",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.wiewiorka": {
+  "hash": "8e5145b9ca02",
+  "who": "wiewiorka",
+  "text": "And now this face!"
+ },
+ "line.mina_jeszcze.zajac": {
+  "hash": "fcbb1cb34088",
+  "who": "zajac",
+  "text": "And now this face!"
+ },
+ "line.kto_tu": {
+  "hash": "55f61c7847ad",
+  "who": "lisek",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_tu.bobr": {
+  "hash": "59a49e50d491",
+  "who": "bobr",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_tu.jez": {
+  "hash": "9eec6a12674c",
+  "who": "jez",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_tu.kret": {
+  "hash": "feeefebb9784",
+  "who": "kret",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_tu.mis": {
+  "hash": "94fa29cf4417",
+  "who": "mis",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_tu.sarenka": {
+  "hash": "8f7132908ae9",
+  "who": "sarenka",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_tu.sowa": {
+  "hash": "a6aacef0752d",
+  "who": "sowa",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_tu.wiewiorka": {
+  "hash": "d1e4c6eb777b",
+  "who": "wiewiorka",
+  "text": "Peekaboo! Here I am!"
+ },
+ "line.kto_pytanie": {
+  "hash": "48e3a31ca813",
+  "who": "lisek",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.bobr": {
+  "hash": "99e6a304a52e",
+  "who": "bobr",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.jez": {
+  "hash": "79abefcf6e45",
+  "who": "jez",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.kret": {
+  "hash": "4262efbb5c16",
+  "who": "kret",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.mis": {
+  "hash": "d5bee25da997",
+  "who": "mis",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.sarenka": {
+  "hash": "c2029056ccb3",
+  "who": "sarenka",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.sowa": {
+  "hash": "c190b41233a8",
+  "who": "sowa",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.wiewiorka": {
+  "hash": "43c3e3da70af",
+  "who": "wiewiorka",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_pytanie.zajac": {
+  "hash": "225886408e74",
+  "who": "zajac",
+  "text": "Who called? Point to the bush the voice came from."
+ },
+ "line.kto_znalazles": {
+  "hash": "45166e5f5097",
+  "who": "lisek",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.bobr": {
+  "hash": "9ad326541f9f",
+  "who": "bobr",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.jez": {
+  "hash": "04c98409b0d2",
+  "who": "jez",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.kret": {
+  "hash": "ac59abefb4c2",
+  "who": "kret",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.mis": {
+  "hash": "32b9eec69219",
+  "who": "mis",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.sarenka": {
+  "hash": "f37dc039fcfa",
+  "who": "sarenka",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.sowa": {
+  "hash": "5a270c864a37",
+  "who": "sowa",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.wiewiorka": {
+  "hash": "866c169c0c1e",
+  "who": "wiewiorka",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.kto_znalazles.zajac": {
+  "hash": "a6e943a70fbb",
+  "who": "zajac",
+  "text": "Hee hee! Here I am!"
+ },
+ "line.maluj": {
+  "hash": "c26c19792f52",
+  "who": "lisek",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.bobr": {
+  "hash": "2a534e6a6507",
+  "who": "bobr",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.jez": {
+  "hash": "b41ab6fb9b76",
+  "who": "jez",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.kret": {
+  "hash": "32ff8cf94b4e",
+  "who": "kret",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.mis": {
+  "hash": "8eaf485dc5e3",
+  "who": "mis",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.sarenka": {
+  "hash": "cdfce4c5e6f1",
+  "who": "sarenka",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.sowa": {
+  "hash": "4b4423112c76",
+  "who": "sowa",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.wiewiorka": {
+  "hash": "a251f9a641e3",
+  "who": "wiewiorka",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj.zajac": {
+  "hash": "1c5f2136a815",
+  "who": "zajac",
+  "text": "Draw something with your finger!"
+ },
+ "line.maluj_ladne": {
+  "hash": "b32822118e86",
+  "who": "lisek",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.bobr": {
+  "hash": "a46af089d984",
+  "who": "bobr",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.jez": {
+  "hash": "6186cc5a9050",
+  "who": "jez",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.kret": {
+  "hash": "45e5b9e84d72",
+  "who": "kret",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.mis": {
+  "hash": "2655a4c9c9c7",
+  "who": "mis",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.sarenka": {
+  "hash": "7aa3d3f4c573",
+  "who": "sarenka",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.sowa": {
+  "hash": "360da30d3525",
+  "who": "sowa",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.wiewiorka": {
+  "hash": "82b263688123",
+  "who": "wiewiorka",
+  "text": "What a lovely drawing!"
+ },
+ "line.maluj_ladne.zajac": {
+  "hash": "7edec82634a2",
+  "who": "zajac",
+  "text": "What a lovely drawing!"
+ },
+ "line.latawiec": {
+  "hash": "d96d1383352a",
+  "who": "lisek",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.bobr": {
+  "hash": "28995852f837",
+  "who": "bobr",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.jez": {
+  "hash": "be322211c40e",
+  "who": "jez",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.kret": {
+  "hash": "8c144b31ddae",
+  "who": "kret",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.mis": {
+  "hash": "3bc7e9747b2b",
+  "who": "mis",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.sarenka": {
+  "hash": "23b07aaab143",
+  "who": "sarenka",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.sowa": {
+  "hash": "3fec1b701d01",
+  "who": "sowa",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.wiewiorka": {
+  "hash": "9eb08ba39928",
+  "who": "wiewiorka",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec.zajac": {
+  "hash": "5557cd352c3b",
+  "who": "zajac",
+  "text": "Pull the string up and the kite will fly higher."
+ },
+ "line.latawiec_hura": {
+  "hash": "7468413e3087",
+  "who": "lisek",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.bobr": {
+  "hash": "62c1f58f608e",
+  "who": "bobr",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.jez": {
+  "hash": "3843f3aa1bbf",
+  "who": "jez",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.kret": {
+  "hash": "980ac7833e56",
+  "who": "kret",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.mis": {
+  "hash": "5fad5e2ce4b1",
+  "who": "mis",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.sarenka": {
+  "hash": "d67eeba69260",
+  "who": "sarenka",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.sowa": {
+  "hash": "de9459797e75",
+  "who": "sowa",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.wiewiorka": {
+  "hash": "b026631079c9",
+  "who": "wiewiorka",
+  "text": "Look how high it flies!"
+ },
+ "line.latawiec_hura.zajac": {
+  "hash": "82504b872c24",
+  "who": "zajac",
+  "text": "Look how high it flies!"
+ },
+ "line.karm_mniam": {
+  "hash": "8d00ae597e08",
+  "who": "lisek",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.bobr": {
+  "hash": "409e11148846",
+  "who": "bobr",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.jez": {
+  "hash": "247069159e13",
+  "who": "jez",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.kret": {
+  "hash": "2a3a163f01eb",
+  "who": "kret",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.mis": {
+  "hash": "0e34d65d0147",
+  "who": "mis",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.sarenka": {
+  "hash": "da863c95d6d5",
+  "who": "sarenka",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.sowa": {
+  "hash": "d6dab03d6d27",
+  "who": "sowa",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.wiewiorka": {
+  "hash": "9a6f8ab2671d",
+  "who": "wiewiorka",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_mniam.zajac": {
+  "hash": "007bd4ce770c",
+  "who": "zajac",
+  "text": "Yum! Tasty!"
+ },
+ "line.karm_fuj": {
+  "hash": "c127785577c6",
+  "who": "lisek",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.bobr": {
+  "hash": "2b134f3d6eac",
+  "who": "bobr",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.jez": {
+  "hash": "d08c84b20781",
+  "who": "jez",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.kret": {
+  "hash": "e4385244c12e",
+  "who": "kret",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.mis": {
+  "hash": "38018c021128",
+  "who": "mis",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.sarenka": {
+  "hash": "58ebe283a570",
+  "who": "sarenka",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.sowa": {
+  "hash": "ab65cbbd8c5e",
+  "who": "sowa",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.wiewiorka": {
+  "hash": "7c61e076f12d",
+  "who": "wiewiorka",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.karm_fuj.zajac": {
+  "hash": "3df029068be5",
+  "who": "zajac",
+  "text": "Yuck, you can't eat that!"
+ },
+ "line.kto_tu.zajac": {
+  "hash": "20d5b89334cc",
+  "who": "zajac",
+  "text": "Peekaboo! Here I am!"
+ }
+}

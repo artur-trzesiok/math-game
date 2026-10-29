@@ -20,6 +20,7 @@ import * as M2 from "./mechaniki2.js";
 import * as M3 from "./mechaniki3.js";
 import * as IL from "./ilustracje.js";
 import * as M4 from "./mechaniki4.js";
+import * as OD from "./oddechy.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -69,7 +70,7 @@ const DEBUG = PARAMS.has("debug");
 const NAGRAJ = PARAMS.has("scenariusz");
 const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie", "focus", "rozblysk", "znalezisko", "ilustracja"]);
 const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose",
-  "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec", "zdrapka", "kropki", "historyjka", "podarty", "wedrowka"]);                   // ?debug=1: the phase icons jump between stages
+  "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec", "zdrapka", "kropki", "historyjka", "podarty", "wedrowka", "kpn", "lustro", "karmienie", "latawiec", "ktoPowiedzial", "malowanie"]);                   // ?debug=1: the phase icons jump between stages
 
 // a background's identity: a name, or an insert {kolor, motyw}
 const tloId = (bg) => (typeof bg === "object" && bg ? (bg.id || `kolor:${bg.kolor}:${bg.motyw}`) : bg);
@@ -300,6 +301,7 @@ export class Player {
     this.strings = await loadStrings(`/game/lessons/${id}/i18n/${this.lang}.json`);
     this.zachety = this.zachety?.lang === this.lang ? this.zachety : { lang: this.lang, t: await loadStrings(`/game/zachety/i18n/${this.lang}.json`) };
     this.pochwaly = this.pochwaly?.lang === this.lang ? this.pochwaly : { lang: this.lang, t: await loadStrings(`/game/pochwaly/i18n/${this.lang}.json`).catch(() => ({})) };
+    this.oddechy = this.oddechy?.lang === this.lang ? this.oddechy : { lang: this.lang, t: await loadStrings(`/game/oddechy/i18n/${this.lang}.json`).catch(() => ({})) };
     if (this.etapyLang !== this.lang) { this.etapy = await loadStrings(`/game/etapy/i18n/${this.lang}.json`).catch(() => ({})); this.etapyLang = this.lang; }
     this.tl = translator([this.strings, this.ui]);
     $("#menu").style.display = "none"; $("#hud").style.display = "flex";
@@ -543,6 +545,21 @@ export class Player {
       if (L.korzen.visible) L.spoczynek();
     };
     const blad = (wrong) => (wrong ? say("narrator", wrong) : zPuli("blad"));
+    // a breather's own line (game/oddechy, every voice): `ukryty` - a character hidden behind a bush calls out (the
+    // peekaboo game is about the voice), otherwise the speaker is put in the shot as always
+    const mowOddech = async (kto, key, { ukryty = false } = {}) => {
+      if (!key.startsWith("line.")) key = `line.${key}`;
+      const line = this.oddechy?.t?.[key], L = S.puppets[kto];
+      if (!line || !L) return;
+      const stem = kto === line.who ? key : `${key}.${kto}`;
+      if (NAGRAJ) zapisz({ typ: "kwestia", who: kto, key, stem, text: line.text, anim: null, zrodlo: "oddech" });
+      if (!ukryty) { await E.mowcaWKadrze(S, L); L.patrz("przod"); L.graj("Mowienie", true); }
+      S.sfx.mowa = true;
+      try { await this.speech.say({ lang, lessonId: "oddechy", key: stem, fallback: key, text: line.text, who: kto, puppet: L, volume: L.meta?.volume ?? 1 }); }
+      finally { S.sfx.mowa = false; }
+      alive();
+      if (L.korzen.visible && !ukryty) L.spoczynek();
+    };
     const say = async (who, key, { anim = null, onSlowo = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
@@ -645,6 +662,13 @@ export class Player {
       zdrapka: (nazwa, o) => wDzialaniu(M4.zdrapka(S, nazwa, o), "dotknij"),   // rub the cover off, then a found picture
       kropki: (nazwa, o = {}) => wDzialaniu(M4.kropki(S, nazwa, { ...o, onZle: () => blad(o.wrong) }), "dotknij"),
       podarty: (nazwa, o) => wDzialaniu(M4.podarty(S, nazwa, o)),          // put a torn found picture together; then its task
+      // breathers (oddechy.js): no maths, one gesture; their words from game/oddechy in the given character's voice
+      kpn: (o = {}) => wDzialaniu(OD.kpn(S, { ...o, mow: mowOddech }), "wskaz"),
+      lustro: (o = {}) => wDzialaniu(OD.lustro(S, { ...o, mow: mowOddech }), "wskaz"),
+      karmienie: (o = {}) => wDzialaniu(OD.karmienie(S, { ...o, mow: mowOddech })),
+      latawiec: (o = {}) => wDzialaniu(OD.latawiec(S, { ...o, mow: mowOddech }), "dotknij"),
+      ktoPowiedzial: (o = {}) => wDzialaniu(OD.ktoPowiedzial(S, { ...o, mow: mowOddech }), "wskaz"),
+      malowanie: (o = {}) => wDzialaniu(OD.malowanie(S, { ...o, mow: mowOddech }), "dotknij"),
       wedrowka: (nazwa, o = {}) => wDzialaniu(M4.wedrowka(S, nazwa, { ...o, onZle: () => blad(o.wrong) }), "dotknij"),
       historyjka: (nazwa, o = {}) => (o.uloz === false ? M4.historyjka(S, nazwa, o) : wDzialaniu(M4.historyjka(S, nazwa, { ...o, onZle: () => blad(o.wrong) }))).then((r) => { if (o.uloz !== false) nagroda(null); return r; }),                         // the painted room's places: {name: {slot(accept), strefa(), ...}}     // an event illustration lands like a stamp; `.zsun()` takes it away
       labirynt: (nazwa, o) => wDzialaniu(M3.labirynt(S, nazwa, o), "wskaz"),

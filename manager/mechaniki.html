@@ -17,7 +17,7 @@
   window.__T = Date.now();
   (() => {
     const im = { imports: { three: "/game/vendor/three.module.js" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje", "mechaniki4"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje", "mechaniki4", "oddechy"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
   })();
@@ -39,7 +39,11 @@ import * as M3 from "/game/engine/mechaniki3.js";
 import * as IL from "/game/engine/ilustracje.js";
 import * as M4 from "/game/engine/mechaniki4.js";
 import * as G from "/game/engine/geometria.js";
+import * as OD from "/game/engine/oddechy.js";
 const $ = (id) => document.getElementById(id);
+// the breathers' pool lines shown as text (the demo has no recordings): who says what
+const ODDECHY = await fetch("/game/oddechy/i18n/pl.json", { cache: "no-store" }).then((r) => r.json());
+const mowO = async (kto, key, { ukryty = false } = {}) => { $("info").textContent = `${kto}${ukryty ? " (zza krzaka)" : ""}: ${ODDECHY[`line.${key}`]?.text || key}`; if (!ukryty && S.puppets[kto]) { S.ostatniMowca = kto; S.puppets[kto].graj("Mowienie", true); } await czekaj(1.4); if (!ukryty) S.puppets[kto]?.spoczynek(); };
 const czekaj = (s) => new Promise((r) => setTimeout(r, s * 1000));
 // a character "speaking" on the demo stage (no recordings here): the badge follows S.ostatniMowca
 const mow = async (kto, s = 2.5) => { S.ostatniMowca = kto; S.puppets[kto].graj("Mowienie", true); await czekaj(s); S.puppets[kto].spoczynek(); };
@@ -179,6 +183,21 @@ const DEMA = {
   wedrowka: async () => {
     pokaz("lisek", "sowa"); info("prowadź jeżyka krótszą ścieżką do koca (dłuższa się nie da)");
     const w = await M4.wedrowka(S, "mapa_pikniku", { pionek: "jez", dobra: 0, onZle: () => info("ta ścieżka jest dłuższa!") }); info("na pikniku!"); await czekaj(1.5); await w.remove();
+  },
+  kpn: async () => { pokaz("lisek", "sowa"); await OD.kpn(S, { kto: "sowa", mow: mowO }); },
+  lustro: async () => { pokaz("lisek", "sowa"); await OD.lustro(S, { kto: "lisek", mow: mowO }); info("koniec"); },
+  karmienie: async () => { pokaz("lisek", "sowa"); info("nakarm kaczkę bułką (kamyka nie zje)"); await OD.karmienie(S, { zwierze: "kaczka_mama", jedzenie: ["bulka", "bulka", "bulka"], fuj: ["kamyk"], kto: "lisek", mow: mowO }); info("najedzona!"); },
+  latawiec: async () => { pokaz("lisek", "sowa"); await mowO("lisek", "latawiec"); await OD.latawiec(S, { ksztalt: "latawiec_trojkat", kto: "lisek", mow: mowO }); info("koniec"); },
+  kto: async () => {
+    pokaz("lisek", "sowa"); if (!S.puppets.zajac) await S.puppet("zajac", { x: 2.6, side: "right" }); S.puppets.zajac.korzen.visible = true;
+    S.puppets.lisek.korzen.position.x = -4.8; S.puppets.zajac.korzen.position.x = 2.6;
+    info("patrz, kto chowa się za którym krzakiem"); await OD.ktoPowiedzial(S, { gospodarz: "sowa", kryjowki: ["lisek", "zajac"], mow: mowO }); info("wszyscy znalezieni");
+  },
+  malowanie: async (nr) => {
+    pokaz("lisek", "sowa"); await mowO("lisek", "maluj");
+    await OD.malowanie(S, { tlo: "noc", kto: "lisek", mow: mowO, czas: 8 });
+    if (nr !== bieg) return; info("teraz zaparowana szyba: przetrzyj palcem");
+    await OD.malowanie(S, { tlo: "szyba", zdrapka: "szyba_rano", kto: "sowa", mow: mowO, czas: 8 });
   },
   historyjka: async (nr) => {
     pokaz("lisek", "sowa");

@@ -287,6 +287,8 @@ def main() -> int:
     if (menu / "i18n").exists() and (not wanted or "menu" in wanted): lessons.append(menu)
     zachety = LESSONS.parent / "zachety"                        # encouragements when a child waits, every voice -> audio/<lang>/zachety
     if (zachety / "i18n").exists() and (not wanted or "zachety" in wanted): lessons.append(zachety)
+    oddechy = LESSONS.parent / "oddechy"                        # the breathers' own lines (rock-paper-scissors, peekaboo), every voice
+    if (oddechy / "i18n").exists() and (not wanted or "oddechy" in wanted): lessons.append(oddechy)
     pochwaly = LESSONS.parent / "pochwaly"                      # praise and gentle wrong variants, every voice -> audio/<lang>/pochwaly
     if (pochwaly / "i18n").exists() and (not wanted or "pochwaly" in wanted): lessons.append(pochwaly)
     etapy = LESSONS.parent / "etapy"                          # the narrator on the stage cards ("here comes the story!") -> audio/<lang>/etapy
