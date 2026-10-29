@@ -104,6 +104,7 @@ checks against), the picture is an object in the story so the answer moves the p
 | `c.wonder(who)`, `c.emocja(who, kind, {anim})` | a "?" over a head; an emotion bubble (zlosc, pot, serce, radosc, smutek, sen, wykrzyknik, zarowka, zimno, mokro, muzyka, strach) |
 | `c.ubierz`, `c.zdejmij`, `c.nieUbieraj`, `c.ubranie` | dressing a character; a garment as a sticker |
 | `c.go(bg, {enter, przejscie, ciecie})` | a new place (a transition between adventures) |
+| `c.ilustracja(name, {ruch: najazd / w_lewo / w_prawo})` -> `{zsun()}` | an EVENT ILLUSTRATION (ilustracje.js): a painted picture of what puppets cannot act lands on the screen like a big perforated stamp - tilted, bending like paper, flattening - over a dimmed scene; the camera creeps over it; whoever speaks shows in a round badge in the corner (a live render of their head, lip-sync included); `zsun()` slides it down off the screen. Lines are said as usual with `c.say` while it is up. Pipeline `tools/ilustracje/make_ilustracja.py` (characters' and scenery references keep cast and style); review in the manager's Ilustracje tab. Lessons: - (samples pociag_most, burza_noc) |
 | `c.go({kolor, motyw})` | an INSERT on a plain colour: the scenery fades, the characters stand on one soft colour with a light circle and faint drifting shapes (kola, figury, chmurki, deszcz, cyfry, gwiazdki, liscie) - for a method or a thing talked about alone; use them often |
 | `c.ujecie(ogolny / sredni / zblizenie / dwuujecie, {na})` | the shot; the engine cuts or flies by one key |
 | `c.pan(k, {idz})` | slides a panorama to area k, characters walk on the spot |
@@ -117,6 +118,16 @@ checks against), the picture is an object in the story so the answer moves the p
 | `c.line`, `c.segment`, `c.circle`, `c.arrow`, `c.cross` | pencil strokes (a stroke can be a task target) and bold marks |
 | `c.object`, `c.sign`, `c.zone`, `c.arrange`, `c.standOn`, `c.bounds` | stickers, signs, zones, layout by real widths |
 | `c.glowy(who)` | head badges |
+
+## 7b. Praise and wrong-answer variants (`game/pochwaly`)
+
+| call | what it does |
+|---|---|
+| `c.brawo(who)` | one of six recorded praise lines ("Brawo!", "Świetnie! Udało się.", ...) in that character's own voice, at random, never the same twice in a row; the character cheers. Use it only where the answer cannot be named - a right answer is NAMED by the lesson's own line ("Tak, trzy gruszki!") |
+| (automatic) | a wrong try in `task`, `sort`, `place`, `slots`, `symmetry`, `polacz`, `zagroda`, `winda` with NO `wrong` line of its own gets a gentle variant ("Prawie! Popatrz uważnie jeszcze raz.") in the instructing character's voice; a lesson's own `wrong` line always wins |
+
+Every variant is recorded for all nine characters (`speakers`), so nobody ever speaks in another's voice.
+`python tools/audio/run.py pochwaly` records them (`game/audio/<lang>/pochwaly`).
 
 ## 7a. What every lesson gets without asking
 

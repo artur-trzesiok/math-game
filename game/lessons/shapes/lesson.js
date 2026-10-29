@@ -197,7 +197,7 @@ export default {
         // 1. tangram: the little house from pieces
         {
           await c.say("lisek", "line.p_tangram"); const t = await c.tangram("domek", { x: 0.4, y: 0.6, scale: 3.0 }); await t.done();
-          await c.ujecie("zblizenie", { na: "sowa" }); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); await c.ujecie("ogolny");
+          await c.ujecie("zblizenie", { na: "sowa" }); await c.brawo("sowa"); gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
         // 2. the triangle among turned shapes
         {

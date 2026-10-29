@@ -18,6 +18,7 @@ import * as R from "./rytm.js";
 import * as M from "./mechaniki.js";
 import * as M2 from "./mechaniki2.js";
 import * as M3 from "./mechaniki3.js";
+import * as IL from "./ilustracje.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -65,7 +66,7 @@ const DEBUG = PARAMS.has("debug");
 // ?scenariusz: the story preview (manager/opowiesc.html) - the autopilot plays the lesson and every line, shot and
 // task is written down in order with a thumbnail of the frame (gra.scenariusz)
 const NAGRAJ = PARAMS.has("scenariusz");
-const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie", "focus", "rozblysk", "znalezisko"]);
+const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie", "focus", "rozblysk", "znalezisko", "ilustracja"]);
 const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose",
   "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec"]);                   // ?debug=1: the phase icons jump between stages
 
@@ -297,6 +298,7 @@ export class Player {
     this.lesson = mod.default;
     this.strings = await loadStrings(`/game/lessons/${id}/i18n/${this.lang}.json`);
     this.zachety = this.zachety?.lang === this.lang ? this.zachety : { lang: this.lang, t: await loadStrings(`/game/zachety/i18n/${this.lang}.json`) };
+    this.pochwaly = this.pochwaly?.lang === this.lang ? this.pochwaly : { lang: this.lang, t: await loadStrings(`/game/pochwaly/i18n/${this.lang}.json`).catch(() => ({})) };
     if (this.etapyLang !== this.lang) { this.etapy = await loadStrings(`/game/etapy/i18n/${this.lang}.json`).catch(() => ({})); this.etapyLang = this.lang; }
     this.tl = translator([this.strings, this.ui]);
     $("#menu").style.display = "none"; $("#hud").style.display = "flex";
@@ -519,6 +521,27 @@ export class Player {
       } catch { /* no picture */ }
       this.scenariusz.push({ ...ev, etap: st, scena: this.scenaW ?? 0, t: performance.now() | 0, miniatura });
     };
+    // praise ("brawo") and a gentle wrong line ("blad") from game/pochwaly: every character has every variant in its
+    // own voice, drawn at random, never the same one twice in a row; a lesson's own line always wins over the pool
+    const zPuli = async (rodzaj, kto = null) => {
+      const tab = this.pochwaly?.t || {};
+      const klucze = Object.keys(tab).filter((k) => k.startsWith(`line.${rodzaj}_`));
+      const widoczny = (n) => n && S.puppets[n]?.korzen.visible;
+      if (!widoczny(kto)) kto = [polecenieTeraz?.who, last?.who].find(widoczny) || Object.keys(S.puppets).find(widoczny);
+      if (!klucze.length || !kto || (rodzaj === "blad" && S.sfx.mowa)) return;     // a quick second miss does not talk over the first
+      this.ostatniaZPuli = this.ostatniaZPuli || {};
+      const pula = klucze.filter((k) => k !== this.ostatniaZPuli[rodzaj]);
+      const key = pula[Math.floor(Math.random() * pula.length)]; this.ostatniaZPuli[rodzaj] = key;
+      const line = tab[key], L = S.puppets[kto], stem = kto === line.who ? key : `${key}.${kto}`;
+      if (NAGRAJ) zapisz({ typ: "kwestia", who: kto, key, stem, text: line.text, anim: null, zrodlo: rodzaj === "brawo" ? "pochwala" : "blad" });
+      if (rodzaj === "brawo") { await E.mowcaWKadrze(S, L); L.graj("Radosc"); } else { L.patrz("przod"); L.graj("Mowienie", true); }
+      S.sfx.mowa = true;
+      try { await this.speech.say({ lang, lessonId: "pochwaly", key: stem, fallback: key, text: line.text, who: kto, puppet: L, volume: L.meta?.volume ?? 1 }); }
+      finally { S.sfx.mowa = false; }
+      alive();
+      if (L.korzen.visible) L.spoczynek();
+    };
+    const blad = (wrong) => (wrong ? say("narrator", wrong) : zPuli("blad"));
     const say = async (who, key, { anim = null, onSlowo = null } = {}) => {
       alive();
       const line = lineOf([strings], key);
@@ -606,19 +629,20 @@ export class Player {
       strzalki: (o) => wDzialaniu(M2.strzalki(S, o), "wskaz"),
       cien: (h, on, o) => M2.cien(S, h, on, o),
       odbicie: guard((who, o) => M2.odbicie(S, who, o)),
-      polacz: (o) => wDzialaniu(M2.polacz(S, { ...o, onZle: o.wrong ? () => say("narrator", o.wrong) : null }), "wskaz"),
+      polacz: (o) => wDzialaniu(M2.polacz(S, { ...o, onZle: () => blad(o.wrong) }), "wskaz"),
       roznice: (nazwa, o) => wDzialaniu(M2.roznice(S, nazwa, o), "wskaz"),
       kolorowanka: (nazwa, o) => wDzialaniu(M2.kolorowanka(S, nazwa, o), "wskaz"),
       // mechaniki3.js: a fence drawn around things, a pencil fence of given points, the lift
-      zagroda: (o) => wDzialaniu(M3.zagroda(S, { ...o, onZle: o.wrong ? () => say("narrator", o.wrong) : null, onOtwarta: o.otwarta ? () => say("narrator", o.otwarta) : null }), "wskaz"),
+      zagroda: (o) => wDzialaniu(M3.zagroda(S, { ...o, onZle: () => blad(o.wrong), onOtwarta: o.otwarta ? () => say("narrator", o.otwarta) : null }), "wskaz"),
       plot: guard((pts, o) => M3.plot(S, pts, o)),
       ramka: guard(async (o = {}) => { const r = await M3.ramka(S, o); const p0 = r.przeciagaj; r.przeciagaj = (q) => wDzialaniu(p0({ ...q, onZaDuzo: q.wrong ? () => say("narrator", q.wrong) : null })); return r; }),
       domino: (a, b, o) => { alive(); return M3.domino(S, a, b, o); },
       szukaj: (nazwa, o) => wDzialaniu(M3.szukaj(S, nazwa, o), "wskaz"),
       znalezisko: guard((nazwa, o) => M3.znalezisko(S, nazwa, o)),
+      ilustracja: guard((nazwa, o) => IL.ilustracja(S, nazwa, o)),     // an event illustration lands like a stamp; `.zsun()` takes it away
       labirynt: (nazwa, o) => wDzialaniu(M3.labirynt(S, nazwa, o), "wskaz"),
       winda: guard(async (o = {}) => {
-        const w = await M3.winda(S, { ...o, onZly: o.wrong ? () => say("narrator", o.wrong) : null });
+        const w = await M3.winda(S, { ...o, onZly: () => blad(o.wrong) });
         const d0 = w.doPoziomu; w.doPoziomu = (i) => wDzialaniu(d0(i)); return w;
       }),
       rozblysk: guard((cel, opts) => E.rozblysk(S, typeof cel === "string" ? S.puppets[cel] : cel, opts)),     // a discovery: rays and sparkles behind it
@@ -659,11 +683,11 @@ export class Player {
       corners: (h) => G.rogi(S, h),
       piece: (t, opts = {}) => G.ksztalt(S, t, { ...opts, def: G.TANGRAM[t], name: `kawalek_${t}` }),
       tangram: guard(async (name, opts) => { const t = G.tangram(S, name, opts); const pol = last; t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
-      place: guard(async (o) => { const pol = last; return wDzialaniu(G.umiesc(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null })); }),
+      place: guard(async (o) => { const pol = last; return wDzialaniu(G.umiesc(S, { ...o, onWrong: () => blad(o.wrong) })); }),
       behind: (item, ref) => G.zaRzecza(item, ref),
       relation: (item, ref, ref2) => G.relacja(S, item, ref, ref2),
-      symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
-      slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: o.wrong ? () => say("narrator", o.wrong) : null }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
+      symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: () => blad(o.wrong) }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
+      slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: () => blad(o.wrong) }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
       put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),
@@ -713,7 +737,7 @@ export class Player {
           if (ok.includes(hit)) { for (const h of ok) h.highlight?.(false); clearInterval(gazeTimer); S.lookAt(null, hit); S.sfx.graj("right"); nagroda(hit, misses === 0); return wszystkie ? ok : hit; }
           misses++;
           S.shake(hit);
-          if (onWrong) await onWrong(hit); else if (wrong) await say("narrator", wrong);
+          if (onWrong) await onWrong(hit); else await blad(wrong);
           // the hint ladder: first the answer pulses, then a pencil arrow points at it, then the character shows it
           if (misses >= hintAfter) for (const h of szukane()) h.highlight?.(true);
           if (misses === hintAfter + 1 && !podpowiedzi.length) podpowiedzi.push(await S.arrow(szukane()[0]));
@@ -747,7 +771,7 @@ export class Player {
               for (const i of odd) { S.shake(i); }
               await S.wait(0.45);
               for (const i of odd) { i.zone.take(i); i.moveTo(i.home.x, i.home.y, 0.4); }
-              if (wrong && this.run === run) await say("narrator", wrong);
+              if (this.run === run) await blad(wrong);
             } finally { busy = false; }
           };
           S.sort({ items, zones, onDrop: () => { if (this.run === run) check(); }, onTap: () => S.onPuppetTap() });
@@ -756,6 +780,7 @@ export class Player {
       card: guard((key, button = "button.next") => this.card(this.tl(key), this.t(button))),
       wait: guard((s) => S.wait(FAST ? Math.min(s, 0.2) : s)),
       clear: () => { alive(); S.clear(); },
+      brawo: guard((who) => zPuli("brawo", who)),          // a recorded praise variant in that character's voice (game/pochwaly)
       praise: guard(async (who) => { const L = S.puppets[who]; if (L && L.korzen.visible) { L.graj("Radosc"); } await S.wait(FAST ? 0.2 : 1.2); }),
     };
     const zadanie = ctx._task, sortuj = ctx._sort;   // task/sort run under the instruction rule (wDzialaniu)

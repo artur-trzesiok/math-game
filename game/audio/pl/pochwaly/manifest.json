@@ -1,0 +1,452 @@
+{
+ "line.brawo_1": {
+  "hash": "f7093e2881e0",
+  "who": "lisek",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.bobr": {
+  "hash": "fac351ca4a2a",
+  "who": "bobr",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.jez": {
+  "hash": "2d3a9f304989",
+  "who": "jez",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.kret": {
+  "hash": "707aad081120",
+  "who": "kret",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.mis": {
+  "hash": "fcf2dd50e10a",
+  "who": "mis",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.sarenka": {
+  "hash": "d75425f6c769",
+  "who": "sarenka",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.sowa": {
+  "hash": "671b319f1b8d",
+  "who": "sowa",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.wiewiorka": {
+  "hash": "380ec0c47b57",
+  "who": "wiewiorka",
+  "text": "Brawo!"
+ },
+ "line.brawo_1.zajac": {
+  "hash": "fc0b36bf7d2c",
+  "who": "zajac",
+  "text": "Brawo!"
+ },
+ "line.brawo_2": {
+  "hash": "2ca27dcfc746",
+  "who": "lisek",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.bobr": {
+  "hash": "cdbb952f8684",
+  "who": "bobr",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.jez": {
+  "hash": "c204d4d85f14",
+  "who": "jez",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.kret": {
+  "hash": "e0a3d535ffa1",
+  "who": "kret",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.mis": {
+  "hash": "271e86cce4b1",
+  "who": "mis",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.sarenka": {
+  "hash": "fce4084f7b5f",
+  "who": "sarenka",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.sowa": {
+  "hash": "5ef10c29c3b3",
+  "who": "sowa",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.wiewiorka": {
+  "hash": "6622a3b6379b",
+  "who": "wiewiorka",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_2.zajac": {
+  "hash": "752abbdcc442",
+  "who": "zajac",
+  "text": "Świetnie! Udało się."
+ },
+ "line.brawo_3": {
+  "hash": "6142e33cc718",
+  "who": "lisek",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.bobr": {
+  "hash": "a62d8e475c9b",
+  "who": "bobr",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.jez": {
+  "hash": "27fb159e59f0",
+  "who": "jez",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.kret": {
+  "hash": "b87520432503",
+  "who": "kret",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.mis": {
+  "hash": "3048608c7bfa",
+  "who": "mis",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.sarenka": {
+  "hash": "738f2d6abb40",
+  "who": "sarenka",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.sowa": {
+  "hash": "ea7ecc9bcbb2",
+  "who": "sowa",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.wiewiorka": {
+  "hash": "b432688ded20",
+  "who": "wiewiorka",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_3.zajac": {
+  "hash": "e3bbc2994d16",
+  "who": "zajac",
+  "text": "Super, właśnie tak!"
+ },
+ "line.brawo_4": {
+  "hash": "09dbb45e3609",
+  "who": "lisek",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.bobr": {
+  "hash": "e5a51c12c385",
+  "who": "bobr",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.jez": {
+  "hash": "62a9ef8405d7",
+  "who": "jez",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.kret": {
+  "hash": "9c3689961103",
+  "who": "kret",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.mis": {
+  "hash": "371ef34f8f82",
+  "who": "mis",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.sarenka": {
+  "hash": "8543ffa636cf",
+  "who": "sarenka",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.sowa": {
+  "hash": "e39107393522",
+  "who": "sowa",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.wiewiorka": {
+  "hash": "994e21c01a7f",
+  "who": "wiewiorka",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_4.zajac": {
+  "hash": "ab1ff9d678dd",
+  "who": "zajac",
+  "text": "Tak jest! Pięknie."
+ },
+ "line.brawo_5": {
+  "hash": "fce6c3266b4e",
+  "who": "lisek",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.bobr": {
+  "hash": "9dd09c91518f",
+  "who": "bobr",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.jez": {
+  "hash": "2bd3087bcfa7",
+  "who": "jez",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.kret": {
+  "hash": "8d5bf716571a",
+  "who": "kret",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.mis": {
+  "hash": "47c61239e9ae",
+  "who": "mis",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.sarenka": {
+  "hash": "31e79d79402d",
+  "who": "sarenka",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.sowa": {
+  "hash": "b0531aa33c3e",
+  "who": "sowa",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.wiewiorka": {
+  "hash": "9c3538aa9b53",
+  "who": "wiewiorka",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_5.zajac": {
+  "hash": "3962b7564094",
+  "who": "zajac",
+  "text": "Ale z ciebie bystrzak!"
+ },
+ "line.brawo_6": {
+  "hash": "388e056149b9",
+  "who": "lisek",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.bobr": {
+  "hash": "b092b72c99b0",
+  "who": "bobr",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.jez": {
+  "hash": "3d2a04a77083",
+  "who": "jez",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.kret": {
+  "hash": "c7759cb1edd2",
+  "who": "kret",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.mis": {
+  "hash": "8ae34ac00039",
+  "who": "mis",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.sarenka": {
+  "hash": "e121ced2551b",
+  "who": "sarenka",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.sowa": {
+  "hash": "be1fc0d5a7a5",
+  "who": "sowa",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.wiewiorka": {
+  "hash": "c38bf678553b",
+  "who": "wiewiorka",
+  "text": "Hurra, dobrze!"
+ },
+ "line.brawo_6.zajac": {
+  "hash": "85ef5aef97af",
+  "who": "zajac",
+  "text": "Hurra, dobrze!"
+ },
+ "line.blad_1": {
+  "hash": "265eecf94fa5",
+  "who": "lisek",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.bobr": {
+  "hash": "b8e1041486c3",
+  "who": "bobr",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.jez": {
+  "hash": "3a71ad3d6808",
+  "who": "jez",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.kret": {
+  "hash": "e9c28b8cb0c7",
+  "who": "kret",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.mis": {
+  "hash": "3b7497c4a103",
+  "who": "mis",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.sarenka": {
+  "hash": "ff376790d696",
+  "who": "sarenka",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.sowa": {
+  "hash": "0620da081852",
+  "who": "sowa",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.wiewiorka": {
+  "hash": "7f3a7b5429ac",
+  "who": "wiewiorka",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_1.zajac": {
+  "hash": "614cc7b82c65",
+  "who": "zajac",
+  "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz."
+ },
+ "line.blad_2": {
+  "hash": "52dbadb27bb5",
+  "who": "lisek",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.bobr": {
+  "hash": "22852d4f6ddf",
+  "who": "bobr",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.jez": {
+  "hash": "323958911fbf",
+  "who": "jez",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.kret": {
+  "hash": "486511362834",
+  "who": "kret",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.mis": {
+  "hash": "d909f6288b69",
+  "who": "mis",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.sarenka": {
+  "hash": "bc2ea6e31886",
+  "who": "sarenka",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.sowa": {
+  "hash": "f83d5abfe38d",
+  "who": "sowa",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.wiewiorka": {
+  "hash": "175ec78f6945",
+  "who": "wiewiorka",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_2.zajac": {
+  "hash": "ab4b45d3f9cf",
+  "who": "zajac",
+  "text": "Prawie! Popatrz uważnie jeszcze raz."
+ },
+ "line.blad_3": {
+  "hash": "ca0b1e06f3a6",
+  "who": "lisek",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.bobr": {
+  "hash": "86ea219f6e68",
+  "who": "bobr",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.jez": {
+  "hash": "c638223dc15f",
+  "who": "jez",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.kret": {
+  "hash": "2bf87eda2972",
+  "who": "kret",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.mis": {
+  "hash": "f314fd5b06ee",
+  "who": "mis",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.sarenka": {
+  "hash": "4b361611d799",
+  "who": "sarenka",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.sowa": {
+  "hash": "5c85e4ec8c61",
+  "who": "sowa",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.wiewiorka": {
+  "hash": "6946d7438556",
+  "who": "wiewiorka",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_3.zajac": {
+  "hash": "d1250708a6e3",
+  "who": "zajac",
+  "text": "Oj, to nie pasuje. Poszukaj dalej."
+ },
+ "line.blad_4": {
+  "hash": "1e6f68fdad5d",
+  "who": "lisek",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.bobr": {
+  "hash": "5d809234f211",
+  "who": "bobr",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.jez": {
+  "hash": "e720837b9502",
+  "who": "jez",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.kret": {
+  "hash": "20cbec29f7ec",
+  "who": "kret",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.mis": {
+  "hash": "f9720229cb2c",
+  "who": "mis",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.sarenka": {
+  "hash": "f97ae28976b1",
+  "who": "sarenka",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.sowa": {
+  "hash": "a7d23dd9ebe1",
+  "who": "sowa",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.wiewiorka": {
+  "hash": "cbbed6aa74e9",
+  "who": "wiewiorka",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ },
+ "line.blad_4.zajac": {
+  "hash": "b684e5ed68fc",
+  "who": "zajac",
+  "text": "Spróbujmy jeszcze raz, dasz radę."
+ }
+}

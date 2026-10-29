@@ -1,0 +1,452 @@
+{
+ "line.brawo_1": {
+  "hash": "3b8d54c7d6fb",
+  "who": "lisek",
+  "text": "Well done!"
+ },
+ "line.brawo_1.bobr": {
+  "hash": "c545434bac65",
+  "who": "bobr",
+  "text": "Well done!"
+ },
+ "line.brawo_1.jez": {
+  "hash": "7b0d4676fde8",
+  "who": "jez",
+  "text": "Well done!"
+ },
+ "line.brawo_1.kret": {
+  "hash": "d141d7a584fc",
+  "who": "kret",
+  "text": "Well done!"
+ },
+ "line.brawo_1.mis": {
+  "hash": "903a5ea62574",
+  "who": "mis",
+  "text": "Well done!"
+ },
+ "line.brawo_1.sarenka": {
+  "hash": "56c113178937",
+  "who": "sarenka",
+  "text": "Well done!"
+ },
+ "line.brawo_1.sowa": {
+  "hash": "360d157e15e5",
+  "who": "sowa",
+  "text": "Well done!"
+ },
+ "line.brawo_1.wiewiorka": {
+  "hash": "d3b3a874470b",
+  "who": "wiewiorka",
+  "text": "Well done!"
+ },
+ "line.brawo_1.zajac": {
+  "hash": "3146348da2d2",
+  "who": "zajac",
+  "text": "Well done!"
+ },
+ "line.brawo_2": {
+  "hash": "8b414118907b",
+  "who": "lisek",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.bobr": {
+  "hash": "f0234caace80",
+  "who": "bobr",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.jez": {
+  "hash": "05d9987c494d",
+  "who": "jez",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.kret": {
+  "hash": "6687b567d953",
+  "who": "kret",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.mis": {
+  "hash": "c982c9d75c88",
+  "who": "mis",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.sarenka": {
+  "hash": "2a2b33c9e126",
+  "who": "sarenka",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.sowa": {
+  "hash": "844ddc216287",
+  "who": "sowa",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.wiewiorka": {
+  "hash": "1353380637e5",
+  "who": "wiewiorka",
+  "text": "Great! You did it."
+ },
+ "line.brawo_2.zajac": {
+  "hash": "41a4735be3c3",
+  "who": "zajac",
+  "text": "Great! You did it."
+ },
+ "line.brawo_3": {
+  "hash": "bf0147f8ff43",
+  "who": "lisek",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.bobr": {
+  "hash": "a83cf77d89af",
+  "who": "bobr",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.jez": {
+  "hash": "cd243a0ec8a8",
+  "who": "jez",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.kret": {
+  "hash": "92ead6b10e05",
+  "who": "kret",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.mis": {
+  "hash": "037844115c79",
+  "who": "mis",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.sarenka": {
+  "hash": "2fb265a955e6",
+  "who": "sarenka",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.sowa": {
+  "hash": "c7a6684542b9",
+  "who": "sowa",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.wiewiorka": {
+  "hash": "33cdbd9036b3",
+  "who": "wiewiorka",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_3.zajac": {
+  "hash": "6b00894e1bc9",
+  "who": "zajac",
+  "text": "Super, just like that!"
+ },
+ "line.brawo_4": {
+  "hash": "d7f82a4fa07f",
+  "who": "lisek",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.bobr": {
+  "hash": "432df23c9a0c",
+  "who": "bobr",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.jez": {
+  "hash": "a5272e5bb47f",
+  "who": "jez",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.kret": {
+  "hash": "ec00c6adca94",
+  "who": "kret",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.mis": {
+  "hash": "4451a7322c57",
+  "who": "mis",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.sarenka": {
+  "hash": "efbad851991b",
+  "who": "sarenka",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.sowa": {
+  "hash": "aefcac070163",
+  "who": "sowa",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.wiewiorka": {
+  "hash": "788b67b4b122",
+  "who": "wiewiorka",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_4.zajac": {
+  "hash": "2485b974b599",
+  "who": "zajac",
+  "text": "Yes! Lovely."
+ },
+ "line.brawo_5": {
+  "hash": "1cb60d797fe0",
+  "who": "lisek",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.bobr": {
+  "hash": "495450bf02a1",
+  "who": "bobr",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.jez": {
+  "hash": "b0325b667ca7",
+  "who": "jez",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.kret": {
+  "hash": "873d70f9ff0e",
+  "who": "kret",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.mis": {
+  "hash": "89a5e2a41640",
+  "who": "mis",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.sarenka": {
+  "hash": "4e4f574115fc",
+  "who": "sarenka",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.sowa": {
+  "hash": "c99810885fd0",
+  "who": "sowa",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.wiewiorka": {
+  "hash": "0d887bf51e8c",
+  "who": "wiewiorka",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_5.zajac": {
+  "hash": "0fce5f3971a4",
+  "who": "zajac",
+  "text": "What a clever one you are!"
+ },
+ "line.brawo_6": {
+  "hash": "5c60e1e4b9a4",
+  "who": "lisek",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.bobr": {
+  "hash": "9157bca506f2",
+  "who": "bobr",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.jez": {
+  "hash": "9d403f9b39e6",
+  "who": "jez",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.kret": {
+  "hash": "8a0b0237ef55",
+  "who": "kret",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.mis": {
+  "hash": "119b52850211",
+  "who": "mis",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.sarenka": {
+  "hash": "ace0bed4115d",
+  "who": "sarenka",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.sowa": {
+  "hash": "1ebc7f42f134",
+  "who": "sowa",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.wiewiorka": {
+  "hash": "58b54a27a762",
+  "who": "wiewiorka",
+  "text": "Hooray, that's right!"
+ },
+ "line.brawo_6.zajac": {
+  "hash": "fd3d92fca528",
+  "who": "zajac",
+  "text": "Hooray, that's right!"
+ },
+ "line.blad_1": {
+  "hash": "df275330ec79",
+  "who": "lisek",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.bobr": {
+  "hash": "c84c1d6af8e5",
+  "who": "bobr",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.jez": {
+  "hash": "8b5f08dc78d4",
+  "who": "jez",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.kret": {
+  "hash": "7e6c8b5fa339",
+  "who": "kret",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.mis": {
+  "hash": "af350857f573",
+  "who": "mis",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.sarenka": {
+  "hash": "65bf3d1590fd",
+  "who": "sarenka",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.sowa": {
+  "hash": "40e8cffaf1c4",
+  "who": "sowa",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.wiewiorka": {
+  "hash": "83a0fb75d5b7",
+  "who": "wiewiorka",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_1.zajac": {
+  "hash": "398fcfb61769",
+  "who": "zajac",
+  "text": "Hmm, not quite yet. Try again."
+ },
+ "line.blad_2": {
+  "hash": "d201ace8a1fb",
+  "who": "lisek",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.bobr": {
+  "hash": "df00c55ede72",
+  "who": "bobr",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.jez": {
+  "hash": "32f4e94e7948",
+  "who": "jez",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.kret": {
+  "hash": "9e0b22880b16",
+  "who": "kret",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.mis": {
+  "hash": "332a5e15df18",
+  "who": "mis",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.sarenka": {
+  "hash": "eaf05ae021f4",
+  "who": "sarenka",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.sowa": {
+  "hash": "1cd99d99d548",
+  "who": "sowa",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.wiewiorka": {
+  "hash": "947717138353",
+  "who": "wiewiorka",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_2.zajac": {
+  "hash": "b96047100160",
+  "who": "zajac",
+  "text": "Almost! Look carefully once more."
+ },
+ "line.blad_3": {
+  "hash": "dd07dbffd414",
+  "who": "lisek",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.bobr": {
+  "hash": "b0878b1f3308",
+  "who": "bobr",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.jez": {
+  "hash": "85d90ffb2d71",
+  "who": "jez",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.kret": {
+  "hash": "433e6deaf2db",
+  "who": "kret",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.mis": {
+  "hash": "40a222606057",
+  "who": "mis",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.sarenka": {
+  "hash": "98fa4a629aec",
+  "who": "sarenka",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.sowa": {
+  "hash": "ddf6a57441b5",
+  "who": "sowa",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.wiewiorka": {
+  "hash": "761762a0fef8",
+  "who": "wiewiorka",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_3.zajac": {
+  "hash": "ae38ff2007c4",
+  "who": "zajac",
+  "text": "Oops, that doesn't fit. Keep looking."
+ },
+ "line.blad_4": {
+  "hash": "e57742c3c177",
+  "who": "lisek",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.bobr": {
+  "hash": "3b30d0af78a1",
+  "who": "bobr",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.jez": {
+  "hash": "2407ef622b4b",
+  "who": "jez",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.kret": {
+  "hash": "07de1204e0d5",
+  "who": "kret",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.mis": {
+  "hash": "c29062ad0478",
+  "who": "mis",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.sarenka": {
+  "hash": "13c55b134c34",
+  "who": "sarenka",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.sowa": {
+  "hash": "aea7c5541236",
+  "who": "sowa",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.wiewiorka": {
+  "hash": "7c7c257eeddb",
+  "who": "wiewiorka",
+  "text": "Let's try once more, you can do it."
+ },
+ "line.blad_4.zajac": {
+  "hash": "c3cb2ada606d",
+  "who": "zajac",
+  "text": "Let's try once more, you can do it."
+ }
+}

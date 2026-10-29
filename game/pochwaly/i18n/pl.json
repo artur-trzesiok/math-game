@@ -1,0 +1,142 @@
+{
+  "line.brawo_1": {
+    "who": "lisek",
+    "text": "Brawo!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.brawo_2": {
+    "who": "lisek",
+    "text": "Świetnie! Udało się.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.brawo_3": {
+    "who": "lisek",
+    "text": "Super, właśnie tak!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.brawo_4": {
+    "who": "lisek",
+    "text": "Tak jest! Pięknie.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.brawo_5": {
+    "who": "lisek",
+    "text": "Ale z ciebie bystrzak!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.brawo_6": {
+    "who": "lisek",
+    "text": "Hurra, dobrze!",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.blad_1": {
+    "who": "lisek",
+    "text": "Hmm, to jeszcze nie to. Spróbuj jeszcze raz.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.blad_2": {
+    "who": "lisek",
+    "text": "Prawie! Popatrz uważnie jeszcze raz.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.blad_3": {
+    "who": "lisek",
+    "text": "Oj, to nie pasuje. Poszukaj dalej.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  },
+  "line.blad_4": {
+    "who": "lisek",
+    "text": "Spróbujmy jeszcze raz, dasz radę.",
+    "speakers": [
+      "bobr",
+      "jez",
+      "kret",
+      "mis",
+      "sarenka",
+      "sowa",
+      "wiewiorka",
+      "zajac"
+    ]
+  }
+}
