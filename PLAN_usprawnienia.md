@@ -5,6 +5,20 @@ that run through the whole game: the home stage is a stub, practice has the same
 the camera is busy without being directed. This plan fixes them and adds seven painted mechanics. Every item says what
 done looks like. Work in this order; each phase ends with a commit (local only) and a line in MEMORY.md.
 
+## Status
+
+Updated at the end of every phase (date, commit).
+
+| phase | state |
+|---|---|
+| 0 rules, game_mechanics.md, flags, lint | in progress |
+| 1 praise / wrong variants | - |
+| 2 seven mechanics | - |
+| 3 home act, rooms with drop places | - |
+| tables: placements, breathers, panoramas | - |
+| 4-5 pass over the 24 lessons | - |
+| 6 whole game | - |
+
 Decisions the user made for this plan (2026-10-29):
 - "Mam pięć zabaw" stays: the repeated opening of practice gives children a calm rhythm.
 - Praise and generic wrong-answer lines get random recorded variants per character (like the sticker variants).

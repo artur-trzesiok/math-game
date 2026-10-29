@@ -1,7 +1,7 @@
 # math_game - how to work here
 
 Read `MEMORY.md` (the session memory) first, then `guidelines.md`: the concept (pedagogy, three stages, safe area,
-the lesson contract). This file is the mechanics: layout, pipelines, tests, rules
+the lesson contract), then `game_mechanics.md`: every mechanic a lesson can use (and the rule to ask before adding one). This file is the mechanics: layout, pipelines, tests, rules
 that cost time to learn. Chat with the user is in Polish; code, commits and repo
 docs are in English. Engine internals (`lalka.js`, `tlo.js`, `make_character.py`)
 keep their Polish identifiers - they were moved here working, not rewritten.
@@ -242,19 +242,7 @@ a new sticker gets a glance, a sort watches the containers, `clear` resets. A no
 (`glowa_x`) slides the face on the head - turning the head about x sorted the face
 behind it on the stage (no depth test) and the mouth vanished.
 
-Pencil (`olowek.js`, ctx `line`, `segment`): a stroke along a polyline or a chain of
-cubic Beziers, drawn in with a moving tip, graphite grain, tapered ends and a slight
-hand wobble; a segment has end ticks. A stroke is a handle like a sticker (a wide
-invisible strip takes the tap, so a line can be a task target; `highlight` makes it
-glow; `clear` removes it). `bounds(h)` is a sticker's real drawing (its alpha box, not
-the transparent square), `standOn(items, y)` stands stickers on a line. Lessons build
-with them: the pairing lines in more_fewer_pro. On a tap a
-thing beats a character (a character only repeats the instruction, the one said
-before the task - never the last "try again"). This is ONE rule for the whole game: `scene.tapPuppet` (a tap on a
-visible character that no task takes) calls the player's `onPuppetTap`, which repeats the instruction in force,
-set by `wDzialaniu(p)` for the life of every interaction (task, count, sort, tangram, place, slots, symmetry),
-one repeat at a time and never over a line being spoken. Counting by touch used to ignore the characters.
-
+Lesson mechanics (pencil, camera and annotations, carrying, numbers, geometry, film tools, rhythm, the mechanics modules, painted pictures) are listed in `game_mechanics.md`, with these engine notes in its appendix. A mechanic not on that list: ask the user before building it.
 Sound effects (`sfx.js`, `game/audio/sfx/*.mp3`): `python tools/audio/run.py --sfx` makes
 them - ElevenLabs sound generation when the key has the `sound_generation` permission
 (ours has it since 2026-10-28; at least 0.5 s each), else a numpy synthesis recipe per effect (repeatable, no service);
@@ -264,113 +252,6 @@ a line draws, whoosh for a long flight, hop / clap with Podskok / Brawo (`Lalka.
 right on a correct pick or a finished sort; `ctx.sfx(name)` for a scene's own. Plain
 `<audio>` pools, a 60 ms gap per effect, ducking under speech, `?cicho` mutes.
 
-Camera and annotations: `ctx.focus(items)` zooms (<= 1.6x, inside the design frame)
-and dims the rest under a veil with a soft hole, `ctx.unfocus()`. `ctx.circle(h)`,
-`ctx.arrow(h)`, `ctx.cross(h)` draw bold pencil marks (`strong`: pressed hard, little
-grain, saturated orange / red - the first thin ones did not read), `ctx.wonder(who)`
-a "?" over a head. The hint ladder in `task`: after `hintAfter` misses the answer
-pulses, one miss later a pencil arrow points at it, one more and the instructing
-character looks, points and circles it; the marks go when the task ends.
-
-Carrying and ideas: `ctx.take(who, thing)` - the near arm comes forward and bends, the
-thing sits just beyond the paw (in front in profile, beside it from the front) INSIDE the
-puppet's draw order (its renderOrder, z between torso and arm), so the paw holds its
-edge; a quadruped carries it on its back; it follows walking; `ctx.put(who, x, y)`.
-Drawn over the whole puppet it covered the body - that looked wrong. `ctx.idea(who,
-[[names...], [names...]])`: a thought bubble over the head with stickers in groups (a
-row each), the "I have an idea!" step of a part 1 scene; `remove()` pops it.
-
-Numbers (`liczby.js`): `ctx.digit(n)` draws a digit (0-9, and 10 as two) with the
-pencil, stroke after stroke as a child writes it; `ctx.equation([2, "+", 1, "=", null])`
-writes an equation, a null leaves a gap (`luki`) for a card to fly into; `ctx.count(items,
-{who, od, rzad})` - counting by touch: every thing once, its number drawn over it in blue
-and spoken by `who` from the lesson's own `line.n1..n10`; `od` counts on (from 5: 6, 7,
-8), `rzad` moves each counted thing into a row so nothing is counted twice. Number
-lessons keep things BIG (stickers ~1.0, counting badges 0.7, digit cards 1.2 on the floor,
-containers raised between the characters): the first layout at 0.5-0.7 was unreadable.
-
-Geometry, positions and rows (`geometria.js`). Free dragging (`S.free(set)`): a thing goes anywhere; a tap
-without moving (< 0.15 units, < 450 ms) is `onTap`, otherwise `onDrop`; a tap on a character repeats the
-instruction. `S.upusc(item, x, y)` / `S.stuknij(item)` drive it from tests. On top of it:
-- `ctx.shape(kind, {x, y, size, color, rot})` - circle / triangle / square / rectangle drawn as a filled sticker
-  with a white rim and a pencil outline (synchronous, a handle with `rotateTo`, `corners()`). The rim is geometry
-  (`obwodka`: the polygon grown by a disc, even width, round corners) - the pencil ribbon wobbled and broke at the
-  corners. Each shape has its own band of draw orders and comes on top when picked up or turned (`naWierzch`), so
-  overlapping pieces lie like paper; with shared orders the lower piece's outline showed through the upper one; `ctx.corners(h)` -
-  corner dots for `ctx.count` (each puts its number OUTSIDE the shape, `etykieta`).
-- `ctx.tangram(name, {x, y, scale, obroty})` - a grey silhouette with a pencil outline (`UKLADANKI`: kwadrat,
-  domek, ryba, lodka, kot, duzy_kwadrat) and its pieces packed without overlap on the floor between the characters,
-  over their heads when the floor is full (`rozloz`: biggest first, each piece may take any turn, the preferred
-  one first - a big triangle on its tip is taller than the floor, so a random turn left it in a pile). A drop near
-  a place of the same piece snaps when the turn matches modulo the piece's symmetry; a tap turns 45 deg; `done()`.
-  `ctx.piece(t)` - one piece as a target ("which piece fits the gap?").
-- `ctx.place({item, ref, ref2, want, wrong})` - on / under / beside / behind (peeks out over the top) / between /
-  in ("w" = the centre inside, drawn in front) / in front of ("przed" = over its lower part, drawn in front); `relation`, `behind`. Moving a thing in front of or behind another
-  shifts its whole draw order past the other's and keeps its own layers (fill, halo, outline) - flattening them
-  to one value hid a round window under the square it was dropped into.
-- `ctx.symmetry(name, ...)` - an axis, the left half of a sticker, three halves to add (mirrored = right).
-- `ctx.slots({items, slots: [{x, y, w, h, accept}], numery, numeryNad})` - dashed places (patterns with a gap,
-  seriation into numbered places, numbers under or over them); `done()` resolves when every place is filled.
-- A sort zone may name the kind it takes (`zone.want = "kolo"`) when the line names the containers.
-Rows and queues are laid out by the things' drawn widths (`c.bounds`), never a fixed step: rhythm rows run over
-the heads at full width (8 things at 1.3), ordering puts things on the floor within x +-3.1 and the places
-over the heads, the queue lesson stands animals feet on the floor, the bunny clearly the biggest.
-
-Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller_pro` uses them all):
-- inserts on a plain colour: `ctx.go({kolor, motyw, kolo})` (motyw kola, figury, chmurki, deszcz, cyfry,
-  gwiazdki, liscie - drifting very faintly; `ciecie: true` inside one adventure);
-- transitions `E.przejscie` (tecza with the characters' heads cut from the frame, wzor, irys, babelki; random
-  unless named): the lesson's `przejscia: true` makes every stage and `go` change one;
-- `ctx.ujecie(ogolny | sredni | zblizenie | dwuujecie, {na})` cuts or flies the camera (efekty.js `ruchKamery`: a cut on a change of subject, a flight when something stays in the shot, back to wide and wide to medium; held shots creep in; `ciecie: true|false` overrides; the speaker is kept in the shot before every line, `mowcaWKadrze`) (a two-shot steps the two closer
-  until the next wide shot); `ctx.pan(k, {idz})` slides a panorama to area k (fractions allowed), the named
-  characters walk on the spot in step with the ground;
-- `ctx.odliczanie({styl: cyfry | kropki})`, `ctx.konfetti(h)`, `ctx.ptaszek(h)` (or `nagrody: true` for every
-  right pick), `ctx.emocja(who, rodzaj, {anim})` (zlosc, pot, serce, radosc, smutek, sen, wykrzyknik, zarowka,
-  zimno, mokro, muzyka, strach), `ctx.nalozenie(gorny, dolny)` -> {wiekszy, cofnij()}, `ctx.czastki(rodzaj)`
-  (deszcz, snieg, swietliki, liscie, pylek, babelki; ends with the background), `ctx.gwiazdki(n)` (practice
-  stars in the HUD, a streak badge after two first-try answers);
-- comic effects: speed lines on every jump into a close-up (automatic in `ujecie`), `ctx.rozblysk(who | handle)`
-  (golden rays and sparkles behind a discovery), motion streaks behind a sticker flying far and fast (automatic in
-  `moveTo`); `ctx.przejdz(who, [[x, y]...], {skok})` walks into the picture (smaller, shadow along).
-Rhythm (`rytm.js`, the rhythm lesson): a sticker may carry its own sound (`object(name, {dzwiek})`, also
-`cicho: true` for no pop) - it sounds when pointed at; `ctx.rytm(items, {tempo, kiwaja})` plays a row from the start,
-one thing per beat (bump, glow, its sound), the method and the hint after a miss; `ctx.rytm(items, {linia, kto,
-slowo})` reads it aloud instead - each thing bumps as its name is said (word start times, `slowa` in the recording's
-json, come from the ElevenLabs timestamps; only new recordings have them, so a line used this way is recorded again); `ctx.ruch(who, klask|skok|obrot)`
-one dance move squeezed into a beat (a one-clap `Klask` is built from Brawo at run time), `ctx.taniec(who, moves)`,
-`ctx.potknij(who)` (a wobble and a sour sound for a wrong move); `ctx.zamroz(who, on)` - statues: the body's
-animation clock stops and new animations are ignored, eyes and mouth still live, so a statue can speak. Characters
-can be the options of a task (statues: "who moved?").
-Mechanics (`mechaniki.js`, `mechaniki2.js`; try each on `manager/mechaniki.html?m=<name>`): `ctx.slad(digit | shape)`
-- trace with a finger along a light road from a green dot (the pencil follows forward only, off the road it stops);
-`ctx.waga()` -> {poloz, przeciagaj({rzeczy, gotowe}), wynik} - a balance scale, things carry `masa`, the beam tips to
-the heavier pan (its parts have no sticker outline: one ran over the next); `ctx.os({od, do})` -> {skocz(who, z, na)}
-- stepping stones with numbers; `ctx.wieza({klocki, miejsca, stoi})` - blocks stacked by dragging, a block that does
-not stand (wider than the one below) tips and falls back; `ctx.kubki({ile, rzeczy})` -> {przykryj, tasuj(n), odkryj};
-`ctx.dzwieki(n, {kto, ruch | dzwiek})` - counting by ear; `ctx.podziel(obraz, {ciecia})` -> {kawalki, rowne, ulamek} -
-cut with a finger stroke (near the middle it snaps through it, far from it the pieces come out unequal);
-`ctx.memory(pary)` (faces {obraz | cyfra | kropki}); `ctx.sklepik({towar, cena})` - coins onto a plate, as many as
-the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program of arrows a pawn follows;
-`ctx.cien(h)` - any sticker as its silhouette; `ctx.zagroda({rzeczy, chcemy, wrong, otwarta})` (mechaniki3.js) - a fence drawn with a finger: a closed line round exactly the wanted things builds it, an open one has a gap a thing walks out through; `ctx.plot(pts)` a pencil fence; `ctx.winda({x, pietra})` -> {doPoziomu(i), jedz, wloz, wyjmij} - a basket on a rope over a painted pulley (parts winda_*.webp; the rope is stacked from pieces of the painted one and drawn behind every sticker);  `ctx.ramka({x, y})` -> {wloz, ile, przeciagaj({rzeczy, ile, wrong})} - a ten frame (two rows of five, filled place by place); `ctx.domino(a, b)` - a domino tile of dots, a task target with `suma`; `ctx.znalezisko(name, {skad})` (mechaniki3.js) - a found picture (map, photo, drawing; square or oblong) flies up from
-`skad` and lies big over a dimmed scene; it returns {cele, tlo, zaznacz(), remove()} and the lesson asks with
-`c.task({targets: [...z.cele, z.tlo], correct: z.cele (wszystkie for several)})` - the spots start NOT marked right for the tests: mark the answer with `dobre(...)` before the task, so a tap elsewhere is a miss with the
-hint ladder, or `c.count(z.cele)` counts the spots by touch (rings, hint arrows and counting digits draw over the picture:
-the spots carry `nadObrazem`; remove the count's `znaczki` with the picture) (`tools/znaleziska/make_znalezisko.py`: gpt-image draws the picture, then an edit with a magenta disc on
-every spot described in words; the discs found by colour are the `cele`; review `work/<name>_cele.png`). A spot can
-be a whole PATH (`{"droga": "the short path from ... to ..."}` in `cele`): each path gets an edit of its own (two paths
-share their ends and merged when painted together), its painted line is skeletonized into points, the game makes the
-whole path one target and `zaznacz(cel)` draws it along in pencil - a disc on a plain stretch of path gave a 3-year-old
-nothing to recognise; `ctx.labirynt(name, {pionek, cel})` - a painted maze the child leads a pawn through with a finger, cell by cell
-through the openings only, a pencil trail behind (`tools/labirynty/make_labirynt.py`: Python makes a perfect maze and
-its plain plan, gpt-image paints it with the plan as the reference - a hedge maze, forest paths - and the build checks
-every wall and opening of the painting against the plan, review `work/<name>_sprawdz.png`; moves are checked on the
-plan, never on the painting; tests `S.labirynt.dokoncz()`); `ctx.line(..., {warstwa})` lifts a stroke over a big
-picture (38+) keeping its halo under the ink; stickers have random variants (`game/engine/warianty.js`, `object(name, {plik})` forces one); `ctx.roznice(name)` - spot the difference (`tools/roznice/make_roznice.py`:
-gpt-image draws a picture and an edit with the pair's changes spelled out, the code finds the changed areas by a
-blurred difference; review `tools/roznice/work/<name>_roznice.png`); `ctx.kolorowanka(name)` - colour by number
-(`tools/kolorowanki/make_kolorowanka.py`: a flat-coloured page split into regions, colours clustered into a palette).
-A drawing finger takes the stage's pointers while set (`S.palec` {down, move, up}); tests drive them through
-`S.slad.dokoncz()`, `S.zagroda.dokoncz()`, `S.winda.dokoncz()`, `S.podziel.tnij(kat)`, `S.memory.karty`, `S.strzalki`, `S.kolorowanka.dokoncz()`.
 Music: `game/audio/muzyka/` (SOURCES.md says where each tune comes from), all ElevenLabs (`python tools/audio/run.py --music`, make_music.py - through run.py: a stale ELEVENLABS_API_KEY sits in the user's environment and the repo's .env must win). Every scenery belongs to a theme (`muzyka.js` MOTYW: laka, las, woda, dom, noc, teatr; inserts on a plain colour: cwiczenia), each theme has two ~150 s versions played in turn (a 30-45 s loop got tiring over long use); a change of place crossfades, the same theme plays on. The weather particles have a quiet loop each (`game/audio/pogoda/<rodzaj>.mp3`, ~20 s) next to the music. Both duck under speech and fall silent while a scene listens (`dzwieki`, `rytm`, `taniec`, a scene's own `ctx.muzyka`); `?cicho` mutes them. The menu: menu_1 / menu_2 in turn.
 Every lesson also gets, without its code doing anything: a start card (cover + name) and a card before every
 stage (icon + name), the characters' head badges peeking in (`plansza`, 2 s, a tap skips); encouragement when the

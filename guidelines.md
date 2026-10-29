@@ -210,6 +210,8 @@ that breaks one of them is wrong even if it runs.
 
 ## A lesson asks for the tools it needs
 
+The tools available today are listed in `game_mechanics.md`; that list is a starting point, not a limit.
+
 Designing a lesson starts from what would make it a good lesson, not from what the engine can do today. When an
 idea needs a mechanic or a tool the engine does not have yet (a row that plays itself, a dance on a beat, statues,
 a night with lights, music), describe it to the user for acceptance - what it does on screen, why the lesson needs
