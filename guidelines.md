@@ -28,7 +28,7 @@ objects - no hand-made art, no in-house level editor.
      is asked again, and after two misses the right answer pulses. A right answer
      is never skipped past: the correct picture stays on screen while a character
      names it ("yes, the mouth opens towards the cups, because..."), then a pause.
-  3. **Apply** - the characters play the home version of the game on screen
+  3. **Apply** - a third act with its own small story (see "The home stage is the third act"): the characters play the home version of the game on screen
      (bigger than my paw, a plate for every cup, tidying after a snack), the child
      joins for one round, and they close with "ask your parents to play this at
      home". No text, no card for the parent: the game itself shows how to play.
@@ -150,9 +150,13 @@ that breaks one of them is wrong even if it runs.
 - **A wrong answer is explained, never punished**, and after two misses the right
   one pulses.
 - **Instructions say "wskaż" / "point to"**, never "click" or "tap" (tablet or
-  computer, we do not know). **No one-word sentences** ("Wskaż." alone is read
-  badly by the voice); a question such as "Gdzie jest więcej?" is the whole
-  instruction.
+  computer, we do not know). **No one-word sentences**: ElevenLabs reads a lone
+  "Wskaż." badly, also at the end of a question ("Kto jest najwyższy? Wskaż.").
+  Make it one sentence ("Wskaż, kto z nas jest najwyższy.") or let the question
+  be the whole instruction ("Gdzie jest więcej?").
+- **A right answer is named, not just praised**: "Tak, trzy gruszki!", not a bare
+  "Brawo!". Where nothing can be named (a finished puzzle) `ctx.brawo(who)` plays one
+  of the character's recorded praise variants at random.
 - **No narrator.** Every line belongs to a character on screen whose mouth moves.
   **No subtitles, no text** the child would have to read. A tap on a character
   repeats the last instruction.
@@ -207,6 +211,23 @@ that breaks one of them is wrong even if it runs.
   is drawn smaller so "9 10" does not read "910".
 - **Random layouts never give the answer or break the task**: shuffled things never
   lie in the answer order already; random turns that do not fit are replaced.
+
+## The home stage is the third act
+
+The audit of October 2026 found the home stage a stub: about 5 lines and one interaction against about 27 lines in
+the story, and the story's thread often dropped. More of the same mechanic does not fix it; the home stage is a
+small story of its own, built like this:
+1. **Arrival with the thread** - the story's promise or reward is why we are home (the housewarming, the feast, the
+   concert for the parents), and a character says so.
+2. **A home problem of its own**, with a character's mistaken idea - the lesson's misconception again, now in a
+   room ("all into one box!", "I'll stand on the books!").
+3. **Four or five interactions in different forms** in a painted room whose shelves, hooks, table and box are real
+   drop places (`miejsca`): put, point, count, order, a scratch-off or a story strip - never one mechanic four times.
+4. **The payoff** - the problem solved thanks to the idea, the promise kept and SEEN (an event illustration for a
+   concert, a party, a goodnight).
+5. **The home task shown in play** - the characters do on screen what parent and child will do at home, then the
+   line for the parents, then the goodbye iris.
+The story preview flags a home stage with fewer than four interactions.
 
 ## A lesson asks for the tools it needs
 
@@ -267,9 +288,10 @@ included - a lesson that misses them is unfinished, whatever its folder is calle
 - **We help someone thanks to maths.** At least one adventure is helping a character who has a problem.
   It is never the same rescue twice: a friend who cannot reach, a guest who is cold, a neighbour whose
   things got mixed up, a little one who is lost - vary who and how.
-- **A mini-game without maths now and then** (rock-paper-scissors to decide who starts, a quick "catch it"
-  round, a race by stages): rhythm and stakes, a breather between the maths. A principle, written in the
-  lesson's own code from the engine's parts, not a separate tool.
+- **A breather: one mini-game without maths in every story** (rock-paper-scissors to decide who starts, a
+  scratch-off, feeding a pet, statues): rhythm and stakes, a rest between the maths. It is NOT maths (counting
+  claps is practice, not a breather), and two neighbouring lessons never share one - "catch what pops up" was the
+  breather of eight lessons and read as the same game. `game_mechanics.md` section 8 lists them.
 - **For the child it is a story, and the story leads.** Every step is said and linked, never cut short: the
   problem -> the goal said out loud ("we must find out who it is") -> the plan and WHY ("let's check what the gifts
   have in common - maybe that helps us guess who left them") -> the action -> what it showed ("all in the basket -
@@ -315,7 +337,9 @@ included - a lesson that misses them is unfinished, whatever its folder is calle
 - **Inserts on a plain colour** (`ctx.go({kolor, motyw})`): for a task, a method or a close-up the
   scenery goes and the characters stand on one soft colour with a light circle behind them; something
   barely moves in the background (drifting circles, shapes, clouds, rain, digits - very subtle: it is a
-  background). Cheap, readable, and the eye goes to the task. Roughly every other shot of a story can be one.
+  background). Cheap, readable, and the eye goes to the task. Every moment where a method is shown or one thing is
+  talked about alone gets one - several per story, in practice and at home too; the user wants many of them (there
+  were two in 24 stories in October 2026). Placed where the moment calls for it, never to fill a count.
 - **Editing like a film** (`ctx.ujecie`): cut between a wide shot, a two-shot, a medium shot and a close-up
   of a face; a new shot every several seconds while the story talks; a close-up for an emotion or a reaction,
   a wide shot when something moves. A task is shown in the shot where every option is visible.
@@ -336,9 +360,18 @@ included - a lesson that misses them is unfinished, whatever its folder is calle
     when the new shot keeps something of the last one (the same character or thing), when it widens back to the whole
     scene and when a medium shot opens from the wide one; a close-up from afar is a cut with comic speed lines. A held
     shot creeps in slowly (5 % in 8 s). `?kamera=ciecie` / `?kamera=lot` force one way to compare;
-  - measure: in the story at least one camera call (`ujecie`, `pan`, `focus`, `go`, `przejdz`, `rozblysk`) per
-    two or three lines (`grep -c` in lesson.js; tall_short, grouping_pro, more_fewer_pro are the reference, about
-    0.4-0.7 per line); the story preview flags four lines in one shot.
+  - every shot has a reason - a template is not editing. The October 2026 audit found the rule kept by numbers
+    and broken in spirit: 232 "close-up for one line, back to wide" ping-pongs, 75 wide shots cut away at once,
+    28 two-shots in the whole game. So:
+    - never a wide shot that is cut away at once (a flight out for nothing), never a shot change with no line,
+      task or movement in it;
+    - a dialogue of two is a two-shot (or shot / reverse shot), not a close-up per line and back to wide;
+    - a close-up only for an emotion, a reaction, a surprise, a "thank you";
+    - an instruction is said in the shot that shows the task, so the child looks at the options, not at a face;
+    - the wide shot is for tasks, walks, arrivals and things moving across the screen;
+  - measure: `python tools/lessons/montaz.py <lesson>` (lines, shots by type, the longest run in one shot,
+    wide-then-cut, ping-pongs) and the story preview, which flags four lines in one shot and a wide shot cut away.
+    No lesson is the reference by being old: the three once named here had become the most static.
 - **Wide sceneries and pans** (`ctx.pan`): a background may be wider than the screen (a panorama made of
   joined tiles); a scene moves to the next area with a pan while the characters walk, instead of a cut to
   another picture when the place is the same.
