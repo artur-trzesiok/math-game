@@ -1068,6 +1068,24 @@ All four the same size, bright different colours.""",
 }
 
 
+# queue: the winners' podium the racers stand on (three steps; the lesson measures their tops on the sticker)
+SHEETS["podium"] = {
+    "outline": True,
+    "names": ["podium"],
+    "size": "1536x1024",
+    "px": 768,                  # shown about six units wide
+    "prompt": f"""ONE illustrated wooden winners' podium for a children's picture book, alone in the middle of a fully
+TRANSPARENT background, with generous empty space around it. NO coloured background, NO glow, NO grass, NO ground, NO
+shadow.
+{STYL}
+Seen straight from the front: three plain wide rectangular wooden blocks side by side, touching, all three EXACTLY the
+same width, their bottoms on one level line: the MIDDLE block golden yellow and clearly the tallest, the LEFT block
+silver grey and a little lower (about three quarters of the middle one's height), the RIGHT block warm bronze brown and
+the lowest (about half of the middle one's height). The tops are flat, level and EMPTY; only a thin sliver of each top
+is seen. NO numbers, NO medals, NO flags, NO text.""",
+}
+
+
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     dst = WORK / f"{sheet}.png"

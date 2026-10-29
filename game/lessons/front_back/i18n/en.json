@@ -123,6 +123,54 @@
     "who": "jez",
     "text": "The ball in front of the house, the hen behind it!"
   },
+  "line.c_gdzie_mysz": {
+    "who": "mis",
+    "text": "Wait, where is Mouse? She hid again, and I can't see her anywhere!"
+  },
+  "line.c_zdjecie": {
+    "who": "zajac",
+    "text": "I took a photo while everyone was hiding! Let's look at it. Maybe the photo shows where Mouse is."
+  },
+  "line.c_zdjecie_gdzie": {
+    "who": "mis",
+    "text": "Where is Mouse hiding in the photo? Point to her."
+  },
+  "line.c_zdjecie_nie": {
+    "who": "mis",
+    "text": "She isn't there. Look for little grey ears peeking out somewhere."
+  },
+  "line.c_zdjecie_tak": {
+    "who": "jez",
+    "text": "Behind the hedge! The hen stands in front of the bench, so we can see all of her. But of Mouse we see only her ears, because the hedge hides her."
+  },
+  "line.c_ogrod": {
+    "who": "zajac",
+    "text": "I know that hedge! It grows in the garden with the maze. Let's go there!"
+  },
+  "line.c_labirynt": {
+    "who": "jez",
+    "text": "Oh my, what a big hedge maze! Mouse is somewhere inside, behind the hedges."
+  },
+  "line.c_za_duzy": {
+    "who": "mis",
+    "text": "I'm too big. I won't fit between the hedges."
+  },
+  "line.c_ide": {
+    "who": "jez",
+    "text": "I'm small, I'll go! I'll go in through that green arch."
+  },
+  "line.c_prowadz": {
+    "who": "jez",
+    "text": "Lead me through the maze to Mouse. I start at the bottom, and Mouse is waiting at the top."
+  },
+  "line.c_znaleziona": {
+    "who": "mis",
+    "text": "Hedgehog found Mouse! She was hiding behind the hedge, so nobody could see her."
+  },
+  "line.c_koniec": {
+    "who": "jez",
+    "text": "Everyone is found! The best way to hide is behind something. In front, everybody can see you."
+  },
   "line.p_start": {
     "who": "jez",
     "text": "Let's play in front and behind! I have five games."

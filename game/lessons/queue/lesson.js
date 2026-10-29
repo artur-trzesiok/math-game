@@ -1,7 +1,8 @@
 // Lesson: the queue - ordinal numbers (first, second, third ... last) say place in order, counted from the front (the
 // finish, the head of a queue), not size. The great forest race: Mole says Bunny won "because he's the biggest", but
-// the little hedgehog crossed the line first; the podium; the queue for the slide (the first slides down and joins the
-// end); the friends' own race; medals in order. At home: toys lined up in order. Script in scenario.md.
+// the photo of the finish shows the little hedgehog first; the queue for the slide (the first slides down and joins the
+// end); the friends' own race; at the podium glade the winners take their steps and get medals in order. At home: toys
+// lined up in order. Script in scenario.md.
 
 const PODLOGA = -3.3;
 const FAST = new URLSearchParams(location.search).has("szybko");
@@ -44,25 +45,31 @@ async function wyscig(c, zawodnicy, { x0 = -1.7, x1 = 2.0, tory = [1.0, -0.05, -
   await c.line([[x1 + 0.75, tory[0] + 0.7], [x1 + 0.75, tory[tory.length - 1] - 0.6]], { width: 0.12, color: "#c0392b", duration: 0.3, strong: true });
   await c.object("meta", { x: x1 + 0.75, y: Math.min(2.7, tory[0] + 1.3), size: 1.4, cicho: true });
   const hs = [];
-  for (const [i, n] of zawodnicy.entries()) hs.push(await c.object(n, { x: x0, y: tory[i], size: ROZ[n] || 1.1 }));
+  // the base drawing of each (the finish photo shows those), turned to face the way they run
+  for (const [i, n] of zawodnicy.entries()) { const h = await c.object(n, { x: x0, y: tory[i], size: ROZ[n] || 1.1, plik: n }); h.icon.scale.x = -1; hs.push(h); }
   await c.wait(0.5);
-  const t = czasy || tasuj([1.6, 2.0, 2.4, 2.8]).slice(0, hs.length), meta = [];
+  const t = czasy || tasuj([1.6, 2.0, 2.4, 2.8]).slice(0, hs.length);
   c.sfx("whoosh");
-  await Promise.all(hs.map((h, i) => h.moveTo(x1, tory[i], (FAST ? 0.25 : 1) * t[i]).then(() => { meta.push(h); c.sfx("pop"); })));
-  return meta;
+  await Promise.all(hs.map((h, i) => h.moveTo(x1, tory[i], (FAST ? 0.25 : 1) * t[i]).then(() => c.sfx("pop"))));
+  return hs.map((h, i) => [h, t[i]]).sort((a, b) => a[1] - b[1]).map(([h]) => h);       // arrival order
 }
 
 // the podium: the first three of a race (names, arrival order) stand on the floor; the child puts each on its place -
-// 1 in the middle and highest, 2 on the left, 3 on the right (the numbers under the places)
-async function podium(c, nazwy, { wrong = "line.a_podium_nie" } = {}) {
-  c.clear();
-  const xs = [0.6, -1.3, 2.5], wys = [1.9, 1.35, 0.9], baza = -2.9, it = [];
-  const W = 1.75;                                                   // the steps: rectangles of their own heights (pts in units of size)
-  xs.forEach((x, i) => { const h = wys[i] / W / 2; c.shape("prostokat", { x, y: baza + wys[i] / 2, size: W, def: { pts: [[-0.5, -h], [0.5, -h], [0.5, h], [-0.5, h]], kolor: ["#e9c24a", "#c9ced6", "#d39a62"][i], rogi: 4 } }); });
-  for (const [i, n] of nazwy.entries()) { const h = await c.object(n, { x: [-1.3, 0.6, 2.5][[1, 2, 0][i]], y: 2.3, size: ROZ[n] || 1.1 }); h.ranga = i; it.push(h); }
+// 1 in the middle and highest, 2 on the left, 3 on the right (the numbers under the places). The podium is a painted
+// sticker; its steps (x of the middle, y of the top) in fractions of the sticker's side, measured on podium.webp
+const STOPNIE = { x: [0, -0.297, 0.296], y: [0.177, 0.096, 0.021], dol: -0.177 };
+// `stoi`: the podium already standing (placed by `postawPodium`)
+const postawPodium = (c, { x = 0, dol = -2.6, size = 7.0 } = {}) => c.object("podium", { x, y: dol - STOPNIE.dol * size, size }).then((h) => Object.assign(h, { px: x, rozmiar: size }));
+async function podium(c, nazwy, { wrong = "line.a_podium_nie", stoi = null, plik = false } = {}) {
+  if (!stoi) { c.clear(); stoi = await postawPodium(c); }
+  const x = stoi.px, size = stoi.rozmiar, y = stoi.mesh.position.y, it = [];
+  const xs = STOPNIE.x.map((f) => x + f * size), gory = STOPNIE.y.map((f) => y + f * size);
+  const start = [xs[1], xs[0], xs[2]];                              // where they wait over the steps, mixed
+  for (const [i, n] of nazwy.entries()) { const h = await c.object(n, { x: start[[1, 2, 0][i]], y: 2.3, size: ROZ[n] || 1.1, plik: plik ? n : null }); h.ranga = i; it.push(h); }
   const t = await c.slots({ items: it, numery: true, wrong,
-    slots: xs.map((x, i) => ({ x, y: baza + wys[i] + 0.75, w: 1.7, h: 1.5, accept: (h) => h.ranga === i })) });
+    slots: xs.map((sx, i) => ({ x: sx, y: gory[i] + 0.75, w: 1.7, h: 1.5, accept: (h) => h.ranga === i })) });
   await t.done();
+  return it;
 }
 
 export default {
@@ -73,7 +80,7 @@ export default {
   backgrounds: { story: "laka", practice: { kolor: "#f3ecdf", motyw: "cyfry" }, apply: "pokoj" },
   stages: {
     story: [
-      // A. the meadow: the great race; Mole says the biggest won; first is who reached the finish first; the podium
+      // A. the meadow: the great race; Mole says the biggest won; too close to see - Beaver's photo of the finish shows it
       async (c) => {
         await Promise.all(["kret", "sowa", "bobr"].map((n) => c.enter(n, n === "bobr" ? "right" : "left")));
         await c.ujecie("zblizenie", { na: "bobr" });
@@ -81,7 +88,8 @@ export default {
         await c.ujecie("sredni", { na: ["kret", "sowa"] });
         await c.say("sowa", "line.a_start");
         await c.ujecie("ogolny");
-        const meta = await wyscig(c, ["zajac", "jez", "kaczatko_stoi", "mysz"], { czasy: [2.2, 1.6, 1.9, 2.7] });
+        // a close finish: the hedgehog first by a whisker, the bunny and the duckling just behind, the mouse far back
+        const meta = await wyscig(c, ["zajac", "jez", "kaczatko_stoi", "mysz"], { czasy: [1.95, 1.85, 2.05, 2.8] });
         await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.a_zajac_wygral", { anim: "Podskok" });
         await c.ujecie("zblizenie", { na: "sowa" });
@@ -89,23 +97,30 @@ export default {
         await c.say("sowa", "line.a_nie_najwiekszy");
         await c.ujecie("sredni", { na: meta });                  // the racers at the finish line
         await c.say("sowa", "line.a_pierwszy", { anim: "Zgloszenie" });
+        await c.ujecie("zblizenie", { na: "kret" });
+        await c.emocja("kret", "pot", { anim: "Rozgladanie" });
+        await c.say("kret", "line.a_nie_widzialem");
+        await c.ujecie("zblizenie", { na: "bobr" });
+        await c.say("bobr", "line.a_zdjecie", { anim: "Zgloszenie" });
         await c.ujecie("ogolny");
-        await c.say("bobr", "line.a_kto_pierwszy");
-        dobre(meta[0]); await c.task({ targets: meta, correct: meta[0], wrong: "line.a_kto_pierwszy_nie" }); dobre(meta[0], false);
+        // the photo of the finish line: who touches the line first, who is far behind (spots: the hedgehog, the mouse)
+        const foto = await c.znalezisko("fotofinisz", { skad: "bobr" });
+        const poX = foto.cele.slice().sort((a, b) => foto.meta.cele[b.nr].x - foto.meta.cele[a.nr].x), [jez, mysz] = poX;
+        const kropka = [...foto.cele, foto.tlo];
+        await c.say("bobr", "line.a_zdjecie_kto");
+        dobre(jez); await c.task({ targets: kropka, correct: jez, wrong: "line.a_zdjecie_nie" }); dobre(jez, false);
         await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.a_jezyk", { anim: "Kiwanie" });
+        await c.ujecie("zblizenie", { na: "sowa" });
+        await c.say("sowa", "line.a_zdjecie_tak", { anim: "Zgloszenie" });
         await c.ujecie("ogolny");
         await c.say("bobr", "line.a_kto_ostatni");
-        const ost = meta[meta.length - 1];
-        dobre(ost); await c.task({ targets: meta, correct: ost, wrong: "line.a_kto_ostatni_nie" }); dobre(ost, false);
-        await c.ujecie("sredni", { na: [ost] });
+        dobre(mysz); await c.task({ targets: kropka, correct: mysz, wrong: "line.a_kto_ostatni_nie" }); dobre(mysz, false);
+        await foto.zaznacz();
         await c.say("sowa", "line.a_ostatnia");
-        await c.ujecie("ogolny");
-        // the podium: first, second, third
-        await c.say("bobr", "line.a_podium");
-        await podium(c, meta.slice(0, 3).map((h) => h.name));
-        await c.ujecie("zblizenie", { na: "sowa" });
-        await c.say("sowa", "line.a_podium_ok", { anim: "Brawo" });
+        await foto.remove();
+        await c.ujecie("zblizenie", { na: "bobr" });
+        await c.say("bobr", "line.a_po_wyscigu", { anim: "Radosc" });
         await c.ujecie("ogolny");
         c.clear();
       },
@@ -152,7 +167,50 @@ export default {
         await c.say(kolej[0], `line.b_pierwszy_${kolej[0]}`, { anim: "Radosc" });
         await c.ujecie("sredni", { na: ["kret", "sowa"] });
         await c.say("kret", "line.b_koniec");
+        await c.ujecie("zblizenie", { na: "bobr" });
+        await c.say("bobr", "line.b_ceremonia", { anim: "Zgloszenie" });
         await c.ujecie("ogolny");
+      },
+      // C. the podium glade: the winners take their steps and get their medals - gold, silver, bronze
+      async (c) => {
+        const S = c.stage, dom = { kret: S.puppets.kret.home, sowa: S.puppets.sowa.home, bobr: S.puppets.bobr.home };
+        S.puppets.kret.home = -3.95; S.puppets.bobr.home = -5.3; S.puppets.sowa.home = 4.4;   // clear of the podium
+        await c.go("podium_wyscigu", { enter: true });
+        const pod = await postawPodium(c);
+        await Promise.all(["kret", "sowa", "bobr"].map((n) => c.enter(n, n === "sowa" ? "right" : "left")));
+        await c.play("kret", "Rozgladanie");
+        await c.say("kret", "line.c_podium_miejsce", { anim: "Radosc" });   // the wide shot: the flags and the podium in view
+        await c.ujecie("zblizenie", { na: "bobr" });
+        await c.say("bobr", "line.a_podium");
+        await c.ujecie("ogolny");
+        const na = await podium(c, ["jez", "zajac", "kaczatko_stoi"], { stoi: pod, plik: true });   // the drawings of the photo
+        await c.ujecie("zblizenie", { na: "sowa" });
+        await c.say("sowa", "line.a_podium_ok", { anim: "Brawo" });
+        await c.ujecie("ogolny");
+        // the medals over the podium, then each one goes to its place
+        const md = []; for (const [i, n] of ["medal_zloty", "medal_srebrny", "medal_brazowy"].entries()) md.push(await c.object(n, { x: -1.6 + i * 1.6, y: 2.75, size: 0.9 }));
+        await c.ujecie("sredni", { na: ["sowa", ...md] });
+        await c.say("sowa", "line.c_medale", { anim: "Zgloszenie" });
+        const wrecz = async (m, h) => {                                // the medal flies onto the winner's chest, a little smaller
+          const b = c.bounds(h), s0 = m.base, s1 = 0.62; m.mesh.position.z = h.mesh.position.z + 0.05; c.sfx("whoosh");
+          await Promise.all([m.moveTo((b.left + b.right) / 2, b.bottom + (b.top - b.bottom) * 0.3, 0.5), S.tween(0.5, (q) => { m.base = s0 + (s1 - s0) * q; m.mesh.scale.setScalar(m.base); })]); c.sfx("pop");
+        };
+        await c.ujecie("ogolny");
+        await c.say("bobr", "line.c_zloty");
+        await wrecz(md[0], na[0]); await c.rozblysk(na[0]);
+        await c.say("bobr", "line.c_srebrny");
+        dobre(na[1]); await c.task({ targets: na, correct: na[1], wrong: "line.c_srebrny_nie" }); dobre(na[1], false);
+        await wrecz(md[1], na[1]);
+        await c.ujecie("sredni", { na: ["sowa", na[2]] });
+        await c.say("sowa", "line.c_brazowy");
+        await wrecz(md[2], na[2]);
+        await c.ujecie("ogolny");
+        await c.konfetti();
+        await c.ujecie("zblizenie", { na: "kret" });
+        await c.say("kret", "line.c_koniec", { anim: "Brawo" });
+        await c.ujecie("ogolny");
+        c.clear();
+        for (const n in dom) S.puppets[n].home = dom[n];
       },
     ],
     practice: [

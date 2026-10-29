@@ -91,12 +91,13 @@ Happy faces, running poses, big simple clear shapes. NO people.
     "zdjecie_chowany": {
         "rozmiar": "1536x1024",
         "obraz": f"""A snapshot photograph of a game of hide-and-seek in a sunny park garden, drawn as a picture-book
-illustration: an oblong picture filling the whole image, warm slightly faded colours like a printed photo. Across the
-back of the picture runs a LOW neat trimmed green HEDGE, the outer wall of a hedge maze, with an arched opening at the
-right end leading inside. On the grass in front of it: on the LEFT a small wooden bench, and IN FRONT of the bench stands
-a white HEN with a red comb, full figure, fully visible. In the MIDDLE, BEHIND the hedge, a little grey MOUSE is hiding:
-only the top of her head with two big round pink ears and her two eyes peek out over the top of the hedge; all the rest
-of her is hidden by the hedge. Round flower beds with red and yellow flowers at the front right, blue sky and round trees
+illustration: an oblong picture filling the whole image, warm slightly faded colours like a printed photo, taken from
+close by. Across the middle of the picture runs a LOW neat trimmed green HEDGE, only a little taller than the hen, the
+outer wall of a hedge maze, with an arched opening at the right end leading inside. On the grass in front of it: on the
+LEFT a small wooden bench, and IN FRONT of the bench stands a big white HEN with a red comb, full figure, fully visible.
+In the MIDDLE, BEHIND the hedge, a grey MOUSE is hiding: the top of her head with two BIG round pink ears and her two
+eyes peek out over the top of the hedge, clearly visible, her head about as big as the hen's head; all the rest of her
+is hidden by the hedge. A round flower bed with red and yellow flowers at the front right, blue sky and round trees
 above the hedge. Big simple clear shapes. NO people.
 {STYL}""",
         "cele": ["on the little grey mouse's head and two pink ears peeking out over the top of the hedge"],

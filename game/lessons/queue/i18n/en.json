@@ -19,17 +19,29 @@
     "who": "sowa",
     "text": "First is the one who reached the finish first. Then second, third, and at the end the last."
   },
-  "line.a_kto_pierwszy": {
-    "who": "bobr",
-    "text": "Who reached the finish first? Point to them."
+  "line.a_nie_widzialem": {
+    "who": "kret",
+    "text": "Oh my, they ran so fast and so close together! So who really got there first? I didn't see."
   },
-  "line.a_kto_pierwszy_nie": {
+  "line.a_zdjecie": {
     "who": "bobr",
-    "text": "Look who touched the finish line first."
+    "text": "I took a photo of the finish! The photo will show us who touched the white line first."
+  },
+  "line.a_zdjecie_kto": {
+    "who": "bobr",
+    "text": "Who touches the finish line first in the photo? Point to them."
+  },
+  "line.a_zdjecie_nie": {
+    "who": "bobr",
+    "text": "Look at the white finish line. Whose nose is already touching it?"
   },
   "line.a_jezyk": {
     "who": "kret",
     "text": "Hedgehog! So small, and first!"
+  },
+  "line.a_zdjecie_tak": {
+    "who": "sowa",
+    "text": "The photo showed it all: Hedgehog first, Bunny right behind him, and then Duckling."
   },
   "line.a_kto_ostatni": {
     "who": "bobr",
@@ -58,6 +70,10 @@
   "line.a_podium_ok": {
     "who": "sowa",
     "text": "First, second and third on the podium. Well done, everyone!"
+  },
+  "line.a_po_wyscigu": {
+    "who": "bobr",
+    "text": "We'll give out the medals on the podium! While everything gets ready, let's go to the playground."
   },
   "line.b_zjezdzalnia": {
     "who": "kret",
@@ -114,6 +130,38 @@
   "line.b_koniec": {
     "who": "kret",
     "text": "Now I know: first is the one who gets there first, not the biggest."
+  },
+  "line.b_ceremonia": {
+    "who": "bobr",
+    "text": "The podium is ready! Let's go and give out the medals."
+  },
+  "line.c_podium_miejsce": {
+    "who": "kret",
+    "text": "How lovely it is here! Colourful flags, flowers and a real podium for the winners!"
+  },
+  "line.c_medale": {
+    "who": "sowa",
+    "text": "And here are the medals! Gold is for first place, silver for second, and bronze for third."
+  },
+  "line.c_zloty": {
+    "who": "bobr",
+    "text": "The gold medal for the first, for Hedgehog!"
+  },
+  "line.c_srebrny": {
+    "who": "bobr",
+    "text": "The silver medal is for second place. Who gets it? Point to them."
+  },
+  "line.c_srebrny_nie": {
+    "who": "bobr",
+    "text": "That one is on another step. The second stands on the two."
+  },
+  "line.c_brazowy": {
+    "who": "sowa",
+    "text": "And the bronze medal goes to the third, Duckling!"
+  },
+  "line.c_koniec": {
+    "who": "kret",
+    "text": "Hooray! Now everyone knows who was first, second and third. And it wasn't the biggest who won, but the fastest!"
   },
   "line.p_start": {
     "who": "bobr",

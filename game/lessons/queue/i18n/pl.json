@@ -19,17 +19,29 @@
     "who": "sowa",
     "text": "Pierwszy jest ten, kto pierwszy dobiegł do mety. Potem drugi, trzeci, a na końcu ostatni."
   },
-  "line.a_kto_pierwszy": {
-    "who": "bobr",
-    "text": "Kto pierwszy dobiegł do mety? Wskaż."
+  "line.a_nie_widzialem": {
+    "who": "kret",
+    "text": "Ojej, biegli tak szybko i tak blisko siebie! To kto naprawdę dobiegł pierwszy? Nie widziałem."
   },
-  "line.a_kto_pierwszy_nie": {
+  "line.a_zdjecie": {
     "who": "bobr",
-    "text": "Popatrz, kto pierwszy dotknął mety."
+    "text": "Zrobiłem zdjęcie mety! Na zdjęciu zobaczymy, kto pierwszy dotknął białej linii."
+  },
+  "line.a_zdjecie_kto": {
+    "who": "bobr",
+    "text": "Kto na zdjęciu pierwszy dotyka mety? Wskaż go."
+  },
+  "line.a_zdjecie_nie": {
+    "who": "bobr",
+    "text": "Popatrz na białą linię mety. Czyj nosek już jej dotyka?"
   },
   "line.a_jezyk": {
     "who": "kret",
     "text": "Jeżyk! Taki mały, a pierwszy!"
+  },
+  "line.a_zdjecie_tak": {
+    "who": "sowa",
+    "text": "Zdjęcie wszystko pokazało: Jeżyk pierwszy, tuż za nim Zajączek, a potem kaczuszka."
   },
   "line.a_kto_ostatni": {
     "who": "bobr",
@@ -58,6 +70,10 @@
   "line.a_podium_ok": {
     "who": "sowa",
     "text": "Pierwszy, drugi i trzeci na podium. Brawo dla wszystkich!"
+  },
+  "line.a_po_wyscigu": {
+    "who": "bobr",
+    "text": "Medale rozdamy na podium! Zanim wszystko będzie gotowe, chodźmy na plac zabaw."
   },
   "line.b_zjezdzalnia": {
     "who": "kret",
@@ -114,6 +130,38 @@
   "line.b_koniec": {
     "who": "kret",
     "text": "Teraz wiem: pierwszy jest ten, kto pierwszy dobiegnie, a nie największy."
+  },
+  "line.b_ceremonia": {
+    "who": "bobr",
+    "text": "Podium już gotowe! Chodźmy rozdać medale."
+  },
+  "line.c_podium_miejsce": {
+    "who": "kret",
+    "text": "Ale tu pięknie! Kolorowe flagi, kwiaty i prawdziwe podium dla zwycięzców!"
+  },
+  "line.c_medale": {
+    "who": "sowa",
+    "text": "A oto medale! Złoty jest za pierwsze miejsce, srebrny za drugie, a brązowy za trzecie."
+  },
+  "line.c_zloty": {
+    "who": "bobr",
+    "text": "Złoty medal dla pierwszego, dla Jeżyka!"
+  },
+  "line.c_srebrny": {
+    "who": "bobr",
+    "text": "Srebrny medal jest za drugie miejsce. Kto go dostanie? Wskaż."
+  },
+  "line.c_srebrny_nie": {
+    "who": "bobr",
+    "text": "Ten stoi na innym stopniu. Drugi stoi na dwójce."
+  },
+  "line.c_brazowy": {
+    "who": "sowa",
+    "text": "A brązowy medal dostaje trzecia, kaczuszka!"
+  },
+  "line.c_koniec": {
+    "who": "kret",
+    "text": "Hurra! Teraz każdy wie, kto był pierwszy, drugi i trzeci. A nie wygrał największy, tylko najszybszy!"
   },
   "line.p_start": {
     "who": "bobr",

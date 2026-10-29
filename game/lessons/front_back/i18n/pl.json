@@ -123,6 +123,54 @@
     "who": "jez",
     "text": "Przed domkiem piłka, za domkiem kurka!"
   },
+  "line.c_gdzie_mysz": {
+    "who": "mis",
+    "text": "Zaraz, a gdzie jest myszka? Schowała się jeszcze raz i nigdzie jej nie widzę!"
+  },
+  "line.c_zdjecie": {
+    "who": "zajac",
+    "text": "Zrobiłem zdjęcie, kiedy wszyscy się chowali! Popatrzmy na nie. Może na zdjęciu widać, gdzie jest myszka."
+  },
+  "line.c_zdjecie_gdzie": {
+    "who": "mis",
+    "text": "Gdzie na zdjęciu schowała się myszka? Wskaż ją."
+  },
+  "line.c_zdjecie_nie": {
+    "who": "mis",
+    "text": "Tam jej nie ma. Szukaj szarych uszek, które gdzieś wystają."
+  },
+  "line.c_zdjecie_tak": {
+    "who": "jez",
+    "text": "Za żywopłotem! Kurka stoi przed ławką i widać ją całą. A z myszki widać tylko uszka, bo żywopłot ją zasłania."
+  },
+  "line.c_ogrod": {
+    "who": "zajac",
+    "text": "Znam ten żywopłot! Rośnie w ogrodzie z labiryntem. Chodźmy tam!"
+  },
+  "line.c_labirynt": {
+    "who": "jez",
+    "text": "Ojej, jaki wielki labirynt z żywopłotu! Myszka jest gdzieś w środku, za żywopłotem."
+  },
+  "line.c_za_duzy": {
+    "who": "mis",
+    "text": "Jestem za duży. Nie zmieszczę się między żywopłotami."
+  },
+  "line.c_ide": {
+    "who": "jez",
+    "text": "Ja jestem mały, ja pójdę! Wejdę przez ten zielony łuk."
+  },
+  "line.c_prowadz": {
+    "who": "jez",
+    "text": "Poprowadź mnie przez labirynt do myszki. Zaczynam na dole, a myszka czeka na górze."
+  },
+  "line.c_znaleziona": {
+    "who": "mis",
+    "text": "Jeżyk znalazł myszkę! Była schowana za żywopłotem, dlatego nikt jej nie widział."
+  },
+  "line.c_koniec": {
+    "who": "jez",
+    "text": "Wszyscy znalezieni! Najlepiej chować się za czymś, z tyłu. Z przodu wszyscy cię widzą."
+  },
   "line.p_start": {
     "who": "jez",
     "text": "Pobawmy się w z przodu i z tyłu! Mam pięć zabaw."

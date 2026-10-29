@@ -273,5 +273,65 @@
   "hash": "b929ddcee37a",
   "who": "narrator",
   "text": "This is the bush Mouse hid behind. We got it when we learnt what is in front and what is behind."
+ },
+ "line.c_gdzie_mysz": {
+  "hash": "32057beff7a2",
+  "who": "mis",
+  "text": "Wait, where is Mouse? She hid again, and I can't see her anywhere!"
+ },
+ "line.c_zdjecie": {
+  "hash": "0d2eb0800ced",
+  "who": "zajac",
+  "text": "I took a photo while everyone was hiding! Let's look at it. Maybe the photo shows where Mouse is."
+ },
+ "line.c_zdjecie_gdzie": {
+  "hash": "f103eb98f1e6",
+  "who": "mis",
+  "text": "Where is Mouse hiding in the photo? Point to her."
+ },
+ "line.c_zdjecie_nie": {
+  "hash": "75f0e26190bb",
+  "who": "mis",
+  "text": "She isn't there. Look for little grey ears peeking out somewhere."
+ },
+ "line.c_zdjecie_tak": {
+  "hash": "ac508df09ec3",
+  "who": "jez",
+  "text": "Behind the hedge! The hen stands in front of the bench, so we can see all of her. But of Mouse we see only her ears, because the hedge hides her."
+ },
+ "line.c_ogrod": {
+  "hash": "dc42459b8773",
+  "who": "zajac",
+  "text": "I know that hedge! It grows in the garden with the maze. Let's go there!"
+ },
+ "line.c_labirynt": {
+  "hash": "68148b66ff4b",
+  "who": "jez",
+  "text": "Oh my, what a big hedge maze! Mouse is somewhere inside, behind the hedges."
+ },
+ "line.c_za_duzy": {
+  "hash": "d419d19e6335",
+  "who": "mis",
+  "text": "I'm too big. I won't fit between the hedges."
+ },
+ "line.c_ide": {
+  "hash": "6770d4c6283f",
+  "who": "jez",
+  "text": "I'm small, I'll go! I'll go in through that green arch."
+ },
+ "line.c_prowadz": {
+  "hash": "5abf8f31bd69",
+  "who": "jez",
+  "text": "Lead me through the maze to Mouse. I start at the bottom, and Mouse is waiting at the top."
+ },
+ "line.c_znaleziona": {
+  "hash": "c286ed5aacc6",
+  "who": "mis",
+  "text": "Hedgehog found Mouse! She was hiding behind the hedge, so nobody could see her."
+ },
+ "line.c_koniec": {
+  "hash": "8f5896e3853b",
+  "who": "jez",
+  "text": "Everyone is found! The best way to hide is behind something. In front, everybody can see you."
  }
 }

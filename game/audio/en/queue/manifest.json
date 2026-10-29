@@ -24,16 +24,6 @@
   "who": "sowa",
   "text": "First is the one who reached the finish first. Then second, third, and at the end the last."
  },
- "line.a_kto_pierwszy": {
-  "hash": "672e52957829",
-  "who": "bobr",
-  "text": "Who reached the finish first? Point to them."
- },
- "line.a_kto_pierwszy_nie": {
-  "hash": "92346f33531d",
-  "who": "bobr",
-  "text": "Look who touched the finish line first."
- },
  "line.a_jezyk": {
   "hash": "a4e97884ca37",
   "who": "kret",
@@ -258,5 +248,75 @@
   "hash": "fa687b0c639b",
   "who": "narrator",
   "text": "This is the gold medal from the forest race. We got it when we learnt who is first, second and last."
+ },
+ "line.a_nie_widzialem": {
+  "hash": "0447c48ee101",
+  "who": "kret",
+  "text": "Oh my, they ran so fast and so close together! So who really got there first? I didn't see."
+ },
+ "line.a_zdjecie": {
+  "hash": "891cb381f60a",
+  "who": "bobr",
+  "text": "I took a photo of the finish! The photo will show us who touched the white line first."
+ },
+ "line.a_zdjecie_kto": {
+  "hash": "487a30425231",
+  "who": "bobr",
+  "text": "Who touches the finish line first in the photo? Point to them."
+ },
+ "line.a_zdjecie_nie": {
+  "hash": "66c5b66ecb9e",
+  "who": "bobr",
+  "text": "Look at the white finish line. Whose nose is already touching it?"
+ },
+ "line.a_zdjecie_tak": {
+  "hash": "bb749fef1c40",
+  "who": "sowa",
+  "text": "The photo showed it all: Hedgehog first, Bunny right behind him, and then Duckling."
+ },
+ "line.a_po_wyscigu": {
+  "hash": "fff0d76a5cee",
+  "who": "bobr",
+  "text": "We'll give out the medals on the podium! While everything gets ready, let's go to the playground."
+ },
+ "line.b_ceremonia": {
+  "hash": "83a2ca328bac",
+  "who": "bobr",
+  "text": "The podium is ready! Let's go and give out the medals."
+ },
+ "line.c_podium_miejsce": {
+  "hash": "4944baabbbe9",
+  "who": "kret",
+  "text": "How lovely it is here! Colourful flags, flowers and a real podium for the winners!"
+ },
+ "line.c_medale": {
+  "hash": "0773a631263c",
+  "who": "sowa",
+  "text": "And here are the medals! Gold is for first place, silver for second, and bronze for third."
+ },
+ "line.c_zloty": {
+  "hash": "ab9d1a6edac6",
+  "who": "bobr",
+  "text": "The gold medal for the first, for Hedgehog!"
+ },
+ "line.c_srebrny": {
+  "hash": "a4b4059e7c33",
+  "who": "bobr",
+  "text": "The silver medal is for second place. Who gets it? Point to them."
+ },
+ "line.c_srebrny_nie": {
+  "hash": "e89dd34dc729",
+  "who": "bobr",
+  "text": "That one is on another step. The second stands on the two."
+ },
+ "line.c_brazowy": {
+  "hash": "85f14b5fcfc5",
+  "who": "sowa",
+  "text": "And the bronze medal goes to the third, Duckling!"
+ },
+ "line.c_koniec": {
+  "hash": "84b8cbb0e985",
+  "who": "kret",
+  "text": "Hooray! Now everyone knows who was first, second and third. And it wasn't the biggest who won, but the fastest!"
  }
 }

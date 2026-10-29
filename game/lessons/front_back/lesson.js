@@ -1,9 +1,12 @@
 // Lesson: in front and behind - behind a thing you are hidden (only a bit peeks out), in front of it everybody sees
 // you. Hide-and-seek in the forest: Bunny "hides" in front of the bush with his eyes shut; the child hides the mouse
-// behind it, then seeks the friends by what peeks out; "in front of the house - behind the house". At home: the teddy
-// behind the curtain. Script in scenario.md.
+// behind it, then seeks the friends by what peeks out; "in front of the house - behind the house"; Bunny's photo shows
+// the mouse's ears behind the hedge, and Hedgehog finds her in the garden maze. At home: the teddy behind the curtain.
+// Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
+const PODLOGA = -3.3;
+const ARKADA = { x: 1.1, y: 1.5 };                  // the arch into the hedge maze in the ogrod_labirynt plate
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
 
 // a thing hidden behind another: drawn under it, only its top `widac` (a fraction of its height) peeking out
@@ -129,6 +132,55 @@ export default {
         await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.b_koniec", { anim: "Radosc" });
         await c.ujecie("ogolny");
+        c.clear();
+      },
+      // C. the mouse hid again: Bunny's photo shows her ears behind the hedge; in the garden maze Hedgehog finds her
+      async (c) => {
+        const S = c.stage;
+        await c.ujecie("zblizenie", { na: "mis" });
+        await c.wonder("mis");
+        await c.emocja("mis", "pot", { anim: "Rozgladanie" });
+        await c.say("mis", "line.c_gdzie_mysz");
+        await c.ujecie("zblizenie", { na: "zajac" });
+        await c.emocja("zajac", "zarowka", { anim: "Zgloszenie" });
+        await c.say("zajac", "line.c_zdjecie");
+        await c.ujecie("ogolny");
+        const foto = await c.znalezisko("zdjecie_chowany", { skad: "zajac" });
+        await c.say("mis", "line.c_zdjecie_gdzie");
+        dobre(foto.cele); await c.task({ targets: [...foto.cele, foto.tlo], correct: foto.cele[0], wrong: "line.c_zdjecie_nie" }); dobre(foto.cele, false);
+        await foto.zaznacz();
+        await c.say("jez", "line.c_zdjecie_tak", { anim: "Wskazanie" });
+        await c.say("zajac", "line.c_ogrod", { anim: "Podskok" });
+        await foto.remove();
+        // the garden with the hedge maze
+        await c.go("ogrod_labirynt", { enter: true });
+        await Promise.all(["jez", "zajac", "mis"].map((n) => c.enter(n, n === "mis" ? "right" : "left")));
+        await c.play("jez", "Rozgladanie");
+        await c.say("jez", "line.c_labirynt", { anim: "Radosc" });   // the wide shot: the maze's hedges and arch in view
+        await c.ujecie("dwuujecie", { na: ["jez", "mis"] });
+        await c.emocja("mis", "smutek", { anim: "Smutek" });
+        await c.say("mis", "line.c_za_duzy");
+        await c.say("jez", "line.c_ide", { anim: "Podskok" });
+        await c.ujecie("ogolny");
+        await c.przejdz("jez", [[ARKADA.x, ARKADA.y]]);              // into the picture, to the maze's arch
+        await c.say("jez", "line.c_prowadz");
+        const lab = c.labirynt("labirynt_chowany", { pionek: "jez", cel: "mysz" });
+        await c.wait(0.4); S.puppets.jez.korzen.visible = false;      // under the maze now, its pawn walks for him
+        const l = await lab;
+        S.puppets.jez.korzen.visible = true;
+        await l.remove();
+        // out they come: the mouse beside Hedgehog at the arch, both walk to the front
+        const mysz = await c.object("mysz", { x: ARKADA.x + 0.7, y: ARKADA.y + 0.35, size: 0.6 });
+        await c.rozblysk(mysz);
+        await c.ujecie("zblizenie", { na: "mis" });
+        await c.say("mis", "line.c_znaleziona", { anim: "Radosc" });
+        await c.ujecie("ogolny");
+        const s0 = mysz.base, s1 = 1.1;
+        await Promise.all([c.przejdz("jez", [[-1.2, PODLOGA]]), mysz.moveTo(-0.1, PODLOGA + s1 * 0.45, 1.0), S.tween(1.0, (q) => { mysz.base = s0 + (s1 - s0) * q; mysz.mesh.scale.setScalar(mysz.base); })]);
+        await c.ujecie("sredni", { na: ["jez", mysz] });
+        await c.say("jez", "line.c_koniec", { anim: "Brawo" });
+        await c.ujecie("ogolny");
+        c.clear();
       },
     ],
     practice: [

@@ -14,10 +14,12 @@
   "backgrounds": [
     "laka",
     "plac_zabaw",
+    "podium_wyscigu",
     "pokoj"
   ],
   "objects": [
     "meta",
+    "podium",
     "zajac",
     "jez",
     "kaczatko_stoi",

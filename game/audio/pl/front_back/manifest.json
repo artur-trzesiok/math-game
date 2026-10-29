@@ -273,5 +273,65 @@
   "hash": "0e891c6f8e2d",
   "who": "narrator",
   "text": "To krzak, za którym chowała się myszka. Dostaliśmy go, kiedy uczyliśmy się, co jest z przodu, a co z tyłu."
+ },
+ "line.c_gdzie_mysz": {
+  "hash": "47271b811138",
+  "who": "mis",
+  "text": "Zaraz, a gdzie jest myszka? Schowała się jeszcze raz i nigdzie jej nie widzę!"
+ },
+ "line.c_zdjecie": {
+  "hash": "7a5ae50a6922",
+  "who": "zajac",
+  "text": "Zrobiłem zdjęcie, kiedy wszyscy się chowali! Popatrzmy na nie. Może na zdjęciu widać, gdzie jest myszka."
+ },
+ "line.c_zdjecie_gdzie": {
+  "hash": "c69ab9d55cc8",
+  "who": "mis",
+  "text": "Gdzie na zdjęciu schowała się myszka? Wskaż ją."
+ },
+ "line.c_zdjecie_nie": {
+  "hash": "0ed3014a9326",
+  "who": "mis",
+  "text": "Tam jej nie ma. Szukaj szarych uszek, które gdzieś wystają."
+ },
+ "line.c_zdjecie_tak": {
+  "hash": "76eddeaec322",
+  "who": "jez",
+  "text": "Za żywopłotem! Kurka stoi przed ławką i widać ją całą. A z myszki widać tylko uszka, bo żywopłot ją zasłania."
+ },
+ "line.c_ogrod": {
+  "hash": "03051a2d561c",
+  "who": "zajac",
+  "text": "Znam ten żywopłot! Rośnie w ogrodzie z labiryntem. Chodźmy tam!"
+ },
+ "line.c_labirynt": {
+  "hash": "d14b1133e5a6",
+  "who": "jez",
+  "text": "Ojej, jaki wielki labirynt z żywopłotu! Myszka jest gdzieś w środku, za żywopłotem."
+ },
+ "line.c_za_duzy": {
+  "hash": "0210653cc9af",
+  "who": "mis",
+  "text": "Jestem za duży. Nie zmieszczę się między żywopłotami."
+ },
+ "line.c_ide": {
+  "hash": "19a6ad181426",
+  "who": "jez",
+  "text": "Ja jestem mały, ja pójdę! Wejdę przez ten zielony łuk."
+ },
+ "line.c_prowadz": {
+  "hash": "48165db38448",
+  "who": "jez",
+  "text": "Poprowadź mnie przez labirynt do myszki. Zaczynam na dole, a myszka czeka na górze."
+ },
+ "line.c_znaleziona": {
+  "hash": "c0b7623a21e4",
+  "who": "mis",
+  "text": "Jeżyk znalazł myszkę! Była schowana za żywopłotem, dlatego nikt jej nie widział."
+ },
+ "line.c_koniec": {
+  "hash": "722622d7009e",
+  "who": "jez",
+  "text": "Wszyscy znalezieni! Najlepiej chować się za czymś, z tyłu. Z przodu wszyscy cię widzą."
  }
 }

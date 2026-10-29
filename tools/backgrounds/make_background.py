@@ -356,16 +356,12 @@ Same colours, same stage, same lanterns. Do NOT move or redraw anything that was
 
 SCENY["podium_wyscigu"] = {
     "plyta": f"""A background illustration for a children's game: a festive sunny meadow at the edge of a forest, ready for
-a prize-giving after a race. In the MIDDLE of the picture, standing on the grass in the lower half, a wooden winners'
-podium of three plain wide blocks side by side, touching, painted in soft colours (the middle one golden yellow, the
-left one silver grey, the right one warm bronze brown): the MIDDLE block is clearly the tallest, the LEFT block is a
-little lower, the RIGHT block is the lowest; their tops are flat and EMPTY. The whole podium is about one third of the
-picture wide. Behind it, between two tall wooden poles, a garland of little colourful triangular flags; flowering bushes
-at both sides, tall trees at the far edges, blue sky. The grass at the far left and the far right of the lower part is
-EMPTY and open where characters will stand.
+a prize-giving after a race. Across the back, between two tall wooden poles far apart, a garland of little colourful
+triangular flags; flowering bushes at both sides, tall trees at the far edges, blue sky. The grassy ground in the
+whole lower half of the picture is EMPTY and open: the winners' podium and the characters will stand there.
 {STYL}
 Wide landscape composition.
-NO characters, NO animals, NO medals, NO numbers, NO text.""",
+NO podium, NO stage, NO characters, NO animals, NO medals, NO numbers, NO text.""",
     "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
 same style: at least fifteen tufts of grass across the ground, and six or seven soft white clouds in the blue sky.
 Same colours, same podium, same flags. Do NOT move or redraw anything that was already there.""",
