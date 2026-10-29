@@ -528,6 +528,7 @@ export class Player {
       last = { who, key, anim }; this.lastSpeaker = who; S.ostatniMowca = who;
       if (NAGRAJ) zapisz({ typ: "kwestia", who, key, stem: who === line.who ? key : `${key}.${who}`, text: line.text, anim, zrodlo: zrodloMowy });
       const puppet = S.puppets[who] || null;
+      await E.mowcaWKadrze(S, puppet);                                // never a voice from outside the shot
       if (puppet && puppet.korzen.visible && anim !== false) { puppet.patrz("przod"); puppet.graj(anim || "Mowienie", true); }
       S.sfx.mowa = true;                                              // effects duck under a line
       try { await this.speech.say({ lang, lessonId, key: stem, fallback: key, text: line.text, who, puppet, volume: puppet?.meta?.volume ?? 1, onSlowo }); }

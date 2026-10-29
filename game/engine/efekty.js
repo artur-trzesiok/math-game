@@ -664,9 +664,18 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 
     const b = obwiednia(S, lista), w = (b.max.x - b.min.x) + 1.2, h = (b.max.y - b.min.y) + 1.0;
     z = Math.max(1, Math.min(2.2, v.w / w, v.h / h)); cx = (b.min.x + b.max.x) / 2; cy = (b.min.y + b.max.y) / 2;
   }
-  // stay inside the design frame (the background ends there)
-  const ramka = S.design(0), hw = v.w / 2 / z, hh = v.h / 2 / z;
-  cx = Math.max(-ramka.w / 2 + hw, Math.min(ramka.w / 2 - hw, cx)); cy = Math.max(-ramka.h / 2 + hh, Math.min(ramka.h / 2 - hh, cy));
+  // stay inside the design frame (the background ends there); pushed in from the edge, a medium shot steps back until
+  // everything it frames fits again (the far end of a plank by the edge was cut off)
+  const ramka = S.design(0);
+  let hw, hh;
+  for (let i = 0; i < 6; i++) {
+    hw = v.w / 2 / z; hh = v.h / 2 / z;
+    cx = Math.max(-ramka.w / 2 + hw, Math.min(ramka.w / 2 - hw, cx)); cy = Math.max(-ramka.h / 2 + hh, Math.min(ramka.h / 2 - hh, cy));
+    if (typ !== "sredni" || !lista.length || z <= 1) break;
+    const b = obwiednia(S, lista), potrzeba = Math.max(cx - b.min.x, b.max.x - cx) + 0.5, wys = Math.max(cy - b.min.y, b.max.y - cy) + 0.4;
+    if (potrzeba <= hw && wys <= hh) break;
+    z = Math.max(1, Math.min(z, v.w / 2 / potrzeba, v.h / 2 / wys));
+  }
   if (S.zaslona) S.zaslona.material.uniforms.alfa.value = 0;
   S.unlift?.();
   const kam = S.camera, z0 = kam.zoom, x0 = kam.position.x, y0 = kam.position.y;
@@ -674,7 +683,23 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 
   // a jump in close gets speed lines (the comic-book zoom); a cut back out does not
   if (typ === "zblizenie" && S.ujecieTeraz !== "zblizenie") linieSzybkosci(S);
   if (ciecie || FAST) krok(1); else await S.tween(d, krok);
-  S.ujecieTeraz = typ;
+  S.ujecieTeraz = typ; S.ujecieNa = lista;
+}
+
+// the one who speaks is always in the shot: a closer shot that leaves the speaker's head out (Deer talking off the
+// edge of a medium shot on the planks) widens to a medium shot of what it framed plus the speaker - measured, not guessed
+export async function mowcaWKadrze(S, L) {
+  if (!L?.korzen.visible || !S.ujecieTeraz || S.ujecieTeraz === "ogolny") return;
+  const kam = S.camera; kam.updateMatrixWorld(); L.korzen.updateMatrixWorld(true);
+  const v = S.visible(0), hw = v.w / 2 / kam.zoom, hh = v.h / 2 / kam.zoom;    // as ujecie frames it (a perspective camera, zoomed)
+  // the head only (a close-up on the speaker never holds the whole body): its middle inside, with a margin
+  const gl = [L.kosci?.glowa, L.kosci?.p_glowa, L.kosci?.t_glowa].find((g) => g && g.parent?.visible !== false) || L.korzen;
+  const b = new THREE.Box3().setFromObject(gl), sx = (b.min.x + b.max.x) / 2, sy = (b.min.y + b.max.y) / 2;
+  const m = Math.min(0.4, (b.max.x - b.min.x) * 0.3), widac = Math.abs(sx - kam.position.x) <= hw - m && Math.abs(sy - kam.position.y) <= hh - m;
+  if (widac) return;
+  S.poprawkiKadru = (S.poprawkiKadru || 0) + 1;                       // tests: how often a shot had to widen
+  const na = [...(S.ujecieNa || []).filter((h) => h !== L), L];
+  await ujecie(S, na.length > 1 ? "sredni" : "zblizenie", { na, ciecie: true });
 }
 
 // ====================================================================== wide backgrounds: areas and pans
