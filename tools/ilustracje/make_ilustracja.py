@@ -34,6 +34,38 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # ordering home: the payoff - the evening concert promised all lesson, at night on the glade
+    "koncert_noc": {
+        "postacie": ["bobr", "zajac", "sowa"], "tlo": "polana_koncert", "lekcje": ["ordering"],
+        "scena": """The evening CONCERT at NIGHT on the forest glade from the reference picture: a deep blue sky full of stars
+and a round moon, the string of paper lanterns over the little log stage glowing warm gold, fireflies in the air. On the
+stage the BEAVER plays FOUR water glasses standing in a row on a little table, from the fullest (on the left) to the
+emptiest (on the right), tapping them with a spoon, his eyes closed with joy; beside him the BUNNY beats a small drum;
+the OWL stands in front and conducts with one wing. In front of the owl THREE little fluffy grey OWLETS stand in a row
+from the smallest to the biggest, beaks open, singing. At the side of the stage a TOWER of four wooden blocks - a big red
+one at the bottom, a yellow, a green and the smallest blue one on top - with a glowing glass jar lantern on the very top.
+On the tree stumps in front small forest guests seen from behind (a hedgehog, a mole, a squirrel) listen happily. Warm,
+magical and joyful.""",
+    },
+    # tall_short: Bear's wish kept - from the treehouse window the whole forest from above
+    "las_z_domku": {
+        "postacie": ["mis", "wiewiorka", "lisek"], "tlo": "domek_wnetrze", "lekcje": ["tall_short"],
+        "scena": """The view from HIGH UP in a treehouse: in the foreground the big round wooden window of the treehouse from the
+reference picture, and leaning out of it, seen from behind and a little from the side, the BEAR with his paws on the
+sill, the FOX and the little SQUIRREL beside him, all three looking out and down in wonder. Below and far away the
+WHOLE FOREST seen from above: soft green tree tops rolling to the hills, a winding brook glittering, a small orchard
+with apple trees in a clearing right below, a meadow, birds flying BELOW the window. Bright summer morning, a wide
+open sky. The feeling: we are so high up, we can see everything.""",
+    },
+    # tall_short home: the payoff - Hedgehog on Bear's shoulders sees the forest through the spyglass (higher, not taller)
+    "jez_na_ramionach": {
+        "postacie": ["mis", "jez", "lisek", "wiewiorka"], "tlo": "przedpokoj", "lekcje": ["tall_short"],
+        "scena": """In the cosy hallway from the reference picture, by its big ROUND window: the BEAR stands tall and carries the
+little HEDGEHOG on his shoulders; the HEDGEHOG, now high up by the round window, holds an old brass SPYGLASS to his
+eye and looks out through the window at the green forest outside, delighted. The BEAR holds the hedgehog's little feet
+and laughs. Below them the FOX and the SQUIRREL look up at them, laughing and clapping. On the wall beside them a
+wooden HEIGHT CHART with four short coloured pencil marks at different heights. Warm afternoon light, happy and funny.""",
+    },
     # long_short: the picnic at the end of the short path - the long baguette is enough for everybody
     "piknik_polana": {
         "postacie": ["sarenka", "lisek", "wiewiorka"], "tlo": "polana_piknik", "lekcje": ["long_short"],

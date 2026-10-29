@@ -33,7 +33,7 @@
   },
   "line.b_najwieksza": {
     "who": "lisek",
-    "text": "So which hollow is the biggest? Point to it."
+    "text": "Point to the biggest hollow."
   },
   "line.b_najwieksza_nie": {
     "who": "lisek",
@@ -49,7 +49,7 @@
   },
   "line.b_najmniejsza": {
     "who": "lisek",
-    "text": "And which one is the smallest? Point to it."
+    "text": "Now point to the smallest hollow."
   },
   "line.b_najmniejsza_nie": {
     "who": "lisek",
@@ -69,7 +69,7 @@
   },
   "line.b_pudelko": {
     "who": "lisek",
-    "text": "Which box is bigger? Point to it, and the mice will fit."
+    "text": "Point to the bigger box, and the mice will fit."
   },
   "line.b_pudelko_nie": {
     "who": "lisek",
@@ -77,23 +77,19 @@
   },
   "line.b_dziekuja": {
     "who": "sowa",
-    "text": "The mice fit in and say thank you!"
-  },
-  "line.b_lapanie": {
-    "who": "lisek",
-    "text": "Acorns are falling from the oak! Catch the big ones, for the new store. Point to a big acorn."
+    "text": "The mice fit into the bigger box and say thank you!"
   },
   "line.b_do_domu": {
     "who": "wiewiorka",
-    "text": "I have a new hollow and big acorns! Come to my house-warming."
+    "text": "I have a new hollow that's just right! Come to my house-warming."
   },
   "line.p_start": {
     "who": "wiewiorka",
-    "text": "Before we go, let's play big and small!"
+    "text": "Before the house-warming, let's play big and small!"
   },
   "line.p_wiekszy": {
     "who": "lisek",
-    "text": "Which one is bigger? Point to it."
+    "text": "Point to the bigger one."
   },
   "line.p_poloz": {
     "who": "lisek",
@@ -105,7 +101,7 @@
   },
   "line.p_najwiekszy": {
     "who": "lisek",
-    "text": "Which apple is the biggest? Point to it."
+    "text": "Point to the biggest apple."
   },
   "line.p_najwiekszy_nie": {
     "who": "lisek",
@@ -113,7 +109,7 @@
   },
   "line.p_cien": {
     "who": "lisek",
-    "text": "Whose shadow is it: the big pear's or the small one's? Point to it."
+    "text": "Point to the pear this shadow belongs to: the big one or the small one."
   },
   "line.p_cien_nie": {
     "who": "lisek",
@@ -149,11 +145,11 @@
   },
   "line.d_parapetowka": {
     "who": "wiewiorka",
-    "text": "Welcome to my new hollow! I'll make you some tea."
+    "text": "Welcome to the house-warming in my new hollow! First I'll put my store on the shelves."
   },
   "line.d_kubki": {
     "who": "sowa",
-    "text": "The big cup for big Fox, the small one for little Squirrel. Drag each cup."
+    "text": "Tea is ready! Give the big cup to big Fox, and the small one to little Squirrel."
   },
   "line.d_nie_ten": {
     "who": "sowa",
@@ -161,7 +157,7 @@
   },
   "line.d_pasuje": {
     "who": "lisek",
-    "text": "Everyone has a cup that's just right. Yum, tea!"
+    "text": "The big cup for big Fox, the small one for little Squirrel. Yum, tea!"
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -209,7 +205,7 @@
   },
   "line.b_ostatnia_dla": {
     "who": "sowa",
-    "text": "Which hollow is just right for Squirrel: a little bigger than the old one? Point to it."
+    "text": "Point to the hollow just right for Squirrel, a little bigger than the old one."
   },
   "line.b_ostatnia_nie": {
     "who": "sowa",
@@ -217,7 +213,7 @@
   },
   "line.b_przeprowadzka": {
     "who": "wiewiorka",
-    "text": "And now, moving day! Come on, let's carry my store to my new hollow."
+    "text": "And now, moving day! My store is in two boxes, a big one and a small one. Who will carry the first one?"
   },
   "line.c_nowy_dom": {
     "who": "wiewiorka",
@@ -229,6 +225,90 @@
   },
   "line.c_zapasy_w_dziupli": {
     "who": "wiewiorka",
-    "text": "All the big acorns are in my hollow. They fit, because this hollow is bigger than the old one!"
+    "text": "All my store fits in my hollow, because it's bigger than the old one!"
+  },
+  "line.p_najwiekszy_tak": {
+    "who": "wiewiorka",
+    "text": "Yes, that's the biggest apple!"
+  },
+  "line.b_ja_pierwszy": {
+    "who": "lisek",
+    "text": "I want to carry the first box! You too? Then let's play rock, paper, scissors. Whoever wins carries the first one."
+  },
+  "line.b_kpn_ty": {
+    "who": "lisek",
+    "text": "Your win! You carry the first box, and I'll take the second."
+  },
+  "line.b_kpn_ja": {
+    "who": "lisek",
+    "text": "My win! I carry the first box, and you take the second."
+  },
+  "line.c_pudlo_ty": {
+    "who": "wiewiorka",
+    "text": "Drag your box up into my new hollow, up there."
+  },
+  "line.c_pudlo_lis": {
+    "who": "lisek",
+    "text": "Hop! My box flies right into the hollow!"
+  },
+  "line.d_polki": {
+    "who": "sowa",
+    "text": "Here is a big shelf, and there a little one. And two boxes of the store: a big one and a small one."
+  },
+  "line.d_ojej": {
+    "who": "wiewiorka",
+    "text": "Oh no, the box is falling!"
+  },
+  "line.d_postaw": {
+    "who": "sowa",
+    "text": "Drag each box onto the shelf that's just right for it."
+  },
+  "line.d_polka_nie": {
+    "who": "sowa",
+    "text": "That shelf doesn't fit that box. Big on big, small on small."
+  },
+  "line.d_krzesla": {
+    "who": "sowa",
+    "text": "Now the chairs for the guests. Point to the smallest chair, it's for Squirrel."
+  },
+  "line.d_krzesla_nie": {
+    "who": "sowa",
+    "text": "That chair is bigger. Look for the smallest one."
+  },
+  "line.d_krzesla_ok": {
+    "who": "wiewiorka",
+    "text": "Yes, the smallest chair is just right for me!"
+  },
+  "line.d_impreza": {
+    "who": "wiewiorka",
+    "text": "The best house-warming! Every box, chair and cup is just right."
+  },
+  "line.d_buty": {
+    "who": "lisek",
+    "text": "I'll show you a game for home. Two shoes, a big one and a small one. Point to the bigger shoe."
+  },
+  "line.d_buty_nie": {
+    "who": "lisek",
+    "text": "That shoe is smaller. Look for the bigger one."
+  },
+  "line.d_buty_tak": {
+    "who": "lisek",
+    "text": "Yes, that shoe is bigger. I'll lay the small one on the big one: the big one sticks out all round!"
+  },
+  "line.d_pudlo_wiew": {
+    "who": "wiewiorka",
+    "text": "I'll put the big box on this little shelf. It'll be near the window!"
+  },
+  "line.d_pudlo_nie": {
+    "who": "sowa",
+    "text": "That box is bigger than the little shelf, it sticks out on both sides. The big box on the big shelf, the small one on the small shelf."
+  },
+  "line.d_pudla_ok": {
+    "who": "wiewiorka",
+    "text": "Yes! The big box stands on the big shelf, and the small one on the small shelf."
+  },
+  "line.p_czapki_ok": {
+    "who": "wiewiorka",
+    "text": "Everyone has a cap that's just right: the biggest on Owl's big head, the smallest on mine!"
   }
 }

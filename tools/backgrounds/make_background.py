@@ -54,6 +54,25 @@ with a fine paper-grain texture, warm friendly colours, thin soft outlines.
 NOT flat vector, NOT 3D render."""
 
 SCENY = {
+    # bigger_smaller home: inside Squirrel's new hollow (the housewarming) - a big shelf and a small one for the store
+    "dziupla_wnetrze": {
+        "wnetrze": True,
+        "plyta": f"""A background illustration for a children's game: the inside of a squirrel's cosy little round home in
+the hollow of a big oak tree, seen straight on: curved walls of warm pale honey-coloured wood with soft tree-ring
+patterns, a round window in the middle of the back wall with green oak leaves and blue sky outside, a few dry oak
+leaves and a small garland of acorns hanging on the wall, a soft green moss carpet on the wooden floor. On the back
+wall LEFT of the window one BIG long wide wooden shelf, sturdy and tall, completely EMPTY. On the back wall RIGHT of the
+window one SMALL short little wooden shelf, only about a third as long as the big one, completely EMPTY. Both shelves
+hang at the same height, their boards just ABOVE THE MIDDLE of the picture (about 45 percent of the way down from the
+top), with a lot of empty wall ABOVE them; both well inside the picture, far from its edges: the big shelf spans from
+about a fifth to almost half of the picture's width, the small shelf sits close to the right of the window. The floor in the lower middle is EMPTY where characters will stand.
+{STYL}
+Wide landscape composition.
+NO furniture on the floor, NO table, NO chairs, NO jars, NO cups, NO characters, NO animals, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that one thing has been added, in the same
+style: a few green oak leaves on a twig swaying outside the round window.
+Same colours, same walls, same shelves. Do NOT move or redraw anything that was already there.""",
+    },
     "sad": {
         "plyta": f"""A background illustration for a children's game: a sunny meadow at the
 edge of an orchard. On the left one big round apple tree with a thick trunk and
@@ -406,7 +425,7 @@ style: a few green leaves swaying outside the round window.
 Same colours, same walls, same pegs. Do NOT move or redraw anything that was already there.""",
 }
 
-# grouping_pro: inside Fox's home in the big oak (the end of the story) - everything he loves is red
+# grouping: inside Fox's home in the big oak (the end of the story) - everything he loves is red
 SCENY["lisia_nora"] = {
     "wnetrze": True,
     "plyta": f"""A background illustration for a children's game: the inside of a cosy little home in the hollow of a big
@@ -483,7 +502,7 @@ same style: at least fifteen tufts of grass across the ground, and six or seven 
 Same colours, same oak, same door, same flowers. Do NOT move or redraw anything that was already there.""",
 }
 
-# bigger_smaller_pro: Squirrel's new home - the tree with the just-right hollow (the end of the story)
+# bigger_smaller: Squirrel's new home - the tree with the just-right hollow (the end of the story)
 SCENY["dab_wiewiorki"] = {
     "plyta": f"""A background illustration for a children's game: a sunny corner of a friendly deciduous forest in early
 autumn. In the middle of the picture, a little to the right, stands a big old oak tree with a thick trunk and a wide

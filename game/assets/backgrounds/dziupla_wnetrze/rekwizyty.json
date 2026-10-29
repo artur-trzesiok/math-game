@@ -1,0 +1,26 @@
+{
+ "plyta": "plyta.webp",
+ "szerokosc": 1536,
+ "wysokosc": 1024,
+ "horyzont": 341,
+ "rekwizyty": [
+  {
+   "plik": "rekwizyt_00.webp",
+   "klasa": "sway",
+   "x": 906,
+   "y": 123,
+   "w": 126,
+   "h": 146,
+   "faza": 0.0
+  },
+  {
+   "plik": "rekwizyt_01.webp",
+   "klasa": "sway",
+   "x": 909,
+   "y": 282,
+   "w": 60,
+   "h": 58,
+   "faza": 0.618
+  }
+ ]
+}

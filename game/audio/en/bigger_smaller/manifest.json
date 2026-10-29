@@ -40,9 +40,9 @@
   "text": "Look, there are three hollows in these trees."
  },
  "line.b_najwieksza": {
-  "hash": "cf0282772f91",
+  "hash": "e81933d25484",
   "who": "lisek",
-  "text": "So which hollow is the biggest? Point to it."
+  "text": "Point to the biggest hollow."
  },
  "line.b_najwieksza_nie": {
   "hash": "8705053f8dc7",
@@ -60,9 +60,9 @@
   "text": "Brr! It's too big. The wind blows in and it's cold."
  },
  "line.b_najmniejsza": {
-  "hash": "54be0119a7a1",
+  "hash": "4b2705f32c0c",
   "who": "lisek",
-  "text": "And which one is the smallest? Point to it."
+  "text": "Now point to the smallest hollow."
  },
  "line.b_najmniejsza_nie": {
   "hash": "123827d679df",
@@ -85,9 +85,9 @@
   "text": "A mouse family will move into Squirrel's old hollow. But their box is too small for their things."
  },
  "line.b_pudelko": {
-  "hash": "5715b93e618a",
+  "hash": "db176539137d",
   "who": "lisek",
-  "text": "Which box is bigger? Point to it, and the mice will fit."
+  "text": "Point to the bigger box, and the mice will fit."
  },
  "line.b_pudelko_nie": {
   "hash": "2720a8dc15f5",
@@ -95,29 +95,24 @@
   "text": "That box is smaller. The mice need a bigger one."
  },
  "line.b_dziekuja": {
-  "hash": "0c2a41522497",
+  "hash": "2d35d8cb3d02",
   "who": "sowa",
-  "text": "The mice fit in and say thank you!"
- },
- "line.b_lapanie": {
-  "hash": "4d6edf948fa4",
-  "who": "lisek",
-  "text": "Acorns are falling from the oak! Catch the big ones, for the new store. Point to a big acorn."
+  "text": "The mice fit into the bigger box and say thank you!"
  },
  "line.b_do_domu": {
-  "hash": "0777b191f148",
+  "hash": "ae2b7c9b3c5f",
   "who": "wiewiorka",
-  "text": "I have a new hollow and big acorns! Come to my house-warming."
+  "text": "I have a new hollow that's just right! Come to my house-warming."
  },
  "line.p_start": {
-  "hash": "2e17d98ee52f",
+  "hash": "e7405b76093e",
   "who": "wiewiorka",
-  "text": "Before we go, let's play big and small!"
+  "text": "Before the house-warming, let's play big and small!"
  },
  "line.p_wiekszy": {
-  "hash": "390648ea019f",
+  "hash": "03da362fff55",
   "who": "lisek",
-  "text": "Which one is bigger? Point to it."
+  "text": "Point to the bigger one."
  },
  "line.p_poloz": {
   "hash": "61fe794c3954",
@@ -130,9 +125,9 @@
   "text": "See? The bigger one sticks out all round."
  },
  "line.p_najwiekszy": {
-  "hash": "4a870d0b0ce2",
+  "hash": "85c4f804549b",
   "who": "lisek",
-  "text": "Which apple is the biggest? Point to it."
+  "text": "Point to the biggest apple."
  },
  "line.p_najwiekszy_nie": {
   "hash": "da751d08d225",
@@ -140,9 +135,9 @@
   "text": "That apple is smaller. Look for the biggest one."
  },
  "line.p_cien": {
-  "hash": "907a04f559f3",
+  "hash": "de6970c90d7f",
   "who": "lisek",
-  "text": "Whose shadow is it: the big pear's or the small one's? Point to it."
+  "text": "Point to the pear this shadow belongs to: the big one or the small one."
  },
  "line.p_cien_nie": {
   "hash": "36136fbac8e6",
@@ -195,14 +190,14 @@
   "text": "That cap is too small. Try a bigger one."
  },
  "line.d_parapetowka": {
-  "hash": "2a29fef2a240",
+  "hash": "d1545e7b2fd6",
   "who": "wiewiorka",
-  "text": "Welcome to my new hollow! I'll make you some tea."
+  "text": "Welcome to the house-warming in my new hollow! First I'll put my store on the shelves."
  },
  "line.d_kubki": {
-  "hash": "e7f80c6739fe",
+  "hash": "92c4509089a9",
   "who": "sowa",
-  "text": "The big cup for big Fox, the small one for little Squirrel. Drag each cup."
+  "text": "Tea is ready! Give the big cup to big Fox, and the small one to little Squirrel."
  },
  "line.d_nie_ten": {
   "hash": "0e4742755467",
@@ -210,9 +205,9 @@
   "text": "That cup is for someone else. The big one for Fox, the small one for Squirrel."
  },
  "line.d_pasuje": {
-  "hash": "c60d4c6734b7",
+  "hash": "888944318dc0",
   "who": "lisek",
-  "text": "Everyone has a cup that's just right. Yum, tea!"
+  "text": "The big cup for big Fox, the small one for little Squirrel. Yum, tea!"
  },
  "line.d_rodzice": {
   "hash": "068cabb4b49d",
@@ -270,9 +265,9 @@
   "text": "There's only a small gap round the door. This hollow is a little bigger than the old one."
  },
  "line.b_ostatnia_dla": {
-  "hash": "2180a233acbe",
+  "hash": "de10ccf06a70",
   "who": "sowa",
-  "text": "Which hollow is just right for Squirrel: a little bigger than the old one? Point to it."
+  "text": "Point to the hollow just right for Squirrel, a little bigger than the old one."
  },
  "line.b_ostatnia_nie": {
   "hash": "828f2e1b67da",
@@ -280,9 +275,9 @@
   "text": "Not that one. We're looking for the one where the door left only a small gap."
  },
  "line.b_przeprowadzka": {
-  "hash": "8a5072566def",
+  "hash": "cca1700e97f5",
   "who": "wiewiorka",
-  "text": "And now, moving day! Come on, let's carry my store to my new hollow."
+  "text": "And now, moving day! My store is in two boxes, a big one and a small one. Who will carry the first one?"
  },
  "line.c_nowy_dom": {
   "hash": "60e388525605",
@@ -295,8 +290,113 @@
   "text": "What a beautiful oak! And so many acorns on it. Squirrel, you'll have plenty for your store."
  },
  "line.c_zapasy_w_dziupli": {
-  "hash": "de0ef821c21d",
+  "hash": "9e1815c24d11",
   "who": "wiewiorka",
-  "text": "All the big acorns are in my hollow. They fit, because this hollow is bigger than the old one!"
+  "text": "All my store fits in my hollow, because it's bigger than the old one!"
+ },
+ "line.p_najwiekszy_tak": {
+  "hash": "597a5d1b7e88",
+  "who": "wiewiorka",
+  "text": "Yes, that's the biggest apple!"
+ },
+ "line.b_ja_pierwszy": {
+  "hash": "5b571104b31c",
+  "who": "lisek",
+  "text": "I want to carry the first box! You too? Then let's play rock, paper, scissors. Whoever wins carries the first one."
+ },
+ "line.b_kpn_ty": {
+  "hash": "939c819f5146",
+  "who": "lisek",
+  "text": "Your win! You carry the first box, and I'll take the second."
+ },
+ "line.b_kpn_ja": {
+  "hash": "749c5b6047dd",
+  "who": "lisek",
+  "text": "My win! I carry the first box, and you take the second."
+ },
+ "line.c_pudlo_ty": {
+  "hash": "070d2b6d0fab",
+  "who": "wiewiorka",
+  "text": "Drag your box up into my new hollow, up there."
+ },
+ "line.c_pudlo_lis": {
+  "hash": "03196e1ac8ee",
+  "who": "lisek",
+  "text": "Hop! My box flies right into the hollow!"
+ },
+ "line.d_polki": {
+  "hash": "a3afec2aef03",
+  "who": "sowa",
+  "text": "Here is a big shelf, and there a little one. And two boxes of the store: a big one and a small one."
+ },
+ "line.d_ojej": {
+  "hash": "a1e570816ed8",
+  "who": "wiewiorka",
+  "text": "Oh no, the box is falling!"
+ },
+ "line.d_postaw": {
+  "hash": "cd484f3f1b3f",
+  "who": "sowa",
+  "text": "Drag each box onto the shelf that's just right for it."
+ },
+ "line.d_polka_nie": {
+  "hash": "22c39e37ce19",
+  "who": "sowa",
+  "text": "That shelf doesn't fit that box. Big on big, small on small."
+ },
+ "line.d_krzesla": {
+  "hash": "4c14348d222f",
+  "who": "sowa",
+  "text": "Now the chairs for the guests. Point to the smallest chair, it's for Squirrel."
+ },
+ "line.d_krzesla_nie": {
+  "hash": "3ade38de113a",
+  "who": "sowa",
+  "text": "That chair is bigger. Look for the smallest one."
+ },
+ "line.d_krzesla_ok": {
+  "hash": "7e1c6528359e",
+  "who": "wiewiorka",
+  "text": "Yes, the smallest chair is just right for me!"
+ },
+ "line.d_impreza": {
+  "hash": "604e0878c3d6",
+  "who": "wiewiorka",
+  "text": "The best house-warming! Every box, chair and cup is just right."
+ },
+ "line.d_buty": {
+  "hash": "62d654d0b91b",
+  "who": "lisek",
+  "text": "I'll show you a game for home. Two shoes, a big one and a small one. Point to the bigger shoe."
+ },
+ "line.d_buty_nie": {
+  "hash": "e6083f9ec166",
+  "who": "lisek",
+  "text": "That shoe is smaller. Look for the bigger one."
+ },
+ "line.d_buty_tak": {
+  "hash": "1ad1f59fdd50",
+  "who": "lisek",
+  "text": "Yes, that shoe is bigger. I'll lay the small one on the big one: the big one sticks out all round!"
+ },
+ "line.d_pudlo_wiew": {
+  "hash": "7ce205458ca8",
+  "who": "wiewiorka",
+  "text": "I'll put the big box on this little shelf. It'll be near the window!"
+ },
+ "line.d_pudlo_nie": {
+  "hash": "e2f237f7151f",
+  "who": "sowa",
+  "text": "That box is bigger than the little shelf, it sticks out on both sides. The big box on the big shelf, the small one on the small shelf."
+ },
+ "line.d_pudla_ok": {
+  "hash": "6d85d62097e0",
+  "who": "wiewiorka",
+  "text": "Yes! The big box stands on the big shelf, and the small one on the small shelf."
+ },
+ "line.p_czapki_ok": {
+  "hash": "32fc07955c4c",
+  "who": "wiewiorka",
+  "text": "Everyone has a cap that's just right: the biggest on Owl's big head, the smallest on mine!"
  }
 }

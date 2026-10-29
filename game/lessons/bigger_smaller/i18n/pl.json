@@ -33,7 +33,7 @@
   },
   "line.b_najwieksza": {
     "who": "lisek",
-    "text": "To która dziupla jest największa? Wskaż."
+    "text": "Wskaż, która dziupla jest największa."
   },
   "line.b_najwieksza_nie": {
     "who": "lisek",
@@ -49,7 +49,7 @@
   },
   "line.b_najmniejsza": {
     "who": "lisek",
-    "text": "A która jest najmniejsza? Wskaż."
+    "text": "A teraz wskaż, która dziupla jest najmniejsza."
   },
   "line.b_najmniejsza_nie": {
     "who": "lisek",
@@ -69,7 +69,7 @@
   },
   "line.b_pudelko": {
     "who": "lisek",
-    "text": "Które pudełko jest większe? Wskaż, a myszki się zmieszczą."
+    "text": "Wskaż większe pudełko, a myszki się zmieszczą."
   },
   "line.b_pudelko_nie": {
     "who": "lisek",
@@ -77,23 +77,19 @@
   },
   "line.b_dziekuja": {
     "who": "sowa",
-    "text": "Myszki się zmieściły i dziękują!"
-  },
-  "line.b_lapanie": {
-    "who": "lisek",
-    "text": "Z dębu spadają żołędzie! Łap te duże, do nowych zapasów. Wskaż duży żołądź."
+    "text": "Myszki zmieściły się w większym pudełku i dziękują!"
   },
   "line.b_do_domu": {
     "who": "wiewiorka",
-    "text": "Mam nową dziuplę i duże żołędzie! Zapraszam was do siebie na parapetówkę."
+    "text": "Mam nową dziuplę w sam raz! Zapraszam was do siebie na parapetówkę."
   },
   "line.p_start": {
     "who": "wiewiorka",
-    "text": "Zanim pójdziemy, pobawmy się w duże i małe!"
+    "text": "Zanim zacznie się parapetówka, pobawmy się w duże i małe!"
   },
   "line.p_wiekszy": {
     "who": "lisek",
-    "text": "Który jest większy? Wskaż."
+    "text": "Wskaż, który jest większy."
   },
   "line.p_poloz": {
     "who": "lisek",
@@ -105,7 +101,7 @@
   },
   "line.p_najwiekszy": {
     "who": "lisek",
-    "text": "Które jabłko jest największe? Wskaż."
+    "text": "Wskaż największe jabłko."
   },
   "line.p_najwiekszy_nie": {
     "who": "lisek",
@@ -113,7 +109,7 @@
   },
   "line.p_cien": {
     "who": "lisek",
-    "text": "Czyj to cień: dużej gruszki czy małej? Wskaż."
+    "text": "Wskaż gruszkę, do której należy ten cień: dużą czy małą."
   },
   "line.p_cien_nie": {
     "who": "lisek",
@@ -149,11 +145,11 @@
   },
   "line.d_parapetowka": {
     "who": "wiewiorka",
-    "text": "Witajcie w mojej nowej dziupli! Zrobię wam herbatkę."
+    "text": "Witajcie na parapetówce w mojej nowej dziupli! Najpierw postawię zapasy na półkach."
   },
   "line.d_kubki": {
     "who": "sowa",
-    "text": "Duży kubek dla dużego Liska, mały dla małej Wiewiórki. Przeciągnij każdy kubek."
+    "text": "Herbatka gotowa! Duży kubek daj dużemu Liskowi, a mały małej Wiewiórce."
   },
   "line.d_nie_ten": {
     "who": "sowa",
@@ -161,7 +157,7 @@
   },
   "line.d_pasuje": {
     "who": "lisek",
-    "text": "Każdy ma kubek w sam raz. Mniam, herbatka!"
+    "text": "Duży kubek dla dużego Liska, mały dla małej Wiewiórki. Mniam, herbatka!"
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -209,7 +205,7 @@
   },
   "line.b_ostatnia_dla": {
     "who": "sowa",
-    "text": "Która dziupla jest w sam raz dla Wiewiórki: troszkę większa od starej? Wskaż."
+    "text": "Wskaż dziuplę w sam raz dla Wiewiórki, troszkę większą od starej."
   },
   "line.b_ostatnia_nie": {
     "who": "sowa",
@@ -217,7 +213,7 @@
   },
   "line.b_przeprowadzka": {
     "who": "wiewiorka",
-    "text": "A teraz przeprowadzka! Chodźcie, zaniesiemy moje zapasy do nowej dziupli."
+    "text": "A teraz przeprowadzka! Moje zapasy są w dwóch pudłach, dużym i małym. Kto poniesie pierwsze?"
   },
   "line.c_nowy_dom": {
     "who": "wiewiorka",
@@ -229,6 +225,90 @@
   },
   "line.c_zapasy_w_dziupli": {
     "who": "wiewiorka",
-    "text": "Wszystkie duże żołędzie są w mojej dziupli. Zmieściły się, bo ta dziupla jest większa od starej!"
+    "text": "Wszystkie zapasy zmieściły się w mojej dziupli, bo jest większa od starej!"
+  },
+  "line.p_najwiekszy_tak": {
+    "who": "wiewiorka",
+    "text": "Tak, to jabłko jest największe!"
+  },
+  "line.b_ja_pierwszy": {
+    "who": "lisek",
+    "text": "Ja chcę nieść pierwsze pudło! A ty też? To zagrajmy w kamień, papier, nożyce. Kto wygra, ten niesie pierwsze."
+  },
+  "line.b_kpn_ty": {
+    "who": "lisek",
+    "text": "Twoja wygrana! Ty niesiesz pierwsze pudło, a ja drugie."
+  },
+  "line.b_kpn_ja": {
+    "who": "lisek",
+    "text": "Moja wygrana! Ja niosę pierwsze pudło, a ty drugie."
+  },
+  "line.c_pudlo_ty": {
+    "who": "wiewiorka",
+    "text": "Przeciągnij swoje pudło do mojej nowej dziupli, tam na górze."
+  },
+  "line.c_pudlo_lis": {
+    "who": "lisek",
+    "text": "Hop! Moje pudło leci prosto do dziupli!"
+  },
+  "line.d_polki": {
+    "who": "sowa",
+    "text": "Tu jest duża półka, a tam mała półeczka. I dwa pudła z zapasami: duże i małe."
+  },
+  "line.d_ojej": {
+    "who": "wiewiorka",
+    "text": "Ojej, pudło mi spada!"
+  },
+  "line.d_postaw": {
+    "who": "sowa",
+    "text": "Przeciągnij każde pudło na półkę w sam raz dla niego."
+  },
+  "line.d_polka_nie": {
+    "who": "sowa",
+    "text": "Ta półka nie pasuje do tego pudła. Duże na dużą, małe na małą."
+  },
+  "line.d_krzesla": {
+    "who": "sowa",
+    "text": "Teraz krzesła dla gości. Wskaż najmniejsze krzesło, to dla Wiewiórki."
+  },
+  "line.d_krzesla_nie": {
+    "who": "sowa",
+    "text": "To krzesło jest większe. Szukaj najmniejszego."
+  },
+  "line.d_krzesla_ok": {
+    "who": "wiewiorka",
+    "text": "Tak, najmniejsze krzesło jest w sam raz dla mnie!"
+  },
+  "line.d_impreza": {
+    "who": "wiewiorka",
+    "text": "Najpiękniejsza parapetówka! Każde pudło, krzesło i kubek jest w sam raz."
+  },
+  "line.d_buty": {
+    "who": "lisek",
+    "text": "Pokażę wam zabawę na dom. Dwa buty, duży i mały. Wskaż, który but jest większy."
+  },
+  "line.d_buty_nie": {
+    "who": "lisek",
+    "text": "Ten but jest mniejszy. Szukaj większego."
+  },
+  "line.d_buty_tak": {
+    "who": "lisek",
+    "text": "Tak, ten but jest większy. Położę mały na dużym: duży wystaje dookoła!"
+  },
+  "line.d_pudlo_wiew": {
+    "who": "wiewiorka",
+    "text": "Duże pudło postawię na tej małej półeczce. Będzie blisko okna!"
+  },
+  "line.d_pudlo_nie": {
+    "who": "sowa",
+    "text": "To pudło jest większe od półeczki, wystaje z obu stron. Duże pudło na dużą półkę, a małe na małą."
+  },
+  "line.d_pudla_ok": {
+    "who": "wiewiorka",
+    "text": "Tak! Duże pudło stoi na dużej półce, a małe na małej."
+  },
+  "line.p_czapki_ok": {
+    "who": "wiewiorka",
+    "text": "Każdy ma czapkę w sam raz: największa na największej głowie Sowy, a najmniejsza na mojej!"
   }
 }

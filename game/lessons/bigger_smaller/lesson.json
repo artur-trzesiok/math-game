@@ -14,23 +14,29 @@
   "backgrounds": [
     "las",
     "dab_wiewiorki",
-    "pokoj"
+    "dziupla_wnetrze"
   ],
   "objects": [
     "dziupla",
+    "drzwiczki",
     "myszki",
     "pudelko",
-    "zoledz",
     "listek",
     "talerz",
     "jablko",
     "gruszka",
+    "gest_kamien",
+    "gest_papier",
+    "gest_nozyce",
+    "krzeslo",
     "kubek",
-    "drzwiczki"
+    "but",
+    "pudlo_zapasy"
   ],
   "cover": "Squirrel peeks happily out of a round tree hollow that is just her size, Fox and Owl stand below; a tiny hollow and a huge one in other trees.",
   "naklejka": {
     "obraz": "objects/dziupla",
     "kto": "wiewiorka"
-  }
+  },
+  "oddech": "kpn"
 }

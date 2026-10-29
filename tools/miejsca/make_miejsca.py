@@ -29,6 +29,10 @@ OUT = ROOT / "game" / "assets" / "backgrounds"
 
 # scene: {place: (kind, where the patch goes)}
 MIEJSCA = {
+    "dziupla_wnetrze": {
+        "polka_duza": ("stoi", "the BIG long wooden wall shelf on the LEFT of the round window (the shelf board and the space just above it)"),
+        "polka_mala": ("stoi", "the SMALL short wooden wall shelf on the RIGHT of the round window (the shelf board and the space just above it)"),
+    },
     "dom": {
         "stol": ("stoi", "the whole flat TOP SURFACE of the big wooden kitchen table in the middle (only the table top, not the legs or chairs)"),
         "polka_gorna": ("stoi", "the UPPER small wooden wall shelf on the left, above the counter, with the jars standing on it (the shelf board and the space just above it where the jars stand)"),

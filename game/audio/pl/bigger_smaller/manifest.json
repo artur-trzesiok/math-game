@@ -40,9 +40,9 @@
   "text": "Popatrzcie, w tych drzewach są trzy dziuple."
  },
  "line.b_najwieksza": {
-  "hash": "a77ad08d89a2",
+  "hash": "f1ab7c0b404d",
   "who": "lisek",
-  "text": "To która dziupla jest największa? Wskaż."
+  "text": "Wskaż, która dziupla jest największa."
  },
  "line.b_najwieksza_nie": {
   "hash": "c19bee30d160",
@@ -60,9 +60,9 @@
   "text": "Brr! Jest za duża. Wieje w niej wiatr i jest zimno."
  },
  "line.b_najmniejsza": {
-  "hash": "f9359a46805b",
+  "hash": "5c4d87d4ce0f",
   "who": "lisek",
-  "text": "A która jest najmniejsza? Wskaż."
+  "text": "A teraz wskaż, która dziupla jest najmniejsza."
  },
  "line.b_najmniejsza_nie": {
   "hash": "e2a571b3b0dc",
@@ -85,9 +85,9 @@
   "text": "Do starej dziupli Wiewiórki wprowadzi się rodzina myszek. Ale mają za małe pudełko na swoje rzeczy."
  },
  "line.b_pudelko": {
-  "hash": "8be8f00ae001",
+  "hash": "54ac29c11667",
   "who": "lisek",
-  "text": "Które pudełko jest większe? Wskaż, a myszki się zmieszczą."
+  "text": "Wskaż większe pudełko, a myszki się zmieszczą."
  },
  "line.b_pudelko_nie": {
   "hash": "160ca9be7c07",
@@ -95,29 +95,24 @@
   "text": "To pudełko jest mniejsze. Myszki potrzebują większego."
  },
  "line.b_dziekuja": {
-  "hash": "a502cfe0bad8",
+  "hash": "4bd0272fde64",
   "who": "sowa",
-  "text": "Myszki się zmieściły i dziękują!"
- },
- "line.b_lapanie": {
-  "hash": "32f09ed33a39",
-  "who": "lisek",
-  "text": "Z dębu spadają żołędzie! Łap te duże, do nowych zapasów. Wskaż duży żołądź."
+  "text": "Myszki zmieściły się w większym pudełku i dziękują!"
  },
  "line.b_do_domu": {
-  "hash": "a31ac604dd68",
+  "hash": "03d196fe8e65",
   "who": "wiewiorka",
-  "text": "Mam nową dziuplę i duże żołędzie! Zapraszam was do siebie na parapetówkę."
+  "text": "Mam nową dziuplę w sam raz! Zapraszam was do siebie na parapetówkę."
  },
  "line.p_start": {
-  "hash": "4c089e25a3d6",
+  "hash": "b0d037b6bddf",
   "who": "wiewiorka",
-  "text": "Zanim pójdziemy, pobawmy się w duże i małe!"
+  "text": "Zanim zacznie się parapetówka, pobawmy się w duże i małe!"
  },
  "line.p_wiekszy": {
-  "hash": "e5388086c468",
+  "hash": "fad7bc0e7f8c",
   "who": "lisek",
-  "text": "Który jest większy? Wskaż."
+  "text": "Wskaż, który jest większy."
  },
  "line.p_poloz": {
   "hash": "acb385149282",
@@ -130,9 +125,9 @@
   "text": "Widzisz? Większy wystaje dookoła."
  },
  "line.p_najwiekszy": {
-  "hash": "251fdfdb73ca",
+  "hash": "b9d1a1dfe480",
   "who": "lisek",
-  "text": "Które jabłko jest największe? Wskaż."
+  "text": "Wskaż największe jabłko."
  },
  "line.p_najwiekszy_nie": {
   "hash": "080d28a8ba87",
@@ -140,9 +135,9 @@
   "text": "To jabłko jest mniejsze. Poszukaj największego."
  },
  "line.p_cien": {
-  "hash": "1b7ea26d6373",
+  "hash": "aea84fb8e59e",
   "who": "lisek",
-  "text": "Czyj to cień: dużej gruszki czy małej? Wskaż."
+  "text": "Wskaż gruszkę, do której należy ten cień: dużą czy małą."
  },
  "line.p_cien_nie": {
   "hash": "262bbf3f68c7",
@@ -195,14 +190,14 @@
   "text": "Ta czapka jest za mała. Spróbuj większej."
  },
  "line.d_parapetowka": {
-  "hash": "fb9dd89682a2",
+  "hash": "48bc3abe5656",
   "who": "wiewiorka",
-  "text": "Witajcie w mojej nowej dziupli! Zrobię wam herbatkę."
+  "text": "Witajcie na parapetówce w mojej nowej dziupli! Najpierw postawię zapasy na półkach."
  },
  "line.d_kubki": {
-  "hash": "7f7a1fe678a6",
+  "hash": "c7b0011d217f",
   "who": "sowa",
-  "text": "Duży kubek dla dużego Liska, mały dla małej Wiewiórki. Przeciągnij każdy kubek."
+  "text": "Herbatka gotowa! Duży kubek daj dużemu Liskowi, a mały małej Wiewiórce."
  },
  "line.d_nie_ten": {
   "hash": "8a307a73957f",
@@ -210,9 +205,9 @@
   "text": "Ten kubek jest dla kogoś innego. Duży dla Liska, mały dla Wiewiórki."
  },
  "line.d_pasuje": {
-  "hash": "f2802bb405c2",
+  "hash": "9f56cfdcbd3e",
   "who": "lisek",
-  "text": "Każdy ma kubek w sam raz. Mniam, herbatka!"
+  "text": "Duży kubek dla dużego Liska, mały dla małej Wiewiórki. Mniam, herbatka!"
  },
  "line.d_rodzice": {
   "hash": "7fd4d9a6a5bb",
@@ -270,9 +265,9 @@
   "text": "Dookoła drzwiczek jest tylko mała szparka. Ta dziupla jest troszkę większa od starej."
  },
  "line.b_ostatnia_dla": {
-  "hash": "53a6cdad3e45",
+  "hash": "d95fb125732c",
   "who": "sowa",
-  "text": "Która dziupla jest w sam raz dla Wiewiórki: troszkę większa od starej? Wskaż."
+  "text": "Wskaż dziuplę w sam raz dla Wiewiórki, troszkę większą od starej."
  },
  "line.b_ostatnia_nie": {
   "hash": "ca9e898935e5",
@@ -280,9 +275,9 @@
   "text": "Ta nie. Szukamy tej, przy której drzwiczki miały tylko małą szparkę."
  },
  "line.b_przeprowadzka": {
-  "hash": "e08b0716d10d",
+  "hash": "4943c3cca64f",
   "who": "wiewiorka",
-  "text": "A teraz przeprowadzka! Chodźcie, zaniesiemy moje zapasy do nowej dziupli."
+  "text": "A teraz przeprowadzka! Moje zapasy są w dwóch pudłach, dużym i małym. Kto poniesie pierwsze?"
  },
  "line.c_nowy_dom": {
   "hash": "34d7d287cbeb",
@@ -295,8 +290,113 @@
   "text": "Jaki piękny dąb! I ile na nim żołędzi. Wiewiórko, będziesz miała z czego robić zapasy."
  },
  "line.c_zapasy_w_dziupli": {
-  "hash": "0769007fb256",
+  "hash": "6d0d53300e7d",
   "who": "wiewiorka",
-  "text": "Wszystkie duże żołędzie są w mojej dziupli. Zmieściły się, bo ta dziupla jest większa od starej!"
+  "text": "Wszystkie zapasy zmieściły się w mojej dziupli, bo jest większa od starej!"
+ },
+ "line.p_najwiekszy_tak": {
+  "hash": "d0c0d1d40cf0",
+  "who": "wiewiorka",
+  "text": "Tak, to jabłko jest największe!"
+ },
+ "line.b_ja_pierwszy": {
+  "hash": "8fb37d0bc523",
+  "who": "lisek",
+  "text": "Ja chcę nieść pierwsze pudło! A ty też? To zagrajmy w kamień, papier, nożyce. Kto wygra, ten niesie pierwsze."
+ },
+ "line.b_kpn_ty": {
+  "hash": "33b87556e0e3",
+  "who": "lisek",
+  "text": "Twoja wygrana! Ty niesiesz pierwsze pudło, a ja drugie."
+ },
+ "line.b_kpn_ja": {
+  "hash": "4ad4ba043d4a",
+  "who": "lisek",
+  "text": "Moja wygrana! Ja niosę pierwsze pudło, a ty drugie."
+ },
+ "line.c_pudlo_ty": {
+  "hash": "5375e3de2b65",
+  "who": "wiewiorka",
+  "text": "Przeciągnij swoje pudło do mojej nowej dziupli, tam na górze."
+ },
+ "line.c_pudlo_lis": {
+  "hash": "b5d798f04a7d",
+  "who": "lisek",
+  "text": "Hop! Moje pudło leci prosto do dziupli!"
+ },
+ "line.d_polki": {
+  "hash": "d3198049bdd5",
+  "who": "sowa",
+  "text": "Tu jest duża półka, a tam mała półeczka. I dwa pudła z zapasami: duże i małe."
+ },
+ "line.d_ojej": {
+  "hash": "24c7a98ebf78",
+  "who": "wiewiorka",
+  "text": "Ojej, pudło mi spada!"
+ },
+ "line.d_postaw": {
+  "hash": "b237644af80b",
+  "who": "sowa",
+  "text": "Przeciągnij każde pudło na półkę w sam raz dla niego."
+ },
+ "line.d_polka_nie": {
+  "hash": "f448976cb11e",
+  "who": "sowa",
+  "text": "Ta półka nie pasuje do tego pudła. Duże na dużą, małe na małą."
+ },
+ "line.d_krzesla": {
+  "hash": "cbf42ce4f056",
+  "who": "sowa",
+  "text": "Teraz krzesła dla gości. Wskaż najmniejsze krzesło, to dla Wiewiórki."
+ },
+ "line.d_krzesla_nie": {
+  "hash": "6d7266c65b86",
+  "who": "sowa",
+  "text": "To krzesło jest większe. Szukaj najmniejszego."
+ },
+ "line.d_krzesla_ok": {
+  "hash": "abbd9031e73a",
+  "who": "wiewiorka",
+  "text": "Tak, najmniejsze krzesło jest w sam raz dla mnie!"
+ },
+ "line.d_impreza": {
+  "hash": "11e71fcac64d",
+  "who": "wiewiorka",
+  "text": "Najpiękniejsza parapetówka! Każde pudło, krzesło i kubek jest w sam raz."
+ },
+ "line.d_buty": {
+  "hash": "c3c31da35855",
+  "who": "lisek",
+  "text": "Pokażę wam zabawę na dom. Dwa buty, duży i mały. Wskaż, który but jest większy."
+ },
+ "line.d_buty_nie": {
+  "hash": "7a273af87ab9",
+  "who": "lisek",
+  "text": "Ten but jest mniejszy. Szukaj większego."
+ },
+ "line.d_buty_tak": {
+  "hash": "645dc97de47f",
+  "who": "lisek",
+  "text": "Tak, ten but jest większy. Położę mały na dużym: duży wystaje dookoła!"
+ },
+ "line.d_pudlo_wiew": {
+  "hash": "22b5ddec534c",
+  "who": "wiewiorka",
+  "text": "Duże pudło postawię na tej małej półeczce. Będzie blisko okna!"
+ },
+ "line.d_pudlo_nie": {
+  "hash": "443c26594f94",
+  "who": "sowa",
+  "text": "To pudło jest większe od półeczki, wystaje z obu stron. Duże pudło na dużą półkę, a małe na małą."
+ },
+ "line.d_pudla_ok": {
+  "hash": "a0da60e83c11",
+  "who": "wiewiorka",
+  "text": "Tak! Duże pudło stoi na dużej półce, a małe na małej."
+ },
+ "line.p_czapki_ok": {
+  "hash": "0a11bc592dce",
+  "who": "wiewiorka",
+  "text": "Każdy ma czapkę w sam raz: największa na największej głowie Sowy, a najmniejsza na mojej!"
  }
 }
