@@ -10,5 +10,9 @@
   "line.etap_apply": {
     "who": "narrator",
     "text": "Wracamy do domu!"
+  },
+  "line.ilustracja_dalej": {
+    "who": "narrator",
+    "text": "Gotowe? Dotknij strzałki i idziemy dalej!"
   }
 }

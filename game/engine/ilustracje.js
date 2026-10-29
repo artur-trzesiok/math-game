@@ -16,7 +16,8 @@ const easeOut = (s) => 1 - (1 - s) ** 3;
 
 // the stamp's paper: white with a perforated edge (half discs bitten out all round), drawn once per size
 function znaczek(w, h, b) {
-  const k = 512 / Math.max(w, h), W = Math.round(w * k), H = Math.round(h * k), B = Math.max(10, Math.round(b * k));
+  const k = 2048 / Math.max(w, h),   // the stamp fills most of the screen: 512 px blurred its perforation
+  W = Math.round(w * k), H = Math.round(h * k), B = Math.max(10, Math.round(b * k));
   const c = document.createElement("canvas"); c.width = W; c.height = H;
   const x = c.getContext("2d");
   x.fillStyle = "#fffaf0"; x.fillRect(0, 0, W, H);
@@ -40,7 +41,11 @@ function wygnij(m, curl, Hc) {
   p.needsUpdate = true;
 }
 
-export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
+// The end waits for the child (czekaj): a painted "next" button (tools/objects/make_przycisk.py) bobs on the stamp's
+// bottom edge until it is tapped - a child may want to look at the picture. The narrator's "tap the arrow" (mowDalej)
+// comes at once only the very first time in the game, later only after 10 s without a tap.
+const ZNANY_DALEJ = "math_game.dalej_znany";
+export async function ilustracja(S, nazwa, { ruch = "najazd", czekaj = false, mowDalej = null } = {}) {
   const kat = `/game/assets/ilustracje/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const tex = await texture(kat + "obraz.webp");
@@ -87,7 +92,8 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
   }
 
   // the speaker's badge: a live render of the head of whoever speaks, a white ring round it
-  const rt = new THREE.WebGLRenderTarget(256, 256, { stencilBuffer: true, depthBuffer: true });
+  // 768 px: the badge is ~30 % of the screen height, a 256 px render looked blurred on it
+  const rt = new THREE.WebGLRenderTarget(768, 768, { stencilBuffer: true, depthBuffer: true, samples: 4 });
   const kamG = new THREE.PerspectiveCamera(20, 1, 0.1, 100);
   const R = Math.min(V.h * 0.14, 0.78);
   const plakietka = new THREE.Group(); plakietka.scale.setScalar(0.001);
@@ -95,7 +101,7 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
   const obwodka = new THREE.Mesh(new THREE.RingGeometry(R, R * 1.12, 48), mat({ color: "#fffaf0" })); obwodka.renderOrder = 6.1;
   const kreska = new THREE.Mesh(new THREE.RingGeometry(R * 1.12, R * 1.16, 48), mat({ color: "#3a332d" })); kreska.renderOrder = 6.2;
   plakietka.add(twarz, obwodka, kreska); plakietka.position.z = 0.6; scena.add(plakietka);
-  let mowca = null, pokaz = 0;
+  let mowca = null, pokaz = 0, dalej = null, puscDalej = null;
 
   const t0 = performance.now();
   let curl = 1.3, gotowa = false;
@@ -110,6 +116,11 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
         obrazTex.repeat.set(z, z);
         const dx = ruch === "w_lewo" ? (1 - z) * (1 - s) : ruch === "w_prawo" ? (1 - z) * s : (1 - z) / 2;
         obrazTex.offset.set(dx, (1 - z) / 2);
+      }
+      if (dalej) {                                                    // the button bobs and breathes
+        const t = performance.now() / 1000, p = Math.min(1, (performance.now() - dalej.userData.t0) / 350);
+        dalej.position.y = dalej.userData.y + Math.sin(t * 3.2) * dalej.userData.r * 0.14;
+        dalej.scale.setScalar((p < 1 ? 1.15 * Math.sin(p * Math.PI / 2) : 1) * (1 + 0.05 * Math.sin(t * 6.4)));
       }
       // who speaks: their head, live, in the corner on their side
       const L = S.puppets[S.ostatniMowca];
@@ -151,8 +162,37 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
   await S.tween(FAST ? 0.05 : 0.18, (s) => karta.scale.setScalar(1.035 - 0.035 * s));
 
   let zniknela = false;
+  const naDalej = async () => {
+    const tex = await texture("/game/assets/objects/przycisk_dalej.webp").catch(() => null);
+    if (!tex || zniknela) return;
+    const r = widac().h * 0.075;
+    dalej = new THREE.Mesh(new THREE.PlaneGeometry(2 * r, 2 * r * tex.image.height / tex.image.width), mat({ map: tex }));
+    dalej.renderOrder = 7; dalej.userData = { y: -Hc / 2 - r * 0.15, r, t0: performance.now() };
+    dalej.position.set(0, dalej.userData.y, 0.5); dalej.scale.setScalar(0.001); karta.add(dalej);
+    S.sfx.graj("pop");
+    const ray = new THREE.Raycaster(), el = S.renderer.domElement;
+    let znany = false; try { znany = !!localStorage.getItem(ZNANY_DALEJ); } catch { /* private mode */ }
+    let podpowiedz = null;
+    if (!znany) { try { localStorage.setItem(ZNANY_DALEJ, "1"); } catch { /* private mode */ } mowDalej?.(); }
+    else podpowiedz = setTimeout(() => mowDalej?.(), 10000);
+    await new Promise((ok) => {
+      const klik = (e) => {
+        const b = el.getBoundingClientRect();
+        ray.setFromCamera(new THREE.Vector2(((e.clientX - b.left) / b.width) * 2 - 1, -((e.clientY - b.top) / b.height) * 2 + 1), kam);
+        if (!ray.intersectObject(dalej).length) return;
+        e.stopImmediatePropagation(); puscDalej();
+      };
+      const moj = () => puscDalej?.();
+      puscDalej = () => { clearTimeout(podpowiedz); el.removeEventListener("pointerdown", klik, true); if (S.ilustracjaDalej === moj) S.ilustracjaDalej = null; puscDalej = null; ok(); };
+      el.addEventListener("pointerdown", klik, true);
+      S.ilustracjaDalej = moj;                                        // tests: gra.stage.ilustracjaDalej()
+    });
+    S.sfx.graj("tap");
+    await S.tween(FAST ? 0.05 : 0.18, (q) => dalej.scale.setScalar(1 - 0.25 * Math.sin(q * Math.PI)));
+  };
   const usun = () => {
     if (zniknela) return; zniknela = true;
+    puscDalej?.(); if (dalej) { dalej.geometry.dispose(); dalej.material.dispose(); }
     const i = S.warstwy.indexOf(warstwa); if (i >= 0) S.warstwy.splice(i, 1);
     rt.dispose(); papier.dispose(); obrazTex.dispose();
     for (const m of [cien, rama, obraz, twarz, obwodka, kreska, welon]) m.geometry.dispose();
@@ -163,6 +203,8 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
     kind: "ilustracja", name: nazwa, mesh: karta, base: 1, meta,
     // the end: it slides down off the screen, its leading edge lifting
     zsun: async () => {
+      if (zniknela) return;
+      if (czekaj) await naDalej();
       if (zniknela) return;
       S.sfx.graj("whoosh", { glosnosc: 0.7 });
       const V3 = widac();
