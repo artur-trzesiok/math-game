@@ -28,6 +28,9 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "most of the picture, on a fully TRANSPARENT background, NO glow, NO halo, NO shadow on the ground, NO text, NO "
         "letters, NO numbers.")
 KROPKI = {
+    # tangram practice: a shadow puppet's outline on the theatre sheet - joined from the smallest, a bird's shadow appears
+    "cien_ptaka": {"n": 8, "tlo": "papier", "lekcje": ["tangram"],
+                   "obraz": "The SHADOW of a little BIRD flying to the right with both wings spread wide up and out, as cast on a theatre sheet by a shadow puppet: ONE solid soft dark plum-grey silhouette with no inner details except one small round light eye, a short pointed beak, a fan-shaped tail. A simple bold silhouette with clear corners (wing tips, beak, tail)."},
     # numbers_1_5 practice: Mole's engine appears from five dots, 1-5 (the same painting as `lokomotywa`)
     "lokomotywa_piec": {"n": 5, "tlo": "papier", "lekcje": ["numbers_1_5"],
                         "obraz": "A little red steam ENGINE seen from the side, facing right: a round boiler, a tall black chimney, a cab with a window, big red wheels. A simple bold silhouette with few corners."},

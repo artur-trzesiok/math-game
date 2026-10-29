@@ -104,25 +104,10 @@
   "who": "sowa",
   "text": "Let's make pictures from pieces! I have five games."
  },
- "line.p_ryba": {
-  "hash": "aab3339bf356",
-  "who": "wiewiorka",
-  "text": "Make a fish."
- },
- "line.p_dobrze": {
-  "hash": "c72d06c98857",
-  "who": "sowa",
-  "text": "Bravo!"
- },
- "line.p_dobrze.wiewiorka": {
-  "hash": "b078bb8b91d9",
-  "who": "wiewiorka",
-  "text": "Bravo!"
- },
  "line.p_luka": {
-  "hash": "ecdf298fe968",
+  "hash": "a15e5cb24ce3",
   "who": "wiewiorka",
-  "text": "A piece is missing from the house. Which one fits the gap? Point to it."
+  "text": "The cat has lost an ear: point to the piece that fits the gap."
  },
  "line.p_za_duzy": {
   "hash": "d0e1457dfe6e",
@@ -134,40 +119,20 @@
   "who": "wiewiorka",
   "text": "That piece has a different shape from the gap."
  },
- "line.p_lodka": {
-  "hash": "4d929b26f6fa",
-  "who": "sowa",
-  "text": "Make a boat. The pieces need turning."
- },
  "line.p_czyj": {
-  "hash": "34422b3b3a3b",
+  "hash": "48ecbb467eb1",
   "who": "sowa",
-  "text": "And whose shadow is this? Point to it."
+  "text": "Point to whose shadow this is."
  },
  "line.p_jez": {
   "hash": "b837cadfd9f0",
   "who": "wiewiorka",
   "text": "It's the hedgehog's shadow! It has spikes."
  },
- "line.p_kot": {
-  "hash": "1ba0aed2328c",
-  "who": "wiewiorka",
-  "text": "And now make the cat."
- },
- "line.h_kuchnia": {
-  "hash": "d62b658aa923",
-  "who": "mis",
-  "text": "We can make pictures in the kitchen too! First a square from two triangles."
- },
  "line.h_kwadrat": {
-  "hash": "dadf9dbcba4f",
+  "hash": "82d1c64f3675",
   "who": "sowa",
-  "text": "Two triangles make a square!"
- },
- "line.h_domek": {
-  "hash": "bb9c10c8a8bd",
-  "who": "mis",
-  "text": "And now a house."
+  "text": "Look: you cut a paper square into two triangles."
  },
  "line.h_dobrze": {
   "hash": "11fa90bafcdd",
@@ -195,9 +160,9 @@
   "text": "This is a colourful block. We got it when we made puppets from pieces for Owl's shadow theatre."
  },
  "line.b_plakat": {
-  "hash": "0a4af077d6c5",
+  "hash": "1e1bf25a4f04",
   "who": "wiewiorka",
-  "text": "Look, I found the poster of our show!"
+  "text": "Look, the poster of our show! Oh no, it's torn."
  },
  "line.b_plakat_kot": {
   "hash": "69d68f77e31f",
@@ -218,5 +183,140 @@
   "hash": "fe54f74f11ea",
   "who": "sowa",
   "text": "The ears are two small triangles, and the head is a turned square. We have pieces like these!"
+ },
+ "line.a_patrz": {
+  "hash": "d3aec3366abf",
+  "who": "sowa",
+  "text": "Look, it's the same triangle. I tap it once, and once more."
+ },
+ "line.a_dach": {
+  "hash": "4843b59dc24c",
+  "who": "sowa",
+  "text": "And now its point is up, like a roof!"
+ },
+ "line.a_aha": {
+  "hash": "73c8d8957692",
+  "who": "mis",
+  "text": "Oh! It wasn't wrong, just turned."
+ },
+ "line.b_podarl": {
+  "hash": "c1f2ff707d4c",
+  "who": "mis",
+  "text": "That was me, my paw caught it. Let's put it back together!"
+ },
+ "line.b_miny": {
+  "hash": "457ba6f8d346",
+  "who": "wiewiorka",
+  "text": "Before the show, actors practise their faces. Practise with me!"
+ },
+ "line.b_miny_ok": {
+  "hash": "48ef86579230",
+  "who": "wiewiorka",
+  "text": "Now we're ready for the show!"
+ },
+ "line.p_kwadrat": {
+  "hash": "b0b5c5a2a05a",
+  "who": "wiewiorka",
+  "text": "First make a square from two triangles."
+ },
+ "line.p_kwadrat_ok": {
+  "hash": "447f46f6a174",
+  "who": "sowa",
+  "text": "Yes, two triangles make a square!"
+ },
+ "line.p_ucho_ok": {
+  "hash": "2ff547367fe2",
+  "who": "sowa",
+  "text": "Yes, the small triangle! The cat has two ears again."
+ },
+ "line.p_kropki": {
+  "hash": "6eef0c67336e",
+  "who": "sowa",
+  "text": "Join the dots from the smallest and a shadow will appear."
+ },
+ "line.p_ptak": {
+  "hash": "9e775da9b337",
+  "who": "sowa",
+  "text": "Yes, it's a bird's shadow! It has wings and a beak."
+ },
+ "line.p_rakieta": {
+  "hash": "b0d1e6fe3c73",
+  "who": "wiewiorka",
+  "text": "And last, make a rocket."
+ },
+ "line.p_rakieta_ok": {
+  "hash": "6656ba908351",
+  "who": "wiewiorka",
+  "text": "Yes, a rocket of squares and triangles! Off to the stars!"
+ },
+ "line.h_wrocilismy": {
+  "hash": "0f00815d8ace",
+  "who": "mis",
+  "text": "The show is over, and I want more!"
+ },
+ "line.h_tutaj": {
+  "hash": "fd5ffa705b17",
+  "who": "sowa",
+  "text": "Let's put on a shadow theatre right here, on the wall. We need a light."
+ },
+ "line.h_lampka": {
+  "hash": "1ce71726eda4",
+  "who": "wiewiorka",
+  "text": "Put the lamp on the rug so it shines on the wall."
+ },
+ "line.h_swieci": {
+  "hash": "9468b62c987a",
+  "who": "mis",
+  "text": "It shines on the wall! Now a puppet."
+ },
+ "line.h_lis": {
+  "hash": "fcdb88607fa3",
+  "who": "sowa",
+  "text": "Let's make a fox: a big head and two pointed ears."
+ },
+ "line.h_ucho": {
+  "hash": "9e90644bd4a7",
+  "who": "mis",
+  "text": "This ear doesn't fit. I'll throw it under the bed!"
+ },
+ "line.h_obroc": {
+  "hash": "7a6a2ee91e9e",
+  "who": "sowa",
+  "text": "Bear, again? Don't throw it away, just turn it!"
+ },
+ "line.h_aha": {
+  "hash": "e6be64ad3655",
+  "who": "mis",
+  "text": "Oh, right! Make the fox with me."
+ },
+ "line.h_lis_ok": {
+  "hash": "b8ee35475f18",
+  "who": "wiewiorka",
+  "text": "The fox is nodding on the wall!"
+ },
+ "line.h_choinka": {
+  "hash": "2f453bef2ab8",
+  "who": "sowa",
+  "text": "And now make a tree from the same pieces."
+ },
+ "line.h_pudelko": {
+  "hash": "662bcab2959b",
+  "who": "mis",
+  "text": "Bedtime, the pieces go back in the box: point to the one that fits the gap."
+ },
+ "line.h_pudelko_nie": {
+  "hash": "76c0a369f0c0",
+  "who": "mis",
+  "text": "That piece has a different shape from the gap."
+ },
+ "line.h_pudelko_ok": {
+  "hash": "6b6ad58dcabf",
+  "who": "sowa",
+  "text": "Yes, the green slanted piece! Every piece is in its place."
+ },
+ "line.h_teatr": {
+  "hash": "6d64198776ce",
+  "who": "wiewiorka",
+  "text": "The loveliest shadow theatre, right in our room!"
  }
 }

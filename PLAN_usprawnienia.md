@@ -17,7 +17,7 @@ Updated at the end of every phase (date, commit).
 | 2b breathers designed and built | DONE 2026-10-29: six new ones built and tested on the mechanics page (kpn, lustro, karmienie, latawiec, ktoPowiedzial, malowanie) with their own line pool `game/oddechy` (23 lines x 9 voices x 2 languages); the swing was built and dropped by the user, skipping stones not built; the assignment in `oddechy_plan.md` avoids both |
 | 3 home act, rooms with drop places | rooms DONE (dom, pokoj, pokoj_noc, przedpokoj have `miejsca.json`), the architecture is in docs/guidelines.md; the home acts themselves are written in phase 5. Found: the bookcase in pokoj / pokoj_noc and most of the doormat lie off a 4:3 screen, the hooks reach under the phase icons |
 | tables: placements, breathers, panoramas | written (`game/lessons/rozmieszczenie_plan.md`, `oddechy_plan.md`); waiting for approval |
-| 4-5 pass over the 24 lessons | in progress: tables approved 2026-10-29; pilot one_many DONE (80350576); the brief for the agents is `game/lessons/przejscie_brief.md`; waves of 3. DONE: one_many, long_short, spot_difference, bigger_smaller, tall_short, ordering, shapes, morning_night, noticing_order, counting_3, more_fewer, logical_pairs, numbers_1_5, up_down (14 of 24); next: in_out, tangram |
+| 4-5 pass over the 24 lessons | in progress: tables approved 2026-10-29; pilot one_many DONE (80350576); the brief for the agents is `game/lessons/przejscie_brief.md`; waves of 3. DONE: one_many, long_short, spot_difference, bigger_smaller, tall_short, ordering, shapes, morning_night, noticing_order, counting_3, more_fewer, logical_pairs, numbers_1_5, up_down (14 of 24); tangram done (15 of 24); next: in_out |
 | 6 whole game | - |
 
 Decisions the user made for this plan (2026-10-29):

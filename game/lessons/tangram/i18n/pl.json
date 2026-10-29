@@ -57,7 +57,7 @@
   },
   "line.b_plakat": {
     "who": "wiewiorka",
-    "text": "Patrzcie, znalazłam plakat naszego przedstawienia!"
+    "text": "Patrzcie, plakat naszego przedstawienia! Ojej, jest podarty."
   },
   "line.b_plakat_kot": {
     "who": "sowa",
@@ -102,20 +102,9 @@
     "who": "sowa",
     "text": "Poukładajmy obrazki z kawałków! Mam pięć zabaw."
   },
-  "line.p_ryba": {
-    "who": "wiewiorka",
-    "text": "Ułóż rybkę."
-  },
-  "line.p_dobrze": {
-    "who": "sowa",
-    "text": "Brawo!",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
   "line.p_luka": {
     "who": "wiewiorka",
-    "text": "W domku brakuje kawałka. Który pasuje do dziury? Wskaż."
+    "text": "Kotek zgubił ucho: wskaż kawałek, który pasuje do dziury."
   },
   "line.p_za_duzy": {
     "who": "wiewiorka",
@@ -125,33 +114,17 @@
     "who": "wiewiorka",
     "text": "Ten kawałek ma inny kształt niż dziura."
   },
-  "line.p_lodka": {
-    "who": "sowa",
-    "text": "Ułóż łódkę. Kawałki trzeba poobracać."
-  },
   "line.p_czyj": {
     "who": "sowa",
-    "text": "A to czyj cień? Wskaż."
+    "text": "Wskaż, czyj to cień."
   },
   "line.p_jez": {
     "who": "wiewiorka",
     "text": "To cień jeżyka! Ma kolce."
   },
-  "line.p_kot": {
-    "who": "wiewiorka",
-    "text": "A teraz ułóż kotka."
-  },
-  "line.h_kuchnia": {
-    "who": "mis",
-    "text": "W kuchni też możemy układać! Najpierw kwadrat z dwóch trójkątów."
-  },
   "line.h_kwadrat": {
     "who": "sowa",
-    "text": "Dwa trójkąty to kwadrat!"
-  },
-  "line.h_domek": {
-    "who": "mis",
-    "text": "A teraz domek."
+    "text": "Patrz: kwadrat z papieru przecinasz na dwa trójkąty."
   },
   "line.h_dobrze": {
     "who": "sowa",
@@ -160,6 +133,114 @@
   "line.h_rodzice": {
     "who": "mis",
     "text": "Wytnij z rodzicami kwadrat z papieru, przetnij go na trójkąty i ułóżcie razem obrazki. A wieczorem zróbcie teatr cieni z latarką!"
+  },
+  "line.a_patrz": {
+    "who": "sowa",
+    "text": "Patrz, to ten sam trójkąt. Stuknę go raz i jeszcze raz."
+  },
+  "line.a_dach": {
+    "who": "sowa",
+    "text": "I już ma czubek do góry, jak dach!"
+  },
+  "line.a_aha": {
+    "who": "mis",
+    "text": "Aha! Nie był zły, tylko obrócony."
+  },
+  "line.b_podarl": {
+    "who": "mis",
+    "text": "To ja, zaczepiłem go łapą. Poskładajmy go!"
+  },
+  "line.b_miny": {
+    "who": "wiewiorka",
+    "text": "Przed przedstawieniem aktorzy ćwiczą miny. Poćwicz ze mną!"
+  },
+  "line.b_miny_ok": {
+    "who": "wiewiorka",
+    "text": "Teraz jesteśmy gotowi do występu!"
+  },
+  "line.p_kwadrat": {
+    "who": "wiewiorka",
+    "text": "Najpierw ułóż kwadrat z dwóch trójkątów."
+  },
+  "line.p_kwadrat_ok": {
+    "who": "sowa",
+    "text": "Tak, dwa trójkąty to kwadrat!"
+  },
+  "line.p_ucho_ok": {
+    "who": "sowa",
+    "text": "Tak, mały trójkąt! Kotek ma znowu dwa uszy."
+  },
+  "line.p_kropki": {
+    "who": "sowa",
+    "text": "Połącz kropki od najmniejszej, a pokaże się cień."
+  },
+  "line.p_ptak": {
+    "who": "sowa",
+    "text": "Tak, to cień ptaszka! Ma skrzydła i dziób."
+  },
+  "line.p_rakieta": {
+    "who": "wiewiorka",
+    "text": "A na koniec ułóż rakietę."
+  },
+  "line.p_rakieta_ok": {
+    "who": "wiewiorka",
+    "text": "Tak, rakieta z kwadratów i trójkątów! Leci do gwiazd!"
+  },
+  "line.h_wrocilismy": {
+    "who": "mis",
+    "text": "Teatr się skończył, a ja chcę jeszcze!"
+  },
+  "line.h_tutaj": {
+    "who": "sowa",
+    "text": "Zróbmy teatr cieni tutaj, na ścianie. Potrzebne nam światło."
+  },
+  "line.h_lampka": {
+    "who": "wiewiorka",
+    "text": "Postaw lampkę na dywanie, żeby świeciła na ścianę."
+  },
+  "line.h_swieci": {
+    "who": "mis",
+    "text": "Świeci na ścianę! Teraz lalka."
+  },
+  "line.h_lis": {
+    "who": "sowa",
+    "text": "Zróbmy lisa: dużą głowę i dwa spiczaste uszy."
+  },
+  "line.h_ucho": {
+    "who": "mis",
+    "text": "To ucho nie pasuje. Wrzucę je pod łóżko!"
+  },
+  "line.h_obroc": {
+    "who": "sowa",
+    "text": "Misiu, znowu? Nie wyrzucaj, tylko obróć!"
+  },
+  "line.h_aha": {
+    "who": "mis",
+    "text": "Ach, prawda! Ułóż lisa ze mną."
+  },
+  "line.h_lis_ok": {
+    "who": "wiewiorka",
+    "text": "Lis kiwa głową na ścianie!"
+  },
+  "line.h_choinka": {
+    "who": "sowa",
+    "text": "A teraz z tych samych kawałków ułóż choinkę."
+  },
+  "line.h_pudelko": {
+    "who": "mis",
+    "text": "Pora spać, kawałki wracają do pudełka: wskaż ten, który pasuje do dziury."
+  },
+  "line.h_pudelko_nie": {
+    "who": "mis",
+    "text": "Ten kawałek ma inny kształt niż dziura."
+  },
+  "line.h_pudelko_ok": {
+    "who": "sowa",
+    "text": "Tak, zielony ukośny kawałek! Każdy kawałek jest na swoim miejscu."
+  },
+  "line.h_teatr": {
+    "who": "wiewiorka",
+    "text": "Najpiękniejszy teatr cieni, w naszym pokoju!"
   },
   "line.naklejka_daj": {
     "who": "sowa",

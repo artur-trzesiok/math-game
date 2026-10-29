@@ -104,25 +104,10 @@
   "who": "sowa",
   "text": "Poukładajmy obrazki z kawałków! Mam pięć zabaw."
  },
- "line.p_ryba": {
-  "hash": "61db46629e1b",
-  "who": "wiewiorka",
-  "text": "Ułóż rybkę."
- },
- "line.p_dobrze": {
-  "hash": "671b319f1b8d",
-  "who": "sowa",
-  "text": "Brawo!"
- },
- "line.p_dobrze.wiewiorka": {
-  "hash": "380ec0c47b57",
-  "who": "wiewiorka",
-  "text": "Brawo!"
- },
  "line.p_luka": {
-  "hash": "eb633310d171",
+  "hash": "7a85eb7e9b21",
   "who": "wiewiorka",
-  "text": "W domku brakuje kawałka. Który pasuje do dziury? Wskaż."
+  "text": "Kotek zgubił ucho: wskaż kawałek, który pasuje do dziury."
  },
  "line.p_za_duzy": {
   "hash": "df04400ecbd7",
@@ -134,40 +119,20 @@
   "who": "wiewiorka",
   "text": "Ten kawałek ma inny kształt niż dziura."
  },
- "line.p_lodka": {
-  "hash": "283c66ec2732",
-  "who": "sowa",
-  "text": "Ułóż łódkę. Kawałki trzeba poobracać."
- },
  "line.p_czyj": {
-  "hash": "424354b770b7",
+  "hash": "db6adc3c1f78",
   "who": "sowa",
-  "text": "A to czyj cień? Wskaż."
+  "text": "Wskaż, czyj to cień."
  },
  "line.p_jez": {
   "hash": "6e4808defd28",
   "who": "wiewiorka",
   "text": "To cień jeżyka! Ma kolce."
  },
- "line.p_kot": {
-  "hash": "a2d619dc8908",
-  "who": "wiewiorka",
-  "text": "A teraz ułóż kotka."
- },
- "line.h_kuchnia": {
-  "hash": "3188951c4743",
-  "who": "mis",
-  "text": "W kuchni też możemy układać! Najpierw kwadrat z dwóch trójkątów."
- },
  "line.h_kwadrat": {
-  "hash": "933fa682e0f9",
+  "hash": "efdfc945beea",
   "who": "sowa",
-  "text": "Dwa trójkąty to kwadrat!"
- },
- "line.h_domek": {
-  "hash": "96e2899a0d0a",
-  "who": "mis",
-  "text": "A teraz domek."
+  "text": "Patrz: kwadrat z papieru przecinasz na dwa trójkąty."
  },
  "line.h_dobrze": {
   "hash": "8d26f768ee2e",
@@ -195,9 +160,9 @@
   "text": "To kolorowy klocek. Dostaliśmy go, kiedy robiliśmy z kawałków lalki do teatru cieni Sowy."
  },
  "line.b_plakat": {
-  "hash": "fe3fc786c138",
+  "hash": "fa734a84316d",
   "who": "wiewiorka",
-  "text": "Patrzcie, znalazłam plakat naszego przedstawienia!"
+  "text": "Patrzcie, plakat naszego przedstawienia! Ojej, jest podarty."
  },
  "line.b_plakat_kot": {
   "hash": "c7401d5e7277",
@@ -218,5 +183,140 @@
   "hash": "199d2a4e800c",
   "who": "sowa",
   "text": "Uszy to dwa małe trójkąty, a głowa to obrócony kwadrat. Takie kawałki mamy!"
+ },
+ "line.a_patrz": {
+  "hash": "5417d32ed2c6",
+  "who": "sowa",
+  "text": "Patrz, to ten sam trójkąt. Stuknę go raz i jeszcze raz."
+ },
+ "line.a_dach": {
+  "hash": "153abbf80221",
+  "who": "sowa",
+  "text": "I już ma czubek do góry, jak dach!"
+ },
+ "line.a_aha": {
+  "hash": "948e3a913a03",
+  "who": "mis",
+  "text": "Aha! Nie był zły, tylko obrócony."
+ },
+ "line.b_podarl": {
+  "hash": "c80d1c223088",
+  "who": "mis",
+  "text": "To ja, zaczepiłem go łapą. Poskładajmy go!"
+ },
+ "line.b_miny": {
+  "hash": "a4f7f6c51374",
+  "who": "wiewiorka",
+  "text": "Przed przedstawieniem aktorzy ćwiczą miny. Poćwicz ze mną!"
+ },
+ "line.b_miny_ok": {
+  "hash": "5735d77ddcd3",
+  "who": "wiewiorka",
+  "text": "Teraz jesteśmy gotowi do występu!"
+ },
+ "line.p_kwadrat": {
+  "hash": "50d310ab0a66",
+  "who": "wiewiorka",
+  "text": "Najpierw ułóż kwadrat z dwóch trójkątów."
+ },
+ "line.p_kwadrat_ok": {
+  "hash": "233f9f17af8e",
+  "who": "sowa",
+  "text": "Tak, dwa trójkąty to kwadrat!"
+ },
+ "line.p_ucho_ok": {
+  "hash": "115f8c3c8737",
+  "who": "sowa",
+  "text": "Tak, mały trójkąt! Kotek ma znowu dwa uszy."
+ },
+ "line.p_kropki": {
+  "hash": "200abed24769",
+  "who": "sowa",
+  "text": "Połącz kropki od najmniejszej, a pokaże się cień."
+ },
+ "line.p_ptak": {
+  "hash": "f773622917f6",
+  "who": "sowa",
+  "text": "Tak, to cień ptaszka! Ma skrzydła i dziób."
+ },
+ "line.p_rakieta": {
+  "hash": "0d632c2c98d1",
+  "who": "wiewiorka",
+  "text": "A na koniec ułóż rakietę."
+ },
+ "line.p_rakieta_ok": {
+  "hash": "6cfb2ce2cf90",
+  "who": "wiewiorka",
+  "text": "Tak, rakieta z kwadratów i trójkątów! Leci do gwiazd!"
+ },
+ "line.h_wrocilismy": {
+  "hash": "bd59ca18af0e",
+  "who": "mis",
+  "text": "Teatr się skończył, a ja chcę jeszcze!"
+ },
+ "line.h_tutaj": {
+  "hash": "dc2d1ee70fc2",
+  "who": "sowa",
+  "text": "Zróbmy teatr cieni tutaj, na ścianie. Potrzebne nam światło."
+ },
+ "line.h_lampka": {
+  "hash": "b52bf29f879a",
+  "who": "wiewiorka",
+  "text": "Postaw lampkę na dywanie, żeby świeciła na ścianę."
+ },
+ "line.h_swieci": {
+  "hash": "f539bd07bcd6",
+  "who": "mis",
+  "text": "Świeci na ścianę! Teraz lalka."
+ },
+ "line.h_lis": {
+  "hash": "c020f95ff30b",
+  "who": "sowa",
+  "text": "Zróbmy lisa: dużą głowę i dwa spiczaste uszy."
+ },
+ "line.h_ucho": {
+  "hash": "bb425939d831",
+  "who": "mis",
+  "text": "To ucho nie pasuje. Wrzucę je pod łóżko!"
+ },
+ "line.h_obroc": {
+  "hash": "77528df56b52",
+  "who": "sowa",
+  "text": "Misiu, znowu? Nie wyrzucaj, tylko obróć!"
+ },
+ "line.h_aha": {
+  "hash": "5538ba56fc48",
+  "who": "mis",
+  "text": "Ach, prawda! Ułóż lisa ze mną."
+ },
+ "line.h_lis_ok": {
+  "hash": "45aa799e9162",
+  "who": "wiewiorka",
+  "text": "Lis kiwa głową na ścianie!"
+ },
+ "line.h_choinka": {
+  "hash": "bc0bf4cec98d",
+  "who": "sowa",
+  "text": "A teraz z tych samych kawałków ułóż choinkę."
+ },
+ "line.h_pudelko": {
+  "hash": "b5710c895af5",
+  "who": "mis",
+  "text": "Pora spać, kawałki wracają do pudełka: wskaż ten, który pasuje do dziury."
+ },
+ "line.h_pudelko_nie": {
+  "hash": "e7756fb86ffc",
+  "who": "mis",
+  "text": "Ten kawałek ma inny kształt niż dziura."
+ },
+ "line.h_pudelko_ok": {
+  "hash": "1b04fe84a9fc",
+  "who": "sowa",
+  "text": "Tak, zielony ukośny kawałek! Każdy kawałek jest na swoim miejscu."
+ },
+ "line.h_teatr": {
+  "hash": "d00878567cf3",
+  "who": "wiewiorka",
+  "text": "Najpiękniejszy teatr cieni, w naszym pokoju!"
  }
 }
