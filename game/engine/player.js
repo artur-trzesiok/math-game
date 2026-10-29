@@ -13,6 +13,7 @@ import * as E from "./efekty.js";
 import * as U from "./ubior.js";
 import { Stage, GROUND } from "./scene.js";
 import * as Album from "./album.js";
+import * as Mapa from "./mapa.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
 import * as R from "./rytm.js";
 import * as M from "./mechaniki.js";
@@ -268,6 +269,13 @@ export class Player {
     chips.innerHTML = ""; chips.style.display = "none";            // no row of topic chips: the planks over the cards and the signposts say where you are
     const bloki = [...pas.querySelectorAll(".topic")];
     const naBlok = (sec) => pas.scrollTo({ left: sec.offsetLeft - parseFloat(getComputedStyle(pas).paddingLeft), behavior: "smooth" });
+    // the world map: this world's stages as stops on a painted path, Fox on the furthest open one; a stop scrolls here
+    $("#mapaBtn img").src = v("/game/assets/mapa/ikona.webp");
+    $("#mapaBtn").onclick = () => {
+      dzwiekMenu("pop");
+      Mapa.otworz({ swiat: swiat.id, dzwiek: dzwiekMenu, onWybierz: (tid) => { const sec = bloki.find((b) => b.dataset.topic === tid); if (sec) naBlok(sec); },
+        etapy: topics.map((t, i) => ({ id: t.id, nr: (t.title?.pl || "").match(/\d+/)?.[0] || i + 1, kolor: t.color, znak: t.znak, otwarty: !!otwarty[i], skonczony: skonczony(t) })) });
+    };
     const odswiez = () => {
       const x = pas.scrollLeft, max = pas.scrollWidth - pas.clientWidth;
       pas.style.setProperty("--fade-l", x > 4 ? "40px" : "0px"); pas.style.setProperty("--fade-r", x < max - 4 ? "40px" : "0px");   // more this way
