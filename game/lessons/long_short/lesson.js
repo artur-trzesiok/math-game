@@ -1,7 +1,8 @@
 // Lesson: long and short - longer / shorter, and the method: lay things from ONE line before comparing. The friends go
 // for a picnic across the brook: Squirrel picks the plank that "reaches further" (it only lay further out) - it is too
 // short and falls into the water; laid from one line, the long one is plain to see and becomes the bridge. On the
-// meadow Squirrel's short scarf is swapped for the long one; a snail race; at home the scarves go on the hooks.
+// meadow Squirrel's short scarf is swapped for the long one; a snail race; Deer's map shows two paths to the picnic
+// glade - the shorter one takes them there; at home the scarves go on the hooks.
 // Script in scenario.md.
 
 const ROW_Y = 1.45;
@@ -144,9 +145,26 @@ export default {
         await c.ujecie("sredni", { na: [meta, ...sl] });                     // the snail at the flower
         await c.say("lisek", "line.b_meta", { anim: "Brawo" });
         c.clear();
+        // the way to the picnic: Deer's map - two paths from one start to the glade; we are hungry, so the shorter one
+        await c.ujecie("zblizenie", { na: "sarenka" });
+        await c.say("sarenka", "line.b_mapa", { anim: "Zgloszenie" });
         await c.ujecie("ogolny");
-        // the picnic: one long baguette for everybody
-        const bagietka = await c.object("bagietka_dluga", { x: 0, y: 0.2, size: 4.0 });
+        const mapa = await c.znalezisko("mapa_pikniku", { skad: "sarenka" });
+        const [krotsza] = mapa.cele.slice().sort((a, b) => mapa.meta.cele[a.nr].x - mapa.meta.cele[b.nr].x);   // the short path is the left one
+        await c.say("sarenka", "line.b_mapa_drogi");
+        await c.say("lisek", "line.b_mapa_ktora");
+        dobre(mapa.cele, false); dobre(krotsza); await c.task({ targets: [...mapa.cele, mapa.tlo], correct: krotsza, wrong: "line.b_mapa_nie" }); dobre(krotsza, false);
+        await c.say("sarenka", "line.b_mapa_tak", { anim: "Radosc" });
+        await mapa.remove();
+        await c.ujecie("ogolny");
+      },
+      // C. the picnic glade at the end of the short path: one long baguette for everybody
+      async (c) => {
+        await c.go("polana_piknik", { enter: true });
+        await Promise.all(["lisek", "wiewiorka", "sarenka"].map((n) => c.enter(n)));
+        await c.play("wiewiorka", "Rozgladanie");
+        await c.say("wiewiorka", "line.c_polana", { anim: "Radosc" });             // wide: the blanket and the basket in view
+        const bagietka = await c.object("bagietka_dluga", { x: 0.5, y: 1.15, size: 3.4 });      // on the painted blanket
         await wyrosnij(c);
         await c.ujecie("sredni", { na: [bagietka, "sarenka"] });
         await c.say("sarenka", "line.b_piknik", { anim: "Radosc" });

@@ -177,7 +177,7 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To motyl znad zaczarowanego stawu. Dostaliśmy go, kiedy szukaliśmy różnic."
+    "text": "To motyl spod dębu babci Sowy. Dostaliśmy go, kiedy szukaliśmy różnic."
   },
   "line.d_druga": {
     "who": "sowa",
@@ -190,5 +190,25 @@
   "line.p_jeszcze_raz": {
     "who": "lisek",
     "text": "Jeszcze raz! Zapamiętaj wszystkie rzeczy w rzędzie."
+  },
+  "line.b_do_babci": {
+    "who": "lisek",
+    "text": "Zanieśmy laurkę babci! Prowadź, Sowo."
+  },
+  "line.c_dab": {
+    "who": "sowa",
+    "text": "Jesteśmy! W tym starym dębie mieszka moja babcia. Widzicie okrągłe drzwiczki wysoko w pniu? To jej dom."
+  },
+  "line.c_zapukaj": {
+    "who": "lisek",
+    "text": "Zapukajmy! Babcia zobaczy, jaką piękną laurkę dla niej masz."
+  },
+  "line.c_spi": {
+    "who": "sowa",
+    "text": "Ciii! W dzień babcia śpi, bo sowy czuwają w nocy. Zostawię laurkę przy drzwiczkach. Wieczorem ją znajdzie."
+  },
+  "line.c_czeka": {
+    "who": "lisek",
+    "text": "Laurka czeka na babcię. Ale będzie miała niespodziankę!"
   }
 }

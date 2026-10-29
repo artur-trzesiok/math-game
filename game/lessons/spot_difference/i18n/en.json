@@ -177,7 +177,7 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the butterfly from the magic pond. We got it when we looked for differences."
+    "text": "This is the butterfly from Granny Owl's oak. We got it when we looked for differences."
   },
   "line.d_druga": {
     "who": "sowa",
@@ -190,5 +190,25 @@
   "line.p_jeszcze_raz": {
     "who": "lisek",
     "text": "Once more! Remember all the things in the row."
+  },
+  "line.b_do_babci": {
+    "who": "lisek",
+    "text": "Let's take the card to your granny! Lead the way, Owl."
+  },
+  "line.c_dab": {
+    "who": "sowa",
+    "text": "Here we are! My granny lives in this old oak. Can you see the little round door high up in the trunk? That's her home."
+  },
+  "line.c_zapukaj": {
+    "who": "lisek",
+    "text": "Let's knock! Granny will see what a lovely card you have for her."
+  },
+  "line.c_spi": {
+    "who": "sowa",
+    "text": "Shh! Granny sleeps in the daytime, because owls stay awake at night. I'll leave the card by her door. She'll find it this evening."
+  },
+  "line.c_czeka": {
+    "who": "lisek",
+    "text": "The card is waiting for Granny. What a surprise she'll have!"
   }
 }

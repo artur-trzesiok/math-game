@@ -11,8 +11,10 @@ as me!" Owl: at a glance yes, but the pond plays tricks - look carefully. **Chil
 the water), circled on both. "A difference: something not the same in two pictures." Again with a hat and glasses -
 two differences.
 B. The pond's game: two pictures of the meadow, three differences (`roznice`). Helping: Owl's drawing for her granny
-and the pond's copy - **child** finds the differences, then points to the real one (the kitten, the sun's rays).
-Breather: catch three butterflies.
+and the pond's copy - **child** finds the differences, then points to the real one (the kitten, the sun's rays). "Let's take it to your granny!"
+C. *Granny Owl's old oak* (`dab_babci`, a place of its own: a round door high in the trunk, a flower bed). Owl: here my
+granny lives; Fox wants to knock - "shh, by day Granny sleeps, owls are awake at night"; the drawing flies up and stays
+by her door, a surprise for the evening. Breather: catch three butterflies over Granny's flowers. Home.
 
 ## Stage 2 - practice (an insert, five stars)
 Three picture pairs (garden, beach, room); what has gone from a row of four (eyes closed); which of four shadows is

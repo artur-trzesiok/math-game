@@ -59,22 +59,6 @@
     "who": "wiewiorka",
     "text": "This one is too small, even smaller than my old one!"
   },
-  "line.b_sprawdzmy": {
-    "who": "sowa",
-    "text": "One is left. Now you check: hold the door against this hollow."
-  },
-  "line.b_wystaje": {
-    "who": "sowa",
-    "text": "There's only a small gap round the door. This hollow is a little bigger than the old one!"
-  },
-  "line.b_wskaz_wieksza": {
-    "who": "sowa",
-    "text": "Which hollow is bigger, the old one or the new one? Point to it."
-  },
-  "line.b_wskaz_wieksza_nie": {
-    "who": "sowa",
-    "text": "That's the old, smaller hollow. In the new one there was a gap round the door."
-  },
   "line.b_w_sam_raz": {
     "who": "wiewiorka",
     "text": "Bigger than the old one, and smaller than the huge one. Just right for me!"
@@ -199,18 +183,6 @@
     "who": "sowa",
     "text": "We've brought the door from the old hollow. We'll hold it against each new one."
   },
-  "line.b_obwodka": {
-    "who": "sowa",
-    "text": "Look: there's a big dark gap all round the door. I've circled it."
-  },
-  "line.b_duzo_wieksza": {
-    "who": "sowa",
-    "text": "This hollow is much bigger than the old one."
-  },
-  "line.b_stara_wystaje": {
-    "who": "sowa",
-    "text": "The door covers the whole hole and still sticks out! This hollow is smaller than the old one."
-  },
   "line.a_drzwiczki": {
     "who": "sowa",
     "text": "Your old hollow has a round little door. It fits it exactly. We can't take the hollow, but we can take the door!"
@@ -242,5 +214,21 @@
   "line.b_ostatnia_nie": {
     "who": "sowa",
     "text": "Not that one. We're looking for the one where the door left only a small gap."
+  },
+  "line.b_przeprowadzka": {
+    "who": "wiewiorka",
+    "text": "And now, moving day! Come on, let's carry my store to my new hollow."
+  },
+  "line.c_nowy_dom": {
+    "who": "wiewiorka",
+    "text": "Here it is, in this big oak! My new hollow: not too big and not too small, just right."
+  },
+  "line.c_zoledzie": {
+    "who": "sowa",
+    "text": "What a beautiful oak! And so many acorns on it. Squirrel, you'll have plenty for your store."
+  },
+  "line.c_zapasy_w_dziupli": {
+    "who": "wiewiorka",
+    "text": "All the big acorns are in my hollow. They fit, because this hollow is bigger than the old one!"
   }
 }

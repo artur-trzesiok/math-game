@@ -1,0 +1,404 @@
+{
+ "plyta": "plyta.webp",
+ "szerokosc": 1536,
+ "wysokosc": 1024,
+ "horyzont": 341,
+ "rekwizyty": [
+  {
+   "plik": "rekwizyt_00.webp",
+   "klasa": "drift",
+   "x": 217,
+   "y": 119,
+   "w": 189,
+   "h": 64,
+   "faza": 0.0
+  },
+  {
+   "plik": "rekwizyt_01.webp",
+   "klasa": "sway",
+   "x": 89,
+   "y": 729,
+   "w": 245,
+   "h": 196,
+   "faza": 0.618
+  },
+  {
+   "plik": "rekwizyt_02.webp",
+   "klasa": "sway",
+   "x": 438,
+   "y": 729,
+   "w": 180,
+   "h": 62,
+   "faza": 0.2361
+  },
+  {
+   "plik": "rekwizyt_03.webp",
+   "klasa": "sway",
+   "x": 1048,
+   "y": 780,
+   "w": 169,
+   "h": 73,
+   "faza": 0.8541
+  },
+  {
+   "plik": "rekwizyt_04.webp",
+   "klasa": "sway",
+   "x": 794,
+   "y": 764,
+   "w": 154,
+   "h": 60,
+   "faza": 0.4721
+  },
+  {
+   "plik": "rekwizyt_05.webp",
+   "klasa": "sway",
+   "x": 382,
+   "y": 808,
+   "w": 151,
+   "h": 59,
+   "faza": 0.0902
+  },
+  {
+   "plik": "rekwizyt_06.webp",
+   "klasa": "sway",
+   "x": 783,
+   "y": 853,
+   "w": 101,
+   "h": 76,
+   "faza": 0.7082
+  },
+  {
+   "plik": "rekwizyt_07.webp",
+   "klasa": "sway",
+   "x": 1231,
+   "y": 711,
+   "w": 119,
+   "h": 116,
+   "faza": 0.3262
+  },
+  {
+   "plik": "rekwizyt_08.webp",
+   "klasa": "sway",
+   "x": 315,
+   "y": 678,
+   "w": 103,
+   "h": 56,
+   "faza": 0.9443
+  },
+  {
+   "plik": "rekwizyt_09.webp",
+   "klasa": "sway",
+   "x": 89,
+   "y": 656,
+   "w": 96,
+   "h": 42,
+   "faza": 0.5623
+  },
+  {
+   "plik": "rekwizyt_10.webp",
+   "klasa": "sway",
+   "x": 203,
+   "y": 710,
+   "w": 114,
+   "h": 50,
+   "faza": 0.1803
+  },
+  {
+   "plik": "rekwizyt_11.webp",
+   "klasa": "sway",
+   "x": 323,
+   "y": 773,
+   "w": 106,
+   "h": 50,
+   "faza": 0.7984
+  },
+  {
+   "plik": "rekwizyt_12.webp",
+   "klasa": "sway",
+   "x": 636,
+   "y": 866,
+   "w": 55,
+   "h": 93,
+   "faza": 0.4164
+  },
+  {
+   "plik": "rekwizyt_13.webp",
+   "klasa": "sway",
+   "x": 185,
+   "y": 568,
+   "w": 106,
+   "h": 48,
+   "faza": 0.0344
+  },
+  {
+   "plik": "rekwizyt_14.webp",
+   "klasa": "drift",
+   "x": 283,
+   "y": 281,
+   "w": 122,
+   "h": 36,
+   "faza": 0.6525
+  },
+  {
+   "plik": "rekwizyt_15.webp",
+   "klasa": "sway",
+   "x": 353,
+   "y": 583,
+   "w": 93,
+   "h": 44,
+   "faza": 0.2705
+  },
+  {
+   "plik": "rekwizyt_16.webp",
+   "klasa": "sway",
+   "x": 981,
+   "y": 692,
+   "w": 79,
+   "h": 37,
+   "faza": 0.8885
+  },
+  {
+   "plik": "rekwizyt_17.webp",
+   "klasa": "sway",
+   "x": 88,
+   "y": 562,
+   "w": 88,
+   "h": 36,
+   "faza": 0.5066
+  },
+  {
+   "plik": "rekwizyt_18.webp",
+   "klasa": "sway",
+   "x": 1366,
+   "y": 512,
+   "w": 71,
+   "h": 61,
+   "faza": 0.1246
+  },
+  {
+   "plik": "rekwizyt_19.webp",
+   "klasa": "drift",
+   "x": 780,
+   "y": 291,
+   "w": 105,
+   "h": 36,
+   "faza": 0.7426
+  },
+  {
+   "plik": "rekwizyt_20.webp",
+   "klasa": "sway",
+   "x": 452,
+   "y": 605,
+   "w": 67,
+   "h": 34,
+   "faza": 0.3607
+  },
+  {
+   "plik": "rekwizyt_21.webp",
+   "klasa": "sway",
+   "x": 30,
+   "y": 707,
+   "w": 72,
+   "h": 57,
+   "faza": 0.9787
+  },
+  {
+   "plik": "rekwizyt_22.webp",
+   "klasa": "sway",
+   "x": 1,
+   "y": 666,
+   "w": 70,
+   "h": 35,
+   "faza": 0.5967
+  },
+  {
+   "plik": "rekwizyt_23.webp",
+   "klasa": "sway",
+   "x": 614,
+   "y": 788,
+   "w": 97,
+   "h": 35,
+   "faza": 0.2148
+  },
+  {
+   "plik": "rekwizyt_24.webp",
+   "klasa": "sway",
+   "x": 1079,
+   "y": 609,
+   "w": 60,
+   "h": 64,
+   "faza": 0.8328
+  },
+  {
+   "plik": "rekwizyt_25.webp",
+   "klasa": "sway",
+   "x": 614,
+   "y": 734,
+   "w": 66,
+   "h": 33,
+   "faza": 0.4508
+  },
+  {
+   "plik": "rekwizyt_26.webp",
+   "klasa": "sway",
+   "x": 1284,
+   "y": 761,
+   "w": 48,
+   "h": 44,
+   "faza": 0.0689
+  },
+  {
+   "plik": "rekwizyt_27.webp",
+   "klasa": "sway",
+   "x": 181,
+   "y": 640,
+   "w": 61,
+   "h": 31,
+   "faza": 0.6869
+  },
+  {
+   "plik": "rekwizyt_28.webp",
+   "klasa": "drift",
+   "x": 453,
+   "y": 288,
+   "w": 74,
+   "h": 19,
+   "faza": 0.305
+  },
+  {
+   "plik": "rekwizyt_29.webp",
+   "klasa": "sway",
+   "x": 546,
+   "y": 673,
+   "w": 57,
+   "h": 30,
+   "faza": 0.923
+  },
+  {
+   "plik": "rekwizyt_30.webp",
+   "klasa": "sway",
+   "x": 1208,
+   "y": 546,
+   "w": 40,
+   "h": 44,
+   "faza": 0.541
+  },
+  {
+   "plik": "rekwizyt_31.webp",
+   "klasa": "sway",
+   "x": 693,
+   "y": 651,
+   "w": 55,
+   "h": 27,
+   "faza": 0.1591
+  },
+  {
+   "plik": "rekwizyt_32.webp",
+   "klasa": "sway",
+   "x": 1,
+   "y": 557,
+   "w": 38,
+   "h": 48,
+   "faza": 0.7771
+  },
+  {
+   "plik": "rekwizyt_33.webp",
+   "klasa": "sway",
+   "x": 264,
+   "y": 643,
+   "w": 66,
+   "h": 29,
+   "faza": 0.3951
+  },
+  {
+   "plik": "rekwizyt_34.webp",
+   "klasa": "sway",
+   "x": 702,
+   "y": 744,
+   "w": 51,
+   "h": 24,
+   "faza": 0.0132
+  },
+  {
+   "plik": "rekwizyt_35.webp",
+   "klasa": "sway",
+   "x": 578,
+   "y": 910,
+   "w": 55,
+   "h": 43,
+   "faza": 0.6312
+  },
+  {
+   "plik": "rekwizyt_36.webp",
+   "klasa": "sway",
+   "x": 1228,
+   "y": 751,
+   "w": 29,
+   "h": 46,
+   "faza": 0.2492
+  },
+  {
+   "plik": "rekwizyt_37.webp",
+   "klasa": "sway",
+   "x": 951,
+   "y": 830,
+   "w": 46,
+   "h": 26,
+   "faza": 0.8673
+  },
+  {
+   "plik": "rekwizyt_38.webp",
+   "klasa": "sway",
+   "x": 73,
+   "y": 793,
+   "w": 41,
+   "h": 28,
+   "faza": 0.4853
+  },
+  {
+   "plik": "rekwizyt_39.webp",
+   "klasa": "sway",
+   "x": 881,
+   "y": 729,
+   "w": 43,
+   "h": 24,
+   "faza": 0.1033
+  },
+  {
+   "plik": "rekwizyt_40.webp",
+   "klasa": "sway",
+   "x": 221,
+   "y": 786,
+   "w": 41,
+   "h": 24,
+   "faza": 0.7214
+  },
+  {
+   "plik": "rekwizyt_41.webp",
+   "klasa": "sway",
+   "x": 748,
+   "y": 777,
+   "w": 33,
+   "h": 31,
+   "faza": 0.3394
+  },
+  {
+   "plik": "rekwizyt_42.webp",
+   "klasa": "sway",
+   "x": 609,
+   "y": 558,
+   "w": 60,
+   "h": 17,
+   "faza": 0.9574
+  },
+  {
+   "plik": "rekwizyt_43.webp",
+   "klasa": "sway",
+   "x": 936,
+   "y": 716,
+   "w": 27,
+   "h": 27,
+   "faza": 0.5755
+  }
+ ]
+}

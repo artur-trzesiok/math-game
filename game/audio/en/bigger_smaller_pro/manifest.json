@@ -74,26 +74,6 @@
   "who": "wiewiorka",
   "text": "This one is too small, even smaller than my old one!"
  },
- "line.b_sprawdzmy": {
-  "hash": "adb6624b70af",
-  "who": "sowa",
-  "text": "One is left. Now you check: hold the door against this hollow."
- },
- "line.b_wystaje": {
-  "hash": "74cd66921473",
-  "who": "sowa",
-  "text": "There's only a small gap round the door. This hollow is a little bigger than the old one!"
- },
- "line.b_wskaz_wieksza": {
-  "hash": "830f1fc59f30",
-  "who": "sowa",
-  "text": "Which hollow is bigger, the old one or the new one? Point to it."
- },
- "line.b_wskaz_wieksza_nie": {
-  "hash": "bef6a48b298a",
-  "who": "sowa",
-  "text": "That's the old, smaller hollow. In the new one there was a gap round the door."
- },
  "line.b_w_sam_raz": {
   "hash": "b11143771829",
   "who": "wiewiorka",
@@ -259,21 +239,6 @@
   "who": "sowa",
   "text": "We've brought the door from the old hollow. We'll hold it against each new one."
  },
- "line.b_obwodka": {
-  "hash": "933964817823",
-  "who": "sowa",
-  "text": "Look: there's a big dark gap all round the door. I've circled it."
- },
- "line.b_duzo_wieksza": {
-  "hash": "f1a4a795e884",
-  "who": "sowa",
-  "text": "This hollow is much bigger than the old one."
- },
- "line.b_stara_wystaje": {
-  "hash": "d8501d9add97",
-  "who": "sowa",
-  "text": "The door covers the whole hole and still sticks out! This hollow is smaller than the old one."
- },
  "line.a_drzwiczki": {
   "hash": "fd4611da3040",
   "who": "sowa",
@@ -313,5 +278,25 @@
   "hash": "828f2e1b67da",
   "who": "sowa",
   "text": "Not that one. We're looking for the one where the door left only a small gap."
+ },
+ "line.b_przeprowadzka": {
+  "hash": "8a5072566def",
+  "who": "wiewiorka",
+  "text": "And now, moving day! Come on, let's carry my store to my new hollow."
+ },
+ "line.c_nowy_dom": {
+  "hash": "60e388525605",
+  "who": "wiewiorka",
+  "text": "Here it is, in this big oak! My new hollow: not too big and not too small, just right."
+ },
+ "line.c_zoledzie": {
+  "hash": "df8c6242ab11",
+  "who": "sowa",
+  "text": "What a beautiful oak! And so many acorns on it. Squirrel, you'll have plenty for your store."
+ },
+ "line.c_zapasy_w_dziupli": {
+  "hash": "de0ef821c21d",
+  "who": "wiewiorka",
+  "text": "All the big acorns are in my hollow. They fit, because this hollow is bigger than the old one!"
  }
 }

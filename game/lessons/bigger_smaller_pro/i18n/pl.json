@@ -59,22 +59,6 @@
     "who": "wiewiorka",
     "text": "Ta jest za mała, jeszcze mniejsza niż moja stara!"
   },
-  "line.b_sprawdzmy": {
-    "who": "sowa",
-    "text": "Została ostatnia. Teraz Ty sprawdź: przyłóż drzwiczki do tej dziupli."
-  },
-  "line.b_wystaje": {
-    "who": "sowa",
-    "text": "Dookoła drzwiczek została tylko mała szpara. Ta dziupla jest troszkę większa od starej!"
-  },
-  "line.b_wskaz_wieksza": {
-    "who": "sowa",
-    "text": "Która dziupla jest większa, stara czy nowa? Wskaż."
-  },
-  "line.b_wskaz_wieksza_nie": {
-    "who": "sowa",
-    "text": "To stara, mniejsza dziupla. Dookoła drzwiczek w nowej była szpara."
-  },
   "line.b_w_sam_raz": {
     "who": "wiewiorka",
     "text": "Większa od starej, a mniejsza od tej ogromnej. W sam raz dla mnie!"
@@ -199,18 +183,6 @@
     "who": "sowa",
     "text": "Mamy ze sobą drzwiczki od starej dziupli. Przyłożymy je do każdej nowej."
   },
-  "line.b_obwodka": {
-    "who": "sowa",
-    "text": "Popatrz: dookoła drzwiczek została duża ciemna dziura. Zaznaczyłam ją kółkiem."
-  },
-  "line.b_duzo_wieksza": {
-    "who": "sowa",
-    "text": "Ta dziupla jest dużo większa od starej."
-  },
-  "line.b_stara_wystaje": {
-    "who": "sowa",
-    "text": "Drzwiczki zakrywają całą dziurę i jeszcze wystają! Ta dziupla jest mniejsza od starej."
-  },
   "line.a_drzwiczki": {
     "who": "sowa",
     "text": "Twoja stara dziupla ma okrągłe drzwiczki. Pasują do niej idealnie. Dziupli nie zabierzemy, ale drzwiczki tak!"
@@ -242,5 +214,21 @@
   "line.b_ostatnia_nie": {
     "who": "sowa",
     "text": "Ta nie. Szukamy tej, przy której drzwiczki miały tylko małą szparkę."
+  },
+  "line.b_przeprowadzka": {
+    "who": "wiewiorka",
+    "text": "A teraz przeprowadzka! Chodźcie, zaniesiemy moje zapasy do nowej dziupli."
+  },
+  "line.c_nowy_dom": {
+    "who": "wiewiorka",
+    "text": "To tutaj, w tym wielkim dębie! Moja nowa dziupla: nie za duża i nie za mała, w sam raz."
+  },
+  "line.c_zoledzie": {
+    "who": "sowa",
+    "text": "Jaki piękny dąb! I ile na nim żołędzi. Wiewiórko, będziesz miała z czego robić zapasy."
+  },
+  "line.c_zapasy_w_dziupli": {
+    "who": "wiewiorka",
+    "text": "Wszystkie duże żołędzie są w mojej dziupli. Zmieściły się, bo ta dziupla jest większa od starej!"
   }
 }

@@ -225,9 +225,9 @@
   "text": "You already have the sticker from this adventure. See you!"
  },
  "line.naklejka_opis": {
-  "hash": "548cc21862c1",
+  "hash": "8bd9a7bb62bc",
   "who": "narrator",
-  "text": "This is the butterfly from the magic pond. We got it when we looked for differences."
+  "text": "This is the butterfly from Granny Owl's oak. We got it when we looked for differences."
  },
  "line.d_druga": {
   "hash": "ba9c452cdf1d",
@@ -243,5 +243,30 @@
   "hash": "fafda8323c1f",
   "who": "lisek",
   "text": "Once more! Remember all the things in the row."
+ },
+ "line.b_do_babci": {
+  "hash": "6963503e5bd9",
+  "who": "lisek",
+  "text": "Let's take the card to your granny! Lead the way, Owl."
+ },
+ "line.c_dab": {
+  "hash": "a5d6fca5bfae",
+  "who": "sowa",
+  "text": "Here we are! My granny lives in this old oak. Can you see the little round door high up in the trunk? That's her home."
+ },
+ "line.c_zapukaj": {
+  "hash": "97a65362f217",
+  "who": "lisek",
+  "text": "Let's knock! Granny will see what a lovely card you have for her."
+ },
+ "line.c_spi": {
+  "hash": "f7beacd3ac81",
+  "who": "sowa",
+  "text": "Shh! Granny sleeps in the daytime, because owls stay awake at night. I'll leave the card by her door. She'll find it this evening."
+ },
+ "line.c_czeka": {
+  "hash": "9f3d3be1a4cb",
+  "who": "lisek",
+  "text": "The card is waiting for Granny. What a surprise she'll have!"
  }
 }

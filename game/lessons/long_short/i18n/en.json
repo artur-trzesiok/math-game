@@ -1,7 +1,7 @@
 {
   "line.a_piknik": {
     "who": "sarenka",
-    "text": "What a lovely day! Let's have a picnic on the meadow, on the other side of the brook."
+    "text": "What a lovely day! Let's have a picnic on the glade, on the other side of the brook."
   },
   "line.a_most": {
     "who": "lisek",
@@ -81,7 +81,7 @@
   },
   "line.b_piknik": {
     "who": "sarenka",
-    "text": "And now the picnic! We have one long baguette, enough for everybody."
+    "text": "Let's lay out the food! We have one long baguette, enough for everybody."
   },
   "line.b_do_domu": {
     "who": "wiewiorka",
@@ -159,10 +159,6 @@
     "who": "lisek",
     "text": "We're back home. Two scarves hang on the hooks: a long one and a short one. Whose is which?"
   },
-  "line.d_porownaj": {
-    "who": "sarenka",
-    "text": "First let's compare the scarves. Put them from the line."
-  },
   "line.d_daj": {
     "who": "lisek",
     "text": "The long scarf is for me, because I'm tall, and the short one for little Squirrel. Drag each scarf to the right friend."
@@ -228,5 +224,29 @@
   "line.k_pyszne": {
     "who": "lisek",
     "text": "Long and short in one pot. Yummy!"
+  },
+  "line.b_mapa": {
+    "who": "sarenka",
+    "text": "Picnic time! But where is our glade? I have a map, let's see which way to go."
+  },
+  "line.b_mapa_drogi": {
+    "who": "sarenka",
+    "text": "We are down here, by the meadow, and the glade with the blanket is at the top. Two paths lead there. Both start at the same place."
+  },
+  "line.b_mapa_ktora": {
+    "who": "lisek",
+    "text": "My tummy is rumbling! Let's take the shorter path, then we'll get there sooner. Which path is shorter? Point to it."
+  },
+  "line.b_mapa_nie": {
+    "who": "lisek",
+    "text": "Look at both paths from the very start. Which one reaches the blanket sooner? Point to the shorter one."
+  },
+  "line.b_mapa_tak": {
+    "who": "sarenka",
+    "text": "Yes! This path is shorter, it goes almost straight. That one winds round the hill, it is longer. Let's take the short one!"
+  },
+  "line.c_polana": {
+    "who": "wiewiorka",
+    "text": "Here we are! The short path got us here in no time. Look, here's a blanket and a basket. This is where we'll have our picnic!"
   }
 }

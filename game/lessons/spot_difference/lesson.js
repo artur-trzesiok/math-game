@@ -1,13 +1,15 @@
 // Lesson: spot the difference - look carefully at two pictures and find what is not the same. The magic pond on the
 // meadow plays tricks: Fox's reflection has no scarf (a quick look says "the same!"); the pond's own game, two pictures
-// of the meadow; Owl's drawing for her granny and the pond's copy - the differences tell which is hers; a catching
-// game. Practice: three picture pairs, what is gone, which one is not like the others. At home: what moved in the room.
+// of the meadow; Owl's drawing for her granny and the pond's copy - the differences tell which is hers; at Granny's
+// old oak the drawing is left by her door (owls sleep by day); a catching game. Practice: three picture pairs, what
+// is gone, which one is not like the others. At home: what moved in the room.
 // Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
 const wyrosnij = (c) => c.stage.tween(0.4, () => {});                  // let things popping in reach their size before a shot frames them
 const WODA = -0.6;                                    // the pond's edge, where Fox stands to look in
+const DRZWI_BABCI = { x: -4.95, y: 2.55 };            // just under the little round door high in Granny's oak (dab_babci; the door itself is above SUFIT)
 
 // eyes closed: the things hide for a moment (a soft fade), something changes, they come back
 async function zamknijOczy(c, rzeczy, zmiana) {
@@ -84,11 +86,34 @@ export default {
         await c.emocja("sowa", "serce", { anim: "Radosc" });
         await c.say("sowa", "line.b_moj");
         r2.remove();
+        await c.ujecie("dwuujecie", { na: ["lisek", "sowa"] });
+        await c.say("lisek", "line.b_do_babci", { anim: "Machanie" });
+        await c.ujecie("ogolny");
+      },
+      // C. Granny Owl's old oak: the drawing is left by her door (by day she sleeps); butterflies over her flowers
+      async (c) => {
+        const S = c.stage;
+        await c.go("dab_babci", { enter: true });
+        await Promise.all([c.enter("lisek"), c.enter("sowa")]);
+        await c.play("lisek", "Rozgladanie");
+        await c.say("sowa", "line.c_dab", { anim: "Wskazanie" });             // wide: the door high in the oak in view
+        await c.ujecie("zblizenie", { na: "lisek" });
+        await c.say("lisek", "line.c_zapukaj", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "sowa" });
+        await c.say("sowa", "line.c_spi", { anim: "Zgloszenie" });
+        // the drawing flies from Owl up to the little door and stays there
+        await c.ujecie("ogolny");
+        const laurka = await c.object("laurka", { x: 2.4, y: 0.6, size: 1.2, obraz: "/game/assets/roznice/rysunek/a.webp" });
+        await wyrosnij(c);
+        await laurka.moveTo(DRZWI_BABCI.x, DRZWI_BABCI.y, 0.9);
+        c.sfx("pop"); await S.tween(0.4, (s) => { laurka.base = 1.2 - 0.3 * s; laurka.mesh.scale.setScalar(laurka.base); });
+        await c.rozblysk(laurka);
+        await c.say("lisek", "line.c_czeka", { anim: "Brawo" });               // wide: a closer shot cuts the door off
         // the breather: butterflies - catch three
         await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.b_motyle", { anim: "Podskok" });
         await c.ujecie("ogolny");
-        for (const [x, y] of tasuj([[-2.4, 1.4], [0.4, 2.0], [2.6, 0.9], [-0.8, 0.2], [1.6, -0.8]]).slice(0, 3)) {
+        for (const [x, y] of tasuj([[-1.3, 1.9], [0.4, 2.0], [2.6, 0.9], [-0.8, 0.2], [1.6, -0.8]]).slice(0, 3)) {   // over the meadow and the sky, off the oak
           const m = await c.object("motyl", { x, y, size: 1.0 });
           dobre(m); await c.task({ targets: [m], correct: m, wrong: "line.b_motyle" });
           c.sfx("pop"); m.remove();

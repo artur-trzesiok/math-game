@@ -1,8 +1,8 @@
 {
  "line.a_piknik": {
-  "hash": "f1f183ddda2d",
+  "hash": "12be38b02fa8",
   "who": "sarenka",
-  "text": "Co za piękny dzień! Zróbmy piknik na łące, po drugiej stronie strumyka."
+  "text": "Co za piękny dzień! Zróbmy piknik na polanie, po drugiej stronie strumyka."
  },
  "line.a_most": {
   "hash": "776979bfcd81",
@@ -100,9 +100,9 @@
   "text": "Jest na mecie! Brawo, ślimaczku!"
  },
  "line.b_piknik": {
-  "hash": "1ba9a7735930",
+  "hash": "7316d3ca6560",
   "who": "sarenka",
-  "text": "A teraz piknik! Mamy jedną długą bagietkę, starczy dla wszystkich."
+  "text": "Rozłóżmy jedzenie! Mamy jedną długą bagietkę, starczy dla wszystkich."
  },
  "line.b_do_domu": {
   "hash": "e13a443ba39d",
@@ -199,11 +199,6 @@
   "who": "lisek",
   "text": "Wróciliśmy do domu. Na wieszakach wiszą dwa szaliki: długi i krótki. Komu który?"
  },
- "line.d_porownaj": {
-  "hash": "0c60a51393d0",
-  "who": "sarenka",
-  "text": "Najpierw porównajmy szaliki. Ustaw je od kreski."
- },
  "line.d_daj": {
   "hash": "cff66f2ac362",
   "who": "lisek",
@@ -288,5 +283,35 @@
   "hash": "c2d51dcba631",
   "who": "lisek",
   "text": "Długi i krótki w jednym garnku. Pycha!"
+ },
+ "line.b_mapa": {
+  "hash": "3ef076929d7a",
+  "who": "sarenka",
+  "text": "Czas na piknik! Tylko gdzie jest nasza polana? Mam mapę, zobaczmy, którędy iść."
+ },
+ "line.b_mapa_drogi": {
+  "hash": "456eb8e45ab5",
+  "who": "sarenka",
+  "text": "Na dole, przy łące, jesteśmy my, a na górze jest polana z kocem. Prowadzą do niej dwie ścieżki. Obie zaczynają się w tym samym miejscu."
+ },
+ "line.b_mapa_ktora": {
+  "hash": "e8ff62218ff5",
+  "who": "lisek",
+  "text": "Burczy mi w brzuchu! Pójdźmy krótszą ścieżką, wtedy szybciej dojdziemy. Która ścieżka jest krótsza? Wskaż ją."
+ },
+ "line.b_mapa_nie": {
+  "hash": "0295f314844e",
+  "who": "lisek",
+  "text": "Popatrz na obie ścieżki od samego początku. Która szybciej dochodzi do koca? Wskaż krótszą."
+ },
+ "line.b_mapa_tak": {
+  "hash": "2001ab49ac71",
+  "who": "sarenka",
+  "text": "Tak! Ta ścieżka jest krótsza, idzie prawie prosto. A tamta kręci się dookoła górki, jest dłuższa. Idziemy krótszą!"
+ },
+ "line.c_polana": {
+  "hash": "8b4b5206861b",
+  "who": "wiewiorka",
+  "text": "Już jesteśmy! Krótką ścieżką doszliśmy w mig. Popatrzcie, tu leży koc i kosz. Tu zrobimy piknik!"
  }
 }

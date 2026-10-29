@@ -1,13 +1,15 @@
 // Lesson: bigger and smaller - a new home for Squirrel (stage 1, rethought). Her hollow has become too small; the
 // friends look for a new one: too small, too big, just right - compared with the old hollow's round door, carried
 // along and held against each new hole (a hollow cannot be carried; its door can): a dark gap round the door - bigger,
-// the door covering the hole and sticking out - smaller. The mice need a bigger box; a catching game; at home the cups and hats go by size.
+// the door covering the hole and sticking out - smaller. The mice need a bigger box; at Squirrel's new oak a catching
+// game fills the new store; at home the cups go by size.
 // Script in scenario.md.
 
 const ROW_Y = 1.4;
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
 const wyrosnij = (c) => c.stage.tween(0.4, () => {});                  // let things popping in reach their size before a shot frames them
+const DZIUPLA = { x: 3.14, y: 2.55 };                       // the hole of the new hollow in the dab_wiewiorki plate
 const MIEJSCE = { sowa: 0, lisek: 1, wiewiorka: 2 };       // head sizes, biggest first: Owl has much the biggest head, Squirrel the smallest
 
 // garment stickers of one kind at sizes (biggest first); h.ranga = 0 for the biggest
@@ -151,16 +153,31 @@ export default {
         await c.ujecie("sredni", { na: [p2] });                              // the mice in their new box
         await c.say("sowa", "line.b_dziekuja");
         c.clear();
-        // the breather: acorns fall from the oak - catch the big ones for the new store
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.say("wiewiorka", "line.b_przeprowadzka", { anim: "Podskok" });
+        await c.ujecie("ogolny");
+      },
+      // C. Squirrel's new home: the oak with the just-right hollow; acorns fall - the big ones go into the new store
+      async (c) => {
+        const S = c.stage;
+        await c.go("dab_wiewiorki", { enter: true });
+        await Promise.all(["lisek", "wiewiorka", "sowa"].map((n) => c.enter(n)));
+        await c.play("wiewiorka", "Rozgladanie");
+        await c.say("wiewiorka", "line.c_nowy_dom", { anim: "Radosc" });           // wide: the oak, its hollow and its acorns in view
+        await c.say("sowa", "line.c_zoledzie", { anim: "Wskazanie" });
+        // the breather: acorns fall from the oak - catch the big ones for the new store; each flies into the hollow
         await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.b_lapanie", { anim: "Podskok" });
         await c.ujecie("ogolny");
         for (let r = 0; r < 3; r++) {
-          const m = tasuj([[-2.4, 1.6], [0, 0.8], [2.2, 1.8], [-1.0, -0.6], [1.6, -0.4]]);
+          const m = tasuj([[-3.6, 2.0], [-1.6, 2.4], [0.2, 1.6], [-1.4, 0.5], [-0.4, -1.4]]);
           const d = await c.object("zoledz", { x: m[0][0], y: m[0][1], size: 1.3 }), k = await c.object("zoledz", { x: m[1][0], y: m[1][1], size: 0.65 });
           dobre(d); await c.task({ targets: [d, k], correct: d, wrong: "line.b_lapanie" });
-          c.clear();
+          k.remove();
+          await Promise.all([d.moveTo(DZIUPLA.x, DZIUPLA.y, 0.6), S.tween(0.6, (s) => { d.mesh.scale.setScalar(1.3 * (1 - 0.7 * s)); })]);
+          c.sfx("plop"); d.remove();
         }
+        await c.say("wiewiorka", "line.c_zapasy_w_dziupli", { anim: "Radosc" });   // wide: the hollow they went into in view
         await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_do_domu");
         await c.ujecie("ogolny");

@@ -1,8 +1,8 @@
 {
  "line.a_piknik": {
-  "hash": "efa388d323d8",
+  "hash": "fe86aae2b16d",
   "who": "sarenka",
-  "text": "What a lovely day! Let's have a picnic on the meadow, on the other side of the brook."
+  "text": "What a lovely day! Let's have a picnic on the glade, on the other side of the brook."
  },
  "line.a_most": {
   "hash": "36708e269eb3",
@@ -100,9 +100,9 @@
   "text": "It's at the finish! Bravo, little snail!"
  },
  "line.b_piknik": {
-  "hash": "72c8b25e59a8",
+  "hash": "5553956a60f7",
   "who": "sarenka",
-  "text": "And now the picnic! We have one long baguette, enough for everybody."
+  "text": "Let's lay out the food! We have one long baguette, enough for everybody."
  },
  "line.b_do_domu": {
   "hash": "66e3225975e2",
@@ -199,11 +199,6 @@
   "who": "lisek",
   "text": "We're back home. Two scarves hang on the hooks: a long one and a short one. Whose is which?"
  },
- "line.d_porownaj": {
-  "hash": "90ff5fa148b3",
-  "who": "sarenka",
-  "text": "First let's compare the scarves. Put them from the line."
- },
  "line.d_daj": {
   "hash": "65ef28864539",
   "who": "lisek",
@@ -288,5 +283,35 @@
   "hash": "908b03d5f664",
   "who": "lisek",
   "text": "Long and short in one pot. Yummy!"
+ },
+ "line.b_mapa": {
+  "hash": "7ea0f0776f94",
+  "who": "sarenka",
+  "text": "Picnic time! But where is our glade? I have a map, let's see which way to go."
+ },
+ "line.b_mapa_drogi": {
+  "hash": "778b841bc178",
+  "who": "sarenka",
+  "text": "We are down here, by the meadow, and the glade with the blanket is at the top. Two paths lead there. Both start at the same place."
+ },
+ "line.b_mapa_ktora": {
+  "hash": "29b0b4e747ee",
+  "who": "lisek",
+  "text": "My tummy is rumbling! Let's take the shorter path, then we'll get there sooner. Which path is shorter? Point to it."
+ },
+ "line.b_mapa_nie": {
+  "hash": "7d3636fb49de",
+  "who": "lisek",
+  "text": "Look at both paths from the very start. Which one reaches the blanket sooner? Point to the shorter one."
+ },
+ "line.b_mapa_tak": {
+  "hash": "f8ae9e447ed3",
+  "who": "sarenka",
+  "text": "Yes! This path is shorter, it goes almost straight. That one winds round the hill, it is longer. Let's take the short one!"
+ },
+ "line.c_polana": {
+  "hash": "d04d869a6e7b",
+  "who": "wiewiorka",
+  "text": "Here we are! The short path got us here in no time. Look, here's a blanket and a basket. This is where we'll have our picnic!"
  }
 }

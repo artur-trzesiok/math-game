@@ -9,8 +9,12 @@ out. Squirrel: "this one is longer, it reaches further" (the naive try); laid ac
 falls in. Deer: it only lay further out; to compare length, start from one line. **Child** drags both planks to the
 pencil line (they snap there), points to the longer; laid across, it reaches; they walk over it into the picture.
 B. *The meadow* (wind). Squirrel's scarf is too short; a second one; **child** lays both from the line and points to
-the longer; Squirrel puts it on, warm. *Breather:* a snail race - point to a snail to cheer it on. The picnic: one long
-baguette for everybody.
+the longer; Squirrel puts it on, warm. *Breather:* a snail race - point to a snail to cheer it on. Where is the picnic
+glade? Deer's map (`znalezisko` mapa_pikniku): two paths from the same start on the meadow to the blanket, one almost
+straight, one winding round a hill; Fox is hungry - **child** points to the shorter path; Deer names both (this one
+shorter, that one longer) and they take the short one.
+C. *The picnic glade* (`polana_piknik`, a place of its own: a checked blanket, a basket, an oak). Squirrel looks round:
+the short path got them here in no time. The picnic: one long baguette for everybody.
 
 ## Stage 2 - practice (an insert with clouds, five stars)
 Ribbons every which way - from the line, then the longer; the shortest of three planks; two pencil snakes; shadows of a

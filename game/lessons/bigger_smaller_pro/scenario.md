@@ -15,7 +15,11 @@ you have grown and your store is big. Owl: you need a bigger one; how to tell - 
 B. Three hollows. **Child** points to the biggest - Squirrel tries: too big, the wind blows, cold. **Child** points
 to the smallest - too small. The last one: the old hollow laid on it, the new sticks out all round; **child** points
 to the bigger of the two - just right. Helping: the mice moving into the old hollow need a bigger box; **child**
-points to it. Breather: acorns fall - catch the big ones (three times).
+points to it. "And now, moving day!"
+C. *Squirrel's new oak* (`dab_wiewiorki`, a place of its own: the just-right hollow halfway up a big oak full of
+acorns). Squirrel shows her new home - not too big, not too small; Owl: so many acorns. Breather: acorns fall - catch
+the big ones (three times), each flies into the new hollow; "they fit, because this hollow is bigger than the old
+one!"
 
 ## Stage 2 - practice (an insert, five stars)
 Which is bigger (twice), then the overlap shows it; the biggest of three apples; the shadow of the big or the small pear;

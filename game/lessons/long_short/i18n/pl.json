@@ -1,7 +1,7 @@
 {
   "line.a_piknik": {
     "who": "sarenka",
-    "text": "Co za piękny dzień! Zróbmy piknik na łące, po drugiej stronie strumyka."
+    "text": "Co za piękny dzień! Zróbmy piknik na polanie, po drugiej stronie strumyka."
   },
   "line.a_most": {
     "who": "lisek",
@@ -81,7 +81,7 @@
   },
   "line.b_piknik": {
     "who": "sarenka",
-    "text": "A teraz piknik! Mamy jedną długą bagietkę, starczy dla wszystkich."
+    "text": "Rozłóżmy jedzenie! Mamy jedną długą bagietkę, starczy dla wszystkich."
   },
   "line.b_do_domu": {
     "who": "wiewiorka",
@@ -159,10 +159,6 @@
     "who": "lisek",
     "text": "Wróciliśmy do domu. Na wieszakach wiszą dwa szaliki: długi i krótki. Komu który?"
   },
-  "line.d_porownaj": {
-    "who": "sarenka",
-    "text": "Najpierw porównajmy szaliki. Ustaw je od kreski."
-  },
   "line.d_daj": {
     "who": "lisek",
     "text": "Długi szalik jest dla mnie, bo jestem wysoki, a krótki dla małej Wiewiórki. Przeciągnij każdy szalik do właściwej osoby."
@@ -228,5 +224,29 @@
   "line.k_pyszne": {
     "who": "lisek",
     "text": "Długi i krótki w jednym garnku. Pycha!"
+  },
+  "line.b_mapa": {
+    "who": "sarenka",
+    "text": "Czas na piknik! Tylko gdzie jest nasza polana? Mam mapę, zobaczmy, którędy iść."
+  },
+  "line.b_mapa_drogi": {
+    "who": "sarenka",
+    "text": "Na dole, przy łące, jesteśmy my, a na górze jest polana z kocem. Prowadzą do niej dwie ścieżki. Obie zaczynają się w tym samym miejscu."
+  },
+  "line.b_mapa_ktora": {
+    "who": "lisek",
+    "text": "Burczy mi w brzuchu! Pójdźmy krótszą ścieżką, wtedy szybciej dojdziemy. Która ścieżka jest krótsza? Wskaż ją."
+  },
+  "line.b_mapa_nie": {
+    "who": "lisek",
+    "text": "Popatrz na obie ścieżki od samego początku. Która szybciej dochodzi do koca? Wskaż krótszą."
+  },
+  "line.b_mapa_tak": {
+    "who": "sarenka",
+    "text": "Tak! Ta ścieżka jest krótsza, idzie prawie prosto. A tamta kręci się dookoła górki, jest dłuższa. Idziemy krótszą!"
+  },
+  "line.c_polana": {
+    "who": "wiewiorka",
+    "text": "Już jesteśmy! Krótką ścieżką doszliśmy w mig. Popatrzcie, tu leży koc i kosz. Tu zrobimy piknik!"
   }
 }

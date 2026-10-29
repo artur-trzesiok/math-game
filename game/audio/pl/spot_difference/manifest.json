@@ -225,9 +225,9 @@
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
  },
  "line.naklejka_opis": {
-  "hash": "391ea4a99551",
+  "hash": "d3e18d17db04",
   "who": "narrator",
-  "text": "To motyl znad zaczarowanego stawu. Dostaliśmy go, kiedy szukaliśmy różnic."
+  "text": "To motyl spod dębu babci Sowy. Dostaliśmy go, kiedy szukaliśmy różnic."
  },
  "line.d_druga": {
   "hash": "95343e27d885",
@@ -243,5 +243,30 @@
   "hash": "37c51e341119",
   "who": "lisek",
   "text": "Jeszcze raz! Zapamiętaj wszystkie rzeczy w rzędzie."
+ },
+ "line.b_do_babci": {
+  "hash": "9933c8af266a",
+  "who": "lisek",
+  "text": "Zanieśmy laurkę babci! Prowadź, Sowo."
+ },
+ "line.c_dab": {
+  "hash": "ddc8f092c865",
+  "who": "sowa",
+  "text": "Jesteśmy! W tym starym dębie mieszka moja babcia. Widzicie okrągłe drzwiczki wysoko w pniu? To jej dom."
+ },
+ "line.c_zapukaj": {
+  "hash": "3bb88951827e",
+  "who": "lisek",
+  "text": "Zapukajmy! Babcia zobaczy, jaką piękną laurkę dla niej masz."
+ },
+ "line.c_spi": {
+  "hash": "d84510d606ff",
+  "who": "sowa",
+  "text": "Ciii! W dzień babcia śpi, bo sowy czuwają w nocy. Zostawię laurkę przy drzwiczkach. Wieczorem ją znajdzie."
+ },
+ "line.c_czeka": {
+  "hash": "d44345672f5c",
+  "who": "lisek",
+  "text": "Laurka czeka na babcię. Ale będzie miała niespodziankę!"
  }
 }
