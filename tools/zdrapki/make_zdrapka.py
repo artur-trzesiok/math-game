@@ -25,6 +25,21 @@ from make_znalezisko import magenta, STYL  # noqa: E402
 WORK = TU / "work"
 OUT = TU.parent.parent / "game" / "assets" / "zdrapki"
 ZDRAPKI = {
+    # in_out: the breather - the round window of Hedgehog's burrow is steamy from the warm stove; a finger wipes it and
+    # the storm outside shows (malowanie, tlo "szyba")
+    "szyba_norki": {
+        "oslona": "para", "lekcje": ["in_out"],
+        "obraz": f"""A view through a big window glass, filling the whole picture, seen from inside a warm cosy burrow: outside
+a dark stormy MEADOW in the evening - heavy rain pouring down in slanting streaks, dark blue-grey storm clouds, ONE bright
+yellow zigzag LIGHTNING bolt in the sky on the right, the tall grass and two round bushes bending in the wind, big rain
+drops running down the outside of the glass. A thin wooden window frame at the very edges. NO animals, NO people. Big
+simple clear shapes.
+{STYL}""",
+        "zakryj": """the window glass completely STEAMED UP from the warm room: a thick even milky-white mist of
+condensation covering the whole glass, with a few tiny water droplets, so NOTHING outside can be seen - no rain, no
+lightning, no meadow; the thin wooden window frame at the edges stays as it is.""",
+        "cele": ["on the bright yellow zigzag lightning bolt"],
+    },
     # logical_pairs: the storm blew everybody's things onto Beaver's workbench under a splash of mud - wipe it off
     "bloto_warsztat": {
         "oslona": "bloto", "lekcje": ["logical_pairs"],

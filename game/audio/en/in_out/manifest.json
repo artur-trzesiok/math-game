@@ -100,9 +100,9 @@
   "text": "Everybody into the circle!"
  },
  "line.b_kto": {
-  "hash": "ffcf85dbd507",
+  "hash": "134733e0069f",
   "who": "sarenka",
-  "text": "Who is still outside? Point to them."
+  "text": "Point to who is still outside the circle."
  },
  "line.b_kto_nie": {
   "hash": "e4092b0c3dcf",
@@ -129,26 +129,6 @@
   "who": "jez",
   "text": "It's dry and warm in the burrow. The rain stayed outside."
  },
- "line.b_kubki": {
-  "hash": "8ee72eaa315c",
-  "who": "jez",
-  "text": "Let's play cups! I'm hiding an acorn under a cup. Watch carefully."
- },
- "line.b_gdzie": {
-  "hash": "ddd49341b5a3",
-  "who": "jez",
-  "text": "Which cup is the acorn in? Point to it."
- },
- "line.b_gdzie_nie": {
-  "hash": "bd000d7e9fa8",
-  "who": "jez",
-  "text": "This one is empty. Try again."
- },
- "line.b_jest": {
-  "hash": "35476d0595f8",
-  "who": "bobr",
-  "text": "There it is! The acorn was inside the cup."
- },
  "line.b_koniec": {
   "hash": "152016b2f8cc",
   "who": "sarenka",
@@ -169,25 +149,15 @@
   "who": "bobr",
   "text": "Look: inside there must be only the sheep, all of them. The wolf outside."
  },
- "line.p_dobrze": {
-  "hash": "ceb0ef83b223",
-  "who": "sarenka",
-  "text": "Bravo!"
- },
- "line.p_dobrze.bobr": {
-  "hash": "443840bb6e59",
-  "who": "bobr",
-  "text": "Bravo!"
- },
  "line.p_jablka": {
   "hash": "aa88a2edeceb",
   "who": "sarenka",
   "text": "Put three apples into the basket. Drag them one at a time."
  },
  "line.p_poza": {
-  "hash": "3f8dd2a7fa87",
+  "hash": "a7f75579fb80",
   "who": "bobr",
-  "text": "Which star is outside the circle? Point to it."
+  "text": "Point to the star that is outside the circle."
  },
  "line.p_poza_nie": {
   "hash": "bf6258242d31",
@@ -200,9 +170,9 @@
   "text": "I'm hiding a ball under a cup. Watch carefully!"
  },
  "line.p_gdzie_pilka": {
-  "hash": "c009614537cf",
+  "hash": "abc356a507e4",
   "who": "sarenka",
-  "text": "Which cup is the ball in? Point to it."
+  "text": "Point to the cup the ball is in."
  },
  "line.p_gdzie_pilka_nie": {
   "hash": "15679c899985",
@@ -225,19 +195,19 @@
   "text": "The goldfish is swimming inside the bowl!"
  },
  "line.h_zabawki": {
-  "hash": "690d40a64b1a",
+  "hash": "3f749c45187f",
   "who": "jez",
-  "text": "Before bed the toys go back into the box. Drag each one inside the box."
+  "text": "What a mess! Before bed the toys go back into the box."
  },
  "line.h_w_pudle": {
-  "hash": "5795dd8666fa",
+  "hash": "7839f06b6a06",
   "who": "sarenka",
-  "text": "All the toys are inside the box!"
+  "text": "The toys are inside the box, and the basket is on the rug!"
  },
  "line.h_rodzice": {
-  "hash": "302714892386",
+  "hash": "9147a6d2fddd",
   "who": "jez",
-  "text": "Play with your parents: a toy into the box, a toy out of the box. Inside or outside?"
+  "text": "Play it with your parents like we did: hide a toy in a box or put it next to it. Where is it: inside or outside?"
  },
  "line.naklejka_daj": {
   "hash": "95cfb6e20062",
@@ -283,5 +253,120 @@
   "hash": "cb6b7cd5f42a",
   "who": "bobr",
   "text": "Little duckling, there you are! Inside, dry and warm."
+ },
+ "line.a_aha": {
+  "hash": "cfcc5f9cb1c3",
+  "who": "bobr",
+  "text": "I see! A fence with no gap, closed all the way round."
+ },
+ "line.b_szyba": {
+  "hash": "8bdd03a4b482",
+  "who": "sarenka",
+  "text": "Oh, the warm stove has steamed up the window! We can't see what's outside."
+ },
+ "line.b_potem": {
+  "hash": "c0cb1d98f388",
+  "who": "bobr",
+  "text": "When the storm is over, we'll go home to sleep."
+ },
+ "line.p_owce_ok": {
+  "hash": "b019f7511bbb",
+  "who": "sarenka",
+  "text": "Yes! The sheep are inside, and the wolf stayed outside."
+ },
+ "line.p_jablka_ok": {
+  "hash": "f589b3ba7934",
+  "who": "bobr",
+  "text": "Yes, three apples are inside the basket!"
+ },
+ "line.p_poza_ok": {
+  "hash": "c008e14d47cf",
+  "who": "sarenka",
+  "text": "Yes, this star is outside the circle!"
+ },
+ "line.p_pilka_ok": {
+  "hash": "19e0558931b6",
+  "who": "bobr",
+  "text": "There it is! The ball was inside this cup."
+ },
+ "line.h_dom": {
+  "hash": "ec04ea4dd131",
+  "who": "jez",
+  "text": "The storm is over. We're at home, everybody inside!"
+ },
+ "line.h_bobr_juz": {
+  "hash": "45740042656f",
+  "who": "bobr",
+  "text": "I'll help! Teddy is in the box already."
+ },
+ "line.h_obok": {
+  "hash": "429866ca1940",
+  "who": "sarenka",
+  "text": "Beaver, Teddy is next to the box, not inside it."
+ },
+ "line.h_aha": {
+  "hash": "093e9a210a48",
+  "who": "bobr",
+  "text": "Oops, again! Next to is not inside."
+ },
+ "line.h_sprzatnij": {
+  "hash": "f250cb839535",
+  "who": "jez",
+  "text": "Drag the toys inside the box, and put the duckling's basket on the rug."
+ },
+ "line.h_sprzatnij_nie": {
+  "hash": "80373b4a4d7f",
+  "who": "jez",
+  "text": "The toys into the box, the basket onto the rug."
+ },
+ "line.h_gra": {
+  "hash": "883083f0870d",
+  "who": "jez",
+  "text": "Now a guessing game! I'll take one toy out and put it next to the box."
+ },
+ "line.h_gra_kto": {
+  "hash": "482b1f58d4d6",
+  "who": "jez",
+  "text": "Point to the toy that is outside the box."
+ },
+ "line.h_gra_nie": {
+  "hash": "56623e1d8341",
+  "who": "jez",
+  "text": "That toy is inside the box. Which one is next to it?"
+ },
+ "line.h_gra_ok": {
+  "hash": "37f23bdcbb32",
+  "who": "bobr",
+  "text": "Yes, the ball is outside, next to the box!"
+ },
+ "line.h_bajka": {
+  "hash": "de548724c0e2",
+  "who": "bobr",
+  "text": "The duckling won't sleep. She wants a story about her evening!"
+ },
+ "line.h_bajka_uloz": {
+  "hash": "c15b6696f25a",
+  "who": "jez",
+  "text": "Put the pictures in order, from what happened first."
+ },
+ "line.h_bajka_nie": {
+  "hash": "338b7add193a",
+  "who": "jez",
+  "text": "Look again at what came first and what came next."
+ },
+ "line.h_bajka_ok": {
+  "hash": "8d569091bc43",
+  "who": "jez",
+  "text": "First the duckling sat in the basket. Then the thunder! She ran off, but she found the burrow and went inside."
+ },
+ "line.h_spac": {
+  "hash": "089ffb76f226",
+  "who": "sarenka",
+  "text": "And now, sleep! Put the duckling inside the basket."
+ },
+ "line.h_dobranoc": {
+  "hash": "70b014ed6aad",
+  "who": "bobr",
+  "text": "The duckling sleeps in the basket, the toys are in the box, and we're all at home. Good night!"
  }
 }

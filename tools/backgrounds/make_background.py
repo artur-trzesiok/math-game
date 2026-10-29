@@ -54,6 +54,24 @@ with a fine paper-grain texture, warm friendly colours, thin soft outlines.
 NOT flat vector, NOT 3D render."""
 
 SCENY = {
+    # in_out: the same lake meadow on the evening before the storm (the story says "a storm is coming", then it rains)
+    "laka_burza": {
+        "z": "laka",
+        "plyta": f"""Exactly the same lake meadow, the same willow on the left, the same lake, shore, hills and trees in
+the same places, but in the EVENING BEFORE A STORM: a heavy dark blue-grey sky with big storm clouds rolling in over the
+hills, a last warm orange glow low on the horizon, the lake dark and rippled by the wind, the willow's branches blown
+to one side, the grass a deeper evening green. Dim, moody, but still clear and readable for a small child. The lower
+middle stays EMPTY flat grass where characters will stand.
+{STYL}
+Do NOT move, add or remove anything. NO tufts, NO flowers, NO birds, NO lightning, NO rain, NO people, NO animals, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two things have been added, in the
+same style:
+  - FIVE or SIX dark grey storm clouds with lighter edges drifting across the sky, big and small, none touching each other;
+  - MANY tufts of taller evening-green grass bent by the wind and a few clumps of reeds at the water's edge - at least
+    fifteen tufts scattered over the foreground and the middle ground, each tuft separate from the others.
+Same colours, same horizon, same lake, same willow, same texture - only the clouds and the tufts are new. Do NOT move or
+redraw anything that was already there. Do NOT add boats, animals, birds or anything else.""",
+    },
     # noticing_order: the henhouse yard behind Fox's garden, where the chick hatches (the end of the story)
     "kurnik": {
         "plyta": f"""A background illustration for a children's game: a sunny little farmyard at the edge of a friendly

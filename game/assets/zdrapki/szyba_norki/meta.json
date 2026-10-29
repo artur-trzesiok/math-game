@@ -1,0 +1,15 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "oslona": "para",
+ "cele": [
+  {
+   "x": 0.8511,
+   "y": 0.2934,
+   "r": 0.05
+  }
+ ],
+ "lekcje": [
+  "in_out"
+ ]
+}

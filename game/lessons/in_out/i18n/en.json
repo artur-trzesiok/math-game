@@ -77,7 +77,7 @@
   },
   "line.b_kto": {
     "who": "sarenka",
-    "text": "Who is still outside? Point to them."
+    "text": "Point to who is still outside the circle."
   },
   "line.b_kto_nie": {
     "who": "sarenka",
@@ -123,22 +123,6 @@
     "who": "jez",
     "text": "It's dry and warm in the burrow. The rain stayed outside."
   },
-  "line.b_kubki": {
-    "who": "jez",
-    "text": "Let's play cups! I'm hiding an acorn under a cup. Watch carefully."
-  },
-  "line.b_gdzie": {
-    "who": "jez",
-    "text": "Which cup is the acorn in? Point to it."
-  },
-  "line.b_gdzie_nie": {
-    "who": "jez",
-    "text": "This one is empty. Try again."
-  },
-  "line.b_jest": {
-    "who": "bobr",
-    "text": "There it is! The acorn was inside the cup."
-  },
   "line.b_koniec": {
     "who": "sarenka",
     "text": "Outside there's a storm, and we're inside, in the warm burrow."
@@ -155,20 +139,13 @@
     "who": "bobr",
     "text": "Look: inside there must be only the sheep, all of them. The wolf outside."
   },
-  "line.p_dobrze": {
-    "who": "sarenka",
-    "text": "Bravo!",
-    "speakers": [
-      "bobr"
-    ]
-  },
   "line.p_jablka": {
     "who": "sarenka",
     "text": "Put three apples into the basket. Drag them one at a time."
   },
   "line.p_poza": {
     "who": "bobr",
-    "text": "Which star is outside the circle? Point to it."
+    "text": "Point to the star that is outside the circle."
   },
   "line.p_poza_nie": {
     "who": "bobr",
@@ -180,7 +157,7 @@
   },
   "line.p_gdzie_pilka": {
     "who": "sarenka",
-    "text": "Which cup is the ball in? Point to it."
+    "text": "Point to the cup the ball is in."
   },
   "line.p_gdzie_pilka_nie": {
     "who": "sarenka",
@@ -200,15 +177,107 @@
   },
   "line.h_zabawki": {
     "who": "jez",
-    "text": "Before bed the toys go back into the box. Drag each one inside the box."
+    "text": "What a mess! Before bed the toys go back into the box."
   },
   "line.h_w_pudle": {
     "who": "sarenka",
-    "text": "All the toys are inside the box!"
+    "text": "The toys are inside the box, and the basket is on the rug!"
   },
   "line.h_rodzice": {
     "who": "jez",
-    "text": "Play with your parents: a toy into the box, a toy out of the box. Inside or outside?"
+    "text": "Play it with your parents like we did: hide a toy in a box or put it next to it. Where is it: inside or outside?"
+  },
+  "line.a_aha": {
+    "who": "bobr",
+    "text": "I see! A fence with no gap, closed all the way round."
+  },
+  "line.b_szyba": {
+    "who": "sarenka",
+    "text": "Oh, the warm stove has steamed up the window! We can't see what's outside."
+  },
+  "line.b_potem": {
+    "who": "bobr",
+    "text": "When the storm is over, we'll go home to sleep."
+  },
+  "line.p_owce_ok": {
+    "who": "sarenka",
+    "text": "Yes! The sheep are inside, and the wolf stayed outside."
+  },
+  "line.p_jablka_ok": {
+    "who": "bobr",
+    "text": "Yes, three apples are inside the basket!"
+  },
+  "line.p_poza_ok": {
+    "who": "sarenka",
+    "text": "Yes, this star is outside the circle!"
+  },
+  "line.p_pilka_ok": {
+    "who": "bobr",
+    "text": "There it is! The ball was inside this cup."
+  },
+  "line.h_dom": {
+    "who": "jez",
+    "text": "The storm is over. We're at home, everybody inside!"
+  },
+  "line.h_bobr_juz": {
+    "who": "bobr",
+    "text": "I'll help! Teddy is in the box already."
+  },
+  "line.h_obok": {
+    "who": "sarenka",
+    "text": "Beaver, Teddy is next to the box, not inside it."
+  },
+  "line.h_aha": {
+    "who": "bobr",
+    "text": "Oops, again! Next to is not inside."
+  },
+  "line.h_sprzatnij": {
+    "who": "jez",
+    "text": "Drag the toys inside the box, and put the duckling's basket on the rug."
+  },
+  "line.h_sprzatnij_nie": {
+    "who": "jez",
+    "text": "The toys into the box, the basket onto the rug."
+  },
+  "line.h_gra": {
+    "who": "jez",
+    "text": "Now a guessing game! I'll take one toy out and put it next to the box."
+  },
+  "line.h_gra_kto": {
+    "who": "jez",
+    "text": "Point to the toy that is outside the box."
+  },
+  "line.h_gra_nie": {
+    "who": "jez",
+    "text": "That toy is inside the box. Which one is next to it?"
+  },
+  "line.h_gra_ok": {
+    "who": "bobr",
+    "text": "Yes, the ball is outside, next to the box!"
+  },
+  "line.h_bajka": {
+    "who": "bobr",
+    "text": "The duckling won't sleep. She wants a story about her evening!"
+  },
+  "line.h_bajka_uloz": {
+    "who": "jez",
+    "text": "Put the pictures in order, from what happened first."
+  },
+  "line.h_bajka_nie": {
+    "who": "jez",
+    "text": "Look again at what came first and what came next."
+  },
+  "line.h_bajka_ok": {
+    "who": "jez",
+    "text": "First the duckling sat in the basket. Then the thunder! She ran off, but she found the burrow and went inside."
+  },
+  "line.h_spac": {
+    "who": "sarenka",
+    "text": "And now, sleep! Put the duckling inside the basket."
+  },
+  "line.h_dobranoc": {
+    "who": "bobr",
+    "text": "The duckling sleeps in the basket, the toys are in the box, and we're all at home. Good night!"
   },
   "line.naklejka_daj": {
     "who": "jez",

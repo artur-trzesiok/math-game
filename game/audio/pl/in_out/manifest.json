@@ -100,9 +100,9 @@
   "text": "Wszyscy do środka kółka!"
  },
  "line.b_kto": {
-  "hash": "5017d26eb148",
+  "hash": "cb212a2f8316",
   "who": "sarenka",
-  "text": "Kto jest jeszcze na zewnątrz? Wskaż."
+  "text": "Wskaż, kto jest jeszcze na zewnątrz kółka."
  },
  "line.b_kto_nie": {
   "hash": "ad05fbe544ec",
@@ -129,26 +129,6 @@
   "who": "jez",
   "text": "W norce jest sucho i ciepło. Deszcz został na zewnątrz."
  },
- "line.b_kubki": {
-  "hash": "dc590b0b8b69",
-  "who": "jez",
-  "text": "Zagrajmy w kubeczki! Chowam żołądź pod kubeczkiem. Patrz uważnie."
- },
- "line.b_gdzie": {
-  "hash": "3c47b30eaa75",
-  "who": "jez",
-  "text": "W którym kubeczku jest żołądź? Wskaż."
- },
- "line.b_gdzie_nie": {
-  "hash": "660c60212e31",
-  "who": "jez",
-  "text": "Tu jest pusto. Spróbuj jeszcze raz."
- },
- "line.b_jest": {
-  "hash": "370d890a95ba",
-  "who": "bobr",
-  "text": "Jest! Żołądź był w środku kubeczka."
- },
  "line.b_koniec": {
   "hash": "136363a8778b",
   "who": "sarenka",
@@ -169,25 +149,15 @@
   "who": "bobr",
   "text": "Popatrz: w środku mają być same owieczki, wszystkie. Wilk na zewnątrz."
  },
- "line.p_dobrze": {
-  "hash": "d75425f6c769",
-  "who": "sarenka",
-  "text": "Brawo!"
- },
- "line.p_dobrze.bobr": {
-  "hash": "fac351ca4a2a",
-  "who": "bobr",
-  "text": "Brawo!"
- },
  "line.p_jablka": {
   "hash": "ec05335917df",
   "who": "sarenka",
   "text": "Włóż trzy jabłka do koszyka. Przeciągaj je po jednym."
  },
  "line.p_poza": {
-  "hash": "3147a530c9fd",
+  "hash": "d21c4de172a1",
   "who": "bobr",
-  "text": "Która gwiazdka jest na zewnątrz kółka? Wskaż."
+  "text": "Wskaż gwiazdkę, która jest na zewnątrz kółka."
  },
  "line.p_poza_nie": {
   "hash": "ce3b8c0da71f",
@@ -200,9 +170,9 @@
   "text": "Chowam piłkę pod kubeczkiem. Patrz uważnie!"
  },
  "line.p_gdzie_pilka": {
-  "hash": "3ae15e88ae91",
+  "hash": "be2ac41590cd",
   "who": "sarenka",
-  "text": "W którym kubeczku jest piłka? Wskaż."
+  "text": "Wskaż kubeczek, w którym jest piłka."
  },
  "line.p_gdzie_pilka_nie": {
   "hash": "b2f1bfbd0fdd",
@@ -225,19 +195,19 @@
   "text": "Rybka pływa w środku akwarium!"
  },
  "line.h_zabawki": {
-  "hash": "b6c300be94b3",
+  "hash": "246bec06baf0",
   "who": "jez",
-  "text": "Przed snem zabawki wracają do pudła. Przeciągnij każdą do środka pudła."
+  "text": "Ale tu bałagan! Przed snem zabawki wracają do pudła."
  },
  "line.h_w_pudle": {
-  "hash": "6fa7e4bb9f80",
+  "hash": "4043e8ba48fd",
   "who": "sarenka",
-  "text": "Wszystkie zabawki są w środku pudła!"
+  "text": "Zabawki są w środku pudła, a koszyk leży na dywanie!"
  },
  "line.h_rodzice": {
-  "hash": "4ac9eda7b127",
+  "hash": "8cb74a659980",
   "who": "jez",
-  "text": "Pobaw się z rodzicami: zabawka do pudełka, zabawka z pudełka. W środku czy na zewnątrz?"
+  "text": "Pobaw się z rodzicami tak jak my: schowajcie zabawkę do pudełka albo połóżcie obok. Gdzie jest: w środku czy na zewnątrz?"
  },
  "line.naklejka_daj": {
   "hash": "172dddc0d197",
@@ -283,5 +253,120 @@
   "hash": "db1821440164",
   "who": "bobr",
   "text": "Kaczuszko, tu jesteś! Siedzisz w środku, sucha i w cieple."
+ },
+ "line.a_aha": {
+  "hash": "1c01e7bad331",
+  "who": "bobr",
+  "text": "Aha! Płot bez dziury, zamknięty dookoła."
+ },
+ "line.b_szyba": {
+  "hash": "2a3615d79d02",
+  "who": "sarenka",
+  "text": "Ojej, od ciepłego pieca szyba zaparowała! Nic nie widać, co jest na zewnątrz."
+ },
+ "line.b_potem": {
+  "hash": "da8480e080d9",
+  "who": "bobr",
+  "text": "Kiedy burza ucichnie, pójdziemy do domu spać."
+ },
+ "line.p_owce_ok": {
+  "hash": "e42a0bb03ee3",
+  "who": "sarenka",
+  "text": "Tak! Owieczki są w środku, a wilk został na zewnątrz."
+ },
+ "line.p_jablka_ok": {
+  "hash": "8dfb9935d266",
+  "who": "bobr",
+  "text": "Tak, trzy jabłka są w środku koszyka!"
+ },
+ "line.p_poza_ok": {
+  "hash": "87e56fd77478",
+  "who": "sarenka",
+  "text": "Tak, ta gwiazdka jest na zewnątrz kółka!"
+ },
+ "line.p_pilka_ok": {
+  "hash": "3fa96b8de06e",
+  "who": "bobr",
+  "text": "Jest! Piłka była w środku tego kubeczka."
+ },
+ "line.h_dom": {
+  "hash": "931084a5924b",
+  "who": "jez",
+  "text": "Burza ucichła. Jesteśmy w domu, wszyscy w środku!"
+ },
+ "line.h_bobr_juz": {
+  "hash": "8d3f178993b5",
+  "who": "bobr",
+  "text": "Ja pomogę! Miś już jest w pudle."
+ },
+ "line.h_obok": {
+  "hash": "78046a7a5bb2",
+  "who": "sarenka",
+  "text": "Bobrze, miś stoi obok pudła, a nie w środku."
+ },
+ "line.h_aha": {
+  "hash": "165b7c8f9976",
+  "who": "bobr",
+  "text": "Ojej, znowu! Obok to nie w środku."
+ },
+ "line.h_sprzatnij": {
+  "hash": "d15a8e69a017",
+  "who": "jez",
+  "text": "Przeciągnij zabawki do środka pudła, a koszyk kaczuszki połóż na dywanie."
+ },
+ "line.h_sprzatnij_nie": {
+  "hash": "9bce2983ee9d",
+  "who": "jez",
+  "text": "Zabawki do pudła, a koszyk na dywan."
+ },
+ "line.h_gra": {
+  "hash": "a038d976eb42",
+  "who": "jez",
+  "text": "Teraz zgadywanka! Jedną zabawkę wyjmę i położę obok pudła."
+ },
+ "line.h_gra_kto": {
+  "hash": "8c318ee10713",
+  "who": "jez",
+  "text": "Wskaż zabawkę, która jest na zewnątrz pudła."
+ },
+ "line.h_gra_nie": {
+  "hash": "1841a908daae",
+  "who": "jez",
+  "text": "Ta zabawka jest w środku pudła. Która leży obok?"
+ },
+ "line.h_gra_ok": {
+  "hash": "959a0a4cc687",
+  "who": "bobr",
+  "text": "Tak, piłka leży na zewnątrz, obok pudła!"
+ },
+ "line.h_bajka": {
+  "hash": "5b693148c9b3",
+  "who": "bobr",
+  "text": "Kaczuszka nie chce spać. Prosi o bajkę o swoim wieczorze!"
+ },
+ "line.h_bajka_uloz": {
+  "hash": "756bb184fda5",
+  "who": "jez",
+  "text": "Ułóż obrazki po kolei, od tego, co było najpierw."
+ },
+ "line.h_bajka_nie": {
+  "hash": "f5be9d66e7be",
+  "who": "jez",
+  "text": "Popatrz jeszcze raz, co było najpierw, a co potem."
+ },
+ "line.h_bajka_ok": {
+  "hash": "c36c2e5a9f95",
+  "who": "jez",
+  "text": "Najpierw kaczuszka siedziała w koszyku. Potem grzmot! Uciekła, ale trafiła do norki, do środka."
+ },
+ "line.h_spac": {
+  "hash": "c75018ca4a3f",
+  "who": "sarenka",
+  "text": "A teraz spać! Włóż kaczuszkę do środka koszyka."
+ },
+ "line.h_dobranoc": {
+  "hash": "c82124fd01cf",
+  "who": "bobr",
+  "text": "Kaczuszka śpi w koszyku, zabawki w pudle, a my wszyscy w domu. Dobranoc!"
  }
 }

@@ -29,6 +29,12 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "friendly colours, thin soft dark outlines. NOT flat vector, NOT 3D render. NO text, NO letters, NO numbers, NO "
         "speech bubbles, NO panel numbers.")
 HISTORYJKI = {
+    # in_out home: the bedtime recap - the duckling's evening in four pictures
+    "wieczor_kaczuszki": {"postacie": [], "lekcje": ["in_out"], "panele": [
+        "the EVENING meadow before a storm, dark clouds far away: a small fluffy YELLOW DUCKLING sits snugly INSIDE a wicker basket on the grass",
+        "the same meadow in the RAIN: a bright zigzag LIGHTNING bolt in the dark sky, the little yellow duckling leaps OUT of the tipped wicker basket in fright",
+        "the little yellow duckling runs along a winding sandy path between round green BUSHES in the rain, towards a little round wooden door in a grassy hill far ahead",
+        "INSIDE a warm cosy burrow by a glowing stove: the little yellow duckling sits dry and happy on a rug, rain on the round window behind"]},
     # ordering practice: the lantern tower built in four steps, from the biggest block up
     "wieza_latarenki": {"postacie": [], "lekcje": ["ordering"], "panele": [
         "on green grass by a little brook: ONE big wide RED wooden block lying alone on the grass",

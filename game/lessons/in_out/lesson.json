@@ -12,16 +12,15 @@
     "sarenka"
   ],
   "backgrounds": [
-    "laka",
+    "laka_burza",
     "norka_burza",
-    "pokoj"
+    "pokoj_noc"
   ],
   "objects": [
     "kura",
     "koszyk",
     "kaczatko_stoi",
     "kubeczek",
-    "zoledz",
     "owca",
     "wilk",
     "jablko",
@@ -39,5 +38,6 @@
   "naklejka": {
     "obraz": "objects/kura",
     "kto": "jez"
-  }
+  },
+  "oddech": "malowanie"
 }
