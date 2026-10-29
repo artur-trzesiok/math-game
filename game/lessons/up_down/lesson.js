@@ -63,7 +63,7 @@ export default {
         await c.ujecie("ogolny");
         const plan = await c.znalezisko("plan_windy", { skad: "lisek" });
         const [kolo, kosz] = plan.cele.slice().sort((a, b) => plan.meta.cele[a.nr].y - plan.meta.cele[b.nr].y);   // the top spot first
-        const naPlanie = [...plan.cele, plan.tlo]; dobre(plan.cele, false);    // the spots come marked right; the tests need one
+        const naPlanie = [...plan.cele, plan.tlo];
         await c.say("lisek", "line.a_plan_gora");
         dobre(kolo); await c.task({ targets: naPlanie, correct: kolo, wrong: "line.a_plan_gora_nie" }); dobre(kolo, false);
         await c.say("lisek", "line.a_plan_kolo");

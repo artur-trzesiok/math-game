@@ -82,7 +82,7 @@ export default {
         await c.ujecie("ogolny");
         const note = await c.znalezisko("zamowienie_sowy", { skad: "wiewiorka" });
         await c.say("mis", "line.a_karteczka_ile");
-        dobre(note.cele, false); const ile = await c.count(note.cele, { who: "mis" });   // the spots are born "right": the tests count by `policzony`
+        const ile = await c.count(note.cele, { who: "mis" });
         await c.say("wiewiorka", "line.a_karteczka_cztery", { anim: "Radosc" });
         ile.znaczki.forEach((z) => z.remove?.());
         await note.remove();

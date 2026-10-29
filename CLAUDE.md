@@ -353,10 +353,9 @@ cut with a finger stroke (near the middle it snaps through it, far from it the p
 the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program of arrows a pawn follows;
 `ctx.cien(h)` - any sticker as its silhouette; `ctx.zagroda({rzeczy, chcemy, wrong, otwarta})` (mechaniki3.js) - a fence drawn with a finger: a closed line round exactly the wanted things builds it, an open one has a gap a thing walks out through; `ctx.plot(pts)` a pencil fence; `ctx.winda({x, pietra})` -> {doPoziomu(i), jedz, wloz, wyjmij} - a basket on a rope over a painted pulley (parts winda_*.webp; the rope is stacked from pieces of the painted one and drawn behind every sticker);  `ctx.ramka({x, y})` -> {wloz, ile, przeciagaj({rzeczy, ile, wrong})} - a ten frame (two rows of five, filled place by place); `ctx.domino(a, b)` - a domino tile of dots, a task target with `suma`; `ctx.znalezisko(name, {skad})` (mechaniki3.js) - a found picture (map, photo, drawing; square or oblong) flies up from
 `skad` and lies big over a dimmed scene; it returns {cele, tlo, zaznacz(), remove()} and the lesson asks with
-`c.task({targets: [...z.cele, z.tlo], correct: z.cele (wszystkie for several)})`, so a tap elsewhere is a miss with the
+`c.task({targets: [...z.cele, z.tlo], correct: z.cele (wszystkie for several)})` - the spots start NOT marked right for the tests: mark the answer with `dobre(...)` before the task, so a tap elsewhere is a miss with the
 hint ladder, or `c.count(z.cele)` counts the spots by touch (rings, hint arrows and counting digits draw over the picture:
-the spots carry `nadObrazem`; the spots come with `dobry: true`, so reset it before a task or a count, or the autopilot
-taps the first one forever; remove the count's `znaczki` with the picture) (`tools/znaleziska/make_znalezisko.py`: gpt-image draws the picture, then an edit with a magenta disc on
+the spots carry `nadObrazem`; remove the count's `znaczki` with the picture) (`tools/znaleziska/make_znalezisko.py`: gpt-image draws the picture, then an edit with a magenta disc on
 every spot described in words; the discs found by colour are the `cele`; review `work/<name>_cele.png`). A spot can
 be a whole PATH (`{"droga": "the short path from ... to ..."}` in `cele`): each path gets an edit of its own (two paths
 share their ends and merged when painted together), its painted line is skeletonized into points, the game makes the

@@ -363,5 +363,15 @@
   "hash": "8090d221c3bb",
   "who": "kret",
   "text": "The passengers are getting off the train. Look how they hop onto the platform!"
+ },
+ "line.b_spoznieni": {
+  "hash": "9581c0491e40",
+  "who": "kret",
+  "text": "Wait! The duckling and the snail are running up. They bought their tickets yesterday, to be in time today!"
+ },
+ "line.b_bilety_wczoraj": {
+  "hash": "f8d8a9139037",
+  "who": "kret",
+  "text": "The duckling has a one, so it gets into the first wagon. The snail has a four, so into the fourth. Hop in!"
  }
 }

@@ -366,11 +366,11 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
       const [ox, oy] = lokalnie(c.droga[Math.floor(c.droga.length / 2)]); g.position.set(ox, oy, 0.05);   // its middle: where a test taps
       for (const q of c.droga) { const [px, py] = lokalnie(q); const d = new THREE.Mesh(new THREE.CircleGeometry(0.32, 16), mat({ opacity: 0, side: THREE.DoubleSide })); d.position.set(px - ox, py - oy, 0); g.add(d); }
       karta.add(g);
-      return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: true, droga: c.droga });
+      return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: false, droga: c.droga });
     }
     g.add(new THREE.Mesh(new THREE.CircleGeometry(rr, 24), mat({ opacity: 0, side: THREE.DoubleSide })));
     g.position.set((c.x - 0.5) * W, (0.5 - c.y) * H, 0.05); karta.add(g);
-    return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: true, nadObrazem: 39 });   // rings and counting digits draw over the picture
+    return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: false, nadObrazem: 39 });   // rings and counting digits draw over the picture; the lesson marks the right one (dobre)
   });
   const tlo = uchwytCelu(S, obraz, { name: `${nazwa}_obraz`, dobry: false });
   // the flight: from whoever found it, small, to the middle, big

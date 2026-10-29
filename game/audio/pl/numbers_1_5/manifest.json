@@ -363,5 +363,15 @@
   "hash": "1013713f3edb",
   "who": "kret",
   "text": "Pasażerowie wysiadają z pociągu. Popatrz, jak skaczą na peron!"
+ },
+ "line.b_spoznieni": {
+  "hash": "2cc3648a8dd8",
+  "who": "kret",
+  "text": "Czekajcie! Biegną jeszcze kaczątko i ślimak. Bilety kupili już wczoraj, żeby dziś zdążyć!"
+ },
+ "line.b_bilety_wczoraj": {
+  "hash": "de9390488bdd",
+  "who": "kret",
+  "text": "Kaczątko ma jedynkę, więc wsiada do pierwszego wagonu. Ślimak ma czwórkę, więc do czwartego. Wskakujcie!"
  }
 }

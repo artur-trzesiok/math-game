@@ -269,5 +269,13 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "This is a wagon from Mole's train. We got it when we counted to five."
+  },
+  "line.b_spoznieni": {
+    "who": "kret",
+    "text": "Wait! The duckling and the snail are running up. They bought their tickets yesterday, to be in time today!"
+  },
+  "line.b_bilety_wczoraj": {
+    "who": "kret",
+    "text": "The duckling has a one, so it gets into the first wagon. The snail has a four, so into the fourth. Hop in!"
   }
 }

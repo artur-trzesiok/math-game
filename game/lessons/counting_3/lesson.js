@@ -104,7 +104,6 @@ export default {
         // the recipe card: the child counts the raspberries on the drawn cake, each once - the last number says how many
         const przepis = await c.znalezisko("przepis_tort", { skad: "mis" });
         await c.say("wiewiorka", "line.b_przepis_policz");
-        dobre(przepis.cele, false);                                          // the spots come marked right: the tests then pick the first again and again
         const licz = await c.count(przepis.cele, { who: "wiewiorka" });
         await c.say("wiewiorka", "line.b_przepis_trzy");
         licz?.znaczki?.forEach((z) => z.remove());                            // the digits go away with the card

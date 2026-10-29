@@ -110,6 +110,25 @@ export default {
           await c.say("kret", "line.b_wsiada");
           await c.ujecie("ogolny");
         }
+        // the last two run up late: their tickets were bought yesterday, so they board with no task - everyone who gets off
+        // at the lake was seen getting on
+        const spoznieni = [];
+        for (const [j, [kto, n]] of [[PASAZEROWIE[3], 1], [PASAZEROWIE[4], 4]].entries()) {
+          const p = await c.object(kto, { x: 6.5, y: -1.5, size: kto === "slimak" ? 1.6 : 1.2 });
+          await p.moveTo(-0.9 + j * 2.0, -1.5, 0.6);                        // the free middle: Mole and Owl left, Bear right
+          const b = await c.object("bilet", { x: 0.1 + j * 2.0, y: -1.45, size: 1.1 });
+          spoznieni.push({ p, b, cyfra: await c.digit(n, { x: 0.1 + j * 2.0, y: -1.45, size: 0.55, duration: 0.2 }), n });
+        }
+        await c.ujecie("sredni", { na: spoznieni.flatMap((s) => [s.p, s.b]) });            // both of them and both tickets in the shot
+        await c.say("kret", "line.b_spoznieni", { anim: "Zgloszenie" });
+        await c.say("kret", "line.b_bilety_wczoraj");
+        await c.ujecie("ogolny");
+        for (const { p, b, cyfra, n } of spoznieni) {
+          const ok = w[n - 1];
+          b.remove(); cyfra.remove();
+          p.mesh.position.z = ok.mesh.position.z - 0.02; p.mesh.scale.setScalar(0.6); p.base = 0.6;
+          await p.moveTo(ok.mesh.position.x, ok.mesh.position.y + 0.5, 0.5); c.sfx("hop");
+        }
         await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.b_odjazd", { anim: "Machanie" });
         await c.ujecie("ogolny");
