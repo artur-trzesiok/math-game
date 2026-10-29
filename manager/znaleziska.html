@@ -31,7 +31,7 @@ const RODZAJE = {
   znaleziska: { tytul: "Znaleziska", opis: "Obrazki do zaznaczania (ctx.znalezisko). Czerwone: co dziecko ma wskazać - punkty albo całe ścieżki.", obrazy: ["obraz.webp"] },
   labirynty: { tytul: "Labirynty", opis: "Labirynty (ctx.labirynt). Żółte: ściany z planu (gra sprawdza ruchy na planie), zielone: wejście, czerwone: wyjście.", obrazy: ["obraz.webp"] },
   roznice: { tytul: "Różnice", opis: "Pary do szukania różnic (ctx.roznice) i ukryte rzeczy przez lunetę (ctx.szukaj, gra pokazuje tylko obrazek b). Czerwone: znalezione różnice.", obrazy: ["a.webp", "b.webp"] },
-  ilustracje: { tytul: "Ilustracje", opis: "Ilustracje zdarzeń (ctx.ilustracja): kadr ląduje na ekranie jak znaczek, postacie mówią z plakietek, na koniec zsuwa się w dół. Pod obrazkiem: co pokazuje i w jakiej lekcji ma być.", obrazy: ["obraz.webp"], bezPdf: true },
+  ilustracje: { tytul: "Ilustracje", opis: "Ilustracje zdarzeń (ctx.ilustracja): kadr ląduje na ekranie jak znaczek, postacie mówią z plakietek, na koniec zsuwa się w dół. Pod obrazkiem: co pokazuje i w jakiej lekcji ma być.", obrazy: ["obraz.webp"], bezZaznaczen: true },
   miejsca: { tytul: "Miejsca w pokojach", opis: "Miejsca na namalowanych pokojach (ctx.miejsca): półki, wieszak, stół, dywan - dziecko kładzie na nich rzeczy. Czerwone: miejsce i jego rodzaj (stoi / wisi / leży).", obrazy: ["plyta.webp"], kat: "/game/assets/backgrounds/", meta: "miejsca.json", bezPdf: true },
   zdrapki: { tytul: "Zdrapki", opis: "Zdrapki (ctx.zdrapka): dziecko ściera palcem osłonę (śnieg, parę z szyby), pod spodem namalowana scena. Lewy: zakryty, prawy: odkryty z celami do policzenia/wskazania.", obrazy: ["zakryty.webp", "odkryty.webp"], bezPdf: true },
   kropki: { tytul: "Połącz kropki", opis: "Połącz kropki (ctx.kropki): kropki na konturze, połączone po kolei odsłaniają obrazek. Czerwone: kolejność kropek.", obrazy: ["obraz.webp"], bezPdf: true },
@@ -42,6 +42,7 @@ const R = RODZAJE[rodzaj];
 document.getElementById("tytul").textContent = R.tytul; document.title = R.tytul; document.getElementById("opis").textContent = R.opis;
 document.getElementById("pdf").href = `/api/${rodzaj}.pdf`; document.getElementById("pdf2").href = `/api/${rodzaj}.pdf?cele=1`;
 if (R.bezPdf) for (const id of ["pdf", "pdf2"]) document.getElementById(id).style.display = "none";
+if (R.bezZaznaczen) document.getElementById("pdf2").style.display = "none";
 const L = await lekcje();
 const obraz = (src) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
 const kat = R.kat || `/game/assets/${rodzaj}/`;

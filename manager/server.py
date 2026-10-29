@@ -18,7 +18,7 @@ character editor and by browser-side tests:
                                   with its name under it (the manager's "pobierz arkusz")
   GET  /api/tla.pdf               every scenery's plate one under another, each fitted to the width
                                   of the widest (panoramas set the width), its name over it
-  GET  /api/<znaleziska|labirynty|roznice>.pdf[?cele=1]  every found picture / maze / difference pair one under
+  GET  /api/<znaleziska|labirynty|roznice|ilustracje>.pdf[?cele=1]  every found picture / maze / difference pair one under
                                   another, fitted to the widest, its name over it; with cele=1 what the child
                                   must find drawn in (spots and paths, maze walls, the differences)
 """
@@ -125,7 +125,7 @@ def arkusz_tel() -> bytes:
     return out.getvalue()
 
 def arkusz_obrazkow(rodzaj: str, z_celami: bool) -> bytes:
-    """One page for one kind of picture task (znaleziska, labirynty, roznice): every picture one under another (a
+    """One page for one kind of picture (znaleziska, labirynty, roznice, ilustracje - no marks, lessons in the name): every picture one under another (a
     difference pair side by side), scaled to the widest, the name over each; with z_celami what the child must find
     drawn in - spots and paths in red, a maze's walls in yellow with its entrance and exit, the differences ringed.
     Pictures go in as JPEG (q 88): lossless they made a 40 MB sheet."""
@@ -157,7 +157,7 @@ def arkusz_obrazkow(rodzaj: str, z_celami: bool) -> bytes:
         meta = json.loads((kat / "meta.json").read_text(encoding="utf-8"))
         ims = [Image.open(kat / f).convert("RGB") for f in pliki if (kat / f).exists()]
         if len(ims) != len(pliki): continue
-        if z_celami:
+        if z_celami and rodzaj != "ilustracje":
             for im in ims:
                 d = ImageDraw.Draw(im); W, H = im.size; g = max(5, W // 160)
                 if rodzaj == "labirynty": sciany(d, meta, W, H, g)
@@ -167,7 +167,9 @@ def arkusz_obrazkow(rodzaj: str, z_celami: bool) -> bytes:
             x = 0
             for i in ims: para.paste(i, (x, 0)); x += i.size[0] + 30
             ims = [para]
-        obrazy.append((f"{kat.name}  ({ims[0].size[0]}x{ims[0].size[1]})", ims[0]))
+        gdzie = f"  -  {', '.join(meta['lekcje'])}" if rodzaj == "ilustracje" and meta.get("lekcje") else ""
+        komiks = "  [komiks]" if meta.get("okienka") else ""
+        obrazy.append((f"{kat.name}  ({ims[0].size[0]}x{ims[0].size[1]}){komiks}{gdzie}", ims[0]))
     if not obrazy: obrazy = [("(pusto)", Image.new("RGB", (800, 200), (238, 238, 238)))]
     W = max(im.size[0] for _, im in obrazy); pad, podpis = 40, 70
     wys = [im.size[1] * W / im.size[0] for _, im in obrazy]
@@ -214,7 +216,7 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_response(302); self.send_header("Location", "/game/"); self.end_headers(); return
         if path == "/api/characters":
             return self._json(200, sorted(p.name for p in CHARACTERS.iterdir() if (p / "postac.json").exists()))
-        m = re.fullmatch(r"/api/(znaleziska|labirynty|roznice)\.pdf", path)
+        m = re.fullmatch(r"/api/(znaleziska|labirynty|roznice|ilustracje)\.pdf", path)
         if m:
             cel = "cele=1" in (urlparse(self.path).query or "")
             body = arkusz_obrazkow(m.group(1), cel)
