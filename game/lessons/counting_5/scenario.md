@@ -8,8 +8,9 @@ Stage 6, lesson 21.
 
 ## Stage 1 - story
 A. *Bakery* (new scenery). **Child** counts five rolls on the tray (`count`). Bear spreads them out - "more!";
-Hedgehog: did any appear? **Child** counts again - five. The first order: **child** packs four rolls into a bag (a
-fifth jumps back).
+Hedgehog: did any appear? **Child** counts again - five. The first order: a note under the door with Owl's
+feather (found picture `zamowienie_sowy`): Owl drew how many rolls she wants - **child** counts the rolls on the drawing
+(four), then packs four rolls into a bag (a fifth jumps back).
 B. *Orchard.* Which heap has five apples; which domino has five dots (`domino`, new: 2 + 3); *breather:* Hedgehog's
 jumps counted by ear (3-5) - a digit card. Back at the bakery the first customer pays five coins (`sklepik`).
 

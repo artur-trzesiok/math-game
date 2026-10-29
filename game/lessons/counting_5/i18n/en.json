@@ -31,9 +31,17 @@
     "who": "mis",
     "text": "Five is five, close together or far apart. I see!"
   },
-  "line.a_zamowienie": {
+  "line.a_karteczka": {
     "who": "wiewiorka",
-    "text": "The first order! Owl would like four rolls."
+    "text": "Someone slipped a note under the door! There's a feather on it. It's from Owl!"
+  },
+  "line.a_karteczka_ile": {
+    "who": "mis",
+    "text": "It's an order! Owl drew how many rolls she wants. Let's count them, then I'll know how many to pack. Point to each roll in the drawing, one by one."
+  },
+  "line.a_karteczka_cztery": {
+    "who": "wiewiorka",
+    "text": "Four rolls! Owl wants four."
   },
   "line.a_spakuj": {
     "who": "mis",

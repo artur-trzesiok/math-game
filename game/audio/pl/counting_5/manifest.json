@@ -39,11 +39,6 @@
   "who": "mis",
   "text": "Pięć to pięć, blisko czy daleko. Rozumiem!"
  },
- "line.a_zamowienie": {
-  "hash": "c817ac24f58c",
-  "who": "wiewiorka",
-  "text": "Pierwsze zamówienie! Sowa prosi o cztery bułeczki."
- },
  "line.a_spakuj": {
   "hash": "e98e75646e59",
   "who": "mis",
@@ -308,5 +303,20 @@
   "hash": "caf8885268d1",
   "who": "narrator",
   "text": "To bułeczka z piekarni Misia. Dostaliśmy ją, kiedy liczyliśmy do pięciu."
+ },
+ "line.a_karteczka": {
+  "hash": "94255d55f6c4",
+  "who": "wiewiorka",
+  "text": "Ktoś wsunął pod drzwi karteczkę! Jest na niej piórko. To od Sowy!"
+ },
+ "line.a_karteczka_ile": {
+  "hash": "9480eb634ecd",
+  "who": "mis",
+  "text": "To zamówienie! Sowa narysowała, ile bułeczek chce. Policzmy je, to będę wiedział, ile zapakować. Wskazuj po kolei każdą bułeczkę na rysunku."
+ },
+ "line.a_karteczka_cztery": {
+  "hash": "ab07c2b1a96d",
+  "who": "wiewiorka",
+  "text": "Cztery bułeczki! Sowa chce cztery."
  }
 }

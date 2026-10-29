@@ -1,6 +1,6 @@
 // Lesson: adding to 5 - adding is putting two groups together and counting them all; the signs + and =; the order does
-// not matter (1 + 4 = 4 + 1). Fox's picnic, guests keep arriving: Bunny counts only the newcomer ("one!"); the child
-// brings the guests onto the blanket and counts all; equations with a gap for a card; a domino turned round still
+// not matter (1 + 4 = 4 + 1). Fox's picnic, guests keep arriving: Bunny counts only the newcomer ("one!"); Fox's
+// invitation shows who is still missing (two more); the child brings the guests onto the blanket and counts all; equations with a gap for a card; a domino turned round still
 // has five dots. At home: cups for the guests. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
@@ -81,12 +81,25 @@ export default {
         await c.equation([2, "+", 1, "=", 3], { y: 2.6, size: 1.1 });
         await c.say("sarenka", "line.a_plus");
         await c.wait(0.6); c.clear();
-        // more guests: three on the blanket, two come - which card goes into the gap?
-        await c.ujecie("sredni", { na: ["lisek", "zajac"] });
-        await c.say("lisek", "line.a_wiecej_gosci");
-        await c.ujecie("ogolny");
+        // is that everyone? Fox's invitation shows all he invited - who is not on the blanket yet? two more: 3 + 2
         const koc2 = await kocyk(c, { x: 0.5, w: 4.6, h: 2.0 });
         for (const n of ["jez", "mysz", "kaczatko_stoi"]) { const h = await c.object(n, { x: 0, y: -1.6, size: 0.95 }); h.tag = "koc"; koc2.put(h); }
+        await c.ujecie("zblizenie", { na: "lisek" });
+        await c.wonder("lisek");
+        await c.say("lisek", "line.a_czy_wszyscy");
+        await c.ujecie("ogolny");
+        const zapr = await c.znalezisko("zaproszenie_lisa", { skad: "lisek", y: 0.9 });
+        const goscie = zapr.cele.slice().sort((a, b) => zapr.meta.cele[a.nr].x - zapr.meta.cele[b.nr].x);   // snail, hedgehog, butterfly, mouse, duckling
+        const brak = [goscie[0], goscie[2]];
+        await c.say("sarenka", "line.a_kogo_brakuje");
+        dobre(zapr.cele, false); dobre(brak); await c.task({ targets: [...zapr.cele, zapr.tlo], correct: brak, wszystkie: true, wrong: "line.a_kogo_brakuje_nie" }); dobre(brak, false);
+        const obwod = [await c.circle(brak[0]), await c.circle(brak[1])];
+        await c.say("lisek", "line.a_brakuje_dwoch", { anim: "Zgloszenie" });
+        await c.say("sarenka", "line.a_trzech_i_dwoch");
+        obwod.forEach((o) => o.remove()); await zapr.remove();
+        await c.ujecie("sredni", { na: ["lisek", "zajac"] });
+        await c.say("lisek", "line.a_wiecej_gosci", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         const nowi = [await c.object("slimak", { x: 2.4, y: 1.0, size: 0.9 }), await c.object("motyl", { x: 3.3, y: 1.4, size: 0.9 })];
         await c.say("lisek", "line.a_przyprowadz");
         await dolacz(c, koc2, nowi, "line.a_na_koc");

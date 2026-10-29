@@ -11,7 +11,11 @@ A. *Brook.* Beaver's dam has a hole; ten logs are needed. Mole counts the heap (
 every counted log aside. **Child** counts the logs into a row (`count` with `rzad`): eight, two missing. Owl's ten
 frame (`ramka`, new): **child** drags eight logs in - five and three.
 B. *Forest.* **Child** fills the frame up to ten (one more jumps back: "full"). The digits 6, 7, 8, 9 drawn; ten with
-two digits. *Breather:* Mole hops along the stones 0-10 to the number Beaver says - **child** points to the stone.
+two digits. "Ten logs - the dam will be whole!"
+C. *The dam* (new scenery `tama_bobra`, the end of the story): the hole in the middle, the water pours through. To be
+sure, **child** counts the ten logs once more, each counted log into a row (none twice); they go into the hole in two
+rows of five, as in the frame - plugged. *Breather:* Mole hops along the stones 0-10 to the number Beaver says -
+**child** points to the stone. Beaver thanks: without counting he could not have done it.
 
 ## Stage 2 - practice
 How many in the frame (6-10) - a number card; seven apples into the frame; write the 7; which heap has more, eight or

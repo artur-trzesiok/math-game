@@ -121,6 +121,34 @@
     "who": "bobr",
     "text": "I've got ten logs. The dam will be whole!"
   },
+  "line.c_tama": {
+    "who": "bobr",
+    "text": "Here is my dam. Look, there's a hole in the middle and the water pours through it like a waterfall."
+  },
+  "line.c_zatkamy": {
+    "who": "kret",
+    "text": "We have ten logs. Let's plug the hole with them!"
+  },
+  "line.c_licz": {
+    "who": "sowa",
+    "text": "First let's check there really are ten. Point to the logs one by one. Each counted log goes into the row, so none is counted twice."
+  },
+  "line.c_dziesiec": {
+    "who": "sowa",
+    "text": "Ten logs! Each one counted only once."
+  },
+  "line.c_do_tamy": {
+    "who": "bobr",
+    "text": "Now into the dam! Five logs at the bottom and five on top, like in the frame."
+  },
+  "line.c_zatkana": {
+    "who": "kret",
+    "text": "The hole is plugged! The water isn't running away any more!"
+  },
+  "line.c_koniec": {
+    "who": "bobr",
+    "text": "My dam is whole again. Thank you! I couldn't have done it without counting."
+  },
   "line.p_start": {
     "who": "sowa",
     "text": "Let's practise numbers up to ten! I have five games."

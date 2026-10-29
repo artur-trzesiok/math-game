@@ -1,7 +1,7 @@
 // Lesson: numbers 1 to 5 - count to five, every thing once; the digits 4 and 5 (1-3 are known); a number says how many
 // to give, not only how many there are; five spread out is still five. Mole's little forest train: a ticket costs as
 // many coins as its number, passengers board the wagon of their ticket, Bear's five apples lie far apart ("mine are
-// more!"), the conductor's bell, five passengers at the lake. Script in scenario.md.
+// more!"), the conductor's bell, five passengers hop off at the lakeside stop. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
@@ -162,15 +162,27 @@ export default {
         await c.ujecie("ogolny");
         c.clear();
       },
-      // D. the lake: five passengers get off - count them
+      // D. the lakeside stop (the end of the journey): the passengers hop off the train onto the platform - count them
       async (c) => {
-        await c.go("laka", { enter: true });
+        const S = c.stage;
+        await c.go("stacja_jezioro", { enter: true });
         await Promise.all(["kret", "mis", "sowa"].map((n) => c.enter(n, n === "mis" ? "right" : "left")));
         await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.d_jezioro", { anim: "Radosc" });
         await c.ujecie("ogolny");
+        await c.play("sowa", "Rozgladanie");
+        await c.say("sowa", "line.d_stacja", { anim: "Zgloszenie" });   // the wide shot: the lake, the pier and the train in view
+        await c.ujecie("sredni", { na: ["kret"] });
+        await c.say("kret", "line.d_wysiadaja");
+        await c.ujecie("ogolny");
+        // one after another out of the train at the back (small: far away), each hops onto the grass between Owl and Bear
         const p = [];
-        for (const [i, n] of PASAZEROWIE.entries()) p.push(await c.object(n, { x: -1.6 + i * 1.3, y: 1.5 - (i % 2) * 0.8, size: 1.5 }));
+        for (const [i, n] of PASAZEROWIE.entries()) {
+          const h = await c.object(n, { x: -4.3, y: 0.4, size: 0.5, cicho: true }), s0 = h.base, s1 = s0 * 2.6;
+          c.sfx("hop");
+          await Promise.all([h.moveTo(-1.1 + i * 1.0, -1.0 - (i % 2) * 0.95, 0.45), S.tween(0.45, (q) => h.mesh.scale.setScalar(s0 + (s1 - s0) * q))]);
+          h.base = s1; p.push(h);
+        }
         await c.say("mis", "line.d_ilu");
         await c.count(p, { who: "mis" });
         await c.ujecie("zblizenie", { na: "sowa" });

@@ -353,5 +353,15 @@
   "hash": "d2dbb498db0c",
   "who": "narrator",
   "text": "This is a wagon from Mole's train. We got it when we counted to five."
+ },
+ "line.d_stacja": {
+  "hash": "13d9509f3c32",
+  "who": "sowa",
+  "text": "What a lovely stop, right by the lake! The water is sparkling, and look, there's a wooden pier."
+ },
+ "line.d_wysiadaja": {
+  "hash": "8090d221c3bb",
+  "who": "kret",
+  "text": "The passengers are getting off the train. Look how they hop onto the platform!"
  }
 }

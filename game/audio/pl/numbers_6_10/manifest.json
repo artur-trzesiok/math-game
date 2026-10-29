@@ -403,5 +403,40 @@
   "hash": "a8c03ef816ea",
   "who": "narrator",
   "text": "To bal z tamy Bobra. Dostaliśmy go, kiedy liczyliśmy do dziesięciu."
+ },
+ "line.c_tama": {
+  "hash": "95a9898d493e",
+  "who": "bobr",
+  "text": "Oto moja tama. Popatrz, na środku jest dziura i woda przelewa się przez nią jak wodospad."
+ },
+ "line.c_zatkamy": {
+  "hash": "edd8f080c5e9",
+  "who": "kret",
+  "text": "Mamy dziesięć bali. Zatkajmy nimi dziurę!"
+ },
+ "line.c_licz": {
+  "hash": "10c73a8aab60",
+  "who": "sowa",
+  "text": "Najpierw sprawdźmy, czy na pewno jest ich dziesięć. Wskazuj bale po kolei. Każdy policzony bal pójdzie do rządka, więc żaden nie policzy się dwa razy."
+ },
+ "line.c_dziesiec": {
+  "hash": "f1028c65352c",
+  "who": "sowa",
+  "text": "Dziesięć bali! Każdy policzony tylko raz."
+ },
+ "line.c_do_tamy": {
+  "hash": "83832ededbe2",
+  "who": "bobr",
+  "text": "Teraz do tamy! Pięć bali na dół i pięć na górę, jak w ramce."
+ },
+ "line.c_zatkana": {
+  "hash": "8542db979744",
+  "who": "kret",
+  "text": "Dziura zatkana! Woda już nie ucieka!"
+ },
+ "line.c_koniec": {
+  "hash": "318d43c950c2",
+  "who": "bobr",
+  "text": "Moja tama jest cała. Dziękuję! Bez liczenia nie dałbym rady."
  }
 }

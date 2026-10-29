@@ -42,6 +42,26 @@
     "who": "sarenka",
     "text": "Zapisujemy to tak: dwa plus jeden równa się trzy. Plus znaczy: łączymy razem."
   },
+  "line.a_czy_wszyscy": {
+    "who": "lisek",
+    "text": "Czy to już wszyscy? Sprawdzę na zaproszeniu. Narysowałem na nim każdego, kogo zaprosiłem."
+  },
+  "line.a_kogo_brakuje": {
+    "who": "sarenka",
+    "text": "Na kocyku siedzą już Jeżyk, Myszka i kaczuszka. Kogo z zaproszenia jeszcze nie ma? Wskaż wszystkich, których brakuje."
+  },
+  "line.a_kogo_brakuje_nie": {
+    "who": "sarenka",
+    "text": "Popatrz na kocyk. Szukamy gości, których na nim jeszcze nie ma."
+  },
+  "line.a_brakuje_dwoch": {
+    "who": "lisek",
+    "text": "Ślimaka i motylka! Brakuje jeszcze dwóch gości."
+  },
+  "line.a_trzech_i_dwoch": {
+    "who": "sarenka",
+    "text": "Na kocyku jest trzech gości, a przyjdzie jeszcze dwóch. Kiedy przyjdą, dodamy ich i policzymy wszystkich."
+  },
   "line.a_wiecej_gosci": {
     "who": "lisek",
     "text": "Przychodzą następni goście: ślimak i motylek!"

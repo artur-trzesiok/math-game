@@ -318,5 +318,30 @@
   "hash": "f3b77bd6411e",
   "who": "narrator",
   "text": "To piknikowy kocyk Liska. Dostaliśmy go, kiedy uczyliśmy się dodawać."
+ },
+ "line.a_czy_wszyscy": {
+  "hash": "d44556b8646f",
+  "who": "lisek",
+  "text": "Czy to już wszyscy? Sprawdzę na zaproszeniu. Narysowałem na nim każdego, kogo zaprosiłem."
+ },
+ "line.a_kogo_brakuje": {
+  "hash": "20c65ae2e22a",
+  "who": "sarenka",
+  "text": "Na kocyku siedzą już Jeżyk, Myszka i kaczuszka. Kogo z zaproszenia jeszcze nie ma? Wskaż wszystkich, których brakuje."
+ },
+ "line.a_kogo_brakuje_nie": {
+  "hash": "2f6470f6617d",
+  "who": "sarenka",
+  "text": "Popatrz na kocyk. Szukamy gości, których na nim jeszcze nie ma."
+ },
+ "line.a_brakuje_dwoch": {
+  "hash": "6ac3903f89cb",
+  "who": "lisek",
+  "text": "Ślimaka i motylka! Brakuje jeszcze dwóch gości."
+ },
+ "line.a_trzech_i_dwoch": {
+  "hash": "2f8f709617f3",
+  "who": "sarenka",
+  "text": "Na kocyku jest trzech gości, a przyjdzie jeszcze dwóch. Kiedy przyjdą, dodamy ich i policzymy wszystkich."
  }
 }

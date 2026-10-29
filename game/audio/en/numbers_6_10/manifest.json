@@ -403,5 +403,40 @@
   "hash": "dce028faeec0",
   "who": "narrator",
   "text": "This is a log from Beaver's dam. We got it when we counted to ten."
+ },
+ "line.c_tama": {
+  "hash": "f691c5fb4e9f",
+  "who": "bobr",
+  "text": "Here is my dam. Look, there's a hole in the middle and the water pours through it like a waterfall."
+ },
+ "line.c_zatkamy": {
+  "hash": "16fea308ac0d",
+  "who": "kret",
+  "text": "We have ten logs. Let's plug the hole with them!"
+ },
+ "line.c_licz": {
+  "hash": "903ce1564240",
+  "who": "sowa",
+  "text": "First let's check there really are ten. Point to the logs one by one. Each counted log goes into the row, so none is counted twice."
+ },
+ "line.c_dziesiec": {
+  "hash": "8bc6bc552f4b",
+  "who": "sowa",
+  "text": "Ten logs! Each one counted only once."
+ },
+ "line.c_do_tamy": {
+  "hash": "d9331c5d797c",
+  "who": "bobr",
+  "text": "Now into the dam! Five logs at the bottom and five on top, like in the frame."
+ },
+ "line.c_zatkana": {
+  "hash": "73bd7f24f85d",
+  "who": "kret",
+  "text": "The hole is plugged! The water isn't running away any more!"
+ },
+ "line.c_koniec": {
+  "hash": "8960fe410afb",
+  "who": "bobr",
+  "text": "My dam is whole again. Thank you! I couldn't have done it without counting."
  }
 }

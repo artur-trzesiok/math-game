@@ -1,6 +1,6 @@
 // Lesson: counting to 5 - one number for each thing, the last number says how many, and moving things does not change
 // how many there are; five shown as a row, a die (domino) and a hand. Bear opens a forest bakery: he spreads five rolls
-// along the tray and says there are more now; orders packed into a bag; which basket has five; Hedgehog's hops; the
+// along the tray and says there are more now; Owl's order note (count the rolls drawn on it) packed into a bag; which basket has five; Hedgehog's hops; the
 // first customers pay. At home: the table set for five. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
@@ -75,10 +75,18 @@ export default {
         await c.say("mis", "line.a_rozumiem", { anim: "Kiwanie" });
         await c.ujecie("ogolny");
         c.clear();
-        // the first order: four rolls into a bag
-        await c.ujecie("sredni", { na: ["wiewiorka", "jez"] });
-        await c.say("wiewiorka", "line.a_zamowienie");
+        // the first order: a note under the door - Owl drew how many rolls she wants; counted on the drawing: four
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.emocja("wiewiorka", "wykrzyknik", { anim: "Podskok" });
+        await c.say("wiewiorka", "line.a_karteczka");
         await c.ujecie("ogolny");
+        const note = await c.znalezisko("zamowienie_sowy", { skad: "wiewiorka" });
+        await c.say("mis", "line.a_karteczka_ile");
+        dobre(note.cele, false); const ile = await c.count(note.cele, { who: "mis" });   // the spots are born "right": the tests count by `policzony`
+        await c.say("wiewiorka", "line.a_karteczka_cztery", { anim: "Radosc" });
+        ile.znaczki.forEach((z) => z.remove?.());
+        await note.remove();
+        // four rolls into a bag
         const torba = await c.object("torebka", { x: 1.6, y: -1.6, size: 1.8 });
         const r = []; for (let i = 0; i < 6; i++) r.push(await c.object("bulka", { x: -2.4 + i * 0.9, y: 1.4 - (i % 2) * 0.6, size: 0.8 }));
         await c.say("mis", "line.a_spakuj");

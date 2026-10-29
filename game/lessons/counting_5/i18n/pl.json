@@ -31,9 +31,17 @@
     "who": "mis",
     "text": "Pięć to pięć, blisko czy daleko. Rozumiem!"
   },
-  "line.a_zamowienie": {
+  "line.a_karteczka": {
     "who": "wiewiorka",
-    "text": "Pierwsze zamówienie! Sowa prosi o cztery bułeczki."
+    "text": "Ktoś wsunął pod drzwi karteczkę! Jest na niej piórko. To od Sowy!"
+  },
+  "line.a_karteczka_ile": {
+    "who": "mis",
+    "text": "To zamówienie! Sowa narysowała, ile bułeczek chce. Policzmy je, to będę wiedział, ile zapakować. Wskazuj po kolei każdą bułeczkę na rysunku."
+  },
+  "line.a_karteczka_cztery": {
+    "who": "wiewiorka",
+    "text": "Cztery bułeczki! Sowa chce cztery."
   },
   "line.a_spakuj": {
     "who": "mis",

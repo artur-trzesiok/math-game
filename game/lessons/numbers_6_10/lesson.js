@@ -1,10 +1,14 @@
 // Lesson: numbers 6 to 10 - count past five to ten, each thing once (a counted thing moves aside into a row); 6-10 as
 // five and some more (the ten frame: a full top row and some below); the digits 6-10; ten is written with two digits.
 // Beaver's dam needs ten logs: Mole counts the heap and loses track ("twelve!"); the logs counted into a row - eight;
-// two more fetched from the forest; the stepping stones to the number Beaver says. Script in scenario.md.
+// two more fetched from the forest; at the dam the ten counted once more and put into the
+// hole, five and five; the stepping stones to the number Beaver says. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
+// the hole in the dam of the tama_bobra plate (safe-area units, wide shot): its middle, the bottom row's y, log step,
+// row step, how much a log grows on the way in
+const TAMA = { x: -0.33, y: 0.6, krok: 0.78, rzad: 0.48, skala: 1.6 };
 
 // digit cards in a row: a paper card (the target) with the number drawn on it
 async function karty(c, liczby, { y = -2.0, xs = [-1.1, 0.8, 2.7] } = {}) {
@@ -108,6 +112,44 @@ export default {
         await c.say("sowa", "line.b_cyfra10");
         await c.ujecie("ogolny");
         c.clear();
+        await c.ujecie("zblizenie", { na: "bobr" });
+        await c.say("bobr", "line.b_tama_gotowa", { anim: "Radosc" });
+        await c.ujecie("ogolny");
+      },
+      // C. the dam (the end of the story): the ten logs counted once more into a row, then into the hole - five and five
+      async (c) => {
+        const S = c.stage, dom = { bobr: S.puppets.bobr.home, kret: S.puppets.kret.home, sowa: S.puppets.sowa.home };
+        S.puppets.bobr.home = -5.2; S.puppets.kret.home = -3.7; S.puppets.sowa.home = 5.3;   // room for a row of ten between them
+        await c.go("tama_bobra", { enter: true });
+        await Promise.all(["bobr", "kret", "sowa"].map((n) => c.enter(n, n === "sowa" ? "right" : "left")));
+        await c.play("bobr", "Rozgladanie");
+        await c.say("bobr", "line.c_tama", { anim: "Zgloszenie" });        // the wide shot: the dam, its hole and the waterfall in view
+        await c.ujecie("zblizenie", { na: "kret" });
+        await c.say("kret", "line.c_zatkamy", { anim: "Podskok" });
+        await c.ujecie("ogolny");
+        // the logs lie anyhow on the near grass (the water ends at y -2.2); each counted one goes into the row below
+        const bale = await stos(c, "bal", 10, { x: 0.6, y: -2.4, w: 6.0, h: 0.3, size: 0.55 });
+        await c.ujecie("sredni", { na: ["sowa", ...bale] });
+        await c.say("sowa", "line.c_licz");
+        await c.ujecie("ogolny");
+        const raz = await c.count(bale, { who: "sowa", rzad: { y: -2.95, x: -2.6, gap: 0.72 } });
+        await c.ujecie("sredni", { na: ["sowa", ...bale] });   // the counted row of ten
+        await c.say("sowa", "line.c_dziesiec", { anim: "Radosc" });
+        raz.znaczki.forEach((z) => z.remove?.());
+        await c.ujecie("ogolny");
+        await c.say("bobr", "line.c_do_tamy");
+        // into the hole of the dam: two rows of five, the bottom row first, as in the frame
+        const wTamie = bale.slice().sort((a, b) => a.mesh.position.x - b.mesh.position.x);
+        for (const [i, b] of wTamie.entries()) {
+          const [x, y] = [TAMA.x + ((i % 5) - 2) * TAMA.krok, TAMA.y + (i < 5 ? 0 : TAMA.rzad)];
+          c.sfx("whoosh"); b.mesh.position.z += 0.01 * i;
+          const s0 = b.base, s1 = s0 * TAMA.skala;
+          await Promise.all([b.moveTo(x, y, 0.35), S.tween(0.35, (q) => b.mesh.scale.setScalar(s0 + (s1 - s0) * q))]); b.base = s1; c.sfx("plop");
+        }
+        await c.rozblysk(wTamie[7]);
+        // the wide shot only: the plate lies deeper than the stickers, a zoom slides the hole away from the logs
+        await c.say("kret", "line.c_zatkana", { anim: "Brawo" });
+        await c.ujecie("ogolny");
         // the breather: hop along the stones to the number Beaver says
         const os = await c.os({ od: 0, do: 10, x0: -3.6, x1: 3.9, y: -1.4, size: 0.62 });
         const cel = 6 + Math.floor(Math.random() * 4);
@@ -118,9 +160,12 @@ export default {
         await os.skocz("kret", 0, cel);
         await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.b_doskoczylem", { anim: "Radosc" });
-        await c.ujecie("zblizenie", { na: "bobr" });
-        await c.say("bobr", "line.b_tama_gotowa");
         await c.ujecie("ogolny");
+        await c.konfetti();
+        await c.ujecie("zblizenie", { na: "bobr" });
+        await c.say("bobr", "line.c_koniec", { anim: "Brawo" });
+        await c.ujecie("ogolny");
+        c.clear(); for (const n in dom) S.puppets[n].home = dom[n];
       },
     ],
     practice: [

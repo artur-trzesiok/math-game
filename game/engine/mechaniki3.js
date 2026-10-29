@@ -379,7 +379,7 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
   if (L) { x0 = L.korzen.position.x; y0 = L.korzen.position.y + 2.2; } else if (skad?.mesh) { x0 = skad.mesh.position.x; y0 = skad.mesh.position.y; }
   grp.position.set(x0, y0, 0.45); grp.scale.setScalar(0.12);
   S.sfx.graj("whoosh");
-  await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (0 - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.42 * e; });
+  await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (0 - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.58 * e; });
   const kolka = [];
   const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [w.x + Math.cos(a) * c.r, w.y + Math.sin(a) * c.r * 0.92]; }); };
   return {
@@ -393,7 +393,7 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
     },
     remove: async () => {
       cele.forEach((c) => c.remove()); tlo.remove(); kolka.forEach((k) => k.remove());
-      await S.tween(0.3, (s) => { grp.scale.setScalar(1 - 0.9 * s); welon.material.opacity = 0.42 * (1 - s); });
+      await S.tween(0.3, (s) => { grp.scale.setScalar(1 - 0.9 * s); welon.material.opacity = 0.58 * (1 - s); });
       h.remove();
     },
   };
@@ -429,7 +429,7 @@ export async function labirynt(S, nazwa, { pionek = "jez", cel = null, y = 0.2, 
   const pion = await S.object(pionek, { x: sx, y: sy, size: roz, z: 0.6 }); naWierzch(pion, 39.5);
   let meta2 = null;
   if (cel) { const [gx, gy] = srodek(meta.cel); meta2 = await S.object(cel, { x: gx, y: gy, size: roz * 0.9, z: 0.55 }); naWierzch(meta2, 39.2); }
-  await S.tween(0.35, (s) => { welon.material.opacity = 0.42 * s; });
+  await S.tween(0.35, (s) => { welon.material.opacity = 0.58 * s; });
   const slad = [];
   const krok = async (nowa) => {
     const a = srodek(poz), b = srodek(nowa); poz = nowa;
@@ -464,7 +464,7 @@ export async function labirynt(S, nazwa, { pionek = "jez", cel = null, y = 0.2, 
     } };
   });
   const h = { mesh: grp, kind: "labirynt", name: nazwa, base: 1,
-    remove: async () => { slad.forEach((k) => k.remove()); pion.remove(); meta2?.remove(); await S.tween(0.3, (s) => { welon.material.opacity = 0.42 * (1 - s); grp.scale.setScalar(1 - 0.9 * s); }); S.scene.remove(grp); S.scene.remove(welon); } };
+    remove: async () => { slad.forEach((k) => k.remove()); pion.remove(); meta2?.remove(); await S.tween(0.3, (s) => { welon.material.opacity = 0.58 * (1 - s); grp.scale.setScalar(1 - 0.9 * s); }); S.scene.remove(grp); S.scene.remove(welon); } };
   return h;
 }
 

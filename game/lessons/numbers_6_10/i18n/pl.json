@@ -121,6 +121,34 @@
     "who": "bobr",
     "text": "Mam dziesięć bali. Tama będzie cała!"
   },
+  "line.c_tama": {
+    "who": "bobr",
+    "text": "Oto moja tama. Popatrz, na środku jest dziura i woda przelewa się przez nią jak wodospad."
+  },
+  "line.c_zatkamy": {
+    "who": "kret",
+    "text": "Mamy dziesięć bali. Zatkajmy nimi dziurę!"
+  },
+  "line.c_licz": {
+    "who": "sowa",
+    "text": "Najpierw sprawdźmy, czy na pewno jest ich dziesięć. Wskazuj bale po kolei. Każdy policzony bal pójdzie do rządka, więc żaden nie policzy się dwa razy."
+  },
+  "line.c_dziesiec": {
+    "who": "sowa",
+    "text": "Dziesięć bali! Każdy policzony tylko raz."
+  },
+  "line.c_do_tamy": {
+    "who": "bobr",
+    "text": "Teraz do tamy! Pięć bali na dół i pięć na górę, jak w ramce."
+  },
+  "line.c_zatkana": {
+    "who": "kret",
+    "text": "Dziura zatkana! Woda już nie ucieka!"
+  },
+  "line.c_koniec": {
+    "who": "bobr",
+    "text": "Moja tama jest cała. Dziękuję! Bez liczenia nie dałbym rady."
+  },
   "line.p_start": {
     "who": "sowa",
     "text": "Poćwiczmy liczby do dziesięciu! Mam pięć zabaw."

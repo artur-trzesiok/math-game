@@ -353,5 +353,15 @@
   "hash": "cce20a828c67",
   "who": "narrator",
   "text": "To wagonik z pociągu Kreta. Dostaliśmy go, kiedy liczyliśmy do pięciu."
+ },
+ "line.d_stacja": {
+  "hash": "6606b97418e7",
+  "who": "sowa",
+  "text": "Jaka piękna stacja, nad samym jeziorem! Woda błyszczy, a tam jest drewniany pomost."
+ },
+ "line.d_wysiadaja": {
+  "hash": "1013713f3edb",
+  "who": "kret",
+  "text": "Pasażerowie wysiadają z pociągu. Popatrz, jak skaczą na peron!"
  }
 }

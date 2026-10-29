@@ -11,7 +11,9 @@ A. *Station* (new scenery). Mole's little train goes to the lake. A ticket costs
 B. Five wagons numbered 1-5: **child** points to the wagon of each passenger's ticket (2, 5, 3); they hop in.
 C. *Forest, a stop.* Bear's apples in a long row, Owl's pears close: "mine are more!" - **child** counts both
 (`count`): five and five. The digit 5 drawn. *Breather:* the conductor's bell rings 3-5 times - point to the digit.
-D. *The lake.* **Child** counts the five passengers getting off.
+D. *The lakeside stop* (new scenery `stacja_jezioro`, the end of the journey): Mole calls the end of the trip, Owl looks
+round (the lake, the pier, the train); the five passengers hop off the train one by one onto the platform and the
+**child** counts them - five, everybody got here.
 
 ## Stage 2 - practice
 How many (4-5 things) - a digit card; a ticket for five coins; write the 5; which basket has four; which stone is 4 -

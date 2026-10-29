@@ -39,11 +39,6 @@
   "who": "mis",
   "text": "Five is five, close together or far apart. I see!"
  },
- "line.a_zamowienie": {
-  "hash": "003d4bb41665",
-  "who": "wiewiorka",
-  "text": "The first order! Owl would like four rolls."
- },
  "line.a_spakuj": {
   "hash": "900656afb12f",
   "who": "mis",
@@ -308,5 +303,20 @@
   "hash": "1e3af61e4b35",
   "who": "narrator",
   "text": "This is a roll from Bear's bakery. We got it when we counted to five."
+ },
+ "line.a_karteczka": {
+  "hash": "4ff81168578b",
+  "who": "wiewiorka",
+  "text": "Someone slipped a note under the door! There's a feather on it. It's from Owl!"
+ },
+ "line.a_karteczka_ile": {
+  "hash": "a3c5f10e8143",
+  "who": "mis",
+  "text": "It's an order! Owl drew how many rolls she wants. Let's count them, then I'll know how many to pack. Point to each roll in the drawing, one by one."
+ },
+ "line.a_karteczka_cztery": {
+  "hash": "6dc4ddf08e19",
+  "who": "wiewiorka",
+  "text": "Four rolls! Owl wants four."
  }
 }

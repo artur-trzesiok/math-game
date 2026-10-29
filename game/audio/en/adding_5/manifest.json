@@ -318,5 +318,30 @@
   "hash": "20650aefcd35",
   "who": "narrator",
   "text": "This is Fox's picnic blanket. We got it when we learnt to add."
+ },
+ "line.a_czy_wszyscy": {
+  "hash": "e7be5ef731ad",
+  "who": "lisek",
+  "text": "Is that everyone? I'll check my invitation. I painted everyone I invited on it."
+ },
+ "line.a_kogo_brakuje": {
+  "hash": "e62980dd1b9d",
+  "who": "sarenka",
+  "text": "Hedgehog, Mouse and the duckling are already on the blanket. Who from the invitation isn't here yet? Point to everyone who is missing."
+ },
+ "line.a_kogo_brakuje_nie": {
+  "hash": "90d0ae4269e6",
+  "who": "sarenka",
+  "text": "Look at the blanket. We're looking for the guests who aren't on it yet."
+ },
+ "line.a_brakuje_dwoch": {
+  "hash": "06ed23d59724",
+  "who": "lisek",
+  "text": "The snail and the butterfly! Two guests are still missing."
+ },
+ "line.a_trzech_i_dwoch": {
+  "hash": "2b74e3481fea",
+  "who": "sarenka",
+  "text": "There are three guests on the blanket, and two more are coming. When they come, we'll add them and count everyone."
  }
 }

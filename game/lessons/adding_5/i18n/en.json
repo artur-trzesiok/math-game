@@ -42,6 +42,26 @@
     "who": "sarenka",
     "text": "We write it like this: two plus one equals three. Plus means: put together."
   },
+  "line.a_czy_wszyscy": {
+    "who": "lisek",
+    "text": "Is that everyone? I'll check my invitation. I painted everyone I invited on it."
+  },
+  "line.a_kogo_brakuje": {
+    "who": "sarenka",
+    "text": "Hedgehog, Mouse and the duckling are already on the blanket. Who from the invitation isn't here yet? Point to everyone who is missing."
+  },
+  "line.a_kogo_brakuje_nie": {
+    "who": "sarenka",
+    "text": "Look at the blanket. We're looking for the guests who aren't on it yet."
+  },
+  "line.a_brakuje_dwoch": {
+    "who": "lisek",
+    "text": "The snail and the butterfly! Two guests are still missing."
+  },
+  "line.a_trzech_i_dwoch": {
+    "who": "sarenka",
+    "text": "There are three guests on the blanket, and two more are coming. When they come, we'll add them and count everyone."
+  },
   "line.a_wiecej_gosci": {
     "who": "lisek",
     "text": "More guests are coming: the snail and the butterfly!"

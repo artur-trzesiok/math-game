@@ -8,7 +8,9 @@ Goal: adding is putting two groups together and counting them all; the signs + a
 ## Stage 1 - story
 A. *Meadow.* Two guests on Fox's blanket, the duckling comes; Bunny: "one!". Deer: adding is putting together.
 **Child** brings the duckling onto the blanket and counts everyone (three); 2 + 1 = 3 written, plus = put together.
-Two more come: **child** brings them, counts five, picks the card for the gap in 3 + 2 = _.
+Is that everyone? Fox's invitation (found picture `zaproszenie_lisa`) shows all five he invited: **child** points to the
+two who are not on the blanket yet (the snail, the butterfly) - two more are coming, three and two. They come: **child**
+brings them, counts five, picks the card for the gap in 3 + 2 = _.
 B. *Orchard.* Dominoes (`domino`, new): which has four. The order trick: 1 + 4, the tile turns round - 4 + 1 = _
 (still five). *Breather:* Fox claps twice, Bunny once - how many claps.
 

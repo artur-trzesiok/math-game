@@ -123,6 +123,14 @@
     "who": "kret",
     "text": "Jezioro! Koniec podróży, wysiadamy!"
   },
+  "line.d_stacja": {
+    "who": "sowa",
+    "text": "Jaka piękna stacja, nad samym jeziorem! Woda błyszczy, a tam jest drewniany pomost."
+  },
+  "line.d_wysiadaja": {
+    "who": "kret",
+    "text": "Pasażerowie wysiadają z pociągu. Popatrz, jak skaczą na peron!"
+  },
   "line.d_ilu": {
     "who": "mis",
     "text": "Ilu pasażerów przyjechało? Policz ich, dotykając każdego."

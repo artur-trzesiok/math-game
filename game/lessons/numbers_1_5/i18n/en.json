@@ -123,6 +123,14 @@
     "who": "kret",
     "text": "The lake! End of the trip, everybody off!"
   },
+  "line.d_stacja": {
+    "who": "sowa",
+    "text": "What a lovely stop, right by the lake! The water is sparkling, and look, there's a wooden pier."
+  },
+  "line.d_wysiadaja": {
+    "who": "kret",
+    "text": "The passengers are getting off the train. Look how they hop onto the platform!"
+  },
   "line.d_ilu": {
     "who": "mis",
     "text": "How many passengers came? Count them, touching each one."
