@@ -7,6 +7,14 @@ silence, and never build a new mechanic without a yes (guidelines.md, "A lesson 
 accepted mechanic goes into the engine for every lesson, gets a demo on `manager/mechaniki.html?m=<name>` where it
 makes sense, and an entry here in the same commit.
 
+**Building one** (the nine of 2026-10-29 were built this way): `export async function <name>(S, ..., opts)` in an engine
+file; the child acts with a finger, a wrong move has a visible consequence and calls `onZle` (the lesson says the line -
+a mechanic never speaks); everything shown is painted (a tools/* pipeline, looked at before use); every added object is
+registered so `S.clear()` removes it; while waiting it sets `S.<name> = {dokoncz}` (the test driver) and works with
+`?szybko`. Register it in: `game/engine/player.js` (import, a ctx entry through `wDzialaniu`, the INTERAKCJE set), the
+importmap list in `game/index.html` (new engine files), `manager/autopilot.js` (the `dokoncz` driver list),
+`manager/mechaniki.html` (a demo), `tools/lessons/montaz.py` (INTERACT), and here.
+
 Every call is on the scene context `c` (a lesson scene is `async (c) => {}`). "Lessons" lists who uses it today
 (2026-10-29); "-" means built and waiting for a lesson. Engine details that matter when changing a mechanic are in the
 appendix at the end (moved from CLAUDE.md); puppets, feet, walks, meshes, audio and backgrounds stay in CLAUDE.md.
