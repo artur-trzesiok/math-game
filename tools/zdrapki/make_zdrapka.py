@@ -25,6 +25,20 @@ from make_znalezisko import magenta, STYL  # noqa: E402
 WORK = TU / "work"
 OUT = TU.parent.parent / "game" / "assets" / "zdrapki"
 ZDRAPKI = {
+    # logical_pairs: the storm blew everybody's things onto Beaver's workbench under a splash of mud - wipe it off
+    "bloto_warsztat": {
+        "oslona": "bloto", "lekcje": ["logical_pairs"],
+        "obraz": f"""A close-up of the top of a sturdy old wooden WORKBENCH in a cosy log workshop, filling the whole picture,
+seen from the front and a little from above. Lying on it, well apart from each other and each one big and clearly
+visible: a PAINTBRUSH with a wooden handle, a small box of WATERCOLOUR PAINTS with eight colours, a HAMMER with a wooden
+handle, one long iron NAIL, a white CUP with a little blue flower, and its white SAUCER. A few wood shavings. Warm light.
+NO animals, NO people. Big simple clear shapes.
+{STYL}""",
+        "zakryj": """thick wet brown MUD splashed and smeared over the whole workbench, as after a storm: blobs, splashes and
+drips of glossy brown mud, a few wet leaves stuck in it, so NONE of the things on the bench shows through anywhere -
+only mud; the edges of the picture stay as they are.""",
+        "cele": ["on the HAMMER (a disc covering its head and the top of its handle)"],
+    },
     # counting_3: the ripest raspberries hide under the leaves - push the leaves aside and count them
     "maliny_pod_liscmi": {
         "oslona": "liscie", "lekcje": ["counting_3"],

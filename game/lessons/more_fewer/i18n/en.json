@@ -66,15 +66,15 @@
   },
   "line.b_swietliki": {
     "who": "sowa",
-    "text": "Look, fireflies! When you touch a lantern, a firefly flies into it and lights it up."
+    "text": "Look, fireflies! When you point to a lantern, a firefly flies into it and lights it up."
   },
   "line.b_dotknij": {
     "who": "sowa",
-    "text": "Touch a lantern that isn't shining yet."
+    "text": "Point to a lantern that isn't shining yet."
   },
   "line.b_swieci": {
     "who": "wiewiorka",
-    "text": "It's shining! Touch the next one."
+    "text": "It's shining! Point to the next one."
   },
   "line.b_jasno": {
     "who": "wiewiorka",
@@ -86,7 +86,7 @@
   },
   "line.b_czego": {
     "who": "sarenka",
-    "text": "Which are there more of: fireflies or lanterns? Point to it."
+    "text": "Which are there more of: fireflies or lanterns?"
   },
   "line.b_czego_nie": {
     "who": "sarenka",
@@ -97,7 +97,7 @@
   },
   "line.b_wiecej_swietlikow": {
     "who": "sowa",
-    "text": "Yes! There are more fireflies and fewer lanterns. The ones left over will dance for us!"
+    "text": "Yes, there are more fireflies and fewer lanterns! The ones without a lantern will fly off to dance."
   },
   "line.c_gra": {
     "who": "sowa",
@@ -113,7 +113,7 @@
   },
   "line.c_ty": {
     "who": "sowa",
-    "text": "You stop the music. Touch the green button whenever you like."
+    "text": "You stop the music. Point to the green button whenever you like."
   },
   "line.c_bez": {
     "who": "lisek",
@@ -121,7 +121,7 @@
   },
   "line.c_kogo": {
     "who": "sarenka",
-    "text": "Are there more friends or more stumps? Point to it."
+    "text": "Are there more friends or more stumps?"
   },
   "line.c_kogo_nie": {
     "who": "sarenka",
@@ -132,15 +132,15 @@
   },
   "line.c_wiecej_przyjaciol": {
     "who": "sowa",
-    "text": "There are more friends and fewer stumps. That's why someone was left without one."
+    "text": "Yes, there are more friends and fewer stumps. That's why Fox was left without one."
   },
   "line.c_dolozmy": {
     "who": "wiewiorka",
-    "text": "Let's add one more stump so everyone has one. Touch the stump at the side."
+    "text": "Let's add one more stump so everyone has one. Point to the stump at the side."
   },
   "line.c_jeszcze_raz": {
     "who": "sowa",
-    "text": "Let's play again! Touch the button whenever you like."
+    "text": "Let's play again! Point to the button whenever you like."
   },
   "line.c_kazdy": {
     "who": "lisek",
@@ -156,11 +156,11 @@
   },
   "line.c_ostatni": {
     "who": "sowa",
-    "text": "Last round! Touch the button."
+    "text": "Last round! Point to the button whenever you like."
   },
   "line.c_pusty": {
     "who": "sowa",
-    "text": "One stump is free. Which one? Point to it."
+    "text": "One stump is free. Point to the one nobody is standing on."
   },
   "line.c_pusty_nie": {
     "who": "sowa",
@@ -171,7 +171,7 @@
   },
   "line.c_wiecej_pienkow": {
     "who": "sarenka",
-    "text": "Now there are more stumps and fewer players. That's why one stump is empty."
+    "text": "Yes, that stump is empty! Now there are more stumps and fewer players."
   },
   "line.c_gwiazda": {
     "who": "wiewiorka",
@@ -191,7 +191,7 @@
   },
   "line.p_bez_pary": {
     "who": "sarenka",
-    "text": "The lines join bunnies and carrots in pairs. Which bunny has no pair? Point to it."
+    "text": "The lines join bunnies and carrots in pairs. Point to the bunny with no pair."
   },
   "line.p_bez_pary_nie": {
     "who": "sarenka",
@@ -202,7 +202,7 @@
   },
   "line.p_dlugi": {
     "who": "lisek",
-    "text": "The apples lie in a long row, and the pears close together. Which are more? Point to it.",
+    "text": "The apples lie in a long row, and the pears close together. Which are more?",
     "speakers": [
       "sowa",
       "sarenka"
@@ -210,14 +210,14 @@
   },
   "line.p_dlugi_nie": {
     "who": "sarenka",
-    "text": "Look at the pairs: one pear has no apple to pair with. Point again.",
+    "text": "Look at the pairs: one pear has no apple to pair with. Which are more?",
     "speakers": [
       "sowa"
     ]
   },
   "line.p_daj": {
     "who": "wiewiorka",
-    "text": "Each bunny wants one carrot. Drag the carrots to the bunnies.",
+    "text": "Each bunny wants one carrot. Drag one to each bunny.",
     "speakers": [
       "sowa",
       "sarenka"
@@ -225,7 +225,7 @@
   },
   "line.p_daj_ok": {
     "who": "wiewiorka",
-    "text": "Each bunny has one carrot. There are as many bunnies as their carrots.",
+    "text": "Every bunny has a carrot, and two are left over. There are more carrots than bunnies.",
     "speakers": [
       "sowa",
       "sarenka"
@@ -249,7 +249,7 @@
   },
   "line.p_ktory_krzak": {
     "who": "lisek",
-    "text": "Behind which bush did more mice hide? Point to it.",
+    "text": "Behind which bush did more mice hide?",
     "speakers": [
       "sowa",
       "sarenka"
@@ -265,23 +265,19 @@
   },
   "line.d_nocowanie": {
     "who": "sowa",
-    "text": "Welcome to the sleepover! We have lots of pillows. Let's have a pillow fight!"
+    "text": "Welcome to the sleepover! After the night of the fireflies it's time to play in my home. Let's have a pillow fight!"
   },
   "line.d_druzyny": {
     "who": "lisek",
     "text": "Squirrel and I are one team, and Owl and Deer are the other."
   },
-  "line.d_niesprawiedliwie": {
-    "who": "sarenka",
-    "text": "Hey, your team has more pillows! That's not fair."
-  },
   "line.d_pary": {
     "who": "sowa",
-    "text": "Let's check. I'll join the pillows in pairs: one of yours, one of ours."
+    "text": "I'll join the pillows in pairs: one of yours, one of ours."
   },
   "line.d_zostaly": {
     "who": "sowa",
-    "text": "Two of Fox's pillows have no pair. Fox's team has more, and ours has fewer."
+    "text": "Yes, two of Fox's pillows have no pair. Fox's team has more, and ours has fewer."
   },
   "line.d_przeloz": {
     "who": "wiewiorka",
@@ -305,11 +301,103 @@
   },
   "line.d_dobranoc": {
     "who": "sowa",
-    "text": "Phew, what fun! And now it's time to sleep. Good night, friends."
+    "text": "And now it's time to sleep. Good night, friends."
   },
   "line.d_rodzice": {
     "who": "wiewiorka",
     "text": "When you share with someone, lay things in pairs. If nothing is left without a pair, everyone has as many."
+  },
+  "line.b_odlatuja": {
+    "who": "sowa",
+    "text": "Look, they're flying away! They're going to the big clearing in the forest. That's where the dance will be."
+  },
+  "line.b_mapa": {
+    "who": "sowa",
+    "text": "I have a map of the forest. Two paths lead to the clearing. Which one shall we take?"
+  },
+  "line.b_ktora": {
+    "who": "sarenka",
+    "text": "Fireflies fly where there are more of them. Lead the lantern along the path where more fireflies glow."
+  },
+  "line.b_ktora_nie": {
+    "who": "sarenka",
+    "text": "There are fewer fireflies by this path. Take the one with more."
+  },
+  "line.b_tedy": {
+    "who": "lisek",
+    "text": "Yes, this way, where there are more fireflies! Let's go!"
+  },
+  "line.b_taniec": {
+    "who": "wiewiorka",
+    "text": "Oh, how beautifully they dance!"
+  },
+  "line.b_taniec2": {
+    "who": "sowa",
+    "text": "This is the fireflies' dance. This is what we came for."
+  },
+  "line.e_chowany": {
+    "who": "wiewiorka",
+    "text": "I'm not afraid of the dark at all now. Let's play hide-and-seek! Owl looks for us, and we hide."
+  },
+  "line.e_pomoz": {
+    "who": "sowa",
+    "text": "Will you help me look? Listen carefully to who is calling."
+  },
+  "line.p_bez_pary_ok": {
+    "who": "sarenka",
+    "text": "Yes, this bunny has no pair! There are more bunnies than carrots."
+  },
+  "line.p_dlugi_ok": {
+    "who": "sarenka",
+    "text": "Yes, there are more pears! They lie close together, but one has no pair."
+  },
+  "line.p_krzak_ok": {
+    "who": "sowa",
+    "text": "Yes, more mice hid here! Look, they're coming out."
+  },
+  "line.d_dlugi_rzad": {
+    "who": "lisek",
+    "text": "Hey, your pillows lie in a long row! You have more. That's not fair!"
+  },
+  "line.d_sarenka": {
+    "who": "sarenka",
+    "text": "A long row doesn't mean there are more. Let's check it in pairs."
+  },
+  "line.d_bez_pary": {
+    "who": "sowa",
+    "text": "Point to a pillow that has no pair."
+  },
+  "line.d_oj": {
+    "who": "lisek",
+    "text": "Oops, the long row fooled me again!"
+  },
+  "line.d_spac": {
+    "who": "sarenka",
+    "text": "Phew, what fun! Time to sleep. Everyone needs a pillow under their head."
+  },
+  "line.d_rozdaj": {
+    "who": "sowa",
+    "text": "Lay one pillow on the rug for each of us."
+  },
+  "line.d_dwie_zostaly": {
+    "who": "sarenka",
+    "text": "Everyone has a pillow, and two are left over. There are more pillows than us."
+  },
+  "line.d_wypusc": {
+    "who": "sowa",
+    "text": "And the fireflies in the lanterns want to go back to their friends. Point to each lantern to let them out."
+  },
+  "line.d_leca": {
+    "who": "wiewiorka",
+    "text": "They're flying out of the window, to the dancing fireflies!"
+  },
+  "line.c_nowy": {
+    "who": "wiewiorka",
+    "text": "There's the new stump! Let's check if there's one for everyone now."
+  },
+  "line.c_stop": {
+    "who": "sowa",
+    "text": "Stop! Every player is on a stump. But look at the stumps."
   },
   "line.naklejka_daj": {
     "who": "sowa",

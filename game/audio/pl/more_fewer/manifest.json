@@ -90,19 +90,19 @@
   "text": "Ale nasze latarenki są puste. Nie świecą!"
  },
  "line.b_swietliki": {
-  "hash": "05f507ac1b41",
+  "hash": "5cc26c05c7a9",
   "who": "sowa",
-  "text": "Patrzcie, świetliki! Kiedy dotkniesz latarenki, świetlik do niej wleci i ją zapali."
+  "text": "Patrzcie, świetliki! Kiedy wskażesz latarenkę, świetlik do niej wleci i ją zapali."
  },
  "line.b_dotknij": {
-  "hash": "484c1d5c99d9",
+  "hash": "000dc9f27a57",
   "who": "sowa",
-  "text": "Dotknij latarenki, która jeszcze nie świeci."
+  "text": "Wskaż latarenkę, która jeszcze nie świeci."
  },
  "line.b_swieci": {
-  "hash": "9308c81d5d56",
+  "hash": "fd97cd95fcfd",
   "who": "wiewiorka",
-  "text": "Świeci! Dotknij następnej."
+  "text": "Świeci! Wskaż następną."
  },
  "line.b_jasno": {
   "hash": "ff6644922e4f",
@@ -115,9 +115,9 @@
   "text": "Popatrzcie: każda latarenka ma już świetlika, a niektóre świetliki wciąż latają. Nie mają wolnej latarenki."
  },
  "line.b_czego": {
-  "hash": "1e5dead2c2b0",
+  "hash": "a86a0b5051ed",
   "who": "sarenka",
-  "text": "Czego jest więcej: świetlików czy latarenek? Wskaż."
+  "text": "Czego jest więcej: świetlików czy latarenek?"
  },
  "line.b_czego_nie": {
   "hash": "6c98a32108dc",
@@ -130,9 +130,9 @@
   "text": "Latarenki są już pełne, a świetliki wciąż latają. Czego jest więcej?"
  },
  "line.b_wiecej_swietlikow": {
-  "hash": "174521e511a4",
+  "hash": "983f04c41b6f",
   "who": "sowa",
-  "text": "Tak! Świetlików jest więcej, a latarenek mniej. Te, które zostały, zatańczą dla nas!"
+  "text": "Tak, świetlików jest więcej, a latarenek mniej! Te bez latarenki polecą tańczyć."
  },
  "line.c_gra": {
   "hash": "c36cab4a49e4",
@@ -150,9 +150,9 @@
   "text": "A kto nie zdąży, zostaje bez pieńka!"
  },
  "line.c_ty": {
-  "hash": "7e9acfed3984",
+  "hash": "acbfc9c462d8",
   "who": "sowa",
-  "text": "Ty wyłączasz muzykę. Dotknij zielonego przycisku, kiedy zechcesz."
+  "text": "Ty wyłączasz muzykę. Wskaż zielony przycisk, kiedy zechcesz."
  },
  "line.c_bez": {
   "hash": "db9695acfca7",
@@ -160,9 +160,9 @@
   "text": "Ojej, dla mnie zabrakło pieńka!"
  },
  "line.c_kogo": {
-  "hash": "68f32c7bf897",
+  "hash": "36ec96b9b9e4",
   "who": "sarenka",
-  "text": "Kogo jest więcej: przyjaciół czy pieńków? Wskaż."
+  "text": "Kogo jest więcej: przyjaciół czy pieńków?"
  },
  "line.c_kogo_nie": {
   "hash": "433f6927c153",
@@ -175,19 +175,19 @@
   "text": "Każdy pieniek jest zajęty, a lisek stoi obok. Kogo jest więcej?"
  },
  "line.c_wiecej_przyjaciol": {
-  "hash": "85c08396d62b",
+  "hash": "c8f4b87ae6a5",
   "who": "sowa",
-  "text": "Przyjaciół jest więcej, a pieńków mniej. Dlatego ktoś został bez pieńka."
+  "text": "Tak, przyjaciół jest więcej, a pieńków mniej. Dlatego lisek został bez pieńka."
  },
  "line.c_dolozmy": {
-  "hash": "dea79c8b1350",
+  "hash": "20c720f8a93d",
   "who": "wiewiorka",
-  "text": "Dołóżmy jeszcze jeden pieniek, żeby każdy miał swój. Dotknij pieńka z boku."
+  "text": "Dołóżmy jeszcze jeden pieniek, żeby każdy miał swój. Wskaż pieniek z boku."
  },
  "line.c_jeszcze_raz": {
-  "hash": "8331d8ac38eb",
+  "hash": "edf068e41c1d",
   "who": "sowa",
-  "text": "Gramy jeszcze raz! Dotknij przycisku, kiedy zechcesz."
+  "text": "Gramy jeszcze raz! Wskaż przycisk, kiedy zechcesz."
  },
  "line.c_kazdy": {
   "hash": "eb02e086499f",
@@ -205,14 +205,14 @@
   "text": "Teraz ja będę sędzią, a wy gracie we troje."
  },
  "line.c_ostatni": {
-  "hash": "252b40e28490",
+  "hash": "ad857e42a03c",
   "who": "sowa",
-  "text": "Ostatnia runda! Dotknij przycisku."
+  "text": "Ostatnia runda! Wskaż przycisk, kiedy zechcesz."
  },
  "line.c_pusty": {
-  "hash": "74d0a9a6c582",
+  "hash": "974d0bdd0225",
   "who": "sowa",
-  "text": "Jeden pieniek został wolny. Który? Wskaż go."
+  "text": "Jeden pieniek został wolny. Wskaż ten, na którym nikt nie stoi."
  },
  "line.c_pusty_nie": {
   "hash": "5194f6adfbd5",
@@ -225,9 +225,9 @@
   "text": "Na tym ktoś stoi. Szukaj pieńka, na którym nikt nie stoi."
  },
  "line.c_wiecej_pienkow": {
-  "hash": "dbacf177d7c9",
+  "hash": "8942a34368c8",
   "who": "sarenka",
-  "text": "Teraz pieńków jest więcej, a graczy mniej. Dlatego jeden pieniek został pusty."
+  "text": "Tak, ten pieniek jest pusty! Teraz pieńków jest więcej, a graczy mniej."
  },
  "line.c_gwiazda": {
   "hash": "d6fddca9b148",
@@ -250,9 +250,9 @@
   "text": "Teraz nocne zabawy! Za każdą dostajesz gwiazdkę."
  },
  "line.p_bez_pary": {
-  "hash": "f73b16c5c48e",
+  "hash": "de60b3ddad9c",
   "who": "sarenka",
-  "text": "Kreski łączą zajączki z marchewkami w pary. Który zajączek nie ma pary? Wskaż go."
+  "text": "Kreski łączą zajączki z marchewkami w pary. Wskaż zajączka, który nie ma pary."
  },
  "line.p_bez_pary_nie": {
   "hash": "930037462f1f",
@@ -265,59 +265,59 @@
   "text": "Od tego zajączka prowadzi kreska do marchewki. Szukaj tego, od którego nie prowadzi żadna."
  },
  "line.p_dlugi": {
-  "hash": "ab9a47c704a4",
+  "hash": "98022404f9a4",
   "who": "lisek",
-  "text": "Jabłka leżą w długim rzędzie, a gruszki blisko siebie. Czego jest więcej? Wskaż."
+  "text": "Jabłka leżą w długim rzędzie, a gruszki blisko siebie. Czego jest więcej?"
  },
  "line.p_dlugi.sowa": {
-  "hash": "97401d66c5da",
+  "hash": "d7817b4cfb10",
   "who": "sowa",
-  "text": "Jabłka leżą w długim rzędzie, a gruszki blisko siebie. Czego jest więcej? Wskaż."
+  "text": "Jabłka leżą w długim rzędzie, a gruszki blisko siebie. Czego jest więcej?"
  },
  "line.p_dlugi.sarenka": {
-  "hash": "7484fd739ea9",
+  "hash": "2cd7220bd2d7",
   "who": "sarenka",
-  "text": "Jabłka leżą w długim rzędzie, a gruszki blisko siebie. Czego jest więcej? Wskaż."
+  "text": "Jabłka leżą w długim rzędzie, a gruszki blisko siebie. Czego jest więcej?"
  },
  "line.p_dlugi_nie": {
-  "hash": "b942f71133a1",
+  "hash": "8a6cccd13614",
   "who": "sarenka",
-  "text": "Popatrz na pary: jedna gruszka nie ma jabłka do pary. Wskaż jeszcze raz."
+  "text": "Popatrz na pary: jedna gruszka nie ma jabłka do pary. Czego jest więcej?"
  },
  "line.p_dlugi_nie.sowa": {
-  "hash": "8703e570326a",
+  "hash": "5070c0d535e6",
   "who": "sowa",
-  "text": "Popatrz na pary: jedna gruszka nie ma jabłka do pary. Wskaż jeszcze raz."
+  "text": "Popatrz na pary: jedna gruszka nie ma jabłka do pary. Czego jest więcej?"
  },
  "line.p_daj": {
-  "hash": "57e100913e0e",
+  "hash": "c7e77dc4aa90",
   "who": "wiewiorka",
-  "text": "Każdy zajączek chce jedną marchewkę. Przeciągnij marchewki do zajączków."
+  "text": "Każdy zajączek chce jedną marchewkę. Przeciągnij do każdego po jednej."
  },
  "line.p_daj.sowa": {
-  "hash": "2d0674ac5cc5",
+  "hash": "78e0c2782c58",
   "who": "sowa",
-  "text": "Każdy zajączek chce jedną marchewkę. Przeciągnij marchewki do zajączków."
+  "text": "Każdy zajączek chce jedną marchewkę. Przeciągnij do każdego po jednej."
  },
  "line.p_daj.sarenka": {
-  "hash": "8520dff447ff",
+  "hash": "d8cc0c484e09",
   "who": "sarenka",
-  "text": "Każdy zajączek chce jedną marchewkę. Przeciągnij marchewki do zajączków."
+  "text": "Każdy zajączek chce jedną marchewkę. Przeciągnij do każdego po jednej."
  },
  "line.p_daj_ok": {
-  "hash": "c7dc89322a6a",
+  "hash": "5649f9ca7f7e",
   "who": "wiewiorka",
-  "text": "Każdy zajączek ma jedną marchewkę. Zajączków i ich marchewek jest tyle samo."
+  "text": "Każdy zajączek ma marchewkę, a dwie zostały. Marchewek jest więcej niż zajączków."
  },
  "line.p_daj_ok.sowa": {
-  "hash": "b34a9f1bc7c9",
+  "hash": "3a3e26cf5273",
   "who": "sowa",
-  "text": "Każdy zajączek ma jedną marchewkę. Zajączków i ich marchewek jest tyle samo."
+  "text": "Każdy zajączek ma marchewkę, a dwie zostały. Marchewek jest więcej niż zajączków."
  },
  "line.p_daj_ok.sarenka": {
-  "hash": "ebb7a31d153c",
+  "hash": "e168e0dc1305",
   "who": "sarenka",
-  "text": "Każdy zajączek ma jedną marchewkę. Zajączków i ich marchewek jest tyle samo."
+  "text": "Każdy zajączek ma marchewkę, a dwie zostały. Marchewek jest więcej niż zajączków."
  },
  "line.p_baloniki": {
   "hash": "507cbad87141",
@@ -345,19 +345,19 @@
   "text": "Uwaga, myszki! Popatrz uważnie, zaraz się schowają."
  },
  "line.p_ktory_krzak": {
-  "hash": "a77d7e18b752",
+  "hash": "bab4bf2fa649",
   "who": "lisek",
-  "text": "Za którym krzakiem schowało się więcej myszek? Wskaż."
+  "text": "Za którym krzakiem schowało się więcej myszek?"
  },
  "line.p_ktory_krzak.sowa": {
-  "hash": "8c0d76f3d064",
+  "hash": "40dd613f5ea2",
   "who": "sowa",
-  "text": "Za którym krzakiem schowało się więcej myszek? Wskaż."
+  "text": "Za którym krzakiem schowało się więcej myszek?"
  },
  "line.p_ktory_krzak.sarenka": {
-  "hash": "47f9739c3130",
+  "hash": "d2d27c5dc076",
   "who": "sarenka",
-  "text": "Za którym krzakiem schowało się więcej myszek? Wskaż."
+  "text": "Za którym krzakiem schowało się więcej myszek?"
  },
  "line.p_krzak_nie": {
   "hash": "f53a95777de5",
@@ -375,29 +375,24 @@
   "text": "Tu schowało się mniej myszek. Spróbuj jeszcze raz."
  },
  "line.d_nocowanie": {
-  "hash": "f3de531c7136",
+  "hash": "bab527bccbca",
   "who": "sowa",
-  "text": "Witajcie na nocowaniu! Mamy mnóstwo poduszek. Zróbmy bitwę na poduszki!"
+  "text": "Witajcie na nocowaniu! Po nocy świetlików czas na zabawę w moim domu. Zróbmy bitwę na poduszki!"
  },
  "line.d_druzyny": {
   "hash": "1a858c3381ce",
   "who": "lisek",
   "text": "Ja i wiewiórka to jedna drużyna, a sowa i sarenka druga."
  },
- "line.d_niesprawiedliwie": {
-  "hash": "cbaaf254493c",
-  "who": "sarenka",
-  "text": "Hej, wasza drużyna ma więcej poduszek! To niesprawiedliwe."
- },
  "line.d_pary": {
-  "hash": "685db424dec0",
+  "hash": "de376b09fd9c",
   "who": "sowa",
-  "text": "Sprawdźmy to. Połączę poduszki w pary: jedna od was, jedna od nas."
+  "text": "Połączę poduszki w pary: jedna od was, jedna od nas."
  },
  "line.d_zostaly": {
-  "hash": "ae8b808e85ab",
+  "hash": "c30ee49524d8",
   "who": "sowa",
-  "text": "Dwie poduszki liska zostały bez pary. Drużyna liska ma więcej, a nasza mniej."
+  "text": "Tak, dwie poduszki liska nie mają pary. To drużyna liska ma więcej, a nasza mniej."
  },
  "line.d_przeloz": {
   "hash": "5783727178be",
@@ -425,9 +420,9 @@
   "text": "No to bitwa na poduszki!"
  },
  "line.d_dobranoc": {
-  "hash": "37aca6394676",
+  "hash": "f4bb3e98b535",
   "who": "sowa",
-  "text": "Uff, ale zabawa! A teraz czas spać. Dobranoc, przyjaciele."
+  "text": "A teraz czas spać. Dobranoc, przyjaciele."
  },
  "line.d_rodzice": {
   "hash": "ebbf57a50a79",
@@ -448,5 +443,120 @@
   "hash": "30acaf1dac43",
   "who": "narrator",
   "text": "To świecąca latarenka od sowy. Dostaliśmy ją w noc świetlików, kiedy sprawdzaliśmy, czego jest więcej, a czego mniej."
+ },
+ "line.b_odlatuja": {
+  "hash": "fb875a223abc",
+  "who": "sowa",
+  "text": "Patrzcie, odlatują! Lecą na wielką polanę w lesie. Tam będzie taniec."
+ },
+ "line.b_mapa": {
+  "hash": "3a5ab3ba13d7",
+  "who": "sowa",
+  "text": "Mam mapę lasu. Do polany prowadzą dwie ścieżki. Którą pójść?"
+ },
+ "line.b_ktora": {
+  "hash": "87fc4a39aac5",
+  "who": "sarenka",
+  "text": "Świetliki lecą tam, gdzie jest ich więcej. Poprowadź latarenkę ścieżką, przy której świeci więcej świetlików."
+ },
+ "line.b_ktora_nie": {
+  "hash": "92bbd3345267",
+  "who": "sarenka",
+  "text": "Przy tej ścieżce świetlików jest mniej. Idź tą, przy której jest ich więcej."
+ },
+ "line.b_tedy": {
+  "hash": "dc922cf5b038",
+  "who": "lisek",
+  "text": "Tak, tędy, gdzie świetlików jest więcej! Idziemy!"
+ },
+ "line.b_taniec": {
+  "hash": "ebe192f342db",
+  "who": "wiewiorka",
+  "text": "Ojej, jak pięknie tańczą!"
+ },
+ "line.b_taniec2": {
+  "hash": "ce9ce46edc98",
+  "who": "sowa",
+  "text": "To jest taniec świetlików. Właśnie dla niego tu przyszliśmy."
+ },
+ "line.e_chowany": {
+  "hash": "4b7006a3312c",
+  "who": "wiewiorka",
+  "text": "Już wcale nie boję się ciemności. Zagrajmy w chowanego! Sowa szuka, a my się chowamy."
+ },
+ "line.e_pomoz": {
+  "hash": "054dbe76dc0a",
+  "who": "sowa",
+  "text": "Pomożesz mi szukać? Słuchaj uważnie, kto woła."
+ },
+ "line.p_bez_pary_ok": {
+  "hash": "a30905e4e0ba",
+  "who": "sarenka",
+  "text": "Tak, ten zajączek nie ma pary! Zajączków jest więcej niż marchewek."
+ },
+ "line.p_dlugi_ok": {
+  "hash": "aa56addaaff7",
+  "who": "sarenka",
+  "text": "Tak, gruszek jest więcej! Leżą ciasno, ale jedna nie ma pary."
+ },
+ "line.p_krzak_ok": {
+  "hash": "d712e4a0bc3b",
+  "who": "sowa",
+  "text": "Tak, tutaj schowało się więcej myszek! Popatrz, już wychodzą."
+ },
+ "line.d_dlugi_rzad": {
+  "hash": "e1c86e067bbf",
+  "who": "lisek",
+  "text": "Hej, wasze poduszki leżą w długim rzędzie! Macie więcej. To niesprawiedliwe!"
+ },
+ "line.d_sarenka": {
+  "hash": "fceaa1c0c1dd",
+  "who": "sarenka",
+  "text": "Długi rząd to jeszcze nie znaczy, że jest ich więcej. Sprawdźmy to parami."
+ },
+ "line.d_bez_pary": {
+  "hash": "8267b4d31613",
+  "who": "sowa",
+  "text": "Wskaż poduszkę, która nie ma pary."
+ },
+ "line.d_oj": {
+  "hash": "55472352f16a",
+  "who": "lisek",
+  "text": "Ojej, długi rząd znowu mnie oszukał!"
+ },
+ "line.d_spac": {
+  "hash": "aa904af7f80e",
+  "who": "sarenka",
+  "text": "Uff, ale zabawa! Czas spać. Każdy potrzebuje poduszki pod głowę."
+ },
+ "line.d_rozdaj": {
+  "hash": "412cf46479bd",
+  "who": "sowa",
+  "text": "Połóż na dywanie po jednej poduszce dla każdego z nas."
+ },
+ "line.d_dwie_zostaly": {
+  "hash": "6fa6ffaed682",
+  "who": "sarenka",
+  "text": "Każdy ma poduszkę, a dwie zostały. Poduszek jest więcej niż nas."
+ },
+ "line.d_wypusc": {
+  "hash": "0dd2c37db8d2",
+  "who": "sowa",
+  "text": "A świetliki w latarenkach chcą wrócić do przyjaciół. Wskaż każdą latarenkę, żeby je wypuścić."
+ },
+ "line.d_leca": {
+  "hash": "8491365cba37",
+  "who": "wiewiorka",
+  "text": "Lecą przez okno, do tańczących świetlików!"
+ },
+ "line.c_nowy": {
+  "hash": "378395e46b3e",
+  "who": "wiewiorka",
+  "text": "Jest nowy pieniek! Sprawdźmy, czy teraz starczy dla każdego."
+ },
+ "line.c_stop": {
+  "hash": "9f489326357a",
+  "who": "sowa",
+  "text": "Stop! Każdy gracz stoi na pieńku. Ale popatrzcie na pieńki."
  }
 }

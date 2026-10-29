@@ -34,6 +34,37 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # logical_pairs home: the payoff - Deer's promised tea, every cup on its saucer, the teapot in the middle
+    "herbatka_u_sarenki": {
+        "postacie": ["sarenka", "bobr", "kret"], "tlo": "przedpokoj", "lekcje": ["logical_pairs"],
+        "scena": """Deer's cosy home from the reference picture (the same warm walls, the round window), in warm afternoon light,
+now with a small round wooden table in the middle covered with a checked tablecloth. On it a round white TEAPOT with a
+little blue flower, three white CUPS each standing on its own white SAUCER, a spoon beside each, a plate of biscuits.
+Around the table the ROE DEER pours tea from the teapot, smiling as the hostess; the BEAVER holds his cup on its saucer
+and smiles; the MOLE, with his little HAMMER tucked under his arm, sips from his cup with happy closed eyes. A big
+golden STAR-shaped key hangs on a hook by the door. Calm, happy and cosy - friends together after the storm.""",
+    },
+    # more_fewer story: the night everyone came for - the fireflies dance over the glade
+    "taniec_swietlikow": {
+        "postacie": ["lisek", "wiewiorka", "sowa", "sarenka"], "tlo": "polana_wieczorem", "lekcje": ["more_fewer"],
+        "scena": """The grassy glade from the reference picture at NIGHT: a deep dark-blue starry sky, a smiling crescent moon,
+the big oak with a little round lit window on the left, everything in soft blue moonlight. In the middle of the sky over
+the glade HUNDREDS of tiny glowing yellow-green FIREFLIES dance in a big swirling ribbon, loops and spirals of little
+lights, some coming down low over the grass. In the front on the grass stand the FOX, the SQUIRREL, the OWL and the ROE
+DEER side by side, seen a little from behind and the side, looking up at the dance with delight; each holds a small glass
+jar lantern glowing warm yellow with one firefly inside. The SQUIRREL laughs with her paws raised - she is not afraid of
+the dark any more. Magical, calm and joyful.""",
+    },
+    # more_fewer home: the payoff - the sleepover, everyone asleep on the rug, the fireflies dancing outside the window
+    "nocowanie": {
+        "postacie": ["lisek", "wiewiorka", "sowa", "sarenka"], "tlo": "pokoj_noc", "lekcje": ["more_fewer"],
+        "scena": """The children's room from the reference picture at night, lit only by the small warm bedside lamp and the
+moon through the window. On the big round blue rug in the middle the FOX, the SQUIRREL, the OWL and the ROE DEER lie
+asleep side by side under soft blankets, EACH with its head on its OWN white PILLOW (exactly four pillows under four
+heads), eyes closed, smiling in their sleep. A few white feathers still lie on the rug from the pillow fight. Outside the
+window, in the dark blue sky by the crescent moon, a little swirl of glowing yellow fireflies dances. Quiet, cosy and
+sleepy - goodnight.""",
+    },
     # noticing_order story: the payoff - the chick hatches in the henhouse yard, the hen beside it, the friends watching
     "wyklucie": {
         "postacie": ["zajac", "sowa", "lisek"], "tlo": "kurnik", "lekcje": ["noticing_order"],

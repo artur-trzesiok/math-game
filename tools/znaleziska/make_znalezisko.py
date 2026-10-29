@@ -30,6 +30,22 @@ OUT = TU.parent.parent / "game" / "assets" / "znaleziska"
 STYL = """STYLE: a modern children's picture-book illustration - soft painterly shading with a fine paper-grain texture, warm
 friendly colours, thin soft dark outlines. NOT flat vector, NOT 3D render. NO text, NO letters, NO numbers."""
 ZNALEZISKA = {
+    # more_fewer: Owl's map of the night forest - two paths to the dancing clearing; the fireflies show the way (more)
+    "mapa_swietlikow": {
+        "rozmiar": "1536x1024",
+        "obraz": f"""A simple hand-drawn map on worn cream paper, seen flat from above, filling the whole picture, like a
+child's map. At the BOTTOM MIDDLE a big old oak tree with a little round window (the owl's home). At the TOP MIDDLE a
+round open clearing with a smiling crescent moon drawn over it. From the oak TWO footpaths lead up to the clearing; both
+start at the same spot by the oak and both end at the clearing, and both are about AS LONG and curve about as much:
+  - the LEFT path is a dotted brown path curving up on the left side; along it, close beside it, MANY little glowing
+    yellow FIREFLIES (round yellow lights with tiny wings and a soft glow) - about eight of them, spread all along it;
+  - the RIGHT path is a dotted brown path curving up on the right side; along it ONLY TWO little glowing fireflies.
+The two paths are far apart and never cross or touch each other between the oak and the clearing. A few little dark
+green trees and bushes between them, drawn simply. Big simple clear shapes.
+{STYL}""",
+        "cele": [{"droga": "the whole LEFT dotted path with many fireflies, from the oak up to the clearing"},
+                 {"droga": "the whole RIGHT dotted path with only two fireflies, from the oak up to the clearing"}],
+    },
     # ordering: Beaver's old map of the way to the concert glade; where the path crosses the brook the stones go
     "mapa_polany": {
         "rozmiar": "1536x1024",
