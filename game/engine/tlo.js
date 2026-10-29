@@ -96,7 +96,9 @@ function poswiata(p, s, z, W, H, srodekY) {
 
 export async function zbudujTlo(scena, wymiar, opcje = {}) {
   const kat = opcje.katalog ?? "tlo/";
-  const Z_TLA = opcje.zTla ?? -9, Z_CHMUR = opcje.zChmur ?? -8.4, Z_TRAWY = opcje.zTrawy ?? -1.2;
+  // movers lie just in front of the plate: at another depth they shifted against it (parallax) whenever the
+  // camera moved for a close-up or a pan, and seemed to float over the painting
+  const Z_TLA = opcje.zTla ?? -9, Z_CHMUR = opcje.zChmur ?? Z_TLA + 0.04, Z_TRAWY = opcje.zTrawy ?? Z_TLA + 0.08;
   const kamZ = opcje.odlegloscKamery ?? 7.2;
   const opis = await (await fetch(v(kat + "rekwizyty.json"), SWIEZO)).json();
   const W = opis.szerokosc, H = opis.wysokosc;
