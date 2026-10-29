@@ -29,6 +29,11 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "friendly colours, thin soft dark outlines. NOT flat vector, NOT 3D render. NO text, NO letters, NO numbers, NO "
         "speech bubbles, NO panel numbers.")
 HISTORYJKI = {
+    # front_back home: Bunny's pictures of the hide-and-seek day, mixed up - in front, behind, the mouse found
+    "dzien_chowanego": {"postacie": ["zajac", "mis", "jez"], "lekcje": ["front_back"], "panele": [
+        "a sunny forest clearing: the BUNNY stands IN FRONT of a round green BUSH, fully seen, his eyes squeezed shut and grinning, while the BEAR points at him and laughs",
+        "the same sunny forest clearing and the same round green bush: the bunny is hidden BEHIND the bush, only his two long ears peek out over the top of it",
+        "a garden maze of tall clipped green hedges: the small HEDGEHOG hugs a little grey MOUSE, both laughing, in the middle of the maze"]},
     # in_out home: the bedtime recap - the duckling's evening in four pictures
     "wieczor_kaczuszki": {"postacie": [], "lekcje": ["in_out"], "panele": [
         "the EVENING meadow before a storm, dark clouds far away: a small fluffy YELLOW DUCKLING sits snugly INSIDE a wicker basket on the grass",

@@ -30,7 +30,6 @@
     "pilka",
     "pudelko",
     "koszyk",
-    "jez",
     "fotel",
     "klocek",
     "zaslona"
@@ -39,5 +38,6 @@
   "naklejka": {
     "obraz": "objects/krzak",
     "kto": "zajac"
-  }
+  },
+  "oddech": "ktoPowiedzial"
 }

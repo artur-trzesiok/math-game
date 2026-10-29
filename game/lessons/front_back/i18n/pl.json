@@ -5,11 +5,11 @@
   },
   "line.a_licze": {
     "who": "mis",
-    "text": "Zamykam oczy i liczę do pięciu!"
+    "text": "Zamykam oczy i liczę do trzech!"
   },
   "line.a_raz_dwa": {
     "who": "mis",
-    "text": "Raz, dwa, trzy, cztery, pięć! Szukam!"
+    "text": "Raz, dwa, trzy! Szukam!"
   },
   "line.a_nie_widac": {
     "who": "zajac",
@@ -23,13 +23,21 @@
     "who": "jez",
     "text": "Zajączku, kiedy stoisz przed krzakiem, z przodu, wszyscy cię widzą. Nawet z zamkniętymi oczami."
   },
+  "line.a_jak": {
+    "who": "zajac",
+    "text": "To jak mam się schować?"
+  },
+  "line.a_pokaz": {
+    "who": "jez",
+    "text": "Popatrz na kaczuszkę. Stoi przed krzakiem, więc widać ją całą."
+  },
   "line.a_za": {
     "who": "jez",
-    "text": "Żeby się schować, trzeba stanąć za krzakiem, z tyłu. Wtedy krzak cię zasłania."
+    "text": "A teraz jest za krzakiem, z tyłu. Krzak ją zasłania i widać tylko główkę."
   },
   "line.a_rozumiem": {
     "who": "zajac",
-    "text": "Aha! Idę poszukać dobrej kryjówki."
+    "text": "Aha! Trzeba stanąć za krzakiem. Idę poszukać dobrej kryjówki!"
   },
   "line.a_schowaj_mysz": {
     "who": "jez",
@@ -57,11 +65,11 @@
   },
   "line.a_mam_zajaca": {
     "who": "mis",
-    "text": "Mam cię! Zajączek był za kryjówką."
+    "text": "Mam cię, Zajączku! Wystawały ci tylko uszy."
   },
   "line.a_gdzie_kaczka": {
     "who": "mis",
-    "text": "A gdzie jest kaczuszka? Wskaż."
+    "text": "A teraz wskaż, gdzie schowała się kaczuszka."
   },
   "line.a_gdzie_kaczka_nie": {
     "who": "mis",
@@ -69,19 +77,31 @@
   },
   "line.a_znalezione": {
     "who": "jez",
-    "text": "Wszyscy znalezieni!"
+    "text": "Kaczuszka też znaleziona! Wystawała jej żółta główka."
   },
   "line.a_wracam": {
     "who": "zajac",
-    "text": "Tym razem schowałem się dobrze, za kryjówką!"
+    "text": "Tym razem stałem z tyłu, ale uszy mnie zdradziły!"
+  },
+  "line.a_jeszcze": {
+    "who": "jez",
+    "text": "Jeszcze raz! Teraz schowamy się tak, że nic nie będzie wystawać."
+  },
+  "line.a_sluchaj": {
+    "who": "mis",
+    "text": "To będę słuchał. Kiedy ktoś zawoła, wskaż krzak, z którego słychać głos."
+  },
+  "line.a_po_glosie": {
+    "who": "mis",
+    "text": "Znaleźliśmy was po głosie! Chodźmy teraz na łąkę."
   },
   "line.b_zabawa": {
     "who": "jez",
-    "text": "Nowa zabawa: z przodu i z tyłu!"
+    "text": "To domek Myszki! Pobawmy się przy nim w z przodu i z tyłu."
   },
   "line.b_przed": {
     "who": "jez",
-    "text": "Postaw misia przed domkiem, z przodu."
+    "text": "Postaw pluszowego misia przed domkiem, z przodu."
   },
   "line.b_przed_nie": {
     "who": "jez",
@@ -89,11 +109,11 @@
   },
   "line.b_przed_ok": {
     "who": "zajac",
-    "text": "Miś stoi przed domkiem. Widać go całego!"
+    "text": "Pluszowy miś stoi przed domkiem. Widać go całego!"
   },
   "line.b_za": {
     "who": "jez",
-    "text": "A teraz schowaj misia za domkiem, z tyłu."
+    "text": "A teraz schowaj pluszowego misia za domkiem, z tyłu."
   },
   "line.b_za_nie": {
     "who": "jez",
@@ -105,15 +125,19 @@
   },
   "line.b_co_przed": {
     "who": "mis",
-    "text": "Co jest przed domkiem? Wskaż."
+    "text": "Wskaż, co leży przed domkiem."
   },
   "line.b_co_przed_nie": {
     "who": "mis",
     "text": "Ta jest za domkiem, schowana. Co stoi z przodu?"
   },
+  "line.b_co_przed_ok": {
+    "who": "zajac",
+    "text": "Tak, piłka leży przed domkiem i widać ją całą."
+  },
   "line.b_co_za": {
     "who": "mis",
-    "text": "A kto schował się za domkiem? Wskaż."
+    "text": "A teraz wskaż, kto schował się za domkiem."
   },
   "line.b_co_za_nie": {
     "who": "mis",
@@ -171,9 +195,13 @@
     "who": "jez",
     "text": "Wszyscy znalezieni! Najlepiej chować się za czymś, z tyłu. Z przodu wszyscy cię widzą."
   },
+  "line.c_rewanz": {
+    "who": "zajac",
+    "text": "Chodźcie do mnie do domu! Zagramy jeszcze raz, i tym razem schowam się tak, że Miś mnie nie znajdzie!"
+  },
   "line.p_start": {
     "who": "jez",
-    "text": "Pobawmy się w z przodu i z tyłu! Mam pięć zabaw."
+    "text": "Pobawmy się w z przodu i z tyłu! Mam dla ciebie kilka zabaw."
   },
   "line.p_mysz": {
     "who": "mis",
@@ -183,12 +211,9 @@
     "who": "mis",
     "text": "Myszka ma być schowana, za pudełkiem."
   },
-  "line.p_dobrze": {
+  "line.p_mysz_ok": {
     "who": "jez",
-    "text": "Brawo!",
-    "speakers": [
-      "mis"
-    ]
+    "text": "Tak, myszka jest za pudełkiem. Widać tylko jej uszka!"
   },
   "line.p_kaczka": {
     "who": "jez",
@@ -198,6 +223,10 @@
     "who": "jez",
     "text": "Przed koszykiem, z przodu, żeby było ją widać."
   },
+  "line.p_kaczka_ok": {
+    "who": "mis",
+    "text": "Tak, kaczuszka stoi przed koszykiem. Widać ją całą!"
+  },
   "line.p_kto": {
     "who": "mis",
     "text": "Kto schował się za krzakiem? Popatrz, co wystaje, i wskaż."
@@ -206,13 +235,25 @@
     "who": "mis",
     "text": "Popatrz jeszcze raz na to, co wystaje zza krzaka."
   },
+  "line.p_kto_zajac": {
+    "who": "jez",
+    "text": "Tak, to zajączek! Wystawały mu długie uszy."
+  },
+  "line.p_kto_kura": {
+    "who": "jez",
+    "text": "Tak, to kurka! Wystawał jej czerwony grzebyk."
+  },
   "line.p_fotel": {
     "who": "jez",
-    "text": "Co leży przed fotelem? Wskaż."
+    "text": "Wskaż, co leży przed fotelem."
   },
   "line.p_fotel_nie": {
     "who": "jez",
     "text": "Misio schował się za fotelem. Co jest z przodu?"
+  },
+  "line.p_fotel_ok": {
+    "who": "mis",
+    "text": "Tak, klocek leży przed fotelem. A misio schował się za nim."
   },
   "line.p_glaz": {
     "who": "mis",
@@ -222,37 +263,101 @@
     "who": "mis",
     "text": "Zajączek ma być schowany, za kamieniem."
   },
+  "line.p_glaz_ok": {
+    "who": "jez",
+    "text": "Tak, zajączek jest za kamieniem. Kamień go zasłania."
+  },
   "line.h_dom": {
     "who": "zajac",
-    "text": "W domu też bawimy się w chowanego! Misio się schował."
+    "text": "Witajcie u mnie w domu! Gramy jeszcze raz. Teraz już wiem, jak się chować."
+  },
+  "line.h_przytulanka": {
+    "who": "zajac",
+    "text": "Mój pluszowy miś też się chowa. Zamknął oczy, więc nikt go nie widzi!"
+  },
+  "line.h_znowu": {
+    "who": "jez",
+    "text": "Zajączku, znowu? Misio stoi przed fotelem, z przodu, więc każdy go widzi."
+  },
+  "line.h_ojej": {
+    "who": "zajac",
+    "text": "Ojej, zrobiłem to samo co w lesie!"
+  },
+  "line.h_schowaj": {
+    "who": "jez",
+    "text": "Pomóż mu i schowaj pluszowego misia za fotelem."
+  },
+  "line.h_schowaj_nie": {
+    "who": "jez",
+    "text": "Za fotelem, z tyłu. Fotel ma go zasłonić."
+  },
+  "line.h_schowany": {
+    "who": "zajac",
+    "text": "Za fotelem! Teraz widać tylko jego uszka."
+  },
+  "line.h_licze": {
+    "who": "mis",
+    "text": "Moja kolej! Zamykam oczy i liczę. Raz, dwa, trzy!"
+  },
+  "line.h_szukam": {
+    "who": "mis",
+    "text": "Szukam, szukam... Gdzie jest Zajączek? Nigdzie go nie widzę!"
   },
   "line.h_gdzie": {
     "who": "mis",
-    "text": "Za czym schował się misio? Wskaż."
+    "text": "Pomóż mi i wskaż, gdzie schował się Zajączek."
   },
   "line.h_gdzie_nie": {
     "who": "mis",
-    "text": "Tam go nie ma. Szukaj łapek, które wystają."
+    "text": "Tam go nie ma. Popatrz, co gdzieś wystaje."
   },
   "line.h_za_zaslona": {
     "who": "mis",
-    "text": "Za zasłoną! Wystawały mu łapki."
+    "text": "Za zasłoną! Wystawały ci tylko łapki, Zajączku."
+  },
+  "line.h_wygralem": {
+    "who": "zajac",
+    "text": "Schowałem się za zasłoną, z tyłu, i Miś długo mnie szukał!"
   },
   "line.h_pilka": {
     "who": "zajac",
-    "text": "Połóż piłkę przed fotelem, żeby było ją widać."
+    "text": "Teraz sprzątamy. Połóż piłkę i klocek na dywanie, przed fotelem, żeby wszyscy je widzieli."
   },
   "line.h_pilka_nie": {
     "who": "zajac",
-    "text": "Przed fotelem, z przodu."
+    "text": "Na dywan, przed fotel."
   },
   "line.h_dobrze": {
     "who": "mis",
-    "text": "Piłka przed fotelem. Widać ją!"
+    "text": "Piłka i klocek leżą przed fotelem. Widać je całe!"
+  },
+  "line.h_obrazki": {
+    "who": "zajac",
+    "text": "Narysowałem dla mamy nasz dzień, ale obrazki się pomieszały."
+  },
+  "line.h_obrazki_uloz": {
+    "who": "jez",
+    "text": "Ułóż obrazki po kolei, od tego, co było najpierw."
+  },
+  "line.h_obrazki_nie": {
+    "who": "jez",
+    "text": "Popatrz jeszcze raz, co było najpierw, a co potem."
+  },
+  "line.h_obrazki_ok": {
+    "who": "zajac",
+    "text": "Najpierw stałem przed krzakiem, potem schowałem się za nim, a na końcu Jeżyk znalazł myszkę!"
+  },
+  "line.h_gra": {
+    "who": "jez",
+    "text": "A teraz ja chowam myszkę, a Zajączek zgaduje."
+  },
+  "line.h_gra_zgaduje": {
+    "who": "zajac",
+    "text": "Myszka jest za pudełkiem! Widać jej uszka. A piłka leży przed pudełkiem."
   },
   "line.h_rodzice": {
-    "who": "zajac",
-    "text": "Pobaw się z rodzicami w chowanego: za drzwiami, za fotelem, za zasłoną. I pamiętaj: z przodu wszystko widać!"
+    "who": "jez",
+    "text": "Pobaw się tak z rodzicami: jedno chowa zabawkę, a drugie szuka i mówi, czy jest przed czymś, czy za czymś."
   },
   "line.naklejka_daj": {
     "who": "zajac",
