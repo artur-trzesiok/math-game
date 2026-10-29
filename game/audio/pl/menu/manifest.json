@@ -498,5 +498,145 @@
   "hash": "584889cf01d0",
   "who": "lisek",
   "text": "Ta polanka jest jeszcze zamknięta. Idziemy po kolei, krok po kroku!"
+ },
+ "line.swiat_swiat1": {
+  "hash": "083bd0fccbfa",
+  "who": "narrator",
+  "text": "Leśna Kraina"
+ },
+ "line.swiat_swiat2": {
+  "hash": "a8baeb344709",
+  "who": "narrator",
+  "text": "Wioska nad Jeziorem"
+ },
+ "line.swiat_swiat3": {
+  "hash": "684c7dc81ada",
+  "who": "narrator",
+  "text": "Zimowe Góry"
+ },
+ "line.swiat_swiat4": {
+  "hash": "febe3941a3be",
+  "who": "narrator",
+  "text": "Zamek na Wzgórzu"
+ },
+ "line.tytul_one_many": {
+  "hash": "515206f1ca11",
+  "who": "narrator",
+  "text": "Jeden czy wiele?"
+ },
+ "line.tytul_spot_difference": {
+  "hash": "9354b738798c",
+  "who": "narrator",
+  "text": "Znajdź różnice"
+ },
+ "line.tytul_bigger_smaller": {
+  "hash": "64576aad8e77",
+  "who": "narrator",
+  "text": "Większy, mniejszy"
+ },
+ "line.tytul_long_short": {
+  "hash": "dd3052366036",
+  "who": "narrator",
+  "text": "Krótki i długi"
+ },
+ "line.tytul_tall_short": {
+  "hash": "470918bd3f8c",
+  "who": "narrator",
+  "text": "Wysoki i niski"
+ },
+ "line.tytul_ordering": {
+  "hash": "7f59bf79aa97",
+  "who": "narrator",
+  "text": "Po kolei"
+ },
+ "line.tytul_shapes": {
+  "hash": "ff551c85587e",
+  "who": "narrator",
+  "text": "Figury geometryczne"
+ },
+ "line.tytul_morning_night": {
+  "hash": "b5c1d199b9ec",
+  "who": "narrator",
+  "text": "Rano i wieczór"
+ },
+ "line.tytul_noticing_order": {
+  "hash": "ca35c959a65a",
+  "who": "narrator",
+  "text": "Zauważanie porządku"
+ },
+ "line.tytul_counting_3": {
+  "hash": "669fce26f87f",
+  "who": "narrator",
+  "text": "Liczymy do 3"
+ },
+ "line.tytul_more_fewer": {
+  "hash": "fd919217bcee",
+  "who": "narrator",
+  "text": "Więcej, mniej"
+ },
+ "line.tytul_logical_pairs": {
+  "hash": "a57d226aa856",
+  "who": "narrator",
+  "text": "Co do pary?"
+ },
+ "line.tytul_numbers_1_5": {
+  "hash": "e42502c32342",
+  "who": "narrator",
+  "text": "Liczby od 1 do 5"
+ },
+ "line.tytul_up_down": {
+  "hash": "dd9f65f88a7e",
+  "who": "narrator",
+  "text": "U góry i na dole"
+ },
+ "line.tytul_in_out": {
+  "hash": "d891316e94dd",
+  "who": "narrator",
+  "text": "W środku i na zewnątrz"
+ },
+ "line.tytul_tangram": {
+  "hash": "15b701f34b75",
+  "who": "narrator",
+  "text": "Tangram"
+ },
+ "line.tytul_grouping": {
+  "hash": "f266cd38be91",
+  "who": "narrator",
+  "text": "Grupowanie"
+ },
+ "line.tytul_front_back": {
+  "hash": "5284e57d4d07",
+  "who": "narrator",
+  "text": "Z przodu i z tyłu"
+ },
+ "line.tytul_rhythm": {
+  "hash": "8f53b70b94b7",
+  "who": "narrator",
+  "text": "Rytm"
+ },
+ "line.tytul_queue": {
+  "hash": "1a0980686c51",
+  "who": "narrator",
+  "text": "Kolejka"
+ },
+ "line.tytul_numbers_6_10": {
+  "hash": "352c8fa9a743",
+  "who": "narrator",
+  "text": "Liczby od 6 do 10"
+ },
+ "line.tytul_counting_5": {
+  "hash": "7608557ac52e",
+  "who": "narrator",
+  "text": "Liczymy do 5"
+ },
+ "line.tytul_adding_5": {
+  "hash": "333477c40a6c",
+  "who": "narrator",
+  "text": "Dodawanie do 5"
+ },
+ "line.tytul_adding_10": {
+  "hash": "1df99d98f449",
+  "who": "narrator",
+  "text": "Dodawanie do 10"
  }
 }

@@ -157,7 +157,7 @@ export class Player {
   async mowMenu(key) {
     const l = await this.liniaMenu(key); if (!l) return;
     menuMuzyka.przycisz(0.35);
-    try { await this.speech.say({ lang: this.lang, lessonId: "menu", key, text: l.text, who: "lisek", puppet: null }); } catch { /* never breaks the menu */ }
+    try { await this.speech.say({ lang: this.lang, lessonId: "menu", key, text: l.text, who: l.who || "lisek", puppet: null }); } catch { /* never breaks the menu */ }
     finally { menuMuzyka.przycisz(1); }
   }
 
@@ -227,7 +227,7 @@ export class Player {
     $("#swiaty").onclick = (e) => {
       const b = e.target.closest("button"); if (!b || b.classList.contains("wysun")) return;
       const s = swiaty.find((q) => q.id === b.dataset.swiat);
-      b.classList.add("wysun"); dzwiekMenu("pop");
+      b.classList.add("wysun"); dzwiekMenu("pop"); this.speech.stop?.(); this.mowMenu(`line.swiat_${s.id}`);   // the land's name, read out
       if (!otwartySwiat(s)) {
         setTimeout(() => { b.classList.remove("trzesie"); void b.offsetWidth; b.classList.add("trzesie"); dzwiekMenu("wrong"); }, 500);
         setTimeout(() => b.classList.remove("wysun", "trzesie"), 1700);
@@ -339,7 +339,7 @@ export class Player {
     pas.onclick = (e) => {
       if (pas.dataset.przeciagniete) return;
       const br = e.target.closest(".brama");                              // the gate to the next world
-      if (br) { if (br.classList.contains("zamknieta")) { br.classList.remove("trzesie"); void br.offsetWidth; br.classList.add("trzesie"); dzwiekMenu("wrong"); } else this.przejdzSwiat(br.dataset.swiat); return; }
+      if (br) { if (br.classList.contains("zamknieta")) { br.classList.remove("trzesie"); void br.offsetWidth; br.classList.add("trzesie"); dzwiekMenu("wrong"); } else this.przejdzSwiat(br.dataset.swiat); this.speech.stop?.(); this.mowMenu(`line.swiat_${br.dataset.swiat}`); return; }
       const zam = e.target.closest(".topic.zamkniety");
       if (zam) { zam.classList.remove("trzesie"); void zam.offsetWidth; zam.classList.add("trzesie"); dzwiekMenu("wrong"); powiedz(zam, `line.zamkniete_${zam.dataset.topic}`); return; }   // not yet: the topic shakes, Fox says what to finish first
       const b = e.target.closest(".lesson"); if (!b) return;
@@ -431,7 +431,7 @@ export class Player {
     catch (e) { console.warn("prepare:", e); }
     ekran.style.display = "none";
     if (run !== this.run) return;
-    if (!fromStage) await this.plansza({ obraz: v(`/game/lessons/${id}/cover.webp`), napis: meta.title[this.lang] || meta.title.en, dzwiek: "plansza" });
+    if (!fromStage) await this.plansza({ obraz: v(`/game/lessons/${id}/cover.webp`), napis: meta.title[this.lang] || meta.title.en, dzwiek: "plansza", menuLinia: `line.tytul_${id}` });
     this.abort = false;
     const order = fromStage && STAGES.includes(fromStage) ? STAGES.slice(STAGES.indexOf(fromStage)) : STAGES;
     for (const st of order) {
@@ -461,7 +461,7 @@ export class Player {
 
   // a card for about two seconds (a tap skips it): the lesson's start (cover + name) or a stage (icon + name),
   // the lesson's characters peeking in from the sides
-  async plansza({ obraz, ikona = false, napis, dzwiek = "etap", linia = null }) {
+  async plansza({ obraz, ikona = false, napis, dzwiek = "etap", linia = null, menuLinia = null }) {
     const el = $("#plansza"), glowy = Object.keys(this.lesson.characters || {}).map((n) => E.glowaObraz(n)).filter(Boolean).slice(0, 2);
     el.innerHTML = `<div class="karta"><img class="obraz ${ikona ? "ikona" : ""}" src="${obraz}" alt=""><div class="napis"></div>`
       + glowy.map((g, i) => `<img class="glowa ${i ? "p" : "l"}" src="${g.toDataURL()}" alt="">`).join("") + "</div>";
@@ -469,7 +469,9 @@ export class Player {
     el.className = "on"; this.stage?.sfx.graj(dzwiek);
     // the narrator says the stage's name ("here comes the story!", game/etapy): the card stays until both are done
     const tekst = linia && this.etapy?.[linia];
-    const mowa = tekst && !FAST ? this.speech.say({ lang: this.lang, lessonId: "etapy", key: linia, text: tekst.text, who: "narrator" }).catch(() => {}) : null;
+    let mowa = tekst && !FAST ? this.speech.say({ lang: this.lang, lessonId: "etapy", key: linia, text: tekst.text, who: "narrator" }).catch(() => {}) : null;
+    const tytul = menuLinia && !FAST ? await this.liniaMenu(menuLinia) : null;   // a lesson's card: its name read out
+    if (tytul) mowa = this.speech.say({ lang: this.lang, lessonId: "menu", key: menuLinia, text: tytul.text, who: "narrator" }).catch(() => {});
     await new Promise((ok) => { const t = setTimeout(ok, FAST ? 150 : 2100); el.onclick = () => { clearTimeout(t); this.speech.stop?.(); ok(); }; });
     if (mowa) await Promise.race([mowa, new Promise((ok) => setTimeout(ok, 3500))]);
     el.className = "on out"; await new Promise((ok) => setTimeout(ok, FAST ? 30 : 330)); el.className = ""; el.innerHTML = "";

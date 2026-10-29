@@ -50,6 +50,15 @@ tied with a little red string.
 {STYL}
 NO text, NO letters.""")
 
+# the scroll's roller (both sides; the right one mirrored): the paper rolled round a wooden rod with knobs
+OBRAZY["walek"] = ("1024x1536", "transparent", f"""ONE vertical rolled-up edge of an old paper scroll, standing upright
+and filling the whole HEIGHT of the picture, on a fully TRANSPARENT background: a tall thin cylinder of warm cream
+parchment rolled tightly around a wooden rod, the paper's rolled edge spiralling on top, and a round polished wooden
+knob in warm brown with a small red ring sticking out at the very top and the very bottom. Seen straight from the
+front, perfectly vertical, about 12 times taller than wide, soft shading so it looks round.
+{STYL}
+NO text, NO shadow on the ground.""")
+
 # the six clearings of every map, in the order of the path (fractions of the picture: x from the left, y from the top)
 STOPY: dict[str, list[list[float]]] = {"swiat1": [[0.094, 0.846], [0.276, 0.575], [0.436, 0.428], [0.581, 0.311], [0.788, 0.382], [0.929, 0.268]], "swiat2": [[0.079, 0.866], [0.222, 0.683], [0.449, 0.602], [0.761, 0.468], [0.784, 0.266], [0.929, 0.249]], "swiat3": [[0.071, 0.886], [0.261, 0.597], [0.452, 0.467], [0.593, 0.374], [0.762, 0.299], [0.934, 0.322]], "swiat4": [[0.068, 0.919], [0.234, 0.695], [0.38, 0.554], [0.627, 0.522], [0.794, 0.409], [0.92, 0.313]]}
 
@@ -82,6 +91,11 @@ def install() -> None:
     for s in KRAINY:
         if (WORK / f"mapa_{s}.png").exists():
             Image.open(WORK / f"mapa_{s}.png").convert("RGB").save(OUT / f"mapa_{s}.webp", "WEBP", quality=86, method=6)
+    if (WORK / "walek.png").exists():
+        im = Image.open(WORK / "walek.png").convert("RGBA")
+        im.putalpha(im.getchannel("A").point(lambda v: 0 if v < 90 else min(255, (v - 90) * 255 // 120)))   # no glow around it
+        im = im.crop(im.getchannel("A").point(lambda v: 255 if v > 20 else 0).getbbox()); im.thumbnail((400, 1400), Image.LANCZOS)
+        im.save(OUT / "walek.webp", "WEBP", quality=90, method=6); print("walek", im.size)
     if (WORK / "ikona.png").exists():
         im = Image.open(WORK / "ikona.png").convert("RGBA")
         im = im.crop(im.getchannel("A").point(lambda v: 255 if v > 20 else 0).getbbox()); im.thumbnail((400, 400), Image.LANCZOS)

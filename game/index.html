@@ -51,17 +51,16 @@
   #mapa { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: rgba(40,25,10,.55); opacity: 0; cursor: pointer; }
   #mapa .plansza { position: relative; width: min(94vw, calc(90vh * 1.5)); aspect-ratio: 3 / 2; cursor: default; }   /* flies out of the button and unrolls (mapa.js) */
   /* the scroll's two rollers: painted-looking wooden rods with red caps, riding on the paper's edges */
-  #mapa .walek { position: absolute; top: -4.5%; bottom: -4.5%; width: 4.2%; transform: translateX(-50%); z-index: 3; pointer-events: none; border-radius: 40% / 6%;
-    background: linear-gradient(90deg, #8a5a2b 0%, #c99a5c 18%, #f6e3b8 42%, #fff4d6 50%, #e2bf86 66%, #a8773f 88%, #6e451f 100%);
-    box-shadow: 0 6px 12px rgba(40,20,0,.45), inset 0 0 0 2px rgba(90,53,24,.55); }
-  #mapa .walek::before, #mapa .walek::after { content: ""; position: absolute; left: 50%; width: 150%; height: 4%; transform: translateX(-50%); border-radius: 50%;
-    background: radial-gradient(ellipse at 40% 35%, #ff8a6e, #c8322a 60%, #7e1712); box-shadow: 0 2px 4px rgba(0,0,0,.4); }
-  #mapa .walek::before { top: -1%; } #mapa .walek::after { bottom: -1%; }
+  /* the paper is masked as it unrolls; the scroll's two painted rollers (tools/mapa walek) ride on its edges, never cut */
+  #mapa .papier { position: absolute; inset: 0; }
+  #mapa .walek { position: absolute; top: -9%; height: 118%; width: auto; transform: translateX(-50%); z-index: 3; pointer-events: none; filter: drop-shadow(0 8px 10px rgba(40,20,0,.45)); }
+  #mapa .walek.prawy { transform: translateX(-50%) scaleX(-1); }
   #mapa .tlo { width: 100%; height: 100%; display: block; border-radius: 18px; box-shadow: 0 0 0 6px #f6e7c8, 0 0 0 9px #8a5a2b, 0 14px 40px rgba(0,0,0,.45); pointer-events: none; }
   #mapa .stop { position: absolute; width: 9%; aspect-ratio: 1; transform: translate(-50%, -50%); padding: 0; border: 0; border-radius: 50%; cursor: pointer;
     background: radial-gradient(circle at 50% 40%, #fff 0 52%, var(--c) 54% 100%); box-shadow: 0 0 0 3px #fff, 0 4px 10px rgba(60,30,0,.45); display: grid; place-items: center; }
   #mapa .stop .nr { font: 800 min(3.4vw, 5vh) "Baloo 2", system-ui; color: #5a3518; }
   #mapa .stop .znak { width: 125%; max-width: none; filter: drop-shadow(0 3px 3px rgba(60,30,0,.4)); }
+  #mapa .stop:not(.skonczony) .znak { width: 74%; }                     /* not finished yet: the sign small on its stage's disc */
   #mapa .stop.skonczony { background: none; box-shadow: none; }
   #mapa .stop.zamkniety { filter: saturate(.35) brightness(.95); }
   #mapa .stop .klodka { position: absolute; width: 62%; right: -18%; bottom: -14%; filter: drop-shadow(0 2px 3px rgba(0,0,0,.35)); }

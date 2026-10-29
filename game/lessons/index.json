@@ -1040,7 +1040,8 @@
         "thick_thin",
         "wide_narrow",
         "measure_steps"
-      ]
+      ],
+      "znak": "znak_rybka"
     },
     {
       "id": "etap8",
@@ -1054,7 +1055,8 @@
         "number_neighbors",
         "ordinal_10",
         "number_hunt"
-      ]
+      ],
+      "znak": "znak_lodka"
     },
     {
       "id": "etap9",
@@ -1068,7 +1070,8 @@
         "make_equal",
         "compare_sets",
         "sort_by_quantity"
-      ]
+      ],
+      "znak": "znak_muszla"
     },
     {
       "id": "etap10",
@@ -1082,7 +1085,8 @@
         "plane_shapes_2",
         "symmetry",
         "shapes_hunt"
-      ]
+      ],
+      "znak": "znak_kaczka"
     },
     {
       "id": "etap11",
@@ -1096,7 +1100,8 @@
         "guess_rule",
         "sort_free",
         "two_features"
-      ]
+      ],
+      "znak": "znak_lilia"
     },
     {
       "id": "etap12",
@@ -1110,7 +1115,8 @@
         "secret_code",
         "split_5",
         "days_of_week"
-      ]
+      ],
+      "znak": "znak_kotwica"
     },
     {
       "id": "etap13",
@@ -1124,7 +1130,8 @@
         "add_sub_family",
         "split_10",
         "fair_share"
-      ]
+      ],
+      "znak": "znak_balwan"
     },
     {
       "id": "etap14",
@@ -1138,7 +1145,8 @@
         "count_by_groups",
         "how_many_plates",
         "compare_numbers"
-      ]
+      ],
+      "znak": "znak_rekawiczka"
     },
     {
       "id": "etap15",
@@ -1152,7 +1160,8 @@
         "every_side",
         "solids",
         "turned_shapes"
-      ]
+      ],
+      "znak": "znak_sanki"
     },
     {
       "id": "etap16",
@@ -1166,7 +1175,8 @@
         "shelf_labels",
         "guess_who",
         "number_patterns"
-      ]
+      ],
+      "znak": "znak_choinka"
     },
     {
       "id": "etap17",
@@ -1180,7 +1190,8 @@
         "seasons",
         "coins",
         "charts"
-      ]
+      ],
+      "znak": "znak_czapka"
     },
     {
       "id": "etap18",
@@ -1194,7 +1205,8 @@
         "addition_10",
         "subtraction_10",
         "tangram_2"
-      ]
+      ],
+      "znak": "znak_kubek"
     },
     {
       "id": "etap19",
@@ -1208,7 +1220,8 @@
         "teens",
         "whole_tens",
         "tens_add_sub"
-      ]
+      ],
+      "znak": "znak_korona"
     },
     {
       "id": "etap20",
@@ -1222,7 +1235,8 @@
         "add_through_10",
         "subtract_through_10",
         "two_ways"
-      ]
+      ],
+      "znak": "znak_tarcza"
     },
     {
       "id": "etap21",
@@ -1236,7 +1250,8 @@
         "subtract_three",
         "add_sub_three",
         "fact_families_20"
-      ]
+      ],
+      "znak": "znak_klucz"
     },
     {
       "id": "etap22",
@@ -1250,7 +1265,8 @@
         "minus_no_borrow",
         "plus_carry",
         "minus_borrow"
-      ]
+      ],
+      "znak": "znak_wieza"
     },
     {
       "id": "etap23",
@@ -1264,7 +1280,8 @@
         "kilograms",
         "calendar",
         "change"
-      ]
+      ],
+      "znak": "znak_klejnot"
     },
     {
       "id": "etap24",
@@ -1278,7 +1295,8 @@
         "estimation",
         "coding",
         "castle_treasure"
-      ]
+      ],
+      "znak": "znak_choragiew"
     }
   ],
   "tematy": {

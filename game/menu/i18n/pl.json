@@ -375,6 +375,118 @@
     "who": "lisek",
     "text": "Hurra! Otworzył się dwudziesty czwarty etap. Nowe przygody czekają!"
   },
+  "line.swiat_swiat1": {
+    "who": "narrator",
+    "text": "Leśna Kraina"
+  },
+  "line.swiat_swiat2": {
+    "who": "narrator",
+    "text": "Wioska nad Jeziorem"
+  },
+  "line.swiat_swiat3": {
+    "who": "narrator",
+    "text": "Zimowe Góry"
+  },
+  "line.swiat_swiat4": {
+    "who": "narrator",
+    "text": "Zamek na Wzgórzu"
+  },
+  "line.tytul_one_many": {
+    "who": "narrator",
+    "text": "Jeden czy wiele?"
+  },
+  "line.tytul_spot_difference": {
+    "who": "narrator",
+    "text": "Znajdź różnice"
+  },
+  "line.tytul_bigger_smaller": {
+    "who": "narrator",
+    "text": "Większy, mniejszy"
+  },
+  "line.tytul_long_short": {
+    "who": "narrator",
+    "text": "Krótki i długi"
+  },
+  "line.tytul_tall_short": {
+    "who": "narrator",
+    "text": "Wysoki i niski"
+  },
+  "line.tytul_ordering": {
+    "who": "narrator",
+    "text": "Po kolei"
+  },
+  "line.tytul_shapes": {
+    "who": "narrator",
+    "text": "Figury geometryczne"
+  },
+  "line.tytul_morning_night": {
+    "who": "narrator",
+    "text": "Rano i wieczór"
+  },
+  "line.tytul_noticing_order": {
+    "who": "narrator",
+    "text": "Zauważanie porządku"
+  },
+  "line.tytul_counting_3": {
+    "who": "narrator",
+    "text": "Liczymy do 3"
+  },
+  "line.tytul_more_fewer": {
+    "who": "narrator",
+    "text": "Więcej, mniej"
+  },
+  "line.tytul_logical_pairs": {
+    "who": "narrator",
+    "text": "Co do pary?"
+  },
+  "line.tytul_numbers_1_5": {
+    "who": "narrator",
+    "text": "Liczby od 1 do 5"
+  },
+  "line.tytul_up_down": {
+    "who": "narrator",
+    "text": "U góry i na dole"
+  },
+  "line.tytul_in_out": {
+    "who": "narrator",
+    "text": "W środku i na zewnątrz"
+  },
+  "line.tytul_tangram": {
+    "who": "narrator",
+    "text": "Tangram"
+  },
+  "line.tytul_grouping": {
+    "who": "narrator",
+    "text": "Grupowanie"
+  },
+  "line.tytul_front_back": {
+    "who": "narrator",
+    "text": "Z przodu i z tyłu"
+  },
+  "line.tytul_rhythm": {
+    "who": "narrator",
+    "text": "Rytm"
+  },
+  "line.tytul_queue": {
+    "who": "narrator",
+    "text": "Kolejka"
+  },
+  "line.tytul_numbers_6_10": {
+    "who": "narrator",
+    "text": "Liczby od 6 do 10"
+  },
+  "line.tytul_counting_5": {
+    "who": "narrator",
+    "text": "Liczymy do 5"
+  },
+  "line.tytul_adding_5": {
+    "who": "narrator",
+    "text": "Dodawanie do 5"
+  },
+  "line.tytul_adding_10": {
+    "who": "narrator",
+    "text": "Dodawanie do 10"
+  },
   "line.mapa_lisek_1": {
     "who": "lisek",
     "text": "To ja! Tu teraz jesteśmy."

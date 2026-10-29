@@ -53,6 +53,10 @@ for lang in ("pl", "en"):
         pd = PORZ["pl_d" if lang == "pl" else "en"][k - 1]
         out[f"line.zamkniete_{t['id']}"] = {"who": "lisek", "text": zamk.format(poprz_d=pd, poprz=pd)}
         out[f"line.otwarte_{t['id']}"] = {"who": "lisek", "text": otw.format(nr=PORZ[lang][k])}
+    for sw in ix.get("swiaty", []):                             # a land tapped in the switcher: its name read out
+        out[f"line.swiat_{sw['id']}"] = {"who": "narrator", "text": sw["title"][lang]}
+    for l in ix.get("lessons", []):                             # a lesson chosen: its name read out over its card
+        if not l.get("wkrotce"): out[f"line.tytul_{l['id']}"] = {"who": "narrator", "text": l["title"][lang]}
     lisek, klodka = MAPA[lang]
     for k, t in enumerate(lisek, 1): out[f"line.mapa_lisek_{k}"] = {"who": "lisek", "text": t}
     for k, t in enumerate(klodka, 1): out[f"line.mapa_klodka_{k}"] = {"who": "lisek", "text": t}

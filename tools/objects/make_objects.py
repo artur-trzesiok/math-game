@@ -32,6 +32,21 @@ vector, NOT 3D. Each object is one single thing seen straight on, NO ground
 shadow, NO text."""
 
 SHEETS = {
+    # logical_pairs home: things that go together in Deer's hallway and at her tea (teapot -> cup, umbrella -> boots)
+    "pary_dom": {
+        "names": ["czajniczek", "parasol", "kalosze", "pasta"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "prompt": f"""A sprite sheet of FOUR illustrated things for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO table.
+{STYL}
+Left to right: one round white porcelain TEAPOT with a little blue flower on its side, a spout and a lid; one closed
+yellow UMBRELLA with a curved wooden handle, standing upright; one pair of green rubber RAIN BOOTS standing side by side;
+one tube of TOOTHPASTE, white with a blue stripe and a blue cap, lying flat, NO letters on it.
+Each thing fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.""",
+    },
     # noticing_order home: what a sandwich is made of, one by one (Bunny stacks them anyhow)
     "kanapka_skladniki": {
         "names": ["kromka", "maslo", "ser"],
@@ -301,6 +316,35 @@ with a small round hole and a short red string, rectangular with one cut corner,
 friendly green arrow pointing to the RIGHT, thick and rounded.
 All four roughly the same size.""",
 }
+
+# the stages' signs of worlds 2-4 (stages 7-24), each world's six in its own land's mood, the same medal style
+ZNAKI_SWIATOW = {
+    "znaki_swiat2": (["znak_rybka", "znak_lodka", "znak_muszla", "znak_kaczka", "znak_lilia", "znak_kotwica"],
+                     """Row 1, left to right: a small smiling orange fish; a little wooden sailing boat with a white sail; a pink
+scallop seashell.
+Row 2, left to right: a yellow rubber-duck-like little duck; a pink water lily flower on a green round leaf; a blue
+ship's anchor with a rope."""),
+    "znaki_swiat3": (["znak_balwan", "znak_rekawiczka", "znak_sanki", "znak_choinka", "znak_czapka", "znak_kubek"],
+                     """Row 1, left to right: a smiling snowman with a carrot nose; a red knitted mitten with a white pattern; a
+little wooden sledge.
+Row 2, left to right: a snowy green pine tree; a blue knitted winter hat with a white pom-pom; a red mug of hot cocoa
+with a little steam."""),
+    "znaki_swiat4": (["znak_korona", "znak_tarcza", "znak_klucz", "znak_wieza", "znak_klejnot", "znak_choragiew"],
+                     """Row 1, left to right: a golden crown with red jewels; a round blue knight's shield with a golden star; a
+big golden old key.
+Row 2, left to right: a small round castle tower with a red pointed roof; a sparkling purple gem; a red pennant flag
+on a pole."""),
+}
+for _n, (_names, _rows) in ZNAKI_SWIATOW.items():
+    SHEETS[_n] = {
+        "outline": True, "names": _names, "size": "1536x1024",
+        "prompt": f"""A sprite sheet of SIX bold, simple, cheerful emblems for a children's game, arranged in a neat grid of 2 rows
+and 3 columns on a fully TRANSPARENT background, with generous empty space between them so none of them touch. Each
+one big, round-ish, readable at a small size, with a soft golden glow at its edge like a little medal.
+{STYL}
+{_rows}
+All six the same size.""",
+    }
 
 # the stages' signs (menu): on a stage's plank, and as the special sticker for finishing a stage
 SHEETS["znaki"] = {

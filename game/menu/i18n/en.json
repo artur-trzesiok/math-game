@@ -375,6 +375,118 @@
     "who": "lisek",
     "text": "Hooray! The twenty-fourth stage is open. New adventures are waiting!"
   },
+  "line.swiat_swiat1": {
+    "who": "narrator",
+    "text": "The Forest Land"
+  },
+  "line.swiat_swiat2": {
+    "who": "narrator",
+    "text": "The Lakeside Village"
+  },
+  "line.swiat_swiat3": {
+    "who": "narrator",
+    "text": "The Snowy Mountains"
+  },
+  "line.swiat_swiat4": {
+    "who": "narrator",
+    "text": "The Castle on the Hill"
+  },
+  "line.tytul_one_many": {
+    "who": "narrator",
+    "text": "One or many?"
+  },
+  "line.tytul_spot_difference": {
+    "who": "narrator",
+    "text": "Spot the difference"
+  },
+  "line.tytul_bigger_smaller": {
+    "who": "narrator",
+    "text": "Bigger, smaller"
+  },
+  "line.tytul_long_short": {
+    "who": "narrator",
+    "text": "Long and short"
+  },
+  "line.tytul_tall_short": {
+    "who": "narrator",
+    "text": "Tall and short"
+  },
+  "line.tytul_ordering": {
+    "who": "narrator",
+    "text": "In order"
+  },
+  "line.tytul_shapes": {
+    "who": "narrator",
+    "text": "Shapes"
+  },
+  "line.tytul_morning_night": {
+    "who": "narrator",
+    "text": "Morning and night"
+  },
+  "line.tytul_noticing_order": {
+    "who": "narrator",
+    "text": "Noticing order"
+  },
+  "line.tytul_counting_3": {
+    "who": "narrator",
+    "text": "Counting to 3"
+  },
+  "line.tytul_more_fewer": {
+    "who": "narrator",
+    "text": "More, fewer"
+  },
+  "line.tytul_logical_pairs": {
+    "who": "narrator",
+    "text": "What goes with what?"
+  },
+  "line.tytul_numbers_1_5": {
+    "who": "narrator",
+    "text": "Numbers 1 to 5"
+  },
+  "line.tytul_up_down": {
+    "who": "narrator",
+    "text": "Up and down"
+  },
+  "line.tytul_in_out": {
+    "who": "narrator",
+    "text": "Inside and outside"
+  },
+  "line.tytul_tangram": {
+    "who": "narrator",
+    "text": "Tangram"
+  },
+  "line.tytul_grouping": {
+    "who": "narrator",
+    "text": "Grouping"
+  },
+  "line.tytul_front_back": {
+    "who": "narrator",
+    "text": "In front and behind"
+  },
+  "line.tytul_rhythm": {
+    "who": "narrator",
+    "text": "Rhythm"
+  },
+  "line.tytul_queue": {
+    "who": "narrator",
+    "text": "The queue"
+  },
+  "line.tytul_numbers_6_10": {
+    "who": "narrator",
+    "text": "Numbers 6 to 10"
+  },
+  "line.tytul_counting_5": {
+    "who": "narrator",
+    "text": "Counting to 5"
+  },
+  "line.tytul_adding_5": {
+    "who": "narrator",
+    "text": "Adding to 5"
+  },
+  "line.tytul_adding_10": {
+    "who": "narrator",
+    "text": "Adding to 10"
+  },
   "line.mapa_lisek_1": {
     "who": "lisek",
     "text": "It's me! This is where we are now."

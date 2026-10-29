@@ -24,21 +24,21 @@ export async function otworz({ swiat, etapy, zrodlo = null, dzwiek = () => {}, m
   const el = document.createElement("div"); el.id = "mapa";
   const tu = Math.max(0, etapy.reduce((k, e, i) => (e.otwarty ? i : k), 0));     // the furthest open stage
   el.innerHTML = `<button class="zamknij" aria-label="zamknij">✕</button>
-    <div class="plansza"><img class="tlo" src="${v(`/game/assets/mapa/mapa_${swiat}.webp`)}" alt="" draggable="false">
+    <div class="plansza"><div class="papier"><img class="tlo" src="${v(`/game/assets/mapa/mapa_${swiat}.webp`)}" alt="" draggable="false">
       ${etapy.map((e, i) => { const [x, y] = stopy[i] || stopy[stopy.length - 1]; return `
       <button class="stop${e.otwarty ? "" : " zamkniety"}${e.skonczony ? " skonczony" : ""}" data-i="${i}" style="left:${x * 100}%;top:${y * 100}%;--c:${e.kolor}">
-        ${e.skonczony && e.znak ? `<img class="znak" src="${v(`/game/assets/objects/${e.znak}.webp`)}" alt="">` : `<span class="nr">${e.nr}</span>`}
+        ${e.znak ? `<img class="znak" src="${v(`/game/assets/objects/${e.znak}.webp`)}" alt="">` : `<span class="nr">${e.nr}</span>`}
         ${e.otwarty ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}
       </button>`; }).join("")}
-      <i class="walek"></i><i class="walek"></i>
-      <button class="lisek" aria-label="lisek"><img src="${v("/game/assets/menu/lisek_glowa.webp")}" alt="" draggable="false"></button>
+      <button class="lisek" aria-label="lisek"><img src="${v("/game/assets/menu/lisek_glowa.webp")}" alt="" draggable="false"></button></div>
+      <img class="walek" src="${v("/game/assets/mapa/walek.webp")}" alt="" draggable="false"><img class="walek prawy" src="${v("/game/assets/mapa/walek.webp")}" alt="" draggable="false">
     </div>`;
   document.body.appendChild(el);
   const [wl, wp] = el.querySelectorAll(".walek");
   const walki = (doKonca, ms, easing) => Promise.all([[wl, W_L], [wp, W_P]].map(([w, [a, b]]) =>
     w.animate([{ left: doKonca ? a : b }, { left: doKonca ? b : a }], { duration: ms, easing, fill: "forwards" }).finished));
   wl.style.left = W_L[0]; wp.style.left = W_P[0];
-  const plansza = el.querySelector(".plansza"), lisek = el.querySelector(".lisek"), guziki = [...el.querySelectorAll(".stop")];
+  const plansza = el.querySelector(".plansza"), papier = el.querySelector(".papier"), lisek = el.querySelector(".lisek"), guziki = [...el.querySelectorAll(".stop")];
   const postaw = ([x, y]) => Object.assign(lisek.style, { left: `${x * 100}%`, top: `${y * 100}%` });
   const stan = czytaj(), byl = Math.min(tu, stan[swiat] ?? tu);
   postaw(stopy[byl]);
@@ -58,17 +58,17 @@ export async function otworz({ swiat, etapy, zrodlo = null, dzwiek = () => {}, m
     // flies out rolled up, lands with a little overshoot, then unrolls from the middle
     // the rolled scroll flies out of the button turning over, lands and bounces
     await plansza.animate([
-      { transform: zPrzycisku(), clipPath: ZWINIETA },
-      { transform: "translateY(-6%) rotate(200deg) scale(.8)", clipPath: ZWINIETA, offset: 0.55 },
-      { transform: "translateY(2%) rotate(360deg) scale(1)", clipPath: ZWINIETA, offset: 0.8 },
-      { transform: "translateY(-1.5%) rotate(360deg)", clipPath: ZWINIETA, offset: 0.9 },
-      { transform: "rotate(360deg)", clipPath: ZWINIETA }],
+      { transform: zPrzycisku() },
+      { transform: "translateY(-6%) rotate(200deg) scale(.8)", offset: 0.55 },
+      { transform: "translateY(2%) rotate(360deg) scale(1)", offset: 0.8 },
+      { transform: "translateY(-1.5%) rotate(360deg)", offset: 0.9 },
+      { transform: "rotate(360deg)" }],
       { duration: 820, easing: "cubic-bezier(.25,.7,.35,1)", fill: "forwards" }).finished;
     plansza.animate([{ transform: "none" }], { fill: "forwards" });
     // then the rollers run apart and pull the paper open, with a little overshoot
     dzwiek("whoosh");
     const rozwin = { duration: 700, easing: "cubic-bezier(.3,1.25,.5,1)" };
-    await Promise.all([plansza.animate([{ clipPath: ZWINIETA }, { clipPath: ROZWINIETA }], { ...rozwin, fill: "forwards" }).finished, walki(true, rozwin.duration, rozwin.easing)]);
+    await Promise.all([papier.animate([{ clipPath: ZWINIETA }, { clipPath: ROZWINIETA }], { ...rozwin, fill: "forwards" }).finished, walki(true, rozwin.duration, rozwin.easing)]);
     // the stops pop in along the path, then Fox drops onto his
     guziki.forEach((b, i) => { b.style.visibility = "visible"; b.animate([{ transform: "translate(-50%,-50%) scale(0)" }, { transform: "translate(-50%,-50%) scale(1.25)", offset: 0.7 }, { transform: "translate(-50%,-50%) scale(1)" }],
       { duration: 380, delay: i * 90, easing: "ease-out", fill: "backwards" }); });
@@ -85,13 +85,13 @@ export async function otworz({ swiat, etapy, zrodlo = null, dzwiek = () => {}, m
     dzwiek("whoosh");
     lisek.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: "forwards" });
     guziki.forEach((b) => b.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: "forwards" }));
-    await Promise.all([plansza.animate([{ clipPath: ROZWINIETA }, { clipPath: ZWINIETA }], { duration: 380, easing: "cubic-bezier(.6,0,.8,.4)", fill: "forwards" }).finished, walki(false, 380, "cubic-bezier(.6,0,.8,.4)")]);
+    await Promise.all([papier.animate([{ clipPath: ROZWINIETA }, { clipPath: ZWINIETA }], { duration: 380, easing: "cubic-bezier(.6,0,.8,.4)", fill: "forwards" }).finished, walki(false, 380, "cubic-bezier(.6,0,.8,.4)")]);
     el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 420, fill: "forwards" });
-    await plansza.animate([{ transform: "none", clipPath: ZWINIETA }, { transform: zPrzycisku().replace("-14deg", "-200deg"), clipPath: ZWINIETA }], { duration: 420, easing: "ease-in", fill: "forwards" }).finished;
+    await plansza.animate([{ transform: "none" }, { transform: zPrzycisku().replace("-14deg", "-200deg") }], { duration: 420, easing: "ease-in", fill: "forwards" }).finished;
     el.remove();
   };
 
-  lisek.style.visibility = "hidden"; guziki.forEach((b) => { b.style.visibility = "hidden"; });
+  papier.style.clipPath = ZWINIETA; lisek.style.visibility = "hidden"; guziki.forEach((b) => { b.style.visibility = "hidden"; });
   await wejscie();
   // a newly opened stage: Fox walks there stop by stop, hopping
   if (byl < tu) {
