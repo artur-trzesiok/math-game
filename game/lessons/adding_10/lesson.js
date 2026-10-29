@@ -1,7 +1,7 @@
 // Lesson: adding to 10 by counting on - the first number is known, so start from it and count only the new things;
 // equations to ten. The hopscotch tournament: Squirrel's bag holds five pebbles (a 5 on it), Owl brings three and
 // Squirrel says "three!"; counted on from five - 6, 7, 8; the ten frame; hopping on from a stone; Bear's bucket of
-// fish; the bell rings on. At home: shoes in the hallway. Script in scenario.md.
+// fish; the tournament square: from the 7 three more hops reach the ten. At home: shoes in the hallway. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
@@ -120,26 +120,49 @@ export default {
         await c.say("mis", "line.b_dziewiec", { anim: "Brawo" });
         await c.ujecie("ogolny");
         c.clear();
-        // the breather: the bell - the 6 is written, then it rings again: count on
-        await c.ujecie("sredni", { na: ["sowa"] });
-        await c.say("sowa", "line.b_dzwonek", { anim: "Zgloszenie" });
+        await c.ujecie("dwuujecie", { na: ["wiewiorka", "sowa"] });
+        await c.say("wiewiorka", "line.b_na_turniej", { anim: "Podskok" });
         await c.ujecie("ogolny");
-        const dz = await c.object("dzwonek", { x: -1.0, y: 1.4, size: 1.5 });
-        await c.digit(6, { x: 0.8, y: 1.4, size: 1.2, color: "#1f5fbf" });
-        await c.ujecie("sredni", { na: ["sowa", dz] });
-        await c.say("sowa", "line.b_juz_szesc");
-        await c.ujecie("ogolny");
-        const ile = 2 + Math.floor(Math.random() * 3);
-        await c.dzwieki(ile, { dzwiek: "dzwonek", rzecz: dz, tempo: 0.7 });
-        const k = await karty(c, oferta(6 + ile));
-        await c.say("sowa", "line.b_ile_razem");
-        const ok = k.find((q) => q.liczba === 6 + ile);
-        dobre(ok); await c.task({ targets: k, correct: ok, wrong: "line.b_ile_razem_nie" });
+      },
+      // C. the tournament square (the end of the story): the final jump - Squirrel on the 7 hops three more, to the ten
+      async (c) => {
+        const S = c.stage;
+        S.puppets.mis.home = 3.4; S.puppets.sowa.home = 5.4;               // both on the right: the stones run along the left and middle
+        await c.go("turniej_klasy", { enter: true });
+        await Promise.all(["wiewiorka", "sowa", "mis"].map((n) => c.enter(n, n === "wiewiorka" ? "left" : "right")));
+        await c.rozblysk("wiewiorka");
         await c.ujecie("zblizenie", { na: "wiewiorka" });
-        await c.say("wiewiorka", `line.b_razem${6 + ile}`);
+        await c.say("wiewiorka", "line.c_plac", { anim: "Radosc" });
+        await c.ujecie("ogolny");
+        const os = await c.os({ od: 0, do: 10, x0: -4.5, x1: 1.2, y: 0.45, size: 0.58 });   // over Squirrel's head: standing on the 7 she hid the 6 to 8
+        await c.ujecie("sredni", { na: ["sowa", os.kamien(10)] });
+        await c.say("sowa", "line.c_zasady", { anim: "Zgloszenie" });
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.say("wiewiorka", "line.c_moja_kolej");
+        await c.ujecie("ogolny");
+        await os.skocz("wiewiorka", 0, 7, { tempo: 0.4 });
+        await c.ujecie("sredni", { na: ["wiewiorka", os.kamien(7)] });
+        await c.say("wiewiorka", "line.c_siodemka");
+        await c.ujecie("ogolny");
+        await c.say("sowa", "line.c_jeszcze_trzy");
+        const ok = os.kamien(10);
+        dobre(ok); await c.task({ targets: os.kamienie.filter((q) => q.liczba > 7), correct: ok, wrong: "line.c_jeszcze_trzy_nie" }); dobre(ok, false);
+        await os.skocz("wiewiorka", 7, 10);
+        await c.konfetti();
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.emocja("wiewiorka", "radosc", { anim: "Radosc" });
+        await c.say("wiewiorka", "line.c_dziesiec");
+        await c.ujecie("ogolny");
+        await c.equation([7, "+", 3, "=", 10], { y: 2.6, size: 1.1 });
+        await c.ujecie("sredni", { na: ["sowa"] });
+        await c.say("sowa", "line.c_rownanie");
+        await c.ujecie("zblizenie", { na: "mis" });
+        c.sfx("clap"); c.play("mis", "Brawo");
+        await c.say("mis", "line.c_wygrana", { anim: "Brawo" });
         await c.ujecie("sredni", { na: ["wiewiorka", "mis"] });
         await c.say("mis", "line.b_koniec");
         await c.ujecie("ogolny");
+        c.clear(); S.puppets.wiewiorka.korzen.position.x = -4.9; S.puppets.mis.home = -2.7; S.puppets.sowa.home = 4.7;
       },
     ],
     practice: [

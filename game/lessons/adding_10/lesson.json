@@ -14,6 +14,7 @@
   "backgrounds": [
     "plac_zabaw",
     "strumyk",
+    "turniej_klasy",
     "przedpokoj"
   ],
   "objects": [
@@ -21,7 +22,6 @@
     "kamyk",
     "wiaderko",
     "rybka_srebrna",
-    "dzwonek",
     "koszyk",
     "jablko",
     "szyszka",

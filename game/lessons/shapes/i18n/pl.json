@@ -51,6 +51,22 @@
     "who": "lisek",
     "text": "Znamy już figury. Budujemy domek dla Jeżyka!"
   },
+  "line.b_rysunek": {
+    "who": "jez",
+    "text": "Wiecie co? Narysowałem sobie domek, o jakim marzę. Popatrzcie!"
+  },
+  "line.b_rysunek_trojkat": {
+    "who": "sowa",
+    "text": "Piękny rysunek! Zbudujemy taki sam domek, więc sprawdźmy, z jakich figur jest zrobiony. Gdzie na rysunku jest trójkąt? Wskaż go."
+  },
+  "line.b_rysunek_nie": {
+    "who": "sowa",
+    "text": "To nie trójkąt. Trójkąt ma trzy rogi i jest spiczasty."
+  },
+  "line.b_rysunek_dach": {
+    "who": "sowa",
+    "text": "Tak! Dach to trójkąt. A ściany to kwadrat, okienko to koło, a drzwi to prostokąt. Zbudujmy z figur taki domek!"
+  },
   "line.b_plan": {
     "who": "lisek",
     "text": "Na trawie leżą figury. Ołówkiem zaznaczymy, gdzie co ma być."
@@ -82,6 +98,10 @@
     "who": "sowa",
     "text": "Domek jest gotowy! Kwadratowe ściany, trójkątny dach, okrągłe okienko i prostokątne drzwi."
   },
+  "line.b_jak_rysunek": {
+    "who": "jez",
+    "text": "Zupełnie jak na moim rysunku!"
+  },
   "line.b_dziekuje": {
     "who": "jez",
     "text": "Mój własny domek! Dziękuję wam!"
@@ -105,10 +125,6 @@
   "line.c_dziekuje": {
     "who": "zajac",
     "text": "To mój latawiec! Dzięki!"
-  },
-  "line.c_turlam": {
-    "who": "jez",
-    "text": "A teraz zwijam się w kulkę i turlam! Złap mnie, wskaż mnie."
   },
   "line.c_do_domu": {
     "who": "lisek",
@@ -148,10 +164,6 @@
   "line.p_bez_rogow_nie": {
     "who": "sowa",
     "text": "Ta figura ma rogi. Poszukaj okrągłej."
-  },
-  "line.p_kolorowanka": {
-    "who": "sowa",
-    "text": "Pokoloruj domek. Wybierz kredkę z cyfrą, a potem pole z tą samą cyfrą."
   },
   "line.p_kolorowanka_znak": {
     "who": "sowa",

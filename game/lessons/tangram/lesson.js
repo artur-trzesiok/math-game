@@ -1,7 +1,8 @@
 // Lesson: the tangram - a picture from pieces: every piece has its place, a piece that does not fit is turned (a tap
 // turns it), not thrown away; the same pieces make different pictures. Owl's shadow theatre: the puppets are made
 // from shapes, Bear throws away the triangle that only needed turning, each finished puppet's shadow comes alive on
-// the sheet (the fish swims, the boat sails, the cat nods); whose shadow is it. Script in scenario.md.
+// the sheet (the fish swims, the boat sails, the cat nods); the show's poster tells what the cat is made of. Script in
+// scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
@@ -118,7 +119,17 @@ export default {
         await c.say("mis", "line.b_plynie_lodka", { anim: "Brawo" });
         await c.ujecie("ogolny");
         c.clear();
-        // the same pieces, a new picture: a cat
+        // the poster of the show promises a cat: the child finds its ears - two small triangles, pieces we have
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.say("wiewiorka", "line.b_plakat", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
+        const plakat = await c.znalezisko("plakat_teatru", { skad: "wiewiorka" });
+        await c.say("sowa", "line.b_plakat_kot");
+        await c.say("sowa", "line.b_plakat_uszy");
+        dobre(plakat.cele); await c.task({ targets: [...plakat.cele, plakat.tlo], correct: plakat.cele, wszystkie: true, wrong: "line.b_plakat_nie" }); dobre(plakat.cele, false);
+        await plakat.zaznacz();
+        await c.say("sowa", "line.b_plakat_trojkaty", { anim: "Radosc" });
+        await plakat.remove();
         await c.ujecie("sredni", { na: ["sowa"] });
         await c.say("sowa", "line.b_kot", { anim: "Zgloszenie" });
         await c.ujecie("ogolny");
@@ -127,12 +138,6 @@ export default {
         await ozyw(c, t, "kiw");
         await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_miau", { anim: "Radosc" });
-        await c.ujecie("ogolny");
-        c.clear();
-        // the breather: whose shadow is it?
-        await czyjCien(c, "zajac", ["zajac", "jez", "kaczka_mama"], "line.b_czyj", "line.b_czyj_nie");
-        await c.ujecie("zblizenie", { na: "wiewiorka" });
-        await c.say("wiewiorka", "line.b_zajac");
         await c.ujecie("ogolny");
         c.clear();
         // the show: the audience claps

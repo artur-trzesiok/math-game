@@ -79,11 +79,6 @@
   "who": "wiewiorka",
   "text": "Miau! Kotek kiwa głową."
  },
- "line.b_czyj": {
-  "hash": "81e012d783a0",
-  "who": "sowa",
-  "text": "Czyj to cień? Wskaż."
- },
  "line.b_czyj_nie": {
   "hash": "9f4fc9b7cdb2",
   "who": "sowa",
@@ -93,11 +88,6 @@
   "hash": "3e8b22b3caa0",
   "who": "wiewiorka",
   "text": "Popatrz na kształt cienia: uszy, ogonek, łapki."
- },
- "line.b_zajac": {
-  "hash": "4a946af26c3a",
-  "who": "wiewiorka",
-  "text": "To cień zajączka! Ma długie uszy."
  },
  "line.b_przedstawienie": {
   "hash": "6e4d283615a4",
@@ -203,5 +193,30 @@
   "hash": "75b6c2b7bbf4",
   "who": "narrator",
   "text": "To kolorowy klocek. Dostaliśmy go, kiedy robiliśmy z kawałków lalki do teatru cieni Sowy."
+ },
+ "line.b_plakat": {
+  "hash": "fe3fc786c138",
+  "who": "wiewiorka",
+  "text": "Patrzcie, znalazłam plakat naszego przedstawienia!"
+ },
+ "line.b_plakat_kot": {
+  "hash": "c7401d5e7277",
+  "who": "sowa",
+  "text": "Na plakacie jest rybka i łódka, te już mamy. Ale jest też kotek, a kotka jeszcze nie mamy!"
+ },
+ "line.b_plakat_uszy": {
+  "hash": "1ad102b4f493",
+  "who": "sowa",
+  "text": "Zobaczmy, z jakich kawałków jest zrobiony. Wskaż uszy kotka."
+ },
+ "line.b_plakat_nie": {
+  "hash": "8befc46c3169",
+  "who": "sowa",
+  "text": "To nie ucho. Uszy kotka są na czubku głowy, spiczaste jak trójkąty."
+ },
+ "line.b_plakat_trojkaty": {
+  "hash": "199d2a4e800c",
+  "who": "sowa",
+  "text": "Uszy to dwa małe trójkąty, a głowa to obrócony kwadrat. Takie kawałki mamy!"
  }
 }

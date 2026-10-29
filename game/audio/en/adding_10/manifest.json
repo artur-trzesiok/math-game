@@ -119,41 +119,6 @@
   "who": "mis",
   "text": "Nine fish! Enough for supper."
  },
- "line.b_dzwonek": {
-  "hash": "d3742095fd39",
-  "who": "sowa",
-  "text": "My bell has already rung six times."
- },
- "line.b_juz_szesc": {
-  "hash": "b66bcd7db754",
-  "who": "sowa",
-  "text": "I wrote a six. Listen how many more times it rings."
- },
- "line.b_ile_razem": {
-  "hash": "1b4663d09c21",
-  "who": "sowa",
-  "text": "How many times did the bell ring altogether? Point to the card."
- },
- "line.b_ile_razem_nie": {
-  "hash": "80cdf9942a2d",
-  "who": "sowa",
-  "text": "Start from six and count on the new rings."
- },
- "line.b_razem8": {
-  "hash": "2fa3a8f12a96",
-  "who": "wiewiorka",
-  "text": "Six and two more: eight!"
- },
- "line.b_razem9": {
-  "hash": "ae556aef26a5",
-  "who": "wiewiorka",
-  "text": "Six and three more: nine!"
- },
- "line.b_razem10": {
-  "hash": "f7e253e91dc6",
-  "who": "wiewiorka",
-  "text": "Six and four more: ten!"
- },
  "line.b_koniec": {
   "hash": "65db28f081b4",
   "who": "mis",
@@ -348,5 +313,55 @@
   "hash": "949013d46f31",
   "who": "narrator",
   "text": "This is a pebble from the hopscotch tournament. We got it when we learnt to count on."
+ },
+ "line.b_na_turniej": {
+  "hash": "d0a8656869e7",
+  "who": "wiewiorka",
+  "text": "We have the pebbles, and fish for supper too. Now let's run to the hopscotch tournament!"
+ },
+ "line.c_plac": {
+  "hash": "f4b061b0b932",
+  "who": "wiewiorka",
+  "text": "How festive it is here! Flags, a tent and benches. This is where the tournament is!"
+ },
+ "line.c_zasady": {
+  "hash": "2bbb7c95d17c",
+  "who": "sowa",
+  "text": "Here are the tournament stones, all the way to the ten. Whoever hops to the ten wins!"
+ },
+ "line.c_moja_kolej": {
+  "hash": "bb37ff23c026",
+  "who": "wiewiorka",
+  "text": "I'm hopping first! Keep your fingers crossed!"
+ },
+ "line.c_siodemka": {
+  "hash": "cef8c327b4e0",
+  "who": "wiewiorka",
+  "text": "Phew, I'm on the seven. The ten is still a little way off, and I have three hops left."
+ },
+ "line.c_jeszcze_trzy": {
+  "hash": "d2e8bc29716f",
+  "who": "sowa",
+  "text": "Squirrel is on the seven and will hop three more times. We don't count from the start, we count on from seven. Which stone will she land on? Point to it."
+ },
+ "line.c_jeszcze_trzy_nie": {
+  "hash": "5b25f28064c8",
+  "who": "sowa",
+  "text": "Count on from the seven: eight, nine, ten."
+ },
+ "line.c_dziesiec": {
+  "hash": "b4a42e651b90",
+  "who": "wiewiorka",
+  "text": "Eight, nine, ten! I made it to the ten!"
+ },
+ "line.c_rownanie": {
+  "hash": "840e329d540a",
+  "who": "sowa",
+  "text": "Seven plus three equals ten. Squirrel has won the tournament!"
+ },
+ "line.c_wygrana": {
+  "hash": "636b7d90ad7b",
+  "who": "mis",
+  "text": "Well done, Squirrel! You knew you were on the seven, and you counted on only the new hops."
  }
 }

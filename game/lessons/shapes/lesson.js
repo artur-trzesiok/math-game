@@ -1,7 +1,7 @@
 // Lesson: shapes - circle, triangle, square, rectangle, told by corners and sides (not by colour, not by turn). Shy
 // Hedgehog has no house for the winter; the friends build one from shapes: the shapes traced with a finger, the
-// corners counted, then walls, roof, window and door each found and put in place. Bunny's kite is a turned square;
-// Hedgehog rolls about (a catching game). Practice: tangram, a turned triangle, a traced rectangle, the shape with no
+// corners counted, then Hedgehog's drawing of his dream house (the child finds the triangle - the roof), and walls,
+// roof, window and door each found and put in place. Bunny's kite is a turned square. Practice: tangram, a turned triangle, a traced rectangle, the shape with no
 // corners, colour by number. At home: what shape is a plate, a chocolate bar. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
@@ -106,6 +106,16 @@ export default {
       async (c) => {
         const S = c.stage;
         S.puppets.sowa.korzen.position.x = 3.5; S.puppets.jez.korzen.position.x = 5.4;                         // by Hedgehog: the pieces lie on the left, over Fox's head
+        // Hedgehog's drawing of the house he dreams of: the child finds the triangle on it - the roof
+        await c.ujecie("zblizenie", { na: "jez" });
+        await c.say("jez", "line.b_rysunek", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
+        const rys = await c.znalezisko("rysunek_domku", { skad: "jez" });
+        await c.say("sowa", "line.b_rysunek_trojkat");
+        dobre(rys.cele); await c.task({ targets: [...rys.cele, rys.tlo], correct: rys.cele[0], wrong: "line.b_rysunek_nie" }); dobre(rys.cele, false);
+        await rys.zaznacz();
+        await c.say("sowa", "line.b_rysunek_dach", { anim: "Radosc" });
+        await rys.remove();
         const plan = czesci();
         // the pieces lie in the grass, in a row on the left (a turned rectangle and a spare triangle among them)
         const lez = [];
@@ -129,6 +139,8 @@ export default {
         await c.rozblysk(dom.find((h) => h.ksztalt === "kwadrat") || dom[0]);
         await c.ujecie("sredni", { na: [...dom, "sowa"] });                  // the finished house
         await c.say("sowa", "line.b_gotowy", { anim: "Brawo" });
+        await c.ujecie("zblizenie", { na: "jez" });
+        await c.say("jez", "line.b_jak_rysunek", { anim: "Radosc" });
         // Hedgehog walks into the house
         await c.ujecie("ogolny");
         await c.przejdz("jez", [[DOM.x - 0.45, -2.6]]);
@@ -139,7 +151,7 @@ export default {
         await c.ujecie("ogolny");
         await c.przejdz("jez", [[4.9, -3.3]]);
       },
-      // C. the playground: Bunny's kite got turned - a square is a square however it is turned; a catching game
+      // C. the playground: Bunny's kite got turned - a square is a square however it is turned
       async (c) => {
         await c.go("plac_zabaw", { enter: true });
         c.show("zajac");
@@ -167,15 +179,6 @@ export default {
         await c.ujecie("zblizenie", { na: "zajac" });
         await c.say("zajac", "line.c_dziekuje", { anim: "Podskok" });
         c.clear();
-        // the breather: Hedgehog rolls into a ball and bounces about - catch him three times
-        await c.ujecie("sredni", { na: ["jez"] });
-        await c.say("jez", "line.c_turlam", { anim: "Radosc" });
-        await c.ujecie("ogolny");
-        for (const [x, y] of tasuj([[-2.2, 1.2], [0.4, 0.4], [2.4, 1.6], [-0.8, -0.6], [1.6, -0.8]]).slice(0, 3)) {
-          const k = await c.object("jez", { x, y, size: 1.0 });
-          dobre(k); await c.task({ targets: [k], correct: k, wrong: "line.c_turlam" });
-          c.sfx("hop"); k.remove();
-        }
         await c.ujecie("dwuujecie", { na: ["lisek", "jez"] });
         await c.say("lisek", "line.c_do_domu");
         await c.ujecie("ogolny");

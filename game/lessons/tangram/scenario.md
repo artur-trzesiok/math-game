@@ -9,9 +9,11 @@ Stage 4, lesson 16.
 ## Stage 1 - story
 A. *Room at night.* A shadow theatre tonight, but no puppets: Owl makes them from shapes. Bear's triangle "does not
 fit" - Owl: it is only turned; tap to turn. **Child** builds the house; it turns into its shadow and nods.
-B. *Theatre* (new scenery: a lit sheet). **Child** builds on the sheet a fish (its shadow swims), a boat (it rocks)
-and, from the same kind of pieces, a cat (new silhouette, four pieces). *Breather:* whose shadow (a sticker's
-silhouette, three stickers). The show; the audience claps.
+B. *Theatre* (new scenery: a lit sheet). **Child** builds on the sheet a fish (its shadow swims), a boat (it rocks).
+Squirrel finds the show's poster (a found picture, `plakat_teatru`): the fish and the boat are there, but also a cat,
+and we have no cat yet - what is it made of? **Child** marks its ears: two small triangles, the head a turned square -
+pieces we have. **Child** builds the cat (four pieces), its shadow nods. The show; the audience claps. (Whose shadow
+stays in practice; in the story the poster took its place.)
 
 ## Stage 2 - practice
 A fish; which piece fits the gap in the house (the big triangle: "the right shape, but too big"); a boat with its

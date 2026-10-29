@@ -134,11 +134,6 @@
   "who": "zajac",
   "text": "To mój latawiec! Dzięki!"
  },
- "line.c_turlam": {
-  "hash": "49bc55edb69b",
-  "who": "jez",
-  "text": "A teraz zwijam się w kulkę i turlam! Złap mnie, wskaż mnie."
- },
  "line.c_do_domu": {
   "hash": "e9e6096b2636",
   "who": "lisek",
@@ -188,11 +183,6 @@
   "hash": "fa65ef5463b2",
   "who": "sowa",
   "text": "Ta figura ma rogi. Poszukaj okrągłej."
- },
- "line.p_kolorowanka": {
-  "hash": "d6931f540fb9",
-  "who": "sowa",
-  "text": "Pokoloruj domek. Wybierz kredkę z cyfrą, a potem pole z tą samą cyfrą."
  },
  "line.p_kolorowanka_ok": {
   "hash": "d3d5e44dbd4f",
@@ -278,5 +268,30 @@
   "hash": "9a6c55c438cc",
   "who": "sowa",
   "text": "Pokoloruj domek. Wybierz kredkę ze znaczkiem, a potem pole z takim samym znaczkiem."
+ },
+ "line.b_rysunek": {
+  "hash": "1e74530f9ab6",
+  "who": "jez",
+  "text": "Wiecie co? Narysowałem sobie domek, o jakim marzę. Popatrzcie!"
+ },
+ "line.b_rysunek_trojkat": {
+  "hash": "cbd8c7261b3a",
+  "who": "sowa",
+  "text": "Piękny rysunek! Zbudujemy taki sam domek, więc sprawdźmy, z jakich figur jest zrobiony. Gdzie na rysunku jest trójkąt? Wskaż go."
+ },
+ "line.b_rysunek_nie": {
+  "hash": "97f6545df45f",
+  "who": "sowa",
+  "text": "To nie trójkąt. Trójkąt ma trzy rogi i jest spiczasty."
+ },
+ "line.b_rysunek_dach": {
+  "hash": "8737bd7c7023",
+  "who": "sowa",
+  "text": "Tak! Dach to trójkąt. A ściany to kwadrat, okienko to koło, a drzwi to prostokąt. Zbudujmy z figur taki domek!"
+ },
+ "line.b_jak_rysunek": {
+  "hash": "12fe55576708",
+  "who": "jez",
+  "text": "Zupełnie jak na moim rysunku!"
  }
 }

@@ -94,33 +94,45 @@
     "who": "mis",
     "text": "Dziewięć rybek! Wystarczy na kolację."
   },
-  "line.b_dzwonek": {
-    "who": "sowa",
-    "text": "Mój dzwonek dzwonił już sześć razy."
-  },
-  "line.b_juz_szesc": {
-    "who": "sowa",
-    "text": "Zapisałam szóstkę. Posłuchaj, ile razy zadzwoni jeszcze."
-  },
-  "line.b_ile_razem": {
-    "who": "sowa",
-    "text": "Ile razy dzwonek zadzwonił razem? Wskaż kartę."
-  },
-  "line.b_ile_razem_nie": {
-    "who": "sowa",
-    "text": "Zacznij od sześciu i dolicz nowe dzwonienia."
-  },
-  "line.b_razem8": {
+  "line.b_na_turniej": {
     "who": "wiewiorka",
-    "text": "Sześć i jeszcze dwa: osiem!"
+    "text": "Kamyki mamy, rybki na kolację też. Teraz biegniemy na turniej w klasy!"
   },
-  "line.b_razem9": {
+  "line.c_plac": {
     "who": "wiewiorka",
-    "text": "Sześć i jeszcze trzy: dziewięć!"
+    "text": "Ale tu odświętnie! Chorągiewki, namiot i ławki. To tutaj jest turniej!"
   },
-  "line.b_razem10": {
+  "line.c_zasady": {
+    "who": "sowa",
+    "text": "Oto kamienie turnieju, aż do dziesiątki. Kto doskoczy do dziesiątki, wygrywa!"
+  },
+  "line.c_moja_kolej": {
     "who": "wiewiorka",
-    "text": "Sześć i jeszcze cztery: dziesięć!"
+    "text": "Ja skaczę pierwsza! Trzymajcie kciuki!"
+  },
+  "line.c_siodemka": {
+    "who": "wiewiorka",
+    "text": "Uff, stoję na siódemce. Do dziesiątki jeszcze kawałek, a zostały mi trzy skoki."
+  },
+  "line.c_jeszcze_trzy": {
+    "who": "sowa",
+    "text": "Wiewiórka stoi na siódemce i skoczy jeszcze trzy razy. Nie liczymy od początku, tylko dalej od siedmiu. Na którym kamieniu stanie? Wskaż."
+  },
+  "line.c_jeszcze_trzy_nie": {
+    "who": "sowa",
+    "text": "Licz dalej od siódemki: osiem, dziewięć, dziesięć."
+  },
+  "line.c_dziesiec": {
+    "who": "wiewiorka",
+    "text": "Osiem, dziewięć, dziesięć! Doskoczyłam do dziesiątki!"
+  },
+  "line.c_rownanie": {
+    "who": "sowa",
+    "text": "Siedem plus trzy równa się dziesięć. Wiewiórka wygrała turniej!"
+  },
+  "line.c_wygrana": {
+    "who": "mis",
+    "text": "Brawo, Wiewiórko! Wiedziałaś, że stoisz na siódemce, i doliczyłaś tylko nowe skoki."
   },
   "line.b_koniec": {
     "who": "mis",

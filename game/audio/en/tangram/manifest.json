@@ -79,11 +79,6 @@
   "who": "wiewiorka",
   "text": "Meow! The cat is nodding."
  },
- "line.b_czyj": {
-  "hash": "921b0a41d70a",
-  "who": "sowa",
-  "text": "Whose shadow is this? Point to it."
- },
  "line.b_czyj_nie": {
   "hash": "6279ec1c7ba6",
   "who": "sowa",
@@ -93,11 +88,6 @@
   "hash": "11252878d324",
   "who": "wiewiorka",
   "text": "Look at the shadow's shape: the ears, the tail, the paws."
- },
- "line.b_zajac": {
-  "hash": "cc9dc61c3d3e",
-  "who": "wiewiorka",
-  "text": "It's the bunny's shadow! It has long ears."
  },
  "line.b_przedstawienie": {
   "hash": "001c31d47733",
@@ -203,5 +193,30 @@
   "hash": "fce9db82ddcf",
   "who": "narrator",
   "text": "This is a colourful block. We got it when we made puppets from pieces for Owl's shadow theatre."
+ },
+ "line.b_plakat": {
+  "hash": "0a4af077d6c5",
+  "who": "wiewiorka",
+  "text": "Look, I found the poster of our show!"
+ },
+ "line.b_plakat_kot": {
+  "hash": "69d68f77e31f",
+  "who": "sowa",
+  "text": "The poster shows the fish and the boat, we have those already. But there is a cat too, and we have no cat yet!"
+ },
+ "line.b_plakat_uszy": {
+  "hash": "68c813ca8a23",
+  "who": "sowa",
+  "text": "Let's see which pieces it is made of. Point to the cat's ears."
+ },
+ "line.b_plakat_nie": {
+  "hash": "e81fdbc994ec",
+  "who": "sowa",
+  "text": "That's not an ear. The cat's ears are on top of its head, pointed like triangles."
+ },
+ "line.b_plakat_trojkaty": {
+  "hash": "fe54f74f11ea",
+  "who": "sowa",
+  "text": "The ears are two small triangles, and the head is a turned square. We have pieces like these!"
  }
 }

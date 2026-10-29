@@ -11,7 +11,12 @@ A. *Playground.* Owl: the five are known, start from five. **Child** counts on (
 5 + 3 = 8. The ten frame: five fill the top row, **child** adds three. Hopscotch: Squirrel on the 6 hops three more -
 **child** points to where she lands (9), she hops there (`os`).
 B. *Brook.* Bear's bucket holds seven fish (a 7 on it), he catches two: **child** counts on from seven, picks the card
-for 7 + 2 = _. *Breather:* the bell has rung six times (a 6 written); it rings 2-4 more - how many altogether.
+for 7 + 2 = _. Pebbles and supper ready - off to the tournament.
+C. *The tournament square* (new scenery `turniej_klasy`: flags, a tent, benches, an open paved square). Arrival; Owl
+lays the stones up to ten: whoever hops to the ten wins. Squirrel hops to the 7 and has three hops left - "we don't
+count from the start, we count on from seven": **child** points to where she lands (10), she hops there, confetti;
+Owl writes 7 + 3 = 10, Squirrel has won; Bear: counting on from a known number is a clever way.
+(The bell breather was dropped: the tournament promised in the first line now happens and closes the story.)
 
 ## Stage 2 - practice
 Six apples in the basket and three more - count on; from the 4 stone hop four more; 7 + 2 = _; eight in the frame -

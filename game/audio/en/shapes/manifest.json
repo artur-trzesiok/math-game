@@ -129,11 +129,6 @@
   "who": "zajac",
   "text": "That's my kite! Thanks!"
  },
- "line.c_turlam": {
-  "hash": "94df482b2342",
-  "who": "jez",
-  "text": "And now I curl up into a ball and roll! Catch me, point to me."
- },
  "line.c_do_domu": {
   "hash": "af001b68241f",
   "who": "lisek",
@@ -183,11 +178,6 @@
   "hash": "67100b15fd84",
   "who": "sowa",
   "text": "That shape has corners. Look for the round one."
- },
- "line.p_kolorowanka": {
-  "hash": "e655941ce787",
-  "who": "sowa",
-  "text": "Colour the house. Pick a crayon with a number, then a space with the same number."
  },
  "line.p_kolorowanka_ok": {
   "hash": "7cc53b122455",
@@ -278,5 +268,30 @@
   "hash": "f7165be24e70",
   "who": "sowa",
   "text": "Colour the house. Pick a crayon with a sign, then a space with the same sign."
+ },
+ "line.b_rysunek": {
+  "hash": "a60162fe9114",
+  "who": "jez",
+  "text": "Do you know what? I drew the little house I dream of. Look!"
+ },
+ "line.b_rysunek_trojkat": {
+  "hash": "86deb005a377",
+  "who": "sowa",
+  "text": "What a lovely drawing! We'll build the very same house, so let's see which shapes it is made of. Where is the triangle in the drawing? Point to it."
+ },
+ "line.b_rysunek_nie": {
+  "hash": "14197c1b246a",
+  "who": "sowa",
+  "text": "That's not a triangle. A triangle has three corners and a pointed top."
+ },
+ "line.b_rysunek_dach": {
+  "hash": "4bc77be6827a",
+  "who": "sowa",
+  "text": "Yes! The roof is a triangle. The walls are a square, the window is a circle and the door is a rectangle. Let's build this house from shapes!"
+ },
+ "line.b_jak_rysunek": {
+  "hash": "4696c6a8e325",
+  "who": "jez",
+  "text": "Just like in my drawing!"
  }
 }

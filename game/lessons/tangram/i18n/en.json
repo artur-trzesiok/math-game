@@ -55,6 +55,26 @@
     "who": "mis",
     "text": "The boat is rocking on the waves!"
   },
+  "line.b_plakat": {
+    "who": "wiewiorka",
+    "text": "Look, I found the poster of our show!"
+  },
+  "line.b_plakat_kot": {
+    "who": "sowa",
+    "text": "The poster shows the fish and the boat, we have those already. But there is a cat too, and we have no cat yet!"
+  },
+  "line.b_plakat_uszy": {
+    "who": "sowa",
+    "text": "Let's see which pieces it is made of. Point to the cat's ears."
+  },
+  "line.b_plakat_nie": {
+    "who": "sowa",
+    "text": "That's not an ear. The cat's ears are on top of its head, pointed like triangles."
+  },
+  "line.b_plakat_trojkaty": {
+    "who": "sowa",
+    "text": "The ears are two small triangles, and the head is a turned square. We have pieces like these!"
+  },
   "line.b_kot": {
     "who": "sowa",
     "text": "From the same shapes we'll make something completely new: a cat!"
@@ -63,20 +83,12 @@
     "who": "wiewiorka",
     "text": "Meow! The cat is nodding."
   },
-  "line.b_czyj": {
-    "who": "sowa",
-    "text": "Whose shadow is this? Point to it."
-  },
   "line.b_czyj_nie": {
     "who": "sowa",
     "text": "Look at the shadow's shape: the ears, the tail, the paws.",
     "speakers": [
       "wiewiorka"
     ]
-  },
-  "line.b_zajac": {
-    "who": "wiewiorka",
-    "text": "It's the bunny's shadow! It has long ears."
   },
   "line.b_przedstawienie": {
     "who": "sowa",

@@ -94,33 +94,45 @@
     "who": "mis",
     "text": "Nine fish! Enough for supper."
   },
-  "line.b_dzwonek": {
-    "who": "sowa",
-    "text": "My bell has already rung six times."
-  },
-  "line.b_juz_szesc": {
-    "who": "sowa",
-    "text": "I wrote a six. Listen how many more times it rings."
-  },
-  "line.b_ile_razem": {
-    "who": "sowa",
-    "text": "How many times did the bell ring altogether? Point to the card."
-  },
-  "line.b_ile_razem_nie": {
-    "who": "sowa",
-    "text": "Start from six and count on the new rings."
-  },
-  "line.b_razem8": {
+  "line.b_na_turniej": {
     "who": "wiewiorka",
-    "text": "Six and two more: eight!"
+    "text": "We have the pebbles, and fish for supper too. Now let's run to the hopscotch tournament!"
   },
-  "line.b_razem9": {
+  "line.c_plac": {
     "who": "wiewiorka",
-    "text": "Six and three more: nine!"
+    "text": "How festive it is here! Flags, a tent and benches. This is where the tournament is!"
   },
-  "line.b_razem10": {
+  "line.c_zasady": {
+    "who": "sowa",
+    "text": "Here are the tournament stones, all the way to the ten. Whoever hops to the ten wins!"
+  },
+  "line.c_moja_kolej": {
     "who": "wiewiorka",
-    "text": "Six and four more: ten!"
+    "text": "I'm hopping first! Keep your fingers crossed!"
+  },
+  "line.c_siodemka": {
+    "who": "wiewiorka",
+    "text": "Phew, I'm on the seven. The ten is still a little way off, and I have three hops left."
+  },
+  "line.c_jeszcze_trzy": {
+    "who": "sowa",
+    "text": "Squirrel is on the seven and will hop three more times. We don't count from the start, we count on from seven. Which stone will she land on? Point to it."
+  },
+  "line.c_jeszcze_trzy_nie": {
+    "who": "sowa",
+    "text": "Count on from the seven: eight, nine, ten."
+  },
+  "line.c_dziesiec": {
+    "who": "wiewiorka",
+    "text": "Eight, nine, ten! I made it to the ten!"
+  },
+  "line.c_rownanie": {
+    "who": "sowa",
+    "text": "Seven plus three equals ten. Squirrel has won the tournament!"
+  },
+  "line.c_wygrana": {
+    "who": "mis",
+    "text": "Well done, Squirrel! You knew you were on the seven, and you counted on only the new hops."
   },
   "line.b_koniec": {
     "who": "mis",

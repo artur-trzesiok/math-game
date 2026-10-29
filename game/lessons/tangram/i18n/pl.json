@@ -55,6 +55,26 @@
     "who": "mis",
     "text": "Łódka kołysze się na falach!"
   },
+  "line.b_plakat": {
+    "who": "wiewiorka",
+    "text": "Patrzcie, znalazłam plakat naszego przedstawienia!"
+  },
+  "line.b_plakat_kot": {
+    "who": "sowa",
+    "text": "Na plakacie jest rybka i łódka, te już mamy. Ale jest też kotek, a kotka jeszcze nie mamy!"
+  },
+  "line.b_plakat_uszy": {
+    "who": "sowa",
+    "text": "Zobaczmy, z jakich kawałków jest zrobiony. Wskaż uszy kotka."
+  },
+  "line.b_plakat_nie": {
+    "who": "sowa",
+    "text": "To nie ucho. Uszy kotka są na czubku głowy, spiczaste jak trójkąty."
+  },
+  "line.b_plakat_trojkaty": {
+    "who": "sowa",
+    "text": "Uszy to dwa małe trójkąty, a głowa to obrócony kwadrat. Takie kawałki mamy!"
+  },
   "line.b_kot": {
     "who": "sowa",
     "text": "Z tych samych kształtów zrobimy coś zupełnie nowego: kotka!"
@@ -63,20 +83,12 @@
     "who": "wiewiorka",
     "text": "Miau! Kotek kiwa głową."
   },
-  "line.b_czyj": {
-    "who": "sowa",
-    "text": "Czyj to cień? Wskaż."
-  },
   "line.b_czyj_nie": {
     "who": "sowa",
     "text": "Popatrz na kształt cienia: uszy, ogonek, łapki.",
     "speakers": [
       "wiewiorka"
     ]
-  },
-  "line.b_zajac": {
-    "who": "wiewiorka",
-    "text": "To cień zajączka! Ma długie uszy."
   },
   "line.b_przedstawienie": {
     "who": "sowa",

@@ -51,6 +51,22 @@
     "who": "lisek",
     "text": "Now we know the shapes. Let's build Hedgehog's house!"
   },
+  "line.b_rysunek": {
+    "who": "jez",
+    "text": "Do you know what? I drew the little house I dream of. Look!"
+  },
+  "line.b_rysunek_trojkat": {
+    "who": "sowa",
+    "text": "What a lovely drawing! We'll build the very same house, so let's see which shapes it is made of. Where is the triangle in the drawing? Point to it."
+  },
+  "line.b_rysunek_nie": {
+    "who": "sowa",
+    "text": "That's not a triangle. A triangle has three corners and a pointed top."
+  },
+  "line.b_rysunek_dach": {
+    "who": "sowa",
+    "text": "Yes! The roof is a triangle. The walls are a square, the window is a circle and the door is a rectangle. Let's build this house from shapes!"
+  },
   "line.b_plan": {
     "who": "lisek",
     "text": "The shapes are lying in the grass. We'll mark with a pencil where each one goes."
@@ -82,6 +98,10 @@
     "who": "sowa",
     "text": "The house is ready! Square walls, a triangle roof, a round window and a rectangle door."
   },
+  "line.b_jak_rysunek": {
+    "who": "jez",
+    "text": "Just like in my drawing!"
+  },
   "line.b_dziekuje": {
     "who": "jez",
     "text": "My very own house! Thank you!"
@@ -105,10 +125,6 @@
   "line.c_dziekuje": {
     "who": "zajac",
     "text": "That's my kite! Thanks!"
-  },
-  "line.c_turlam": {
-    "who": "jez",
-    "text": "And now I curl up into a ball and roll! Catch me, point to me."
   },
   "line.c_do_domu": {
     "who": "lisek",
@@ -148,10 +164,6 @@
   "line.p_bez_rogow_nie": {
     "who": "sowa",
     "text": "That shape has corners. Look for the round one."
-  },
-  "line.p_kolorowanka": {
-    "who": "sowa",
-    "text": "Colour the house. Pick a crayon with a number, then a space with the same number."
   },
   "line.p_kolorowanka_znak": {
     "who": "sowa",
