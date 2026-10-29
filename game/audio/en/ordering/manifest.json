@@ -25,9 +25,9 @@
   "text": "In order? How do you mean?"
  },
  "line.a_od_najwiekszego": {
-  "hash": "bbba4cff7f1a",
+  "hash": "07109a6b2c19",
   "who": "bobr",
-  "text": "At the bottom the biggest block, on it a smaller one, then a smaller one still, and at the top the smallest. Drag the blocks onto the line on the grass and build the tower."
+  "text": "The biggest block at the bottom, the smallest at the top. Drag the blocks onto the line on the grass and build the tower."
  },
  "line.a_stoi": {
   "hash": "3f14f0d9dad1",
@@ -74,25 +74,15 @@
   "who": "zajac",
   "text": "Put the cups in order: from the smallest to the biggest. Start at the arrow."
  },
- "line.p_dobrze": {
-  "hash": "6d4d349921e5",
-  "who": "bobr",
-  "text": "Bravo, all in order!"
- },
- "line.p_dobrze.zajac": {
-  "hash": "cf1bd5a32845",
-  "who": "zajac",
-  "text": "Bravo, all in order!"
- },
  "line.p_marchewki": {
   "hash": "c4140463cdf0",
   "who": "bobr",
   "text": "And now the carrots the other way: from the biggest to the smallest. Start at the arrow."
  },
  "line.p_luka": {
-  "hash": "5c0318fb3648",
+  "hash": "0bb6a9b42107",
   "who": "zajac",
-  "text": "The apples grow in order, but one is missing. Which apple fits the gap? Point to it."
+  "text": "The apples grow in order, but one is missing. Point to the apple that fits the gap."
  },
  "line.p_luka_nie": {
   "hash": "3755e3888193",
@@ -105,9 +95,9 @@
   "text": "Yes! Now the apples grow in order."
  },
  "line.p_ktory_rzad": {
-  "hash": "9fd7af7b7667",
+  "hash": "25e5ab25ecd5",
   "who": "bobr",
-  "text": "In which row are the leaves in order? Point to that row."
+  "text": "Point to the row where the leaves are in order."
  },
  "line.p_ktory_rzad_nie": {
   "hash": "484439025574",
@@ -118,16 +108,6 @@
   "hash": "2ad0b0b06f88",
   "who": "zajac",
   "text": "Yes! Here the leaves grow in order."
- },
- "line.p_wieza": {
-  "hash": "f411f2a73099",
-  "who": "zajac",
-  "text": "Last, build a tower on the line: the biggest block at the bottom."
- },
- "line.p_wieza_ok": {
-  "hash": "dc2e20eb30b5",
-  "who": "bobr",
-  "text": "It stands! What a builder you are!"
  },
  "line.naklejka_daj": {
   "hash": "7b60dd6eba2f",
@@ -220,9 +200,9 @@
   "text": "Hee hee! I'll swap two owlets around."
  },
  "line.c_falsz": {
-  "hash": "6ec707e5ecb5",
+  "hash": "a38d9703d398",
   "who": "bobr",
-  "text": "Oh dear, the choir sounds wrong! Which owlet is not in its place? Point to it."
+  "text": "Oh dear, the choir is singing out of tune! Point to an owlet that is not in its place."
  },
  "line.c_falsz_nie": {
   "hash": "ebffa67459db",
@@ -245,9 +225,9 @@
   "text": "There's still time before the evening. Let's go home, I'll get my instrument ready!"
  },
  "line.d_szklanki": {
-  "hash": "115bbce3602a",
+  "hash": "18b0b219030a",
   "who": "bobr",
-  "text": "Here is my instrument: glasses of water! Tap each one and listen."
+  "text": "Here is my instrument: glasses of water! Point to each glass and listen to how it sounds."
  },
  "line.d_rozne": {
   "hash": "9c0f3987a54d",
@@ -255,9 +235,9 @@
   "text": "Each sounds different! The one with lots of water sounds low, the one with a little sounds high."
  },
  "line.d_uloz": {
-  "hash": "d265dbbb4168",
+  "hash": "89c8b299921a",
   "who": "bobr",
-  "text": "Put the glasses in order: from the one with the most water to the one with the least. Start by the arrow."
+  "text": "Stand the glasses in order on the rug: from the one with the most water to the one with the least."
  },
  "line.d_gama": {
   "hash": "0b339b0abde6",
@@ -265,23 +245,123 @@
   "text": "Can you hear it? The notes go up, like steps!"
  },
  "line.d_zagraj": {
-  "hash": "7a8e894907e6",
+  "hash": "5cb0ee961d34",
   "who": "bobr",
-  "text": "Now you play: tap the glasses in order, from the first to the last."
+  "text": "Now you play: point to the glasses in order, from the first to the last."
  },
  "line.d_zagraj_nie": {
-  "hash": "8fbadb3fa3b9",
+  "hash": "bd826af425bf",
   "who": "bobr",
-  "text": "Not that one yet. Tap the next one in order."
+  "text": "Not that one yet. Point to the next glass in order."
  },
  "line.d_brawo": {
-  "hash": "0fb542be7e24",
+  "hash": "7382e8747ecf",
   "who": "zajac",
-  "text": "Bravo, musician! Tonight we'll play it together at the concert."
+  "text": "Beautifully played, in order, from the first to the last! That's how we'll play at the concert."
  },
  "line.d_rodzice_szklanki": {
   "hash": "b6dcbef6b73b",
   "who": "bobr",
   "text": "With your parents, pour water into a few glasses, put them in order and listen to them play."
+ },
+ "line.a_metoda": {
+  "hash": "821726033afc",
+  "who": "bobr",
+  "text": "Look at the blocks: this one is the biggest, this one a bit smaller, this one smaller still, and this one the smallest."
+ },
+ "line.a_sloik": {
+  "hash": "3d92431b7ebb",
+  "who": "bobr",
+  "text": "Now the lantern on the very top. Oh dear, it's only an empty jar. Who will light it up?"
+ },
+ "line.a_swietliki": {
+  "hash": "5130fb3d4b9a",
+  "who": "zajac",
+  "text": "Fireflies! Call them in order: join the fireflies from the smallest to the biggest."
+ },
+ "line.a_swietliki_ok": {
+  "hash": "03b107b7a1be",
+  "who": "bobr",
+  "text": "Yes, from the smallest to the biggest, and the lantern glows!"
+ },
+ "line.c_zachod": {
+  "hash": "caa812cb0de4",
+  "who": "sowa",
+  "text": "The sun is setting. Before the concert begins, let's light up the evening sky!"
+ },
+ "line.p_kubki_ok": {
+  "hash": "6c5303e0f4c5",
+  "who": "bobr",
+  "text": "Yes, the cups from the smallest to the biggest!"
+ },
+ "line.p_marchewki_ok": {
+  "hash": "0f8154e29115",
+  "who": "zajac",
+  "text": "Yes, the carrots from the biggest to the smallest!"
+ },
+ "line.p_historyjka": {
+  "hash": "413a81c19338",
+  "who": "zajac",
+  "text": "Remember how we built the tower? Put the pictures in order. The first picture goes by the arrow."
+ },
+ "line.p_historyjka_ok": {
+  "hash": "844d63caef4d",
+  "who": "bobr",
+  "text": "Yes! First the biggest block, and last of all the lantern on the very top."
+ },
+ "line.d_dom": {
+  "hash": "0003b343fbd5",
+  "who": "bobr",
+  "text": "Here we are at my home. The concert is soon, and my instrument is waiting here!"
+ },
+ "line.d_zajac_gra": {
+  "hash": "710eb41c4ebd",
+  "who": "zajac",
+  "text": "Let me play! A row is a row, I'll play them just as they stand!"
+ },
+ "line.d_falsz": {
+  "hash": "440ab2183c53",
+  "who": "bobr",
+  "text": "Oh dear, that's not a tune! The glasses must stand in order too."
+ },
+ "line.d_metoda": {
+  "hash": "de365058abed",
+  "who": "bobr",
+  "text": "Listen. This glass has a lot of water and sounds low. This one has a little water and sounds high."
+ },
+ "line.d_najnizej": {
+  "hash": "c09650e7cd94",
+  "who": "zajac",
+  "text": "Point to the glass that will play the lowest."
+ },
+ "line.d_najnizej_nie": {
+  "hash": "18f73a75cc6a",
+  "who": "bobr",
+  "text": "This one has less water, so it sounds higher. Look for the glass with the most water."
+ },
+ "line.d_najnizej_ok": {
+  "hash": "b91be5dddb84",
+  "who": "bobr",
+  "text": "Yes, the one with the most water sounds the lowest. We'll start with it."
+ },
+ "line.d_woda_schodki": {
+  "hash": "cc85c9b9ad1d",
+  "who": "bobr",
+  "text": "And the water in the glasses goes down, step by step."
+ },
+ "line.d_koncert": {
+  "hash": "4efdef2897ad",
+  "who": "zajac",
+  "text": "It's dark already! Let's run to the concert!"
+ },
+ "line.d_koncert_bobr": {
+  "hash": "e694386d479f",
+  "who": "bobr",
+  "text": "The lanterns glow, the owlets sing in order, and I play the glasses!"
+ },
+ "line.d_koncert_zajac": {
+  "hash": "dea550c826d8",
+  "who": "zajac",
+  "text": "The most beautiful concert in the whole forest!"
  }
 }

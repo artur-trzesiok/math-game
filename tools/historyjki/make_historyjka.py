@@ -29,6 +29,12 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "friendly colours, thin soft dark outlines. NOT flat vector, NOT 3D render. NO text, NO letters, NO numbers, NO "
         "speech bubbles, NO panel numbers.")
 HISTORYJKI = {
+    # ordering practice: the lantern tower built in four steps, from the biggest block up
+    "wieza_latarenki": {"postacie": [], "lekcje": ["ordering"], "panele": [
+        "on green grass by a little brook: ONE big wide RED wooden block lying alone on the grass",
+        "the same place: on the big red block now stands a smaller YELLOW block - two blocks",
+        "the same place: on the yellow block now stands a still smaller GREEN block - a tower of three blocks",
+        "the same place at dusk: the smallest BLUE block on top - a tower of four blocks, the biggest at the bottom, the smallest at the top - and on the very top a glass jar lantern glowing warm gold"]},
     # morning_night: Mole's day in four pictures
     "dzien_kreta": {"postacie": ["kret"], "lekcje": ["morning_night"], "panele": [
         "MORNING: the mole stretches and yawns beside his little bed, the round sun rising low in a pink sky in the window",
@@ -51,7 +57,8 @@ def gen(n: str) -> Path:
     uklad = ("a 2 x 2 grid of FOUR equal square panels: top-left, top-right, bottom-left, bottom-right" if k == 4 else
              f"ONE ROW of {k} equal square panels side by side, from left to right, the white page above and below them")
     refs = [CHARACTERS / q / "postac.png" for q in z["postacie"]]
-    kto = ("The mole in every panel is the mole from the reference picture - exactly the same design, colours and size in "
+    kto = (f"The character{'s' if len(z['postacie']) > 1 else ''} in every panel {'are' if len(z['postacie']) > 1 else 'is'} "
+           f"from the reference picture{'s' if len(z['postacie']) > 1 else ''} - exactly the same design, colours and size in "
            "all panels. " if z["postacie"] else "")
     opis = "\n".join(f"  {i + 1}. {p}" for i, p in enumerate(z["panele"]))
     figgen.generate(f"""A children's picture-story page: {uklad}, separated by THICK plain WHITE gutters (wide white space between

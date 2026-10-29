@@ -28,6 +28,12 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "most of the picture, on a fully TRANSPARENT background, NO glow, NO halo, NO shadow on the ground, NO text, NO "
         "letters, NO numbers.")
 KROPKI = {
+    # shapes: the big roof for Hedgehog's house - three corners joined from the smallest make a triangle
+    "dach_trojkat": {"n": 3, "tlo": "papier", "lekcje": ["shapes"],
+                     "obraz": "A big house ROOF on its own: ONE plain TRIANGLE pointing up, wide at the bottom, made of warm yellow-orange roof tiles in neat rows, with three sharp clean corners and three perfectly straight edges. Nothing else: no walls, no chimney, no windows."},
+    # ordering: the fireflies light Beaver's lantern for the tower - joined from the smallest to the biggest
+    "latarenka_swietlikow": {"n": 8, "tlo": "noc", "lekcje": ["ordering"],
+                             "obraz": "A glass JAR LANTERN with a curved wire handle arching over its top, glowing warm golden light from many tiny fireflies inside, seen straight from the front: a simple bold silhouette - the round arch of the handle, the jar's rim, straight sides, a flat bottom."},
     # numbers_1_5: Mole's engine appears from five dots
     "lokomotywa": {"n": 10, "tlo": "papier", "lekcje": [],
                    "obraz": "A little red steam ENGINE seen from the side, facing right: a round boiler, a tall black chimney, a cab with a window, big red wheels. A simple bold silhouette with few corners."},

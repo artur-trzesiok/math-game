@@ -19,6 +19,7 @@
   "objects": [
     "kamien_schodek",
     "sowiatko",
+    "latarenka",
     "latarenka_swieci",
     "kubek_skladany",
     "marchewka",
@@ -33,5 +34,6 @@
   "naklejka": {
     "obraz": "objects/latarenka_swieci",
     "kto": "bobr"
-  }
+  },
+  "oddech": "malowanie"
 }

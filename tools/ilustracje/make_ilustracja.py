@@ -34,6 +34,18 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # shapes home: the payoff - tea at Hedgehog's new house built of shapes, the shape biscuits on four plates
+    "herbatka_u_jeza": {
+        "postacie": ["jez", "lisek", "sowa", "zajac"], "tlo": "laka", "lekcje": ["shapes"],
+        "scena": """A cosy TEA PARTY on the meadow from the reference picture, late afternoon in golden autumn light. In the
+middle stands the little HEDGEHOG's new HOUSE built of big flat shapes, exactly like a child's drawing: a big blue
+SQUARE for the walls; a PLAIN yellow TRIANGLE roof on top with nothing on it; ON THE BLUE WALL, on the right, a round red
+CIRCLE window; on the left of the same wall a green upright RECTANGLE door standing open. In front of it a small round
+wooden table with four cups of tea and FOUR plates of golden biscuits: one plate of round biscuits, one of square
+biscuits, one of triangle biscuits, one of rectangle biscuits. The little HEDGEHOG, the host, stands proudly at his open
+door pouring tea from a teapot; the FOX, the OWL and the BUNNY sit round the table holding biscuits, laughing. A square
+kite on a string is tied to the house and flies high in the sky. A few autumn leaves on the grass. Warm, happy, homely.""",
+    },
     # ordering home: the payoff - the evening concert promised all lesson, at night on the glade
     "koncert_noc": {
         "postacie": ["bobr", "zajac", "sowa"], "tlo": "polana_koncert", "lekcje": ["ordering"],

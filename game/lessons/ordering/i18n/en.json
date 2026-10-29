@@ -21,7 +21,7 @@
   },
   "line.a_od_najwiekszego": {
     "who": "bobr",
-    "text": "At the bottom the biggest block, on it a smaller one, then a smaller one still, and at the top the smallest. Drag the blocks onto the line on the grass and build the tower."
+    "text": "The biggest block at the bottom, the smallest at the top. Drag the blocks onto the line on the grass and build the tower."
   },
   "line.a_stoi": {
     "who": "zajac",
@@ -58,20 +58,13 @@
     "who": "zajac",
     "text": "Put the cups in order: from the smallest to the biggest. Start at the arrow."
   },
-  "line.p_dobrze": {
-    "who": "bobr",
-    "text": "Bravo, all in order!",
-    "speakers": [
-      "zajac"
-    ]
-  },
   "line.p_marchewki": {
     "who": "bobr",
     "text": "And now the carrots the other way: from the biggest to the smallest. Start at the arrow."
   },
   "line.p_luka": {
     "who": "zajac",
-    "text": "The apples grow in order, but one is missing. Which apple fits the gap? Point to it."
+    "text": "The apples grow in order, but one is missing. Point to the apple that fits the gap."
   },
   "line.p_luka_nie": {
     "who": "zajac",
@@ -83,7 +76,7 @@
   },
   "line.p_ktory_rzad": {
     "who": "bobr",
-    "text": "In which row are the leaves in order? Point to that row."
+    "text": "Point to the row where the leaves are in order."
   },
   "line.p_ktory_rzad_nie": {
     "who": "bobr",
@@ -92,14 +85,6 @@
   "line.p_ktory_rzad_ok": {
     "who": "zajac",
     "text": "Yes! Here the leaves grow in order."
-  },
-  "line.p_wieza": {
-    "who": "zajac",
-    "text": "Last, build a tower on the line: the biggest block at the bottom."
-  },
-  "line.p_wieza_ok": {
-    "who": "bobr",
-    "text": "It stands! What a builder you are!"
   },
   "line.naklejka_daj": {
     "who": "bobr",
@@ -175,7 +160,7 @@
   },
   "line.c_falsz": {
     "who": "bobr",
-    "text": "Oh dear, the choir sounds wrong! Which owlet is not in its place? Point to it."
+    "text": "Oh dear, the choir is singing out of tune! Point to an owlet that is not in its place."
   },
   "line.c_falsz_nie": {
     "who": "bobr",
@@ -195,7 +180,7 @@
   },
   "line.d_szklanki": {
     "who": "bobr",
-    "text": "Here is my instrument: glasses of water! Tap each one and listen."
+    "text": "Here is my instrument: glasses of water! Point to each glass and listen to how it sounds."
   },
   "line.d_rozne": {
     "who": "zajac",
@@ -203,7 +188,7 @@
   },
   "line.d_uloz": {
     "who": "bobr",
-    "text": "Put the glasses in order: from the one with the most water to the one with the least. Start by the arrow."
+    "text": "Stand the glasses in order on the rug: from the one with the most water to the one with the least."
   },
   "line.d_gama": {
     "who": "zajac",
@@ -211,18 +196,98 @@
   },
   "line.d_zagraj": {
     "who": "bobr",
-    "text": "Now you play: tap the glasses in order, from the first to the last."
+    "text": "Now you play: point to the glasses in order, from the first to the last."
   },
   "line.d_zagraj_nie": {
     "who": "bobr",
-    "text": "Not that one yet. Tap the next one in order."
+    "text": "Not that one yet. Point to the next glass in order."
   },
   "line.d_brawo": {
     "who": "zajac",
-    "text": "Bravo, musician! Tonight we'll play it together at the concert."
+    "text": "Beautifully played, in order, from the first to the last! That's how we'll play at the concert."
   },
   "line.d_rodzice_szklanki": {
     "who": "bobr",
     "text": "With your parents, pour water into a few glasses, put them in order and listen to them play."
+  },
+  "line.a_metoda": {
+    "who": "bobr",
+    "text": "Look at the blocks: this one is the biggest, this one a bit smaller, this one smaller still, and this one the smallest."
+  },
+  "line.a_sloik": {
+    "who": "bobr",
+    "text": "Now the lantern on the very top. Oh dear, it's only an empty jar. Who will light it up?"
+  },
+  "line.a_swietliki": {
+    "who": "zajac",
+    "text": "Fireflies! Call them in order: join the fireflies from the smallest to the biggest."
+  },
+  "line.a_swietliki_ok": {
+    "who": "bobr",
+    "text": "Yes, from the smallest to the biggest, and the lantern glows!"
+  },
+  "line.c_zachod": {
+    "who": "sowa",
+    "text": "The sun is setting. Before the concert begins, let's light up the evening sky!"
+  },
+  "line.p_kubki_ok": {
+    "who": "bobr",
+    "text": "Yes, the cups from the smallest to the biggest!"
+  },
+  "line.p_marchewki_ok": {
+    "who": "zajac",
+    "text": "Yes, the carrots from the biggest to the smallest!"
+  },
+  "line.p_historyjka": {
+    "who": "zajac",
+    "text": "Remember how we built the tower? Put the pictures in order. The first picture goes by the arrow."
+  },
+  "line.p_historyjka_ok": {
+    "who": "bobr",
+    "text": "Yes! First the biggest block, and last of all the lantern on the very top."
+  },
+  "line.d_dom": {
+    "who": "bobr",
+    "text": "Here we are at my home. The concert is soon, and my instrument is waiting here!"
+  },
+  "line.d_zajac_gra": {
+    "who": "zajac",
+    "text": "Let me play! A row is a row, I'll play them just as they stand!"
+  },
+  "line.d_falsz": {
+    "who": "bobr",
+    "text": "Oh dear, that's not a tune! The glasses must stand in order too."
+  },
+  "line.d_metoda": {
+    "who": "bobr",
+    "text": "Listen. This glass has a lot of water and sounds low. This one has a little water and sounds high."
+  },
+  "line.d_najnizej": {
+    "who": "zajac",
+    "text": "Point to the glass that will play the lowest."
+  },
+  "line.d_najnizej_nie": {
+    "who": "bobr",
+    "text": "This one has less water, so it sounds higher. Look for the glass with the most water."
+  },
+  "line.d_najnizej_ok": {
+    "who": "bobr",
+    "text": "Yes, the one with the most water sounds the lowest. We'll start with it."
+  },
+  "line.d_woda_schodki": {
+    "who": "bobr",
+    "text": "And the water in the glasses goes down, step by step."
+  },
+  "line.d_koncert": {
+    "who": "zajac",
+    "text": "It's dark already! Let's run to the concert!"
+  },
+  "line.d_koncert_bobr": {
+    "who": "bobr",
+    "text": "The lanterns glow, the owlets sing in order, and I play the glasses!"
+  },
+  "line.d_koncert_zajac": {
+    "who": "zajac",
+    "text": "The most beautiful concert in the whole forest!"
   }
 }

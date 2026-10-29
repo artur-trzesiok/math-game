@@ -21,7 +21,7 @@
   },
   "line.a_od_najwiekszego": {
     "who": "bobr",
-    "text": "Na dole największy klocek, na nim trochę mniejszy, potem jeszcze mniejszy, a na górze najmniejszy. Przeciągaj klocki na kreskę na trawie i zbuduj wieżę."
+    "text": "Na dole największy klocek, a na górze najmniejszy. Przeciągaj klocki na kreskę na trawie i zbuduj wieżę."
   },
   "line.a_stoi": {
     "who": "zajac",
@@ -58,20 +58,13 @@
     "who": "zajac",
     "text": "Ułóż kubeczki po kolei: od najmniejszego do największego. Zacznij przy strzałce."
   },
-  "line.p_dobrze": {
-    "who": "bobr",
-    "text": "Brawo, wszystko po kolei!",
-    "speakers": [
-      "zajac"
-    ]
-  },
   "line.p_marchewki": {
     "who": "bobr",
     "text": "A teraz marchewki odwrotnie: od największej do najmniejszej. Zacznij przy strzałce."
   },
   "line.p_luka": {
     "who": "zajac",
-    "text": "Jabłka rosną po kolei, ale jednego brakuje. Które jabłko pasuje w lukę? Wskaż."
+    "text": "Jabłka rosną po kolei, ale jednego brakuje. Wskaż jabłko, które pasuje w lukę."
   },
   "line.p_luka_nie": {
     "who": "zajac",
@@ -83,7 +76,7 @@
   },
   "line.p_ktory_rzad": {
     "who": "bobr",
-    "text": "W którym rzędzie listki są ułożone po kolei? Wskaż ten rząd."
+    "text": "Wskaż rząd, w którym listki są ułożone po kolei."
   },
   "line.p_ktory_rzad_nie": {
     "who": "bobr",
@@ -92,14 +85,6 @@
   "line.p_ktory_rzad_ok": {
     "who": "zajac",
     "text": "Tak! Tu listki rosną po kolei."
-  },
-  "line.p_wieza": {
-    "who": "zajac",
-    "text": "Na koniec zbuduj wieżę na kresce: największy klocek na dole."
-  },
-  "line.p_wieza_ok": {
-    "who": "bobr",
-    "text": "Stoi! Ale z ciebie budowniczy!"
   },
   "line.naklejka_daj": {
     "who": "bobr",
@@ -175,7 +160,7 @@
   },
   "line.c_falsz": {
     "who": "bobr",
-    "text": "Ojej, chór fałszuje! Które sowiątko stoi nie na swoim miejscu? Wskaż."
+    "text": "Ojej, chór fałszuje! Wskaż sowiątko, które stoi nie na swoim miejscu."
   },
   "line.c_falsz_nie": {
     "who": "bobr",
@@ -195,7 +180,7 @@
   },
   "line.d_szklanki": {
     "who": "bobr",
-    "text": "Oto mój instrument: szklanki z wodą! Stuknij w każdą i posłuchaj."
+    "text": "Oto mój instrument: szklanki z wodą! Wskaż każdą szklankę i posłuchaj, jak brzmi."
   },
   "line.d_rozne": {
     "who": "zajac",
@@ -203,7 +188,7 @@
   },
   "line.d_uloz": {
     "who": "bobr",
-    "text": "Ułóż szklanki po kolei: od tej z największą ilością wody do tej z najmniejszą. Zacznij przy strzałce."
+    "text": "Ustaw szklanki po kolei na dywanie: od tej z największą ilością wody do tej z najmniejszą."
   },
   "line.d_gama": {
     "who": "zajac",
@@ -211,18 +196,98 @@
   },
   "line.d_zagraj": {
     "who": "bobr",
-    "text": "Teraz ty zagraj: stukaj w szklanki po kolei, od pierwszej do ostatniej."
+    "text": "Teraz ty zagraj: wskazuj szklanki po kolei, od pierwszej do ostatniej."
   },
   "line.d_zagraj_nie": {
     "who": "bobr",
-    "text": "Jeszcze nie ta. Stuknij w następną po kolei."
+    "text": "Jeszcze nie ta. Wskaż następną szklankę po kolei."
   },
   "line.d_brawo": {
     "who": "zajac",
-    "text": "Brawo, muzyku! Wieczorem zagramy to razem na koncercie."
+    "text": "Pięknie zagrane, po kolei, od pierwszej do ostatniej! Tak zagramy na koncercie."
   },
   "line.d_rodzice_szklanki": {
     "who": "bobr",
     "text": "Nalej z rodzicami wody do kilku szklanek, ustaw je po kolei i posłuchaj, jak grają."
+  },
+  "line.a_metoda": {
+    "who": "bobr",
+    "text": "Popatrz na klocki: ten jest największy, ten trochę mniejszy, ten jeszcze mniejszy, a ten najmniejszy."
+  },
+  "line.a_sloik": {
+    "who": "bobr",
+    "text": "Teraz latarenka na samą górę. Ojej, to tylko pusty słoik. Kto go rozświetli?"
+  },
+  "line.a_swietliki": {
+    "who": "zajac",
+    "text": "Świetliki! Zawołaj je po kolei: połącz świetliki od najmniejszego do największego."
+  },
+  "line.a_swietliki_ok": {
+    "who": "bobr",
+    "text": "Tak, od najmniejszego do największego, i latarenka świeci!"
+  },
+  "line.c_zachod": {
+    "who": "sowa",
+    "text": "Słońce już zachodzi. Zanim zacznie się koncert, rozświetlmy wieczorne niebo!"
+  },
+  "line.p_kubki_ok": {
+    "who": "bobr",
+    "text": "Tak, kubeczki od najmniejszego do największego!"
+  },
+  "line.p_marchewki_ok": {
+    "who": "zajac",
+    "text": "Tak, marchewki od największej do najmniejszej!"
+  },
+  "line.p_historyjka": {
+    "who": "zajac",
+    "text": "Pamiętasz, jak budowaliśmy wieżę? Ułóż obrazki po kolei. Pierwszy obrazek idzie przy strzałce."
+  },
+  "line.p_historyjka_ok": {
+    "who": "bobr",
+    "text": "Tak! Najpierw największy klocek, a na końcu latarenka na samej górze."
+  },
+  "line.d_dom": {
+    "who": "bobr",
+    "text": "Jesteśmy u mnie w domu. Niedługo koncert, a tu czeka mój instrument!"
+  },
+  "line.d_zajac_gra": {
+    "who": "zajac",
+    "text": "Ja zagram! Rząd to rząd, zagram je tak, jak stoją!"
+  },
+  "line.d_falsz": {
+    "who": "bobr",
+    "text": "Ojej, to nie jest melodia! Szklanki też muszą stać po kolei."
+  },
+  "line.d_metoda": {
+    "who": "bobr",
+    "text": "Posłuchaj. W tej szklance jest dużo wody i brzmi nisko. W tej jest mało wody i brzmi wysoko."
+  },
+  "line.d_najnizej": {
+    "who": "zajac",
+    "text": "Wskaż szklankę, która zagra najniżej."
+  },
+  "line.d_najnizej_nie": {
+    "who": "bobr",
+    "text": "Ta ma mniej wody, więc brzmi wyżej. Szukaj szklanki z największą ilością wody."
+  },
+  "line.d_najnizej_ok": {
+    "who": "bobr",
+    "text": "Tak, ta z największą ilością wody brzmi najniżej. Od niej zaczniemy."
+  },
+  "line.d_woda_schodki": {
+    "who": "bobr",
+    "text": "A woda w szklankach schodzi w dół, schodek po schodku."
+  },
+  "line.d_koncert": {
+    "who": "zajac",
+    "text": "Już ciemno! Biegniemy na koncert!"
+  },
+  "line.d_koncert_bobr": {
+    "who": "bobr",
+    "text": "Lampiony świecą, sowiątka śpiewają po kolei, a ja gram na szklankach!"
+  },
+  "line.d_koncert_zajac": {
+    "who": "zajac",
+    "text": "Najpiękniejszy koncert w całym lesie!"
   }
 }
