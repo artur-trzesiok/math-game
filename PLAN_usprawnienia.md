@@ -39,8 +39,9 @@ Decisions the user made for this plan (2026-10-29):
   first lesson passes phase 5;
 - add the editing rules from phase 4 (no wide shot that is cut away at once, two-shots for exchanges, a shot has a
   reason);
-- inserts on a plain colour: replace "roughly every other shot" by "where a method is shown or a thing is talked about
-  alone" (they were used twice in 24 stories; the quota never matched practice);
+- inserts on a plain colour: replace "roughly every other shot" by "every moment where a method is shown or one thing
+  is talked about alone gets one" - the user likes them and wants MORE (used twice in 24 stories today); expect
+  several per story, in practice and home too, but placed where the moment calls for it, not by a count;
 - the home stage architecture of phase 3;
 - the breather rule: a breather is NOT maths, and two neighbouring lessons never share one.
 
@@ -151,7 +152,8 @@ The agent reads the lesson's scenes in order and gives every line a shot WITH A 
 - an instruction is said in the shot that shows the task (the child looks at the options, not at a face);
 - the wide shot is for tasks, walks, arrivals and things moving across the screen;
 - inserts on a plain colour (`ctx.go({kolor, motyw})` - the scenery fades, the characters stand on one soft colour
-  with a light circle and faint drifting shapes) where a method is shown;
+  with a light circle and faint drifting shapes) at every method and every thing talked about alone - the user wants
+  many more of them; the agent lists each insert it added in the lesson's commit;
 - a pan on a panorama instead of a cut when the place is the same (see the panorama review below);
 - practice and home are edited too (three lessons have no shot at all in practice).
 Checked by the lint (0.3) and the story preview (0.2); the numbers of the lesson go into its commit message.
