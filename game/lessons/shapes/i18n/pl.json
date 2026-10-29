@@ -153,6 +153,10 @@
     "who": "sowa",
     "text": "Pokoloruj domek. Wybierz kredkę z cyfrą, a potem pole z tą samą cyfrą."
   },
+  "line.p_kolorowanka_znak": {
+    "who": "sowa",
+    "text": "Pokoloruj domek. Wybierz kredkę ze znaczkiem, a potem pole z takim samym znaczkiem."
+  },
   "line.p_kolorowanka_ok": {
     "who": "lisek",
     "text": "Piękny kolorowy domek!"

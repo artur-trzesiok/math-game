@@ -183,7 +183,18 @@ export function cien(S, h, on = true, { kolor = "#3e3a54" } = {}) {
 // game/assets/kolorowanki/<name> (tools/kolorowanki): a picture whose areas carry numbers; crayons with the same
 // numbers along the bottom. The child picks a crayon, then points to an area: one with that number fills with its
 // colour, another shakes the crayon. Resolves when every area is coloured.
-export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6 } = {}) {
+// `znaki`: a sign per colour instead of its number (["kolo", "trojkat", ...]) - for a lesson before the digits
+const ZNAK = (cx, k, x, y, r) => {
+  cx.beginPath();
+  if (k === "kolo") cx.arc(x, y, r * 0.8, 0, 7);
+  else if (k === "trojkat") { cx.moveTo(x, y - r * 0.85); cx.lineTo(x + r * 0.95, y + r * 0.7); cx.lineTo(x - r * 0.95, y + r * 0.7); cx.closePath(); }
+  else if (k === "kwadrat") cx.rect(x - r * 0.72, y - r * 0.72, r * 1.44, r * 1.44);
+  else if (k === "prostokat") cx.rect(x - r * 0.95, y - r * 0.5, r * 1.9, r * 1.0);
+  else if (k === "serce") { cx.moveTo(x, y + r * 0.8); cx.bezierCurveTo(x - r * 1.3, y - r * 0.1, x - r * 0.6, y - r * 1.1, x, y - r * 0.35); cx.bezierCurveTo(x + r * 0.6, y - r * 1.1, x + r * 1.3, y - r * 0.1, x, y + r * 0.8); }
+  else { for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, q = i % 2 ? r * 0.42 : r; cx.lineTo(x + q * Math.cos(a), y + q * Math.sin(a)); } cx.closePath(); }   // gwiazdka
+  cx.fill();
+};
+export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6, znaki = null } = {}) {
   const kat = `/game/assets/kolorowanki/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const wczytaj = (u) => new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = bad; i.src = kat + u; });
@@ -201,7 +212,11 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6 } = 
     }
     px.putImageData(img, 0, 0); px.drawImage(linieImg, 0, 0);
     px.fillStyle = "#6b6258"; px.textAlign = "center"; px.textBaseline = "middle";
-    for (const r of meta.regiony) if (!barwy.has(r.id)) { px.font = `bold ${Math.max(18, Math.min(64, r.r * 1.1))}px sans-serif`; px.fillText(String(r.kolor), r.x, r.y); }
+    for (const r of meta.regiony) if (!barwy.has(r.id)) {
+      const wys = Math.max(18, Math.min(64, r.r * 1.1));
+      if (znaki) ZNAK(px, znaki[r.kolor - 1], r.x, r.y, Math.min(r.r * 0.7, wys * 0.6));   // a sign reads smaller than a digit
+      else { px.font = `bold ${wys}px sans-serif`; px.fillText(String(r.kolor), r.x, r.y); }
+    }
     tex.needsUpdate = true;
   };
   const tex = new THREE.CanvasTexture(plotno); tex.colorSpace = THREE.SRGBColorSpace;
@@ -213,7 +228,8 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6 } = 
   const kredki = meta.paleta.map((k, i) => {
     const kx = -((meta.paleta.length - 1) / 2) * 1.05 + i * 1.05 + x;
     const h = ksztalt(S, "prostokat", { x: kx, y: -2.85, size: 0.62, color: k, rot: 90, name: "kredka" }); h.kolor = i + 1;
-    const n = document.createElement("canvas"); n.width = n.height = 128; const nx = n.getContext("2d"); nx.fillStyle = "#fff"; nx.beginPath(); nx.arc(64, 64, 46, 0, 7); nx.fill(); nx.fillStyle = "#2b2622"; nx.font = "bold 72px sans-serif"; nx.textAlign = "center"; nx.textBaseline = "middle"; nx.fillText(String(i + 1), 64, 70);
+    const n = document.createElement("canvas"); n.width = n.height = 128; const nx = n.getContext("2d"); nx.fillStyle = "#fff"; nx.beginPath(); nx.arc(64, 64, 46, 0, 7); nx.fill(); nx.fillStyle = "#2b2622";
+    if (znaki) ZNAK(nx, znaki[i], 64, 66, 30); else { nx.font = "bold 72px sans-serif"; nx.textAlign = "center"; nx.textBaseline = "middle"; nx.fillText(String(i + 1), 64, 70); }
     const s = new THREE.Mesh(new THREE.PlaneGeometry(0.42, 0.42), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(n), transparent: true, depthWrite: false })); s.renderOrder = 12; s.position.z = 0.06; h.mesh.add(s);
     return h;
   });

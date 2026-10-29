@@ -6,6 +6,8 @@
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
+const OBRYS = { kolo: Array.from({ length: 16 }, (_, i) => [0.5 * Math.cos(i * Math.PI / 8), 0.5 * Math.sin(i * Math.PI / 8)]), kwadrat: [[-0.5, -0.5], [0.5, -0.5], [0.5, 0.5], [-0.5, 0.5]],
+  trojkat: [[-0.55, -0.45], [0.55, -0.45], [0, 0.5]], prostokat: [[-0.8, -0.42], [0.8, -0.42], [0.8, 0.42], [-0.8, 0.42]] };
 const KOLOR = { kolo: "#e8604c", trojkat: "#f5c341", kwadrat: "#3f8ce0", prostokat: "#58bd68" };
 
 // the house: walls (a square), roof (a triangle on top), window (a circle), door (an upright rectangle)
@@ -19,6 +21,18 @@ const czesci = () => {
     { kind: "prostokat", x: DOM.x - 0.45, y: DOM.dol + 0.68, size: 0.85, rot: 90, linia: "line.b_drzwi" },
   ];
 };
+
+// a row of shapes laid out by their drawn widths (turned ones included) with a clear gap: a fixed step let a turned
+// rectangle lie over the triangle in "which one is the triangle?"; distinct colours, so colour never decides
+function rzad(c, kinds, { y = 0.8, size = 1.3, rot = () => 0, przerwa = 0.55, kolory = null } = {}) {
+  const barwy = kolory || tasuj(Object.values(KOLOR));
+  const hs = kinds.map((k, i) => c.shape(k, { x: 0, y, size, color: barwy[i % barwy.length], rot: rot(k, i) }));
+  // widths from the shapes' own outlines (geometria.js KSZTALTY), turned: corners() reads the scale still popping in
+  const szer = kinds.map((k, i) => { const a = rot(k, i) * Math.PI / 180, xs = OBRYS[k].map(([u, v]) => (u * Math.cos(a) - v * Math.sin(a)) * size); return Math.max(...xs) - Math.min(...xs) + 0.3; });
+  let x = -(szer.reduce((a, b) => a + b, 0) + przerwa * (hs.length - 1)) / 2;
+  hs.forEach((h, i) => { h.mesh.position.x = x + szer[i] / 2; h.home = { x: h.mesh.position.x, y }; x += szer[i] + przerwa; });
+  return hs;
+}
 
 // touch every corner (stage 2: before counting): each touched corner gets a pencil ring, no numbers
 async function rogi(c, ksztalt, wrong) {
@@ -147,8 +161,7 @@ export default {
         { await c.say("lisek", "line.p_tangram"); const t = await c.tangram("domek", { x: 0.4, y: 0.6, scale: 3.0 }); await t.done(); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
         // 2. the triangle among turned shapes
         {
-          const hs = [];
-          for (const [i, k] of tasuj(["trojkat", "kwadrat", "prostokat", "kolo"]).entries()) hs.push(c.shape(k, { x: -2.4 + i * 1.6, y: 0.8, size: 1.3, color: tasuj(Object.values(KOLOR))[0], rot: (i * 47) % 180 }));
+          const hs = rzad(c, tasuj(["trojkat", "kwadrat", "prostokat", "kolo"]), { size: 1.25, rot: (k, i) => 20 + ((i * 47) % 140) });
           await c.say("sowa", "line.p_trojkat");
           const ok = hs.find((h) => h.ksztalt === "trojkat");
           dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.p_trojkat_nie" });
@@ -158,15 +171,14 @@ export default {
         { await c.say("lisek", "line.p_prostokat"); const t = await c.slad("prostokat", { x: 0.3, y: 0.4, size: 3.0 }); t.remove(); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
         // 4. the shape with no corners
         {
-          const hs = [];
-          for (const [i, k] of tasuj(["kolo", "kwadrat", "trojkat"]).entries()) hs.push(c.shape(k, { x: -2.0 + i * 2.0, y: 0.8, size: 1.5, color: tasuj(Object.values(KOLOR))[0] }));
+          const hs = rzad(c, tasuj(["kolo", "kwadrat", "trojkat"]), { size: 1.5 });
           await c.say("sowa", "line.p_bez_rogow");
           const ok = hs.find((h) => h.ksztalt === "kolo");
           dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.p_bez_rogow_nie" });
           await c.say("lisek", "line.p_dobrze"); gw.dodaj(); c.clear();
         }
-        // 5. colour the house by numbers
-        { await c.say("sowa", "line.p_kolorowanka"); const k = await c.kolorowanka("domek", { x: 0.2, y: 0.55, size: 5.0 }); await c.say("lisek", "line.p_kolorowanka_ok"); k.remove(); gw.dodaj(); }
+        // 5. colour the house by signs (not digits: numbers come later)
+        { await c.say("sowa", "line.p_kolorowanka_znak"); const k = await c.kolorowanka("domek", { x: 0.2, y: 0.55, size: 5.0, znaki: ["trojkat", "kwadrat", "kolo", "prostokat", "serce", "gwiazdka"] }); await c.say("lisek", "line.p_kolorowanka_ok"); k.remove(); gw.dodaj(); }
         await c.praise("sowa");
       },
     ],
@@ -177,8 +189,8 @@ export default {
         await c.say("lisek", "line.d_kuchnia", { anim: "Zgloszenie" });
         for (const [rzecz, kind, linia] of [["talerz", "kolo", "line.d_talerz"], ["czekolada", "prostokat", "line.d_czekolada"]]) {
           const r = await c.object(rzecz, { x: 0, y: 1.5, size: 1.9 });
-          const hs = [];
-          for (const [i, k] of tasuj(["kolo", "kwadrat", "trojkat", "prostokat"]).entries()) hs.push(c.shape(k, { x: -2.4 + i * 1.6, y: -1.6, size: 1.1, color: KOLOR[k] }));
+          const ks = tasuj(["kolo", "kwadrat", "trojkat", "prostokat"]);
+          const hs = rzad(c, ks, { y: -1.6, size: 1.1, kolory: ks.map((k) => KOLOR[k]) });
           await c.say("jez", linia);
           const ok = hs.find((h) => h.ksztalt === kind);
           dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.d_nie" });

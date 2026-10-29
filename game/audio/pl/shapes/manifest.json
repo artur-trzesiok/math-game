@@ -273,5 +273,10 @@
   "hash": "0d5c469171ea",
   "who": "sowa",
   "text": "Policzmy jego rogi. Dotknij każdego rogu."
+ },
+ "line.p_kolorowanka_znak": {
+  "hash": "9a6c55c438cc",
+  "who": "sowa",
+  "text": "Pokoloruj domek. Wybierz kredkę ze znaczkiem, a potem pole z takim samym znaczkiem."
  }
 }

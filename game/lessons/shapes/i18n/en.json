@@ -153,6 +153,10 @@
     "who": "sowa",
     "text": "Colour the house. Pick a crayon with a number, then a space with the same number."
   },
+  "line.p_kolorowanka_znak": {
+    "who": "sowa",
+    "text": "Colour the house. Pick a crayon with a sign, then a space with the same sign."
+  },
   "line.p_kolorowanka_ok": {
     "who": "lisek",
     "text": "A beautiful colourful house!"
