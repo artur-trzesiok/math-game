@@ -89,11 +89,21 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
       pokaz = Math.min(1, pokaz + 0.08);
       plakietka.scale.setScalar(mowca ? 0.001 + easeOut(pokaz) : 0.001);
       if (!mowca) return;
-      const V2 = widac(), lewo = mowca.korzen.position.x < 0;
-      plakietka.position.set((lewo ? -1 : 1) * (V2.w / 2 - R * 1.35), -V2.h / 2 + R * 1.3, 0.6);
-      const glowa = new THREE.Vector3(); mowca.korzen.getWorldPosition(glowa); glowa.y += mowca.wysokosc * 0.8;
+      // the badge lies nearer the camera than the picture: the frame there is smaller
+      const V2 = widac(), k = (KAM_Z - 0.6) / KAM_Z, lewo = mowca.korzen.position.x < 0;
+      plakietka.position.set((lewo ? -1 : 1) * (V2.w / 2 * k - R * 1.32), -V2.h / 2 * k + R * 1.32, 0.6);
+      // aimed at the visible head piece's box, so any character's face sits in the middle
+      const L2 = mowca, wid = L2.widokGrupy.profil?.visible ? "p_glowa" : L2.widokGrupy.tyl?.visible ? "t_glowa" : "glowa";
+      const gl = L2.kosci[wid] || L2.kosci.glowa, glowa = new THREE.Vector3();
+      let rozmiar = mowca.wysokosc * 0.3;
+      if (gl) {
+        mowca.korzen.updateMatrixWorld(true);
+        const bb = new THREE.Box3().setFromObject(gl); bb.getCenter(glowa);
+        rozmiar = Math.max(bb.max.y - bb.min.y, bb.max.x - bb.min.x) * 0.62;
+        glowa.y -= (bb.max.y - bb.min.y) * 0.04;
+      } else { mowca.korzen.getWorldPosition(glowa); glowa.y += mowca.wysokosc * 0.8; }
       kamG.position.set(glowa.x, glowa.y, glowa.z + 8); kamG.lookAt(glowa);
-      kamG.fov = 2 * Math.atan(mowca.wysokosc * 0.3 / 8) * 180 / Math.PI; kamG.updateProjectionMatrix();
+      kamG.fov = 2 * Math.atan(rozmiar / 8) * 180 / Math.PI; kamG.updateProjectionMatrix();
       S.renderer.setRenderTarget(rt); S.renderer.render(S.scene, kamG); S.renderer.setRenderTarget(null);
     },
   };
