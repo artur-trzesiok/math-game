@@ -283,7 +283,9 @@ included - a lesson that misses them is unfinished, whatever its folder is calle
 - **Found pictures and mazes as story beats** (`ctx.znalezisko`, the maze tool): somebody finds a map, a photo, a
   drawing; it flies up big in the middle and the child marks what the story needs on it - where the path crosses the
   river (that is where the treasure is, so we go there), what the lost friend holds in the photo (an apple - so she
-  went to the orchard). The answer moves the story on; it is never a quiz for its own sake. One spot or several.
+  went to the orchard). The answer moves the story on; it is never a quiz for its own sake. One spot or several, points or whole paths -
+  what is marked must be recognisable at a glance by a 3-year-old (a thing, a crossing, a whole path), never an anonymous
+  point on a plain stretch.
   A maze to find the way through works the same: solving it lets the story go on.
 - **Everything the child sees is painted.** Even what code makes (a maze's layout, a map's spots) is drawn by
   gpt-image in the book's style, with the code's layout given as a reference; plain diagrams and vector shapes are

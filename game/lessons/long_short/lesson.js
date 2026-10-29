@@ -154,6 +154,7 @@ export default {
         await c.say("sarenka", "line.b_mapa_drogi");
         await c.say("lisek", "line.b_mapa_ktora");
         dobre(mapa.cele, false); dobre(krotsza); await c.task({ targets: [...mapa.cele, mapa.tlo], correct: krotsza, wrong: "line.b_mapa_nie" }); dobre(krotsza, false);
+        await mapa.zaznacz(krotsza);                                            // the chosen way drawn along in pencil
         await c.say("sarenka", "line.b_mapa_tak", { anim: "Radosc" });
         await mapa.remove();
         await c.ujecie("ogolny");

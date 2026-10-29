@@ -357,7 +357,11 @@ the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program 
 hint ladder, or `c.count(z.cele)` counts the spots by touch (rings, hint arrows and counting digits draw over the picture:
 the spots carry `nadObrazem`; the spots come with `dobry: true`, so reset it before a task or a count, or the autopilot
 taps the first one forever; remove the count's `znaczki` with the picture) (`tools/znaleziska/make_znalezisko.py`: gpt-image draws the picture, then an edit with a magenta disc on
-every spot described in words; the discs found by colour are the `cele`; review `work/<name>_cele.png`); `ctx.labirynt(name, {pionek, cel})` - a painted maze the child leads a pawn through with a finger, cell by cell
+every spot described in words; the discs found by colour are the `cele`; review `work/<name>_cele.png`). A spot can
+be a whole PATH (`{"droga": "the short path from ... to ..."}` in `cele`): each path gets an edit of its own (two paths
+share their ends and merged when painted together), its painted line is skeletonized into points, the game makes the
+whole path one target and `zaznacz(cel)` draws it along in pencil - a disc on a plain stretch of path gave a 3-year-old
+nothing to recognise; `ctx.labirynt(name, {pionek, cel})` - a painted maze the child leads a pawn through with a finger, cell by cell
 through the openings only, a pencil trail behind (`tools/labirynty/make_labirynt.py`: Python makes a perfect maze and
 its plain plan, gpt-image paints it with the plan as the reference - a hedge maze, forest paths - and the build checks
 every wall and opening of the painting against the plan, review `work/<name>_sprawdz.png`; moves are checked on the

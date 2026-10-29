@@ -5,7 +5,10 @@ game shows the clean picture.
 
   python tools/znaleziska/make_znalezisko.py mapa_polany     # work/<name>_a.png, _b.png -> game/assets/znaleziska/<name>/
 
-Output: obraz.webp, meta.json {szerokosc, wysokosc, cele: [{x, y, r}] in fractions of the width / height}. Review
+A spot may be a whole PATH ({"droga": "the short path from ... to ..."}): the edit paints a thick magenta line along
+all of it, and the build keeps its centre line ("droga": points) - the child taps anywhere on the path, a small disc on
+a plain stretch of path gave a little one nothing to recognise.
+Output: obraz.webp, meta.json {szerokosc, wysokosc, cele: [{x, y, r, droga?}] in fractions of the width / height}. Review
 work/<name>_cele.png; delete the work files to redraw. A picture whose found spots are not as many as asked is reported.
 """
 from __future__ import annotations
@@ -117,8 +120,8 @@ picnic glade; both start at the same spot on the meadow and both end at the blan
 The two paths are far apart and never cross or touch each other between the meadow and the blanket. A few little
 trees with round green crowns and some bushes between them, drawn simply. Big simple clear shapes.
 {STYL}""",
-        "cele": ["on the middle of the SHORT left path, halfway between the meadow and the blanket",
-                 "on the middle of the LONG right path, where it loops round the hill on the right"],
+        "cele": [{"droga": "the whole SHORT left dotted path, from the meadow up to the picnic blanket"},
+                 {"droga": "the whole LONG right dotted path, from the meadow round the hill and back to the picnic blanket"}],
     },
     # shapes: Hedgehog's drawing of the house he dreams of - the roof is a triangle (no digits, no text: before numbers)
     "rysunek_domku": {
@@ -230,30 +233,76 @@ def gen(n: str) -> None:
     if not a.exists():
         refs = [TU.parent.parent / r for r in z.get("refs", [])] or None       # what the picture's characters must look like
         figgen.generate(z["obraz"], a, refs=refs, size=z.get("rozmiar", "1024x1024"), quality="high", background="opaque")
-    if not b.exists():
-        miejsca = "\n".join(f"  - {c};" for c in z["cele"])
+    plamy = [c for c in z["cele"] if isinstance(c, str)]
+    if plamy and not b.exists():                       # all the spots in one edit: discs never touch
         figgen.generate(f"""Exactly the same illustration, unchanged in every way, with ONLY this added: a flat solid bright magenta
 (#FF00FF) filled disc, about one tenth of the picture's height across, placed exactly on each of these
-{len(z["cele"])} places:
-{miejsca}
+{len(plamy)} places:
+{chr(10).join(f"  - {c};" for c in plamy)}
 Nothing else changes; no other magenta anywhere.""", b, refs=[a], size=z.get("rozmiar", "1024x1024"), quality="high", background="opaque")
+    # every path in an edit of its own: two paths share their ends (one start, one goal), painted together they merge
+    for k, c in enumerate(c for c in z["cele"] if isinstance(c, dict)):
+        bk = WORK / f"{n}_droga{k}.png"
+        if bk.exists(): continue
+        figgen.generate(f"""Exactly the same illustration, unchanged in every way, with ONLY this added: a thick flat solid bright
+magenta (#FF00FF) line painted exactly along {c["droga"]}, covering it from its one end to its other end and following
+every bend. Only this one path; nothing else changes; no other magenta anywhere.""", bk, refs=[a], size=z.get("rozmiar", "1024x1024"), quality="high", background="opaque")
+
+
+def droga(maska, w, h, krok=34):
+    """The centre line of a painted path: its skeleton, thinned to a point every `krok` px and ordered end to end."""
+    from skimage.morphology import skeletonize
+    ys, xs = np.nonzero(skeletonize(maska))
+    pts = list(zip(xs.tolist(), ys.tolist()))
+    sasiedzi = lambda p: sum((p[0] + dx, p[1] + dy) in zbior for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy)
+    zbior = set(pts)
+    konce = [p for p in pts if sasiedzi(p) == 1] or pts[:1]
+    start = max(konce, key=lambda p: p[1])                     # the lower end first
+    kolej, zostalo, akt = [start], set(pts) - {start}, start
+    while zostalo:                                            # walk along: always the nearest skeleton pixel
+        nast = min(zostalo, key=lambda q: (q[0] - akt[0]) ** 2 + (q[1] - akt[1]) ** 2)
+        if (nast[0] - akt[0]) ** 2 + (nast[1] - akt[1]) ** 2 > 60 ** 2: break
+        kolej.append(nast); zostalo.discard(nast); akt = nast
+    rzadko = [kolej[0]]
+    for q in kolej[1:]:
+        if (q[0] - rzadko[-1][0]) ** 2 + (q[1] - rzadko[-1][1]) ** 2 >= krok ** 2: rzadko.append(q)
+    return [[round(x / w, 4), round(y / h, 4)] for x, y in rzadko]
+
+
+def magenta(sciezka: Path, rozmiar) -> np.ndarray:
+    B = np.asarray(Image.open(sciezka).convert("RGB").resize(rozmiar, Image.LANCZOS)).astype(float)
+    r, g, bl = B[..., 0], B[..., 1], B[..., 2]
+    m = (r > 170) & (bl > 150) & (g < 110) & (np.abs(r - bl) < 90)       # wherever the edit painted
+    return ndimage.binary_closing(ndimage.binary_opening(ndimage.gaussian_filter(m.astype(float), ROZMYCIE) > 0.5, iterations=2), iterations=6)
 
 
 def build(n: str) -> None:
     z = ZNALEZISKA[n]
     A = Image.open(WORK / f"{n}_a.png").convert("RGB")
-    B = np.asarray(Image.open(WORK / f"{n}_b.png").convert("RGB").resize(A.size, Image.LANCZOS)).astype(float)
-    r, g, bl = B[..., 0], B[..., 1], B[..., 2]
-    magenta = (r > 170) & (bl > 150) & (g < 110) & (np.abs(r - bl) < 90)       # the discs, wherever the edit put them
-    m = ndimage.binary_closing(ndimage.binary_opening(ndimage.gaussian_filter(magenta.astype(float), ROZMYCIE) > 0.5, iterations=2), iterations=6)
-    lab, ile = ndimage.label(m)
-    pola = sorted(((int((lab == i).sum()), i) for i in range(1, ile + 1)), reverse=True)[:len(z["cele"])]
     w, h = A.size
     cele = []
-    for pole, i in pola:
-        ys, xs = np.nonzero(lab == i)
-        rr = max(xs.max() - xs.min(), ys.max() - ys.min()) / 2
-        cele.append({"x": round(xs.mean() / w, 4), "y": round(ys.mean() / h, 4), "r": round(max(rr * 1.25, 0.05 * w) / w, 4)})
+    plamy = [c for c in z["cele"] if isinstance(c, str)]
+    if plamy:
+        lab, ile = ndimage.label(magenta(WORK / f"{n}_b.png", A.size))
+        for pole, i in sorted(((int((lab == i).sum()), i) for i in range(1, ile + 1)), reverse=True)[:len(plamy)]:
+            ys, xs = np.nonzero(lab == i)
+            rr = max(xs.max() - xs.min(), ys.max() - ys.min()) / 2
+            cele.append({"x": round(xs.mean() / w, 4), "y": round(ys.mean() / h, 4), "r": round(max(rr * 1.25, 0.05 * w) / w, 4)})
+    for k, _ in enumerate(c for c in z["cele"] if isinstance(c, dict)):
+        lab, ile = ndimage.label(magenta(WORK / f"{n}_droga{k}.png", A.size))
+        if not ile: continue
+        pola = [(lab == j).sum() for j in range(1, ile + 1)]
+        kawalki = [droga(lab == j + 1, w, h) for j, s in enumerate(pola) if s >= 0.05 * max(pola)]   # the paint may break; specks go
+        # the pieces chained end to end, the lowest start first (a walk over all of them at once took shortcuts)
+        kawalki.sort(key=lambda k: -max(k[0][1], k[-1][1])); lancuch = kawalki.pop(0)
+        if lancuch[-1][1] > lancuch[0][1]: lancuch.reverse()
+        d2 = lambda a, b: (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2
+        while kawalki:
+            k = min(kawalki, key=lambda k: min(d2(lancuch[-1], k[0]), d2(lancuch[-1], k[-1]))); kawalki.remove(k)
+            lancuch += k if d2(lancuch[-1], k[0]) <= d2(lancuch[-1], k[-1]) else k[::-1]
+        maska = np.isin(lab, [j + 1 for j, s in enumerate(pola) if s >= 0.05 * max(pola)])
+        ys, xs = np.nonzero(maska)
+        cele.append({"x": round(xs.mean() / w, 4), "y": round(ys.mean() / h, 4), "r": 0.03, "droga": lancuch})
     if len(cele) != len(z["cele"]):
         print(f"  {n}: {len(cele)} spots found for {len(z['cele'])} asked - check work/{n}_cele.png")
     out = OUT / n; out.mkdir(parents=True, exist_ok=True)
@@ -261,7 +310,9 @@ def build(n: str) -> None:
     A.resize((round(w * k), round(h * k)), Image.LANCZOS).save(out / "obraz.webp", "WEBP", quality=84, method=6)
     (out / "meta.json").write_text(json.dumps({"szerokosc": round(w * k), "wysokosc": round(h * k), "cele": cele}, indent=1), encoding="utf-8")
     podglad = A.copy(); dr = ImageDraw.Draw(podglad)
-    for c in cele: dr.ellipse([(c["x"] - c["r"]) * w, c["y"] * h - c["r"] * w, (c["x"] + c["r"]) * w, c["y"] * h + c["r"] * w], outline=(255, 40, 40), width=8)
+    for c in cele:
+        if c.get("droga"): dr.line([(x * w, y * h) for x, y in c["droga"]], fill=(255, 40, 40), width=10)
+        else: dr.ellipse([(c["x"] - c["r"]) * w, c["y"] * h - c["r"] * w, (c["x"] + c["r"]) * w, c["y"] * h + c["r"] * w], outline=(255, 40, 40), width=8)
     podglad.resize((w // 2, h // 2)).save(WORK / f"{n}_cele.png")
     print(f"{n}: {len(cele)} spots")
 
