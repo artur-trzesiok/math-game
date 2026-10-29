@@ -311,6 +311,10 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 
 ## 8. Open, not started
 
+- **`PLAN_usprawnienia.md`** (2026-10-29, from the lesson audit, approved): mechanics moved to `game_mechanics.md`,
+  praise / wrong-answer variants, 7 painted mechanics, the home stage as a third act, an editing pass per lesson,
+  new breathers, panoramas, every "Wskaż." line rewritten. "Mam pięć zabaw" stays on purpose (a calm rhythm).
+
 - noticing_order and one_many still end in shared sceneries, not a place of their own.
 - shapes: the catching game was removed by an agent; ask the user if they want it back.
 - queue: a new wrong line for a tap on the photo's empty background.
