@@ -211,16 +211,24 @@ export async function winda(S, { x = -2.0, pietra = [-2.0, 2.0], start = 0, kosz
 export async function ramka(S, { x = 0.5, y = 1.0, krok = 0.95, kolor = "#2f6fd0" } = {}) {
   const grp = new THREE.Group(); grp.position.set(x, y, 0.32); S.scene.add(grp);
   const W = krok * 5 + 0.3, H = krok * 2 + 0.3;
-  const tlo = new THREE.Mesh(new THREE.PlaneGeometry(W + 0.22, H + 0.22), new THREE.MeshBasicMaterial({ color: "#8a5a2e", transparent: true, depthWrite: false }));   // a wooden frame
-  const plyta = new THREE.Mesh(new THREE.PlaneGeometry(W, H), new THREE.MeshBasicMaterial({ color: "#fdf6e6", transparent: true, depthWrite: false }));
-  tlo.renderOrder = 9.2; plyta.renderOrder = 9.3; grp.add(tlo, plyta);
+  // the painted wooden tray (tools/objects/make_ramka.py, cups laid out from this geometry); flat shapes without it
+  const malowana = krok === 0.95 ? await texture("/game/assets/objects/ramka_dziesiatkowa.webp").catch(() => null) : null;
+  const plaski = (w, h, o) => new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, ...o }));
+  if (malowana) {
+    const tacka = plaski(W + 0.22 + 0.04, H + 0.22 + 0.04, { map: malowana }); tacka.renderOrder = 9.3; grp.add(tacka);
+  } else {
+    const tlo = plaski(W + 0.22, H + 0.22, { color: "#8a5a2e" }), plyta = plaski(W, H, { color: "#fdf6e6" });   // a wooden frame
+    tlo.renderOrder = 9.2; plyta.renderOrder = 9.3; grp.add(tlo, plyta);
+    const srodek = plaski(W, 0.06, { color: "#8a5a2e" });
+    srodek.renderOrder = 9.45; srodek.position.z = 0.02; grp.add(srodek);               // the line between the two fives
+  }
   const miejsca = [];
-  const srodek = new THREE.Mesh(new THREE.PlaneGeometry(W, 0.06), new THREE.MeshBasicMaterial({ color: "#8a5a2e", transparent: true, depthWrite: false }));
-  srodek.renderOrder = 9.45; srodek.position.z = 0.02; grp.add(srodek);                 // the line between the two fives
   for (let r = 0; r < 2; r++) for (let k = 0; k < 5; k++) {
     const mx = (k - 2) * krok, my = (0.5 - r) * krok;
-    const kwadrat = new THREE.Mesh(new THREE.PlaneGeometry(krok - 0.12, krok - 0.12), new THREE.MeshBasicMaterial({ color: kolor, transparent: true, opacity: 0.22, depthWrite: false }));
-    kwadrat.position.set(mx, my, 0.01); kwadrat.renderOrder = 9.4; grp.add(kwadrat);
+    if (!malowana) {
+      const kwadrat = plaski(krok - 0.12, krok - 0.12, { color: kolor, opacity: 0.22 });
+      kwadrat.position.set(mx, my, 0.01); kwadrat.renderOrder = 9.4; grp.add(kwadrat);
+    }
     miejsca.push({ x: x + mx, y: y + my, h: null });
   }
   const h = { mesh: grp, kind: "ramka", name: "ramka", base: 1, remove: () => { S.scene.remove(grp); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); for (const m of miejsca) m.h?.remove?.(); } };
@@ -260,18 +268,31 @@ export async function ramka(S, { x = 0.5, y = 1.0, krok = 0.95, kolor = "#2f6fd0
 // A domino tile: a white rounded tile, a line across the middle, dots on each half (die patterns 0-6). A handle like a
 // sticker (a task target; `lewa`, `prawa`, `suma` on it). Pionowa by default (the halves above each other).
 const WZORY = { 0: [], 1: [[0, 0]], 2: [[-1, 1], [1, -1]], 3: [[-1, 1], [0, 0], [1, -1]], 4: [[-1, 1], [1, 1], [-1, -1], [1, -1]], 5: [[-1, 1], [1, 1], [0, 0], [-1, -1], [1, -1]], 6: [[-1, 1], [1, 1], [-1, 0], [1, 0], [-1, -1], [1, -1]] };
+// the painted tile and pip (tools/objects/make_domino.py), loaded with the module; flat shapes until they are in
+const DOMINO = {};
+for (const n of ["plytka", "oczko"]) texture(`/game/assets/objects/domino_${n}.webp`).then((t) => { DOMINO[n] = t; }, () => {});
+
 export function domino(S, a, b, { x = 0, y = 0.8, size = 2.4, pozioma = false } = {}) {
   const grp = new THREE.Group(); grp.position.set(x, y, 0.4); S.scene.add(grp);
   const w = size * 0.5, hh = size;
   const zaokr = (W, H, r) => { const s = new THREE.Shape(); s.moveTo(-W / 2 + r, -H / 2); s.lineTo(W / 2 - r, -H / 2); s.quadraticCurveTo(W / 2, -H / 2, W / 2, -H / 2 + r); s.lineTo(W / 2, H / 2 - r); s.quadraticCurveTo(W / 2, H / 2, W / 2 - r, H / 2); s.lineTo(-W / 2 + r, H / 2); s.quadraticCurveTo(-W / 2, H / 2, -W / 2, H / 2 - r); s.lineTo(-W / 2, -H / 2 + r); s.quadraticCurveTo(-W / 2, -H / 2, -W / 2 + r, -H / 2); return s; };
   const mat = (c) => new THREE.MeshBasicMaterial({ color: c, transparent: true, depthWrite: false });
-  const brzeg = new THREE.Mesh(new THREE.ShapeGeometry(zaokr(w + 0.08, hh + 0.08, 0.14)), mat("#3a332d"));
-  const plyta = new THREE.Mesh(new THREE.ShapeGeometry(zaokr(w, hh, 0.11)), mat("#fffaf0"));
-  const kreska = new THREE.Mesh(new THREE.PlaneGeometry(w * 0.8, 0.035), mat("#3a332d"));
-  brzeg.renderOrder = 10; plyta.renderOrder = 10.1; kreska.renderOrder = 10.2; kreska.position.z = 0.01; grp.add(brzeg, plyta, kreska);
+  if (DOMINO.plytka) {
+    const im = DOMINO.plytka.image, H2 = hh + 0.12, W2 = H2 * im.width / im.height;
+    const t = new THREE.Mesh(new THREE.PlaneGeometry(W2, H2), new THREE.MeshBasicMaterial({ map: DOMINO.plytka, transparent: true, depthWrite: false }));
+    t.renderOrder = 10.1; grp.add(t);
+  } else {
+    const brzeg = new THREE.Mesh(new THREE.ShapeGeometry(zaokr(w + 0.08, hh + 0.08, 0.14)), mat("#3a332d"));
+    const plyta = new THREE.Mesh(new THREE.ShapeGeometry(zaokr(w, hh, 0.11)), mat("#fffaf0"));
+    const kreska = new THREE.Mesh(new THREE.PlaneGeometry(w * 0.8, 0.035), mat("#3a332d"));
+    brzeg.renderOrder = 10; plyta.renderOrder = 10.1; kreska.renderOrder = 10.2; kreska.position.z = 0.01; grp.add(brzeg, plyta, kreska);
+  }
   const r = w * 0.085, u = w * 0.25;
   for (const [n, sy] of [[a, 1], [b, -1]]) for (const [px, py] of WZORY[n]) {
-    const d = new THREE.Mesh(new THREE.CircleGeometry(r, 20), mat("#2b2622")); d.position.set(px * u, sy * hh / 4 + py * u, 0.02); d.renderOrder = 10.3; grp.add(d);
+    const d = DOMINO.oczko
+      ? new THREE.Mesh(new THREE.PlaneGeometry(2.3 * r, 2.3 * r), new THREE.MeshBasicMaterial({ map: DOMINO.oczko, transparent: true, depthWrite: false }))
+      : new THREE.Mesh(new THREE.CircleGeometry(r, 20), mat("#2b2622"));
+    d.position.set(px * u, sy * hh / 4 + py * u, 0.02); d.renderOrder = 10.3; grp.add(d);
   }
   if (pozioma) grp.rotation.z = Math.PI / 2;
   const h = { mesh: grp, kind: "object", name: "domino", base: 1, size0: 1, pulse: false, home: { x, y }, zone: null, lewa: a, prawa: b, suma: a + b,

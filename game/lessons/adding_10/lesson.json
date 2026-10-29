@@ -17,7 +17,7 @@
     "turniej_klasy",
     "przedpokoj"
   ],
-  "objects": [
+  "objects": ["ramka_dziesiatkowa", 
     "torebka",
     "kamyk",
     "wiaderko",

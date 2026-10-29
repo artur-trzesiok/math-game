@@ -46,7 +46,7 @@ appendix at the end (moved from CLAUDE.md); puppets, feet, walks, meshes, audio 
 | `c.tangram(name, {x, y, scale, obroty})` -> `done()`; `c.piece(t)` | lays tangram pieces on a silhouette, a tap turns 45 deg; one piece as a target | shapes, tangram |
 | `c.wieza({klocki, miejsca, stoi})` | stacks blocks; a block that does not stand tips and falls back | ordering |
 | `c.waga()` -> `{poloz, przeciagaj, wynik}` | a balance scale, the beam tips to the heavier pan | - |
-| `c.ramka({x, y})` -> `{wloz, ile, przeciagaj}` | the ten frame, filled place by place | numbers_6_10, adding_10 |
+| `c.ramka({x, y})` -> `{wloz, ile, przeciagaj}` | the ten frame, filled place by place - a painted wooden tray (`tools/objects/make_ramka.py`, cups laid out from the engine's geometry) | numbers_6_10, adding_10 |
 | `c.sklepik({towar, cena, pokaz})` | pays: coins onto a plate, as many as the tag | numbers_1_5, counting_5, adding_5 |
 | `c.ubieranie({rzeczy, kto, pasuje, wrong})` | dresses characters; a wrong size goes on, slips and falls off | bigger_smaller, grouping |
 | `c.miejsca()` -> `{name: {slot(accept), strefa(), x, y, w, h, rodzaj}}` | the scenery's painted surfaces as drop places: a shelf, the hooks, the table, the rug (`game/assets/backgrounds/<scene>/miejsca.json`, `tools/miejsca/make_miejsca.py`). `m.gorna_polka.slot(accept)` goes into `c.slots`, `m.stol.strefa()` into `c.sort`; nothing is drawn - the picture shows where; a thing STANDS on a shelf, HANGS on a hook, LIES on a rug. Rooms with places: dom, pokoj, przedpokoj, pokoj_noc | - (the home stage, phase 3) |

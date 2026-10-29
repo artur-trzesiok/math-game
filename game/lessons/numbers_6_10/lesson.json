@@ -17,7 +17,7 @@
     "pokoj",
     "tama_bobra"
   ],
-  "objects": [
+  "objects": ["ramka_dziesiatkowa", 
     "bal",
     "kamyk",
     "szyszka",
