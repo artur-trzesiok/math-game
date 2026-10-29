@@ -229,15 +229,17 @@ export default {
         // a gust: Bunny's kite is blown away to the playground
         await c.ujecie("ogolny");
         c.czastki("liscie", { wiatr: 1.6 });
-        const lat = await c.object("latawiec_kwadrat", { x: -2.0, y: -1.2, size: 1.3 });
+        await c.przejdz("jez", [[5.4, -3.3]]);
+        // the gust, as a comic: the kite flies, the string slips, the kite sails off to the playground
+        const il = await c.ilustracja("latawiec_porwany");
+        await il.okienko(1); await c.wait(1.8);
         c.sfx("whoosh");
-        await Promise.all([lat.moveTo(7.5, 3.0, 1.4), c.przejdz("jez", [[5.4, -3.3]])]);
-        lat.remove();
-        await c.ujecie("zblizenie", { na: "zajac" });
-        await c.emocja("zajac", "wykrzyknik");
+        await il.okienko(2);
         await c.say("zajac", "line.b_wiatr");
-        await c.ujecie("dwuujecie", { na: ["lisek", "zajac"] });
-        await c.say("lisek", "line.b_szukamy", { anim: "Machanie" });
+        await il.okienko(3);
+        await c.say("lisek", "line.b_szukamy");
+        await il.calosc(); await c.wait(1.0);
+        await il.zsun();
         c.czastki(null);
         c.clear();
       },

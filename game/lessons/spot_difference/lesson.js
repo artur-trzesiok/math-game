@@ -81,9 +81,11 @@ export default {
         await c.say("lisek", "line.b_gra_ok", { anim: "Radosc" });
         r1.remove();
         // helping: Owl's drawing for her granny, and the copy the pond made
+        const il = await c.ilustracja("staw_kopia", { ruch: "najazd" });    // the pond's copy, seen
+        await c.say("sowa", "line.b_rysunek");
+        await il.zsun();
         await c.ujecie("zblizenie", { na: "sowa" });                         // worried
         await c.emocja("sowa", "pot", { anim: "Smutek" });
-        await c.say("sowa", "line.b_rysunek");
         await c.ujecie("dwuujecie", { na: ["lisek", "sowa"] });
         await c.say("lisek", "line.b_pomoge");
         await c.ujecie("ogolny");                                            // the two drawings: every option in the shot

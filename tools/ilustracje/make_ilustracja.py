@@ -228,6 +228,27 @@ at the wooden table round one big steaming pot of pasta. The FOX slurps ONE very
 his plate up to his mouth, his cheeks puffed, laughing; the little SQUIRREL holds up ONE tiny short elbow macaroni on her
 fork, delighted; the DEER laughs at them. Plates, forks, a bowl of grated cheese. Cosy and funny.""",
     },
+    # spot_difference story: the magic, seen - the pond makes a copy of Owl's drawing for her granny
+    "staw_kopia": {
+        "postacie": ["sowa"], "tlo": "laka", "lekcje": ["spot_difference"],
+        "scena": """The edge of the little pond on the meadow from the reference picture, a sunny afternoon. The OWL has
+laid her child's crayon DRAWING (a sun, a little house with a red roof, a tree) on a flat stone right by the water.
+The pond's surface GLOWS with silver magical sparkles and soft rings, and out of the water a SECOND drawing of the
+same size is rising, dripping, shimmering in the sparkles - from here the two drawings look alike, their small details
+lost in the glow. The OWL jumps back in surprise, wings up, eyes wide, beak open. Magical and funny, not scary.""",
+    },
+    # shapes story, a COMIC: the gust takes Bunny's square kite away to the playground
+    "latawiec_porwany": {
+        "postacie": ["zajac", "lisek", "jez"], "tlo": "laka", "lekcje": ["shapes"], "uklad": "3d",
+        "scena": """PANEL 1 (top left): the BUNNY on the sunny meadow happily flies his ORANGE SQUARE KITE - a square
+standing on its corner, two crossed sticks, a tail of three bows red, orange and yellow - holding the string, the
+kite high in the blue sky.
+PANEL 2 (top right): a sudden strong GUST - leaves and petals whirl, the BUNNY's long ears are blown back, the string
+slips out of his paws, his mouth open in an "oh no!".
+PANEL 3 (the wide one below): the orange square kite sails far away over the treetops towards a distant PLAYGROUND
+with a red slide and swings; on the meadow the BUNNY, the FOX and the small HEDGEHOG, seen small from behind, point
+after it. Windy and lively, not scary.""",
+    },
     # morning_night story, a COMIC (three panels, revealed one by one): how little Hedgehog got lost as the day ended
     "jezyk_zgubil_sie": {
         "postacie": ["jez"], "tlo": "laka", "lekcje": ["morning_night"], "uklad": "3",

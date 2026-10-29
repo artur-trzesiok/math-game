@@ -1,0 +1,70 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "postacie": [
+  "zajac",
+  "lisek",
+  "jez"
+ ],
+ "lekcje": [
+  "shapes"
+ ],
+ "opis": "PANEL 1 (top left): the BUNNY on the sunny meadow happily flies his ORANGE SQUARE KITE - a square standing on its corner, two crossed sticks, a tail of three bows red, orange and yellow - holding the string, the kite high in the blue sky. PANEL 2 (top right): a sudden strong GUST - leaves and petals whirl, the BUNNY's long ears are blown back, the string slips out of his paws, his mouth open in an \"oh no!\". PANEL 3 (the wide one below): the orange square kite sails far away over the treetops towards a distant PLAYGROUND with a red slide and swings; on the meadow the BUNNY, the FOX and the small HEDGEHOG, seen small from behind, point after it. Windy and lively, not scary.",
+ "uklad": "3d",
+ "okienka": [
+  [
+   [
+    0.026,
+    0.0391
+   ],
+   [
+    0.026,
+    0.5713
+   ],
+   [
+    0.4642,
+    0.5449
+   ],
+   [
+    0.5378,
+    0.0391
+   ]
+  ],
+  [
+   [
+    0.5586,
+    0.0391
+   ],
+   [
+    0.4857,
+    0.543
+   ],
+   [
+    0.974,
+    0.5205
+   ],
+   [
+    0.974,
+    0.0391
+   ]
+  ],
+  [
+   [
+    0.974,
+    0.543
+   ],
+   [
+    0.026,
+    0.5938
+   ],
+   [
+    0.026,
+    0.9609
+   ],
+   [
+    0.974,
+    0.9609
+   ]
+  ]
+ ]
+}
