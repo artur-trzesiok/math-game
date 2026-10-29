@@ -237,9 +237,10 @@ export class Player {
     };
     const otwarty = topics.map((t) => otwartyId[t.id]);              // the chain over all the worlds (above)
     const nastepny = swiaty[nrSwiata + 1] || null;
-    // at the end of a world's strip, the gate to the next world (in a mist under a padlock until it opens)
+    // at the end of a world's strip, the gate to the next world: through it the next land is seen, in colour - an
+    // invitation (a padlock hangs on it until it opens)
     const brama = nastepny ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>
-      <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><img class="slupy" src="${v("/game/assets/menu/brama.webp")}" alt="">
+      <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><span class="rama"><span class="widok" style="background-image:url(${v(`/game/assets/menu/${nastepny.tlo}.webp`)})"></span><img class="slupy" src="${v("/game/assets/menu/brama.webp")}" alt=""></span>
         <div class="dokad"><img src="${v(`/game/assets/menu/odznaka_${nastepny.id}.webp`)}" alt="">${nastepny.title?.[this.lang] || nastepny.title?.en || ""}</div>
         ${otwartySwiat(nastepny) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}</div>` : "";
     pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
