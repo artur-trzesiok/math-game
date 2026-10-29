@@ -21,10 +21,14 @@ let stan = wczytaj();
 // a lesson's sticker comes in: new, waiting on the tray (a sticker already earned stays where it is)
 export function dodaj(lekcja) { if (!stan.naklejki[lekcja]) { stan.naklejki[lekcja] = { nowa: true }; zapisz(stan); } }
 export const ma = (lekcja) => !!stan.naklejki[lekcja];
-export const nieprzyklejone = () => Object.values(stan.naklejki).filter((n) => n.strona === undefined).length;
+// waiting on the tray: all of them, or only those of one world's album (ids: its lessons and stages)
+export const nieprzyklejone = (ids = null) => Object.entries(stan.naklejki).filter(([id, n]) => n.strona === undefined && (!ids || ids.has(id))).length;
 
-let opis = null;                                     // album.json: the pages' boxes in the spread picture
-const opisAlbumu = async () => (opis ||= await fetch(v("/game/assets/album/album.json"), { cache: "no-store" }).then((r) => r.json()));
+// every world its own album (tools/album/make_album.py ALBUMY): the forest's has no suffix, the others "_swiatN"
+const kon = (swiat) => (swiat && swiat !== "swiat1" ? `_${swiat}` : "");
+export const okladka = (swiat) => v(`/game/assets/album/okladka${kon(swiat)}.webp`);
+const opisy = {};                                    // album*.json: the pages' boxes in the spread picture
+const opisAlbumu = async (k) => (opisy[k] ||= await fetch(v(`/game/assets/album/album${k}.json`), { cache: "no-store" }).then((r) => r.json()));
 
 // the giving at the end of a lesson: the sticker big in the middle, glowing; a tap takes it (it flies up, to the album)
 export function wrecz(lekcja, naklejka, { szybko = false } = {}) {
@@ -42,13 +46,13 @@ export function wrecz(lekcja, naklejka, { szybko = false } = {}) {
 }
 
 // ---------------------------------------------------------------- the album itself
-export async function otworz({ lekcje, lang, speech, onZamknij }) {
-  const A = await opisAlbumu();
+export async function otworz({ lekcje, lang, speech, onZamknij, swiat = null }) {
+  const K = kon(swiat), A = await opisAlbumu(K), rozkladowka = v(`/game/assets/album/rozkladowka${K}.webp`);
   const naklejkiLekcji = Object.fromEntries(lekcje.filter((l) => l.naklejka).map((l) => [l.id, l.naklejka]));
   let rozklad = 0;                                    // which spread is open (pages 2k and 2k+1)
   const el = document.createElement("div"); el.id = "album";
   el.innerHTML = `<button class="zamknij" aria-label="zamknij">✕</button>
-    <div class="ksiazka"><img class="tlo" src="${v("/game/assets/album/rozkladowka.webp")}" alt="" draggable="false">
+    <div class="ksiazka"><img class="tlo" src="${rozkladowka}" alt="" draggable="false">
       <div class="strona" data-bok="0"></div><div class="strona" data-bok="1"></div></div>
     <button class="kartkuj wstecz" aria-label="wstecz">‹</button><button class="kartkuj dalej" aria-label="dalej">›</button>
     <div class="tacka"></div>`;
@@ -74,8 +78,9 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
     const powiedz = (k) => (tab[k] ? speech.say({ lang, lessonId: "album", key: k, text: tab[k].text, who: "narrator" }).catch(() => {}) : null);
     await powiedz("line.album_witaj");
     if (!el.isConnected) return;
-    if (!Object.keys(stan.naklejki).length) await powiedz("line.album_pusty");
-    else if (nieprzyklejone()) await powiedz("line.album_nowe");
+    const moje = new Set(Object.keys(naklejkiLekcji));
+    if (!Object.keys(stan.naklejki).some((id) => moje.has(id))) await powiedz("line.album_pusty");
+    else if (nieprzyklejone(moje)) await powiedz("line.album_nowe");
   };
   powitanie();
 
@@ -89,7 +94,7 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
     const lisc = document.createElement("div"); lisc.className = `lisc ${kier > 0 ? "w-lewo" : "w-prawo"}`;
     const twarz = (bok, strona) => {
       const [x0, y0, x1, y1] = A.strony[bok], pol = bok ? 0.5 : 0;
-      return `<div class="twarz ${bok ? "prawa" : "lewa"}" style="background-image:url(${v("/game/assets/album/rozkladowka.webp")})"><div class="strona" style="left:${(x0 - pol) * 200}%;top:${y0 * 100}%;width:${(x1 - x0) * 200}%;height:${(y1 - y0) * 100}%">${tresc(strona)}</div></div>`;
+      return `<div class="twarz ${bok ? "prawa" : "lewa"}" style="background-image:url(${rozkladowka})"><div class="strona" style="left:${(x0 - pol) * 200}%;top:${y0 * 100}%;width:${(x1 - x0) * 200}%;height:${(y1 - y0) * 100}%">${tresc(strona)}</div></div>`;
     };
     lisc.innerHTML = twarz(bokStary, rozklad * 2 + bokStary) + twarz(bokNowy, nowy * 2 + bokNowy).replace('class="twarz', 'class="twarz tyl');
     ksiazka.appendChild(lisc);
@@ -138,7 +143,7 @@ export async function otworz({ lekcje, lang, speech, onZamknij }) {
   // (positions in % of the page; a sticker is 27% of the page's width, the page about 0.72 as wide as tall)
   const SZ = 27, WYS = 27 * 0.72;
   const wolne = (strona, x0, y0) => {
-    const inne = Object.values(stan.naklejki).filter((n) => n.strona === strona);
+    const inne = Object.entries(stan.naklejki).filter(([id, n]) => n.strona === strona && naklejkiLekcji[id]).map(([, n]) => n);   // this album's only
     const pasuje = (x, y) => inne.every((n) => Math.abs(n.x - x) > SZ * 0.9 || Math.abs(n.y - y) > WYS * 0.95);
     let best = null, bd = Infinity;
     for (let x = 14; x <= 86; x += 3) for (let y = 12; y <= 88; y += 3) {

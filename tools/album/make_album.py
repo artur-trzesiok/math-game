@@ -42,6 +42,33 @@ Soft light, a gentle shadow in the fold.
 NO stickers, NO pictures on the pages, NO writing."""),
 }
 
+# every world its own album (the forest keeps the one above): another cover outside, other pages inside; the pages stay
+# light (album.json measures them by their light paper)
+ALBUMY = {
+    "swiat2": ("a soft light-blue linen cover with a thin hemp rope tied around it in a bow, a small pink seashell and a "
+               "little painted sailing boat on the front",
+               "a light-blue linen binding and cover edge with a hemp rope along the spine; each page has only a thin "
+               "delicate border of tiny painted waves, little shells and reeds near its edges"),
+    "swiat3": ("a snow-white and icy pale-blue cover with a big shiny painted snowflake in the middle, a little soft snow "
+               "on its top edge",
+               "an icy pale-blue binding and cover edge with a little soft snow on it; each page has only a thin delicate "
+               "border of tiny painted snowflakes and little pine twigs near its edges"),
+    "swiat4": ("a deep red velvet cover with shiny golden corners, a golden crown in the middle and a little red ribbon "
+               "bookmark hanging out",
+               "a deep red velvet binding and cover edge with golden corners; the pages are light cream parchment, each "
+               "with only a thin delicate border of tiny painted golden pennant flags and little crowns near its edges"),
+}
+for _s, (_okl, _rz) in ALBUMY.items():
+    OBRAZY[f"okladka_{_s}"] = ("1024x1024", "transparent", f"""ONE closed children's sticker album, seen from the front,
+slightly tilted, on a fully TRANSPARENT background with empty space around it. A thick square album: {_okl}, a few
+colourful stickers peeking out from between the pages. Friendly and inviting, like a treasure book.
+{STYL}""")
+    OBRAZY[f"rozkladowka_{_s}"] = ("1536x1024", "opaque", f"""A children's sticker album lying OPEN, seen straight from
+above, filling the whole picture: two big EMPTY pages of thick warm light paper side by side, {_rz}, and is otherwise
+COMPLETELY EMPTY - large clean space for stickers. Soft light, a gentle shadow in the fold.
+{STYL}
+NO stickers, NO pictures on the pages, NO writing.""")
+
 
 def gen() -> None:
     WORK.mkdir(parents=True, exist_ok=True)
@@ -70,14 +97,16 @@ def strony(im: Image.Image) -> list[list[float]]:
 
 def install() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    ok = Image.open(WORK / "okladka.png").convert("RGBA")
-    bb = ok.getchannel("A").point(lambda v: 255 if v > 20 else 0).getbbox()
-    ok = ok.crop(bb); ok.thumbnail((512, 512), Image.LANCZOS); ok.save(OUT / "okladka.webp", "WEBP", quality=88, method=6)
-    rz = Image.open(WORK / "rozkladowka.png").convert("RGB")
-    rz.save(OUT / "rozkladowka.webp", "WEBP", quality=86, method=6)
-    opis = {"strony": strony(rz), "wymiar": list(rz.size)}
-    (OUT / "album.json").write_text(json.dumps(opis, indent=1), encoding="utf-8")
-    print("strony:", opis["strony"])
+    for kon in [""] + [f"_{s}" for s in ALBUMY]:                         # the forest's album, then every world's own
+        if not (WORK / f"okladka{kon}.png").exists() or not (WORK / f"rozkladowka{kon}.png").exists(): continue
+        ok = Image.open(WORK / f"okladka{kon}.png").convert("RGBA")
+        bb = ok.getchannel("A").point(lambda v: 255 if v > 20 else 0).getbbox()
+        ok = ok.crop(bb); ok.thumbnail((512, 512), Image.LANCZOS); ok.save(OUT / f"okladka{kon}.webp", "WEBP", quality=88, method=6)
+        rz = Image.open(WORK / f"rozkladowka{kon}.png").convert("RGB")
+        rz.save(OUT / f"rozkladowka{kon}.webp", "WEBP", quality=86, method=6)
+        opis = {"strony": strony(rz), "wymiar": list(rz.size)}
+        (OUT / f"album{kon}.json").write_text(json.dumps(opis, indent=1), encoding="utf-8")
+        print(f"album{kon} strony:", opis["strony"])
 
 
 if __name__ == "__main__":

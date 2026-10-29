@@ -61,7 +61,7 @@
     border-image: url(/game/assets/menu/karta.webp) 70 fill / 4vh stretch; filter: drop-shadow(0 10px 18px rgba(0,0,0,.35)); animation: wskok .55s cubic-bezier(.2,1.5,.4,1) both; }
   #plansza .obraz { width: min(40vh, 52vw); aspect-ratio: 1; object-fit: cover; border-radius: 2.4vh; box-shadow: 0 0 0 4px rgba(90,53,24,.55); }
   #plansza .obraz.ikona { object-fit: contain; box-shadow: none; }
-  #plansza .napis { padding: .25em 1.4em .35em; font: 800 min(6vh, 7vw) "Baloo 2", system-ui; color: #5a3518; white-space: nowrap; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; }
+  #plansza .napis { padding: .25em 1.4em .35em; font: 800 min(6vh, 7vw) "Baloo 2", system-ui; color: #5a3518; white-space: nowrap;  }
   #plansza .glowa { position: absolute; top: 24vh; width: min(17vh, 20vw);   /* beside the picture: at the name they covered a long one */ filter: drop-shadow(0 4px 6px rgba(0,0,0,.3)); animation: bujaj 1.8s ease-in-out infinite; }
   #plansza .glowa.l { left: -6vh; } #plansza .glowa.p { right: -6vh; animation-delay: -.9s; }
   @keyframes zanik { from { opacity: 0; } to { opacity: 1; } }
@@ -102,12 +102,12 @@
   #menu h1 .szyld { height: calc(var(--k) * 0.5); filter: drop-shadow(0 5px 6px rgba(60,30,0,.3)); animation: kiw 5s ease-in-out infinite; }
   #menu h1 .napis { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   #langs { justify-self: end; display: flex; gap: calc(var(--k) * 0.05); margin-left: calc(var(--k) * 0.14); }   /* clear of the title sign */
-  #langs button { width: calc(var(--k) * 0.27); aspect-ratio: 1; border: 0; padding: 0; background: url(/game/assets/menu/guzik.webp) center / contain no-repeat; color: var(--braz);
+  #langs button { width: calc(var(--k) * 0.27); aspect-ratio: 1; border: 0; padding: 0; background: var(--guzik, url(/game/assets/menu/guzik.webp)) center / contain no-repeat; color: var(--braz);
     font: 800 calc(var(--k) * 0.085) / 1 "Baloo 2", system-ui; cursor: pointer; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); transition: transform .2s; display: grid; place-items: center; }
   #langs button svg { width: 34%; display: block; }
   #langs button.on { transform: scale(1.12); filter: drop-shadow(0 0 0 #ffd24a) drop-shadow(0 0 5px #ffd24a) drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   #langs button:active { transform: scale(.94); }
-  #lessons { display: flex; align-items: stretch; gap: calc(var(--k) * 0.12); overflow-x: auto; overflow-y: hidden; padding: 6px var(--safe) 14px; box-sizing: border-box; width: 100%;
+  #lessons { display: flex; align-items: stretch; gap: calc(var(--k) * 0.12); overflow-x: auto; overflow-y: hidden; padding: calc(6px + var(--k) * 0.14) var(--safe) 14px; margin-top: calc(var(--k) * -0.14); box-sizing: border-box; width: 100%;
              overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab;
              -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); mask-image: linear-gradient(90deg, transparent, #000 var(--fade-l, 0px), #000 calc(100% - var(--fade-r, 0px)), transparent); }
   #lessons::-webkit-scrollbar { display: none; }
@@ -136,7 +136,7 @@
   @keyframes kiwa { to { transform: translateY(-5%) rotate(-5deg); } }
   @keyframes drga { 50% { transform: translate(-50%, -50%) rotate(-4deg); } }
   .topic h2 { align-self: flex-start; margin: 0; padding: calc(var(--k) * 0.035) calc(var(--k) * 0.17) calc(var(--k) * 0.045); font: 800 max(14px, calc(var(--k) * 0.1)) "Baloo 2", system-ui; color: var(--braz);
-    background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
+     display: flex; align-items: center; gap: .4em; white-space: nowrap; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   .topic h2::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
   .topic.ze-znakiem h2::before { display: none; }
   .topic h2 .znak { height: 1.75em; margin: -0.5em 0 -0.45em -0.55em; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); }
@@ -168,7 +168,7 @@
   #menu.ze-swiatami { --k: max(100px, min(30vh, 55vw)); }
   #swiaty button { position: relative; display: flex; flex-direction: column; align-items: center; padding: 0; border: 0; background: none; cursor: pointer; }
   #swiaty button span { position: relative; z-index: 2; display: block; font: 800 max(10px, calc(var(--k) * 0.06)) "Baloo 2", system-ui; color: var(--braz); padding: .1em .9em .2em;
-    white-space: nowrap; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
+    white-space: nowrap;  filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
   #swiaty button:active span { transform: scale(.95); }
   #swiaty button .odznaka { position: relative; z-index: 1; width: calc(var(--k) * 0.4); margin-bottom: calc(var(--k) * -0.05); transform: scale(.72); transform-origin: 50% 100%; opacity: .95;
     filter: drop-shadow(0 4px 6px rgba(60,30,0,.35)); transition: transform .5s cubic-bezier(.3,1.5,.5,1), opacity .25s; pointer-events: none; }
@@ -183,7 +183,7 @@
     background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.97) 30%, rgba(255,255,255,.9) 60%, rgba(255,255,255,.75)); opacity: 0; transition: opacity .45s ease; }
   #swiatZmiana.widac { opacity: 1; }
   #swiatZmiana .odznaka { width: calc(var(--k) * 0.7); animation: kiw 3s ease-in-out infinite; filter: drop-shadow(0 6px 8px rgba(60,30,0,.3)); }
-  #swiatZmiana .nazwa { font: 800 min(7vh, 6vw) "Baloo 2", system-ui; color: var(--braz); padding: .15em 1.3em .3em; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat;
+  #swiatZmiana .nazwa { font: 800 min(7vh, 6vw) "Baloo 2", system-ui; color: var(--braz); padding: .15em 1.3em .3em; 
     filter: drop-shadow(0 4px 4px rgba(60,30,0,.3)); }
   #lessons.wjazd { animation: wjazd .7s cubic-bezier(.2,.8,.3,1); }
   @keyframes wjazd { from { transform: translateX(40vw); opacity: 0; } }
@@ -195,7 +195,7 @@
   .brama .rama { transition: transform .3s; }
   .brama:hover .rama { transform: scale(1.04); }
   .brama .dokad { display: flex; align-items: center; gap: .4em; font: 800 max(12px, calc(var(--k) * 0.075)) "Baloo 2", system-ui; color: var(--braz); padding: .15em 1em .25em; white-space: nowrap;
-    background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
+     filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
   .brama .dokad img { width: 1.6em; }
   .brama.zamknieta img.slupy { filter: saturate(.55) brightness(1.05) drop-shadow(0 6px 8px rgba(60,30,0,.3)); }   /* sharp: the padlock says it is shut */
   .brama .klodka { position: absolute; left: 50%; top: 42%; width: calc(var(--k) * 0.34); height: auto; transform: translate(-50%, -50%); filter: drop-shadow(0 6px 8px rgba(60,30,0,.35)); }
@@ -203,9 +203,15 @@
   /* the way back: the gate and the signpost mirrored, so their arrows point back; the land behind seen through it */
   .brama.wstecz img.slupy, .drogowskaz.wstecz img { transform: scaleX(-1); }
   .brama.wstecz .widok { left: 23%; right: 19%; }
-  .brama.wstecz .wracam { position: absolute; left: 50%; top: 52%; width: 50%; transform: translate(-50%, -50%); filter: drop-shadow(0 4px 6px rgba(60,30,0,.35)); }   /* the land you came from, its own badge */
   #chips button { font: 800 max(11px, min(calc(var(--k) * 0.068), 1.5vw)) "Baloo 2", system-ui; padding: .35em 1.1em .45em; border: 0; color: var(--braz); cursor: pointer; display: flex; align-items: center; gap: .45em;
-    background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
+     filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
+  /* the plank under a name: the box is the plank's bare wood, its land's decorations (moss, rope, snow, flags) stick out
+     around it (--deska-t/r/b/l: % of the box, player.js DESKI) - so the name and the stage sign never sit on them */
+  #plansza .napis, .topic h2, #swiaty button span, #swiatZmiana .nazwa, .brama .dokad, #chips button { position: relative; isolation: isolate; }
+  .topic h2 { z-index: 5; }      /* over the cards: its icicles and flags hang onto them */
+  #plansza .napis::after, .topic h2::after, #swiaty button span::after, #swiatZmiana .nazwa::after, .brama .dokad::after, #chips button::after {
+    content: ""; position: absolute; z-index: -1; pointer-events: none; top: calc(var(--deska-t, 0) * -1%); right: calc(var(--deska-r, 0) * -1%);
+    bottom: calc(var(--deska-b, 0) * -1%); left: calc(var(--deska-l, 0) * -1%); background: var(--deska, url(/game/assets/menu/deska.webp)) center / 100% 100% no-repeat; }
   #chips button::before { content: ""; width: .7em; height: .7em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
   #chips button.on { transform: translateY(-4px) scale(1.08); }
   .lesson { position: relative; display: flex; flex-direction: column; align-items: center; gap: calc(var(--k) * 0.02); width: calc(var(--k) * 1.22); padding: calc(var(--k) * 0.16) calc(var(--k) * 0.11) calc(var(--k) * 0.12);

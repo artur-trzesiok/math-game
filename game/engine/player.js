@@ -32,7 +32,10 @@ const PARAMS = new URLSearchParams(location.search);
 // on screen (the mist clears, the padlock opens and falls)
 const PRZEWINIECIE = "math_game.menu_x";                             // how far the menu strip was scrolled
 const OTWARTE = "math_game.otwarte", WIDZIANE = "math_game.widziane_otwarte", UKONCZONE = "math_game.etapy_ukonczone";
-const SWIAT = "math_game.swiat";                                       // the world the menu shows
+const SWIAT = "math_game.swiat";
+// a world's own plank (make_menu DESKI) and how far its decorations stick out of the bare wood, in % of the name's box
+const DESKI = { swiat1: [40, 1.4, 9, 1.8], swiat2: [45, 16, 10, 16], swiat3: [39, 1.8, 37, 1.9], swiat4: [62, 1.4, 6, 1.6] };
+const deska = (id) => `--deska:url(${v(`/game/assets/menu/deska_${id}.webp`)});` + (DESKI[id] || [0, 0, 0, 0]).map((x, i) => `--deska-${"trbl"[i]}:${x}`).join(";");                                       // the world the menu shows
 const lista = (k) => { try { return JSON.parse(localStorage.getItem(k)) || []; } catch { return []; } };
 const dopisz = (k, id) => { try { const l = lista(k); if (!l.includes(id)) localStorage.setItem(k, JSON.stringify([...l, id])); } catch { /* private mode */ } };
 const dzwiekMenu = (n) => { if (PARAMS.has("cicho")) return; try { const a = new Audio(v(`/game/audio/sfx/${n}.mp3`)); a.volume = 0.7; a.play().catch(() => {}); } catch { /* ignore */ } };
@@ -129,6 +132,7 @@ export class Player {
     const w = (this.index.swiaty || []).find((s) => s.id === id); if (!w) return;
     const z = $("#swiatZmiana");
     z.querySelector(".odznaka").src = v(`/game/assets/menu/odznaka_${w.id}.webp`);
+    z.querySelector(".nazwa").style.cssText = deska(w.id);
     z.querySelector(".nazwa").textContent = w.title?.[this.lang] || w.title?.en || "";
     z.style.display = "flex"; void z.offsetWidth; z.classList.add("widac"); dzwiekMenu("plansza");
     await new Promise((r) => setTimeout(r, 900));
@@ -159,15 +163,6 @@ export class Player {
     if (!zmiana) { menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20); }
     $("#title .napis").textContent = this.t("menu.title");
     $("#title .szyld").src = v(`/game/assets/menu/szyld_${this.lang}.webp`); $("#title .szyld").alt = this.t("menu.title");
-    // the album: its button shows how many stickers wait to be stuck in
-    const ab = $("#albumBtn"), ile = Album.nieprzyklejone();
-    ab.querySelector(".ksiega").src = v("/game/assets/album/okladka.webp"); ab.querySelector(".pniak").src = v("/game/assets/menu/pniak.webp"); ab.querySelector(".ile").textContent = ile || ""; ab.classList.toggle("nowe", ile > 0);
-    ab.onclick = async () => {
-      const lekcje = await Promise.all(this.index.lessons.filter((l) => !l.wkrotce).map(async (l) => ({ id: l.id, naklejka: (await fetch(v(`/game/lessons/${l.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}))).naklejka })));
-      for (const t of this.index.topics || []) if (t.znak) lekcje.push({ id: t.id, naklejka: { obraz: `objects/${t.znak}`, kto: "lisek" } });   // a stage's own sticker
-      menuMuzyka.przycisz(0.35);
-      await Album.otworz({ lekcje, lang: this.lang, speech: this.speech, onZamknij: () => { menuMuzyka.przycisz(1); const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
-    };
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("")
       + `<button class="pelny" aria-label="fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="#5a3518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6"/></svg></button>`;
     $("#langs").onclick = (e) => { if (e.target.closest(".pelny")) return pelnyEkran(); const l = e.target.dataset.lang; if (l) location.search = `?lang=${l}`; };
@@ -192,13 +187,25 @@ export class Player {
     const nrSwiata = swiaty.indexOf(swiat);
     menu.style.backgroundImage = `url(${v(`/game/assets/menu/${swiat.tlo || "tlo"}.webp`)})`;
     menuMuzyka.graj(swiat.muzyka || "menu");
+    for (const d of deska(swiat.id).split(";")) { const i = d.indexOf(":"); document.documentElement.style.setProperty(d.slice(0, i), d.slice(i + 1)); }
     const topics = wszystkie.filter((t) => swiatEtapu(t.id) === swiat);
+    const stojak = (n) => (nrSwiata ? `${n}_${swiat.id}` : n);        // the signposts and gates of this land (make_menu STOJAKI)
+    document.documentElement.style.setProperty("--guzik", `url(${v(`/game/assets/menu/${stojak("guzik")}.webp`)})`);   // the round buttons
+    // the album, its own in every world (album.js): its button shows how many stickers wait to be stuck in
+    const ab = $("#albumBtn"), ids = this.albumIds = new Set(topics.flatMap((t) => [t.id, ...t.lessons])), ile = Album.nieprzyklejone(ids);
+    ab.querySelector(".ksiega").src = Album.okladka(swiat.id); ab.querySelector(".pniak").src = v(`/game/assets/menu/${stojak("pniak")}.webp`); ab.querySelector(".ile").textContent = ile || ""; ab.classList.toggle("nowe", ile > 0);
+    ab.onclick = async () => {
+      const lekcje = await Promise.all(this.index.lessons.filter((l) => !l.wkrotce && ids.has(l.id)).map(async (l) => ({ id: l.id, naklejka: (await fetch(v(`/game/lessons/${l.id}/lesson.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({}))).naklejka })));
+      for (const t of topics) if (t.znak) lekcje.push({ id: t.id, naklejka: { obraz: `objects/${t.znak}`, kto: "lisek" } });   // a stage's own sticker
+      menuMuzyka.przycisz(0.35);
+      await Album.otworz({ lekcje, swiat: swiat.id, lang: this.lang, speech: this.speech, onZamknij: () => { menuMuzyka.przycisz(1); const k = Album.nieprzyklejone(ids); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); } });
+    };
     // the world switcher: a badge per world; an open one takes you there, a locked one shakes
     // the world switcher: every land's painted picture over a plank with its name (for a parent - a child cannot read);
     // a tap lifts the picture - an open land then takes you there, a locked one shows its padlock and shakes
     $("#swiaty").innerHTML = swiaty.length < 2 ? "" : swiaty.map((s) => `<button data-swiat="${s.id}" class="${s === swiat ? "on" : ""}${otwartySwiat(s) ? "" : " zamkniety"}">
       <img class="odznaka" src="${v(`/game/assets/menu/odznaka_${s.id}.webp`)}" alt="">${otwartySwiat(s) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}
-      <span>${s.title?.[this.lang] || s.title?.en || ""}</span></button>`).join("");
+      <span style="${deska(s.id)}">${s.title?.[this.lang] || s.title?.en || ""}</span></button>`).join("");
     menu.classList.toggle("ze-swiatami", swiaty.length > 1);
     $("#swiaty").onclick = (e) => {
       const b = e.target.closest("button"); if (!b || b.classList.contains("wysun")) return;
@@ -239,17 +246,17 @@ export class Player {
     const nastepny = swiaty[nrSwiata + 1] || null;
     // at the end of a world's strip, the gate to the next world: through it the next land is seen, in colour - an
     // invitation (a padlock hangs on it until it opens)
-    const brama = nastepny ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>
-      <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><span class="rama"><span class="widok" style="background-image:url(${v(`/game/assets/menu/${nastepny.tlo}.webp`)})"></span><img class="slupy" src="${v("/game/assets/menu/brama.webp")}" alt=""></span>
-        <div class="dokad"><img src="${v(`/game/assets/menu/odznaka_${nastepny.id}.webp`)}" alt="">${nastepny.title?.[this.lang] || nastepny.title?.en || ""}</div>
+    const brama = nastepny ? `<div class="drogowskaz"><img src="${v(`/game/assets/menu/${stojak("drogowskaz")}.webp`)}" alt=""></div>
+      <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><span class="rama"><span class="widok" style="background-image:url(${v(`/game/assets/menu/${nastepny.tlo}.webp`)})"></span><img class="slupy" src="${v(`/game/assets/menu/${stojak("brama")}.webp`)}" alt=""></span>
+        <div class="dokad" style="${deska(nastepny.id)}"><img src="${v(`/game/assets/menu/odznaka_${nastepny.id}.webp`)}" alt="">${nastepny.title?.[this.lang] || nastepny.title?.en || ""}</div>
         ${otwartySwiat(nastepny) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}</div>` : "";
     // at the START of a world's strip (not the first world), the gate back: mirrored, its arrow pointing back, the land it
     // returns to seen through it - the child sees it is the way home
     const poprzedni = swiaty[nrSwiata - 1] || null;
-    const powrot = poprzedni ? `<div class="brama wstecz" data-swiat="${poprzedni.id}"><span class="rama"><span class="widok" style="background-image:url(${v(`/game/assets/menu/${poprzedni.tlo}.webp`)})"></span><img class="slupy" src="${v("/game/assets/menu/brama.webp")}" alt=""><img class="wracam" src="${v(`/game/assets/menu/odznaka_${poprzedni.id}.webp`)}" alt=""></span>
-        <div class="dokad"><img src="${v(`/game/assets/menu/odznaka_${poprzedni.id}.webp`)}" alt="">${poprzedni.title?.[this.lang] || poprzedni.title?.en || ""}</div></div>
-      <div class="drogowskaz wstecz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "";
-    pas.innerHTML = powrot + topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
+    const powrot = poprzedni ? `<div class="brama wstecz" data-swiat="${poprzedni.id}"><span class="rama"><span class="widok" style="background-image:url(${v(`/game/assets/menu/${poprzedni.tlo}.webp`)})"></span><img class="slupy" src="${v(`/game/assets/menu/${stojak("brama")}.webp`)}" alt=""></span>
+        <div class="dokad" style="${deska(poprzedni.id)}"><img src="${v(`/game/assets/menu/odznaka_${poprzedni.id}.webp`)}" alt="">${poprzedni.title?.[this.lang] || poprzedni.title?.en || ""}</div></div>
+      <div class="drogowskaz wstecz"><img src="${v(`/game/assets/menu/${stojak("drogowskaz")}.webp`)}" alt=""></div>` : "";
+    pas.innerHTML = powrot + topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v(`/game/assets/menu/${stojak("drogowskaz")}.webp`)}" alt=""></div>` : "") + `
       <section class="topic${otwarty[i] ? "" : " zamkniety"}${t.znak ? " ze-znakiem" : ""}" data-topic="${t.id}" style="--c:${t.color};--odcien:${odcien(t.color)}deg">
         ${t.title ? `<h2>${t.znak ? `<img class="znak" src="${v(`/game/assets/objects/${t.znak}.webp`)}" alt="">` : ""}${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
@@ -362,7 +369,7 @@ export class Player {
     z.style.animation = "none"; z.style.transition = "transform .9s cubic-bezier(.5,-0.3,.6,1)"; el.classList.add("odlot");
     z.style.transform = `translate(${a.left + a.width / 2 - (b.left + b.width / 2)}px, ${a.top + a.height / 2 - (b.top + b.height / 2)}px) scale(.18)`;
     await new Promise((r) => setTimeout(r, 950));
-    const k = Album.nieprzyklejone(); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); dzwiekMenu("pop");
+    const k = Album.nieprzyklejone(this.albumIds); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); dzwiekMenu("pop");
     el.remove(); gotowe();
   }
 
