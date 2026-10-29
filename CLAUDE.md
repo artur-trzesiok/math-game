@@ -1,6 +1,6 @@
 # math_game - how to work here
 
-Read `guidelines.md` first: it is the concept (pedagogy, three stages, safe area,
+Read `MEMORY.md` (the session memory) first, then `guidelines.md`: the concept (pedagogy, three stages, safe area,
 the lesson contract). This file is the mechanics: layout, pipelines, tests, rules
 that cost time to learn. Chat with the user is in Polish; code, commits and repo
 docs are in English. Engine internals (`lalka.js`, `tlo.js`, `make_character.py`)
@@ -498,6 +498,14 @@ fields, "zablokuj" to keep the selection under the cursor, Ctrl+Z, Ctrl+S. Savin
 writes `postac.json` and `poprawki.json` (the diff from `postac.build.json`);
 `install` re-applies that file after every rebuild. A correction that repeats
 across characters is a pipeline bug: fix the measurement, delete the file.
+
+## Memory
+
+`MEMORY.md` is the session memory of this project: the user's standing rules, decisions they made, where the work
+stands, pitfalls that cost time and what is left open. Read it at the start of every session (on any machine) and
+keep it current: when the user decides something, a lesson or tool changes state, or a mistake costs time, update the
+matching section in the same step and commit it with the work. Keep it short - facts and rules, not a diary; what the
+code, this file or guidelines.md already say does not go there.
 
 ## Git
 
