@@ -604,7 +604,7 @@ export class Stage {
     else if (d.zone) { d.zone.put(it); }                              // dropped nowhere: back where it was
     else it.moveTo(it.home.x, it.home.y, 0.35);
   }
-  clear() { for (const L of Object.values(this.puppets)) L.patrzNa(null); this.unfocus(0);
+  clear() { for (const L of Object.values(this.puppets)) L.patrzNa(null); this.unfocus(0); this.dwuujecie = null;   // a two-shot's stored places never reach the next scene
     this.palec = null; this.palecWcisniety = false;                      // a finger mechanic of a skipped scene lets go
     for (const d of this.dymki.slice()) d.remove();
     this.endSort();

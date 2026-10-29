@@ -655,8 +655,8 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
   // something still popping in (grown from nothing) is measured too small: the shot framed an empty box
   const rosnie = (h) => (h.korzen ? h.korzen.scale.x < 0.97 : h.mesh && h.base ? h.mesh.scale.x < h.base * 0.97 : false);
   for (let i = 0; i < 8 && lista.some(rosnie); i++) await S.wait(0.06);
-  // back from a two-shot: the characters return to their places
-  if (S.dwuujecie && typ !== "dwuujecie") { for (const [L, x] of S.dwuujecie) L.korzen.position.x = x; S.dwuujecie = null; }
+  // back from a two-shot (also before the next one, else its pair is never stored): the characters return to their places
+  if (S.dwuujecie) { for (const [L, x] of S.dwuujecie) L.korzen.position.x = x; S.dwuujecie = null; }
   const v = S.visible(0);
   let z = 1, cx = 0, cy = 0;
   if (typ === "zblizenie" && lista[0]?.korzen) {
@@ -668,12 +668,13 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
     const h = (b.max.y - b.min.y) * 1.55;                                 // the head and a little of the shoulders
     z = Math.min(3.4, v.h / h); cx = (b.min.x + b.max.x) / 2; cy = (b.min.y + b.max.y) / 2 - (b.max.y - b.min.y) * 0.12;
   } else if (typ === "dwuujecie" && lista.length >= 2) {
-    if (!S.dwuujecie) { S.dwuujecie = lista.map((L) => [L, L.korzen.position.x]); }
+    S.dwuujecie = lista.map((L) => [L, L.korzen.position.x]);
     const [A, B] = lista, lewy = A.korzen.position.x <= B.korzen.position.x ? A : B, prawy = lewy === A ? B : A;
     // closer together around their own middle (fixed spots at +-2.3 put Squirrel into a brook); near enough: stay
     const sr = (lewy.korzen.position.x + prawy.korzen.position.x) / 2, rozstaw = prawy.korzen.position.x - lewy.korzen.position.x;
     // never onto things on the ground: with containers or stickers between them they stay, the camera frames them
-    const cosMiedzy = S.objects.some((o) => o.mesh?.visible !== false && (o.kind === "zone" || o.kind === "object") && o.mesh.position.x > lewy.korzen.position.x && o.mesh.position.x < prawy.korzen.position.x);
+    const cosMiedzy = S.objects.some((o) => o.mesh?.visible !== false && (o.kind === "zone" || o.kind === "object") && o.mesh.position.x > lewy.korzen.position.x && o.mesh.position.x < prawy.korzen.position.x)
+      || Object.values(S.puppets).some((L) => !lista.includes(L) && L.korzen?.visible !== false && L.korzen?.parent && L.korzen.position.x > lewy.korzen.position.x && L.korzen.position.x < prawy.korzen.position.x);   // nor through a third character
     if (rozstaw > 4.6 && !cosMiedzy) { lewy.korzen.position.x = sr - 2.3; prawy.korzen.position.x = sr + 2.3; }
     const b = obwiednia(S, lista);
     const h = (b.max.y - b.min.y) * 0.72 + 1.0;                           // from the waist up, room over the heads (the HUD)
