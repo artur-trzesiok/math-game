@@ -21,11 +21,11 @@
   },
   "line.a_wszyscy": {
     "who": "lisek",
-    "text": "Teraz wszyscy stoimy na trawie."
+    "text": "Stańmy wszyscy na jednej kresce, na tej samej ziemi. Narysuję kreskę nad każdą głową."
   },
   "line.a_najwyzszy": {
     "who": "lisek",
-    "text": "Kto z nas jest najwyższy? Wskaż."
+    "text": "Wskaż, kto z nas jest najwyższy."
   },
   "line.a_najwyzszy_nie": {
     "who": "lisek",
@@ -37,7 +37,7 @@
   },
   "line.a_najnizszy": {
     "who": "lisek",
-    "text": "A kto jest najniższy? Wskaż."
+    "text": "A teraz wskaż, kto z nas jest najniższy."
   },
   "line.a_najnizszy_nie": {
     "who": "lisek",
@@ -53,11 +53,11 @@
   },
   "line.b_postaw": {
     "who": "lisek",
-    "text": "Postaw oba kije na kresce, na tej samej ziemi. Przeciągnij je."
+    "text": "Przeciągnij oba kije na kreskę, żeby stały na tej samej ziemi."
   },
   "line.b_ktory": {
     "who": "lisek",
-    "text": "Który kij jest wyższy? Wskaż."
+    "text": "Wskaż, który kij jest wyższy."
   },
   "line.b_ktory_nie": {
     "who": "lisek",
@@ -73,7 +73,7 @@
   },
   "line.b_najnizsze": {
     "who": "lisek",
-    "text": "Jeżyk dosięgnie tylko do najniższego drzewka. Które jest najniższe? Wskaż."
+    "text": "Jeżyk dosięgnie tylko do najniższego drzewka. Wskaż, które drzewko jest najniższe."
   },
   "line.b_najnizsze_nie": {
     "who": "lisek",
@@ -81,15 +81,7 @@
   },
   "line.b_dziekuje": {
     "who": "jez",
-    "text": "Dosięgnąłem! Dziękuję."
-  },
-  "line.b_lapanie": {
-    "who": "mis",
-    "text": "Wyrastają słoneczniki! Łap wysoki słonecznik, wskaż go."
-  },
-  "line.b_do_domu": {
-    "who": "lisek",
-    "text": "Ale było fajnie! Chodźmy do domu."
+    "text": "To najniższe drzewko! Dosięgnąłem. Dziękuję!"
   },
   "line.p_start": {
     "who": "lisek",
@@ -97,7 +89,7 @@
   },
   "line.p_wyzsza": {
     "who": "mis",
-    "text": "Która świeca jest wyższa? Wskaż."
+    "text": "Wskaż, która świeca jest wyższa."
   },
   "line.p_wyzsza_nie": {
     "who": "mis",
@@ -113,7 +105,7 @@
   },
   "line.p_ktory": {
     "who": "lisek",
-    "text": "Który słonecznik jest wyższy? Wskaż."
+    "text": "Wskaż, który słonecznik jest wyższy."
   },
   "line.p_ktory_nie": {
     "who": "lisek",
@@ -121,7 +113,7 @@
   },
   "line.p_najnizszy": {
     "who": "mis",
-    "text": "Który kij jest najniższy? Wskaż."
+    "text": "Wskaż, który kij jest najniższy."
   },
   "line.p_najnizszy_nie": {
     "who": "mis",
@@ -133,19 +125,15 @@
   },
   "line.p_cien": {
     "who": "lisek",
-    "text": "Czyj to cień: wysokiego drzewka czy niskiego? Wskaż."
+    "text": "Wskaż drzewko, do którego pasuje ten cień: wysokie czy niskie?"
   },
   "line.p_cien_nie": {
     "who": "lisek",
     "text": "Popatrz na cień jeszcze raz. Czy jest wysoki, czy niski?"
   },
-  "line.p_cien_ok": {
-    "who": "mis",
-    "text": "Tak! Cień pasuje do drzewka."
-  },
   "line.p_kto": {
     "who": "lisek",
-    "text": "Teraz my! Kto z nas jest najniższy? Wskaż."
+    "text": "Teraz my! Wskaż, kto z nas jest najniższy."
   },
   "line.p_kto_nie": {
     "who": "lisek",
@@ -161,7 +149,7 @@
   },
   "line.d_najwyzszy": {
     "who": "mis",
-    "text": "Popatrz na kreski na miarce. Kto jest najwyższy? Wskaż."
+    "text": "Popatrz na kreski na miarce. Wskaż kreskę, która jest najwyżej."
   },
   "line.d_nie": {
     "who": "lisek",
@@ -171,10 +159,6 @@
       "wiewiorka",
       "jez"
     ]
-  },
-  "line.d_najnizszy": {
-    "who": "wiewiorka",
-    "text": "A kto jest najniższy? Wskaż."
   },
   "line.d_rosne": {
     "who": "jez",
@@ -206,11 +190,11 @@
   },
   "line.c_klucz": {
     "who": "wiewiorka",
-    "text": "Tam, na samej górze, na haczyku! Hop! Nie sięgam."
+    "text": "Tam, na samej górze, na haczyku! Hop, hop... nie sięgam."
   },
   "line.c_kto": {
     "who": "lisek",
-    "text": "Klucz wisi bardzo wysoko. Zdejmie go najwyższy z nas. Kto to? Wskaż."
+    "text": "Klucz wisi bardzo wysoko. Zdejmie go najwyższy z nas. Wskaż, kto to jest."
   },
   "line.c_kto_nie": {
     "who": "lisek",
@@ -230,7 +214,7 @@
   },
   "line.c_myszki": {
     "who": "lisek",
-    "text": "W sadzie schowało się sześć myszek. Znajdź je wszystkie! Dotknij każdej myszki."
+    "text": "W sadzie schowały się myszki. Wskaż każdą myszkę, znajdź je wszystkie!"
   },
   "line.c_wszystkie": {
     "who": "mis",
@@ -246,7 +230,7 @@
   },
   "line.d_zabierz": {
     "who": "wiewiorka",
-    "text": "Jeżyku, książki tylko cię podnoszą! Zabierz książki spod Jeżyka. Przeciągnij je na bok."
+    "text": "Jeżyku, książki tylko cię podnoszą! Tak się nie mierzy."
   },
   "line.d_na_podlodze": {
     "who": "lisek",
@@ -254,6 +238,90 @@
   },
   "line.d_kto_wyzszy": {
     "who": "jez",
-    "text": "A kto jest wyższy: Lisek czy Wiewiórka? Wskaż."
+    "text": "Wskaż, kto jest wyższy: Lisek czy Wiewiórka."
+  },
+  "line.b_chowany": {
+    "who": "jez",
+    "text": "A teraz pobawmy się w chowanego! Misiu, ty szukasz, a my schowamy się w krzakach."
+  },
+  "line.b_zasady": {
+    "who": "mis",
+    "text": "Dobrze! Kto się schowa, zawoła: a kuku! A ty wskażesz krzak, z którego dobiegł głos."
+  },
+  "line.b_smutno": {
+    "who": "jez",
+    "text": "Szkoda, że jestem taki niski. Nie wejdę po drabince do domku i nigdy nie zobaczę lasu z góry."
+  },
+  "line.b_obiecuje": {
+    "who": "mis",
+    "text": "Chodź z nami do domu, Jeżyku. Coś wymyślę, obiecuję!"
+  },
+  "line.c_okno": {
+    "who": "mis",
+    "text": "Jesteśmy w domku na drzewie! Szybko, do okna!"
+  },
+  "line.c_las": {
+    "who": "mis",
+    "text": "Widzę cały las z góry! Jak tu wysoko! A na dole jest sad z jabłonkami."
+  },
+  "line.p_ktory_ok": {
+    "who": "mis",
+    "text": "Tak, ten słonecznik jest wyższy! Tamten tylko stał wyżej."
+  },
+  "line.p_cien_wysokie": {
+    "who": "mis",
+    "text": "Tak, to cień wysokiego drzewka!"
+  },
+  "line.p_cien_niskie": {
+    "who": "mis",
+    "text": "Tak, to cień niskiego drzewka!"
+  },
+  "line.d_najwyzszy_ok": {
+    "who": "mis",
+    "text": "Tak, to moja kreska! Jestem najwyższy z nas."
+  },
+  "line.d_wyzszy_ok": {
+    "who": "lisek",
+    "text": "Tak, ja jestem wyższy od Wiewiórki, a Wiewiórka jest niższa ode mnie."
+  },
+  "line.d_powrot": {
+    "who": "mis",
+    "text": "Jesteśmy w domu! Jeżyk przyszedł z nami, a ja przyniosłem lunetę z domku na drzewie."
+  },
+  "line.d_powies": {
+    "who": "mis",
+    "text": "Powieś lunetę wysoko na wieszaku, żeby się nie zgubiła. Przeciągnij ją na haczyk."
+  },
+  "line.d_odloz": {
+    "who": "wiewiorka",
+    "text": "Odłóż książki na półkę w szafce, żeby Jeżyk stanął na podłodze."
+  },
+  "line.d_smutno": {
+    "who": "jez",
+    "text": "Jestem najniższy. Nigdy nie zobaczę lasu z góry tak jak Miś."
+  },
+  "line.d_ramiona": {
+    "who": "mis",
+    "text": "Zobaczysz! Jestem najwyższy, więc zdejmę lunetę z haczyka. A teraz wskakuj mi na ramiona!"
+  },
+  "line.d_widze": {
+    "who": "jez",
+    "text": "Widzę cały las! Teraz jestem najwyżej ze wszystkich."
+  },
+  "line.d_ale": {
+    "who": "wiewiorka",
+    "text": "Najwyżej, ale nie najwyższy! To Miś cię podniósł."
+  },
+  "line.b_stoja": {
+    "who": "mis",
+    "text": "Teraz oba kije stoją na tej samej ziemi. Od razu widać różnicę!"
+  },
+  "line.p_stoja": {
+    "who": "mis",
+    "text": "Teraz oba słoneczniki stoją na kresce, na tej samej ziemi."
+  },
+  "line.c_widze_sad": {
+    "who": "mis",
+    "text": "Patrzę przez lunetę... Widzę sad pod domkiem!"
   }
 }

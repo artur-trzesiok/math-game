@@ -34,11 +34,13 @@
     "skrzynia_otwarta",
     "luneta",
     "klucz_stary",
-    "ksiazeczka"
+    "ksiazeczka",
+    "krzak"
   ],
   "cover": "Big Bear reaches up to a little treehouse in a tall tree in a forest while small Squirrel stands on a tree stump on tiptoe beside him and Fox laughs.",
   "naklejka": {
     "obraz": "objects/domek_na_drzewie",
     "kto": "mis"
-  }
+  },
+  "oddech": "ktoPowiedzial"
 }

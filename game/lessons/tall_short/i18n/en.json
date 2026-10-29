@@ -21,11 +21,11 @@
   },
   "line.a_wszyscy": {
     "who": "lisek",
-    "text": "Now we're all standing on the grass."
+    "text": "Let's all stand on one line, on the same ground. I'll draw a line over every head."
   },
   "line.a_najwyzszy": {
     "who": "lisek",
-    "text": "Which of us is the tallest? Point to them."
+    "text": "Point to the tallest of us."
   },
   "line.a_najwyzszy_nie": {
     "who": "lisek",
@@ -37,7 +37,7 @@
   },
   "line.a_najnizszy": {
     "who": "lisek",
-    "text": "And who is the shortest? Point to them."
+    "text": "And now point to the shortest of us."
   },
   "line.a_najnizszy_nie": {
     "who": "lisek",
@@ -53,11 +53,11 @@
   },
   "line.b_postaw": {
     "who": "lisek",
-    "text": "Stand both sticks on the line, on the same ground. Drag them."
+    "text": "Drag both sticks onto the line, so they stand on the same ground."
   },
   "line.b_ktory": {
     "who": "lisek",
-    "text": "Which stick is taller? Point to it."
+    "text": "Point to the taller stick."
   },
   "line.b_ktory_nie": {
     "who": "lisek",
@@ -73,7 +73,7 @@
   },
   "line.b_najnizsze": {
     "who": "lisek",
-    "text": "Hedgehog can only reach the shortest tree. Which one is the shortest? Point to it."
+    "text": "Hedgehog can only reach the shortest tree. Point to the shortest tree."
   },
   "line.b_najnizsze_nie": {
     "who": "lisek",
@@ -81,15 +81,7 @@
   },
   "line.b_dziekuje": {
     "who": "jez",
-    "text": "I reached it! Thank you."
-  },
-  "line.b_lapanie": {
-    "who": "mis",
-    "text": "Sunflowers are popping up! Catch the tall sunflower, point to it."
-  },
-  "line.b_do_domu": {
-    "who": "lisek",
-    "text": "That was fun! Let's go home."
+    "text": "The shortest tree! I reached it. Thank you!"
   },
   "line.p_start": {
     "who": "lisek",
@@ -97,7 +89,7 @@
   },
   "line.p_wyzsza": {
     "who": "mis",
-    "text": "Which candle is taller? Point to it."
+    "text": "Point to the taller candle."
   },
   "line.p_wyzsza_nie": {
     "who": "mis",
@@ -113,7 +105,7 @@
   },
   "line.p_ktory": {
     "who": "lisek",
-    "text": "Which sunflower is taller? Point to it."
+    "text": "Point to the taller sunflower."
   },
   "line.p_ktory_nie": {
     "who": "lisek",
@@ -121,7 +113,7 @@
   },
   "line.p_najnizszy": {
     "who": "mis",
-    "text": "Which stick is the shortest? Point to it."
+    "text": "Point to the shortest stick."
   },
   "line.p_najnizszy_nie": {
     "who": "mis",
@@ -133,19 +125,15 @@
   },
   "line.p_cien": {
     "who": "lisek",
-    "text": "Whose shadow is it: the tall tree's or the short one's? Point to it."
+    "text": "Point to the tree this shadow belongs to: the tall one or the short one?"
   },
   "line.p_cien_nie": {
     "who": "lisek",
     "text": "Look at the shadow again. Is it tall or short?"
   },
-  "line.p_cien_ok": {
-    "who": "mis",
-    "text": "Yes! The shadow fits the tree."
-  },
   "line.p_kto": {
     "who": "lisek",
-    "text": "Now us! Which of us is the shortest? Point to them."
+    "text": "Now us! Point to the shortest of us."
   },
   "line.p_kto_nie": {
     "who": "lisek",
@@ -161,7 +149,7 @@
   },
   "line.d_najwyzszy": {
     "who": "mis",
-    "text": "Look at the lines on the chart. Who is the tallest? Point to them."
+    "text": "Look at the lines on the chart. Point to the highest line."
   },
   "line.d_nie": {
     "who": "lisek",
@@ -171,10 +159,6 @@
       "wiewiorka",
       "jez"
     ]
-  },
-  "line.d_najnizszy": {
-    "who": "wiewiorka",
-    "text": "And who is the shortest? Point to them."
   },
   "line.d_rosne": {
     "who": "jez",
@@ -206,11 +190,11 @@
   },
   "line.c_klucz": {
     "who": "wiewiorka",
-    "text": "Up there, at the very top, on the peg! Hop! I can't reach."
+    "text": "Up there, at the very top, on the peg! Hop, hop... I can't reach."
   },
   "line.c_kto": {
     "who": "lisek",
-    "text": "The key hangs very high. The tallest of us will take it down. Who is that? Point to them."
+    "text": "The key hangs very high. The tallest of us will take it down. Point to who that is."
   },
   "line.c_kto_nie": {
     "who": "lisek",
@@ -230,7 +214,7 @@
   },
   "line.c_myszki": {
     "who": "lisek",
-    "text": "Six mice are hiding in the orchard. Find them all! Touch each mouse."
+    "text": "Some mice are hiding in the orchard. Point to every mouse and find them all!"
   },
   "line.c_wszystkie": {
     "who": "mis",
@@ -246,7 +230,7 @@
   },
   "line.d_zabierz": {
     "who": "wiewiorka",
-    "text": "Hedgehog, the books only lift you up! Take the books from under Hedgehog. Drag them aside."
+    "text": "Hedgehog, the books only lift you up! That's not how we measure."
   },
   "line.d_na_podlodze": {
     "who": "lisek",
@@ -254,6 +238,90 @@
   },
   "line.d_kto_wyzszy": {
     "who": "jez",
-    "text": "And who is taller: Fox or Squirrel? Point to them."
+    "text": "Point to who is taller: Fox or Squirrel."
+  },
+  "line.b_chowany": {
+    "who": "jez",
+    "text": "And now let's play hide and seek! Bear, you look for us, and we'll hide in the bushes."
+  },
+  "line.b_zasady": {
+    "who": "mis",
+    "text": "All right! Whoever is hiding will call: peekaboo! And you will point to the bush the voice came from."
+  },
+  "line.b_smutno": {
+    "who": "jez",
+    "text": "Too bad I'm so short. I can't climb the ladder to the treehouse, and I'll never see the forest from above."
+  },
+  "line.b_obiecuje": {
+    "who": "mis",
+    "text": "Come home with us, Hedgehog. I'll think of something, I promise!"
+  },
+  "line.c_okno": {
+    "who": "mis",
+    "text": "We're in the treehouse! Quick, to the window!"
+  },
+  "line.c_las": {
+    "who": "mis",
+    "text": "I can see the whole forest from above! It's so high up here! And down below there's an orchard with apple trees."
+  },
+  "line.p_ktory_ok": {
+    "who": "mis",
+    "text": "Yes, this sunflower is taller! The other one was only standing higher up."
+  },
+  "line.p_cien_wysokie": {
+    "who": "mis",
+    "text": "Yes, it's the tall tree's shadow!"
+  },
+  "line.p_cien_niskie": {
+    "who": "mis",
+    "text": "Yes, it's the short tree's shadow!"
+  },
+  "line.d_najwyzszy_ok": {
+    "who": "mis",
+    "text": "Yes, that's my line! I'm the tallest of us."
+  },
+  "line.d_wyzszy_ok": {
+    "who": "lisek",
+    "text": "Yes, I'm taller than Squirrel, and Squirrel is shorter than me."
+  },
+  "line.d_powrot": {
+    "who": "mis",
+    "text": "We're home! Hedgehog came with us, and I brought the spyglass from the treehouse."
+  },
+  "line.d_powies": {
+    "who": "mis",
+    "text": "Hang the spyglass high on the hooks, so it doesn't get lost. Drag it onto a hook."
+  },
+  "line.d_odloz": {
+    "who": "wiewiorka",
+    "text": "Put the books on the shelf of the shoe rack, so Hedgehog stands on the floor."
+  },
+  "line.d_smutno": {
+    "who": "jez",
+    "text": "I'm the shortest. I'll never see the forest from above like Bear did."
+  },
+  "line.d_ramiona": {
+    "who": "mis",
+    "text": "You will! I'm the tallest, so I'll take the spyglass off the hook. Now climb up on my shoulders!"
+  },
+  "line.d_widze": {
+    "who": "jez",
+    "text": "I can see the whole forest! Now I'm the highest of all."
+  },
+  "line.d_ale": {
+    "who": "wiewiorka",
+    "text": "The highest, but not the tallest! Bear lifted you up."
+  },
+  "line.b_stoja": {
+    "who": "mis",
+    "text": "Now both sticks stand on the same ground. You can see the difference at once!"
+  },
+  "line.p_stoja": {
+    "who": "mis",
+    "text": "Now both sunflowers stand on the line, on the same ground."
+  },
+  "line.c_widze_sad": {
+    "who": "mis",
+    "text": "I'm looking through the spyglass... I can see the orchard below the treehouse!"
   }
 }

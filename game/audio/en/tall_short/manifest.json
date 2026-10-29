@@ -25,14 +25,14 @@
   "text": "The stump only lifted you up. To check who is tall and who is short, we must stand on the same ground."
  },
  "line.a_wszyscy": {
-  "hash": "7fd9124e4fff",
+  "hash": "5c6a7dd4c140",
   "who": "lisek",
-  "text": "Now we're all standing on the grass."
+  "text": "Let's all stand on one line, on the same ground. I'll draw a line over every head."
  },
  "line.a_najwyzszy": {
-  "hash": "4ed595c677ed",
+  "hash": "824efb557a00",
   "who": "lisek",
-  "text": "Which of us is the tallest? Point to them."
+  "text": "Point to the tallest of us."
  },
  "line.a_najwyzszy_nie": {
   "hash": "0c900a777c81",
@@ -45,9 +45,9 @@
   "text": "I'm the tallest! I can reach the branch."
  },
  "line.a_najnizszy": {
-  "hash": "8c298f8d4714",
+  "hash": "cd5fbdf5f2dd",
   "who": "lisek",
-  "text": "And who is the shortest? Point to them."
+  "text": "And now point to the shortest of us."
  },
  "line.a_najnizszy_nie": {
   "hash": "228e77e4759e",
@@ -65,14 +65,14 @@
   "text": "Oh dear, the ladder to the treehouse is broken. We need a tall stick."
  },
  "line.b_postaw": {
-  "hash": "ea3529a6a114",
+  "hash": "1758834f7bad",
   "who": "lisek",
-  "text": "Stand both sticks on the line, on the same ground. Drag them."
+  "text": "Drag both sticks onto the line, so they stand on the same ground."
  },
  "line.b_ktory": {
-  "hash": "d62df42ee8d2",
+  "hash": "4f8cd669c70b",
   "who": "lisek",
-  "text": "Which stick is taller? Point to it."
+  "text": "Point to the taller stick."
  },
  "line.b_ktory_nie": {
   "hash": "721cbdace4e3",
@@ -90,9 +90,9 @@
   "text": "Hello! I'd like to pick an apple, but I'm very short."
  },
  "line.b_najnizsze": {
-  "hash": "1ac09ac4c237",
+  "hash": "15862925034f",
   "who": "lisek",
-  "text": "Hedgehog can only reach the shortest tree. Which one is the shortest? Point to it."
+  "text": "Hedgehog can only reach the shortest tree. Point to the shortest tree."
  },
  "line.b_najnizsze_nie": {
   "hash": "c0dd1f25f5a0",
@@ -100,19 +100,9 @@
   "text": "That tree is too tall for Hedgehog. Look for the shortest one."
  },
  "line.b_dziekuje": {
-  "hash": "1f92ed19d60c",
+  "hash": "1b4964a6d47a",
   "who": "jez",
-  "text": "I reached it! Thank you."
- },
- "line.b_lapanie": {
-  "hash": "9d76d5e6ffa2",
-  "who": "mis",
-  "text": "Sunflowers are popping up! Catch the tall sunflower, point to it."
- },
- "line.b_do_domu": {
-  "hash": "af001b68241f",
-  "who": "lisek",
-  "text": "That was fun! Let's go home."
+  "text": "The shortest tree! I reached it. Thank you!"
  },
  "line.p_start": {
   "hash": "896c0d1c938b",
@@ -120,9 +110,9 @@
   "text": "Let's play tall and short! I have five games."
  },
  "line.p_wyzsza": {
-  "hash": "c2941ea083f5",
+  "hash": "724fa88d4f2d",
   "who": "mis",
-  "text": "Which candle is taller? Point to it."
+  "text": "Point to the taller candle."
  },
  "line.p_wyzsza_nie": {
   "hash": "bb450f8d576d",
@@ -140,9 +130,9 @@
   "text": "One sunflower is higher up, but is it taller? Stand both on the line."
  },
  "line.p_ktory": {
-  "hash": "aa645f736801",
+  "hash": "ddcc3d521472",
   "who": "lisek",
-  "text": "Which sunflower is taller? Point to it."
+  "text": "Point to the taller sunflower."
  },
  "line.p_ktory_nie": {
   "hash": "15143dab0c13",
@@ -150,9 +140,9 @@
   "text": "This one is shorter. Point to the taller sunflower."
  },
  "line.p_najnizszy": {
-  "hash": "69d0f12408db",
+  "hash": "2e1fa4554bf5",
   "who": "mis",
-  "text": "Which stick is the shortest? Point to it."
+  "text": "Point to the shortest stick."
  },
  "line.p_najnizszy_nie": {
   "hash": "93ed03b5777d",
@@ -165,24 +155,19 @@
   "text": "Yes! That's the shortest stick."
  },
  "line.p_cien": {
-  "hash": "8cafd8d50b77",
+  "hash": "db057a647f54",
   "who": "lisek",
-  "text": "Whose shadow is it: the tall tree's or the short one's? Point to it."
+  "text": "Point to the tree this shadow belongs to: the tall one or the short one?"
  },
  "line.p_cien_nie": {
   "hash": "b4d8215f6c02",
   "who": "lisek",
   "text": "Look at the shadow again. Is it tall or short?"
  },
- "line.p_cien_ok": {
-  "hash": "3efc45c22720",
-  "who": "mis",
-  "text": "Yes! The shadow fits the tree."
- },
  "line.p_kto": {
-  "hash": "50c19c0f3f6a",
+  "hash": "e221e4b814ed",
   "who": "lisek",
-  "text": "Now us! Which of us is the shortest? Point to them."
+  "text": "Now us! Point to the shortest of us."
  },
  "line.p_kto_nie": {
   "hash": "228e77e4759e",
@@ -200,9 +185,9 @@
   "text": "There's a height chart in the hallway. Everyone stands by it, and I draw a line over their head."
  },
  "line.d_najwyzszy": {
-  "hash": "3abf9895743f",
+  "hash": "8196216247a0",
   "who": "mis",
-  "text": "Look at the lines on the chart. Who is the tallest? Point to them."
+  "text": "Look at the lines on the chart. Point to the highest line."
  },
  "line.d_nie": {
   "hash": "5fac38c9e0c7",
@@ -218,11 +203,6 @@
   "hash": "11f2ddf5576f",
   "who": "wiewiorka",
   "text": "Look whose line is the highest and whose is the lowest."
- },
- "line.d_najnizszy": {
-  "hash": "3fbf10490ffd",
-  "who": "wiewiorka",
-  "text": "And who is the shortest? Point to them."
  },
  "line.d_rosne": {
   "hash": "46e2a3848a3b",
@@ -265,14 +245,14 @@
   "text": "It's locked. Where's the key?"
  },
  "line.c_klucz": {
-  "hash": "bb461e4f6983",
+  "hash": "666b098e184f",
   "who": "wiewiorka",
-  "text": "Up there, at the very top, on the peg! Hop! I can't reach."
+  "text": "Up there, at the very top, on the peg! Hop, hop... I can't reach."
  },
  "line.c_kto": {
-  "hash": "3449bb7ce05e",
+  "hash": "464ebc70a88c",
   "who": "lisek",
-  "text": "The key hangs very high. The tallest of us will take it down. Who is that? Point to them."
+  "text": "The key hangs very high. The tallest of us will take it down. Point to who that is."
  },
  "line.c_kto_nie": {
   "hash": "0c900a777c81",
@@ -295,9 +275,9 @@
   "text": "Let's look through the spyglass at the orchard below."
  },
  "line.c_myszki": {
-  "hash": "3296bf8c3231",
+  "hash": "6983e55d003c",
   "who": "lisek",
-  "text": "Six mice are hiding in the orchard. Find them all! Touch each mouse."
+  "text": "Some mice are hiding in the orchard. Point to every mouse and find them all!"
  },
  "line.c_wszystkie": {
   "hash": "56c2769b337a",
@@ -315,9 +295,9 @@
   "text": "I'll stand on books! Then I'll be taller than Squirrel!"
  },
  "line.d_zabierz": {
-  "hash": "b9a806d404f3",
+  "hash": "8e2810fe3e1f",
   "who": "wiewiorka",
-  "text": "Hedgehog, the books only lift you up! Take the books from under Hedgehog. Drag them aside."
+  "text": "Hedgehog, the books only lift you up! That's not how we measure."
  },
  "line.d_na_podlodze": {
   "hash": "4c79ac915a0a",
@@ -325,8 +305,113 @@
   "text": "Now Hedgehog stands on the floor, like everyone. I'm drawing his line."
  },
  "line.d_kto_wyzszy": {
-  "hash": "d96dcf37f360",
+  "hash": "63f84c2217d1",
   "who": "jez",
-  "text": "And who is taller: Fox or Squirrel? Point to them."
+  "text": "Point to who is taller: Fox or Squirrel."
+ },
+ "line.b_chowany": {
+  "hash": "0099b7b550d9",
+  "who": "jez",
+  "text": "And now let's play hide and seek! Bear, you look for us, and we'll hide in the bushes."
+ },
+ "line.b_zasady": {
+  "hash": "135062a7e22c",
+  "who": "mis",
+  "text": "All right! Whoever is hiding will call: peekaboo! And you will point to the bush the voice came from."
+ },
+ "line.b_smutno": {
+  "hash": "2e7238189b78",
+  "who": "jez",
+  "text": "Too bad I'm so short. I can't climb the ladder to the treehouse, and I'll never see the forest from above."
+ },
+ "line.b_obiecuje": {
+  "hash": "61630410bf2a",
+  "who": "mis",
+  "text": "Come home with us, Hedgehog. I'll think of something, I promise!"
+ },
+ "line.c_okno": {
+  "hash": "cc9c4b53a0b2",
+  "who": "mis",
+  "text": "We're in the treehouse! Quick, to the window!"
+ },
+ "line.c_las": {
+  "hash": "2c649d5f2071",
+  "who": "mis",
+  "text": "I can see the whole forest from above! It's so high up here! And down below there's an orchard with apple trees."
+ },
+ "line.p_ktory_ok": {
+  "hash": "97cac68f9661",
+  "who": "mis",
+  "text": "Yes, this sunflower is taller! The other one was only standing higher up."
+ },
+ "line.p_cien_wysokie": {
+  "hash": "c41b264d4f3e",
+  "who": "mis",
+  "text": "Yes, it's the tall tree's shadow!"
+ },
+ "line.p_cien_niskie": {
+  "hash": "24b8f4086153",
+  "who": "mis",
+  "text": "Yes, it's the short tree's shadow!"
+ },
+ "line.d_najwyzszy_ok": {
+  "hash": "8e0602491eca",
+  "who": "mis",
+  "text": "Yes, that's my line! I'm the tallest of us."
+ },
+ "line.d_wyzszy_ok": {
+  "hash": "20ea1dec1688",
+  "who": "lisek",
+  "text": "Yes, I'm taller than Squirrel, and Squirrel is shorter than me."
+ },
+ "line.d_powrot": {
+  "hash": "c7f9ad08afbd",
+  "who": "mis",
+  "text": "We're home! Hedgehog came with us, and I brought the spyglass from the treehouse."
+ },
+ "line.d_powies": {
+  "hash": "88c14e2b0d26",
+  "who": "mis",
+  "text": "Hang the spyglass high on the hooks, so it doesn't get lost. Drag it onto a hook."
+ },
+ "line.d_odloz": {
+  "hash": "8c63d92eb421",
+  "who": "wiewiorka",
+  "text": "Put the books on the shelf of the shoe rack, so Hedgehog stands on the floor."
+ },
+ "line.d_smutno": {
+  "hash": "67e832c1c7f8",
+  "who": "jez",
+  "text": "I'm the shortest. I'll never see the forest from above like Bear did."
+ },
+ "line.d_ramiona": {
+  "hash": "adaa128016a8",
+  "who": "mis",
+  "text": "You will! I'm the tallest, so I'll take the spyglass off the hook. Now climb up on my shoulders!"
+ },
+ "line.d_widze": {
+  "hash": "b20141ec3f21",
+  "who": "jez",
+  "text": "I can see the whole forest! Now I'm the highest of all."
+ },
+ "line.d_ale": {
+  "hash": "26ab848b54f7",
+  "who": "wiewiorka",
+  "text": "The highest, but not the tallest! Bear lifted you up."
+ },
+ "line.b_stoja": {
+  "hash": "4de8b658d93f",
+  "who": "mis",
+  "text": "Now both sticks stand on the same ground. You can see the difference at once!"
+ },
+ "line.p_stoja": {
+  "hash": "712bfe3ada01",
+  "who": "mis",
+  "text": "Now both sunflowers stand on the line, on the same ground."
+ },
+ "line.c_widze_sad": {
+  "hash": "214e4f1b357d",
+  "who": "mis",
+  "text": "I'm looking through the spyglass... I can see the orchard below the treehouse!"
  }
 }

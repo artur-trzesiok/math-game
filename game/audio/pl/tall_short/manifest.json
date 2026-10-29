@@ -25,14 +25,14 @@
   "text": "Pieniek tylko cię podniósł. Żeby sprawdzić, kto jest wysoki, a kto niski, trzeba stanąć na tej samej ziemi."
  },
  "line.a_wszyscy": {
-  "hash": "2026d349f83f",
+  "hash": "63a8c8434c47",
   "who": "lisek",
-  "text": "Teraz wszyscy stoimy na trawie."
+  "text": "Stańmy wszyscy na jednej kresce, na tej samej ziemi. Narysuję kreskę nad każdą głową."
  },
  "line.a_najwyzszy": {
-  "hash": "0b8fd8f8feef",
+  "hash": "fdf58c41e99c",
   "who": "lisek",
-  "text": "Kto z nas jest najwyższy? Wskaż."
+  "text": "Wskaż, kto z nas jest najwyższy."
  },
  "line.a_najwyzszy_nie": {
   "hash": "da9f63a5bae4",
@@ -45,9 +45,9 @@
   "text": "Ja jestem najwyższy! Dosięgnę gałęzi."
  },
  "line.a_najnizszy": {
-  "hash": "c58d856bb97f",
+  "hash": "fb91801406a7",
   "who": "lisek",
-  "text": "A kto jest najniższy? Wskaż."
+  "text": "A teraz wskaż, kto z nas jest najniższy."
  },
  "line.a_najnizszy_nie": {
   "hash": "5776526956c5",
@@ -65,14 +65,14 @@
   "text": "Ojej, drabinka do domku jest połamana. Potrzebujemy wysokiego kija."
  },
  "line.b_postaw": {
-  "hash": "30a1b2b878f7",
+  "hash": "bafb90bbb017",
   "who": "lisek",
-  "text": "Postaw oba kije na kresce, na tej samej ziemi. Przeciągnij je."
+  "text": "Przeciągnij oba kije na kreskę, żeby stały na tej samej ziemi."
  },
  "line.b_ktory": {
-  "hash": "d3e8774b45a8",
+  "hash": "f54a9fb11ca7",
   "who": "lisek",
-  "text": "Który kij jest wyższy? Wskaż."
+  "text": "Wskaż, który kij jest wyższy."
  },
  "line.b_ktory_nie": {
   "hash": "222b4884c622",
@@ -90,9 +90,9 @@
   "text": "Dzień dobry! Chciałbym zerwać jabłko, ale jestem bardzo niski."
  },
  "line.b_najnizsze": {
-  "hash": "a03cd674e0a3",
+  "hash": "be663991a632",
   "who": "lisek",
-  "text": "Jeżyk dosięgnie tylko do najniższego drzewka. Które jest najniższe? Wskaż."
+  "text": "Jeżyk dosięgnie tylko do najniższego drzewka. Wskaż, które drzewko jest najniższe."
  },
  "line.b_najnizsze_nie": {
   "hash": "225b6d9ee24d",
@@ -100,19 +100,9 @@
   "text": "To drzewko jest za wysokie dla Jeżyka. Poszukaj najniższego."
  },
  "line.b_dziekuje": {
-  "hash": "48992cc2176d",
+  "hash": "6cc1c23af4d5",
   "who": "jez",
-  "text": "Dosięgnąłem! Dziękuję."
- },
- "line.b_lapanie": {
-  "hash": "ac3050362f3c",
-  "who": "mis",
-  "text": "Wyrastają słoneczniki! Łap wysoki słonecznik, wskaż go."
- },
- "line.b_do_domu": {
-  "hash": "49779ebce651",
-  "who": "lisek",
-  "text": "Ale było fajnie! Chodźmy do domu."
+  "text": "To najniższe drzewko! Dosięgnąłem. Dziękuję!"
  },
  "line.p_start": {
   "hash": "c02c2ce14722",
@@ -120,9 +110,9 @@
   "text": "Pobawmy się w wysokie i niskie! Mam pięć zabaw."
  },
  "line.p_wyzsza": {
-  "hash": "b53d989cb538",
+  "hash": "e8abc034fe6f",
   "who": "mis",
-  "text": "Która świeca jest wyższa? Wskaż."
+  "text": "Wskaż, która świeca jest wyższa."
  },
  "line.p_wyzsza_nie": {
   "hash": "0e3762add649",
@@ -140,9 +130,9 @@
   "text": "Jeden słonecznik jest wyżej, ale czy jest wyższy? Postaw oba na kresce."
  },
  "line.p_ktory": {
-  "hash": "2028858eda6d",
+  "hash": "903e4477f6e1",
   "who": "lisek",
-  "text": "Który słonecznik jest wyższy? Wskaż."
+  "text": "Wskaż, który słonecznik jest wyższy."
  },
  "line.p_ktory_nie": {
   "hash": "82f96f63c267",
@@ -150,9 +140,9 @@
   "text": "Ten jest niższy. Wskaż wyższy słonecznik."
  },
  "line.p_najnizszy": {
-  "hash": "7e6b5e2c5b48",
+  "hash": "ac4e778b12a2",
   "who": "mis",
-  "text": "Który kij jest najniższy? Wskaż."
+  "text": "Wskaż, który kij jest najniższy."
  },
  "line.p_najnizszy_nie": {
   "hash": "a16aabbb6fa7",
@@ -165,24 +155,19 @@
   "text": "Tak! To najniższy kij."
  },
  "line.p_cien": {
-  "hash": "59a8c48120ae",
+  "hash": "931b2abeb6e2",
   "who": "lisek",
-  "text": "Czyj to cień: wysokiego drzewka czy niskiego? Wskaż."
+  "text": "Wskaż drzewko, do którego pasuje ten cień: wysokie czy niskie?"
  },
  "line.p_cien_nie": {
   "hash": "60819d31beb0",
   "who": "lisek",
   "text": "Popatrz na cień jeszcze raz. Czy jest wysoki, czy niski?"
  },
- "line.p_cien_ok": {
-  "hash": "822ef9c6babf",
-  "who": "mis",
-  "text": "Tak! Cień pasuje do drzewka."
- },
  "line.p_kto": {
-  "hash": "088b9cf9791b",
+  "hash": "61d107b1d82f",
   "who": "lisek",
-  "text": "Teraz my! Kto z nas jest najniższy? Wskaż."
+  "text": "Teraz my! Wskaż, kto z nas jest najniższy."
  },
  "line.p_kto_nie": {
   "hash": "5776526956c5",
@@ -200,9 +185,9 @@
   "text": "W przedpokoju wisi miarka. Każdy stanie przy niej, a ja narysuję kreskę nad jego głową."
  },
  "line.d_najwyzszy": {
-  "hash": "6becdf05539f",
+  "hash": "2ee8e1e6b271",
   "who": "mis",
-  "text": "Popatrz na kreski na miarce. Kto jest najwyższy? Wskaż."
+  "text": "Popatrz na kreski na miarce. Wskaż kreskę, która jest najwyżej."
  },
  "line.d_nie": {
   "hash": "54e22399709c",
@@ -218,11 +203,6 @@
   "hash": "08e3e5dd428d",
   "who": "wiewiorka",
   "text": "Popatrz, czyja kreska jest najwyżej, a czyja najniżej."
- },
- "line.d_najnizszy": {
-  "hash": "db7d8e2f1a4d",
-  "who": "wiewiorka",
-  "text": "A kto jest najniższy? Wskaż."
  },
  "line.d_rosne": {
   "hash": "b7b543e0e488",
@@ -265,14 +245,14 @@
   "text": "Jest zamknięta na klucz. Gdzie jest klucz?"
  },
  "line.c_klucz": {
-  "hash": "e6dc0f008992",
+  "hash": "63bc175588f6",
   "who": "wiewiorka",
-  "text": "Tam, na samej górze, na haczyku! Hop! Nie sięgam."
+  "text": "Tam, na samej górze, na haczyku! Hop, hop... nie sięgam."
  },
  "line.c_kto": {
-  "hash": "462f8ea7f9e9",
+  "hash": "11d4100ba9ca",
   "who": "lisek",
-  "text": "Klucz wisi bardzo wysoko. Zdejmie go najwyższy z nas. Kto to? Wskaż."
+  "text": "Klucz wisi bardzo wysoko. Zdejmie go najwyższy z nas. Wskaż, kto to jest."
  },
  "line.c_kto_nie": {
   "hash": "da9f63a5bae4",
@@ -295,9 +275,9 @@
   "text": "Popatrzmy przez lunetę na sad pod drzewem."
  },
  "line.c_myszki": {
-  "hash": "4beebfad46d3",
+  "hash": "c1ebe9551ed5",
   "who": "lisek",
-  "text": "W sadzie schowało się sześć myszek. Znajdź je wszystkie! Dotknij każdej myszki."
+  "text": "W sadzie schowały się myszki. Wskaż każdą myszkę, znajdź je wszystkie!"
  },
  "line.c_wszystkie": {
   "hash": "8be5ce673b45",
@@ -315,9 +295,9 @@
   "text": "A ja stanę na książkach! Wtedy będę wyższy od Wiewiórki!"
  },
  "line.d_zabierz": {
-  "hash": "26f1af11259f",
+  "hash": "a8ce64964fcd",
   "who": "wiewiorka",
-  "text": "Jeżyku, książki tylko cię podnoszą! Zabierz książki spod Jeżyka. Przeciągnij je na bok."
+  "text": "Jeżyku, książki tylko cię podnoszą! Tak się nie mierzy."
  },
  "line.d_na_podlodze": {
   "hash": "36dd3c3a090f",
@@ -325,8 +305,113 @@
   "text": "Teraz Jeżyk stoi na podłodze, jak wszyscy. Rysuję jego kreskę."
  },
  "line.d_kto_wyzszy": {
-  "hash": "5451f85c078e",
+  "hash": "3a67590de8dc",
   "who": "jez",
-  "text": "A kto jest wyższy: Lisek czy Wiewiórka? Wskaż."
+  "text": "Wskaż, kto jest wyższy: Lisek czy Wiewiórka."
+ },
+ "line.b_chowany": {
+  "hash": "7696bec54594",
+  "who": "jez",
+  "text": "A teraz pobawmy się w chowanego! Misiu, ty szukasz, a my schowamy się w krzakach."
+ },
+ "line.b_zasady": {
+  "hash": "15fd643d89ca",
+  "who": "mis",
+  "text": "Dobrze! Kto się schowa, zawoła: a kuku! A ty wskażesz krzak, z którego dobiegł głos."
+ },
+ "line.b_smutno": {
+  "hash": "5bf92950b7e7",
+  "who": "jez",
+  "text": "Szkoda, że jestem taki niski. Nie wejdę po drabince do domku i nigdy nie zobaczę lasu z góry."
+ },
+ "line.b_obiecuje": {
+  "hash": "b657938b158b",
+  "who": "mis",
+  "text": "Chodź z nami do domu, Jeżyku. Coś wymyślę, obiecuję!"
+ },
+ "line.c_okno": {
+  "hash": "9b446f5d09e7",
+  "who": "mis",
+  "text": "Jesteśmy w domku na drzewie! Szybko, do okna!"
+ },
+ "line.c_las": {
+  "hash": "f8134d2087a7",
+  "who": "mis",
+  "text": "Widzę cały las z góry! Jak tu wysoko! A na dole jest sad z jabłonkami."
+ },
+ "line.p_ktory_ok": {
+  "hash": "09414d96fcb6",
+  "who": "mis",
+  "text": "Tak, ten słonecznik jest wyższy! Tamten tylko stał wyżej."
+ },
+ "line.p_cien_wysokie": {
+  "hash": "71f06e705f88",
+  "who": "mis",
+  "text": "Tak, to cień wysokiego drzewka!"
+ },
+ "line.p_cien_niskie": {
+  "hash": "9957f4ff5ae2",
+  "who": "mis",
+  "text": "Tak, to cień niskiego drzewka!"
+ },
+ "line.d_najwyzszy_ok": {
+  "hash": "9adca651090d",
+  "who": "mis",
+  "text": "Tak, to moja kreska! Jestem najwyższy z nas."
+ },
+ "line.d_wyzszy_ok": {
+  "hash": "e1c555102f01",
+  "who": "lisek",
+  "text": "Tak, ja jestem wyższy od Wiewiórki, a Wiewiórka jest niższa ode mnie."
+ },
+ "line.d_powrot": {
+  "hash": "99ca623ccd03",
+  "who": "mis",
+  "text": "Jesteśmy w domu! Jeżyk przyszedł z nami, a ja przyniosłem lunetę z domku na drzewie."
+ },
+ "line.d_powies": {
+  "hash": "e809700d6194",
+  "who": "mis",
+  "text": "Powieś lunetę wysoko na wieszaku, żeby się nie zgubiła. Przeciągnij ją na haczyk."
+ },
+ "line.d_odloz": {
+  "hash": "4f385c6a8cad",
+  "who": "wiewiorka",
+  "text": "Odłóż książki na półkę w szafce, żeby Jeżyk stanął na podłodze."
+ },
+ "line.d_smutno": {
+  "hash": "d2fc425fd9a7",
+  "who": "jez",
+  "text": "Jestem najniższy. Nigdy nie zobaczę lasu z góry tak jak Miś."
+ },
+ "line.d_ramiona": {
+  "hash": "93d3fa17ac0c",
+  "who": "mis",
+  "text": "Zobaczysz! Jestem najwyższy, więc zdejmę lunetę z haczyka. A teraz wskakuj mi na ramiona!"
+ },
+ "line.d_widze": {
+  "hash": "ae60e74c0a2d",
+  "who": "jez",
+  "text": "Widzę cały las! Teraz jestem najwyżej ze wszystkich."
+ },
+ "line.d_ale": {
+  "hash": "ad2ff5cf6848",
+  "who": "wiewiorka",
+  "text": "Najwyżej, ale nie najwyższy! To Miś cię podniósł."
+ },
+ "line.b_stoja": {
+  "hash": "434e76ef5741",
+  "who": "mis",
+  "text": "Teraz oba kije stoją na tej samej ziemi. Od razu widać różnicę!"
+ },
+ "line.p_stoja": {
+  "hash": "b68c97246e6c",
+  "who": "mis",
+  "text": "Teraz oba słoneczniki stoją na kresce, na tej samej ziemi."
+ },
+ "line.c_widze_sad": {
+  "hash": "deddd387bb75",
+  "who": "mis",
+  "text": "Patrzę przez lunetę... Widzę sad pod domkiem!"
  }
 }
