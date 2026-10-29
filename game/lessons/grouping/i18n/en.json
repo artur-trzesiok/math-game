@@ -72,7 +72,7 @@
   },
   "line.b_co_przyda": {
     "who": "sarenka",
-    "text": "What will help against the wind? Point to all of them."
+    "text": "Point to everything that helps against the cold wind."
   },
   "line.b_nie_grzeje": {
     "who": "sarenka",
@@ -93,21 +93,6 @@
     "who": "sarenka",
     "text": "And I have my warm fur."
   },
-  "line.b_lapiemy": {
-    "who": "wiewiorka",
-    "text": "Let's keep following the trail! The trail is made of red leaves, so we catch only the red ones. Get ready!"
-  },
-  "line.b_lap": {
-    "who": "wiewiorka",
-    "text": "Catch the red leaf!"
-  },
-  "line.b_nie_ten": {
-    "who": "sarenka",
-    "text": "That one is yellow. We're looking for red ones.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
   "line.b_las": {
     "who": "sarenka",
     "text": "The trail leads into the forest! We're getting closer."
@@ -118,7 +103,7 @@
   },
   "line.b_kartka": {
     "who": "sarenka",
-    "text": "The wind blew something in... It's a map of the forest!"
+    "text": "The wind blew something in... It's a map of the forest! Oh no, it tore on a branch."
   },
   "line.b_mapa_plan": {
     "who": "wiewiorka",
@@ -126,11 +111,11 @@
   },
   "line.b_mapa_gdzie": {
     "who": "sarenka",
-    "text": "Where does the path of red leaves lead? Point to the place at its end."
+    "text": "Lead us with your finger along the path of red leaves."
   },
   "line.b_mapa_nie": {
     "who": "sarenka",
-    "text": "The red leaves don't lead there. Look where the path of red leaves ends.",
+    "text": "Other leaves lie on that path. We only follow the red ones!",
     "speakers": [
       "wiewiorka"
     ]
@@ -193,7 +178,7 @@
   },
   "line.c_ktora": {
     "who": "sarenka",
-    "text": "Which hat is red? Point to it."
+    "text": "Which hat is red?"
   },
   "line.c_nie_ta": {
     "who": "lisek",
@@ -208,44 +193,15 @@
   },
   "line.p_start": {
     "who": "wiewiorka",
-    "text": "Detectives need practice! Now detective training. We collect stars."
+    "text": "Detectives must practise! We get a star for every task."
   },
   "line.p_wspolne": {
     "who": "sarenka",
-    "text": "What belongs in this group? Point to it."
-  },
-  "line.p_nie_pasuje": {
-    "who": "sarenka",
-    "text": "Look at the group. What do they have in common?",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.p_liscie": {
-    "who": "sarenka",
-    "text": "Red leaves into the basket, yellow ones into the box."
-  },
-  "line.p_pomylka": {
-    "who": "sarenka",
-    "text": "That one doesn't belong in this group.",
-    "speakers": [
-      "wiewiorka"
-    ]
-  },
-  "line.p_grzyby": {
-    "who": "wiewiorka",
-    "text": "Quick! Catch the mushrooms!"
-  },
-  "line.p_nie_grzyb": {
-    "who": "wiewiorka",
-    "text": "That's not a mushroom. Catch the mushroom!",
-    "speakers": [
-      "sarenka"
-    ]
+    "text": "What fits this group?"
   },
   "line.p_inny": {
     "who": "sarenka",
-    "text": "Which one doesn't belong with the others? Point to it."
+    "text": "Which one doesn't go with the rest?"
   },
   "line.p_pasuje": {
     "who": "sarenka",
@@ -253,10 +209,6 @@
     "speakers": [
       "wiewiorka"
     ]
-  },
-  "line.p_zoledzie": {
-    "who": "sarenka",
-    "text": "Acorns into the basket, chestnuts into the box."
   },
   "line.d_szarlotka": {
     "who": "sarenka",
@@ -268,7 +220,7 @@
   },
   "line.d_rodzice": {
     "who": "wiewiorka",
-    "text": "Tidy your room with your parents just like we did: toys in one box, clothes in another. You'll see how easy it is to find everything!"
+    "text": "Play this with your parents: tidy up together, every group in its own place. Then someone hides something that doesn't belong in a group, and you find it!"
   },
   "line.d_pa": {
     "who": "sarenka",
@@ -308,7 +260,7 @@
   },
   "line.e_balagan": {
     "who": "lisek",
-    "text": "Oh my, what a mess! Everything is lying on the rug."
+    "text": "Oh dear, what a mess! Books, toys and clothes all over the floor."
   },
   "line.e_posprzatam": {
     "who": "lisek",
@@ -328,11 +280,11 @@
   },
   "line.e_grupujmy": {
     "who": "wiewiorka",
-    "text": "I know! Let's group them. Toys into the basket, clothes into the box. Then everything will be easy to find."
+    "text": "I know! Let's group them. Every group gets its own place, and then we'll find everything easily."
   },
   "line.e_zasada": {
     "who": "wiewiorka",
-    "text": "Drag the toys into the basket and the clothes into the box."
+    "text": "Drag the books onto the window sill, the toys onto the rug and the clothes into the box."
   },
   "line.e_pomylka": {
     "who": "wiewiorka",
@@ -342,17 +294,13 @@
       "lisek"
     ]
   },
-  "line.e_porzadek": {
-    "who": "sarenka",
-    "text": "Now that's real tidying!"
-  },
   "line.e_gdzie_pilka": {
     "who": "lisek",
-    "text": "So where should I look for the ball? Point to it."
+    "text": "So where should I look for the ball?"
   },
   "line.e_nie_tam": {
     "who": "lisek",
-    "text": "These are clothes. And a ball is a toy.",
+    "text": "There are no toys here. And a ball is a toy.",
     "speakers": [
       "sarenka"
     ]
@@ -372,5 +320,165 @@
   "line.naklejka_juz": {
     "who": "lisek",
     "text": "You already have the sticker from this adventure. See you soon!"
+  },
+  "line.a_grupuj_ok": {
+    "who": "wiewiorka",
+    "text": "Oh! The apples are together and the cones are together."
+  },
+  "line.b_zniknely": {
+    "who": "wiewiorka",
+    "text": "Oh no! The wind piled leaves on the path and the red trail is gone!"
+  },
+  "line.b_odgarnij": {
+    "who": "sarenka",
+    "text": "Brush the leaves away with your finger. Maybe there's something underneath!"
+  },
+  "line.b_lapki": {
+    "who": "wiewiorka",
+    "text": "Paw prints! Somebody walked this way."
+  },
+  "line.b_dokad": {
+    "who": "sarenka",
+    "text": "Where do the prints lead?"
+  },
+  "line.b_dokad_nie": {
+    "who": "sarenka",
+    "text": "Look which way the paw prints go.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.b_do_debu": {
+    "who": "wiewiorka",
+    "text": "To the big oak in the forest! Let's go!"
+  },
+  "line.b_poskladaj": {
+    "who": "wiewiorka",
+    "text": "Put the map back together, so we know which way to go."
+  },
+  "line.c_komiks_1": {
+    "who": "lisek",
+    "text": "Every morning I gathered red things and tied golden bows on them."
+  },
+  "line.c_komiks_2": {
+    "who": "lisek",
+    "text": "Then I quietly laid them under the apple tree."
+  },
+  "line.c_komiks_3": {
+    "who": "lisek",
+    "text": "And then I hid behind a tree and watched you being happy."
+  },
+  "line.p_wspolne_ok": {
+    "who": "sarenka",
+    "text": "Yes, the red ball! This group has only red things."
+  },
+  "line.p_tajna": {
+    "who": "wiewiorka",
+    "text": "The basket and the chest have a secret rule. Put things in and guess what it is!"
+  },
+  "line.p_tajna_nie": {
+    "who": "wiewiorka",
+    "text": "Spat out! That thing doesn't belong in there.",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.p_tajna_ok": {
+    "who": "sarenka",
+    "text": "I've got it! Mushrooms in the basket, and cones in the chest."
+  },
+  "line.p_inny_ok": {
+    "who": "sarenka",
+    "text": "Yes, the chestnut! The rest are acorns."
+  },
+  "line.p_wymysl": {
+    "who": "sarenka",
+    "text": "Now you make up the rule! Group the leaves and the flags any way you like."
+  },
+  "line.p_wymysl_nie": {
+    "who": "sarenka",
+    "text": "That one doesn't go with what's already in there.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.p_wg_koloru": {
+    "who": "wiewiorka",
+    "text": "You're grouping by colour: red together and yellow together!",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.p_wg_rodzaju": {
+    "who": "wiewiorka",
+    "text": "You're grouping by shape: leaves together and flags together!",
+    "speakers": [
+      "sarenka"
+    ]
+  },
+  "line.p_inaczej": {
+    "who": "wiewiorka",
+    "text": "And now group the same things another way!"
+  },
+  "line.p_inaczej_ok": {
+    "who": "sarenka",
+    "text": "The same things, but quite different groups! You can group in different ways."
+  },
+  "line.p_koniec": {
+    "who": "wiewiorka",
+    "text": "All the stars! You're a real detective."
+  },
+  "line.e_gra": {
+    "who": "wiewiorka",
+    "text": "Let's play detectives! Close your eyes, and I'll hide something."
+  },
+  "line.e_gra_kto": {
+    "who": "sarenka",
+    "text": "What doesn't belong with the toys on the rug?"
+  },
+  "line.e_gra_nie": {
+    "who": "sarenka",
+    "text": "That's a toy, it belongs here.",
+    "speakers": [
+      "lisek"
+    ]
+  },
+  "line.e_gra_ok": {
+    "who": "lisek",
+    "text": "The sock! It's clothing, not a toy. Into the box with it!"
+  },
+  "line.e_szarlotka": {
+    "who": "sarenka",
+    "text": "The pie is ready! Point to everything we need for the pie."
+  },
+  "line.e_szarlotka_nie": {
+    "who": "sarenka",
+    "text": "We can't eat pie with that.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.e_szarlotka_ok": {
+    "who": "wiewiorka",
+    "text": "A plate, a cup and a spoon. Everything for eating!"
+  },
+  "line.p_nie_pasuje": {
+    "who": "sarenka",
+    "text": "Look at the group. What do they have in common?",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.b_co_przyda_ok": {
+    "who": "sarenka",
+    "text": "Yes, the hat and the scarf! They keep you warm."
+  },
+  "line.c_pogrupowane": {
+    "who": "lisek",
+    "text": "Hats in the basket, scarves in the box! Now I can see all my hats at once."
+  },
+  "line.e_porzadek": {
+    "who": "sarenka",
+    "text": "Now that's real tidiness!"
   }
 }

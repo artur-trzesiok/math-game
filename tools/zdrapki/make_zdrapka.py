@@ -25,6 +25,22 @@ from make_znalezisko import magenta, STYL  # noqa: E402
 WORK = TU / "work"
 OUT = TU.parent.parent / "game" / "assets" / "zdrapki"
 ZDRAPKI = {
+    # grouping: the breather - the wind heaped leaves over the trail; rake them off and the paw prints show the way
+    "trop_pod_liscmi": {
+        "oslona": "liscie", "lekcje": ["grouping"],
+        "obraz": f"""A close view of a soft damp brown earth FOOTPATH at the edge of an autumn forest, seen from above at a slant,
+filling the whole picture. Along the path runs ONE clear trail of SIX neat animal PAW PRINTS (each a round heel pad with
+four small oval toe pads), pressed into the earth, from the BOTTOM LEFT corner to the TOP RIGHT, where the path enters the
+forest: a few big tree trunks with orange and red autumn crowns and ONE big old OAK at the top right. A little short
+grass at the sides of the path, two small mushrooms. NO animals, NO people, NO leaves on the path. Big simple clear
+shapes.
+{STYL}""",
+        "zakryj": """a thick heap of fallen autumn LEAVES - red, orange, yellow and brown leaves of all sizes piled over the
+whole path and the grass, overlapping like a soft blanket, so NONE of the paw prints shows through anywhere - only
+leaves; the tree trunks and crowns at the top right stay as they are.""",
+        "cele": ["on the paw print in the MIDDLE of the trail (a disc covering that one print)",
+                 "on the big old oak at the top right, where the trail of paw prints leads into the forest"],
+    },
     # in_out: the breather - the round window of Hedgehog's burrow is steamy from the warm stove; a finger wipes it and
     # the storm outside shows (malowanie, tlo "szyba")
     "szyba_norki": {

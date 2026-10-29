@@ -34,6 +34,48 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # front_back story: the seeker counting - Bear's face in his paws at a tree, Bunny "hides" IN FRONT of a bush
+    "mis_liczy": {
+        "postacie": ["mis", "zajac", "jez"], "tlo": "las", "lekcje": ["front_back"],
+        "scena": """The sunny forest from the reference picture. On the LEFT the BEAR stands facing a big tree trunk, his
+forehead against the bark and BOTH paws over his eyes, counting - we see his back and the side of his head. Behind his
+back the others hurry to hide: the small HEDGEHOG scurries on tiptoe towards a mossy tree STUMP on the right. In the
+middle of the clearing the BUNNY stands IN FRONT of a round green BUSH, in full view, his whole body seen, his eyes
+squeezed tightly SHUT and a big proud grin - he thinks nobody can see him. Funny and sunny, a game of hide-and-seek.""",
+    },
+    # front_back home: the payoff - Bunny hid well at last: Bear pulls the curtain aside and finds him behind it
+    "zajac_za_zaslona": {
+        "postacie": ["mis", "zajac", "jez"], "tlo": "pokoj", "lekcje": ["front_back"],
+        "scena": """The bright children's room from the reference picture (the same striped wallpaper, the window, the bed,
+the round rug, the bookcase), warm afternoon light. Beside the window hangs a long light-blue floor-length CURTAIN. The
+BEAR, surprised and laughing, has just pulled the curtain aside with one paw: BEHIND it stands the BUNNY, laughing with
+both paws up - "you found me!". In the middle of the room stands a green ARMCHAIR, and from BEHIND its back only the
+two round ears of a small brown TEDDY BEAR toy peek out. The small HEDGEHOG stands beside the armchair, clapping happily.
+Warm, cosy and funny.""",
+    },
+    # grouping story: how the gifts got under the apple tree - Fox's secret mornings, told by Fox as a short comic
+    "lisek_prezenty": {
+        "postacie": ["lisek"], "tlo": "jesienny_sad", "lekcje": ["grouping"], "uklad": "3",
+        "scena": """PANEL 1 (the big one on the left), early morning, soft pink dawn light in an autumn forest: the FOX, alone,
+happily gathers RED things into his arms - a shiny red apple, a big red maple leaf, a red toy block and a red-and-white
+ball - each tied with a golden ribbon bow.
+PANEL 2 (top right), dawn in the autumn orchard from the reference picture: the FOX tiptoes under the apple tree and
+carefully lays the red gifts with golden bows on the grass, looking over his shoulder.
+PANEL 3 (bottom right), morning: the FOX peeks out shyly from behind a thick tree trunk, only his head and one paw seen,
+blushing and smiling, watching the little pile of red gifts under the apple tree. Gentle, warm and a little funny; the
+fox is the ONLY animal in the picture.""",
+    },
+    # grouping home: the payoff - Fox's first visit: the apple pie on the rug of the tidy room, the shelves in order
+    "szarlotka_z_liskiem": {
+        "postacie": ["lisek", "wiewiorka", "sarenka"], "tlo": "pokoj", "lekcje": ["grouping"],
+        "scena": """The bright children's room from the reference picture (the same wallpaper, the window, the bed, the rug and
+the bookcase) in warm afternoon light, autumn leaves seen through the window. The room is TIDY: three picture books
+stand together in a row on the white window sill, the toys (a teddy bear, a red-and-white ball, wooden blocks) sit
+together at the left edge of the rug, the clothes (striped socks, red shoes) lie in a cardboard box by the wall on the
+right. In the middle of the rug a checked picnic cloth with ONE big golden APPLE PIE, one slice cut
+out, little plates and cups. The FOX, wearing a red knitted winter hat, holds a slice of pie and laughs; the SQUIRREL
+pours tea; the ROE DEER lies on the rug beside them, smiling. Cosy, happy and calm - new friends together.""",
+    },
     # tangram home: the payoff - the shadow theatre at home, the tangram fox's shadow on the bedroom wall
     "teatr_w_pokoju": {
         "postacie": ["sowa", "mis", "wiewiorka"], "tlo": "pokoj_noc", "lekcje": ["tangram"],

@@ -85,9 +85,9 @@
   "text": "Brr, ale wieje! Zimno mi w uszy."
  },
  "line.b_co_przyda": {
-  "hash": "86a287501cd2",
+  "hash": "c537ff10fb09",
   "who": "sarenka",
-  "text": "Co się przyda na wiatr? Wskaż wszystkie takie rzeczy."
+  "text": "Wskaż wszystko, co się przyda na zimny wiatr."
  },
  "line.b_nie_grzeje": {
   "hash": "8c64e6d4d31e",
@@ -113,26 +113,6 @@
   "hash": "ebb68d8feff7",
   "who": "sarenka",
   "text": "A ja mam ciepłe futerko."
- },
- "line.b_lapiemy": {
-  "hash": "4157ca9aecd1",
-  "who": "wiewiorka",
-  "text": "Idziemy dalej po śladach! Ślady są z czerwonych liści, więc łapiemy tylko czerwone. Uwaga!"
- },
- "line.b_lap": {
-  "hash": "d70a52c9c3d5",
-  "who": "wiewiorka",
-  "text": "Łap czerwony liść!"
- },
- "line.b_nie_ten": {
-  "hash": "ed7804a22d26",
-  "who": "sarenka",
-  "text": "Ten jest żółty. Szukamy czerwonych."
- },
- "line.b_nie_ten.wiewiorka": {
-  "hash": "00397021299e",
-  "who": "wiewiorka",
-  "text": "Ten jest żółty. Szukamy czerwonych."
  },
  "line.b_las": {
   "hash": "c8eefeb7d12d",
@@ -195,9 +175,9 @@
   "text": "To nie pasuje do tej grupy."
  },
  "line.c_ktora": {
-  "hash": "68d90447e942",
+  "hash": "79455ff34c2f",
   "who": "sarenka",
-  "text": "Która czapka jest czerwona? Wskaż ją."
+  "text": "Która czapka jest czerwona?"
  },
  "line.c_nie_ta": {
   "hash": "85a07c96ddf9",
@@ -215,14 +195,14 @@
   "text": "Moja czapka! Dziękuję. Idziemy na szarlotkę!"
  },
  "line.p_start": {
-  "hash": "b2f85ef64722",
+  "hash": "c22b7259863d",
   "who": "wiewiorka",
-  "text": "Detektywi muszą ćwiczyć! Teraz trening detektywa. Zbieramy gwiazdki."
+  "text": "Detektywi muszą ćwiczyć! Za każde zadanie dostaniemy gwiazdkę."
  },
  "line.p_wspolne": {
-  "hash": "798cc7390d01",
+  "hash": "de38ad0b468c",
   "who": "sarenka",
-  "text": "Co pasuje do tej grupy? Wskaż to."
+  "text": "Co pasuje do tej grupy?"
  },
  "line.p_nie_pasuje": {
   "hash": "01b0279d8617",
@@ -234,40 +214,10 @@
   "who": "wiewiorka",
   "text": "Popatrz na grupę. Co mają wspólnego?"
  },
- "line.p_liscie": {
-  "hash": "47311eb206d3",
-  "who": "sarenka",
-  "text": "Czerwone liście do koszyka, żółte do pudełka."
- },
- "line.p_pomylka": {
-  "hash": "d202211ad705",
-  "who": "sarenka",
-  "text": "Ta rzecz nie pasuje do tej grupy."
- },
- "line.p_pomylka.wiewiorka": {
-  "hash": "7ca4b6ed78ca",
-  "who": "wiewiorka",
-  "text": "Ta rzecz nie pasuje do tej grupy."
- },
- "line.p_grzyby": {
-  "hash": "5abf424fecdd",
-  "who": "wiewiorka",
-  "text": "Szybko! Łap grzyby!"
- },
- "line.p_nie_grzyb": {
-  "hash": "8875c345aff1",
-  "who": "wiewiorka",
-  "text": "To nie grzyb. Łap grzyba!"
- },
- "line.p_nie_grzyb.sarenka": {
-  "hash": "d7ccff343e87",
-  "who": "sarenka",
-  "text": "To nie grzyb. Łap grzyba!"
- },
  "line.p_inny": {
-  "hash": "1e893307a662",
+  "hash": "0a763d1e3db2",
   "who": "sarenka",
-  "text": "Co tu nie pasuje do reszty? Wskaż to."
+  "text": "Który tu nie pasuje do reszty?"
  },
  "line.p_pasuje": {
   "hash": "a479a4dc9f66",
@@ -278,11 +228,6 @@
   "hash": "494b215b8d30",
   "who": "wiewiorka",
   "text": "Ten pasuje do reszty. Szukaj tego, który jest inny."
- },
- "line.p_zoledzie": {
-  "hash": "e50ab074eae0",
-  "who": "sarenka",
-  "text": "Żołędzie do koszyka, kasztany do pudełka."
  },
  "line.d_szarlotka": {
   "hash": "a2c8ebd9c3e4",
@@ -295,9 +240,9 @@
   "text": "Pycha! Mam nowych przyjaciół i porządek. Najlepszy dzień!"
  },
  "line.d_rodzice": {
-  "hash": "95cbb6b3aa11",
+  "hash": "fed36b48c32f",
   "who": "wiewiorka",
-  "text": "Posprzątaj z rodzicami swój pokój tak jak my: zabawki do jednego pudła, ubrania do drugiego. Zobaczysz, jak łatwo potem wszystko znaleźć!"
+  "text": "Pobaw się tak z rodzicami: posprzątajcie razem, każda grupa na swoje miejsce. A potem niech ktoś schowa w grupie coś, co nie pasuje, a ty szukaj!"
  },
  "line.d_pa": {
   "hash": "6b0b053d3570",
@@ -345,9 +290,9 @@
   "text": "Witaj w naszym domu, lisku! Szarlotka jeszcze się piecze."
  },
  "line.e_balagan": {
-  "hash": "29a9b0ea5312",
+  "hash": "81f7085b0923",
   "who": "lisek",
-  "text": "Ojej, ale tu bałagan! Wszystko leży na dywanie."
+  "text": "Ojej, ale tu bałagan! Książki, zabawki i ubrania leżą na podłodze."
  },
  "line.e_posprzatam": {
   "hash": "d983e504b817",
@@ -370,14 +315,14 @@
   "text": "Gdzieś w pudle... Ale tam wszystko jest pomieszane. Nie mogę jej znaleźć!"
  },
  "line.e_grupujmy": {
-  "hash": "5ecf9645fd51",
+  "hash": "dbe571c23c63",
   "who": "wiewiorka",
-  "text": "Wiem! Pogrupujmy. Zabawki do koszyka, ubrania do pudełka. Wtedy wszystko łatwo znajdziemy."
+  "text": "Wiem! Pogrupujmy. Każda grupa dostanie swoje miejsce, a wtedy wszystko łatwo znajdziemy."
  },
  "line.e_zasada": {
-  "hash": "5eb7b78cbf55",
+  "hash": "a46a1f871d21",
   "who": "wiewiorka",
-  "text": "Przeciągnij zabawki do koszyka, a ubrania do pudełka."
+  "text": "Przeciągnij książki na parapet, zabawki na dywan, a ubrania do pudełka."
  },
  "line.e_pomylka": {
   "hash": "eac9cbbc37ab",
@@ -394,25 +339,20 @@
   "who": "lisek",
   "text": "To nie pasuje do tej grupy."
  },
- "line.e_porzadek": {
-  "hash": "0adab01f3fdc",
-  "who": "sarenka",
-  "text": "Teraz to jest prawdziwy porządek!"
- },
  "line.e_gdzie_pilka": {
-  "hash": "551916473c11",
+  "hash": "5d20d2a619db",
   "who": "lisek",
-  "text": "To gdzie mam szukać piłki? Wskaż."
+  "text": "To gdzie mam szukać piłki?"
  },
  "line.e_nie_tam": {
-  "hash": "cd5dfd35865e",
+  "hash": "9745211f3b7c",
   "who": "lisek",
-  "text": "Tu są ubrania. A piłka to zabawka."
+  "text": "Tu nie ma zabawek. A piłka to zabawka."
  },
  "line.e_nie_tam.sarenka": {
-  "hash": "7a19c43f9707",
+  "hash": "92835e998acd",
   "who": "sarenka",
-  "text": "Tu są ubrania. A piłka to zabawka."
+  "text": "Tu nie ma zabawek. A piłka to zabawka."
  },
  "line.e_jest": {
   "hash": "54abc6b2507d",
@@ -450,9 +390,9 @@
   "text": "Ojej, las jest taki wielki. Którędy teraz iść?"
  },
  "line.b_kartka": {
-  "hash": "5b0390cc8ea7",
+  "hash": "4e6014e5d652",
   "who": "sarenka",
-  "text": "Wiatr coś przywiał... To mapa lasu!"
+  "text": "Wiatr coś przywiał... To mapa lasu! Ojej, podarła się na gałęzi."
  },
  "line.b_mapa_plan": {
   "hash": "dadfc40c448e",
@@ -460,19 +400,19 @@
   "text": "Na mapie są trzy ścieżki z liśćmi. Ten, kto zostawia prezenty, lubi czerwony. Szukajmy ścieżki z czerwonymi liśćmi!"
  },
  "line.b_mapa_gdzie": {
-  "hash": "53032678272c",
+  "hash": "18942ba34bc5",
   "who": "sarenka",
-  "text": "Dokąd prowadzi ścieżka z czerwonymi liśćmi? Wskaż miejsce na jej końcu."
+  "text": "Poprowadź nas palcem ścieżką z czerwonymi liśćmi."
  },
  "line.b_mapa_nie": {
-  "hash": "5d08583708fb",
+  "hash": "84ebee0fda53",
   "who": "sarenka",
-  "text": "Tam nie prowadzą czerwone liście. Popatrz, gdzie kończy się ścieżka z czerwonymi liśćmi."
+  "text": "Na tej ścieżce leżą inne liście. Idziemy tylko po czerwonych!"
  },
  "line.b_mapa_nie.wiewiorka": {
-  "hash": "dcdb49ff994b",
+  "hash": "36d9c2ca9172",
   "who": "wiewiorka",
-  "text": "Tam nie prowadzą czerwone liście. Popatrz, gdzie kończy się ścieżka z czerwonymi liśćmi."
+  "text": "Na tej ścieżce leżą inne liście. Idziemy tylko po czerwonych!"
  },
  "line.b_mapa_dab": {
   "hash": "da9985981f98",
@@ -493,5 +433,205 @@
   "hash": "24f196c73924",
   "who": "lisek",
   "text": "Mówiłem, że lubię czerwony! A tu leżą moje czapki i szaliki. Wszystko pomieszane."
+ },
+ "line.a_grupuj_ok": {
+  "hash": "07bda2ab2a4e",
+  "who": "wiewiorka",
+  "text": "Aha! Jabłka są razem i szyszki są razem."
+ },
+ "line.b_zniknely": {
+  "hash": "b7f0340a6077",
+  "who": "wiewiorka",
+  "text": "Ojej! Wiatr nasypał liści i czerwone ślady zniknęły!"
+ },
+ "line.b_odgarnij": {
+  "hash": "1e586d8a14f3",
+  "who": "sarenka",
+  "text": "Odgarnij liście palcem. Może pod spodem coś jest!"
+ },
+ "line.b_lapki": {
+  "hash": "911be4a71698",
+  "who": "wiewiorka",
+  "text": "Ślady łapek! Ktoś tędy szedł."
+ },
+ "line.b_dokad": {
+  "hash": "7d7efe89f4ab",
+  "who": "sarenka",
+  "text": "Dokąd prowadzą te ślady?"
+ },
+ "line.b_dokad_nie": {
+  "hash": "94282bc5a083",
+  "who": "sarenka",
+  "text": "Popatrz, w którą stronę idą łapki."
+ },
+ "line.b_dokad_nie.wiewiorka": {
+  "hash": "2dfc72f5b878",
+  "who": "wiewiorka",
+  "text": "Popatrz, w którą stronę idą łapki."
+ },
+ "line.b_do_debu": {
+  "hash": "d0f02bc2f48c",
+  "who": "wiewiorka",
+  "text": "Do wielkiego dębu w lesie! Idziemy!"
+ },
+ "line.b_poskladaj": {
+  "hash": "83c56d3c2037",
+  "who": "wiewiorka",
+  "text": "Złóż mapę z kawałków, żebyśmy wiedzieli, którędy iść."
+ },
+ "line.c_komiks_1": {
+  "hash": "508e29d68cab",
+  "who": "lisek",
+  "text": "Każdego ranka zbierałem czerwone rzeczy i wiązałem im złote kokardki."
+ },
+ "line.c_komiks_2": {
+  "hash": "1b64cbf91b6e",
+  "who": "lisek",
+  "text": "Potem cichutko kładłem je pod jabłonką."
+ },
+ "line.c_komiks_3": {
+  "hash": "dad56f2c3a5e",
+  "who": "lisek",
+  "text": "A potem chowałem się za drzewem i patrzyłem, jak się cieszycie."
+ },
+ "line.p_wspolne_ok": {
+  "hash": "0524f67c4759",
+  "who": "sarenka",
+  "text": "Tak, czerwona piłka! W tej grupie są same czerwone rzeczy."
+ },
+ "line.p_tajna": {
+  "hash": "68f81c02f2b1",
+  "who": "wiewiorka",
+  "text": "Koszyk i skrzynia mają tajną zasadę. Wkładaj do nich rzeczy i zgadnij jaką!"
+ },
+ "line.p_tajna_nie": {
+  "hash": "5229d45e8c64",
+  "who": "wiewiorka",
+  "text": "Wypluło! Ta rzecz tu nie pasuje."
+ },
+ "line.p_tajna_nie.sarenka": {
+  "hash": "f072656d933b",
+  "who": "sarenka",
+  "text": "Wypluło! Ta rzecz tu nie pasuje."
+ },
+ "line.p_tajna_ok": {
+  "hash": "adbbebe1ba71",
+  "who": "sarenka",
+  "text": "Już wiem! Grzyby do koszyka, a szyszki do skrzyni."
+ },
+ "line.p_inny_ok": {
+  "hash": "c7ef531bdf3a",
+  "who": "sarenka",
+  "text": "Tak, kasztan! Reszta to żołędzie."
+ },
+ "line.p_wymysl": {
+  "hash": "e8a9c50d99d7",
+  "who": "sarenka",
+  "text": "Teraz ty wymyśl zasadę! Pogrupuj liście i chorągiewki tak, jak chcesz."
+ },
+ "line.p_wymysl_nie": {
+  "hash": "e60acf17a392",
+  "who": "sarenka",
+  "text": "Ta rzecz nie pasuje do tego, co już tam leży."
+ },
+ "line.p_wymysl_nie.wiewiorka": {
+  "hash": "073eb05fd2ed",
+  "who": "wiewiorka",
+  "text": "Ta rzecz nie pasuje do tego, co już tam leży."
+ },
+ "line.p_wg_koloru": {
+  "hash": "37dc3c4ae77c",
+  "who": "wiewiorka",
+  "text": "Grupujesz według koloru: czerwone razem, a żółte razem!"
+ },
+ "line.p_wg_koloru.sarenka": {
+  "hash": "061c77380108",
+  "who": "sarenka",
+  "text": "Grupujesz według koloru: czerwone razem, a żółte razem!"
+ },
+ "line.p_wg_rodzaju": {
+  "hash": "5821c2b80a52",
+  "who": "wiewiorka",
+  "text": "Grupujesz według kształtu: liście razem, a chorągiewki razem!"
+ },
+ "line.p_wg_rodzaju.sarenka": {
+  "hash": "fb7244f8c48f",
+  "who": "sarenka",
+  "text": "Grupujesz według kształtu: liście razem, a chorągiewki razem!"
+ },
+ "line.p_inaczej": {
+  "hash": "0fcba86449e1",
+  "who": "wiewiorka",
+  "text": "A teraz pogrupuj te same rzeczy inaczej!"
+ },
+ "line.p_inaczej_ok": {
+  "hash": "4922d0444377",
+  "who": "sarenka",
+  "text": "Te same rzeczy, a grupy całkiem inne! Można grupować na różne sposoby."
+ },
+ "line.p_koniec": {
+  "hash": "f4bd544a8746",
+  "who": "wiewiorka",
+  "text": "Wszystkie gwiazdki! Jesteś prawdziwym detektywem."
+ },
+ "line.e_gra": {
+  "hash": "47603bb8a000",
+  "who": "wiewiorka",
+  "text": "Zagrajmy w detektywa! Zamknijcie oczy, a ja coś schowam."
+ },
+ "line.e_gra_kto": {
+  "hash": "5543d9a035ba",
+  "who": "sarenka",
+  "text": "Co nie pasuje do zabawek na dywanie?"
+ },
+ "line.e_gra_nie": {
+  "hash": "4c66361463fc",
+  "who": "sarenka",
+  "text": "To jest zabawka, pasuje tutaj."
+ },
+ "line.e_gra_nie.lisek": {
+  "hash": "21be85b839f2",
+  "who": "lisek",
+  "text": "To jest zabawka, pasuje tutaj."
+ },
+ "line.e_gra_ok": {
+  "hash": "8fb6b30c5704",
+  "who": "lisek",
+  "text": "Skarpetka! To ubranie, a nie zabawka. Do pudełka z nią!"
+ },
+ "line.e_szarlotka": {
+  "hash": "65bc2a64fe7f",
+  "who": "sarenka",
+  "text": "Szarlotka gotowa! Wskaż wszystko, czego potrzebujemy do szarlotki."
+ },
+ "line.e_szarlotka_nie": {
+  "hash": "05f79189b3b7",
+  "who": "sarenka",
+  "text": "Tym nie zjemy szarlotki."
+ },
+ "line.e_szarlotka_nie.wiewiorka": {
+  "hash": "f7b79f00fc84",
+  "who": "wiewiorka",
+  "text": "Tym nie zjemy szarlotki."
+ },
+ "line.e_szarlotka_ok": {
+  "hash": "246e2f0bd1f4",
+  "who": "wiewiorka",
+  "text": "Talerz, kubek i łyżka. Wszystko do jedzenia!"
+ },
+ "line.b_co_przyda_ok": {
+  "hash": "337f4e83b59b",
+  "who": "sarenka",
+  "text": "Tak, czapka i szalik! One grzeją."
+ },
+ "line.c_pogrupowane": {
+  "hash": "c2a3caa9a58b",
+  "who": "lisek",
+  "text": "Czapki w koszyku, szaliki w pudełku! Teraz widać wszystkie moje czapki naraz."
+ },
+ "line.e_porzadek": {
+  "hash": "0adab01f3fdc",
+  "who": "sarenka",
+  "text": "Teraz to jest prawdziwy porządek!"
  }
 }

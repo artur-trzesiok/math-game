@@ -1,0 +1,68 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "postacie": [
+  "lisek"
+ ],
+ "lekcje": [
+  "grouping"
+ ],
+ "opis": "PANEL 1 (the big one on the left), early morning, soft pink dawn light in an autumn forest: the FOX, alone, happily gathers RED things into his arms - a shiny red apple, a big red maple leaf, a red toy block and a red-and-white ball - each tied with a golden ribbon bow. PANEL 2 (top right), dawn in the autumn orchard from the reference picture: the FOX tiptoes under the apple tree and carefully lays the red gifts with golden bows on the grass, looking over his shoulder. PANEL 3 (bottom right), morning: the FOX peeks out shyly from behind a thick tree trunk, only his head and one paw seen, blushing and smiling, watching the little pile of red gifts under the apple tree. Gentle, warm and a little funny; the fox is the ONLY animal in the picture.",
+ "uklad": "3",
+ "okienka": [
+  [
+   [
+    0.026,
+    0.0391
+   ],
+   [
+    0.026,
+    0.9609
+   ],
+   [
+    0.4889,
+    0.9609
+   ],
+   [
+    0.5911,
+    0.0391
+   ]
+  ],
+  [
+   [
+    0.612,
+    0.0391
+   ],
+   [
+    0.5579,
+    0.5254
+   ],
+   [
+    0.974,
+    0.4492
+   ],
+   [
+    0.974,
+    0.0391
+   ]
+  ],
+  [
+   [
+    0.974,
+    0.4795
+   ],
+   [
+    0.5547,
+    0.5557
+   ],
+   [
+    0.5098,
+    0.9609
+   ],
+   [
+    0.974,
+    0.9609
+   ]
+  ]
+ ]
+}

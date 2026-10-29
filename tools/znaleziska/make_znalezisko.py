@@ -100,7 +100,9 @@ far apart, never crossing or touching each other:
 Every path carries leaves of ONE colour only, clearly visible along its whole length. Between the paths little trees
 drawn simply with soft green crowns, a few bushes, like a child's map. Big simple clear shapes.
 {STYL}""",
-        "cele": ["the big oak tree with the little round door at the top right, at the very end of the path of red leaves"],
+        "cele": [{"droga": "the whole RIGHT path strewn with RED leaves, from the round meadow at the bottom up to the big oak tree with the little door at the top right"},
+                 {"droga": "the whole MIDDLE path strewn with GREEN leaves, from the round meadow at the bottom up to the pond by the wooden hut at the top"},
+                 {"droga": "the whole LEFT path strewn with YELLOW leaves, from the round meadow at the bottom up to the burrow in the hill at the top left"}],
     },
     # queue: Beaver's photo of the finish line - the hedgehog's nose touches the line first, the bunny just behind
     "fotofinisz": {
