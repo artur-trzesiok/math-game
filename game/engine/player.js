@@ -65,7 +65,7 @@ const DEBUG = PARAMS.has("debug");
 // ?scenariusz: the story preview (manager/opowiesc.html) - the autopilot plays the lesson and every line, shot and
 // task is written down in order with a thumbnail of the frame (gra.scenariusz)
 const NAGRAJ = PARAMS.has("scenariusz");
-const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie"]);
+const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie", "focus", "rozblysk"]);
 const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose"]);                   // ?debug=1: the phase icons jump between stages
 
 // a background's identity: a name, or an insert {kolor, motyw}

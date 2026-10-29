@@ -68,21 +68,22 @@ async function czas(lang, lekcja, stem) {
 function analizuj(ev) {
   const uwagi = new Map(), dodaj = (i, tekst, lekka = false) => { if (!uwagi.has(i)) uwagi.set(i, []); uwagi.get(i).push({ tekst, lekka }); };
   const opowiesc = (e) => e.typ === "kwestia" && e.zrodlo === "opowiesc";
-  let odOstatniej = 0, ostatniaInterakcja = -1, poZmianieMiejsca = false, ciagMowy = [];
+  let odOstatniej = 0, ostatniaInterakcja = -1, poZmianieMiejsca = false, ciagMowy = [], wUjeciu = 0;
   for (let i = 0; i < ev.length; i++) {
     const e = ev[i], prev = ev[i - 1];
     const nowaScena = !prev || prev.etap !== e.etap || prev.scena !== e.scena;
     if (nowaScena) {
       if (ostatniaInterakcja >= 0 && odOstatniej === 0) dodaj(ostatniaInterakcja, "Zadanie bez komentarza: nikt nie mówi, co z niego wyszło ani co dalej.");
-      odOstatniej = 0; ostatniaInterakcja = -1; poZmianieMiejsca = false; ciagMowy = [];
+      odOstatniej = 0; ostatniaInterakcja = -1; poZmianieMiejsca = false; ciagMowy = []; wUjeciu = 0;
     }
     if (opowiesc(e)) {
       if (e.dur === null) dodaj(i, "Brak nagrania tej kwestii.");
       odOstatniej++; poZmianieMiejsca = false;
       if (!e.anim) ciagMowy.push(i); else ciagMowy = [];
+      if (++wUjeciu === 4) dodaj(i, "Statyczny montaż: cztery kwestie w jednym ujęciu - potrzebne cięcie, zbliżenie, plan średni albo ruch kamery.");
       if (ciagMowy.length === 5) dodaj(i, "Długa rozmowa bez akcji: pięć kwestii z rzędu, a na ekranie nic się nie dzieje (bez ujęcia, ruchu, emocji).");
     } else if (e.typ === "obraz") {
-      ciagMowy = [];
+      ciagMowy = []; if (["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "focus", "rozblysk", "przejscie"].includes(e.co)) wUjeciu = 0;   // the camera or the picture moved
       if (["go", "pan", "przejscie"].includes(e.co)) poZmianieMiejsca = true;
     } else if (e.typ === "interakcja") {
       ciagMowy = [];

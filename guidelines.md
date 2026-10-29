@@ -304,6 +304,21 @@ one built on them (if the pro version does not work out, this section goes).
 - **Editing like a film** (`ctx.ujecie`): cut between a wide shot, a two-shot, a medium shot and a close-up
   of a face; a new shot every several seconds while the story talks; a close-up for an emotion or a reaction,
   a wide shot when something moves. A task is shown in the shot where every option is visible.
+- **A static camera is a bug, in EVERY lesson and every stage (the user flagged it again and again).** A scene
+  filmed in one wide shot from start to end reads as dull however good the script is. The rule, checked before a
+  lesson is called done:
+  - at most three spoken lines in a row in the same shot - then a cut (`ujecie`), a pan, a walk into the
+    picture, an insert (`go`) or a focus (`focus`) on the thing talked about;
+  - a close-up (`zblizenie`) for every emotion, surprise, "oh no" and "thank you"; a medium shot (`sredni`,
+    `na: [who, thing]`) when a character talks about a thing - the thing in the shot;
+  - a two-shot (`dwuujecie`) for a dialogue of two; back to the wide shot (`ogolny`) for every task, walk and
+    anything that moves across the screen;
+  - a discovery gets `rozblysk`, an arrival a walk-in (`przejdz`), a new place a transition or a pan;
+  - practice and home too: a close-up on the praise between rounds, a medium shot on a thing before it is asked
+    about, an insert for a method - not five tasks in one frozen frame;
+  - measure: in the story at least one camera call (`ujecie`, `pan`, `focus`, `go`, `przejdz`, `rozblysk`) per
+    two or three lines (`grep -c` in lesson.js; tall_short, grouping_pro, more_fewer_pro are the reference, about
+    0.4-0.7 per line); the story preview flags four lines in one shot.
 - **Wide sceneries and pans** (`ctx.pan`): a background may be wider than the screen (a panorama made of
   joined tiles); a scene moves to the next area with a pan while the characters walk, instead of a cut to
   another picture when the place is the same.
