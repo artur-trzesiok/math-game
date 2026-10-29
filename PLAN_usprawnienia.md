@@ -13,10 +13,10 @@ Updated at the end of every phase (date, commit).
 |---|---|
 | 0 rules, game_mechanics.md, flags, lint | DONE 2026-10-29 (f7296d08, 3e40898d, b073483a + flags commit). Baseline from `montaz.py all`: 1209 shots, 44 % wide, 28 two-shots, 2 inserts, 74 wide-then-cut, 237 ping-pongs, 111 "Wskaż." lines, 22 home stages under 4 interactions |
 | 1 praise / wrong variants | DONE 2026-10-29: `game/pochwaly` (6 praise + 4 wrong, pl + en, all nine voices, 180 mp3), `ctx.brawo`, the wrong pool where a lesson has no line of its own; first use in shapes practice (verified: Owl said brawo_5) |
-| 2 seven mechanics | in progress: 2.1 illustration built (engine, pipeline, 2 samples, demo, manager tab) |
-| 2b breathers designed and built | - |
-| 3 home act, rooms with drop places | - |
-| tables: placements, breathers, panoramas | - |
+| 2 seven mechanics | DONE 2026-10-29 (1f2b8e2a, 9617ca36, 65b00498): ilustracja, miejsca, zdrapka, kropki, historyjka, podarty, wedrowka - engine, pipelines, 2 samples each (podarty / wedrowka reuse found pictures), demos on mechaniki.html, manager tabs Ilustracje / Miejsca / Zdrapki / Kropki / Historyjki, entries in game_mechanics.md. Waiting: the user's look at the demos |
+| 2b breathers designed and built | design sheet written (`game/lessons/oddechy_plan.md`); waiting: which of the 8 new ones to build |
+| 3 home act, rooms with drop places | rooms DONE (dom, pokoj, pokoj_noc, przedpokoj have `miejsca.json`), the architecture is in guidelines.md; the home acts themselves are written in phase 5. Found: the bookcase in pokoj / pokoj_noc and most of the doormat lie off a 4:3 screen, the hooks reach under the phase icons |
+| tables: placements, breathers, panoramas | written (`game/lessons/rozmieszczenie_plan.md`, `oddechy_plan.md`); waiting for approval |
 | 4-5 pass over the 24 lessons | - |
 | 6 whole game | - |
 
