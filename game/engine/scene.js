@@ -724,7 +724,7 @@ export class Stage {
   // ------------------------------------------------------------------ pencil
   // a pencil stroke along a path (polyline [[x, y], ...] or { bezier: [p0, c1, c2, p1, ...] }), drawn in over
   // `duration` s; a handle like a sticker's: a task target (a wide invisible strip takes the tap), remove, highlight
-  async line(path, { width = 0.06, color = "#3b3631", duration = 0.7, wobble = 0.012, name = "kreska", wait = true, strong = false, halo = true } = {}) {
+  async line(path, { width = 0.06, color = "#3b3631", duration = 0.7, wobble = 0.012, name = "kreska", wait = true, strong = false, halo = true, warstwa = 11 } = {}) {
     const pts = probkuj(path);
     const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
     const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
@@ -732,13 +732,13 @@ export class Stage {
     const seed = Math.random() * 1000;
     const { g: geo, dlugosc } = wstega(local, { grubosc: width, drzenie: wobble, ziarno: seed });
     const mat = olowekMaterial(color, dlugosc, seed, strong ? 1 : 0);
-    const stroke = new THREE.Mesh(geo, mat); stroke.renderOrder = 12; stroke.frustumCulled = false;
+    const stroke = new THREE.Mesh(geo, mat); stroke.renderOrder = warstwa + 0.01; stroke.frustumCulled = false;   // `warstwa`: over a big picture (38+), the halo still under the ink
     // a white outline under every stroke, like the stickers' die-cut edge: the pencil reads on grass, water and sky
     let haloMesh = null;
     if (halo) {
       const hw = Math.max(0.06, width * 0.7);
       haloMesh = new THREE.Mesh(wstega(local, { grubosc: width + 2 * hw, drzenie: wobble, ziarno: seed }).g, olowekMaterial("#ffffff", dlugosc, seed + 7, 1));
-      haloMesh.material.uniforms.mocno.value = 1; haloMesh.renderOrder = 11; haloMesh.frustumCulled = false;
+      haloMesh.material.uniforms.mocno.value = 1; haloMesh.renderOrder = warstwa; haloMesh.frustumCulled = false;
     }
     const hit = new THREE.Mesh(wstega(local, { grubosc: Math.max(0.45, width * 4), drzenie: 0 }).g,
       new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false, colorWrite: false, side: THREE.DoubleSide }));

@@ -100,6 +100,8 @@ const DEMA = {
     const pary = { skarpetka: "but", kubek: "talerz", kwiatek: "motyl" };
     await M2.polacz(S, { lewe: L, prawe: P, para: (a, b) => pary[a.name] === b.name }); info("połączone!");
   },
+  labirynt: async () => { pokaz("lisek", "sowa"); info("poprowadź jeżyka palcem przez labirynt do wyjścia"); await M3.labirynt(S, "zywoplot", { pionek: "jez", cel: "jablko" }); info("wyszedł!"); },
+  znalezisko: async () => { pokaz("lisek", "sowa"); info("wskaż na mapie, gdzie ścieżka przecina strumyk"); const z = await M3.znalezisko(S, "mapa_polany", { skad: "lisek" }); const hit = await S.choose([...z.cele, z.tlo]); info(z.cele.includes(hit) ? "tak!" : "pudło"); await z.zaznacz(); },
   zagroda: async () => {
     pokaz(); info("otocz palcem płotem same kury (nie wilka)");
     const R = [];

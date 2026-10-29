@@ -377,13 +377,82 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 5.6, r
   const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [w.x + Math.cos(a) * c.r, w.y + Math.sin(a) * c.r * 0.92]; }); };
   return {
     ...h, cele, tlo, meta,
-    zaznacz: async () => { for (const c of cele) { const k = await S.line(kolo(c), { color: "#e8502e", width: 0.1, duration: 0.3, strong: true }); k.mesh.traverse((o) => { o.renderOrder = 39; }); kolka.push(k); } },
+    zaznacz: async () => { for (const c of cele) kolka.push(await S.line(kolo(c), { color: "#e8502e", width: 0.1, duration: 0.3, strong: true, warstwa: 39 })); },
     remove: async () => {
       cele.forEach((c) => c.remove()); tlo.remove(); kolka.forEach((k) => k.remove());
       await S.tween(0.3, (s) => { grp.scale.setScalar(1 - 0.9 * s); welon.material.opacity = 0.42 * (1 - s); });
       h.remove();
     },
   };
+}
+
+// ===================================================================== a maze (labirynt)
+// game/assets/labirynty/<name> (tools/labirynty): a painted maze whose plan (cells and walls) the game checks moves on.
+// It lies big over a dimmed scene; `pionek` (a sticker) stands at the entrance, `cel` (a sticker) at the exit. The child
+// leads the pawn with a finger: it steps into the next cell only through an opening, a pencil trail behind it; going
+// back is allowed. Resolves at the exit; `S.labirynt.dokoncz()` walks it there (tests).
+export async function labirynt(S, nazwa, { pionek = "jez", cel = null, y = 0.2, szer = 10.2 } = {}) {
+  const kat = `/game/assets/labirynty/${nazwa}/`;
+  const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
+  const tex = await texture(kat + "obraz.webp");
+  const W = szer, H = W * meta.wysokosc / meta.szerokosc, K = meta.kolumny, R = meta.wiersze;
+  const mat = (o) => new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, ...o });
+  const welon = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), mat({ color: "#1d1a17", opacity: 0 }));
+  welon.position.set(0, 0, 0.42); welon.renderOrder = 38; S.scene.add(welon);
+  const grp = new THREE.Group(); grp.position.set(0, y, 0.45); S.scene.add(grp);
+  const brzeg = new THREE.Mesh(new THREE.PlaneGeometry(W + 0.3, H + 0.3), mat({ color: "#fffaf0" })); brzeg.position.z = -0.01; brzeg.renderOrder = 38.4;
+  const obraz = new THREE.Mesh(new THREE.PlaneGeometry(W, H), mat({ map: tex })); obraz.renderOrder = 38.6;
+  grp.add(brzeg, obraz);
+  const [fx0, fy0, fx1, fy1] = meta.ramka, cw = (fx1 - fx0) * W / K, ch = (fy1 - fy0) * H / R;
+  const srodek = ([c, r]) => [-W / 2 + fx0 * W + (c + 0.5) * cw, y + H / 2 - fy0 * H - (r + 0.5) * ch];
+  const komorka = ([x, yy]) => [Math.floor((x + W / 2 - fx0 * W) / cw), Math.floor((y + H / 2 - fy0 * H - yy) / ch)];
+  const sciana = ([c, r], k) => meta.sciany[r * K + c][k];          // k: 0 N, 1 E, 2 S, 3 W
+  const KIER = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+  const otwarte = (a, b) => { const k = KIER.findIndex(([dx, dy]) => a[0] + dx === b[0] && a[1] + dy === b[1]); return k >= 0 && !sciana(a, k); };
+  // the pawn and the goal: stickers over the picture
+  const naWierzch = (h, ro) => h.mesh.traverse((o) => { if (o.isMesh) o.renderOrder = ro; });
+  let poz = meta.start.slice();
+  const [sx, sy] = srodek(poz), roz = Math.min(cw, ch) * 0.8;
+  const pion = await S.object(pionek, { x: sx, y: sy, size: roz, z: 0.6 }); naWierzch(pion, 39.5);
+  let meta2 = null;
+  if (cel) { const [gx, gy] = srodek(meta.cel); meta2 = await S.object(cel, { x: gx, y: gy, size: roz * 0.9, z: 0.55 }); naWierzch(meta2, 39.2); }
+  await S.tween(0.35, (s) => { welon.material.opacity = 0.42 * s; });
+  const slad = [];
+  const krok = async (nowa) => {
+    const a = srodek(poz), b = srodek(nowa); poz = nowa;
+    S.line([a, b], { color: "#e8502e", width: 0.12, duration: 0.12, strong: true, wait: false, warstwa: 38.9 }).then((k) => slad.push(k));
+    await pion.moveTo(b[0], b[1], 0.12);
+  };
+  const wyjscie = async () => { S.sfx.graj("right"); if (meta2) S.bump(meta2, 0.3, false); await S.wait(0.4); };
+  await new Promise((gotowe) => {
+    let aktywny = false, idzie = false, koniec = false;
+    const sprawdzKoniec = async () => { if (!koniec && poz[0] === meta.cel[0] && poz[1] === meta.cel[1]) { koniec = true; oddaj(); S.labirynt = null; await wyjscie(); gotowe(); } };
+    const oddaj = (() => { const h = {
+      down: ([px, py]) => { const [x, yy] = srodek(poz); if (Math.hypot(px - x, py - yy) > Math.max(cw, ch) * 0.8) return false; aktywny = true; S.sfx.graj("tap"); return true; },
+      move: async ([px, py]) => {
+        if (!aktywny || idzie || koniec) return;
+        const k = komorka([px, py]);
+        if (k[0] === poz[0] && k[1] === poz[1]) return;
+        // one cell at a time, towards the finger: through an opening it goes, against a hedge it stops
+        const dx = Math.sign(k[0] - poz[0]), dy = Math.sign(k[1] - poz[1]);
+        const proba = Math.abs(k[0] - poz[0]) >= Math.abs(k[1] - poz[1]) ? [[poz[0] + dx, poz[1]], [poz[0], poz[1] + dy]] : [[poz[0], poz[1] + dy], [poz[0] + dx, poz[1]]];
+        const nast = proba.find((n) => (n[0] !== poz[0] || n[1] !== poz[1]) && otwarte(poz, n));
+        if (!nast) return;
+        idzie = true; await krok(nast); idzie = false; sprawdzKoniec();
+      },
+      up: () => { aktywny = false; },
+    }; S.palec = h; return () => { if (S.palec === h) S.palec = null; }; })();
+    S.labirynt = { meta, dokoncz: async () => {                     // tests: the way out by a search over the plan
+      const klucz = (q) => q.join(","), skad = new Map([[klucz(poz), null]]), kol = [poz];
+      while (kol.length) { const q = kol.shift(); if (q[0] === meta.cel[0] && q[1] === meta.cel[1]) break; for (const [dx, dy] of KIER) { const n = [q[0] + dx, q[1] + dy]; if (n[0] < 0 || n[1] < 0 || n[0] >= K || n[1] >= R || skad.has(klucz(n)) || !otwarte(q, n)) continue; skad.set(klucz(n), q); kol.push(n); } }
+      const droga = []; for (let q = meta.cel; q && klucz(q) !== klucz(poz); q = skad.get(klucz(q))) droga.unshift(q);
+      for (const q of droga) await krok(q);
+      await sprawdzKoniec();
+    } };
+  });
+  const h = { mesh: grp, kind: "labirynt", name: nazwa, base: 1,
+    remove: async () => { slad.forEach((k) => k.remove()); pion.remove(); meta2?.remove(); await S.tween(0.3, (s) => { welon.material.opacity = 0.42 * (1 - s); grp.scale.setScalar(1 - 0.9 * s); }); S.scene.remove(grp); S.scene.remove(welon); } };
+  return h;
 }
 
 function uchwytCelu(S, g, extra) {

@@ -355,7 +355,12 @@ the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program 
 `skad` and lies big over a dimmed scene; it returns {cele, tlo, zaznacz(), remove()} and the lesson asks with
 `c.task({targets: [...z.cele, z.tlo], correct: z.cele (wszystkie for several)})`, so a tap elsewhere is a miss with the
 hint ladder (`tools/znaleziska/make_znalezisko.py`: gpt-image draws the picture, then an edit with a magenta disc on
-every spot described in words; the discs found by colour are the `cele`; review `work/<name>_cele.png`); stickers have random variants (`game/engine/warianty.js`, `object(name, {plik})` forces one); `ctx.roznice(name)` - spot the difference (`tools/roznice/make_roznice.py`:
+every spot described in words; the discs found by colour are the `cele`; review `work/<name>_cele.png`); `ctx.labirynt(name, {pionek, cel})` - a painted maze the child leads a pawn through with a finger, cell by cell
+through the openings only, a pencil trail behind (`tools/labirynty/make_labirynt.py`: Python makes a perfect maze and
+its plain plan, gpt-image paints it with the plan as the reference - a hedge maze, forest paths - and the build checks
+every wall and opening of the painting against the plan, review `work/<name>_sprawdz.png`; moves are checked on the
+plan, never on the painting; tests `S.labirynt.dokoncz()`); `ctx.line(..., {warstwa})` lifts a stroke over a big
+picture (38+) keeping its halo under the ink; stickers have random variants (`game/engine/warianty.js`, `object(name, {plik})` forces one); `ctx.roznice(name)` - spot the difference (`tools/roznice/make_roznice.py`:
 gpt-image draws a picture and an edit with the pair's changes spelled out, the code finds the changed areas by a
 blurred difference; review `tools/roznice/work/<name>_roznice.png`); `ctx.kolorowanka(name)` - colour by number
 (`tools/kolorowanki/make_kolorowanka.py`: a flat-coloured page split into regions, colours clustered into a palette).

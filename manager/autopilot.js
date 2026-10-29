@@ -13,6 +13,7 @@ export async function run(maxSteps = 20, prefix = "a") {
       if (G?.polacz) { await sleep(300); await snap(`${prefix}polacz${step}`); await G.polacz.dokoncz(); log.push("polacz"); await sleep(400); continue; }
       if (G?.szukaj) { const z = G.szukaj; await sleep(300); await snap(`${prefix}szukaj${step}`); if (G.szukaj === z) await z.dokoncz(); log.push("szukaj"); await sleep(400); continue; }
       if (G?.zagroda) { await sleep(300); await snap(`${prefix}zagroda${step}`); await G.zagroda.dokoncz(); log.push("zagroda"); await sleep(400); continue; }
+      if (G?.labirynt) { await sleep(300); await snap(`${prefix}labirynt${step}`); await G.labirynt.dokoncz(); log.push("labirynt"); await sleep(400); continue; }
       if (G?.winda) { await sleep(300); await snap(`${prefix}winda${step}`); await G.winda.dokoncz(); log.push("winda"); await sleep(400); continue; }
       if (G?.kolorowanka) { await sleep(300); G.kolorowanka.dokoncz(); log.push("kolorowanka"); await sleep(400); continue; }
       const ds = gra.stage && gra.stage.dragSet;

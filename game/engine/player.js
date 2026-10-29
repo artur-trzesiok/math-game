@@ -614,6 +614,7 @@ export class Player {
       domino: (a, b, o) => { alive(); return M3.domino(S, a, b, o); },
       szukaj: (nazwa, o) => wDzialaniu(M3.szukaj(S, nazwa, o), "wskaz"),
       znalezisko: guard((nazwa, o) => M3.znalezisko(S, nazwa, o)),
+      labirynt: (nazwa, o) => wDzialaniu(M3.labirynt(S, nazwa, o), "wskaz"),
       winda: guard(async (o = {}) => {
         const w = await M3.winda(S, { ...o, onZly: o.wrong ? () => say("narrator", o.wrong) : null });
         const d0 = w.doPoziomu; w.doPoziomu = (i) => wDzialaniu(d0(i)); return w;
