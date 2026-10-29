@@ -243,7 +243,13 @@ export class Player {
       <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><span class="rama"><span class="widok" style="background-image:url(${v(`/game/assets/menu/${nastepny.tlo}.webp`)})"></span><img class="slupy" src="${v("/game/assets/menu/brama.webp")}" alt=""></span>
         <div class="dokad"><img src="${v(`/game/assets/menu/odznaka_${nastepny.id}.webp`)}" alt="">${nastepny.title?.[this.lang] || nastepny.title?.en || ""}</div>
         ${otwartySwiat(nastepny) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}</div>` : "";
-    pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
+    // at the START of a world's strip (not the first world), the gate back: mirrored, its arrow pointing back, the land it
+    // returns to seen through it - the child sees it is the way home
+    const poprzedni = swiaty[nrSwiata - 1] || null;
+    const powrot = poprzedni ? `<div class="brama wstecz" data-swiat="${poprzedni.id}"><span class="rama"><span class="widok" style="background-image:url(${v(`/game/assets/menu/${poprzedni.tlo}.webp`)})"></span><img class="slupy" src="${v("/game/assets/menu/brama.webp")}" alt=""><img class="wracam" src="${v(`/game/assets/menu/odznaka_${poprzedni.id}.webp`)}" alt=""></span>
+        <div class="dokad"><img src="${v(`/game/assets/menu/odznaka_${poprzedni.id}.webp`)}" alt="">${poprzedni.title?.[this.lang] || poprzedni.title?.en || ""}</div></div>
+      <div class="drogowskaz wstecz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "";
+    pas.innerHTML = powrot + topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
       <section class="topic${otwarty[i] ? "" : " zamkniety"}${t.znak ? " ze-znakiem" : ""}" data-topic="${t.id}" style="--c:${t.color};--odcien:${odcien(t.color)}deg">
         ${t.title ? `<h2>${t.znak ? `<img class="znak" src="${v(`/game/assets/objects/${t.znak}.webp`)}" alt="">` : ""}${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
