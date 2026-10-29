@@ -339,7 +339,7 @@ export class Player {
     const c = this.context("apply", run, ++this.scenaNr);
     try {
       const L = this.stage.puppets[n.kto]; if (L && !L.korzen.visible) c.show(n.kto);
-      c.clear(); await c.ujecie("ogolny");
+      c.clear(); await c.ujecie("ogolny", { ciecie: true });
       if (Album.ma(this.lessonId)) { await c.say(n.kto, "line.naklejka_juz", { anim: "Machanie" }); return; }   // a second time: no second sticker
       const wziete = Album.wrecz(this.lessonId, n, { szybko: FAST });
       await c.say(n.kto, "line.naklejka_daj", { anim: "Radosc" });
@@ -431,7 +431,7 @@ export class Player {
   posprzataj() {
     const S = this.stage; if (!S) return;
     this.speech.stop(); S.cancelChoice(); S.endSort(); S.clear();
-    E.ujecie(S, "ogolny");
+    E.ujecie(S, "ogolny", { ciecie: true });
   }
 
   context(st, run, nr = this.scenaNr) {
@@ -552,7 +552,7 @@ export class Player {
       go: guard(async (bg, { enter = false, przejscie = undefined, obszar = 0, ciecie = false } = {}) => {
         if (S.bgName === tloId(bg)) return;
         const zmien = async () => {
-          S.clear(); E.ujecie(S, "ogolny");
+          S.clear(); E.ujecie(S, "ogolny", { ciecie: true });   // a new place: a cut
           for (const L of Object.values(S.puppets)) { if (enter) L.korzen.visible = false; else L.korzen.position.x = L.home; }
           await S.background(bg); S.bgName = tloId(bg);
           if (obszar) E.ustawObszar(S, obszar);

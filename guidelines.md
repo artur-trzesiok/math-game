@@ -329,6 +329,11 @@ included - a lesson that misses them is unfinished, whatever its folder is calle
   - a discovery gets `rozblysk`, an arrival a walk-in (`przejdz`), a new place a transition or a pan;
   - practice and home too: a close-up on the praise between rounds, a medium shot on a thing before it is asked
     about, an insert for a method - not five tasks in one frozen frame;
+  - cut or fly - the engine decides by one key, the lesson only names the shot: a CUT when the subject changes
+    (another character's face, other things, a new place), so a small viewer sees at once what to look at; a FLIGHT
+    when the new shot keeps something of the last one (the same character or thing), when it widens back to the whole
+    scene and when a medium shot opens from the wide one; a close-up from afar is a cut with comic speed lines. A held
+    shot creeps in slowly (5 % in 8 s). `?kamera=ciecie` / `?kamera=lot` force one way to compare;
   - measure: in the story at least one camera call (`ujecie`, `pan`, `focus`, `go`, `przejdz`, `rozblysk`) per
     two or three lines (`grep -c` in lesson.js; tall_short, grouping_pro, more_fewer_pro are the reference, about
     0.4-0.7 per line); the story preview flags four lines in one shot.

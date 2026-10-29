@@ -12,6 +12,9 @@ import { GROUND } from "./scene.js";
 const PARAMS = new URLSearchParams(location.search);
 const FAST = PARAMS.has("szybko");
 const easeInOut = (s) => s * s * (3 - 2 * s);
+// cut or fly (ujecie): ?kamera=ciecie / ?kamera=lot force one way for comparison; by default the shot decides (ruchKamery)
+const KAMERA = PARAMS.get("kamera");
+const gladko = (s) => (s < 0.5 ? 4 * s * s * s : 1 - (-2 * s + 2) ** 3 / 2);       // ease in-out, softer at both ends
 const easeOut = (s) => 1 - Math.pow(1 - s, 3);
 const easeOutBack = (s) => { const c = 1.7; return 1 + (c + 1) * Math.pow(s - 1, 3) + c * Math.pow(s - 1, 2); };
 const los = (a, b) => a + Math.random() * (b - a);
@@ -632,7 +635,22 @@ function obwiednia(S, cele) {
   }
   return b;
 }
-export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 0.8 } = {}) {
+// The editing key, one rule for every lesson: CUT when the subject changes (another character's face, other things, a
+// new place) - a small viewer sees at once what to look at; FLY when the new shot keeps something of the last one (the
+// same character or thing, Deer and then Deer with the planks), when it widens back to the whole scene (before a task
+// or a walk) and when a medium shot opens from the wide one (the camera goes to what is talked about); a close-up from
+// afar is a cut with comic speed lines. A held shot creeps in slowly, so even a long talk is never a frozen frame.
+function ruchKamery(S, typ, lista) {
+  if (KAMERA === "ciecie") return "ciecie";
+  if (KAMERA === "lot") return "lot";
+  const bylo = S.ujecieTeraz || "ogolny", wspolne = lista.some((h) => (S.ujecieNa || []).includes(h));
+  if (typ === "ogolny") return bylo === "ogolny" ? "ciecie" : "lot";
+  if (wspolne) return "lot";
+  if (bylo === "ogolny" && typ !== "zblizenie") return "lot";
+  return "ciecie";
+}
+
+export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 0.8 } = {}) {
   const lista = (Array.isArray(na) ? na : na ? [na] : []).map((n) => (typeof n === "string" ? S.puppets[n] : n)).filter(Boolean);
   // something still popping in (grown from nothing) is measured too small: the shot framed an empty box
   const rosnie = (h) => (h.korzen ? h.korzen.scale.x < 0.97 : h.mesh && h.base ? h.mesh.scale.x < h.base * 0.97 : false);
@@ -680,10 +698,25 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 
   S.unlift?.();
   const kam = S.camera, z0 = kam.zoom, x0 = kam.position.x, y0 = kam.position.y;
   const krok = (s) => { kam.zoom = z0 + (z - z0) * s; kam.position.x = x0 + (cx - x0) * s; kam.position.y = y0 + (cy - y0) * s; kam.updateProjectionMatrix(); };
-  // a jump in close gets speed lines (the comic-book zoom); a cut back out does not
-  if (typ === "zblizenie" && S.ujecieTeraz !== "zblizenie") linieSzybkosci(S);
-  if (ciecie || FAST) krok(1); else await S.tween(d, krok);
+  // `ciecie`: true / false from the caller wins (the engine cuts on a change of place); otherwise the editing key
+  const ruch = ciecie === true ? "ciecie" : ciecie === false ? "lot" : ruchKamery(S, typ, lista);
+  (S.montaz ||= []).push([typ, ruch]);                                    // tests: the editing as it went
+  // a jump in close gets speed lines (the comic-book zoom); a cut back out does not, a flight neither
+  if (typ === "zblizenie" && S.ujecieTeraz !== "zblizenie" && ruch === "ciecie") linieSzybkosci(S);
+  const dryfNr = (S.dryfNr = (S.dryfNr || 0) + 1);
+  if (FAST) krok(1);
+  else if (ruch === "lot") {
+    // the length of the flight grows with how far it goes (a near reframe 0.7 s, across the scene 1.6 s)
+    const dl = Math.hypot(cx - x0, cy - y0) / 6 + Math.abs(Math.log(z / z0));
+    // far across the scene it rises over it: the zoom dips half way (a close-up to a close-up never slides at full zoom)
+    const wznies = Math.min(0.6, Math.abs(cx - x0) / (v.w / Math.min(z, z0)) * 0.9);
+    await S.tween(Math.min(1.6, 0.7 + dl * 0.9), (s) => { const q = gladko(s); krok(q); kam.zoom = Math.max(1, kam.zoom * (1 - wznies * Math.sin(Math.PI * s))); kam.updateProjectionMatrix(); });
+  } else krok(1);
   S.ujecieTeraz = typ; S.ujecieNa = lista;
+  if (!FAST && typ !== "ogolny") {                           // a slow push-in while the shot holds; the next shot stops it
+    const zs = kam.zoom;
+    S.tween(8, (s) => { if (S.dryfNr !== dryfNr) return; kam.zoom = zs * (1 + 0.05 * s); kam.updateProjectionMatrix(); });
+  }
 }
 
 // the one who speaks is always in the shot: a closer shot that leaves the speaker's head out (Deer talking off the
@@ -699,7 +732,7 @@ export async function mowcaWKadrze(S, L) {
   if (widac) return;
   S.poprawkiKadru = (S.poprawkiKadru || 0) + 1;                       // tests: how often a shot had to widen
   const na = [...(S.ujecieNa || []).filter((h) => h !== L), L];
-  await ujecie(S, na.length > 1 ? "sredni" : "zblizenie", { na, ciecie: true });
+  await ujecie(S, na.length > 1 ? "sredni" : "zblizenie", { na });   // it keeps what was framed: a short flight
 }
 
 // ====================================================================== wide backgrounds: areas and pans
