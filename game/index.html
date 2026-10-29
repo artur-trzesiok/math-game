@@ -163,18 +163,17 @@
   #menu { transition: opacity .7s ease, background-image 0s; }
   #swiaty { display: flex; justify-content: center; align-items: flex-end; gap: calc(var(--k) * 0.16); padding: 0 var(--safe); }
   #swiaty:empty { display: none; }
-  /* a world is a wooden plank (its name, for the parent); a tap slides the land's round picture out from under it (the
-     child cannot read); the world the menu shows keeps its picture peeking out */
+  /* every land's round picture over a plank with its name (the name is for a parent); the world shown glows */
   /* the row has its own room for the pictures (the cards are a little smaller then): a picture never covers a card */
   #menu.ze-swiatami { --k: max(100px, min(30vh, 55vw)); }
   #swiaty button { position: relative; display: flex; flex-direction: column; align-items: center; padding: 0; border: 0; background: none; cursor: pointer; }
   #swiaty button span { position: relative; z-index: 2; display: block; font: 800 max(10px, calc(var(--k) * 0.06)) "Baloo 2", system-ui; color: var(--braz); padding: .1em .9em .2em;
     white-space: nowrap; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
   #swiaty button:active span { transform: scale(.95); }
-  #swiaty button .odznaka { position: relative; z-index: 1; width: calc(var(--k) * 0.4); margin-bottom: calc(var(--k) * -0.05); transform: translateY(55%) scale(.3); opacity: 0;
+  #swiaty button .odznaka { position: relative; z-index: 1; width: calc(var(--k) * 0.4); margin-bottom: calc(var(--k) * -0.05); transform: scale(.72); transform-origin: 50% 100%; opacity: .95;
     filter: drop-shadow(0 4px 6px rgba(60,30,0,.35)); transition: transform .5s cubic-bezier(.3,1.5,.5,1), opacity .25s; pointer-events: none; }
-  #swiaty button.on .odznaka { transform: none; opacity: 1; }
-  #swiaty button.wysun .odznaka { transform: none; opacity: 1; }
+  #swiaty button.on .odznaka { transform: none; opacity: 1; filter: drop-shadow(0 0 0 #ffd24a) drop-shadow(0 0 6px #ffd24a) drop-shadow(0 4px 6px rgba(60,30,0,.35)); }
+  #swiaty button.wysun .odznaka { transform: scale(1.08); opacity: 1; }
   #swiaty button.zamkniety .odznaka { filter: grayscale(.85) brightness(1.1) drop-shadow(0 4px 6px rgba(60,30,0,.35)); }
   #swiaty button .klodka { position: absolute; z-index: 3; left: 50%; top: calc(var(--k) * 0.06); width: calc(var(--k) * 0.22); transform: translateX(-50%) scale(0); transition: transform .4s .15s cubic-bezier(.3,1.5,.5,1); pointer-events: none; }
   #swiaty button.wysun .klodka { transform: translateX(-50%) scale(1); }

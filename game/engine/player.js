@@ -194,8 +194,8 @@ export class Player {
     menuMuzyka.graj(swiat.muzyka || "menu");
     const topics = wszystkie.filter((t) => swiatEtapu(t.id) === swiat);
     // the world switcher: a badge per world; an open one takes you there, a locked one shakes
-    // the world switcher: a plank per world (the name, for a parent); a tap slides the land's picture out from under it -
-    // an open land then takes you there, a locked one shows its padlock, shakes and hides again
+    // the world switcher: every land's painted picture over a plank with its name (for a parent - a child cannot read);
+    // a tap lifts the picture - an open land then takes you there, a locked one shows its padlock and shakes
     $("#swiaty").innerHTML = swiaty.length < 2 ? "" : swiaty.map((s) => `<button data-swiat="${s.id}" class="${s === swiat ? "on" : ""}${otwartySwiat(s) ? "" : " zamkniety"}">
       <img class="odznaka" src="${v(`/game/assets/menu/odznaka_${s.id}.webp`)}" alt="">${otwartySwiat(s) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}
       <span>${s.title?.[this.lang] || s.title?.en || ""}</span></button>`).join("");
