@@ -32,6 +32,7 @@ const PARAMS = new URLSearchParams(location.search);
 // on screen (the mist clears, the padlock opens and falls)
 const PRZEWINIECIE = "math_game.menu_x";                             // how far the menu strip was scrolled
 const OTWARTE = "math_game.otwarte", WIDZIANE = "math_game.widziane_otwarte", UKONCZONE = "math_game.etapy_ukonczone";
+const SWIAT = "math_game.swiat";                                       // the world the menu shows
 const lista = (k) => { try { return JSON.parse(localStorage.getItem(k)) || []; } catch { return []; } };
 const dopisz = (k, id) => { try { const l = lista(k); if (!l.includes(id)) localStorage.setItem(k, JSON.stringify([...l, id])); } catch { /* private mode */ } };
 const dzwiekMenu = (n) => { if (PARAMS.has("cicho")) return; try { const a = new Audio(v(`/game/audio/sfx/${n}.mp3`)); a.volume = 0.7; a.play().catch(() => {}); } catch { /* ignore */ } };
@@ -41,14 +42,21 @@ const dzwiekMenu = (n) => { if (PARAMS.has("cicho")) return; try { const a = new
 const MENU_GLOS = 0.3;
 const menuMuzyka = {
   a: null, gra: false, fade: 0,
-  graj() {
+  motyw: "menu",
+  graj(motyw = this.motyw) {
     if (PARAMS.has("cicho")) return;
+    // another world: the old tune fades out, the world's own comes in
+    if (this.a && motyw !== this.motyw) {
+      const stary = this.a; this.a = null; let k = 0;
+      const f = setInterval(() => { k++; stary.volume = Math.max(0, stary.volume - MENU_GLOS / 10); if (k >= 10) { clearInterval(f); stary.pause(); } }, 50);
+    }
+    this.motyw = motyw;
     this.gra = true; clearInterval(this.fade);
-    // two ~150 s versions in turn (tools/audio/make_music.py "menu"); the old 45 s tune if they are not made yet
+    // two ~150 s versions in turn (tools/audio/make_music.py "menu", "menu_swiat2" ...); the old 45 s tune if they are not made yet
     if (!this.a) {
       this.n = Math.floor(Math.random() * 2);
-      const nast = () => { this.n = (this.n + 1) % 2; this.a.src = v(`/game/audio/muzyka/menu_${this.n + 1}.mp3`); if (this.gra) this.a.play()?.catch(() => {}); };
-      this.a = new Audio(v(`/game/audio/muzyka/menu_${this.n + 1}.mp3`));
+      const nast = () => { this.n = (this.n + 1) % 2; this.a.src = v(`/game/audio/muzyka/${motyw}_${this.n + 1}.mp3`); if (this.gra) this.a.play()?.catch(() => {}); };
+      this.a = new Audio(v(`/game/audio/muzyka/${motyw}_${this.n + 1}.mp3`));
       this.a.onended = nast;
       this.a.onerror = () => { if (!this.a.src.endsWith("menu.mp3")) { this.a.onended = null; this.a.loop = true; this.a.src = v("/game/audio/muzyka/menu.mp3"); if (this.gra) this.a.play()?.catch(() => {}); } };
     }
@@ -116,7 +124,23 @@ export class Player {
   }
 
   // ------------------------------------------------------------------ menu
-  menu() {
+  // move to another world: its name and badge over a white cloud, then its strip slides in with its scenery and music
+  async przejdzSwiat(id) {
+    const w = (this.index.swiaty || []).find((s) => s.id === id); if (!w) return;
+    const z = $("#swiatZmiana");
+    z.querySelector(".odznaka").src = v(`/game/assets/menu/odznaka_${w.id}.webp`);
+    z.querySelector(".nazwa").textContent = w.title?.[this.lang] || w.title?.en || "";
+    z.style.display = "flex"; void z.offsetWidth; z.classList.add("widac"); dzwiekMenu("plansza");
+    await new Promise((r) => setTimeout(r, 900));
+    this.swiat = id; try { localStorage.setItem(SWIAT, id); } catch { /* private mode */ }
+    this.menuX = null;
+    this.menu({ zmiana: true });
+    const pas = $("#lessons"); pas.classList.remove("wjazd"); void pas.offsetWidth; pas.classList.add("wjazd");
+    await new Promise((r) => setTimeout(r, 500));
+    z.classList.remove("widac"); setTimeout(() => { z.style.display = "none"; }, 460);
+  }
+
+  menu({ zmiana = false } = {}) {
     this.closeStage();
     // typing "admin" on the menu (a keyboard; a tablet has none): every sticker into the album, every stage open
     if (!this.adminSluch) {
@@ -132,8 +156,7 @@ export class Player {
       });
     }
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
-    menuMuzyka.graj();
-    menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20);
+    if (!zmiana) { menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20); }
     $("#title .napis").textContent = this.t("menu.title");
     $("#title .szyld").src = v(`/game/assets/menu/szyld_${this.lang}.webp`); $("#title .szyld").alt = this.t("menu.title");
     // the album: its button shows how many stickers wait to be stuck in
@@ -151,9 +174,43 @@ export class Player {
     // lessons grouped into topics (index.json "topics"; a lesson in no topic goes to a last, untitled row);
     // numbers restart in every topic, the topic's colour marks its cards
     const byId = Object.fromEntries(this.index.lessons.map((l) => [l.id, l]));
-    const topics = (this.index.topics || []).map((t) => ({ ...t, lessons: t.lessons.filter((id) => byId[id]) })).filter((t) => t.lessons.length);
-    const rest = this.index.lessons.map((l) => l.id).filter((id) => !topics.some((t) => t.lessons.includes(id)));
-    if (rest.length) topics.push({ id: "inne", title: null, color: "#ffb347", lessons: rest });
+    const wszystkie = (this.index.topics || []).map((t) => ({ ...t, lessons: t.lessons.filter((id) => byId[id]) })).filter((t) => t.lessons.length);
+    const rest = this.index.lessons.map((l) => l.id).filter((id) => !wszystkie.some((t) => t.lessons.includes(id)));
+    if (rest.length) wszystkie.push({ id: "inne", title: null, color: "#ffb347", lessons: rest });
+    // one chain over every stage of every world: a stage opens when the one before is open AND finished; a stage of
+    // placeholders only is never finished (else the empty stages would open one after another)
+    const skonczony = (t) => t.lessons.some((id) => !byId[id].wkrotce) && t.lessons.filter((id) => !byId[id].wkrotce).every((id) => Album.ma(id));
+    const otwartyId = {};
+    wszystkie.forEach((t, i) => { otwartyId[t.id] = i === 0 || PARAMS.has("wszystko") || lista(OTWARTE).includes(t.id) || (otwartyId[wszystkie[i - 1].id] && skonczony(wszystkie[i - 1])); });
+    // the worlds (index.json "swiaty"): the menu shows one world's stages, its scenery, its music
+    const swiaty = this.index.swiaty?.length ? this.index.swiaty : [{ id: "swiat1", etapy: wszystkie.map((t) => t.id), tlo: "tlo", muzyka: "menu" }];
+    const swiatEtapu = (tid) => swiaty.find((s) => s.etapy.includes(tid)) || swiaty[swiaty.length - 1];
+    const otwartySwiat = (s) => s.etapy.some((tid) => otwartyId[tid]);
+    let swiat = swiaty.find((s) => s.id === (this.swiat || (() => { try { return localStorage.getItem(SWIAT); } catch { return null; } })()));
+    if (!swiat || !otwartySwiat(swiat)) swiat = swiaty[0];
+    this.swiat = swiat.id;
+    const nrSwiata = swiaty.indexOf(swiat);
+    menu.style.backgroundImage = `url(${v(`/game/assets/menu/${swiat.tlo || "tlo"}.webp`)})`;
+    menuMuzyka.graj(swiat.muzyka || "menu");
+    const topics = wszystkie.filter((t) => swiatEtapu(t.id) === swiat);
+    // the world switcher: a badge per world; an open one takes you there, a locked one shakes
+    // the world switcher: a plank per world (the name, for a parent); a tap slides the land's picture out from under it -
+    // an open land then takes you there, a locked one shows its padlock, shakes and hides again
+    $("#swiaty").innerHTML = swiaty.length < 2 ? "" : swiaty.map((s) => `<button data-swiat="${s.id}" class="${s === swiat ? "on" : ""}${otwartySwiat(s) ? "" : " zamkniety"}">
+      <img class="odznaka" src="${v(`/game/assets/menu/odznaka_${s.id}.webp`)}" alt="">${otwartySwiat(s) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}
+      <span>${s.title?.[this.lang] || s.title?.en || ""}</span></button>`).join("");
+    menu.classList.toggle("ze-swiatami", swiaty.length > 1);
+    $("#swiaty").onclick = (e) => {
+      const b = e.target.closest("button"); if (!b || b.classList.contains("wysun")) return;
+      const s = swiaty.find((q) => q.id === b.dataset.swiat);
+      b.classList.add("wysun"); dzwiekMenu("pop");
+      if (!otwartySwiat(s)) {
+        setTimeout(() => { b.classList.remove("trzesie"); void b.offsetWidth; b.classList.add("trzesie"); dzwiekMenu("wrong"); }, 500);
+        setTimeout(() => b.classList.remove("wysun", "trzesie"), 1700);
+        return;
+      }
+      setTimeout(() => { if (s !== swiat) this.przejdzSwiat(s.id); else b.classList.remove("wysun"); }, 900);
+    };
     // a lesson not made yet (index.json "wkrotce"): its place in the stage, a waiting easel for a cover, not playable.
     // The stages mix subjects in the order they are taught; a lesson's subject (index.json "tematy") colours its
     // number and names itself on a small badge, so a parent sees what it is about
@@ -178,15 +235,19 @@ export class Player {
       const h = !d ? 0 : mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
       return Math.round(h * 60 - 105);
     };
-    const skonczony = (t) => t.lessons.filter((id) => !byId[id].wkrotce).every((id) => Album.ma(id));   // a placeholder never holds the way
-    const otwarty = [];                                              // a chain: the one before must be open AND finished
-    topics.forEach((t, i) => otwarty.push(i === 0 || PARAMS.has("wszystko") || lista(OTWARTE).includes(t.id) || (otwarty[i - 1] && skonczony(topics[i - 1]))));
+    const otwarty = topics.map((t) => otwartyId[t.id]);              // the chain over all the worlds (above)
+    const nastepny = swiaty[nrSwiata + 1] || null;
+    // at the end of a world's strip, the gate to the next world (in a mist under a padlock until it opens)
+    const brama = nastepny ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>
+      <div class="brama${otwartySwiat(nastepny) ? "" : " zamknieta"}" data-swiat="${nastepny.id}"><img src="${v("/game/assets/menu/brama.webp")}" alt="">
+        <div class="dokad"><img src="${v(`/game/assets/menu/odznaka_${nastepny.id}.webp`)}" alt="">${nastepny.title?.[this.lang] || nastepny.title?.en || ""}</div>
+        ${otwartySwiat(nastepny) ? "" : `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`}</div>` : "";
     pas.innerHTML = topics.map((t, i) => (i ? `<div class="drogowskaz"><img src="${v("/game/assets/menu/drogowskaz.webp")}" alt=""></div>` : "") + `
       <section class="topic${otwarty[i] ? "" : " zamkniety"}${t.znak ? " ze-znakiem" : ""}" data-topic="${t.id}" style="--c:${t.color};--odcien:${odcien(t.color)}deg">
         ${t.title ? `<h2>${t.znak ? `<img class="znak" src="${v(`/game/assets/objects/${t.znak}.webp`)}" alt="">` : ""}${t.title[this.lang] || t.title.en}</h2>` : ""}
         <div class="row">${t.lessons.map((id, i) => card(byId[id], i, t.color)).join("")}</div>
-        ${i ? `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">` : ""}
-      </section>`).join("");
+        ${i || nrSwiata ? `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">` : ""}
+      </section>`).join("") + brama;
     chips.innerHTML = ""; chips.style.display = "none";            // no row of topic chips: the planks over the cards and the signposts say where you are
     const bloki = [...pas.querySelectorAll(".topic")];
     const naBlok = (sec) => pas.scrollTo({ left: sec.offsetLeft - parseFloat(getComputedStyle(pas).paddingLeft), behavior: "smooth" });
@@ -197,7 +258,7 @@ export class Player {
       let akt = bloki[0]; for (const b of bloki) if (b.offsetLeft <= srodek) akt = b;
       if (x >= max - 4) akt = bloki[bloki.length - 1];
       chips.querySelectorAll("button").forEach((c) => c.classList.toggle("on", c.dataset.topic === akt?.dataset.topic));
-      this.menuX = x; try { localStorage.setItem(PRZEWINIECIE, String(Math.round(x))); } catch { /* private mode */ }
+      this.menuX = x; try { localStorage.setItem(`${PRZEWINIECIE}.${swiat.id}`, String(Math.round(x))); } catch { /* private mode */ }   // per world
     };
     pas.onscroll = odswiez;
     // a card carries the sticker still to be won from its lesson; once it is in the album the card has none
@@ -239,6 +300,8 @@ export class Player {
     };
     pas.onclick = (e) => {
       if (pas.dataset.przeciagniete) return;
+      const br = e.target.closest(".brama");                              // the gate to the next world
+      if (br) { if (br.classList.contains("zamknieta")) { br.classList.remove("trzesie"); void br.offsetWidth; br.classList.add("trzesie"); dzwiekMenu("wrong"); } else this.przejdzSwiat(br.dataset.swiat); return; }
       const zam = e.target.closest(".topic.zamkniety");
       if (zam) { zam.classList.remove("trzesie"); void zam.offsetWidth; zam.classList.add("trzesie"); dzwiekMenu("wrong"); powiedz(zam, `line.zamkniete_${zam.dataset.topic}`); return; }   // not yet: the topic shakes, Fox says what to finish first
       const b = e.target.closest(".lesson"); if (!b) return;
@@ -252,15 +315,20 @@ export class Player {
     }
     // back from a lesson, or a new visit: where the child was (localStorage); set again while the cards still lay out -
     // set once at once, the strip was not wide yet and the browser clamped it to the start
-    const cel = this.menuX ?? (() => { try { return +localStorage.getItem(PRZEWINIECIE) || 0; } catch { return 0; } })();
+    const cel = this.menuX ?? (() => { try { return +localStorage.getItem(`${PRZEWINIECIE}.${swiat.id}`) || 0; } catch { return 0; } })();
     let sam = false; for (const ev of ["pointerdown", "wheel", "touchstart"]) pas.addEventListener(ev, () => { sam = true; }, { once: true, passive: true });
     const ustaw = () => { if (!sam && Math.abs(pas.scrollLeft - cel) > 2 && pas.scrollWidth - pas.clientWidth >= cel - 2) pas.scrollLeft = cel; };   // never against a finger
     pas.scrollLeft = cel; odswiez();
     for (const ms of [50, 200, 600, 1500]) setTimeout(ustaw, ms);
     // a topic open for the first time (not the first one, not ?wszystko): the strip goes there and it unlocks
-    const nowy = bloki.find((b, i) => i > 0 && otwarty[i] && !PARAMS.has("wszystko") && !lista(WIDZIANE).includes(b.dataset.topic));
+    const nowy = bloki.find((b, i) => (i > 0 || nrSwiata > 0) && otwarty[i] && !PARAMS.has("wszystko") && !lista(WIDZIANE).includes(b.dataset.topic));
+    // a stage newly open in ANOTHER world (the last stage of this one was just finished): the menu goes there to open it
+    const gdzieIndziej = wszystkie.find((t, i) => i > 0 && otwartyId[t.id] && !PARAMS.has("wszystko") && !lista(WIDZIANE).includes(t.id) && swiatEtapu(t.id) !== swiat);
     if (nowy) { nowy.classList.add("zamkniety"); if (!nowy.querySelector(".klodka")) nowy.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`); }
-    const odblokuj = () => { if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => otworz(nowy), 900); }, 400); };
+    const odblokuj = () => {
+      if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => otworz(nowy), 900); }, 400);
+      else if (gdzieIndziej) setTimeout(() => this.przejdzSwiat(swiatEtapu(gdzieIndziej.id).id), 600);
+    };
     // a stage just finished (every lesson made so far has its sticker; once): its sign comes big to the middle with rays
     // and confetti, Fox cheers, the sign flies into the album as the stage's own sticker; then the next stage opens
     const swieto = topics.findIndex((t, i) => t.znak && otwarty[i] && !PARAMS.has("wszystko") && t.lessons.some((id) => !byId[id].wkrotce) && skonczony(t) && !lista(UKONCZONE).includes(t.id));

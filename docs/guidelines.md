@@ -44,6 +44,13 @@ objects - no hand-made art, no in-house level editor.
 
 ## The world
 
+- **A lesson's sceneries belong to its world** (docs/program.md: the forest land, the lakeside village, the snowy
+  mountains, the castle town). A lesson of world 3 happens in winter: snow outside the windows, warm coats, frost on the
+  brook, a sledge by the door. Not monotonous: a world has many places and many colours - a bright, colourful room, a
+  kitchen full of fruit, a theatre - but each is seen in the world's weather and light (a cosy coloured room with snow
+  behind the window, not a summer meadow). A new scenery is painted for its world; a scenery reused from another world
+  gets a variant (`"z"` in make_background.py) in this world's season. The menu shows the world's own scenery and music,
+  so the lessons inside must feel like the same place.
 - A cast of cut-out animal puppets (fox, squirrel, owl, roe deer so far), each with
   the same set of moves (walk, talk, cheer, point, raise a paw, wave, sway, sad,
   look around) so any lesson can use any of them. The fox is the host; the others

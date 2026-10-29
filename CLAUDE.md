@@ -281,6 +281,14 @@ character and view in `game/assets/characters/<kto>/ubior.json` (dx, dy in heigh
 manager's wardrobe panel. `ctx.ubieranie({rzeczy, kto, pasuje, wrong})` - drag garments onto characters; a wrong
 size goes on, slips and falls off. Quadrupeds are not dressed, tails never.
 
+Worlds (`lessons/index.json` "swiaty", docs/program.md): a world groups six stages; the menu shows ONE world's strip at a
+time with the world's own scenery (`game/assets/menu/tlo_<world>.webp`, world 1 `tlo.webp`) and music (`menu_<world>_1/2`,
+world 1 `menu_1/2`), round badges under the strip move between the open ones (`przejdzSwiat`: the world's badge and name
+over a white cloud, the strip slides in), a gate at the end of a world's strip leads to the next. The stage chain runs
+through all the worlds; a world opens with its first stage; a stage made of placeholders only is never "finished". When
+the stage that opens next lies in another world, the menu goes there by itself to open it. The scroll position is kept
+per world (`math_game.menu_x.<world>`), the world in `math_game.swiat`. Pictures: `tools/menu/make_menu.py` (SWIATY,
+ODZNAKI, brama); music: `make_music.py` MOTYWY `menu_swiatN`.
 Topics open one after another (player.js menu): a topic opens when every lesson of the one before has its sticker in
 the album; until then its cards lie in a mist under a painted padlock (tools/menu: klodka, klodka_otwarta), a tap
 shakes it, a 3 s press on the padlock opens it for good (localStorage math_game.otwarte - a parent's way through),

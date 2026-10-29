@@ -92,8 +92,42 @@ a little butterfly. Calm and friendly, waiting to be painted.
 {STYL}
 NO characters, NO animals except the butterfly, NO text."""),
 }
-CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz", "klodka", "klodka_otwarta"]
-DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900, "klodka": 420, "klodka_otwarta": 420}      # the long side kept (the menu draws them big)
+# the worlds (docs/program.md): each world's menu scenery, its round badge for the world switcher, and the gate at the
+# end of a world's strip that leads to the next one
+SWIATY = {
+    "swiat2": "a sunny LAKESIDE VILLAGE: a calm blue lake, a few small cosy wooden cottages with red roofs on the shore, "
+              "a little wooden jetty with a rowing boat, reeds and water lilies, green hills behind",
+    "swiat3": "SNOWY MOUNTAINS on a bright winter day: soft white peaks under a pale blue sky, snowy pine trees at the "
+              "left and right edges, a frozen little lake, a cosy wooden hut with smoke from the chimney far away",
+    "swiat4": "a CASTLE TOWN on a hill: a friendly fairy-tale castle with round towers and coloured flags on a green hill "
+              "far away, a little town of colourful houses below it, a winding road, an orchard in front",
+}
+for _s, _opis in SWIATY.items():
+    OBRAZY[f"tlo_{_s}"] = ("1536x1024", "opaque", f"""A wide calm illustrated landscape for the main menu of a children's
+game, in exactly the style of a picture book: {_opis}. The whole middle of the picture is open and calm (things will be
+placed over it), a meadow or a snowy field in front.
+{STYL}
+NO characters, NO animals, NO text.""")
+ODZNAKI = {
+    "swiat1": "a round green forest with a big friendly oak and a little red mushroom",
+    "swiat2": "a blue lake with a little cottage with a red roof and a jetty",
+    "swiat3": "white snowy mountain peaks with a little pine tree",
+    "swiat4": "a little fairy-tale castle with round towers and a flag on a green hill",
+}
+for _s, _opis in ODZNAKI.items():
+    OBRAZY[f"odznaka_{_s}"] = ("1024x1024", "transparent", f"""ONE round medallion badge like a thick painted wooden coin,
+filling most of the picture, on a fully TRANSPARENT background: a warm wooden rim with a dark-brown outline, and
+inside it a tiny picture-book landscape: {_opis}.
+{STYL}
+NO text, NO letters, NO numbers.""")
+OBRAZY["brama"] = ("1024x1536", "transparent", f"""ONE wooden archway gate standing alone, on a fully TRANSPARENT
+background, filling most of the picture: two thick round wooden posts, an arched wooden beam over them hung with green
+ivy and a few little flowers, a small wooden signpost arrow on the right post pointing onwards, an open path between
+the posts. Friendly, inviting.
+{STYL}
+NO text, NO letters, NO ground, NO shadow.""")
+CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz", "klodka", "klodka_otwarta", "brama"] + [f"odznaka_{s}" for s in ODZNAKI]
+DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900, "klodka": 420, "klodka_otwarta": 420, "brama": 900, **{f"odznaka_{s}": 360 for s in ODZNAKI}}      # the long side kept (the menu draws them big)
 
 
 def gen() -> None:
@@ -113,12 +147,15 @@ def przytnij(im: Image.Image) -> Image.Image:
 def install() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     t = Image.open(WORK / "tlo.png").convert("RGB"); t.save(OUT / "tlo.webp", "WEBP", quality=82, method=6)
+    for sw in SWIATY:                                                     # the worlds' sceneries
+        if (WORK / f"tlo_{sw}.png").exists(): Image.open(WORK / f"tlo_{sw}.png").convert("RGB").save(OUT / f"tlo_{sw}.webp", "WEBP", quality=82, method=6)
     if (WORK / "wkrotce.png").exists():
         Image.open(WORK / "wkrotce.png").convert("RGB").resize((512, 512), Image.LANCZOS).save(OUT / "wkrotce.webp", "WEBP", quality=82, method=6)
     for n in ("szyld_pl", "szyld_en"):
         im = przytnij(Image.open(WORK / f"{n}.png").convert("RGBA")); im.thumbnail((1200, 600), Image.LANCZOS)
         im.save(OUT / f"{n}.webp", "WEBP", quality=88, method=6)
     for nazwa in CZESCI:
+        if not (WORK / f"{nazwa}.png").exists(): continue
         im = przytnij(Image.open(WORK / f"{nazwa}.png").convert("RGBA")); im.thumbnail((DLUGOSC[nazwa], DLUGOSC[nazwa]), Image.LANCZOS)
         im.save(OUT / f"{nazwa}.webp", "WEBP", quality=90, method=6); print(nazwa, im.size)
 

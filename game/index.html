@@ -158,6 +158,45 @@
   .topic .lesson { flex: 0 0 auto; }
   #chips { display: flex; justify-content: center; gap: max(8px, calc(var(--k) * 0.05)); padding: 0 var(--safe); white-space: nowrap; }
   @media (max-height: 520px) { #menu { --k: 31vh; gap: 1.8vh; } .lesson .sub { display: none; } }
+  /* the worlds (index.json "swiaty"): one world's strip at a time, its own scenery and music; badges to move between
+     the open ones; a gate at the end of a world's strip leads to the next */
+  #menu { transition: opacity .7s ease, background-image 0s; }
+  #swiaty { display: flex; justify-content: center; align-items: flex-end; gap: calc(var(--k) * 0.16); padding: 0 var(--safe); }
+  #swiaty:empty { display: none; }
+  /* a world is a wooden plank (its name, for the parent); a tap slides the land's round picture out from under it (the
+     child cannot read); the world the menu shows keeps its picture peeking out */
+  /* the row has its own room for the pictures (the cards are a little smaller then): a picture never covers a card */
+  #menu.ze-swiatami { --k: max(100px, min(30vh, 55vw)); }
+  #swiaty button { position: relative; display: flex; flex-direction: column; align-items: center; padding: 0; border: 0; background: none; cursor: pointer; }
+  #swiaty button span { position: relative; z-index: 2; display: block; font: 800 max(10px, calc(var(--k) * 0.06)) "Baloo 2", system-ui; color: var(--braz); padding: .1em .9em .2em;
+    white-space: nowrap; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
+  #swiaty button:active span { transform: scale(.95); }
+  #swiaty button .odznaka { position: relative; z-index: 1; width: calc(var(--k) * 0.4); margin-bottom: calc(var(--k) * -0.05); transform: translateY(55%) scale(.3); opacity: 0;
+    filter: drop-shadow(0 4px 6px rgba(60,30,0,.35)); transition: transform .5s cubic-bezier(.3,1.5,.5,1), opacity .25s; pointer-events: none; }
+  #swiaty button.on .odznaka { transform: none; opacity: 1; }
+  #swiaty button.wysun .odznaka { transform: none; opacity: 1; }
+  #swiaty button.zamkniety .odznaka { filter: grayscale(.85) brightness(1.1) drop-shadow(0 4px 6px rgba(60,30,0,.35)); }
+  #swiaty button .klodka { position: absolute; z-index: 3; left: 50%; top: calc(var(--k) * 0.06); width: calc(var(--k) * 0.22); transform: translateX(-50%) scale(0); transition: transform .4s .15s cubic-bezier(.3,1.5,.5,1); pointer-events: none; }
+  #swiaty button.wysun .klodka { transform: translateX(-50%) scale(1); }
+  #swiaty button.trzesie .odznaka, #swiaty button.trzesie .klodka { animation: trzesX .45s; }
+  @keyframes trzesX { 20% { margin-left: -8px; } 40% { margin-left: 7px; } 60% { margin-left: -5px; } 80% { margin-left: 3px; } }
+  #swiatZmiana { position: absolute; inset: 0; z-index: 30; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 2vh; pointer-events: none;
+    background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.97) 30%, rgba(255,255,255,.9) 60%, rgba(255,255,255,.75)); opacity: 0; transition: opacity .45s ease; }
+  #swiatZmiana.widac { opacity: 1; }
+  #swiatZmiana .odznaka { width: calc(var(--k) * 0.7); animation: kiw 3s ease-in-out infinite; filter: drop-shadow(0 6px 8px rgba(60,30,0,.3)); }
+  #swiatZmiana .nazwa { font: 800 min(7vh, 6vw) "Baloo 2", system-ui; color: var(--braz); padding: .15em 1.3em .3em; background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat;
+    filter: drop-shadow(0 4px 4px rgba(60,30,0,.3)); }
+  #lessons.wjazd { animation: wjazd .7s cubic-bezier(.2,.8,.3,1); }
+  @keyframes wjazd { from { transform: translateX(40vw); opacity: 0; } }
+  .brama { flex: 0 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; cursor: pointer; padding: 0 calc(var(--k) * 0.1); }
+  .brama > img { height: calc(var(--k) * 1.25); filter: drop-shadow(0 6px 8px rgba(60,30,0,.3)); transition: transform .3s; }
+  .brama:hover > img { transform: scale(1.04); }
+  .brama .dokad { display: flex; align-items: center; gap: .4em; font: 800 max(12px, calc(var(--k) * 0.075)) "Baloo 2", system-ui; color: var(--braz); padding: .15em 1em .25em; white-space: nowrap;
+    background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 3px 3px rgba(60,30,0,.3)); }
+  .brama .dokad img { width: 1.6em; }
+  .brama.zamknieta > img { filter: grayscale(.7) blur(1.5px) brightness(1.1); }
+  .brama .klodka { position: absolute; left: 50%; top: 42%; width: calc(var(--k) * 0.36); transform: translate(-50%, -50%); }
+  .brama.trzesie { animation: trzes .45s; }
   #chips button { font: 800 max(11px, min(calc(var(--k) * 0.068), 1.5vw)) "Baloo 2", system-ui; padding: .35em 1.1em .45em; border: 0; color: var(--braz); cursor: pointer; display: flex; align-items: center; gap: .45em;
     background: url(/game/assets/menu/deska.webp) center / 100% 100% no-repeat; filter: drop-shadow(0 2px 2px rgba(60,30,0,.3)); transition: transform .2s; }
   #chips button::before { content: ""; width: .7em; height: .7em; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--braz); }
@@ -234,7 +273,7 @@
   <button class="ster pauza" aria-label="pauza">❚❚</button><button class="ster dalej" aria-label="dalej">▶▶</button><button class="ster pelny" aria-label="pełny ekran">⛶</button><button class="menu">☰</button></div>
 <div id="seria"></div>
 <div id="pauza"><button aria-label="graj"><svg viewBox="0 0 10 10"><path d="M3 2 L8 5 L3 8 Z" fill="#2a4a6a"/></svg></button></div>
-<div id="menu"><div id="gora"><button id="albumBtn" aria-label="album"><img class="pniak" alt=""><img class="ksiega" alt=""><span class="ile"></span></button><h1 id="title"><img class="szyld" alt=""><span class="napis"></span></h1><div id="langs"></div></div><div id="lessons"></div><div id="chips"></div></div>
+<div id="menu"><div id="gora"><button id="albumBtn" aria-label="album"><img class="pniak" alt=""><img class="ksiega" alt=""><span class="ile"></span></button><h1 id="title"><img class="szyld" alt=""><span class="napis"></span></h1><div id="langs"></div></div><div id="lessons"></div><div id="chips"></div><div id="swiaty"></div><div id="swiatZmiana"><img class="odznaka" alt=""><div class="nazwa"></div></div></div>
 <div id="subtitle"></div>
 <div id="iris"></div>
 <div id="fade"></div>

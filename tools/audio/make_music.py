@@ -48,6 +48,19 @@ MOTYWY = {
              "light shaker, a sunny meadow mood, calm and friendly, steady medium-slow tempo",
              "the main menu of a picture-book maths game: soft acoustic guitar and celesta with gentle woodwinds and a "
              "light shaker, warm and welcoming, steady medium-slow tempo"),
+    # the worlds' menus (docs/program.md): the same calm menu, each with its world's colour
+    "menu_swiat2": ("the main menu of a picture-book maths game by a sunny lake village: gentle ukulele and soft "
+                    "accordion with light marimba, a breezy lakeside mood, calm and friendly, steady medium-slow tempo",
+                    "a calm menu by a lake: soft harp arpeggios and acoustic guitar with a light flute melody, warm and "
+                    "welcoming, steady medium-slow tempo"),
+    "menu_swiat3": ("the main menu of a picture-book maths game in the snowy mountains: sleigh bells, celesta and soft "
+                    "pizzicato strings, a cosy winter mood, calm and friendly, steady medium-slow tempo",
+                    "a calm winter menu: soft music box and glockenspiel over warm strings, gentle and sparkling, steady "
+                    "medium-slow tempo"),
+    "menu_swiat4": ("the main menu of a picture-book maths game in a fairy-tale castle town: a gentle medieval-style "
+                    "tune on recorder, lute and soft hand drum, friendly and a little adventurous, steady medium-slow tempo",
+                    "a calm castle menu: soft harpsichord and recorder with light pizzicato strings, warm and noble, "
+                    "steady medium-slow tempo"),
     "cwiczenia": ("a light focused practice moment for small children: soft marimba and gentle pizzicato, a steady "
                   "calm pulse, cheerful but quiet, easy to think over", "a calm playful puzzle time: soft vibraphone "
                   "and kalimba, light and simple, gentle steady rhythm"),

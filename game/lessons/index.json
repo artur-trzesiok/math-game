@@ -287,6 +287,654 @@
         "en": "the hopscotch tournament"
       },
       "temat": "dodawanie"
+    },
+    {
+      "id": "light_heavy",
+      "title": {
+        "pl": "Lekki i ciężki",
+        "en": "Light and heavy"
+      },
+      "temat": "porownywanie",
+      "wkrotce": true
+    },
+    {
+      "id": "thick_thin",
+      "title": {
+        "pl": "Gruby i cienki",
+        "en": "Thick and thin"
+      },
+      "temat": "porownywanie",
+      "wkrotce": true
+    },
+    {
+      "id": "wide_narrow",
+      "title": {
+        "pl": "Szeroki i wąski",
+        "en": "Wide and narrow"
+      },
+      "temat": "porownywanie",
+      "wkrotce": true
+    },
+    {
+      "id": "measure_steps",
+      "title": {
+        "pl": "Mierzymy łapką",
+        "en": "Measuring with a paw"
+      },
+      "temat": "mierzenie",
+      "wkrotce": true
+    },
+    {
+      "id": "counting_10",
+      "title": {
+        "pl": "Liczymy do 10",
+        "en": "Counting to 10"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "number_neighbors",
+      "title": {
+        "pl": "Sąsiedzi liczb",
+        "en": "Number neighbours"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "ordinal_10",
+      "title": {
+        "pl": "Pierwszy, drugi... dziesiąty",
+        "en": "First, second... tenth"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "number_hunt",
+      "title": {
+        "pl": "Polowanie na liczby",
+        "en": "Number hunt"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "equal_sets",
+      "title": {
+        "pl": "Tyle samo",
+        "en": "As many"
+      },
+      "temat": "zbiory",
+      "wkrotce": true
+    },
+    {
+      "id": "make_equal",
+      "title": {
+        "pl": "Wyrównaj",
+        "en": "Make them equal"
+      },
+      "temat": "zbiory",
+      "wkrotce": true
+    },
+    {
+      "id": "compare_sets",
+      "title": {
+        "pl": "Gdzie więcej?",
+        "en": "Where are more?"
+      },
+      "temat": "zbiory",
+      "wkrotce": true
+    },
+    {
+      "id": "sort_by_quantity",
+      "title": {
+        "pl": "Od najmniej do najwięcej",
+        "en": "From fewest to most"
+      },
+      "temat": "zbiory",
+      "wkrotce": true
+    },
+    {
+      "id": "complete_shape",
+      "title": {
+        "pl": "Brakujący kawałek",
+        "en": "The missing piece"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "plane_shapes_2",
+      "title": {
+        "pl": "Owal, trapez, pięciokąt",
+        "en": "Oval, trapezium, pentagon"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "symmetry",
+      "title": {
+        "pl": "Lustrzane połówki",
+        "en": "Mirror halves"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "shapes_hunt",
+      "title": {
+        "pl": "Figury wokół nas",
+        "en": "Shapes around us"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "rhythm_hunt",
+      "title": {
+        "pl": "Rytmy w domu",
+        "en": "Rhythms at home"
+      },
+      "temat": "rytm",
+      "wkrotce": true
+    },
+    {
+      "id": "guess_rule",
+      "title": {
+        "pl": "Zgadnij regułę",
+        "en": "Guess the rule"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "sort_free",
+      "title": {
+        "pl": "Posortuj sam",
+        "en": "Sort it yourself"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "two_features",
+      "title": {
+        "pl": "Dwie cechy naraz",
+        "en": "Two features at once"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "tables_1",
+      "title": {
+        "pl": "Tabelki",
+        "en": "Tables"
+      },
+      "temat": "dane",
+      "wkrotce": true
+    },
+    {
+      "id": "secret_code",
+      "title": {
+        "pl": "Tajny szyfr",
+        "en": "The secret code"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "split_5",
+      "title": {
+        "pl": "Pięć to dwa i trzy",
+        "en": "Five is two and three"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "days_of_week",
+      "title": {
+        "pl": "Dni tygodnia",
+        "en": "Days of the week"
+      },
+      "temat": "czas",
+      "wkrotce": true
+    },
+    {
+      "id": "subtract_5",
+      "title": {
+        "pl": "Odejmowanie do 5",
+        "en": "Taking away within 5"
+      },
+      "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "add_sub_family",
+      "title": {
+        "pl": "Dodawanie i odejmowanie",
+        "en": "Adding and taking away"
+      },
+      "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "split_10",
+      "title": {
+        "pl": "Rozkład dziesiątki",
+        "en": "Ten in two parts"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "fair_share",
+      "title": {
+        "pl": "Po równo",
+        "en": "Fair shares"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "even_odd",
+      "title": {
+        "pl": "Parzyste i nieparzyste",
+        "en": "Even and odd"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "count_by_groups",
+      "title": {
+        "pl": "Liczymy grupami",
+        "en": "Counting in groups"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "how_many_plates",
+      "title": {
+        "pl": "Ile talerzy?",
+        "en": "How many plates?"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "compare_numbers",
+      "title": {
+        "pl": "Która liczba większa?",
+        "en": "Which number is bigger?"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "shelf_grid",
+      "title": {
+        "pl": "Półki: wiersz i kolumna",
+        "en": "Shelves: row and column"
+      },
+      "temat": "przestrzen",
+      "wkrotce": true
+    },
+    {
+      "id": "every_side",
+      "title": {
+        "pl": "Z przodu, z boku, z tyłu",
+        "en": "Front, side and back"
+      },
+      "temat": "przestrzen",
+      "wkrotce": true
+    },
+    {
+      "id": "solids",
+      "title": {
+        "pl": "Bryły",
+        "en": "Solids"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "turned_shapes",
+      "title": {
+        "pl": "Obroty",
+        "en": "Turns"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "picture_sudoku",
+      "title": {
+        "pl": "Sudoku z obrazkami",
+        "en": "Picture sudoku"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "shelf_labels",
+      "title": {
+        "pl": "Etykiety półek",
+        "en": "Shelf labels"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "guess_who",
+      "title": {
+        "pl": "Zgadnij kto",
+        "en": "Guess who"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "number_patterns",
+      "title": {
+        "pl": "Co dalej?",
+        "en": "What comes next?"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "clock",
+      "title": {
+        "pl": "Zegar",
+        "en": "The clock"
+      },
+      "temat": "czas",
+      "wkrotce": true
+    },
+    {
+      "id": "seasons",
+      "title": {
+        "pl": "Pory roku",
+        "en": "The seasons"
+      },
+      "temat": "czas",
+      "wkrotce": true
+    },
+    {
+      "id": "coins",
+      "title": {
+        "pl": "Monety",
+        "en": "Coins"
+      },
+      "temat": "pieniadze",
+      "wkrotce": true
+    },
+    {
+      "id": "charts",
+      "title": {
+        "pl": "Wykresy",
+        "en": "Charts"
+      },
+      "temat": "dane",
+      "wkrotce": true
+    },
+    {
+      "id": "bonds_10",
+      "title": {
+        "pl": "Pary do dziesięciu",
+        "en": "Pairs that make ten"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "addition_10",
+      "title": {
+        "pl": "Dodawanie do 10",
+        "en": "Adding within 10"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "subtraction_10",
+      "title": {
+        "pl": "Odejmowanie do 10",
+        "en": "Taking away within 10"
+      },
+      "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "tangram_2",
+      "title": {
+        "pl": "Tangram z siedmiu kawałków",
+        "en": "Seven-piece tangram"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "count_20",
+      "title": {
+        "pl": "Liczymy do 20",
+        "en": "Counting to 20"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "teens",
+      "title": {
+        "pl": "Nastki",
+        "en": "The teens"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "whole_tens",
+      "title": {
+        "pl": "Pełne dziesiątki",
+        "en": "Whole tens"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "tens_add_sub",
+      "title": {
+        "pl": "Dziesiątki plus i minus",
+        "en": "Adding and taking tens"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "make_ten",
+      "title": {
+        "pl": "Dopełnij do 10",
+        "en": "Make ten"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "add_through_10",
+      "title": {
+        "pl": "Dodawanie przez dziesiątkę",
+        "en": "Adding through ten"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "subtract_through_10",
+      "title": {
+        "pl": "Odejmowanie przez dziesiątkę",
+        "en": "Taking away through ten"
+      },
+      "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "two_ways",
+      "title": {
+        "pl": "Dwa sposoby",
+        "en": "Two ways"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "add_three",
+      "title": {
+        "pl": "Trzy liczby razem",
+        "en": "Adding three numbers"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "subtract_three",
+      "title": {
+        "pl": "Odejmujemy dwa razy",
+        "en": "Taking away twice"
+      },
+      "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "add_sub_three",
+      "title": {
+        "pl": "Plus i minus naraz",
+        "en": "Plus and minus together"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "fact_families_20",
+      "title": {
+        "pl": "Rodziny działań",
+        "en": "Fact families"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "plus_no_carry",
+      "title": {
+        "pl": "23 + 4",
+        "en": "23 + 4"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "minus_no_borrow",
+      "title": {
+        "pl": "27 - 4",
+        "en": "27 - 4"
+      },
+      "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "plus_carry",
+      "title": {
+        "pl": "28 + 5",
+        "en": "28 + 5"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "minus_borrow",
+      "title": {
+        "pl": "32 - 5",
+        "en": "32 - 5"
+      },
+      "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "ruler_cm",
+      "title": {
+        "pl": "Linijka i centymetry",
+        "en": "The ruler"
+      },
+      "temat": "mierzenie",
+      "wkrotce": true
+    },
+    {
+      "id": "kilograms",
+      "title": {
+        "pl": "Kilogramy",
+        "en": "Kilograms"
+      },
+      "temat": "mierzenie",
+      "wkrotce": true
+    },
+    {
+      "id": "calendar",
+      "title": {
+        "pl": "Kalendarz",
+        "en": "The calendar"
+      },
+      "temat": "czas",
+      "wkrotce": true
+    },
+    {
+      "id": "change",
+      "title": {
+        "pl": "Reszta w sklepie",
+        "en": "Change in the shop"
+      },
+      "temat": "pieniadze",
+      "wkrotce": true
+    },
+    {
+      "id": "picture_problems",
+      "title": {
+        "pl": "Zadania obrazkowe",
+        "en": "Picture problems"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "estimation",
+      "title": {
+        "pl": "Szacowanie",
+        "en": "Estimating"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
+      "id": "coding",
+      "title": {
+        "pl": "Programujemy drogę",
+        "en": "Coding a path"
+      },
+      "temat": "logika",
+      "wkrotce": true
+    },
+    {
+      "id": "castle_treasure",
+      "title": {
+        "pl": "Skarb zamku",
+        "en": "The castle treasure"
+      },
+      "temat": "liczby",
+      "wkrotce": true
     }
   ],
   "topics": [
@@ -379,6 +1027,258 @@
         "adding_10"
       ],
       "znak": "znak_gwiazda"
+    },
+    {
+      "id": "etap7",
+      "title": {
+        "pl": "Etap 7",
+        "en": "Stage 7"
+      },
+      "color": "#7ec8a9",
+      "lessons": [
+        "light_heavy",
+        "thick_thin",
+        "wide_narrow",
+        "measure_steps"
+      ]
+    },
+    {
+      "id": "etap8",
+      "title": {
+        "pl": "Etap 8",
+        "en": "Stage 8"
+      },
+      "color": "#f4a259",
+      "lessons": [
+        "counting_10",
+        "number_neighbors",
+        "ordinal_10",
+        "number_hunt"
+      ]
+    },
+    {
+      "id": "etap9",
+      "title": {
+        "pl": "Etap 9",
+        "en": "Stage 9"
+      },
+      "color": "#8cb369",
+      "lessons": [
+        "equal_sets",
+        "make_equal",
+        "compare_sets",
+        "sort_by_quantity"
+      ]
+    },
+    {
+      "id": "etap10",
+      "title": {
+        "pl": "Etap 10",
+        "en": "Stage 10"
+      },
+      "color": "#5b9bd5",
+      "lessons": [
+        "complete_shape",
+        "plane_shapes_2",
+        "symmetry",
+        "shapes_hunt"
+      ]
+    },
+    {
+      "id": "etap11",
+      "title": {
+        "pl": "Etap 11",
+        "en": "Stage 11"
+      },
+      "color": "#c77dd6",
+      "lessons": [
+        "rhythm_hunt",
+        "guess_rule",
+        "sort_free",
+        "two_features"
+      ]
+    },
+    {
+      "id": "etap12",
+      "title": {
+        "pl": "Etap 12",
+        "en": "Stage 12"
+      },
+      "color": "#3d85c6",
+      "lessons": [
+        "tables_1",
+        "secret_code",
+        "split_5",
+        "days_of_week"
+      ]
+    },
+    {
+      "id": "etap13",
+      "title": {
+        "pl": "Etap 13",
+        "en": "Stage 13"
+      },
+      "color": "#e06666",
+      "lessons": [
+        "subtract_5",
+        "add_sub_family",
+        "split_10",
+        "fair_share"
+      ]
+    },
+    {
+      "id": "etap14",
+      "title": {
+        "pl": "Etap 14",
+        "en": "Stage 14"
+      },
+      "color": "#f1c232",
+      "lessons": [
+        "even_odd",
+        "count_by_groups",
+        "how_many_plates",
+        "compare_numbers"
+      ]
+    },
+    {
+      "id": "etap15",
+      "title": {
+        "pl": "Etap 15",
+        "en": "Stage 15"
+      },
+      "color": "#45818e",
+      "lessons": [
+        "shelf_grid",
+        "every_side",
+        "solids",
+        "turned_shapes"
+      ]
+    },
+    {
+      "id": "etap16",
+      "title": {
+        "pl": "Etap 16",
+        "en": "Stage 16"
+      },
+      "color": "#8e7cc3",
+      "lessons": [
+        "picture_sudoku",
+        "shelf_labels",
+        "guess_who",
+        "number_patterns"
+      ]
+    },
+    {
+      "id": "etap17",
+      "title": {
+        "pl": "Etap 17",
+        "en": "Stage 17"
+      },
+      "color": "#9b7fd4",
+      "lessons": [
+        "clock",
+        "seasons",
+        "coins",
+        "charts"
+      ]
+    },
+    {
+      "id": "etap18",
+      "title": {
+        "pl": "Etap 18",
+        "en": "Stage 18"
+      },
+      "color": "#e07a5f",
+      "lessons": [
+        "bonds_10",
+        "addition_10",
+        "subtraction_10",
+        "tangram_2"
+      ]
+    },
+    {
+      "id": "etap19",
+      "title": {
+        "pl": "Etap 19",
+        "en": "Stage 19"
+      },
+      "color": "#6aa84f",
+      "lessons": [
+        "count_20",
+        "teens",
+        "whole_tens",
+        "tens_add_sub"
+      ]
+    },
+    {
+      "id": "etap20",
+      "title": {
+        "pl": "Etap 20",
+        "en": "Stage 20"
+      },
+      "color": "#e69138",
+      "lessons": [
+        "make_ten",
+        "add_through_10",
+        "subtract_through_10",
+        "two_ways"
+      ]
+    },
+    {
+      "id": "etap21",
+      "title": {
+        "pl": "Etap 21",
+        "en": "Stage 21"
+      },
+      "color": "#a64d79",
+      "lessons": [
+        "add_three",
+        "subtract_three",
+        "add_sub_three",
+        "fact_families_20"
+      ]
+    },
+    {
+      "id": "etap22",
+      "title": {
+        "pl": "Etap 22",
+        "en": "Stage 22"
+      },
+      "color": "#0b5394",
+      "lessons": [
+        "plus_no_carry",
+        "minus_no_borrow",
+        "plus_carry",
+        "minus_borrow"
+      ]
+    },
+    {
+      "id": "etap23",
+      "title": {
+        "pl": "Etap 23",
+        "en": "Stage 23"
+      },
+      "color": "#bf9000",
+      "lessons": [
+        "ruler_cm",
+        "kilograms",
+        "calendar",
+        "change"
+      ]
+    },
+    {
+      "id": "etap24",
+      "title": {
+        "pl": "Etap 24",
+        "en": "Stage 24"
+      },
+      "color": "#cc0000",
+      "lessons": [
+        "picture_problems",
+        "estimation",
+        "coding",
+        "castle_treasure"
+      ]
     }
   ],
   "tematy": {
@@ -437,6 +1337,129 @@
         "en": "adding"
       },
       "color": "#e07a5f"
+    },
+    "mierzenie": {
+      "title": {
+        "pl": "mierzenie",
+        "en": "measuring"
+      },
+      "color": "#d9824b"
+    },
+    "zbiory": {
+      "title": {
+        "pl": "zbiory",
+        "en": "sets"
+      },
+      "color": "#6aa84f"
+    },
+    "logika": {
+      "title": {
+        "pl": "logika",
+        "en": "logic"
+      },
+      "color": "#8e7cc3"
+    },
+    "dane": {
+      "title": {
+        "pl": "dane",
+        "en": "data"
+      },
+      "color": "#3d85c6"
+    },
+    "odejmowanie": {
+      "title": {
+        "pl": "odejmowanie",
+        "en": "subtracting"
+      },
+      "color": "#cc4125"
+    },
+    "przestrzen": {
+      "title": {
+        "pl": "przestrzeń",
+        "en": "space"
+      },
+      "color": "#45818e"
+    },
+    "pieniadze": {
+      "title": {
+        "pl": "pieniądze",
+        "en": "money"
+      },
+      "color": "#bf9000"
     }
-  }
+  },
+  "swiaty": [
+    {
+      "id": "swiat1",
+      "title": {
+        "pl": "Leśna Kraina",
+        "en": "The Forest Land"
+      },
+      "etapy": [
+        "etap1",
+        "etap2",
+        "etap3",
+        "etap4",
+        "etap5",
+        "etap6"
+      ],
+      "tlo": "tlo",
+      "muzyka": "menu",
+      "kolor": "#5c8d3a"
+    },
+    {
+      "id": "swiat2",
+      "title": {
+        "pl": "Wioska nad Jeziorem",
+        "en": "The Lakeside Village"
+      },
+      "etapy": [
+        "etap7",
+        "etap8",
+        "etap9",
+        "etap10",
+        "etap11",
+        "etap12"
+      ],
+      "tlo": "tlo_swiat2",
+      "muzyka": "menu_swiat2",
+      "kolor": "#2f7fb5"
+    },
+    {
+      "id": "swiat3",
+      "title": {
+        "pl": "Zimowe Góry",
+        "en": "The Snowy Mountains"
+      },
+      "etapy": [
+        "etap13",
+        "etap14",
+        "etap15",
+        "etap16",
+        "etap17",
+        "etap18"
+      ],
+      "tlo": "tlo_swiat3",
+      "muzyka": "menu_swiat3",
+      "kolor": "#6b8fb3"
+    },
+    {
+      "id": "swiat4",
+      "title": {
+        "pl": "Zamek na Wzgórzu",
+        "en": "The Castle on the Hill"
+      },
+      "etapy": [
+        "etap19",
+        "etap20",
+        "etap21",
+        "etap22",
+        "etap23",
+        "etap24"
+      ],
+      "tlo": "tlo_swiat4",
+      "muzyka": "menu_swiat4",
+      "kolor": "#a0522d"
+    }
+  ]
 }
