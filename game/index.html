@@ -48,10 +48,15 @@
   #mapaBtn { width: calc(var(--k) * 0.42); aspect-ratio: 1; padding: 0; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 5px 8px rgba(60,30,0,.3)); transition: transform .2s; }
   #mapaBtn img { width: 100%; height: 100%; object-fit: contain; transform: rotate(6deg); }
   #mapaBtn:active { transform: scale(.92); }
-  #mapa { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: rgba(40,25,10,.55); opacity: 0; transition: opacity .3s; }
-  #mapa.widac { opacity: 1; }
-  #mapa .plansza { position: relative; width: min(94vw, calc(90vh * 1.5)); aspect-ratio: 3 / 2; transform: scale(.92); transition: transform .4s cubic-bezier(.3,1.4,.5,1); }
-  #mapa.widac .plansza { transform: none; }
+  #mapa { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: rgba(40,25,10,.55); opacity: 0; cursor: pointer; }
+  #mapa .plansza { position: relative; width: min(94vw, calc(90vh * 1.5)); aspect-ratio: 3 / 2; cursor: default; }   /* flies out of the button and unrolls (mapa.js) */
+  /* the scroll's two rollers: painted-looking wooden rods with red caps, riding on the paper's edges */
+  #mapa .walek { position: absolute; top: -4.5%; bottom: -4.5%; width: 4.2%; transform: translateX(-50%); z-index: 3; pointer-events: none; border-radius: 40% / 6%;
+    background: linear-gradient(90deg, #8a5a2b 0%, #c99a5c 18%, #f6e3b8 42%, #fff4d6 50%, #e2bf86 66%, #a8773f 88%, #6e451f 100%);
+    box-shadow: 0 6px 12px rgba(40,20,0,.45), inset 0 0 0 2px rgba(90,53,24,.55); }
+  #mapa .walek::before, #mapa .walek::after { content: ""; position: absolute; left: 50%; width: 150%; height: 4%; transform: translateX(-50%); border-radius: 50%;
+    background: radial-gradient(ellipse at 40% 35%, #ff8a6e, #c8322a 60%, #7e1712); box-shadow: 0 2px 4px rgba(0,0,0,.4); }
+  #mapa .walek::before { top: -1%; } #mapa .walek::after { bottom: -1%; }
   #mapa .tlo { width: 100%; height: 100%; display: block; border-radius: 18px; box-shadow: 0 0 0 6px #f6e7c8, 0 0 0 9px #8a5a2b, 0 14px 40px rgba(0,0,0,.45); pointer-events: none; }
   #mapa .stop { position: absolute; width: 9%; aspect-ratio: 1; transform: translate(-50%, -50%); padding: 0; border: 0; border-radius: 50%; cursor: pointer;
     background: radial-gradient(circle at 50% 40%, #fff 0 52%, var(--c) 54% 100%); box-shadow: 0 0 0 3px #fff, 0 4px 10px rgba(60,30,0,.45); display: grid; place-items: center; }
@@ -63,9 +68,14 @@
   #mapa .stop.tu, #mapa .stop.nowy { animation: puls 1.4s ease-in-out infinite; }
   #mapa .stop.wybrany { transform: translate(-50%, -50%) scale(1.2); transition: transform .3s; }
   #mapa .stop.trzesie { animation: trzesX .45s; }
-  #mapa .lisek { position: absolute; width: 10%; transform: translate(-50%, -118%); pointer-events: none; z-index: 2; filter: drop-shadow(0 5px 6px rgba(60,30,0,.4));
-    transition: left .7s ease-in-out, top .7s ease-in-out; }
+  #mapa .lisek { position: absolute; width: 10%; aspect-ratio: 1; padding: 0; border: 0; background: none; cursor: pointer; transform: translate(-50%, -118%); z-index: 2;
+    filter: drop-shadow(0 5px 6px rgba(60,30,0,.4)); transition: left .7s ease-in-out, top .7s ease-in-out; }
+  #mapa .lisek img { width: 100%; display: block; transform-origin: 50% 90%; }
   #mapa .lisek.skok { animation: skokLiska .7s ease-in-out; }
+  #mapa .lisek.hop img { animation: hopLiska .55s cubic-bezier(.3,1.6,.5,1); }               /* tapped: a jump with a wiggle */
+  #mapa .lisek.mowi img { animation: mowiLisek .5s ease-in-out infinite alternate; }        /* nodding while he talks */
+  @keyframes hopLiska { 30% { transform: translateY(-28%) rotate(-10deg) scale(1.1); } 60% { transform: translateY(0) rotate(8deg) scale(.95, 1.05); } }
+  @keyframes mowiLisek { from { transform: rotate(-5deg); } to { transform: rotate(5deg) translateY(-4%); } }
   @keyframes skokLiska { 50% { margin-top: -4%; } }
   @keyframes puls { 50% { box-shadow: 0 0 0 3px #fff, 0 0 0 9px rgba(255,210,74,.75), 0 4px 10px rgba(60,30,0,.45); } }
   #mapa .zamknij { position: absolute; top: 2vh; right: 2vh; width: min(64px, 9vh); aspect-ratio: 1; border-radius: 50%; border: 0; background: #fff; color: #555; font: 700 min(30px, 4vh) system-ui; box-shadow: 0 4px 12px rgba(0,0,0,.25); cursor: pointer; z-index: 3; }

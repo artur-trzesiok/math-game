@@ -108,5 +108,395 @@
   "hash": "6d89ab454612",
   "who": "narrator",
   "text": "To nagroda za ukończenie szóstego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap7": {
+  "hash": "b7e1633d669b",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały siódmy etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap7": {
+  "hash": "129cb5aefef2",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie siódmego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap8": {
+  "hash": "c937d057fe29",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały ósmy etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap8": {
+  "hash": "0ea11ae6c04f",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie ósmego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap9": {
+  "hash": "004e69a30579",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dziewiąty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap9": {
+  "hash": "a7c924bb3f3f",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dziewiątego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap10": {
+  "hash": "9690598c127e",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dziesiąty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap10": {
+  "hash": "4e61da1c94cc",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dziesiątego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap11": {
+  "hash": "7e16f7d2a1d6",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały jedenasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap11": {
+  "hash": "bd6e067ce48a",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie jedenastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap12": {
+  "hash": "a2f6d64c4f9f",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dwunasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap12": {
+  "hash": "0882b6f74703",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dwunastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap13": {
+  "hash": "b28384a617e4",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały trzynasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap13": {
+  "hash": "ad1ee1a511ba",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie trzynastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap14": {
+  "hash": "31325703d6ef",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały czternasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap14": {
+  "hash": "23ff0b037422",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie czternastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap15": {
+  "hash": "2a40d66bb578",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały piętnasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap15": {
+  "hash": "4b0ec082362f",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie piętnastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap16": {
+  "hash": "94f13d46cdd3",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały szesnasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap16": {
+  "hash": "ec52c07060c0",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie szesnastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap17": {
+  "hash": "a2c55f8076f2",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały siedemnasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap17": {
+  "hash": "ac88833f56a2",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie siedemnastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap18": {
+  "hash": "424ac06265e5",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały osiemnasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap18": {
+  "hash": "41e3880d7f3c",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie osiemnastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap19": {
+  "hash": "c1e3be6df1b2",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dziewiętnasty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap19": {
+  "hash": "bb1186855824",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dziewiętnastego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap20": {
+  "hash": "aa8d6fb0585b",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dwudziesty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap20": {
+  "hash": "25105e160641",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dwudziestego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap21": {
+  "hash": "e36b9b283c95",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dwudziesty pierwszy etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap21": {
+  "hash": "da2cd20c3e56",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dwudziestego pierwszego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap22": {
+  "hash": "6d520dfb18ad",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dwudziesty drugi etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap22": {
+  "hash": "9f02485af411",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dwudziestego drugiego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap23": {
+  "hash": "143e74a627aa",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dwudziesty trzeci etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap23": {
+  "hash": "f3652402913a",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dwudziestego trzeciego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.etap_koniec_etap24": {
+  "hash": "a658a7b474e2",
+  "who": "lisek",
+  "text": "Brawo! Ukończyliśmy cały dwudziesty czwarty etap! Za to dostajesz specjalną naklejkę do albumu."
+ },
+ "line.naklejka_opis_etap24": {
+  "hash": "e3e5e6d3f7e5",
+  "who": "narrator",
+  "text": "To nagroda za ukończenie dwudziestego czwartego etapu. Wszystkie jego przygody przeszliśmy razem."
+ },
+ "line.zamkniete_etap7": {
+  "hash": "4abfe6e924a1",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z szóstego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap7": {
+  "hash": "fbf05e72e379",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się siódmy etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap8": {
+  "hash": "2d96a44b8fd3",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z siódmego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap8": {
+  "hash": "80bdc5aa192e",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się ósmy etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap9": {
+  "hash": "a770c5e7402a",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z ósmego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap9": {
+  "hash": "130de2f72bd0",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dziewiąty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap10": {
+  "hash": "1c7978f579b8",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dziewiątego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap10": {
+  "hash": "6a3894c295c9",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dziesiąty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap11": {
+  "hash": "5b4d81a61b6f",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dziesiątego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap11": {
+  "hash": "50ae86976044",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się jedenasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap12": {
+  "hash": "408e71f9e480",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z jedenastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap12": {
+  "hash": "79afbaae0016",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dwunasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap13": {
+  "hash": "a3292a73b297",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dwunastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap13": {
+  "hash": "067ed2345241",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się trzynasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap14": {
+  "hash": "95053595d6b9",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z trzynastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap14": {
+  "hash": "3506e0584c39",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się czternasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap15": {
+  "hash": "9f65e288b256",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z czternastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap15": {
+  "hash": "f3c78880d74b",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się piętnasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap16": {
+  "hash": "09f8f3e942d7",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z piętnastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap16": {
+  "hash": "be10f9c945ba",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się szesnasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap17": {
+  "hash": "a0bd1fde1573",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z szesnastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap17": {
+  "hash": "24311b2237fb",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się siedemnasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap18": {
+  "hash": "5d1a848d4f6c",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z siedemnastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap18": {
+  "hash": "211be6667daf",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się osiemnasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap19": {
+  "hash": "6851590f61f0",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z osiemnastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap19": {
+  "hash": "fee039e9bc55",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dziewiętnasty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap20": {
+  "hash": "fac1f76e2706",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dziewiętnastego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap20": {
+  "hash": "b28ab1995d6e",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dwudziesty etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap21": {
+  "hash": "42fe2d4e1621",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dwudziestego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap21": {
+  "hash": "6d1f9de1a596",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dwudziesty pierwszy etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap22": {
+  "hash": "5fe74af3473c",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dwudziestego pierwszego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap22": {
+  "hash": "62ed6a479765",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dwudziesty drugi etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap23": {
+  "hash": "f99273fa640d",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dwudziestego drugiego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap23": {
+  "hash": "e691a21083db",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dwudziesty trzeci etap. Nowe przygody czekają!"
+ },
+ "line.zamkniete_etap24": {
+  "hash": "6f97951f36c6",
+  "who": "lisek",
+  "text": "Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z dwudziestego trzeciego etapu, a kłódka sama się otworzy!"
+ },
+ "line.otwarte_etap24": {
+  "hash": "f54dd7d6c625",
+  "who": "lisek",
+  "text": "Hurra! Otworzył się dwudziesty czwarty etap. Nowe przygody czekają!"
+ },
+ "line.mapa_lisek_1": {
+  "hash": "6c768bf39c50",
+  "who": "lisek",
+  "text": "To ja! Tu teraz jesteśmy."
+ },
+ "line.mapa_lisek_2": {
+  "hash": "8f9a60a669dc",
+  "who": "lisek",
+  "text": "Hop, hop! Idziemy dalej ścieżką!"
+ },
+ "line.mapa_lisek_3": {
+  "hash": "b40b45ba072e",
+  "who": "lisek",
+  "text": "Pokaż mi, dokąd chcesz iść!"
+ },
+ "line.mapa_lisek_4": {
+  "hash": "5a7ef99b88b3",
+  "who": "lisek",
+  "text": "Ale ta mapa jest piękna! Ciekawe, co czeka na następnej polance."
+ },
+ "line.mapa_klodka_1": {
+  "hash": "01ee032c851c",
+  "who": "lisek",
+  "text": "Tu jeszcze nie dojdziemy. Najpierw skończmy przygody przed nami!"
+ },
+ "line.mapa_klodka_2": {
+  "hash": "584889cf01d0",
+  "who": "lisek",
+  "text": "Ta polanka jest jeszcze zamknięta. Idziemy po kolei, krok po kroku!"
  }
 }

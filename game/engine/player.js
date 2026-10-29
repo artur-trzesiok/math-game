@@ -148,6 +148,19 @@ export class Player {
     z.classList.remove("widac"); setTimeout(() => { z.style.display = "none"; }, 460);
   }
 
+  // Fox's menu lines (game/menu/i18n, tools/menu/make_menu_lines.py)
+  async liniaMenu(key) {
+    this.menuLinie = this.menuLinie?.lang === this.lang ? this.menuLinie : { lang: this.lang, t: await fetch(v(`/game/menu/i18n/${this.lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({})) };
+    return this.menuLinie.t[key];
+  }
+  // Fox says a menu line with no head badge (the map has Fox on it); the music steps back meanwhile
+  async mowMenu(key) {
+    const l = await this.liniaMenu(key); if (!l) return;
+    menuMuzyka.przycisz(0.35);
+    try { await this.speech.say({ lang: this.lang, lessonId: "menu", key, text: l.text, who: "lisek", puppet: null }); } catch { /* never breaks the menu */ }
+    finally { menuMuzyka.przycisz(1); }
+  }
+
   menu({ zmiana = false } = {}) {
     this.closeStage();
     // typing "admin" on the menu (a keyboard; a tablet has none): every sticker into the album, every stage open
@@ -273,7 +286,7 @@ export class Player {
     $("#mapaBtn img").src = v("/game/assets/mapa/ikona.webp");
     $("#mapaBtn").onclick = () => {
       dzwiekMenu("pop");
-      Mapa.otworz({ swiat: swiat.id, dzwiek: dzwiekMenu, onWybierz: (tid) => { const sec = bloki.find((b) => b.dataset.topic === tid); if (sec) naBlok(sec); },
+      Mapa.otworz({ swiat: swiat.id, dzwiek: dzwiekMenu, zrodlo: $("#mapaBtn").getBoundingClientRect(), mow: (key) => this.mowMenu(key), onWybierz: (tid) => { const sec = bloki.find((b) => b.dataset.topic === tid); if (sec) naBlok(sec); },
         etapy: topics.map((t, i) => ({ id: t.id, nr: (t.title?.pl || "").match(/\d+/)?.[0] || i + 1, kolor: t.color, znak: t.znak, otwarty: !!otwarty[i], skonczony: skonczony(t) })) });
     };
     const odswiez = () => {
@@ -307,7 +320,7 @@ export class Player {
     // Fox speaks in the menu (game/menu, tools/menu/make_menu_lines.py): his head badge peeks in beside the padlock
     // while he says it - never a voice from nowhere; the music steps back meanwhile
     const powiedz = async (sec, key) => {
-      this.menuLinie = this.menuLinie?.lang === this.lang ? this.menuLinie : { lang: this.lang, t: await fetch(v(`/game/menu/i18n/${this.lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({})) };
+      await this.liniaMenu(key);
       const l = this.menuLinie.t[key]; if (!l) return;
       pas.querySelectorAll(".glowa-mowi").forEach((g) => g.remove());
       const g = document.createElement("img"); g.className = "glowa-mowi"; g.src = v("/game/assets/menu/lisek_glowa.webp"); g.alt = ""; sec.appendChild(g);

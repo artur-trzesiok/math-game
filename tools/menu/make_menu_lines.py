@@ -9,9 +9,26 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 # the stages are numbered: Fox names the one to finish and the one that opens by its ordinal
-PORZ = {"pl": ["pierwszy", "drugi", "trzeci", "czwarty", "piąty", "szósty", "siódmy", "ósmy"],
-        "pl_d": ["pierwszego", "drugiego", "trzeciego", "czwartego", "piątego", "szóstego", "siódmego", "ósmego"],
-        "en": ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"]}
+_J = ["pierwszy", "drugi", "trzeci", "czwarty", "piąty", "szósty", "siódmy", "ósmy", "dziewiąty"]
+_JD = ["pierwszego", "drugiego", "trzeciego", "czwartego", "piątego", "szóstego", "siódmego", "ósmego", "dziewiątego"]
+_N = ["dziesiąty", "jedenasty", "dwunasty", "trzynasty", "czternasty", "piętnasty", "szesnasty", "siedemnasty", "osiemnasty", "dziewiętnasty"]
+_ND = ["dziesiątego", "jedenastego", "dwunastego", "trzynastego", "czternastego", "piętnastego", "szesnastego", "siedemnastego", "osiemnastego", "dziewiętnastego"]
+_EN = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth",
+       "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth"]
+PORZ = {"pl": _J + _N + ["dwudziesty"] + [f"dwudziesty {x}" for x in _J[:4]],
+        "pl_d": _JD + _ND + ["dwudziestego"] + [f"dwudziestego {x}" for x in _JD[:4]],
+        "en": _EN + [f"twenty-{x}" for x in _EN[:4]]}
+# the world map (engine/mapa.js): Fox tapped on the map (one at random), a locked stop tapped
+MAPA = {
+    "pl": (["To ja! Tu teraz jesteśmy.", "Hop, hop! Idziemy dalej ścieżką!", "Pokaż mi, dokąd chcesz iść!",
+            "Ale ta mapa jest piękna! Ciekawe, co czeka na następnej polance."],
+           ["Tu jeszcze nie dojdziemy. Najpierw skończmy przygody przed nami!",
+            "Ta polanka jest jeszcze zamknięta. Idziemy po kolei, krok po kroku!"]),
+    "en": (["It's me! This is where we are now.", "Hop, hop! Let's go on along the path!", "Show me where you want to go!",
+            "What a lovely map! I wonder what waits at the next clearing."],
+           ["We can't go there yet. Let's finish the adventures before it first!",
+            "This clearing is still locked. We go one by one, step by step!"]),
+}
 TEKST = {
     "pl": ("Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z {poprz_d} etapu, a kłódka sama się otworzy!",
            "Hurra! Otworzył się {nr} etap. Nowe przygody czekają!"),
@@ -36,6 +53,9 @@ for lang in ("pl", "en"):
         pd = PORZ["pl_d" if lang == "pl" else "en"][k - 1]
         out[f"line.zamkniete_{t['id']}"] = {"who": "lisek", "text": zamk.format(poprz_d=pd, poprz=pd)}
         out[f"line.otwarte_{t['id']}"] = {"who": "lisek", "text": otw.format(nr=PORZ[lang][k])}
+    lisek, klodka = MAPA[lang]
+    for k, t in enumerate(lisek, 1): out[f"line.mapa_lisek_{k}"] = {"who": "lisek", "text": t}
+    for k, t in enumerate(klodka, 1): out[f"line.mapa_klodka_{k}"] = {"who": "lisek", "text": t}
     d = ROOT / "game" / "menu" / "i18n"; d.mkdir(parents=True, exist_ok=True)
     (d / f"{lang}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(lang, len(out), "lines")

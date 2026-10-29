@@ -47,6 +47,150 @@
     "who": "narrator",
     "text": "This is the prize for finishing the sixth stage. We went through all its adventures together."
   },
+  "line.etap_koniec_etap7": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole seventh stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap7": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the seventh stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap8": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole eighth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap8": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the eighth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap9": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole ninth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap9": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the ninth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap10": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole tenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap10": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the tenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap11": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole eleventh stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap11": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the eleventh stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap12": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole twelfth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap12": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the twelfth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap13": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole thirteenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap13": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the thirteenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap14": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole fourteenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap14": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the fourteenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap15": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole fifteenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap15": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the fifteenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap16": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole sixteenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap16": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the sixteenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap17": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole seventeenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap17": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the seventeenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap18": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole eighteenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap18": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the eighteenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap19": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole nineteenth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap19": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the nineteenth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap20": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole twentieth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap20": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the twentieth stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap21": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole twenty-first stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap21": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the twenty-first stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap22": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole twenty-second stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap22": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the twenty-second stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap23": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole twenty-third stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap23": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the twenty-third stage. We went through all its adventures together."
+  },
+  "line.etap_koniec_etap24": {
+    "who": "lisek",
+    "text": "Bravo! We finished the whole twenty-fourth stage! Here is a special sticker for your album."
+  },
+  "line.naklejka_opis_etap24": {
+    "who": "narrator",
+    "text": "This is the prize for finishing the twenty-fourth stage. We went through all its adventures together."
+  },
   "line.zamkniete_etap2": {
     "who": "lisek",
     "text": "This way is still locked. Let's first finish all the adventures of the first stage, and the padlock will open by itself!"
@@ -86,5 +230,173 @@
   "line.otwarte_etap6": {
     "who": "lisek",
     "text": "Hooray! The sixth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap7": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the sixth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap7": {
+    "who": "lisek",
+    "text": "Hooray! The seventh stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap8": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the seventh stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap8": {
+    "who": "lisek",
+    "text": "Hooray! The eighth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap9": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the eighth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap9": {
+    "who": "lisek",
+    "text": "Hooray! The ninth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap10": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the ninth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap10": {
+    "who": "lisek",
+    "text": "Hooray! The tenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap11": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the tenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap11": {
+    "who": "lisek",
+    "text": "Hooray! The eleventh stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap12": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the eleventh stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap12": {
+    "who": "lisek",
+    "text": "Hooray! The twelfth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap13": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the twelfth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap13": {
+    "who": "lisek",
+    "text": "Hooray! The thirteenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap14": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the thirteenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap14": {
+    "who": "lisek",
+    "text": "Hooray! The fourteenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap15": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the fourteenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap15": {
+    "who": "lisek",
+    "text": "Hooray! The fifteenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap16": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the fifteenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap16": {
+    "who": "lisek",
+    "text": "Hooray! The sixteenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap17": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the sixteenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap17": {
+    "who": "lisek",
+    "text": "Hooray! The seventeenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap18": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the seventeenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap18": {
+    "who": "lisek",
+    "text": "Hooray! The eighteenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap19": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the eighteenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap19": {
+    "who": "lisek",
+    "text": "Hooray! The nineteenth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap20": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the nineteenth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap20": {
+    "who": "lisek",
+    "text": "Hooray! The twentieth stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap21": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the twentieth stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap21": {
+    "who": "lisek",
+    "text": "Hooray! The twenty-first stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap22": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the twenty-first stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap22": {
+    "who": "lisek",
+    "text": "Hooray! The twenty-second stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap23": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the twenty-second stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap23": {
+    "who": "lisek",
+    "text": "Hooray! The twenty-third stage is open. New adventures are waiting!"
+  },
+  "line.zamkniete_etap24": {
+    "who": "lisek",
+    "text": "This way is still locked. Let's first finish all the adventures of the twenty-third stage, and the padlock will open by itself!"
+  },
+  "line.otwarte_etap24": {
+    "who": "lisek",
+    "text": "Hooray! The twenty-fourth stage is open. New adventures are waiting!"
+  },
+  "line.mapa_lisek_1": {
+    "who": "lisek",
+    "text": "It's me! This is where we are now."
+  },
+  "line.mapa_lisek_2": {
+    "who": "lisek",
+    "text": "Hop, hop! Let's go on along the path!"
+  },
+  "line.mapa_lisek_3": {
+    "who": "lisek",
+    "text": "Show me where you want to go!"
+  },
+  "line.mapa_lisek_4": {
+    "who": "lisek",
+    "text": "What a lovely map! I wonder what waits at the next clearing."
+  },
+  "line.mapa_klodka_1": {
+    "who": "lisek",
+    "text": "We can't go there yet. Let's finish the adventures before it first!"
+  },
+  "line.mapa_klodka_2": {
+    "who": "lisek",
+    "text": "This clearing is still locked. We go one by one, step by step!"
   }
 }
