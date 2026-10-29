@@ -650,6 +650,11 @@ function ruchKamery(S, typ, lista) {
   return "ciecie";
 }
 
+// how much of each shot's zoom is kept (2026-10-30, user: a fast deep zoom reads to a child like a cut, and loses what
+// matters out of the frame): every close shot keeps 55 % of its zoom beyond the full frame; the speed stays
+const ZOOM_UJEC = 0.55;
+const lagodniej = (z) => 1 + (z - 1) * ZOOM_UJEC;
+
 export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 0.8 } = {}) {
   const lista = (Array.isArray(na) ? na : na ? [na] : []).map((n) => (typeof n === "string" ? S.puppets[n] : n)).filter(Boolean);
   // something still popping in (grown from nothing) is measured too small: the shot framed an empty box
@@ -666,7 +671,8 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
     const glowna = gl ? (gl === L.kosci.glowa ? L.widoki.przod : gl.children.find((o) => o.isMesh)) : null;
     const b = new THREE.Box3().setFromObject(glowna || gl || L.korzen);
     const h = (b.max.y - b.min.y) * 1.55;                                 // the head and a little of the shoulders
-    z = Math.min(3.4, v.h / h); cx = (b.min.x + b.max.x) / 2; cy = (b.min.y + b.max.y) / 2 - (b.max.y - b.min.y) * 0.12;
+    z = lagodniej(Math.min(3.4, v.h / h)); cx = (b.min.x + b.max.x) / 2;
+    cy = (b.min.y + b.max.y) / 2 - v.h / 2 / z * 0.3;                    // the head in the upper part, the body below it
   } else if (typ === "dwuujecie" && lista.length >= 2) {
     S.dwuujecie = lista.map((L) => [L, L.korzen.position.x]);
     const [A, B] = lista, lewy = A.korzen.position.x <= B.korzen.position.x ? A : B, prawy = lewy === A ? B : A;
@@ -678,10 +684,10 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
     if (rozstaw > 4.6 && !cosMiedzy) { lewy.korzen.position.x = sr - 2.3; prawy.korzen.position.x = sr + 2.3; }
     const b = obwiednia(S, lista);
     const h = (b.max.y - b.min.y) * 0.72 + 1.0;                           // from the waist up, room over the heads (the HUD)
-    z = Math.min(1.9, v.h / h, v.w / ((b.max.x - b.min.x) * 1.15)); cx = (b.min.x + b.max.x) / 2; cy = b.max.y + 0.9 - v.h / 2 / z;
+    z = lagodniej(Math.min(1.9, v.h / h, v.w / ((b.max.x - b.min.x) * 1.15))); cx = (b.min.x + b.max.x) / 2; cy = b.max.y + 0.9 - v.h / 2 / z;
   } else if (typ === "sredni" && lista.length) {
     const b = obwiednia(S, lista), w = (b.max.x - b.min.x) + 1.2, h = (b.max.y - b.min.y) + 1.0;
-    z = Math.max(1, Math.min(2.2, v.w / w, v.h / h)); cx = (b.min.x + b.max.x) / 2; cy = (b.min.y + b.max.y) / 2;
+    z = Math.max(1, lagodniej(Math.min(2.2, v.w / w, v.h / h))); cx = (b.min.x + b.max.x) / 2; cy = (b.min.y + b.max.y) / 2;
   }
   // stay inside the design frame (the background ends there); pushed in from the edge, a medium shot steps back until
   // everything it frames fits again (the far end of a plank by the edge was cut off)
