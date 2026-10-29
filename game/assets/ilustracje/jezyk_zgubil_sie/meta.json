@@ -1,0 +1,68 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "postacie": [
+  "jez"
+ ],
+ "lekcje": [
+  "morning_night"
+ ],
+ "opis": "PANEL 1 (the big one on the left), late afternoon, golden sunset light: the small HEDGEHOG walks along the meadow path from the reference picture, looking up happily at a yellow butterfly fluttering just ahead of him. PANEL 2 (top right), dusk, the sky purple and pink, the sun half gone: the HEDGEHOG follows the first glowing FIREFLIES off the path, deeper into the tall grass towards a row of round dark-green bushes; the path is far behind him. PANEL 3 (bottom right), almost night, deep blue sky with the first stars and a thin moon: only the HEDGEHOG's spiky back and his big worried eyes peek out from inside a round bush; a firefly glows above it. Sad but not scary, a little lost.",
+ "uklad": "3",
+ "okienka": [
+  [
+   [
+    0.026,
+    0.0391
+   ],
+   [
+    0.026,
+    0.9609
+   ],
+   [
+    0.4889,
+    0.9609
+   ],
+   [
+    0.5911,
+    0.0391
+   ]
+  ],
+  [
+   [
+    0.612,
+    0.0391
+   ],
+   [
+    0.5579,
+    0.5254
+   ],
+   [
+    0.974,
+    0.4492
+   ],
+   [
+    0.974,
+    0.0391
+   ]
+  ],
+  [
+   [
+    0.974,
+    0.4795
+   ],
+   [
+    0.5547,
+    0.5557
+   ],
+   [
+    0.5098,
+    0.9609
+   ],
+   [
+    0.974,
+    0.9609
+   ]
+  ]
+ ]
+}

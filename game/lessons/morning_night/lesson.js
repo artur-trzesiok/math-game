@@ -119,8 +119,15 @@ export default {
       async (c) => {
         await c.noc({ ciemnosc: 0.6, d: 2.0 });
         await c.ujecie("dwuujecie", { na: ["kret", "sarenka"] });
+        // how Hedgehog got lost, as a comic: the sky darkens panel by panel
+        const il = await c.ilustracja("jezyk_zgubil_sie");
+        await il.okienko(1); await c.wait(2.2);
+        await il.okienko(2);
         await c.say("kret", "line.c_wieczor");
+        await il.okienko(3);
         await c.say("sarenka", "line.c_zgubil", { anim: "Smutek" });
+        await il.calosc(); await c.wait(1.2);
+        await il.zsun();
         await c.ujecie("ogolny");                                            // the bushes come in: the task is wide
         const krzaki = [], gdzie = Math.floor(Math.random() * 3);
         for (let i = 0; i < 3; i++) krzaki.push(await c.object("krzak", { x: -2.2 + i * 2.2, y: -1.2, size: 2.0, z: 0.5 }));

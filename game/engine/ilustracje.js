@@ -3,6 +3,9 @@
 // flattens, the camera creeps over it, and it slides down off the screen at the end. The characters keep speaking: the
 // speaker shows in a round badge in a corner, a live picture of their head (lip-sync and all), so there is never a
 // voice without a face. Assets: game/assets/ilustracje/<name>/ (tools/ilustracje/make_ilustracja.py).
+// A comic is an option (meta.okienka: the panels' polygons from the layout template): it lands with only its first
+// panel painted, the others blank paper; h.okienko(i) paints panel i in and moves to it (the ones before dim a little),
+// h.calosc() shows the whole page.
 
 import * as THREE from "three";
 import { texture } from "./scene.js";
@@ -57,6 +60,31 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
   const rama = arkusz(W + 2 * b, Hc, mat({ map: papier }), 3);
   const obraz = arkusz(W, H, mat({ map: obrazTex }), 4); obraz.position.z = 0.002;
   karta.add(cien, rama, obraz); scena.add(welon, karta);
+  // a comic: one sheet over the picture, drawn on a canvas - blank paper over the panels not told yet, a shade over
+  // the ones told before; it bends with the paper
+  const ok = (meta.okienka || []).map((q, i) => {
+    const xs = q.map(([x]) => x), ys = q.map(([, y]) => y), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+    return { q, k: i ? 1 : 0, c: 0, cx: -W / 2 + (x0 + x1) / 2 * W, cy: H / 2 - (y0 + y1) / 2 * H, w: (x1 - x0) * W, h: (y1 - y0) * H };
+  });
+  const komiks = ok.length > 0;
+  let platno = null, nakladka = null;
+  const rysujOkienka = () => {
+    const x = platno.getContext("2d"), cw = platno.width, ch = platno.height;
+    x.clearRect(0, 0, cw, ch); x.lineJoin = "round";
+    for (const o of ok) {
+      if (o.k <= 0 && o.c <= 0) continue;
+      x.beginPath(); o.q.forEach(([u, v], j) => (j ? x.lineTo : x.moveTo).call(x, u * cw, v * ch)); x.closePath();
+      if (o.k > 0) { x.globalAlpha = o.k; x.fillStyle = x.strokeStyle = "#f6efe0"; x.lineWidth = 6; x.fill(); x.stroke(); }
+      if (o.c > 0) { x.globalAlpha = o.c * 0.38; x.fillStyle = "#1d1a17"; x.fill(); }
+    }
+    x.globalAlpha = 1; nakladka.material.map.needsUpdate = true;
+  };
+  if (komiks) {
+    platno = document.createElement("canvas"); platno.width = 1024; platno.height = Math.round(1024 * ar);
+    const t = new THREE.CanvasTexture(platno); t.colorSpace = THREE.SRGBColorSpace;
+    nakladka = arkusz(W, H, mat({ map: t }), 5); nakladka.position.z = 0.004; karta.add(nakladka);
+    rysujOkienka();
+  }
 
   // the speaker's badge: a live render of the head of whoever speaks, a white ring round it
   const rt = new THREE.WebGLRenderTarget(256, 256, { stencilBuffer: true, depthBuffer: true });
@@ -76,7 +104,8 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
     przed: () => {
       kam.aspect = S.camera.aspect; kam.updateProjectionMatrix();
       for (const m of [cien, rama, obraz]) wygnij(m, curl, Hc);
-      if (gotowa) {                                                  // the camera creeps over the picture
+      if (nakladka) wygnij(nakladka, curl, Hc);
+      if (gotowa && !komiks) {                                                  // the camera creeps over the picture
         const s = Math.min(1, (performance.now() - t0) / 14000), z = 1 - 0.1 * s;
         obrazTex.repeat.set(z, z);
         const dx = ruch === "w_lewo" ? (1 - z) * (1 - s) : ruch === "w_prawo" ? (1 - z) * s : (1 - z) / 2;
@@ -127,6 +156,7 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
     const i = S.warstwy.indexOf(warstwa); if (i >= 0) S.warstwy.splice(i, 1);
     rt.dispose(); papier.dispose(); obrazTex.dispose();
     for (const m of [cien, rama, obraz, twarz, obwodka, kreska, welon]) m.geometry.dispose();
+    if (nakladka) { nakladka.geometry.dispose(); nakladka.material.map.dispose(); }
     const j = S.objects.indexOf(h); if (j >= 0) S.objects.splice(j, 1);
   };
   const h = {
@@ -143,6 +173,30 @@ export async function ilustracja(S, nazwa, { ruch = "najazd" } = {}) {
       usun();
     },
     remove: () => usun(),                                            // a cleared or skipped scene takes it at once
+    // comic: paint panel i (1-based) in and move to it, as close as fits; the panels before it dim
+    okienko: async (i) => {
+      const o = ok[i - 1]; if (!o || zniknela) return;
+      const V3 = widac(), s1 = Math.max(1, Math.min(1.35, V3.w * 0.8 / o.w, V3.h * 0.82 / o.h));
+      const p0 = karta.position.clone(), s0 = karta.scale.x, x1 = -o.cx * s1, y1 = -o.cy * s1;
+      const od = ok.map((q, j) => [q.k, j === i - 1 ? 0 : q.k, q.c, j < i - 1 ? 1 : 0]);
+      if (o.k > 0) S.sfx.graj("pencil");
+      await S.tween(FAST ? 0.1 : 0.75, (s) => {
+        const e = easeOut(s);
+        karta.position.x = p0.x + (x1 - p0.x) * e; karta.position.y = p0.y + (y1 - p0.y) * e; karta.scale.setScalar(s0 + (s1 - s0) * e);
+        ok.forEach((q, j) => { q.k = od[j][0] + (od[j][1] - od[j][0]) * e; q.c = od[j][2] + (od[j][3] - od[j][2]) * e; });
+        rysujOkienka();
+      });
+    },
+    calosc: async () => {
+      if (zniknela || !komiks) return;
+      const p0 = karta.position.clone(), s0 = karta.scale.x, od = ok.map((q) => [q.k, q.c]);
+      await S.tween(FAST ? 0.1 : 0.75, (s) => {
+        const e = easeOut(s);
+        karta.position.x = p0.x * (1 - e); karta.position.y = p0.y * (1 - e); karta.scale.setScalar(s0 + (1 - s0) * e);
+        ok.forEach((q, j) => { q.k = od[j][0] * (1 - e); q.c = od[j][1] * (1 - e); });
+        rysujOkienka();
+      });
+    },
   };
   S.objects.push(h);
   return h;

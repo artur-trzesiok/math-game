@@ -34,6 +34,38 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # tangram home: the payoff - the shadow theatre at home, the tangram fox's shadow on the bedroom wall
+    "teatr_w_pokoju": {
+        "postacie": ["sowa", "mis", "wiewiorka"], "tlo": "pokoj_noc", "lekcje": ["tangram"],
+        "scena": """The cosy bedroom at night from the reference picture (the same striped blue wallpaper, the window with
+the moon, the bed, the round blue rug), the big light switched off. The little bedside lamp is turned towards the wall and
+throws a big warm circle of light on it; in the circle a big dark SHADOW of a FOX HEAD made of flat paper shapes: one big
+triangle pointing down for the face and two small triangles for the pointed ears. The BEAR, in front of the wall, holds
+up the paper fox made of a red triangle and two purple triangles on a stick; the OWL and the SQUIRREL sit on the rug
+wrapped in a blanket, watching and laughing. Calm, cosy, magical evening light.""",
+    },
+    # in_out story: the turn - a thunderclap scares Beaver's duckling out of the basket and off into the bushes
+    "grzmot_kaczuszka": {
+        "postacie": ["jez", "bobr", "sarenka"], "tlo": "laka", "lekcje": ["in_out"],
+        "scena": """The meadow by the lake from the reference picture, now in the EVENING before a storm: dark blue-grey storm
+clouds, slanting rain, ONE bright zigzag LIGHTNING bolt over the lake lighting everything up. In the front a wicker
+BASKET has tipped over on the wet grass and a small fluffy YELLOW DUCKLING has just leapt OUT of it in fright - in mid-air,
+wings up, beak open, little drops flying - running towards a row of round green BUSHES on the right. The small HEDGEHOG,
+the BEAVER and the ROE DEER stand on the left in the rain, startled, reaching out after the duckling. Dramatic but
+not scary for a small child: a gust, a flash, a surprise.""",
+    },
+    # in_out home: the payoff - everybody home and inside after the storm: the duckling asleep IN its basket on the rug,
+    # the toys IN their box, the friends tucked up, the moon outside the window
+    "dobranoc_w_domu": {
+        "postacie": ["jez", "bobr", "sarenka"], "tlo": "pokoj_noc", "lekcje": ["in_out"],
+        "scena": """The children's room at NIGHT from the reference picture (the same striped wallpaper, the window with the
+moon and stars, the bed, the round blue rug, the bookcase), lit warm by the little bedside lamp. The storm is over: a
+few raindrops still on the window glass, the moon shining. On the rug a wicker BASKET with a soft blanket and INSIDE it
+a small fluffy YELLOW DUCKLING asleep, its head tucked in. Beside the rug a wooden TOY BOX with all the toys INSIDE it
+(a teddy bear, a ball, wooden blocks peeking over the rim). The small HEDGEHOG is asleep on the bed under the blue
+blanket; the BEAVER and the ROE DEER lie on cushions on the rug under a checked blanket, eyes closed, smiling. Calm,
+cosy and safe - everybody inside, at home.""",
+    },
     # up_down home: the payoff - the apple pie from the apples the lift brought down, in the tidy hallway
     "szarlotka_wiewiorki": {
         "postacie": ["wiewiorka", "lisek", "zajac"], "tlo": "przedpokoj", "lekcje": ["up_down"],
@@ -196,6 +228,16 @@ at the wooden table round one big steaming pot of pasta. The FOX slurps ONE very
 his plate up to his mouth, his cheeks puffed, laughing; the little SQUIRREL holds up ONE tiny short elbow macaroni on her
 fork, delighted; the DEER laughs at them. Plates, forks, a bowl of grated cheese. Cosy and funny.""",
     },
+    # morning_night story, a COMIC (three panels, revealed one by one): how little Hedgehog got lost as the day ended
+    "jezyk_zgubil_sie": {
+        "postacie": ["jez"], "tlo": "laka", "lekcje": ["morning_night"], "uklad": "3",
+        "scena": """PANEL 1 (the big one on the left), late afternoon, golden sunset light: the small HEDGEHOG walks along the meadow path from the
+reference picture, looking up happily at a yellow butterfly fluttering just ahead of him.
+PANEL 2 (top right), dusk, the sky purple and pink, the sun half gone: the HEDGEHOG follows the first glowing FIREFLIES off the path,
+deeper into the tall grass towards a row of round dark-green bushes; the path is far behind him.
+PANEL 3 (bottom right), almost night, deep blue sky with the first stars and a thin moon: only the HEDGEHOG's spiky back and his big
+worried eyes peek out from inside a round bush; a firefly glows above it. Sad but not scary, a little lost.""",
+    },
     # spot_difference home: the payoff - at night Granny Owl opens her little door and finds Owl's drawing waiting there
     "babcia_laurka": {
         "postacie": ["sowa"], "tlo": "dab_babci", "lekcje": ["spot_difference"],
@@ -262,16 +304,72 @@ storm for small children.""",
 }
 
 
+# comic page layouts (key "uklad"): the white gutters as lines on a 1536x1024 page; the first is the main gutter, every
+# other one ends on it. gpt-image paints into the drawn template and keeps its panels (IoU 0.97-0.99, 2026-10-29), so
+# the panels' polygons come from the template, not from the painting.
+UKLAD_W, UKLAD_H, UKLAD_M, UKLAD_G = 1536, 1024, 40, 30
+UKLADY = {
+    "3": [((930, 0), (760, 1024)), ((800, 560), (1536, 470))],            # a big slanted panel left, two on the right
+    "3d": [((40, 600), (1496, 540)), ((850, 0), (720, 600))],             # two slanted on top, one wide below
+    "4": [((40, 640), (1496, 560)), ((1000, 0), (830, 640)), ((560, 560), (600, 1024))],   # two on top, two below
+}
+
+
+def uklad(nazwa: str) -> tuple[Image.Image, list[list[list[float]]]]:
+    """The template page (grey panels, black outlines, white gutters) and its panels as polygons (fractions), in
+    reading order: by row (top edge), then left to right."""
+    import cv2
+    import numpy as np
+    from PIL import ImageDraw
+    W, H, M, G = UKLAD_W, UKLAD_H, UKLAD_M, UKLAD_G
+    im = Image.new("L", (W, H), 255); d = ImageDraw.Draw(im)
+    d.rectangle([M, M, W - M, H - M], fill=0)
+    L = UKLADY[nazwa]; (x1, y1), (x2, y2) = L[0]
+    for i, (a, b) in enumerate(L):
+        if i:                                   # a split ends on the main gutter: its nearer end moves to the crossing
+            (x3, y3), (x4, y4) = a, b
+            den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
+            t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den
+            q = (x1 + t * (x2 - x1), y1 + t * (y2 - y1))
+            if (a[0] - q[0]) ** 2 + (a[1] - q[1]) ** 2 < (b[0] - q[0]) ** 2 + (b[1] - q[1]) ** 2: a = q
+            else: b = q
+        d.line([a, b], fill=255, width=G)
+    maska = (np.asarray(im) == 0).astype(np.uint8)
+    n, lab = cv2.connectedComponents(maska)
+    strona = np.full((H, W, 3), 255, np.uint8)
+    panele = []
+    for i in range(1, n):
+        p = (lab == i).astype(np.uint8)
+        kont, _ = cv2.findContours(p, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        c = max(kont, key=cv2.contourArea)
+        q = cv2.approxPolyDP(c, 0.01 * cv2.arcLength(c, True), True)[:, 0, :]
+        panele.append(q)
+        strona[p > 0] = (235, 235, 235)
+        cv2.polylines(strona, [q.reshape(-1, 1, 2)], True, (0, 0, 0), 5)
+    panele.sort(key=lambda q: (int(q[:, 1].min() // (H / 3)), q[:, 0].mean()))
+    return Image.fromarray(strona), [[[round(x / W, 4), round(y / H, 4)] for x, y in q.tolist()] for q in panele]
+
+
 def build(n: str) -> None:
     z = ILUSTRACJE[n]
     refs = [CHARACTERS / k / "postac.png" for k in z["postacie"]] + ([BACKGROUNDS / z["tlo"] / "plyta.png"] if z.get("tlo") else [])
     for r in refs:
         if not r.exists(): raise SystemExit(f"missing reference {r}")
-    kto = ", ".join(f"{POSTAC[k]} (reference {i + 1})" for i, k in enumerate(z["postacie"]))
+    o = 2 if z.get("uklad") else 1
+    kto = ", ".join(f"{POSTAC[k]} (reference {i + o})" for i, k in enumerate(z["postacie"]))
     obsada = (f"The characters are {kto} - draw each exactly as in its reference (same design, colours, proportions). "
               if kto else "")
     miejsce = f"The place is the one in the last reference picture (same colours, simplified). " if z.get("tlo") else ""
-    prompt = f"An OBLONG picture-book illustration of one moment of a story. {obsada}{miejsce}{z['scena']} {STYL}"
+    if z.get("uklad"):                          # a comic: the layout template goes first among the references
+        strona, _ = uklad(z["uklad"]); WORK.mkdir(parents=True, exist_ok=True)
+        strona.save(WORK / f"uklad_{z['uklad']}.png"); refs = [WORK / f"uklad_{z['uklad']}.png"] + refs
+        prompt = ("A picture-book COMIC PAGE. The FIRST reference picture is the page LAYOUT: keep it EXACTLY - the same "
+                  "panels with the same slanted shapes, sizes and positions, the same clean plain WHITE gutters between them "
+                  "and the same white margin; paint a full picture INSIDE every grey panel, edge to edge, with a thin dark "
+                  f"outline round each panel. The other references follow in order. {obsada}{miejsce}{z['scena']} "
+                  + STYL.replace("A full-bleed picture with no border, ", ""))
+    else:
+        prompt = f"An OBLONG picture-book illustration of one moment of a story. {obsada}{miejsce}{z['scena']} {STYL}"
     WORK.mkdir(parents=True, exist_ok=True)
     raw = WORK / f"{n}.png"
     if not raw.exists():
@@ -282,9 +380,11 @@ def build(n: str) -> None:
     im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
     out = OUT / n; out.mkdir(parents=True, exist_ok=True)
     im.save(out / "obraz.webp", "WEBP", quality=84, method=6)
-    (out / "meta.json").write_text(json.dumps({"szerokosc": im.width, "wysokosc": im.height, "postacie": z["postacie"],
-                                               "lekcje": z.get("lekcje", []), "opis": " ".join(z["scena"].split())},
-                                              ensure_ascii=False, indent=1), encoding="utf-8")
+    meta = {"szerokosc": im.width, "wysokosc": im.height, "postacie": z["postacie"],
+            "lekcje": z.get("lekcje", []), "opis": " ".join(z["scena"].split())}
+    if z.get("uklad"):
+        meta["uklad"], meta["okienka"] = z["uklad"], uklad(z["uklad"])[1]
+    (out / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{n}: {im.width}x{im.height}")
 
 
