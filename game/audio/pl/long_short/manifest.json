@@ -40,9 +40,9 @@
   "text": "Przeciągnij obie deski do kreski, tak żeby zaczynały się w tym samym miejscu."
  },
  "line.a_teraz_widac": {
-  "hash": "78512aef69ad",
+  "hash": "10001e1d0cfb",
   "who": "sarenka",
-  "text": "Ta, której koniec jest dalej od kreski, jest dłuższa. Która deska jest dłuższa? Wskaż."
+  "text": "Ta, której koniec jest dalej od kreski, jest dłuższa. Wskaż dłuższą deskę."
  },
  "line.a_ta_krotsza": {
   "hash": "ed07da96e5dd",
@@ -100,14 +100,14 @@
   "text": "Jest na mecie! Brawo, ślimaczku!"
  },
  "line.b_piknik": {
-  "hash": "7316d3ca6560",
+  "hash": "7c3ca0a60685",
   "who": "sarenka",
-  "text": "Rozłóżmy jedzenie! Mamy jedną długą bagietkę, starczy dla wszystkich."
+  "text": "Każdy dostał kawałek długiej bagietki. Starczyło dla wszystkich!"
  },
  "line.b_do_domu": {
-  "hash": "e13a443ba39d",
+  "hash": "198a738af541",
   "who": "wiewiorka",
-  "text": "Mniam! A po pikniku wracamy do domu."
+  "text": "Mniam! Wieczorem wracamy do domu. Lisku, wtedy oddam ci twój szalik."
  },
  "line.p_start": {
   "hash": "8a4951cda496",
@@ -120,9 +120,9 @@
   "text": "Wstążki leżą byle jak. Ustaw je od kreski, żeby je porównać."
  },
  "line.p_dluzsza": {
-  "hash": "9f3bdee96761",
+  "hash": "86cfec10d597",
   "who": "sarenka",
-  "text": "Która wstążka jest dłuższa? Wskaż."
+  "text": "Wskaż dłuższą wstążkę."
  },
  "line.p_dluzsza_nie": {
   "hash": "2bb55b6a42c8",
@@ -135,9 +135,9 @@
   "text": "Tak! Ta wstążka jest dłuższa."
  },
  "line.p_najkrotsza": {
-  "hash": "3afab2c497c0",
+  "hash": "64c777d37f89",
   "who": "wiewiorka",
-  "text": "Trzy deski zaczynają się od kreski. Która jest najkrótsza? Wskaż."
+  "text": "Trzy deski zaczynają się od kreski. Wskaż najkrótszą deskę."
  },
  "line.p_najkrotsza_nie": {
   "hash": "f5558e4f893c",
@@ -150,9 +150,9 @@
   "text": "Tak! To najkrótsza deska."
  },
  "line.p_weze": {
-  "hash": "dea6db7a9dae",
+  "hash": "893296f741c4",
   "who": "sarenka",
-  "text": "Narysowałam dwa węże. Który wąż jest dłuższy? Wskaż."
+  "text": "Narysowałam dwa węże. Wskaż dłuższego węża."
  },
  "line.p_weze_nie": {
   "hash": "0deb1fc5c6a7",
@@ -165,14 +165,14 @@
   "text": "Tak! Ten wąż jest dłuższy."
  },
  "line.p_cien_dlugi": {
-  "hash": "93e95475adea",
+  "hash": "f1f3f477d803",
   "who": "wiewiorka",
-  "text": "To cień długiego szalika. Który to szalik? Wskaż."
+  "text": "To cień długiego szalika. Wskaż ten szalik."
  },
  "line.p_cien_krotki": {
-  "hash": "98b2b6364582",
+  "hash": "2ebee8d8e571",
   "who": "wiewiorka",
-  "text": "To cień krótkiego szalika. Który to szalik? Wskaż."
+  "text": "To cień krótkiego szalika. Wskaż ten szalik."
  },
  "line.p_cien_nie": {
   "hash": "fe3216500f33",
@@ -185,34 +185,34 @@
   "text": "Tak! Cień pasuje do szalika."
  },
  "line.p_lap": {
-  "hash": "7bacc9393eb8",
+  "hash": "912c9301eca1",
   "who": "sarenka",
-  "text": "Wstążki wyskakują! Łap długą wstążkę, wskaż ją."
+  "text": "Wstążki wyskakują! Wskaż długą wstążkę, zanim się schowa."
  },
  "line.p_lap_ok": {
-  "hash": "6d99cc507b20",
+  "hash": "bcd2d84f96c7",
   "who": "wiewiorka",
-  "text": "Złapane! Ale szybko, jak wiatr."
+  "text": "Złapane! Długa wstążka za każdym razem."
  },
  "line.d_wieszaki": {
-  "hash": "4b3f675ae130",
+  "hash": "818f7792e277",
   "who": "lisek",
-  "text": "Wróciliśmy do domu. Na wieszakach wiszą dwa szaliki: długi i krótki. Komu który?"
+  "text": "Powieśmy oba szaliki na wieszaku."
  },
  "line.d_daj": {
-  "hash": "cff66f2ac362",
+  "hash": "f1fffa4ad783",
   "who": "lisek",
-  "text": "Długi szalik jest dla mnie, bo jestem wysoki, a krótki dla małej Wiewiórki. Przeciągnij każdy szalik do właściwej osoby."
+  "text": "Przeciągnij każdy szalik na wieszak, na swój haczyk."
  },
  "line.d_nie_ten": {
-  "hash": "032ec362418e",
+  "hash": "5d0b7bc4a16a",
   "who": "sarenka",
-  "text": "Ten szalik jest dla kogoś innego. Długi dla Liska, krótki dla Wiewiórki."
+  "text": "Wieszak jest wyżej, na ścianie. Przeciągnij szalik na haczyk."
  },
  "line.d_pasuje": {
-  "hash": "b6101126f675",
+  "hash": "fd3c6a135a8b",
   "who": "wiewiorka",
-  "text": "Każdy ma szalik w sam raz!"
+  "text": "Tak, długi szalik jest Liska, a krótki jest mój!"
  },
  "line.d_rodzice": {
   "hash": "192f13f03c6d",
@@ -225,29 +225,29 @@
   "text": "Teraz popatrz, gdzie każda deska się kończy. Zaznaczam końce."
  },
  "line.k_kuchnia": {
-  "hash": "7a9d2d296870",
+  "hash": "9df01448f8bd",
   "who": "lisek",
-  "text": "A teraz do kuchni! Zrobimy obiad z makaronu."
+  "text": "A teraz obiad! Makaron leży na stole."
  },
  "line.k_ja_najdluzszy": {
-  "hash": "0f75c0d3c02f",
+  "hash": "b558d13a1ed6",
   "who": "lisek",
-  "text": "Ja chcę najdłuższy makaron!"
+  "text": "Ja chcę najdłuższy makaron! Biorę ten, bo wystaje najdalej."
  },
  "line.k_ja_najkrotszy": {
-  "hash": "c10e24b295a6",
+  "hash": "275ac2c0920b",
   "who": "wiewiorka",
-  "text": "A ja najkrótszy!"
+  "text": "A ja chcę najkrótszy!"
  },
  "line.k_umowa": {
-  "hash": "952aa24bef7c",
+  "hash": "b12bbc9855e8",
   "who": "sarenka",
-  "text": "Umówmy się: ułożymy wszystkie makarony od jednej kreski i zobaczymy, który jest najdłuższy, a który najkrótszy. Przeciągnij każdy makaron do kreski."
+  "text": "Lisku, ten makaron tylko leży dalej, tak jak deska nad strumykiem. Ułóżmy wszystkie od jednej kreski."
  },
  "line.k_najdluzszy": {
-  "hash": "5f86538223fc",
+  "hash": "0d335f77dd97",
   "who": "lisek",
-  "text": "Który makaron jest najdłuższy? Wskaż."
+  "text": "Wskaż najdłuższy makaron, ten dla mnie."
  },
  "line.k_najdluzszy_nie": {
   "hash": "c3024db40a0f",
@@ -260,9 +260,9 @@
   "text": "Popatrz, którego koniec jest najdalej od kreski."
  },
  "line.k_najkrotszy": {
-  "hash": "6b73a6d19bbe",
+  "hash": "0cf97dbf7d92",
   "who": "wiewiorka",
-  "text": "A który jest najkrótszy? Wskaż."
+  "text": "A teraz wskaż najkrótszy makaron, ten dla mnie."
  },
  "line.k_najkrotszy_nie": {
   "hash": "d211da16cb69",
@@ -275,14 +275,14 @@
   "text": "Szukaj tego, którego koniec jest najbliżej kreski."
  },
  "line.k_pomieszajmy": {
-  "hash": "8f7d6cc51c43",
+  "hash": "8c500b48b72c",
   "who": "sarenka",
-  "text": "Mam pomysł! Pomieszajmy najdłuższy z najkrótszym. Każdy dostanie swój!"
+  "text": "Mam pomysł! Ugotujmy najdłuższy i najkrótszy w jednym garnku. Każdy dostanie swój!"
  },
  "line.k_pyszne": {
-  "hash": "c2d51dcba631",
+  "hash": "2a8ea205c883",
   "who": "lisek",
-  "text": "Długi i krótki w jednym garnku. Pycha!"
+  "text": "Mój makaron ciągnie się i ciągnie! Pycha!"
  },
  "line.b_mapa": {
   "hash": "3ef076929d7a",
@@ -313,5 +313,115 @@
   "hash": "8b4b5206861b",
   "who": "wiewiorka",
   "text": "Już jesteśmy! Krótką ścieżką doszliśmy w mig. Popatrzcie, tu leży koc i kosz. Tu zrobimy piknik!"
+ },
+ "line.b_wedrowka": {
+  "hash": "ddf7fc14f703",
+  "who": "lisek",
+  "text": "Teraz prowadź mój pionek palcem po krótszej ścieżce, aż do koca."
+ },
+ "line.b_wedrowka_nie": {
+  "hash": "5dfefa228023",
+  "who": "lisek",
+  "text": "Nie tędy, to długa ścieżka dookoła górki! Idziemy krótszą."
+ },
+ "line.b_wedrowka_tak": {
+  "hash": "bb496b11fbf6",
+  "who": "wiewiorka",
+  "text": "Krótka ścieżka prowadzi prosto do koca. Chodźmy!"
+ },
+ "line.c_kosz": {
+  "hash": "17288cc2da18",
+  "who": "lisek",
+  "text": "Burczy mi w brzuchu! Co mamy w koszyku?"
+ },
+ "line.c_bagietki": {
+  "hash": "13f3f2828375",
+  "who": "sarenka",
+  "text": "Dwie bagietki, położyłam je od jednej kreski. Wskaż dłuższą, żeby starczyło dla nas trojga."
+ },
+ "line.c_bagietki_nie": {
+  "hash": "c7449166bc45",
+  "who": "sarenka",
+  "text": "Ta jest krótsza, nie starczy dla nas trojga. Wskaż dłuższą bagietkę."
+ },
+ "line.c_bagietki_tak": {
+  "hash": "13f29f0a5708",
+  "who": "lisek",
+  "text": "Tak, długa bagietka! Starczy dla każdego."
+ },
+ "line.d_dziekuje": {
+  "hash": "1c937acd9a50",
+  "who": "wiewiorka",
+  "text": "Jesteśmy w domu! Lisku, oddaję ci twój długi szalik. Dzięki niemu nie zmarzłam."
+ },
+ "line.d_jedna_linia": {
+  "hash": "d54b52dcce8d",
+  "who": "sarenka",
+  "text": "Wiszą z jednego wieszaka, tak jak od jednej kreski. Teraz od razu widać, który jest dłuższy."
+ },
+ "line.d_ktory": {
+  "hash": "8dd832071f00",
+  "who": "wiewiorka",
+  "text": "Szalik Liska jest dłuższy. Wskaż szalik Liska."
+ },
+ "line.d_ktory_nie": {
+  "hash": "b4512af6c583",
+  "who": "wiewiorka",
+  "text": "Ten jest krótszy, to mój. Wskaż ten, który sięga niżej."
+ },
+ "line.k_przeciagnij": {
+  "hash": "7cc540c3c7c9",
+  "who": "sarenka",
+  "text": "Przeciągnij każdy makaron do kreski."
+ },
+ "line.k_ojej": {
+  "hash": "4b6cb73bb217",
+  "who": "lisek",
+  "text": "Ojej! Mój makaron wcale nie jest długi. Leżał tylko dalej."
+ },
+ "line.k_najdluzszy_tak": {
+  "hash": "a2affff92dd5",
+  "who": "lisek",
+  "text": "Tak! Spaghetti jest najdłuższe."
+ },
+ "line.k_najkrotszy_tak": {
+  "hash": "d3a3b7dd4025",
+  "who": "wiewiorka",
+  "text": "Tak! Malutkie kolanko jest najkrótsze."
+ },
+ "line.k_kolanko": {
+  "hash": "51e637e15435",
+  "who": "wiewiorka",
+  "text": "A mój jest malutki. Też pycha!"
+ },
+ "line.d_zabawa": {
+  "hash": "d7740d5b5a66",
+  "who": "wiewiorka",
+  "text": "Zagrajmy jeszcze raz! Kładziemy makaron od jednej kreski."
+ },
+ "line.d_zabawa_widac": {
+  "hash": "20eeaf8ade19",
+  "who": "lisek",
+  "text": "Mój dłuższy, a Wiewiórki krótszy. Od razu widać!"
+ },
+ "line.k_do_garnka": {
+  "hash": "edb966e83d4a",
+  "who": "sarenka",
+  "text": "Przeciągnij oba makarony do garnka."
+ },
+ "line.naklejka_daj": {
+  "hash": "25b2a00b8116",
+  "who": "sarenka",
+  "text": "Dziękuję za wspólny piknik! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "7b4f384e1970",
+  "who": "sarenka",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "afc9a1a2f140",
+  "who": "narrator",
+  "text": "To ślimak z wyścigu na łące. Dostaliśmy go, kiedy szliśmy na piknik i uczyliśmy się, co jest długie, a co krótkie."
  }
 }

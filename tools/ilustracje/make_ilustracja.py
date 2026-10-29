@@ -34,6 +34,54 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # long_short: the picnic at the end of the short path - the long baguette is enough for everybody
+    "piknik_polana": {
+        "postacie": ["sarenka", "lisek", "wiewiorka"], "tlo": "polana_piknik", "lekcje": ["long_short"],
+        "scena": """A happy PICNIC on the sunny glade from the reference picture: the ROE DEER, the FOX and the SQUIRREL sit
+together on the red-and-white checked blanket under the big oak, the wicker basket open beside them. The FOX holds up
+ONE very LONG baguette of bread and is breaking it into pieces; the SQUIRREL already nibbles her piece, the DEER takes
+hers; a jug of juice and three cups. The squirrel wears a long blue-and-white striped scarf. Behind them a narrow
+footpath comes almost straight across the meadow to the blanket. Warm summer light, everybody smiling.""",
+    },
+    # long_short home: dinner in the kitchen - the longest and the shortest pasta from one pot
+    "obiad_makaron": {
+        "postacie": ["sarenka", "lisek", "wiewiorka"], "tlo": "dom", "lekcje": ["long_short"],
+        "scena": """DINNER in the kitchen from the reference picture, evening light: the ROE DEER, the FOX and the SQUIRREL sit
+at the wooden table round one big steaming pot of pasta. The FOX slurps ONE very LONG strand of spaghetti that goes from
+his plate up to his mouth, his cheeks puffed, laughing; the little SQUIRREL holds up ONE tiny short elbow macaroni on her
+fork, delighted; the DEER laughs at them. Plates, forks, a bowl of grated cheese. Cosy and funny.""",
+    },
+    # spot_difference home: the payoff - at night Granny Owl opens her little door and finds Owl's drawing waiting there
+    "babcia_laurka": {
+        "postacie": ["sowa"], "tlo": "dab_babci", "lekcje": ["spot_difference"],
+        "scena": """NIGHT at the big old oak from the reference picture: a round full moon and stars, a deep blue sky, the
+meadow silver in the moonlight. High in the trunk the little ROUND WOODEN DOOR stands open, warm golden candle light
+shining out of it. In the doorway stands GRANNY OWL - an OLD owl drawn like the reference owl but with soft grey-white
+feathers, small round spectacles on her beak and a knitted lilac shawl round her shoulders. With both wings she holds
+up a child's crayon DRAWING (a sun with rays, a little house with a red roof, a tree and an orange kitten) and looks
+at it, deeply touched and smiling, one wing on her heart. A little lantern hangs by the door. Calm, warm, magical.
+Granny Owl is the ONLY animal in the picture: the reference owl only shows how owls are drawn - NO young owl, NO
+other animal anywhere, the meadow under the oak is empty.""",
+    },
+    # bigger_smaller: the problem, big and funny - Squirrel has outgrown her old hollow, only her head goes in
+    "wiewiorka_utknela": {
+        "postacie": ["wiewiorka"], "tlo": "las", "lekcje": ["bigger_smaller"],
+        "scena": """In the forest from the reference picture, a close view of a tree trunk with a SMALL round hollow in it. The
+SQUIRREL has pushed only her HEAD into the little round hole; her whole body is stuck OUTSIDE: her plump body pressed
+against the bark, her hind paws kicking in the air, her big fluffy tail sticking up, her front paws pushing on the
+trunk. The hole is clearly much too small for her - her shoulders cannot go in. A few acorns and nuts fall around,
+a leaf flutters. Funny, not scary: a comic moment, the trunk and the hole big in the picture.""",
+    },
+    # bigger_smaller home: the housewarming in Squirrel's new hollow - every cup, chair and jar its own size
+    "parapetowka": {
+        "postacie": ["wiewiorka", "lisek", "sowa"], "tlo": "dziupla_wnetrze", "lekcje": ["bigger_smaller"],
+        "scena": """A cosy HOUSEWARMING party inside the squirrel's round hollow home from the reference picture: the SQUIRREL,
+the FOX and the OWL sit round a small round wooden table, laughing and raising their cups. The OWL on the BIGGEST chair,
+the FOX on a middle chair, the little SQUIRREL on the SMALLEST chair; a big cup for the fox, a small cup for the squirrel.
+On the BIG shelf on the wall stands one BIG open cardboard box full of nuts and acorns, on the SMALL shelf one small
+open cardboard box full of nuts. A plate of acorn
+cookies on the table, a little garland of leaves, warm light, steam from the cups. A joyful party.""",
+    },
     "pociag_most": {
         "postacie": ["kret", "mis", "sowa"], "tlo": "las", "lekcje": ["numbers_1_5"],
         "scena": """A little red steam train with FIVE small wooden wagons crosses a high wooden bridge over a forest valley,

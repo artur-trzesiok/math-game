@@ -40,9 +40,9 @@
   "text": "Drag both planks to the line, so they start in the same place."
  },
  "line.a_teraz_widac": {
-  "hash": "1b228acc718f",
+  "hash": "6dfbd7893c6e",
   "who": "sarenka",
-  "text": "The one whose end is further from the line is longer. Which plank is longer? Point to it."
+  "text": "The one whose end is further from the line is longer. Point to the longer plank."
  },
  "line.a_ta_krotsza": {
   "hash": "16747fc3911f",
@@ -100,14 +100,14 @@
   "text": "It's at the finish! Bravo, little snail!"
  },
  "line.b_piknik": {
-  "hash": "5553956a60f7",
+  "hash": "0bead269eae0",
   "who": "sarenka",
-  "text": "Let's lay out the food! We have one long baguette, enough for everybody."
+  "text": "Everyone got a piece of the long baguette. There was enough for all of us!"
  },
  "line.b_do_domu": {
-  "hash": "66e3225975e2",
+  "hash": "dadfb411c0f5",
   "who": "wiewiorka",
-  "text": "Yum! And after the picnic we go back home."
+  "text": "Yum! This evening we go home. Fox, then I'll give you back your scarf."
  },
  "line.p_start": {
   "hash": "3a28c7b10a5c",
@@ -120,9 +120,9 @@
   "text": "The ribbons are lying every which way. Put them from the line to compare them."
  },
  "line.p_dluzsza": {
-  "hash": "2bd36246eca0",
+  "hash": "cfceb40c191f",
   "who": "sarenka",
-  "text": "Which ribbon is longer? Point to it."
+  "text": "Point to the longer ribbon."
  },
  "line.p_dluzsza_nie": {
   "hash": "f442c744b843",
@@ -135,9 +135,9 @@
   "text": "Yes! This ribbon is longer."
  },
  "line.p_najkrotsza": {
-  "hash": "409bf38de4c7",
+  "hash": "5046f753573e",
   "who": "wiewiorka",
-  "text": "Three planks start at the line. Which one is the shortest? Point to it."
+  "text": "Three planks start at the line. Point to the shortest plank."
  },
  "line.p_najkrotsza_nie": {
   "hash": "39440172d705",
@@ -150,9 +150,9 @@
   "text": "Yes! That is the shortest plank."
  },
  "line.p_weze": {
-  "hash": "34a07d8a4a21",
+  "hash": "ef1117ffd6ef",
   "who": "sarenka",
-  "text": "I drew two snakes. Which snake is longer? Point to it."
+  "text": "I drew two snakes. Point to the longer snake."
  },
  "line.p_weze_nie": {
   "hash": "e201fa63e355",
@@ -165,14 +165,14 @@
   "text": "Yes! This snake is longer."
  },
  "line.p_cien_dlugi": {
-  "hash": "e5c4d0840ac2",
+  "hash": "66efe8c3d9cf",
   "who": "wiewiorka",
-  "text": "This is the shadow of the long scarf. Which scarf is it? Point to it."
+  "text": "This is the shadow of the long scarf. Point to that scarf."
  },
  "line.p_cien_krotki": {
-  "hash": "17c5ce53068b",
+  "hash": "1e2eed4eb78f",
   "who": "wiewiorka",
-  "text": "This is the shadow of the short scarf. Which scarf is it? Point to it."
+  "text": "This is the shadow of the short scarf. Point to that scarf."
  },
  "line.p_cien_nie": {
   "hash": "b7d70f9c847e",
@@ -185,34 +185,34 @@
   "text": "Yes! The shadow fits the scarf."
  },
  "line.p_lap": {
-  "hash": "76066070e35e",
+  "hash": "83cbde7fff5e",
   "who": "sarenka",
-  "text": "Ribbons are popping up! Catch the long ribbon, point to it."
+  "text": "Ribbons are popping up! Point to the long ribbon before it hides."
  },
  "line.p_lap_ok": {
-  "hash": "ae2acd576d9c",
+  "hash": "e7f96c07c36a",
   "who": "wiewiorka",
-  "text": "Caught! You're as quick as the wind."
+  "text": "Caught! The long ribbon every time."
  },
  "line.d_wieszaki": {
-  "hash": "edd1ce70ec34",
+  "hash": "e97ace6b7e22",
   "who": "lisek",
-  "text": "We're back home. Two scarves hang on the hooks: a long one and a short one. Whose is which?"
+  "text": "Let's hang both scarves on the hooks."
  },
  "line.d_daj": {
-  "hash": "65ef28864539",
+  "hash": "ccfb1f42d02a",
   "who": "lisek",
-  "text": "The long scarf is for me, because I'm tall, and the short one for little Squirrel. Drag each scarf to the right friend."
+  "text": "Drag each scarf up to the hooks, onto a hook of its own."
  },
  "line.d_nie_ten": {
-  "hash": "f107118fc540",
+  "hash": "e21eccf4fb96",
   "who": "sarenka",
-  "text": "That scarf is for someone else. The long one for Fox, the short one for Squirrel."
+  "text": "The hooks are higher up, on the wall. Drag the scarf onto a hook."
  },
  "line.d_pasuje": {
-  "hash": "4509e5b01f78",
+  "hash": "8d8171dc8f99",
   "who": "wiewiorka",
-  "text": "Everyone has a scarf that is just right!"
+  "text": "Yes, the long scarf is Fox's, and the short one is mine!"
  },
  "line.d_rodzice": {
   "hash": "ddbffd056c2e",
@@ -225,14 +225,14 @@
   "text": "Now look where each plank ends. I'm marking the ends."
  },
  "line.k_kuchnia": {
-  "hash": "743c124e3c4e",
+  "hash": "1fb447ce5b81",
   "who": "lisek",
-  "text": "And now to the kitchen! We'll make pasta for dinner."
+  "text": "And now dinner! The pasta is on the table."
  },
  "line.k_ja_najdluzszy": {
-  "hash": "749fa9f65883",
+  "hash": "15be1cf80db2",
   "who": "lisek",
-  "text": "I want the longest pasta!"
+  "text": "I want the longest pasta! I'll take this one, it sticks out furthest."
  },
  "line.k_ja_najkrotszy": {
   "hash": "00448333c6a9",
@@ -240,14 +240,14 @@
   "text": "And I want the shortest!"
  },
  "line.k_umowa": {
-  "hash": "2ea305aef6be",
+  "hash": "9d8435517ea1",
   "who": "sarenka",
-  "text": "Let's agree: we'll lay all the pasta from one line and see which is the longest and which the shortest. Drag each piece to the line."
+  "text": "Fox, that pasta only lies further out, just like the plank at the brook. Let's lay them all from one line."
  },
  "line.k_najdluzszy": {
-  "hash": "b73036da28ad",
+  "hash": "ee97019e81e4",
   "who": "lisek",
-  "text": "Which pasta is the longest? Point to it."
+  "text": "Point to the longest pasta, the one for me."
  },
  "line.k_najdluzszy_nie": {
   "hash": "d8b6d5435368",
@@ -260,9 +260,9 @@
   "text": "Look whose end is furthest from the line."
  },
  "line.k_najkrotszy": {
-  "hash": "bf703e76c42c",
+  "hash": "c6ff84262a7e",
   "who": "wiewiorka",
-  "text": "And which is the shortest? Point to it."
+  "text": "And now point to the shortest pasta, the one for me."
  },
  "line.k_najkrotszy_nie": {
   "hash": "15bc130c3867",
@@ -275,14 +275,14 @@
   "text": "Look for the one whose end is closest to the line."
  },
  "line.k_pomieszajmy": {
-  "hash": "13d20ec467a1",
+  "hash": "57795db7ca04",
   "who": "sarenka",
-  "text": "I've got an idea! Let's mix the longest with the shortest. Everyone gets their own!"
+  "text": "I've got an idea! Let's cook the longest and the shortest in one pot. Everyone gets their own!"
  },
  "line.k_pyszne": {
-  "hash": "908b03d5f664",
+  "hash": "e790f6e5efa6",
   "who": "lisek",
-  "text": "Long and short in one pot. Yummy!"
+  "text": "My pasta goes on and on! Yummy!"
  },
  "line.b_mapa": {
   "hash": "7ea0f0776f94",
@@ -313,5 +313,115 @@
   "hash": "d04d869a6e7b",
   "who": "wiewiorka",
   "text": "Here we are! The short path got us here in no time. Look, here's a blanket and a basket. This is where we'll have our picnic!"
+ },
+ "line.b_wedrowka": {
+  "hash": "8826cbc5d185",
+  "who": "lisek",
+  "text": "Now lead my pawn with your finger along the shorter path, all the way to the blanket."
+ },
+ "line.b_wedrowka_nie": {
+  "hash": "890c9b137e0c",
+  "who": "lisek",
+  "text": "Not that way, that's the long path round the hill! We're taking the shorter one."
+ },
+ "line.b_wedrowka_tak": {
+  "hash": "6447e5766ff3",
+  "who": "wiewiorka",
+  "text": "The short path goes straight to the blanket. Let's go!"
+ },
+ "line.c_kosz": {
+  "hash": "a31fa350bec9",
+  "who": "lisek",
+  "text": "My tummy is rumbling! What's in the basket?"
+ },
+ "line.c_bagietki": {
+  "hash": "91b6d5fe3733",
+  "who": "sarenka",
+  "text": "Two baguettes, I laid them from one line. Point to the longer one, so there is enough for the three of us."
+ },
+ "line.c_bagietki_nie": {
+  "hash": "f7ab7ce71280",
+  "who": "sarenka",
+  "text": "This one is shorter, it won't do for the three of us. Point to the longer baguette."
+ },
+ "line.c_bagietki_tak": {
+  "hash": "ef1e4472a73c",
+  "who": "lisek",
+  "text": "Yes, the long baguette! There's enough for everyone."
+ },
+ "line.d_dziekuje": {
+  "hash": "96325ffa78a8",
+  "who": "wiewiorka",
+  "text": "We're home! Fox, here's your long scarf back. It kept me warm."
+ },
+ "line.d_jedna_linia": {
+  "hash": "964e116727c5",
+  "who": "sarenka",
+  "text": "They hang from one rail, just like from one line. Now you can see at once which one is longer."
+ },
+ "line.d_ktory": {
+  "hash": "ecab2bf3599a",
+  "who": "wiewiorka",
+  "text": "Fox's scarf is the longer one. Point to Fox's scarf."
+ },
+ "line.d_ktory_nie": {
+  "hash": "3ad392db521c",
+  "who": "wiewiorka",
+  "text": "This one is shorter, it's mine. Point to the one that hangs lower."
+ },
+ "line.k_przeciagnij": {
+  "hash": "19178d58b12c",
+  "who": "sarenka",
+  "text": "Drag each piece of pasta to the line."
+ },
+ "line.k_ojej": {
+  "hash": "1bead69b705c",
+  "who": "lisek",
+  "text": "Oh dear! My pasta isn't long at all. It only lay further out."
+ },
+ "line.k_najdluzszy_tak": {
+  "hash": "524ac608eab2",
+  "who": "lisek",
+  "text": "Yes! The spaghetti is the longest."
+ },
+ "line.k_najkrotszy_tak": {
+  "hash": "eea31cd17772",
+  "who": "wiewiorka",
+  "text": "Yes! The tiny elbow is the shortest."
+ },
+ "line.k_kolanko": {
+  "hash": "7f8fc0e305d7",
+  "who": "wiewiorka",
+  "text": "And mine is tiny. Yummy too!"
+ },
+ "line.d_zabawa": {
+  "hash": "3e29959e271d",
+  "who": "wiewiorka",
+  "text": "Let's play once more! We lay the pasta from one line."
+ },
+ "line.d_zabawa_widac": {
+  "hash": "660c981aa192",
+  "who": "lisek",
+  "text": "Mine is longer, and Squirrel's is shorter. You can see it at once!"
+ },
+ "line.k_do_garnka": {
+  "hash": "42c858eeaa57",
+  "who": "sarenka",
+  "text": "Drag both pieces of pasta into the pot."
+ },
+ "line.naklejka_daj": {
+  "hash": "2cac79c12399",
+  "who": "sarenka",
+  "text": "Thank you for the picnic together! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "c5b40c9af054",
+  "who": "sarenka",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "ebb35888a0cb",
+  "who": "narrator",
+  "text": "This is the snail from the race on the meadow. We got it on the way to the picnic, when we learnt what is long and what is short."
  }
 }

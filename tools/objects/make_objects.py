@@ -32,6 +32,21 @@ vector, NOT 3D. Each object is one single thing seen straight on, NO ground
 shadow, NO text."""
 
 SHEETS = {
+    # bigger_smaller: Squirrel's store in a moving box (story and home), full so "a box of the store" is seen
+    "pudlo_zapasy": {
+        "names": ["pudlo_zapasy"],
+        "outline": True,
+        "size": "1024x1024",
+        "rows": 1,
+        "px": 512,
+        "refs": ["pudelko"],
+        "prompt": f"""ONE illustrated object for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO glow, NO halo, NO background.
+{STYL}
+The open cardboard box from the reference, seen straight on and a little from above, wide and low, its flaps open,
+FILLED to the top with brown hazelnuts, acorns with little caps and a few pine cones heaped up a little over the rim.
+Only the box and its nuts - NOTHING else.""",
+    },
     "objects": {
         "outline": True,         # lesson stickers get a white die-cut outline
         "names": ["jablko", "gruszka", "kwiatek", "ciastko", "kubek", "talerz", "skarpetka", "pilka"],
@@ -272,6 +287,18 @@ All six the same size.""",
 }
 
 # one or many (stage 1)
+# spot_difference home: the proof that Granny Owl came at night - one of her feathers left on the rug
+SHEETS["pioro_babci"] = {
+    "outline": True,
+    "names": ["pioro_sowy"],
+    "size": "1024x1024",
+    "prompt": f"""ONE illustrated object for a children's picture book, alone in the middle of a fully TRANSPARENT background,
+NO glow, NO halo, with generous empty space around it.
+{STYL}
+One single soft OWL FEATHER, lying diagonally: soft grey-white with gentle light-brown bars across it, a fluffy downy
+base and a thin pale quill, big and clear.""",
+}
+
 SHEETS["jeden_wiele"] = {
     "outline": True,
     "names": ["kaczatko", "wisnia"],
@@ -314,6 +341,23 @@ Row 2, left to right: one LONG striped knitted scarf laid out straight and horiz
 fringe at both ends; the SAME scarf but SHORT; one LONG baguette of bread lying horizontally; one cute little snail
 with a spiral orange shell, seen from the side, facing right.
 The long things are about three times as long as the short ones; all equally thick.""",
+}
+
+# long_short: the short twin of the baguette (the picnic basket holds both) and the friends' pawn for the walk on the map
+SHEETS["piknik_pionek"] = {
+    "outline": True,
+    "names": ["bagietka_krotka", "pionek_lisek"],
+    "size": "1536x1024",
+    "rows": 1,
+    "refs": ["bagietka_dluga"],
+    "prompt": f"""A sprite sheet of TWO illustrated objects for a children's picture book, in ONE ROW of TWO on a fully
+TRANSPARENT background, with generous empty space between them so they do not touch. NO coloured background, NO glow,
+NO halo, NO vignette - the space around and between the objects is completely empty and transparent.
+{STYL}
+Left: the SAME baguette of bread as in the reference picture (same colour, same crust, same thickness), but SHORT - half
+as long - lying flat and HORIZONTAL, seen from the front. Right: one small wooden board-game pawn carved as a cute
+little red FOX sitting upright on a round wooden base, seen from the front, smiling, painted orange-red with a white
+chest and a white tail tip.""",
 }
 
 # bigger and smaller, rethought (stage 1): a tree hollow (one picture, shown at several sizes), the mice's family
