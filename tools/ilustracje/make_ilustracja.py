@@ -34,6 +34,25 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # up_down home: the payoff - the apple pie from the apples the lift brought down, in the tidy hallway
+    "szarlotka_wiewiorki": {
+        "postacie": ["wiewiorka", "lisek", "zajac"], "tlo": "przedpokoj", "lekcje": ["up_down"],
+        "scena": """Squirrel's cosy home from the reference picture (the same warm walls, the round window, the row of hooks
+on the wall), in warm evening light. On the hooks hang a red hat, a long striped scarf and a little backpack. In the
+middle a small round wooden table with a checked tablecloth; on it ONE big golden APPLE PIE just out of the oven,
+steaming, one slice cut out, and a wicker basket full of red apples. The SQUIRREL, wearing oven mitts, proudly sets the
+pie down; the FOX holds a plate with a slice of pie and smiles; the BUNNY licks his lips with a fork in his paw.
+Cosy, happy and calm - friends together after a day of picking apples.""",
+    },
+    # numbers_1_5 home: the payoff - the promised picnic by the lake the next day, the five packed things laid out
+    "piknik_nad_jeziorem": {
+        "postacie": ["kret", "mis", "sowa"], "tlo": "stacja_jezioro", "lekcje": ["numbers_1_5"],
+        "scena": """A sunny PICNIC on the green grass by the blue lake from the reference picture, the little red engine on the
+rails behind and the wooden pier on the lake. The MOLE, the BEAR and the OWL sit on a red-and-white checked blanket,
+laughing; an open little backpack lies on the blanket and in front of it EXACTLY FIVE things are laid out in a row: one
+red apple, one sandwich, one cap, one ball, one small picture book. On the water near the shore a mother duck swims with
+her yellow ducklings; the bear holds out a piece of bread to them. Warm morning light, a joyful day out.""",
+    },
     # logical_pairs home: the payoff - Deer's promised tea, every cup on its saucer, the teapot in the middle
     "herbatka_u_sarenki": {
         "postacie": ["sarenka", "bobr", "kret"], "tlo": "przedpokoj", "lekcje": ["logical_pairs"],

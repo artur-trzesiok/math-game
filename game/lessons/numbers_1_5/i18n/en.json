@@ -13,11 +13,11 @@
   },
   "line.a_cztery": {
     "who": "kret",
-    "text": "Your ticket, Bear, costs four coins. Look, this is what the number four looks like."
+    "text": "Your ticket, Bear, costs four coins. Four is a new number - let me show you."
   },
   "line.a_to_cztery": {
     "who": "kret",
-    "text": "This is four."
+    "text": "And this is a new number: four."
   },
   "line.a_zaplac": {
     "who": "sowa",
@@ -45,23 +45,19 @@
   },
   "line.b_bilet2": {
     "who": "kret",
-    "text": "Mouse has a ticket with the number two. Which wagon does she get into? Point to it."
+    "text": "Mouse has a ticket with number two. Point to the wagon she gets into."
   },
   "line.b_bilet5": {
     "who": "kret",
-    "text": "Bunny has a ticket with the number five. Which wagon is it? Point to it."
+    "text": "Bunny has a ticket with number five. Point to his wagon."
   },
   "line.b_bilet3": {
     "who": "kret",
-    "text": "Hedgehog has a ticket with the number three. Which wagon is it? Point to it."
+    "text": "Hedgehog has a three and knows where to go - into wagon number three!"
   },
   "line.zly_wagon": {
     "who": "kret",
     "text": "Not that wagon. Look at the number on the ticket."
-  },
-  "line.b_wsiada": {
-    "who": "kret",
-    "text": "All aboard! Have a good trip!"
   },
   "line.b_odjazd": {
     "who": "kret",
@@ -69,7 +65,7 @@
   },
   "line.c_jablka": {
     "who": "sowa",
-    "text": "A stop in the forest! Bear picked apples and I picked pears."
+    "text": "A stop in the forest! Apple trees and pear trees grow here. Let's pick some fruit for the trip!"
   },
   "line.c_wiecej": {
     "who": "mis",
@@ -90,34 +86,6 @@
   "line.c_rozumiem": {
     "who": "mis",
     "text": "I see! My row was longer, but there weren't more apples."
-  },
-  "line.c_cyfra5": {
-    "who": "sowa",
-    "text": "And this is what the number five looks like."
-  },
-  "line.c_to_piec": {
-    "who": "sowa",
-    "text": "This is five."
-  },
-  "line.c_dzwonek": {
-    "who": "kret",
-    "text": "Listen to my bell and count how many times it rings."
-  },
-  "line.c_ile_dzwonkow": {
-    "who": "sowa",
-    "text": "How many times did the bell ring? Point to the number."
-  },
-  "line.c_dzwonek3": {
-    "who": "kret",
-    "text": "Three times!"
-  },
-  "line.c_dzwonek4": {
-    "who": "kret",
-    "text": "Four times!"
-  },
-  "line.c_dzwonek5": {
-    "who": "kret",
-    "text": "Five times!"
   },
   "line.d_jezioro": {
     "who": "kret",
@@ -151,13 +119,6 @@
     "who": "kret",
     "text": "Count again, touching each thing."
   },
-  "line.p_dobrze": {
-    "who": "sowa",
-    "text": "Bravo!",
-    "speakers": [
-      "kret"
-    ]
-  },
   "line.p_bilet5": {
     "who": "kret",
     "text": "This ticket costs five coins. Drag five coins onto the plate."
@@ -166,17 +127,9 @@
     "who": "sowa",
     "text": "Write a five with your finger. Start at the green dot."
   },
-  "line.p_cztery": {
-    "who": "sowa",
-    "text": "Where are four apples? Point to them."
-  },
-  "line.p_cztery_nie": {
-    "who": "sowa",
-    "text": "Count the apples again. We're looking for four."
-  },
   "line.p_kamienie": {
     "who": "kret",
-    "text": "I want to hop to the stone with the number four. Which one is it? Point to it."
+    "text": "Point to the stone with the number four - I want to jump there."
   },
   "line.p_kamienie_nie": {
     "who": "kret",
@@ -188,11 +141,11 @@
   },
   "line.h_jutro": {
     "who": "kret",
-    "text": "Tomorrow we ride the train again. The backpack needs packing."
+    "text": "We're home! Tomorrow we go to the lake for a picnic, so we must pack."
   },
   "line.h_spakuj": {
     "who": "kret",
-    "text": "Put five things in the backpack. Drag them one at a time and I'll count."
+    "text": "Now the backpack. Put five things from the windowsill into it. Drag them one at a time, and I'll count."
   },
   "line.h_za_duzo": {
     "who": "kret",
@@ -204,7 +157,7 @@
   },
   "line.h_palce": {
     "who": "mis",
-    "text": "How many fingers does this hand have? Count and point to the number."
+    "text": "Tomorrow we'll wave to the ducks. How many fingers does this hand have? Count and point to the number."
   },
   "line.h_palce_nie": {
     "who": "mis",
@@ -272,10 +225,150 @@
   },
   "line.b_spoznieni": {
     "who": "kret",
-    "text": "Wait! The duckling and the snail are running up. They bought their tickets yesterday, to be in time today!"
+    "text": "Wait! Here come Duckling and Snail. They bought their tickets yesterday!"
   },
   "line.b_bilety_wczoraj": {
     "who": "kret",
-    "text": "The duckling has a one, so it gets into the first wagon. The snail has a four, so into the fourth. Hop in!"
+    "text": "Duckling has a one, so it hops into the first wagon."
+  },
+  "line.a_znasz": {
+    "who": "kret",
+    "text": "One, two, three - you know these numbers already."
+  },
+  "line.a_to_piec": {
+    "who": "kret",
+    "text": "And this is five. My train has five wagons!"
+  },
+  "line.b_wsiada2": {
+    "who": "kret",
+    "text": "Yes, wagon number two! Hop in, Mouse!"
+  },
+  "line.b_wsiada5": {
+    "who": "kret",
+    "text": "Yes, the five! Jump in, Bunny!"
+  },
+  "line.b_slimak": {
+    "who": "kret",
+    "text": "Snail has a four, but he does not know which wagon that is. Help him: point to wagon number four."
+  },
+  "line.b_wsiada4": {
+    "who": "kret",
+    "text": "The four! Snail made it, and he thanks you for your help."
+  },
+  "line.c_wsiadamy": {
+    "who": "kret",
+    "text": "All aboard, on we go - to the lake!"
+  },
+  "line.c_most": {
+    "who": "sowa",
+    "text": "We're riding over a high bridge! A river flows far below."
+  },
+  "line.c_most2": {
+    "who": "mis",
+    "text": "I can see the whole train: the engine and five wagons!"
+  },
+  "line.d_kaczki": {
+    "who": "kret",
+    "text": "Look, a duck is swimming on the lake. I think she's hungry!"
+  },
+  "line.d_karm": {
+    "who": "sowa",
+    "text": "We have bread left from the trip. Drag the food to the duck - let's see what she likes."
+  },
+  "line.d_najedzona": {
+    "who": "kret",
+    "text": "She ate the bread and spat out the cone! Cones are not for ducks."
+  },
+  "line.d_jutro": {
+    "who": "kret",
+    "text": "Now we go home. And tomorrow we'll come back here for a picnic!"
+  },
+  "line.d_piknik": {
+    "who": "mis",
+    "text": "Hooray! Then we must pack today!"
+  },
+  "line.p_ile4": {
+    "who": "sowa",
+    "text": "Yes, there are four!"
+  },
+  "line.p_ile5": {
+    "who": "sowa",
+    "text": "Yes, there are five!"
+  },
+  "line.p_bilet_ok": {
+    "who": "sowa",
+    "text": "Five coins - ticket bought!"
+  },
+  "line.p_piatka_ok": {
+    "who": "kret",
+    "text": "What a beautiful five!"
+  },
+  "line.p_kropki": {
+    "who": "sowa",
+    "text": "Join the dots in order, from one to five. What will appear?"
+  },
+  "line.p_lokomotywa": {
+    "who": "kret",
+    "text": "My engine! Five dots and there it is."
+  },
+  "line.h_jedzenie": {
+    "who": "mis",
+    "text": "I'll take apples, and Owl takes sandwiches."
+  },
+  "line.h_wiecej": {
+    "who": "mis",
+    "text": "I have more food than Owl! Look how long my row is!"
+  },
+  "line.h_znowu": {
+    "who": "sowa",
+    "text": "A long row again? Let's check on a chart which there are more of."
+  },
+  "line.h_wykres": {
+    "who": "sowa",
+    "text": "Drag every apple and every sandwich into its own column."
+  },
+  "line.h_wykres_nie": {
+    "who": "sowa",
+    "text": "Apples go with apples, sandwiches with sandwiches."
+  },
+  "line.h_rowne": {
+    "who": "sowa",
+    "text": "The columns are just as tall!"
+  },
+  "line.h_ile_kolumna": {
+    "who": "sowa",
+    "text": "How many apples are in the column? Point to the number."
+  },
+  "line.h_ile_kolumna_nie": {
+    "who": "sowa",
+    "text": "Count the apples in the column from the bottom, one by one."
+  },
+  "line.h_piec_i_piec": {
+    "who": "mis",
+    "text": "Five apples and five sandwiches - the same! A long row is not more."
+  },
+  "line.h_piknik": {
+    "who": "sowa",
+    "text": "And the next day - a picnic by the lake!"
+  },
+  "line.h_piknik2": {
+    "who": "mis",
+    "text": "Five things from the backpack, and we needed every one!"
+  },
+  "line.h_klaszczemy": {
+    "who": "mis",
+    "text": "Let's count to five together and clap five times!"
+  },
+  "line.h_metka": {
+    "who": "kret",
+    "text": "Write a five on the backpack's tag. Then we'll remember there are five things inside."
+  },
+  "line.h_metka_ok": {
+    "who": "mis",
+    "text": "A five on the tag - just like in the backpack!"
+  },
+  "line.c_tylko_piec": {
+    "who": "mis",
+    "text": "Only five? I thought I had more!"
   }
 }

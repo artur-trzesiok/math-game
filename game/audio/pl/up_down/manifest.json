@@ -1,8 +1,8 @@
 {
  "line.a_jablka": {
-  "hash": "475aa60a6040",
+  "hash": "6f8db3f2e218",
   "who": "wiewiorka",
-  "text": "Jabłka dojrzały! Wiszą wysoko, na górze, na mojej jabłoni."
+  "text": "Jabłka dojrzały! Wiszą wysoko, na samej górze mojej jabłoni. Upieczemy z nich szarlotkę!"
  },
  "line.a_inaczej": {
   "hash": "a3922ad2ae7f",
@@ -80,14 +80,14 @@
   "text": "Balonik, ptaszek i motyl lecą do góry. Jabłko, kamyk i szyszka spadają na dół!"
  },
  "line.b_skok": {
-  "hash": "b0c1c569b638",
+  "hash": "b9117f621398",
   "who": "lisek",
-  "text": "Zabawa! Kiedy powiem: skok w górę, skaczecie wysoko. Skok w górę!"
+  "text": "Zagrajmy! Kiedy powiem: skok w górę, skaczecie wysoko. Skok w górę!"
  },
  "line.b_kto": {
-  "hash": "bb63c30fb5a7",
+  "hash": "8a0c9434a9e8",
   "who": "lisek",
-  "text": "Kto się pomylił i nie skoczył w górę? Wskaż."
+  "text": "Wskaż, kto się pomylił i nie skoczył w górę."
  },
  "line.b_pomylka_wiewiorka": {
   "hash": "10aa3c4dfa1c",
@@ -100,9 +100,9 @@
   "text": "Ups, zamiast skoczyć, klasnąłem!"
  },
  "line.b_do_domu": {
-  "hash": "d7449be249f0",
+  "hash": "afb307333c05",
   "who": "wiewiorka",
-  "text": "Wiatr się uspokaja. Wracajmy do domu z jabłkami!"
+  "text": "Do góry, do domku, z jabłkami!"
  },
  "line.p_start": {
   "hash": "4a24ff4871ce",
@@ -118,16 +118,6 @@
   "hash": "66c9f5a69e5a",
   "who": "zajac",
   "text": "Nie ta półka. Słoik na górę, but na dół."
- },
- "line.p_dobrze": {
-  "hash": "f7093e2881e0",
-  "who": "lisek",
-  "text": "Brawo!"
- },
- "line.p_dobrze.zajac": {
-  "hash": "fc0b36bf7d2c",
-  "who": "zajac",
-  "text": "Brawo!"
  },
  "line.p_winda_gora": {
   "hash": "e951f80f6766",
@@ -145,9 +135,9 @@
   "text": "Jeszcze nie. Na samą górę czy na sam dół?"
  },
  "line.p_wyzej": {
-  "hash": "2d796e8dde8a",
+  "hash": "18bbd40ef2b6",
   "who": "lisek",
-  "text": "Który ptaszek jest wyżej? Wskaż."
+  "text": "Wskaż, który ptaszek jest wyżej."
  },
  "line.p_wyzej_nie": {
   "hash": "5c8e3a8f7cf1",
@@ -155,9 +145,9 @@
   "text": "Ten jest niżej. Wyżej znaczy bliżej nieba."
  },
  "line.p_wieza_gora": {
-  "hash": "e21f8a132dcb",
+  "hash": "354f05f129b9",
   "who": "zajac",
-  "text": "Co jest na samej górze wieży? Wskaż."
+  "text": "Wskaż, co jest na samej górze wieży."
  },
  "line.p_wieza_gora_nie": {
   "hash": "3b4cbbcdf60d",
@@ -165,9 +155,9 @@
   "text": "Popatrz na sam szczyt wieży."
  },
  "line.p_wieza_dol": {
-  "hash": "8a5b92a39148",
+  "hash": "421d333a4fcb",
   "who": "zajac",
-  "text": "A co jest na samym dole? Wskaż."
+  "text": "A teraz wskaż, co jest na samym dole wieży."
  },
  "line.p_wieza_dol_nie": {
   "hash": "98d6bc00712a",
@@ -180,14 +170,14 @@
   "text": "Co jest w górze, na niebie, a co na dole, na ziemi? Przeciągnij każdą rzecz."
  },
  "line.h_przedpokoj": {
-  "hash": "3c5dc73738d4",
+  "hash": "dee097bb756e",
   "who": "wiewiorka",
-  "text": "W przedpokoju bałagan po wietrze. Czapkę, szalik i plecak powieś na górze, na wieszaku. But i piłkę połóż na dole, na podłodze."
+  "text": "Czapkę, szalik i plecak powieś na górze, na wieszaku. But i piłkę połóż na dole, na wycieraczce."
  },
  "line.h_nie_tu": {
-  "hash": "101e4edbe7d7",
+  "hash": "4a709149259e",
   "who": "wiewiorka",
-  "text": "To nie to miejsce. Na górę na wieszak czy na dół na podłogę?"
+  "text": "To nie to miejsce. Na górę, na wieszak, czy na dół, na wycieraczkę?"
  },
  "line.h_porzadek": {
   "hash": "ca0e303d8b58",
@@ -195,9 +185,9 @@
   "text": "Na górze czapka, szalik i plecak. Na dole but i piłka. Porządek!"
  },
  "line.h_rodzice": {
-  "hash": "0ad6e782a002",
+  "hash": "148274297260",
   "who": "wiewiorka",
-  "text": "Pobaw się z rodzicami: ręce do góry, do nieba! Ręce na dół, do podłogi!"
+  "text": "Zagraj tak z rodzicami: skok w górę! Ręce do góry, do nieba! Ręce na dół, do podłogi!"
  },
  "line.naklejka_daj": {
   "hash": "cbb312faa197",
@@ -220,14 +210,14 @@
   "text": "Ale jak zdejmiemy jabłka? Wiszą tak wysoko, a ja nie uniosę ich wszystkich naraz."
  },
  "line.a_plan": {
-  "hash": "aa9c81b06caf",
+  "hash": "493311b4a78b",
   "who": "lisek",
-  "text": "Mam pomysł! Narysowałem plan windy, która zwiezie jabłka. Popatrzcie, co gdzie trzeba powiesić."
+  "text": "Mam pomysł! Narysowałem plan windy, która zwiezie jabłka na dół."
  },
  "line.a_plan_gora": {
-  "hash": "b7e58053bf9f",
+  "hash": "ec64a49d7410",
   "who": "lisek",
-  "text": "Co jest na samej górze, na gałęzi? Wskaż."
+  "text": "Wskaż, co jest na samej górze, na gałęzi."
  },
  "line.a_plan_gora_nie": {
   "hash": "0b800c507c70",
@@ -240,9 +230,9 @@
   "text": "Tak! Na górze, na gałęzi, wisi kółko. Przez kółko przejdzie lina."
  },
  "line.a_plan_dol": {
-  "hash": "c6d426416704",
+  "hash": "083191a0af89",
   "who": "lisek",
-  "text": "A co jest na samym dole, w trawie? Wskaż."
+  "text": "A teraz wskaż, co jest na samym dole, w trawie."
  },
  "line.a_plan_dol_nie": {
   "hash": "6009cf4b7eab",
@@ -258,5 +248,180 @@
   "hash": "423a8dac096a",
   "who": "lisek",
   "text": "Winda gotowa, tak jak na planie: kółko na górze, koszyk na dole."
+ },
+ "line.a_wiatr_plan": {
+  "hash": "6bef37f9841e",
+  "who": "lisek",
+  "text": "Ojej! Wiatr wyrwał mi plan z łapki i podarł go na kawałki!"
+ },
+ "line.a_posklejaj": {
+  "hash": "ecb09ef8123e",
+  "who": "wiewiorka",
+  "text": "Pomóż nam złożyć plan. Przesuń każdy kawałek na jego miejsce."
+ },
+ "line.a_plan_caly": {
+  "hash": "02194887b95c",
+  "who": "lisek",
+  "text": "Plan jest cały! Popatrzcie, co gdzie trzeba powiesić."
+ },
+ "line.a_ja_wysle": {
+  "hash": "bea0ff6014b6",
+  "who": "zajac",
+  "text": "Ja chcę wysłać koszyk do góry! Ja pociągnę linę!"
+ },
+ "line.a_kpn": {
+  "hash": "1bab017c3d43",
+  "who": "wiewiorka",
+  "text": "Nasz przyjaciel też by chciał. Zagrajcie w kamień, papier, nożyce. Kto wygra, ten wyśle koszyk."
+ },
+ "line.a_ciagne": {
+  "hash": "56e89ab3e2d0",
+  "who": "zajac",
+  "text": "To ja ciągnę linę! Hop, koszyk jedzie do góry, do jabłek."
+ },
+ "line.a_do_domu": {
+  "hash": "4cb086306594",
+  "who": "wiewiorka",
+  "text": "Mamy jabłka na szarlotkę! Chodźmy do domu, przez jesienny sad."
+ },
+ "line.b_dalej": {
+  "hash": "a33e7b6227d7",
+  "who": "lisek",
+  "text": "Wiatr się uspokaja. Idziemy dalej!"
+ },
+ "line.b_rozstaje": {
+  "hash": "55795388bd61",
+  "who": "zajac",
+  "text": "Którędy teraz do domu, Wiewiórko?"
+ },
+ "line.b_mapa": {
+  "hash": "20d5ecb99a11",
+  "who": "wiewiorka",
+  "text": "Popatrzcie na moją mapę. Mój domek jest wysoko, na samej górze wzgórza. Poprowadź koszyk ścieżką, która idzie w górę."
+ },
+ "line.b_mapa_nie": {
+  "hash": "9e992c3c6801",
+  "who": "wiewiorka",
+  "text": "Ta ścieżka schodzi w dół, do stawu. A mój domek jest na górze!"
+ },
+ "line.b_mapa_ok": {
+  "hash": "691105eb665e",
+  "who": "zajac",
+  "text": "W górę, na wzgórze! Tędy idziemy do domu."
+ },
+ "line.p_polki_ok": {
+  "hash": "e491177e729d",
+  "who": "lisek",
+  "text": "Tak! Słoik stoi na górnej półce, a but na dolnej."
+ },
+ "line.p_winda_ok": {
+  "hash": "cf66cf770e37",
+  "who": "lisek",
+  "text": "Misio pojechał na samą górę i zjechał na sam dół!"
+ },
+ "line.p_wyzej_ok": {
+  "hash": "fb62d7d1d0c7",
+  "who": "zajac",
+  "text": "Tak, ten ptaszek jest wyżej, bliżej nieba."
+ },
+ "line.p_wieza_ok": {
+  "hash": "527758f493a8",
+  "who": "lisek",
+  "text": "Tak! Misio na samej górze, pudełko na samym dole."
+ },
+ "line.p_niebo_ok": {
+  "hash": "5a5a475cd2fb",
+  "who": "zajac",
+  "text": "Słońce, gwiazdka i ptaszek są w górze, na niebie. But, grzyb i kamyk na dole, na ziemi."
+ },
+ "line.d_w_domu": {
+  "hash": "5d55f9b52099",
+  "who": "wiewiorka",
+  "text": "Jesteśmy w domu! Zaraz upieczemy szarlotkę. Ojej, wiatr otworzył drzwi i narobił bałaganu!"
+ },
+ "line.d_na_glowie": {
+  "hash": "82ebc64104a2",
+  "who": "zajac",
+  "text": "Hop, stoję na głowie! Teraz wieszak jest na dole. Powieszę na nim but!"
+ },
+ "line.d_zawsze": {
+  "hash": "4aa00253ba40",
+  "who": "lisek",
+  "text": "Zajączku, wieszak jest zawsze na górze, blisko sufitu. A podłoga zawsze na dole. Nawet kiedy stoisz na głowie."
+ },
+ "line.d_aha": {
+  "hash": "9f18173277f7",
+  "who": "zajac",
+  "text": "Aha! Wieszak na górze, podłoga na dole. Zawsze!"
+ },
+ "line.d_jablka": {
+  "hash": "64a23076c03b",
+  "who": "wiewiorka",
+  "text": "A koszyk z jabłkami postaw na samej górze szafki, na najwyższej półce. Tam piłka go nie strąci."
+ },
+ "line.d_jablka_nie": {
+  "hash": "5de1ba48a3e4",
+  "who": "wiewiorka",
+  "text": "Tu jest za nisko, piłka by go strąciła. Postaw koszyk na samej górze szafki."
+ },
+ "line.d_jablka_ok": {
+  "hash": "af4ced895516",
+  "who": "lisek",
+  "text": "Tak, koszyk stoi na najwyższej półce. Jabłka są bezpieczne!"
+ },
+ "line.d_balonik": {
+  "hash": "6d195f750550",
+  "who": "zajac",
+  "text": "Patrzcie, mój balonik z sadu! Ojej, wyleciał mi z łapki!"
+ },
+ "line.d_balonik_wysoko": {
+  "hash": "16d42f6e0d6b",
+  "who": "zajac",
+  "text": "Poleciał wysoko, do góry. Nie dosięgnę!"
+ },
+ "line.d_winda": {
+  "hash": "82f7ad613eb4",
+  "who": "lisek",
+  "text": "Mam tu moją windę. Wyślij wiaderko do góry, do balonika."
+ },
+ "line.d_winda_dol": {
+  "hash": "700ba2964232",
+  "who": "lisek",
+  "text": "Balonik jest w wiaderku. Sprowadź go na sam dół, do Zajączka."
+ },
+ "line.d_balonik_ok": {
+  "hash": "2ce2ec2ad916",
+  "who": "zajac",
+  "text": "Mój balonik! Był wysoko, na górze, a teraz jest na dole."
+ },
+ "line.d_szarlotka": {
+  "hash": "93b41b3d3f64",
+  "who": "wiewiorka",
+  "text": "Szarlotka gotowa! Z jabłek, które zjechały windą z samej góry."
+ },
+ "line.d_pyszna": {
+  "hash": "0b0e6c34aa12",
+  "who": "zajac",
+  "text": "Mmm, pyszna! Dobrze, że jabłka nie zostały na górze."
+ },
+ "line.p_wieza_gora_ok": {
+  "hash": "23abcb0d4cfb",
+  "who": "zajac",
+  "text": "Tak, na samej górze siedzi misio."
+ },
+ "line.d_wyzej": {
+  "hash": "962634e71ce3",
+  "who": "lisek",
+  "text": "Wskaż, co jest teraz wyżej: balonik czy koszyk z jabłkami."
+ },
+ "line.d_wyzej_nie": {
+  "hash": "a0378407e4df",
+  "who": "lisek",
+  "text": "Balonik zjechał na dół. Popatrz na najwyższą półkę."
+ },
+ "line.d_wyzej_ok": {
+  "hash": "15f4114bf4e9",
+  "who": "wiewiorka",
+  "text": "Tak, koszyk z jabłkami jest teraz wyżej niż balonik."
  }
 }

@@ -13,11 +13,11 @@
   },
   "line.a_cztery": {
     "who": "kret",
-    "text": "Twój bilet, Misiu, kosztuje cztery monety. Popatrz, tak wygląda cyfra cztery."
+    "text": "Twój bilet, Misiu, kosztuje cztery monety. Cztery to nowa cyfra - zaraz ci ją pokażę."
   },
   "line.a_to_cztery": {
     "who": "kret",
-    "text": "To jest cztery."
+    "text": "A to jest nowa cyfra: cztery."
   },
   "line.a_zaplac": {
     "who": "sowa",
@@ -45,23 +45,19 @@
   },
   "line.b_bilet2": {
     "who": "kret",
-    "text": "Myszka ma bilet z numerem dwa. Do którego wagonu wsiada? Wskaż."
+    "text": "Myszka ma bilet z numerem dwa. Wskaż, do którego wagonu wsiada."
   },
   "line.b_bilet5": {
     "who": "kret",
-    "text": "Zajączek ma bilet z numerem pięć. Który to wagon? Wskaż."
+    "text": "Zajączek ma bilet z numerem pięć. Wskaż jego wagon."
   },
   "line.b_bilet3": {
     "who": "kret",
-    "text": "Jeżyk ma bilet z numerem trzy. Który to wagon? Wskaż."
+    "text": "Jeżyk ma trójkę i sam wie, gdzie wsiąść - do wagonu numer trzy!"
   },
   "line.zly_wagon": {
     "who": "kret",
     "text": "To nie ten wagon. Popatrz na cyfrę na bilecie."
-  },
-  "line.b_wsiada": {
-    "who": "kret",
-    "text": "Wsiadaj! Dobrej podróży!"
   },
   "line.b_odjazd": {
     "who": "kret",
@@ -69,7 +65,7 @@
   },
   "line.c_jablka": {
     "who": "sowa",
-    "text": "Postój w lesie! Miś nazbierał jabłek, a ja gruszek."
+    "text": "Postój w lesie! Tu rosną jabłonie i grusze. Nazbierajmy owoców na drogę!"
   },
   "line.c_wiecej": {
     "who": "mis",
@@ -90,34 +86,6 @@
   "line.c_rozumiem": {
     "who": "mis",
     "text": "Aha! Mój rządek był dłuższy, ale jabłek nie było więcej."
-  },
-  "line.c_cyfra5": {
-    "who": "sowa",
-    "text": "A tak wygląda cyfra pięć."
-  },
-  "line.c_to_piec": {
-    "who": "sowa",
-    "text": "To jest pięć."
-  },
-  "line.c_dzwonek": {
-    "who": "kret",
-    "text": "Posłuchaj mojego dzwonka i policz, ile razy zadzwoni."
-  },
-  "line.c_ile_dzwonkow": {
-    "who": "sowa",
-    "text": "Ile razy zadzwonił dzwonek? Wskaż cyfrę."
-  },
-  "line.c_dzwonek3": {
-    "who": "kret",
-    "text": "Trzy razy!"
-  },
-  "line.c_dzwonek4": {
-    "who": "kret",
-    "text": "Cztery razy!"
-  },
-  "line.c_dzwonek5": {
-    "who": "kret",
-    "text": "Pięć razy!"
   },
   "line.d_jezioro": {
     "who": "kret",
@@ -151,13 +119,6 @@
     "who": "kret",
     "text": "Policz jeszcze raz, dotykając każdej rzeczy."
   },
-  "line.p_dobrze": {
-    "who": "sowa",
-    "text": "Brawo!",
-    "speakers": [
-      "kret"
-    ]
-  },
   "line.p_bilet5": {
     "who": "kret",
     "text": "Ten bilet kosztuje pięć monet. Przeciągnij pięć monet na talerzyk."
@@ -166,17 +127,9 @@
     "who": "sowa",
     "text": "Napisz palcem piątkę. Zacznij od zielonej kropki."
   },
-  "line.p_cztery": {
-    "who": "sowa",
-    "text": "Gdzie są cztery jabłka? Wskaż."
-  },
-  "line.p_cztery_nie": {
-    "who": "sowa",
-    "text": "Policz jabłka jeszcze raz. Szukamy czterech."
-  },
   "line.p_kamienie": {
     "who": "kret",
-    "text": "Chcę doskoczyć do kamienia z cyfrą cztery. Który to? Wskaż."
+    "text": "Wskaż kamień z cyfrą cztery - chcę tam doskoczyć."
   },
   "line.p_kamienie_nie": {
     "who": "kret",
@@ -188,11 +141,11 @@
   },
   "line.h_jutro": {
     "who": "kret",
-    "text": "Jutro znowu jedziemy pociągiem. Trzeba spakować plecak."
+    "text": "Jesteśmy w domu! Jutro jedziemy nad jezioro na piknik, więc trzeba się spakować."
   },
   "line.h_spakuj": {
     "who": "kret",
-    "text": "Włóż do plecaka pięć rzeczy. Przeciągaj je po jednej, a ja policzę."
+    "text": "Teraz plecak. Włóż do niego pięć rzeczy z parapetu. Przeciągaj po jednej, a ja policzę."
   },
   "line.h_za_duzo": {
     "who": "kret",
@@ -204,7 +157,7 @@
   },
   "line.h_palce": {
     "who": "mis",
-    "text": "Ile palców ma ta dłoń? Policz i wskaż cyfrę."
+    "text": "Jutro pomachamy kaczkom. Ile palców ma ta dłoń? Policz i wskaż cyfrę."
   },
   "line.h_palce_nie": {
     "who": "mis",
@@ -272,10 +225,150 @@
   },
   "line.b_spoznieni": {
     "who": "kret",
-    "text": "Czekajcie! Biegną jeszcze kaczątko i ślimak. Bilety kupili już wczoraj, żeby dziś zdążyć!"
+    "text": "Czekajcie! Biegną jeszcze kaczątko i ślimak. Bilety kupili już wczoraj!"
   },
   "line.b_bilety_wczoraj": {
     "who": "kret",
-    "text": "Kaczątko ma jedynkę, więc wsiada do pierwszego wagonu. Ślimak ma czwórkę, więc do czwartego. Wskakujcie!"
+    "text": "Kaczątko ma jedynkę, więc wskakuje do pierwszego wagonu."
+  },
+  "line.a_znasz": {
+    "who": "kret",
+    "text": "Jeden, dwa, trzy - te cyfry już znasz."
+  },
+  "line.a_to_piec": {
+    "who": "kret",
+    "text": "A to pięć. Mój pociąg ma pięć wagonów!"
+  },
+  "line.b_wsiada2": {
+    "who": "kret",
+    "text": "Tak, wagon numer dwa! Wsiadaj, Myszko!"
+  },
+  "line.b_wsiada5": {
+    "who": "kret",
+    "text": "Tak, piątka! Wskakuj, Zajączku!"
+  },
+  "line.b_slimak": {
+    "who": "kret",
+    "text": "Ślimak ma czwórkę, ale nie wie, który to wagon. Pomóż mu i wskaż wagon numer cztery."
+  },
+  "line.b_wsiada4": {
+    "who": "kret",
+    "text": "Czwórka! Ślimak zdążył i dziękuje ci za pomoc."
+  },
+  "line.c_wsiadamy": {
+    "who": "kret",
+    "text": "Wsiadajcie, jedziemy dalej - nad jezioro!"
+  },
+  "line.c_most": {
+    "who": "sowa",
+    "text": "Jedziemy po wysokim moście! Na dole płynie rzeka."
+  },
+  "line.c_most2": {
+    "who": "mis",
+    "text": "Widzę cały pociąg: lokomotywę i pięć wagonów!"
+  },
+  "line.d_kaczki": {
+    "who": "kret",
+    "text": "Popatrz, na jeziorze pływa kaczka. Chyba jest głodna!"
+  },
+  "line.d_karm": {
+    "who": "sowa",
+    "text": "Mamy bułkę z drogi. Przeciągnij jedzenie do kaczki - zobaczymy, co lubi."
+  },
+  "line.d_najedzona": {
+    "who": "kret",
+    "text": "Bułkę zjadła, a szyszkę wypluła! Szyszki nie są dla kaczek."
+  },
+  "line.d_jutro": {
+    "who": "kret",
+    "text": "Teraz wracamy do domu. A jutro przyjedziemy tu znowu, na piknik!"
+  },
+  "line.d_piknik": {
+    "who": "mis",
+    "text": "Hura! To trzeba się dziś spakować!"
+  },
+  "line.p_ile4": {
+    "who": "sowa",
+    "text": "Tak, są cztery!"
+  },
+  "line.p_ile5": {
+    "who": "sowa",
+    "text": "Tak, jest ich pięć!"
+  },
+  "line.p_bilet_ok": {
+    "who": "sowa",
+    "text": "Pięć monet - bilet kupiony!"
+  },
+  "line.p_piatka_ok": {
+    "who": "kret",
+    "text": "Jaka piękna piątka!"
+  },
+  "line.p_kropki": {
+    "who": "sowa",
+    "text": "Połącz kropki po kolei, od jedynki do piątki. Co się pojawi?"
+  },
+  "line.p_lokomotywa": {
+    "who": "kret",
+    "text": "Moja lokomotywa! Pięć kropek i jest cała."
+  },
+  "line.h_jedzenie": {
+    "who": "mis",
+    "text": "Ja zabiorę jabłka, a Sowa kanapki."
+  },
+  "line.h_wiecej": {
+    "who": "mis",
+    "text": "Mam więcej jedzenia niż Sowa! Popatrz, jaki długi rządek!"
+  },
+  "line.h_znowu": {
+    "who": "sowa",
+    "text": "Znowu długi rządek? Sprawdźmy na wykresie, czego jest więcej."
+  },
+  "line.h_wykres": {
+    "who": "sowa",
+    "text": "Przeciągnij każde jabłko i każdą kanapkę do jej kolumny."
+  },
+  "line.h_wykres_nie": {
+    "who": "sowa",
+    "text": "Jabłka idą do jabłek, a kanapki do kanapek."
+  },
+  "line.h_rowne": {
+    "who": "sowa",
+    "text": "Kolumny są tak samo wysokie!"
+  },
+  "line.h_ile_kolumna": {
+    "who": "sowa",
+    "text": "Ile jabłek jest w kolumnie? Wskaż cyfrę."
+  },
+  "line.h_ile_kolumna_nie": {
+    "who": "sowa",
+    "text": "Policz jabłka w kolumnie od dołu, każde po kolei."
+  },
+  "line.h_piec_i_piec": {
+    "who": "mis",
+    "text": "Pięć jabłek i pięć kanapek - tyle samo! Długi rządek to nie więcej."
+  },
+  "line.h_piknik": {
+    "who": "sowa",
+    "text": "A następnego dnia - piknik nad jeziorem!"
+  },
+  "line.h_piknik2": {
+    "who": "mis",
+    "text": "Pięć rzeczy z plecaka i wszystko się przydało!"
+  },
+  "line.h_klaszczemy": {
+    "who": "mis",
+    "text": "Policzmy razem do pięciu i klaśnijmy pięć razy!"
+  },
+  "line.h_metka": {
+    "who": "kret",
+    "text": "Napisz na metce plecaka piątkę. Będziemy pamiętać, że w plecaku jest pięć rzeczy."
+  },
+  "line.h_metka_ok": {
+    "who": "mis",
+    "text": "Piątka na metce - jak w plecaku!"
+  },
+  "line.c_tylko_piec": {
+    "who": "mis",
+    "text": "Tylko pięć? Myślałem, że mam więcej!"
   }
 }

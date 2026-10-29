@@ -1,0 +1,549 @@
+{
+ "plyta": "plyta.webp",
+ "szerokosc": 3584,
+ "wysokosc": 1024,
+ "horyzont": 152,
+ "rekwizyty": [
+  {
+   "plik": "rekwizyt_00.webp",
+   "klasa": "drift",
+   "x": 696,
+   "y": 30,
+   "w": 318,
+   "h": 135,
+   "faza": 0.0
+  },
+  {
+   "plik": "rekwizyt_01.webp",
+   "klasa": "drift",
+   "x": 1121,
+   "y": 115,
+   "w": 268,
+   "h": 107,
+   "faza": 0.618
+  },
+  {
+   "plik": "rekwizyt_02.webp",
+   "klasa": "drift",
+   "x": 1601,
+   "y": 1,
+   "w": 291,
+   "h": 98,
+   "faza": 0.2361
+  },
+  {
+   "plik": "rekwizyt_03.webp",
+   "klasa": "drift",
+   "x": 2452,
+   "y": 1,
+   "w": 189,
+   "h": 68,
+   "faza": 0.8541
+  },
+  {
+   "plik": "rekwizyt_04.webp",
+   "klasa": "drift",
+   "x": 3071,
+   "y": 3,
+   "w": 118,
+   "h": 79,
+   "faza": 0.4721
+  },
+  {
+   "plik": "rekwizyt_05.webp",
+   "klasa": "sway",
+   "x": 94,
+   "y": 850,
+   "w": 168,
+   "h": 96,
+   "faza": 0.0902
+  },
+  {
+   "plik": "rekwizyt_06.webp",
+   "klasa": "drift",
+   "x": 1329,
+   "y": 48,
+   "w": 135,
+   "h": 66,
+   "faza": 0.7082
+  },
+  {
+   "plik": "rekwizyt_07.webp",
+   "klasa": "sway",
+   "x": 72,
+   "y": 665,
+   "w": 142,
+   "h": 78,
+   "faza": 0.3262
+  },
+  {
+   "plik": "rekwizyt_08.webp",
+   "klasa": "drift",
+   "x": 958,
+   "y": 202,
+   "w": 139,
+   "h": 55,
+   "faza": 0.9443
+  },
+  {
+   "plik": "rekwizyt_09.webp",
+   "klasa": "drift",
+   "x": 3343,
+   "y": 3,
+   "w": 135,
+   "h": 49,
+   "faza": 0.5623
+  },
+  {
+   "plik": "rekwizyt_10.webp",
+   "klasa": "drift",
+   "x": 2894,
+   "y": 40,
+   "w": 121,
+   "h": 55,
+   "faza": 0.1803
+  },
+  {
+   "plik": "rekwizyt_11.webp",
+   "klasa": "sway",
+   "x": 415,
+   "y": 773,
+   "w": 127,
+   "h": 73,
+   "faza": 0.7984
+  },
+  {
+   "plik": "rekwizyt_12.webp",
+   "klasa": "sway",
+   "x": 1326,
+   "y": 630,
+   "w": 115,
+   "h": 68,
+   "faza": 0.4164
+  },
+  {
+   "plik": "rekwizyt_13.webp",
+   "klasa": "sway",
+   "x": 3339,
+   "y": 888,
+   "w": 120,
+   "h": 65,
+   "faza": 0.0344
+  },
+  {
+   "plik": "rekwizyt_14.webp",
+   "klasa": "sway",
+   "x": 1026,
+   "y": 525,
+   "w": 126,
+   "h": 63,
+   "faza": 0.6525
+  },
+  {
+   "plik": "rekwizyt_15.webp",
+   "klasa": "sway",
+   "x": 908,
+   "y": 618,
+   "w": 108,
+   "h": 59,
+   "faza": 0.2705
+  },
+  {
+   "plik": "rekwizyt_16.webp",
+   "klasa": "sway",
+   "x": 626,
+   "y": 498,
+   "w": 115,
+   "h": 57,
+   "faza": 0.8885
+  },
+  {
+   "plik": "rekwizyt_17.webp",
+   "klasa": "sway",
+   "x": 3415,
+   "y": 747,
+   "w": 104,
+   "h": 56,
+   "faza": 0.5066
+  },
+  {
+   "plik": "rekwizyt_18.webp",
+   "klasa": "sway",
+   "x": 2316,
+   "y": 658,
+   "w": 101,
+   "h": 51,
+   "faza": 0.1246
+  },
+  {
+   "plik": "rekwizyt_19.webp",
+   "klasa": "sway",
+   "x": 2036,
+   "y": 753,
+   "w": 95,
+   "h": 62,
+   "faza": 0.7426
+  },
+  {
+   "plik": "rekwizyt_20.webp",
+   "klasa": "sway",
+   "x": 3208,
+   "y": 491,
+   "w": 100,
+   "h": 49,
+   "faza": 0.3607
+  },
+  {
+   "plik": "rekwizyt_21.webp",
+   "klasa": "sway",
+   "x": 814,
+   "y": 818,
+   "w": 106,
+   "h": 64,
+   "faza": 0.9787
+  },
+  {
+   "plik": "rekwizyt_22.webp",
+   "klasa": "sway",
+   "x": 610,
+   "y": 690,
+   "w": 108,
+   "h": 52,
+   "faza": 0.5967
+  },
+  {
+   "plik": "rekwizyt_23.webp",
+   "klasa": "sway",
+   "x": 1110,
+   "y": 746,
+   "w": 88,
+   "h": 56,
+   "faza": 0.2148
+  },
+  {
+   "plik": "rekwizyt_24.webp",
+   "klasa": "sway",
+   "x": 1724,
+   "y": 630,
+   "w": 93,
+   "h": 56,
+   "faza": 0.8328
+  },
+  {
+   "plik": "rekwizyt_25.webp",
+   "klasa": "drift",
+   "x": 2027,
+   "y": 27,
+   "w": 89,
+   "h": 38,
+   "faza": 0.4508
+  },
+  {
+   "plik": "rekwizyt_26.webp",
+   "klasa": "sway",
+   "x": 3371,
+   "y": 589,
+   "w": 86,
+   "h": 47,
+   "faza": 0.0689
+  },
+  {
+   "plik": "rekwizyt_27.webp",
+   "klasa": "sway",
+   "x": 2782,
+   "y": 687,
+   "w": 89,
+   "h": 54,
+   "faza": 0.6869
+  },
+  {
+   "plik": "rekwizyt_28.webp",
+   "klasa": "sway",
+   "x": 2923,
+   "y": 813,
+   "w": 75,
+   "h": 61,
+   "faza": 0.305
+  },
+  {
+   "plik": "rekwizyt_29.webp",
+   "klasa": "sway",
+   "x": 1333,
+   "y": 823,
+   "w": 91,
+   "h": 55,
+   "faza": 0.923
+  },
+  {
+   "plik": "rekwizyt_30.webp",
+   "klasa": "drift",
+   "x": 1382,
+   "y": 245,
+   "w": 93,
+   "h": 36,
+   "faza": 0.541
+  },
+  {
+   "plik": "rekwizyt_31.webp",
+   "klasa": "sway",
+   "x": 1265,
+   "y": 475,
+   "w": 87,
+   "h": 42,
+   "faza": 0.1591
+  },
+  {
+   "plik": "rekwizyt_32.webp",
+   "klasa": "sway",
+   "x": 1679,
+   "y": 885,
+   "w": 68,
+   "h": 66,
+   "faza": 0.7771
+  },
+  {
+   "plik": "rekwizyt_33.webp",
+   "klasa": "sway",
+   "x": 374,
+   "y": 586,
+   "w": 71,
+   "h": 45,
+   "faza": 0.3951
+  },
+  {
+   "plik": "rekwizyt_34.webp",
+   "klasa": "drift",
+   "x": 2720,
+   "y": 19,
+   "w": 79,
+   "h": 35,
+   "faza": 0.0132
+  },
+  {
+   "plik": "rekwizyt_35.webp",
+   "klasa": "sway",
+   "x": 1906,
+   "y": 502,
+   "w": 81,
+   "h": 45,
+   "faza": 0.6312
+  },
+  {
+   "plik": "rekwizyt_36.webp",
+   "klasa": "sway",
+   "x": 2919,
+   "y": 480,
+   "w": 66,
+   "h": 40,
+   "faza": 0.2492
+  },
+  {
+   "plik": "rekwizyt_37.webp",
+   "klasa": "sway",
+   "x": 2937,
+   "y": 604,
+   "w": 71,
+   "h": 43,
+   "faza": 0.8673
+  },
+  {
+   "plik": "rekwizyt_38.webp",
+   "klasa": "sway",
+   "x": 1080,
+   "y": 884,
+   "w": 54,
+   "h": 57,
+   "faza": 0.4853
+  },
+  {
+   "plik": "rekwizyt_39.webp",
+   "klasa": "sway",
+   "x": 2444,
+   "y": 488,
+   "w": 62,
+   "h": 34,
+   "faza": 0.1033
+  },
+  {
+   "plik": "rekwizyt_40.webp",
+   "klasa": "sway",
+   "x": 3071,
+   "y": 672,
+   "w": 49,
+   "h": 49,
+   "faza": 0.7214
+  },
+  {
+   "plik": "rekwizyt_41.webp",
+   "klasa": "sway",
+   "x": 1753,
+   "y": 898,
+   "w": 38,
+   "h": 55,
+   "faza": 0.3394
+  },
+  {
+   "plik": "rekwizyt_42.webp",
+   "klasa": "sway",
+   "x": 3471,
+   "y": 468,
+   "w": 66,
+   "h": 32,
+   "faza": 0.9574
+  },
+  {
+   "plik": "rekwizyt_43.webp",
+   "klasa": "sway",
+   "x": 1560,
+   "y": 573,
+   "w": 71,
+   "h": 31,
+   "faza": 0.5755
+  },
+  {
+   "plik": "rekwizyt_44.webp",
+   "klasa": "sway",
+   "x": 414,
+   "y": 465,
+   "w": 66,
+   "h": 28,
+   "faza": 0.1935
+  },
+  {
+   "plik": "rekwizyt_45.webp",
+   "klasa": "sway",
+   "x": 2650,
+   "y": 556,
+   "w": 50,
+   "h": 43,
+   "faza": 0.8115
+  },
+  {
+   "plik": "rekwizyt_46.webp",
+   "klasa": "sway",
+   "x": 2517,
+   "y": 878,
+   "w": 52,
+   "h": 50,
+   "faza": 0.4296
+  },
+  {
+   "plik": "rekwizyt_47.webp",
+   "klasa": "sway",
+   "x": 31,
+   "y": 545,
+   "w": 66,
+   "h": 35,
+   "faza": 0.0476
+  },
+  {
+   "plik": "rekwizyt_48.webp",
+   "klasa": "sway",
+   "x": 900,
+   "y": 466,
+   "w": 63,
+   "h": 28,
+   "faza": 0.6656
+  },
+  {
+   "plik": "rekwizyt_49.webp",
+   "klasa": "sway",
+   "x": 2483,
+   "y": 853,
+   "w": 41,
+   "h": 66,
+   "faza": 0.2837
+  },
+  {
+   "plik": "rekwizyt_50.webp",
+   "klasa": "sway",
+   "x": 2994,
+   "y": 831,
+   "w": 43,
+   "h": 42,
+   "faza": 0.9017
+  },
+  {
+   "plik": "rekwizyt_51.webp",
+   "klasa": "sway",
+   "x": 1701,
+   "y": 526,
+   "w": 57,
+   "h": 25,
+   "faza": 0.5197
+  },
+  {
+   "plik": "rekwizyt_52.webp",
+   "klasa": "sway",
+   "x": 1451,
+   "y": 534,
+   "w": 57,
+   "h": 27,
+   "faza": 0.1378
+  },
+  {
+   "plik": "rekwizyt_53.webp",
+   "klasa": "sway",
+   "x": 2081,
+   "y": 463,
+   "w": 52,
+   "h": 28,
+   "faza": 0.7558
+  },
+  {
+   "plik": "rekwizyt_54.webp",
+   "klasa": "sway",
+   "x": 1043,
+   "y": 892,
+   "w": 33,
+   "h": 44,
+   "faza": 0.3738
+  },
+  {
+   "plik": "rekwizyt_55.webp",
+   "klasa": "sway",
+   "x": 1593,
+   "y": 474,
+   "w": 53,
+   "h": 25,
+   "faza": 0.9919
+  },
+  {
+   "plik": "rekwizyt_56.webp",
+   "klasa": "sway",
+   "x": 156,
+   "y": 490,
+   "w": 38,
+   "h": 35,
+   "faza": 0.6099
+  },
+  {
+   "plik": "rekwizyt_57.webp",
+   "klasa": "sway",
+   "x": 2091,
+   "y": 576,
+   "w": 45,
+   "h": 26,
+   "faza": 0.2279
+  },
+  {
+   "plik": "rekwizyt_58.webp",
+   "klasa": "sway",
+   "x": 2473,
+   "y": 889,
+   "w": 30,
+   "h": 37,
+   "faza": 0.846
+  },
+  {
+   "plik": "rekwizyt_59.webp",
+   "klasa": "sway",
+   "x": 1612,
+   "y": 761,
+   "w": 30,
+   "h": 34,
+   "faza": 0.464
+  }
+ ],
+ "obszary": 3
+}

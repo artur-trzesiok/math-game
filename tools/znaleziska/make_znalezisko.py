@@ -30,6 +30,22 @@ OUT = TU.parent.parent / "game" / "assets" / "znaleziska"
 STYL = """STYLE: a modern children's picture-book illustration - soft painterly shading with a fine paper-grain texture, warm
 friendly colours, thin soft dark outlines. NOT flat vector, NOT 3D render. NO text, NO letters, NO numbers."""
 ZNALEZISKA = {
+    # up_down: Squirrel's map home - up the hill to her cottage, or down to the pond in the valley
+    "mapa_wzgorza": {
+        "rozmiar": "1536x1024",
+        "obraz": f"""A simple hand-drawn map on worn cream paper, drawn like a child's picture of a landscape seen from the SIDE
+(not from above), filling the whole picture. On the LEFT, at middle height, a small apple orchard: three little round
+apple trees with red apples. On the RIGHT a big round green HILL rises high; at the very TOP of the hill stands ONE small
+cosy wooden cottage with a round window and a red roof. Far DOWN under the hill, in the valley at the BOTTOM RIGHT corner,
+ONE small blue pond with a few reeds. From one spot by the orchard TWO dotted brown footpaths start:
+  - the UPPER path climbs UP the hill in two gentle bends and ends at the cottage at the very top;
+  - the LOWER path goes DOWN the slope into the valley and ends at the blue pond at the very bottom.
+After their common start the two paths are far apart and never cross or touch. A few little bushes and flowers drawn
+simply. NO animals, NO people, NO arrows. Big simple clear shapes.
+{STYL}""",
+        "cele": [{"droga": "the whole UPPER dotted path that climbs up the hill from the orchard to the cottage at the top"},
+                 {"droga": "the whole LOWER dotted path that goes down from the orchard into the valley to the blue pond"}],
+    },
     # more_fewer: Owl's map of the night forest - two paths to the dancing clearing; the fireflies show the way (more)
     "mapa_swietlikow": {
         "rozmiar": "1536x1024",

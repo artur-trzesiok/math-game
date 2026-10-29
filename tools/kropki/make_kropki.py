@@ -28,6 +28,9 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "most of the picture, on a fully TRANSPARENT background, NO glow, NO halo, NO shadow on the ground, NO text, NO "
         "letters, NO numbers.")
 KROPKI = {
+    # numbers_1_5 practice: Mole's engine appears from five dots, 1-5 (the same painting as `lokomotywa`)
+    "lokomotywa_piec": {"n": 5, "tlo": "papier", "lekcje": ["numbers_1_5"],
+                        "obraz": "A little red steam ENGINE seen from the side, facing right: a round boiler, a tall black chimney, a cab with a window, big red wheels. A simple bold silhouette with few corners."},
     # counting_3: Squirrel's surprise birthday present for Hedgehog - joined from the smallest, a toy drum appears
     "bebenek_prezent": {"n": 8, "tlo": "papier", "lekcje": ["counting_3"],
                         "obraz": "A little toy DRUM seen from the front and a little from above: a short round cylinder with bright red sides crossed by white zigzag cords, a light cream drum skin on top with a golden rim, and two short wooden drumsticks with round red tips lying crossed FLAT ON the top skin, not sticking out. A simple bold silhouette."},

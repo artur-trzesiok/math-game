@@ -40,6 +40,30 @@ The GRASS IS PLAIN - NO tufts, NO flowers, NO reeds.
 NO characters, NO animals, NO text."""
 
 PANORAMY = {
+    # numbers_1_5: Mole's little train rides through the forest (the pan IS the ride) to the forest stop
+    "kolej_lesna": {
+        "kafle": [
+            """A sunny birch grove at the edge of a forest: white birch trunks and green bushes stand BEHIND a narrow
+railway track with wooden sleepers and two shiny rails that runs straight and level from the left edge to the right
+edge of the picture, just below the horizon, at the same height all the way. In front of the track a wide strip of
+short plain green grass.""",
+            """The railway track goes on, straight and level at the same height, through a tall green pine forest:
+big pine and spruce trunks stand behind the track, sunbeams fall between them, a few ferns at their feet. In front of
+the track the same wide strip of short plain grass.""",
+            """The railway track goes on, straight and level at the same height, to a little FOREST STOP: in the middle
+of this new part a tiny wooden platform beside the track with a small roofed wooden bench, and behind it, on a sunny
+glade, one apple tree with red apples and one pear tree with yellow pears. The track continues to the right edge. In
+front of the track the same wide strip of short plain grass, open and empty.""",
+        ],
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two things have been added, in
+the same style:
+  - FOUR or FIVE soft white cartoon clouds in the sky, big and small, none touching each other and none
+    touching the left or the right edge of the picture;
+  - MANY tufts of taller grass, at least twelve, scattered over the foreground in front of the track, each
+    tuft separate from the others, none on the rails, none touching the left or right edge.
+Same colours, same horizon, same track, same everything - only the clouds and the tufts are new. Do NOT move or
+redraw anything that was already there.""",
+    },
     "polana_wieczorem": {
         "kafle": [
             """A garden at sunset: on the left a big old friendly tree with a round little door and a round window
@@ -104,7 +128,7 @@ redraw anything that was already there.""",
 
 
 for _n in PANORAMY:                       # the difference split reads its knobs from SCENY: panoramas are outdoors
-    MB.SCENY.setdefault(_n, {"wnetrze": False})
+    MB.SCENY.setdefault(_n, {"wnetrze": False, "ruch": True})
 
 
 def _dalej(segment: str) -> str:

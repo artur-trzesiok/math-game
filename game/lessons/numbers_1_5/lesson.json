@@ -13,7 +13,7 @@
   ],
   "backgrounds": [
     "stacyjka",
-    "las",
+    "kolej_lesna",
     "stacja_jezioro",
     "pokoj"
   ],
@@ -30,11 +30,9 @@
     "slimak",
     "jablko",
     "gruszka",
-    "dzwonek",
     "szyszka",
     "zoledz",
     "grzyb",
-    "kamyk",
     "plecak",
     "kanapka_1",
     "czapka",
@@ -42,11 +40,14 @@
     "ksiazeczka",
     "skarpetka",
     "kubek",
-    "gest_papier"
+    "gest_papier",
+    "kaczka_mama",
+    "bulka"
   ],
   "cover": "A tiny red forest train at a little wooden station: Mole in a conductor's cap waves from the locomotive, Bear and Owl hold paper tickets, five little passengers peek out of five wagons.",
   "naklejka": {
     "obraz": "objects/wagon",
     "kto": "kret"
-  }
+  },
+  "oddech": "karmienie"
 }

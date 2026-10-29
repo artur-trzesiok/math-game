@@ -1,8 +1,8 @@
 {
  "line.a_jablka": {
-  "hash": "5a27061e6536",
+  "hash": "e434105373c5",
   "who": "wiewiorka",
-  "text": "The apples are ripe! They hang high up, at the top of my apple tree."
+  "text": "The apples are ripe! They hang high up, at the very top of my apple tree. We'll bake an apple pie with them!"
  },
  "line.a_inaczej": {
   "hash": "122629ca8263",
@@ -80,14 +80,14 @@
   "text": "The balloon, the bird and the butterfly fly up. The apple, the stone and the cone fall down!"
  },
  "line.b_skok": {
-  "hash": "a59682ae15cd",
+  "hash": "8b87ab04e825",
   "who": "lisek",
-  "text": "A game! When I say: jump up, you jump high. Jump up!"
+  "text": "Let's play! When I say: jump up, you jump up high. Jump up!"
  },
  "line.b_kto": {
-  "hash": "e011ada7de32",
+  "hash": "9eced7ade53e",
   "who": "lisek",
-  "text": "Who got it wrong and didn't jump up? Point to them."
+  "text": "Point to who got it wrong and didn't jump up."
  },
  "line.b_pomylka_wiewiorka": {
   "hash": "ee42b6e5ae09",
@@ -100,9 +100,9 @@
   "text": "Oops, I clapped instead of jumping!"
  },
  "line.b_do_domu": {
-  "hash": "e87da3746398",
+  "hash": "d7980d118da0",
   "who": "wiewiorka",
-  "text": "The wind is calming down. Let's go home with the apples!"
+  "text": "Up we go, home, with the apples!"
  },
  "line.p_start": {
   "hash": "b875dce4ae2d",
@@ -118,16 +118,6 @@
   "hash": "fea4212b91c1",
   "who": "zajac",
   "text": "Not that shelf. The jar up, the shoe down."
- },
- "line.p_dobrze": {
-  "hash": "5a54aa6e56ed",
-  "who": "lisek",
-  "text": "Bravo!"
- },
- "line.p_dobrze.zajac": {
-  "hash": "a7313a7ece36",
-  "who": "zajac",
-  "text": "Bravo!"
  },
  "line.p_winda_gora": {
   "hash": "fcc78ae2ab62",
@@ -145,9 +135,9 @@
   "text": "Not yet. To the very top or to the very bottom?"
  },
  "line.p_wyzej": {
-  "hash": "98c638471254",
+  "hash": "6110c7107d79",
   "who": "lisek",
-  "text": "Which bird is higher? Point to it."
+  "text": "Point to the bird that is higher."
  },
  "line.p_wyzej_nie": {
   "hash": "4144305d8cd2",
@@ -155,9 +145,9 @@
   "text": "That one is lower. Higher means closer to the sky."
  },
  "line.p_wieza_gora": {
-  "hash": "2a1f851ded16",
+  "hash": "16cc49e23185",
   "who": "zajac",
-  "text": "What is at the very top of the tower? Point to it."
+  "text": "Point to what is at the very top of the tower."
  },
  "line.p_wieza_gora_nie": {
   "hash": "fde26bebb1e4",
@@ -165,9 +155,9 @@
   "text": "Look at the very top of the tower."
  },
  "line.p_wieza_dol": {
-  "hash": "c5d1beb1cbbc",
+  "hash": "fe5f61015245",
   "who": "zajac",
-  "text": "And what is at the very bottom? Point to it."
+  "text": "And now point to what is at the very bottom of the tower."
  },
  "line.p_wieza_dol_nie": {
   "hash": "47f4a9489f7d",
@@ -180,14 +170,14 @@
   "text": "What is up in the sky and what is down on the ground? Drag each thing."
  },
  "line.h_przedpokoj": {
-  "hash": "9f1749385fe0",
+  "hash": "2205347e8c0b",
   "who": "wiewiorka",
-  "text": "The hallway is a mess after the wind. Hang the hat, the scarf and the backpack up on the hooks. Put the shoe and the ball down on the floor."
+  "text": "Hang the hat, the scarf and the backpack up on the hooks. Put the shoe and the ball down on the doormat."
  },
  "line.h_nie_tu": {
-  "hash": "56515dc88eb1",
+  "hash": "d66560126340",
   "who": "wiewiorka",
-  "text": "Not that place. Up on the hooks or down on the floor?"
+  "text": "Not that place. Up on the hooks, or down on the doormat?"
  },
  "line.h_porzadek": {
   "hash": "e91ad1429cdd",
@@ -195,9 +185,9 @@
   "text": "Up: the hat, the scarf and the backpack. Down: the shoe and the ball. All tidy!"
  },
  "line.h_rodzice": {
-  "hash": "e5485b727d21",
+  "hash": "8d97fa7748d0",
   "who": "wiewiorka",
-  "text": "Play with your parents: hands up to the sky! Hands down to the floor!"
+  "text": "Play it with your parents: jump up! Hands up to the sky! Hands down to the floor!"
  },
  "line.naklejka_daj": {
   "hash": "c97ef9123b1e",
@@ -220,14 +210,14 @@
   "text": "But how do we get the apples down? They hang so high, and I can't carry them all at once."
  },
  "line.a_plan": {
-  "hash": "eac39d89c40b",
+  "hash": "0abe9387bfae",
   "who": "lisek",
-  "text": "I have an idea! I drew a plan of a lift that will bring the apples down. Look where everything goes."
+  "text": "I have an idea! I drew a plan of a lift that will bring the apples down."
  },
  "line.a_plan_gora": {
-  "hash": "6893d0df2f04",
+  "hash": "0a3b0f2fc961",
   "who": "lisek",
-  "text": "What is at the very top, on the branch? Point to it."
+  "text": "Point to what is at the very top, on the branch."
  },
  "line.a_plan_gora_nie": {
   "hash": "bd0b27dc329f",
@@ -240,9 +230,9 @@
   "text": "Yes! At the top, on the branch, hangs a wheel. The rope goes over the wheel."
  },
  "line.a_plan_dol": {
-  "hash": "703a3408f486",
+  "hash": "d91ef4e7f44b",
   "who": "lisek",
-  "text": "And what is at the very bottom, in the grass? Point to it."
+  "text": "And now point to what is at the very bottom, in the grass."
  },
  "line.a_plan_dol_nie": {
   "hash": "f202114240a9",
@@ -258,5 +248,180 @@
   "hash": "a462bd828379",
   "who": "lisek",
   "text": "The lift is ready, just like the plan: the wheel at the top, the basket at the bottom."
+ },
+ "line.a_wiatr_plan": {
+  "hash": "ed1c5cc287f0",
+  "who": "lisek",
+  "text": "Oh no! The wind pulled the plan out of my paw and tore it to pieces!"
+ },
+ "line.a_posklejaj": {
+  "hash": "681c6daa6f98",
+  "who": "wiewiorka",
+  "text": "Help us put the plan back together. Move each piece to its place."
+ },
+ "line.a_plan_caly": {
+  "hash": "cb5bb8b076ed",
+  "who": "lisek",
+  "text": "The plan is whole again! Look where everything goes."
+ },
+ "line.a_ja_wysle": {
+  "hash": "00b52144b2c6",
+  "who": "zajac",
+  "text": "I want to send the basket up! I'll pull the rope!"
+ },
+ "line.a_kpn": {
+  "hash": "1e8a75fa5eb0",
+  "who": "wiewiorka",
+  "text": "Our friend would like to as well. Play rock, paper, scissors. Whoever wins sends the basket up."
+ },
+ "line.a_ciagne": {
+  "hash": "ccfaeedf1284",
+  "who": "zajac",
+  "text": "So I pull the rope! Hup, the basket goes up to the apples."
+ },
+ "line.a_do_domu": {
+  "hash": "d478980b6d23",
+  "who": "wiewiorka",
+  "text": "We have apples for the pie! Let's go home, through the autumn orchard."
+ },
+ "line.b_dalej": {
+  "hash": "e65f3ce4b8b0",
+  "who": "lisek",
+  "text": "The wind is calming down. Let's walk on!"
+ },
+ "line.b_rozstaje": {
+  "hash": "f806484e50c9",
+  "who": "zajac",
+  "text": "Which way home now, Squirrel?"
+ },
+ "line.b_mapa": {
+  "hash": "4ade0f71910b",
+  "who": "wiewiorka",
+  "text": "Look at my map. My cottage is high up, at the very top of the hill. Lead the basket along the path that goes up."
+ },
+ "line.b_mapa_nie": {
+  "hash": "8fdf838b819e",
+  "who": "wiewiorka",
+  "text": "That path goes down, to the pond. But my cottage is up at the top!"
+ },
+ "line.b_mapa_ok": {
+  "hash": "0d90cd7402f6",
+  "who": "zajac",
+  "text": "Up, up the hill! This is the way home."
+ },
+ "line.p_polki_ok": {
+  "hash": "3dd9e6dede3a",
+  "who": "lisek",
+  "text": "Yes! The jar is on the top shelf and the shoe on the bottom one."
+ },
+ "line.p_winda_ok": {
+  "hash": "e09f8a93dd41",
+  "who": "lisek",
+  "text": "Teddy rode all the way up and all the way down!"
+ },
+ "line.p_wyzej_ok": {
+  "hash": "95b5580e8107",
+  "who": "zajac",
+  "text": "Yes, this bird is higher, closer to the sky."
+ },
+ "line.p_wieza_ok": {
+  "hash": "49e8335544a4",
+  "who": "lisek",
+  "text": "Yes! Teddy at the very top, the box at the very bottom."
+ },
+ "line.p_niebo_ok": {
+  "hash": "c6ef14588527",
+  "who": "zajac",
+  "text": "The sun, the star and the bird are up in the sky. The shoe, the mushroom and the stone are down on the ground."
+ },
+ "line.d_w_domu": {
+  "hash": "10c8b440354a",
+  "who": "wiewiorka",
+  "text": "We're home! Now we'll bake the apple pie. Oh dear, the wind blew the door open and made a mess!"
+ },
+ "line.d_na_glowie": {
+  "hash": "bc68d640ce2c",
+  "who": "zajac",
+  "text": "Hup, I'm standing on my head! Now the hooks are down. I'll hang the shoe on them!"
+ },
+ "line.d_zawsze": {
+  "hash": "30075561604d",
+  "who": "lisek",
+  "text": "Bunny, the hooks are always up, near the ceiling. And the floor is always down. Even when you stand on your head."
+ },
+ "line.d_aha": {
+  "hash": "988cbd06d232",
+  "who": "zajac",
+  "text": "I see! The hooks up, the floor down. Always!"
+ },
+ "line.d_jablka": {
+  "hash": "893cd7f218a0",
+  "who": "wiewiorka",
+  "text": "And stand the basket of apples at the very top of the shoe rack, on the highest shelf. The ball can't knock it off there."
+ },
+ "line.d_jablka_nie": {
+  "hash": "b2f82dd39ed9",
+  "who": "wiewiorka",
+  "text": "That's too low, the ball would knock it off. Stand the basket at the very top of the shoe rack."
+ },
+ "line.d_jablka_ok": {
+  "hash": "06a7bc658ec3",
+  "who": "lisek",
+  "text": "Yes, the basket is on the highest shelf. The apples are safe!"
+ },
+ "line.d_balonik": {
+  "hash": "a98d41750910",
+  "who": "zajac",
+  "text": "Look, my balloon from the orchard! Oh no, it slipped out of my paw!"
+ },
+ "line.d_balonik_wysoko": {
+  "hash": "10a8c2678b9d",
+  "who": "zajac",
+  "text": "It flew high up. I can't reach it!"
+ },
+ "line.d_winda": {
+  "hash": "2ab9a39497f9",
+  "who": "lisek",
+  "text": "I've got my lift here. Send the bucket up to the balloon."
+ },
+ "line.d_winda_dol": {
+  "hash": "361b6e4c9e78",
+  "who": "lisek",
+  "text": "The balloon is in the bucket. Bring it all the way down to Bunny."
+ },
+ "line.d_balonik_ok": {
+  "hash": "222ca7fc1f50",
+  "who": "zajac",
+  "text": "My balloon! It was high up, and now it's down below."
+ },
+ "line.d_szarlotka": {
+  "hash": "961543416db4",
+  "who": "wiewiorka",
+  "text": "The apple pie is ready! Made with the apples that came down in the lift from the very top."
+ },
+ "line.d_pyszna": {
+  "hash": "fb88bd7dfa86",
+  "who": "zajac",
+  "text": "Mmm, delicious! Good thing the apples didn't stay up there."
+ },
+ "line.p_wieza_gora_ok": {
+  "hash": "cf61fe22128c",
+  "who": "zajac",
+  "text": "Yes, Teddy sits at the very top."
+ },
+ "line.d_wyzej": {
+  "hash": "232b16bad716",
+  "who": "lisek",
+  "text": "Point to what is higher now: the balloon or the basket of apples."
+ },
+ "line.d_wyzej_nie": {
+  "hash": "e06851059176",
+  "who": "lisek",
+  "text": "The balloon came down. Look at the highest shelf."
+ },
+ "line.d_wyzej_ok": {
+  "hash": "8f990bf5c754",
+  "who": "wiewiorka",
+  "text": "Yes, the basket of apples is higher than the balloon now."
  }
 }

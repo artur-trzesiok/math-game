@@ -15,14 +15,14 @@
   "text": "Najpierw trzeba kupić bilet. Bilet kosztuje tyle monet, ile pokazuje cyfra."
  },
  "line.a_cztery": {
-  "hash": "25dedb642f39",
+  "hash": "dcfe6628c212",
   "who": "kret",
-  "text": "Twój bilet, Misiu, kosztuje cztery monety. Popatrz, tak wygląda cyfra cztery."
+  "text": "Twój bilet, Misiu, kosztuje cztery monety. Cztery to nowa cyfra - zaraz ci ją pokażę."
  },
  "line.a_to_cztery": {
-  "hash": "5dd58daf8634",
+  "hash": "aec73d956d7a",
   "who": "kret",
-  "text": "To jest cztery."
+  "text": "A to jest nowa cyfra: cztery."
  },
  "line.a_zaplac": {
   "hash": "1a9bb0cb3cc3",
@@ -55,29 +55,24 @@
   "text": "Mój pociąg ma pięć wagonów. Każdy ma swój numer: jeden, dwa, trzy, cztery, pięć."
  },
  "line.b_bilet2": {
-  "hash": "c60f9a0e3707",
+  "hash": "57bde3c60823",
   "who": "kret",
-  "text": "Myszka ma bilet z numerem dwa. Do którego wagonu wsiada? Wskaż."
+  "text": "Myszka ma bilet z numerem dwa. Wskaż, do którego wagonu wsiada."
  },
  "line.b_bilet5": {
-  "hash": "f8f3763af2c0",
+  "hash": "dd58b45a0d2a",
   "who": "kret",
-  "text": "Zajączek ma bilet z numerem pięć. Który to wagon? Wskaż."
+  "text": "Zajączek ma bilet z numerem pięć. Wskaż jego wagon."
  },
  "line.b_bilet3": {
-  "hash": "def264897658",
+  "hash": "eab6810715a2",
   "who": "kret",
-  "text": "Jeżyk ma bilet z numerem trzy. Który to wagon? Wskaż."
+  "text": "Jeżyk ma trójkę i sam wie, gdzie wsiąść - do wagonu numer trzy!"
  },
  "line.zly_wagon": {
   "hash": "17087849d1f3",
   "who": "kret",
   "text": "To nie ten wagon. Popatrz na cyfrę na bilecie."
- },
- "line.b_wsiada": {
-  "hash": "cd191ac3cd3c",
-  "who": "kret",
-  "text": "Wsiadaj! Dobrej podróży!"
  },
  "line.b_odjazd": {
   "hash": "35db4b92bf15",
@@ -85,9 +80,9 @@
   "text": "Wszyscy na miejscach? Odjeżdżamy!"
  },
  "line.c_jablka": {
-  "hash": "30dee5ee5c37",
+  "hash": "059e4af09ff0",
   "who": "sowa",
-  "text": "Postój w lesie! Miś nazbierał jabłek, a ja gruszek."
+  "text": "Postój w lesie! Tu rosną jabłonie i grusze. Nazbierajmy owoców na drogę!"
  },
  "line.c_wiecej": {
   "hash": "be0f0a2f1658",
@@ -113,41 +108,6 @@
   "hash": "fc397c708fb8",
   "who": "mis",
   "text": "Aha! Mój rządek był dłuższy, ale jabłek nie było więcej."
- },
- "line.c_cyfra5": {
-  "hash": "6b6184ebf0e1",
-  "who": "sowa",
-  "text": "A tak wygląda cyfra pięć."
- },
- "line.c_to_piec": {
-  "hash": "75cb6e871f97",
-  "who": "sowa",
-  "text": "To jest pięć."
- },
- "line.c_dzwonek": {
-  "hash": "6a23be089674",
-  "who": "kret",
-  "text": "Posłuchaj mojego dzwonka i policz, ile razy zadzwoni."
- },
- "line.c_ile_dzwonkow": {
-  "hash": "3e3c16ea444d",
-  "who": "sowa",
-  "text": "Ile razy zadzwonił dzwonek? Wskaż cyfrę."
- },
- "line.c_dzwonek3": {
-  "hash": "56fcdaf0b3e6",
-  "who": "kret",
-  "text": "Trzy razy!"
- },
- "line.c_dzwonek4": {
-  "hash": "5a6934057b37",
-  "who": "kret",
-  "text": "Cztery razy!"
- },
- "line.c_dzwonek5": {
-  "hash": "b91aefbbd927",
-  "who": "kret",
-  "text": "Pięć razy!"
  },
  "line.d_jezioro": {
   "hash": "ce9302caabae",
@@ -179,16 +139,6 @@
   "who": "kret",
   "text": "Policz jeszcze raz, dotykając każdej rzeczy."
  },
- "line.p_dobrze": {
-  "hash": "671b319f1b8d",
-  "who": "sowa",
-  "text": "Brawo!"
- },
- "line.p_dobrze.kret": {
-  "hash": "707aad081120",
-  "who": "kret",
-  "text": "Brawo!"
- },
  "line.p_bilet5": {
   "hash": "b7b91decd54e",
   "who": "kret",
@@ -199,20 +149,10 @@
   "who": "sowa",
   "text": "Napisz palcem piątkę. Zacznij od zielonej kropki."
  },
- "line.p_cztery": {
-  "hash": "bb70a79577b5",
-  "who": "sowa",
-  "text": "Gdzie są cztery jabłka? Wskaż."
- },
- "line.p_cztery_nie": {
-  "hash": "3f48798bd2ab",
-  "who": "sowa",
-  "text": "Policz jabłka jeszcze raz. Szukamy czterech."
- },
  "line.p_kamienie": {
-  "hash": "1749f88f2553",
+  "hash": "4383475eae1a",
   "who": "kret",
-  "text": "Chcę doskoczyć do kamienia z cyfrą cztery. Który to? Wskaż."
+  "text": "Wskaż kamień z cyfrą cztery - chcę tam doskoczyć."
  },
  "line.p_kamienie_nie": {
   "hash": "2f36c44a4bbe",
@@ -225,14 +165,14 @@
   "text": "Jeden, dwa, trzy, cztery! Jestem na czwórce!"
  },
  "line.h_jutro": {
-  "hash": "465ab6196c76",
+  "hash": "4fe8ba38b477",
   "who": "kret",
-  "text": "Jutro znowu jedziemy pociągiem. Trzeba spakować plecak."
+  "text": "Jesteśmy w domu! Jutro jedziemy nad jezioro na piknik, więc trzeba się spakować."
  },
  "line.h_spakuj": {
-  "hash": "aef97ce95b0f",
+  "hash": "0e07bfb3f0bf",
   "who": "kret",
-  "text": "Włóż do plecaka pięć rzeczy. Przeciągaj je po jednej, a ja policzę."
+  "text": "Teraz plecak. Włóż do niego pięć rzeczy z parapetu. Przeciągaj po jednej, a ja policzę."
  },
  "line.h_za_duzo": {
   "hash": "aa974ac78b2e",
@@ -245,9 +185,9 @@
   "text": "Pięć rzeczy w plecaku. Gotowe!"
  },
  "line.h_palce": {
-  "hash": "7bfb387cc7d0",
+  "hash": "9a5a79736a39",
   "who": "mis",
-  "text": "Ile palców ma ta dłoń? Policz i wskaż cyfrę."
+  "text": "Jutro pomachamy kaczkom. Ile palców ma ta dłoń? Policz i wskaż cyfrę."
  },
  "line.h_palce_nie": {
   "hash": "8e0fd34d7c2d",
@@ -365,13 +305,188 @@
   "text": "Pasażerowie wysiadają z pociągu. Popatrz, jak skaczą na peron!"
  },
  "line.b_spoznieni": {
-  "hash": "2cc3648a8dd8",
+  "hash": "7ca2b80d2186",
   "who": "kret",
-  "text": "Czekajcie! Biegną jeszcze kaczątko i ślimak. Bilety kupili już wczoraj, żeby dziś zdążyć!"
+  "text": "Czekajcie! Biegną jeszcze kaczątko i ślimak. Bilety kupili już wczoraj!"
  },
  "line.b_bilety_wczoraj": {
-  "hash": "de9390488bdd",
+  "hash": "3e2bfd585a09",
   "who": "kret",
-  "text": "Kaczątko ma jedynkę, więc wsiada do pierwszego wagonu. Ślimak ma czwórkę, więc do czwartego. Wskakujcie!"
+  "text": "Kaczątko ma jedynkę, więc wskakuje do pierwszego wagonu."
+ },
+ "line.a_znasz": {
+  "hash": "7eb44e37ece2",
+  "who": "kret",
+  "text": "Jeden, dwa, trzy - te cyfry już znasz."
+ },
+ "line.a_to_piec": {
+  "hash": "dbe22750268b",
+  "who": "kret",
+  "text": "A to pięć. Mój pociąg ma pięć wagonów!"
+ },
+ "line.b_wsiada2": {
+  "hash": "6b5aa09487ea",
+  "who": "kret",
+  "text": "Tak, wagon numer dwa! Wsiadaj, Myszko!"
+ },
+ "line.b_wsiada5": {
+  "hash": "b81bc13fdfa5",
+  "who": "kret",
+  "text": "Tak, piątka! Wskakuj, Zajączku!"
+ },
+ "line.b_slimak": {
+  "hash": "07867d979a92",
+  "who": "kret",
+  "text": "Ślimak ma czwórkę, ale nie wie, który to wagon. Pomóż mu i wskaż wagon numer cztery."
+ },
+ "line.b_wsiada4": {
+  "hash": "980c88ce2bf6",
+  "who": "kret",
+  "text": "Czwórka! Ślimak zdążył i dziękuje ci za pomoc."
+ },
+ "line.c_wsiadamy": {
+  "hash": "a6b47bcb81dc",
+  "who": "kret",
+  "text": "Wsiadajcie, jedziemy dalej - nad jezioro!"
+ },
+ "line.c_most": {
+  "hash": "c94e2214d83f",
+  "who": "sowa",
+  "text": "Jedziemy po wysokim moście! Na dole płynie rzeka."
+ },
+ "line.c_most2": {
+  "hash": "9b5e67adaea7",
+  "who": "mis",
+  "text": "Widzę cały pociąg: lokomotywę i pięć wagonów!"
+ },
+ "line.d_kaczki": {
+  "hash": "dd1653aba67a",
+  "who": "kret",
+  "text": "Popatrz, na jeziorze pływa kaczka. Chyba jest głodna!"
+ },
+ "line.d_karm": {
+  "hash": "ef22fee0bdc5",
+  "who": "sowa",
+  "text": "Mamy bułkę z drogi. Przeciągnij jedzenie do kaczki - zobaczymy, co lubi."
+ },
+ "line.d_najedzona": {
+  "hash": "b5020a7af28a",
+  "who": "kret",
+  "text": "Bułkę zjadła, a szyszkę wypluła! Szyszki nie są dla kaczek."
+ },
+ "line.d_jutro": {
+  "hash": "31a4e7729333",
+  "who": "kret",
+  "text": "Teraz wracamy do domu. A jutro przyjedziemy tu znowu, na piknik!"
+ },
+ "line.d_piknik": {
+  "hash": "95327d234bc7",
+  "who": "mis",
+  "text": "Hura! To trzeba się dziś spakować!"
+ },
+ "line.p_ile4": {
+  "hash": "7630d83d51f7",
+  "who": "sowa",
+  "text": "Tak, są cztery!"
+ },
+ "line.p_ile5": {
+  "hash": "52cf1221cc03",
+  "who": "sowa",
+  "text": "Tak, jest ich pięć!"
+ },
+ "line.p_bilet_ok": {
+  "hash": "0a81965ed8c3",
+  "who": "sowa",
+  "text": "Pięć monet - bilet kupiony!"
+ },
+ "line.p_piatka_ok": {
+  "hash": "0009b4a79e78",
+  "who": "kret",
+  "text": "Jaka piękna piątka!"
+ },
+ "line.p_kropki": {
+  "hash": "a29023ff6cb5",
+  "who": "sowa",
+  "text": "Połącz kropki po kolei, od jedynki do piątki. Co się pojawi?"
+ },
+ "line.p_lokomotywa": {
+  "hash": "72209703d008",
+  "who": "kret",
+  "text": "Moja lokomotywa! Pięć kropek i jest cała."
+ },
+ "line.h_jedzenie": {
+  "hash": "67de32e4d89c",
+  "who": "mis",
+  "text": "Ja zabiorę jabłka, a Sowa kanapki."
+ },
+ "line.h_wiecej": {
+  "hash": "e3c5cd6818fa",
+  "who": "mis",
+  "text": "Mam więcej jedzenia niż Sowa! Popatrz, jaki długi rządek!"
+ },
+ "line.h_znowu": {
+  "hash": "d569432a6bca",
+  "who": "sowa",
+  "text": "Znowu długi rządek? Sprawdźmy na wykresie, czego jest więcej."
+ },
+ "line.h_wykres": {
+  "hash": "def4dc57dc2b",
+  "who": "sowa",
+  "text": "Przeciągnij każde jabłko i każdą kanapkę do jej kolumny."
+ },
+ "line.h_wykres_nie": {
+  "hash": "8aed6563abad",
+  "who": "sowa",
+  "text": "Jabłka idą do jabłek, a kanapki do kanapek."
+ },
+ "line.h_rowne": {
+  "hash": "8d22fa13fe8c",
+  "who": "sowa",
+  "text": "Kolumny są tak samo wysokie!"
+ },
+ "line.h_ile_kolumna": {
+  "hash": "308bb2187e20",
+  "who": "sowa",
+  "text": "Ile jabłek jest w kolumnie? Wskaż cyfrę."
+ },
+ "line.h_ile_kolumna_nie": {
+  "hash": "9691680effea",
+  "who": "sowa",
+  "text": "Policz jabłka w kolumnie od dołu, każde po kolei."
+ },
+ "line.h_piec_i_piec": {
+  "hash": "7499557d1916",
+  "who": "mis",
+  "text": "Pięć jabłek i pięć kanapek - tyle samo! Długi rządek to nie więcej."
+ },
+ "line.h_piknik": {
+  "hash": "1c89af0adee5",
+  "who": "sowa",
+  "text": "A następnego dnia - piknik nad jeziorem!"
+ },
+ "line.h_piknik2": {
+  "hash": "355b6ed7f005",
+  "who": "mis",
+  "text": "Pięć rzeczy z plecaka i wszystko się przydało!"
+ },
+ "line.h_klaszczemy": {
+  "hash": "0e65e4625900",
+  "who": "mis",
+  "text": "Policzmy razem do pięciu i klaśnijmy pięć razy!"
+ },
+ "line.h_metka": {
+  "hash": "07b4a0535a10",
+  "who": "kret",
+  "text": "Napisz na metce plecaka piątkę. Będziemy pamiętać, że w plecaku jest pięć rzeczy."
+ },
+ "line.h_metka_ok": {
+  "hash": "f6a080bf09dc",
+  "who": "mis",
+  "text": "Piątka na metce - jak w plecaku!"
+ },
+ "line.c_tylko_piec": {
+  "hash": "936c19fca5d5",
+  "who": "mis",
+  "text": "Tylko pięć? Myślałem, że mam więcej!"
  }
 }

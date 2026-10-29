@@ -40,11 +40,16 @@
     "czapka",
     "szalik_dlugi",
     "plecak",
-    "pilka"
+    "pilka",
+    "wiaderko",
+    "gest_kamien",
+    "gest_papier",
+    "gest_nozyce"
   ],
   "cover": "A sunny orchard: Bunny stands on his head, laughing, under an apple tree; Squirrel and Fox send a basket of red apples down on a rope lift hanging from a branch, a little blue bird watches from the top of the tree.",
   "naklejka": {
     "obraz": "objects/ptak",
     "kto": "wiewiorka"
-  }
+  },
+  "oddech": "kpn"
 }

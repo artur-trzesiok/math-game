@@ -15,14 +15,14 @@
   "text": "First you need a ticket. A ticket costs as many coins as its number shows."
  },
  "line.a_cztery": {
-  "hash": "007a64a23eb2",
+  "hash": "606ae106d446",
   "who": "kret",
-  "text": "Your ticket, Bear, costs four coins. Look, this is what the number four looks like."
+  "text": "Your ticket, Bear, costs four coins. Four is a new number - let me show you."
  },
  "line.a_to_cztery": {
-  "hash": "7d1c0378e0f0",
+  "hash": "2bcd2f26c25d",
   "who": "kret",
-  "text": "This is four."
+  "text": "And this is a new number: four."
  },
  "line.a_zaplac": {
   "hash": "81360bf81092",
@@ -55,29 +55,24 @@
   "text": "My train has five wagons. Each has its number: one, two, three, four, five."
  },
  "line.b_bilet2": {
-  "hash": "245a6efdd030",
+  "hash": "9e1996dbd4c9",
   "who": "kret",
-  "text": "Mouse has a ticket with the number two. Which wagon does she get into? Point to it."
+  "text": "Mouse has a ticket with number two. Point to the wagon she gets into."
  },
  "line.b_bilet5": {
-  "hash": "e4384dcc1166",
+  "hash": "4d019e8f5aa6",
   "who": "kret",
-  "text": "Bunny has a ticket with the number five. Which wagon is it? Point to it."
+  "text": "Bunny has a ticket with number five. Point to his wagon."
  },
  "line.b_bilet3": {
-  "hash": "717116674a87",
+  "hash": "c40e33e7ac5f",
   "who": "kret",
-  "text": "Hedgehog has a ticket with the number three. Which wagon is it? Point to it."
+  "text": "Hedgehog has a three and knows where to go - into wagon number three!"
  },
  "line.zly_wagon": {
   "hash": "ef66707cf9b0",
   "who": "kret",
   "text": "Not that wagon. Look at the number on the ticket."
- },
- "line.b_wsiada": {
-  "hash": "c1cdc2815a63",
-  "who": "kret",
-  "text": "All aboard! Have a good trip!"
  },
  "line.b_odjazd": {
   "hash": "ec3adffbe77c",
@@ -85,9 +80,9 @@
   "text": "Everyone in their seats? Off we go!"
  },
  "line.c_jablka": {
-  "hash": "944b2c477d10",
+  "hash": "818b1d429d1f",
   "who": "sowa",
-  "text": "A stop in the forest! Bear picked apples and I picked pears."
+  "text": "A stop in the forest! Apple trees and pear trees grow here. Let's pick some fruit for the trip!"
  },
  "line.c_wiecej": {
   "hash": "9ed614c3ca10",
@@ -113,41 +108,6 @@
   "hash": "9396bcd1a72b",
   "who": "mis",
   "text": "I see! My row was longer, but there weren't more apples."
- },
- "line.c_cyfra5": {
-  "hash": "1405c668795b",
-  "who": "sowa",
-  "text": "And this is what the number five looks like."
- },
- "line.c_to_piec": {
-  "hash": "a56eb392345d",
-  "who": "sowa",
-  "text": "This is five."
- },
- "line.c_dzwonek": {
-  "hash": "b7048765cbd7",
-  "who": "kret",
-  "text": "Listen to my bell and count how many times it rings."
- },
- "line.c_ile_dzwonkow": {
-  "hash": "bb223f2c93ad",
-  "who": "sowa",
-  "text": "How many times did the bell ring? Point to the number."
- },
- "line.c_dzwonek3": {
-  "hash": "a61366d6b6ed",
-  "who": "kret",
-  "text": "Three times!"
- },
- "line.c_dzwonek4": {
-  "hash": "154dc5a28565",
-  "who": "kret",
-  "text": "Four times!"
- },
- "line.c_dzwonek5": {
-  "hash": "cddf997e4ecb",
-  "who": "kret",
-  "text": "Five times!"
  },
  "line.d_jezioro": {
   "hash": "bb22998cdb68",
@@ -179,16 +139,6 @@
   "who": "kret",
   "text": "Count again, touching each thing."
  },
- "line.p_dobrze": {
-  "hash": "c72d06c98857",
-  "who": "sowa",
-  "text": "Bravo!"
- },
- "line.p_dobrze.kret": {
-  "hash": "960458c5116f",
-  "who": "kret",
-  "text": "Bravo!"
- },
  "line.p_bilet5": {
   "hash": "2f6579f44857",
   "who": "kret",
@@ -199,20 +149,10 @@
   "who": "sowa",
   "text": "Write a five with your finger. Start at the green dot."
  },
- "line.p_cztery": {
-  "hash": "34d627175d92",
-  "who": "sowa",
-  "text": "Where are four apples? Point to them."
- },
- "line.p_cztery_nie": {
-  "hash": "456020658830",
-  "who": "sowa",
-  "text": "Count the apples again. We're looking for four."
- },
  "line.p_kamienie": {
-  "hash": "2932eea4471e",
+  "hash": "c3922cf2787a",
   "who": "kret",
-  "text": "I want to hop to the stone with the number four. Which one is it? Point to it."
+  "text": "Point to the stone with the number four - I want to jump there."
  },
  "line.p_kamienie_nie": {
   "hash": "cd9ff3607e05",
@@ -225,14 +165,14 @@
   "text": "One, two, three, four! I'm on the four!"
  },
  "line.h_jutro": {
-  "hash": "bc148a23cc13",
+  "hash": "886bdd4db169",
   "who": "kret",
-  "text": "Tomorrow we ride the train again. The backpack needs packing."
+  "text": "We're home! Tomorrow we go to the lake for a picnic, so we must pack."
  },
  "line.h_spakuj": {
-  "hash": "bfab4ff87512",
+  "hash": "088326db2c79",
   "who": "kret",
-  "text": "Put five things in the backpack. Drag them one at a time and I'll count."
+  "text": "Now the backpack. Put five things from the windowsill into it. Drag them one at a time, and I'll count."
  },
  "line.h_za_duzo": {
   "hash": "7f3042c49e95",
@@ -245,9 +185,9 @@
   "text": "Five things in the backpack. Ready!"
  },
  "line.h_palce": {
-  "hash": "808b14fee685",
+  "hash": "90a0f5faaa58",
   "who": "mis",
-  "text": "How many fingers does this hand have? Count and point to the number."
+  "text": "Tomorrow we'll wave to the ducks. How many fingers does this hand have? Count and point to the number."
  },
  "line.h_palce_nie": {
   "hash": "7eb3ad944896",
@@ -365,13 +305,188 @@
   "text": "The passengers are getting off the train. Look how they hop onto the platform!"
  },
  "line.b_spoznieni": {
-  "hash": "9581c0491e40",
+  "hash": "4c75ae7ec818",
   "who": "kret",
-  "text": "Wait! The duckling and the snail are running up. They bought their tickets yesterday, to be in time today!"
+  "text": "Wait! Here come Duckling and Snail. They bought their tickets yesterday!"
  },
  "line.b_bilety_wczoraj": {
-  "hash": "f8d8a9139037",
+  "hash": "f42396965c61",
   "who": "kret",
-  "text": "The duckling has a one, so it gets into the first wagon. The snail has a four, so into the fourth. Hop in!"
+  "text": "Duckling has a one, so it hops into the first wagon."
+ },
+ "line.a_znasz": {
+  "hash": "7462c1fbc7c7",
+  "who": "kret",
+  "text": "One, two, three - you know these numbers already."
+ },
+ "line.a_to_piec": {
+  "hash": "e91981fc0f69",
+  "who": "kret",
+  "text": "And this is five. My train has five wagons!"
+ },
+ "line.b_wsiada2": {
+  "hash": "935191047a54",
+  "who": "kret",
+  "text": "Yes, wagon number two! Hop in, Mouse!"
+ },
+ "line.b_wsiada5": {
+  "hash": "af9fa682726f",
+  "who": "kret",
+  "text": "Yes, the five! Jump in, Bunny!"
+ },
+ "line.b_slimak": {
+  "hash": "09de315220c6",
+  "who": "kret",
+  "text": "Snail has a four, but he does not know which wagon that is. Help him: point to wagon number four."
+ },
+ "line.b_wsiada4": {
+  "hash": "f6933af92153",
+  "who": "kret",
+  "text": "The four! Snail made it, and he thanks you for your help."
+ },
+ "line.c_wsiadamy": {
+  "hash": "1dd128967b85",
+  "who": "kret",
+  "text": "All aboard, on we go - to the lake!"
+ },
+ "line.c_most": {
+  "hash": "c7d34f452aea",
+  "who": "sowa",
+  "text": "We're riding over a high bridge! A river flows far below."
+ },
+ "line.c_most2": {
+  "hash": "021c8bf87410",
+  "who": "mis",
+  "text": "I can see the whole train: the engine and five wagons!"
+ },
+ "line.d_kaczki": {
+  "hash": "b529b9787e53",
+  "who": "kret",
+  "text": "Look, a duck is swimming on the lake. I think she's hungry!"
+ },
+ "line.d_karm": {
+  "hash": "66293a55452b",
+  "who": "sowa",
+  "text": "We have bread left from the trip. Drag the food to the duck - let's see what she likes."
+ },
+ "line.d_najedzona": {
+  "hash": "6f343a473b44",
+  "who": "kret",
+  "text": "She ate the bread and spat out the cone! Cones are not for ducks."
+ },
+ "line.d_jutro": {
+  "hash": "83021bbf53dc",
+  "who": "kret",
+  "text": "Now we go home. And tomorrow we'll come back here for a picnic!"
+ },
+ "line.d_piknik": {
+  "hash": "d16a36626e95",
+  "who": "mis",
+  "text": "Hooray! Then we must pack today!"
+ },
+ "line.p_ile4": {
+  "hash": "3386910acadb",
+  "who": "sowa",
+  "text": "Yes, there are four!"
+ },
+ "line.p_ile5": {
+  "hash": "98738c21eb3b",
+  "who": "sowa",
+  "text": "Yes, there are five!"
+ },
+ "line.p_bilet_ok": {
+  "hash": "87387d43d393",
+  "who": "sowa",
+  "text": "Five coins - ticket bought!"
+ },
+ "line.p_piatka_ok": {
+  "hash": "60458c87e540",
+  "who": "kret",
+  "text": "What a beautiful five!"
+ },
+ "line.p_kropki": {
+  "hash": "516b5cb0da02",
+  "who": "sowa",
+  "text": "Join the dots in order, from one to five. What will appear?"
+ },
+ "line.p_lokomotywa": {
+  "hash": "8b279026bcde",
+  "who": "kret",
+  "text": "My engine! Five dots and there it is."
+ },
+ "line.h_jedzenie": {
+  "hash": "6c4ca360ecc5",
+  "who": "mis",
+  "text": "I'll take apples, and Owl takes sandwiches."
+ },
+ "line.h_wiecej": {
+  "hash": "e6c0f37dbd3c",
+  "who": "mis",
+  "text": "I have more food than Owl! Look how long my row is!"
+ },
+ "line.h_znowu": {
+  "hash": "df58176b540d",
+  "who": "sowa",
+  "text": "A long row again? Let's check on a chart which there are more of."
+ },
+ "line.h_wykres": {
+  "hash": "f2b55311685f",
+  "who": "sowa",
+  "text": "Drag every apple and every sandwich into its own column."
+ },
+ "line.h_wykres_nie": {
+  "hash": "00433f27cfed",
+  "who": "sowa",
+  "text": "Apples go with apples, sandwiches with sandwiches."
+ },
+ "line.h_rowne": {
+  "hash": "a1bacc36a121",
+  "who": "sowa",
+  "text": "The columns are just as tall!"
+ },
+ "line.h_ile_kolumna": {
+  "hash": "730af4abc1f0",
+  "who": "sowa",
+  "text": "How many apples are in the column? Point to the number."
+ },
+ "line.h_ile_kolumna_nie": {
+  "hash": "fc0840d0b06d",
+  "who": "sowa",
+  "text": "Count the apples in the column from the bottom, one by one."
+ },
+ "line.h_piec_i_piec": {
+  "hash": "fbd81b9d00a8",
+  "who": "mis",
+  "text": "Five apples and five sandwiches - the same! A long row is not more."
+ },
+ "line.h_piknik": {
+  "hash": "0da41e0bb295",
+  "who": "sowa",
+  "text": "And the next day - a picnic by the lake!"
+ },
+ "line.h_piknik2": {
+  "hash": "5477fea28973",
+  "who": "mis",
+  "text": "Five things from the backpack, and we needed every one!"
+ },
+ "line.h_klaszczemy": {
+  "hash": "28729245582a",
+  "who": "mis",
+  "text": "Let's count to five together and clap five times!"
+ },
+ "line.h_metka": {
+  "hash": "7f3c49550edf",
+  "who": "kret",
+  "text": "Write a five on the backpack's tag. Then we'll remember there are five things inside."
+ },
+ "line.h_metka_ok": {
+  "hash": "ac1324b36367",
+  "who": "mis",
+  "text": "A five on the tag - just like in the backpack!"
+ },
+ "line.c_tylko_piec": {
+  "hash": "902bcb9a009c",
+  "who": "mis",
+  "text": "Only five? I thought I had more!"
  }
 }
