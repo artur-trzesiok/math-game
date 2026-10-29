@@ -19,29 +19,41 @@
     "who": "zajac",
     "text": "Aha! Niebo na górze, trawa na dole. Zawsze."
   },
-  "line.a_co_na_gorze": {
-    "who": "lisek",
-    "text": "Co jest na górze, na drzewie? Wskaż."
-  },
-  "line.a_gora_nie": {
-    "who": "lisek",
-    "text": "To jest na dole, w trawie. Popatrz wyżej, tam gdzie niebo."
-  },
-  "line.a_co_na_dole": {
-    "who": "lisek",
-    "text": "A co jest na dole, w trawie? Wskaż."
-  },
-  "line.a_dol_nie": {
-    "who": "lisek",
-    "text": "To jest na górze. Popatrz niżej, na trawę."
-  },
-  "line.a_dobrze": {
+  "line.a_jak_zdjac": {
     "who": "wiewiorka",
-    "text": "Ptaszek na górze, grzybek na dole!"
+    "text": "Ale jak zdejmiemy jabłka? Wiszą tak wysoko, a ja nie uniosę ich wszystkich naraz."
   },
-  "line.a_winda": {
+  "line.a_plan": {
     "who": "lisek",
-    "text": "Jabłka są wysoko. Zbudowałem windę: koszyk na linie!"
+    "text": "Mam pomysł! Narysowałem plan windy, która zwiezie jabłka. Popatrzcie, co gdzie trzeba powiesić."
+  },
+  "line.a_plan_gora": {
+    "who": "lisek",
+    "text": "Co jest na samej górze, na gałęzi? Wskaż."
+  },
+  "line.a_plan_gora_nie": {
+    "who": "lisek",
+    "text": "Popatrz na samą górę, na koniec długiej gałęzi. Co tam wisi?"
+  },
+  "line.a_plan_kolo": {
+    "who": "lisek",
+    "text": "Tak! Na górze, na gałęzi, wisi kółko. Przez kółko przejdzie lina."
+  },
+  "line.a_plan_dol": {
+    "who": "lisek",
+    "text": "A co jest na samym dole, w trawie? Wskaż."
+  },
+  "line.a_plan_dol_nie": {
+    "who": "lisek",
+    "text": "Popatrz na sam dół, w trawę pod liną. Co tam stoi?"
+  },
+  "line.a_plan_koszyk": {
+    "who": "zajac",
+    "text": "Koszyk na dole, w trawie! Przy mnie. Do niego zjadą jabłka."
+  },
+  "line.a_zbudowana": {
+    "who": "lisek",
+    "text": "Winda gotowa, tak jak na planie: kółko na górze, koszyk na dole."
   },
   "line.a_do_gory": {
     "who": "lisek",

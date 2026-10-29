@@ -19,29 +19,41 @@
     "who": "zajac",
     "text": "I see! The sky up, the grass down. Always."
   },
-  "line.a_co_na_gorze": {
-    "who": "lisek",
-    "text": "What is up in the tree? Point to it."
-  },
-  "line.a_gora_nie": {
-    "who": "lisek",
-    "text": "That's down in the grass. Look higher, up where the sky is."
-  },
-  "line.a_co_na_dole": {
-    "who": "lisek",
-    "text": "And what is down in the grass? Point to it."
-  },
-  "line.a_dol_nie": {
-    "who": "lisek",
-    "text": "That's up high. Look lower, at the grass."
-  },
-  "line.a_dobrze": {
+  "line.a_jak_zdjac": {
     "who": "wiewiorka",
-    "text": "The bird up high, the mushroom down below!"
+    "text": "But how do we get the apples down? They hang so high, and I can't carry them all at once."
   },
-  "line.a_winda": {
+  "line.a_plan": {
     "who": "lisek",
-    "text": "The apples are high up. I built a lift: a basket on a rope!"
+    "text": "I have an idea! I drew a plan of a lift that will bring the apples down. Look where everything goes."
+  },
+  "line.a_plan_gora": {
+    "who": "lisek",
+    "text": "What is at the very top, on the branch? Point to it."
+  },
+  "line.a_plan_gora_nie": {
+    "who": "lisek",
+    "text": "Look right up at the top, at the end of the long branch. What hangs there?"
+  },
+  "line.a_plan_kolo": {
+    "who": "lisek",
+    "text": "Yes! At the top, on the branch, hangs a wheel. The rope goes over the wheel."
+  },
+  "line.a_plan_dol": {
+    "who": "lisek",
+    "text": "And what is at the very bottom, in the grass? Point to it."
+  },
+  "line.a_plan_dol_nie": {
+    "who": "lisek",
+    "text": "Look right down at the bottom, in the grass under the rope. What stands there?"
+  },
+  "line.a_plan_koszyk": {
+    "who": "zajac",
+    "text": "The basket at the bottom, in the grass! Next to me. The apples will ride down into it."
+  },
+  "line.a_zbudowana": {
+    "who": "lisek",
+    "text": "The lift is ready, just like the plan: the wheel at the top, the basket at the bottom."
   },
   "line.a_do_gory": {
     "who": "lisek",

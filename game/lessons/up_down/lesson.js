@@ -54,21 +54,32 @@ export default {
         await c.ujecie("zblizenie", { na: "zajac" });
         await c.say("zajac", "line.a_rozumiem");
         await c.ujecie("ogolny");
-        // up and down: the bird in the crown, the mushroom in the grass
-        const ptak = await c.object("ptak", { x: -2.9, y: 2.6, size: 0.95 }), grzyb = await c.object("grzyb", { x: 0.4, y: -2.7, size: 1.1 });
-        await c.say("lisek", "line.a_co_na_gorze");
-        dobre(ptak); await c.task({ targets: [ptak, grzyb], correct: ptak, wrong: "line.a_gora_nie" }); dobre(ptak, false);
-        await c.say("lisek", "line.a_co_na_dole");
-        dobre(grzyb); await c.task({ targets: [ptak, grzyb], correct: grzyb, wrong: "line.a_dol_nie" }); dobre(grzyb, false);
+        // how to get the apples down? Fox's plan of the lift: the child marks what goes at the top and what at the bottom
         await c.ujecie("zblizenie", { na: "wiewiorka" });
-        await c.say("wiewiorka", "line.a_dobrze");
+        await c.emocja("wiewiorka", "pot");
+        await c.say("wiewiorka", "line.a_jak_zdjac");
+        await c.ujecie("sredni", { na: ["lisek"] });
+        await c.say("lisek", "line.a_plan", { anim: "Zgloszenie" });
         await c.ujecie("ogolny");
-        ptak.remove(); grzyb.remove();
-        // the lift: the basket up to the apples, down to Bunny
-        await c.ujecie("zblizenie", { na: "lisek" });
-        await c.say("lisek", "line.a_winda", { anim: "Zgloszenie" });
+        const plan = await c.znalezisko("plan_windy", { skad: "lisek" });
+        const [kolo, kosz] = plan.cele.slice().sort((a, b) => plan.meta.cele[a.nr].y - plan.meta.cele[b.nr].y);   // the top spot first
+        const naPlanie = [...plan.cele, plan.tlo]; dobre(plan.cele, false);    // the spots come marked right; the tests need one
+        await c.say("lisek", "line.a_plan_gora");
+        dobre(kolo); await c.task({ targets: naPlanie, correct: kolo, wrong: "line.a_plan_gora_nie" }); dobre(kolo, false);
+        await c.say("lisek", "line.a_plan_kolo");
+        await c.say("lisek", "line.a_plan_dol");
+        dobre(kosz); await c.task({ targets: naPlanie, correct: kosz, wrong: "line.a_plan_dol_nie" }); dobre(kosz, false);
+        await plan.zaznacz();
+        await c.wait(0.6);
+        await plan.remove();
+        await c.ujecie("zblizenie", { na: "zajac" });
+        await c.say("zajac", "line.a_plan_koszyk", { anim: "Radosc" });
+        // the lift, built as the plan says: the basket up to the apples, down to Bunny
         await c.ujecie("ogolny");
         const w = await c.winda({ x: -2.3, pietra: [-2.1, 1.6], wrong: "line.a_winda_nie" });
+        await c.ujecie("sredni", { na: ["lisek"] });
+        await c.say("lisek", "line.a_zbudowana", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await c.say("lisek", "line.a_do_gory");
         await w.doPoziomu(1);
         await c.say("wiewiorka", "line.a_wkladam");

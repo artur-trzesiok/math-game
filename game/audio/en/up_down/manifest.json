@@ -24,36 +24,6 @@
   "who": "zajac",
   "text": "I see! The sky up, the grass down. Always."
  },
- "line.a_co_na_gorze": {
-  "hash": "b391555b4383",
-  "who": "lisek",
-  "text": "What is up in the tree? Point to it."
- },
- "line.a_gora_nie": {
-  "hash": "a3a6444b1ee2",
-  "who": "lisek",
-  "text": "That's down in the grass. Look higher, up where the sky is."
- },
- "line.a_co_na_dole": {
-  "hash": "09f4b60b2934",
-  "who": "lisek",
-  "text": "And what is down in the grass? Point to it."
- },
- "line.a_dol_nie": {
-  "hash": "5d1eb39da8bc",
-  "who": "lisek",
-  "text": "That's up high. Look lower, at the grass."
- },
- "line.a_dobrze": {
-  "hash": "b38ce35680b0",
-  "who": "wiewiorka",
-  "text": "The bird up high, the mushroom down below!"
- },
- "line.a_winda": {
-  "hash": "03e727c3039f",
-  "who": "lisek",
-  "text": "The apples are high up. I built a lift: a basket on a rope!"
- },
  "line.a_do_gory": {
   "hash": "d4fbd2f9fbbd",
   "who": "lisek",
@@ -243,5 +213,50 @@
   "hash": "501ef5fcc48f",
   "who": "narrator",
   "text": "This is the bird from Squirrel's apple tree. We got it when we learnt what is up and what is down."
+ },
+ "line.a_jak_zdjac": {
+  "hash": "e45c5da495d1",
+  "who": "wiewiorka",
+  "text": "But how do we get the apples down? They hang so high, and I can't carry them all at once."
+ },
+ "line.a_plan": {
+  "hash": "eac39d89c40b",
+  "who": "lisek",
+  "text": "I have an idea! I drew a plan of a lift that will bring the apples down. Look where everything goes."
+ },
+ "line.a_plan_gora": {
+  "hash": "6893d0df2f04",
+  "who": "lisek",
+  "text": "What is at the very top, on the branch? Point to it."
+ },
+ "line.a_plan_gora_nie": {
+  "hash": "bd0b27dc329f",
+  "who": "lisek",
+  "text": "Look right up at the top, at the end of the long branch. What hangs there?"
+ },
+ "line.a_plan_kolo": {
+  "hash": "d27da5012738",
+  "who": "lisek",
+  "text": "Yes! At the top, on the branch, hangs a wheel. The rope goes over the wheel."
+ },
+ "line.a_plan_dol": {
+  "hash": "703a3408f486",
+  "who": "lisek",
+  "text": "And what is at the very bottom, in the grass? Point to it."
+ },
+ "line.a_plan_dol_nie": {
+  "hash": "f202114240a9",
+  "who": "lisek",
+  "text": "Look right down at the bottom, in the grass under the rope. What stands there?"
+ },
+ "line.a_plan_koszyk": {
+  "hash": "374c04b03186",
+  "who": "zajac",
+  "text": "The basket at the bottom, in the grass! Next to me. The apples will ride down into it."
+ },
+ "line.a_zbudowana": {
+  "hash": "a462bd828379",
+  "who": "lisek",
+  "text": "The lift is ready, just like the plan: the wheel at the top, the basket at the bottom."
  }
 }

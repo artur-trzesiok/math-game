@@ -88,12 +88,29 @@ export default {
         await c.ujecie("ogolny");
         t.remove(); c.clear();
       },
-      // B. the forest: three raspberries for the cake (a fourth jumps back); Hedgehog's claps counted by ear
+      // B. the raspberry thicket: how many for the cake? Grandma's recipe shows it - the child counts its raspberries;
+      // three are picked (a fourth jumps back); Hedgehog's claps counted by ear
       async (c) => {
-        await c.go("las", { enter: true });
+        await c.go("malinowy_zagajnik", { enter: true });
         await Promise.all(["jez", "wiewiorka", "mis"].map((n) => c.enter(n, n === "mis" ? "right" : "left")));
+        await c.play("mis", "Rozgladanie");
+        await c.say("mis", "line.b_zagajnik", { anim: "Radosc" });           // the wide shot: the raspberry bushes in view
+        await c.ujecie("zblizenie", { na: "jez" });
+        await c.wonder("jez");
+        await c.say("jez", "line.b_ile_malin");
         await c.ujecie("sredni", { na: ["mis"] });
-        await c.say("mis", "line.b_maliny");
+        await c.say("mis", "line.b_przepis", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
+        // the recipe card: the child counts the raspberries on the drawn cake, each once - the last number says how many
+        const przepis = await c.znalezisko("przepis_tort", { skad: "mis" });
+        await c.say("wiewiorka", "line.b_przepis_policz");
+        dobre(przepis.cele, false);                                          // the spots come marked right: the tests then pick the first again and again
+        const licz = await c.count(przepis.cele, { who: "wiewiorka" });
+        await c.say("wiewiorka", "line.b_przepis_trzy");
+        licz?.znaczki?.forEach((z) => z.remove());                            // the digits go away with the card
+        await przepis.remove();
+        await c.ujecie("sredni", { na: ["mis"] });
+        await c.say("mis", "line.b_zrywamy", { anim: "Radosc" });
         await c.ujecie("ogolny");
         const ml = [];
         for (let i = 0; i < 5; i++) ml.push(await c.object("malina", { x: -1.4 + i * 1.0, y: 1.6 - (i % 2) * 0.7, size: 1.0 }));

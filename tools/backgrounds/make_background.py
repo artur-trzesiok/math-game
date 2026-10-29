@@ -441,6 +441,128 @@ same style: at least fifteen tufts of grass across the ground, and three thin so
 Same colours, same oak, same door, same moon. Do NOT move or redraw anything that was already there.""",
 }
 
+# long_short: the picnic glade at the end of the short path (the end of the story)
+SCENY["polana_piknik"] = {
+    "plyta": f"""A background illustration for a children's game: a sunny little glade at the edge of a birch wood, ready
+for a picnic. In the middle distance a red-and-white checked picnic blanket lies spread on the grass with a wicker
+picnic basket on one corner and a small jug of juice beside it; a big shady oak at the left edge, flowering bushes and
+white birches at the back and at the right, a blue sky. The grass in the lower part of the picture is EMPTY and open
+where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+NO characters, NO animals, NO food out of the basket, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the ground, and six or seven soft white clouds in the blue sky.
+Same colours, same blanket, same basket, same trees. Do NOT move or redraw anything that was already there.""",
+}
+
+# spot_difference: Granny Owl's old oak, where the drawing is taken (the end of the story); by day she sleeps
+SCENY["dab_babci"] = {
+    "plyta": f"""A background illustration for a children's game: a sunny clearing in a friendly forest with a huge old
+oak tree on the left side of the picture. High in the oak's trunk a round hollow with a little round wooden door,
+closed, with a tiny curtained window and a small wooden plaque with a painted moon above it - the home of an old owl;
+a little wooden ladder of branches leads up the trunk. Under the oak a round bed of colourful flowers - red, yellow,
+purple - and a few round bushes. Tall trees at the back and at the right, blue sky. The grass in the lower middle and
+the lower right is EMPTY and open where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+NO characters, NO animals, NO birds, NO butterflies, NO letters on the plaque, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the ground, and six or seven soft white clouds in the blue sky.
+Same colours, same oak, same door, same flowers. Do NOT move or redraw anything that was already there.""",
+}
+
+# bigger_smaller_pro: Squirrel's new home - the tree with the just-right hollow (the end of the story)
+SCENY["dab_wiewiorki"] = {
+    "plyta": f"""A background illustration for a children's game: a sunny corner of a friendly deciduous forest in early
+autumn. In the middle of the picture, a little to the right, stands a big old oak tree with a thick trunk and a wide
+crown full of green and golden leaves and acorns. In the trunk, about halfway up, ONE round tree hollow, dark inside,
+with a smooth rim of bark - a squirrel's cosy new home; a short branch sticks out under it like a little doorstep. A
+small heap of acorns lies between the oak's roots. Other trees at both edges, a few round bushes, blue sky with soft
+light. The grass in the lower left and the lower middle is EMPTY and open where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+NO characters, NO animals, NO squirrels, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass and a few small ferns across the ground, and a few small soft white clouds
+in the sky between the tree crowns.
+Same colours, same oak, same hollow, same acorns. Do NOT move or redraw anything that was already there.""",
+}
+
+# adding to 10: the square of the hopscotch tournament (the end of the story) - the stones are drawn by the game
+SCENY["turniej_klasy"] = {
+    "plyta": f"""A background illustration for a children's game: a festive sunny little square in a park, ready for a
+hopscotch tournament. Across the back, between two tall wooden poles far apart, a garland of little colourful triangular
+flags; behind it a low striped red-and-white tent on the left, two wooden benches at the sides, round flowering bushes,
+round trees and a blue sky. The whole lower half of the picture is an EMPTY, open, smooth, light sandy-beige paved ground
+of big soft flagstones, where the stones of the game and the characters will stand.
+{STYL}
+Wide landscape composition.
+NO chalk drawings, NO hopscotch squares, NO stones, NO numbers, NO characters, NO animals, NO people, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: six or seven soft white clouds in the blue sky, and at least fifteen tufts of grass along the edges of the
+bushes and the flower beds (NOT on the paved ground).
+Same colours, same flags, same tent, same benches. Do NOT move or redraw anything that was already there.""",
+}
+
+# counting to 3: the raspberry thicket in the forest where Bear picks three raspberries for the cake (the end of the story)
+SCENY["malinowy_zagajnik"] = {
+    "plyta": f"""A background illustration for a children's game: a sunny little clearing deep in a friendly forest, full of
+raspberry canes. Tall tree trunks with green crowns at both sides and along the back, soft golden light between them.
+Across the middle of the picture, from the left edge to the right edge, a long low thicket of raspberry bushes, about as
+high as a small child, with many small ripe red raspberries among their green leaves; a little wicker basket and a
+wooden ladder left leaning on a tree at the far right. The grassy ground in the lower part of the picture is EMPTY and
+open where characters will stand. The sky between the crowns is light blue.
+{STYL}
+Wide landscape composition, the bushes in the middle distance.
+NO characters, NO animals, NO people, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass and a few small ferns across the ground in front of the bushes, and a few
+small soft white clouds in the sky between the tree crowns, none touching each other.
+Same colours, same trees, same raspberry bushes, same basket. Do NOT move or redraw anything that was already there.""",
+}
+
+# numbers_1_5: the lakeside stop where Mole's train ends its journey (the end of the story)
+SCENY["stacja_jezioro"] = {
+    "plyta": f"""A background illustration for a children's game: a tiny wooden railway stop on the shore of a calm blue
+forest lake on a sunny day. Along the back of the picture a narrow railway track runs across the whole width, and on it,
+on the LEFT, the same small friendly red toy-like steam locomotive with a tall black chimney and no wagons, standing
+still. Behind the track the lake glitters, with a little wooden pier reaching into the water on the right, a few water
+lilies, reeds at the shore, pine trees and soft hills on the far shore. A small wooden shelter with a bench at the far
+right edge. The lower part of the picture is an EMPTY grassy lakeside platform where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+The SKY IS EMPTY - just sky, NO clouds, NO birds, NO sun.
+The GRASS IS PLAIN - NO tufts, NO flowers, NO stones.
+NO boats, NO characters, NO animals, NO people, NO text, NO numbers.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the platform's grass and a few reeds at the water's edge, each
+separate, and six or seven soft white clouds in the blue sky, none touching each other.
+Same colours, same lake, same locomotive, same pier. Do NOT move or redraw anything that was already there. Do NOT add
+boats, animals, birds or anything else.""",
+}
+
+# numbers_6_10: Beaver's dam on the brook with the hole the ten logs mend (the end of the story)
+SCENY["tama_bobra"] = {
+    "plyta": f"""A background illustration for a children's game: a forest brook in a sunny clearing, seen from its near
+bank. In the middle distance, just below the horizon, Beaver's dam stretches across the whole brook from the left bank
+to the right bank: a long low wall of stacked brown logs and sticks lying sideways. In the MIDDLE of the dam a wide gap
+is missing from the top, about one fifth of the picture's width, and there the water pours through in a little foamy
+waterfall into the brook in front. Behind the dam a calm wide pond reflecting the trees; on the right bank a round
+beaver lodge, a dome of sticks and mud; birches and pines around, soft hills. The near bank in the lower part of the
+picture is EMPTY flat grass where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+The SKY IS EMPTY - just sky, NO clouds, NO birds, NO sun.
+The GRASS IS PLAIN - NO tufts, NO flowers, NO stones.
+NO characters, NO animals, NO loose logs on the grass, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the near bank and a few reeds at the water's edge, each separate,
+and six or seven soft white clouds in the blue sky, none touching each other.
+Same colours, same dam, same gap, same waterfall, same lodge. Do NOT move or redraw anything that was already there.
+Do NOT add logs, animals, birds or anything else.""",
+}
+
 
 def gen(nazwa: str, jakosc: str = "high") -> None:
     kat = KORZEN / nazwa

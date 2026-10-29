@@ -354,7 +354,9 @@ the tag; `ctx.strzalki({kolumny, wiersze, start, cel, przeszkody})` - a program 
 `ctx.cien(h)` - any sticker as its silhouette; `ctx.zagroda({rzeczy, chcemy, wrong, otwarta})` (mechaniki3.js) - a fence drawn with a finger: a closed line round exactly the wanted things builds it, an open one has a gap a thing walks out through; `ctx.plot(pts)` a pencil fence; `ctx.winda({x, pietra})` -> {doPoziomu(i), jedz, wloz, wyjmij} - a basket on a rope over a painted pulley (parts winda_*.webp; the rope is stacked from pieces of the painted one and drawn behind every sticker);  `ctx.ramka({x, y})` -> {wloz, ile, przeciagaj({rzeczy, ile, wrong})} - a ten frame (two rows of five, filled place by place); `ctx.domino(a, b)` - a domino tile of dots, a task target with `suma`; `ctx.znalezisko(name, {skad})` (mechaniki3.js) - a found picture (map, photo, drawing; square or oblong) flies up from
 `skad` and lies big over a dimmed scene; it returns {cele, tlo, zaznacz(), remove()} and the lesson asks with
 `c.task({targets: [...z.cele, z.tlo], correct: z.cele (wszystkie for several)})`, so a tap elsewhere is a miss with the
-hint ladder (`tools/znaleziska/make_znalezisko.py`: gpt-image draws the picture, then an edit with a magenta disc on
+hint ladder, or `c.count(z.cele)` counts the spots by touch (rings, hint arrows and counting digits draw over the picture:
+the spots carry `nadObrazem`; the spots come with `dobry: true`, so reset it before a task or a count, or the autopilot
+taps the first one forever; remove the count's `znaczki` with the picture) (`tools/znaleziska/make_znalezisko.py`: gpt-image draws the picture, then an edit with a magenta disc on
 every spot described in words; the discs found by colour are the `cele`; review `work/<name>_cele.png`); `ctx.labirynt(name, {pionek, cel})` - a painted maze the child leads a pawn through with a finger, cell by cell
 through the openings only, a pencil trail behind (`tools/labirynty/make_labirynt.py`: Python makes a perfect maze and
 its plain plan, gpt-image paints it with the plan as the reference - a hedge maze, forest paths - and the build checks

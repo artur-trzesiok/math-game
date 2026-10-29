@@ -84,11 +84,6 @@
   "who": "jez",
   "text": "My three! Because I'm three years old."
  },
- "line.b_maliny": {
-  "hash": "58158422297a",
-  "who": "mis",
-  "text": "Raspberries grow in the forest. We need three for the cake."
- },
  "line.b_daj": {
   "hash": "19e3ac9f73e4",
   "who": "wiewiorka",
@@ -278,5 +273,35 @@
   "hash": "b22450fa3fe4",
   "who": "narrator",
   "text": "This is Hedgehog's birthday cake with three candles. We got it when we learnt to count to three."
+ },
+ "line.b_zagajnik": {
+  "hash": "fece5734eea6",
+  "who": "mis",
+  "text": "Look how lovely it is here! This is the raspberry thicket. The bushes are full of raspberries."
+ },
+ "line.b_ile_malin": {
+  "hash": "dcd0d9b71fc4",
+  "who": "jez",
+  "text": "But how many raspberries go on the cake?"
+ },
+ "line.b_przepis": {
+  "hash": "e1cd3b44fda5",
+  "who": "mis",
+  "text": "I have Grandma's recipe! The picture shows how many raspberries lie on the cake. Let's count them, then we'll know."
+ },
+ "line.b_przepis_policz": {
+  "hash": "5b6900fa202a",
+  "who": "wiewiorka",
+  "text": "Count the raspberries on the cake in the recipe. Touch each one in turn."
+ },
+ "line.b_przepis_trzy": {
+  "hash": "8c22d9935c13",
+  "who": "wiewiorka",
+  "text": "Three raspberries! The last number tells how many there are. We need three for the cake."
+ },
+ "line.b_zrywamy": {
+  "hash": "822c355ceda6",
+  "who": "mis",
+  "text": "Then let's pick three raspberries from the bushes!"
  }
 }

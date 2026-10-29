@@ -363,7 +363,7 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 5.6, r
     const rr = Math.max(0.45, c.r * W), g = new THREE.Group();
     g.add(new THREE.Mesh(new THREE.CircleGeometry(rr, 24), mat({ opacity: 0, side: THREE.DoubleSide })));
     g.position.set((c.x - 0.5) * W, (0.5 - c.y) * H, 0.05); karta.add(g);
-    return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: true });
+    return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: true, nadObrazem: 39 });   // rings and counting digits draw over the picture
   });
   const tlo = uchwytCelu(S, obraz, { name: `${nazwa}_obraz`, dobry: false });
   // the flight: from whoever found it, small, to the middle, big

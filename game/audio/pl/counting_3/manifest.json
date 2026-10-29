@@ -84,11 +84,6 @@
   "who": "jez",
   "text": "Moja trójka! Bo mam trzy lata."
  },
- "line.b_maliny": {
-  "hash": "73ae8f9c819b",
-  "who": "mis",
-  "text": "W lesie rosną maliny. Na tort potrzebujemy trzech."
- },
  "line.b_daj": {
   "hash": "f8c734f99996",
   "who": "wiewiorka",
@@ -278,5 +273,35 @@
   "hash": "c5de2ff7f7d1",
   "who": "narrator",
   "text": "To urodzinowy tort Jeżyka z trzema świeczkami. Dostaliśmy go, kiedy uczyliśmy się liczyć do trzech."
+ },
+ "line.b_zagajnik": {
+  "hash": "fc256f28aa52",
+  "who": "mis",
+  "text": "Popatrzcie, jak tu pięknie! To malinowy zagajnik. Krzaczki są pełne malin."
+ },
+ "line.b_ile_malin": {
+  "hash": "16d54a7b868e",
+  "who": "jez",
+  "text": "Ale ile malin trzeba położyć na tort?"
+ },
+ "line.b_przepis": {
+  "hash": "63bfcc5db85b",
+  "who": "mis",
+  "text": "Mam przepis od babci! Na obrazku widać, ile malin leży na torcie. Policzmy je, to będziemy wiedzieć."
+ },
+ "line.b_przepis_policz": {
+  "hash": "a35e7f2f07fa",
+  "who": "wiewiorka",
+  "text": "Policz maliny na torcie z przepisu. Dotknij każdej po kolei."
+ },
+ "line.b_przepis_trzy": {
+  "hash": "1d2933550643",
+  "who": "wiewiorka",
+  "text": "Trzy maliny! Ostatnia liczba mówi, ile ich jest. Na tort potrzebujemy trzech."
+ },
+ "line.b_zrywamy": {
+  "hash": "09e707d298fa",
+  "who": "mis",
+  "text": "To zerwijmy z krzaczków trzy maliny!"
  }
 }

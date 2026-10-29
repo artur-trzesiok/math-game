@@ -24,36 +24,6 @@
   "who": "zajac",
   "text": "Aha! Niebo na górze, trawa na dole. Zawsze."
  },
- "line.a_co_na_gorze": {
-  "hash": "06047edd8afb",
-  "who": "lisek",
-  "text": "Co jest na górze, na drzewie? Wskaż."
- },
- "line.a_gora_nie": {
-  "hash": "348be241d2ab",
-  "who": "lisek",
-  "text": "To jest na dole, w trawie. Popatrz wyżej, tam gdzie niebo."
- },
- "line.a_co_na_dole": {
-  "hash": "c4fa363a4a81",
-  "who": "lisek",
-  "text": "A co jest na dole, w trawie? Wskaż."
- },
- "line.a_dol_nie": {
-  "hash": "1858f4c0454d",
-  "who": "lisek",
-  "text": "To jest na górze. Popatrz niżej, na trawę."
- },
- "line.a_dobrze": {
-  "hash": "34a74a845d96",
-  "who": "wiewiorka",
-  "text": "Ptaszek na górze, grzybek na dole!"
- },
- "line.a_winda": {
-  "hash": "08e062cca615",
-  "who": "lisek",
-  "text": "Jabłka są wysoko. Zbudowałem windę: koszyk na linie!"
- },
  "line.a_do_gory": {
   "hash": "3a2032f3e636",
   "who": "lisek",
@@ -243,5 +213,50 @@
   "hash": "0b9989962705",
   "who": "narrator",
   "text": "To ptaszek z jabłoni Wiewiórki. Dostaliśmy go, kiedy uczyliśmy się, co jest na górze, a co na dole."
+ },
+ "line.a_jak_zdjac": {
+  "hash": "f53279d8e2d5",
+  "who": "wiewiorka",
+  "text": "Ale jak zdejmiemy jabłka? Wiszą tak wysoko, a ja nie uniosę ich wszystkich naraz."
+ },
+ "line.a_plan": {
+  "hash": "aa9c81b06caf",
+  "who": "lisek",
+  "text": "Mam pomysł! Narysowałem plan windy, która zwiezie jabłka. Popatrzcie, co gdzie trzeba powiesić."
+ },
+ "line.a_plan_gora": {
+  "hash": "b7e58053bf9f",
+  "who": "lisek",
+  "text": "Co jest na samej górze, na gałęzi? Wskaż."
+ },
+ "line.a_plan_gora_nie": {
+  "hash": "0b800c507c70",
+  "who": "lisek",
+  "text": "Popatrz na samą górę, na koniec długiej gałęzi. Co tam wisi?"
+ },
+ "line.a_plan_kolo": {
+  "hash": "62a5a95d2f78",
+  "who": "lisek",
+  "text": "Tak! Na górze, na gałęzi, wisi kółko. Przez kółko przejdzie lina."
+ },
+ "line.a_plan_dol": {
+  "hash": "c6d426416704",
+  "who": "lisek",
+  "text": "A co jest na samym dole, w trawie? Wskaż."
+ },
+ "line.a_plan_dol_nie": {
+  "hash": "6009cf4b7eab",
+  "who": "lisek",
+  "text": "Popatrz na sam dół, w trawę pod liną. Co tam stoi?"
+ },
+ "line.a_plan_koszyk": {
+  "hash": "f8bd7082e798",
+  "who": "zajac",
+  "text": "Koszyk na dole, w trawie! Przy mnie. Do niego zjadą jabłka."
+ },
+ "line.a_zbudowana": {
+  "hash": "423a8dac096a",
+  "who": "lisek",
+  "text": "Winda gotowa, tak jak na planie: kółko na górze, koszyk na dole."
  }
 }

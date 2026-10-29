@@ -18,7 +18,7 @@ export const CYFRY = {
 import { SUFIT } from "./scene.js";
 
 // draw the number n (0..10) centred on (x, y), `size` = height; never above the ceiling (the phase icons)
-export async function narysujCyfre(S, n, { x = 0, y = 1.2, size = 1.6, color = "#2b2622", width = null, duration = 0.5, strong = true } = {}) {
+export async function narysujCyfre(S, n, { x = 0, y = 1.2, size = 1.6, color = "#2b2622", width = null, duration = 0.5, strong = true, warstwa = 11 } = {}) {
   y = Math.min(y, SUFIT - size / 2);
   const znaki = String(n).split("").map(Number), k = size / 1.4, gap = 0.3 * k;
   const szer = znaki.length * 0.9 * k + (znaki.length - 1) * gap;
@@ -28,7 +28,7 @@ export async function narysujCyfre(S, n, { x = 0, y = 1.2, size = 1.6, color = "
     const map = ([px, py]) => [ox + px * k, oy + py * k];
     for (const s of CYFRY[d]) {
       const path = s.bezier ? { bezier: s.bezier.map(map) } : s.map(map);
-      parts.push(await S.line(path, { color, width: width ?? 0.095 * size, duration: duration / CYFRY[d].length, strong, name: `cyfra_${n}` }));
+      parts.push(await S.line(path, { color, width: width ?? 0.095 * size, duration: duration / CYFRY[d].length, strong, name: `cyfra_${n}`, warstwa }));
     }
   }
   const head = parts[0];
@@ -85,7 +85,7 @@ export function liczDotykiem(S, items, { say, kolor = "#1f5fbf", size = 0.7, od 
       const b = S.bounds(hit);
       const gdzie = hit.etykieta || { x: (b.left + b.right) / 2, y: b.top + size * 0.75 };   // a corner puts its number outside the shape
       // a two-digit badge is drawn smaller, or its 1 and 0 stand as far apart as the badge before: "9 1 0" read as 910
-      znaczki.push(await narysujCyfre(S, od + k, { x: gdzie.x, y: gdzie.y, size: od + k > 9 ? size * 0.72 : size, color: kolor, duration: 0.25 }));
+      znaczki.push(await narysujCyfre(S, od + k, { x: gdzie.x, y: gdzie.y, size: od + k > 9 ? size * 0.72 : size, color: kolor, duration: 0.25, warstwa: hit.nadObrazem }));
       await say(od + k);
       tura();
     };

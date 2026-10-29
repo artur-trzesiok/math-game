@@ -67,9 +67,29 @@
     "who": "jez",
     "text": "Moja trójka! Bo mam trzy lata."
   },
-  "line.b_maliny": {
+  "line.b_zagajnik": {
     "who": "mis",
-    "text": "W lesie rosną maliny. Na tort potrzebujemy trzech."
+    "text": "Popatrzcie, jak tu pięknie! To malinowy zagajnik. Krzaczki są pełne malin."
+  },
+  "line.b_ile_malin": {
+    "who": "jez",
+    "text": "Ale ile malin trzeba położyć na tort?"
+  },
+  "line.b_przepis": {
+    "who": "mis",
+    "text": "Mam przepis od babci! Na obrazku widać, ile malin leży na torcie. Policzmy je, to będziemy wiedzieć."
+  },
+  "line.b_przepis_policz": {
+    "who": "wiewiorka",
+    "text": "Policz maliny na torcie z przepisu. Dotknij każdej po kolei."
+  },
+  "line.b_przepis_trzy": {
+    "who": "wiewiorka",
+    "text": "Trzy maliny! Ostatnia liczba mówi, ile ich jest. Na tort potrzebujemy trzech."
+  },
+  "line.b_zrywamy": {
+    "who": "mis",
+    "text": "To zerwijmy z krzaczków trzy maliny!"
   },
   "line.b_daj": {
     "who": "wiewiorka",

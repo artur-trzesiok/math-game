@@ -67,9 +67,29 @@
     "who": "jez",
     "text": "My three! Because I'm three years old."
   },
-  "line.b_maliny": {
+  "line.b_zagajnik": {
     "who": "mis",
-    "text": "Raspberries grow in the forest. We need three for the cake."
+    "text": "Look how lovely it is here! This is the raspberry thicket. The bushes are full of raspberries."
+  },
+  "line.b_ile_malin": {
+    "who": "jez",
+    "text": "But how many raspberries go on the cake?"
+  },
+  "line.b_przepis": {
+    "who": "mis",
+    "text": "I have Grandma's recipe! The picture shows how many raspberries lie on the cake. Let's count them, then we'll know."
+  },
+  "line.b_przepis_policz": {
+    "who": "wiewiorka",
+    "text": "Count the raspberries on the cake in the recipe. Touch each one in turn."
+  },
+  "line.b_przepis_trzy": {
+    "who": "wiewiorka",
+    "text": "Three raspberries! The last number tells how many there are. We need three for the cake."
+  },
+  "line.b_zrywamy": {
+    "who": "mis",
+    "text": "Then let's pick three raspberries from the bushes!"
   },
   "line.b_daj": {
     "who": "wiewiorka",

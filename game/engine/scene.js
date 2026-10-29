@@ -770,7 +770,7 @@ export class Stage {
     return this.bounds(h);
   }
   // a hand-drawn loop around a thing: a little more than one turn, its end overshooting the start
-  circle(h, { color = ZAKRESLACZ, margin = 0.18, duration = 0.8, width = 0.13 } = {}) {
+  circle(h, { color = ZAKRESLACZ, margin = 0.18, duration = 0.8, width = 0.13, warstwa = h?.nadObrazem ?? 11 } = {}) {
     const b = this._box(h), cx = (b.left + b.right) / 2, cy = (b.bottom + b.top) / 2;
     const rx = (b.right - b.left) / 2 + margin, ry = (b.top - b.bottom) / 2 + margin;
     const pts = [], a0 = 2.2, turns = 1.12, n = 64;
@@ -778,17 +778,17 @@ export class Stage {
       const a = a0 + (i / n) * turns * 2 * Math.PI, r = 1 + 0.06 * (i / n);       // the stroke drifts outwards as a hand does
       pts.push([cx + rx * r * Math.cos(a), cy + ry * r * Math.sin(a)]);
     }
-    return this.line(pts, { color, duration, width, name: "kolko", strong: true });
+    return this.line(pts, { color, duration, width, name: "kolko", strong: true, warstwa });
   }
   // an arrow bending down onto a thing from above-left (or `from`), with a two-stroke head
-  async arrow(h, { from = null, color = ZAKRESLACZ, duration = 0.6, width = 0.13 } = {}) {
+  async arrow(h, { from = null, color = ZAKRESLACZ, duration = 0.6, width = 0.13, warstwa = h?.nadObrazem ?? 11 } = {}) {
     const b = this._box(h), tx = (b.left + b.right) / 2, ty = b.top + 0.12;
     const [fx, fy] = from || [tx - 1.1, Math.min(SUFIT, ty + 1.5)];
     const k = [(fx + tx) / 2 - 0.35, (fy + ty) / 2 + 0.25];
-    const body = await this.line({ bezier: [[fx, fy], k, [tx - 0.1, ty + 0.5], [tx, ty]] }, { color, duration, width, name: "strzalka", strong: true });
+    const body = await this.line({ bezier: [[fx, fy], k, [tx - 0.1, ty + 0.5], [tx, ty]] }, { color, duration, width, name: "strzalka", strong: true, warstwa });
     const ang = Math.atan2(ty - (ty + 0.5), tx - (tx - 0.1)), L = 0.28;
-    const g1 = await this.line([[tx, ty], [tx - L * Math.cos(ang - 0.5), ty - L * Math.sin(ang - 0.5)]], { color, duration: 0.12, width, strong: true });
-    const g2 = await this.line([[tx, ty], [tx - L * Math.cos(ang + 0.5), ty - L * Math.sin(ang + 0.5)]], { color, duration: 0.12, width, strong: true });
+    const g1 = await this.line([[tx, ty], [tx - L * Math.cos(ang - 0.5), ty - L * Math.sin(ang - 0.5)]], { color, duration: 0.12, width, strong: true, warstwa });
+    const g2 = await this.line([[tx, ty], [tx - L * Math.cos(ang + 0.5), ty - L * Math.sin(ang + 0.5)]], { color, duration: 0.12, width, strong: true, warstwa });
     const parts = [g1, g2]; const r0 = body.remove; body.remove = () => { r0(); parts.forEach((p) => p.remove()); };
     return body;
   }
