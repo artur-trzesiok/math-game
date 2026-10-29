@@ -634,6 +634,9 @@ function obwiednia(S, cele) {
 }
 export async function ujecie(S, typ = "ogolny", { na = null, ciecie = true, d = 0.8 } = {}) {
   const lista = (Array.isArray(na) ? na : na ? [na] : []).map((n) => (typeof n === "string" ? S.puppets[n] : n)).filter(Boolean);
+  // something still popping in (grown from nothing) is measured too small: the shot framed an empty box
+  const rosnie = (h) => (h.korzen ? h.korzen.scale.x < 0.97 : h.mesh && h.base ? h.mesh.scale.x < h.base * 0.97 : false);
+  for (let i = 0; i < 8 && lista.some(rosnie); i++) await S.wait(0.06);
   // back from a two-shot: the characters return to their places
   if (S.dwuujecie && typ !== "dwuujecie") { for (const [L, x] of S.dwuujecie) L.korzen.position.x = x; S.dwuujecie = null; }
   const v = S.visible(0);

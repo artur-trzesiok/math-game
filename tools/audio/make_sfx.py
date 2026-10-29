@@ -56,9 +56,22 @@ SFX = {
     "koniec":  ("a classic cartoon ending sound: a soft magical slide whistle rising in pitch for one and a half seconds "
                 "while a circle closes, then a sweet short glockenspiel 'ding-ding' closing chord, gentle and happy, "
                 "children's animation, no voices", 2.2),
+    # the ordering lesson's owlet choir: the rehearsal in order, then sung wrong after Bunny's prank
+    "chor_sowiatek": ("three tiny baby owls singing a short cheerful wordless little song together, made only of soft cute "
+                      "owl hoots and coos, a simple happy tune going down and up, high sweet voices, children's animation, "
+                      "no human voice, no instruments", 4.0),
+    "chor_falsz": ("three tiny baby owls trying to sing a short wordless song of soft owl hoots but it goes funny and out "
+                   "of tune, hoots in the wrong order, a wobbly sour note at the end, comic, children's animation, no human "
+                   "voice, no instruments", 3.5),
     "etap":    ("a short bright playful chime announcing the next part of a children's game: three rising "
                 "glockenspiel notes and a little sparkle, warm and happy, no voices", 1.2),
 }
+# tuned notes (the ordering lesson's water glasses and owlet choir): always synthesised - a scale needs exact pitches
+SZKLO = {"szklo_1": 523.25, "szklo_2": 659.25, "szklo_3": 783.99, "szklo_4": 1046.50}      # C5 E5 G5 C6
+HU = {"hu_1": 783.99, "hu_2": 659.25, "hu_3": 523.25}                                      # the smallest owlet sings highest
+for _n in SZKLO: SFX[_n] = ("a glass with water tapped with a spoon, tuned", 1.2)
+for _n in HU: SFX[_n] = ("a soft owlet hoot, tuned", 0.7)
+STROJONE = set(SZKLO) | set(HU)
 
 SR = 44100
 PETLE = {"melodyjka"}       # music loops (sfx.muzyka): written as WAV, gapless
@@ -109,6 +122,17 @@ def _at(x, t0, total):
 
 def synth(name: str) -> np.ndarray:
     rng = np.random.default_rng(int(hashlib.md5(name.encode()).hexdigest()[:8], 16))
+    if name in SZKLO:                      # a glass: a pure partial, its inharmonic overtones fading fast, a tick of the spoon
+        f, t = SZKLO[name], _t(1.2)
+        tone = (np.sin(2 * np.pi * f * t) * _env(len(t), 0.002, 0.55) + 0.22 * np.sin(2 * np.pi * f * 2.32 * t) * _env(len(t), 0.001, 0.12)
+                + 0.08 * np.sin(2 * np.pi * f * 4.25 * t) * _env(len(t), 0.001, 0.05)) * (1 + 0.004 * np.sin(2 * np.pi * 5 * t))
+        return _mix(tone, 0.25 * _band(_noise(0.01, rng), 3000, 8000) * _env(int(SR * 0.01), 0.0005, 0.003))
+    if name in HU:                         # a hoot: a soft "hu" rising a little into its note, a gentle vibrato
+        f0, d = HU[name], 0.6
+        t = _t(d); f = f0 * (0.94 + 0.06 * np.minimum(1, t / 0.08)) * (1 + 0.012 * np.sin(2 * np.pi * 5.5 * t))
+        ph = 2 * np.pi * np.cumsum(f) / SR
+        x = np.sin(ph) + 0.18 * np.sin(2 * ph) + 0.05 * np.sin(3 * ph)
+        return x * np.minimum(1, t / 0.05) * np.minimum(1, (d - t) / 0.18) + 0.03 * _band(_noise(d, rng), 400, 1500) * np.sin(np.pi * t / d)
     if name == "pop":
         x = _slide(900, 260, 0.09, 0.6) * _env(int(SR * 0.09), 0.002, 0.035)
         return _mix(x, 0.3 * _band(_noise(0.012, rng), 2000, 6000) * _env(int(SR * 0.012), 0.0005, 0.004))
@@ -266,15 +290,15 @@ def main() -> int:
         if not only and dst.exists() and manifest.get(name) in (digest(name, "synth"), digest(name, "elevenlabs")):
             continue
         try:
-            if backend == "elevenlabs" and name not in PETLE:        # a loop is always synthesised (exact length)
+            if backend == "elevenlabs" and name not in PETLE and name not in STROJONE:        # loops and tuned notes: always synthesised
                 try:
                     generate_elevenlabs(name, dst)
                 except BrakUprawnien:
                     print("  the key lacks the sound_generation permission: synthesising instead")
                     backend = "synth"
-            if backend == "synth" or name in PETLE:
+            if backend == "synth" or name in PETLE or name in STROJONE:
                 generate_synth(name, dst)
-            manifest[name] = digest(name, backend)
+            manifest[name] = digest(name, "synth" if name in STROJONE else backend)
             done += 1
             print(f"  {name:8s} ok, {backend} ({dst.stat().st_size // 1024} kB)")
         except Exception as e:  # keep going, report at the end

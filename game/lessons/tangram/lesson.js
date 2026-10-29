@@ -60,53 +60,89 @@ export default {
       // A. the room at night: puppets from shapes; Bear throws away the triangle; Owl turns it - it fits
       async (c) => {
         await Promise.all(["sowa", "mis", "wiewiorka"].map((n) => c.enter(n, n === "wiewiorka" ? "right" : "left")));
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.a_teatr", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.a_lalki");
+        await c.ujecie("sredni", { na: ["sowa", "mis"] });
         await c.say("sowa", "line.a_z_ksztaltow", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         const t = await c.tangram("domek", { x: 0.8, y: 1.0, scale: 3.6, obroty: [0, 0] });
         await c.say("mis", "line.a_pomoge");
         const tr = t.kawalki.find((k) => k.tag === "M");
         await tr.moveTo(t.sloty[1].x, t.sloty[1].y, 0.5); c.stage.shake(tr);
+        await c.ujecie("zblizenie", { na: "mis" });
+        await c.emocja("mis", "smutek", { anim: "Smutek" });
         await c.say("mis", "line.a_nie_pasuje", { anim: "Smutek" });
+        await c.ujecie("ogolny");
         await tr.moveTo(3.4, -2.6, 0.5);
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.wonder("sowa");
         await c.say("sowa", "line.a_nie_wyrzucaj");
+        await c.ujecie("sredni", { na: ["sowa", tr] });   // the thrown-away triangle: turn it
         await c.say("sowa", "line.a_obroc");
+        await c.ujecie("ogolny");
         await tr.moveTo(tr.home.x, tr.home.y, 0.4);
         await t.done();
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.a_pasuje", { anim: "Radosc" });
+        await c.ujecie("sredni", { na: t.kawalki });   // the house's shadow comes alive
         await ozyw(c, t, "kiw");
+        await c.ujecie("sredni", { na: ["sowa", "mis"] });
         await c.say("sowa", "line.a_do_teatru");
+        await c.ujecie("ogolny");
         c.clear();
       },
       // B. the theatre: each puppet built on the sheet comes alive - the fish swims, the boat sails, a cat
       async (c) => {
         await c.go("teatrzyk", { enter: true });
         await Promise.all(["sowa", "mis", "wiewiorka"].map((n) => c.enter(n, n === "wiewiorka" ? "right" : "left")));
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_ekran");
+        await c.ujecie("sredni", { na: ["sowa", "mis"] });
         await c.say("sowa", "line.b_ryba");
+        await c.ujecie("ogolny");
         let t = await uloz(c, "ryba", { ...EKRAN, scale: 3.2 });
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_plynie", { anim: "Radosc" });
-        await ozyw(c, t, "plyn"); c.clear();
+        await c.ujecie("sredni", { na: t.kawalki });   // the fish's shadow swims
+        await ozyw(c, t, "plyn");
+        await c.ujecie("ogolny"); c.clear();
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.b_lodka");
+        await c.ujecie("ogolny");
         t = await uloz(c, "lodka", { ...EKRAN, scale: 3.0 });
+        await c.ujecie("sredni", { na: t.kawalki });
         await ozyw(c, t, "kolys");
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.b_plynie_lodka", { anim: "Brawo" });
+        await c.ujecie("ogolny");
         c.clear();
         // the same pieces, a new picture: a cat
+        await c.ujecie("sredni", { na: ["sowa"] });
         await c.say("sowa", "line.b_kot", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         t = await uloz(c, "kot", { ...EKRAN, scale: 2.3 });
+        await c.ujecie("sredni", { na: t.kawalki });
         await ozyw(c, t, "kiw");
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_miau", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.clear();
         // the breather: whose shadow is it?
         await czyjCien(c, "zajac", ["zajac", "jez", "kaczka_mama"], "line.b_czyj", "line.b_czyj_nie");
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_zajac");
+        await c.ujecie("ogolny");
         c.clear();
         // the show: the audience claps
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.b_przedstawienie", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.sfx("clap"); await Promise.all([c.play("mis", "Brawo"), c.play("wiewiorka", "Brawo")]);
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.b_koniec");
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -115,9 +151,17 @@ export default {
         c.show("sowa"); c.show("wiewiorka");
         S.puppets.sowa.korzen.position.x = -5.2; S.puppets.wiewiorka.korzen.position.x = 5.2;
         const gw = c.gwiazdki(5, { auto: false });
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.p_start", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         // 1. a fish
-        { await c.say("wiewiorka", "line.p_ryba"); await uloz(c, "ryba"); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.say("wiewiorka", "line.p_ryba");
+          const t = await uloz(c, "ryba");
+          await c.ujecie("sredni", { na: ["sowa", ...t.kawalki] });   // the finished fish
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 2. which piece fits the gap in the house?
         {
           const brak = "M", t = await c.tangram("domek", { x: 0, y: 1.3, scale: 3.2 });
@@ -130,29 +174,61 @@ export default {
           await c.say("wiewiorka", "line.p_luka");
           const ok = cele[opcje.indexOf(brak)];
           dobre(ok); await c.task({ targets: cele, correct: ok, onWrong: (hit) => c.say("wiewiorka", hit.tag === "L" ? "line.p_za_duzy" : "line.p_inny") });
-          await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "sowa" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         // 3. a boat with its pieces turned
-        { await c.say("sowa", "line.p_lodka"); await uloz(c, "lodka"); await c.say("wiewiorka", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["sowa"] });
+          await c.say("sowa", "line.p_lodka");
+          await c.ujecie("ogolny");
+          await uloz(c, "lodka");
+          await c.ujecie("zblizenie", { na: "wiewiorka" });
+          await c.say("wiewiorka", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 4. whose shadow?
-        { await czyjCien(c, "jez", ["jez", "mysz", "kura"], "line.p_czyj", "line.b_czyj_nie"); await c.say("wiewiorka", "line.p_jez"); gw.dodaj(); c.clear(); }
+        {
+          await czyjCien(c, "jez", ["jez", "mysz", "kura"], "line.p_czyj", "line.b_czyj_nie");
+          await c.ujecie("zblizenie", { na: "wiewiorka" });
+          await c.say("wiewiorka", "line.p_jez"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 5. a cat
-        { await c.say("wiewiorka", "line.p_kot"); await uloz(c, "kot", { scale: 2.6 }); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.say("wiewiorka", "line.p_kot");
+          const t = await uloz(c, "kot", { scale: 2.6 });
+          await c.ujecie("sredni", { na: ["sowa", ...t.kawalki] });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.praise("sowa");
+        await c.ujecie("ogolny");
       },
     ],
     apply: [
       // home, the kitchen: a square from two triangles, then a house - as with paper at home
       async (c) => {
         for (const n of ["sowa", "mis"]) c.show(n);
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.h_kuchnia", { anim: "Zgloszenie" });
-        await uloz(c, "kwadrat", { x: 0.6 });
+        await c.ujecie("ogolny");
+        const k = await uloz(c, "kwadrat", { x: 0.6 });
+        await c.ujecie("sredni", { na: ["sowa", ...k.kawalki] });   // the square from two triangles
         await c.say("sowa", "line.h_kwadrat");
+        await c.ujecie("ogolny");
         c.clear();
+        await c.ujecie("sredni", { na: ["mis"] });
         await c.say("mis", "line.h_domek");
+        await c.ujecie("ogolny");
         await uloz(c, "domek", { x: 0.6 });
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.h_dobrze", { anim: "Brawo" });
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.h_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

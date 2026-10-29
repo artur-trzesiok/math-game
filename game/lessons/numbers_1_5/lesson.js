@@ -68,31 +68,51 @@ export default {
       // A. the station: Mole's train; Bear's ticket costs four coins; the digit 4
       async (c) => {
         await c.enter("kret");
+        await c.ujecie("sredni", { na: ["kret"] });
         await c.say("kret", "line.a_pociag", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         await Promise.all([c.enter("mis", "right"), c.enter("sowa")]);
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.a_chce", { anim: "Podskok" });
+        await c.ujecie("sredni", { na: ["kret", "sowa"] });
         await c.say("kret", "line.a_bilet", { anim: "Zgloszenie" });
         await c.say("kret", "line.a_cztery");
-        await c.digit(4, { x: 0.8, y: 1.2, size: 1.8 });
+        await c.ujecie("ogolny");
+        const d4 = await c.digit(4, { x: 0.8, y: 1.2, size: 1.8 });
+        await c.ujecie("sredni", { na: [d4] });                  // the new digit fills the screen
         await c.say("kret", "line.a_to_cztery");
+        await c.ujecie("ogolny");
         c.clear();
         await c.say("sowa", "line.a_zaplac");
         const s = await c.sklepik({ towar: "bilet", cena: 4, pokaz: "cyfra", x: 0.8, onZaDuzo: () => c.say("kret", "line.a_za_duzo") });
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.a_cztery_monety", { anim: "Kiwanie" });
+        await c.ujecie("ogolny");
         s.remove();
         // the child writes the 4 on Bear's ticket
         await c.say("kret", "line.a_napisz");
         await c.object("bilet", { x: 0.8, y: 0.4, size: 4.4 });
         const t = await c.slad(4, { x: 0.8, y: 0.4, size: 2.4 });
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.a_moj_bilet", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         t.remove(); c.clear();
       },
       // B. the passengers board the wagon of their ticket's number; off into the forest
       async (c) => {
         const w = await wagony(c);
+        await c.ujecie("sredni", { na: ["kret", ...w] });
         await c.say("kret", "line.b_wagony");
-        for (const [i, n] of [[0, 2], [1, 5], [2, 3]]) { await wsiadanie(c, w, PASAZEROWIE[i], n, `line.b_bilet${n}`); await c.say("kret", "line.b_wsiada"); }
+        await c.ujecie("ogolny");
+        for (const [i, n] of [[0, 2], [1, 5], [2, 3]]) {
+          const p = await wsiadanie(c, w, PASAZEROWIE[i], n, `line.b_bilet${n}`);
+          await c.ujecie("sredni", { na: [p, w[n - 1]] });       // the passenger in the wagon of the ticket
+          await c.say("kret", "line.b_wsiada");
+          await c.ujecie("ogolny");
+        }
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.b_odjazd", { anim: "Machanie" });
+        await c.ujecie("ogolny");
         c.sfx("dzwonek"); c.clear();
       },
       // C. the forest: Bear's five apples far apart, Owl's five close - "mine are more!"; the digit 5; the bell
@@ -103,21 +123,33 @@ export default {
         const misia = [], sowy = [];
         for (let i = 0; i < 5; i++) misia.push(await c.object("jablko", { x: -3.6 + i * 1.8, y: 1.85, size: 1.0 }));
         for (let i = 0; i < 5; i++) sowy.push(await c.object("gruszka", { x: -0.9 + i * 0.95, y: -0.6, size: 0.8 }));
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.c_wiecej", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.wonder("sowa");
         await c.say("sowa", "line.c_policz");
+        await c.ujecie("ogolny");
         await c.count(misia, { who: "sowa" });
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.c_piec_misia");
+        await c.ujecie("ogolny");
         await c.count(sowy, { who: "sowa" });
+        await c.ujecie("sredni", { na: ["sowa", ...sowy] });
         await c.say("sowa", "line.c_tyle_samo", { anim: "Zgloszenie" });
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.c_rozumiem", { anim: "Kiwanie" });
+        await c.ujecie("ogolny");
         c.clear();
         await c.say("sowa", "line.c_cyfra5");
-        await c.digit(5, { x: 0.8, y: 1.2, size: 1.8 });
+        const d5 = await c.digit(5, { x: 0.8, y: 1.2, size: 1.8 });
+        await c.ujecie("sredni", { na: [d5] });
         await c.say("sowa", "line.c_to_piec");
+        await c.ujecie("ogolny");
         c.clear();
         // the breather: how many times did the conductor ring the bell?
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.c_dzwonek", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         const dz = await c.object("dzwonek", { x: 0.6, y: 1.4, size: 1.6 });
         const ile = 3 + Math.floor(Math.random() * 3);
         await c.dzwieki(ile, { dzwiek: "dzwonek", rzecz: dz, tempo: 0.7 });
@@ -125,19 +157,25 @@ export default {
         await c.say("sowa", "line.c_ile_dzwonkow");
         const ok = k.find((q) => q.liczba === ile);
         dobre(ok); await c.task({ targets: k, correct: ok, wrong: "line.c_ile_dzwonkow" });
+        await c.ujecie("sredni", { na: ["kret", dz] });
         await c.say("kret", `line.c_dzwonek${ile}`);
+        await c.ujecie("ogolny");
         c.clear();
       },
       // D. the lake: five passengers get off - count them
       async (c) => {
         await c.go("laka", { enter: true });
         await Promise.all(["kret", "mis", "sowa"].map((n) => c.enter(n, n === "mis" ? "right" : "left")));
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.d_jezioro", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         const p = [];
         for (const [i, n] of PASAZEROWIE.entries()) p.push(await c.object(n, { x: -1.6 + i * 1.3, y: 1.5 - (i % 2) * 0.8, size: 1.5 }));
         await c.say("mis", "line.d_ilu");
         await c.count(p, { who: "mis" });
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.d_pieciu", { anim: "Brawo" });
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -155,20 +193,32 @@ export default {
           await c.say("kret", "line.p_ile");
           const ok = k.find((q) => q.liczba === ile);
           dobre(ok); await c.task({ targets: k, correct: ok, wrong: "line.p_ile_nie" });
-          await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "sowa" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 2. a ticket for five coins
-        { await c.say("kret", "line.p_bilet5"); await c.sklepik({ towar: "bilet", cena: 5, pokaz: "cyfra", onZaDuzo: () => c.say("kret", "line.a_za_duzo") }); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.say("kret", "line.p_bilet5"); await c.sklepik({ towar: "bilet", cena: 5, pokaz: "cyfra", onZaDuzo: () => c.say("kret", "line.a_za_duzo") });
+          await c.ujecie("zblizenie", { na: "sowa" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
+        }
         // 3. write the 5
-        { await c.say("sowa", "line.p_napisz5"); const t = await c.slad(5, { x: 0, y: 0.4, size: 2.8 }); t.remove(); await c.say("kret", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.say("sowa", "line.p_napisz5"); const t = await c.slad(5, { x: 0, y: 0.4, size: 2.8 }); t.remove();
+          await c.ujecie("zblizenie", { na: "kret" });
+          await c.say("kret", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
+        }
         // 4. which basket has four?
         {
           const kupki = [];
           for (const [i, n] of tasuj([3, 4, 5]).entries()) { const h = await c.kupka("jablko", n, { x: -2.4 + i * 2.4, y: 0.8, size: 1.7 }); h.ile = n; kupki.push(h); }
+          await c.ujecie("sredni", { na: kupki });               // the baskets, before the question
           await c.say("sowa", "line.p_cztery");
+          await c.ujecie("ogolny");
           const ok = kupki.find((h) => h.ile === 4);
           dobre(ok); await c.task({ targets: kupki, correct: ok, wrong: "line.p_cztery_nie" });
-          await c.say("kret", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "kret" });
+          await c.say("kret", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 5. Mole hops along the stones - which stone is four?
         {
@@ -178,7 +228,9 @@ export default {
           dobre(ok); await c.task({ targets: os.kamienie.filter((k) => k.liczba > 0), correct: ok, wrong: "line.p_kamienie_nie" });
           S.puppets.kret.korzen.position.x = os.pole(0)[0];
           await os.skocz("kret", 0, 4);
+          await c.ujecie("zblizenie", { na: "kret" });
           await c.say("kret", "line.p_doskoczylem", { anim: "Radosc" });
+          await c.ujecie("ogolny");
           gw.dodaj(); c.clear(); S.puppets.kret.korzen.position.x = -5.2;
         }
         await c.praise("sowa");
@@ -188,21 +240,28 @@ export default {
       // home: pack five things for tomorrow's trip; how many fingers on a hand
       async (c) => {
         for (const n of ["kret", "mis"]) c.show(n);
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.h_jutro", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         const plecak = await c.object("plecak", { x: 0.2, y: -1.7, size: 2.0 });
         const rzeczy = [];
         for (const [i, n] of ["jablko", "kanapka_1", "czapka", "pilka", "ksiazeczka", "skarpetka", "kubek"].entries()) rzeczy.push(await c.object(n, { x: -3.0 + i * 1.0, y: 1.5 - (i % 2) * 0.7, size: 0.9 }));
         await c.say("kret", "line.h_spakuj");
         await spakuj(c, rzeczy, plecak, 5, "line.h_za_duzo");
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.h_spakowane", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.clear();
-        await c.object("gest_papier", { x: 0, y: 1.3, size: 2.6 });
+        const reka = await c.object("gest_papier", { x: 0, y: 1.3, size: 2.6 });
         const k = await karty(c, [3, 4, 5], { xs: [-1.6, 0, 1.6] });
         await c.say("mis", "line.h_palce");
         const ok = k.find((q) => q.liczba === 5);
         dobre(ok); await c.task({ targets: k, correct: ok, wrong: "line.h_palce_nie" });
+        await c.ujecie("sredni", { na: [reka, ok] });             // the hand and its five
         await c.say("kret", "line.h_piec_palcow");
+        await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.h_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

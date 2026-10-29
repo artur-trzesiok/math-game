@@ -197,10 +197,12 @@ export class Stage {
     if (s0) m.scale.copy(s0); else m.scale.setScalar(base); h.bumping = false;
   }
   async shake(h) {
-    const m = this.meshOf(h), x0 = m.position.x;
+    // an offset on top of wherever it is: restoring the x of the shake's start pulled a thing sent home meanwhile back
+    // under the wrong place (an owlet landed on another one)
+    const m = this.meshOf(h); let o = 0;
     this.sfx.graj("wrong");
-    await this.tween(0.4, (s) => { m.position.x = x0 + 0.12 * Math.sin(s * Math.PI * 4) * (1 - s); });
-    m.position.x = x0;
+    await this.tween(0.4, (s) => { const n = 0.12 * Math.sin(s * Math.PI * 4) * (1 - s); m.position.x += n - o; o = n; });
+    m.position.x -= o;
   }
   wait(s) { return new Promise((ok) => setTimeout(ok, s * 1000)); }
 

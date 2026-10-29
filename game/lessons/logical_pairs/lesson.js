@@ -28,50 +28,74 @@ export default {
       async (c) => {
         c.czastki("liscie", { wiatr: 2.0 });
         await Promise.all(["bobr", "kret", "sarenka"].map((n) => c.enter(n)));
+        await c.ujecie("zblizenie", { na: "bobr" });
         await c.say("bobr", "line.a_burza", { anim: "Smutek" });
+        await c.ujecie("ogolny");
         c.czastki("liscie", { wiatr: 0.4 });
         const kubek = await c.object("kubek_czerwony", { x: -0.6, y: 1.6, size: 1.2 }), jablko = await c.object("jablko", { x: 2.2, y: 1.2, size: 1.2 });
         const fil = await c.object("filizanka", { x: 0.9, y: -1.9, size: 1.2 }), sp = await c.object("spodek", { x: 2.6, y: -2.2, size: 1.3 });
+        await c.ujecie("sredni", { na: ["kret"] });
         await c.say("kret", "line.a_pomoge", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await kubek.moveTo(1.4, 1.2, 0.5);
+        await c.ujecie("sredni", { na: [kubek, jablko] });                 // Mole's "pair": the two red things
         await c.say("kret", "line.a_kolor");
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.a_nie", { anim: "Kiwanie" });
+        await c.ujecie("sredni", { na: [fil, sp] });
         await c.say("sarenka", "line.a_razem");
         await sp.moveTo(0.9, -2.35, 0.4); await fil.moveTo(0.9, -1.85, 0.3); c.sfx("plop");
         await c.say("sarenka", "line.a_filizanka");
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.a_rozumiem");
+        await c.ujecie("sredni", { na: ["bobr"] });
         await c.say("bobr", "line.a_do_warsztatu");
+        await c.ujecie("ogolny");
         c.clear();
       },
       // B. the workshop: the child joins the pairs; Deer's door and the key that fits; catching leaves
       async (c) => {
         await c.go("warsztat", { enter: true });
         await Promise.all(["bobr", "kret", "sarenka"].map((n) => c.enter(n)));
+        await c.ujecie("sredni", { na: ["bobr"] });
         await c.say("bobr", "line.b_rzeczy");
+        await c.ujecie("ogolny");
         await c.say("bobr", "line.b_polacz");
-        const { w } = await laczPary(c, [["pedzel", "farby"], ["pszczola", "kwiatek"], ["mlotek", "gwozdz"]]);
+        const { L, P, w } = await laczPary(c, [["pedzel", "farby"], ["pszczola", "kwiatek"], ["mlotek", "gwozdz"]]);
+        await c.ujecie("sredni", { na: [...L, ...P] });                    // the joined pairs while Mole names them
         await c.say("kret", "line.b_pasuja", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         w.remove(); c.clear();
         // helping: Deer's round door has a star keyhole - which key opens it?
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.b_drzwi", { anim: "Smutek" });
-        await c.object("drzwi_gwiazda", { x: 2.4, y: 0.4, size: 2.3 });
+        await c.ujecie("ogolny");
+        const drzwi = await c.object("drzwi_gwiazda", { x: 2.4, y: 0.4, size: 2.3 });
         const klucze = [];
         for (const [i, n] of tasuj(["klucz_gwiazda", "klucz_kolo", "klucz_kwadrat"]).entries()) klucze.push(await c.object(n, { x: -2.2 + i * 1.3, y: 0.9, size: 1.5 }));
+        await c.ujecie("sredni", { na: [drzwi, ...klucze] });
         await c.say("bobr", "line.b_klucz");
+        await c.ujecie("ogolny");
         const ok = klucze.find((k) => k.name === "klucz_gwiazda");
         dobre(ok); await c.task({ targets: klucze, correct: ok, wrong: "line.b_klucz_nie" });
         await ok.moveTo(2.4, 0.4, 0.5); c.sfx("tap");
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.emocja("sarenka", "serce", { anim: "Radosc" });
         await c.say("sarenka", "line.b_otwarte");
+        await c.ujecie("ogolny");
         c.clear();
         // the breather: the last leaves of the storm fall - catch three
+        await c.ujecie("sredni", { na: ["kret"] });
         await c.say("kret", "line.b_liscie", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         for (const [x, y] of tasuj([[-2.2, 1.4], [0.2, 2.0], [2.2, 1.0], [-0.8, 0.4], [1.4, 0.2]]).slice(0, 3)) {
           const l = await c.object(Math.random() < 0.5 ? "lisc_czerwony" : "lisc_zolty", { x, y, size: 1.0 });
           dobre(l); await c.task({ targets: [l], correct: l, wrong: "line.b_liscie" });
           c.sfx("pop"); l.remove();
         }
+        await c.ujecie("sredni", { na: ["bobr"] });
         await c.say("bobr", "line.b_koniec");
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -80,30 +104,65 @@ export default {
         c.show("bobr"); c.show("sarenka");
         S.puppets.bobr.korzen.position.x = -5.3; S.puppets.sarenka.korzen.position.x = 5.3;
         const gw = c.gwiazdki(5, { auto: false });
+        await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.p_start", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         // 1. join three pairs
-        { await c.say("bobr", "line.p_polacz"); const { w } = await laczPary(c, [["skarpetka", "but"], ["lyzka", "miska"], ["filizanka", "spodek"]]); await c.say("sarenka", "line.p_dobrze"); w.remove(); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["bobr"] });
+          await c.say("bobr", "line.p_polacz");
+          await c.ujecie("ogolny");
+          const { w } = await laczPary(c, [["skarpetka", "but"], ["lyzka", "miska"], ["filizanka", "spodek"]]);
+          await c.ujecie("zblizenie", { na: "sarenka" });
+          await c.say("sarenka", "line.p_dobrze");
+          await c.ujecie("ogolny"); w.remove(); gw.dodaj(); c.clear();
+        }
         // 2. what goes with the bee?
         {
-          await c.object("pszczola", { x: 0, y: 1.7, size: 1.6 });
+          const bee = await c.object("pszczola", { x: 0, y: 1.7, size: 1.6 });
           const op = []; for (const [i, n] of tasuj(["kwiatek", "mlotek", "kubek"]).entries()) op.push(await c.object(n, { x: -2.0 + i * 2.0, y: -1.3, size: 1.4 }));
+          await c.ujecie("sredni", { na: [bee] });
           await c.say("sarenka", "line.p_pszczola");
+          await c.ujecie("ogolny");
           const ok = op.find((h) => h.name === "kwiatek");
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_pszczola_nie" });
-          await c.say("bobr", "line.p_kwiatek"); gw.dodaj(); c.clear();
+          await c.ujecie("sredni", { na: [bee, ok] });
+          await c.say("bobr", "line.p_kwiatek"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         // 3. memory of pairs: a thing and the one it goes with
-        { await c.say("bobr", "line.p_memory"); await c.memory([[{ obraz: "mlotek" }, { obraz: "gwozdz" }], [{ obraz: "pedzel" }, { obraz: "farby" }], [{ obraz: "kura" }, { obraz: "jajko" }], [{ obraz: "skarpetka" }, { obraz: "but" }]], { szer: 1.4 }); await c.say("sarenka", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["bobr"] });
+          await c.say("bobr", "line.p_memory");
+          await c.ujecie("ogolny");
+          await c.memory([[{ obraz: "mlotek" }, { obraz: "gwozdz" }], [{ obraz: "pedzel" }, { obraz: "farby" }], [{ obraz: "kura" }, { obraz: "jajko" }], [{ obraz: "skarpetka" }, { obraz: "but" }]], { szer: 1.4 });
+          await c.ujecie("zblizenie", { na: "sarenka" });
+          await c.say("sarenka", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 4. which does not belong? a cup, a saucer - and a hammer
         {
           const op = []; for (const [i, n] of tasuj(["filizanka", "spodek", "mlotek"]).entries()) op.push(await c.object(n, { x: -2.0 + i * 2.0, y: 0.8, size: 1.5 }));
+          await c.ujecie("sredni", { na: op });
           await c.say("sarenka", "line.p_nie_pasuje");
+          await c.ujecie("ogolny");
           const ok = op.find((h) => h.name === "mlotek");
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_nie_pasuje_nie" });
-          await c.say("bobr", "line.p_mlotek"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "bobr" });
+          await c.say("bobr", "line.p_mlotek"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         // 5. join another three
-        { await c.say("bobr", "line.p_polacz"); const { w } = await laczPary(c, [["mlotek", "gwozdz"], ["kura", "jajko"], ["klucz_gwiazda", "drzwi_gwiazda"]]); await c.say("sarenka", "line.p_dobrze"); w.remove(); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["bobr"] });
+          await c.say("bobr", "line.p_polacz");
+          await c.ujecie("ogolny");
+          const { w } = await laczPary(c, [["mlotek", "gwozdz"], ["kura", "jajko"], ["klucz_gwiazda", "drzwi_gwiazda"]]);
+          await c.ujecie("zblizenie", { na: "sarenka" });
+          await c.say("sarenka", "line.p_dobrze");
+          await c.ujecie("ogolny"); w.remove(); gw.dodaj(); c.clear();
+        }
         await c.praise("sarenka");
       },
     ],
@@ -111,11 +170,17 @@ export default {
       // home, the hallway: everybody's things back with their pairs
       async (c) => {
         for (const n of ["bobr", "kret", "sarenka"]) c.show(n);
+        await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
+        await c.ujecie("sredni", { na: ["kret"] });
         await c.say("kret", "line.d_przedpokoj", { anim: "Zgloszenie" });
-        const { w } = await laczPary(c, [["skarpetka", "but"], ["pedzel", "farby"], ["filizanka", "spodek"]]);
+        await c.ujecie("ogolny");
+        const { L, P, w } = await laczPary(c, [["skarpetka", "but"], ["pedzel", "farby"], ["filizanka", "spodek"]]);
+        await c.ujecie("sredni", { na: [...L, ...P] });
         await c.say("kret", "line.d_porzadek", { anim: "Radosc" });
         w.remove();
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.d_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

@@ -334,6 +334,58 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null } = 
   cele.forEach((c) => c.remove());
   return { ...h, ile: cele.length, remove: () => { h.remove(); kolka.forEach((k) => k.remove()); } };
 }
+// ===================================================================== a found picture (znalezisko)
+// game/assets/znaleziska/<name> (tools/znaleziska): a picture someone found - a map, a photo, a drawing, square or
+// oblong - flies up from `skad` (a character's name or a handle) and lies big in the middle over a dimmed scene. It
+// has `cele`: n spots to mark (one or more); the lesson asks with c.task({targets: z.cele.concat(z.tlo), correct:
+// z.cele, wszystkie: n > 1}), so a tap elsewhere on the picture is a miss with the usual hint ladder. `zaznacz()`
+// rings the spots in pencil; `remove()` puts the picture away.
+export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 5.6, rama = "#fffaf0", obrot = -2.5 } = {}) {
+  const kat = `/game/assets/znaleziska/${nazwa}/`;
+  const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
+  const tex = await texture(kat + "obraz.webp");
+  const ar = meta.wysokosc / meta.szerokosc, W = ar > 1 ? size / ar * 1.0 : size, H = W * ar, b = 0.32;
+  const mat = (o) => new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, ...o });
+  // the veil: the scene goes quiet behind the picture
+  const welon = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), mat({ color: "#1d1a17", opacity: 0 }));
+  welon.position.set(0, 0, 0.42); welon.renderOrder = 38;             // over the characters (20-30): the picture is all there is S.scene.add(welon);
+  const grp = new THREE.Group(); S.scene.add(grp);
+  const karta = new THREE.Group(); karta.rotation.z = obrot * Math.PI / 180; grp.add(karta);
+  const cien = new THREE.Mesh(new THREE.PlaneGeometry(W + b, H + b), mat({ color: "#000000", opacity: 0.28 }));
+  cien.position.set(0.14, -0.16, -0.02); cien.renderOrder = 38.2;
+  const brzeg = new THREE.Mesh(new THREE.PlaneGeometry(W + b, H + b), mat({ color: rama })); brzeg.position.z = -0.01; brzeg.renderOrder = 38.4;
+  const obraz = new THREE.Mesh(new THREE.PlaneGeometry(W, H), mat({ map: tex })); obraz.renderOrder = 38.6;
+  karta.add(cien, brzeg, obraz);
+  const h = { mesh: grp, kind: "znalezisko", name: nazwa, base: 1, remove: () => { S.scene.remove(grp); S.scene.remove(welon); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
+  S.objects.push(h);
+  // the spots: invisible discs on the picture (in the card, so they turn with it); the rest of the picture is a miss
+  const cele = meta.cele.map((c, k) => {
+    const rr = Math.max(0.45, c.r * W), g = new THREE.Group();
+    g.add(new THREE.Mesh(new THREE.CircleGeometry(rr, 24), mat({ opacity: 0, side: THREE.DoubleSide })));
+    g.position.set((c.x - 0.5) * W, (0.5 - c.y) * H, 0.05); karta.add(g);
+    return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: true });
+  });
+  const tlo = uchwytCelu(S, obraz, { name: `${nazwa}_obraz`, dobry: false });
+  // the flight: from whoever found it, small, to the middle, big
+  let x0 = 0, y0 = y - 2;
+  const L = typeof skad === "string" ? S.puppets[skad] : null;
+  if (L) { x0 = L.korzen.position.x; y0 = L.korzen.position.y + 2.2; } else if (skad?.mesh) { x0 = skad.mesh.position.x; y0 = skad.mesh.position.y; }
+  grp.position.set(x0, y0, 0.45); grp.scale.setScalar(0.12);
+  S.sfx.graj("whoosh");
+  await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (0 - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.42 * e; });
+  const kolka = [];
+  const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [w.x + Math.cos(a) * c.r, w.y + Math.sin(a) * c.r * 0.92]; }); };
+  return {
+    ...h, cele, tlo, meta,
+    zaznacz: async () => { for (const c of cele) { const k = await S.line(kolo(c), { color: "#e8502e", width: 0.1, duration: 0.3, strong: true }); k.mesh.traverse((o) => { o.renderOrder = 39; }); kolka.push(k); } },
+    remove: async () => {
+      cele.forEach((c) => c.remove()); tlo.remove(); kolka.forEach((k) => k.remove());
+      await S.tween(0.3, (s) => { grp.scale.setScalar(1 - 0.9 * s); welon.material.opacity = 0.42 * (1 - s); });
+      h.remove();
+    },
+  };
+}
+
 function uchwytCelu(S, g, extra) {
   const h = { mesh: g, kind: "object", base: 1, size0: 1, pulse: false, zone: null, ...extra,
     remove: () => { S.scene.remove(g); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); S.untarget(h); },

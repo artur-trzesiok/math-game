@@ -31,8 +31,10 @@ export default {
       async (c) => {
         c.show("sowa");
         await c.enter("zajac");
+        await c.ujecie("dwuujecie", { na: ["sowa", "zajac"] });
         await c.say("sowa", "line.a_ksiazka", { anim: "Radosc" });
         await c.say("zajac", "line.a_szybko", { anim: "Podskok" });
+        await c.ujecie("ogolny");                                            // the pages fly across the screen
         // the pages fly - Bunny grabbed the book in a hurry
         const strony = [];
         for (const [i, n] of ["jajko", "piskle", "kura"].entries()) {
@@ -40,52 +42,74 @@ export default {
           strony.push(h); h.moveTo(-2.2 + i * 2.2 + (Math.random() - 0.5), -1.6 - Math.random() * 0.6, 0.6); h.mesh.rotation.z = (Math.random() - 0.5) * 0.6;
         }
         c.sfx("whoosh"); await c.wait(0.8);
+        await c.ujecie("zblizenie", { na: "zajac" });
         await c.emocja("zajac", "pot", { anim: "Smutek" });
         await c.say("zajac", "line.a_ojej");
+        await c.ujecie("ogolny");
         // Bunny puts them back anyhow: hen, egg, chick
         for (const [i, k] of [2, 0, 1].entries()) { strony[k].mesh.rotation.z = 0; await strony[k].moveTo(-2.2 + i * 2.2, 1.5, 0.3); }
+        await c.ujecie("sredni", { na: strony });
         await c.say("sowa", "line.a_czyta_zle");
+        await c.ujecie("ogolny");
         await c.play("sowa", "Radosc"); await c.play("zajac", "Radosc");
+        await c.ujecie("zblizenie", { na: "zajac" });
         await c.say("zajac", "line.a_smieszne");
+        await c.ujecie("sredni", { na: ["sowa"] });
         await c.say("sowa", "line.a_po_kolei", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         c.clear();
         await c.say("sowa", "line.a_uloz");
         const ulozone = await historyjka(c, ["jajko", "piskle", "kura"]);
+        await c.ujecie("sredni", { na: ulozone });                          // the pages in order while Owl reads them
         await c.rytm(ulozone, { linia: "line.a_czyta_dobrze", kto: "sowa", slowo: (h) => SLOWA[h.name]?.[c.lang] });
+        await c.ujecie("zblizenie", { na: "zajac" });
         await c.say("zajac", "line.a_ma_sens", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.clear();
       },
       // B. the garden: Fox plants a seed and they watch it grow; then its pictures mixed, the child orders them
       async (c) => {
         await c.go("ogrod", { enter: true });
         await Promise.all(["sowa", "zajac", "lisek"].map((n) => c.enter(n)));
+        await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.b_nasiono", { anim: "Zgloszenie" });
         let h = await c.object("nasiono", { x: 0, y: 0.8, size: 2.0 });
+        await c.ujecie("sredni", { na: [h] });                              // the seed grows in one shot: same place, new picture
         await c.say("sowa", "line.b_najpierw");
         await c.wait(1.0); h.remove(); h = await c.object("kielek", { x: 0, y: 0.8, size: 2.0 });
         await c.say("sowa", "line.b_potem");
         await c.wait(1.0); h.remove(); h = await c.object("kwiat_rozkwit", { x: 0, y: 0.8, size: 2.0 });
+        await c.rozblysk(h);
         await c.say("sowa", "line.b_na_koncu", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         h.remove();
         await c.say("lisek", "line.b_uloz");
         await historyjka(c, ["nasiono", "kielek", "kwiat_rozkwit"]);
+        await c.ujecie("zblizenie", { na: "lisek" });
         await c.say("lisek", "line.b_dobrze", { anim: "Brawo" });
+        await c.ujecie("ogolny");
         c.clear();
         // helping: Fox's snowman story is missing its middle page
+        await c.ujecie("zblizenie", { na: "lisek" });
         await c.say("lisek", "line.b_balwan", { anim: "Smutek" });
-        await c.object("balwan_1", { x: -2.2, y: 1.5, size: 1.8 });
+        await c.ujecie("ogolny");
+        const b1 = await c.object("balwan_1", { x: -2.2, y: 1.5, size: 1.8 });
         const luka = await c.zone({ x: 0, y: 1.5, w: 1.9, h: 1.9, name: "luka" });
-        await c.object("balwan_3", { x: 2.2, y: 1.5, size: 1.8 });
+        const b3 = await c.object("balwan_3", { x: 2.2, y: 1.5, size: 1.8 });
         const op = [];
         for (const [i, n] of tasuj(["balwan_2", "ciasto_2", "kielek"]).entries()) op.push(await c.object(n, { x: -2.2 + i * 2.2, y: -2.2, size: 1.6 }));
         await c.say("sowa", "line.b_ktora");
         const ok = op.find((q) => q.name === "balwan_2");
         dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.b_ktora_nie" });
         await ok.moveTo(luka.x, luka.y, 0.4);
+        await c.ujecie("sredni", { na: [b1, ok, b3] });                     // the whole snowman story, the gap filled
         await c.say("lisek", "line.b_balwan_ok", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.clear();
         // the breather: a hop race - who is first, who is last
+        await c.ujecie("sredni", { na: ["zajac"] });
         await c.say("zajac", "line.b_wyscig", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         const S = c.stage;
         await Promise.all([c.walkTo("zajac", -4.6), (async () => { await c.wait(0.4); await c.walkTo("lisek", -2.4); })(), (async () => { await c.wait(0.8); await c.walkTo("sowa", 0.2); })()]);
         const cele = ["zajac", "lisek", "sowa"].map((n) => S.puppets[n]);
@@ -93,7 +117,9 @@ export default {
         dobre(cele, false); dobre(S.puppets.zajac); await c.task({ targets: cele, correct: S.puppets.zajac, wrong: "line.b_kto_pierwszy" });
         await c.say("lisek", "line.b_kto_ostatni");
         dobre(cele, false); dobre(S.puppets.sowa); await c.task({ targets: cele, correct: S.puppets.sowa, wrong: "line.b_kto_ostatni" }); dobre(cele, false);
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.b_ostatnia", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         await c.say("zajac", "line.b_do_domu");
       },
     ],
@@ -103,28 +129,63 @@ export default {
         c.show("sowa"); c.show("zajac");
         S.puppets.sowa.korzen.position.x = -5.3; S.puppets.zajac.korzen.position.x = 5.3;
         const gw = c.gwiazdki(5, { auto: false });
+        await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.p_start", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         // 1. a cake in order
-        { await c.say("zajac", "line.p_ciasto"); await historyjka(c, ["ciasto_1", "ciasto_2", "ciasto_3"]); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["zajac"] });
+          await c.say("zajac", "line.p_ciasto");
+          await c.ujecie("ogolny");
+          await historyjka(c, ["ciasto_1", "ciasto_2", "ciasto_3"]);
+          await c.ujecie("zblizenie", { na: "sowa" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 2. what came first?
         {
           const a = await c.object("kura", { x: -1.6, y: 0.8, size: 2.5 }), b = await c.object("jajko", { x: 1.8, y: 0.8, size: 2.5 });
+          await c.ujecie("sredni", { na: [a, b] });
           await c.say("sowa", "line.p_co_pierwsze");
+          await c.ujecie("ogolny");
           dobre(b); await c.task({ targets: [a, b], correct: b, wrong: "line.p_co_pierwsze_nie" });
-          await c.say("zajac", "line.p_jajko"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "zajac" });
+          await c.say("zajac", "line.p_jajko"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         // 3. the snowman in order
-        { await c.say("zajac", "line.p_balwan"); await historyjka(c, ["balwan_1", "balwan_2", "balwan_3"]); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["zajac"] });
+          await c.say("zajac", "line.p_balwan");
+          await c.ujecie("ogolny");
+          await historyjka(c, ["balwan_1", "balwan_2", "balwan_3"]);
+          await c.ujecie("zblizenie", { na: "sowa" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 4. what comes last?
         {
           const op = []; for (const [i, n] of tasuj(["nasiono", "kielek", "kwiat_rozkwit"]).entries()) op.push(await c.object(n, { x: -2.4 + i * 2.4, y: 0.8, size: 2.2 }));
+          await c.ujecie("sredni", { na: op });
           await c.say("sowa", "line.p_ostatnie");
+          await c.ujecie("ogolny");
           const ok = op.find((h) => h.name === "kwiat_rozkwit");
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_ostatnie_nie" });
-          await c.say("zajac", "line.p_kwiat"); gw.dodaj(); c.clear();
+          await c.ujecie("sredni", { na: [ok] });
+          await c.say("zajac", "line.p_kwiat"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         // 5. memory of story steps
-        { await c.say("zajac", "line.p_memory"); await c.memory([["jajko"], ["piskle"], ["kura"], ["kielek"]].map(([n]) => [{ obraz: n }, { obraz: n }]), { szer: 1.4 }); await c.say("sowa", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["zajac"] });
+          await c.say("zajac", "line.p_memory");
+          await c.ujecie("ogolny");
+          await c.memory([["jajko"], ["piskle"], ["kura"], ["kielek"]].map(([n]) => [{ obraz: n }, { obraz: n }]), { szer: 1.4 });
+          await c.ujecie("zblizenie", { na: "sowa" });
+          await c.say("sowa", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         await c.praise("sowa");
       },
     ],
@@ -132,11 +193,17 @@ export default {
       // home: a sandwich for supper, in order
       async (c) => {
         for (const n of ["sowa", "zajac"]) c.show(n);
+        await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
+        await c.ujecie("sredni", { na: ["zajac"] });
         await c.say("zajac", "line.d_kanapka", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await c.say("sowa", "line.d_uloz");
         await historyjka(c, ["kanapka_1", "kanapka_2", "kanapka_3"]);
+        await c.ujecie("zblizenie", { na: "zajac" });
         await c.say("zajac", "line.d_mniam", { anim: "Radosc" });
+        await c.ujecie("sredni", { na: ["sowa"] });
         await c.say("sowa", "line.d_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

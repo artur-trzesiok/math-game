@@ -25,54 +25,81 @@ export default {
       // A. the meadow: the hens out; Beaver's fence with a gap; the child closes a fence; the duckling next to the basket
       async (c) => {
         await Promise.all(["jez", "bobr", "sarenka"].map((n) => c.enter(n, n === "sarenka" ? "right" : "left")));
+        await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.a_burza", { anim: "Smutek" });
+        await c.ujecie("ogolny");
         const kury = [];
         for (const [x, y] of [[0.2, -0.4], [1.7, -0.9], [0.7, -1.8]]) kury.push(await c.object("kura", { x, y, size: 1.05 }));
+        await c.ujecie("sredni", { na: ["jez", ...kury] });
         await c.say("jez", "line.a_kurki");
+        await c.ujecie("zblizenie", { na: "bobr" });
         await c.say("bobr", "line.a_plot", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         const plot = await c.plot(elipsa(0.9, -1.05, 1.95, 1.25, 0.5, 2 * Math.PI - 0.5), { zamkniety: false });
+        await c.ujecie("sredni", { na: ["bobr", plot] });     // the fence in the shot
         await c.say("bobr", "line.a_gotowe", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         const uc = kury[1];
         await uc.moveTo(3.4, -0.9, 0.9);
+        await c.ujecie("zblizenie", { na: "jez" });
         await c.emocja("jez", "wykrzyknik", { anim: "Smutek" });
         await c.say("jez", "line.a_uciekla");
+        await c.ujecie("sredni", { na: ["sarenka", uc, kury[0]] });   // the gap the hen walked out through
         await c.say("sarenka", "line.a_dziura", { anim: "Kiwanie" });
         await c.say("sarenka", "line.a_zamkniety");
+        await c.ujecie("ogolny");
         plot.remove(); await uc.moveTo(1.7, -0.9, 0.6);
         await c.say("jez", "line.a_narysuj");
         await c.zagroda({ rzeczy: kury, wrong: "line.a_nie_wszystkie", otwarta: "line.a_otwarta" });
+        await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.a_w_srodku", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.clear();
         // next to is not inside
         const kosz = await c.object("koszyk", { x: 0.4, y: -1.3, size: 1.9 }), kacz = await c.object("kaczatko_stoi", { x: 2.4, y: -1.3, size: 1.0 });
+        await c.ujecie("sredni", { na: ["bobr", kosz, kacz] });
         await c.say("bobr", "line.a_kaczuszka", { anim: "Radosc" });
+        await c.ujecie("sredni", { na: ["sarenka", kosz, kacz] });
         await c.wonder("sarenka");
         await c.say("sarenka", "line.a_obok");
+        await c.ujecie("ogolny");
         await c.say("sarenka", "line.a_wloz");
         await c.place({ item: kacz, ref: kosz, want: "w", wrong: "line.a_wloz_nie" });
         await wSrodku(kacz, kosz);
+        await c.ujecie("sredni", { na: ["bobr", kosz] });
         await c.say("bobr", "line.a_teraz_w_srodku", { anim: "Kiwanie" });
+        await c.ujecie("ogolny");
         c.clear();
       },
       // B. a game in a circle on the grass: who is still outside? the rain - into the warm burrow, the shell game
       async (c) => {
         const S = c.stage;
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.b_zabawa", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         const kolko = await c.line(elipsa(0.6, -3.05, 1.9, 0.5), { width: 0.09, duration: 0.6, strong: true });
         await c.say("sarenka", "line.b_wskakujcie");
         await Promise.all([c.walkTo("bobr", -0.3), c.walkTo("sarenka", 1.5)]);
         await c.say("sarenka", "line.b_kto");
         const cele = ["jez", "bobr", "sarenka"].map((n) => S.puppets[n]);
         dobre(cele, false); dobre(S.puppets.jez); await c.task({ targets: cele, correct: S.puppets.jez, wrong: "line.b_kto_nie" }); dobre(cele, false);
+        await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.b_biegne", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         await c.walkTo("jez", -1.9);
+        await c.ujecie("sredni", { na: ["jez", "bobr", "sarenka"] });   // all three inside the circle
         await c.say("bobr", "line.b_wszyscy");
+        await c.ujecie("ogolny");
         kolko.remove();
         c.czastki("deszcz");
+        await c.ujecie("zblizenie", { na: "sarenka" });
+        await c.emocja("sarenka", "mokro");
         await c.say("sarenka", "line.b_deszcz");
         await c.go("nora", { enter: true });
         await Promise.all(["jez", "bobr", "sarenka"].map((n) => c.enter(n, n === "sarenka" ? "right" : "left")));
+        await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.b_norka", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         await c.say("jez", "line.b_kubki");
         const k = await c.kubki({ ile: 3, x: 1.2, odstep: 2.0, rzeczy: tasuj(["zoledz", null, null]) });
         await c.wait(1.2); await k.przykryj(); await k.tasuj(4);
@@ -80,8 +107,11 @@ export default {
         await c.say("jez", "line.b_gdzie");
         dobre(ok); const hit = await c.task({ targets: k.kubki, correct: ok, wrong: "line.b_gdzie_nie", onWrong: async (h) => { await k.odkryj(h); await c.say("jez", "line.b_gdzie_nie"); await k.przykryj(); } });
         await k.odkryj(hit);
+        await c.ujecie("zblizenie", { na: "bobr" });
         await c.say("bobr", "line.b_jest", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.b_koniec");
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -98,7 +128,8 @@ export default {
           r.push(await c.object("wilk", { x: 2.2, y: 0.4, size: 1.3 }));
           await c.say("bobr", "line.p_owce");
           await c.zagroda({ rzeczy: r, chcemy: (h) => h.name === "owca", wrong: "line.p_owce_nie", otwarta: "line.a_otwarta" });
-          await c.say("sarenka", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "sarenka" });
+          await c.say("sarenka", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 2. three apples into the basket
         {
@@ -106,7 +137,8 @@ export default {
           const j = []; for (let i = 0; i < 3; i++) { const h = await c.object("jablko", { x: -2.6 + i * 1.3, y: 1.4, size: 1.0 }); h.tag = "kosz"; j.push(h); }
           await c.say("sarenka", "line.p_jablka");
           await c.sort({ items: j, zones: [z] });
-          await c.say("bobr", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "bobr" });
+          await c.say("bobr", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 3. which star is outside the circle?
         {
@@ -117,7 +149,8 @@ export default {
           const gw4 = S.objects.filter((o) => o.name === "gwiazdka");
           await c.say("bobr", "line.p_poza");
           dobre(poza); await c.task({ targets: gw4, correct: poza, wrong: "line.p_poza_nie" });
-          await c.say("sarenka", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "sarenka" });
+          await c.say("sarenka", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 4. the shell game: which cup hides the ball?
         {
@@ -128,14 +161,18 @@ export default {
           await c.say("sarenka", "line.p_gdzie_pilka");
           dobre(ok); const hit = await c.task({ targets: k.kubki, correct: ok, wrong: "line.p_gdzie_pilka_nie", onWrong: async (h) => { await k.odkryj(h); await c.say("sarenka", "line.p_gdzie_pilka_nie"); await k.przykryj(); } });
           await k.odkryj(hit);
-          await c.say("bobr", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "bobr" });
+          await c.say("bobr", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 5. the goldfish into the bowl
         {
           const ak = await c.object("akwarium", { x: -0.6, y: 0.4, size: 2.4 }), ryba = await c.object("rybka", { x: 2.6, y: -1.4, size: 1.0 });
+          await c.ujecie("sredni", { na: [ak, ryba] });
           await c.say("bobr", "line.p_rybka");
+          await c.ujecie("ogolny");
           await c.place({ item: ryba, ref: ak, want: "w", wrong: "line.p_rybka_nie" });
-          await c.say("sarenka", "line.p_rybka_ok"); gw.dodaj(); c.clear();
+          await c.ujecie("sredni", { na: ["sarenka", ak] });
+          await c.say("sarenka", "line.p_rybka_ok"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         await c.praise("sarenka");
       },
@@ -144,12 +181,17 @@ export default {
       // home: the toys back into the toy box before bed
       async (c) => {
         for (const n of ["jez", "sarenka"]) c.show(n);
+        await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.h_zabawki", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         const z = await c.zone({ x: 0.6, y: -1.6, w: 3.2, h: 1.9, image: "pudelko", name: "pudelko" }); z.want = "pudlo";
         const t = []; for (const [i, n] of ["misiu", "pilka", "klocek", "ksiazeczka"].entries()) { const h = await c.object(n, { x: -2.2 + i * 1.5, y: 1.4, size: 1.1 }); h.tag = "pudlo"; t.push(h); }
         await c.sort({ items: t, zones: [z] });
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.h_w_pudle", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "jez" });
         await c.say("jez", "line.h_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

@@ -1,8 +1,4 @@
 {
-  "line.a_wieza": {
-    "who": "bobr",
-    "text": "Hi! I'm Beaver, the builder. I'll build a lookout tower by the brook, to see the whole forest."
-  },
   "line.a_ogon": {
     "who": "bobr",
     "text": "And if I have no tape, I'll measure everything with my tail!"
@@ -53,38 +49,6 @@
   "line.b_schodki_ok": {
     "who": "bobr",
     "text": "Lovely steps! The lowest, higher, the highest."
-  },
-  "line.b_sowiatka": {
-    "who": "sowa",
-    "text": "Please help me! My owlets mixed up their boxes. Each has its own: the biggest owlet lives in the biggest box."
-  },
-  "line.b_do_budek": {
-    "who": "zajac",
-    "text": "Drag each owlet to the box its size: the smallest to the smallest, the biggest to the biggest."
-  },
-  "line.b_nie_ta_budka": {
-    "who": "sowa",
-    "text": "That box is for another owlet. Look which one is bigger and which is smaller."
-  },
-  "line.b_dziekuje": {
-    "who": "sowa",
-    "text": "Every owlet is in its own box. Thank you!"
-  },
-  "line.b_wyscig": {
-    "who": "zajac",
-    "text": "Let's race along the stones, to the finish! Go!"
-  },
-  "line.b_kto_pierwszy": {
-    "who": "bobr",
-    "text": "Who got to the finish first? Point to them."
-  },
-  "line.b_pierwszy": {
-    "who": "zajac",
-    "text": "Me! I'm first, and Beaver is second."
-  },
-  "line.b_do_domu": {
-    "who": "bobr",
-    "text": "Phew, I'm tired. Let's go home."
   },
   "line.p_start": {
     "who": "bobr",
@@ -137,22 +101,6 @@
     "who": "bobr",
     "text": "It stands! What a builder you are!"
   },
-  "line.d_polka": {
-    "who": "zajac",
-    "text": "The teddies must sit on the shelf. We'll put them in order."
-  },
-  "line.d_od_najwiekszego": {
-    "who": "bobr",
-    "text": "From the biggest teddy to the smallest. Start at the arrow."
-  },
-  "line.d_porzadek": {
-    "who": "zajac",
-    "text": "What a tidy shelf!"
-  },
-  "line.d_rodzice": {
-    "who": "bobr",
-    "text": "Line up the whole family's shoes with your parents: from the biggest to the smallest."
-  },
   "line.naklejka_daj": {
     "who": "bobr",
     "text": "Thank you for helping me build! Here is a sticker for your album. Touch it to take it."
@@ -163,6 +111,118 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the owlets' box. We got it when we put everything in order with Beaver and Bunny."
+    "text": "This is the lantern from Beaver's tower. We got it when we were getting the concert ready and putting everything in order."
+  },
+  "line.a_koncert": {
+    "who": "bobr",
+    "text": "Hello! I'm Beaver, the builder. Tonight there's a big concert in the forest glade! I must get everything ready."
+  },
+  "line.a_latarnia": {
+    "who": "bobr",
+    "text": "First I'll build a tower for a lantern, so the guests can find the way in the dark."
+  },
+  "line.a_latarenka": {
+    "who": "zajac",
+    "text": "The lantern shines at the very top! Now everyone will find the concert."
+  },
+  "line.b_mapa": {
+    "who": "bobr",
+    "text": "Look what I have: an old map of the way to the glade!"
+  },
+  "line.b_mapa_gdzie": {
+    "who": "zajac",
+    "text": "The dotted path goes across the brook. Show on the map where the path crosses the brook."
+  },
+  "line.b_mapa_nie": {
+    "who": "bobr",
+    "text": "There's no water here. Look for the place where the dots of the path meet the blue brook."
+  },
+  "line.b_mapa_tu": {
+    "who": "bobr",
+    "text": "Yes, right here! This is where we'll make a way across the brook."
+  },
+  "line.b_sowa": {
+    "who": "sowa",
+    "text": "I'm glad you're here! My owlets can't fly yet, and they so want to sing at the concert. How will they cross the water?"
+  },
+  "line.b_przeszly": {
+    "who": "sowa",
+    "text": "Hop, hop, hop! They're all across. Thank you!"
+  },
+  "line.b_w_droge": {
+    "who": "bobr",
+    "text": "Now, off to the glade!"
+  },
+  "line.c_polana": {
+    "who": "zajac",
+    "text": "We're at the glade! How lovely, the lanterns are shining already."
+  },
+  "line.c_proba": {
+    "who": "sowa",
+    "text": "Let's rehearse the choir. The owlets stand in a row in order: from the smallest to the biggest."
+  },
+  "line.c_ustaw": {
+    "who": "zajac",
+    "text": "Drag the owlets to their places. The smallest stands by the arrow."
+  },
+  "line.c_spiewaja": {
+    "who": "sowa",
+    "text": "How lovely they sing when they stand in order!"
+  },
+  "line.c_psikus": {
+    "who": "zajac",
+    "text": "Hee hee! I'll swap two owlets around."
+  },
+  "line.c_falsz": {
+    "who": "bobr",
+    "text": "Oh dear, the choir sounds wrong! Which owlet is not in its place? Point to it."
+  },
+  "line.c_falsz_nie": {
+    "who": "bobr",
+    "text": "That owlet is in the right place. Look where the row stops growing."
+  },
+  "line.c_znowu": {
+    "who": "sowa",
+    "text": "In order again, and it sounds lovely again!"
+  },
+  "line.c_przepraszam": {
+    "who": "zajac",
+    "text": "Sorry, owlets! I won't do it again."
+  },
+  "line.c_instrument": {
+    "who": "bobr",
+    "text": "There's still time before the evening. Let's go home, I'll get my instrument ready!"
+  },
+  "line.d_szklanki": {
+    "who": "bobr",
+    "text": "Here is my instrument: glasses of water! Tap each one and listen."
+  },
+  "line.d_rozne": {
+    "who": "zajac",
+    "text": "Each sounds different! The one with lots of water sounds low, the one with a little sounds high."
+  },
+  "line.d_uloz": {
+    "who": "bobr",
+    "text": "Put the glasses in order: from the one with the most water to the one with the least. Start by the arrow."
+  },
+  "line.d_gama": {
+    "who": "zajac",
+    "text": "Can you hear it? The notes go up, like steps!"
+  },
+  "line.d_zagraj": {
+    "who": "bobr",
+    "text": "Now you play: tap the glasses in order, from the first to the last."
+  },
+  "line.d_zagraj_nie": {
+    "who": "bobr",
+    "text": "Not that one yet. Tap the next one in order."
+  },
+  "line.d_brawo": {
+    "who": "zajac",
+    "text": "Bravo, musician! Tonight we'll play it together at the concert."
+  },
+  "line.d_rodzice_szklanki": {
+    "who": "bobr",
+    "text": "With your parents, pour water into a few glasses, put them in order and listen to them play."
   }
 }

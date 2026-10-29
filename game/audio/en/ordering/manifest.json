@@ -1,9 +1,4 @@
 {
- "line.a_wieza": {
-  "hash": "16734f52e6b5",
-  "who": "bobr",
-  "text": "Hi! I'm Beaver, the builder. I'll build a lookout tower by the brook, to see the whole forest."
- },
  "line.a_ogon": {
   "hash": "b504e8c9f030",
   "who": "bobr",
@@ -68,46 +63,6 @@
   "hash": "83602e7df9fd",
   "who": "bobr",
   "text": "Lovely steps! The lowest, higher, the highest."
- },
- "line.b_sowiatka": {
-  "hash": "dbf5f0989a40",
-  "who": "sowa",
-  "text": "Please help me! My owlets mixed up their boxes. Each has its own: the biggest owlet lives in the biggest box."
- },
- "line.b_do_budek": {
-  "hash": "824222d4b10e",
-  "who": "zajac",
-  "text": "Drag each owlet to the box its size: the smallest to the smallest, the biggest to the biggest."
- },
- "line.b_nie_ta_budka": {
-  "hash": "c37183896445",
-  "who": "sowa",
-  "text": "That box is for another owlet. Look which one is bigger and which is smaller."
- },
- "line.b_dziekuje": {
-  "hash": "71cfa847c0bb",
-  "who": "sowa",
-  "text": "Every owlet is in its own box. Thank you!"
- },
- "line.b_wyscig": {
-  "hash": "eec432a872ef",
-  "who": "zajac",
-  "text": "Let's race along the stones, to the finish! Go!"
- },
- "line.b_kto_pierwszy": {
-  "hash": "02b9565d6e33",
-  "who": "bobr",
-  "text": "Who got to the finish first? Point to them."
- },
- "line.b_pierwszy": {
-  "hash": "8d5ce7f6f99c",
-  "who": "zajac",
-  "text": "Me! I'm first, and Beaver is second."
- },
- "line.b_do_domu": {
-  "hash": "112da8729216",
-  "who": "bobr",
-  "text": "Phew, I'm tired. Let's go home."
  },
  "line.p_start": {
   "hash": "a3f6d19c5b5a",
@@ -174,26 +129,6 @@
   "who": "bobr",
   "text": "It stands! What a builder you are!"
  },
- "line.d_polka": {
-  "hash": "0716af30c4ae",
-  "who": "zajac",
-  "text": "The teddies must sit on the shelf. We'll put them in order."
- },
- "line.d_od_najwiekszego": {
-  "hash": "85c460402523",
-  "who": "bobr",
-  "text": "From the biggest teddy to the smallest. Start at the arrow."
- },
- "line.d_porzadek": {
-  "hash": "a0b16455deac",
-  "who": "zajac",
-  "text": "What a tidy shelf!"
- },
- "line.d_rodzice": {
-  "hash": "8fc738c072f6",
-  "who": "bobr",
-  "text": "Line up the whole family's shoes with your parents: from the biggest to the smallest."
- },
  "line.naklejka_daj": {
   "hash": "7b60dd6eba2f",
   "who": "bobr",
@@ -205,8 +140,148 @@
   "text": "You already have the sticker from this adventure. See you!"
  },
  "line.naklejka_opis": {
-  "hash": "84fb44864803",
+  "hash": "d6a583e8053a",
   "who": "narrator",
-  "text": "This is the owlets' box. We got it when we put everything in order with Beaver and Bunny."
+  "text": "This is the lantern from Beaver's tower. We got it when we were getting the concert ready and putting everything in order."
+ },
+ "line.a_koncert": {
+  "hash": "63aa9bc6fc11",
+  "who": "bobr",
+  "text": "Hello! I'm Beaver, the builder. Tonight there's a big concert in the forest glade! I must get everything ready."
+ },
+ "line.a_latarnia": {
+  "hash": "6ae5c3fa4d7f",
+  "who": "bobr",
+  "text": "First I'll build a tower for a lantern, so the guests can find the way in the dark."
+ },
+ "line.a_latarenka": {
+  "hash": "1bebf019dc35",
+  "who": "zajac",
+  "text": "The lantern shines at the very top! Now everyone will find the concert."
+ },
+ "line.b_mapa": {
+  "hash": "c97200bc1228",
+  "who": "bobr",
+  "text": "Look what I have: an old map of the way to the glade!"
+ },
+ "line.b_mapa_gdzie": {
+  "hash": "57013860c882",
+  "who": "zajac",
+  "text": "The dotted path goes across the brook. Show on the map where the path crosses the brook."
+ },
+ "line.b_mapa_nie": {
+  "hash": "c75b735bae94",
+  "who": "bobr",
+  "text": "There's no water here. Look for the place where the dots of the path meet the blue brook."
+ },
+ "line.b_mapa_tu": {
+  "hash": "73bfacf06795",
+  "who": "bobr",
+  "text": "Yes, right here! This is where we'll make a way across the brook."
+ },
+ "line.b_sowa": {
+  "hash": "0253926cdb4a",
+  "who": "sowa",
+  "text": "I'm glad you're here! My owlets can't fly yet, and they so want to sing at the concert. How will they cross the water?"
+ },
+ "line.b_przeszly": {
+  "hash": "b762678164c7",
+  "who": "sowa",
+  "text": "Hop, hop, hop! They're all across. Thank you!"
+ },
+ "line.b_w_droge": {
+  "hash": "0eec82bcf5f6",
+  "who": "bobr",
+  "text": "Now, off to the glade!"
+ },
+ "line.c_polana": {
+  "hash": "adfe8dc8f0ed",
+  "who": "zajac",
+  "text": "We're at the glade! How lovely, the lanterns are shining already."
+ },
+ "line.c_proba": {
+  "hash": "d649038378eb",
+  "who": "sowa",
+  "text": "Let's rehearse the choir. The owlets stand in a row in order: from the smallest to the biggest."
+ },
+ "line.c_ustaw": {
+  "hash": "14e13012eadd",
+  "who": "zajac",
+  "text": "Drag the owlets to their places. The smallest stands by the arrow."
+ },
+ "line.c_spiewaja": {
+  "hash": "7ece45b43988",
+  "who": "sowa",
+  "text": "How lovely they sing when they stand in order!"
+ },
+ "line.c_psikus": {
+  "hash": "e07bc29f720d",
+  "who": "zajac",
+  "text": "Hee hee! I'll swap two owlets around."
+ },
+ "line.c_falsz": {
+  "hash": "6ec707e5ecb5",
+  "who": "bobr",
+  "text": "Oh dear, the choir sounds wrong! Which owlet is not in its place? Point to it."
+ },
+ "line.c_falsz_nie": {
+  "hash": "ebffa67459db",
+  "who": "bobr",
+  "text": "That owlet is in the right place. Look where the row stops growing."
+ },
+ "line.c_znowu": {
+  "hash": "2edef4e3e4d1",
+  "who": "sowa",
+  "text": "In order again, and it sounds lovely again!"
+ },
+ "line.c_przepraszam": {
+  "hash": "c9809ed3fdd1",
+  "who": "zajac",
+  "text": "Sorry, owlets! I won't do it again."
+ },
+ "line.c_instrument": {
+  "hash": "489c61fa9f3e",
+  "who": "bobr",
+  "text": "There's still time before the evening. Let's go home, I'll get my instrument ready!"
+ },
+ "line.d_szklanki": {
+  "hash": "115bbce3602a",
+  "who": "bobr",
+  "text": "Here is my instrument: glasses of water! Tap each one and listen."
+ },
+ "line.d_rozne": {
+  "hash": "9c0f3987a54d",
+  "who": "zajac",
+  "text": "Each sounds different! The one with lots of water sounds low, the one with a little sounds high."
+ },
+ "line.d_uloz": {
+  "hash": "d265dbbb4168",
+  "who": "bobr",
+  "text": "Put the glasses in order: from the one with the most water to the one with the least. Start by the arrow."
+ },
+ "line.d_gama": {
+  "hash": "0b339b0abde6",
+  "who": "zajac",
+  "text": "Can you hear it? The notes go up, like steps!"
+ },
+ "line.d_zagraj": {
+  "hash": "7a8e894907e6",
+  "who": "bobr",
+  "text": "Now you play: tap the glasses in order, from the first to the last."
+ },
+ "line.d_zagraj_nie": {
+  "hash": "8fbadb3fa3b9",
+  "who": "bobr",
+  "text": "Not that one yet. Tap the next one in order."
+ },
+ "line.d_brawo": {
+  "hash": "0fb542be7e24",
+  "who": "zajac",
+  "text": "Bravo, musician! Tonight we'll play it together at the concert."
+ },
+ "line.d_rodzice_szklanki": {
+  "hash": "b6dcbef6b73b",
+  "who": "bobr",
+  "text": "With your parents, pour water into a few glasses, put them in order and listen to them play."
  }
 }

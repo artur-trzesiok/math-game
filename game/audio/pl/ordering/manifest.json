@@ -1,9 +1,4 @@
 {
- "line.a_wieza": {
-  "hash": "6df02989cae9",
-  "who": "bobr",
-  "text": "Cześć! Jestem Bóbr, budowniczy. Zbuduję nad strumykiem wieżę widokową, żeby zobaczyć cały las."
- },
  "line.a_ogon": {
   "hash": "1c464ba5e326",
   "who": "bobr",
@@ -68,46 +63,6 @@
   "hash": "e33abb8e24a5",
   "who": "bobr",
   "text": "Piękne schodki! Najniższy, wyższy, najwyższy."
- },
- "line.b_sowiatka": {
-  "hash": "240090f835eb",
-  "who": "sowa",
-  "text": "Pomóżcie mi, proszę! Moje sowiątka pomieszały budki. Każde ma swoją: największe sowiątko mieszka w największej budce."
- },
- "line.b_do_budek": {
-  "hash": "9f6523362834",
-  "who": "zajac",
-  "text": "Przeciągnij każde sowiątko do budki w jego rozmiarze: najmniejsze do najmniejszej, największe do największej."
- },
- "line.b_nie_ta_budka": {
-  "hash": "70019ee1bcf1",
-  "who": "sowa",
-  "text": "Ta budka jest dla innego sowiątka. Popatrz, które jest większe, a które mniejsze."
- },
- "line.b_dziekuje": {
-  "hash": "2040e8f85bdc",
-  "who": "sowa",
-  "text": "Każde sowiątko jest w swojej budce. Dziękuję!"
- },
- "line.b_wyscig": {
-  "hash": "ecaedfc39a4b",
-  "who": "zajac",
-  "text": "Zróbmy wyścig po kamieniach, do mety! Start!"
- },
- "line.b_kto_pierwszy": {
-  "hash": "a84b7a0502f0",
-  "who": "bobr",
-  "text": "Kto był pierwszy na mecie? Wskaż."
- },
- "line.b_pierwszy": {
-  "hash": "fc6eef3f6a39",
-  "who": "zajac",
-  "text": "Ja! Jestem pierwszy, a Bóbr drugi."
- },
- "line.b_do_domu": {
-  "hash": "d82486e97019",
-  "who": "bobr",
-  "text": "Uff, ale się zmęczyłem. Wracajmy do domu."
  },
  "line.p_start": {
   "hash": "38dfbf68031c",
@@ -174,26 +129,6 @@
   "who": "bobr",
   "text": "Stoi! Ale z ciebie budowniczy!"
  },
- "line.d_polka": {
-  "hash": "cb57bdbba20e",
-  "who": "zajac",
-  "text": "Na półce trzeba posadzić misie. Ułożymy je po kolei."
- },
- "line.d_od_najwiekszego": {
-  "hash": "0f18bdb92595",
-  "who": "bobr",
-  "text": "Od największego misia do najmniejszego. Zacznij przy strzałce."
- },
- "line.d_porzadek": {
-  "hash": "691fb87dc8a9",
-  "who": "zajac",
-  "text": "Jaki porządek na półce!"
- },
- "line.d_rodzice": {
-  "hash": "c6651c522ccd",
-  "who": "bobr",
-  "text": "Ustaw z rodzicami buty całej rodziny po kolei: od największego do najmniejszego."
- },
  "line.naklejka_daj": {
   "hash": "dc147187a16e",
   "who": "bobr",
@@ -205,8 +140,148 @@
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
  },
  "line.naklejka_opis": {
-  "hash": "80a226c4a62e",
+  "hash": "d175270b38f1",
   "who": "narrator",
-  "text": "To budka sowiątek. Dostaliśmy ją, kiedy z Bobrem i Zajączkiem układaliśmy wszystko po kolei."
+  "text": "To latarenka z wieży Bobra. Dostaliśmy ją, kiedy szykowaliśmy koncert i układaliśmy wszystko po kolei."
+ },
+ "line.a_koncert": {
+  "hash": "5c6d74ba5298",
+  "who": "bobr",
+  "text": "Cześć! Jestem Bóbr, budowniczy. Dziś wieczorem na leśnej polanie będzie wielki koncert! Muszę wszystko przygotować."
+ },
+ "line.a_latarnia": {
+  "hash": "1fc648b55dcd",
+  "who": "bobr",
+  "text": "Najpierw zbuduję wieżę na latarenkę, żeby goście trafili po ciemku."
+ },
+ "line.a_latarenka": {
+  "hash": "9eb5ced24c58",
+  "who": "zajac",
+  "text": "Latarenka świeci na samej górze! Teraz każdy trafi na koncert."
+ },
+ "line.b_mapa": {
+  "hash": "3a24facca480",
+  "who": "bobr",
+  "text": "Popatrzcie, co mam: starą mapę drogi na polanę!"
+ },
+ "line.b_mapa_gdzie": {
+  "hash": "4c37380c2ea3",
+  "who": "zajac",
+  "text": "Ścieżka z kropek idzie przez strumyk. Pokaż na mapie, gdzie ścieżka przecina strumyk."
+ },
+ "line.b_mapa_nie": {
+  "hash": "4c0b08ec7bc0",
+  "who": "bobr",
+  "text": "Tu nie ma wody. Szukaj miejsca, gdzie kropki ścieżki spotykają niebieski strumyk."
+ },
+ "line.b_mapa_tu": {
+  "hash": "a2770ae0001b",
+  "who": "bobr",
+  "text": "Tak, to tutaj! W tym miejscu zrobimy przejście przez strumyk."
+ },
+ "line.b_sowa": {
+  "hash": "aefed0035cea",
+  "who": "sowa",
+  "text": "Dobrze, że jesteście! Moje sowiątka jeszcze nie latają, a tak chcą zaśpiewać na koncercie. Jak przejdą przez wodę?"
+ },
+ "line.b_przeszly": {
+  "hash": "6e81661284be",
+  "who": "sowa",
+  "text": "Hop, hop, hop! Wszystkie przeszły. Dziękuję!"
+ },
+ "line.b_w_droge": {
+  "hash": "cb8fac685915",
+  "who": "bobr",
+  "text": "To teraz na polanę!"
+ },
+ "line.c_polana": {
+  "hash": "cc301b2e0115",
+  "who": "zajac",
+  "text": "Jesteśmy na polanie! Ale tu pięknie, lampiony już świecą."
+ },
+ "line.c_proba": {
+  "hash": "5f84a6efadef",
+  "who": "sowa",
+  "text": "Zróbmy próbę chóru. Sowiątka stają w rządku po kolei: od najmniejszego do największego."
+ },
+ "line.c_ustaw": {
+  "hash": "b5bb1cd7de59",
+  "who": "zajac",
+  "text": "Przeciągnij sowiątka na miejsca. Najmniejsze stoi przy strzałce."
+ },
+ "line.c_spiewaja": {
+  "hash": "183e9aa2efb8",
+  "who": "sowa",
+  "text": "Ale pięknie śpiewają, kiedy stoją po kolei!"
+ },
+ "line.c_psikus": {
+  "hash": "c28ddac6c334",
+  "who": "zajac",
+  "text": "Hi, hi! Zamienię dwa sowiątka miejscami."
+ },
+ "line.c_falsz": {
+  "hash": "482f1d58bf55",
+  "who": "bobr",
+  "text": "Ojej, chór fałszuje! Które sowiątko stoi nie na swoim miejscu? Wskaż."
+ },
+ "line.c_falsz_nie": {
+  "hash": "673456f0e042",
+  "who": "bobr",
+  "text": "To sowiątko stoi dobrze. Popatrz, gdzie rządek przestaje rosnąć."
+ },
+ "line.c_znowu": {
+  "hash": "2ea9b09fde3c",
+  "who": "sowa",
+  "text": "Znowu po kolei i znowu ładnie brzmi!"
+ },
+ "line.c_przepraszam": {
+  "hash": "5ac84578b427",
+  "who": "zajac",
+  "text": "Przepraszam, sowiątka! Już nie będę."
+ },
+ "line.c_instrument": {
+  "hash": "1bc1a10320b9",
+  "who": "bobr",
+  "text": "Do wieczora zostało trochę czasu. Chodźmy do domu, przygotuję swój instrument!"
+ },
+ "line.d_szklanki": {
+  "hash": "4edad141e071",
+  "who": "bobr",
+  "text": "Oto mój instrument: szklanki z wodą! Stuknij w każdą i posłuchaj."
+ },
+ "line.d_rozne": {
+  "hash": "16964a5b82a8",
+  "who": "zajac",
+  "text": "Każda brzmi inaczej! Ta z dużą ilością wody brzmi nisko, a ta z małą wysoko."
+ },
+ "line.d_uloz": {
+  "hash": "cd16c999f8ab",
+  "who": "bobr",
+  "text": "Ułóż szklanki po kolei: od tej z największą ilością wody do tej z najmniejszą. Zacznij przy strzałce."
+ },
+ "line.d_gama": {
+  "hash": "5d2ec85705bc",
+  "who": "zajac",
+  "text": "Słyszysz? Dźwięki idą w górę, jak po schodkach!"
+ },
+ "line.d_zagraj": {
+  "hash": "5b57a27c639d",
+  "who": "bobr",
+  "text": "Teraz ty zagraj: stukaj w szklanki po kolei, od pierwszej do ostatniej."
+ },
+ "line.d_zagraj_nie": {
+  "hash": "c33dcec8b2f8",
+  "who": "bobr",
+  "text": "Jeszcze nie ta. Stuknij w następną po kolei."
+ },
+ "line.d_brawo": {
+  "hash": "d3280d48ccec",
+  "who": "zajac",
+  "text": "Brawo, muzyku! Wieczorem zagramy to razem na koncercie."
+ },
+ "line.d_rodzice_szklanki": {
+  "hash": "bf081cfa9aec",
+  "who": "bobr",
+  "text": "Nalej z rodzicami wody do kilku szklanek, ustaw je po kolei i posłuchaj, jak grają."
  }
 }

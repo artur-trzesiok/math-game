@@ -4,7 +4,7 @@
     "pl": "Po kolei",
     "en": "In order"
   },
-  "goal": "Put things in order by size - from the biggest to the smallest and back - and see why order matters (a tower stands only in order).",
+  "goal": "Put things in order by size - from the biggest to the smallest and back - and see why order matters: a tower stands only in order, a choir and a water-glass xylophone sound right only in order.",
   "age": "4-5",
   "characters": [
     "bobr",
@@ -13,21 +13,25 @@
   ],
   "backgrounds": [
     "strumyk",
-    "pokoj"
+    "polana_koncert",
+    "pokoj_noc"
   ],
   "objects": [
     "kamien_schodek",
-    "budka",
     "sowiatko",
+    "latarenka_swieci",
     "kubek_skladany",
     "marchewka",
     "jablko",
     "listek",
-    "misiu"
+    "szklanka_1",
+    "szklanka_2",
+    "szklanka_3",
+    "szklanka_4"
   ],
-  "cover": "Beaver proudly stands by a tall tower of four coloured blocks, the biggest at the bottom, by a sunny brook, while Bunny claps beside him.",
+  "cover": "Beaver taps a row of four water glasses, from the fullest to the emptiest, with a spoon, while Bunny dances beside him on a forest glade at evening, paper lanterns glowing over a little log stage.",
   "naklejka": {
-    "obraz": "objects/budka",
+    "obraz": "objects/latarenka_swieci",
     "kto": "bobr"
   }
 }

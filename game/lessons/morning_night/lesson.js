@@ -32,14 +32,20 @@ export default {
         await c.noc({ ciemnosc: 0.55, d: 0.1 });
         c.swiatlo([-3.6, -1.6], { r: 2.2, moc: 0.8, migotanie: 0.05 });
         c.show("kret");
+        await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.emocja("kret", "sen");
         await c.say("kret", "line.a_ziew", { anim: "Kiwanie" });
         await c.wonder("kret");
         await c.say("kret", "line.a_ciemno");
+        await c.ujecie("ogolny");
         await Promise.all([c.enter("wiewiorka", "right"), c.enter("sarenka", "right")]);
+        await c.ujecie("dwuujecie", { na: ["kret", "wiewiorka"] });
         await c.say("wiewiorka", "line.a_dzien_dobry", { anim: "Machanie" });
         await c.say("kret", "line.a_noc");
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.a_na_gore", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         c.clear();
       },
       // B. the meadow: the sun rises; what we do in the morning; the day passes - the four cards in order
@@ -48,28 +54,40 @@ export default {
         await c.noc({ ciemnosc: 0.5, d: 0.1 });
         await Promise.all(["kret", "wiewiorka", "sarenka"].map((n) => c.enter(n)));
         await c.noc({ ciemnosc: 0, d: 2.5 });
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.emocja("kret", "wykrzyknik", { anim: "Radosc" });
         await c.say("kret", "line.b_jasno");
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.b_rano");
+        await c.ujecie("ogolny");
         const rzeczy = [];
         for (const [i, n] of tasuj(["sniadanie", "lozeczko", "pizama"]).entries()) rzeczy.push(await c.object(n, { x: -2.0 + i * 2.0, y: 1.4, size: 1.5 }));
         await c.say("wiewiorka", "line.b_co_rano");
         const sn = rzeczy.find((h) => h.name === "sniadanie");
         dobre(sn); await c.task({ targets: rzeczy, correct: sn, wrong: "line.b_co_rano_nie" }); dobre(sn, false);
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.b_sniadanie", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.clear();
         // the whole day on four cards
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.b_caly_dzien");
+        await c.ujecie("ogolny");
         await c.say("sarenka", "line.b_uloz");
         await wKolejce(c, PORY);
+        await c.ujecie("sredni", { na: ["wiewiorka"] });
         await c.say("wiewiorka", "line.b_po_kolei", { anim: "Brawo" });
+        await c.ujecie("ogolny");
         c.clear();
       },
       // C. dusk: a little hedgehog lost - lanterns light the bushes; night: fireflies; Mole understands
       async (c) => {
         await c.noc({ ciemnosc: 0.6, d: 2.0 });
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.c_wieczor");
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.c_zgubil", { anim: "Smutek" });
+        await c.ujecie("ogolny");
         const krzaki = [], gdzie = Math.floor(Math.random() * 3);
         for (let i = 0; i < 3; i++) krzaki.push(await c.object("krzak", { x: -2.2 + i * 2.2, y: -1.2, size: 2.0, z: 0.5 }));
         const maly = await c.object("jez", { x: krzaki[gdzie].mesh.position.x, y: -1.5, size: 0.8, z: 0.3 }); maly.mesh.visible = false;
@@ -78,7 +96,10 @@ export default {
         await c.task({ targets: krzaki, correct: krzaki[gdzie], wrong: "line.c_pusto", onWrong: async (h) => { c.swiatlo(h, { r: 1.4, moc: 0.9 }); await c.say("wiewiorka", "line.c_pusto"); } });
         c.swiatlo(krzaki[gdzie], { r: 1.6, moc: 1 });
         maly.mesh.visible = true; await maly.moveTo(maly.mesh.position.x, -2.4, 0.5);
+        await c.ujecie("sredni", { na: [krzaki[gdzie], maly] });
+        await c.rozblysk(maly);
         await c.say("sarenka", "line.c_jest", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         c.clear();
         // night: catch the fireflies
         await c.noc({ ciemnosc: 0.78, d: 1.5 });
@@ -88,8 +109,11 @@ export default {
           dobre(s); await c.task({ targets: [s], correct: s, wrong: "line.c_noc_swietliki" });
           c.sfx("pop"); s.remove(); l?.remove?.();
         }
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.c_juz_wiem", { anim: "Zgloszenie" });
+        await c.ujecie("dwuujecie", { na: ["kret", "wiewiorka"] });
         await c.say("wiewiorka", "line.c_dobranoc");
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -98,38 +122,71 @@ export default {
         c.show("kret"); c.show("sarenka");
         S.puppets.kret.korzen.position.x = -5.2; S.puppets.sarenka.korzen.position.x = 5.2;
         const gw = c.gwiazdki(5, { auto: false });
+        await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.p_start", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         // 1. what comes next after morning, midday, evening?
         {
-          for (const [i, n] of PORY.slice(0, 3).entries()) await c.object(n, { x: -3.3 + i * 2.0, y: 1.5, size: 1.8 });
+          const rz = []; for (const [i, n] of PORY.slice(0, 3).entries()) rz.push(await c.object(n, { x: -3.3 + i * 2.0, y: 1.5, size: 1.8 }));
           await c.zone({ x: 2.7, y: 1.5, w: 1.9, h: 1.9, name: "luka" });
           const op = []; for (const [i, n] of tasuj(["pora_noc", "pora_rano", "pora_poludnie"]).entries()) op.push(await c.object(n, { x: -2.1 + i * 2.1, y: -2.1, size: 1.7 }));
+          await c.ujecie("sredni", { na: rz });
           await c.say("kret", "line.p_co_dalej");
+          await c.ujecie("ogolny");
           const ok = op.find((h) => h.name === "pora_noc");
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_co_dalej_nie" });
-          await ok.moveTo(2.7, 1.5, 0.4); await c.say("sarenka", "line.p_noc"); gw.dodaj(); c.clear();
+          await ok.moveTo(2.7, 1.5, 0.4);
+          await c.ujecie("sredni", { na: [...rz, ok] });                  // the row complete
+          await c.say("sarenka", "line.p_noc"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         // 2. what do we do at night?
         {
           const op = []; for (const [i, n] of tasuj(["lozeczko", "sniadanie", "szczoteczka"]).entries()) op.push(await c.object(n, { x: -2.2 + i * 2.2, y: 0.6, size: 1.9 }));
+          await c.ujecie("sredni", { na: op });
           await c.say("sarenka", "line.p_w_nocy");
+          await c.ujecie("ogolny");
           const ok = op.find((h) => h.name === "lozeczko");
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_w_nocy_nie" });
-          await c.say("kret", "line.p_spimy"); gw.dodaj(); c.clear();
+          await c.ujecie("sredni", { na: [ok] });
+          await c.say("kret", "line.p_spimy"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         // 3. three cards in order
-        { await c.say("kret", "line.p_trzy"); await wKolejce(c, PORY.slice(0, 3)); await c.say("sarenka", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["kret"] });
+          await c.say("kret", "line.p_trzy");
+          await c.ujecie("ogolny");
+          await wKolejce(c, PORY.slice(0, 3));
+          await c.ujecie("zblizenie", { na: "sarenka" });
+          await c.say("sarenka", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 4. memory: day cards in pairs
-        { await c.say("sarenka", "line.p_memory"); await c.memory(PORY.map((n) => [{ obraz: n }, { obraz: n }]), { szer: 1.5 }); await c.say("kret", "line.p_dobrze"); gw.dodaj(); c.clear(); }
+        {
+          await c.ujecie("sredni", { na: ["sarenka"] });
+          await c.say("sarenka", "line.p_memory");
+          await c.ujecie("ogolny");
+          await c.memory(PORY.map((n) => [{ obraz: n }, { obraz: n }]), { szer: 1.5 });
+          await c.ujecie("zblizenie", { na: "kret" });
+          await c.say("kret", "line.p_dobrze"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
+        }
         // 5. after night comes ...?
         {
-          await c.object("pora_noc", { x: -1.2, y: 1.5, size: 1.5 });
+          const noc = await c.object("pora_noc", { x: -1.2, y: 1.5, size: 1.5 });
           await c.zone({ x: 1.2, y: 1.5, w: 1.6, h: 1.6, name: "luka" });
           const op = []; for (const [i, n] of tasuj(["pora_rano", "pora_wieczor"]).entries()) op.push(await c.object(n, { x: -1.0 + i * 2.2, y: -2.2, size: 1.3 }));
+          await c.ujecie("sredni", { na: [noc] });
           await c.say("kret", "line.p_po_nocy");
+          await c.ujecie("ogolny");
           const ok = op.find((h) => h.name === "pora_rano");
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_po_nocy_nie" });
-          await ok.moveTo(1.2, 1.5, 0.4); await c.say("sarenka", "line.p_rano_znowu"); gw.dodaj(); c.clear();
+          await ok.moveTo(1.2, 1.5, 0.4);
+          await c.ujecie("sredni", { na: [noc, ok] });
+          await c.say("sarenka", "line.p_rano_znowu"); gw.dodaj();
+          await c.ujecie("ogolny"); c.clear();
         }
         await c.praise("sarenka");
       },
@@ -138,11 +195,17 @@ export default {
       // home at night: the evening routine in order - bath, pyjamas, a story, bed
       async (c) => {
         for (const n of ["kret", "wiewiorka", "sarenka"]) c.show(n);
+        await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
+        await c.ujecie("sredni", { na: ["wiewiorka"] });
         await c.say("wiewiorka", "line.d_wieczor", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await c.say("sarenka", "line.d_uloz");
         await wKolejce(c, ["wanna", "pizama", "ksiazeczka", "lozeczko"], { size: 1.6, krok: 1.9 });
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.d_dobranoc", { anim: "Kiwanie" });
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.d_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

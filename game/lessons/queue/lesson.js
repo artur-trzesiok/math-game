@@ -76,24 +76,37 @@ export default {
       // A. the meadow: the great race; Mole says the biggest won; first is who reached the finish first; the podium
       async (c) => {
         await Promise.all(["kret", "sowa", "bobr"].map((n) => c.enter(n, n === "bobr" ? "right" : "left")));
+        await c.ujecie("zblizenie", { na: "bobr" });
         await c.say("bobr", "line.a_wyscig", { anim: "Radosc" });
+        await c.ujecie("sredni", { na: ["kret", "sowa"] });
         await c.say("sowa", "line.a_start");
+        await c.ujecie("ogolny");
         const meta = await wyscig(c, ["zajac", "jez", "kaczatko_stoi", "mysz"], { czasy: [2.2, 1.6, 1.9, 2.7] });
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.a_zajac_wygral", { anim: "Podskok" });
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.wonder("sowa");
         await c.say("sowa", "line.a_nie_najwiekszy");
+        await c.ujecie("sredni", { na: meta });                  // the racers at the finish line
         await c.say("sowa", "line.a_pierwszy", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await c.say("bobr", "line.a_kto_pierwszy");
         dobre(meta[0]); await c.task({ targets: meta, correct: meta[0], wrong: "line.a_kto_pierwszy_nie" }); dobre(meta[0], false);
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.a_jezyk", { anim: "Kiwanie" });
+        await c.ujecie("ogolny");
         await c.say("bobr", "line.a_kto_ostatni");
         const ost = meta[meta.length - 1];
         dobre(ost); await c.task({ targets: meta, correct: ost, wrong: "line.a_kto_ostatni_nie" }); dobre(ost, false);
+        await c.ujecie("sredni", { na: [ost] });
         await c.say("sowa", "line.a_ostatnia");
+        await c.ujecie("ogolny");
         // the podium: first, second, third
         await c.say("bobr", "line.a_podium");
         await podium(c, meta.slice(0, 3).map((h) => h.name));
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.a_podium_ok", { anim: "Brawo" });
+        await c.ujecie("ogolny");
         c.clear();
       },
       // B. the playground: the queue for the slide; the first slides and joins the end; the friends' own race; medals
@@ -101,32 +114,45 @@ export default {
         const S = c.stage;
         await c.go("plac_zabaw", { enter: true });
         await Promise.all(["kret", "sowa", "bobr"].map((n) => c.enter(n, n === "bobr" ? "right" : "left")));
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.b_zjezdzalnia");
+        await c.ujecie("ogolny");
         const q = await kolejka(c, ["mysz", "zajac", "jez", "kaczatko_stoi"]);
         const s = await strzalka(c, q.x0 - 0.15, PODLOGA - 0.35);
+        await c.ujecie("sredni", { na: ["sowa", ...q] });        // the queue and its front, where counting starts
         await c.say("sowa", "line.b_od_przodu");
         const nr = await numery(c, q);
+        await c.ujecie("ogolny");
         await c.say("kret", "line.b_trzeci");
         dobre(q[2]); await c.task({ targets: q, correct: q[2], wrong: "line.b_trzeci_nie" }); dobre(q[2], false);
         nr.forEach((d) => d.remove());
         // the first slides down and joins the end: who is first now?
+        await c.ujecie("zblizenie", { na: "bobr" });
         await c.say("bobr", "line.b_zjezdza");
+        await c.ujecie("ogolny");
         const pierwszy = q.shift(); c.sfx("whoosh");
         await pierwszy.moveTo(pierwszy.mesh.position.x, 2.0, 0.4); q.push(pierwszy);
         await przesun(c, q, q.x0);
         await c.say("bobr", "line.b_kto_teraz");
         dobre(q[0]); await c.task({ targets: q, correct: q[0], wrong: "line.b_kto_teraz_nie" }); dobre(q[0], false);
+        await c.ujecie("sredni", { na: ["sowa", ...q] });
         await c.say("sowa", "line.b_teraz_pierwszy");
+        await c.ujecie("ogolny");
         s.remove(); c.clear();
         // the breather: the friends race to the swings - who came first?
+        await c.ujecie("zblizenie", { na: "bobr" });
         await c.say("bobr", "line.b_my", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         const kolej = [], kto = ["kret", "sowa"], start = tasuj(kto);
         await Promise.all(start.map((n, i) => (async () => { await c.wait(i * 0.5); await c.walkTo(n, { kret: 2.6, sowa: 0.9 }[n]); kolej.push(n); })()));
         const cele = kto.map((n) => S.puppets[n]), wygral = S.puppets[kolej[0]];
         await c.say("bobr", "line.b_kto_pierwszy");
         dobre(cele, false); dobre(wygral); await c.task({ targets: cele, correct: wygral, wrong: "line.b_kto_pierwszy_nie" }); dobre(cele, false);
+        await c.ujecie("zblizenie", { na: kolej[0] });
         await c.say(kolej[0], `line.b_pierwszy_${kolej[0]}`, { anim: "Radosc" });
+        await c.ujecie("sredni", { na: ["kret", "sowa"] });
         await c.say("kret", "line.b_koniec");
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -141,7 +167,8 @@ export default {
           const q = await kolejka(c, tasuj(["mysz", "zajac", "jez", "kaczatko_stoi"])); const s = await strzalka(c, q.x0 - 0.15, PODLOGA - 0.35);
           await c.say("kret", "line.p_drugi");
           dobre(q[1]); await c.task({ targets: q, correct: q[1], wrong: "line.p_drugi_nie" });
-          await c.say("bobr", "line.p_dobrze"); s.remove(); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "bobr" });
+          await c.say("bobr", "line.p_dobrze"); s.remove(); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 2. who is last?
         {
@@ -149,31 +176,41 @@ export default {
           await c.say("bobr", "line.p_ostatni");
           const ost = q[q.length - 1];
           dobre(ost); await c.task({ targets: q, correct: ost, wrong: "line.p_ostatni_nie" });
-          await c.say("kret", "line.p_dobrze"); s.remove(); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "kret" });
+          await c.say("kret", "line.p_dobrze"); s.remove(); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 3. a race, then the podium
         {
+          await c.ujecie("zblizenie", { na: "kret" });
           await c.say("kret", "line.p_wyscig");
+          await c.ujecie("ogolny");
           const meta = await wyscig(c, tasuj(["zajac", "jez", "kaczatko_stoi"]), { tory: [0.6, -0.7, -2.0] });
           await c.say("bobr", "line.p_podium");
           await podium(c, meta.map((h) => h.name));
-          await c.say("kret", "line.p_dobrze"); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "kret" });
+          await c.say("kret", "line.p_dobrze"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 4. the gold, silver and bronze medals: which one is for the second?
         {
           const m = []; for (const [i, n] of tasuj(["medal_zloty", "medal_srebrny", "medal_brazowy"]).entries()) m.push(await c.object(n, { x: -2.0 + i * 2.2, y: 0.6, size: 2.3 }));
+          await c.ujecie("sredni", { na: m });
           await c.say("bobr", "line.p_medale");
+          await c.ujecie("ogolny");
           const ok = m.find((h) => h.name === "medal_srebrny");
           dobre(ok); await c.task({ targets: m, correct: ok, wrong: "line.p_medale_nie" });
-          await c.say("kret", "line.p_srebrny"); gw.dodaj(); c.clear();
+          await c.ujecie("sredni", { na: ["kret", ok] });
+          await c.say("kret", "line.p_srebrny"); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         // 5. the bronze medal for the third in the queue
         {
-          await c.object("medal_brazowy", { x: 0, y: 1.5, size: 1.8 });
+          const md = await c.object("medal_brazowy", { x: 0, y: 1.5, size: 1.8 });
           const q = await kolejka(c, tasuj(["mysz", "zajac", "jez", "kaczatko_stoi"])); const s = await strzalka(c, q.x0 - 0.15, PODLOGA - 0.35);
+          await c.ujecie("sredni", { na: [md, ...q] });
           await c.say("kret", "line.p_trzeci");
+          await c.ujecie("ogolny");
           dobre(q[2]); await c.task({ targets: q, correct: q[2], wrong: "line.p_trzeci_nie" });
-          await c.say("bobr", "line.p_dobrze"); s.remove(); gw.dodaj(); c.clear();
+          await c.ujecie("zblizenie", { na: "bobr" });
+          await c.say("bobr", "line.p_dobrze"); s.remove(); gw.dodaj(); await c.ujecie("ogolny"); c.clear();
         }
         await c.praise("bobr");
       },
@@ -182,13 +219,18 @@ export default {
       // home: the toys line up for bed in the order Mole says
       async (c) => {
         for (const n of ["kret", "bobr"]) c.show(n);
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.h_zabawki", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         const it = []; for (const [i, n] of tasuj(["misiu", "pilka", "klocek"]).entries()) { const h = await c.object(n, { x: -2.0 + i * 2.0, y: 1.4, size: ROZ[n] }); h.ranga = ["misiu", "pilka", "klocek"].indexOf(n); it.push(h); }
         await c.say("kret", "line.h_kolejnosc");
         const t = await c.slots({ items: it, numery: true, slots: [0, 1, 2].map((k) => ({ x: -2.0 + k * 2.0, y: -1.7, w: 1.7, h: 1.5, accept: (h) => h.ranga === k })), wrong: "line.h_nie" });
         await t.done();
+        await c.ujecie("zblizenie", { na: "bobr" });
         await c.say("bobr", "line.h_dobrze", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.say("kret", "line.h_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

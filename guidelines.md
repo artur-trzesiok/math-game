@@ -277,6 +277,17 @@ included - a lesson that misses them is unfinished, whatever its folder is calle
   why it is needed ("I'd like to wear my red hat for the visit, but my things are in a mess"). Terse, hurried lines
   that jump from one task to the next read as careless. Before recording, read the whole script in order, aloud, as
   the child will hear it, and add every missing link.
+- **The story ends somewhere new.** The last adventure takes the characters to a place made for it, with its own
+  scenery (the treehouse inside, the concert glade): a background costs less than a few recordings, so a dedicated
+  place is never too much. Arriving there is a beat of its own (a transition, a look around, a line about the place).
+- **Found pictures and mazes as story beats** (`ctx.znalezisko`, the maze tool): somebody finds a map, a photo, a
+  drawing; it flies up big in the middle and the child marks what the story needs on it - where the path crosses the
+  river (that is where the treasure is, so we go there), what the lost friend holds in the photo (an apple - so she
+  went to the orchard). The answer moves the story on; it is never a quiz for its own sake. One spot or several.
+  A maze to find the way through works the same: solving it lets the story go on.
+- **Everything the child sees is painted.** Even what code makes (a maze's layout, a map's spots) is drawn by
+  gpt-image in the book's style, with the code's layout given as a reference; plain diagrams and vector shapes are
+  for tests, never for the child.
 - **A game is taught before it is played.** Rock-paper-scissors: first the three signs, then each pair
   shown with what happens (the rock moves onto the scissors and they shake: "rock blunts scissors"), then
   "one, two, three, show!", then each player says what they showed ("I chose rock", "Squirrel chose paper"),

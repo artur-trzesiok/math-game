@@ -7,6 +7,7 @@
 const ROW_Y = 1.4;
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
+const wyrosnij = (c) => c.stage.tween(0.4, () => {});                  // let things popping in reach their size before a shot frames them
 const MIEJSCE = { sowa: 0, lisek: 1, wiewiorka: 2 };       // head sizes, biggest first: Owl has much the biggest head, Squirrel the smallest
 
 // garment stickers of one kind at sizes (biggest first); h.ranga = 0 for the biggest
@@ -48,23 +49,35 @@ export default {
         c.show("wiewiorka");
         const STARA = 1.8;                                                    // the old hollow: the door is cut to its hole
         const stara = await c.object("dziupla", { x: -0.4, y: 1.0, size: STARA });
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: ["wiewiorka", stara] });              // Squirrel and her old hollow
         await c.say("wiewiorka", "line.a_zapasy", { anim: "Radosc" });
         // she squeezes in - only her head goes in, she bounces back
+        await c.ujecie("ogolny");
         const L = c.stage.puppets.wiewiorka;
         await c.przejdz("wiewiorka", [[-1.3, -2.4]]);
         c.stage.shake(stara);
         await c.stage.tween(0.5, (s) => { L.korzen.scale.set(1 - 0.18 * Math.sin(s * Math.PI), 1 + 0.12 * Math.sin(s * Math.PI), 1); });
         await c.przejdz("wiewiorka", [[-2.9, -3.3]]);
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "pot", { anim: "Smutek" });
         await c.say("wiewiorka", "line.a_nie_mieszcze");
+        await c.ujecie("ogolny");
         await Promise.all([c.enter("lisek"), c.enter("sowa")]);
+        await c.ujecie("sredni", { na: ["lisek", "wiewiorka", stara] });
         await c.say("lisek", "line.a_za_mala");
+        await c.ujecie("sredni", { na: ["sowa"] });
         await c.say("sowa", "line.a_nowa", { anim: "Zgloszenie" });
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.a_jak");
         // the old hollow's round door: it fits the old hole exactly - a template to carry along
+        await c.ujecie("ogolny");
         const o = otwor(stara), drzwi = await c.object("drzwiczki", { x: o.x, y: o.y, size: o.d / DRZWI }); przed(drzwi);
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: [stara, drzwi, "sowa"] });            // the door in the old hole, Owl telling about it
         await c.say("sowa", "line.a_drzwiczki", { anim: "Zgloszenie" });
         await c.say("sowa", "line.a_metoda");
+        await c.ujecie("ogolny");
         await c.wait(0.5); await drzwi.moveTo(-2.4, 0.9, 0.6);
         await c.say("lisek", "line.a_w_droge", { anim: "Machanie" });
         c.clear();
@@ -78,7 +91,10 @@ export default {
         await c.say("sowa", "line.b_trzy");
         const drzwi = await c.object("drzwiczki", { x: 0.9, y: -1.9, size: OTWOR.d * 1.8 / DRZWI });     // the old door, the size of the old hole
         przed(drzwi);
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: [drzwi, "sowa"] });
         await c.say("sowa", "line.b_stara_ze_soba");
+        await c.ujecie("ogolny");
         // the child holds the door against each hollow in any order; Fox says what it shows
         const KOMENTARZ = new Map([[duza, "line.b_k_duza"], [mala, "line.b_k_mala"], [sr, "line.b_k_srednia"]]);
         const sprawdzone = new Set();
@@ -93,7 +109,9 @@ export default {
             onTap: () => {}, onPuppet: () => c.stage.onPuppetTap?.(),
           }));
           const n = await przyloz(c, drzwi, h);
+          await c.ujecie("sredni", { na: [h, drzwi] });                     // the door on the hole: what Fox talks about
           await c.say("lisek", KOMENTARZ.get(h), { anim: "Wskazanie" });
+          await c.ujecie("ogolny");
           await n.zdejmij();
           if (!sprawdzone.has(h)) sprawdzone.add(h);
           if (sprawdzone.size < 3) await c.say("sowa", "line.b_nastepna");
@@ -101,37 +119,51 @@ export default {
         // then the question: which is the biggest? the smallest? and which one for Squirrel?
         await c.say("lisek", "line.b_najwieksza");
         dobre(duza); await c.task({ targets: [duza, mala, sr], correct: duza, wrong: "line.b_najwieksza_nie" }); dobre(duza, false);
+        await c.ujecie("sredni", { na: ["wiewiorka", duza] });
         await c.say("wiewiorka", "line.b_sprobuje");
         c.czastki("liscie", { wiatr: 1.4 });
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "zimno", { anim: "Smutek" });
         await c.say("wiewiorka", "line.b_za_duza");
         c.czastki(null);
+        await c.ujecie("ogolny");
         await c.say("lisek", "line.b_najmniejsza");
         dobre(mala); await c.task({ targets: [duza, mala, sr], correct: mala, wrong: "line.b_najmniejsza_nie" }); dobre(mala, false);
+        await c.ujecie("sredni", { na: ["wiewiorka", mala] });
         await c.say("wiewiorka", "line.b_za_mala");
+        await c.ujecie("ogolny");
         await c.say("sowa", "line.b_ostatnia_dla");
         dobre(sr); await c.task({ targets: [duza, mala, sr], correct: sr, wrong: "line.b_ostatnia_nie" }); dobre(sr, false);
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "serce", { anim: "Radosc" });
         await c.say("wiewiorka", "line.b_w_sam_raz");
         c.clear();
         // helping: the mice move into the old hollow's box - too small for all of them; the bigger box
         const myszki = await c.object("myszki", { x: -0.6, y: -1.9, size: 1.3 });
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: [myszki] });
         await c.say("sowa", "line.b_myszki");
+        await c.ujecie("ogolny");
         const p1 = await c.object("pudelko", { x: 1.4, y: 1.2, size: 0.9 }), p2 = await c.object("pudelko", { x: -1.8, y: 1.3, size: 1.7 });
         await c.say("lisek", "line.b_pudelko");
         dobre(p2); await c.task({ targets: [p1, p2], correct: p2, wrong: "line.b_pudelko_nie" }); dobre(p2, false);
         await myszki.moveTo(p2.mesh.position.x, p2.mesh.position.y - 0.1, 0.6); myszki.remove();
+        await c.ujecie("sredni", { na: [p2] });                              // the mice in their new box
         await c.say("sowa", "line.b_dziekuja");
         c.clear();
         // the breather: acorns fall from the oak - catch the big ones for the new store
+        await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.b_lapanie", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         for (let r = 0; r < 3; r++) {
           const m = tasuj([[-2.4, 1.6], [0, 0.8], [2.2, 1.8], [-1.0, -0.6], [1.6, -0.4]]);
           const d = await c.object("zoledz", { x: m[0][0], y: m[0][1], size: 1.3 }), k = await c.object("zoledz", { x: m[1][0], y: m[1][1], size: 0.65 });
           dobre(d); await c.task({ targets: [d, k], correct: d, wrong: "line.b_lapanie" });
           c.clear();
         }
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_do_domu");
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -139,14 +171,20 @@ export default {
       async (c) => {
         c.show("lisek"); c.show("wiewiorka"); c.show("sowa");
         const gw = c.gwiazdki(5, { auto: false });
+        await wyrosnij(c);
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.p_start");
+        await c.ujecie("ogolny");
         // 1-2. which is bigger, then the overlap shows it
         for (const rzecz of ["listek", "talerz"]) {
           const duzy = Math.random() < 0.5;
           const a = await c.object(rzecz, { x: duzy ? -1.2 : 1.6, y: 1.0, size: 1.6 }), b = await c.object(rzecz, { x: duzy ? 1.6 : -1.2, y: 1.0, size: 1.05 });
           await c.say("lisek", "line.p_wiekszy");
           dobre(a); await c.task({ targets: [a, b], correct: a, wrong: "line.p_poloz" });
-          const n = await c.nalozenie(b, a); await c.say("wiewiorka", "line.p_wystaje"); await n.cofnij(0.3);
+          const n = await c.nalozenie(b, a);
+          await c.ujecie("sredni", { na: [a, b] });                          // the overlap close: the bigger one sticks out
+          await c.say("wiewiorka", "line.p_wystaje"); await n.cofnij(0.3);
+          await c.ujecie("ogolny");
           gw.dodaj(); c.clear();
         }
         // 3. the biggest of three
@@ -166,8 +204,10 @@ export default {
           await c.say("lisek", "line.p_cien");
           const ok = duzy ? a : b;
           dobre(ok); await c.task({ targets: [a, b], correct: ok, wrong: "line.p_cien_nie" });
-          c.cien(cien, false); await c.say("wiewiorka", duzy ? "line.p_cien_duzy" : "line.p_cien_maly");
-          gw.dodaj(); c.clear();
+          c.cien(cien, false);
+          await c.ujecie("sredni", { na: [cien, ok] });                      // the shadow and its pear
+          await c.say("wiewiorka", duzy ? "line.p_cien_duzy" : "line.p_cien_maly");
+          gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
         // 5. caps by size: the biggest for Owl, the middle for Fox, the smallest for Squirrel (over the heads, not on the floor)
         const czapki = await rzeczy(c, "czapka_z_daszkiem", [1.5, 1.2, 0.9], { y: 1.4, odstep: 2.2 });
@@ -181,7 +221,10 @@ export default {
       // home - the new hollow: a housewarming; the cups go by size (the big one for Fox, the small one for Squirrel)
       async (c) => {
         for (const n of ["lisek", "wiewiorka", "sowa"]) { c.show(n); c.zdejmij(n); }
+        await wyrosnij(c);
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.d_parapetowka", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         const duzy = await c.object("kubek", { x: -0.4, y: ROW_Y, size: 1.5 }), maly = await c.object("kubek", { x: 1.8, y: ROW_Y, size: 0.85 });
         await c.say("sowa", "line.d_kubki");
         const kto = new Map([[duzy, "lisek"], [maly, "wiewiorka"]]), maja = new Set();
@@ -195,8 +238,11 @@ export default {
           },
           onTap: () => {}, onPuppet: () => c.stage.onPuppetTap?.(),
         }));
+        await c.ujecie("dwuujecie", { na: ["lisek", "wiewiorka"] });        // both with their cups
         await c.say("lisek", "line.d_pasuje", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "sowa" });
         await c.say("sowa", "line.d_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

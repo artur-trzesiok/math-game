@@ -340,6 +340,20 @@ Same colours, same oven, same counter, same shelves. Do NOT move or redraw anyth
 }
 
 # tall and short: inside the treehouse - a cosy wooden room high in a tree, a round window with leaves outside
+# ordering: the forest glade of the evening concert (the end of the story)
+SCENY["polana_koncert"] = {
+    "plyta": f"""A background illustration for a children's game: a round forest glade at early evening, warm golden sky
+with the first star, tall trees around. In the upper middle, a little low wooden stage made of logs, with a garland of
+small paper lanterns glowing warm yellow strung between two poles above it, and a few tree stumps in an arc in front
+of it like seats. The grassy ground in the lower part of the picture is EMPTY and open where characters will stand.
+{STYL}
+Wide landscape composition.
+NO characters, NO animals, NO instruments, NO text.""",
+    "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass across the ground, and three soft clouds in the evening sky.
+Same colours, same stage, same lanterns. Do NOT move or redraw anything that was already there.""",
+}
+
 SCENY["domek_wnetrze"] = {
     "wnetrze": True,
     "plyta": f"""A background illustration for a children's game: the inside of a cosy little wooden treehouse, seen

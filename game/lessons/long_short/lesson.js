@@ -8,6 +8,7 @@ const ROW_Y = 1.45;
 const MOST = { x: 1.03, y: -0.25, kat: -0.52 };       // the bridge: from the near bank (lower right) to the rock on the far bank
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
+const wyrosnij = (c) => c.stage.tween(0.4, () => {});                  // let things popping in reach their size before a shot frames them
 const polowa = (c, h) => { const b = c.bounds(h); return (b.right - b.left) / 2; };
 
 // from one line: a pencil start line on the left; the child drags every thing to it and its left end snaps there,
@@ -50,39 +51,56 @@ export default {
       // A. the brook: the plank that "reaches further" is too short; from one line the long one is plain to see
       async (c) => {
         await Promise.all(["lisek", "wiewiorka", "sarenka"].map((n) => c.enter(n)));
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.a_piknik", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "lisek" });
         await c.say("lisek", "line.a_most");
         // two planks on the grass: the short one lies further out, so its end reaches further
+        await c.ujecie("ogolny");
         const dluga = await c.object("deska_dluga", { x: 0.4, y: -1.1, size: 3.0 });
         const krotka = await c.object("deska_krotka", { x: 2.7, y: -2.35, size: 3.0 });              // its end reaches further
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: [dluga, krotka] });                   // the two planks on the grass
         await c.say("sarenka", "line.a_deski");
+        await c.ujecie("sredni", { na: ["wiewiorka", dluga, krotka] });
         await c.say("wiewiorka", "line.a_ta", { anim: "Wskazanie" });
         // the naive try: the short one across the water - it does not reach and falls in
+        await c.ujecie("ogolny");
         await Promise.all([obroc(c, krotka, MOST.kat, 0.6), krotka.moveTo(MOST.x + 0.55, MOST.y - 0.32, 0.7)]);     // from the near bank: its end ends in the water
         await c.wait(0.4);
         c.sfx("plop"); await krotka.moveTo(1.2, 0.35, 0.4); krotka.mesh.visible = false;
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "smutek", { anim: "Smutek" });
         await c.say("wiewiorka", "line.a_wpadla");
+        await c.ujecie("ogolny");
         krotka.icon.rotation.z = 0; krotka.mesh.visible = true; await krotka.moveTo(2.7, -2.35, 0.5);   // Fox fishes it out
+        await c.ujecie("zblizenie", { na: "lisek" });
         await c.say("lisek", "line.a_wylowilem");
         // the method: from one line
-        await c.ujecie("ogolny");
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.a_metoda", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await c.say("sarenka", "line.a_przeciagnij");
         const linia = await odLinii(c, [dluga, krotka], { x0: -1.5, ys: [1.1, -0.1] });
         const k = await konce(c, [dluga, krotka]);
+        await c.ujecie("sredni", { na: [dluga, krotka] });                   // both from the line, the ends marked
         await c.say("sarenka", "line.a_konce");
+        await c.ujecie("ogolny");
         await c.say("sarenka", "line.a_teraz_widac");
         dobre(dluga); await c.task({ targets: [dluga, krotka], correct: dluga, wrong: "line.a_ta_krotsza" }); dobre(dluga, false);
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.a_dluzsza", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         linia?.remove(); k.remove();
         // the long one across: it reaches the far bank; they walk over it into the picture
         krotka.remove();
         await Promise.all([obroc(c, dluga, MOST.kat, 0.6), dluga.moveTo(MOST.x, MOST.y, 0.7)]);           // from bank to bank, across the water
         c.sfx("plop");
+        await c.ujecie("sredni", { na: [dluga] });                           // the plank bridge across the brook
         await c.say("lisek", "line.a_siega");
+        await c.ujecie("ogolny");
         for (const n of ["wiewiorka", "lisek", "sarenka"]) await c.przejdz(n, [[2.3, -0.95], [-0.2, 0.5], [-0.6, 0.9]], { glebia: 0.12 });
-        await c.say("sarenka", "line.a_przeszlismy");
+        await c.say("sarenka", "line.a_przeszlismy");                      // wide: all three over the brook, close together on the far bank
         c.clear();
       },
       // B. the meadow: Squirrel's short scarf - the long one warms her; a snail race; the picnic
@@ -95,7 +113,10 @@ export default {
         await c.say("wiewiorka", "line.b_zimno");
         await c.ujecie("ogolny");
         const krotki = await c.object("szalik_krotki", { x: 2.2, y: 1.7, size: 3.0 }), dlugi = await c.object("szalik_dlugi", { x: 0.9, y: 0.4, size: 3.0 });
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: [krotki, dlugi] });                   // the two scarves
         await c.say("lisek", "line.b_szaliki");
+        await c.ujecie("ogolny");
         const linia = await odLinii(c, [krotki, dlugi], { x0: -1.2, ys: [1.7, 0.6] });
         await c.say("lisek", "line.b_ktory");
         dobre(dlugi); await c.task({ targets: [krotki, dlugi], correct: dlugi, wrong: "line.b_za_krotki" }); dobre(dlugi, false);
@@ -103,11 +124,14 @@ export default {
         await dlugi.moveTo(-2.9, -0.6, 0.5); dlugi.remove();
         await c.ubierz("wiewiorka", "szalik");
         c.czastki(null);
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.emocja("wiewiorka", "serce", { anim: "Radosc" });
         await c.say("wiewiorka", "line.b_cieplo");
         c.clear();
         // the breather: a snail race - point to a snail to cheer it on, it crawls a bit
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.b_wyscig", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         const meta = await c.object("kwiatek", { x: 3.3, y: -1.0, size: 1.0 });
         const sl = [await c.object("slimak", { x: -0.8, y: 0.4, size: 2.6 }), await c.object("slimak", { x: -0.8, y: -1.4, size: 2.6 })];
         for (;;) {
@@ -117,12 +141,18 @@ export default {
           if (hit.mesh.position.x >= 2.4) break;
         }
         c.stage.bump(meta, 0.3);
+        await c.ujecie("sredni", { na: [meta, ...sl] });                     // the snail at the flower
         await c.say("lisek", "line.b_meta", { anim: "Brawo" });
         c.clear();
+        await c.ujecie("ogolny");
         // the picnic: one long baguette for everybody
-        await c.object("bagietka_dluga", { x: 0, y: 0.2, size: 4.0 });
+        const bagietka = await c.object("bagietka_dluga", { x: 0, y: 0.2, size: 4.0 });
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: [bagietka, "sarenka"] });
         await c.say("sarenka", "line.b_piknik", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.b_do_domu");
+        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -132,7 +162,10 @@ export default {
         c.show("sarenka"); c.show("wiewiorka");
         S.puppets.wiewiorka.korzen.position.x = -5.3; S.puppets.sarenka.korzen.position.x = 5.2;
         const gw = c.gwiazdki(5, { auto: false });
+        await wyrosnij(c);
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.p_start", { anim: "Radosc" });
+        await c.ujecie("ogolny");
         // 1. two ribbons laid every which way: from the line, then which is longer
         {
           const d = await c.object("wstazka_dluga", { x: 1.0, y: -1.7, size: 3.0 }), k = await c.object("wstazka_krotka", { x: 2.4, y: 1.3, size: 3.0 });
@@ -142,8 +175,9 @@ export default {
           const l = await odLinii(c, tasuj([d, k]), { x0: -2.8, ys: [1.0, -0.4] });
           await c.say("sarenka", "line.p_dluzsza");
           dobre(d); await c.task({ targets: [d, k], correct: d, wrong: "line.p_dluzsza_nie" });
+          await c.ujecie("sredni", { na: [d, k] });
           await c.say("wiewiorka", "line.p_dluzsza_ok");
-          l?.remove(); gw.dodaj(); c.clear();
+          l?.remove(); gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
         // 2. the shortest of three planks, already from one line
         {
@@ -155,8 +189,9 @@ export default {
           const ok = hs.find((h) => h.krotka);
           await c.say("wiewiorka", "line.p_najkrotsza");
           dobre(ok); await c.task({ targets: hs, correct: ok, wrong: "line.p_najkrotsza_nie" });
+          await c.ujecie("sredni", { na: hs });                             // the three planks from the line
           await c.say("sarenka", "line.p_najkrotsza_ok");
-          gw.dodaj(); c.clear();
+          gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
         // 3. two snakes drawn with the pencil: which is longer? (a stroke is a target)
         {
@@ -167,8 +202,9 @@ export default {
           const ok = dl ? a : b;
           await c.say("sarenka", "line.p_weze");
           dobre(ok); await c.task({ targets: [a, b], correct: ok, wrong: "line.p_weze_nie" });
+          await c.ujecie("sredni", { na: [a, b] });                         // the two snakes
           await c.say("wiewiorka", "line.p_weze_ok");
-          gw.dodaj(); c.clear();
+          gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
         // 4. shadows: which shadow is the long scarf's?
         {
@@ -179,8 +215,9 @@ export default {
           await c.say("wiewiorka", dl ? "line.p_cien_dlugi" : "line.p_cien_krotki");
           dobre(ok); await c.task({ targets: [d, k], correct: ok, wrong: "line.p_cien_nie" });
           c.cien(cien, false);
+          await c.ujecie("sredni", { na: [cien, ok] });                     // the shadow and its scarf
           await c.say("sarenka", "line.p_cien_ok");
-          gw.dodaj(); c.clear();
+          gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
         // 5. catch the long ones: long and short ribbons pop up, point to the long one
         {
@@ -191,8 +228,9 @@ export default {
             dobre(d); await c.task({ targets: [d, k], correct: d, wrong: "line.p_lap" });
             c.clear();
           }
+          await c.ujecie("zblizenie", { na: "wiewiorka" });
           await c.say("wiewiorka", "line.p_lap_ok");
-          gw.dodaj();
+          gw.dodaj(); await c.ujecie("ogolny");
         }
         await c.praise("sarenka");
       },
@@ -202,7 +240,10 @@ export default {
       async (c) => {
         for (const n of ["lisek", "wiewiorka", "sarenka"]) { c.show(n); c.zdejmij(n); }        // scarves off: they hang on the hooks now
         const d = await c.object("szalik_dlugi", { x: -1.2, y: 2.15, size: 2.6 }), k = await c.object("szalik_krotki", { x: 1.6, y: 2.15, size: 2.6 });   // on the hooks
+        await wyrosnij(c);
+        await c.ujecie("sredni", { na: [d, k] });                            // the scarves on the hooks
         await c.say("lisek", "line.d_wieszaki", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await c.say("lisek", "line.d_daj");
         // drag each scarf onto the one it fits
         const kto = new Map([[d, "lisek"], [k, "wiewiorka"]]);
@@ -216,18 +257,25 @@ export default {
           },
           onTap: () => {}, onPuppet: () => c.stage.onPuppetTap?.(),
         }));
+        await c.ujecie("dwuujecie", { na: ["lisek", "wiewiorka"] });        // both in their scarves
         await c.say("wiewiorka", "line.d_pasuje", { anim: "Radosc" });
         // the kitchen: Fox wants the longest pasta, Squirrel the shortest - all five laid from one line
         await c.go("dom", { enter: true });
         await Promise.all(["lisek", "wiewiorka", "sarenka"].map((n) => c.enter(n)));
+        await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.k_kuchnia", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "lisek" });
         await c.say("lisek", "line.k_ja_najdluzszy");
+        await c.ujecie("sredni", { na: ["wiewiorka"] });
         await c.say("wiewiorka", "line.k_ja_najkrotszy", { anim: "Podskok" });
+        await c.ujecie("ogolny");
         const MAK = ["makaron_spaghetti", "makaron_tagliatelle", "makaron_swiderek", "makaron_penne", "makaron_kolanko"];
         const mak = [];
         for (const [i, n] of tasuj(MAK).entries()) mak.push(await c.object(n, { x: [-0.4, 1.6, 0.2, 2.4, 1.0][i], y: [-1.9, -2.5, -2.9, -1.7, -2.3][i], size: 4.6 }));
         for (const h of mak) h.icon.rotation.z = (Math.random() - 0.5) * 0.5;
+        await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.k_umowa", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
         await Promise.all(mak.map((h) => obroc(c, h, 0)));
         const lm = await odLinii(c, mak, { x0: -1.7, ys: [2.4, 1.7, 1.0, 0.3, -0.4] });
         const najd = mak.find((h) => h.name === "makaron_spaghetti"), najk = mak.find((h) => h.name === "makaron_kolanko");
@@ -237,12 +285,17 @@ export default {
         dobre(najk); await c.task({ targets: mak, correct: najk, wrong: "line.k_najkrotszy_nie" }); dobre(najk, false);
         lm?.remove();
         // they mix the longest with the shortest in the pot
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.k_pomieszajmy");
+        await c.ujecie("ogolny");
         const garnek = await c.object("garnek", { x: 0.6, y: -1.8, size: 2.2 });
         for (const h of [najd, najk]) { h.mesh.position.z = garnek.mesh.position.z - 0.05; await h.moveTo(0.6, -1.2, 0.5); c.sfx("plop"); h.mesh.visible = false; }
         c.stage.bump(garnek);
+        await c.ujecie("zblizenie", { na: "lisek" });
         await c.say("lisek", "line.k_pyszne", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.d_rodzice");
+        await c.ujecie("ogolny");
       },
     ],
   },

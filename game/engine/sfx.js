@@ -4,9 +4,9 @@ import { naPierwszyDotyk } from "./odblokuj.js";
 // WebAudio (the tablet), a small pool per effect so they can overlap, a gap so a burst of identical
 // events is one sound, and ducking under speech so an effect never covers what a character says.
 
-const NAZWY = ["pop", "tap", "wrong", "right", "pencil", "hop", "clap", "plop", "whoosh", "idea", "zoom", "wonder", "plansza", "etap", "melodyjka", "beben", "beben_maly", "dzwonek", "garnek", "kubek", "falsz", "klask", "koniec"];
+const NAZWY = ["pop", "tap", "wrong", "right", "pencil", "hop", "clap", "plop", "whoosh", "idea", "zoom", "wonder", "plansza", "etap", "melodyjka", "beben", "beben_maly", "dzwonek", "garnek", "kubek", "falsz", "klask", "koniec", "szklo_1", "szklo_2", "szklo_3", "szklo_4", "hu_1", "hu_2", "hu_3", "chor_sowiatek", "chor_falsz"];
 const PETLE = new Set(["melodyjka"]);    // music loops: WAV (an mp3 has a gap where it loops)
-const GLOSNOSC = { pop: 0.55, tap: 0.6, wrong: 0.7, right: 0.7, pencil: 0.45, hop: 0.6, clap: 0.55, plop: 0.6, whoosh: 0.5, idea: 0.7, zoom: 0.5, wonder: 0.6, plansza: 0.85, etap: 0.8, beben: 0.9, beben_maly: 0.85, dzwonek: 0.8, garnek: 0.85, kubek: 0.85, falsz: 0.7, klask: 0.8 };
+const GLOSNOSC = { pop: 0.55, tap: 0.6, wrong: 0.7, right: 0.7, pencil: 0.45, hop: 0.6, clap: 0.55, plop: 0.6, whoosh: 0.5, idea: 0.7, zoom: 0.5, wonder: 0.6, plansza: 0.85, etap: 0.8, beben: 0.9, beben_maly: 0.85, dzwonek: 0.8, garnek: 0.85, kubek: 0.85, falsz: 0.7, klask: 0.8, szklo_1: 0.8, szklo_2: 0.8, szklo_3: 0.8, szklo_4: 0.8, hu_1: 0.8, hu_2: 0.8, hu_3: 0.8, chor_sowiatek: 0.9, chor_falsz: 0.9 };
 const ODSTEP = 0.06;                     // s: the same effect again within this is dropped (five stickers popping in = a ripple, not a blast)
 
 export class Sfx {

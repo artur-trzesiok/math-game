@@ -361,6 +361,24 @@ for a wall, painted with coloured stripes and small notches, NO numbers, NO lett
 platform with a little roof, seen from the front, NO tree under it; one big tall apple tree with red apples.""",
 }
 
+# in order, at home: a water-glass xylophone - the SAME glass four times, water at four levels (more water, a lower note)
+SHEETS["szklanki"] = {
+    "outline": True,
+    "wspolna_skala": True,
+    "px": 512,
+    "names": ["szklanka_1", "szklanka_2", "szklanka_3", "szklanka_4"],
+    "rows": 1,
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of FOUR illustrated drinking glasses for a children's picture book, in ONE ROW of 4 on a
+fully TRANSPARENT background, with generous empty space between them so none of them touch. They stand UPRIGHT with
+their bottoms on the same invisible ground line.
+{STYL}
+The SAME simple clear glass tumbler four times, exactly the same size and shape, a little shine on the glass. Each holds
+clear light-blue water to a different level, left to right: filled almost to the top; filled three quarters; filled
+half; filled only a quarter. The water levels are clearly different and easy to compare. No spoon, no straw, no table.
+The background is fully TRANSPARENT: NO coloured background, NO glow, NO light halo around anything.""",
+}
+
 # in order (stage 2): nesting boxes and owlets at three sizes, cups that stack inside each other
 SHEETS["po_kolei"] = {
     "outline": True,

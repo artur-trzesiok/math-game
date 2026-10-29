@@ -1,8 +1,4 @@
 {
-  "line.a_wieza": {
-    "who": "bobr",
-    "text": "Cześć! Jestem Bóbr, budowniczy. Zbuduję nad strumykiem wieżę widokową, żeby zobaczyć cały las."
-  },
   "line.a_ogon": {
     "who": "bobr",
     "text": "A jak nie mam miarki, zmierzę wszystko ogonem!"
@@ -53,38 +49,6 @@
   "line.b_schodki_ok": {
     "who": "bobr",
     "text": "Piękne schodki! Najniższy, wyższy, najwyższy."
-  },
-  "line.b_sowiatka": {
-    "who": "sowa",
-    "text": "Pomóżcie mi, proszę! Moje sowiątka pomieszały budki. Każde ma swoją: największe sowiątko mieszka w największej budce."
-  },
-  "line.b_do_budek": {
-    "who": "zajac",
-    "text": "Przeciągnij każde sowiątko do budki w jego rozmiarze: najmniejsze do najmniejszej, największe do największej."
-  },
-  "line.b_nie_ta_budka": {
-    "who": "sowa",
-    "text": "Ta budka jest dla innego sowiątka. Popatrz, które jest większe, a które mniejsze."
-  },
-  "line.b_dziekuje": {
-    "who": "sowa",
-    "text": "Każde sowiątko jest w swojej budce. Dziękuję!"
-  },
-  "line.b_wyscig": {
-    "who": "zajac",
-    "text": "Zróbmy wyścig po kamieniach, do mety! Start!"
-  },
-  "line.b_kto_pierwszy": {
-    "who": "bobr",
-    "text": "Kto był pierwszy na mecie? Wskaż."
-  },
-  "line.b_pierwszy": {
-    "who": "zajac",
-    "text": "Ja! Jestem pierwszy, a Bóbr drugi."
-  },
-  "line.b_do_domu": {
-    "who": "bobr",
-    "text": "Uff, ale się zmęczyłem. Wracajmy do domu."
   },
   "line.p_start": {
     "who": "bobr",
@@ -137,22 +101,6 @@
     "who": "bobr",
     "text": "Stoi! Ale z ciebie budowniczy!"
   },
-  "line.d_polka": {
-    "who": "zajac",
-    "text": "Na półce trzeba posadzić misie. Ułożymy je po kolei."
-  },
-  "line.d_od_najwiekszego": {
-    "who": "bobr",
-    "text": "Od największego misia do najmniejszego. Zacznij przy strzałce."
-  },
-  "line.d_porzadek": {
-    "who": "zajac",
-    "text": "Jaki porządek na półce!"
-  },
-  "line.d_rodzice": {
-    "who": "bobr",
-    "text": "Ustaw z rodzicami buty całej rodziny po kolei: od największego do najmniejszego."
-  },
   "line.naklejka_daj": {
     "who": "bobr",
     "text": "Dziękuję za pomoc przy budowie! Oto naklejka do Twojego albumu. Dotknij jej, żeby ją zabrać."
@@ -163,6 +111,118 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To budka sowiątek. Dostaliśmy ją, kiedy z Bobrem i Zajączkiem układaliśmy wszystko po kolei."
+    "text": "To latarenka z wieży Bobra. Dostaliśmy ją, kiedy szykowaliśmy koncert i układaliśmy wszystko po kolei."
+  },
+  "line.a_koncert": {
+    "who": "bobr",
+    "text": "Cześć! Jestem Bóbr, budowniczy. Dziś wieczorem na leśnej polanie będzie wielki koncert! Muszę wszystko przygotować."
+  },
+  "line.a_latarnia": {
+    "who": "bobr",
+    "text": "Najpierw zbuduję wieżę na latarenkę, żeby goście trafili po ciemku."
+  },
+  "line.a_latarenka": {
+    "who": "zajac",
+    "text": "Latarenka świeci na samej górze! Teraz każdy trafi na koncert."
+  },
+  "line.b_mapa": {
+    "who": "bobr",
+    "text": "Popatrzcie, co mam: starą mapę drogi na polanę!"
+  },
+  "line.b_mapa_gdzie": {
+    "who": "zajac",
+    "text": "Ścieżka z kropek idzie przez strumyk. Pokaż na mapie, gdzie ścieżka przecina strumyk."
+  },
+  "line.b_mapa_nie": {
+    "who": "bobr",
+    "text": "Tu nie ma wody. Szukaj miejsca, gdzie kropki ścieżki spotykają niebieski strumyk."
+  },
+  "line.b_mapa_tu": {
+    "who": "bobr",
+    "text": "Tak, to tutaj! W tym miejscu zrobimy przejście przez strumyk."
+  },
+  "line.b_sowa": {
+    "who": "sowa",
+    "text": "Dobrze, że jesteście! Moje sowiątka jeszcze nie latają, a tak chcą zaśpiewać na koncercie. Jak przejdą przez wodę?"
+  },
+  "line.b_przeszly": {
+    "who": "sowa",
+    "text": "Hop, hop, hop! Wszystkie przeszły. Dziękuję!"
+  },
+  "line.b_w_droge": {
+    "who": "bobr",
+    "text": "To teraz na polanę!"
+  },
+  "line.c_polana": {
+    "who": "zajac",
+    "text": "Jesteśmy na polanie! Ale tu pięknie, lampiony już świecą."
+  },
+  "line.c_proba": {
+    "who": "sowa",
+    "text": "Zróbmy próbę chóru. Sowiątka stają w rządku po kolei: od najmniejszego do największego."
+  },
+  "line.c_ustaw": {
+    "who": "zajac",
+    "text": "Przeciągnij sowiątka na miejsca. Najmniejsze stoi przy strzałce."
+  },
+  "line.c_spiewaja": {
+    "who": "sowa",
+    "text": "Ale pięknie śpiewają, kiedy stoją po kolei!"
+  },
+  "line.c_psikus": {
+    "who": "zajac",
+    "text": "Hi, hi! Zamienię dwa sowiątka miejscami."
+  },
+  "line.c_falsz": {
+    "who": "bobr",
+    "text": "Ojej, chór fałszuje! Które sowiątko stoi nie na swoim miejscu? Wskaż."
+  },
+  "line.c_falsz_nie": {
+    "who": "bobr",
+    "text": "To sowiątko stoi dobrze. Popatrz, gdzie rządek przestaje rosnąć."
+  },
+  "line.c_znowu": {
+    "who": "sowa",
+    "text": "Znowu po kolei i znowu ładnie brzmi!"
+  },
+  "line.c_przepraszam": {
+    "who": "zajac",
+    "text": "Przepraszam, sowiątka! Już nie będę."
+  },
+  "line.c_instrument": {
+    "who": "bobr",
+    "text": "Do wieczora zostało trochę czasu. Chodźmy do domu, przygotuję swój instrument!"
+  },
+  "line.d_szklanki": {
+    "who": "bobr",
+    "text": "Oto mój instrument: szklanki z wodą! Stuknij w każdą i posłuchaj."
+  },
+  "line.d_rozne": {
+    "who": "zajac",
+    "text": "Każda brzmi inaczej! Ta z dużą ilością wody brzmi nisko, a ta z małą wysoko."
+  },
+  "line.d_uloz": {
+    "who": "bobr",
+    "text": "Ułóż szklanki po kolei: od tej z największą ilością wody do tej z najmniejszą. Zacznij przy strzałce."
+  },
+  "line.d_gama": {
+    "who": "zajac",
+    "text": "Słyszysz? Dźwięki idą w górę, jak po schodkach!"
+  },
+  "line.d_zagraj": {
+    "who": "bobr",
+    "text": "Teraz ty zagraj: stukaj w szklanki po kolei, od pierwszej do ostatniej."
+  },
+  "line.d_zagraj_nie": {
+    "who": "bobr",
+    "text": "Jeszcze nie ta. Stuknij w następną po kolei."
+  },
+  "line.d_brawo": {
+    "who": "zajac",
+    "text": "Brawo, muzyku! Wieczorem zagramy to razem na koncercie."
+  },
+  "line.d_rodzice_szklanki": {
+    "who": "bobr",
+    "text": "Nalej z rodzicami wody do kilku szklanek, ustaw je po kolei i posłuchaj, jak grają."
   }
 }
