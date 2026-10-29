@@ -32,6 +32,23 @@ vector, NOT 3D. Each object is one single thing seen straight on, NO ground
 shadow, NO text."""
 
 SHEETS = {
+    # shapes home: biscuits baked in the four shapes for Hedgehog's tea, and a triangle sandwich for "I spy"
+    "ciastka_figury": {
+        "names": ["ciastko_kolo", "ciastko_kwadrat", "ciastko_trojkat", "ciastko_prostokat", "kanapka_trojkat"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "prompt": f"""A sprite sheet of FIVE illustrated things for a children's picture book, in ONE ROW of 5 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO plate, NO table.
+{STYL}
+Four flat golden-brown butter BISCUITS seen straight from above, each one exactly ONE clear geometric shape with crisp
+straight edges and sharp corners, a few sugar sprinkles on top, all the same golden colour: left to right - a ROUND
+biscuit, a perfect circle; a SQUARE biscuit, all four sides exactly equal, lying straight (not turned); a TRIANGLE
+biscuit, point up, three equal sides; a RECTANGLE biscuit, lying flat, twice as wide as it is tall. The fifth: a
+SANDWICH cut into a TRIANGLE (white bread, a green lettuce leaf and yellow cheese peeking out), seen from the front,
+point up. Each thing fills at most a sixth of the sheet's width.""",
+    },
     # bigger_smaller: Squirrel's store in a moving box (story and home), full so "a box of the store" is seen
     "pudlo_zapasy": {
         "names": ["pudlo_zapasy"],

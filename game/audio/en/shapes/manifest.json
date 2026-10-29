@@ -15,9 +15,9 @@
   "text": "But what will we build it from?"
  },
  "line.a_z_figur": {
-  "hash": "861778641c9d",
+  "hash": "66bdd9e6eaba",
   "who": "sowa",
-  "text": "From shapes! Every shape is different, and we can tell them by their corners and sides. First let's draw them."
+  "text": "From shapes! They are lying here in the grass. For the walls we need a square."
  },
  "line.a_kolo": {
   "hash": "d69c3c67484b",
@@ -35,9 +35,9 @@
   "text": "And this is a triangle. Draw it with your finger."
  },
  "line.a_policz": {
-  "hash": "8e9abdecf742",
+  "hash": "588977e265ab",
   "who": "sowa",
-  "text": "Show its corners. Touch every corner."
+  "text": "Now touch every corner of the square."
  },
  "line.a_trzy_rogi": {
   "hash": "e4eeb4052788",
@@ -60,19 +60,19 @@
   "text": "Now we know the shapes. Let's build Hedgehog's house!"
  },
  "line.b_plan": {
-  "hash": "15ad8677eba0",
+  "hash": "d09f6fc732e7",
   "who": "lisek",
-  "text": "The shapes are lying in the grass. We'll mark with a pencil where each one goes."
+  "text": "The shapes are lying on the grass. We'll mark with a pencil where each one goes."
  },
  "line.b_sciany": {
-  "hash": "aae7a933266d",
+  "hash": "0813f72e946d",
   "who": "sowa",
-  "text": "First the walls. The walls are a square. Drag the square into its place."
+  "text": "Walls first. The walls are a square. Drag the square to its place."
  },
  "line.b_dach": {
-  "hash": "18a675595143",
+  "hash": "20ea73606557",
   "who": "sowa",
-  "text": "Now the roof. A roof is a triangle, pointy at the top. Drag the triangle onto the walls."
+  "text": "Three corners and three sides, it's a triangle! We have a roof."
  },
  "line.b_okno": {
   "hash": "c060f2930b22",
@@ -85,14 +85,14 @@
   "text": "And the door is a rectangle, two long sides and two short ones. Drag the rectangle onto the door."
  },
  "line.b_nie_ta": {
-  "hash": "fbdc8af7c722",
+  "hash": "0c7d64cea3e5",
   "who": "sowa",
-  "text": "That shape doesn't fit here. Look at its corners and sides, and try another."
+  "text": "That shape doesn't fit here. Look at its corners and sides, and try another one."
  },
  "line.b_nie_ta.lisek": {
-  "hash": "bae185d08b7f",
+  "hash": "ff0ffa1d06ff",
   "who": "lisek",
-  "text": "That shape doesn't fit here. Look at its corners and sides, and try another."
+  "text": "That shape doesn't fit here. Look at its corners and sides, and try another one."
  },
  "line.b_gotowy": {
   "hash": "1b50d9f641ba",
@@ -105,14 +105,14 @@
   "text": "My very own house! Thank you!"
  },
  "line.c_latawiec": {
-  "hash": "170a3a97f33c",
+  "hash": "f1cb6983b018",
   "who": "zajac",
-  "text": "My kite turned round and now I don't know which one it is. Mine was a square."
+  "text": "There are kites here, but not mine. Mine was a square, and none of these is a square!"
  },
  "line.c_ktory": {
-  "hash": "dfca92b684f5",
+  "hash": "f1d29a1c9f56",
   "who": "lisek",
-  "text": "Which kite is a square? Point to it."
+  "text": "Remember? We know a shape by its corners and sides. Point to the kite that is a square."
  },
  "line.c_ktory_nie": {
   "hash": "4894460caf33",
@@ -120,19 +120,19 @@
   "text": "That's not a square. A square has all its sides the same length."
  },
  "line.c_obrocony": {
-  "hash": "6628b38b0ffb",
+  "hash": "d061c07e74fd",
   "who": "lisek",
-  "text": "The square is only turned, but its sides are still all the same. A turned square is still a square!"
+  "text": "The square is only turned, but all its sides are still the same. A turned square is still a square!"
  },
  "line.c_dziekuje": {
-  "hash": "fb53bcc026e6",
+  "hash": "b2fffb76b8cc",
   "who": "zajac",
-  "text": "That's my kite! Thanks!"
+  "text": "That's my kite! Thanks! Let's fly it again!"
  },
  "line.c_do_domu": {
-  "hash": "af001b68241f",
+  "hash": "7c31ad800f2a",
   "who": "lisek",
-  "text": "That was fun! Let's go home."
+  "text": "Hooray! We'll bake biscuits for it. Let's go home!"
  },
  "line.p_start": {
   "hash": "e79e0dd7b922",
@@ -140,24 +140,14 @@
   "text": "Let's practise shapes! I have five games."
  },
  "line.p_tangram": {
-  "hash": "d9a4d2c1afb4",
+  "hash": "ed8c02cb8283",
   "who": "lisek",
-  "text": "Build the house from the pieces. Drag them, and tap to turn them."
- },
- "line.p_dobrze": {
-  "hash": "c72d06c98857",
-  "who": "sowa",
-  "text": "Bravo!"
- },
- "line.p_dobrze.lisek": {
-  "hash": "5a54aa6e56ed",
-  "who": "lisek",
-  "text": "Bravo!"
+  "text": "Build the house from the pieces. Drag them, and touch one to turn it."
  },
  "line.p_trojkat": {
-  "hash": "d962ad4a3535",
+  "hash": "b51e99586504",
   "who": "sowa",
-  "text": "The shapes have turned round. Which one is the triangle? Point to it."
+  "text": "The shapes have turned around. Point to the triangle."
  },
  "line.p_trojkat_nie": {
   "hash": "6d25aad7f9ce",
@@ -170,9 +160,9 @@
   "text": "Draw a rectangle with your finger, from the green dot."
  },
  "line.p_bez_rogow": {
-  "hash": "b9b0178bebfa",
+  "hash": "d1242f6ce7d7",
   "who": "sowa",
-  "text": "Which shape has no corners at all? Point to it."
+  "text": "Point to the shape that has no corners at all."
  },
  "line.p_bez_rogow_nie": {
   "hash": "67100b15fd84",
@@ -180,49 +170,14 @@
   "text": "That shape has corners. Look for the round one."
  },
  "line.p_kolorowanka_ok": {
-  "hash": "7cc53b122455",
+  "hash": "ae2ecc639b72",
   "who": "lisek",
-  "text": "A beautiful colourful house!"
- },
- "line.d_kuchnia": {
-  "hash": "f75662d16bba",
-  "who": "lisek",
-  "text": "There are shapes in the kitchen too. Let's look for them!"
- },
- "line.d_talerz": {
-  "hash": "8e311ea0ed70",
-  "who": "jez",
-  "text": "What shape is the plate? Point to it."
- },
- "line.d_czekolada": {
-  "hash": "f36ff688b378",
-  "who": "jez",
-  "text": "And what shape is the chocolate bar? Point to it."
- },
- "line.d_nie": {
-  "hash": "8e08642aad66",
-  "who": "jez",
-  "text": "Look again at the corners and sides."
- },
- "line.d_nie.lisek": {
-  "hash": "d07b9119e6c9",
-  "who": "lisek",
-  "text": "Look again at the corners and sides."
- },
- "line.d_kolo": {
-  "hash": "7dc7f81ebe2e",
-  "who": "lisek",
-  "text": "Yes! The plate is round like a circle."
- },
- "line.d_prostokat": {
-  "hash": "c489ac9b70b8",
-  "who": "lisek",
-  "text": "Yes! The chocolate bar is a rectangle: two long sides, two short ones."
+  "text": "What a lovely colourful house!"
  },
  "line.d_rodzice": {
-  "hash": "4c6dbcf0bd58",
-  "who": "jez",
-  "text": "Look for circles, squares, triangles and rectangles at home with your parents."
+  "hash": "fb8e4b4b9a8a",
+  "who": "lisek",
+  "text": "Play this guessing game at home with your parents: I can see something round, I can see something with three corners!"
  },
  "line.n1": {
   "hash": "13ecf4f502e6",
@@ -265,9 +220,9 @@
   "text": "Let's count its corners. Touch every corner."
  },
  "line.p_kolorowanka_znak": {
-  "hash": "f7165be24e70",
+  "hash": "ba87acd9c12d",
   "who": "sowa",
-  "text": "Colour the house. Pick a crayon with a sign, then a space with the same sign."
+  "text": "Colour the house. Pick a crayon with a sign, then a part with the same sign."
  },
  "line.b_rysunek": {
   "hash": "a60162fe9114",
@@ -275,23 +230,238 @@
   "text": "Do you know what? I drew the little house I dream of. Look!"
  },
  "line.b_rysunek_trojkat": {
-  "hash": "86deb005a377",
+  "hash": "d07f9c271a92",
   "who": "sowa",
-  "text": "What a lovely drawing! We'll build the very same house, so let's see which shapes it is made of. Where is the triangle in the drawing? Point to it."
+  "text": "What a lovely drawing! We'll build the very same house. Point to the triangle in the drawing."
  },
  "line.b_rysunek_nie": {
-  "hash": "14197c1b246a",
+  "hash": "df5d9741316c",
   "who": "sowa",
-  "text": "That's not a triangle. A triangle has three corners and a pointed top."
+  "text": "That's not a triangle. A triangle has three corners and is pointy."
  },
  "line.b_rysunek_dach": {
-  "hash": "4bc77be6827a",
+  "hash": "3b2ff4bafe15",
   "who": "sowa",
-  "text": "Yes! The roof is a triangle. The walls are a square, the window is a circle and the door is a rectangle. Let's build this house from shapes!"
+  "text": "Yes! The roof is a triangle. The walls are a square, the window is a circle and the door is a rectangle. Let's build that house from shapes!"
  },
  "line.b_jak_rysunek": {
   "hash": "4696c6a8e325",
   "who": "jez",
   "text": "Just like in my drawing!"
+ },
+ "line.a_nie_kwadrat": {
+  "hash": "24b07bb7e00e",
+  "who": "lisek",
+  "text": "Here is the square! But that other one is not a square. It stands on its corner and it's pointy, so it's some other shape."
+ },
+ "line.a_obroc": {
+  "hash": "9de150c428ab",
+  "who": "sowa",
+  "text": "Are you sure? Watch, I'll turn it."
+ },
+ "line.a_jak_poznac": {
+  "hash": "a3586e583d32",
+  "who": "lisek",
+  "text": "Now it looks just the same! So how do you know which shape it is?"
+ },
+ "line.a_rogi_boki": {
+  "hash": "88129e756973",
+  "who": "sowa",
+  "text": "We know a shape by its corners and sides, not by the way it stands."
+ },
+ "line.a_co_to": {
+  "hash": "a31862ddd790",
+  "who": "lisek",
+  "text": "By its corners and sides? What does that mean?"
+ },
+ "line.a_pokaze": {
+  "hash": "8d1502a5d635",
+  "who": "sowa",
+  "text": "I'll show you. We'll draw the shapes with a finger!"
+ },
+ "line.a_wszystkie_kwadraty": {
+  "hash": "1b610ecc90be",
+  "who": "sowa",
+  "text": "Point to all the squares lying in the grass."
+ },
+ "line.a_kwadraty_nie": {
+  "hash": "27979dd8b588",
+  "who": "sowa",
+  "text": "That's not a square. A square has all its sides the same."
+ },
+ "line.a_oba_kwadraty": {
+  "hash": "0636f1b8cfb0",
+  "who": "lisek",
+  "text": "Both are squares! They have the same corners and equal sides. A turned square is still a square!"
+ },
+ "line.b_pokaz": {
+  "hash": "2e7fe1c445a6",
+  "who": "zajac",
+  "text": "Show me, show me! I want to see too!"
+ },
+ "line.b_podarlem": {
+  "hash": "935ae5e91e19",
+  "who": "zajac",
+  "text": "Oh no... I tore it. I'm sorry, Hedgehog!"
+ },
+ "line.b_posklejaj": {
+  "hash": "789809085abd",
+  "who": "sowa",
+  "text": "Never mind. Put the drawing together from its pieces, and it will be as good as new."
+ },
+ "line.b_maly_trojkat": {
+  "hash": "7c48713bf5e0",
+  "who": "zajac",
+  "text": "And here is a triangle for the roof!"
+ },
+ "line.b_za_maly": {
+  "hash": "1c8e92885a32",
+  "who": "sowa",
+  "text": "That triangle is too small for a roof. Let's make a big one: a triangle is three corners joined by sides."
+ },
+ "line.b_kropki": {
+  "hash": "d77e55d5c612",
+  "who": "sowa",
+  "text": "Join the dots with your finger, from the smallest to the biggest."
+ },
+ "line.b_wiatr": {
+  "hash": "6c4319844909",
+  "who": "zajac",
+  "text": "Oh no, the wind took my kite! It flew off to the playground!"
+ },
+ "line.b_szukamy": {
+  "hash": "229e262ca41f",
+  "who": "lisek",
+  "text": "Don't worry, Bunny. Let's go and find it!"
+ },
+ "line.c_herbatka": {
+  "hash": "de3605904ca0",
+  "who": "jez",
+  "text": "Come to tea in my new house tomorrow, all of you!"
+ },
+ "line.p_tangram_ok": {
+  "hash": "0e19dcc16db0",
+  "who": "sowa",
+  "text": "The house from pieces is ready, just like Hedgehog's house!"
+ },
+ "line.p_trojkat_ok": {
+  "hash": "98466985454c",
+  "who": "lisek",
+  "text": "Yes, that's the triangle! It has three corners, even when it's turned."
+ },
+ "line.p_prostokat_ok": {
+  "hash": "100ebe4ddec5",
+  "who": "sowa",
+  "text": "A lovely rectangle: two long sides and two short ones."
+ },
+ "line.p_bez_rogow_ok": {
+  "hash": "8565f14909f7",
+  "who": "lisek",
+  "text": "Yes, the circle! It's round and has no corners at all."
+ },
+ "line.d_herbatka": {
+  "hash": "c86f877558fe",
+  "who": "jez",
+  "text": "Tomorrow it's tea in my house! I'm so happy!"
+ },
+ "line.d_ciasteczka": {
+  "hash": "eea972013a22",
+  "who": "lisek",
+  "text": "Let's bake biscuits in the shapes of your house: circles, squares, triangles and rectangles!"
+ },
+ "line.d_brakuje": {
+  "hash": "a2f029d311dd",
+  "who": "lisek",
+  "text": "We still need a rectangle for Owl. Cut it out of the dough: run your finger along the path."
+ },
+ "line.d_wyciete": {
+  "hash": "095989054df1",
+  "who": "jez",
+  "text": "There's the rectangle biscuit! Two long sides and two short ones."
+ },
+ "line.d_talerzyki": {
+  "hash": "3a58fd8a509b",
+  "who": "lisek",
+  "text": "Now every shape on a plate of its own."
+ },
+ "line.d_pomoge": {
+  "hash": "077cf9931976",
+  "who": "zajac",
+  "text": "I'll help! The triangle biscuit on this plate."
+ },
+ "line.d_spiczaste": {
+  "hash": "43bd00e898a2",
+  "who": "zajac",
+  "text": "And this one here too, because it's pointy, like a triangle!"
+ },
+ "line.d_rogi": {
+  "hash": "543e80b357cd",
+  "who": "jez",
+  "text": "Wait, Bunny! Let's look at its corners. Touch every corner of the biscuit."
+ },
+ "line.d_kwadrat": {
+  "hash": "0a2d6ec1c172",
+  "who": "jez",
+  "text": "A triangle has three corners, and this biscuit has more. All its sides are the same: it's a square, only turned!"
+ },
+ "line.d_zapomnialem": {
+  "hash": "58681642c218",
+  "who": "zajac",
+  "text": "A turned square is still a square! I forgot."
+ },
+ "line.d_poloz": {
+  "hash": "688018cec9e4",
+  "who": "lisek",
+  "text": "Put all the biscuits on the plates, one shape on each plate."
+ },
+ "line.d_poloz_nie": {
+  "hash": "60828122dc32",
+  "who": "lisek",
+  "text": "There are different shapes on that plate. Look at the corners and sides."
+ },
+ "line.d_gotowe": {
+  "hash": "b4b157a35e6e",
+  "who": "jez",
+  "text": "Circles, squares, triangles and rectangles, each on its own plate!"
+ },
+ "line.d_zgadywanka": {
+  "hash": "941e344ead31",
+  "who": "lisek",
+  "text": "While they cool, let's play a guessing game! I can see something in the kitchen that is round, like a circle."
+ },
+ "line.d_zegar": {
+  "hash": "76d87e59f983",
+  "who": "jez",
+  "text": "I know! The clock on the wall!"
+ },
+ "line.d_trzy_rogi": {
+  "hash": "1690e2f97026",
+  "who": "jez",
+  "text": "My turn! Point to something in the kitchen that has three corners."
+ },
+ "line.d_trzy_rogi_nie": {
+  "hash": "9dd27485299f",
+  "who": "jez",
+  "text": "That doesn't have three corners. Look for something pointy."
+ },
+ "line.d_kanapka": {
+  "hash": "e4bcfa7b9ecc",
+  "who": "lisek",
+  "text": "Yes, the sandwich! It's a triangle, it has three corners."
+ },
+ "line.d_herbatka_ok": {
+  "hash": "2c6ae761e7b2",
+  "who": "jez",
+  "text": "My first tea in my new house! Everybody loves the shape biscuits."
+ },
+ "line.b_caly": {
+  "hash": "3b74ac2be74f",
+  "who": "jez",
+  "text": "My drawing is whole again! Thank you."
+ },
+ "line.b_okienko": {
+  "hash": "cffae9318023",
+  "who": "jez",
+  "text": "A round window! I'll look out at the forest through it."
  }
 }

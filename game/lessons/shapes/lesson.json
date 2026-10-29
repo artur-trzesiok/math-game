@@ -19,16 +19,22 @@
   ],
   "objects": [
     "krzak",
-    "talerz",
-    "czekolada",
     "latawiec_kwadrat",
     "latawiec_prostokat",
     "latawiec_trojkat",
-    "latawiec_kolo"
+    "latawiec_kolo",
+    "ciastko_kolo",
+    "ciastko_kwadrat",
+    "ciastko_trojkat",
+    "ciastko_prostokat",
+    "kanapka_trojkat",
+    "talerz",
+    "czekolada"
   ],
   "cover": "Shy Hedgehog peeks happily out of a little house made of shapes - square blue walls, a yellow triangle roof, a round red window, a green rectangle door - on a meadow, Fox and Owl beside it.",
   "naklejka": {
     "obraz": "objects/jez",
     "kto": "jez"
-  }
+  },
+  "oddech": "latawiec"
 }
