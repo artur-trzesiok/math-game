@@ -19,16 +19,19 @@
   "objects": [
     "swieczka",
     "malina",
+    "koszyk",
     "jablko",
     "zoledz",
+    "miska",
+    "beben",
     "gruszka",
-    "tort",
-    "lyzka",
-    "ruch_klask"
+    "talerz",
+    "tort"
   ],
   "cover": "Hedgehog's third birthday on a meadow: a pink cake with three lit candles, Hedgehog beaming, Bear and Squirrel clapping beside it.",
   "naklejka": {
     "obraz": "objects/tort",
     "kto": "jez"
-  }
+  },
+  "oddech": "kropki"
 }

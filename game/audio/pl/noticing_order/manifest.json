@@ -15,14 +15,14 @@
   "text": "Ojej! Kartki się wysypały. Zaraz je poukładam!"
  },
  "line.a_czyta_zle": {
-  "hash": "275526dd3ac9",
+  "hash": "47cb04fe5ba7",
   "who": "sowa",
-  "text": "Przeczytajmy. Najpierw była kura, potem jajko, a na końcu z jajka wykluło się pisklę... Hmm."
+  "text": "Przeczytajmy. Najpierw była kura, potem jajko, a na końcu z jajka wykluło się pisklę... Coś tu jest dziwnie."
  },
  "line.a_smieszne": {
-  "hash": "3872d47522cc",
+  "hash": "d9f23c2828ab",
   "who": "zajac",
-  "text": "Hihi, coś tu się nie zgadza. Pisklę wykluwa się na końcu, a kura była na początku?"
+  "text": "Hihi, coś tu się nie zgadza. Skąd się wzięła kura, zanim było pisklę?"
  },
  "line.a_po_kolei": {
   "hash": "359c011b5456",
@@ -60,9 +60,9 @@
   "text": "Teraz to ma sens! Jajko, pisklę, kura."
  },
  "line.b_nasiono": {
-  "hash": "bc3d000f4c4e",
+  "hash": "7700a5e82a93",
   "who": "lisek",
-  "text": "W ogródku też wszystko dzieje się po kolei. Popatrzcie, sadzę nasionko."
+  "text": "Cześć! W ogródku też wszystko dzieje się po kolei. Popatrzcie, sadzę nasionko."
  },
  "line.b_najpierw": {
   "hash": "e11443ad7dfb",
@@ -80,24 +80,24 @@
   "text": "A na końcu kwiatek! Tulipan."
  },
  "line.b_uloz": {
-  "hash": "97f397ff912c",
+  "hash": "f76826333414",
   "who": "lisek",
-  "text": "Obrazki się pomieszały. Ułóż je po kolei, zacznij przy strzałce."
+  "text": "Narysowałem to na obrazkach, ale się pomieszały. Ułóż je po kolei, zacznij przy strzałce."
  },
  "line.b_dobrze": {
-  "hash": "8607b7a4cfda",
+  "hash": "70ade64081cc",
   "who": "lisek",
-  "text": "Nasionko, kiełek, kwiatek. Brawo!"
+  "text": "Tak! Najpierw nasionko, potem kiełek, a na końcu kwiatek."
  },
  "line.b_balwan": {
-  "hash": "7c100a59d520",
+  "hash": "dd14491478a0",
   "who": "lisek",
-  "text": "Narysowałem historyjkę o bałwanku, ale zgubiłem jedną kartkę ze środka."
+  "text": "Narysowałem też historyjkę o bałwanku, ale zgubiłem jedną kartkę ze środka."
  },
  "line.b_ktora": {
-  "hash": "50da37ba6171",
+  "hash": "5419b75b519b",
   "who": "sowa",
-  "text": "Najpierw jedna kula, na końcu gotowy bałwan. Co było pomiędzy? Wskaż."
+  "text": "Najpierw jedna kula, na końcu gotowy bałwan. Wskaż, co było pomiędzy."
  },
  "line.b_ktora_nie": {
   "hash": "61186d70ae52",
@@ -109,55 +109,20 @@
   "who": "lisek",
   "text": "Tak! Dwie kule, a potem dopiero kapelusz i szalik. Historyjka jest cała."
  },
- "line.b_wyscig": {
-  "hash": "40e70d36b5c9",
-  "who": "zajac",
-  "text": "A teraz wyścig! Kto pierwszy dobiegnie do drzewa?"
- },
- "line.b_kto_pierwszy": {
-  "hash": "96287305f865",
-  "who": "lisek",
-  "text": "Kto był pierwszy? Wskaż."
- },
- "line.b_kto_ostatni": {
-  "hash": "08df3f3dbfd5",
-  "who": "lisek",
-  "text": "A kto był ostatni? Wskaż."
- },
- "line.b_ostatnia": {
-  "hash": "c626bd13015d",
-  "who": "sowa",
-  "text": "Ja byłam ostatnia. Mam krótkie nóżki!"
- },
- "line.b_do_domu": {
-  "hash": "3d0287e4204f",
-  "who": "zajac",
-  "text": "Wracamy do domu!"
- },
  "line.p_start": {
-  "hash": "cf6879afe356",
+  "hash": "7ed9661240fc",
   "who": "sowa",
-  "text": "Pobawmy się w historyjki! Mam pięć zabaw."
+  "text": "Pobawmy się w historyjki! Mam dla ciebie kilka zabaw."
  },
  "line.p_ciasto": {
   "hash": "8a3060deb4eb",
   "who": "zajac",
   "text": "Jak się piecze ciasto? Ułóż obrazki po kolei."
  },
- "line.p_dobrze": {
-  "hash": "427a7d044fbf",
-  "who": "sowa",
-  "text": "Brawo, wszystko po kolei!"
- },
- "line.p_dobrze.zajac": {
-  "hash": "8473f7f4ed23",
-  "who": "zajac",
-  "text": "Brawo, wszystko po kolei!"
- },
  "line.p_co_pierwsze": {
-  "hash": "f0d3012f9b02",
+  "hash": "f5f5a2132add",
   "who": "sowa",
-  "text": "Co było pierwsze: kura czy jajko? W naszej książeczce. Wskaż."
+  "text": "W naszej książeczce co było pierwsze: kura czy jajko?"
  },
  "line.p_co_pierwsze_nie": {
   "hash": "f9ad4b6dcbad",
@@ -175,9 +140,9 @@
   "text": "Ułóż bałwanka po kolei."
  },
  "line.p_ostatnie": {
-  "hash": "0bacef8e748f",
+  "hash": "465345a82a14",
   "who": "sowa",
-  "text": "Co jest na końcu tej historyjki? Wskaż."
+  "text": "Wskaż, co jest na końcu tej historyjki."
  },
  "line.p_ostatnie_nie": {
   "hash": "08d50128fae2",
@@ -195,19 +160,19 @@
   "text": "Odwracaj karty i szukaj par."
  },
  "line.d_kanapka": {
-  "hash": "4d9155b9b743",
+  "hash": "9aa8d334d3a8",
   "who": "zajac",
-  "text": "Na kolację zrobimy kanapkę."
+  "text": "Ja zrobię kanapki! Szybko, wszystko naraz!"
  },
  "line.d_uloz": {
-  "hash": "2e09e4bae511",
+  "hash": "b93bba3d187b",
   "who": "sowa",
-  "text": "Najpierw chleb, potem masło, a na końcu ser. Ułóż obrazki po kolei."
+  "text": "Ułóż na blacie, jak powstaje kanapka. Zacznij przy strzałce."
  },
  "line.d_mniam": {
-  "hash": "9e65023d9755",
+  "hash": "89022c018c06",
   "who": "zajac",
-  "text": "Chleb, masło, ser. Mniam!"
+  "text": "Chleb, masło i ser. Mniam, mniam, pyszna kanapka!"
  },
  "line.d_rodzice": {
   "hash": "c92b5f12c006",
@@ -225,8 +190,173 @@
   "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
  },
  "line.naklejka_opis": {
-  "hash": "6fd2e27549db",
+  "hash": "ab3f16a08667",
   "who": "narrator",
-  "text": "To pisklę z książeczki Sowy. Dostaliśmy je, kiedy układaliśmy historyjki po kolei."
+  "text": "To pisklę, które wykluło się w kurniku za ogródkiem Liska. Dostaliśmy je, kiedy układaliśmy historyjki po kolei."
+ },
+ "line.a_dowolnie": {
+  "hash": "16bde0bcc107",
+  "who": "zajac",
+  "text": "Kura, jajko, pisklę. Gotowe! Kolejność nie ma znaczenia."
+ },
+ "line.a_naprawde": {
+  "hash": "c922491bad60",
+  "who": "zajac",
+  "text": "A czy to prawda, że z jajka wychodzi pisklę? Chcę to zobaczyć na własne oczy!"
+ },
+ "line.a_do_liska": {
+  "hash": "848b96e57451",
+  "who": "sowa",
+  "text": "Chodźmy do Liska. Za jego ogródkiem stoi kurnik, a w kurniku mieszka kura."
+ },
+ "line.b_miny": {
+  "hash": "6477025998cf",
+  "who": "zajac",
+  "text": "Bałwanek ma śmieszną minę. A ja umiem robić różne miny! Pobawimy się w lusterko?"
+ },
+ "line.b_kurnik": {
+  "hash": "023d61390a7f",
+  "who": "lisek",
+  "text": "Słyszycie? Ko, ko, ko! To kura woła nas z kurnika. Chodźmy szybko!"
+ },
+ "line.c_kurnik": {
+  "hash": "dc87d3c0b13e",
+  "who": "zajac",
+  "text": "Jaki ładny czerwony domek, a przed nim słoma. To tutaj mieszka kura?"
+ },
+ "line.c_gniazdo": {
+  "hash": "8f99b5c6a42d",
+  "who": "lisek",
+  "text": "Tak. Popatrzcie, w gniazdku leży jej jajko."
+ },
+ "line.c_rusza": {
+  "hash": "715d87a15607",
+  "who": "sowa",
+  "text": "Jajko się rusza! Zaraz coś się stanie."
+ },
+ "line.c_co_potem": {
+  "hash": "948433283141",
+  "who": "sowa",
+  "text": "Najpierw jest jajko. Wskaż, co będzie potem."
+ },
+ "line.c_co_potem_nie": {
+  "hash": "bc2e210a1c56",
+  "who": "sowa",
+  "text": "Kura będzie na końcu, kiedy pisklę urośnie. Co wychodzi z jajka?"
+ },
+ "line.c_piskle": {
+  "hash": "e299c2447d46",
+  "who": "zajac",
+  "text": "Pisklę! Wykluło się z jajka, a kura je przytula."
+ },
+ "line.c_kura": {
+  "hash": "aa5a2caeaf0a",
+  "who": "lisek",
+  "text": "A kiedy pisklę urośnie, będzie dużą kurą. Najpierw jajko, potem pisklę, a na końcu kura."
+ },
+ "line.c_juz_wiem": {
+  "hash": "f50ac4c4ca9d",
+  "who": "zajac",
+  "text": "Już wiem! Wszystko dzieje się po kolei, tak jak w książeczce Sowy."
+ },
+ "line.c_do_domu": {
+  "hash": "06a6373b9289",
+  "who": "sowa",
+  "text": "To teraz po kolei: najpierw wracamy do domu, potem podwieczorek, a na końcu przeczytam wam całą książeczkę."
+ },
+ "line.p_ciasto_ok": {
+  "hash": "4353a691942e",
+  "who": "sowa",
+  "text": "Tak! Najpierw mąka i jajka, potem mieszamy, a na końcu jest ciasto."
+ },
+ "line.p_balwan_ok": {
+  "hash": "8109748e4dd8",
+  "who": "sowa",
+  "text": "Tak! Najpierw jedna kula, potem dwie, a na końcu bałwanek w kapeluszu."
+ },
+ "line.d_dom": {
+  "hash": "665153b8203e",
+  "who": "sowa",
+  "text": "Jesteśmy w domu. Po kolei: najpierw podwieczorek, a potem książeczka."
+ },
+ "line.d_zajac_robi": {
+  "hash": "d031a707166d",
+  "who": "zajac",
+  "text": "Ser, masło, chleb. Kolejność nie ma znaczenia!"
+ },
+ "line.d_ojej": {
+  "hash": "d7141c4cae53",
+  "who": "zajac",
+  "text": "Ojej! Chleb zjechał na podłogę, a masło jest na serze."
+ },
+ "line.d_najpierw": {
+  "hash": "859565f51be6",
+  "who": "sowa",
+  "text": "Kanapkę też robimy po kolei. Najpierw chleb, potem masło, a na końcu ser."
+ },
+ "line.d_co_najpierw": {
+  "hash": "41e96f60c2e9",
+  "who": "lisek",
+  "text": "Wskaż, co kładziemy na talerzu najpierw."
+ },
+ "line.d_co_najpierw_nie": {
+  "hash": "aba36c3b48ff",
+  "who": "lisek",
+  "text": "To położymy później. Co leży na samym spodzie kanapki?"
+ },
+ "line.d_chleb": {
+  "hash": "6398fb75de30",
+  "who": "zajac",
+  "text": "Chleb! Najpierw kromka chleba."
+ },
+ "line.d_talerz": {
+  "hash": "9407910af9d5",
+  "who": "lisek",
+  "text": "Zjedliśmy. Teraz odłóż talerz na półkę, a potem czytamy."
+ },
+ "line.d_czytanie": {
+  "hash": "9bfef7a6a35e",
+  "who": "sowa",
+  "text": "A teraz obiecana książeczka. Czytam wam ją kartka po kartce, po kolei."
+ },
+ "line.d_czytanie_zajac": {
+  "hash": "892cfce12307",
+  "who": "zajac",
+  "text": "Jak dobrze, że kartki są w dobrej kolejności!"
+ },
+ "line.d_opowiem": {
+  "hash": "ab69d49fb783",
+  "who": "zajac",
+  "text": "A ja opowiem historyjkę o dzisiejszym dniu. Wskaż po kolei obrazki: co było najpierw, co potem, a co na końcu."
+ },
+ "line.d_dzien_nie": {
+  "hash": "8ec2052269f6",
+  "who": "zajac",
+  "text": "To było później. Co robiliśmy wcześniej?"
+ },
+ "line.d_dzien_1": {
+  "hash": "153e50d6fbb0",
+  "who": "zajac",
+  "text": "Najpierw Sowa pokazała mi książeczkę, a kartki się wysypały."
+ },
+ "line.d_dzien_2": {
+  "hash": "e308d76f265a",
+  "who": "zajac",
+  "text": "Potem u Liska z nasionka wyrósł kwiatek."
+ },
+ "line.d_dzien_3": {
+  "hash": "1b0f78c4a172",
+  "who": "zajac",
+  "text": "A na końcu z jajka wykluło się pisklę!"
+ },
+ "line.p_memory_ok": {
+  "hash": "fcb4e0eaba85",
+  "who": "sowa",
+  "text": "Wszystkie pary znalezione: jajko, pisklę, kura i kiełek!"
+ },
+ "line.d_talerz_ok": {
+  "hash": "45c1e8027d36",
+  "who": "lisek",
+  "text": "Talerz stoi na półce, posprzątane. A teraz książeczka!"
  }
 }

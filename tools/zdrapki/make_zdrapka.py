@@ -25,6 +25,22 @@ from make_znalezisko import magenta, STYL  # noqa: E402
 WORK = TU / "work"
 OUT = TU.parent.parent / "game" / "assets" / "zdrapki"
 ZDRAPKI = {
+    # counting_3: the ripest raspberries hide under the leaves - push the leaves aside and count them
+    "maliny_pod_liscmi": {
+        "oslona": "liscie", "lekcje": ["counting_3"],
+        "obraz": f"""A close-up of ONE branch of a raspberry bush in a sunny forest thicket, filling the whole picture: a few
+thorny green stems and some green leaves at the edges, and hanging from the stems EXACTLY THREE big ripe deep-red
+RASPBERRIES, each one big, plump and clearly visible, well apart from each other - one on the LEFT, one in the MIDDLE,
+one on the RIGHT. A soft green blurred forest background with sunlight. NO other berries, NO flowers, NO other red
+things. Big simple clear shapes.
+{STYL}""",
+        "zakryj": """big fresh green RASPBERRY LEAVES (jagged edges, light veins) piled thickly over the whole branch, overlapping
+each other like a green blanket, so NONE of the three red raspberries shows through anywhere - only leaves; the edges of
+the picture stay as they are.""",
+        "cele": ["on the LEFT raspberry (a disc covering the whole berry)",
+                 "on the MIDDLE raspberry (a disc covering the whole berry)",
+                 "on the RIGHT raspberry (a disc covering the whole berry)"],
+    },
     # morning_night: earth fell into Mole's way out in the night - rub it off and the morning shines in
     "wyjscie_z_nory": {
         "oslona": "piasek", "lekcje": ["morning_night"],

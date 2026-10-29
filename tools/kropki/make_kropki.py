@@ -28,6 +28,9 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "most of the picture, on a fully TRANSPARENT background, NO glow, NO halo, NO shadow on the ground, NO text, NO "
         "letters, NO numbers.")
 KROPKI = {
+    # counting_3: Squirrel's surprise birthday present for Hedgehog - joined from the smallest, a toy drum appears
+    "bebenek_prezent": {"n": 8, "tlo": "papier", "lekcje": ["counting_3"],
+                        "obraz": "A little toy DRUM seen from the front and a little from above: a short round cylinder with bright red sides crossed by white zigzag cords, a light cream drum skin on top with a golden rim, and two short wooden drumsticks with round red tips lying crossed FLAT ON the top skin, not sticking out. A simple bold silhouette."},
     # shapes: the big roof for Hedgehog's house - three corners joined from the smallest make a triangle
     "dach_trojkat": {"n": 3, "tlo": "papier", "lekcje": ["shapes"],
                      "obraz": "A big house ROOF on its own: ONE plain TRIANGLE pointing up, wide at the bottom, made of warm yellow-orange roof tiles in neat rows, with three sharp clean corners and three perfectly straight edges. Nothing else: no walls, no chimney, no windows."},

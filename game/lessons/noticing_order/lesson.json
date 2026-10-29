@@ -14,6 +14,7 @@
   "backgrounds": [
     "las",
     "ogrod",
+    "kurnik",
     "dom"
   ],
   "objects": [
@@ -32,11 +33,23 @@
     "kanapka_1",
     "kanapka_2",
     "kanapka_3",
-    "karta_rewers"
+    "kromka",
+    "maslo",
+    "ser",
+    "talerz",
+    "ksiazeczka",
+    "karta_rewers",
+    "emocja_radosc",
+    "emocja_smutek",
+    "emocja_zlosc",
+    "emocja_sen",
+    "emocja_strach",
+    "emocja_ojej"
   ],
   "cover": "Owl reads a picture book to Bunny in a forest; three of its pages float in the air in order: an egg in a nest, a chick hatching, a hen.",
   "naklejka": {
     "obraz": "objects/piskle",
     "kto": "sowa"
-  }
+  },
+  "oddech": "lustro"
 }

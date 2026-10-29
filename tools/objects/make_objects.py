@@ -32,6 +32,21 @@ vector, NOT 3D. Each object is one single thing seen straight on, NO ground
 shadow, NO text."""
 
 SHEETS = {
+    # noticing_order home: what a sandwich is made of, one by one (Bunny stacks them anyhow)
+    "kanapka_skladniki": {
+        "names": ["kromka", "maslo", "ser"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "prompt": f"""A sprite sheet of THREE illustrated things for a children's picture book, in ONE ROW of 3 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO plate, NO table.
+{STYL}
+Left to right: one plain slice of white bread with a golden crust, seen straight on, nothing on it; one block of pale
+yellow butter on a small white butter dish, a butter knife lying beside it on the dish; one square slice of yellow
+cheese with a few round holes, seen straight on.
+Each thing fills at most a quarter of the sheet's width; a WIDE empty gap between neighbours.""",
+    },
     # shapes home: biscuits baked in the four shapes for Hedgehog's tea, and a triangle sandwich for "I spy"
     "ciastka_figury": {
         "names": ["ciastko_kolo", "ciastko_kwadrat", "ciastko_trojkat", "ciastko_prostokat", "kanapka_trojkat"],

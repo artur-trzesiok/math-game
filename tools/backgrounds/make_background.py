@@ -54,6 +54,22 @@ with a fine paper-grain texture, warm friendly colours, thin soft outlines.
 NOT flat vector, NOT 3D render."""
 
 SCENY = {
+    # noticing_order: the henhouse yard behind Fox's garden, where the chick hatches (the end of the story)
+    "kurnik": {
+        "plyta": f"""A background illustration for a children's game: a sunny little farmyard at the edge of a friendly
+forest, behind a garden. On the LEFT a small cosy wooden henhouse painted warm red with a white-framed little window, a
+small round door and a short wooden ramp with slats leading up to it; a little heap of golden straw by the ramp. Along
+the back a low woven wicker fence with a few sunflowers, behind it green bushes and the trees of the forest, a blue sky.
+On the far right a wooden water trough and a small sack of grain. The ground in the lower part of the picture is EMPTY
+and open - packed earth with a little scattered straw - where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+NO chickens, NO hens, NO birds, NO eggs, NO nests in the open, NO characters, NO animals, NO people, NO text.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass along the fence, by the henhouse and at the edges of the yard, and six or
+seven soft white clouds in the blue sky, none touching each other.
+Same colours, same henhouse, same fence, same trough. Do NOT move or redraw anything that was already there.""",
+    },
     # bigger_smaller home: inside Squirrel's new hollow (the housewarming) - a big shelf and a small one for the store
     "dziupla_wnetrze": {
         "wnetrze": True,

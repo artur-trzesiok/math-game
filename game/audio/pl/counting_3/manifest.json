@@ -15,9 +15,9 @@
   "text": "Mam trzy lata!"
  },
  "line.a_swieczki": {
-  "hash": "efda3aa5af51",
+  "hash": "182e38231f23",
   "who": "mis",
-  "text": "Przyniosłem świeczki na tort. Policzę je!"
+  "text": "Upiekę ci tort z malinami! Mam już świeczki, policzę je."
  },
  "line.a_licze_zle": {
   "hash": "4b5cd084ce8a",
@@ -55,9 +55,9 @@
   "text": "Każda tylko raz. Teraz rozumiem."
  },
  "line.a_cyfry": {
-  "hash": "1b9d4dca5114",
+  "hash": "3719b8472a3b",
   "who": "wiewiorka",
-  "text": "Liczby można też zapisać cyframi. Popatrz."
+  "text": "Liczby można też zapisać cyframi, popatrz."
  },
  "line.a_cyfra1": {
   "hash": "9cd26e5219a4",
@@ -75,54 +75,19 @@
   "text": "A to jest trzy."
  },
  "line.a_narysuj_trzy": {
-  "hash": "c37c9dff485e",
+  "hash": "dc97e37be4d5",
   "who": "jez",
-  "text": "Narysuj trójkę na moim torcie. Poprowadź palcem od zielonej kropki."
+  "text": "Narysuj palcem trójkę, zacznij od zielonej kropki."
  },
  "line.a_moja_trojka": {
   "hash": "10d20f04308d",
   "who": "jez",
   "text": "Moja trójka! Bo mam trzy lata."
  },
- "line.b_daj": {
-  "hash": "f8c734f99996",
-  "who": "wiewiorka",
-  "text": "Daj Misiowi trzy maliny. Przeciągaj je po jednej i licz."
- },
- "line.b_za_duzo": {
-  "hash": "b8f5bd49945e",
-  "who": "mis",
-  "text": "Już mam trzy! Więcej nie potrzeba."
- },
  "line.b_trzy": {
-  "hash": "30044a3dabc9",
+  "hash": "e5e4d263da6c",
   "who": "mis",
-  "text": "Jeden, dwa, trzy maliny. W sam raz na tort!"
- },
- "line.b_klaszcze": {
-  "hash": "56a07feaca80",
-  "who": "jez",
-  "text": "Klaszczę dla moich gości! Posłuchaj i policz."
- },
- "line.b_ile_klasniec": {
-  "hash": "a445f007321d",
-  "who": "wiewiorka",
-  "text": "Ile razy klasnął Jeżyk? Wskaż cyfrę."
- },
- "line.b_klask1": {
-  "hash": "025298a77a8a",
-  "who": "jez",
-  "text": "Jeden raz!"
- },
- "line.b_klask2": {
-  "hash": "c3093f40429b",
-  "who": "jez",
-  "text": "Dwa razy!"
- },
- "line.b_klask3": {
-  "hash": "600f88e21903",
-  "who": "jez",
-  "text": "Trzy razy!"
+  "text": "Trzy maliny, tyle samo, ile w przepisie. W sam raz na tort!"
  },
  "line.b_do_domu": {
   "hash": "67495b973700",
@@ -135,29 +100,19 @@
   "text": "Poćwiczmy liczenie do trzech! Mam pięć zabaw."
  },
  "line.p_ile_jablek": {
-  "hash": "9a03f8b051a9",
+  "hash": "5c98cfdd92c2",
   "who": "mis",
-  "text": "Ile jest jabłek? Policz i wskaż cyfrę."
+  "text": "Policz jabłka i wskaż cyfrę, która mówi, ile ich jest."
  },
  "line.p_ile_jablek_nie": {
   "hash": "a8e331f2a43b",
   "who": "mis",
   "text": "Policz jeszcze raz, dotykając każdego jabłka."
  },
- "line.p_dobrze": {
-  "hash": "380ec0c47b57",
-  "who": "wiewiorka",
-  "text": "Brawo!"
- },
- "line.p_dobrze.mis": {
-  "hash": "fcf2dd50e10a",
-  "who": "mis",
-  "text": "Brawo!"
- },
  "line.p_dwa": {
-  "hash": "4ac219d4d152",
+  "hash": "0c287e88548e",
   "who": "wiewiorka",
-  "text": "Daj mi dwa żołędzie. Przeciągaj po jednym."
+  "text": "Daj mi dwa żołędzie. Przeciągaj je po jednym do mojej miski."
  },
  "line.p_dwa_juz": {
   "hash": "f7614b7f0fe5",
@@ -175,19 +130,19 @@
   "text": "Narysuj palcem jedynkę i dwójkę."
  },
  "line.p_sluchaj": {
-  "hash": "28cb4bf8fa28",
+  "hash": "ebd9c1c7645f",
   "who": "mis",
-  "text": "Posłuchaj bębna."
+  "text": "Posłuchaj, ile razy zagra bęben."
  },
  "line.p_ile_bum": {
-  "hash": "0bd334804c2b",
+  "hash": "95cf92fc4994",
   "who": "mis",
-  "text": "Ile razy zagrał bęben? Wskaż cyfrę."
+  "text": "Wskaż cyfrę, która mówi, ile razy zagrał bęben."
  },
  "line.p_trzy": {
-  "hash": "7c65f556b9b0",
+  "hash": "04331d95cb8a",
   "who": "wiewiorka",
-  "text": "Gdzie są trzy gruszki? Wskaż."
+  "text": "Wskaż, gdzie leżą trzy gruszki."
  },
  "line.p_trzy_nie": {
   "hash": "d2c69a467928",
@@ -195,39 +150,24 @@
   "text": "Policz gruszki jeszcze raz. Szukamy trzech."
  },
  "line.d_tort": {
-  "hash": "8139f8a62de0",
+  "hash": "19dba8b815a9",
   "who": "mis",
-  "text": "Tort jest gotowy! Policz świeczki."
+  "text": "Tort gotowy! Czy ma tyle malin, ile w przepisie babci? Policz je."
  },
  "line.d_trzy_lata": {
   "hash": "8db00ac9ddcb",
   "who": "jez",
   "text": "Trzy świeczki, bo mam trzy lata! Sto lat!"
  },
- "line.d_lyzki": {
-  "hash": "f854ad1464e9",
-  "who": "wiewiorka",
-  "text": "Do tortu potrzebujemy łyżeczek. Policz je."
- },
  "line.d_kazdy": {
-  "hash": "b741f546990d",
-  "who": "wiewiorka",
-  "text": "Trzy łyżeczki dla trzech przyjaciół!"
+  "hash": "49d138469d28",
+  "who": "jez",
+  "text": "Trzy talerzyki dla trzech przyjaciół!"
  },
  "line.d_rodzice": {
   "hash": "021af7c91e34",
   "who": "mis",
   "text": "Policz z rodzicami do trzech: trzy schody, trzy jabłka, trzy podskoki!"
- },
- "line.za_duzo": {
-  "hash": "eb11cc53c7fd",
-  "who": "mis",
-  "text": "Już wystarczy!"
- },
- "line.za_duzo.wiewiorka": {
-  "hash": "7576beae0e34",
-  "who": "wiewiorka",
-  "text": "Już wystarczy!"
  },
  "line.n1": {
   "hash": "ba57f5b09fb8",
@@ -299,9 +239,149 @@
   "who": "wiewiorka",
   "text": "Trzy maliny! Ostatnia liczba mówi, ile ich jest. Na tort potrzebujemy trzech."
  },
- "line.b_zrywamy": {
-  "hash": "09e707d298fa",
+ "line.a_po_maliny": {
+  "hash": "f3c980118cf6",
   "who": "mis",
-  "text": "To zerwijmy z krzaczków trzy maliny!"
+  "text": "A teraz chodźmy po maliny do zagajnika. Będą na tort!"
+ },
+ "line.b_pod_liscmi": {
+  "hash": "054888501429",
+  "who": "wiewiorka",
+  "text": "Najsłodsze maliny chowają się pod liśćmi. Odgarnij liście palcem!"
+ },
+ "line.b_policz_maliny": {
+  "hash": "c23ce42a2cb4",
+  "who": "mis",
+  "text": "Policz je, dotknij każdej po kolei. Czy jest ich tyle, ile w przepisie?"
+ },
+ "line.b_niespodzianka": {
+  "hash": "85d486b9de30",
+  "who": "wiewiorka",
+  "text": "Jeżyku, mam dla ciebie prezent niespodziankę! Połącz kropki od najmniejszej, a zobaczysz, co to."
+ },
+ "line.b_bebenek": {
+  "hash": "39b38cb7a0e6",
+  "who": "jez",
+  "text": "Bębenek! Dziękuję, Wiewiórko!"
+ },
+ "line.p_jablka1": {
+  "hash": "07620b056280",
+  "who": "wiewiorka",
+  "text": "Tak, jedno jabłko!"
+ },
+ "line.p_jablka2": {
+  "hash": "09dc99ec8066",
+  "who": "wiewiorka",
+  "text": "Tak, dwa jabłka!"
+ },
+ "line.p_jablka3": {
+  "hash": "ac49ac208433",
+  "who": "wiewiorka",
+  "text": "Tak, trzy jabłka!"
+ },
+ "line.p_cyfry_ok": {
+  "hash": "999e3cd6430a",
+  "who": "wiewiorka",
+  "text": "Jedynka i dwójka, pięknie narysowane!"
+ },
+ "line.p_bum1": {
+  "hash": "11129fc65b14",
+  "who": "wiewiorka",
+  "text": "Tak, bęben zagrał jeden raz!"
+ },
+ "line.p_bum2": {
+  "hash": "f55c990df2bf",
+  "who": "wiewiorka",
+  "text": "Tak, bęben zagrał dwa razy!"
+ },
+ "line.p_bum3": {
+  "hash": "241b47757127",
+  "who": "wiewiorka",
+  "text": "Tak, bęben zagrał trzy razy!"
+ },
+ "line.p_gruszki_ok": {
+  "hash": "0a4a8952d34f",
+  "who": "mis",
+  "text": "Tak, tu są trzy gruszki: jedna, dwie, trzy!"
+ },
+ "line.d_w_domu": {
+  "hash": "fc58364efcb9",
+  "who": "mis",
+  "text": "Jesteśmy w domu! Tort z malinami już się piecze. Nakryjmy do stołu na urodziny!"
+ },
+ "line.d_policze": {
+  "hash": "329705bb2f11",
+  "who": "jez",
+  "text": "Ja policzę, ile talerzyków potrzeba!"
+ },
+ "line.d_licze_zle": {
+  "hash": "601330c59eb0",
+  "who": "jez",
+  "text": "Jeden, dwa, trzy, cztery..."
+ },
+ "line.d_cztery": {
+  "hash": "76324e60b2f1",
+  "who": "jez",
+  "text": "Cztery talerzyki!"
+ },
+ "line.d_dwa_razy": {
+  "hash": "d896670ff7aa",
+  "who": "wiewiorka",
+  "text": "Jeżyku, Misia policzyłeś dwa razy!"
+ },
+ "line.d_kazdy_raz": {
+  "hash": "41e6a60e64db",
+  "who": "mis",
+  "text": "Każdego liczymy tylko raz. Sprawdźmy: każdy dostanie jeden talerzyk."
+ },
+ "line.d_rozdaj": {
+  "hash": "3b83001c6fa2",
+  "who": "wiewiorka",
+  "text": "Daj każdemu z nas po jednym talerzyku."
+ },
+ "line.d_zostal": {
+  "hash": "f77fa4782b9a",
+  "who": "jez",
+  "text": "Jeden talerzyk został! Jest nas troje, więc wystarczą trzy."
+ },
+ "line.d_na_stol": {
+  "hash": "5f13ae64bdf7",
+  "who": "wiewiorka",
+  "text": "Postaw trzy talerzyki na stole, na trzech miejscach."
+ },
+ "line.d_maliny_ok": {
+  "hash": "6749a2d526f6",
+  "who": "mis",
+  "text": "Trzy maliny, jak w przepisie!"
+ },
+ "line.d_ile_swieczek": {
+  "hash": "203718376fb9",
+  "who": "wiewiorka",
+  "text": "Teraz świeczki. Wskaż cyfrę, która mówi, ile lat ma Jeżyk."
+ },
+ "line.d_ile_swieczek_nie": {
+  "hash": "7c884baa6748",
+  "who": "wiewiorka",
+  "text": "Jeżyk ma trzy lata. Szukamy trójki."
+ },
+ "line.d_zdmuchuje": {
+  "hash": "2912256a40e2",
+  "who": "jez",
+  "text": "Wszystkie trzy naraz! Fuuu!"
+ },
+ "line.d_sto_lat": {
+  "hash": "c235215767fb",
+  "who": "wiewiorka",
+  "text": "Zgasły wszystkie trzy! Sto lat, Jeżyku!"
+ },
+ "line.d_podskoki": {
+  "hash": "5363d619c439",
+  "who": "mis",
+  "text": "A teraz trzy urodzinowe podskoki. Liczymy razem!"
+ },
+ "line.b_sa_maliny": {
+  "hash": "98fd5b6870d5",
+  "who": "jez",
+  "text": "Są! Schowały się pod liśćmi!"
  }
 }

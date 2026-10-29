@@ -34,6 +34,37 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # noticing_order story: the payoff - the chick hatches in the henhouse yard, the hen beside it, the friends watching
+    "wyklucie": {
+        "postacie": ["zajac", "sowa", "lisek"], "tlo": "kurnik", "lekcje": ["noticing_order"],
+        "scena": """The sunny henhouse yard from the reference picture. In the front middle, on the ground, a round straw NEST;
+in it a white EGG has just CRACKED open - the top of the shell lifted off, and a tiny fluffy yellow CHICK pokes its head
+and wings out, its beak wide open as it cheeps, little pieces of shell around it. A big white HEN with a red comb stands
+right beside the nest, bending her head down lovingly to her chick. Behind the nest, a little apart, the BUNNY crouches
+down with both paws on his cheeks, amazed and delighted; the OWL stands next to him smiling warmly with her wings
+folded; the FOX kneels at the other side, smiling. Golden afternoon light, warm and joyful - a new little life.""",
+    },
+    # noticing_order home: the payoff - after the sandwiches Owl reads the whole picture book at the kitchen table
+    "czytanie_ksiazeczki": {
+        "postacie": ["sowa", "zajac", "lisek"], "tlo": "dom", "lekcje": ["noticing_order"],
+        "scena": """The cosy kitchen from the reference picture, in warm late-afternoon light. Around the big wooden table sit
+the OWL, the BUNNY and the FOX. On the table three plates with half-eaten sandwiches (bread, butter and yellow cheese),
+crumbs, three cups of milk. The OWL holds an open picture book with both wings and reads it aloud; on the open pages a
+simple picture of a white egg in a straw nest. The BUNNY leans in close with his chin on his paws, listening with shining
+eyes; the FOX listens too, smiling. Calm, happy and cosy - the promised story at last.""",
+    },
+    # counting_3 home: the payoff - Hedgehog blows out the three candles of his birthday cake in the kitchen
+    "zdmuchiwanie_swieczek": {
+        "postacie": ["jez", "mis", "wiewiorka"], "tlo": "dom", "lekcje": ["counting_3"],
+        "scena": """Hedgehog's BIRTHDAY PARTY at the big wooden kitchen table from the reference picture, warm afternoon light
+through the window, a few colourful paper streamers and balloons by the window. On the table in the middle a round
+birthday CAKE with pink icing; on top of it EXACTLY THREE red RASPBERRIES and EXACTLY THREE thin candles, their little
+flames just blown sideways and going out, with tiny wisps of smoke. The little HEDGEHOG stands on a chair at the table,
+cheeks puffed out, blowing the candles out with all his might, eyes shut with joy. The BEAR stands on one side clapping
+his paws, beaming; the SQUIRREL on the other side throws a handful of confetti. EXACTLY THREE small plates on the table,
+one in front of each of them, and a little red toy drum with two drumsticks beside the hedgehog's plate. Happy, warm,
+festive.""",
+    },
     # morning_night story: Mole's first morning - he climbs out of his burrow onto the meadow as the sun rises
     "wschod_slonca": {
         "postacie": ["kret", "wiewiorka", "sarenka"], "tlo": "laka", "lekcje": ["morning_night"],

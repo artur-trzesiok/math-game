@@ -13,7 +13,7 @@
   },
   "line.a_swieczki": {
     "who": "mis",
-    "text": "I brought candles for the cake. I'll count them!"
+    "text": "I'll bake you a raspberry cake! I already have the candles, I'll count them."
   },
   "line.a_licze_zle": {
     "who": "mis",
@@ -45,7 +45,7 @@
   },
   "line.a_cyfry": {
     "who": "wiewiorka",
-    "text": "Numbers can also be written with digits. Look."
+    "text": "Numbers can also be written with digits, look."
   },
   "line.a_cyfra1": {
     "who": "wiewiorka",
@@ -61,11 +61,15 @@
   },
   "line.a_narysuj_trzy": {
     "who": "jez",
-    "text": "Draw a three for my cake. Run your finger from the green dot."
+    "text": "Draw a three with your finger, starting at the green dot."
   },
   "line.a_moja_trojka": {
     "who": "jez",
     "text": "My three! Because I'm three years old."
+  },
+  "line.a_po_maliny": {
+    "who": "mis",
+    "text": "Now let's go to the thicket for raspberries. They're for the cake!"
   },
   "line.b_zagajnik": {
     "who": "mis",
@@ -87,41 +91,29 @@
     "who": "wiewiorka",
     "text": "Three raspberries! The last number tells how many there are. We need three for the cake."
   },
-  "line.b_zrywamy": {
-    "who": "mis",
-    "text": "Then let's pick three raspberries from the bushes!"
-  },
-  "line.b_daj": {
+  "line.b_pod_liscmi": {
     "who": "wiewiorka",
-    "text": "Give Bear three raspberries. Drag them one at a time and count."
+    "text": "The sweetest raspberries hide under the leaves. Brush the leaves away with your finger!"
   },
-  "line.b_za_duzo": {
+  "line.b_sa_maliny": {
+    "who": "jez",
+    "text": "There they are! They were hiding under the leaves!"
+  },
+  "line.b_policz_maliny": {
     "who": "mis",
-    "text": "I already have three! No more needed."
+    "text": "Count them, touch each one in turn. Are there as many as in the recipe?"
   },
   "line.b_trzy": {
     "who": "mis",
-    "text": "One, two, three raspberries. Just right for the cake!"
+    "text": "Three raspberries, just as many as in the recipe. Just right for the cake!"
   },
-  "line.b_klaszcze": {
-    "who": "jez",
-    "text": "I'm clapping for my guests! Listen and count."
-  },
-  "line.b_ile_klasniec": {
+  "line.b_niespodzianka": {
     "who": "wiewiorka",
-    "text": "How many times did Hedgehog clap? Point to the number."
+    "text": "Hedgehog, I have a surprise present for you! Join the dots from the smallest one and you'll see what it is."
   },
-  "line.b_klask1": {
+  "line.b_bebenek": {
     "who": "jez",
-    "text": "One time!"
-  },
-  "line.b_klask2": {
-    "who": "jez",
-    "text": "Two times!"
-  },
-  "line.b_klask3": {
-    "who": "jez",
-    "text": "Three times!"
+    "text": "A drum! Thank you, Squirrel!"
   },
   "line.b_do_domu": {
     "who": "mis",
@@ -133,22 +125,27 @@
   },
   "line.p_ile_jablek": {
     "who": "mis",
-    "text": "How many apples are there? Count and point to the number."
+    "text": "Count the apples and point to the digit that says how many there are."
   },
   "line.p_ile_jablek_nie": {
     "who": "mis",
     "text": "Count again, touching each apple."
   },
-  "line.p_dobrze": {
+  "line.p_jablka1": {
     "who": "wiewiorka",
-    "text": "Bravo!",
-    "speakers": [
-      "mis"
-    ]
+    "text": "Yes, one apple!"
+  },
+  "line.p_jablka2": {
+    "who": "wiewiorka",
+    "text": "Yes, two apples!"
+  },
+  "line.p_jablka3": {
+    "who": "wiewiorka",
+    "text": "Yes, three apples!"
   },
   "line.p_dwa": {
     "who": "wiewiorka",
-    "text": "Give me two acorns. Drag them one at a time."
+    "text": "Give me two acorns. Drag them into my bowl one at a time."
   },
   "line.p_dwa_juz": {
     "who": "wiewiorka",
@@ -162,48 +159,117 @@
     "who": "mis",
     "text": "Draw a one and a two with your finger."
   },
+  "line.p_cyfry_ok": {
+    "who": "wiewiorka",
+    "text": "A one and a two, beautifully drawn!"
+  },
   "line.p_sluchaj": {
     "who": "mis",
-    "text": "Listen to the drum."
+    "text": "Listen to how many times the drum plays."
   },
   "line.p_ile_bum": {
     "who": "mis",
-    "text": "How many times did the drum play? Point to the number."
+    "text": "Point to the digit that says how many times the drum played."
+  },
+  "line.p_bum1": {
+    "who": "wiewiorka",
+    "text": "Yes, the drum played once!"
+  },
+  "line.p_bum2": {
+    "who": "wiewiorka",
+    "text": "Yes, the drum played two times!"
+  },
+  "line.p_bum3": {
+    "who": "wiewiorka",
+    "text": "Yes, the drum played three times!"
   },
   "line.p_trzy": {
     "who": "wiewiorka",
-    "text": "Where are three pears? Point to them."
+    "text": "Point to where there are three pears."
   },
   "line.p_trzy_nie": {
     "who": "wiewiorka",
     "text": "Count the pears again. We're looking for three."
   },
+  "line.p_gruszki_ok": {
+    "who": "mis",
+    "text": "Yes, here are three pears: one, two, three!"
+  },
+  "line.d_w_domu": {
+    "who": "mis",
+    "text": "We're home! The raspberry cake is baking. Let's lay the table for the party!"
+  },
+  "line.d_policze": {
+    "who": "jez",
+    "text": "I'll count how many plates we need!"
+  },
+  "line.d_licze_zle": {
+    "who": "jez",
+    "text": "One, two, three, four..."
+  },
+  "line.d_cztery": {
+    "who": "jez",
+    "text": "Four plates!"
+  },
+  "line.d_dwa_razy": {
+    "who": "wiewiorka",
+    "text": "Hedgehog, you counted Bear twice!"
+  },
+  "line.d_kazdy_raz": {
+    "who": "mis",
+    "text": "We count each one only once. Let's check: everyone gets one plate."
+  },
+  "line.d_rozdaj": {
+    "who": "wiewiorka",
+    "text": "Give each of us one plate."
+  },
+  "line.d_zostal": {
+    "who": "jez",
+    "text": "One plate is left over! There are three of us, so three are enough."
+  },
+  "line.d_na_stol": {
+    "who": "wiewiorka",
+    "text": "Put the three plates on the table, in the three places."
+  },
+  "line.d_kazdy": {
+    "who": "jez",
+    "text": "Three plates for three friends!"
+  },
   "line.d_tort": {
     "who": "mis",
-    "text": "The cake is ready! Count the candles."
+    "text": "The cake is ready! Does it have as many raspberries as Grandma's recipe? Count them."
+  },
+  "line.d_maliny_ok": {
+    "who": "mis",
+    "text": "Three raspberries, just like the recipe!"
+  },
+  "line.d_ile_swieczek": {
+    "who": "wiewiorka",
+    "text": "Now the candles. Point to the digit that says how old Hedgehog is."
+  },
+  "line.d_ile_swieczek_nie": {
+    "who": "wiewiorka",
+    "text": "Hedgehog is three. We're looking for the three."
   },
   "line.d_trzy_lata": {
     "who": "jez",
     "text": "Three candles, because I'm three! Hooray!"
   },
-  "line.d_lyzki": {
-    "who": "wiewiorka",
-    "text": "We need spoons for the cake. Count them."
+  "line.d_zdmuchuje": {
+    "who": "jez",
+    "text": "All three at once! Whoosh!"
   },
-  "line.d_kazdy": {
+  "line.d_sto_lat": {
     "who": "wiewiorka",
-    "text": "Three spoons for three friends!"
+    "text": "All three are out! Happy birthday, Hedgehog!"
+  },
+  "line.d_podskoki": {
+    "who": "mis",
+    "text": "And now three birthday jumps. Let's count together!"
   },
   "line.d_rodzice": {
     "who": "mis",
     "text": "Count to three with your parents: three stairs, three apples, three jumps!"
-  },
-  "line.za_duzo": {
-    "who": "mis",
-    "text": "That's enough!",
-    "speakers": [
-      "wiewiorka"
-    ]
   },
   "line.n1": {
     "who": "wiewiorka",

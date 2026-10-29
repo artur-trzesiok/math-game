@@ -11,13 +11,17 @@
     "who": "zajac",
     "text": "Ojej! Kartki się wysypały. Zaraz je poukładam!"
   },
+  "line.a_dowolnie": {
+    "who": "zajac",
+    "text": "Kura, jajko, pisklę. Gotowe! Kolejność nie ma znaczenia."
+  },
   "line.a_czyta_zle": {
     "who": "sowa",
-    "text": "Przeczytajmy. Najpierw była kura, potem jajko, a na końcu z jajka wykluło się pisklę... Hmm."
+    "text": "Przeczytajmy. Najpierw była kura, potem jajko, a na końcu z jajka wykluło się pisklę... Coś tu jest dziwnie."
   },
   "line.a_smieszne": {
     "who": "zajac",
-    "text": "Hihi, coś tu się nie zgadza. Pisklę wykluwa się na końcu, a kura była na początku?"
+    "text": "Hihi, coś tu się nie zgadza. Skąd się wzięła kura, zanim było pisklę?"
   },
   "line.a_po_kolei": {
     "who": "sowa",
@@ -43,9 +47,17 @@
     "who": "zajac",
     "text": "Teraz to ma sens! Jajko, pisklę, kura."
   },
+  "line.a_naprawde": {
+    "who": "zajac",
+    "text": "A czy to prawda, że z jajka wychodzi pisklę? Chcę to zobaczyć na własne oczy!"
+  },
+  "line.a_do_liska": {
+    "who": "sowa",
+    "text": "Chodźmy do Liska. Za jego ogródkiem stoi kurnik, a w kurniku mieszka kura."
+  },
   "line.b_nasiono": {
     "who": "lisek",
-    "text": "W ogródku też wszystko dzieje się po kolei. Popatrzcie, sadzę nasionko."
+    "text": "Cześć! W ogródku też wszystko dzieje się po kolei. Popatrzcie, sadzę nasionko."
   },
   "line.b_najpierw": {
     "who": "sowa",
@@ -61,19 +73,19 @@
   },
   "line.b_uloz": {
     "who": "lisek",
-    "text": "Obrazki się pomieszały. Ułóż je po kolei, zacznij przy strzałce."
+    "text": "Narysowałem to na obrazkach, ale się pomieszały. Ułóż je po kolei, zacznij przy strzałce."
   },
   "line.b_dobrze": {
     "who": "lisek",
-    "text": "Nasionko, kiełek, kwiatek. Brawo!"
+    "text": "Tak! Najpierw nasionko, potem kiełek, a na końcu kwiatek."
   },
   "line.b_balwan": {
     "who": "lisek",
-    "text": "Narysowałem historyjkę o bałwanku, ale zgubiłem jedną kartkę ze środka."
+    "text": "Narysowałem też historyjkę o bałwanku, ale zgubiłem jedną kartkę ze środka."
   },
   "line.b_ktora": {
     "who": "sowa",
-    "text": "Najpierw jedna kula, na końcu gotowy bałwan. Co było pomiędzy? Wskaż."
+    "text": "Najpierw jedna kula, na końcu gotowy bałwan. Wskaż, co było pomiędzy."
   },
   "line.b_ktora_nie": {
     "who": "sowa",
@@ -83,44 +95,65 @@
     "who": "lisek",
     "text": "Tak! Dwie kule, a potem dopiero kapelusz i szalik. Historyjka jest cała."
   },
-  "line.b_wyscig": {
+  "line.b_miny": {
     "who": "zajac",
-    "text": "A teraz wyścig! Kto pierwszy dobiegnie do drzewa?"
+    "text": "Bałwanek ma śmieszną minę. A ja umiem robić różne miny! Pobawimy się w lusterko?"
   },
-  "line.b_kto_pierwszy": {
+  "line.b_kurnik": {
     "who": "lisek",
-    "text": "Kto był pierwszy? Wskaż."
+    "text": "Słyszycie? Ko, ko, ko! To kura woła nas z kurnika. Chodźmy szybko!"
   },
-  "line.b_kto_ostatni": {
+  "line.c_kurnik": {
+    "who": "zajac",
+    "text": "Jaki ładny czerwony domek, a przed nim słoma. To tutaj mieszka kura?"
+  },
+  "line.c_gniazdo": {
     "who": "lisek",
-    "text": "A kto był ostatni? Wskaż."
+    "text": "Tak. Popatrzcie, w gniazdku leży jej jajko."
   },
-  "line.b_ostatnia": {
+  "line.c_rusza": {
     "who": "sowa",
-    "text": "Ja byłam ostatnia. Mam krótkie nóżki!"
+    "text": "Jajko się rusza! Zaraz coś się stanie."
   },
-  "line.b_do_domu": {
+  "line.c_co_potem": {
+    "who": "sowa",
+    "text": "Najpierw jest jajko. Wskaż, co będzie potem."
+  },
+  "line.c_co_potem_nie": {
+    "who": "sowa",
+    "text": "Kura będzie na końcu, kiedy pisklę urośnie. Co wychodzi z jajka?"
+  },
+  "line.c_piskle": {
     "who": "zajac",
-    "text": "Wracamy do domu!"
+    "text": "Pisklę! Wykluło się z jajka, a kura je przytula."
+  },
+  "line.c_kura": {
+    "who": "lisek",
+    "text": "A kiedy pisklę urośnie, będzie dużą kurą. Najpierw jajko, potem pisklę, a na końcu kura."
+  },
+  "line.c_juz_wiem": {
+    "who": "zajac",
+    "text": "Już wiem! Wszystko dzieje się po kolei, tak jak w książeczce Sowy."
+  },
+  "line.c_do_domu": {
+    "who": "sowa",
+    "text": "To teraz po kolei: najpierw wracamy do domu, potem podwieczorek, a na końcu przeczytam wam całą książeczkę."
   },
   "line.p_start": {
     "who": "sowa",
-    "text": "Pobawmy się w historyjki! Mam pięć zabaw."
+    "text": "Pobawmy się w historyjki! Mam dla ciebie kilka zabaw."
   },
   "line.p_ciasto": {
     "who": "zajac",
     "text": "Jak się piecze ciasto? Ułóż obrazki po kolei."
   },
-  "line.p_dobrze": {
+  "line.p_ciasto_ok": {
     "who": "sowa",
-    "text": "Brawo, wszystko po kolei!",
-    "speakers": [
-      "zajac"
-    ]
+    "text": "Tak! Najpierw mąka i jajka, potem mieszamy, a na końcu jest ciasto."
   },
   "line.p_co_pierwsze": {
     "who": "sowa",
-    "text": "Co było pierwsze: kura czy jajko? W naszej książeczce. Wskaż."
+    "text": "W naszej książeczce co było pierwsze: kura czy jajko?"
   },
   "line.p_co_pierwsze_nie": {
     "who": "sowa",
@@ -134,9 +167,13 @@
     "who": "zajac",
     "text": "Ułóż bałwanka po kolei."
   },
+  "line.p_balwan_ok": {
+    "who": "sowa",
+    "text": "Tak! Najpierw jedna kula, potem dwie, a na końcu bałwanek w kapeluszu."
+  },
   "line.p_ostatnie": {
     "who": "sowa",
-    "text": "Co jest na końcu tej historyjki? Wskaż."
+    "text": "Wskaż, co jest na końcu tej historyjki."
   },
   "line.p_ostatnie_nie": {
     "who": "sowa",
@@ -150,17 +187,85 @@
     "who": "zajac",
     "text": "Odwracaj karty i szukaj par."
   },
+  "line.p_memory_ok": {
+    "who": "sowa",
+    "text": "Wszystkie pary znalezione: jajko, pisklę, kura i kiełek!"
+  },
+  "line.d_dom": {
+    "who": "sowa",
+    "text": "Jesteśmy w domu. Po kolei: najpierw podwieczorek, a potem książeczka."
+  },
   "line.d_kanapka": {
     "who": "zajac",
-    "text": "Na kolację zrobimy kanapkę."
+    "text": "Ja zrobię kanapki! Szybko, wszystko naraz!"
+  },
+  "line.d_zajac_robi": {
+    "who": "zajac",
+    "text": "Ser, masło, chleb. Kolejność nie ma znaczenia!"
+  },
+  "line.d_ojej": {
+    "who": "zajac",
+    "text": "Ojej! Chleb zjechał na podłogę, a masło jest na serze."
+  },
+  "line.d_najpierw": {
+    "who": "sowa",
+    "text": "Kanapkę też robimy po kolei. Najpierw chleb, potem masło, a na końcu ser."
+  },
+  "line.d_co_najpierw": {
+    "who": "lisek",
+    "text": "Wskaż, co kładziemy na talerzu najpierw."
+  },
+  "line.d_co_najpierw_nie": {
+    "who": "lisek",
+    "text": "To położymy później. Co leży na samym spodzie kanapki?"
+  },
+  "line.d_chleb": {
+    "who": "zajac",
+    "text": "Chleb! Najpierw kromka chleba."
   },
   "line.d_uloz": {
     "who": "sowa",
-    "text": "Najpierw chleb, potem masło, a na końcu ser. Ułóż obrazki po kolei."
+    "text": "Ułóż na blacie, jak powstaje kanapka. Zacznij przy strzałce."
   },
   "line.d_mniam": {
     "who": "zajac",
-    "text": "Chleb, masło, ser. Mniam!"
+    "text": "Chleb, masło i ser. Mniam, mniam, pyszna kanapka!"
+  },
+  "line.d_talerz": {
+    "who": "lisek",
+    "text": "Zjedliśmy. Teraz odłóż talerz na półkę, a potem czytamy."
+  },
+  "line.d_talerz_ok": {
+    "who": "lisek",
+    "text": "Talerz stoi na półce, posprzątane. A teraz książeczka!"
+  },
+  "line.d_czytanie": {
+    "who": "sowa",
+    "text": "A teraz obiecana książeczka. Czytam wam ją kartka po kartce, po kolei."
+  },
+  "line.d_czytanie_zajac": {
+    "who": "zajac",
+    "text": "Jak dobrze, że kartki są w dobrej kolejności!"
+  },
+  "line.d_opowiem": {
+    "who": "zajac",
+    "text": "A ja opowiem historyjkę o dzisiejszym dniu. Wskaż po kolei obrazki: co było najpierw, co potem, a co na końcu."
+  },
+  "line.d_dzien_nie": {
+    "who": "zajac",
+    "text": "To było później. Co robiliśmy wcześniej?"
+  },
+  "line.d_dzien_1": {
+    "who": "zajac",
+    "text": "Najpierw Sowa pokazała mi książeczkę, a kartki się wysypały."
+  },
+  "line.d_dzien_2": {
+    "who": "zajac",
+    "text": "Potem u Liska z nasionka wyrósł kwiatek."
+  },
+  "line.d_dzien_3": {
+    "who": "zajac",
+    "text": "A na końcu z jajka wykluło się pisklę!"
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -176,6 +281,6 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To pisklę z książeczki Sowy. Dostaliśmy je, kiedy układaliśmy historyjki po kolei."
+    "text": "To pisklę, które wykluło się w kurniku za ogródkiem Liska. Dostaliśmy je, kiedy układaliśmy historyjki po kolei."
   }
 }

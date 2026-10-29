@@ -15,14 +15,14 @@
   "text": "Oh no! The pages fell out. I'll put them back right now!"
  },
  "line.a_czyta_zle": {
-  "hash": "2a307f3bb283",
+  "hash": "9d39559a2832",
   "who": "sowa",
-  "text": "Let's read. First there was the hen, then the egg, and last a chick hatched out of the egg... Hmm."
+  "text": "Let's read. First there was the hen, then the egg, and last a chick hatched out of the egg... Something is odd here."
  },
  "line.a_smieszne": {
-  "hash": "fe1e34263e16",
+  "hash": "239d971563c0",
   "who": "zajac",
-  "text": "Hee hee, something's wrong here. The chick hatches at the end, but the hen was at the start?"
+  "text": "Hee hee, something's wrong here. Where did the hen come from, before there was a chick?"
  },
  "line.a_po_kolei": {
   "hash": "89e60ca08727",
@@ -60,9 +60,9 @@
   "text": "Now it makes sense! Egg, chick, hen."
  },
  "line.b_nasiono": {
-  "hash": "1e99eddc281f",
+  "hash": "9976fa09e386",
   "who": "lisek",
-  "text": "In the garden everything happens in order too. Look, I'm planting a seed."
+  "text": "Hello! In the garden everything happens in order too. Look, I'm planting a seed."
  },
  "line.b_najpierw": {
   "hash": "6ab7fc06ccb2",
@@ -80,24 +80,24 @@
   "text": "And last a flower! A tulip."
  },
  "line.b_uloz": {
-  "hash": "5e0113cf4dcd",
+  "hash": "ca3683637e8f",
   "who": "lisek",
-  "text": "The pictures got mixed up. Put them in order, start at the arrow."
+  "text": "I drew it in pictures, but they got mixed up. Put them in order, start at the arrow."
  },
  "line.b_dobrze": {
-  "hash": "0697c2d41f98",
+  "hash": "dd20a2bb227c",
   "who": "lisek",
-  "text": "Seed, sprout, flower. Bravo!"
+  "text": "Yes! First the seed, then the sprout, and last the flower."
  },
  "line.b_balwan": {
-  "hash": "9265047ebc66",
+  "hash": "29bccc52fa96",
   "who": "lisek",
-  "text": "I drew a story about a snowman, but I lost one page from the middle."
+  "text": "I also drew a story about a snowman, but I lost one page from the middle."
  },
  "line.b_ktora": {
-  "hash": "45d6b2ad302e",
+  "hash": "b61afb0bbf71",
   "who": "sowa",
-  "text": "First one snowball, last a finished snowman. What came in between? Point to it."
+  "text": "First one snowball, last a finished snowman. Point to what came in between."
  },
  "line.b_ktora_nie": {
   "hash": "d1e777f09a88",
@@ -109,55 +109,20 @@
   "who": "lisek",
   "text": "Yes! Two snowballs, and only then the hat and the scarf. The story is whole."
  },
- "line.b_wyscig": {
-  "hash": "a206c330851b",
-  "who": "zajac",
-  "text": "And now a race! Who'll get to the tree first?"
- },
- "line.b_kto_pierwszy": {
-  "hash": "3e4368060bf0",
-  "who": "lisek",
-  "text": "Who was first? Point to them."
- },
- "line.b_kto_ostatni": {
-  "hash": "601bbfdc1bd4",
-  "who": "lisek",
-  "text": "And who was last? Point to them."
- },
- "line.b_ostatnia": {
-  "hash": "84713fe4c303",
-  "who": "sowa",
-  "text": "I was last. I have short little legs!"
- },
- "line.b_do_domu": {
-  "hash": "6c9b9bd3734b",
-  "who": "zajac",
-  "text": "Let's go home!"
- },
  "line.p_start": {
-  "hash": "d1410bd40aff",
+  "hash": "e37dd7631889",
   "who": "sowa",
-  "text": "Let's play with stories! I have five games."
+  "text": "Let's play with stories! I have a few games for you."
  },
  "line.p_ciasto": {
   "hash": "45286ed41563",
   "who": "zajac",
   "text": "How do you bake a cake? Put the pictures in order."
  },
- "line.p_dobrze": {
-  "hash": "9e7a98ca461f",
-  "who": "sowa",
-  "text": "Bravo, all in order!"
- },
- "line.p_dobrze.zajac": {
-  "hash": "cf1bd5a32845",
-  "who": "zajac",
-  "text": "Bravo, all in order!"
- },
  "line.p_co_pierwsze": {
-  "hash": "790786b719a6",
+  "hash": "2377aa3ea851",
   "who": "sowa",
-  "text": "What came first: the hen or the egg? In our book. Point to it."
+  "text": "In our book, what came first: the hen or the egg?"
  },
  "line.p_co_pierwsze_nie": {
   "hash": "919449bea136",
@@ -175,9 +140,9 @@
   "text": "Put the snowman in order."
  },
  "line.p_ostatnie": {
-  "hash": "f2bfb45a0b70",
+  "hash": "51d4c92f16ca",
   "who": "sowa",
-  "text": "What comes last in this story? Point to it."
+  "text": "Point to what comes last in this story."
  },
  "line.p_ostatnie_nie": {
   "hash": "25ade2d4e648",
@@ -195,19 +160,19 @@
   "text": "Turn the cards and find the pairs."
  },
  "line.d_kanapka": {
-  "hash": "c12959dd06fd",
+  "hash": "ff47d4a01563",
   "who": "zajac",
-  "text": "Let's make a sandwich for supper."
+  "text": "I'll make the sandwiches! Quick, everything at once!"
  },
  "line.d_uloz": {
-  "hash": "1fa3e712f644",
+  "hash": "23b04ba4d212",
   "who": "sowa",
-  "text": "First bread, then butter, and last cheese. Put the pictures in order."
+  "text": "Put on the counter how a sandwich is made. Start at the arrow."
  },
  "line.d_mniam": {
-  "hash": "758a75bde8d9",
+  "hash": "755101f1a95f",
   "who": "zajac",
-  "text": "Bread, butter, cheese. Yum!"
+  "text": "Bread, butter and cheese. Yum, yum, a tasty sandwich!"
  },
  "line.d_rodzice": {
   "hash": "35677fca7191",
@@ -225,8 +190,173 @@
   "text": "You already have the sticker from this adventure. See you!"
  },
  "line.naklejka_opis": {
-  "hash": "9bbf69fc0a55",
+  "hash": "55f91c498498",
   "who": "narrator",
-  "text": "This is the chick from Owl's book. We got it when we put stories in order."
+  "text": "This is the chick that hatched in the henhouse behind Fox's garden. We got it when we put stories in order."
+ },
+ "line.a_dowolnie": {
+  "hash": "677108bfcf83",
+  "who": "zajac",
+  "text": "Hen, egg, chick. Done! The order doesn't matter."
+ },
+ "line.a_naprawde": {
+  "hash": "2a534e9c4b0e",
+  "who": "zajac",
+  "text": "But is it true that a chick comes out of an egg? I want to see it with my own eyes!"
+ },
+ "line.a_do_liska": {
+  "hash": "026beabb35ba",
+  "who": "sowa",
+  "text": "Let's go to Fox. Behind his garden there is a henhouse, and a hen lives in it."
+ },
+ "line.b_miny": {
+  "hash": "3d0c892ae7f6",
+  "who": "zajac",
+  "text": "The snowman has a funny face. And I can make all kinds of faces! Shall we play mirror?"
+ },
+ "line.b_kurnik": {
+  "hash": "b50064fc97a1",
+  "who": "lisek",
+  "text": "Can you hear it? Cluck, cluck, cluck! The hen is calling us from the henhouse. Let's hurry!"
+ },
+ "line.c_kurnik": {
+  "hash": "ab56ff81a770",
+  "who": "zajac",
+  "text": "What a pretty red little house, with straw in front of it. Does the hen live here?"
+ },
+ "line.c_gniazdo": {
+  "hash": "3a6d688a2224",
+  "who": "lisek",
+  "text": "Yes. Look, her egg is lying in the nest."
+ },
+ "line.c_rusza": {
+  "hash": "4a5fe21cd64e",
+  "who": "sowa",
+  "text": "The egg is moving! Something is about to happen."
+ },
+ "line.c_co_potem": {
+  "hash": "ee306e00a811",
+  "who": "sowa",
+  "text": "First there is the egg. Point to what comes next."
+ },
+ "line.c_co_potem_nie": {
+  "hash": "eb59b4b1039e",
+  "who": "sowa",
+  "text": "The hen comes last, when the chick has grown up. What comes out of the egg?"
+ },
+ "line.c_piskle": {
+  "hash": "75af9e1750ed",
+  "who": "zajac",
+  "text": "A chick! It hatched out of the egg, and the hen is cuddling it."
+ },
+ "line.c_kura": {
+  "hash": "0810ee9a54c3",
+  "who": "lisek",
+  "text": "And when the chick grows up, it will be a big hen. First the egg, then the chick, and last the hen."
+ },
+ "line.c_juz_wiem": {
+  "hash": "15c0817c02e0",
+  "who": "zajac",
+  "text": "Now I know! Everything happens in order, just like in Owl's book."
+ },
+ "line.c_do_domu": {
+  "hash": "83b5156d74c6",
+  "who": "sowa",
+  "text": "So now, in order: first we go home, then we have a snack, and last I'll read you the whole book."
+ },
+ "line.p_ciasto_ok": {
+  "hash": "fdd8d1eb594f",
+  "who": "sowa",
+  "text": "Yes! First flour and eggs, then we stir, and last there is the cake."
+ },
+ "line.p_balwan_ok": {
+  "hash": "5cdb6ff760e8",
+  "who": "sowa",
+  "text": "Yes! First one snowball, then two, and last the snowman in his hat."
+ },
+ "line.d_dom": {
+  "hash": "7dbb579b9ac2",
+  "who": "sowa",
+  "text": "We're home. In order: first a snack, and then the book."
+ },
+ "line.d_zajac_robi": {
+  "hash": "008a703dd263",
+  "who": "zajac",
+  "text": "Cheese, butter, bread. The order doesn't matter!"
+ },
+ "line.d_ojej": {
+  "hash": "b6436adde645",
+  "who": "zajac",
+  "text": "Oh no! The bread slid onto the floor, and the butter is on the cheese."
+ },
+ "line.d_najpierw": {
+  "hash": "65b256950fac",
+  "who": "sowa",
+  "text": "We make a sandwich in order too. First bread, then butter, and last cheese."
+ },
+ "line.d_co_najpierw": {
+  "hash": "4dfcdd8acf23",
+  "who": "lisek",
+  "text": "Point to what goes on the plate first."
+ },
+ "line.d_co_najpierw_nie": {
+  "hash": "cdd4fc81dcb0",
+  "who": "lisek",
+  "text": "That goes on later. What is at the very bottom of a sandwich?"
+ },
+ "line.d_chleb": {
+  "hash": "64e1fe3e386b",
+  "who": "zajac",
+  "text": "Bread! First a slice of bread."
+ },
+ "line.d_talerz": {
+  "hash": "3f4f70f2d6b8",
+  "who": "lisek",
+  "text": "We've eaten. Now put the plate away on the shelf, and then we read."
+ },
+ "line.d_czytanie": {
+  "hash": "20c0d0450eec",
+  "who": "sowa",
+  "text": "And now the book I promised. I'm reading it to you page by page, in order."
+ },
+ "line.d_czytanie_zajac": {
+  "hash": "7e75c7c6a0e9",
+  "who": "zajac",
+  "text": "It's so good that the pages are in the right order!"
+ },
+ "line.d_opowiem": {
+  "hash": "5daee3cbe066",
+  "who": "zajac",
+  "text": "And I'll tell a story about today. Point to the pictures in order: what came first, what next, and what last."
+ },
+ "line.d_dzien_nie": {
+  "hash": "74fac102e473",
+  "who": "zajac",
+  "text": "That was later. What did we do before?"
+ },
+ "line.d_dzien_1": {
+  "hash": "8652d7c35dee",
+  "who": "zajac",
+  "text": "First Owl showed me her book, and the pages fell out."
+ },
+ "line.d_dzien_2": {
+  "hash": "121fe3ee3e4d",
+  "who": "zajac",
+  "text": "Then at Fox's a flower grew from a seed."
+ },
+ "line.d_dzien_3": {
+  "hash": "4b2fca3f3582",
+  "who": "zajac",
+  "text": "And last a chick hatched out of an egg!"
+ },
+ "line.p_memory_ok": {
+  "hash": "d60349655413",
+  "who": "sowa",
+  "text": "All the pairs found: the egg, the chick, the hen and the sprout!"
+ },
+ "line.d_talerz_ok": {
+  "hash": "d5ad7202674a",
+  "who": "lisek",
+  "text": "The plate is on the shelf, all tidy. And now the book!"
  }
 }

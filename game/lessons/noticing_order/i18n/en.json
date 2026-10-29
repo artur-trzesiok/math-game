@@ -11,13 +11,17 @@
     "who": "zajac",
     "text": "Oh no! The pages fell out. I'll put them back right now!"
   },
+  "line.a_dowolnie": {
+    "who": "zajac",
+    "text": "Hen, egg, chick. Done! The order doesn't matter."
+  },
   "line.a_czyta_zle": {
     "who": "sowa",
-    "text": "Let's read. First there was the hen, then the egg, and last a chick hatched out of the egg... Hmm."
+    "text": "Let's read. First there was the hen, then the egg, and last a chick hatched out of the egg... Something is odd here."
   },
   "line.a_smieszne": {
     "who": "zajac",
-    "text": "Hee hee, something's wrong here. The chick hatches at the end, but the hen was at the start?"
+    "text": "Hee hee, something's wrong here. Where did the hen come from, before there was a chick?"
   },
   "line.a_po_kolei": {
     "who": "sowa",
@@ -43,9 +47,17 @@
     "who": "zajac",
     "text": "Now it makes sense! Egg, chick, hen."
   },
+  "line.a_naprawde": {
+    "who": "zajac",
+    "text": "But is it true that a chick comes out of an egg? I want to see it with my own eyes!"
+  },
+  "line.a_do_liska": {
+    "who": "sowa",
+    "text": "Let's go to Fox. Behind his garden there is a henhouse, and a hen lives in it."
+  },
   "line.b_nasiono": {
     "who": "lisek",
-    "text": "In the garden everything happens in order too. Look, I'm planting a seed."
+    "text": "Hello! In the garden everything happens in order too. Look, I'm planting a seed."
   },
   "line.b_najpierw": {
     "who": "sowa",
@@ -61,19 +73,19 @@
   },
   "line.b_uloz": {
     "who": "lisek",
-    "text": "The pictures got mixed up. Put them in order, start at the arrow."
+    "text": "I drew it in pictures, but they got mixed up. Put them in order, start at the arrow."
   },
   "line.b_dobrze": {
     "who": "lisek",
-    "text": "Seed, sprout, flower. Bravo!"
+    "text": "Yes! First the seed, then the sprout, and last the flower."
   },
   "line.b_balwan": {
     "who": "lisek",
-    "text": "I drew a story about a snowman, but I lost one page from the middle."
+    "text": "I also drew a story about a snowman, but I lost one page from the middle."
   },
   "line.b_ktora": {
     "who": "sowa",
-    "text": "First one snowball, last a finished snowman. What came in between? Point to it."
+    "text": "First one snowball, last a finished snowman. Point to what came in between."
   },
   "line.b_ktora_nie": {
     "who": "sowa",
@@ -83,44 +95,65 @@
     "who": "lisek",
     "text": "Yes! Two snowballs, and only then the hat and the scarf. The story is whole."
   },
-  "line.b_wyscig": {
+  "line.b_miny": {
     "who": "zajac",
-    "text": "And now a race! Who'll get to the tree first?"
+    "text": "The snowman has a funny face. And I can make all kinds of faces! Shall we play mirror?"
   },
-  "line.b_kto_pierwszy": {
+  "line.b_kurnik": {
     "who": "lisek",
-    "text": "Who was first? Point to them."
+    "text": "Can you hear it? Cluck, cluck, cluck! The hen is calling us from the henhouse. Let's hurry!"
   },
-  "line.b_kto_ostatni": {
+  "line.c_kurnik": {
+    "who": "zajac",
+    "text": "What a pretty red little house, with straw in front of it. Does the hen live here?"
+  },
+  "line.c_gniazdo": {
     "who": "lisek",
-    "text": "And who was last? Point to them."
+    "text": "Yes. Look, her egg is lying in the nest."
   },
-  "line.b_ostatnia": {
+  "line.c_rusza": {
     "who": "sowa",
-    "text": "I was last. I have short little legs!"
+    "text": "The egg is moving! Something is about to happen."
   },
-  "line.b_do_domu": {
+  "line.c_co_potem": {
+    "who": "sowa",
+    "text": "First there is the egg. Point to what comes next."
+  },
+  "line.c_co_potem_nie": {
+    "who": "sowa",
+    "text": "The hen comes last, when the chick has grown up. What comes out of the egg?"
+  },
+  "line.c_piskle": {
     "who": "zajac",
-    "text": "Let's go home!"
+    "text": "A chick! It hatched out of the egg, and the hen is cuddling it."
+  },
+  "line.c_kura": {
+    "who": "lisek",
+    "text": "And when the chick grows up, it will be a big hen. First the egg, then the chick, and last the hen."
+  },
+  "line.c_juz_wiem": {
+    "who": "zajac",
+    "text": "Now I know! Everything happens in order, just like in Owl's book."
+  },
+  "line.c_do_domu": {
+    "who": "sowa",
+    "text": "So now, in order: first we go home, then we have a snack, and last I'll read you the whole book."
   },
   "line.p_start": {
     "who": "sowa",
-    "text": "Let's play with stories! I have five games."
+    "text": "Let's play with stories! I have a few games for you."
   },
   "line.p_ciasto": {
     "who": "zajac",
     "text": "How do you bake a cake? Put the pictures in order."
   },
-  "line.p_dobrze": {
+  "line.p_ciasto_ok": {
     "who": "sowa",
-    "text": "Bravo, all in order!",
-    "speakers": [
-      "zajac"
-    ]
+    "text": "Yes! First flour and eggs, then we stir, and last there is the cake."
   },
   "line.p_co_pierwsze": {
     "who": "sowa",
-    "text": "What came first: the hen or the egg? In our book. Point to it."
+    "text": "In our book, what came first: the hen or the egg?"
   },
   "line.p_co_pierwsze_nie": {
     "who": "sowa",
@@ -134,9 +167,13 @@
     "who": "zajac",
     "text": "Put the snowman in order."
   },
+  "line.p_balwan_ok": {
+    "who": "sowa",
+    "text": "Yes! First one snowball, then two, and last the snowman in his hat."
+  },
   "line.p_ostatnie": {
     "who": "sowa",
-    "text": "What comes last in this story? Point to it."
+    "text": "Point to what comes last in this story."
   },
   "line.p_ostatnie_nie": {
     "who": "sowa",
@@ -150,17 +187,85 @@
     "who": "zajac",
     "text": "Turn the cards and find the pairs."
   },
+  "line.p_memory_ok": {
+    "who": "sowa",
+    "text": "All the pairs found: the egg, the chick, the hen and the sprout!"
+  },
+  "line.d_dom": {
+    "who": "sowa",
+    "text": "We're home. In order: first a snack, and then the book."
+  },
   "line.d_kanapka": {
     "who": "zajac",
-    "text": "Let's make a sandwich for supper."
+    "text": "I'll make the sandwiches! Quick, everything at once!"
+  },
+  "line.d_zajac_robi": {
+    "who": "zajac",
+    "text": "Cheese, butter, bread. The order doesn't matter!"
+  },
+  "line.d_ojej": {
+    "who": "zajac",
+    "text": "Oh no! The bread slid onto the floor, and the butter is on the cheese."
+  },
+  "line.d_najpierw": {
+    "who": "sowa",
+    "text": "We make a sandwich in order too. First bread, then butter, and last cheese."
+  },
+  "line.d_co_najpierw": {
+    "who": "lisek",
+    "text": "Point to what goes on the plate first."
+  },
+  "line.d_co_najpierw_nie": {
+    "who": "lisek",
+    "text": "That goes on later. What is at the very bottom of a sandwich?"
+  },
+  "line.d_chleb": {
+    "who": "zajac",
+    "text": "Bread! First a slice of bread."
   },
   "line.d_uloz": {
     "who": "sowa",
-    "text": "First bread, then butter, and last cheese. Put the pictures in order."
+    "text": "Put on the counter how a sandwich is made. Start at the arrow."
   },
   "line.d_mniam": {
     "who": "zajac",
-    "text": "Bread, butter, cheese. Yum!"
+    "text": "Bread, butter and cheese. Yum, yum, a tasty sandwich!"
+  },
+  "line.d_talerz": {
+    "who": "lisek",
+    "text": "We've eaten. Now put the plate away on the shelf, and then we read."
+  },
+  "line.d_talerz_ok": {
+    "who": "lisek",
+    "text": "The plate is on the shelf, all tidy. And now the book!"
+  },
+  "line.d_czytanie": {
+    "who": "sowa",
+    "text": "And now the book I promised. I'm reading it to you page by page, in order."
+  },
+  "line.d_czytanie_zajac": {
+    "who": "zajac",
+    "text": "It's so good that the pages are in the right order!"
+  },
+  "line.d_opowiem": {
+    "who": "zajac",
+    "text": "And I'll tell a story about today. Point to the pictures in order: what came first, what next, and what last."
+  },
+  "line.d_dzien_nie": {
+    "who": "zajac",
+    "text": "That was later. What did we do before?"
+  },
+  "line.d_dzien_1": {
+    "who": "zajac",
+    "text": "First Owl showed me her book, and the pages fell out."
+  },
+  "line.d_dzien_2": {
+    "who": "zajac",
+    "text": "Then at Fox's a flower grew from a seed."
+  },
+  "line.d_dzien_3": {
+    "who": "zajac",
+    "text": "And last a chick hatched out of an egg!"
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -176,6 +281,6 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the chick from Owl's book. We got it when we put stories in order."
+    "text": "This is the chick that hatched in the henhouse behind Fox's garden. We got it when we put stories in order."
   }
 }
