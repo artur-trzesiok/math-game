@@ -17,7 +17,7 @@
   window.__T = Date.now();
   (() => {
     const im = { imports: { three: "/game/vendor/three.module.js" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje", "mechaniki4", "oddechy"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje", "mechaniki4", "mechaniki5", "oddechy", "mechaniki6", "mechaniki7"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
   })();
@@ -38,6 +38,7 @@ import * as M2 from "/game/engine/mechaniki2.js";
 import * as M3 from "/game/engine/mechaniki3.js";
 import * as IL from "/game/engine/ilustracje.js";
 import * as M4 from "/game/engine/mechaniki4.js";
+import * as M5 from "/game/engine/mechaniki5.js";
 import * as G from "/game/engine/geometria.js";
 import * as OD from "/game/engine/oddechy.js";
 const $ = (id) => document.getElementById(id);
@@ -206,6 +207,124 @@ const DEMA = {
     if (nr !== bieg) return;
     info("od jajka do kury");
     h = await M4.historyjka(S, "jajko_kura", { onZle: () => info("to nie to miejsce") }); info("po kolei!");
+  },
+  // mechaniki5.js: the grid (two features, the bookcase, a picture sudoku, a calendar to read), the hidden rule, giving out
+  siatka: async (nr) => {
+    pokaz("lisek", "sowa");
+    info("dwie cechy: czerwone w górny rząd, żółte w dolny; liście w lewą kolumnę, chorągiewki w prawą");
+    let s = await M5.siatka(S, { wiersze: ["koralik_czerwony", "koralik_zolty"], kolumny: ["listek", "choragiewka_niebieska"],
+      rzeczy: [{ name: "lisc_zolty", wiersz: 1, kolumna: 0 }, { name: "choragiewka_czerwona", wiersz: 0, kolumna: 1 }, { name: "lisc_czerwony", wiersz: 0, kolumna: 0 }, { name: "choragiewka_zolta", wiersz: 1, kolumna: 1 }],
+      onZle: () => info("nie pasuje do rzędu albo do kolumny") });
+    if (nr !== bieg) return; info("tabela pełna; czytanie: rząd żółty, kolumna chorągiewek"); await s.pokaz(1, 1); await czekaj(0.6); s.remove();
+    if (nr !== bieg) return; info("regał: gruszka na górę z lewej, piłka na środek, jabłko na dół z prawej");
+    s = await M5.siatka(S, { plansza: "regal_3x3", rzeczy: [{ name: "pilka", wiersz: 1, kolumna: 1 }, { name: "jablko", wiersz: 2, kolumna: 2 }, { name: "gruszka", wiersz: 0, kolumna: 0 }], onZle: () => info("nie ta półka") });
+    await czekaj(0.8); s.remove();
+    if (nr !== bieg) return; info("sudoku: w każdym rzędzie i w każdej kolumnie każdy obrazek raz");
+    const G3 = ["znak_gwiazda", "znak_kwiatek", "znak_slonce"], roz = [[0, 1, 2], [1, 2, 0], [2, 0, 1]].map((r) => r.map((i) => G3[i]));
+    const dane = roz.map((r, i) => r.map((n, j) => ((i + j) % 2 ? n : null)));
+    s = await M5.siatka(S, { komorki: dane, rozwiazanie: roz, sudoku: true, rzeczy: roz.flatMap((r, i) => r.filter((_, j) => !((i + j) % 2))).sort(() => Math.random() - 0.5), onZle: () => info("ten obrazek już jest w tym rzędzie albo kolumnie") });
+    await czekaj(0.8); s.remove();
+    if (nr !== bieg) return; info("kalendarz: wskaż dwunasty");
+    const dni = [...Array(5)].map((_, r) => [...Array(7)].map((_, c) => { const d = r * 7 + c - 1; return d >= 1 && d <= 30 ? { cyfra: d } : null; }));
+    s = await M5.siatka(S, { komorki: dni, kolumny: ["pora_rano", null, null, null, null, "znak_slonce", "znak_slonce"] });
+    const hit = await S.choose(s.cele); info(hit.r * 7 + hit.c - 1 === 12 ? "tak, dwunasty!" : `to ${hit.r * 7 + hit.c - 1}`);
+  },
+  regula: async (nr) => {
+    pokaz("lisek", "sowa"); info("sortuj do koszyka i pudełka - reguły nikt nie mówi");
+    const kol = (n, k) => ({ name: n, kolor: k });
+    let w = await M5.regula(S, { pojemniki: ["koszyk", "pudelko"], cecha: "kolor", wartosci: ["czerwony", "zolty"], poIlu: 3,
+      rzeczy: [kol("lisc_czerwony", "czerwony"), kol("choragiewka_zolta", "zolty"), kol("koralik_czerwony", "czerwony"), kol("kubek_czerwony", "czerwony"), kol("lisc_zolty", "zolty"), kol("koralik_zolty", "zolty")].sort(() => Math.random() - 0.5),
+      ikony: { czerwony: "koralik_czerwony", zolty: "koralik_zolty" },
+      onRegula: async (r) => { info(`lisek: już wiem! wszystkie ${r.wartosci[0]} są w koszyku!`); await mow("lisek", 1.5); }, onZle: () => info("koszyk wypluwa - to nie jego rodzaj") });
+    await czekaj(1); w.remove();
+    if (nr !== bieg) return; info("posortuj sam: jak chcesz - kolorem albo kształtem; pierwsze ruchy decydują");
+    const r2 = (n, kolor, rodzaj) => ({ name: n, kolor, rodzaj });
+    w = await M5.regula(S, { pojemniki: ["skrzynia", "koszyk"], cechy: ["kolor", "rodzaj"], poIlu: 3,
+      rzeczy: [r2("lisc_czerwony", "czerwony", "lisc"), r2("lisc_zolty", "zolty", "lisc"), r2("choragiewka_czerwona", "czerwony", "flaga"), r2("choragiewka_zolta", "zolty", "flaga")],
+      onRegula: (r) => info(`sowa: sortujesz według: ${r.cecha} (${r.wartosci.join(" / ")})`), onZle: () => info("to nie pasuje do tego, co już tam jest") });
+  },
+  rozdaj: async (nr) => {
+    pokaz("lisek", "sowa"); info("podziel jabłka po równo: do miski liska i miski sowy");
+    let r = await M5.rozdaj(S, { komu: ["lisek", "sowa"], rzeczy: Array(6).fill("jablko"), onNierowno: (k) => info(`nierówno: ${k.join(" i ")} - przełóż`) });
+    info(`po równo: ${r.kupki.join(" i ")}`); await czekaj(1.2); r.remove();
+    if (nr !== bieg) return; info("skarpetki: czy każda ma parę? rozdaj, potem łączymy w pary");
+    r = await M5.rozdaj(S, { komu: ["lisek", "sowa"], miski: null, rzeczy: Array(5).fill("skarpetka") });
+    const p = await r.paruj(); info(`${p.pary} pary, ${p.bezPary.length} bez pary - nieparzyste`); await czekaj(1.5); r.remove();
+    if (nr !== bieg) return; info("po dwa ciastka na każdy talerz (trzecie się nie zmieści)");
+    r = await M5.rozdaj(S, { komu: [{ obraz: "talerz" }, { obraz: "talerz" }, { obraz: "talerz" }], ile: 2, rzeczy: Array(6).fill("ciastko"), onZle: () => info("już ma dwa!") });
+    info("trzy talerze po dwa - sześć");
+  },
+  // mechaniki6.js
+  szpara: async (nr) => {
+    const M6 = await import("/game/engine/mechaniki6.js");
+    pokaz("lisek", "sowa");
+    info("przepchnij przez furtkę: gruby pień utknie, cienki patyk przejdzie");
+    let s = await M6.szpara(S, { szpary: [{ obraz: "szpara_furtka", x: 0.3, szczelina: 0.75 }], rzeczy: [{ obraz: "bal", size: 1.2 }, { obraz: "patyk_wysoki", size: 1.6 }], onZle: () => info("za gruby - utknął!") });
+    info("przeszedł!"); await czekaj(1.2); s.remove(); if (nr !== bieg) return;
+    pokaz(); info("wąska i szeroka brama: co się zmieści?");
+    s = await M6.szpara(S, { szpary: [{ obraz: "szpara_drzewa", x: -3.0, szczelina: 0.7 }, { obraz: "szpara_brama", x: 2.0, szczelina: 1.2 }], rzeczy: [{ obraz: "wagon", size: 1.1 }, { obraz: "klocek", size: 0.6 }], onZle: () => info("za szeroki!") });
+    info("wszystko, co się mieści, przeszło"); await czekaj(1.2); s.remove(); if (nr !== bieg) return;
+    pokaz("lisek", "sowa"); info("pod mostkiem: co się zmieści pod łukiem?");
+    s = await M6.szpara(S, { szpary: [{ obraz: "szpara_mostek", x: 0.4, szczelina: 1.0 }], rzeczy: [{ obraz: "pilka", size: 0.9, toczy: true }, { obraz: "slonecznik_wysoki", size: 2.0 }], onZle: () => info("za wysoki!") });
+    info("piłka przetoczyła się pod mostkiem");
+  },
+  miarka: async (nr) => {
+    const M6 = await import("/game/engine/mechaniki6.js");
+    pokaz("lisek", "sowa");
+    info("zmierz deskę łapkami: przeciągaj łapki pod deskę");
+    let m = await M6.miarka(S, { rzecz: "deska_dluga", dlugosc: 5, jednostka: "lapka", onLicz: (n) => info(`${n}`), onZle: (p) => info(`nie tak: ${p}`) });
+    info(`deska ma ${m.ile} łapek`); await czekaj(1.2); m.remove(); if (nr !== bieg) return;
+    info("klocki bez przyciągania: kładź jeden za drugim, bez przerw");
+    m = await M6.miarka(S, { rzecz: "szalik_dlugi", dlugosc: 4, jednostka: "klocek", przyciagaj: false, onLicz: (n) => info(`${n}`), onZle: (p) => info(`nie tak: ${p}`) });
+    info(`szalik ma ${m.ile} klocki`); await czekaj(1.2); m.remove(); if (nr !== bieg) return;
+    info("linijka: przyłóż zero do kreski, potem wskaż liczbę na końcu");
+    m = await M6.miarka(S, { rzecz: "deska_dluga", dlugosc: 7, jednostka: "linijka", onZle: (p) => info(p === "zero" ? "zacznij od zera!" : "popatrz, gdzie kończy się deska") });
+    info(`${m.ile} centymetrów`); await czekaj(1.2); m.remove(); if (nr !== bieg) return;
+    info("waga: dokładaj odważniki (duży = 2 kg), aż szalki będą równo");
+    m = await M6.miarka(S, { rzecz: "dynia", jednostka: "odwaznik", masa: 3, wagi: [2, 2, 1, 1], onLicz: (n) => info(`${n} kg`), onZle: () => info("za dużo - przechyliło się!") });
+    info(`dynia waży ${m.ile} kilogramy`);
+  },
+  wykres: async (nr) => {
+    const M6 = await import("/game/engine/mechaniki6.js");
+    pokaz("lisek", "sowa");
+    info("ułóż owoce w słupkach nad ich obrazkami");
+    let w = await M6.wykres(S, { rodzaje: ["jablko", "gruszka", "wisnia"], rzeczy: ["jablko", "jablko", "jablko", "gruszka", "wisnia", "wisnia", "wisnia", "wisnia", "gruszka"], onZle: (h) => info(`to nie jest słupek: ${h.rodzaj}`) });
+    info("który słupek najwyższy? (dotknij)"); const hit = await S.choose(w.kolumny.map((k) => k.cel)); info(hit === w.najwyzsza()?.cel ? "tak, najwyższy!" : "nie ten"); await czekaj(1.2); await w.remove(); if (nr !== bieg) return;
+    info("gotowy wykres pogody: wskaż najniższy słupek");
+    w = await M6.wykres(S, { rodzaje: ["znak_slonce", "znak_tecza", "emocja_mokro"], wypelnij: { znak_slonce: 4, znak_tecza: 1, emocja_mokro: 2 } });
+    const h2 = await S.choose(w.kolumny.map((k) => k.cel)); info(h2 === w.najnizsza()?.cel ? "tak, najniższy!" : "nie ten");
+  },
+  // mechaniki7.js
+  zegar: async (nr) => {
+    const M7 = await import("/game/engine/mechaniki7.js");
+    pokaz("lisek", "sowa");
+    const z = await M7.zegar(S, { godzina: 3, ruchome: "krotka" });
+    info("ustaw krótką wskazówkę na siódmą (przeciągnij po tarczy)");
+    await z.ustaw({ godzina: 7, onZle: (t) => info(`to ${t.godzina}, a ma być 7`) }); info("siódma!"); await czekaj(1); if (nr !== bieg) return;
+    info("czas mija: zegar idzie do dziewiątej"); await z.pokaz(9, 0); await czekaj(0.8); z.remove(); if (nr !== bieg) return;
+    const z2 = await M7.zegar(S, { godzina: 12, ruchome: "obie", polowki: true });
+    info("ustaw wpół do czwartej: długa na dół, krótka między 3 a 4");
+    await z2.ustaw({ godzina: 3, minuty: 30, onZle: (t) => info(`to ${t.godzina}:${String(t.minuty).padStart(2, "0")}`) }); info("wpół do czwartej!");
+  },
+  portrety: async (nr) => {
+    const M7 = await import("/game/engine/mechaniki7.js");
+    pokaz("lisek", "sowa"); info("kto ma okulary? odwróć tych, którzy nie mają");
+    let p = await M7.portrety(S, { postacie: ["jez", "zajac", "bobr", "wiewiorka", "mis", "kret"], ubrania: { jez: ["okulary"], bobr: ["okulary", "kapelusz"], wiewiorka: ["kapelusz"], kret: ["okulary"] } });
+    await p.odrzuc({ pasuje: (k) => ["jez", "bobr", "kret"].includes(k), onZle: (k) => info(`${k} ma okulary - zostaje`) });
+    info("a kto ma też kapelusz?");
+    const r = await p.odrzuc({ pasuje: (k) => k === "bobr", onZle: (k) => info(`${k} ma kapelusz`) }); info(`to ${r.join(", ")}!`); await czekaj(1.5); p.remove(); if (nr !== bieg) return;
+    info("kto to od tyłu? znajdź misia");
+    p = await M7.portrety(S, { postacie: ["mis", "zajac", "sowa", "jez"], widok: "tyl" });
+    await p.znajdz("mis", { onZle: (k) => info(`to ${k}, nie miś`) }); info("miś!");
+  },
+  peczki: async (nr) => {
+    const M7 = await import("/game/engine/mechaniki7.js");
+    pokaz("lisek", "sowa"); info("ułóż trzynaście: przeciągaj patyczki na tacę (stuknięcie też kładzie); przy dziesięciu same się wiążą");
+    let m = await M7.peczki(S, { zapas: 14 });
+    await m.uloz({ cel: 13, onZle: (pw) => info(pw === "za_duzo" ? "za dużo!" : "za mało!") }); info("13 = pęczek i trzy"); await czekaj(1.5); m.remove(); if (nr !== bieg) return;
+    info("32 - 5: zabierz pięć patyczków z tacy (stuknij pęczek, żeby go rozwiązać)");
+    m = await M7.peczki(S, { peczki: 3, patyczki: 2 });
+    await m.uloz({ cel: 27, onZle: (pw) => info(pw === "za_malo" ? "za dużo zabrane - rozwiąż pęczek" : "za dużo!") }); info("zostało 27");
   },
 };
 const uruchom = async (n) => {

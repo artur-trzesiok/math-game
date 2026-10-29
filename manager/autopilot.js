@@ -18,7 +18,7 @@ export async function run(maxSteps = 20, prefix = "a") {
       if (G?.kolorowanka) { await sleep(300); G.kolorowanka.dokoncz(); log.push("kolorowanka"); await sleep(400); continue; }
       // the painted mechanics and the breathers of the improvement plan (mechaniki4.js, oddechy.js)
       let nowa = false;
-      for (const k of ["zdrapka", "kropki", "historyjka", "podarty", "wedrowka", "oddech"]) {
+      for (const k of ["zdrapka", "kropki", "siatka", "regula", "rozdaj", "szpara", "miarka", "wykres", "zegar", "portrety", "peczki", "historyjka", "podarty", "wedrowka", "oddech"]) {
         const m = G?.[k]; if (!m) continue;
         await sleep(300); await snap(`${prefix}${k}${step}`); if (G[k] === m) await m.dokoncz(); log.push(k); await sleep(400); nowa = true; break;
       }

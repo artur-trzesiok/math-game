@@ -1147,6 +1147,168 @@ is seen. NO numbers, NO medals, NO flags, NO text.""",
 }
 
 
+# mechaniki6 miarka: the units laid end to end (a paw print, a block) and the weight for the scale
+SHEETS["miarka_jednostki"] = {
+    "outline": True,
+    "names": ["lapka_miarka", "klocek_miarka", "odwaznik"],
+    "size": "1536x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["klocek", "deska_dluga"],
+    "prompt": f"""A sprite sheet of THREE illustrated objects for a children's picture book, in ONE ROW of 3 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO ground, NO shadow.
+{STYL}
+The same painted style as the references. Left to right: one PAW PRINT cut out of thick orange paper, seen flat from
+above - one round pad with four small round toe pads above it, all joined into one piece, the toes pointing to the
+RIGHT; one plain light-wood toy BLOCK seen straight from the front, a long flat rectangle exactly twice as wide as it is
+tall, smooth, with no pattern; one old black cast-iron WEIGHT for a balance scale seen from the front, a squat
+bell-like shape with a flat bottom and a little round handle on top, NO numbers, NO letters.
+Each object fills at most a fifth of the sheet's width.""",
+}
+# miarka ruler_cm: a blank ruler - the code draws its ticks and numbers with the pencil (painted digits are unreliable)
+SHEETS["linijka"] = {
+    "names": ["linijka"],
+    "size": "1536x1024",
+    "rows": 1,
+    "px": 1024,
+    "refs": ["deska_dluga"],
+    "prompt": f"""ONE illustrated school RULER for a children's picture book, alone and lying perfectly level across the
+middle of a fully TRANSPARENT background, filling almost the whole width. NO glow, NO halo, NO background, NO shadow.
+{STYL}
+A long flat ruler of light yellow wood seen straight from the front: a thin perfectly straight horizontal strip about
+twelve times as long as it is tall, square ends, an even width along its whole length, a slightly darker wooden edge
+along its top. It is completely BLANK: NO marks, NO lines, NO ticks, NO numbers, NO letters.""",
+}
+# mechaniki6 szpara: painted gaps a thing is pushed through; the opening is see-through, the code measures it on the alpha
+SHEETS["szpara_drzewa"] = {
+    "outline": False,           # no die-cut rim: it would narrow the opening
+    "names": ["szpara_drzewa"],
+    "caly": True,
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 768,
+    "refs": ["pniak", "krzak"],
+    "prompt": f"""ONE illustrated thing for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO glow, NO halo, NO background, NO sky.
+{STYL}
+TWO young birch trees standing side by side, seen straight from the front, their straight white trunks parallel and
+upright, their small green crowns touching above. Between the two trunks a clear EMPTY gap as wide as two trunks, from
+the ground up to the crowns: the gap is completely transparent (we see through it), NOTHING in it - no grass, no ground,
+no branches, no leaves. Each trunk stands on its own small tuft of grass; nothing joins the two trees at the bottom.""",
+}
+SHEETS["szpara_furtka"] = {
+    "outline": False,           # no die-cut rim: it would narrow the opening
+    "names": ["szpara_furtka"],
+    "caly": True,
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 768,
+    "refs": ["pniak", "deska_dluga"],
+    "prompt": f"""ONE illustrated thing for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO glow, NO halo, NO background, NO ground.
+{STYL}
+A short piece of a low wooden picket fence seen straight from the front, with a NARROW OPEN GATEWAY in the middle: on
+the left three pickets with their rails and a thick gate post, on the right a thick gate post and three pickets with
+their rails. Between the two gate posts the gateway is EMPTY and completely transparent from the bottom edge to the top
+(we see through it): NO gate, NO rails across it, NO arch over it, NO ground in it. The gateway is about as wide as one
+fence section of three pickets.""",
+}
+SHEETS["szpara_brama"] = {
+    "outline": False,           # no die-cut rim: it would narrow the opening
+    "names": ["szpara_brama"],
+    "caly": True,
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 768,
+    "refs": ["glaz", "pniak"],
+    "prompt": f"""ONE illustrated thing for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO glow, NO halo, NO background, NO ground.
+{STYL}
+A low wall of round grey field stones seen straight from the front, with a WIDE OPEN GATEWAY in the middle between two
+stone pillars, each pillar topped with a little cap of moss. The gateway is EMPTY and completely transparent from the
+bottom edge to the top (we see through it): NO gate, NO arch over it, NO ground, NO path in it. The gateway is wide -
+about half of the whole wall's width; the two wall pieces on its sides are short.""",
+}
+SHEETS["szpara_mostek"] = {
+    "outline": False,           # no die-cut rim: it would narrow the opening
+    "names": ["szpara_mostek"],
+    "caly": True,
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 768,
+    "refs": ["glaz", "pniak"],
+    "prompt": f"""ONE illustrated thing for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO glow, NO halo, NO background, NO water, NO ground.
+{STYL}
+A small old stone ARCH bridge seen straight from the front, wider than tall, built of round grey stones with moss, a
+little grass on its top. Under it ONE low round-topped ARCH opening in the middle: the opening is EMPTY and completely
+transparent from the bottom edge up to the stones of the arch (we see through it) - NO water, NO ground, NO path, NO
+shadow inside it. The opening is about half of the bridge's width and about half of its height.""",
+}
+
+# mechaniki7 zegar: a clock face with an EMPTY dial (the engine draws the hour digits with the pencil - gpt-image cannot
+# be trusted with twelve numerals) and its two hands, pointing up, each turning on a round hub at its bottom end
+SHEETS["zegar_tarcza"] = {
+    "names": ["zegar_tarcza"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 1024,
+    "prompt": f"""ONE illustrated round wall clock for a children's picture book in the middle of a fully TRANSPARENT
+background, filling most of the image. NO glow, NO halo, NO background, NO wall, NO shadow.
+{STYL}
+Seen exactly straight from the front: a PERFECT CIRCLE. A thick, smooth, warm red painted wooden rim with a soft
+highlight, and inside it a plain light cream dial. The dial is COMPLETELY EMPTY: NO numbers, NO marks, NO dots, NO
+lines, NO hands, NO centre pin, NO text, NO logo - just the smooth cream surface with a little paper grain.""",
+}
+SHEETS["zegar_wskazowki"] = {
+    "names": ["zegar_krotka", "zegar_dluga"],
+    "size": "1536x1024",
+    "rows": 1,
+    "px": 1024,
+    "wspolna_skala": True,     # the short hand stays shorter than the long one
+    "prompt": f"""A sprite sheet of TWO separate illustrated clock HANDS for a children's picture book, side by side in ONE
+ROW on a fully TRANSPARENT background, with a wide empty gap between them. NO clock face, NO glow, NO halo, NO
+background, NO shadow.
+{STYL}
+Both hands are dark navy blue painted wood, stand exactly VERTICAL and point straight UP, drawn at the SAME scale. Each
+has at its BOTTOM end a round flat hub (a small disc) with a tiny golden dot in its middle - the hand turns on it; from
+the hub a tapered hand rises to a rounded leaf-shaped tip. Left: the SHORT hour hand, wide and sturdy, about half as
+long as the other one. Right: the LONG minute hand, thinner, the tallest thing on the sheet, almost as tall as the
+sheet.""",
+}
+# mechaniki7 peczki: one wooden stick, the red twine that ties ten of them into a bunch, the place-value tray
+SHEETS["peczki"] = {
+    "names": ["patyczek", "wstazka_peczka"],
+    "size": "1536x1024",
+    "rows": 1,
+    "px": 512,
+    "wspolna_skala": True,     # the tie is drawn as wide as a bunch of ten of these sticks
+    "prompt": f"""A sprite sheet of TWO separate illustrated things for a children's picture book, side by side in ONE ROW
+on a fully TRANSPARENT background, with a wide empty gap between them. NO glow, NO halo, NO background, NO shadow.
+{STYL}
+Left: ONE single plain wooden counting stick (like an ice-lolly stick but longer), light natural wood with a soft
+grain, rounded ends, standing exactly VERTICAL, the tallest thing on the sheet, about eight times as tall as it is wide.
+Right: ONLY the red twine that ties a bundle of ten such sticks - a short HORIZONTAL band of thick red twine wound twice
+round, as wide as ten of those sticks lying side by side, with a small neat BOW knot in its middle and two short loose
+ends. The bundle itself is NOT drawn: no sticks, nothing behind the twine.""",
+}
+SHEETS["mata_peczki"] = {
+    "names": ["mata_peczki"],
+    "size": "1536x1024",
+    "rows": 1,
+    "px": 1024,
+    "prompt": f"""ONE illustrated wooden tray for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO glow, NO halo, NO background, NO table, NO shadow.
+{STYL}
+A wide, low, light wooden tray seen straight from ABOVE, a rectangle about twice as wide as it is tall, with a raised
+wooden rim, divided by ONE wooden wall down its middle into TWO equal compartments, LEFT and RIGHT. Both compartments
+are EMPTY, lined with plain soft green felt. On the rim in front of (below) the LEFT compartment a small round wooden
+badge with a little painted bundle of sticks tied with red twine; on the rim below the RIGHT compartment a small round
+wooden badge with ONE little painted single stick. NO numbers, NO letters, NO text, nothing inside the compartments.""",
+}
+
+
 def gen(sheet: str) -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     dst = WORK / f"{sheet}.png"
@@ -1187,6 +1349,8 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
     a = np.asarray(im)
     maska = ndimage.binary_closing(a[:, :, 3] > 40, iterations=6)
     etyk, ile = ndimage.label(maska, structure=np.ones((3, 3)))
+    if SHEETS[sheet].get("caly"):                        # one thing in separate parts (a gateway's two sides): all alpha is it
+        etyk, ile = maska.astype(np.int32), 1
     plamy = []
     for i in range(1, ile + 1):
         ys, xs = np.where(etyk == i)

@@ -13,7 +13,7 @@ LESSONS = ROOT / "game" / "lessons"
 
 INTERACT = ("task|sort|count|slots|place|free|tangram|znalezisko|labirynt|roznice|szukaj|slad|waga|wieza|kubki|"
             "dzwieki|podziel|memory|sklepik|strzalki|zagroda|winda|ramka|ubieranie|taniec|symmetry|kolorowanka|polacz|"
-            "choose|miejsca|zdrapka|kropki|historyjka|podarty|wedrowka|kpn|lustro|karmienie|latawiec|ktoPowiedzial|malowanie|brawo")
+            "choose|miejsca|zdrapka|kropki|siatka|regula|rozdaj|szpara|miarka|wykres|zegar|portrety|peczki|historyjka|podarty|wedrowka|kpn|lustro|karmienie|latawiec|ktoPowiedzial|malowanie|brawo")
 # something happens on screen: a reason for the shot it is in
 MOVE = (r"przejdz|walkTo|enter|show|play|pan|go|take|put|rozblysk|focus|ilustracja|object|tween|emocja|wonder|czastki|"
         r"konfetti|ptaszek|digit|equation|line|circle|arrow|idea|noc|swiatlo|rytm|ruch|nalozenie|bump|moveTo|shape")

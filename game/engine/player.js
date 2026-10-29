@@ -20,6 +20,9 @@ import * as M2 from "./mechaniki2.js";
 import * as M3 from "./mechaniki3.js";
 import * as IL from "./ilustracje.js";
 import * as M4 from "./mechaniki4.js";
+import * as M5 from "./mechaniki5.js";
+import * as M6 from "./mechaniki6.js";
+import * as M7 from "./mechaniki7.js";
 import * as OD from "./oddechy.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
@@ -81,7 +84,7 @@ const DEBUG = PARAMS.has("debug");
 const NAGRAJ = PARAMS.has("scenariusz");
 const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie", "focus", "rozblysk", "znalezisko", "ilustracja"]);
 const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose",
-  "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec", "zdrapka", "kropki", "historyjka", "podarty", "wedrowka", "kpn", "lustro", "karmienie", "latawiec", "ktoPowiedzial", "malowanie"]);                   // ?debug=1: the phase icons jump between stages
+  "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec", "zdrapka", "kropki", "siatka", "regula", "rozdaj", "szpara", "miarka", "wykres", "zegar", "portrety", "peczki", "historyjka", "podarty", "wedrowka", "kpn", "lustro", "karmienie", "latawiec", "ktoPowiedzial", "malowanie"]);                   // ?debug=1: the phase icons jump between stages
 
 // a background's identity: a name, or an insert {kolor, motyw}
 const tloId = (bg) => (typeof bg === "object" && bg ? (bg.id || `kolor:${bg.kolor}:${bg.motyw}`) : bg);
@@ -743,6 +746,24 @@ export class Player {
       miejsca: guard((o) => M4.miejsca(S, o)),
       zdrapka: (nazwa, o) => wDzialaniu(M4.zdrapka(S, nazwa, o), "dotknij"),   // rub the cover off, then a found picture
       kropki: (nazwa, o = {}) => wDzialaniu(M4.kropki(S, nazwa, { ...o, onZle: () => blad(o.wrong) }), "dotknij"),
+      // mechaniki7.js: the clock, the characters as cards, bundles of ten; the task is a method of what they return,
+      // `wrong` a line key or (what) => key
+      zegar: guard(async (o = {}) => { const z = await M7.zegar(S, o); const u0 = z.ustaw; z.ustaw = (q = {}) => wDzialaniu(u0({ ...q, onZle: (t) => blad(typeof q.wrong === "function" ? q.wrong(t) : q.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }); return z; }),
+      portrety: guard(async (o = {}) => {
+        const p = await M7.portrety(S, o), od = p.odrzuc, zn = p.znajdz, zle = (w) => (kto) => blad(typeof w === "function" ? w(kto) : w);
+        p.odrzuc = (q = {}) => wDzialaniu(od({ ...q, onZle: zle(q.wrong) }), "wskaz").then((r) => { nagroda(null); return r; });
+        p.znajdz = (kto, q = {}) => wDzialaniu(zn(kto, { ...q, onZle: zle(q.wrong) }), "wskaz").then((r) => { nagroda(null); return r; });
+        return p;
+      }),
+      peczki: guard(async (o = {}) => { const m = await M7.peczki(S, o); const u0 = m.uloz; m.uloz = (q = {}) => wDzialaniu(u0({ ...q, onZle: (pw) => blad(typeof q.wrong === "function" ? q.wrong(pw) : q.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }); return m; }),
+      // mechaniki6.js: push through a gap, measure with units (counted by `who`), a picture bar chart; `wrong` may be (reason) => key
+      szpara: (o = {}) => wDzialaniu(M6.szpara(S, { ...o, onZle: () => blad(o.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }),
+      miarka: (o = {}) => wDzialaniu(M6.miarka(S, { ...o, onZle: (pow) => blad(typeof o.wrong === "function" ? o.wrong(pow) : o.wrong), onLicz: o.who ? (n) => say(o.who, `line.n${n}`) : null }), "przeciagnij").then((r) => { nagroda(null); return r; }),
+      wykres: guard((o = {}) => (o.rzeczy?.length ? wDzialaniu(M6.wykres(S, { ...o, onZle: () => blad(o.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }) : M6.wykres(S, o))),
+      // mechaniki5.js: a grid with headers (without `rzeczy` it only lays out cells to read), a hidden rule, giving out
+      siatka: guard((o = {}) => (o.rzeczy?.length ? wDzialaniu(M5.siatka(S, { ...o, onZle: () => blad(o.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }) : M5.siatka(S, o))),
+      regula: (o = {}) => wDzialaniu(M5.regula(S, { ...o, onZle: () => blad(o.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }),
+      rozdaj: (o = {}) => wDzialaniu(M5.rozdaj(S, { ...o, onZle: () => blad(o.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }),
       podarty: (nazwa, o) => wDzialaniu(M4.podarty(S, nazwa, o)),          // put a torn found picture together; then its task
       // breathers (oddechy.js): no maths, one gesture; their words from game/oddechy in the given character's voice
       kpn: (o = {}) => wDzialaniu(OD.kpn(S, { ...o, mow: mowOddech }), "wskaz"),
