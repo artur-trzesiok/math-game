@@ -12,11 +12,12 @@
   ],
   "backgrounds": [
     "laka",
+    "droga_do_debu",
     "dab_babci",
+    "pokoj_noc",
     "pokoj"
   ],
   "objects": [
-    "motyl",
     "jablko",
     "gruszka",
     "marchewka",
@@ -31,11 +32,16 @@
     "kasztan",
     "lisc_czerwony",
     "kwiatek",
-    "lyzka"
+    "lyzka",
+    "rybka",
+    "bulka",
+    "kamien_schodek",
+    "pioro_sowy"
   ],
   "cover": "Fox looks into a round magic pond on a meadow and his reflection has no scarf while he wears a striped scarf; Owl beside him points at the water, surprised.",
   "naklejka": {
-    "obraz": "objects/motyl",
+    "obraz": "objects/pioro_sowy",
     "kto": "sowa"
-  }
+  },
+  "oddech": "karmienie"
 }

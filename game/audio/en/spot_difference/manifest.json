@@ -15,9 +15,9 @@
   "text": "At a first glance, yes. But this pond plays tricks: it always changes something. You must look carefully."
  },
  "line.a_znajdz": {
-  "hash": "7a5fe4245e95",
+  "hash": "235c73fecc3d",
   "who": "sowa",
-  "text": "Look at Fox and at his reflection. How are they different? Point to it."
+  "text": "Look at Fox and at his reflection. Point to what is different."
  },
  "line.a_bez_szalika": {
   "hash": "76144e061849",
@@ -45,9 +45,9 @@
   "text": "The reflection has no hat and no glasses! What a clever pond."
  },
  "line.b_gra": {
-  "hash": "667c35b54f5c",
+  "hash": "447ecd89cb43",
   "who": "sowa",
-  "text": "The pond wants to play with us. It shows two pictures of the meadow, but it changed something on one. Find three differences."
+  "text": "The pond shows us two pictures of the meadow, but it changed something on one of them. Look at a bit of one picture, then at the same place on the other. Find three differences."
  },
  "line.b_gra_ok": {
   "hash": "c4036c23fbba",
@@ -65,9 +65,9 @@
   "text": "We'll help you! Let's find the differences between the drawings."
  },
  "line.b_ktory": {
-  "hash": "47cdc2064647",
+  "hash": "987a6672e4e5",
   "who": "sowa",
-  "text": "My drawing had a kitten and a sun with rays. Which drawing is mine? Point to it."
+  "text": "My drawing had a kitten and a sun with rays. Point to the drawing that is mine."
  },
  "line.b_ktory_nie": {
   "hash": "a036c910e730",
@@ -79,15 +79,10 @@
   "who": "sowa",
   "text": "That's my drawing! Thank you, granny will be so happy."
  },
- "line.b_motyle": {
-  "hash": "1c1356657299",
-  "who": "lisek",
-  "text": "Look, butterflies! Catch a butterfly when it lands. Point to it."
- },
  "line.b_do_domu": {
-  "hash": "6ed59fd868b4",
+  "hash": "f6e8b5dc5509",
   "who": "sowa",
-  "text": "That was fun. Let's go home, we'll play differences there too!"
+  "text": "Let's go home before it gets dark. Tonight I'm sleeping over at your place, Fox!"
  },
  "line.p_start": {
   "hash": "4be94f25061b",
@@ -125,14 +120,14 @@
   "text": "Two pictures of a room. Find three differences."
  },
  "line.p_para_ok": {
-  "hash": "9b3343b941ef",
+  "hash": "dac0ad483c6f",
   "who": "lisek",
-  "text": "Bravo, all the differences found!"
+  "text": "All three differences found!"
  },
  "line.p_para_ok.sowa": {
-  "hash": "adb0796fa661",
+  "hash": "70110ee8a0df",
   "who": "sowa",
-  "text": "Bravo, all the differences found!"
+  "text": "All three differences found!"
  },
  "line.p_zapamietaj": {
   "hash": "09c880a6ecac",
@@ -145,9 +140,9 @@
   "text": "And now close your eyes! No peeking."
  },
  "line.p_co_zniknelo": {
-  "hash": "947a7736d5fc",
+  "hash": "3b0081010439",
   "who": "lisek",
-  "text": "Up at the top, in the row, one thing is missing. Something was where the question mark is. What has gone? Point to it."
+  "text": "Up in the row one thing is missing. Something was where the question mark is. Point to what has gone."
  },
  "line.p_co_zniknelo_nie": {
   "hash": "b9eeb333caee",
@@ -160,9 +155,9 @@
   "text": "Yes! That's what disappeared. Well remembered."
  },
  "line.p_inny": {
-  "hash": "0766d2a981cb",
+  "hash": "6a4f6bc555ac",
   "who": "sowa",
-  "text": "Four shadows. One isn't like the others. Which one? Point to it."
+  "text": "Four shadows. Point to the one that is not like the others."
  },
  "line.p_inny_nie": {
   "hash": "663d7d927971",
@@ -174,30 +169,20 @@
   "who": "lisek",
   "text": "Yes! That's a pear, and the rest are apples."
  },
- "line.d_zabawa": {
-  "hash": "c3fa49350d29",
-  "who": "lisek",
-  "text": "At home we'll play a game: what has changed?"
- },
  "line.d_zapamietaj": {
-  "hash": "8ed46c7ec840",
+  "hash": "87c90b476ee6",
   "who": "sowa",
-  "text": "Look at where the toys are, and remember."
- },
- "line.d_jeszcze": {
-  "hash": "ef7cc521e199",
-  "who": "sowa",
-  "text": "Once more! Remember where the toys are."
+  "text": "Look carefully at where everything is, and remember it."
  },
  "line.d_zamknij": {
-  "hash": "e8db44e1d271",
+  "hash": "aab9094e5972",
   "who": "lisek",
-  "text": "Close your eyes! I'll move something."
+  "text": "Now it's your turn! Close your eyes and I'll move something."
  },
  "line.d_co": {
-  "hash": "0d1d80d95031",
+  "hash": "f57038180700",
   "who": "sowa",
-  "text": "Two toys have swapped places. Point to the first one."
+  "text": "Two toys have swapped places. Point to one of them."
  },
  "line.d_nie": {
   "hash": "c89acb4f8428",
@@ -205,9 +190,9 @@
   "text": "This toy is where it was. Which one moved?"
  },
  "line.d_tak": {
-  "hash": "5d2bc3a9272d",
+  "hash": "4ea80b2b3da2",
   "who": "lisek",
-  "text": "Yes! These two swapped places. Look, they're going back to their places."
+  "text": "Yes, the teddy and the block swapped places! Granny plays tricks, just like the pond."
  },
  "line.d_rodzice": {
   "hash": "d0cd97a94fcc",
@@ -225,14 +210,14 @@
   "text": "You already have the sticker from this adventure. See you!"
  },
  "line.naklejka_opis": {
-  "hash": "8bd9a7bb62bc",
+  "hash": "e438a3da64e3",
   "who": "narrator",
-  "text": "This is the butterfly from Granny Owl's oak. We got it when we looked for differences."
+  "text": "This is Granny Owl's feather. She left it to say thank you when we were spotting differences."
  },
  "line.d_druga": {
-  "hash": "ba9c452cdf1d",
+  "hash": "3c9a0fe7d80b",
   "who": "sowa",
-  "text": "And which toy did it swap with? Point to the other one."
+  "text": "Now point to the one it swapped with."
  },
  "line.d_druga_nie": {
   "hash": "c0ca3f9e29d1",
@@ -268,5 +253,135 @@
   "hash": "9f3d3be1a4cb",
   "who": "lisek",
   "text": "The card is waiting for Granny. What a surprise she'll have!"
+ },
+ "line.b_rybki": {
+  "hash": "3d8dca0c7c4d",
+  "who": "sowa",
+  "text": "Look, a fish is swimming in the pond! It is hungry. Let's give it some bread to say thank you for the game."
+ },
+ "line.b_rybki_jak": {
+  "hash": "ae8d94c0f3d7",
+  "who": "lisek",
+  "text": "Slide the bread to the fish with your finger. But don't give it the pine cone!"
+ },
+ "line.b_rybki_ok": {
+  "hash": "d4a7475313a3",
+  "who": "lisek",
+  "text": "The fish is full! Thank you, pond."
+ },
+ "line.c_droga": {
+  "hash": "06121f9c53ba",
+  "who": "sowa",
+  "text": "Granny's oak grows far away, beyond the brook, on a little hill. Let's follow the path!"
+ },
+ "line.c_strumyk": {
+  "hash": "fdad65b64976",
+  "who": "lisek",
+  "text": "Oh no, a brook! And there are no stones to step on."
+ },
+ "line.c_kamienie": {
+  "hash": "21cce9bfe712",
+  "who": "sowa",
+  "text": "Here are some flat stones. Put them in the water, in the marked places."
+ },
+ "line.c_hop": {
+  "hash": "8a2dd87bcc25",
+  "who": "lisek",
+  "text": "Hop, hop, hop! We're on the other side."
+ },
+ "line.c_widac": {
+  "hash": "4ad218a8be01",
+  "who": "sowa",
+  "text": "Can you see the big oak on the hill? That's where Granny lives!"
+ },
+ "line.d_wieczor": {
+  "hash": "0336c7483775",
+  "who": "sowa",
+  "text": "What a day! Tonight I'm sleeping over at Fox's. And tonight Granny will find my drawing."
+ },
+ "line.d_przyleci": {
+  "hash": "b7d25d2dbd2d",
+  "who": "sowa",
+  "text": "I'm sure she'll fly over to say thank you. Owls fly at night!"
+ },
+ "line.d_plan": {
+  "hash": "7caf96de0478",
+  "who": "lisek",
+  "text": "Then let's tidy up and remember where everything is. In the morning we'll see if anything has changed!"
+ },
+ "line.d_poloz": {
+  "hash": "2d77a10e416d",
+  "who": "lisek",
+  "text": "Put the teddy, the ball and the block on the rug, side by side."
+ },
+ "line.d_dobranoc": {
+  "hash": "043795c929eb",
+  "who": "lisek",
+  "text": "Good night, Owl! Lights out."
+ },
+ "line.d_noc": {
+  "hash": "ec357b5cb2eb",
+  "who": "sowa",
+  "text": "Look! Granny opened her little door and found the drawing. How happy she is!"
+ },
+ "line.d_rano": {
+  "hash": "2a2264b28c8e",
+  "who": "lisek",
+  "text": "Good morning! Everything is the same as yesterday. I don't think Granny came."
+ },
+ "line.d_uwaznie": {
+  "hash": "a90a2f134baa",
+  "who": "sowa",
+  "text": "At a glance, yes. But look carefully, just like at the pond!"
+ },
+ "line.d_nowe": {
+  "hash": "57edba62296c",
+  "who": "sowa",
+  "text": "But something here is new. Point to what was not in the room yesterday."
+ },
+ "line.d_nowe_nie": {
+  "hash": "d3d0ae880cf5",
+  "who": "sowa",
+  "text": "That was here yesterday. What wasn't here yesterday?"
+ },
+ "line.d_pioro": {
+  "hash": "afc204aa55dc",
+  "who": "sowa",
+  "text": "A grey feather! It's my granny's feather. She was here in the night and left it to say thank you!"
+ },
+ "line.d_jak_babcia": {
+  "hash": "cedd7f19ff0d",
+  "who": "lisek",
+  "text": "Let's play like Granny! Owl, close your eyes and I'll move something."
+ },
+ "line.d_sowa_znalazla": {
+  "hash": "245d09d2ff19",
+  "who": "sowa",
+  "text": "Let me look. The teddy is sitting somewhere else! Found it."
+ },
+ "line.d_ktora": {
+  "hash": "6b4c8fd09b75",
+  "who": "lisek",
+  "text": "Open your eyes! Point to what has moved."
+ },
+ "line.d_ktora_nie": {
+  "hash": "14a55e4cd6dc",
+  "who": "lisek",
+  "text": "That is where it was. What has moved?"
+ },
+ "line.d_ktora_ok": {
+  "hash": "74f2cde3a32c",
+  "who": "lisek",
+  "text": "Yes, the ball! I rolled it off the rug onto the floor."
+ },
+ "line.b_roznice_ok": {
+  "hash": "f82a819319fb",
+  "who": "lisek",
+  "text": "Three differences: the kitten, the sun's rays and the colour of the door!"
+ },
+ "line.d_pierwsza_ok": {
+  "hash": "3cfed9a3e3e6",
+  "who": "sowa",
+  "text": "Yes, this toy is somewhere else than in the evening!"
  }
 }

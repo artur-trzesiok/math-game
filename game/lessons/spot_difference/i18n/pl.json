@@ -13,7 +13,7 @@
   },
   "line.a_znajdz": {
     "who": "sowa",
-    "text": "Popatrz na Liska i na jego odbicie. Czym się różnią? Wskaż."
+    "text": "Popatrz na Liska i na jego odbicie. Wskaż, czym się różnią."
   },
   "line.a_bez_szalika": {
     "who": "lisek",
@@ -37,7 +37,7 @@
   },
   "line.b_gra": {
     "who": "sowa",
-    "text": "Staw chce się z nami bawić. Pokazuje dwa obrazki łąki, ale na jednym coś zmienił. Znajdź trzy różnice."
+    "text": "Staw pokazuje nam dwa obrazki łąki, ale na jednym coś zmienił. Popatrz na kawałek jednego obrazka, a potem na to samo miejsce na drugim. Znajdź trzy różnice."
   },
   "line.b_gra_ok": {
     "who": "lisek",
@@ -53,7 +53,7 @@
   },
   "line.b_ktory": {
     "who": "sowa",
-    "text": "Mój rysunek miał kotka i słońce z promieniami. Który rysunek jest mój? Wskaż."
+    "text": "Mój rysunek miał kotka i słońce z promieniami. Wskaż, który rysunek jest mój."
   },
   "line.b_ktory_nie": {
     "who": "sowa",
@@ -63,13 +63,9 @@
     "who": "sowa",
     "text": "To mój rysunek! Dziękuję, babcia się ucieszy."
   },
-  "line.b_motyle": {
-    "who": "lisek",
-    "text": "Popatrzcie, motyle! Złap motyla, kiedy usiądzie. Wskaż go."
-  },
   "line.b_do_domu": {
     "who": "sowa",
-    "text": "Ale było wesoło. Chodźmy do domu, tam też zagramy w różnice!"
+    "text": "Wracajmy do domu, zanim się ściemni. Dziś nocuję u ciebie, Lisku!"
   },
   "line.p_start": {
     "who": "sowa",
@@ -98,7 +94,7 @@
   },
   "line.p_para_ok": {
     "who": "lisek",
-    "text": "Brawo, wszystkie różnice znalezione!",
+    "text": "Wszystkie trzy różnice znalezione!",
     "speakers": [
       "sowa"
     ]
@@ -113,7 +109,7 @@
   },
   "line.p_co_zniknelo": {
     "who": "lisek",
-    "text": "Na górze, w rzędzie, jednej rzeczy brakuje. W miejscu ze znakiem zapytania coś było. Co zniknęło? Wskaż."
+    "text": "Na górze, w rzędzie, jednej rzeczy brakuje. W miejscu ze znakiem zapytania coś było. Wskaż, co zniknęło."
   },
   "line.p_co_zniknelo_nie": {
     "who": "lisek",
@@ -125,7 +121,7 @@
   },
   "line.p_inny": {
     "who": "sowa",
-    "text": "Cztery cienie. Jeden nie pasuje do pozostałych. Który? Wskaż."
+    "text": "Cztery cienie. Wskaż ten, który nie pasuje do pozostałych."
   },
   "line.p_inny_nie": {
     "who": "sowa",
@@ -135,25 +131,17 @@
     "who": "lisek",
     "text": "Tak! To gruszka, a reszta to jabłka."
   },
-  "line.d_zabawa": {
-    "who": "lisek",
-    "text": "W domu zagramy w zabawę: co się zmieniło?"
-  },
   "line.d_zapamietaj": {
     "who": "sowa",
-    "text": "Popatrz, jak leżą zabawki, i zapamiętaj."
-  },
-  "line.d_jeszcze": {
-    "who": "sowa",
-    "text": "Jeszcze raz! Zapamiętaj, gdzie leżą zabawki."
+    "text": "Popatrz uważnie, gdzie wszystko leży, i zapamiętaj."
   },
   "line.d_zamknij": {
     "who": "lisek",
-    "text": "Zamknij oczy! Coś przestawię."
+    "text": "Teraz twoja kolej! Zamknij oczy, a ja coś przestawię."
   },
   "line.d_co": {
     "who": "sowa",
-    "text": "Dwie zabawki zamieniły się miejscami. Wskaż pierwszą z nich."
+    "text": "Dwie zabawki zamieniły się miejscami. Wskaż jedną z nich."
   },
   "line.d_nie": {
     "who": "sowa",
@@ -161,7 +149,7 @@
   },
   "line.d_tak": {
     "who": "lisek",
-    "text": "Tak! Te dwie zamieniły się miejscami. Patrz, wracają na swoje miejsca."
+    "text": "Tak, miś i klocek zamieniły się miejscami! Babcia płata figle, jak staw."
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -177,11 +165,11 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "To motyl spod dębu babci Sowy. Dostaliśmy go, kiedy szukaliśmy różnic."
+    "text": "To piórko babci Sowy. Zostawiła je na dziękuję, kiedy szukaliśmy różnic."
   },
   "line.d_druga": {
     "who": "sowa",
-    "text": "A z którą zabawką się zamieniła? Wskaż drugą."
+    "text": "A teraz wskaż tę, z którą się zamieniła."
   },
   "line.d_druga_nie": {
     "who": "sowa",
@@ -210,5 +198,109 @@
   "line.c_czeka": {
     "who": "lisek",
     "text": "Laurka czeka na babcię. Ale będzie miała niespodziankę!"
+  },
+  "line.b_rybki": {
+    "who": "sowa",
+    "text": "Popatrzcie, w stawie pływa rybka! Jest głodna. Dajmy jej bułki na podziękowanie za zabawę."
+  },
+  "line.b_rybki_jak": {
+    "who": "lisek",
+    "text": "Przesuń palcem bułkę do rybki. Tylko szyszki jej nie dawaj!"
+  },
+  "line.b_rybki_ok": {
+    "who": "lisek",
+    "text": "Rybka najedzona! Dziękujemy, stawie."
+  },
+  "line.c_droga": {
+    "who": "sowa",
+    "text": "Dąb babci rośnie daleko, za strumykiem, na pagórku. Chodźmy ścieżką!"
+  },
+  "line.c_strumyk": {
+    "who": "lisek",
+    "text": "Ojej, strumyk! I nie ma kamieni, po których można przejść."
+  },
+  "line.c_kamienie": {
+    "who": "sowa",
+    "text": "Tu leżą płaskie kamienie. Połóż je w wodzie, w zaznaczonych miejscach."
+  },
+  "line.c_hop": {
+    "who": "lisek",
+    "text": "Hop, hop, hop! Jesteśmy na drugim brzegu."
+  },
+  "line.c_widac": {
+    "who": "sowa",
+    "text": "Widzicie ten wielki dąb na pagórku? Tam mieszka babcia!"
+  },
+  "line.d_wieczor": {
+    "who": "sowa",
+    "text": "Ale to był dzień! Dziś nocuję u Liska. A w nocy babcia znajdzie moją laurkę."
+  },
+  "line.d_przyleci": {
+    "who": "sowa",
+    "text": "Na pewno przyleci nam podziękować. Sowy latają nocą!"
+  },
+  "line.d_plan": {
+    "who": "lisek",
+    "text": "To posprzątajmy i zapamiętajmy, gdzie co leży. Rano zobaczymy, czy coś się zmieniło!"
+  },
+  "line.d_poloz": {
+    "who": "lisek",
+    "text": "Połóż misia, piłkę i klocek na dywanie, jedno obok drugiego."
+  },
+  "line.d_dobranoc": {
+    "who": "lisek",
+    "text": "Dobranoc, Sowo! Gasimy lampkę."
+  },
+  "line.d_noc": {
+    "who": "sowa",
+    "text": "Popatrzcie! Babcia otworzyła drzwiczki i znalazła laurkę. Jak ona się cieszy!"
+  },
+  "line.d_rano": {
+    "who": "lisek",
+    "text": "Dzień dobry! Wszystko jest takie samo jak wczoraj. Babcia chyba nie przyleciała."
+  },
+  "line.d_uwaznie": {
+    "who": "sowa",
+    "text": "Na pierwszy rzut oka tak. Ale popatrz uważnie, tak jak w stawie!"
+  },
+  "line.d_nowe": {
+    "who": "sowa",
+    "text": "Ale coś jest tu nowego. Wskaż, czego wczoraj w pokoju nie było."
+  },
+  "line.d_nowe_nie": {
+    "who": "sowa",
+    "text": "To leżało tu już wczoraj. Czego wczoraj nie było?"
+  },
+  "line.d_pioro": {
+    "who": "sowa",
+    "text": "Szare piórko! To piórko mojej babci. Była tu w nocy i zostawiła je nam na dziękuję!"
+  },
+  "line.d_jak_babcia": {
+    "who": "lisek",
+    "text": "Pobawmy się jak babcia! Sowo, zamknij oczy, a ja coś przestawię."
+  },
+  "line.d_sowa_znalazla": {
+    "who": "sowa",
+    "text": "Już patrzę. Miś siedzi gdzie indziej! Znalazłam."
+  },
+  "line.d_ktora": {
+    "who": "lisek",
+    "text": "Otwórz oczy! Wskaż, co się przesunęło."
+  },
+  "line.d_ktora_nie": {
+    "who": "lisek",
+    "text": "To leży tam, gdzie leżało. Co się przesunęło?"
+  },
+  "line.d_ktora_ok": {
+    "who": "lisek",
+    "text": "Tak, piłka! Przetoczyłem ją z dywanu na podłogę."
+  },
+  "line.b_roznice_ok": {
+    "who": "lisek",
+    "text": "Trzy różnice: kotek, promienie słońca i kolor drzwi!"
+  },
+  "line.d_pierwsza_ok": {
+    "who": "sowa",
+    "text": "Tak, ta zabawka leży gdzie indziej niż wieczorem!"
   }
 }

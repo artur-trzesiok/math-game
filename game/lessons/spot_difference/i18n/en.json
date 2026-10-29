@@ -13,7 +13,7 @@
   },
   "line.a_znajdz": {
     "who": "sowa",
-    "text": "Look at Fox and at his reflection. How are they different? Point to it."
+    "text": "Look at Fox and at his reflection. Point to what is different."
   },
   "line.a_bez_szalika": {
     "who": "lisek",
@@ -37,7 +37,7 @@
   },
   "line.b_gra": {
     "who": "sowa",
-    "text": "The pond wants to play with us. It shows two pictures of the meadow, but it changed something on one. Find three differences."
+    "text": "The pond shows us two pictures of the meadow, but it changed something on one of them. Look at a bit of one picture, then at the same place on the other. Find three differences."
   },
   "line.b_gra_ok": {
     "who": "lisek",
@@ -53,7 +53,7 @@
   },
   "line.b_ktory": {
     "who": "sowa",
-    "text": "My drawing had a kitten and a sun with rays. Which drawing is mine? Point to it."
+    "text": "My drawing had a kitten and a sun with rays. Point to the drawing that is mine."
   },
   "line.b_ktory_nie": {
     "who": "sowa",
@@ -63,13 +63,9 @@
     "who": "sowa",
     "text": "That's my drawing! Thank you, granny will be so happy."
   },
-  "line.b_motyle": {
-    "who": "lisek",
-    "text": "Look, butterflies! Catch a butterfly when it lands. Point to it."
-  },
   "line.b_do_domu": {
     "who": "sowa",
-    "text": "That was fun. Let's go home, we'll play differences there too!"
+    "text": "Let's go home before it gets dark. Tonight I'm sleeping over at your place, Fox!"
   },
   "line.p_start": {
     "who": "sowa",
@@ -98,7 +94,7 @@
   },
   "line.p_para_ok": {
     "who": "lisek",
-    "text": "Bravo, all the differences found!",
+    "text": "All three differences found!",
     "speakers": [
       "sowa"
     ]
@@ -113,7 +109,7 @@
   },
   "line.p_co_zniknelo": {
     "who": "lisek",
-    "text": "Up at the top, in the row, one thing is missing. Something was where the question mark is. What has gone? Point to it."
+    "text": "Up in the row one thing is missing. Something was where the question mark is. Point to what has gone."
   },
   "line.p_co_zniknelo_nie": {
     "who": "lisek",
@@ -125,7 +121,7 @@
   },
   "line.p_inny": {
     "who": "sowa",
-    "text": "Four shadows. One isn't like the others. Which one? Point to it."
+    "text": "Four shadows. Point to the one that is not like the others."
   },
   "line.p_inny_nie": {
     "who": "sowa",
@@ -135,25 +131,17 @@
     "who": "lisek",
     "text": "Yes! That's a pear, and the rest are apples."
   },
-  "line.d_zabawa": {
-    "who": "lisek",
-    "text": "At home we'll play a game: what has changed?"
-  },
   "line.d_zapamietaj": {
     "who": "sowa",
-    "text": "Look at where the toys are, and remember."
-  },
-  "line.d_jeszcze": {
-    "who": "sowa",
-    "text": "Once more! Remember where the toys are."
+    "text": "Look carefully at where everything is, and remember it."
   },
   "line.d_zamknij": {
     "who": "lisek",
-    "text": "Close your eyes! I'll move something."
+    "text": "Now it's your turn! Close your eyes and I'll move something."
   },
   "line.d_co": {
     "who": "sowa",
-    "text": "Two toys have swapped places. Point to the first one."
+    "text": "Two toys have swapped places. Point to one of them."
   },
   "line.d_nie": {
     "who": "sowa",
@@ -161,7 +149,7 @@
   },
   "line.d_tak": {
     "who": "lisek",
-    "text": "Yes! These two swapped places. Look, they're going back to their places."
+    "text": "Yes, the teddy and the block swapped places! Granny plays tricks, just like the pond."
   },
   "line.d_rodzice": {
     "who": "sowa",
@@ -177,11 +165,11 @@
   },
   "line.naklejka_opis": {
     "who": "narrator",
-    "text": "This is the butterfly from Granny Owl's oak. We got it when we looked for differences."
+    "text": "This is Granny Owl's feather. She left it to say thank you when we were spotting differences."
   },
   "line.d_druga": {
     "who": "sowa",
-    "text": "And which toy did it swap with? Point to the other one."
+    "text": "Now point to the one it swapped with."
   },
   "line.d_druga_nie": {
     "who": "sowa",
@@ -210,5 +198,109 @@
   "line.c_czeka": {
     "who": "lisek",
     "text": "The card is waiting for Granny. What a surprise she'll have!"
+  },
+  "line.b_rybki": {
+    "who": "sowa",
+    "text": "Look, a fish is swimming in the pond! It is hungry. Let's give it some bread to say thank you for the game."
+  },
+  "line.b_rybki_jak": {
+    "who": "lisek",
+    "text": "Slide the bread to the fish with your finger. But don't give it the pine cone!"
+  },
+  "line.b_rybki_ok": {
+    "who": "lisek",
+    "text": "The fish is full! Thank you, pond."
+  },
+  "line.c_droga": {
+    "who": "sowa",
+    "text": "Granny's oak grows far away, beyond the brook, on a little hill. Let's follow the path!"
+  },
+  "line.c_strumyk": {
+    "who": "lisek",
+    "text": "Oh no, a brook! And there are no stones to step on."
+  },
+  "line.c_kamienie": {
+    "who": "sowa",
+    "text": "Here are some flat stones. Put them in the water, in the marked places."
+  },
+  "line.c_hop": {
+    "who": "lisek",
+    "text": "Hop, hop, hop! We're on the other side."
+  },
+  "line.c_widac": {
+    "who": "sowa",
+    "text": "Can you see the big oak on the hill? That's where Granny lives!"
+  },
+  "line.d_wieczor": {
+    "who": "sowa",
+    "text": "What a day! Tonight I'm sleeping over at Fox's. And tonight Granny will find my drawing."
+  },
+  "line.d_przyleci": {
+    "who": "sowa",
+    "text": "I'm sure she'll fly over to say thank you. Owls fly at night!"
+  },
+  "line.d_plan": {
+    "who": "lisek",
+    "text": "Then let's tidy up and remember where everything is. In the morning we'll see if anything has changed!"
+  },
+  "line.d_poloz": {
+    "who": "lisek",
+    "text": "Put the teddy, the ball and the block on the rug, side by side."
+  },
+  "line.d_dobranoc": {
+    "who": "lisek",
+    "text": "Good night, Owl! Lights out."
+  },
+  "line.d_noc": {
+    "who": "sowa",
+    "text": "Look! Granny opened her little door and found the drawing. How happy she is!"
+  },
+  "line.d_rano": {
+    "who": "lisek",
+    "text": "Good morning! Everything is the same as yesterday. I don't think Granny came."
+  },
+  "line.d_uwaznie": {
+    "who": "sowa",
+    "text": "At a glance, yes. But look carefully, just like at the pond!"
+  },
+  "line.d_nowe": {
+    "who": "sowa",
+    "text": "But something here is new. Point to what was not in the room yesterday."
+  },
+  "line.d_nowe_nie": {
+    "who": "sowa",
+    "text": "That was here yesterday. What wasn't here yesterday?"
+  },
+  "line.d_pioro": {
+    "who": "sowa",
+    "text": "A grey feather! It's my granny's feather. She was here in the night and left it to say thank you!"
+  },
+  "line.d_jak_babcia": {
+    "who": "lisek",
+    "text": "Let's play like Granny! Owl, close your eyes and I'll move something."
+  },
+  "line.d_sowa_znalazla": {
+    "who": "sowa",
+    "text": "Let me look. The teddy is sitting somewhere else! Found it."
+  },
+  "line.d_ktora": {
+    "who": "lisek",
+    "text": "Open your eyes! Point to what has moved."
+  },
+  "line.d_ktora_nie": {
+    "who": "lisek",
+    "text": "That is where it was. What has moved?"
+  },
+  "line.d_ktora_ok": {
+    "who": "lisek",
+    "text": "Yes, the ball! I rolled it off the rug onto the floor."
+  },
+  "line.b_roznice_ok": {
+    "who": "lisek",
+    "text": "Three differences: the kitten, the sun's rays and the colour of the door!"
+  },
+  "line.d_pierwsza_ok": {
+    "who": "sowa",
+    "text": "Yes, this toy is somewhere else than in the evening!"
   }
 }
