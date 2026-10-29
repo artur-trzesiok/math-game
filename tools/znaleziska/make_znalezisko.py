@@ -55,7 +55,7 @@ feet a red apple and a small yellow flower, well apart from him. Big simple clea
 {STYL}""",
         "cele": ["on the small hammer in the mole's raised paw (the disc covers the whole hammer, its metal head and its wooden handle down to the paw)"],
     },
-    # grouping_pro: a map of the forest the wind blows in - the path of red leaves leads to the big oak (Fox's home)
+    # grouping: a map of the forest the wind blows in - the path of red leaves leads to the big oak (Fox's home)
     "mapa_lasu": {
         "rozmiar": "1536x1024",
         "obraz": f"""A simple hand-drawn map of a forest on worn cream paper, seen flat from above, filling the whole picture.

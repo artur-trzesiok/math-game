@@ -10,12 +10,12 @@ and reviewed in the manager tab of its kind before the lesson uses it.
 |---|---|---|
 | one_many | the first snow falls on Squirrel's garden | the winter is coming: why the stores matter |
 | spot_difference | Granny Owl at night finds the drawing at her door | the promised payoff the story only talks about |
-| bigger_smaller_pro | Squirrel stuck in the old hollow, only her head in | the problem, big and funny |
+| bigger_smaller | Squirrel stuck in the old hollow, only her head in | the problem, big and funny |
 | tall_short | the forest seen from the treehouse | "I want to see the whole forest from above" kept |
 | ordering | the evening concert: lanterns, the owlet choir, the friends playing | the concert promised all lesson, seen at the end of home |
 | morning_night | the sun rising over the meadow | Mole's first morning |
 | counting_3 | Hedgehog blowing out three candles | the birthday payoff |
-| more_fewer_pro | the fireflies' dance over the glade | the night everyone came for |
+| more_fewer | the fireflies' dance over the glade | the night everyone came for |
 | logical_pairs | the storm at night blowing things away (sample `burza_noc`) | now only told: "w nocy była burza" |
 | numbers_1_5 | Mole's train on the bridge (sample `pociag_most`) | the journey between stops |
 | in_out | the thunder: the duckling jumps out of the basket | the turn of the story |
@@ -29,9 +29,9 @@ and reviewed in the manager tab of its kind before the lesson uses it.
 
 Rooms with places: dom (table, two wall shelves, counter, cupboard), pokoj and pokoj_noc (bed, rug, three bookcase
 shelves, sill / lamp), przedpokoj (hooks, shoe rack top / middle / bottom, doormat). Used in the home act of:
-one_many (pantry and table), bigger_smaller_pro (shelves by size), tall_short (hooks by height), shapes (kitchen),
+one_many (pantry and table), bigger_smaller (shelves by size), tall_short (hooks by height), shapes (kitchen),
 noticing_order (kitchen counter steps), counting_3 (table places), logical_pairs (hallway pairs), numbers_1_5
-(backpack, shelf), up_down (hooks up, floor down), in_out (box, rug), grouping_pro (shelves by kind), front_back
+(backpack, shelf), up_down (hooks up, floor down), in_out (box, rug), grouping (shelves by kind), front_back
 (behind the curtain / in front of the armchair - needs those places painted), queue (beds in a row), counting_5,
 numbers_6_10, adding_5, adding_10 (table and shelves). A room a lesson needs that has no fitting place (a curtain, an
 armchair) is a new scenery variant painted for it.
@@ -44,7 +44,7 @@ armchair) is a new scenery variant painted for it.
 | morning_night | the fogged morning window (sample `szyba_rano`) - the sun and the rooster | it IS morning |
 | logical_pairs | mud on the things after the storm - wipe, then pair | breather and story |
 | in_out | the burrow's steamy window - the storm outside | outside / inside |
-| grouping_pro | leaves raked off the trail - red footprints | the trail |
+| grouping | leaves raked off the trail - red footprints | the trail |
 | counting_3 | raspberries under the leaves - count three | counting |
 
 ## Connect the dots (ctx.kropki)
@@ -74,7 +74,7 @@ armchair) is a new scenery variant painted for it.
 | lesson | found picture | why torn |
 |---|---|---|
 | logical_pairs | Mole's photo (`zdjecie_kreta`) | the storm tore it |
-| grouping_pro | the forest map (`mapa_lasu`) | the wind blew it into a branch |
+| grouping | the forest map (`mapa_lasu`) | the wind blew it into a branch |
 | long_short | the picnic map (`mapa_pikniku`) | it got wet in the brook |
 | shapes | Hedgehog's drawing (`rysunek_domku`) torn into its shapes | Bunny tore it |
 | up_down | Fox's lift plan (`plan_windy`) | the wind |
@@ -84,15 +84,15 @@ armchair) is a new scenery variant painted for it.
 | lesson | map | fork question |
 |---|---|---|
 | long_short | the picnic map (`mapa_pikniku`) | the shorter path - walk it, after pointing to it |
-| grouping_pro | the forest map (`mapa_lasu`) - paths need painting as `droga` | the path of red leaves |
+| grouping | the forest map (`mapa_lasu`) - paths need painting as `droga` | the path of red leaves |
 | ordering | the map to the glade (`mapa_polany`) - paths need painting | cross where the stones go |
 | up_down | a hill map: up the hill or down to the valley | up / down |
-| more_fewer_pro | a map of the night glade: the path where more fireflies are | more |
+| more_fewer | a map of the night glade: the path where more fireflies are | more |
 
 ## Panoramas (ctx.pan)
 
-Panorama plates today: `jesienny_sad` (grouping_pro pans it; up_down uses it without panning), `polana_wieczorem`
-(more_fewer_pro), `droga_do_debu` (made, unused). Candidates:
+Panorama plates today: `jesienny_sad` (grouping pans it; up_down uses it without panning), `polana_wieczorem`
+(more_fewer), `droga_do_debu` (made, unused). Candidates:
 
 | lesson | panorama | what the pan is |
 |---|---|---|

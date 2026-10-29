@@ -127,14 +127,14 @@ export async function run(maxSteps = 20, prefix = "a") {
     else if (/c1_pick|c1_wrong_pear/.test(last)) pick = sizes.indexOf(Math.max(...okSizes));
     else if (/e_gdzie_pilka|e_nie_tam/.test(last)) pick = targets.findIndex((t) => t.name === "koszyk");
     if (dobry >= 0) pick = dobry;
-    else if (/b_co_przyda|b_nie_grzeje/.test(last)) pick = targets.findIndex((t) => t.rzecz || /ubrania/.test(t.name || ""));   // grouping_pro
+    else if (/b_co_przyda|b_nie_grzeje/.test(last)) pick = targets.findIndex((t) => t.rzecz || /ubrania/.test(t.name || ""));   // grouping
     else if (/b_lap|b_nie_ten|b_lapiemy/.test(last)) pick = targets.findIndex((t) => t.name === "lisc_czerwony");
     else if (/c_ktora|c_nie_ta/.test(last)) pick = targets.findIndex((t) => t.kolor === "czerwona");
     else if (/p_wspolne|p_nie_pasuje/.test(last)) pick = targets.findIndex((t) => t.name === "pilka");
     else if (/p_grzyby|p_nie_grzyb/.test(last)) pick = targets.findIndex((t) => t.name === "grzyb");
     else if (/p_inny|p_pasuje/.test(last)) pick = targets.findIndex((t) => t.tag === "k");
     else if (/d_najpierw|d_nie_jablko/.test(last)) pick = targets.findIndex((t) => t.name === "jablko");
-    else if (/a_wskaz_maly|a_nie_ten/.test(last)) pick = sizes.indexOf(Math.min(...okSizes));                  // bigger_smaller_pro
+    else if (/a_wskaz_maly|a_nie_ten/.test(last)) pick = sizes.indexOf(Math.min(...okSizes));                  // bigger_smaller
     else if (/b_wskaz_duzy|b_jeszcze|b_utonal/.test(last)) pick = sizes.indexOf(Math.max(...okSizes));
     else if (/bigger|biggest|a_sq_your_turn|big_cone|s3_pick|s3_wrong/.test(last)) pick = sizes.indexOf(Math.max(...okSizes));
     else if (/smaller|smallest|s2_prompt|small_leaf|small_spoon/.test(last)) pick = sizes.indexOf(Math.min(...okSizes));

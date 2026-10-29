@@ -45,7 +45,7 @@ async function latarenka(c, x, y) {
 }
 
 export default {
-  id: "more_fewer_pro",
+  id: "more_fewer",
   przejscia: true,
   nagrody: true,
   characters: { lisek: { side: "left", x: -5.0 }, wiewiorka: { side: "left", x: -2.6 }, sowa: { side: "right", x: 2.0 }, sarenka: { side: "right", x: 4.6 } },

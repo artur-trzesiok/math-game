@@ -49,7 +49,7 @@ Decisions the user made for this plan (2026-10-29):
 - from then on every new mechanic of phase 2 and every new breather is added there, with its entry, in the same commit.
 
 0.1 **Guidelines** (`guidelines.md`, "Atmosphere and editing"):
-- remove "tall_short, grouping_pro, more_fewer_pro are the reference, about 0.4-0.7 per line" - they are now the most
+- remove "tall_short, grouping, more_fewer are the reference, about 0.4-0.7 per line" - they are now the most
   static lessons (no shot at all in their practice, up to 10 lines in one shot). Name a new reference only after the
   first lesson passes phase 5;
 - add the editing rules from phase 4 (no wide shot that is cut away at once, two-shots for exchanges, a shot has a
@@ -214,7 +214,7 @@ the lessons are touched. "Breather" = the current one and what to do with it.
 |---|---|---|---|
 | one_many | strong misconception (the pumpkin); ends in the shared `strumyk` - a place of its own | the winter feast: one table, many guests; Squirrel's pantry shelves | scratch-off: snow over the garden hides the stores; drop places: pantry; illustration: the first snow |
 | spot_difference | the ending has no payoff (Granny asleep, "she will find it tonight" never seen) | home "what changed" is not linked to the drawing | illustration: Granny finds the drawing at night (the payoff); scratch-off: the fogged pond |
-| bigger_smaller_pro | the door template is good; practice 3 names nothing | the housewarming (kept), add a home problem: cups and chairs by size | drop places: Squirrel's new hollow inside; illustration: Squirrel stuck in the old hollow |
+| bigger_smaller | the door template is good; practice 3 names nothing | the housewarming (kept), add a home problem: cups and chairs by size | drop places: Squirrel's new hollow inside; illustration: Squirrel stuck in the old hollow |
 | long_short | best visible consequence (the plank falls in); the picnic glade is 3 lines, no interaction | scarves + pasta (kept, rich) | walk on the map: the two paths, walk the shorter; torn picture: the picnic map |
 | tall_short | best chain of adventures; practice has no shot at all; 13 "Wskaż." | height chart (kept, rich) | illustration: the view from the treehouse; drop places: hallway pegs by height |
 | ordering | tower falls (good); the evening concert promised at home is never seen | xylophone (kept, the best home) - end with the concert seen | illustration: the concert at night (promise kept); connect the dots by size: the lantern; story strip |
@@ -222,13 +222,13 @@ the lessons are touched. "Breather" = the current one and what to do with it.
 | morning_night | Mole's "always night" good | evening routine: 1 ordering, 3 lines | story strip: the day; scratch-off: the fogged morning window; connect the dots: a night constellation (pictures); illustration: sunrise |
 | noticing_order | ends in the shared `ogrod`; the hop race is maths, not a breather; 3x "Brawo, wszystko po kolei!" | sandwich: 1 ordering | story strip: Owl's picture book pages (the natural fit); drop places: kitchen counter steps |
 | counting_3 | Bear counting a candle twice (good); 4 bare praises | cake and spoons (2 counts) | scratch-off: raspberries under leaves; drop places: three places at the table; illustration: blowing out the candles |
-| more_fewer_pro | strong misconception; the most static camera (runs of 8-10 lines) | pillow fight (kept, rich) | illustration: the fireflies' dance; walk on the map: where more fireflies |
+| more_fewer | strong misconception; the most static camera (runs of 8-10 lines) | pillow fight (kept, rich) | illustration: the fireflies' dance; walk on the map: where more fireflies |
 | logical_pairs | Mole's photo (good); "Połącz palcem" twice in practice | hallway pairs: 1 task, 3 lines | illustration: the storm at night (now only told); torn picture: Mole's photo; scratch-off: mud on the things |
 | numbers_1_5 | nobody is helped; 4 bare praises | backpack + fingers (2) | illustration: the train on the bridge; connect the dots 1-5: the engine; panorama: the ride through the forest |
 | up_down | weak climax (the "jump up" game); `jesienny_sad` is a panorama but never panned | hallway: 1 sort, 3 lines | drop places: hooks up, floor down (the natural fit); walk on the map: up the hill / down the hill; pan |
 | in_out | the fence with a gap (good), the burrow in the storm (good) | toy box: 1 sort | illustration: the thunder; scratch-off: the steamy burrow window; drop places: in the box / out on the rug |
 | tangram | practice and home repeat the story's puzzles (house, fish, boat, cat) | kitchen tangram again | torn picture: the theatre poster; connect the dots: a shadow outline; new practice puzzles of their own |
-| grouping_pro | best story; practice has no shot and terse lines ("Szybko! Łap grzyby!") | Fox's visit (kept, rich) | walk on the map: the red path with colour forks; torn picture: the forest map |
+| grouping | best story; practice has no shot and terse lines ("Szybko! Łap grzyby!") | Fox's visit (kept, rich) | walk on the map: the red path with colour forks; torn picture: the forest map |
 | front_back | Bunny "hidden" with eyes shut (good); 5 bare praises | curtain + armchair (2) | drop places: behind the curtain, in front of the armchair; scratch-off: a leaf pile; illustration: the seeker counting |
 | rhythm | strong all through; the longest | the concert for the parents (kept, rich) | illustration: the parents applauding (the payoff) |
 | queue | photo finish (good); 9 "Wskaż." | toys in a queue to bed - not linked to the race | illustration: the race start; story strip: the race; home: a medal ceremony for the toys or the family queue |
@@ -258,8 +258,8 @@ table approved by the user before phase 5.
 
 ### Panoramas
 
-Panorama plates today: `jesienny_sad` (grouping_pro pans it; up_down uses it without panning), `polana_wieczorem`
-(more_fewer_pro), `droga_do_debu` (made, used by no lesson). Candidates where a journey happens in one place:
+Panorama plates today: `jesienny_sad` (grouping pans it; up_down uses it without panning), `polana_wieczorem`
+(more_fewer), `droga_do_debu` (made, used by no lesson). Candidates where a journey happens in one place:
 - numbers_1_5 - the train ride through the forest (the pan IS the ride);
 - up_down - pan the autumn orchard it already uses;
 - spot_difference - the walk to Granny's oak (`droga_do_debu` exists);

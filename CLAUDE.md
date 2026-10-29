@@ -61,7 +61,7 @@ for review snapshots of all four puppets at a frozen phase.
 ## Lessons
 
 One folder per lesson, see `guidelines.md` for the contract and
-`game/lessons/bigger_smaller_pro/` as the reference. Order of work for a new lesson:
+`game/lessons/bigger_smaller/` as the reference. Order of work for a new lesson:
 `scenario.md` first (the script, three stages), then `i18n/pl.json` + `en.json`
 (every spoken line as `"line.<stage>_<n>": {who, text}` - `who` is always a character
 of the lesson, never a narrator, the default speaker; `"speakers": [...]` lists the

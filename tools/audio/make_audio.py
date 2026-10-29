@@ -1,7 +1,7 @@
 """Narration for the lessons: every spoken line -> game/audio/<lang>/<lesson>/<key>.mp3
 
   python tools/audio/make_audio.py                 # every lesson, every language, missing/changed lines only
-  python tools/audio/make_audio.py bigger_smaller_pro  # one lesson
+  python tools/audio/make_audio.py bigger_smaller  # one lesson
   python tools/audio/make_audio.py --voices        # list the account's voices and exit
   python tools/audio/make_audio.py --bake          # (re)compute the lip-sync envelopes of every mp3
   python tools/audio/make_audio.py --normalize     # bring every mp3 to TARGET_RMS_DB and re-bake

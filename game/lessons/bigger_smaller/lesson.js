@@ -39,7 +39,7 @@ async function przyloz(c, drzwi, h) {
 }
 
 export default {
-  id: "bigger_smaller_pro",
+  id: "bigger_smaller",
   przejscia: true,
   nagrody: true,
   characters: { lisek: { side: "left", x: -5.0 }, wiewiorka: { side: "left", x: -2.9 }, sowa: { side: "right", x: 4.8 } },

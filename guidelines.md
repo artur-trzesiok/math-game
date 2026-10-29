@@ -242,7 +242,7 @@ for every lesson (documented in CLAUDE.md), not into one lesson's code.
 
 ## Watch it as the child before calling it done
 
-A lesson written alone (more_fewer_pro) reached the user with plain faults that one look would have caught:
+A lesson written alone (more_fewer) reached the user with plain faults that one look would have caught:
 a voice from a character who was not on screen, mice that vanished in a cut so nobody could know which bush had
 more, pairing arcs all at one height that ran into one band, a "sleepover" in a sunlit room, the characters
 covering the game, one lantern of four given its firefly. The code ran; nobody had watched it as a child does.

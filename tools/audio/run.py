@@ -2,7 +2,7 @@
 
   python tools/audio/run.py --voices
   python tools/audio/run.py                 # every lesson, every language
-  python tools/audio/run.py bigger_smaller_pro
+  python tools/audio/run.py bigger_smaller
   python tools/audio/run.py --sfx           # the sound effects (make_sfx.py)
   python tools/audio/run.py --music         # the places' music and the weather loops (make_music.py)
 

@@ -100,7 +100,7 @@ further along looks longer - it was only pushed ahead.
 ## What is needed
 
 Already in the engine: sorting zones, tasks, `nalozenie`, `ubieranie`, `przejdz`, `pan`, `ujecie`, `emocja`,
-`czastki`, `kubki`, `memory`, `dzwieki`, `cien`, `slad`, the catching game of bigger_smaller_pro.
+`czastki`, `kubki`, `memory`, `dzwieki`, `cien`, `slad`, the catching game of bigger_smaller.
 
 **New tools (for acceptance):**
 1. `roznice` - picture pairs for "spot the difference": gpt-image draws a picture, then an edit "the same picture

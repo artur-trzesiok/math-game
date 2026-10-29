@@ -6,7 +6,15 @@ import { v } from "./v.js";
 const KLUCZ = "math_game.album", STRON = 8;
 const obrazNaklejki = (n) => v(`/game/assets/${n.obraz}.webp`);
 
-function wczytaj() { try { return JSON.parse(localStorage.getItem(KLUCZ)) || { naklejki: {} }; } catch { return { naklejki: {} }; } }
+// lessons renamed on 2026-10-29: a sticker earned under the old id stays the child's
+const STARE = { bigger_smaller_pro: "bigger_smaller", grouping_pro: "grouping", more_fewer_pro: "more_fewer" };
+function wczytaj() {
+  try {
+    const s = JSON.parse(localStorage.getItem(KLUCZ)) || { naklejki: {} };
+    for (const [a, b] of Object.entries(STARE)) if (s.naklejki?.[a]) { s.naklejki[b] = s.naklejki[b] || s.naklejki[a]; delete s.naklejki[a]; }
+    return s;
+  } catch { return { naklejki: {} }; }
+}
 function zapisz(s) { try { localStorage.setItem(KLUCZ, JSON.stringify(s)); } catch { /* private mode: the album lives until the page closes */ } }
 let stan = wczytaj();
 

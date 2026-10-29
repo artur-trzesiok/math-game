@@ -21,7 +21,7 @@ appendix at the end (moved from CLAUDE.md); puppets, feet, walks, meshes, audio 
 | `c.choose(targets)` | a plain pick with no right answer | - |
 | `c.memory(pary, {szer})` | turns cards and finds pairs; faces `{obraz}`, `{cyfra}`, `{kropki}` | one_many, morning_night, noticing_order, logical_pairs, counting_5 |
 | `c.kubki({ile, rzeczy, x, odstep})` -> `{przykryj, tasuj(n), odkryj, kubki}` | the shell game: watches, then points to the cup | one_many, in_out |
-| `c.cien(h, on)` | any sticker shown as its silhouette ("whose shadow?") | one_many, spot_difference, bigger_smaller_pro, long_short, tall_short, tangram |
+| `c.cien(h, on)` | any sticker shown as its silhouette ("whose shadow?") | one_many, spot_difference, bigger_smaller, long_short, tall_short, tangram |
 | `c.odbicie(who, {woda, ubrania, rozne})` | a character's reflection in water with something different; point to the difference | spot_difference |
 | `c.roznice(name, {size})` | spot the difference on a painted pair (`tools/roznice`) | spot_difference |
 | `c.szukaj(name, {y, size})` | looks through a round spyglass at a painted scene and finds the hidden things, a count at the side | tall_short |
@@ -30,16 +30,16 @@ appendix at the end (moved from CLAUDE.md); puppets, feet, walks, meshes, audio 
 
 | call | what the child does | lessons |
 |---|---|---|
-| `c.sort({items, zones, wrong})` | drags things into drawn containers, any order, checked when all are in; a zone may name its kind (`zone.want`) | one_many, grouping_pro, in_out, up_down, adding_5 |
+| `c.sort({items, zones, wrong})` | drags things into drawn containers, any order, checked when all are in; a zone may name its kind (`zone.want`) | one_many, grouping, in_out, up_down, adding_5 |
 | `c.slots({items, slots:[{x,y,w,h,accept}], numery, numeryNad})` -> `done()` | drags things into dashed places (patterns with a gap, seriation, numbered places) | ordering, noticing_order, morning_night, shapes, up_down, rhythm, queue |
 | `c.place({item, ref, ref2, want, wrong})` | puts a thing on / under / beside / behind / between / in / in front of another; `c.relation`, `c.behind` read it | front_back, in_out |
-| `c.stage.free({items, onDrop, onTap, doLinii})` | free dragging, the lesson decides what a drop means (standing things on one line, giving one to each) | tall_short, long_short, more_fewer_pro, counting_3, counting_5, numbers_1_5, bigger_smaller_pro |
+| `c.stage.free({items, onDrop, onTap, doLinii})` | free dragging, the lesson decides what a drop means (standing things on one line, giving one to each) | tall_short, long_short, more_fewer, counting_3, counting_5, numbers_1_5, bigger_smaller |
 | `c.tangram(name, {x, y, scale, obroty})` -> `done()`; `c.piece(t)` | lays tangram pieces on a silhouette, a tap turns 45 deg; one piece as a target | shapes, tangram |
 | `c.wieza({klocki, miejsca, stoi})` | stacks blocks; a block that does not stand tips and falls back | ordering |
 | `c.waga()` -> `{poloz, przeciagaj, wynik}` | a balance scale, the beam tips to the heavier pan | - |
 | `c.ramka({x, y})` -> `{wloz, ile, przeciagaj}` | the ten frame, filled place by place | numbers_6_10, adding_10 |
 | `c.sklepik({towar, cena, pokaz})` | pays: coins onto a plate, as many as the tag | numbers_1_5, counting_5, adding_5 |
-| `c.ubieranie({rzeczy, kto, pasuje, wrong})` | dresses characters; a wrong size goes on, slips and falls off | bigger_smaller_pro, grouping_pro |
+| `c.ubieranie({rzeczy, kto, pasuje, wrong})` | dresses characters; a wrong size goes on, slips and falls off | bigger_smaller, grouping |
 | `c.miejsca()` -> `{name: {slot(accept), strefa(), x, y, w, h, rodzaj}}` | the scenery's painted surfaces as drop places: a shelf, the hooks, the table, the rug (`game/assets/backgrounds/<scene>/miejsca.json`, `tools/miejsca/make_miejsca.py`). `m.gorna_polka.slot(accept)` goes into `c.slots`, `m.stol.strefa()` into `c.sort`; nothing is drawn - the picture shows where; a thing STANDS on a shelf, HANGS on a hook, LIES on a rug. Rooms with places: dom, pokoj, przedpokoj, pokoj_noc | - (the home stage, phase 3) |
 | `c.winda({x, pietra})` -> `{doPoziomu, jedz, wloz, wyjmij}` | sends a basket on a rope up and down (pull the rope or drag the basket) | up_down |
 
@@ -76,7 +76,7 @@ appendix at the end (moved from CLAUDE.md); puppets, feet, walks, meshes, audio 
 | `c.rytm(items, {tempo, kiwaja, linia, kto, slowo})` | plays a row from the start one thing per beat, or reads it aloud word by word | noticing_order, ordering, rhythm |
 | `c.taniec(who, moves)`, `c.ruch(who, klask/skok/obrot)` | a dance on the beat; one move | rhythm, up_down |
 | `c.zamroz(who, on)`, `c.potknij(who)` | statues (body stops, face lives); a wobble for a wrong move | rhythm |
-| `c.muzyka(name)` | a scene's own music (the theme falls silent) | more_fewer_pro, rhythm |
+| `c.muzyka(name)` | a scene's own music (the theme falls silent) | more_fewer, rhythm |
 | `c.sfx(name)` | a sound effect (most play by themselves: pop, tap, wrong, plop, pencil, whoosh, right) | many |
 | sticker sound `c.object(name, {dzwiek})` | a thing that sounds when pointed at | ordering, rhythm |
 
@@ -88,7 +88,7 @@ checks against), the picture is an object in the story so the answer moves the p
 
 | call | what the child does | pipeline | lessons |
 |---|---|---|---|
-| `c.znalezisko(name, {skad, y})` -> `{cele, tlo, zaznacz, remove}` | a found map, photo, drawing or note flies up big; the child points to spots or whole paths, or counts them | `tools/znaleziska/make_znalezisko.py` | long_short, ordering, shapes, counting_3, logical_pairs, up_down, tangram, grouping_pro, front_back, queue, counting_5, adding_5 |
+| `c.znalezisko(name, {skad, y})` -> `{cele, tlo, zaznacz, remove}` | a found map, photo, drawing or note flies up big; the child points to spots or whole paths, or counts them | `tools/znaleziska/make_znalezisko.py` | long_short, ordering, shapes, counting_3, logical_pairs, up_down, tangram, grouping, front_back, queue, counting_5, adding_5 |
 | `c.labirynt` | see 3 | `tools/labirynty/make_labirynt.py` | |
 | `c.zdrapka(name)` -> found picture | rubs a painted cover (snow, a fogged window, sand, leaves) off with a finger; at 75 % the rest melts and the scene under it is a found picture (`cele`, `tlo`, `zaznacz`) to count or point on. Tests `S.zdrapka.dokoncz()` | `tools/zdrapki/make_zdrapka.py` (scene, the same scene covered, spots) | - (samples snieg_ogrodek, szyba_rano) |
 | `c.kropki(name, {znaki: wielkosc / cyfry})` | joins dots on the outline of a painted thing in order (draws from dot to dot or taps the next); the outline closes and the picture appears. `wielkosc`: the dots grow, from the smallest (before numbers); `cyfry`: digits. A wrong dot shakes. Tests `S.kropki.dokoncz()` | `tools/kropki/make_kropki.py` (one thing on a transparent background; dots along the outline, pulled to corners) | - (samples niedzwiedz_gwiazd on a night card, lokomotywa 1-10) |
@@ -174,7 +174,7 @@ hand wobble; a segment has end ticks. A stroke is a handle like a sticker (a wid
 invisible strip takes the tap, so a line can be a task target; `highlight` makes it
 glow; `clear` removes it). `bounds(h)` is a sticker's real drawing (its alpha box, not
 the transparent square), `standOn(items, y)` stands stickers on a line. Lessons build
-with them: the pairing lines in more_fewer_pro. On a tap a
+with them: the pairing lines in more_fewer. On a tap a
 thing beats a character (a character only repeats the instruction, the one said
 before the task - never the last "try again"). This is ONE rule for the whole game: `scene.tapPuppet` (a tap on a
 visible character that no task takes) calls the player's `onPuppetTap`, which repeats the instruction in force,
@@ -233,7 +233,7 @@ Rows and queues are laid out by the things' drawn widths (`c.bounds`), never a f
 the heads at full width (8 things at 1.3), ordering puts things on the floor within x +-3.1 and the places
 over the heads, the queue lesson stands animals feet on the floor, the bunny clearly the biggest.
 
-Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller_pro` uses them all):
+Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller` uses them all):
 - inserts on a plain colour: `ctx.go({kolor, motyw, kolo})` (motyw kola, figury, chmurki, deszcz, cyfry,
   gwiazdki, liscie - drifting very faintly; `ciecie: true` inside one adventure);
 - transitions `E.przejscie` (tecza with the characters' heads cut from the frame, wzor, irys, babelki; random

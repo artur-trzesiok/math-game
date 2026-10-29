@@ -73,7 +73,7 @@ async function zlap(c, { dobre, zle, linia, wrong, ile = 3, size = 1.1 }) {
 }
 
 export default {
-  id: "grouping_pro",
+  id: "grouping",
   przejscia: true,
   nagrody: true,
   characters: { wiewiorka: { side: "left" }, sarenka: { side: "right" }, lisek: { side: "left", x: 0 } },

@@ -25,7 +25,7 @@
       "temat": "spostrzeganie"
     },
     {
-      "id": "bigger_smaller_pro",
+      "id": "bigger_smaller",
       "title": {
         "pl": "Większy, mniejszy",
         "en": "Bigger, smaller"
@@ -121,7 +121,7 @@
       "temat": "liczby"
     },
     {
-      "id": "more_fewer_pro",
+      "id": "more_fewer",
       "title": {
         "pl": "Więcej, mniej",
         "en": "More, fewer"
@@ -193,7 +193,7 @@
       "temat": "figury"
     },
     {
-      "id": "grouping_pro",
+      "id": "grouping",
       "title": {
         "pl": "Grupowanie",
         "en": "Grouping"
@@ -300,7 +300,7 @@
       "lessons": [
         "one_many",
         "spot_difference",
-        "bigger_smaller_pro",
+        "bigger_smaller",
         "long_short"
       ],
       "znak": "znak_kwiatek"
@@ -330,7 +330,7 @@
       "lessons": [
         "noticing_order",
         "counting_3",
-        "more_fewer_pro",
+        "more_fewer",
         "logical_pairs"
       ],
       "znak": "znak_lisc"
@@ -358,7 +358,7 @@
       },
       "color": "#9b7fd4",
       "lessons": [
-        "grouping_pro",
+        "grouping",
         "front_back",
         "rhythm",
         "queue"

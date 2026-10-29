@@ -64,7 +64,7 @@ Nine cut-out puppets (gpt-image pieces, `tools/characters`), natural height in s
 
 | who | name | height | notes |
 |---|---|---|---|
-| lisek | Fox | 3.6 | the default guide; red things in grouping_pro |
+| lisek | Fox | 3.6 | the default guide; red things in grouping |
 | wiewiorka | Squirrel | 2.7 | three quarters of Fox |
 | sowa | Owl | 3.6 | the biggest head (gets the biggest cap); owlets are stickers (`sowiatko`) |
 | sarenka | Deer | 3.6 | gpt-image output moderation blocks deer at random - retry, never rewrite |
@@ -95,7 +95,7 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   must not vanish on a wrong tap), picture pairs, Owl's drawing vs the pond's copy, three rounds of "what is gone"
   (framed row, "?" in the gap, "na górze" in the line), the swapped toys ask for BOTH toys. Ends at Granny Owl's oak
   (`dab_babci`, she sleeps by day). Sceneries laka, dab_babci, pokoj.
-- `bigger_smaller_pro` (Większy, mniejszy) - Squirrel's new home: a hollow cannot be carried, its old round DOOR can
+- `bigger_smaller` (Większy, mniejszy) - Squirrel's new home: a hollow cannot be carried, its old round DOOR can
   - held against each new hole in any order, Fox comments, then the question; the door drawn in front of the holes.
   Caps: biggest for Owl, middle Fox, small Squirrel (placed high on the heads). Ends at Squirrel's new oak
   (`dab_wiewiorki`): big acorns fit the bigger hollow. Sceneries las, dab_wiewiorki, pokoj.
@@ -136,7 +136,7 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   missing step; hop race. No new tools (the pages already are the pictures). Ends in ogrod.
 - `counting_3` (Liczymy do 3) - Hedgehog's birthday, Bear counts a candle twice ("four!"); digits traced; in a new
   raspberry thicket (`malinowy_zagajnik`) Grandma's cake recipe (`przepis_tort`): count its 3 raspberries, then pick 3.
-- `more_fewer_pro` (Więcej, mniej) - the night of the fireflies with its own night tools (`ctx.noc`, `ctx.swiatlo`),
+- `more_fewer` (Więcej, mniej) - the night of the fireflies with its own night tools (`ctx.noc`, `ctx.swiatlo`),
   stumps game to music. Left as it was (already ~10 interactions and its own travel).
 - `logical_pairs` (Co do pary?) - the storm blew things into Beaver's workshop; Mole pairs a red cup with a red apple
   (looks alike is not "goes with"); finger-drawn pairing lines (`polacz`); Mole's old photo (`zdjecie_kreta`) shows the
@@ -158,7 +158,7 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   ears (the two spots overlap a little).
 
 **Etap 5**
-- `grouping_pro` (Grupowanie) - a detective story on the autumn panorama: red gifts; grouping by one rule then
+- `grouping` (Grupowanie) - a detective story on the autumn panorama: red gifts; grouping by one rule then
   another; a forest map (`mapa_lasu`) with yellow, green and red leaf paths - follow the red one; ends inside Fox's red
   home in the oak (`lisia_nora`), his red hat found.
 - `front_back` (Z przodu i z tyłu) - hide-and-seek: Bunny "hides" in front of the bush with his eyes shut; Bunny's

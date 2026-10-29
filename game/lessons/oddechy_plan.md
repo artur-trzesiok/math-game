@@ -30,7 +30,7 @@ Not again: catch what pops up (overused); counting claps / hops / bells (that is
 |---|---|---|---|---|
 | 1 | one_many | catch a duckling | latawiec (the autumn wind in the garden) | the garden, before the brook |
 | 2 | spot_difference | catch butterflies | karmienie (fish in the magic pond) | at the pond |
-| 3 | bigger_smaller_pro | catch big acorns | kamień, papier, nożyce (who carries the first box) | before the move to the new hollow |
+| 3 | bigger_smaller | catch big acorns | kamień, papier, nożyce (who carries the first box) | before the move to the new hollow |
 | 4 | long_short | snail race | wyścig ślimaków (keep) | the meadow |
 | 5 | tall_short | catch tall sunflowers | kto to powiedział? (hiding in the orchard) | in the orchard with Hedgehog |
 | 6 | ordering | (the choir song) | malowanie palcem - light on the evening sky | before the concert |
@@ -38,13 +38,13 @@ Not again: catch what pops up (overused); counting claps / hops / bells (that is
 | 8 | morning_night | catch fireflies | zdrapka - the fogged morning window | Mole's first morning |
 | 9 | noticing_order | hop race (first / last) | lustro min (Bunny pulls faces) | the garden |
 | 10 | counting_3 | count claps | kropki z obrazkami - a surprise gift for Hedgehog | the birthday |
-| 11 | more_fewer_pro | (stumps - maths) | kto to powiedział? in the dark glade | the night glade |
+| 11 | more_fewer | (stumps - maths) | kto to powiedział? in the dark glade | the night glade |
 | 12 | logical_pairs | catch leaves | zdrapka - mud off the things after the storm | the workshop |
 | 13 | numbers_1_5 | count the bell | karmienie (ducks at the lake stop) | the lakeside stop |
 | 14 | up_down | who did not jump | kamień, papier, nożyce (who rides the lift first) | the orchard |
 | 15 | in_out | (the circle game - maths) | malowanie palcem on the burrow's steamy window | the warm burrow in the storm |
 | 16 | tangram | - | lustro min (the actors' faces before the show) | the theatre |
-| 17 | grouping_pro | catch the red leaf, mushrooms | zdrapka - rake leaves off to find footprints | on the trail |
+| 17 | grouping | catch the red leaf, mushrooms | zdrapka - rake leaves off to find footprints | on the trail |
 | 18 | front_back | - | kto to powiedział? (who calls from behind the bush) | the hide-and-seek |
 | 19 | rhythm | statues | posągi (keep) | before Deer |
 | 20 | queue | race to the swings | lustro min (Bunny pulls faces in the queue) | the playground |
