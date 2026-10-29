@@ -188,5 +188,50 @@
   "hash": "84815e579df3",
   "who": "narrator",
   "text": "To klucz z gwiazdką od Sarenki. Dostaliśmy go, kiedy szukaliśmy rzeczy, które pasują do siebie."
+ },
+ "line.b_czyje": {
+  "hash": "4d6cb426dc80",
+  "who": "bobr",
+  "text": "Pary gotowe! Teraz oddajmy rzeczy właścicielom. Czyje są młotek i gwóźdź?"
+ },
+ "line.b_nie_widze": {
+  "hash": "66f065fdfe8a",
+  "who": "kret",
+  "text": "Chyba moje... Ale słabo widzę i nie jestem pewien."
+ },
+ "line.b_zdjecie": {
+  "hash": "13f9b8565cb5",
+  "who": "bobr",
+  "text": "Popatrz, na półce leży stare zdjęcie. To ty, Krecie! Może zdjęcie nam podpowie."
+ },
+ "line.b_zdjecie_co": {
+  "hash": "562602fddc0f",
+  "who": "sarenka",
+  "text": "Co Kret trzyma w łapce na zdjęciu? Wskaż to."
+ },
+ "line.b_zdjecie_nie": {
+  "hash": "8e667dd1e17b",
+  "who": "sarenka",
+  "text": "Tego Kret nie trzyma. Popatrz na jego łapkę."
+ },
+ "line.b_zdjecie_nie.bobr": {
+  "hash": "0e89cbedb7e1",
+  "who": "bobr",
+  "text": "Tego Kret nie trzyma. Popatrz na jego łapkę."
+ },
+ "line.b_zdjecie_mlotek": {
+  "hash": "5d80b84d52de",
+  "who": "bobr",
+  "text": "Młotek! Na zdjęciu Kret trzyma młotek, więc to jego młotek."
+ },
+ "line.b_zdjecie_para": {
+  "hash": "93150f4acd69",
+  "who": "sarenka",
+  "text": "A gwóźdź pasuje do młotka, bo używamy ich razem. Więc gwóźdź też jest Kreta!"
+ },
+ "line.b_moje": {
+  "hash": "2cfd9afdd35a",
+  "who": "kret",
+  "text": "Mój młotek i mój gwóźdź! Dziękuję. Naprawię nimi półkę przy mojej norce."
  }
 }

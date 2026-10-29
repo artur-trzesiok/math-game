@@ -38,6 +38,69 @@ banks. A few little trees, a hill, two flowers drawn like a child's map. Big sim
 {STYL}""",
         "cele": ["the one place where the dotted footpath crosses the blue brook"],
     },
+    # logical_pairs: an old photo of Mole in Beaver's workshop - what he holds in his paw (the hammer) says whose it is
+    "zdjecie_kreta": {
+        "rozmiar": "1024x1024",
+        "obraz": f"""An old family photograph drawn as a picture-book illustration: a square picture with a wide white paper
+border, slightly faded warm colours, filling the whole image. In the photo, in the middle, stands a small friendly
+cartoon MOLE, front view, full figure: round body covered in soft dark grey fluffy fur with a lighter grey-brown belly,
+a round head, small shiny dark brown eyes, rosy pink cheeks, a small round pink nose, a happy open smile, short arms
+with PINK paws and long pale cream claws, short legs with pink feet; no clothes, no glasses. In ONE raised paw he
+proudly holds a small wooden HAMMER with a grey metal head, clearly visible beside his body. Behind him the round
+earthen entrance of his burrow in a green grassy hill, and a little crooked wooden shelf on a post. On the grass at his
+feet a red apple and a small yellow flower, well apart from him. Big simple clear shapes.
+{STYL}""",
+        "cele": ["on the small hammer in the mole's raised paw (the disc covers the whole hammer, its metal head and its wooden handle down to the paw)"],
+    },
+    # grouping_pro: a map of the forest the wind blows in - the path of red leaves leads to the big oak (Fox's home)
+    "mapa_lasu": {
+        "rozmiar": "1536x1024",
+        "obraz": f"""A simple hand-drawn map of a forest on worn cream paper, seen flat from above, filling the whole picture.
+At the bottom middle a small round meadow. From the meadow THREE separate footpaths go up into the forest, fanning out,
+far apart, never crossing or touching each other:
+  - the LEFT path is strewn with small YELLOW leaves and ends at the top left at a little burrow in a low hill;
+  - the MIDDLE path is strewn with small GREEN leaves and ends at the top middle at a little wooden hut by a pond;
+  - the RIGHT path is strewn with small bright RED leaves and ends at the top right at one BIG OAK TREE with a little
+    round door in its trunk.
+Every path carries leaves of ONE colour only, clearly visible along its whole length. Between the paths little trees
+drawn simply with soft green crowns, a few bushes, like a child's map. Big simple clear shapes.
+{STYL}""",
+        "cele": ["the big oak tree with the little round door at the top right, at the very end of the path of red leaves"],
+    },
+    # queue: Beaver's photo of the finish line - the hedgehog's nose touches the line first, the bunny just behind
+    "fotofinisz": {
+        "rozmiar": "1536x1024",
+        "obraz": f"""A photo-finish photograph of a little forest race, drawn as a picture-book illustration: an oblong picture
+filling the whole image, warm slightly faded colours like a printed photo. A sunny meadow seen from the side and a little
+from above. Four straight racing lanes of mown grass run from left to right, one above the other, separated by thin white
+chalk lines. Near the RIGHT edge a wide white chalk FINISH LINE crosses all four lanes from top to bottom, with a wooden
+post beside it topped by a small red-and-white checkered flag. All four racers run towards the RIGHT, side view, one in
+each lane, nobody overlapping anybody:
+  - top lane: a big grey BUNNY with long upright pink-lined ears and a white fluffy tail, close to the finish line but
+    still half a step BEFORE it;
+  - second lane: a small round brown HEDGEHOG with a cream face, rosy cheeks, a black button nose and brown spines; the
+    tip of its nose is already ON the white finish line - it is the FIRST to reach it;
+  - third lane: a fluffy yellow DUCKLING with an orange beak, a step further behind than the bunny;
+  - bottom lane: a little grey MOUSE with big round pink ears, far behind, on the left side of the picture.
+Happy faces, running poses, big simple clear shapes. NO people.
+{STYL}""",
+        "cele": ["on the small brown hedgehog in the second lane, whose nose touches the finish line (the disc covers its head and body)",
+                 "on the little grey mouse far behind in the bottom lane (the disc covers its head and body)"],
+    },
+    # front_back: Bunny's snapshot of the hide-and-seek - the mouse's ears peek out from behind the maze's hedge
+    "zdjecie_chowany": {
+        "rozmiar": "1536x1024",
+        "obraz": f"""A snapshot photograph of a game of hide-and-seek in a sunny park garden, drawn as a picture-book
+illustration: an oblong picture filling the whole image, warm slightly faded colours like a printed photo. Across the
+back of the picture runs a LOW neat trimmed green HEDGE, the outer wall of a hedge maze, with an arched opening at the
+right end leading inside. On the grass in front of it: on the LEFT a small wooden bench, and IN FRONT of the bench stands
+a white HEN with a red comb, full figure, fully visible. In the MIDDLE, BEHIND the hedge, a little grey MOUSE is hiding:
+only the top of her head with two big round pink ears and her two eyes peek out over the top of the hedge; all the rest
+of her is hidden by the hedge. Round flower beds with red and yellow flowers at the front right, blue sky and round trees
+above the hedge. Big simple clear shapes. NO people.
+{STYL}""",
+        "cele": ["on the little grey mouse's head and two pink ears peeking out over the top of the hedge"],
+    },
 }
 ROZMYCIE = 2.0
 

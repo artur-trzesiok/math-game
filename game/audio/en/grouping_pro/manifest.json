@@ -443,5 +443,55 @@
   "hash": "762a3697fa3a",
   "who": "sarenka",
   "text": "Gifts! Somebody left them for us under the apple tree again."
+ },
+ "line.b_gdzie_teraz": {
+  "hash": "7b964f231c8d",
+  "who": "wiewiorka",
+  "text": "Oh, the forest is so big. Which way now?"
+ },
+ "line.b_kartka": {
+  "hash": "ceb99a24db90",
+  "who": "sarenka",
+  "text": "The wind blew something in... It's a map of the forest!"
+ },
+ "line.b_mapa_plan": {
+  "hash": "59579f10e086",
+  "who": "wiewiorka",
+  "text": "The map has three paths of leaves. Whoever leaves the gifts loves red. Let's look for the path of red leaves!"
+ },
+ "line.b_mapa_gdzie": {
+  "hash": "b20ee4322668",
+  "who": "sarenka",
+  "text": "Where does the path of red leaves lead? Point to the place at its end."
+ },
+ "line.b_mapa_nie": {
+  "hash": "a5a0fdd7e248",
+  "who": "sarenka",
+  "text": "The red leaves don't lead there. Look where the path of red leaves ends."
+ },
+ "line.b_mapa_nie.wiewiorka": {
+  "hash": "d785c4734139",
+  "who": "wiewiorka",
+  "text": "The red leaves don't lead there. Look where the path of red leaves ends."
+ },
+ "line.b_mapa_dab": {
+  "hash": "590898a911b5",
+  "who": "wiewiorka",
+  "text": "To the big oak with a little door! Let's go there!"
+ },
+ "line.c_wejdzcie": {
+  "hash": "b68f691dac6a",
+  "who": "lisek",
+  "text": "Come inside, I'll show you."
+ },
+ "line.c_przytulnie": {
+  "hash": "b6463a9975fb",
+  "who": "wiewiorka",
+  "text": "How cosy it is here! Red curtains, a red armchair, a red rug..."
+ },
+ "line.c_lubie": {
+  "hash": "2ad1bee0a7ab",
+  "who": "lisek",
+  "text": "I told you I love red! And here are my hats and scarves. All mixed up."
  }
 }

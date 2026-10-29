@@ -51,6 +51,41 @@
     "who": "kret",
     "text": "Pędzel i farby, pszczoła i kwiatek, młotek i gwóźdź!"
   },
+  "line.b_czyje": {
+    "who": "bobr",
+    "text": "Pary gotowe! Teraz oddajmy rzeczy właścicielom. Czyje są młotek i gwóźdź?"
+  },
+  "line.b_nie_widze": {
+    "who": "kret",
+    "text": "Chyba moje... Ale słabo widzę i nie jestem pewien."
+  },
+  "line.b_zdjecie": {
+    "who": "bobr",
+    "text": "Popatrz, na półce leży stare zdjęcie. To ty, Krecie! Może zdjęcie nam podpowie."
+  },
+  "line.b_zdjecie_co": {
+    "who": "sarenka",
+    "text": "Co Kret trzyma w łapce na zdjęciu? Wskaż to."
+  },
+  "line.b_zdjecie_nie": {
+    "who": "sarenka",
+    "text": "Tego Kret nie trzyma. Popatrz na jego łapkę.",
+    "speakers": [
+      "bobr"
+    ]
+  },
+  "line.b_zdjecie_mlotek": {
+    "who": "bobr",
+    "text": "Młotek! Na zdjęciu Kret trzyma młotek, więc to jego młotek."
+  },
+  "line.b_zdjecie_para": {
+    "who": "sarenka",
+    "text": "A gwóźdź pasuje do młotka, bo używamy ich razem. Więc gwóźdź też jest Kreta!"
+  },
+  "line.b_moje": {
+    "who": "kret",
+    "text": "Mój młotek i mój gwóźdź! Dziękuję. Naprawię nimi półkę przy mojej norce."
+  },
   "line.b_drzwi": {
     "who": "sarenka",
     "text": "A ja nie mogę otworzyć moich drzwi. Burza pomieszała moje klucze."

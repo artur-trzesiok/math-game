@@ -1,6 +1,7 @@
 // Lesson: grouping, the "pro" build (guidelines.md, "Atmosphere and editing"): a detective story on the autumn
 // panorama - someone leaves red gifts; grouping by one rule and then another shows what they have in common, a
-// trail of red leaves leads to a shy Fox, who is helped to find his red hat and invited home for the promised apple
+// trail of red leaves (and a map: the path of red leaves) leads to a shy Fox, who is helped to find his red hat in
+// his home in the oak (lisia_nora) and invited home for the promised apple
 // pie. Script in scenario.md.
 
 const PANO = "jesienny_sad";
@@ -182,9 +183,27 @@ export default {
         await c.odliczanie({ styl: "kropki" });
         for (let i = 0; i < 4; i++) {
           await zlap(c, { dobre: "lisc_czerwony", zle: ["lisc_zolty"], linia: i === 0 ? ["wiewiorka", "line.b_lap"] : null, wrong: "line.b_nie_ten", ile: 3 });
-          await c.pan(1 + (i + 1) * 0.25, { idz: ["wiewiorka", "sarenka"], d: 1.1 });
+          await c.pan(1 + (i + 1) * 0.2, { idz: ["wiewiorka", "sarenka"], d: 1.1 });
         }
         await c.say("sarenka", "line.b_las", { anim: "Wskazanie" });
+        // the forest is big: the wind blows in a map - the path of red leaves leads to the big oak
+        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        c.play("wiewiorka", "Rozgladanie"); await c.wonder("wiewiorka");
+        await c.say("wiewiorka", "line.b_gdzie_teraz");
+        await c.ujecie("ogolny");
+        c.czastki("liscie", { wiatr: 2.2, gestosc: 1.4 }); c.sfx("whoosh");
+        await c.say("sarenka", "line.b_kartka", { anim: "Podskok" });
+        c.czastki("liscie", { wiatr: 0.6 });
+        const mapa = await c.znalezisko("mapa_lasu", { skad: "sarenka" });
+        await c.say("wiewiorka", "line.b_mapa_plan");
+        await c.say("sarenka", "line.b_mapa_gdzie");
+        mapa.cele.forEach((h) => (h.dobry = true));
+        await c.task({ targets: [...mapa.cele, mapa.tlo], correct: mapa.cele[0], wrong: "line.b_mapa_nie" });
+        mapa.cele.forEach((h) => (h.dobry = false));
+        await mapa.zaznacz();
+        await c.say("wiewiorka", "line.b_mapa_dab", { anim: "Radosc" });
+        await mapa.remove();
+        await c.pan(2, { idz: ["wiewiorka", "sarenka"], d: 1.6 });
       },
       // C. the forest edge: the red door; Fox comes out (far away, small) and walks up to them - it was him; he is
       // invited for the pie, but cannot find his red hat in the mess: sort hats and scarves, point to the red hat
@@ -218,12 +237,25 @@ export default {
         await c.say("wiewiorka", "line.c_dziekujemy", { anim: "Radosc" });
         await c.ujecie("ogolny");
         await c.say("sarenka", "line.c_zapraszamy", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "lisek" });
         await c.say("lisek", "line.c_balagan", { anim: "Rozgladanie" });
-        // his things: hats into the basket, scarves into the box
+        await c.say("lisek", "line.c_wejdzcie", { anim: "Zgloszenie" });
+        // inside Fox's home in the oak: everything red - and his hats and scarves all over the place
+        await c.go("lisia_nora", { enter: true });
+        await Promise.all(["wiewiorka", "sarenka", "lisek"].map((n) => c.enter(n)));
+        await c.rozblysk("wiewiorka");
+        await c.say("wiewiorka", "line.c_przytulnie", { anim: "Rozgladanie" });
         const rzeczy = [
           { name: "czapka_zimowa", ubranie: true, tag: "czapki", kolor: "czerwona" }, { name: "czapka_zimowa_2", ubranie: true, tag: "czapki" }, { name: "czapka_zimowa_3", ubranie: true, tag: "czapki" },
           { name: "szalik", ubranie: true, tag: "szaliki" }, { name: "szalik_2", ubranie: true, tag: "szaliki" }, { name: "szalik", ubranie: true, tag: "szaliki" }];
         const items = await wRzedzie(c, rzeczy, { size: 0.9 });
+        for (const h of items) { h.mesh.rotation.z = (Math.random() - 0.5) * 1.4; h.mesh.position.y += (Math.random() - 0.5) * 0.5; }   // a mess, turned anyhow
+        await c.ujecie("sredni", { na: ["lisek", ...items] });
+        await c.say("lisek", "line.c_lubie", { anim: "Smutek" });
+        await c.ujecie("ogolny");
+        // his things: hats into the basket, scarves into the box
+        for (const h of items) h.mesh.rotation.z = 0;
+        await doRzedu(c, items);
         const zones = await pojemniki(c, ["koszyk", "czapki"], ["pudelko", "szaliki"], TRZY);
         await c.say("wiewiorka", "line.c_pogrupujmy");
         await c.sort({ items, zones, wrong: "line.c_pomylka" });

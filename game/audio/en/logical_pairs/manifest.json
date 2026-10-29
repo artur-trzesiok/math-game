@@ -188,5 +188,50 @@
   "hash": "90799691e6fc",
   "who": "narrator",
   "text": "This is Deer's star key. We got it when we looked for things that go together."
+ },
+ "line.b_czyje": {
+  "hash": "87bd0d36e2eb",
+  "who": "bobr",
+  "text": "The pairs are ready! Now let's give the things back to their owners. Whose are the hammer and the nail?"
+ },
+ "line.b_nie_widze": {
+  "hash": "5d4b7276ab99",
+  "who": "kret",
+  "text": "Mine, I think... But I can't see very well, and I'm not sure."
+ },
+ "line.b_zdjecie": {
+  "hash": "4d685b9de071",
+  "who": "bobr",
+  "text": "Look, there's an old photo on the shelf. It's you, Mole! Maybe the photo will tell us."
+ },
+ "line.b_zdjecie_co": {
+  "hash": "821f9cf782e3",
+  "who": "sarenka",
+  "text": "What is Mole holding in his paw in the photo? Point to it."
+ },
+ "line.b_zdjecie_nie": {
+  "hash": "9c0d98b16ba3",
+  "who": "sarenka",
+  "text": "Mole isn't holding that. Look at his paw."
+ },
+ "line.b_zdjecie_nie.bobr": {
+  "hash": "2f6ce2e26882",
+  "who": "bobr",
+  "text": "Mole isn't holding that. Look at his paw."
+ },
+ "line.b_zdjecie_mlotek": {
+  "hash": "95a635af2539",
+  "who": "bobr",
+  "text": "A hammer! In the photo Mole is holding a hammer, so it's his hammer."
+ },
+ "line.b_zdjecie_para": {
+  "hash": "cec95c6f97c3",
+  "who": "sarenka",
+  "text": "And the nail goes with the hammer, because we use them together. So the nail is Mole's too!"
+ },
+ "line.b_moje": {
+  "hash": "dff538c7b608",
+  "who": "kret",
+  "text": "My hammer and my nail! Thank you. I'll fix the shelf by my burrow with them."
  }
 }

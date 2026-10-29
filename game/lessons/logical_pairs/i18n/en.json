@@ -51,6 +51,41 @@
     "who": "kret",
     "text": "A brush and paints, a bee and a flower, a hammer and a nail!"
   },
+  "line.b_czyje": {
+    "who": "bobr",
+    "text": "The pairs are ready! Now let's give the things back to their owners. Whose are the hammer and the nail?"
+  },
+  "line.b_nie_widze": {
+    "who": "kret",
+    "text": "Mine, I think... But I can't see very well, and I'm not sure."
+  },
+  "line.b_zdjecie": {
+    "who": "bobr",
+    "text": "Look, there's an old photo on the shelf. It's you, Mole! Maybe the photo will tell us."
+  },
+  "line.b_zdjecie_co": {
+    "who": "sarenka",
+    "text": "What is Mole holding in his paw in the photo? Point to it."
+  },
+  "line.b_zdjecie_nie": {
+    "who": "sarenka",
+    "text": "Mole isn't holding that. Look at his paw.",
+    "speakers": [
+      "bobr"
+    ]
+  },
+  "line.b_zdjecie_mlotek": {
+    "who": "bobr",
+    "text": "A hammer! In the photo Mole is holding a hammer, so it's his hammer."
+  },
+  "line.b_zdjecie_para": {
+    "who": "sarenka",
+    "text": "And the nail goes with the hammer, because we use them together. So the nail is Mole's too!"
+  },
+  "line.b_moje": {
+    "who": "kret",
+    "text": "My hammer and my nail! Thank you. I'll fix the shelf by my burrow with them."
+  },
   "line.b_drzwi": {
     "who": "sarenka",
     "text": "And I can't open my door. The storm mixed up my keys."

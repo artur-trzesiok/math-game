@@ -1,7 +1,8 @@
 // Lesson: what goes with what - logical pairs: things that belong together because we use them together (a cup and its
 // saucer, a brush and paints, a bee and a flower, a hammer and a nail, a key and its door) - not because they look
 // alike. A storm blew everybody's things into Beaver's workshop; Mole, who sees badly, pairs a red cup with a red apple;
-// the child joins the pairs with a finger-drawn line (polacz); Deer's key; leaves after the storm. Script in scenario.md.
+// the child joins the pairs with a finger-drawn line (polacz); an old photo of Mole shows whose the hammer (and so the
+// nail) is; Deer's key; leaves after the storm. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
@@ -66,6 +67,31 @@ export default {
         await c.say("kret", "line.b_pasuja", { anim: "Radosc" });
         await c.ujecie("ogolny");
         w.remove(); c.clear();
+        // whose? Mole cannot tell; an old photo shows him holding the hammer - and the nail goes with the hammer
+        await c.ujecie("sredni", { na: ["bobr"] });
+        await c.say("bobr", "line.b_czyje", { anim: "Zgloszenie" });
+        await c.ujecie("zblizenie", { na: "kret" });
+        c.play("kret", "Rozgladanie"); await c.wonder("kret");
+        await c.say("kret", "line.b_nie_widze");
+        await c.ujecie("ogolny");
+        await c.say("bobr", "line.b_zdjecie", { anim: "Wskazanie" });
+        const foto = await c.znalezisko("zdjecie_kreta", { skad: "bobr" });
+        await c.say("sarenka", "line.b_zdjecie_co");
+        dobre(foto.cele); await c.task({ targets: [...foto.cele, foto.tlo], correct: foto.cele[0], wrong: "line.b_zdjecie_nie" }); dobre(foto.cele, false);
+        await foto.zaznacz();
+        await c.say("bobr", "line.b_zdjecie_mlotek", { anim: "Radosc" });
+        await foto.remove();
+        // the pair goes back to its owner together
+        const mlotek = await c.object("mlotek", { x: 1.8, y: 0.9, size: 1.2 }), gwozdz = await c.object("gwozdz", { x: 3.0, y: 0.9, size: 1.1 });
+        await c.ujecie("sredni", { na: [mlotek, gwozdz, "sarenka"] });
+        await c.say("sarenka", "line.b_zdjecie_para", { anim: "Kiwanie" });
+        await c.ujecie("ogolny");
+        c.sfx("whoosh"); await Promise.all([mlotek.moveTo(-1.5, -2.6, 0.5), gwozdz.moveTo(-0.6, -2.65, 0.5)]);   // at Mole's feet
+        await c.ujecie("sredni", { na: ["kret", mlotek, gwozdz] });
+        await c.emocja("kret", "radosc", { anim: "Radosc" });
+        await c.say("kret", "line.b_moje");
+        await c.ujecie("ogolny");
+        c.clear();
         // helping: Deer's round door has a star keyhole - which key opens it?
         await c.ujecie("zblizenie", { na: "sarenka" });
         await c.say("sarenka", "line.b_drzwi", { anim: "Smutek" });

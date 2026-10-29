@@ -112,6 +112,33 @@
     "who": "sarenka",
     "text": "Ślady prowadzą do lasu! Jesteśmy coraz bliżej."
   },
+  "line.b_gdzie_teraz": {
+    "who": "wiewiorka",
+    "text": "Ojej, las jest taki wielki. Którędy teraz iść?"
+  },
+  "line.b_kartka": {
+    "who": "sarenka",
+    "text": "Wiatr coś przywiał... To mapa lasu!"
+  },
+  "line.b_mapa_plan": {
+    "who": "wiewiorka",
+    "text": "Na mapie są trzy ścieżki z liśćmi. Ten, kto zostawia prezenty, lubi czerwony. Szukajmy ścieżki z czerwonymi liśćmi!"
+  },
+  "line.b_mapa_gdzie": {
+    "who": "sarenka",
+    "text": "Dokąd prowadzi ścieżka z czerwonymi liśćmi? Wskaż miejsce na jej końcu."
+  },
+  "line.b_mapa_nie": {
+    "who": "sarenka",
+    "text": "Tam nie prowadzą czerwone liście. Popatrz, gdzie kończy się ścieżka z czerwonymi liśćmi.",
+    "speakers": [
+      "wiewiorka"
+    ]
+  },
+  "line.b_mapa_dab": {
+    "who": "wiewiorka",
+    "text": "Do wielkiego dębu z drzwiczkami! Chodźmy tam!"
+  },
   "line.c_drzwi": {
     "who": "wiewiorka",
     "text": "O! I ma czerwone drzwi. To chyba tutaj!"
@@ -139,6 +166,18 @@
   "line.c_balagan": {
     "who": "lisek",
     "text": "Hurra! Na wizytę chciałbym włożyć moją czerwoną czapkę. Ale mam bałagan i nie mogę jej znaleźć."
+  },
+  "line.c_wejdzcie": {
+    "who": "lisek",
+    "text": "Wejdźcie do mnie, pokażę wam."
+  },
+  "line.c_przytulnie": {
+    "who": "wiewiorka",
+    "text": "Ale tu przytulnie! Czerwone zasłonki, czerwony fotel, czerwony dywanik..."
+  },
+  "line.c_lubie": {
+    "who": "lisek",
+    "text": "Mówiłem, że lubię czerwony! A tu leżą moje czapki i szaliki. Wszystko pomieszane."
   },
   "line.c_pogrupujmy": {
     "who": "wiewiorka",

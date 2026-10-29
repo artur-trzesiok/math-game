@@ -19,11 +19,16 @@ for an apple pie (paid out in stage 3).
 2. **The meadow.** A cold wind: what is useful against it (a hat and a scarf among a ball and a spoon), dragged
    onto Squirrel; Deer has her fur (quadrupeds are never dressed). Then the trail, a quick game: countdown, and four
    times red and yellow leaves pop up - catch the red one; every catch is a few steps (a short pan) along the
-   trail. It leads to the forest.
+   trail. It leads to the forest - but the forest is big: which way now? The wind blows in a map of the forest (a
+   found picture, `znalezisko` "mapa_lasu"): three paths, each strewn with leaves of one colour. The giver loves red,
+   so we look for the path of red leaves: the **child** points to the place at its end - the big oak with a little
+   door. Off we go (a pan to the forest edge).
 3. **The forest edge.** "Look, what a beautiful red oak!" - "Somebody lives here..." - "Oh! And it has a red door.
    This must be the place!" Knock-knock: Fox comes out - it was him, he loves red, he wanted
-   to be friends but was shy. Invited for the pie - but he cannot find his red hat in the mess: sort his things,
-   hats into the basket, scarves into the box; point to the red hat; Fox puts it on. Off home.
+   to be friends but was shy. Invited for the pie - but he cannot find his red hat in the mess. "Come inside."
+4. **Inside Fox's home in the oak** (new scenery `lisia_nora`). "How cosy! Red curtains, a red armchair, a red
+   rug..." - "I told you I love red! And here are my hats and scarves, all mixed up" (lying anyhow, turned). Sort his
+   things, hats into the basket, scarves into the box; point to the red hat; Fox puts it on. Off home for the pie.
 
 ## Stage 2 - practice - inserts on plain colours, five stars
 

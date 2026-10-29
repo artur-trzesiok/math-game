@@ -443,5 +443,55 @@
   "hash": "96d9651d488c",
   "who": "sarenka",
   "text": "Prezenty! Ktoś znowu zostawił je dla nas pod jabłonką."
+ },
+ "line.b_gdzie_teraz": {
+  "hash": "247b8e327c3a",
+  "who": "wiewiorka",
+  "text": "Ojej, las jest taki wielki. Którędy teraz iść?"
+ },
+ "line.b_kartka": {
+  "hash": "5b0390cc8ea7",
+  "who": "sarenka",
+  "text": "Wiatr coś przywiał... To mapa lasu!"
+ },
+ "line.b_mapa_plan": {
+  "hash": "dadfc40c448e",
+  "who": "wiewiorka",
+  "text": "Na mapie są trzy ścieżki z liśćmi. Ten, kto zostawia prezenty, lubi czerwony. Szukajmy ścieżki z czerwonymi liśćmi!"
+ },
+ "line.b_mapa_gdzie": {
+  "hash": "53032678272c",
+  "who": "sarenka",
+  "text": "Dokąd prowadzi ścieżka z czerwonymi liśćmi? Wskaż miejsce na jej końcu."
+ },
+ "line.b_mapa_nie": {
+  "hash": "5d08583708fb",
+  "who": "sarenka",
+  "text": "Tam nie prowadzą czerwone liście. Popatrz, gdzie kończy się ścieżka z czerwonymi liśćmi."
+ },
+ "line.b_mapa_nie.wiewiorka": {
+  "hash": "dcdb49ff994b",
+  "who": "wiewiorka",
+  "text": "Tam nie prowadzą czerwone liście. Popatrz, gdzie kończy się ścieżka z czerwonymi liśćmi."
+ },
+ "line.b_mapa_dab": {
+  "hash": "da9985981f98",
+  "who": "wiewiorka",
+  "text": "Do wielkiego dębu z drzwiczkami! Chodźmy tam!"
+ },
+ "line.c_wejdzcie": {
+  "hash": "f017fb9408b1",
+  "who": "lisek",
+  "text": "Wejdźcie do mnie, pokażę wam."
+ },
+ "line.c_przytulnie": {
+  "hash": "5678b8043b76",
+  "who": "wiewiorka",
+  "text": "Ale tu przytulnie! Czerwone zasłonki, czerwony fotel, czerwony dywanik..."
+ },
+ "line.c_lubie": {
+  "hash": "24f196c73924",
+  "who": "lisek",
+  "text": "Mówiłem, że lubię czerwony! A tu leżą moje czapki i szaliki. Wszystko pomieszane."
  }
 }
