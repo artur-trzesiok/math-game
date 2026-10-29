@@ -154,6 +154,17 @@ NO toys lying around, NO people, NO animals, NO text.""",
         "ruch": None,
         "poswiaty": [{"x": 448, "y": 495, "r": 380, "kolor": "#ffbf5e", "moc": 0.8}],
     },
+    # one_many: the morning after the first snow - the same vegetable garden, white; the story ends here
+    "ogrod_zima": {
+        "z": "ogrod",
+        "plyta": f"""Exactly the same vegetable garden, the same raised beds, fence, gate, trees and path in the same
+places, but the MORNING AFTER THE FIRST SNOW: a soft even layer of fresh white snow on the beds, the fence posts, the
+tree branches and the ground, little snow caps on everything, a pale blue winter sky, the trees bare. The lower
+middle path stays a flat EMPTY snowy space where characters will stand.
+{STYL}
+Do NOT move, add or remove anything. The SKY IS EMPTY - NO clouds, NO birds, NO sun. NO people, NO animals, NO text.""",
+        "ruch": None,
+    },
     # Mole's home under the meadow (morning and night): a cosy burrow, roots from the ceiling, a round way up to the light
     "nora": {
         "wnetrze": True,

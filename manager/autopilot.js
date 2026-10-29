@@ -16,6 +16,13 @@ export async function run(maxSteps = 20, prefix = "a") {
       if (G?.labirynt) { await sleep(300); await snap(`${prefix}labirynt${step}`); await G.labirynt.dokoncz(); log.push("labirynt"); await sleep(400); continue; }
       if (G?.winda) { await sleep(300); await snap(`${prefix}winda${step}`); await G.winda.dokoncz(); log.push("winda"); await sleep(400); continue; }
       if (G?.kolorowanka) { await sleep(300); G.kolorowanka.dokoncz(); log.push("kolorowanka"); await sleep(400); continue; }
+      // the painted mechanics and the breathers of the improvement plan (mechaniki4.js, oddechy.js)
+      let nowa = false;
+      for (const k of ["zdrapka", "kropki", "historyjka", "podarty", "wedrowka", "oddech"]) {
+        const m = G?.[k]; if (!m) continue;
+        await sleep(300); await snap(`${prefix}${k}${step}`); if (G[k] === m) await m.dokoncz(); log.push(k); await sleep(400); nowa = true; break;
+      }
+      if (nowa) continue;
       const ds = gra.stage && gra.stage.dragSet;
       if (ds && ds.free) {                                        // free dragging (geometria.js): solve it like a child would
         const S = gra.stage; let kind = "free"; await sleep(300); await snap(`${prefix}pre${step}`);

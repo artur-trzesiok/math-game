@@ -25,7 +25,7 @@
   },
   "line.a_gdzie_jedna": {
     "who": "wiewiorka",
-    "text": "Now you. Where is one thing? Point to it.",
+    "text": "Now you. Point to where there is one thing.",
     "speakers": [
       "sarenka"
     ]
@@ -40,7 +40,7 @@
   },
   "line.a_gdzie_wiele": {
     "who": "wiewiorka",
-    "text": "And where are many things? Point to them."
+    "text": "And now point to where there are many things."
   },
   "line.a_to_jedna": {
     "who": "sarenka",
@@ -84,7 +84,7 @@
   },
   "line.b_gdzie": {
     "who": "wiewiorka",
-    "text": "Let's look for it! Where is one duckling, all alone? Point to it."
+    "text": "Let's look for it! Point to the one duckling swimming all alone."
   },
   "line.b_to_wiele": {
     "who": "sarenka",
@@ -98,13 +98,9 @@
     "who": "lisek",
     "text": "Now all the ducklings are together. Mother Duck says thank you!"
   },
-  "line.b_zabawa": {
-    "who": "lisek",
-    "text": "The ducklings want to play hide and seek with you! Catch the duckling when it pops up."
-  },
   "line.b_do_domu": {
     "who": "wiewiorka",
-    "text": "That was fun! Now we go home with the store. We'll have a feast!"
+    "text": "Mother Duck, come to my feast tomorrow! Now home, it's getting cold."
   },
   "line.p_start": {
     "who": "wiewiorka",
@@ -132,7 +128,7 @@
   },
   "line.p_gdzie_wiele": {
     "who": "wiewiorka",
-    "text": "Under which cup are many acorns? Point to it."
+    "text": "Point to the cup with many acorns under it."
   },
   "line.p_kubki_nie": {
     "who": "wiewiorka",
@@ -152,7 +148,7 @@
   },
   "line.p_cien": {
     "who": "lisek",
-    "text": "Whose shadow is it: one pear's or many pears'? Point to it."
+    "text": "Point to whose shadow it is: one pear's or many pears'."
   },
   "line.p_cien_nie": {
     "who": "lisek",
@@ -168,7 +164,7 @@
   },
   "line.p_niebo": {
     "who": "lisek",
-    "text": "There are many stars in the sky. And what is there only one of? Point to it."
+    "text": "There are many stars in the sky. Point to what there is only one of."
   },
   "line.p_niebo_nie": {
     "who": "lisek",
@@ -180,7 +176,7 @@
   },
   "line.d_uczta": {
     "who": "wiewiorka",
-    "text": "The store is home! And now a feast for my friends."
+    "text": "We're home! Before the guests come, let's put the store on the shelves."
   },
   "line.d_nakryj": {
     "who": "sarenka",
@@ -209,5 +205,77 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "These are Squirrel's nuts. She gave them to us when we helped her gather her store and learnt what one and many are."
+  },
+  "line.a_wiatr": {
+    "who": "lisek",
+    "text": "What a wind! Just right for a kite. Let's play before we go to the brook!"
+  },
+  "line.c_noc": {
+    "who": "wiewiorka",
+    "text": "Look, the first snow fell in the night! Good thing my store is already in my hollow."
+  },
+  "line.c_rano": {
+    "who": "sarenka",
+    "text": "Oh dear! There are still vegetables in the garden, and now the snow has covered them."
+  },
+  "line.c_zetrzyj": {
+    "who": "wiewiorka",
+    "text": "Brush the snow away with your finger and see what is underneath."
+  },
+  "line.c_marchewki": {
+    "who": "lisek",
+    "text": "Under the snow there is one cabbage and many carrots! Point to every carrot, we'll take them to the feast."
+  },
+  "line.c_marchewki_nie": {
+    "who": "sarenka",
+    "text": "That's not a carrot. Carrots are orange with green leaves."
+  },
+  "line.c_mamy": {
+    "who": "wiewiorka",
+    "text": "We have one cabbage and many carrots. Let's run home, the guests are coming soon!"
+  },
+  "line.d_polki": {
+    "who": "sarenka",
+    "text": "On the top shelf we put what there is one of. On the bottom shelf, what there are many of."
+  },
+  "line.d_dynia_lis": {
+    "who": "lisek",
+    "text": "My pumpkin is so huge! I'll put it on the bottom shelf, where there's a lot."
+  },
+  "line.d_dynia_nie": {
+    "who": "sarenka",
+    "text": "Fox, the pumpkin is huge, but there is one. Drag the pumpkin to the top shelf."
+  },
+  "line.d_orzechy": {
+    "who": "wiewiorka",
+    "text": "And my nuts? Drag them to the bottom shelf, because there are many."
+  },
+  "line.d_polka_nie": {
+    "who": "sarenka",
+    "text": "One goes at the top, and many go at the bottom."
+  },
+  "line.d_polki_ok": {
+    "who": "lisek",
+    "text": "One pumpkin at the top, many nuts at the bottom. Now I know!"
+  },
+  "line.d_goscie": {
+    "who": "sarenka",
+    "text": "Knock, knock! The guests are here!"
+  },
+  "line.d_kto_sam": {
+    "who": "wiewiorka",
+    "text": "Point to who came alone, just one."
+  },
+  "line.d_kto_sam_nie": {
+    "who": "wiewiorka",
+    "text": "Many ducklings came. And who came alone?"
+  },
+  "line.d_jez": {
+    "who": "lisek",
+    "text": "Hedgehog came alone. And many ducklings came!"
+  },
+  "line.d_uczta_ok": {
+    "who": "wiewiorka",
+    "text": "Everyone at the table! One cake, many cherries and many friends."
   }
 }

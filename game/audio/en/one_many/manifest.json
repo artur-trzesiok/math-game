@@ -30,14 +30,14 @@
   "text": "There is one pumpkin. And there are many nuts."
  },
  "line.a_gdzie_jedna": {
-  "hash": "a65513a4d0e5",
+  "hash": "e07c32035eb8",
   "who": "wiewiorka",
-  "text": "Now you. Where is one thing? Point to it."
+  "text": "Now you. Point to where there is one thing."
  },
  "line.a_gdzie_jedna.sarenka": {
-  "hash": "78ac015465d1",
+  "hash": "e985c0d716bb",
   "who": "sarenka",
-  "text": "Now you. Where is one thing? Point to it."
+  "text": "Now you. Point to where there is one thing."
  },
  "line.a_to_wiele": {
   "hash": "d4b53229e7d8",
@@ -50,9 +50,9 @@
   "text": "Yes! There is one pumpkin."
  },
  "line.a_gdzie_wiele": {
-  "hash": "8a3602242c8b",
+  "hash": "65717ffa72b3",
   "who": "wiewiorka",
-  "text": "And where are many things? Point to them."
+  "text": "And now point to where there are many things."
  },
  "line.a_to_jedna": {
   "hash": "ea07fcb68e76",
@@ -105,9 +105,9 @@
   "text": "Mother Duck has many ducklings. They all came back from swimming... but one is missing!"
  },
  "line.b_gdzie": {
-  "hash": "66ac0004a257",
+  "hash": "401241fe6017",
   "who": "wiewiorka",
-  "text": "Let's look for it! Where is one duckling, all alone? Point to it."
+  "text": "Let's look for it! Point to the one duckling swimming all alone."
  },
  "line.b_to_wiele": {
   "hash": "10cd108fa942",
@@ -124,15 +124,10 @@
   "who": "lisek",
   "text": "Now all the ducklings are together. Mother Duck says thank you!"
  },
- "line.b_zabawa": {
-  "hash": "fd6359be90be",
-  "who": "lisek",
-  "text": "The ducklings want to play hide and seek with you! Catch the duckling when it pops up."
- },
  "line.b_do_domu": {
-  "hash": "c1eaf8201b29",
+  "hash": "9e4d87f6ce4d",
   "who": "wiewiorka",
-  "text": "That was fun! Now we go home with the store. We'll have a feast!"
+  "text": "Mother Duck, come to my feast tomorrow! Now home, it's getting cold."
  },
  "line.p_start": {
   "hash": "85616d967bd8",
@@ -165,9 +160,9 @@
   "text": "Under one cup I hide one acorn, and under the other many acorns. Watch carefully!"
  },
  "line.p_gdzie_wiele": {
-  "hash": "0bb444e54efd",
+  "hash": "49592f8cc8eb",
   "who": "wiewiorka",
-  "text": "Under which cup are many acorns? Point to it."
+  "text": "Point to the cup with many acorns under it."
  },
  "line.p_kubki_nie": {
   "hash": "2d51d17ebbc2",
@@ -190,9 +185,9 @@
   "text": "All the pairs found!"
  },
  "line.p_cien": {
-  "hash": "fe257ea1ec51",
+  "hash": "184972ad06d6",
   "who": "lisek",
-  "text": "Whose shadow is it: one pear's or many pears'? Point to it."
+  "text": "Point to whose shadow it is: one pear's or many pears'."
  },
  "line.p_cien_nie": {
   "hash": "d3a84f77d90e",
@@ -210,9 +205,9 @@
   "text": "Yes! It is the shadow of many pears."
  },
  "line.p_niebo": {
-  "hash": "07be8b0fbde2",
+  "hash": "45a2071957f6",
   "who": "lisek",
-  "text": "There are many stars in the sky. And what is there only one of? Point to it."
+  "text": "There are many stars in the sky. Point to what there is only one of."
  },
  "line.p_niebo_nie": {
   "hash": "b1ea62c018bf",
@@ -225,9 +220,9 @@
   "text": "Yes! There is one moon, and there are many stars."
  },
  "line.d_uczta": {
-  "hash": "c24e3ca189b3",
+  "hash": "511ba57397fc",
   "who": "wiewiorka",
-  "text": "The store is home! And now a feast for my friends."
+  "text": "We're home! Before the guests come, let's put the store on the shelves."
  },
  "line.d_nakryj": {
   "hash": "b72200745fa8",
@@ -263,5 +258,95 @@
   "hash": "f1140e0a52cb",
   "who": "narrator",
   "text": "These are Squirrel's nuts. She gave them to us when we helped her gather her store and learnt what one and many are."
+ },
+ "line.a_wiatr": {
+  "hash": "8ee1400c765c",
+  "who": "lisek",
+  "text": "What a wind! Just right for a kite. Let's play before we go to the brook!"
+ },
+ "line.c_noc": {
+  "hash": "2af94c727512",
+  "who": "wiewiorka",
+  "text": "Look, the first snow fell in the night! Good thing my store is already in my hollow."
+ },
+ "line.c_rano": {
+  "hash": "b6dbe3b3d7cf",
+  "who": "sarenka",
+  "text": "Oh dear! There are still vegetables in the garden, and now the snow has covered them."
+ },
+ "line.c_zetrzyj": {
+  "hash": "7417f4d83c77",
+  "who": "wiewiorka",
+  "text": "Brush the snow away with your finger and see what is underneath."
+ },
+ "line.c_marchewki": {
+  "hash": "609cdd9cb32a",
+  "who": "lisek",
+  "text": "Under the snow there is one cabbage and many carrots! Point to every carrot, we'll take them to the feast."
+ },
+ "line.c_marchewki_nie": {
+  "hash": "f1b3e439928d",
+  "who": "sarenka",
+  "text": "That's not a carrot. Carrots are orange with green leaves."
+ },
+ "line.c_mamy": {
+  "hash": "f5b4d95fc8ee",
+  "who": "wiewiorka",
+  "text": "We have one cabbage and many carrots. Let's run home, the guests are coming soon!"
+ },
+ "line.d_polki": {
+  "hash": "42452af3e262",
+  "who": "sarenka",
+  "text": "On the top shelf we put what there is one of. On the bottom shelf, what there are many of."
+ },
+ "line.d_dynia_lis": {
+  "hash": "05b81c205f7b",
+  "who": "lisek",
+  "text": "My pumpkin is so huge! I'll put it on the bottom shelf, where there's a lot."
+ },
+ "line.d_dynia_nie": {
+  "hash": "a62ef017d111",
+  "who": "sarenka",
+  "text": "Fox, the pumpkin is huge, but there is one. Drag the pumpkin to the top shelf."
+ },
+ "line.d_orzechy": {
+  "hash": "2e123ecc434e",
+  "who": "wiewiorka",
+  "text": "And my nuts? Drag them to the bottom shelf, because there are many."
+ },
+ "line.d_polka_nie": {
+  "hash": "fa7969d831af",
+  "who": "sarenka",
+  "text": "One goes at the top, and many go at the bottom."
+ },
+ "line.d_polki_ok": {
+  "hash": "46ca0cc6a75a",
+  "who": "lisek",
+  "text": "One pumpkin at the top, many nuts at the bottom. Now I know!"
+ },
+ "line.d_goscie": {
+  "hash": "8127eeb037fc",
+  "who": "sarenka",
+  "text": "Knock, knock! The guests are here!"
+ },
+ "line.d_kto_sam": {
+  "hash": "71aa5ce1f508",
+  "who": "wiewiorka",
+  "text": "Point to who came alone, just one."
+ },
+ "line.d_kto_sam_nie": {
+  "hash": "4b95dbf25842",
+  "who": "wiewiorka",
+  "text": "Many ducklings came. And who came alone?"
+ },
+ "line.d_jez": {
+  "hash": "f16439e26de5",
+  "who": "lisek",
+  "text": "Hedgehog came alone. And many ducklings came!"
+ },
+ "line.d_uczta_ok": {
+  "hash": "8fb2268b0940",
+  "who": "wiewiorka",
+  "text": "Everyone at the table! One cake, many cherries and many friends."
  }
 }

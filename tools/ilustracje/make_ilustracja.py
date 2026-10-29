@@ -42,6 +42,22 @@ engine, leaning out of the cab, waving his cap; a puff of white steam rises from
 BEAR, in the fourth the OWL, both looking out happily over the valley. Far below a small river, autumn trees, a blue
 sky with round clouds. A feeling of a joyful journey.""",
     },
+    # one_many: the night the first snow falls - Squirrel's store is safe, the garden goes white
+    "pierwszy_snieg": {
+        "postacie": ["wiewiorka"], "tlo": "ogrod", "lekcje": ["one_many"],
+        "scena": """NIGHT in the vegetable garden from the reference picture: the FIRST SNOW is falling in big soft flakes,
+the beds and the fence turning white. At the round window of a hollow in a big tree at the side, the SQUIRREL looks out
+in her pyjamas, holding a candle, amazed, her nose against the glass; inside behind her a little shelf full of nuts.
+Dark blue sky, a warm glow from the window. Calm and magical.""",
+    },
+    # one_many home: the winter feast at Squirrel's table - one cake, many cherries, the friends, the ducklings visiting
+    "uczta_zima": {
+        "postacie": ["wiewiorka", "lisek", "sarenka"], "tlo": "dom", "lekcje": ["one_many"],
+        "scena": """A cosy winter FEAST in the kitchen from the reference picture, snow outside the window: the SQUIRREL, the
+FOX and the ROE DEER sit round the wooden table, laughing; in the middle ONE big apple cake on a plate and a bowl full
+of many red cherries; one big orange pumpkin on the shelf; a little HEDGEHOG and a mother DUCK with her fluffy yellow
+ducklings have come to visit and stand by the table. Warm light, steam from cups of tea.""",
+    },
     "burza_noc": {
         "postacie": [], "tlo": "strumyk", "lekcje": ["logical_pairs"],
         "scena": """The brook from the reference picture at NIGHT in a big storm: dark blue sky with heavy clouds, one bright

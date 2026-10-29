@@ -187,14 +187,14 @@ const DEMA = {
   kpn: async () => { pokaz("lisek", "sowa"); await OD.kpn(S, { kto: "sowa", mow: mowO }); },
   lustro: async () => { pokaz("lisek", "sowa"); await OD.lustro(S, { kto: "lisek", mow: mowO }); info("koniec"); },
   karmienie: async () => { pokaz("lisek", "sowa"); info("nakarm kaczkę bułką (kamyka nie zje)"); await OD.karmienie(S, { zwierze: "kaczka_mama", jedzenie: ["bulka", "bulka", "bulka"], fuj: ["kamyk"], kto: "lisek", mow: mowO }); info("najedzona!"); },
-  latawiec: async () => { pokaz("lisek", "sowa"); await mowO("lisek", "latawiec"); await OD.latawiec(S, { ksztalt: "latawiec_trojkat", kto: "lisek", mow: mowO }); info("koniec"); },
+  latawiec: async () => { pokaz("lisek", "sowa"); await OD.latawiec(S, { ksztalt: "latawiec_trojkat", kto: "lisek", mow: mowO }); info("koniec"); },
   kto: async () => {
     pokaz("lisek", "sowa"); if (!S.puppets.zajac) await S.puppet("zajac", { x: 2.6, side: "right" }); S.puppets.zajac.korzen.visible = true;
     S.puppets.lisek.korzen.position.x = -4.8; S.puppets.zajac.korzen.position.x = 2.6;
     info("patrz, kto chowa się za którym krzakiem"); await OD.ktoPowiedzial(S, { gospodarz: "sowa", kryjowki: ["lisek", "zajac"], mow: mowO }); info("wszyscy znalezieni");
   },
   malowanie: async (nr) => {
-    pokaz("lisek", "sowa"); await mowO("lisek", "maluj");
+    pokaz("lisek", "sowa");
     await OD.malowanie(S, { tlo: "noc", kto: "lisek", mow: mowO, czas: 8 });
     if (nr !== bieg) return; info("teraz zaparowana szyba: przetrzyj palcem");
     await OD.malowanie(S, { tlo: "szyba", zdrapka: "szyba_rano", kto: "sowa", mow: mowO, czas: 8 });

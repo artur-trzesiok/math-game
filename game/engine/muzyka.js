@@ -7,7 +7,7 @@ import { v } from "./v.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
 
 export const MOTYW = {
-  laka: "laka", sad: "laka", ogrod: "laka", plac_zabaw: "laka", stacyjka: "laka", podium_wyscigu: "laka", turniej_klasy: "laka",ogrod_labirynt: "laka", polana_piknik: "laka", dab_babci: "las", dab_wiewiorki: "las",
+  laka: "laka", sad: "laka", ogrod: "laka", ogrod_zima: "laka", plac_zabaw: "laka", stacyjka: "laka", podium_wyscigu: "laka", turniej_klasy: "laka",ogrod_labirynt: "laka", polana_piknik: "laka", dab_babci: "las", dab_wiewiorki: "las",
   las: "las", droga_do_debu: "las", jesienny_sad: "las", malinowy_zagajnik: "las",
   strumyk: "woda", stacja_jezioro: "woda", tama_bobra: "woda",
   dom: "dom", pokoj: "dom", przedpokoj: "dom", nora: "dom", piekarnia: "dom", warsztat: "dom", lisia_nora: "dom",

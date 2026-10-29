@@ -14,6 +14,7 @@
   "backgrounds": [
     "ogrod",
     "strumyk",
+    "ogrod_zima",
     "dom"
   ],
   "objects": [
@@ -38,11 +39,14 @@
     "wisnia",
     "miska",
     "kaczka_mama",
-    "trzcina"
+    "trzcina",
+    "latawiec_trojkat",
+    "jez"
   ],
   "cover": "Squirrel holds a heap of many nuts in her arms while Fox proudly pushes one enormous orange pumpkin beside her and Deer laughs; autumn leaves in the air in a garden.",
   "naklejka": {
     "obraz": "objects/orzech",
     "kto": "wiewiorka"
-  }
+  },
+  "oddech": "latawiec"
 }

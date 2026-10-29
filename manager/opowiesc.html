@@ -87,7 +87,8 @@ function analizuj(ev) {
       if (ciagMowy.length === 5) dodaj(i, "Długa rozmowa bez akcji: pięć kwestii z rzędu, a na ekranie nic się nie dzieje (bez ujęcia, ruchu, emocji).");
     } else if (e.typ === "obraz") {
       const nast = ev[i + 1];
-      if (e.co === "ujecie" && /^ogolny/.test(e.opis || "") && nast?.typ === "obraz" && nast.co === "ujecie" && !/^ogolny/.test(nast.opis || ""))
+      // (a pause between the two means something moved in the wide shot - a sticker flying across is not recorded)
+      if (e.co === "ujecie" && /^ogolny/.test(e.opis || "") && nast?.typ === "obraz" && nast.co === "ujecie" && !/^ogolny/.test(nast.opis || "") && (nast.t - e.t) < 700)
         dodaj(i, "Plan ogólny od razu przecięty innym ujęciem: kamera odlatuje i wraca bez powodu.");
       ciagMowy = []; if (["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "focus", "rozblysk", "przejscie", "ilustracja"].includes(e.co)) wUjeciu = 0;   // the camera or the picture moved
       if (["go", "pan", "przejscie"].includes(e.co)) poZmianieMiejsca = true;

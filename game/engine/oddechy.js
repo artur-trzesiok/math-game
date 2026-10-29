@@ -111,6 +111,7 @@ export async function karmienie(S, { zwierze = "kaczka_mama", jedzenie = ["bulka
 export async function latawiec(S, { ksztalt = "latawiec_kwadrat", kto = null, mow = nic } = {}) {
   const K = await S.object(ksztalt, { x: 0.8, y: -0.4, size: 1.5 });
   const L = kto ? S.puppets[kto] : null;
+  if (kto) await mow(kto, "latawiec");                                  // how to play it
   const reka = () => (L ? [L.korzen.position.x + (L.korzen.position.x < 0 ? 0.6 : -0.6), L.korzen.position.y + L.wysokosc * 0.45] : [-3.6, -2.4]);
   const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]);
   const sznurek = new THREE.Line(geo, new THREE.LineBasicMaterial({ color: "#5a4632" })); sznurek.renderOrder = 9.5; S.scene.add(sznurek);
@@ -215,6 +216,7 @@ export async function malowanie(S, { tlo = "noc", zdrapka = "szyba_rano", kto = 
   const plotno = new THREE.Mesh(new THREE.PlaneGeometry(W, H), mat({ map: tex })); plotno.renderOrder = 38.6; plotno.position.z = 0.01; grp.add(plotno);
   const h = { kind: "malowanie", mesh: grp, base: 1, remove: () => { S.scene.remove(grp); S.scene.remove(welon); tex.dispose(); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
   S.objects.push(h);
+  if (kto) await mow(kto, "maluj");
   const uv = ([px, py]) => { const v = plotno.worldToLocal(new THREE.Vector3(px, py, 0.45)); return [(v.x / W + 0.5) * CW, (0.5 - v.y / H) * CH]; };
   let ost = null, start = null, dzwiek = 0;
   const kreska = (a, b) => {

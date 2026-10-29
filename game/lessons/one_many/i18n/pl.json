@@ -25,7 +25,7 @@
   },
   "line.a_gdzie_jedna": {
     "who": "wiewiorka",
-    "text": "Teraz ty. Gdzie jest jedna rzecz? Wskaż.",
+    "text": "Teraz ty. Wskaż, gdzie jest jedna rzecz.",
     "speakers": [
       "sarenka"
     ]
@@ -40,7 +40,7 @@
   },
   "line.a_gdzie_wiele": {
     "who": "wiewiorka",
-    "text": "A gdzie jest wiele rzeczy? Wskaż."
+    "text": "A teraz wskaż, gdzie jest wiele rzeczy."
   },
   "line.a_to_jedna": {
     "who": "sarenka",
@@ -84,7 +84,7 @@
   },
   "line.b_gdzie": {
     "who": "wiewiorka",
-    "text": "Poszukajmy go! Gdzie jest jedno kaczątko, samo? Wskaż."
+    "text": "Poszukajmy go! Wskaż jedno kaczątko, które pływa samo."
   },
   "line.b_to_wiele": {
     "who": "sarenka",
@@ -98,13 +98,9 @@
     "who": "lisek",
     "text": "Teraz wszystkie kaczątka są razem. Mama kaczka bardzo dziękuje!"
   },
-  "line.b_zabawa": {
-    "who": "lisek",
-    "text": "Kaczątka chcą się z tobą bawić w chowanego! Złap kaczątko, kiedy wyskoczy."
-  },
   "line.b_do_domu": {
     "who": "wiewiorka",
-    "text": "Ale było wesoło! A teraz wracamy do domu z zapasami. Zrobimy ucztę!"
+    "text": "Mamo kaczko, przyjdźcie jutro na moją ucztę! A teraz do domu, robi się zimno."
   },
   "line.p_start": {
     "who": "wiewiorka",
@@ -132,7 +128,7 @@
   },
   "line.p_gdzie_wiele": {
     "who": "wiewiorka",
-    "text": "Pod którym kubkiem jest wiele żołędzi? Wskaż."
+    "text": "Wskaż kubek, pod którym jest wiele żołędzi."
   },
   "line.p_kubki_nie": {
     "who": "wiewiorka",
@@ -152,7 +148,7 @@
   },
   "line.p_cien": {
     "who": "lisek",
-    "text": "Czyj to cień: jednej gruszki czy wielu gruszek? Wskaż."
+    "text": "Wskaż, czyj to cień: jednej gruszki czy wielu gruszek."
   },
   "line.p_cien_nie": {
     "who": "lisek",
@@ -168,7 +164,7 @@
   },
   "line.p_niebo": {
     "who": "lisek",
-    "text": "Na niebie jest wiele gwiazdek. A czego jest tylko jedno? Wskaż."
+    "text": "Na niebie jest wiele gwiazdek. Wskaż to, czego jest tylko jedno."
   },
   "line.p_niebo_nie": {
     "who": "lisek",
@@ -180,7 +176,7 @@
   },
   "line.d_uczta": {
     "who": "wiewiorka",
-    "text": "Zapasy są już w domu! A teraz uczta dla przyjaciół."
+    "text": "Jesteśmy w domu! Zanim przyjdą goście, postawmy zapasy na półkach."
   },
   "line.d_nakryj": {
     "who": "sarenka",
@@ -209,5 +205,77 @@
   "line.naklejka_opis": {
     "who": "narrator",
     "text": "To orzechy Wiewiórki. Dostaliśmy je, kiedy pomagaliśmy jej zebrać zapasy i uczyliśmy się, co to jest jeden, a co wiele."
+  },
+  "line.a_wiatr": {
+    "who": "lisek",
+    "text": "Ale wieje! Taki wiatr jest w sam raz na latawiec. Pobawmy się, zanim pójdziemy nad strumyk!"
+  },
+  "line.c_noc": {
+    "who": "wiewiorka",
+    "text": "Popatrzcie, w nocy spadł pierwszy śnieg! Dobrze, że moje zapasy są już w dziupli."
+  },
+  "line.c_rano": {
+    "who": "sarenka",
+    "text": "Ojej! W ogródku zostały jeszcze warzywa, a teraz przykrył je śnieg."
+  },
+  "line.c_zetrzyj": {
+    "who": "wiewiorka",
+    "text": "Odgarnij śnieg palcem i zobacz, co jest pod spodem."
+  },
+  "line.c_marchewki": {
+    "who": "lisek",
+    "text": "Pod śniegiem jest jedna kapusta i wiele marchewek! Wskaż każdą marchewkę, zabierzemy je na ucztę."
+  },
+  "line.c_marchewki_nie": {
+    "who": "sarenka",
+    "text": "To nie marchewka. Marchewki są pomarańczowe i mają zielone listki."
+  },
+  "line.c_mamy": {
+    "who": "wiewiorka",
+    "text": "Mamy jedną kapustę i wiele marchewek. Biegniemy do domu, zaraz przyjdą goście!"
+  },
+  "line.d_polki": {
+    "who": "sarenka",
+    "text": "Na górnej półce stawiamy to, czego jest jedno. Na dolnej to, czego jest wiele."
+  },
+  "line.d_dynia_lis": {
+    "who": "lisek",
+    "text": "Moja dynia jest taka wielka! Postawię ją na dolnej półce, tam gdzie dużo."
+  },
+  "line.d_dynia_nie": {
+    "who": "sarenka",
+    "text": "Lisku, dynia jest wielka, ale jest jedna. Przeciągnij dynię na górną półkę."
+  },
+  "line.d_orzechy": {
+    "who": "wiewiorka",
+    "text": "A moje orzechy? Przeciągnij je na dolną półkę, bo jest ich wiele."
+  },
+  "line.d_polka_nie": {
+    "who": "sarenka",
+    "text": "Jedno stawiamy na górze, a wiele na dole."
+  },
+  "line.d_polki_ok": {
+    "who": "lisek",
+    "text": "Jedna dynia na górze, wiele orzechów na dole. Teraz już wiem!"
+  },
+  "line.d_goscie": {
+    "who": "sarenka",
+    "text": "Puk, puk! Przyszli goście!"
+  },
+  "line.d_kto_sam": {
+    "who": "wiewiorka",
+    "text": "Wskaż, kto przyszedł sam, tylko jeden."
+  },
+  "line.d_kto_sam_nie": {
+    "who": "wiewiorka",
+    "text": "Kaczątek przyszło wiele. A kto przyszedł sam?"
+  },
+  "line.d_jez": {
+    "who": "lisek",
+    "text": "Jeżyk przyszedł sam. A kaczątek przyszło wiele!"
+  },
+  "line.d_uczta_ok": {
+    "who": "wiewiorka",
+    "text": "Wszyscy przy stole! Jedno ciasto, wiele wisienek i wielu przyjaciół."
   }
 }
