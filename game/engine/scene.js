@@ -30,10 +30,15 @@ const CAM_Z = 7.2;
 // A shot moves the FRAME, not the camera: position.x/y (set by shots, read everywhere as "where the camera looks")
 // becomes an off-axis shift of the projection, the eye stays at x = y = 0. Moving the eye made the puppets (z 0)
 // and the background movers slide against the painted plate (z -9) - parallax a cut-out theatre must not have.
-function kadrBezParalaksy(cam) {
+// The shift is held inside `ramka` (the design frame at z 0, where the plate ends) at every zoom, in every move: a
+// flight that dips its zoom half way showed the sky colour past the plate's edge.
+function kadrBezParalaksy(cam, ramka) {
   const oko = new THREE.Vector3(), up = cam.updateProjectionMatrix.bind(cam);
   const przesun = () => {
-    const e = cam.projectionMatrix.elements, sx = e[0] * cam.position.x / cam.position.z, sy = e[5] * cam.position.y / cam.position.z;
+    const R = ramka(), hh = cam.position.z * Math.tan(cam.fov * Math.PI / 360) / cam.zoom, hw = hh * cam.aspect;
+    const px = Math.max(-Math.max(0, R.w / 2 - hw), Math.min(Math.max(0, R.w / 2 - hw), cam.position.x));
+    const py = Math.max(-Math.max(0, R.h / 2 - hh), Math.min(Math.max(0, R.h / 2 - hh), cam.position.y));
+    const e = cam.projectionMatrix.elements, sx = e[0] * px / cam.position.z, sy = e[5] * py / cam.position.z;
     if (e[8] !== sx || e[9] !== sy) { e[8] = sx; e[9] = sy; cam.projectionMatrixInverse.copy(cam.projectionMatrix).invert(); }
   };
   cam.updateProjectionMatrix = () => { up(); przesun(); };
@@ -70,7 +75,7 @@ export class Stage {
     this.scene.background = new THREE.Color(0x9fd0f0);
     this.camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
     this.camera.position.set(0, 0, CAM_Z);
-    kadrBezParalaksy(this.camera);
+    kadrBezParalaksy(this.camera, () => this.design(0));
     this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0; this.camZ = CAM_Z; this.warstwy = [];
     this.pauza = false; this.panorama = null; this.otoczenie = []; this.dymki = [];
     this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;
