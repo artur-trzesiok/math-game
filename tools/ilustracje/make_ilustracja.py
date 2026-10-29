@@ -34,6 +34,26 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # morning_night story: Mole's first morning - he climbs out of his burrow onto the meadow as the sun rises
+    "wschod_slonca": {
+        "postacie": ["kret", "wiewiorka", "sarenka"], "tlo": "laka", "lekcje": ["morning_night"],
+        "scena": """Early MORNING on the meadow from the reference picture, at SUNRISE: the big round orange SUN is just coming
+up over the far hills, the sky pink, gold and pale blue, long soft morning light over the dewy grass, a little mist in
+the hollows. In the front a small round MOLEHILL of brown earth with a hole in the top; the MOLE has just climbed half
+out of it, his front paws on the grass, blinking at the light with one paw shading his eyes, amazed. The SQUIRREL stands
+beside the molehill pointing happily at the rising sun; the ROE DEER stands a little behind, smiling at the mole. A few
+birds fly over the sun. Fresh, bright and hopeful - the first morning the mole has ever seen.""",
+    },
+    # morning_night home: the payoff - the next morning in the bedroom, Mole wakes up with his friends when the sun rises
+    "pobudka_rano": {
+        "postacie": ["kret", "wiewiorka", "sarenka"], "tlo": "pokoj", "lekcje": ["morning_night"],
+        "scena": """The NEXT MORNING in the children's bedroom from the reference picture: bright morning SUN streams in through
+the big window, the round sun low over the green trees outside, a pink and gold morning sky, warm sunbeams across the
+floor. The MOLE sits up in the bed under the blue blanket, stretching both paws high with a big happy smile, wide awake;
+striped pyjamas on him. The SQUIRREL, who slept in a little nest of cushions on the rug, waves at him; the ROE DEER
+stands by the window and opens the curtain wider. On the bedside table a closed picture book. Cheerful, fresh, the
+start of a new day.""",
+    },
     # shapes home: the payoff - tea at Hedgehog's new house built of shapes, the shape biscuits on four plates
     "herbatka_u_jeza": {
         "postacie": ["jez", "lisek", "sowa", "zajac"], "tlo": "laka", "lekcje": ["shapes"],

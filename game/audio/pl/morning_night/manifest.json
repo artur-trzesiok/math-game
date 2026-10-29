@@ -35,9 +35,9 @@
   "text": "Tak, jest rano. Rano wstajemy, myjemy się i jemy śniadanie."
  },
  "line.b_co_rano": {
-  "hash": "d2918143ddc8",
+  "hash": "fa428300669e",
   "who": "wiewiorka",
-  "text": "Co robimy rano? Wskaż."
+  "text": "Wskaż, co robimy rano."
  },
  "line.b_co_rano_nie": {
   "hash": "6200cd778118",
@@ -70,9 +70,9 @@
   "text": "To nie to miejsce. Co jest wcześniej, a co później?"
  },
  "line.b_po_kolei": {
-  "hash": "e24068489812",
+  "hash": "ee7d489fbe2f",
   "who": "wiewiorka",
-  "text": "Rano, południe, wieczór, noc. Cały dzień po kolei!"
+  "text": "Tak! Rano Kret wstaje, w południe gra w piłkę, wieczorem wraca do domu, a w nocy śpi."
  },
  "line.c_wieczor": {
   "hash": "c43f192e7709",
@@ -100,19 +100,19 @@
   "text": "Jest! Mały Jeżyk się znalazł."
  },
  "line.c_noc_swietliki": {
-  "hash": "ad63d5a200f5",
+  "hash": "b3e21c0bea39",
   "who": "kret",
-  "text": "Teraz jest noc! Popatrzcie, świetliki. Łap świetlika, wskaż go."
+  "text": "Teraz jest noc. Ale tu pięknie! Jeszcze nigdy nie widziałem gwiazd."
  },
  "line.c_juz_wiem": {
-  "hash": "6fdc3ff6cb64",
+  "hash": "33800b8db43e",
   "who": "kret",
-  "text": "Już wiem! Po rankach jest południe, po południu wieczór, po wieczorze noc, a po nocy znowu rano."
+  "text": "Już wiem! Po ranku jest południe, po południu wieczór, po wieczorze noc, a po nocy znowu rano."
  },
  "line.c_dobranoc": {
-  "hash": "fd6ab7443053",
+  "hash": "a116142b9908",
   "who": "wiewiorka",
-  "text": "Brawo, Krecie! A teraz chodźmy spać."
+  "text": "Tak, Krecie! Dziś nocujesz u nas, a rano obudzimy się razem."
  },
  "line.p_start": {
   "hash": "1f88b220cdb7",
@@ -120,9 +120,9 @@
   "text": "Pobawmy się w pory dnia! Mam pięć zabaw."
  },
  "line.p_co_dalej": {
-  "hash": "4d0502704627",
+  "hash": "a9db393d86e8",
   "who": "kret",
-  "text": "Rano, południe, wieczór... a co jest potem? Wskaż."
+  "text": "Rano, południe, wieczór... Wskaż, co jest potem."
  },
  "line.p_co_dalej_nie": {
   "hash": "999ef146254a",
@@ -135,9 +135,9 @@
   "text": "Tak, po wieczorze jest noc."
  },
  "line.p_w_nocy": {
-  "hash": "56c4c7cada7c",
+  "hash": "fa1313bdf266",
   "who": "sarenka",
-  "text": "Co robimy w nocy? Wskaż."
+  "text": "Wskaż, co robimy w nocy."
  },
  "line.p_w_nocy_nie": {
   "hash": "453cd639553c",
@@ -154,25 +154,15 @@
   "who": "kret",
   "text": "Ułóż obrazki po kolei, zacznij przy strzałce."
  },
- "line.p_dobrze": {
-  "hash": "d75425f6c769",
-  "who": "sarenka",
-  "text": "Brawo!"
- },
- "line.p_dobrze.kret": {
-  "hash": "707aad081120",
-  "who": "kret",
-  "text": "Brawo!"
- },
  "line.p_memory": {
   "hash": "0a3a8caa7b3b",
   "who": "sarenka",
   "text": "Odwracaj karty i szukaj par: rano do rana, noc do nocy."
  },
  "line.p_po_nocy": {
-  "hash": "5bdbb6f91837",
+  "hash": "dca2ff386ca6",
   "who": "kret",
-  "text": "A co jest po nocy? Wskaż."
+  "text": "Wskaż, co jest po nocy."
  },
  "line.p_po_nocy_nie": {
   "hash": "d8ac4aa5044f",
@@ -185,24 +175,24 @@
   "text": "Tak! Po nocy znowu jest rano."
  },
  "line.d_wieczor": {
-  "hash": "7f506bdcc7cd",
+  "hash": "b2bcefaf8003",
   "who": "wiewiorka",
-  "text": "Jest wieczór. Pora szykować się do spania."
+  "text": "Już wieczór. Krecie, dziś śpisz u nas, a rano obudzimy się wszyscy razem!"
  },
  "line.d_uloz": {
-  "hash": "6384126c0ba9",
+  "hash": "b81f671b549d",
   "who": "sarenka",
-  "text": "Co robimy po kolei? Najpierw kąpiel, potem piżamka, potem bajka, a na końcu łóżeczko. Ułóż obrazki, zacznij przy strzałce."
+  "text": "Teraz ułóż na dywanie cały wieczór po kolei: kąpiel, piżamka, bajka i łóżeczko. Zacznij przy strzałce."
  },
  "line.d_dobranoc": {
-  "hash": "017b8dfb70fe",
+  "hash": "73997fa6151b",
   "who": "kret",
-  "text": "Kąpiel, piżamka, bajka i spanie. Dobranoc, przyjaciele!"
+  "text": "Książeczka na szafce, lampka zgaszona. Dobranoc, przyjaciele!"
  },
  "line.d_rodzice": {
-  "hash": "f7171af9995d",
+  "hash": "a0050b022402",
   "who": "sarenka",
-  "text": "Opowiedz rodzicom, co się działo dziś rano, w południe i wieczorem."
+  "text": "A teraz ty opowiedz rodzicom, co się działo dziś rano, w południe i wieczorem."
  },
  "line.naklejka_daj": {
   "hash": "c12f0a93327b",
@@ -248,5 +238,170 @@
   "hash": "af691acf7d43",
   "who": "wiewiorka",
   "text": "Jesteś w domu, mały Jeżyku. Zdążyliśmy przed nocą. Dobranoc!"
+ },
+ "line.a_zasypane": {
+  "hash": "2e4bcab0d7cd",
+  "who": "sarenka",
+  "text": "Zawsze noc? Popatrz, twoje wyjście jest zasypane ziemią. Dlatego nie wpada tu światło."
+ },
+ "line.a_odgarnij": {
+  "hash": "bb6948dc71e4",
+  "who": "wiewiorka",
+  "text": "Odgarnij ziemię palcem, a zobaczymy, co jest na górze!"
+ },
+ "line.a_swiatlo": {
+  "hash": "bb05c2e633a3",
+  "who": "kret",
+  "text": "Ojej, światło! I ktoś tam bardzo głośno krzyczy."
+ },
+ "line.a_kto_pieje": {
+  "hash": "a1e66d7c6774",
+  "who": "wiewiorka",
+  "text": "Wskaż, kto tak głośno pieje."
+ },
+ "line.a_kto_pieje_nie": {
+  "hash": "a5c98eb7514e",
+  "who": "wiewiorka",
+  "text": "To nie tu. Poszukaj ptaka na płocie."
+ },
+ "line.a_kogut": {
+  "hash": "2cb03c1e7a61",
+  "who": "sarenka",
+  "text": "Tak, to kogut! Kogut pieje rano: kukuryku, wstawać! A obok wschodzi słońce."
+ },
+ "line.a_noc_nie": {
+  "hash": "9cee97cfb053",
+  "who": "kret",
+  "text": "To nie zawsze jest noc? Naprawdę jest rano!"
+ },
+ "line.b_rysunek": {
+  "hash": "e479a28a71b8",
+  "who": "wiewiorka",
+  "text": "Krecie, mam coś dla ciebie. Narysowałam cały twój dzień!"
+ },
+ "line.b_wiatr": {
+  "hash": "58b52ab4f160",
+  "who": "wiewiorka",
+  "text": "Ojej, wiatr! Obrazki się pomieszały."
+ },
+ "line.c_sciezka_ok": {
+  "hash": "bdab7affd0fe",
+  "who": "sarenka",
+  "text": "Jest dobra ścieżka! Idziemy prosto do starego dębu."
+ },
+ "line.c_gwiazdy": {
+  "hash": "4a51fe03baaa",
+  "who": "sarenka",
+  "text": "Połącz gwiazdki palcem, od najmniejszej do największej. Zobaczymy, co z nich wyjdzie!"
+ },
+ "line.c_mis": {
+  "hash": "27a772c3e3e2",
+  "who": "wiewiorka",
+  "text": "Niedźwiedź! To Wielka Niedźwiedzica. Na niebie widać ją tylko w nocy."
+ },
+ "line.p_trzy_ok": {
+  "hash": "f4c348cf783f",
+  "who": "sarenka",
+  "text": "Tak: najpierw rano, potem południe, a potem wieczór!"
+ },
+ "line.p_memory_ok": {
+  "hash": "86efb49223c3",
+  "who": "kret",
+  "text": "Wszystkie pary znalezione, od rana do nocy!"
+ },
+ "line.d_kret_pizama": {
+  "hash": "458f660a7a46",
+  "who": "kret",
+  "text": "Wieczór? To szybko: piżamka! A teraz do kąpieli!"
+ },
+ "line.d_mokro": {
+  "hash": "808a0a369f81",
+  "who": "kret",
+  "text": "Ojej! Moja piżamka jest cała mokra."
+ },
+ "line.d_najpierw": {
+  "hash": "6ebc0ae3501d",
+  "who": "sarenka",
+  "text": "Najpierw jest kąpiel, a dopiero potem piżamka. Wieczorem też wszystko robimy po kolei."
+ },
+ "line.d_co_najpierw": {
+  "hash": "b62f6ff556c4",
+  "who": "sarenka",
+  "text": "Wskaż, co robimy wieczorem najpierw."
+ },
+ "line.d_co_najpierw_nie": {
+  "hash": "7d5d4b1a5ee5",
+  "who": "sarenka",
+  "text": "To robimy później. Najpierw się kąpiemy."
+ },
+ "line.d_kapiel": {
+  "hash": "1d5bd5d7f059",
+  "who": "kret",
+  "text": "Tak, najpierw kąpiel! Plum!"
+ },
+ "line.d_wieczor_ok": {
+  "hash": "fbf20100abe3",
+  "who": "wiewiorka",
+  "text": "Kąpiel, piżamka, bajka, a na końcu łóżeczko. Cały wieczór po kolei!"
+ },
+ "line.d_bajka": {
+  "hash": "c213203ed890",
+  "who": "wiewiorka",
+  "text": "A teraz bajka na dobranoc. Był sobie mały kret, który pierwszy raz zobaczył słońce. Koniec!"
+ },
+ "line.d_ksiazka": {
+  "hash": "b5dfd5cd259f",
+  "who": "sarenka",
+  "text": "Odłóż książeczkę na szafkę, obok lampki."
+ },
+ "line.d_po_nocy": {
+  "hash": "3294f7e4136b",
+  "who": "wiewiorka",
+  "text": "Śpimy całą noc. Wskaż, co przyjdzie po nocy."
+ },
+ "line.d_po_nocy_nie": {
+  "hash": "6247e02c8fd0",
+  "who": "wiewiorka",
+  "text": "To jeszcze nie teraz. Po nocy wstaje słońce."
+ },
+ "line.d_rano": {
+  "hash": "c7b58c26b0e0",
+  "who": "kret",
+  "text": "Dzień dobry! Jest rano, świeci słońce. Obudziłem się rano, razem z wami!"
+ },
+ "line.d_rano_ok": {
+  "hash": "2dffbd5eb3f3",
+  "who": "sarenka",
+  "text": "Dzień dobry, Krecie! Tak, po nocy zawsze przychodzi rano."
+ },
+ "line.d_opowiedz": {
+  "hash": "c5be1a8aebab",
+  "who": "sarenka",
+  "text": "Krecie, opowiedz nam swój wczorajszy dzień. A ty wskazuj obrazki po kolei, od rana."
+ },
+ "line.d_opowiedz_nie": {
+  "hash": "dcf291992f93",
+  "who": "sarenka",
+  "text": "Po kolei! Co było wcześniej?"
+ },
+ "line.d_kret_rano": {
+  "hash": "5a53b48f7f12",
+  "who": "kret",
+  "text": "Rano odgarnęliśmy ziemię i zobaczyłem słońce. A co było potem?"
+ },
+ "line.d_kret_poludnie": {
+  "hash": "90b92656ce08",
+  "who": "kret",
+  "text": "W południe układaliśmy obrazki na łące. A co było potem?"
+ },
+ "line.d_kret_wieczor": {
+  "hash": "bb0a2ebf6cfd",
+  "who": "kret",
+  "text": "Wieczorem odprowadziliśmy Jeżyka do domu. A co było potem?"
+ },
+ "line.d_kret_noc": {
+  "hash": "3097b7b126cf",
+  "who": "kret",
+  "text": "A w nocy zobaczyłem Wielką Niedźwiedzicę i spałem u was."
  }
 }

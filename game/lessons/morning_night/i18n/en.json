@@ -15,6 +15,34 @@
     "who": "kret",
     "text": "Morning? I thought it was always night."
   },
+  "line.a_zasypane": {
+    "who": "sarenka",
+    "text": "Always night? Look, your way out is full of earth. That's why no light gets in."
+  },
+  "line.a_odgarnij": {
+    "who": "wiewiorka",
+    "text": "Brush the earth away with your finger, and we'll see what's up there!"
+  },
+  "line.a_swiatlo": {
+    "who": "kret",
+    "text": "Oh my, light! And somebody up there is shouting very loudly."
+  },
+  "line.a_kto_pieje": {
+    "who": "wiewiorka",
+    "text": "Point to who is crowing so loudly."
+  },
+  "line.a_kto_pieje_nie": {
+    "who": "wiewiorka",
+    "text": "Not there. Look for the bird on the fence."
+  },
+  "line.a_kogut": {
+    "who": "sarenka",
+    "text": "Yes, the rooster! The rooster crows in the morning: cock-a-doodle-doo, get up! And next to him the sun is rising."
+  },
+  "line.a_noc_nie": {
+    "who": "kret",
+    "text": "So it isn't always night? It really is morning!"
+  },
   "line.a_na_gore": {
     "who": "sarenka",
     "text": "Come up with us! We'll show you how a whole day goes by: morning, midday, evening and night."
@@ -29,7 +57,7 @@
   },
   "line.b_co_rano": {
     "who": "wiewiorka",
-    "text": "What do we do in the morning? Point to it."
+    "text": "Point to what we do in the morning."
   },
   "line.b_co_rano_nie": {
     "who": "wiewiorka",
@@ -42,6 +70,14 @@
   "line.b_caly_dzien": {
     "who": "sarenka",
     "text": "The day goes by in order: in the morning the sun rises, at midday it's high, in the evening it sets, and at night the moon shines."
+  },
+  "line.b_rysunek": {
+    "who": "wiewiorka",
+    "text": "Mole, I've got something for you. I drew your whole day!"
+  },
+  "line.b_wiatr": {
+    "who": "wiewiorka",
+    "text": "Oh no, the wind! The pictures got all mixed up."
   },
   "line.b_uloz": {
     "who": "sarenka",
@@ -56,7 +92,7 @@
   },
   "line.b_po_kolei": {
     "who": "wiewiorka",
-    "text": "Morning, midday, evening, night. The whole day in order!"
+    "text": "Yes! In the morning Mole gets up, at midday he plays ball, in the evening he walks home, and at night he sleeps."
   },
   "line.c_wieczor": {
     "who": "kret",
@@ -94,6 +130,10 @@
     "who": "sarenka",
     "text": "Lead the little hedgehog with your finger along the path, all the way to his door. He can't go through the bushes."
   },
+  "line.c_sciezka_ok": {
+    "who": "sarenka",
+    "text": "That's the right path! Straight on to the old oak."
+  },
   "line.c_dab": {
     "who": "sarenka",
     "text": "Here we are under the old oak. There is the little hedgehog's door, with a light in the window."
@@ -104,7 +144,15 @@
   },
   "line.c_noc_swietliki": {
     "who": "kret",
-    "text": "Now it's night! Look, fireflies. Catch a firefly, point to it."
+    "text": "Now it's night. How beautiful! I have never seen the stars before."
+  },
+  "line.c_gwiazdy": {
+    "who": "sarenka",
+    "text": "Join the stars with your finger, from the smallest to the biggest. Let's see what they make!"
+  },
+  "line.c_mis": {
+    "who": "wiewiorka",
+    "text": "A bear! It's the Great Bear. You can only see it in the sky at night."
   },
   "line.c_juz_wiem": {
     "who": "kret",
@@ -112,7 +160,7 @@
   },
   "line.c_dobranoc": {
     "who": "wiewiorka",
-    "text": "Bravo, Mole! Now let's go to bed."
+    "text": "That's right, Mole! Tonight you sleep at ours, and in the morning we'll wake up together."
   },
   "line.p_start": {
     "who": "sarenka",
@@ -120,7 +168,7 @@
   },
   "line.p_co_dalej": {
     "who": "kret",
-    "text": "Morning, midday, evening... and what comes next? Point to it."
+    "text": "Morning, midday, evening... point to what comes next."
   },
   "line.p_co_dalej_nie": {
     "who": "kret",
@@ -132,7 +180,7 @@
   },
   "line.p_w_nocy": {
     "who": "sarenka",
-    "text": "What do we do at night? Point to it."
+    "text": "Point to what we do at night."
   },
   "line.p_w_nocy_nie": {
     "who": "sarenka",
@@ -146,20 +194,21 @@
     "who": "kret",
     "text": "Put the pictures in order, start at the arrow."
   },
-  "line.p_dobrze": {
+  "line.p_trzy_ok": {
     "who": "sarenka",
-    "text": "Bravo!",
-    "speakers": [
-      "kret"
-    ]
+    "text": "Yes: first the morning, then midday, and then the evening!"
   },
   "line.p_memory": {
     "who": "sarenka",
     "text": "Turn the cards and find pairs: morning with morning, night with night."
   },
+  "line.p_memory_ok": {
+    "who": "kret",
+    "text": "All the pairs found, from morning to night!"
+  },
   "line.p_po_nocy": {
     "who": "kret",
-    "text": "And what comes after the night? Point to it."
+    "text": "Point to what comes after the night."
   },
   "line.p_po_nocy_nie": {
     "who": "kret",
@@ -171,19 +220,95 @@
   },
   "line.d_wieczor": {
     "who": "wiewiorka",
-    "text": "It's evening. Time to get ready for bed."
+    "text": "It's evening. Mole, tonight you sleep at ours, and in the morning we'll all wake up together!"
+  },
+  "line.d_kret_pizama": {
+    "who": "kret",
+    "text": "Evening? Quick then: pyjamas on! And now into the bath!"
+  },
+  "line.d_mokro": {
+    "who": "kret",
+    "text": "Oh no! My pyjamas are all wet."
+  },
+  "line.d_najpierw": {
+    "who": "sarenka",
+    "text": "First the bath, and only then the pyjamas. In the evening we do things in order too."
+  },
+  "line.d_co_najpierw": {
+    "who": "sarenka",
+    "text": "Point to what we do first in the evening."
+  },
+  "line.d_co_najpierw_nie": {
+    "who": "sarenka",
+    "text": "We do that later. First we have a bath."
+  },
+  "line.d_kapiel": {
+    "who": "kret",
+    "text": "Yes, the bath first! Splash!"
   },
   "line.d_uloz": {
     "who": "sarenka",
-    "text": "What do we do in order? First a bath, then pyjamas, then a story, and last the bed. Put the pictures in order, start at the arrow."
+    "text": "Now put the whole evening in order on the rug: a bath, pyjamas, a story and bed. Start at the arrow."
+  },
+  "line.d_wieczor_ok": {
+    "who": "wiewiorka",
+    "text": "A bath, pyjamas, a story, and last the bed. The whole evening in order!"
+  },
+  "line.d_bajka": {
+    "who": "wiewiorka",
+    "text": "And now a bedtime story. Once upon a time there was a little mole who saw the sun for the first time. The end!"
+  },
+  "line.d_ksiazka": {
+    "who": "sarenka",
+    "text": "Put the book away on the bedside table, next to the lamp."
   },
   "line.d_dobranoc": {
     "who": "kret",
-    "text": "A bath, pyjamas, a story and sleep. Good night, friends!"
+    "text": "The book on the table, the lamp off. Good night, friends!"
+  },
+  "line.d_po_nocy": {
+    "who": "wiewiorka",
+    "text": "We sleep all night. Point to what comes after the night."
+  },
+  "line.d_po_nocy_nie": {
+    "who": "wiewiorka",
+    "text": "Not yet. After the night the sun comes up."
+  },
+  "line.d_rano": {
+    "who": "kret",
+    "text": "Good morning! It's morning, the sun is shining. I woke up in the morning, together with you!"
+  },
+  "line.d_rano_ok": {
+    "who": "sarenka",
+    "text": "Good morning, Mole! Yes, after the night the morning always comes."
+  },
+  "line.d_opowiedz": {
+    "who": "sarenka",
+    "text": "Mole, tell us about your day yesterday. And you, point to the pictures in order, from the morning."
+  },
+  "line.d_opowiedz_nie": {
+    "who": "sarenka",
+    "text": "In order! What came earlier?"
+  },
+  "line.d_kret_rano": {
+    "who": "kret",
+    "text": "In the morning we brushed the earth away and I saw the sun. And what came next?"
+  },
+  "line.d_kret_poludnie": {
+    "who": "kret",
+    "text": "At midday we put the pictures in order on the meadow. And what came next?"
+  },
+  "line.d_kret_wieczor": {
+    "who": "kret",
+    "text": "In the evening we took little Hedgehog home. And what came next?"
+  },
+  "line.d_kret_noc": {
+    "who": "kret",
+    "text": "And at night I saw the Great Bear and slept at your place."
   },
   "line.d_rodzice": {
     "who": "sarenka",
-    "text": "Tell your parents what happened this morning, at midday and this evening."
+    "text": "Now you tell your parents what happened this morning, at midday and this evening."
   },
   "line.naklejka_daj": {
     "who": "kret",

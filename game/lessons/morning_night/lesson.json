@@ -14,8 +14,9 @@
   "backgrounds": [
     "nora",
     "laka",
+    "dab_noc",
     "pokoj_noc",
-    "dab_noc"
+    "pokoj"
   ],
   "objects": [
     "pora_rano",
@@ -30,7 +31,6 @@
     "ksiazeczka",
     "krzak",
     "jez",
-    "swietlik",
     "karta_rewers",
     "drzwiczki"
   ],
@@ -38,5 +38,6 @@
   "naklejka": {
     "obraz": "objects/pora_noc",
     "kto": "kret"
-  }
+  },
+  "oddech": "zdrapka"
 }

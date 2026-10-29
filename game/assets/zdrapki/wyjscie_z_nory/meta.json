@@ -1,0 +1,20 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "oslona": "piasek",
+ "cele": [
+  {
+   "x": 0.2907,
+   "y": 0.3858,
+   "r": 0.05
+  },
+  {
+   "x": 0.6757,
+   "y": 0.2708,
+   "r": 0.05
+  }
+ ],
+ "lekcje": [
+  "morning_night"
+ ]
+}

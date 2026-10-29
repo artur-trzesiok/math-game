@@ -15,6 +15,34 @@
     "who": "kret",
     "text": "Rano? A ja myślałem, że zawsze jest noc."
   },
+  "line.a_zasypane": {
+    "who": "sarenka",
+    "text": "Zawsze noc? Popatrz, twoje wyjście jest zasypane ziemią. Dlatego nie wpada tu światło."
+  },
+  "line.a_odgarnij": {
+    "who": "wiewiorka",
+    "text": "Odgarnij ziemię palcem, a zobaczymy, co jest na górze!"
+  },
+  "line.a_swiatlo": {
+    "who": "kret",
+    "text": "Ojej, światło! I ktoś tam bardzo głośno krzyczy."
+  },
+  "line.a_kto_pieje": {
+    "who": "wiewiorka",
+    "text": "Wskaż, kto tak głośno pieje."
+  },
+  "line.a_kto_pieje_nie": {
+    "who": "wiewiorka",
+    "text": "To nie tu. Poszukaj ptaka na płocie."
+  },
+  "line.a_kogut": {
+    "who": "sarenka",
+    "text": "Tak, to kogut! Kogut pieje rano: kukuryku, wstawać! A obok wschodzi słońce."
+  },
+  "line.a_noc_nie": {
+    "who": "kret",
+    "text": "To nie zawsze jest noc? Naprawdę jest rano!"
+  },
   "line.a_na_gore": {
     "who": "sarenka",
     "text": "Chodź z nami na górę! Pokażemy ci, jak mija cały dzień: rano, w południe, wieczorem i w nocy."
@@ -29,7 +57,7 @@
   },
   "line.b_co_rano": {
     "who": "wiewiorka",
-    "text": "Co robimy rano? Wskaż."
+    "text": "Wskaż, co robimy rano."
   },
   "line.b_co_rano_nie": {
     "who": "wiewiorka",
@@ -42,6 +70,14 @@
   "line.b_caly_dzien": {
     "who": "sarenka",
     "text": "Dzień mija po kolei: rano słońce wschodzi, w południe jest wysoko, wieczorem zachodzi, a w nocy świeci księżyc."
+  },
+  "line.b_rysunek": {
+    "who": "wiewiorka",
+    "text": "Krecie, mam coś dla ciebie. Narysowałam cały twój dzień!"
+  },
+  "line.b_wiatr": {
+    "who": "wiewiorka",
+    "text": "Ojej, wiatr! Obrazki się pomieszały."
   },
   "line.b_uloz": {
     "who": "sarenka",
@@ -56,7 +92,7 @@
   },
   "line.b_po_kolei": {
     "who": "wiewiorka",
-    "text": "Rano, południe, wieczór, noc. Cały dzień po kolei!"
+    "text": "Tak! Rano Kret wstaje, w południe gra w piłkę, wieczorem wraca do domu, a w nocy śpi."
   },
   "line.c_wieczor": {
     "who": "kret",
@@ -94,6 +130,10 @@
     "who": "sarenka",
     "text": "Prowadź Jeżyka palcem po ścieżce, aż do jego drzwiczek. Przez krzaki nie przejdzie."
   },
+  "line.c_sciezka_ok": {
+    "who": "sarenka",
+    "text": "Jest dobra ścieżka! Idziemy prosto do starego dębu."
+  },
   "line.c_dab": {
     "who": "sarenka",
     "text": "Jesteśmy pod starym dębem. Tu są drzwiczki Jeżyka, w okienku świeci się światło."
@@ -104,15 +144,23 @@
   },
   "line.c_noc_swietliki": {
     "who": "kret",
-    "text": "Teraz jest noc! Popatrzcie, świetliki. Łap świetlika, wskaż go."
+    "text": "Teraz jest noc. Ale tu pięknie! Jeszcze nigdy nie widziałem gwiazd."
+  },
+  "line.c_gwiazdy": {
+    "who": "sarenka",
+    "text": "Połącz gwiazdki palcem, od najmniejszej do największej. Zobaczymy, co z nich wyjdzie!"
+  },
+  "line.c_mis": {
+    "who": "wiewiorka",
+    "text": "Niedźwiedź! To Wielka Niedźwiedzica. Na niebie widać ją tylko w nocy."
   },
   "line.c_juz_wiem": {
     "who": "kret",
-    "text": "Już wiem! Po rankach jest południe, po południu wieczór, po wieczorze noc, a po nocy znowu rano."
+    "text": "Już wiem! Po ranku jest południe, po południu wieczór, po wieczorze noc, a po nocy znowu rano."
   },
   "line.c_dobranoc": {
     "who": "wiewiorka",
-    "text": "Brawo, Krecie! A teraz chodźmy spać."
+    "text": "Tak, Krecie! Dziś nocujesz u nas, a rano obudzimy się razem."
   },
   "line.p_start": {
     "who": "sarenka",
@@ -120,7 +168,7 @@
   },
   "line.p_co_dalej": {
     "who": "kret",
-    "text": "Rano, południe, wieczór... a co jest potem? Wskaż."
+    "text": "Rano, południe, wieczór... Wskaż, co jest potem."
   },
   "line.p_co_dalej_nie": {
     "who": "kret",
@@ -132,7 +180,7 @@
   },
   "line.p_w_nocy": {
     "who": "sarenka",
-    "text": "Co robimy w nocy? Wskaż."
+    "text": "Wskaż, co robimy w nocy."
   },
   "line.p_w_nocy_nie": {
     "who": "sarenka",
@@ -146,20 +194,21 @@
     "who": "kret",
     "text": "Ułóż obrazki po kolei, zacznij przy strzałce."
   },
-  "line.p_dobrze": {
+  "line.p_trzy_ok": {
     "who": "sarenka",
-    "text": "Brawo!",
-    "speakers": [
-      "kret"
-    ]
+    "text": "Tak: najpierw rano, potem południe, a potem wieczór!"
   },
   "line.p_memory": {
     "who": "sarenka",
     "text": "Odwracaj karty i szukaj par: rano do rana, noc do nocy."
   },
+  "line.p_memory_ok": {
+    "who": "kret",
+    "text": "Wszystkie pary znalezione, od rana do nocy!"
+  },
   "line.p_po_nocy": {
     "who": "kret",
-    "text": "A co jest po nocy? Wskaż."
+    "text": "Wskaż, co jest po nocy."
   },
   "line.p_po_nocy_nie": {
     "who": "kret",
@@ -171,19 +220,95 @@
   },
   "line.d_wieczor": {
     "who": "wiewiorka",
-    "text": "Jest wieczór. Pora szykować się do spania."
+    "text": "Już wieczór. Krecie, dziś śpisz u nas, a rano obudzimy się wszyscy razem!"
+  },
+  "line.d_kret_pizama": {
+    "who": "kret",
+    "text": "Wieczór? To szybko: piżamka! A teraz do kąpieli!"
+  },
+  "line.d_mokro": {
+    "who": "kret",
+    "text": "Ojej! Moja piżamka jest cała mokra."
+  },
+  "line.d_najpierw": {
+    "who": "sarenka",
+    "text": "Najpierw jest kąpiel, a dopiero potem piżamka. Wieczorem też wszystko robimy po kolei."
+  },
+  "line.d_co_najpierw": {
+    "who": "sarenka",
+    "text": "Wskaż, co robimy wieczorem najpierw."
+  },
+  "line.d_co_najpierw_nie": {
+    "who": "sarenka",
+    "text": "To robimy później. Najpierw się kąpiemy."
+  },
+  "line.d_kapiel": {
+    "who": "kret",
+    "text": "Tak, najpierw kąpiel! Plum!"
   },
   "line.d_uloz": {
     "who": "sarenka",
-    "text": "Co robimy po kolei? Najpierw kąpiel, potem piżamka, potem bajka, a na końcu łóżeczko. Ułóż obrazki, zacznij przy strzałce."
+    "text": "Teraz ułóż na dywanie cały wieczór po kolei: kąpiel, piżamka, bajka i łóżeczko. Zacznij przy strzałce."
+  },
+  "line.d_wieczor_ok": {
+    "who": "wiewiorka",
+    "text": "Kąpiel, piżamka, bajka, a na końcu łóżeczko. Cały wieczór po kolei!"
+  },
+  "line.d_bajka": {
+    "who": "wiewiorka",
+    "text": "A teraz bajka na dobranoc. Był sobie mały kret, który pierwszy raz zobaczył słońce. Koniec!"
+  },
+  "line.d_ksiazka": {
+    "who": "sarenka",
+    "text": "Odłóż książeczkę na szafkę, obok lampki."
   },
   "line.d_dobranoc": {
     "who": "kret",
-    "text": "Kąpiel, piżamka, bajka i spanie. Dobranoc, przyjaciele!"
+    "text": "Książeczka na szafce, lampka zgaszona. Dobranoc, przyjaciele!"
+  },
+  "line.d_po_nocy": {
+    "who": "wiewiorka",
+    "text": "Śpimy całą noc. Wskaż, co przyjdzie po nocy."
+  },
+  "line.d_po_nocy_nie": {
+    "who": "wiewiorka",
+    "text": "To jeszcze nie teraz. Po nocy wstaje słońce."
+  },
+  "line.d_rano": {
+    "who": "kret",
+    "text": "Dzień dobry! Jest rano, świeci słońce. Obudziłem się rano, razem z wami!"
+  },
+  "line.d_rano_ok": {
+    "who": "sarenka",
+    "text": "Dzień dobry, Krecie! Tak, po nocy zawsze przychodzi rano."
+  },
+  "line.d_opowiedz": {
+    "who": "sarenka",
+    "text": "Krecie, opowiedz nam swój wczorajszy dzień. A ty wskazuj obrazki po kolei, od rana."
+  },
+  "line.d_opowiedz_nie": {
+    "who": "sarenka",
+    "text": "Po kolei! Co było wcześniej?"
+  },
+  "line.d_kret_rano": {
+    "who": "kret",
+    "text": "Rano odgarnęliśmy ziemię i zobaczyłem słońce. A co było potem?"
+  },
+  "line.d_kret_poludnie": {
+    "who": "kret",
+    "text": "W południe układaliśmy obrazki na łące. A co było potem?"
+  },
+  "line.d_kret_wieczor": {
+    "who": "kret",
+    "text": "Wieczorem odprowadziliśmy Jeżyka do domu. A co było potem?"
+  },
+  "line.d_kret_noc": {
+    "who": "kret",
+    "text": "A w nocy zobaczyłem Wielką Niedźwiedzicę i spałem u was."
   },
   "line.d_rodzice": {
     "who": "sarenka",
-    "text": "Opowiedz rodzicom, co się działo dziś rano, w południe i wieczorem."
+    "text": "A teraz ty opowiedz rodzicom, co się działo dziś rano, w południe i wieczorem."
   },
   "line.naklejka_daj": {
     "who": "kret",

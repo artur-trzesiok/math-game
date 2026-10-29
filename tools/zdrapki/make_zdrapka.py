@@ -25,6 +25,20 @@ from make_znalezisko import magenta, STYL  # noqa: E402
 WORK = TU / "work"
 OUT = TU.parent.parent / "game" / "assets" / "zdrapki"
 ZDRAPKI = {
+    # morning_night: earth fell into Mole's way out in the night - rub it off and the morning shines in
+    "wyjscie_z_nory": {
+        "oslona": "piasek", "lekcje": ["morning_night"],
+        "obraz": f"""Inside a cosy underground MOLE BURROW, looking at its big ROUND way OUT: the round opening fills most of the
+picture, its edge made of brown earth with little roots and pebbles. Through the opening we see the outside: a green
+meadow at SUNRISE, the big round orange SUN just above the hills on the LEFT side of the opening, a pink and gold morning
+sky, and on the RIGHT side a wooden fence with a big red ROOSTER standing on it, crowing with its beak open. Bright
+morning light pours in. Big simple clear shapes.
+{STYL}""",
+        "zakryj": """the round opening completely PLUGGED with loose dark brown SOIL, crumbs of earth, little pebbles and a
+few roots, as if the earth had fallen in during the night - no light comes in and NOTHING of the meadow, the sun or the
+rooster shows through; the burrow's earth walls around the opening stay as they are.""",
+        "cele": ["on the big round orange sun rising above the hills", "on the red rooster standing on the fence"],
+    },
     # one_many / counting: snow fell on the vegetable patch - rub it off and see what is still in the ground
     "snieg_ogrodek": {
         "oslona": "snieg", "lekcje": ["one_many"],
