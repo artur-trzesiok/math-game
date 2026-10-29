@@ -1,0 +1,20 @@
+{
+ "panele": [
+  "panel_0.webp",
+  "panel_1.webp",
+  "panel_2.webp",
+  "panel_3.webp"
+ ],
+ "opisy": [
+  "MORNING: the mole stretches and yawns beside his little bed, the round sun rising low in a pink sky in the window",
+  "MIDDAY: the mole plays with a ball on a sunny green meadow, the sun high in a bright blue sky",
+  "EVENING: the mole walks home along a path, the big orange sun setting behind the hills, an orange sky",
+  "NIGHT: the mole sleeps in his little bed under a blanket, the moon and stars in the dark blue window"
+ ],
+ "postacie": [
+  "kret"
+ ],
+ "lekcje": [
+  "morning_night"
+ ]
+}

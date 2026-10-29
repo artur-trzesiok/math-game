@@ -19,6 +19,7 @@ import * as M from "./mechaniki.js";
 import * as M2 from "./mechaniki2.js";
 import * as M3 from "./mechaniki3.js";
 import * as IL from "./ilustracje.js";
+import * as M4 from "./mechaniki4.js";
 import { Speech, FAST } from "./speech.js";
 import { LANGS, pickLang, loadStrings, translator, lineOf } from "./i18n.js";
 
@@ -68,7 +69,7 @@ const DEBUG = PARAMS.has("debug");
 const NAGRAJ = PARAMS.has("scenariusz");
 const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie", "focus", "rozblysk", "znalezisko", "ilustracja"]);
 const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose",
-  "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec"]);                   // ?debug=1: the phase icons jump between stages
+  "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec", "zdrapka", "kropki", "historyjka", "podarty", "wedrowka"]);                   // ?debug=1: the phase icons jump between stages
 
 // a background's identity: a name, or an insert {kolor, motyw}
 const tloId = (bg) => (typeof bg === "object" && bg ? (bg.id || `kolor:${bg.kolor}:${bg.motyw}`) : bg);
@@ -639,7 +640,13 @@ export class Player {
       domino: (a, b, o) => { alive(); return M3.domino(S, a, b, o); },
       szukaj: (nazwa, o) => wDzialaniu(M3.szukaj(S, nazwa, o), "wskaz"),
       znalezisko: guard((nazwa, o) => M3.znalezisko(S, nazwa, o)),
-      ilustracja: guard((nazwa, o) => IL.ilustracja(S, nazwa, o)),     // an event illustration lands like a stamp; `.zsun()` takes it away
+      ilustracja: guard((nazwa, o) => IL.ilustracja(S, nazwa, o)),
+      miejsca: guard((o) => M4.miejsca(S, o)),
+      zdrapka: (nazwa, o) => wDzialaniu(M4.zdrapka(S, nazwa, o), "dotknij"),   // rub the cover off, then a found picture
+      kropki: (nazwa, o = {}) => wDzialaniu(M4.kropki(S, nazwa, { ...o, onZle: () => blad(o.wrong) }), "dotknij"),
+      podarty: (nazwa, o) => wDzialaniu(M4.podarty(S, nazwa, o)),          // put a torn found picture together; then its task
+      wedrowka: (nazwa, o = {}) => wDzialaniu(M4.wedrowka(S, nazwa, { ...o, onZle: () => blad(o.wrong) }), "dotknij"),
+      historyjka: (nazwa, o = {}) => (o.uloz === false ? M4.historyjka(S, nazwa, o) : wDzialaniu(M4.historyjka(S, nazwa, { ...o, onZle: () => blad(o.wrong) }))).then((r) => { if (o.uloz !== false) nagroda(null); return r; }),                         // the painted room's places: {name: {slot(accept), strefa(), ...}}     // an event illustration lands like a stamp; `.zsun()` takes it away
       labirynt: (nazwa, o) => wDzialaniu(M3.labirynt(S, nazwa, o), "wskaz"),
       winda: guard(async (o = {}) => {
         const w = await M3.winda(S, { ...o, onZly: () => blad(o.wrong) });

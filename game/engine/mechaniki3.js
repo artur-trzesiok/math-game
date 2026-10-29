@@ -340,7 +340,7 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null } = 
 // has `cele`: n spots to mark (one or more); the lesson asks with c.task({targets: z.cele.concat(z.tlo), correct:
 // z.cele, wszystkie: n > 1}), so a tap elsewhere on the picture is a miss with the usual hint ladder. `zaznacz()`
 // rings the spots in pencil; `remove()` puts the picture away.
-export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, rama = "#fffaf0", obrot = -2.5 } = {}) {
+export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, rama = "#fffaf0", obrot = -2.5, bezLotu = false } = {}) {
   const kat = `/game/assets/znaleziska/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const tex = await texture(kat + "obraz.webp");
@@ -377,9 +377,12 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
   let x0 = 0, y0 = y - 2;
   const L = typeof skad === "string" ? S.puppets[skad] : null;
   if (L) { x0 = L.korzen.position.x; y0 = L.korzen.position.y + 2.2; } else if (skad?.mesh) { x0 = skad.mesh.position.x; y0 = skad.mesh.position.y; }
-  grp.position.set(x0, y0, 0.45); grp.scale.setScalar(0.12);
-  S.sfx.graj("whoosh");
-  await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (0 - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.58 * e; });
+  if (bezLotu) { grp.position.set(0, y, 0.45); welon.material.opacity = 0.58; }   // it is already there (a torn picture just put together)
+  else {
+    grp.position.set(x0, y0, 0.45); grp.scale.setScalar(0.12);
+    S.sfx.graj("whoosh");
+    await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (0 - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.58 * e; });
+  }
   const kolka = [];
   const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [w.x + Math.cos(a) * c.r, w.y + Math.sin(a) * c.r * 0.92]; }); };
   return {

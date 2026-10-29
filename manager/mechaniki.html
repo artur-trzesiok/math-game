@@ -17,7 +17,7 @@
   window.__T = Date.now();
   (() => {
     const im = { imports: { three: "/game/vendor/three.module.js" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje", "mechaniki4"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
   })();
@@ -37,6 +37,8 @@ import * as M from "/game/engine/mechaniki.js";
 import * as M2 from "/game/engine/mechaniki2.js";
 import * as M3 from "/game/engine/mechaniki3.js";
 import * as IL from "/game/engine/ilustracje.js";
+import * as M4 from "/game/engine/mechaniki4.js";
+import * as G from "/game/engine/geometria.js";
 const $ = (id) => document.getElementById(id);
 const czekaj = (s) => new Promise((r) => setTimeout(r, s * 1000));
 // a character "speaking" on the demo stage (no recordings here): the badge follows S.ostatniMowca
@@ -141,6 +143,50 @@ const DEMA = {
       await il.zsun(); await czekaj(1);
     }
     info("koniec");
+  },
+  miejsca: async (nr) => {
+    pokaz(); await S.background("przedpokoj");
+    const m = await M4.miejsca(S);
+    info("przedpokój: czapka na wieszak, but na dolną półkę szafki, piłka na wycieraczkę");
+    const rzeczy = [];
+    for (const [i, n] of ["czapka", "but", "pilka"].entries()) { const h = await S.object(n, { x: -1.5 + i * 1.6, y: -2.3, size: 1.0 }); rzeczy.push(h); }
+    const cel = { czapka: "wieszak", but: "szafka_dol", pilka: "wycieraczka" };
+    const t = await G.sloty(S, { items: rzeczy, slots: ["wieszak", "szafka_dol", "wycieraczka"].map((n) => m[n].slot((k) => cel[k.name] === n)), onWrong: () => info("to nie to miejsce") });
+    await t.wait(); if (nr === bieg) info("wszystko na swoim miejscu: wisi, stoi, leży");
+  },
+  zdrapka: async (nr) => {
+    pokaz("lisek", "sowa");
+    for (const n of ["snieg_ogrodek", "szyba_rano"]) {
+      if (nr !== bieg) return;
+      info(`${n}: zetrzyj palcem osłonę`);
+      const z = await M4.zdrapka(S, n);
+      info(`odkryte - ${z.cele.length} rzeczy do policzenia/wskazania`); await z.zaznacz(); await czekaj(1.5); await z.remove();
+    }
+  },
+  kropki: async (nr) => {
+    pokaz("lisek", "sowa");
+    info("gwiazdozbiór: łącz od najmniejszej gwiazdki do największej");
+    let k = await M4.kropki(S, "niedzwiedz_gwiazd", { znaki: "wielkosc", onZle: () => info("najpierw najmniejsza") }); await czekaj(1.5); await k.remove();
+    if (nr !== bieg) return;
+    info("lokomotywa: łącz kropki od 1 do 10");
+    k = await M4.kropki(S, "lokomotywa", { znaki: "cyfry", onZle: () => info("po kolei!") }); info("lokomotywa!");
+  },
+  podarty: async () => {
+    pokaz("lisek", "sowa"); info("burza podarła mapę: złóż kawałki");
+    const z = await M4.podarty(S, "mapa_polany", { kawalki: 4 });
+    info("mapa cała - wskaż, gdzie ścieżka przecina strumyk"); const hit = await S.choose([...z.cele, z.tlo]); info(z.cele.includes(hit) ? "tak!" : "pudło"); await z.zaznacz();
+  },
+  wedrowka: async () => {
+    pokaz("lisek", "sowa"); info("prowadź jeżyka krótszą ścieżką do koca (dłuższa się nie da)");
+    const w = await M4.wedrowka(S, "mapa_pikniku", { pionek: "jez", dobra: 0, onZle: () => info("ta ścieżka jest dłuższa!") }); info("na pikniku!"); await czekaj(1.5); await w.remove();
+  },
+  historyjka: async (nr) => {
+    pokaz("lisek", "sowa");
+    info("ułóż dzień Kreta po kolei: rano, południe, wieczór, noc");
+    let h = await M4.historyjka(S, "dzien_kreta", { onZle: () => info("to nie to miejsce") }); await czekaj(1.5); h.remove();
+    if (nr !== bieg) return;
+    info("od jajka do kury");
+    h = await M4.historyjka(S, "jajko_kura", { onZle: () => info("to nie to miejsce") }); info("po kolei!");
   },
 };
 const uruchom = async (n) => {

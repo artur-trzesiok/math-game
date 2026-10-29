@@ -134,6 +134,9 @@ puppy): pieces with a torn-paper edge scattered, dragged into the frame (snap wh
 usual found-picture task on the whole. No new painting: the cut is code on a picture that is not a character (allowed;
 the no-cutting rule is for puppet pieces), the torn edge is a painted texture from gpt-image.
 
+Built differently (2026-10-29): the torn edge is drawn by code (a jagged cut shared by neighbours, a white paper-fibre
+rim) - a painted edge could not make the pieces fit each other; it is an edge effect like the stamp's perforation.
+
 2.7 **A walk on the map** (`ctx.wedrowka(name, {pionek, cel, rozwidlenia})`) - the pawn is dragged along a painted path
 of a found picture (the skeleton we already make for path spots); at each fork the story asks a maths question ("the
 longer bridge", "where there are more trees", "up the hill") and only the right branch lets the pawn on. Pipeline:

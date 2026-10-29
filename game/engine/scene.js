@@ -439,8 +439,27 @@ export class Stage {
   // widths, a little smaller than loose (0.8), so even the big ones fit.
   // `obrys`: a polygon (points in units, around the zone's centre) drawn dashed instead of the rounded rectangle - a
   // place for a triangle looks like a triangle; it is drawn over what already lies there (a window on a wall)
-  async zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff", image = null, name = "zone", obrys = null } = {}) {
+  async zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff", image = null, name = "zone", obrys = null, niewidoczna = false, rodzaj = "stoi" } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, 0.3);
+    if (niewidoczna) {                                                      // a painted place (ctx.miejsca): the picture shows where, no dashes
+      const handle = { mesh: g, name, kind: "zone", x, y, w, h, base: 1, pulse: false, items: [], niewidoczna: true, rodzaj,
+        contains: (px, py) => Math.abs(px - x) < w / 2 + 0.25 && Math.abs(py - y) < h / 2 + 0.35,
+        // side by side along the place: standing on its lower part, hanging from its top, or lying in its middle
+        layout: () => {
+          const n = handle.items.length;
+          handle.items.forEach((it, i) => {
+            const tx = x - w / 2 + (i + 0.5) * w / n, b = this.bounds(it), dol = it.mesh.position.y - b.bottom, gora = b.top - it.mesh.position.y;
+            const ty = rodzaj === "stoi" ? y - h * 0.3 + dol : rodzaj === "wisi" ? y + h * 0.1 - gora : y;
+            it.moveTo(tx, ty, 0.2);
+          });
+        },
+        put: (it) => { if (it.zone && it.zone !== handle) it.zone.take(it); if (!handle.items.includes(it)) handle.items.push(it); it.zone = handle; handle.layout(); },
+        take: (it, relayout = true) => { const i = handle.items.indexOf(it); if (i >= 0) handle.items.splice(i, 1); it.zone = null; if (relayout) handle.layout(); },
+        highlight: (on) => { handle.pulse = false; for (const it of handle.items) it.highlight?.(on); },
+        remove: () => { this.scene.remove(g); const i = this.objects.indexOf(handle); if (i >= 0) this.objects.splice(i, 1); this.untarget(handle); } };
+      this.scene.add(g); this.objects.push(handle);
+      return handle;
+    }
     if (image) {
       const side = Math.max(w, h) * 1.05;
       const pic = new THREE.Mesh(new THREE.PlaneGeometry(side, side), new THREE.MeshBasicMaterial({ map: await texture(`/game/assets/objects/${image}.webp`), transparent: true, alphaTest: 0.05, depthWrite: false }));
@@ -586,6 +605,7 @@ export class Stage {
     else it.moveTo(it.home.x, it.home.y, 0.35);
   }
   clear() { for (const L of Object.values(this.puppets)) L.patrzNa(null); this.unfocus(0);
+    this.palec = null; this.palecWcisniety = false;                      // a finger mechanic of a skipped scene lets go
     for (const d of this.dymki.slice()) d.remove();
     this.endSort();
     for (const o of this.objects.slice()) o.remove();

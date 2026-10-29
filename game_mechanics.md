@@ -40,6 +40,7 @@ appendix at the end (moved from CLAUDE.md); puppets, feet, walks, meshes, audio 
 | `c.ramka({x, y})` -> `{wloz, ile, przeciagaj}` | the ten frame, filled place by place | numbers_6_10, adding_10 |
 | `c.sklepik({towar, cena, pokaz})` | pays: coins onto a plate, as many as the tag | numbers_1_5, counting_5, adding_5 |
 | `c.ubieranie({rzeczy, kto, pasuje, wrong})` | dresses characters; a wrong size goes on, slips and falls off | bigger_smaller_pro, grouping_pro |
+| `c.miejsca()` -> `{name: {slot(accept), strefa(), x, y, w, h, rodzaj}}` | the scenery's painted surfaces as drop places: a shelf, the hooks, the table, the rug (`game/assets/backgrounds/<scene>/miejsca.json`, `tools/miejsca/make_miejsca.py`). `m.gorna_polka.slot(accept)` goes into `c.slots`, `m.stol.strefa()` into `c.sort`; nothing is drawn - the picture shows where; a thing STANDS on a shelf, HANGS on a hook, LIES on a rug. Rooms with places: dom, pokoj, przedpokoj, pokoj_noc | - (the home stage, phase 3) |
 | `c.winda({x, pietra})` -> `{doPoziomu, jedz, wloz, wyjmij}` | sends a basket on a rope up and down (pull the rope or drag the basket) | up_down |
 
 ## 3. Drawing with a finger
@@ -89,6 +90,11 @@ checks against), the picture is an object in the story so the answer moves the p
 |---|---|---|---|
 | `c.znalezisko(name, {skad, y})` -> `{cele, tlo, zaznacz, remove}` | a found map, photo, drawing or note flies up big; the child points to spots or whole paths, or counts them | `tools/znaleziska/make_znalezisko.py` | long_short, ordering, shapes, counting_3, logical_pairs, up_down, tangram, grouping_pro, front_back, queue, counting_5, adding_5 |
 | `c.labirynt` | see 3 | `tools/labirynty/make_labirynt.py` | |
+| `c.zdrapka(name)` -> found picture | rubs a painted cover (snow, a fogged window, sand, leaves) off with a finger; at 75 % the rest melts and the scene under it is a found picture (`cele`, `tlo`, `zaznacz`) to count or point on. Tests `S.zdrapka.dokoncz()` | `tools/zdrapki/make_zdrapka.py` (scene, the same scene covered, spots) | - (samples snieg_ogrodek, szyba_rano) |
+| `c.kropki(name, {znaki: wielkosc / cyfry})` | joins dots on the outline of a painted thing in order (draws from dot to dot or taps the next); the outline closes and the picture appears. `wielkosc`: the dots grow, from the smallest (before numbers); `cyfry`: digits. A wrong dot shakes. Tests `S.kropki.dokoncz()` | `tools/kropki/make_kropki.py` (one thing on a transparent background; dots along the outline, pulled to corners) | - (samples niedzwiedz_gwiazd on a night card, lokomotywa 1-10) |
+| `c.historyjka(name, {uloz})` -> `{karty}` | puts the panels of ONE painted comic page in order: cards shuffled on the floor (never already in order), places over the heads, an arrow at the first. `uloz: false` only lays the cards out for the lesson's own question. Tests `S.historyjka.dokoncz()` | `tools/historyjki/make_historyjka.py` (3-4 panels in one picture, cut at the white gutters) | - (samples dzien_kreta, jajko_kura) |
+| `c.podarty(name, {kawalki: 4 / 6})` -> found picture | a found picture torn by the story: jagged pieces (shared cut lines, a white paper rim) scattered and turned; dropped near its place a piece snaps in; then the usual found-picture task. Tests `S.podarty.dokoncz()` | any found picture | - |
+| `c.wedrowka(name, {pionek, dobra})` -> found picture | drags a pawn along a painted PATH of a found picture; on the shared stretch freely, past the fork only the right path (`dobra`) lets it on - the other one shakes the pawn (the story says why). Tests `S.wedrowka.dokoncz()` | found pictures with `droga` spots | - (try mapa_pikniku, dobra 0 = the short path) |
 | `c.roznice`, `c.szukaj` | see 1 | `tools/roznice/make_roznice.py` | |
 | `c.kolorowanka` | see 3 | `tools/kolorowanki/make_kolorowanka.py` | |
 

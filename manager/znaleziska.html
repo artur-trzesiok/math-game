@@ -32,6 +32,10 @@ const RODZAJE = {
   labirynty: { tytul: "Labirynty", opis: "Labirynty (ctx.labirynt). Żółte: ściany z planu (gra sprawdza ruchy na planie), zielone: wejście, czerwone: wyjście.", obrazy: ["obraz.webp"] },
   roznice: { tytul: "Różnice", opis: "Pary do szukania różnic (ctx.roznice) i ukryte rzeczy przez lunetę (ctx.szukaj, gra pokazuje tylko obrazek b). Czerwone: znalezione różnice.", obrazy: ["a.webp", "b.webp"] },
   ilustracje: { tytul: "Ilustracje", opis: "Ilustracje zdarzeń (ctx.ilustracja): kadr ląduje na ekranie jak znaczek, postacie mówią z plakietek, na koniec zsuwa się w dół. Pod obrazkiem: co pokazuje i w jakiej lekcji ma być.", obrazy: ["obraz.webp"], bezPdf: true },
+  miejsca: { tytul: "Miejsca w pokojach", opis: "Miejsca na namalowanych pokojach (ctx.miejsca): półki, wieszak, stół, dywan - dziecko kładzie na nich rzeczy. Czerwone: miejsce i jego rodzaj (stoi / wisi / leży).", obrazy: ["plyta.webp"], kat: "/game/assets/backgrounds/", meta: "miejsca.json", bezPdf: true },
+  zdrapki: { tytul: "Zdrapki", opis: "Zdrapki (ctx.zdrapka): dziecko ściera palcem osłonę (śnieg, parę z szyby), pod spodem namalowana scena. Lewy: zakryty, prawy: odkryty z celami do policzenia/wskazania.", obrazy: ["zakryty.webp", "odkryty.webp"], bezPdf: true },
+  kropki: { tytul: "Połącz kropki", opis: "Połącz kropki (ctx.kropki): kropki na konturze, połączone po kolei odsłaniają obrazek. Czerwone: kolejność kropek.", obrazy: ["obraz.webp"], bezPdf: true },
+  historyjki: { tytul: "Historyjki", opis: "Historyjki z jednego obrazu (ctx.historyjka): okienka komiksu jako karty do ułożenia po kolei. Numer w rogu: właściwa kolejność.", obrazy: (m) => m.panele, bezPdf: true },
 };
 const rodzaj = RODZAJE[new URLSearchParams(location.search).get("rodzaj")] ? new URLSearchParams(location.search).get("rodzaj") : "znaleziska";
 const R = RODZAJE[rodzaj];
@@ -40,7 +44,7 @@ document.getElementById("pdf").href = `/api/${rodzaj}.pdf`; document.getElementB
 if (R.bezPdf) for (const id of ["pdf", "pdf2"]) document.getElementById(id).style.display = "none";
 const L = await lekcje();
 const obraz = (src) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
-const kat = `/game/assets/${rodzaj}/`;
+const kat = R.kat || `/game/assets/${rodzaj}/`;
 
 const okregi = (x, lista, W, H) => {
   x.strokeStyle = "#ff2a2a"; x.lineWidth = Math.max(5, W / 160); x.lineJoin = x.lineCap = "round";
@@ -60,7 +64,14 @@ const sciany = (x, m, W, H) => {
   }
   for (const [[k, r], kol] of [[m.start, "#3ddc84"], [m.cel, "#ff4d4d"]]) { x.fillStyle = kol; x.beginPath(); x.arc(fx0 * W + (k + 0.5) * cw, fy0 * H + (r + 0.5) * ch, Math.min(cw, ch) * 0.22, 0, 7); x.fill(); }
 };
-const zaznacz = { znaleziska: (x, m, W, H) => okregi(x, m.cele, W, H), labirynty: sciany, roznice: (x, m, W, H) => okregi(x, m.roznice, W, H), ilustracje: () => {} };
+const napis = (x, t, X, Y, W) => { x.font = `bold ${Math.max(16, W / 40)}px system-ui`; x.lineWidth = 5; x.strokeStyle = "#000"; x.strokeText(t, X, Y); x.fillStyle = "#fff"; x.fillText(t, X, Y); };
+const zaznacz = {
+  znaleziska: (x, m, W, H) => okregi(x, m.cele, W, H), labirynty: sciany, roznice: (x, m, W, H) => okregi(x, m.roznice, W, H), ilustracje: () => {},
+  miejsca: (x, m, W, H) => { x.strokeStyle = "#ff2a2a"; x.lineWidth = Math.max(4, W / 260); for (const [n, p] of Object.entries(m)) { x.strokeRect((p.x - p.w / 2) * W, (p.y - p.h / 2) * H, p.w * W, p.h * H); napis(x, `${n} (${p.rodzaj})`, (p.x - p.w / 2) * W + 6, (p.y - p.h / 2) * H + W / 40, W); } },
+  zdrapki: (x, m, W, H, i) => { if (i === 1) okregi(x, m.cele, W, H); },
+  kropki: (x, m, W, H) => { x.strokeStyle = "#ff2a2a"; x.lineWidth = Math.max(3, W / 200); x.beginPath(); m.kropki.forEach(([a, b], i) => (i ? x.lineTo(a * W, b * H) : x.moveTo(a * W, b * H))); x.closePath(); x.stroke(); m.kropki.forEach(([a, b], i) => { x.fillStyle = "#222"; x.beginPath(); x.arc(a * W, b * H, W / 70, 0, 7); x.fill(); napis(x, String(i + 1), a * W + W / 50, b * H - W / 60, W); }); },
+  historyjki: (x, m, W, H, i) => napis(x, String(i + 1), W * 0.06, W * 0.14, W * 2),
+};
 // Polish plural: 1 punkt, 2-4 punkty, 5+ punktów (12-14 too)
 const odm = (n, [jeden, kilka, wiele]) => `${n} ${n === 1 ? jeden : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? kilka : wiele}`;
 const chip = {
@@ -68,16 +79,24 @@ const chip = {
   labirynty: (m) => `${m.kolumny}×${m.wiersze} pól`,
   roznice: (m) => odm(m.roznice.length, ["różnica", "różnice", "różnic"]),
   ilustracje: (m) => (m.postacie?.length ? m.postacie.join(", ") : "bez postaci") + (m.lekcje?.length ? ` → plan: ${m.lekcje.join(", ")}` : ""),
+  miejsca: (m) => odm(Object.keys(m).length, ["miejsce", "miejsca", "miejsc"]),
+  zdrapki: (m) => `osłona: ${m.oslona}, ${odm(m.cele.length, ["cel", "cele", "celów"])}` + (m.lekcje?.length ? ` → plan: ${m.lekcje.join(", ")}` : ""),
+  kropki: (m) => `${odm(m.kropki.length, ["kropka", "kropki", "kropek"])}, tło: ${m.tlo}` + (m.lekcje?.length ? ` → plan: ${m.lekcje.join(", ")}` : ""),
+  historyjki: (m) => odm(m.panele.length, ["okienko", "okienka", "okienek"]) + (m.lekcje?.length ? ` → plan: ${m.lekcje.join(", ")}` : ""),
 };
 // which lessons use it: the call that shows it (a scenery may share the name - "laka")
-const WYWOLANIE = { znaleziska: ["znalezisko"], labirynty: ["labirynt"], roznice: ["roznice", "szukaj"], ilustracje: ["ilustracja"] };
+const WYWOLANIE = { znaleziska: ["znalezisko", "podarty", "wedrowka"], labirynty: ["labirynt"], roznice: ["roznice", "szukaj"], ilustracje: ["ilustracja"],
+  zdrapki: ["zdrapka"], kropki: ["kropki"], historyjki: ["historyjka"] };
 // (the call names it, or the lesson makes the call and names it elsewhere - practice takes its pairs from a list)
-const uzywa = (n) => L.filter((l) => WYWOLANIE[rodzaj].some((f) => new RegExp(`${f}\\(\\s*["'\`]${n}["'\`]`).test(l.kod)
+const uzywa = (n) => rodzaj === "miejsca"
+  ? L.filter((l) => /\bmiejsca\(/.test(l.kod) && (l.meta.backgrounds || []).includes(n))     // a room's places: a lesson in that room calls them
+  : L.filter((l) => WYWOLANIE[rodzaj].some((f) => new RegExp(`${f}\\(\\s*["'\`]${n}["'\`]`).test(l.kod)
   || (new RegExp(`\\b${f}\\(`).test(l.kod) && new RegExp(`["'\`]${n}["'\`]`).test(l.kod) && !(l.meta.backgrounds || []).includes(n))));
 const lista = document.getElementById("lista");
 for (const n of (await katalog(kat)).filter((q) => q.endsWith("/")).map((q) => q.slice(0, -1))) {
-  const meta = await json(`${kat}${n}/meta.json`); if (!meta) continue;
-  const ims = await Promise.all(R.obrazy.map((f) => obraz(`${kat}${n}/${f}`))); if (ims.some((i) => !i)) continue;
+  const meta = await json(`${kat}${n}/${R.meta || "meta.json"}`); if (!meta) continue;
+  const pliki = typeof R.obrazy === "function" ? R.obrazy(meta) : R.obrazy;
+  const ims = await Promise.all(pliki.map((f) => obraz(`${kat}${n}/${f}`))); if (ims.some((i) => !i)) continue;
   const kto = uzywa(n);
   const d = document.createElement("div"); d.className = "rzecz"; d.dataset.szukaj = (n + " " + kto.map((l) => l.title.pl).join(" ")).toLowerCase();
   d.innerHTML = `<h3>${esc(n)}</h3><div><span class="chip">${ims[0].naturalWidth}×${ims[0].naturalHeight}</span><span class="chip">${chip[rodzaj](meta)}</span>
@@ -86,7 +105,11 @@ for (const n of (await katalog(kat)).filter((q) => q.endsWith("/")).map((q) => q
     ${meta.opis ? `<p class="opcje">${esc(meta.opis)}</p>` : ""}<div class="opcje" ${rodzaj === "ilustracje" ? 'style="display:none"' : ""}><label><input type="checkbox" checked> pokaż zaznaczenia</label></div>`;
   lista.appendChild(d);
   const pokaz = d.querySelector("input"), cs = [...d.querySelectorAll("canvas")];
-  const odswiez = () => cs.forEach((c, i) => { const im = ims[i], x = c.getContext("2d"); c.width = im.naturalWidth; c.height = im.naturalHeight; x.drawImage(im, 0, 0); if (pokaz.checked) zaznacz[rodzaj](x, meta, c.width, c.height); });
+  const odswiez = () => cs.forEach((c, i) => {
+    const im = ims[i], x = c.getContext("2d"); c.width = im.naturalWidth; c.height = im.naturalHeight;
+    if (rodzaj === "kropki") { x.fillStyle = meta.tlo === "noc" ? "#141d3f" : "#f6efdf"; x.fillRect(0, 0, c.width, c.height); }   // the card the game lays it on
+    x.drawImage(im, 0, 0); if (pokaz.checked) zaznacz[rodzaj](x, meta, c.width, c.height, i);
+  });
   pokaz.onchange = odswiez; odswiez();
 }
 document.getElementById("status").textContent = `${lista.children.length} ${rodzaj === "labirynty" ? "labiryntów" : rodzaj === "roznice" ? "par" : "obrazków"}`;
