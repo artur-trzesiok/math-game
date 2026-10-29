@@ -245,11 +245,11 @@ picture, not with what the code means:
 Run the whole lesson with the autopilot, snapshot every scene (each task before and after its answer), view the
 snapshots one by one against this list, and only then show it to the user.
 
-## Atmosphere and editing (the "pro" lessons)
+## Atmosphere and editing (every lesson)
 
 Learned from a competitor's 7-minute "Big and Small" lesson (`reference/analiza_mniejszy_wiekszy.md`).
-These rules hold for every lesson written from now on; `game/lessons/bigger_smaller_pro/` is the first
-one built on them (if the pro version does not work out, this section goes).
+There is no "plain" and "pro" kind of lesson: these rules are the default for EVERY lesson, old ones
+included - a lesson that misses them is unfinished, whatever its folder is called.
 
 ### The story
 - **Less talk, more happening.** Aim for about half of the story stage spoken; between lines something
