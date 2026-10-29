@@ -26,6 +26,24 @@ export const GROUND = -3.3;
 export const SUFIT = 3.3;
 export const ASPECT_MIN = 4 / 3, ASPECT_MAX = 16 / 9;
 const CAM_Z = 7.2;
+
+// A shot moves the FRAME, not the camera: position.x/y (set by shots, read everywhere as "where the camera looks")
+// becomes an off-axis shift of the projection, the eye stays at x = y = 0. Moving the eye made the puppets (z 0)
+// and the background movers slide against the painted plate (z -9) - parallax a cut-out theatre must not have.
+function kadrBezParalaksy(cam) {
+  const oko = new THREE.Vector3(), up = cam.updateProjectionMatrix.bind(cam);
+  const przesun = () => {
+    const e = cam.projectionMatrix.elements, sx = e[0] * cam.position.x / cam.position.z, sy = e[5] * cam.position.y / cam.position.z;
+    if (e[8] !== sx || e[9] !== sy) { e[8] = sx; e[9] = sy; cam.projectionMatrixInverse.copy(cam.projectionMatrix).invert(); }
+  };
+  cam.updateProjectionMatrix = () => { up(); przesun(); };
+  cam.updateMatrixWorld = () => {
+    cam.matrix.compose(oko.set(0, 0, cam.position.z), cam.quaternion, cam.scale);
+    cam.matrixWorld.copy(cam.matrix); cam.matrixWorldInverse.copy(cam.matrixWorld).invert();
+    przesun();
+  };
+  cam.updateWorldMatrix = () => cam.updateMatrixWorld();
+}
 const ZAKRESLACZ = "#ff5a1f";          // pencil annotations: a bold saturated orange that reads on grass, sky and wood
 const PARAMS = new URLSearchParams(location.search);
 const FRESH = { cache: "no-store" };
@@ -52,6 +70,7 @@ export class Stage {
     this.scene.background = new THREE.Color(0x9fd0f0);
     this.camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
     this.camera.position.set(0, 0, CAM_Z);
+    kadrBezParalaksy(this.camera);
     this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0; this.camZ = CAM_Z; this.warstwy = [];
     this.pauza = false; this.panorama = null; this.otoczenie = []; this.dymki = [];
     this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;

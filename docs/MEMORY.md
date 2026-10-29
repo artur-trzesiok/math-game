@@ -290,6 +290,9 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 
 ## 7. Traps that cost time
 
+- **No parallax on the stage** (fixed 2026-10-30, user: "postacie pływają"): a shot must never move the camera's eye -
+  puppets (z 0) and grass (then z -1.2) slid against the plate (z -9). `kadrBezParalaksy` (scene.js) turns
+  camera.position.x/y into an off-axis projection shift; the movers lie just in front of the plate (tlo.js).
 - **The hidden browser pane**: rAF runs at 0 fps although the page says visible; screenshots are stale; real-time
   runs stall on animations (szybko runs work). JS evals time out at 45 s - split long polls. Background tabs throttle.
   An autopilot inside an iframe stalled on a drag where the same lesson in a tab passed.
