@@ -89,9 +89,9 @@ export default {
         await c.say("lisek", "line.a_dynia_tez", { anim: "Radosc" });
         c.clear();
         // the breather: the autumn wind - Fox's kite
+        await c.ujecie("ogolny");                                            // the wind blows over the whole scene, the kite climbs across the sky
         c.czastki("liscie", { wiatr: 1.4 });
         await c.say("lisek", "line.a_wiatr", { anim: "Podskok" });
-        await c.ujecie("ogolny");                                            // the kite climbs across the sky
         await c.latawiec({ ksztalt: "latawiec_trojkat", kto: "lisek" });
         c.czastki("liscie", { wiatr: 0.4 });
         await c.ujecie("dwuujecie", { na: ["lisek", "wiewiorka"] });

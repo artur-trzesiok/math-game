@@ -5,7 +5,7 @@
 
 import * as THREE from "three";
 import { emocja } from "./efekty.js";
-import { GROUND } from "./scene.js";
+import { GROUND, texture } from "./scene.js";
 
 const FAST = new URLSearchParams(location.search).has("szybko");
 const czekaj = (S, s) => S.wait(FAST ? Math.min(s, 0.15) : s);
@@ -113,8 +113,43 @@ export async function latawiec(S, { ksztalt = "latawiec_kwadrat", kto = null, mo
   const L = kto ? S.puppets[kto] : null;
   if (kto) await mow(kto, "latawiec");                                  // how to play it
   const reka = () => (L ? [L.korzen.position.x + (L.korzen.position.x < 0 ? 0.6 : -0.6), L.korzen.position.y + L.wysokosc * 0.45] : [-3.6, -2.4]);
-  const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]);
-  const sznurek = new THREE.Line(geo, new THREE.LineBasicMaterial({ color: "#5a4632" })); sznurek.renderOrder = 9.5; S.scene.add(sznurek);
+  // the string: the painted twisted rope (winda_lina) repeated along a sagging curve that ripples in the wind - a
+  // 1 px line read as a technical drawing
+  const N = 28, GRUB = 0.1, OKRES = 0.6;
+  const lina = await texture("/game/assets/objects/winda_lina.webp").catch(() => null);
+  let u0 = 0, u1 = 1;                                                   // the rope's own columns: the picture is mostly empty
+  if (lina) {
+    lina.wrapT = THREE.RepeatWrapping; lina.needsUpdate = true;
+    try {
+      const im = lina.image, c = document.createElement("canvas"); c.width = im.width; c.height = im.height;
+      const x = c.getContext("2d"); x.drawImage(im, 0, 0); const d = x.getImageData(0, 0, c.width, c.height).data;
+      const kol = []; for (let i = 0; i < c.width; i++) { let n = 0; for (let j = 0; j < c.height; j += 4) if (d[(j * c.width + i) * 4 + 3] > 40) n++; kol.push(n / (c.height / 4)); }
+      const lin = kol.map((v, i) => (v > 0.3 ? i : -1)).filter((i) => i >= 0);
+      if (lin.length) { u0 = lin[0] / c.width; u1 = (lin[lin.length - 1] + 1) / c.width; }
+    } catch { /* keep the whole width */ }
+  }
+  const geo = new THREE.BufferGeometry(), poz = new Float32Array((N + 1) * 2 * 3), uvy = new Float32Array((N + 1) * 2 * 2), idx = [];
+  for (let i = 0; i < N; i++) { const a = 2 * i; idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2); }
+  geo.setAttribute("position", new THREE.BufferAttribute(poz, 3)); geo.setAttribute("uv", new THREE.BufferAttribute(uvy, 2)); geo.setIndex(idx);
+  const sznurek = new THREE.Mesh(geo, new THREE.MeshBasicMaterial(lina ? { map: lina, transparent: true, depthWrite: false, side: THREE.DoubleSide } : { color: "#6b4a2a", side: THREE.DoubleSide }));
+  sznurek.renderOrder = 9.5; sznurek.frustumCulled = false; S.scene.add(sznurek);
+  const ulozSznurek = (ax, ay, bx, by, faza) => {
+    const dl = Math.hypot(bx - ax, by - ay), zwis = 0.12 * dl + 0.15;
+    let prev = null, droga = 0;
+    const pkt = [];
+    for (let i = 0; i <= N; i++) {
+      const t = i / N, fala = Math.sin(t * Math.PI) * 0.07 * Math.sin(faza * 3 + t * 6);
+      pkt.push([ax + (bx - ax) * t + fala * 0.5, ay + (by - ay) * t - zwis * 4 * t * (1 - t) + fala]);
+    }
+    for (let i = 0; i <= N; i++) {
+      const [x, y] = pkt[i], [x2, y2] = pkt[Math.min(N, i + 1)], [x0, y0] = pkt[Math.max(0, i - 1)];
+      let tx = x2 - x0, ty = y2 - y0; const n = Math.hypot(tx, ty) || 1; tx /= n; ty /= n;
+      if (prev) droga += Math.hypot(x - prev[0], y - prev[1]); prev = [x, y];
+      const nx = -ty * GRUB / 2, ny = tx * GRUB / 2, v = droga / OKRES;
+      poz.set([x - nx, y - ny, 0.39, x + nx, y + ny, 0.39], i * 6); uvy.set([u0, v, u1, v], i * 4);
+    }
+    geo.attributes.position.needsUpdate = true; geo.attributes.uv.needsUpdate = true;
+  };
   let y = -0.4, vy = 0, faza = 0, petla, gotowe, ost = null;
   const h = { kind: "latawiec", mesh: sznurek, base: 1, remove: () => { clearInterval(petla); S.scene.remove(sznurek); K.remove(); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
   S.objects.push(h);
@@ -124,7 +159,7 @@ export async function latawiec(S, { ksztalt = "latawiec_kwadrat", kto = null, mo
     vy -= 0.35 * dt; vy *= 0.97; y = Math.max(-1.0, Math.min(2.7, y + vy * dt));
     const x = 0.8 + Math.sin(faza * 1.3) * 0.5 + (y + 1) * 0.35;
     K.mesh.position.set(x, y, 0.4); if (!K.petla) K.mesh.rotation.z = Math.sin(faza * 2.1) * 0.18;
-    const [rx, ry] = reka(), p = geo.attributes.position; p.setXYZ(0, rx, ry, 0.39); p.setXYZ(1, x, y - 0.55, 0.39); p.needsUpdate = true;
+    const [rx, ry] = reka(); ulozSznurek(rx, ry, x, y - 0.55, faza);
     if (y >= 2.6 && gotowe) { const g0 = gotowe; gotowe = null; g0(); }
   }, 16);
   await new Promise((ok) => {

@@ -135,8 +135,8 @@ already there. Do NOT add fruit, animals, birds or anything else.""",
         "plyta": f"""A background illustration for a children's game: the inside of a cosy,
 bright kitchen and dining room seen straight on. A big wooden table in the
 lower middle with its top COMPLETELY EMPTY, floor space in front of it where
-characters will stand. On the back wall: one large window with plain sky, a
-shelf with a few jars, a wall clock, pale patterned wallpaper. A fridge on one
+characters will stand. On the back wall: one large window with plain sky, two
+EMPTY wooden wall shelves (lessons put things there), a wall clock, pale patterned wallpaper. A fridge on one
 side, a cupboard on the other. Warm wooden floor.
 {STYL}
 Wide landscape composition.

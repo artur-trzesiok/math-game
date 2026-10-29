@@ -734,7 +734,10 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
     const dl = Math.hypot(cx - x0, cy - y0) / 6 + Math.abs(Math.log(z / z0));
     // far across the scene it rises over it: the zoom dips half way (a close-up to a close-up never slides at full zoom)
     const wznies = Math.min(0.6, Math.abs(cx - x0) / (v.w / Math.min(z, z0)) * 0.9);
-    await S.tween(Math.min(1.6, 0.7 + dl * 0.9), (s) => { const q = gladko(s); krok(q); kam.zoom = Math.max(1, kam.zoom * (1 - wznies * Math.sin(Math.PI * s))); kam.updateProjectionMatrix(); });
+    // the dip never zooms out past what keeps the frame inside the design frame there (else the frame's hard limit
+    // pulled the camera sideways half way - a jerk)
+    const doRamki = () => Math.max(1, (v.w / 2) / Math.max(0.01, ramka.w / 2 - Math.abs(kam.position.x)), (v.h / 2) / Math.max(0.01, ramka.h / 2 - Math.abs(kam.position.y)));
+    await S.tween(Math.min(1.6, 0.7 + dl * 0.9), (s) => { const q = gladko(s); krok(q); kam.zoom = Math.max(doRamki(), kam.zoom * (1 - wznies * Math.sin(Math.PI * s))); kam.updateProjectionMatrix(); });
   } else krok(1);
   await Promise.all(chody);
   S.ujecieTeraz = typ; S.ujecieNa = lista;
