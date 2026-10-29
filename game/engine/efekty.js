@@ -661,8 +661,10 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
   const rosnie = (h) => (h.korzen ? h.korzen.scale.x < 0.97 : h.mesh && h.base ? h.mesh.scale.x < h.base * 0.97 : false);
   for (let i = 0; i < 8 && lista.some(rosnie); i++) await S.wait(0.06);
   // back from a two-shot (also before the next one, else its pair is never stored): the characters return to their places
-  // (only one still where the two-shot put it: a character that walked since keeps its new place)
-  if (S.dwuujecie) { for (const [L, x, tu] of S.dwuujecie) if (Math.abs(L.korzen.position.x - tu) < 1e-6) L.korzen.position.x = x; S.dwuujecie = null; }
+  // (only one still where the two-shot put it: a character that walked since keeps its new place). Nobody jumps:
+  // the shot is framed for where they end up, and they walk there while the camera moves
+  const ruchy = [];                                                       // [L, from, to]
+  if (S.dwuujecie) { for (const [L, x, tu] of S.dwuujecie) if (Math.abs(L.korzen.position.x - tu) < 1e-6 && Math.abs(x - tu) > 0.05) { ruchy.push([L, tu, x]); L.korzen.position.x = x; } S.dwuujecie = null; }
   const v = S.visible(0);
   let z = 1, cx = 0, cy = 0;
   if (typ === "zblizenie" && lista[0]?.korzen) {
@@ -682,7 +684,13 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
     // never onto things on the ground: with containers or stickers between them they stay, the camera frames them
     const cosMiedzy = S.objects.some((o) => o.mesh?.visible !== false && (o.kind === "zone" || o.kind === "object") && o.mesh.position.x > lewy.korzen.position.x && o.mesh.position.x < prawy.korzen.position.x)
       || Object.values(S.puppets).some((L) => !lista.includes(L) && L.korzen?.visible !== false && L.korzen?.parent && L.korzen.position.x > lewy.korzen.position.x && L.korzen.position.x < prawy.korzen.position.x);   // nor through a third character
-    if (rozstaw > 4.6 && !cosMiedzy) { lewy.korzen.position.x = sr - 2.3; prawy.korzen.position.x = sr + 2.3; }
+    if (rozstaw > 4.6 && !cosMiedzy) {
+      for (const [L, x1] of [[lewy, sr - 2.3], [prawy, sr + 2.3]]) {
+        const r = ruchy.find((q) => q[0] === L);
+        if (r) r[2] = x1; else ruchy.push([L, L.korzen.position.x, x1]);
+        L.korzen.position.x = x1;
+      }
+    }
     for (const p of S.dwuujecie) p.push(p[0].korzen.position.x);
     const b = obwiednia(S, lista);
     const h = (b.max.y - b.min.y) * 0.72 + 1.0;                           // from the waist up, room over the heads (the HUD)
@@ -705,6 +713,13 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
   }
   if (S.zaslona) S.zaslona.material.uniforms.alfa.value = 0;
   S.unlift?.();
+  // framed for the end places: back to the start, and walk there with the camera
+  for (const [L, x0] of ruchy) L.korzen.position.x = x0;
+  const chody = ruchy.filter(([, a, b]) => Math.abs(b - a) > 0.05).map(async ([L, a, b]) => {
+    L.patrz(b > a ? "prawo" : "lewo"); L.graj("Chod", true);
+    await S.walkLine(L, a, b);
+    L.korzen.position.x = b; L.patrz("przod"); L.spoczynek();
+  });
   const kam = S.camera, z0 = kam.zoom, x0 = kam.position.x, y0 = kam.position.y;
   const krok = (s) => { kam.zoom = z0 + (z - z0) * s; kam.position.x = x0 + (cx - x0) * s; kam.position.y = y0 + (cy - y0) * s; kam.updateProjectionMatrix(); };
   // `ciecie`: true / false from the caller wins (the engine cuts on a change of place); otherwise the editing key
@@ -721,6 +736,7 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
     const wznies = Math.min(0.6, Math.abs(cx - x0) / (v.w / Math.min(z, z0)) * 0.9);
     await S.tween(Math.min(1.6, 0.7 + dl * 0.9), (s) => { const q = gladko(s); krok(q); kam.zoom = Math.max(1, kam.zoom * (1 - wznies * Math.sin(Math.PI * s))); kam.updateProjectionMatrix(); });
   } else krok(1);
+  await Promise.all(chody);
   S.ujecieTeraz = typ; S.ujecieNa = lista;
   if (!FAST && typ !== "ogolny") {                           // a slow push-in while the shot holds; the next shot stops it
     const zs = kam.zoom;
