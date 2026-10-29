@@ -14,6 +14,7 @@ Updated at the end of every phase (date, commit).
 | 0 rules, game_mechanics.md, flags, lint | in progress |
 | 1 praise / wrong variants | - |
 | 2 seven mechanics | - |
+| 2b breathers designed and built | - |
 | 3 home act, rooms with drop places | - |
 | tables: placements, breathers, panoramas | - |
 | 4-5 pass over the 24 lessons | - |
@@ -141,6 +142,19 @@ paths as in `make_znalezisko.py` with fork points named.
 Done per mechanic: demo works on the mechanics page, pipeline makes one sample with its review image, its entry is in
 `game_mechanics.md`.
 
+## Phase 2b - breathers: design and build the non-maths mini-games
+
+The breather list in phase 5 is a list of ideas; this phase turns it into games. Steps:
+1. A design sheet `game/lessons/oddechy_plan.md`: 10-12 breathers, each with what the child does (one gesture a
+   3-year-old gets at once), what the characters do, the sound, what it is built from (existing parts or new code,
+   new pictures), how long it takes (30-60 s), and which kinds of story it fits (outdoors, water, night, home).
+   No maths in any of them; none is "catch what pops up" again.
+2. The user picks which to build (a new gesture or new code needs a yes, per `game_mechanics.md`).
+3. Build the chosen ones as engine calls (`ctx.oddech(name, opts)` or one call each), each with a demo on
+   `manager/mechaniki.html?m=<name>`, a test driver and an entry in `game_mechanics.md` section 8.
+4. The assignment table (every lesson one breather, no two neighbours alike) goes to the user with the other tables.
+Done: the chosen breathers run on the mechanics page; the table is approved.
+
 ## Phase 3 - the home stage as a third act
 
 Today: about 5 lines and 1 interaction per home stage against about 27 lines in the story; the story's thread is often
@@ -262,6 +276,7 @@ open list cleaned.
 | 0 game_mechanics.md, rules, flags, lint | no |
 | 1 praise / wrong variants | no (approved) |
 | 2 mechanics, one by one | a look at each demo; the placement list per mechanic |
+| 2b breathers | which ideas to build; a look at each demo |
 | 3 home architecture | no (approved); rooms with drop places reviewed by eye |
 | breathers and panoramas | the assignment tables |
 | 4-5 lesson pass | no within the approved tables; a new mechanic or a change of direction - ask |
