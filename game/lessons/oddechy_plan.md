@@ -54,5 +54,5 @@ Not again: catch what pops up (overused); counting claps / hops / bells (that is
 | 24 | adding_10 | - | kamień, papier, nożyce (who jumps first) | the tournament |
 
 Decided 2026-10-29: build 5, 6, 9, 10, 11, 12 (six new ones); the swing was built, tried and dropped; skipping stones not built. Each needs a yes; each gets a demo on the mechanics page
-and an entry in game_mechanics.md section 8. lesson.json gets `"oddech": "<name>"`, so the story preview checks
+and an entry in docs/game_mechanics.md section 8. lesson.json gets `"oddech": "<name>"`, so the story preview checks
 neighbours.

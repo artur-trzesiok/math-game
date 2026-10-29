@@ -2,7 +2,7 @@
 
 Educational maths game for 3-4 year olds: cut-out animal puppets, picture-book
 scenes, spoken lessons in Polish and English, built for tablets. Concept and
-pedagogy: [guidelines.md](guidelines.md). How to work in this repository:
+pedagogy: [docs/guidelines.md](docs/guidelines.md). How to work in this repository:
 [CLAUDE.md](CLAUDE.md).
 
 ```

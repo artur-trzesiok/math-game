@@ -5,8 +5,8 @@ You rework ONE lesson of the maths game in `D:\Project\ai\math_game` the way the
 agents work on other lessons at the same time.
 
 ## Read first
-`CLAUDE.md`, `MEMORY.md`, `guidelines.md` (above all "The home stage is the third act" and "Atmosphere and editing"),
-`game_mechanics.md` (every tool you may use), `PLAN_usprawnienia.md` (your lesson's row in "Lesson notes"), the
+`CLAUDE.md`, `docs/MEMORY.md`, `docs/guidelines.md` (above all "The home stage is the third act" and "Atmosphere and editing"),
+`docs/game_mechanics.md` (every tool you may use), `PLAN_usprawnienia.md` (your lesson's row in "Lesson notes"), the
 approved tables `game/lessons/rozmieszczenie_plan.md` (illustrations, places, scratch-offs, dots, strips, torn
 pictures, walks, panoramas for your lesson) and `game/lessons/oddechy_plan.md` (your lesson's breather). Then your
 lesson: `scenario.md`, `lesson.js`, `lesson.json`, `i18n/pl.json`, `i18n/en.json`, and `python tools/lessons/montaz.py
@@ -58,7 +58,7 @@ lesson: `scenario.md`, `lesson.js`, `lesson.json`, `i18n/pl.json`, `i18n/en.json
 ## Do NOT
 - commit (the lead reviews and commits); push;
 - edit engine files (`game/engine/*`, except one MOTYW key in muzyka.js), `manager/*`, `tools/*` code (only YOUR
-  dict entries), CLAUDE.md, guidelines.md, game_mechanics.md, PLAN_usprawnienia.md, MEMORY.md, other lessons;
+  dict entries), CLAUDE.md, docs/guidelines.md, docs/game_mechanics.md, PLAN_usprawnienia.md, docs/MEMORY.md, other lessons;
 - build a new mechanic - if the lesson needs one, describe it in the report instead;
 - leave a picture you have not looked at.
 

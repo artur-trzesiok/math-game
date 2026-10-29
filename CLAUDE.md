@@ -1,7 +1,7 @@
 # math_game - how to work here
 
-Read `MEMORY.md` (the session memory) first, then `guidelines.md`: the concept (pedagogy, three stages, safe area,
-the lesson contract), then `game_mechanics.md`: every mechanic a lesson can use (and the rule to ask before adding one). This file is the mechanics: layout, pipelines, tests, rules
+Read `docs/MEMORY.md` (the session memory) first, then `docs/guidelines.md`: the concept (pedagogy, three stages, safe area,
+the lesson contract), then `docs/game_mechanics.md`: every mechanic a lesson can use (and the rule to ask before adding one). This file is the mechanics: layout, pipelines, tests, rules
 that cost time to learn. Chat with the user is in Polish; code, commits and repo
 docs are in English. Engine internals (`lalka.js`, `tlo.js`, `make_character.py`)
 keep their Polish identifiers - they were moved here working, not rewritten.
@@ -60,7 +60,7 @@ for review snapshots of all four puppets at a frozen phase.
 
 ## Lessons
 
-One folder per lesson, see `guidelines.md` for the contract and
+One folder per lesson, see `docs/guidelines.md` for the contract and
 `game/lessons/bigger_smaller/` as the reference. Order of work for a new lesson:
 `scenario.md` first (the script, three stages), then `i18n/pl.json` + `en.json`
 (every spoken line as `"line.<stage>_<n>": {who, text}` - `who` is always a character
@@ -242,7 +242,7 @@ a new sticker gets a glance, a sort watches the containers, `clear` resets. A no
 (`glowa_x`) slides the face on the head - turning the head about x sorted the face
 behind it on the stage (no depth test) and the mouth vanished.
 
-Lesson mechanics (pencil, camera and annotations, carrying, numbers, geometry, film tools, rhythm, the mechanics modules, painted pictures) are listed in `game_mechanics.md`, with these engine notes in its appendix. A mechanic not on that list: ask the user before building it.
+Lesson mechanics (pencil, camera and annotations, carrying, numbers, geometry, film tools, rhythm, the mechanics modules, painted pictures) are listed in `docs/game_mechanics.md`, with these engine notes in its appendix. A mechanic not on that list: ask the user before building it.
 Sound effects (`sfx.js`, `game/audio/sfx/*.mp3`): `python tools/audio/run.py --sfx` makes
 them - ElevenLabs sound generation when the key has the `sound_generation` permission
 (ours has it since 2026-10-28; at least 0.5 s each), else a numpy synthesis recipe per effect (repeatable, no service);
@@ -385,11 +385,11 @@ across characters is a pipeline bug: fix the measurement, delete the file.
 
 ## Memory
 
-`MEMORY.md` is the session memory of this project: the user's standing rules, decisions they made, where the work
+`docs/MEMORY.md` is the session memory of this project: the user's standing rules, decisions they made, where the work
 stands, pitfalls that cost time and what is left open. Read it at the start of every session (on any machine) and
 keep it current: when the user decides something, a lesson or tool changes state, or a mistake costs time, update the
 matching section in the same step and commit it with the work. Keep it short - facts and rules, not a diary; what the
-code, this file or guidelines.md already say does not go there.
+code, this file or docs/guidelines.md already say does not go there.
 
 ## Git
 

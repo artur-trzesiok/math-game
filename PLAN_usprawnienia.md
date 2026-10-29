@@ -3,7 +3,7 @@
 The audit of all 24 lessons (story, practice, at home, editing) found the stories in good shape and three weak spots
 that run through the whole game: the home stage is a stub, practice has the same answers and breathers everywhere, and
 the camera is busy without being directed. This plan fixes them and adds seven painted mechanics. Every item says what
-done looks like. Work in this order; each phase ends with a commit (local only) and a line in MEMORY.md.
+done looks like. Work in this order; each phase ends with a commit (local only) and a line in docs/MEMORY.md.
 
 ## Status
 
@@ -11,11 +11,11 @@ Updated at the end of every phase (date, commit).
 
 | phase | state |
 |---|---|
-| 0 rules, game_mechanics.md, flags, lint | DONE 2026-10-29 (f7296d08, 3e40898d, b073483a + flags commit). Baseline from `montaz.py all`: 1209 shots, 44 % wide, 28 two-shots, 2 inserts, 74 wide-then-cut, 237 ping-pongs, 111 "Wskaż." lines, 22 home stages under 4 interactions |
+| 0 rules, docs/game_mechanics.md, flags, lint | DONE 2026-10-29 (f7296d08, 3e40898d, b073483a + flags commit). Baseline from `montaz.py all`: 1209 shots, 44 % wide, 28 two-shots, 2 inserts, 74 wide-then-cut, 237 ping-pongs, 111 "Wskaż." lines, 22 home stages under 4 interactions |
 | 1 praise / wrong variants | DONE 2026-10-29: `game/pochwaly` (6 praise + 4 wrong, pl + en, all nine voices, 180 mp3), `ctx.brawo`, the wrong pool where a lesson has no line of its own; first use in shapes practice (verified: Owl said brawo_5) |
-| 2 seven mechanics | DONE 2026-10-29 (1f2b8e2a, 9617ca36, 65b00498): ilustracja, miejsca, zdrapka, kropki, historyjka, podarty, wedrowka - engine, pipelines, 2 samples each (podarty / wedrowka reuse found pictures), demos on mechaniki.html, manager tabs Ilustracje / Miejsca / Zdrapki / Kropki / Historyjki, entries in game_mechanics.md. Waiting: the user's look at the demos |
+| 2 seven mechanics | DONE 2026-10-29 (1f2b8e2a, 9617ca36, 65b00498): ilustracja, miejsca, zdrapka, kropki, historyjka, podarty, wedrowka - engine, pipelines, 2 samples each (podarty / wedrowka reuse found pictures), demos on mechaniki.html, manager tabs Ilustracje / Miejsca / Zdrapki / Kropki / Historyjki, entries in docs/game_mechanics.md. Waiting: the user's look at the demos |
 | 2b breathers designed and built | DONE 2026-10-29: six new ones built and tested on the mechanics page (kpn, lustro, karmienie, latawiec, ktoPowiedzial, malowanie) with their own line pool `game/oddechy` (23 lines x 9 voices x 2 languages); the swing was built and dropped by the user, skipping stones not built; the assignment in `oddechy_plan.md` avoids both |
-| 3 home act, rooms with drop places | rooms DONE (dom, pokoj, pokoj_noc, przedpokoj have `miejsca.json`), the architecture is in guidelines.md; the home acts themselves are written in phase 5. Found: the bookcase in pokoj / pokoj_noc and most of the doormat lie off a 4:3 screen, the hooks reach under the phase icons |
+| 3 home act, rooms with drop places | rooms DONE (dom, pokoj, pokoj_noc, przedpokoj have `miejsca.json`), the architecture is in docs/guidelines.md; the home acts themselves are written in phase 5. Found: the bookcase in pokoj / pokoj_noc and most of the doormat lie off a 4:3 screen, the hooks reach under the phase icons |
 | tables: placements, breathers, panoramas | written (`game/lessons/rozmieszczenie_plan.md`, `oddechy_plan.md`); waiting for approval |
 | 4-5 pass over the 24 lessons | in progress: tables approved 2026-10-29; pilot one_many DONE (80350576); the brief for the agents is `game/lessons/przejscie_brief.md`; waves of 3 |
 | 6 whole game | - |
@@ -35,7 +35,7 @@ Decisions the user made for this plan (2026-10-29):
 
 ## Phase 0 - rules and checks first
 
-0.0 **`game_mechanics.md`** - the mechanics move out of CLAUDE.md into their own file, listed plainly:
+0.0 **`docs/game_mechanics.md`** - the mechanics move out of CLAUDE.md into their own file, listed plainly:
 - it opens with the rule: this is the list of what the engine offers today; when a mechanic NOT on the list would
   make a lesson better, ask the operator (the user) whether to add it - never water a lesson down to the list in
   silence, never build a new one without a yes (the rule of guidelines "A lesson asks for the tools it needs");
@@ -45,10 +45,10 @@ Decisions the user made for this plan (2026-10-29):
   painted pictures (found pictures, mazes, differences, colouring), story and film tools (camera, inserts,
   transitions, emotions, weather), breathers;
 - CLAUDE.md keeps only the engine mechanics needed to build them (draw order, stencil, meshes) and points to
-  `game_mechanics.md`; guidelines.md points to it where lessons choose tools;
+  `docs/game_mechanics.md`; docs/guidelines.md points to it where lessons choose tools;
 - from then on every new mechanic of phase 2 and every new breather is added there, with its entry, in the same commit.
 
-0.1 **Guidelines** (`guidelines.md`, "Atmosphere and editing"):
+0.1 **Guidelines** (`docs/guidelines.md`, "Atmosphere and editing"):
 - remove "tall_short, grouping, more_fewer are the reference, about 0.4-0.7 per line" - they are now the most
   static lessons (no shot at all in their practice, up to 10 lines in one shot). Name a new reference only after the
   first lesson passes phase 5;
@@ -71,7 +71,7 @@ Decisions the user made for this plan (2026-10-29):
 types, the longest run of lines in one shot, wide-then-cut count, zoom-one-line-wide ping-pongs. The audit numbers to
 beat: 75 wide-then-cut, 232 ping-pongs, 28 two-shots in the whole game, 44 % of shots wide.
 
-Done: `game_mechanics.md` lists every ctx mechanic in use (checked against `player.js`), guidelines committed, the preview shows the new flags on a lesson known to break them, the lint prints the table.
+Done: `docs/game_mechanics.md` lists every ctx mechanic in use (checked against `player.js`), guidelines committed, the preview shows the new flags on a lesson known to break them, the lint prints the table.
 
 ## Phase 1 - praise and wrong-answer variants
 
@@ -98,7 +98,7 @@ READS the painting (a magenta key, a plan it checks against), the thing is an ob
 the plot, what the child marks is recognisable at a glance, it is a big picture (a free insert shot), and the manager
 can review it. Each one: engine module + ctx call, a `tools/<name>/make_<name>.py` pipeline with a `work/` review image,
 a demo on `manager/mechaniki.html?m=<name>`, a test driver (`S.<name>.dokoncz()`), a tab or section in the manager's
-review pages, an entry in `game_mechanics.md`. Build them one at a time, show each on the demo page before the next.
+review pages, an entry in `docs/game_mechanics.md`. Build them one at a time, show each on the demo page before the next.
 
 2.1 **Event illustration** (`ctx.ilustracja(name, {...})`) - the comic-book panel for what puppets cannot act: a storm
 at night, a train on a bridge, the race start, the sun rising, the parents applauding.
@@ -143,7 +143,7 @@ longer bridge", "where there are more trees", "up the hill") and only the right 
 paths as in `make_znalezisko.py` with fork points named.
 
 Done per mechanic: demo works on the mechanics page, pipeline makes one sample with its review image, its entry is in
-`game_mechanics.md`, and EVERY new asset (illustrations, rooms with their places, scratch-off pairs, dot pictures,
+`docs/game_mechanics.md`, and EVERY new asset (illustrations, rooms with their places, scratch-off pairs, dot pictures,
 story strips, torn pieces, walk maps) can be browsed in the manager (`http://localhost:8750/manager/`, a tab like
 Znaleziska with the answer drawn in) - the user asked to be able to look at all of them there.
 
@@ -154,9 +154,9 @@ The breather list in phase 5 is a list of ideas; this phase turns it into games.
    3-year-old gets at once), what the characters do, the sound, what it is built from (existing parts or new code,
    new pictures), how long it takes (30-60 s), and which kinds of story it fits (outdoors, water, night, home).
    No maths in any of them; none is "catch what pops up" again.
-2. The user picks which to build (a new gesture or new code needs a yes, per `game_mechanics.md`).
+2. The user picks which to build (a new gesture or new code needs a yes, per `docs/game_mechanics.md`).
 3. Build the chosen ones as engine calls (`ctx.oddech(name, opts)` or one call each), each with a demo on
-   `manager/mechaniki.html?m=<name>`, a test driver and an entry in `game_mechanics.md` section 8.
+   `manager/mechaniki.html?m=<name>`, a test driver and an entry in `docs/game_mechanics.md` section 8.
 4. The assignment table (every lesson one breather, no two neighbours alike) goes to the user with the other tables.
 Done: the chosen breathers run on the mechanics page; the table is approved.
 
@@ -203,7 +203,7 @@ before committing). For each lesson, in this order:
 4. lesson.js: the story notes, the home act, the breather, the editing pass (phase 4);
 5. `python tools/audio/run.py <id>` once the lines are final (changed texts re-record by hash; never rename a key);
 6. autopilot run with `?cicho&szybko&scenariusz`, snapshots of every scene, the story preview with no flags;
-7. cover redrawn when the story changed (`make_cover.py`), MEMORY.md lesson entry updated, one commit per lesson.
+7. cover redrawn when the story changed (`make_cover.py`), docs/MEMORY.md lesson entry updated, one commit per lesson.
 
 ### Lesson notes and candidate places for the new tools
 
@@ -271,14 +271,14 @@ Panorama plates today: `jesienny_sad` (grouping pans it; up_down uses it without
 ## Phase 6 - the whole game
 
 All 24 lessons through the autopilot end to end, the lint table for the game (compare with the audit numbers), covers
-redrawn where stories changed, the manager's lesson page complete (recordings pl/en), MEMORY.md state per lesson, the
+redrawn where stories changed, the manager's lesson page complete (recordings pl/en), docs/MEMORY.md state per lesson, the
 open list cleaned.
 
 ## Order and approvals
 
 | step | needs the user |
 |---|---|
-| 0 game_mechanics.md, rules, flags, lint | no |
+| 0 docs/game_mechanics.md, rules, flags, lint | no |
 | 1 praise / wrong variants | no (approved) |
 | 2 mechanics, one by one | a look at each demo; the placement list per mechanic |
 | 2b breathers | which ideas to build; a look at each demo |
