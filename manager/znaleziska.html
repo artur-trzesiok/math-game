@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Znaleziska</title>
+<style id="styl"></style>
+<style>
+  .przycisk { background: #2d6cdf; color: #fff; border-radius: 4px; padding: 3px 10px; text-decoration: none; margin-left: 8px; }
+  .opis { color: #bbb; margin: 0 0 12px; }
+  .siatka { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 14px; }
+  .rzecz { background: #333; border-radius: 8px; padding: 12px; }
+  .rzecz h3 { margin: 0 0 6px; font-size: 15px; }
+  .obrazy { display: flex; gap: 6px; }
+  .obrazy canvas { display: block; width: 100%; min-width: 0; height: auto; border-radius: 6px; background: #000; flex: 1; }
+  .opcje { margin: 8px 0 0; color: #ccc; }
+</style>
+</head>
+<body>
+<header><h1 id="tytul"></h1><input id="szukaj" placeholder="szukaj…">
+  <a class="przycisk" id="pdf" download>pobierz arkusz</a>
+  <a class="przycisk" id="pdf2" download>arkusz z zaznaczeniami</a>
+  <span id="status">wczytuję…</span></header>
+<main><p class="opis" id="opis"></p><div class="siatka" id="lista"></div></main>
+<script type="module">
+// one page for the three kinds of picture tasks (?rodzaj=znaleziska | labirynty | roznice): every picture with what the
+// child must find in it, and the lessons that use it; the PDF sheets come from the server (/api/<rodzaj>.pdf)
+import { lekcje, katalog, json, esc, STYL } from "./dane.js";
+document.getElementById("styl").textContent = STYL;
+const RODZAJE = {
+  znaleziska: { tytul: "Znaleziska", opis: "Obrazki do zaznaczania (ctx.znalezisko). Czerwone: co dziecko ma wskazać - punkty albo całe ścieżki.", obrazy: ["obraz.webp"] },
+  labirynty: { tytul: "Labirynty", opis: "Labirynty (ctx.labirynt). Żółte: ściany z planu (gra sprawdza ruchy na planie), zielone: wejście, czerwone: wyjście.", obrazy: ["obraz.webp"] },
+  roznice: { tytul: "Różnice", opis: "Pary do szukania różnic (ctx.roznice) i ukryte rzeczy przez lunetę (ctx.szukaj, gra pokazuje tylko obrazek b). Czerwone: znalezione różnice.", obrazy: ["a.webp", "b.webp"] },
+};
+const rodzaj = RODZAJE[new URLSearchParams(location.search).get("rodzaj")] ? new URLSearchParams(location.search).get("rodzaj") : "znaleziska";
+const R = RODZAJE[rodzaj];
+document.getElementById("tytul").textContent = R.tytul; document.title = R.tytul; document.getElementById("opis").textContent = R.opis;
+document.getElementById("pdf").href = `/api/${rodzaj}.pdf`; document.getElementById("pdf2").href = `/api/${rodzaj}.pdf?cele=1`;
+const L = await lekcje();
+const obraz = (src) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
+const kat = `/game/assets/${rodzaj}/`;
+
+const okregi = (x, lista, W, H) => {
+  x.strokeStyle = "#ff2a2a"; x.lineWidth = Math.max(5, W / 160); x.lineJoin = x.lineCap = "round";
+  for (const c of lista) {
+    x.beginPath();
+    if (c.droga) c.droga.forEach(([a, b], i) => (i ? x.lineTo(a * W, b * H) : x.moveTo(a * W, b * H)));
+    else x.arc(c.x * W, c.y * H, c.r * W, 0, 7);
+    x.stroke();
+  }
+};
+const sciany = (x, m, W, H) => {
+  const [fx0, fy0, fx1, fy1] = m.ramka, cw = (fx1 - fx0) * W / m.kolumny, ch = (fy1 - fy0) * H / m.wiersze;
+  x.strokeStyle = "#ffe14d"; x.lineWidth = Math.max(3, W / 300);
+  for (let r = 0; r < m.wiersze; r++) for (let k = 0; k < m.kolumny; k++) {
+    const X = fx0 * W + k * cw, Y = fy0 * H + r * ch, s = m.sciany[r * m.kolumny + k];
+    [[X, Y, X + cw, Y], [X + cw, Y, X + cw, Y + ch], [X, Y + ch, X + cw, Y + ch], [X, Y, X, Y + ch]].forEach((q, i) => { if (s[i]) { x.beginPath(); x.moveTo(q[0], q[1]); x.lineTo(q[2], q[3]); x.stroke(); } });
+  }
+  for (const [[k, r], kol] of [[m.start, "#3ddc84"], [m.cel, "#ff4d4d"]]) { x.fillStyle = kol; x.beginPath(); x.arc(fx0 * W + (k + 0.5) * cw, fy0 * H + (r + 0.5) * ch, Math.min(cw, ch) * 0.22, 0, 7); x.fill(); }
+};
+const zaznacz = { znaleziska: (x, m, W, H) => okregi(x, m.cele, W, H), labirynty: sciany, roznice: (x, m, W, H) => okregi(x, m.roznice, W, H) };
+// Polish plural: 1 punkt, 2-4 punkty, 5+ punktów (12-14 too)
+const odm = (n, [jeden, kilka, wiele]) => `${n} ${n === 1 ? jeden : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? kilka : wiele}`;
+const chip = {
+  znaleziska: (m) => { const d = m.cele.filter((c) => c.droga).length, p = m.cele.length - d; return [p ? odm(p, ["punkt", "punkty", "punktów"]) : "", d ? odm(d, ["ścieżka", "ścieżki", "ścieżek"]) : ""].filter(Boolean).join(" + "); },
+  labirynty: (m) => `${m.kolumny}×${m.wiersze} pól`,
+  roznice: (m) => odm(m.roznice.length, ["różnica", "różnice", "różnic"]),
+};
+// which lessons use it: the call that shows it (a scenery may share the name - "laka")
+const WYWOLANIE = { znaleziska: ["znalezisko"], labirynty: ["labirynt"], roznice: ["roznice", "szukaj"] };
+// (the call names it, or the lesson makes the call and names it elsewhere - practice takes its pairs from a list)
+const uzywa = (n) => L.filter((l) => WYWOLANIE[rodzaj].some((f) => new RegExp(`${f}\\(\\s*["'\`]${n}["'\`]`).test(l.kod)
+  || (new RegExp(`\\b${f}\\(`).test(l.kod) && new RegExp(`["'\`]${n}["'\`]`).test(l.kod) && !(l.meta.backgrounds || []).includes(n))));
+const lista = document.getElementById("lista");
+for (const n of (await katalog(kat)).filter((q) => q.endsWith("/")).map((q) => q.slice(0, -1))) {
+  const meta = await json(`${kat}${n}/meta.json`); if (!meta) continue;
+  const ims = await Promise.all(R.obrazy.map((f) => obraz(`${kat}${n}/${f}`))); if (ims.some((i) => !i)) continue;
+  const kto = uzywa(n);
+  const d = document.createElement("div"); d.className = "rzecz"; d.dataset.szukaj = (n + " " + kto.map((l) => l.title.pl).join(" ")).toLowerCase();
+  d.innerHTML = `<h3>${esc(n)}</h3><div><span class="chip">${ims[0].naturalWidth}×${ims[0].naturalHeight}</span><span class="chip">${chip[rodzaj](meta)}</span>
+    ${kto.length ? kto.map((l) => `<span class="chip">${esc(l.title.pl)}</span>`).join("") : '<span class="chip zle">nieużywane</span>'}</div>
+    <div class="obrazy">${ims.map(() => "<canvas></canvas>").join("")}</div><div class="opcje"><label><input type="checkbox" checked> pokaż zaznaczenia</label></div>`;
+  lista.appendChild(d);
+  const pokaz = d.querySelector("input"), cs = [...d.querySelectorAll("canvas")];
+  const odswiez = () => cs.forEach((c, i) => { const im = ims[i], x = c.getContext("2d"); c.width = im.naturalWidth; c.height = im.naturalHeight; x.drawImage(im, 0, 0); if (pokaz.checked) zaznacz[rodzaj](x, meta, c.width, c.height); });
+  pokaz.onchange = odswiez; odswiez();
+}
+document.getElementById("status").textContent = `${lista.children.length} ${rodzaj === "labirynty" ? "labiryntów" : rodzaj === "roznice" ? "par" : "obrazków"}`;
+document.getElementById("szukaj").oninput = (e) => { const q = e.target.value.toLowerCase(); for (const d of lista.children) d.style.display = d.dataset.szukaj.includes(q) ? "" : "none"; };
+</script>
+</body>
+</html>

@@ -489,6 +489,9 @@ uses the browser's voice and shows a subtitle - fine for testing, not for a chil
   nothing happening, a missing recording). Run it on every new lesson before calling it done;
 - `tla.html`: every scenery, the plate with or without its props, prop boxes, horizon, panorama areas, who uses it;
 - `obiekty.html`: every sticker and garment, its size, which lessons use it (or none).
+- `znaleziska.html?rodzaj=znaleziska|labirynty|roznice` (three tabs): every found picture, maze and difference pair
+  with what the child must find drawn in (spots and paths, the plan's walls, the differences) and the lessons that
+  call it; `/api/<rodzaj>.pdf[?cele=1]` makes a sheet of them (JPEG inside - lossless was 40 MB).
 
 The character editor
 (`editor.html`): all four puppets at once, any animation, a phase slider, lip-sync

@@ -20,6 +20,9 @@
   <a href="#opowiesc" data-src="opowiesc.html">Opowieść</a>
   <a href="#tla" data-src="tla.html">Tła</a>
   <a href="#obiekty" data-src="obiekty.html">Obiekty</a>
+  <a href="#znaleziska" data-src="znaleziska.html?rodzaj=znaleziska">Znaleziska</a>
+  <a href="#labirynty" data-src="znaleziska.html?rodzaj=labirynty">Labirynty</a>
+  <a href="#roznice" data-src="znaleziska.html?rodzaj=roznice">Różnice</a>
   <a href="#mechaniki" data-src="mechaniki.html">Mechaniki</a>
   <a href="../game/" target="_blank">Gra ↗</a>
 </nav>
@@ -31,8 +34,9 @@
     document.querySelectorAll("nav a").forEach((x) => x.classList.remove("aktywny")); a.classList.add("aktywny");
     document.getElementById("modul").src = src; history.replaceState(null, "", a.getAttribute("href"));
   };
-  for (const a of document.querySelectorAll("nav a[data-src]")) a.onclick = (e) => { e.preventDefault(); otworz(a, a.dataset.src + location.search); };
-  const start = document.querySelector(`nav a[href="${location.hash}"]`); if (start) otworz(start, start.dataset.src + location.search);
+  const zAdresem = (s) => s + (location.search ? (s.includes("?") ? "&" : "?") + location.search.slice(1) : "");   // a module may carry its own query
+  for (const a of document.querySelectorAll("nav a[data-src]")) a.onclick = (e) => { e.preventDefault(); otworz(a, zAdresem(a.dataset.src)); };
+  const start = document.querySelector(`nav a[href="${location.hash}"]`); if (start) otworz(start, zAdresem(start.dataset.src));
   addEventListener("message", (e) => {
     const src = e.data?.otworz; if (!src) return;
     const a = document.querySelector(`nav a[data-src="${src.split("?")[0]}"]`); if (a) otworz(a, src);

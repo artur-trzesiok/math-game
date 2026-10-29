@@ -248,6 +248,8 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
   `gra.klikCel(i)`, `gra.cele`; `gra.pomin()` skips a scene; `S.upusc(item, x, y)` drops a dragged thing;
   `S.montaz` logs [shot, cut|fly]; `S.poprawkiKadru` counts speaker re-framings. The autopilot taps whatever is marked
   `dobry` - found-picture spots start NOT marked, the lesson marks the answer with `dobre(...)`.
+- **Manager tabs Znaleziska / Labirynty / Różnice** (2026-10-29, the user asked for them with PDF export): review every
+  picture task with its answers drawn in; the PDF endpoints need a server restart after server.py changes.
 - **Story preview** `manager/opowiesc.html?lekcja=<id>` lists lines, shots and tasks and flags gaps in the telling
   (not yet run on the lessons changed 2026-10-29).
 - **Draw order**: background props < zones 9 < stickers 10 < shapes 10.5-12 < slot outlines 13 < puppets 20-30 <
