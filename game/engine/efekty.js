@@ -661,7 +661,8 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
   const rosnie = (h) => (h.korzen ? h.korzen.scale.x < 0.97 : h.mesh && h.base ? h.mesh.scale.x < h.base * 0.97 : false);
   for (let i = 0; i < 8 && lista.some(rosnie); i++) await S.wait(0.06);
   // back from a two-shot (also before the next one, else its pair is never stored): the characters return to their places
-  if (S.dwuujecie) { for (const [L, x] of S.dwuujecie) L.korzen.position.x = x; S.dwuujecie = null; }
+  // (only one still where the two-shot put it: a character that walked since keeps its new place)
+  if (S.dwuujecie) { for (const [L, x, tu] of S.dwuujecie) if (Math.abs(L.korzen.position.x - tu) < 1e-6) L.korzen.position.x = x; S.dwuujecie = null; }
   const v = S.visible(0);
   let z = 1, cx = 0, cy = 0;
   if (typ === "zblizenie" && lista[0]?.korzen) {
@@ -682,6 +683,7 @@ export async function ujecie(S, typ = "ogolny", { na = null, ciecie = null, d = 
     const cosMiedzy = S.objects.some((o) => o.mesh?.visible !== false && (o.kind === "zone" || o.kind === "object") && o.mesh.position.x > lewy.korzen.position.x && o.mesh.position.x < prawy.korzen.position.x)
       || Object.values(S.puppets).some((L) => !lista.includes(L) && L.korzen?.visible !== false && L.korzen?.parent && L.korzen.position.x > lewy.korzen.position.x && L.korzen.position.x < prawy.korzen.position.x);   // nor through a third character
     if (rozstaw > 4.6 && !cosMiedzy) { lewy.korzen.position.x = sr - 2.3; prawy.korzen.position.x = sr + 2.3; }
+    for (const p of S.dwuujecie) p.push(p[0].korzen.position.x);
     const b = obwiednia(S, lista);
     const h = (b.max.y - b.min.y) * 0.72 + 1.0;                           // from the waist up, room over the heads (the HUD)
     z = lagodniej(Math.min(1.9, v.h / h, v.w / ((b.max.x - b.min.x) * 1.15))); cx = (b.min.x + b.max.x) / 2; cy = b.max.y + 0.9 - v.h / 2 / z;
