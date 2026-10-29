@@ -11,7 +11,7 @@ Updated at the end of every phase (date, commit).
 
 | phase | state |
 |---|---|
-| 0 rules, game_mechanics.md, flags, lint | in progress |
+| 0 rules, game_mechanics.md, flags, lint | DONE 2026-10-29 (f7296d08, 3e40898d, b073483a + flags commit). Baseline from `montaz.py all`: 1209 shots, 44 % wide, 28 two-shots, 2 inserts, 74 wide-then-cut, 237 ping-pongs, 111 "Wskaż." lines, 22 home stages under 4 interactions |
 | 1 praise / wrong variants | - |
 | 2 seven mechanics | - |
 | 2b breathers designed and built | - |

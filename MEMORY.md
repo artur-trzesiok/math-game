@@ -251,7 +251,10 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 - **Manager tabs Znaleziska / Labirynty / Różnice** (2026-10-29, the user asked for them with PDF export): review every
   picture task with its answers drawn in; the PDF endpoints need a server restart after server.py changes.
 - **Story preview** `manager/opowiesc.html?lekcja=<id>` lists lines, shots and tasks and flags gaps in the telling
-  (not yet run on the lessons changed 2026-10-29).
+  (not yet run on the lessons changed 2026-10-29). Since 2026-10-29 it also flags a separate "Wskaż.", a bare
+  "Brawo!" after a task, a wide shot cut away at once, a home stage under 4 interactions and a missing or repeated
+  breather (lesson.json `oddech`). Static twin: `python tools/lessons/montaz.py <id>|all`.
+- **Mechanics list**: `game_mechanics.md` (moved out of CLAUDE.md 2026-10-29) - ask the user before adding one.
 - **Draw order**: background props < zones 9 < stickers 10 < shapes 10.5-12 < slot outlines 13 < puppets 20-30 <
   found pictures / mazes 38-39 (veil 38, opacity 0.58). A sticker that must hide a character needs > 30. Pencil lines
   over a big picture: `line(..., {warstwa: 39})` keeps the halo under the ink.

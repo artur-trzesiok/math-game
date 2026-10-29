@@ -66,7 +66,8 @@ const DEBUG = PARAMS.has("debug");
 // task is written down in order with a thumbnail of the frame (gra.scenariusz)
 const NAGRAJ = PARAMS.has("scenariusz");
 const OBRAZ = new Set(["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "show", "emocja", "wonder", "odliczanie", "czastki", "play", "idea", "nalozenie", "take", "put", "konfetti", "ubierz", "digit", "przejscie", "focus", "rozblysk", "znalezisko"]);
-const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose"]);                   // ?debug=1: the phase icons jump between stages
+const INTERAKCJE = new Set(["task", "sort", "ubieranie", "place", "symmetry", "slots", "tangram", "count", "choose",
+  "memory", "slad", "polacz", "zagroda", "labirynt", "roznice", "szukaj", "kolorowanka", "strzalki", "podziel", "sklepik", "taniec"]);                   // ?debug=1: the phase icons jump between stages
 
 // a background's identity: a name, or an insert {kolor, motyw}
 const tloId = (bg) => (typeof bg === "object" && bg ? (bg.id || `kolor:${bg.kolor}:${bg.motyw}`) : bg);

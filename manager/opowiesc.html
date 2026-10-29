@@ -78,11 +78,17 @@ function analizuj(ev) {
     }
     if (opowiesc(e)) {
       if (e.dur === null) dodaj(i, "Brak nagrania tej kwestii.");
+      if (/[.?!]\s+Wskaż\.?$/.test(e.text || "")) dodaj(i, "Osobne „Wskaż.” na końcu: ElevenLabs czyta je źle. Jedno zdanie („Wskaż, kto…”) albo samo pytanie.");
+      if (ostatniaInterakcja >= 0 && odOstatniej === 0 && /^(Brawo|Super|Świetnie|Dobrze|Pięknie)[!.]?$/i.test((e.text || "").trim()))
+        dodaj(i, "Gołe „Brawo!” po zadaniu: nazwij odpowiedź („Tak, trzy gruszki!”) albo użyj ctx.brawo (losowy wariant).");
       odOstatniej++; poZmianieMiejsca = false;
       if (!e.anim) ciagMowy.push(i); else ciagMowy = [];
       if (++wUjeciu === 4) dodaj(i, "Statyczny montaż: cztery kwestie w jednym ujęciu - potrzebne cięcie, zbliżenie, plan średni albo ruch kamery.");
       if (ciagMowy.length === 5) dodaj(i, "Długa rozmowa bez akcji: pięć kwestii z rzędu, a na ekranie nic się nie dzieje (bez ujęcia, ruchu, emocji).");
     } else if (e.typ === "obraz") {
+      const nast = ev[i + 1];
+      if (e.co === "ujecie" && /^ogolny/.test(e.opis || "") && nast?.typ === "obraz" && nast.co === "ujecie" && !/^ogolny/.test(nast.opis || ""))
+        dodaj(i, "Plan ogólny od razu przecięty innym ujęciem: kamera odlatuje i wraca bez powodu.");
       ciagMowy = []; if (["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "focus", "rozblysk", "przejscie"].includes(e.co)) wUjeciu = 0;   // the camera or the picture moved
       if (["go", "pan", "przejscie"].includes(e.co)) poZmianieMiejsca = true;
     } else if (e.typ === "interakcja") {
@@ -98,11 +104,29 @@ function analizuj(ev) {
     }
   }
   if (ostatniaInterakcja >= 0 && odOstatniej === 0) dodaj(ostatniaInterakcja, "Zadanie bez komentarza: nikt nie mówi, co z niego wyszło ani co dalej.");
+  // the home stage is a third act: at least four interactions (rounds of one game count once)
+  const dom = ev.map((e, i) => [e, i]).filter(([e]) => e.etap === "apply");
+  if (dom.length) {
+    let ile = 0, poprz = null;
+    for (const [e] of dom) if (e.typ === "interakcja") { const k = `${e.co}|${e.polecenie}`; if (k !== poprz) ile++; poprz = k; }
+    if (ile < 4) dodaj(dom[0][1], `Etap „w domu” ma ${ile} ${ile === 1 ? "interakcję" : "interakcje"}: to ma być trzeci akt (powrót z wątkiem, domowy problem, 4-5 różnych interakcji, puenta).`);
+  }
   return uwagi;
 }
 
-function rysuj(ev, lekcja, koniec) {
+// the breather of a lesson (lesson.json `oddech`) must differ from its neighbours' in the menu order
+async function oddechy(lekcja) {
+  const ids = index.lessons.map((l) => l.id), i = ids.indexOf(lekcja);
+  const odd = async (id) => (id ? fetch(`/game/lessons/${id}/lesson.json`, { cache: "no-store" }).then((r) => r.json()).then((j) => j.oddech || null).catch(() => null) : null);
+  const [ten, przed, po] = await Promise.all([odd(lekcja), odd(ids[i - 1]), odd(ids[i + 1])]);
+  if (!ten) return "Brak `oddech` w lesson.json: jaka mini-gra bez matematyki jest w opowieści?";
+  if (ten === przed || ten === po) return `Ten sam oddech („${ten}”) co w sąsiedniej lekcji (${ten === przed ? ids[i - 1] : ids[i + 1]}).`;
+  return null;
+}
+
+function rysuj(ev, lekcja, koniec, uwagaOddech = null) {
   const uwagi = analizuj(ev);
+  if (uwagaOddech && ev.length) { if (!uwagi.has(0)) uwagi.set(0, []); uwagi.get(0).push({ tekst: uwagaOddech, lekka: false }); }
   const mowa = {}; let kwestii = 0, ileUwag = 0, lekkich = 0;
   for (const e of ev) if (e.typ === "kwestia" && e.zrodlo === "opowiesc") { kwestii++; mowa[e.etap] = (mowa[e.etap] || 0) + (e.dur || 0); }
   for (const u of uwagi.values()) for (const x of u) x.lekka ? lekkich++ : ileUwag++;
@@ -134,6 +158,7 @@ $("nagraj").onclick = () => {
   $("raport").innerHTML = "";
   const f = $("gra"); f.src = `/game/index.html?lekcja=${lekcja}&lang=${lang}&szybko&cicho&scenariusz`;
   let ile = -1;
+  const uwagaOddech = oddechy(lekcja);
   timer = setInterval(async () => {
     const g = f.contentWindow?.gra; if (!g) return;
     const ev = g.scenariusz || [];
@@ -142,7 +167,7 @@ $("nagraj").onclick = () => {
     if (ev.length !== ile || koniec) {
       ile = ev.length;
       for (const e of ev) if (e.typ === "kwestia" && e.dur === undefined) e.dur = await czas(lang, lekcja, e.stem);
-      rysuj(ev, lekcja, koniec);
+      rysuj(ev, lekcja, koniec, await uwagaOddech);
     }
     if (koniec) {
       clearInterval(timer);
