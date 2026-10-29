@@ -1,8 +1,8 @@
 {
  "line.a_burza": {
-  "hash": "2054c54a19a4",
+  "hash": "c3c491c3fda5",
   "who": "bobr",
-  "text": "Ojej, w nocy była burza! Wiatr porozrzucał wszystkie rzeczy po okolicy."
+  "text": "W nocy była wielka burza! Wiatr porwał nasze rzeczy i porozrzucał je po całej okolicy."
  },
  "line.a_pomoge": {
   "hash": "b423543f266a",
@@ -20,14 +20,14 @@
   "text": "Krecie, one tylko mają ten sam kolor. Ale do niczego razem nie służą."
  },
  "line.a_razem": {
-  "hash": "82f077c9a7f1",
+  "hash": "2621f120741c",
   "who": "sarenka",
-  "text": "Para to dwie rzeczy, których używamy razem. Popatrz: filiżanka i spodek."
+  "text": "Para to dwie rzeczy, których używamy razem. Popatrz na łyżkę i miskę."
  },
  "line.a_filizanka": {
-  "hash": "dd690c0bf138",
+  "hash": "7ccc5667a8f4",
   "who": "sarenka",
-  "text": "Filiżankę stawiamy na spodku. Pasują do siebie, chociaż wyglądają inaczej."
+  "text": "Łyżką jemy zupę z miski. Pasują do siebie, chociaż wcale nie są podobne."
  },
  "line.a_rozumiem": {
   "hash": "554fc0d7aadb",
@@ -35,14 +35,14 @@
   "text": "Aha! Para to rzeczy, które pasują do siebie, bo używamy ich razem."
  },
  "line.a_do_warsztatu": {
-  "hash": "6b237f68e805",
+  "hash": "95d99f5367d9",
   "who": "bobr",
-  "text": "Wiatr zawiał resztę rzeczy do mojego warsztatu. Chodźmy!"
+  "text": "Resztę rzeczy wiatr wrzucił przez okno do mojego warsztatu. Chodźmy tam!"
  },
  "line.b_rzeczy": {
-  "hash": "e54184af0595",
+  "hash": "36174f8fd4dc",
   "who": "bobr",
-  "text": "Tyle rzeczy! Trzeba je połączyć w pary."
+  "text": "Oto mój warsztat. Ojej, wszystko na stole jest w błocie!"
  },
  "line.b_polacz": {
   "hash": "7e1ee0350f75",
@@ -65,9 +65,9 @@
   "text": "Te dwie nie pasują do siebie. Czego używamy razem?"
  },
  "line.b_pasuja": {
-  "hash": "70e42679b25e",
+  "hash": "6b123248266d",
   "who": "kret",
-  "text": "Pędzel i farby, pszczoła i kwiatek, młotek i gwóźdź!"
+  "text": "Pędzel i farby, młotek i gwóźdź, filiżanka i spodek!"
  },
  "line.b_drzwi": {
   "hash": "f3dfbc71a22f",
@@ -75,9 +75,9 @@
   "text": "A ja nie mogę otworzyć moich drzwi. Burza pomieszała moje klucze."
  },
  "line.b_klucz": {
-  "hash": "e93fd57735b8",
+  "hash": "d880a5270d31",
   "who": "bobr",
-  "text": "Drzwi mają dziurkę w kształcie gwiazdki. Który klucz do nich pasuje? Wskaż."
+  "text": "Drzwi Sarenki mają dziurkę w kształcie gwiazdki. Wskaż klucz, który do nich pasuje."
  },
  "line.b_klucz_nie": {
   "hash": "59cf0c599e27",
@@ -85,24 +85,19 @@
   "text": "Ten klucz nie pasuje do dziurki. Popatrz na jego końcówkę."
  },
  "line.b_otwarte": {
-  "hash": "8b6a131c068e",
+  "hash": "9adc42289f92",
   "who": "sarenka",
-  "text": "Klucz z gwiazdką pasuje do drzwi z gwiazdką! Otwarte, dziękuję."
- },
- "line.b_liscie": {
-  "hash": "84eef07de25f",
-  "who": "kret",
-  "text": "Spadają ostatnie liście po burzy. Złap liść, wskaż go."
+  "text": "Klucz z gwiazdką pasuje do drzwi z gwiazdką! Dziękuję."
  },
  "line.b_koniec": {
-  "hash": "b83e20fdad06",
+  "hash": "dddbe4e077fc",
   "who": "bobr",
-  "text": "Wszystko posprzątane. Wracajmy do domu!"
+  "text": "Herbatka u Sarenki! Chodźmy."
  },
  "line.p_start": {
-  "hash": "afe93e417989",
+  "hash": "1c923432be7b",
   "who": "sarenka",
-  "text": "Pobawmy się w pary! Mam pięć zabaw."
+  "text": "Pobawmy się w pary!"
  },
  "line.p_polacz": {
   "hash": "d01b3b77abb4",
@@ -114,40 +109,15 @@
   "who": "sarenka",
   "text": "Połącz palcem rzeczy, które pasują do siebie."
  },
- "line.p_dobrze": {
-  "hash": "d75425f6c769",
-  "who": "sarenka",
-  "text": "Brawo!"
- },
- "line.p_dobrze.bobr": {
-  "hash": "fac351ca4a2a",
-  "who": "bobr",
-  "text": "Brawo!"
- },
- "line.p_pszczola": {
-  "hash": "44000602b373",
-  "who": "sarenka",
-  "text": "Co pasuje do pszczoły? Wskaż."
- },
- "line.p_pszczola_nie": {
-  "hash": "b809cb486f65",
-  "who": "sarenka",
-  "text": "Pszczoła tego nie potrzebuje. Gdzie pszczoła zbiera miód?"
- },
- "line.p_kwiatek": {
-  "hash": "a51dafda1996",
-  "who": "bobr",
-  "text": "Kwiatek! Pszczoła siada na kwiatku."
- },
  "line.p_memory": {
   "hash": "8a5fee039b68",
   "who": "bobr",
   "text": "Odwracaj karty i szukaj par: rzeczy, które pasują do siebie."
  },
  "line.p_nie_pasuje": {
-  "hash": "915846dce542",
+  "hash": "31d0a8816cc7",
   "who": "sarenka",
-  "text": "Która rzecz tu nie pasuje? Wskaż."
+  "text": "Wskaż rzecz, która tu nie pasuje."
  },
  "line.p_nie_pasuje_nie": {
   "hash": "69487034fd94",
@@ -160,19 +130,19 @@
   "text": "Młotek! Pasuje do gwoździa, nie do filiżanki."
  },
  "line.d_przedpokoj": {
-  "hash": "d88de72d8afb",
+  "hash": "0210a6b890ae",
   "who": "kret",
-  "text": "W przedpokoju też są pomieszane rzeczy. Połącz je w pary."
+  "text": "To domek Sarenki! Jak tu ładnie."
  },
  "line.d_porzadek": {
-  "hash": "9c6d81a0a0ed",
+  "hash": "6bdd80e747a6",
   "who": "kret",
-  "text": "Każda rzecz ma swoją parę. Porządek!"
+  "text": "But ze skarpetką, czapka z szalikiem, parasol z kaloszami. Teraz rozumiem!"
  },
  "line.d_rodzice": {
-  "hash": "aecd62364161",
+  "hash": "8c8298f009ec",
   "who": "sarenka",
-  "text": "Zagraj z rodzicami w zabawę „co pasuje do czego”: łyżka do zupy, szczoteczka do pasty."
+  "text": "Zagraj z rodzicami w „co do czego”: rodzic pokazuje rzecz, a Ty szukasz w domu jej pary."
  },
  "line.naklejka_daj": {
   "hash": "0e82f73451e3",
@@ -200,14 +170,14 @@
   "text": "Chyba moje... Ale słabo widzę i nie jestem pewien."
  },
  "line.b_zdjecie": {
-  "hash": "13f9b8565cb5",
+  "hash": "b79809b90d7f",
   "who": "bobr",
-  "text": "Popatrz, na półce leży stare zdjęcie. To ty, Krecie! Może zdjęcie nam podpowie."
+  "text": "Krecie, na półce leżało twoje stare zdjęcie. Ojej, burza je podarła!"
  },
  "line.b_zdjecie_co": {
-  "hash": "562602fddc0f",
+  "hash": "315df64d3a28",
   "who": "sarenka",
-  "text": "Co Kret trzyma w łapce na zdjęciu? Wskaż to."
+  "text": "Wskaż, co Kret trzyma w łapce na zdjęciu."
  },
  "line.b_zdjecie_nie": {
   "hash": "8e667dd1e17b",
@@ -233,5 +203,200 @@
   "hash": "2cfd9afdd35a",
   "who": "kret",
   "text": "Mój młotek i mój gwóźdź! Dziękuję. Naprawię nimi półkę przy mojej norce."
+ },
+ "line.a_burza_kret": {
+  "hash": "6d90a70a4aeb",
+  "who": "kret",
+  "text": "Ale wiało! Schowałem się głęboko w mojej norce."
+ },
+ "line.a_rano": {
+  "hash": "ba85389122f4",
+  "who": "sarenka",
+  "text": "Rano burza minęła. Popatrzcie, ile rzeczy leży nad strumykiem!"
+ },
+ "line.a_jak": {
+  "hash": "dbed6fe2cd75",
+  "who": "kret",
+  "text": "To jak się układa pary?"
+ },
+ "line.a_szczoteczka": {
+  "hash": "54dbc13f4a32",
+  "who": "sarenka",
+  "text": "Tu leży szczoteczka. Wskaż, co do niej pasuje."
+ },
+ "line.a_szczoteczka_nie": {
+  "hash": "266803669948",
+  "who": "sarenka",
+  "text": "Tym nie umyjemy zębów. Czego używamy razem ze szczoteczką?"
+ },
+ "line.a_szczoteczka_nie.bobr": {
+  "hash": "ebde9c273cb6",
+  "who": "bobr",
+  "text": "Tym nie umyjemy zębów. Czego używamy razem ze szczoteczką?"
+ },
+ "line.a_pasta": {
+  "hash": "44264f9df843",
+  "who": "kret",
+  "text": "Pasta! Szczoteczka i pasta to para, bo razem myjemy nimi zęby."
+ },
+ "line.b_wytrzyj": {
+  "hash": "35a4bcf35a73",
+  "who": "kret",
+  "text": "Wytrzyjmy to błoto! Wycieraj stół palcem."
+ },
+ "line.b_czyste": {
+  "hash": "aa4028d64faf",
+  "who": "sarenka",
+  "text": "Pędzel, farby, młotek, gwóźdź, filiżanka i spodek. Wszystko czyste!"
+ },
+ "line.b_posklejaj": {
+  "hash": "19fcfe388f7f",
+  "who": "sarenka",
+  "text": "Złóż zdjęcie z kawałków. Może ono nam podpowie."
+ },
+ "line.b_zaproszenie": {
+  "hash": "8858cf80abd3",
+  "who": "sarenka",
+  "text": "Teraz otworzę mój domek. Zapraszam was do mnie na herbatkę!"
+ },
+ "line.p_polacz_ok": {
+  "hash": "01151b0e0356",
+  "who": "sarenka",
+  "text": "Tak! Łyżka z miską, kura z jajkiem, pszczoła z kwiatkiem."
+ },
+ "line.p_poduszka": {
+  "hash": "3f3c07ef5434",
+  "who": "sarenka",
+  "text": "Wskaż, co pasuje do poduszki."
+ },
+ "line.p_poduszka_nie": {
+  "hash": "bbeb79d81cd0",
+  "who": "sarenka",
+  "text": "Tego nie potrzebujemy do spania. Gdzie kładziemy poduszkę?"
+ },
+ "line.p_lozeczko": {
+  "hash": "8a245d7735bc",
+  "who": "bobr",
+  "text": "Łóżeczko! Poduszkę kładziemy do łóżeczka i śpimy."
+ },
+ "line.p_memory_ok": {
+  "hash": "cfcbe61ce320",
+  "who": "bobr",
+  "text": "Młotek z gwoździem, pędzel z farbami, filiżanka ze spodkiem i klucz z drzwiami!"
+ },
+ "line.p_dopasuj": {
+  "hash": "9417427856cb",
+  "who": "bobr",
+  "text": "Każda rzecz czeka na swoją parę. Przeciągnij parę na puste miejsce obok."
+ },
+ "line.p_dopasuj_nie": {
+  "hash": "2fc39d63c7d5",
+  "who": "bobr",
+  "text": "To nie jest para tej rzeczy. Czego używamy z nią razem?"
+ },
+ "line.p_dopasuj_ok": {
+  "hash": "ef5e770fbc9f",
+  "who": "sarenka",
+  "text": "Miska z łyżką, but ze skarpetką, drzwi z kluczem. Wszystkie pary razem!"
+ },
+ "line.d_klucz": {
+  "hash": "db298a62db51",
+  "who": "sarenka",
+  "text": "Otwieram drzwi kluczem z gwiazdką. Wchodźcie!"
+ },
+ "line.d_balagan": {
+  "hash": "4910316959a3",
+  "who": "sarenka",
+  "text": "Ojej! Okno było otwarte i wiatr nabałaganił też u mnie."
+ },
+ "line.d_kret_kolor": {
+  "hash": "cd47b43b38d6",
+  "who": "kret",
+  "text": "Ja posprzątam! Czerwona czapka i czerwony but. Oba czerwone, więc to para!"
+ },
+ "line.d_kret_nie": {
+  "hash": "19a4c521b7c3",
+  "who": "bobr",
+  "text": "Krecie, znowu kolor? Czapki nie nosimy na nodze! Do buta pasuje skarpetka."
+ },
+ "line.d_polacz": {
+  "hash": "fef0e5560698",
+  "who": "sarenka",
+  "text": "Połącz palcem rzeczy, których używamy razem."
+ },
+ "line.d_miejsca": {
+  "hash": "c6fddb67d04a",
+  "who": "sarenka",
+  "text": "Odłóżmy rzeczy na miejsce: czapkę na wieszak, kalosze na wycieraczkę, a but na półkę."
+ },
+ "line.d_miejsca_nie": {
+  "hash": "d7d02a40a9c5",
+  "who": "sarenka",
+  "text": "Ta rzecz tam nie pasuje. Gdzie ją odkładamy?"
+ },
+ "line.d_miejsca_ok": {
+  "hash": "ae6319ec619d",
+  "who": "bobr",
+  "text": "Czapka na wieszaku, kalosze na wycieraczce, but na półce. Porządek!"
+ },
+ "line.d_czajniczek": {
+  "hash": "1e34e30e8833",
+  "who": "sarenka",
+  "text": "Teraz herbatka! Wskaż, co pasuje do czajniczka."
+ },
+ "line.d_czajniczek_nie": {
+  "hash": "4e38a7e4de07",
+  "who": "sarenka",
+  "text": "Do tego nie nalejemy herbaty. W co nalewamy herbatę?"
+ },
+ "line.d_filizanka": {
+  "hash": "e2ae321df633",
+  "who": "kret",
+  "text": "Filiżanka! Z czajniczka nalewamy herbatę do filiżanki."
+ },
+ "line.d_herbatka": {
+  "hash": "c67208fb86ae",
+  "who": "sarenka",
+  "text": "Każda filiżanka na swoim spodku, a w środku czajniczek. Smacznej herbatki!"
+ },
+ "line.d_herbatka_kret": {
+  "hash": "3afdb3c2d4f8",
+  "who": "kret",
+  "text": "Mmm, pyszna! A mój młotek jest zawsze przy mnie."
+ },
+ "line.d_zabawa": {
+  "hash": "24e64082adf2",
+  "who": "sarenka",
+  "text": "Zagrajmy w zabawę „co do czego”. Ja pokazuję rzecz, a Kret szuka jej pary."
+ },
+ "line.d_lyzka": {
+  "hash": "c42faea38dd3",
+  "who": "sarenka",
+  "text": "Krecie, co pasuje do łyżki?"
+ },
+ "line.d_kret_miska": {
+  "hash": "ec698a9dee53",
+  "who": "kret",
+  "text": "Miska! Łyżką jemy z miski."
+ },
+ "line.d_teraz_ty": {
+  "hash": "7bf837bf2639",
+  "who": "sarenka",
+  "text": "Teraz Twoja kolej. Wskaż, co pasuje do klucza z gwiazdką."
+ },
+ "line.d_teraz_ty_nie": {
+  "hash": "f2288a1efe06",
+  "who": "sarenka",
+  "text": "Ten klucz otwiera coś z gwiazdką. Popatrz uważnie."
+ },
+ "line.d_drzwi": {
+  "hash": "0f5938fa65dd",
+  "who": "bobr",
+  "text": "Drzwi z gwiazdką! Klucz i drzwi to para."
+ },
+ "line.b_to_ja": {
+  "hash": "cc56bbcd4e4c",
+  "who": "kret",
+  "text": "To ja, przed moją norką! Pamiętam ten dzień."
  }
 }

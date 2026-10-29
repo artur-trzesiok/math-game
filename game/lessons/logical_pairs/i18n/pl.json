@@ -1,7 +1,15 @@
 {
   "line.a_burza": {
     "who": "bobr",
-    "text": "Ojej, w nocy była burza! Wiatr porozrzucał wszystkie rzeczy po okolicy."
+    "text": "W nocy była wielka burza! Wiatr porwał nasze rzeczy i porozrzucał je po całej okolicy."
+  },
+  "line.a_burza_kret": {
+    "who": "kret",
+    "text": "Ale wiało! Schowałem się głęboko w mojej norce."
+  },
+  "line.a_rano": {
+    "who": "sarenka",
+    "text": "Rano burza minęła. Popatrzcie, ile rzeczy leży nad strumykiem!"
   },
   "line.a_pomoge": {
     "who": "kret",
@@ -15,13 +23,32 @@
     "who": "sarenka",
     "text": "Krecie, one tylko mają ten sam kolor. Ale do niczego razem nie służą."
   },
+  "line.a_jak": {
+    "who": "kret",
+    "text": "To jak się układa pary?"
+  },
   "line.a_razem": {
     "who": "sarenka",
-    "text": "Para to dwie rzeczy, których używamy razem. Popatrz: filiżanka i spodek."
+    "text": "Para to dwie rzeczy, których używamy razem. Popatrz na łyżkę i miskę."
   },
   "line.a_filizanka": {
     "who": "sarenka",
-    "text": "Filiżankę stawiamy na spodku. Pasują do siebie, chociaż wyglądają inaczej."
+    "text": "Łyżką jemy zupę z miski. Pasują do siebie, chociaż wcale nie są podobne."
+  },
+  "line.a_szczoteczka": {
+    "who": "sarenka",
+    "text": "Tu leży szczoteczka. Wskaż, co do niej pasuje."
+  },
+  "line.a_szczoteczka_nie": {
+    "who": "sarenka",
+    "text": "Tym nie umyjemy zębów. Czego używamy razem ze szczoteczką?",
+    "speakers": [
+      "bobr"
+    ]
+  },
+  "line.a_pasta": {
+    "who": "kret",
+    "text": "Pasta! Szczoteczka i pasta to para, bo razem myjemy nimi zęby."
   },
   "line.a_rozumiem": {
     "who": "kret",
@@ -29,11 +56,19 @@
   },
   "line.a_do_warsztatu": {
     "who": "bobr",
-    "text": "Wiatr zawiał resztę rzeczy do mojego warsztatu. Chodźmy!"
+    "text": "Resztę rzeczy wiatr wrzucił przez okno do mojego warsztatu. Chodźmy tam!"
   },
   "line.b_rzeczy": {
     "who": "bobr",
-    "text": "Tyle rzeczy! Trzeba je połączyć w pary."
+    "text": "Oto mój warsztat. Ojej, wszystko na stole jest w błocie!"
+  },
+  "line.b_wytrzyj": {
+    "who": "kret",
+    "text": "Wytrzyjmy to błoto! Wycieraj stół palcem."
+  },
+  "line.b_czyste": {
+    "who": "sarenka",
+    "text": "Pędzel, farby, młotek, gwóźdź, filiżanka i spodek. Wszystko czyste!"
   },
   "line.b_polacz": {
     "who": "bobr",
@@ -49,7 +84,7 @@
   },
   "line.b_pasuja": {
     "who": "kret",
-    "text": "Pędzel i farby, pszczoła i kwiatek, młotek i gwóźdź!"
+    "text": "Pędzel i farby, młotek i gwóźdź, filiżanka i spodek!"
   },
   "line.b_czyje": {
     "who": "bobr",
@@ -61,11 +96,19 @@
   },
   "line.b_zdjecie": {
     "who": "bobr",
-    "text": "Popatrz, na półce leży stare zdjęcie. To ty, Krecie! Może zdjęcie nam podpowie."
+    "text": "Krecie, na półce leżało twoje stare zdjęcie. Ojej, burza je podarła!"
+  },
+  "line.b_posklejaj": {
+    "who": "sarenka",
+    "text": "Złóż zdjęcie z kawałków. Może ono nam podpowie."
+  },
+  "line.b_to_ja": {
+    "who": "kret",
+    "text": "To ja, przed moją norką! Pamiętam ten dzień."
   },
   "line.b_zdjecie_co": {
     "who": "sarenka",
-    "text": "Co Kret trzyma w łapce na zdjęciu? Wskaż to."
+    "text": "Wskaż, co Kret trzyma w łapce na zdjęciu."
   },
   "line.b_zdjecie_nie": {
     "who": "sarenka",
@@ -92,7 +135,7 @@
   },
   "line.b_klucz": {
     "who": "bobr",
-    "text": "Drzwi mają dziurkę w kształcie gwiazdki. Który klucz do nich pasuje? Wskaż."
+    "text": "Drzwi Sarenki mają dziurkę w kształcie gwiazdki. Wskaż klucz, który do nich pasuje."
   },
   "line.b_klucz_nie": {
     "who": "bobr",
@@ -100,19 +143,19 @@
   },
   "line.b_otwarte": {
     "who": "sarenka",
-    "text": "Klucz z gwiazdką pasuje do drzwi z gwiazdką! Otwarte, dziękuję."
+    "text": "Klucz z gwiazdką pasuje do drzwi z gwiazdką! Dziękuję."
   },
-  "line.b_liscie": {
-    "who": "kret",
-    "text": "Spadają ostatnie liście po burzy. Złap liść, wskaż go."
+  "line.b_zaproszenie": {
+    "who": "sarenka",
+    "text": "Teraz otworzę mój domek. Zapraszam was do mnie na herbatkę!"
   },
   "line.b_koniec": {
     "who": "bobr",
-    "text": "Wszystko posprzątane. Wracajmy do domu!"
+    "text": "Herbatka u Sarenki! Chodźmy."
   },
   "line.p_start": {
     "who": "sarenka",
-    "text": "Pobawmy się w pary! Mam pięć zabaw."
+    "text": "Pobawmy się w pary!"
   },
   "line.p_polacz": {
     "who": "bobr",
@@ -121,32 +164,33 @@
       "sarenka"
     ]
   },
-  "line.p_dobrze": {
+  "line.p_polacz_ok": {
     "who": "sarenka",
-    "text": "Brawo!",
-    "speakers": [
-      "bobr"
-    ]
+    "text": "Tak! Łyżka z miską, kura z jajkiem, pszczoła z kwiatkiem."
   },
-  "line.p_pszczola": {
+  "line.p_poduszka": {
     "who": "sarenka",
-    "text": "Co pasuje do pszczoły? Wskaż."
+    "text": "Wskaż, co pasuje do poduszki."
   },
-  "line.p_pszczola_nie": {
+  "line.p_poduszka_nie": {
     "who": "sarenka",
-    "text": "Pszczoła tego nie potrzebuje. Gdzie pszczoła zbiera miód?"
+    "text": "Tego nie potrzebujemy do spania. Gdzie kładziemy poduszkę?"
   },
-  "line.p_kwiatek": {
+  "line.p_lozeczko": {
     "who": "bobr",
-    "text": "Kwiatek! Pszczoła siada na kwiatku."
+    "text": "Łóżeczko! Poduszkę kładziemy do łóżeczka i śpimy."
   },
   "line.p_memory": {
     "who": "bobr",
     "text": "Odwracaj karty i szukaj par: rzeczy, które pasują do siebie."
   },
+  "line.p_memory_ok": {
+    "who": "bobr",
+    "text": "Młotek z gwoździem, pędzel z farbami, filiżanka ze spodkiem i klucz z drzwiami!"
+  },
   "line.p_nie_pasuje": {
     "who": "sarenka",
-    "text": "Która rzecz tu nie pasuje? Wskaż."
+    "text": "Wskaż rzecz, która tu nie pasuje."
   },
   "line.p_nie_pasuje_nie": {
     "who": "sarenka",
@@ -156,17 +200,105 @@
     "who": "bobr",
     "text": "Młotek! Pasuje do gwoździa, nie do filiżanki."
   },
+  "line.p_dopasuj": {
+    "who": "bobr",
+    "text": "Każda rzecz czeka na swoją parę. Przeciągnij parę na puste miejsce obok."
+  },
+  "line.p_dopasuj_nie": {
+    "who": "bobr",
+    "text": "To nie jest para tej rzeczy. Czego używamy z nią razem?"
+  },
+  "line.p_dopasuj_ok": {
+    "who": "sarenka",
+    "text": "Miska z łyżką, but ze skarpetką, drzwi z kluczem. Wszystkie pary razem!"
+  },
   "line.d_przedpokoj": {
     "who": "kret",
-    "text": "W przedpokoju też są pomieszane rzeczy. Połącz je w pary."
+    "text": "To domek Sarenki! Jak tu ładnie."
+  },
+  "line.d_klucz": {
+    "who": "sarenka",
+    "text": "Otwieram drzwi kluczem z gwiazdką. Wchodźcie!"
+  },
+  "line.d_balagan": {
+    "who": "sarenka",
+    "text": "Ojej! Okno było otwarte i wiatr nabałaganił też u mnie."
+  },
+  "line.d_kret_kolor": {
+    "who": "kret",
+    "text": "Ja posprzątam! Czerwona czapka i czerwony but. Oba czerwone, więc to para!"
+  },
+  "line.d_kret_nie": {
+    "who": "bobr",
+    "text": "Krecie, znowu kolor? Czapki nie nosimy na nodze! Do buta pasuje skarpetka."
+  },
+  "line.d_polacz": {
+    "who": "sarenka",
+    "text": "Połącz palcem rzeczy, których używamy razem."
   },
   "line.d_porzadek": {
     "who": "kret",
-    "text": "Każda rzecz ma swoją parę. Porządek!"
+    "text": "But ze skarpetką, czapka z szalikiem, parasol z kaloszami. Teraz rozumiem!"
+  },
+  "line.d_miejsca": {
+    "who": "sarenka",
+    "text": "Odłóżmy rzeczy na miejsce: czapkę na wieszak, kalosze na wycieraczkę, a but na półkę."
+  },
+  "line.d_miejsca_nie": {
+    "who": "sarenka",
+    "text": "Ta rzecz tam nie pasuje. Gdzie ją odkładamy?"
+  },
+  "line.d_miejsca_ok": {
+    "who": "bobr",
+    "text": "Czapka na wieszaku, kalosze na wycieraczce, but na półce. Porządek!"
+  },
+  "line.d_czajniczek": {
+    "who": "sarenka",
+    "text": "Teraz herbatka! Wskaż, co pasuje do czajniczka."
+  },
+  "line.d_czajniczek_nie": {
+    "who": "sarenka",
+    "text": "Do tego nie nalejemy herbaty. W co nalewamy herbatę?"
+  },
+  "line.d_filizanka": {
+    "who": "kret",
+    "text": "Filiżanka! Z czajniczka nalewamy herbatę do filiżanki."
+  },
+  "line.d_herbatka": {
+    "who": "sarenka",
+    "text": "Każda filiżanka na swoim spodku, a w środku czajniczek. Smacznej herbatki!"
+  },
+  "line.d_herbatka_kret": {
+    "who": "kret",
+    "text": "Mmm, pyszna! A mój młotek jest zawsze przy mnie."
+  },
+  "line.d_zabawa": {
+    "who": "sarenka",
+    "text": "Zagrajmy w zabawę „co do czego”. Ja pokazuję rzecz, a Kret szuka jej pary."
+  },
+  "line.d_lyzka": {
+    "who": "sarenka",
+    "text": "Krecie, co pasuje do łyżki?"
+  },
+  "line.d_kret_miska": {
+    "who": "kret",
+    "text": "Miska! Łyżką jemy z miski."
+  },
+  "line.d_teraz_ty": {
+    "who": "sarenka",
+    "text": "Teraz Twoja kolej. Wskaż, co pasuje do klucza z gwiazdką."
+  },
+  "line.d_teraz_ty_nie": {
+    "who": "sarenka",
+    "text": "Ten klucz otwiera coś z gwiazdką. Popatrz uważnie."
+  },
+  "line.d_drzwi": {
+    "who": "bobr",
+    "text": "Drzwi z gwiazdką! Klucz i drzwi to para."
   },
   "line.d_rodzice": {
     "who": "sarenka",
-    "text": "Zagraj z rodzicami w zabawę „co pasuje do czego”: łyżka do zupy, szczoteczka do pasty."
+    "text": "Zagraj z rodzicami w „co do czego”: rodzic pokazuje rzecz, a Ty szukasz w domu jej pary."
   },
   "line.naklejka_daj": {
     "who": "bobr",

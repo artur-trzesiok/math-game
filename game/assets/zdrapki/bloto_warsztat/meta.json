@@ -1,0 +1,15 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "oslona": "bloto",
+ "cele": [
+  {
+   "x": 0.5907,
+   "y": 0.3225,
+   "r": 0.0594
+  }
+ ],
+ "lekcje": [
+  "logical_pairs"
+ ]
+}

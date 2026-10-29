@@ -1,8 +1,10 @@
-// Lesson: what goes with what - logical pairs: things that belong together because we use them together (a cup and its
-// saucer, a brush and paints, a bee and a flower, a hammer and a nail, a key and its door) - not because they look
-// alike. A storm blew everybody's things into Beaver's workshop; Mole, who sees badly, pairs a red cup with a red apple;
-// the child joins the pairs with a finger-drawn line (polacz); an old photo of Mole shows whose the hammer (and so the
-// nail) is; Deer's key; leaves after the storm. Script in scenario.md.
+// Lesson: what goes with what - logical pairs: things that belong together because we use them together (a spoon and a
+// bowl, a toothbrush and toothpaste, a hammer and a nail, a key and its door) - not because they look alike. The night's
+// storm (seen) scattered everybody's things; Mole pairs a red cup with a red apple; the method on an insert; the child
+// finds the toothpaste for the toothbrush; in Beaver's workshop the mud is wiped off (the breather), the pairs joined with
+// a finger, Mole's torn photo put together shows whose the hammer (and so the nail) is; Deer's star key - she invites
+// everyone to tea. At home (Deer's hallway): Mole's red hat with the red shoe again, the pairs joined, things put on
+// their painted places, the cup for the teapot, the tea seen, the "what goes with what" game played. Script in scenario.md.
 
 const tasuj = (a) => a.slice().sort(() => Math.random() - 0.5);
 const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak; };     // the right answer, for the tests
@@ -11,10 +13,17 @@ const dobre = (hs, tak = true) => { for (const h of [].concat(hs)) h.dobry = tak
 async function laczPary(c, pary, { xL = -1.0, xP = 2.0, y0 = 2.1, krok = 1.25, size = 1.15, wrong = "line.nie_para" } = {}) {
   const L = [], P = [], para = new Map();
   for (const [i, [a]] of pary.entries()) { const h = await c.object(a, { x: xL, y: y0 - i * krok, size }); L.push(h); }
-  for (const [i, k] of tasuj(pary.map((_, i) => i)).entries()) { const h = await c.object(pary[k][1], { x: xP, y: y0 - i * krok, size }); P.push(h); para.set(h, L[k]); }
-  for (const [k, h] of L.entries()) para.set(h, P.find((q) => para.get(q) === h));
+  let m = tasuj(pary.map((_, i) => i)); while (m.every((v, i) => v === i)) m = tasuj(m);   // never already side by side
+  for (const [i, k] of m.entries()) { const h = await c.object(pary[k][1], { x: xP, y: y0 - i * krok, size }); P.push(h); para.set(h, L[k]); }
+  for (const h of L) para.set(h, P.find((q) => para.get(q) === h));
   const w = await c.polacz({ lewe: L, prawe: P, para: (a, b) => para.get(a) === b, wrong });
   return { L, P, w };
+}
+// things lying about after the storm: turned, scattered
+async function rozrzuc(c, rzeczy) {
+  const hs = [];
+  for (const [n, x, y, size, rot] of rzeczy) { const h = await c.object(n, { x, y, size }); h.mesh.rotation.z = rot; hs.push(h); }
+  return hs;
 }
 
 export default {
@@ -25,103 +34,122 @@ export default {
   backgrounds: { story: "strumyk", practice: { kolor: "#e9f2e1", motyw: "figury" }, apply: "przedpokoj" },
   stages: {
     story: [
-      // A. the brook after the storm: everything blown about; Mole pairs by colour - Deer: by what we use together
+      // A. the brook the morning after the storm (seen); Mole's pair by colour; the method; the toothbrush's pair
       async (c) => {
-        c.czastki("liscie", { wiatr: 2.0 });
         await Promise.all(["bobr", "kret", "sarenka"].map((n) => c.enter(n)));
-        await c.ujecie("zblizenie", { na: "bobr" });
+        const il = await c.ilustracja("burza_noc", { ruch: "w_prawo" });       // the night, seen
         await c.say("bobr", "line.a_burza", { anim: "Smutek" });
-        await c.ujecie("ogolny");
-        c.czastki("liscie", { wiatr: 0.4 });
-        const kubek = await c.object("kubek_czerwony", { x: -0.6, y: 1.6, size: 1.2 }), jablko = await c.object("jablko", { x: 2.2, y: 1.2, size: 1.2 });
-        const fil = await c.object("filizanka", { x: 0.9, y: -1.9, size: 1.2 }), sp = await c.object("spodek", { x: 2.6, y: -2.2, size: 1.3 });
-        await c.ujecie("sredni", { na: ["kret"] });
+        await c.say("kret", "line.a_burza_kret");
+        await il.zsun();
+        c.czastki("liscie", { wiatr: 0.5 });
+        const [kubek, jablko, szczot, pasta, kwiat] = await rozrzuc(c, [
+          ["kubek_czerwony", -1.4, -2.5, 1.1, 0.5], ["jablko", 2.6, -1.4, 1.0, -0.3], ["szczoteczka", 0.4, -2.7, 1.2, 1.2],
+          ["pasta", -0.6, -1.3, 1.1, -0.6], ["kwiatek", 1.6, -2.6, 1.0, 0.4]]);
+        await c.say("sarenka", "line.a_rano", { anim: "Rozgladanie" });          // the mess, wide
+        await c.ujecie("dwuujecie", { na: ["bobr", "kret"] });
         await c.say("kret", "line.a_pomoge", { anim: "Zgloszenie" });
-        await c.ujecie("ogolny");
-        await kubek.moveTo(1.4, 1.2, 0.5);
-        await c.ujecie("sredni", { na: [kubek, jablko] });                 // Mole's "pair": the two red things
-        await c.say("kret", "line.a_kolor");
-        await c.ujecie("zblizenie", { na: "sarenka" });
+        await c.ujecie("ogolny");                                                // Mole carries the red cup to the red apple, talking
+        const mowa = c.say("kret", "line.a_kolor", { anim: "Radosc" });
+        kubek.mesh.rotation.z = 0; await kubek.moveTo(1.6, -1.4, 0.6); c.sfx("plop");
+        await mowa;
+        await c.ujecie("zblizenie", { na: "sarenka" });                          // she objects
         await c.say("sarenka", "line.a_nie", { anim: "Kiwanie" });
-        await c.ujecie("sredni", { na: [fil, sp] });
-        await c.say("sarenka", "line.a_razem");
-        await sp.moveTo(0.9, -2.35, 0.4); await fil.moveTo(0.9, -1.85, 0.3); c.sfx("plop");
-        await c.say("sarenka", "line.a_filizanka");
         await c.ujecie("zblizenie", { na: "kret" });
-        await c.say("kret", "line.a_rozumiem");
-        await c.ujecie("sredni", { na: ["bobr"] });
-        await c.say("bobr", "line.a_do_warsztatu");
+        await c.wonder("kret");
+        await c.say("kret", "line.a_jak");
+        // the method on a plain colour: a spoon and a bowl, used together
+        await c.go({ kolor: "#e6f0f7", motyw: "kola" }, { ciecie: true });
+        const miska = await c.object("miska", { x: 0.9, y: 0.9, size: 1.8 }), lyzka = await c.object("lyzka", { x: -1.6, y: 1.3, size: 1.6 });
+        await c.ujecie("sredni", { na: ["sarenka", lyzka, miska] });
+        await c.say("sarenka", "line.a_razem", { anim: "Wskazanie" });
+        c.sfx("whoosh"); await Promise.all([lyzka.moveTo(1.3, 1.4, 0.6), c.stage.tween(0.6, (s) => { lyzka.mesh.rotation.z = -0.6 * s; })]); c.sfx("plop");
+        await c.say("sarenka", "line.a_filizanka");
+        // back at the brook: the child finds the toothbrush's pair
+        await c.go("strumyk", { ciecie: true });
+        c.czastki("liscie", { wiatr: 0.4 });
         await c.ujecie("ogolny");
+        const sz = await c.object("szczoteczka", { x: 0.4, y: 1.6, size: 1.6 });
+        const op = [];
+        for (const [i, n] of tasuj(["pasta", "jablko", "kwiatek"]).entries()) op.push(await c.object(n, { x: -1.5 + i * 2.0, y: -1.6, size: 1.3 }));
+        await c.say("sarenka", "line.a_szczoteczka");
+        const ok = op.find((h) => h.name === "pasta");
+        dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.a_szczoteczka_nie" }); dobre(ok, false);
+        await ok.moveTo(1.9, 1.6, 0.45); c.sfx("plop");
+        await c.ujecie("sredni", { na: ["kret", sz, ok] });                       // the pair, named
+        await c.say("kret", "line.a_pasta", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "kret" });                             // he gets it
+        await c.emocja("kret", "zarowka", { anim: "Radosc" });
+        await c.say("kret", "line.a_rozumiem");
+        await c.ujecie("dwuujecie", { na: ["bobr", "kret"] });
+        await c.say("bobr", "line.a_do_warsztatu", { anim: "Wskazanie" });
         c.clear();
       },
-      // B. the workshop: the child joins the pairs; Deer's door and the key that fits; catching leaves
+      // B. the workshop: the mud wiped off (the breather), the pairs joined, Mole's torn photo, Deer's key
       async (c) => {
         await c.go("warsztat", { enter: true });
         await Promise.all(["bobr", "kret", "sarenka"].map((n) => c.enter(n)));
-        await c.ujecie("sredni", { na: ["bobr"] });
+        c.play("bobr", "Rozgladanie");                                           // the arrival, wide: the workbench in the shot
         await c.say("bobr", "line.b_rzeczy");
-        await c.ujecie("ogolny");
+        await c.ujecie("dwuujecie", { na: ["bobr", "kret"] });
+        await c.say("kret", "line.b_wytrzyj", { anim: "Podskok" });
+        await c.ujecie("ogolny");                                                // the muddy bench flies up over the wide scene
+        const z = await c.zdrapka("bloto_warsztat");
+        await c.say("sarenka", "line.b_czyste", { anim: "Radosc" });
+        await z.remove();
         await c.say("bobr", "line.b_polacz");
-        const { L, P, w } = await laczPary(c, [["pedzel", "farby"], ["pszczola", "kwiatek"], ["mlotek", "gwozdz"]]);
-        await c.ujecie("sredni", { na: [...L, ...P] });                    // the joined pairs while Mole names them
+        const { L, P, w } = await laczPary(c, [["pedzel", "farby"], ["mlotek", "gwozdz"], ["filizanka", "spodek"]]);
+        await c.ujecie("sredni", { na: [...L, ...P] });                          // the joined pairs while Mole names them
         await c.say("kret", "line.b_pasuja", { anim: "Radosc" });
-        await c.ujecie("ogolny");
         w.remove(); c.clear();
-        // whose? Mole cannot tell; an old photo shows him holding the hammer - and the nail goes with the hammer
-        await c.ujecie("sredni", { na: ["bobr"] });
+        // whose? Mole cannot tell; his torn photo shows him holding the hammer - and the nail goes with the hammer
+        await c.ujecie("dwuujecie", { na: ["bobr", "kret"] });
         await c.say("bobr", "line.b_czyje", { anim: "Zgloszenie" });
-        await c.ujecie("zblizenie", { na: "kret" });
         c.play("kret", "Rozgladanie"); await c.wonder("kret");
         await c.say("kret", "line.b_nie_widze");
-        await c.ujecie("ogolny");
-        await c.say("bobr", "line.b_zdjecie", { anim: "Wskazanie" });
-        const foto = await c.znalezisko("zdjecie_kreta", { skad: "bobr" });
+        await c.ujecie("dwuujecie", { na: ["bobr", "sarenka"] });                // the find, and what to do with it
+        await c.emocja("bobr", "wykrzyknik");
+        await c.say("bobr", "line.b_zdjecie");
+        await c.say("sarenka", "line.b_posklejaj");
+        await c.ujecie("ogolny");                                                // a found picture flies with the camera: wide first
+        const foto = await c.podarty("zdjecie_kreta", { kawalki: 4 });
+        await c.say("kret", "line.b_to_ja", { anim: "Radosc" });
         await c.say("sarenka", "line.b_zdjecie_co");
         dobre(foto.cele); await c.task({ targets: [...foto.cele, foto.tlo], correct: foto.cele[0], wrong: "line.b_zdjecie_nie" }); dobre(foto.cele, false);
         await foto.zaznacz();
         await c.say("bobr", "line.b_zdjecie_mlotek", { anim: "Radosc" });
         await foto.remove();
-        // the pair goes back to its owner together
-        const mlotek = await c.object("mlotek", { x: 1.8, y: 0.9, size: 1.2 }), gwozdz = await c.object("gwozdz", { x: 3.0, y: 0.9, size: 1.1 });
-        await c.ujecie("sredni", { na: [mlotek, gwozdz, "sarenka"] });
-        await c.say("sarenka", "line.b_zdjecie_para", { anim: "Kiwanie" });
-        await c.ujecie("ogolny");
-        c.sfx("whoosh"); await Promise.all([mlotek.moveTo(-1.5, -2.6, 0.5), gwozdz.moveTo(-0.6, -2.65, 0.5)]);   // at Mole's feet
-        await c.ujecie("sredni", { na: ["kret", mlotek, gwozdz] });
+        const mlotek = await c.object("mlotek", { x: 1.2, y: 1.0, size: 1.2 }), gwozdz = await c.object("gwozdz", { x: 2.6, y: 1.0, size: 1.1 });
+        await c.ujecie("ogolny");                                                // the pair flies to Mole's feet while Deer says why
+        const para = c.say("sarenka", "line.b_zdjecie_para", { anim: "Kiwanie" });
+        await c.wait(c.fast ? 0.1 : 2.0);
+        c.sfx("whoosh"); await Promise.all([mlotek.moveTo(-1.5, -2.6, 0.5), gwozdz.moveTo(-0.6, -2.65, 0.5)]);
+        await para;
+        await c.ujecie("zblizenie", { na: "kret" });
         await c.emocja("kret", "radosc", { anim: "Radosc" });
         await c.say("kret", "line.b_moje");
-        await c.ujecie("ogolny");
         c.clear();
-        // helping: Deer's round door has a star keyhole - which key opens it?
+        // helping: Deer's door has a star keyhole - which key opens it? (the door and the keys alone, on an insert)
         await c.ujecie("zblizenie", { na: "sarenka" });
-        await c.say("sarenka", "line.b_drzwi", { anim: "Smutek" });
+        await c.emocja("sarenka", "smutek", { anim: "Smutek" });
+        await c.say("sarenka", "line.b_drzwi");
+        await c.go({ kolor: "#f6ecd9", motyw: "gwiazdki" }, { ciecie: true });
         await c.ujecie("ogolny");
-        const drzwi = await c.object("drzwi_gwiazda", { x: 2.4, y: 0.4, size: 2.3 });
+        const drzwi = await c.object("drzwi_gwiazda", { x: 2.2, y: 0.6, size: 2.4 });
         const klucze = [];
-        for (const [i, n] of tasuj(["klucz_gwiazda", "klucz_kolo", "klucz_kwadrat"]).entries()) klucze.push(await c.object(n, { x: -2.2 + i * 1.3, y: 0.9, size: 1.5 }));
-        await c.ujecie("sredni", { na: [drzwi, ...klucze] });
+        for (const [i, n] of tasuj(["klucz_gwiazda", "klucz_kolo", "klucz_kwadrat"]).entries()) klucze.push(await c.object(n, { x: -2.4 + i * 1.3, y: 0.9, size: 1.5 }));
         await c.say("bobr", "line.b_klucz");
-        await c.ujecie("ogolny");
-        const ok = klucze.find((k) => k.name === "klucz_gwiazda");
-        dobre(ok); await c.task({ targets: klucze, correct: ok, wrong: "line.b_klucz_nie" });
-        await ok.moveTo(2.4, 0.4, 0.5); c.sfx("tap");
-        await c.ujecie("zblizenie", { na: "sarenka" });
+        const klucz = klucze.find((k) => k.name === "klucz_gwiazda");
+        dobre(klucz); await c.task({ targets: klucze, correct: klucz, wrong: "line.b_klucz_nie" }); dobre(klucz, false);
+        await klucz.moveTo(2.2, 0.6, 0.5); c.sfx("tap");
+        await c.rozblysk(drzwi);
+        await c.ujecie("zblizenie", { na: "sarenka" });                          // her thanks
         await c.emocja("sarenka", "serce", { anim: "Radosc" });
         await c.say("sarenka", "line.b_otwarte");
-        await c.ujecie("ogolny");
-        c.clear();
-        // the breather: the last leaves of the storm fall - catch three
-        await c.ujecie("sredni", { na: ["kret"] });
-        await c.say("kret", "line.b_liscie", { anim: "Podskok" });
-        await c.ujecie("ogolny");
-        for (const [x, y] of tasuj([[-2.2, 1.4], [0.2, 2.0], [2.2, 1.0], [-0.8, 0.4], [1.4, 0.2]]).slice(0, 3)) {
-          const l = await c.object(Math.random() < 0.5 ? "lisc_czerwony" : "lisc_zolty", { x, y, size: 1.0 });
-          dobre(l); await c.task({ targets: [l], correct: l, wrong: "line.b_liscie" });
-          c.sfx("pop"); l.remove();
-        }
-        await c.ujecie("sredni", { na: ["bobr"] });
-        await c.say("bobr", "line.b_koniec");
-        await c.ujecie("ogolny");
+        // back in the workshop: the invitation - the thread into the home stage
+        await c.go("warsztat", { ciecie: true });
+        await c.ujecie("dwuujecie", { na: ["kret", "sarenka"] });
+        await c.say("sarenka", "line.b_zaproszenie", { anim: "Zgloszenie" });
+        await c.say("bobr", "line.b_koniec", { anim: "Machanie" });
       },
     ],
     practice: [
@@ -131,82 +159,154 @@ export default {
         S.puppets.bobr.korzen.position.x = -5.3; S.puppets.sarenka.korzen.position.x = 5.3;
         const gw = c.gwiazdki(5, { auto: false });
         await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
-        await c.ujecie("zblizenie", { na: "sarenka" });
+        await c.ujecie("dwuujecie", { na: ["bobr", "sarenka"] });
         await c.say("sarenka", "line.p_start", { anim: "Radosc" });
-        await c.ujecie("ogolny");
         // 1. join three pairs
         {
-          await c.ujecie("sredni", { na: ["bobr"] });
+          await c.ujecie("ogolny");
           await c.say("bobr", "line.p_polacz");
-          await c.ujecie("ogolny");
-          const { w } = await laczPary(c, [["skarpetka", "but"], ["lyzka", "miska"], ["filizanka", "spodek"]]);
-          await c.ujecie("zblizenie", { na: "sarenka" });
-          await c.say("sarenka", "line.p_dobrze");
-          await c.ujecie("ogolny"); w.remove(); gw.dodaj(); c.clear();
+          const { L, P, w } = await laczPary(c, [["lyzka", "miska"], ["kura", "jajko"], ["pszczola", "kwiatek"]]);
+          await c.ujecie("sredni", { na: ["sarenka", ...L, ...P] });
+          await c.say("sarenka", "line.p_polacz_ok", { anim: "Radosc" });
+          w.remove(); gw.dodaj(); c.clear();
         }
-        // 2. what goes with the bee?
+        // 2. what goes with the pillow?
         {
-          const bee = await c.object("pszczola", { x: 0, y: 1.7, size: 1.6 });
-          const op = []; for (const [i, n] of tasuj(["kwiatek", "mlotek", "kubek"]).entries()) op.push(await c.object(n, { x: -2.0 + i * 2.0, y: -1.3, size: 1.4 }));
-          await c.ujecie("sredni", { na: [bee] });
-          await c.say("sarenka", "line.p_pszczola");
           await c.ujecie("ogolny");
-          const ok = op.find((h) => h.name === "kwiatek");
-          dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_pszczola_nie" });
-          await c.ujecie("sredni", { na: [bee, ok] });
-          await c.say("bobr", "line.p_kwiatek"); gw.dodaj();
-          await c.ujecie("ogolny"); c.clear();
+          const pod = await c.object("poduszka", { x: 0, y: 1.7, size: 1.5 });
+          const op = []; for (const [i, n] of tasuj(["lozeczko", "garnek", "pilka"]).entries()) op.push(await c.object(n, { x: -2.2 + i * 2.2, y: -1.4, size: 1.5 }));
+          await c.say("sarenka", "line.p_poduszka");
+          const ok = op.find((h) => h.name === "lozeczko");
+          dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_poduszka_nie" });
+          await pod.moveTo(ok.mesh.position.x, ok.mesh.position.y + 0.6, 0.45); c.sfx("plop");
+          await c.ujecie("sredni", { na: ["bobr", ok, pod] });
+          await c.say("bobr", "line.p_lozeczko", { anim: "Radosc" }); gw.dodaj();
+          c.clear();
         }
         // 3. memory of pairs: a thing and the one it goes with
         {
-          await c.ujecie("sredni", { na: ["bobr"] });
-          await c.say("bobr", "line.p_memory");
           await c.ujecie("ogolny");
-          await c.memory([[{ obraz: "mlotek" }, { obraz: "gwozdz" }], [{ obraz: "pedzel" }, { obraz: "farby" }], [{ obraz: "kura" }, { obraz: "jajko" }], [{ obraz: "skarpetka" }, { obraz: "but" }]], { szer: 1.4 });
-          await c.ujecie("zblizenie", { na: "sarenka" });
-          await c.say("sarenka", "line.p_dobrze"); gw.dodaj();
-          await c.ujecie("ogolny"); c.clear();
+          await c.say("bobr", "line.p_memory");
+          await c.memory([[{ obraz: "mlotek" }, { obraz: "gwozdz" }], [{ obraz: "pedzel" }, { obraz: "farby" }], [{ obraz: "filizanka" }, { obraz: "spodek" }], [{ obraz: "klucz_gwiazda" }, { obraz: "drzwi_gwiazda" }]], { szer: 1.4 });
+          await c.ujecie("sredni", { na: ["bobr"] });                         // the pairs found, named
+          await c.say("bobr", "line.p_memory_ok", { anim: "Radosc" }); gw.dodaj();
+          c.clear();
         }
         // 4. which does not belong? a cup, a saucer - and a hammer
         {
-          const op = []; for (const [i, n] of tasuj(["filizanka", "spodek", "mlotek"]).entries()) op.push(await c.object(n, { x: -2.0 + i * 2.0, y: 0.8, size: 1.5 }));
-          await c.ujecie("sredni", { na: op });
-          await c.say("sarenka", "line.p_nie_pasuje");
           await c.ujecie("ogolny");
+          const op = []; for (const [i, n] of tasuj(["filizanka", "spodek", "mlotek"]).entries()) op.push(await c.object(n, { x: -2.0 + i * 2.0, y: 0.8, size: 1.5 }));
+          await c.say("sarenka", "line.p_nie_pasuje");
           const ok = op.find((h) => h.name === "mlotek");
           dobre(ok); await c.task({ targets: op, correct: ok, wrong: "line.p_nie_pasuje_nie" });
-          await c.ujecie("zblizenie", { na: "bobr" });
-          await c.say("bobr", "line.p_mlotek"); gw.dodaj();
-          await c.ujecie("ogolny"); c.clear();
+          await c.ujecie("sredni", { na: ["bobr", ok] });
+          await c.say("bobr", "line.p_mlotek", { anim: "Radosc" }); gw.dodaj();
+          c.clear();
         }
-        // 5. join another three
+        // 5. each thing waits for its pair: drag the pair into the place beside it
         {
-          await c.ujecie("sredni", { na: ["bobr"] });
-          await c.say("bobr", "line.p_polacz");
           await c.ujecie("ogolny");
-          const { w } = await laczPary(c, [["mlotek", "gwozdz"], ["kura", "jajko"], ["klucz_gwiazda", "drzwi_gwiazda"]]);
-          await c.ujecie("zblizenie", { na: "sarenka" });
-          await c.say("sarenka", "line.p_dobrze");
-          await c.ujecie("ogolny"); w.remove(); gw.dodaj(); c.clear();
+          const PARY = [["miska", "lyzka"], ["but", "skarpetka"], ["drzwi_gwiazda", "klucz_gwiazda"]], slots = [], items = [];
+          for (const [i, [a]] of PARY.entries()) {
+            const x = -3.2 + i * 3.2;
+            await c.object(a, { x: x - 0.7, y: 1.5, size: 1.3 });
+            slots.push({ x: x + 0.7, y: 1.5, w: 1.35, h: 1.35, accept: (h) => h.name === PARY[i][1] });
+          }
+          for (const [i, n] of tasuj(PARY.map((p) => p[1])).entries()) items.push(await c.object(n, { x: -2.2 + i * 2.2, y: -2.2, size: 1.3 }));
+          await c.say("bobr", "line.p_dopasuj");
+          const t = await c.slots({ items, slots, wrong: "line.p_dopasuj_nie" });
+          await t.done();
+          await c.ujecie("sredni", { na: ["sarenka"] });
+          await c.say("sarenka", "line.p_dopasuj_ok", { anim: "Radosc" }); gw.dodaj();
+          c.clear();
         }
         await c.praise("sarenka");
       },
     ],
     apply: [
-      // home, the hallway: everybody's things back with their pairs
+      // home - the third act in Deer's hallway: the promised tea. The key opens the door; the storm's mess here too;
+      // Mole's red hat with the red shoe; the pairs joined; things on their painted places; the teapot's cup; the tea
+      // seen; "what goes with what" played
       async (c) => {
+        const S = c.stage;
+        const naMiejsca = () => { S.puppets.bobr.korzen.position.x = -3.2; S.puppets.kret.korzen.position.x = -1.7; S.puppets.sarenka.korzen.position.x = 3.6; };
         for (const n of ["bobr", "kret", "sarenka"]) c.show(n);
+        naMiejsca();
         await c.wait(0.4);                                                  // show() pops the puppet in: a shot measured mid-pop misses the head
-        await c.ujecie("sredni", { na: ["kret"] });
-        await c.say("kret", "line.d_przedpokoj", { anim: "Zgloszenie" });
+        const m = await c.miejsca();
+        await c.say("kret", "line.d_przedpokoj", { anim: "Rozgladanie" });   // the arrival, wide
+        const klucz = await c.object("klucz_gwiazda", { x: 2.6, y: 0.6, size: 1.1 });
+        await c.ujecie("sredni", { na: ["sarenka", klucz] });
+        await c.say("sarenka", "line.d_klucz", { anim: "Radosc" });
+        await klucz.moveTo(5.4, 0.2, 0.5); c.sfx("tap"); klucz.remove();
+        // the storm's mess, and Mole's pair by colour again
         await c.ujecie("ogolny");
-        const { L, P, w } = await laczPary(c, [["skarpetka", "but"], ["pedzel", "farby"], ["filizanka", "spodek"]]);
-        await c.ujecie("sredni", { na: [...L, ...P] });
+        const [czapka, but] = await rozrzuc(c, [["czapka", -0.2, -2.4, 1.0, 0.6], ["but", 1.8, -1.5, 1.0, -0.4], ["skarpetka", 0.9, -2.7, 0.9, 1.0],
+          ["szalik_dlugi", -0.4, -1.2, 1.2, -0.3], ["parasol", 2.4, -2.6, 1.1, 1.3], ["kalosze", 0.6, -1.0, 1.0, 0.2]]);
+        await c.emocja("sarenka", "pot", { anim: "Smutek" });
+        await c.say("sarenka", "line.d_balagan");
+        czapka.mesh.rotation.z = 0; await czapka.moveTo(1.0, -1.5, 0.5); c.sfx("plop");
+        await c.ujecie("sredni", { na: ["kret", czapka, but] });
+        await c.say("kret", "line.d_kret_kolor", { anim: "Radosc" });
+        await c.ujecie("dwuujecie", { na: ["bobr", "kret"] });
+        await c.say("bobr", "line.d_kret_nie", { anim: "Kiwanie" });
+        c.clear();
+        // the pairs, joined
+        await c.ujecie("ogolny");
+        await c.say("sarenka", "line.d_polacz");
+        const { L, P, w } = await laczPary(c, [["but", "skarpetka"], ["czapka", "szalik_dlugi"], ["parasol", "kalosze"]], { xL: -0.8, xP: 1.4 });
+        await c.ujecie("sredni", { na: ["kret", ...L, ...P] });
         await c.say("kret", "line.d_porzadek", { anim: "Radosc" });
         w.remove();
-        await c.ujecie("sredni", { na: ["sarenka"] });
-        await c.say("sarenka", "line.d_rodzice");
+        // every thing on its painted place: the hat on the hooks, the boots on the doormat, the shoe on the shelf
         await c.ujecie("ogolny");
+        const zostaw = { czapka: 1, kalosze: 1, but: 1 }, rzeczy = [];
+        for (const h of [...L, ...P]) if (!zostaw[h.name]) h.remove(); else rzeczy.push(h);
+        await Promise.all(rzeczy.map((h, i) => h.moveTo(-0.6 + i * 1.4, -2.4, 0.4)));
+        await c.say("sarenka", "line.d_miejsca");
+        const gdzie = { czapka: m.wieszak, kalosze: m.wycieraczka, but: m.szafka_srodek };
+        const t = await c.slots({ items: rzeczy, slots: rzeczy.map((h) => gdzie[h.name].slot((q) => q === h)), wrong: "line.d_miejsca_nie" });
+        await t.done();
+        await c.say("bobr", "line.d_miejsca_ok", { anim: "Radosc" });           // the things stay on their places
+        // the tea: what goes with the teapot?
+        const cz = await c.object("czajniczek", { x: 2.0, y: 1.8, size: 1.4 });
+        const op = []; for (const [i, n] of tasuj(["filizanka", "pedzel", "skarpetka"]).entries()) op.push(await c.object(n, { x: -2.4 + i * 1.8, y: 0.7, size: 1.2 }));
+        await c.say("sarenka", "line.d_czajniczek");
+        const fil = op.find((h) => h.name === "filizanka");
+        dobre(fil); await c.task({ targets: op, correct: fil, wrong: "line.d_czajniczek_nie" }); dobre(fil, false);
+        await fil.moveTo(0.7, 1.8, 0.45); c.sfx("plop");
+        await c.ujecie("sredni", { na: ["kret", cz, fil] });
+        await c.say("kret", "line.d_filizanka", { anim: "Radosc" });
+        c.clear();
+        // the promised tea, seen
+        const il = await c.ilustracja("herbatka_u_sarenki", { ruch: "najazd" });
+        await c.say("sarenka", "line.d_herbatka");
+        await c.say("kret", "line.d_herbatka_kret");
+        await il.zsun();
+        // the home game, played: Deer shows a thing, Mole finds its pair - then the child
+        await c.ujecie("dwuujecie", { na: ["kret", "sarenka"] });
+        await c.say("sarenka", "line.d_zabawa", { anim: "Zgloszenie" });
+        await c.ujecie("ogolny");
+        const ly = await c.object("lyzka", { x: 2.0, y: 1.8, size: 1.3 });
+        const op2 = []; for (const [i, n] of tasuj(["miska", "kalosze", "kwiatek"]).entries()) op2.push(await c.object(n, { x: -2.4 + i * 1.8, y: 0.7, size: 1.2 }));
+        await c.say("sarenka", "line.d_lyzka");
+        const mi = op2.find((h) => h.name === "miska");
+        c.look("kret", mi); await c.play("kret", "Wskazanie"); c.stage.bump(mi, 0.3);
+        await mi.moveTo(0.7, 1.8, 0.45); c.sfx("plop");
+        await c.ujecie("sredni", { na: ["kret", ly, mi] });
+        await c.say("kret", "line.d_kret_miska", { anim: "Radosc" });
+        c.clear();
+        await c.ujecie("ogolny");
+        const kl = await c.object("klucz_gwiazda", { x: 2.0, y: 1.8, size: 1.3 });
+        const op3 = []; for (const [i, n] of tasuj(["drzwi_gwiazda", "kubek", "pedzel"]).entries()) op3.push(await c.object(n, { x: -2.4 + i * 1.8, y: 0.7, size: 1.2 }));
+        await c.say("sarenka", "line.d_teraz_ty");
+        const dz = op3.find((h) => h.name === "drzwi_gwiazda");
+        dobre(dz); await c.task({ targets: op3, correct: dz, wrong: "line.d_teraz_ty_nie" }); dobre(dz, false);
+        await kl.moveTo(dz.mesh.position.x, dz.mesh.position.y, 0.45); c.sfx("tap");
+        await c.ujecie("sredni", { na: ["bobr", dz] });
+        await c.say("bobr", "line.d_drzwi", { anim: "Brawo" });
+        await c.ujecie("dwuujecie", { na: ["kret", "sarenka"] });             // the home task, for the parents
+        await c.say("sarenka", "line.d_rodzice", { anim: "Zgloszenie" });
       },
     ],
   },

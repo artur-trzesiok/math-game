@@ -1,8 +1,8 @@
 {
  "line.a_burza": {
-  "hash": "2921f9888492",
+  "hash": "9b35b9551b40",
   "who": "bobr",
-  "text": "Oh dear, there was a storm last night! The wind blew everybody's things all over the place."
+  "text": "There was a big storm last night! The wind grabbed our things and threw them all over the place."
  },
  "line.a_pomoge": {
   "hash": "fcb1b9dff12c",
@@ -20,14 +20,14 @@
   "text": "Mole, they only have the same colour. But we don't use them for anything together."
  },
  "line.a_razem": {
-  "hash": "f8df10155f8b",
+  "hash": "89fe014401a2",
   "who": "sarenka",
-  "text": "A pair is two things we use together. Look: a cup and a saucer."
+  "text": "A pair is two things we use together. Look at the spoon and the bowl."
  },
  "line.a_filizanka": {
-  "hash": "228c9fc3adf0",
+  "hash": "ae2ed7b5e945",
   "who": "sarenka",
-  "text": "We put the cup on the saucer. They go together, even though they look different."
+  "text": "We eat soup from the bowl with the spoon. They go together, even though they don't look alike at all."
  },
  "line.a_rozumiem": {
   "hash": "24fb9c5940e3",
@@ -35,14 +35,14 @@
   "text": "I see! A pair is things that go together because we use them together."
  },
  "line.a_do_warsztatu": {
-  "hash": "5eda4aea402b",
+  "hash": "31fdf4caaf77",
   "who": "bobr",
-  "text": "The wind blew the rest of the things into my workshop. Let's go!"
+  "text": "The wind blew the rest of the things through the window into my workshop. Let's go there!"
  },
  "line.b_rzeczy": {
-  "hash": "a0453a51b93b",
+  "hash": "f63b06e366fc",
   "who": "bobr",
-  "text": "So many things! We must join them into pairs."
+  "text": "Here's my workshop. Oh dear, everything on the bench is covered in mud!"
  },
  "line.b_polacz": {
   "hash": "64b37d904c43",
@@ -65,9 +65,9 @@
   "text": "Those two don't go together. What do we use together?"
  },
  "line.b_pasuja": {
-  "hash": "e4cb62b9bbb4",
+  "hash": "300bf6eb9246",
   "who": "kret",
-  "text": "A brush and paints, a bee and a flower, a hammer and a nail!"
+  "text": "A brush and paints, a hammer and a nail, a cup and a saucer!"
  },
  "line.b_drzwi": {
   "hash": "27f1e6edce0d",
@@ -75,9 +75,9 @@
   "text": "And I can't open my door. The storm mixed up my keys."
  },
  "line.b_klucz": {
-  "hash": "1acea364dffb",
+  "hash": "06e89272c28d",
   "who": "bobr",
-  "text": "The door has a star-shaped keyhole. Which key fits it? Point to it."
+  "text": "Deer's door has a star-shaped keyhole. Point to the key that fits it."
  },
  "line.b_klucz_nie": {
   "hash": "88930dcbe898",
@@ -85,24 +85,19 @@
   "text": "That key doesn't fit the keyhole. Look at its end."
  },
  "line.b_otwarte": {
-  "hash": "b63ffae1233d",
+  "hash": "2da9dca77fb5",
   "who": "sarenka",
-  "text": "The star key fits the star door! It's open, thank you."
- },
- "line.b_liscie": {
-  "hash": "cc54aad1c3b9",
-  "who": "kret",
-  "text": "The last leaves of the storm are falling. Catch a leaf, point to it."
+  "text": "The star key fits the star door! Thank you."
  },
  "line.b_koniec": {
-  "hash": "dd70a500d4a2",
+  "hash": "80f5888225dc",
   "who": "bobr",
-  "text": "All tidy. Let's go home!"
+  "text": "Tea at Deer's! Let's go."
  },
  "line.p_start": {
-  "hash": "d50f8d631559",
+  "hash": "4b8946d207fb",
   "who": "sarenka",
-  "text": "Let's play pairs! I have five games."
+  "text": "Let's play pairs!"
  },
  "line.p_polacz": {
   "hash": "3add8d3ffbe7",
@@ -114,40 +109,15 @@
   "who": "sarenka",
   "text": "Join the things that go together with your finger."
  },
- "line.p_dobrze": {
-  "hash": "ceb0ef83b223",
-  "who": "sarenka",
-  "text": "Bravo!"
- },
- "line.p_dobrze.bobr": {
-  "hash": "443840bb6e59",
-  "who": "bobr",
-  "text": "Bravo!"
- },
- "line.p_pszczola": {
-  "hash": "0fa991b08e08",
-  "who": "sarenka",
-  "text": "What goes with the bee? Point to it."
- },
- "line.p_pszczola_nie": {
-  "hash": "9597e8650e81",
-  "who": "sarenka",
-  "text": "The bee doesn't need that. Where does the bee get its honey?"
- },
- "line.p_kwiatek": {
-  "hash": "a5e61dcf8554",
-  "who": "bobr",
-  "text": "The flower! The bee sits on the flower."
- },
  "line.p_memory": {
   "hash": "ab3e39028fc2",
   "who": "bobr",
   "text": "Turn the cards and find pairs: things that go together."
  },
  "line.p_nie_pasuje": {
-  "hash": "51b5205e0749",
+  "hash": "7c1a24371509",
   "who": "sarenka",
-  "text": "Which thing doesn't belong here? Point to it."
+  "text": "Point to the thing that doesn't belong here."
  },
  "line.p_nie_pasuje_nie": {
   "hash": "58cb6dcf7151",
@@ -160,19 +130,19 @@
   "text": "The hammer! It goes with a nail, not with a cup."
  },
  "line.d_przedpokoj": {
-  "hash": "bd17d7ccf84a",
+  "hash": "a7b20a543781",
   "who": "kret",
-  "text": "Things are mixed up in the hallway too. Join them into pairs."
+  "text": "This is Deer's house! How lovely."
  },
  "line.d_porzadek": {
-  "hash": "52fc05d73a33",
+  "hash": "fac686a671ec",
   "who": "kret",
-  "text": "Every thing has its pair. All tidy!"
+  "text": "The shoe with the sock, the hat with the scarf, the umbrella with the rain boots. Now I get it!"
  },
  "line.d_rodzice": {
-  "hash": "83ab2e60fd70",
+  "hash": "d4d534edf1b4",
   "who": "sarenka",
-  "text": "Play “what goes with what” with your parents: a spoon with soup, a toothbrush with toothpaste."
+  "text": "Play “what goes with what” with your parents: they show a thing, and you find its pair at home."
  },
  "line.naklejka_daj": {
   "hash": "45c71d993a35",
@@ -200,14 +170,14 @@
   "text": "Mine, I think... But I can't see very well, and I'm not sure."
  },
  "line.b_zdjecie": {
-  "hash": "4d685b9de071",
+  "hash": "0a037afce513",
   "who": "bobr",
-  "text": "Look, there's an old photo on the shelf. It's you, Mole! Maybe the photo will tell us."
+  "text": "Mole, your old photo was lying on the shelf. Oh dear, the storm tore it!"
  },
  "line.b_zdjecie_co": {
-  "hash": "821f9cf782e3",
+  "hash": "26f3d7e794f9",
   "who": "sarenka",
-  "text": "What is Mole holding in his paw in the photo? Point to it."
+  "text": "Point to what Mole is holding in his paw in the photo."
  },
  "line.b_zdjecie_nie": {
   "hash": "9c0d98b16ba3",
@@ -233,5 +203,200 @@
   "hash": "dff538c7b608",
   "who": "kret",
   "text": "My hammer and my nail! Thank you. I'll fix the shelf by my burrow with them."
+ },
+ "line.a_burza_kret": {
+  "hash": "80a5380e949d",
+  "who": "kret",
+  "text": "What a wind! I hid deep down in my burrow."
+ },
+ "line.a_rano": {
+  "hash": "bd583979648e",
+  "who": "sarenka",
+  "text": "In the morning the storm was over. Look how many things are lying by the brook!"
+ },
+ "line.a_jak": {
+  "hash": "d59e48309d16",
+  "who": "kret",
+  "text": "Then how do you make pairs?"
+ },
+ "line.a_szczoteczka": {
+  "hash": "8f0fde5aaf6e",
+  "who": "sarenka",
+  "text": "Here's a toothbrush. Point to what goes with it."
+ },
+ "line.a_szczoteczka_nie": {
+  "hash": "1769a7ba7a50",
+  "who": "sarenka",
+  "text": "We can't brush our teeth with that. What do we use together with a toothbrush?"
+ },
+ "line.a_szczoteczka_nie.bobr": {
+  "hash": "de4d590c5556",
+  "who": "bobr",
+  "text": "We can't brush our teeth with that. What do we use together with a toothbrush?"
+ },
+ "line.a_pasta": {
+  "hash": "bc393d3e0bb4",
+  "who": "kret",
+  "text": "Toothpaste! A toothbrush and toothpaste are a pair, because we brush our teeth with them together."
+ },
+ "line.b_wytrzyj": {
+  "hash": "0bb6405121d5",
+  "who": "kret",
+  "text": "Let's wipe off the mud! Wipe the bench with your finger."
+ },
+ "line.b_czyste": {
+  "hash": "ee7c395fccd0",
+  "who": "sarenka",
+  "text": "A brush, paints, a hammer, a nail, a cup and a saucer. All clean!"
+ },
+ "line.b_posklejaj": {
+  "hash": "872193e544ce",
+  "who": "sarenka",
+  "text": "Put the photo together from its pieces. Maybe it will tell us."
+ },
+ "line.b_zaproszenie": {
+  "hash": "7ea177488690",
+  "who": "sarenka",
+  "text": "Now I can open my little house. Come to my place for tea, all of you!"
+ },
+ "line.p_polacz_ok": {
+  "hash": "2ec2f99edced",
+  "who": "sarenka",
+  "text": "Yes! The spoon with the bowl, the hen with the egg, the bee with the flower."
+ },
+ "line.p_poduszka": {
+  "hash": "a3b84d42c19d",
+  "who": "sarenka",
+  "text": "Point to what goes with the pillow."
+ },
+ "line.p_poduszka_nie": {
+  "hash": "3199b78c1b94",
+  "who": "sarenka",
+  "text": "We don't need that for sleeping. Where do we put a pillow?"
+ },
+ "line.p_lozeczko": {
+  "hash": "ecdc064a36e1",
+  "who": "bobr",
+  "text": "The bed! We put the pillow on the bed and sleep."
+ },
+ "line.p_memory_ok": {
+  "hash": "bac8fe6dfeb1",
+  "who": "bobr",
+  "text": "The hammer with the nail, the brush with the paints, the cup with the saucer and the key with the door!"
+ },
+ "line.p_dopasuj": {
+  "hash": "2bc5f5e8e759",
+  "who": "bobr",
+  "text": "Each thing is waiting for its pair. Drag the pair to the empty place next to it."
+ },
+ "line.p_dopasuj_nie": {
+  "hash": "69fc67bc98ad",
+  "who": "bobr",
+  "text": "That's not its pair. What do we use together with it?"
+ },
+ "line.p_dopasuj_ok": {
+  "hash": "1f1d563f9e30",
+  "who": "sarenka",
+  "text": "The bowl with the spoon, the shoe with the sock, the door with the key. All the pairs together!"
+ },
+ "line.d_klucz": {
+  "hash": "fd7eb67e53d5",
+  "who": "sarenka",
+  "text": "I open the door with the star key. Come in!"
+ },
+ "line.d_balagan": {
+  "hash": "403f2ba01e3b",
+  "who": "sarenka",
+  "text": "Oh dear! The window was open, and the wind made a mess here too."
+ },
+ "line.d_kret_kolor": {
+  "hash": "8acf40c9b419",
+  "who": "kret",
+  "text": "I'll tidy up! A red hat and a red shoe. Both are red, so they're a pair!"
+ },
+ "line.d_kret_nie": {
+  "hash": "35894fff0e00",
+  "who": "bobr",
+  "text": "Mole, colour again? We don't wear a hat on our foot! A sock goes with a shoe."
+ },
+ "line.d_polacz": {
+  "hash": "3d5c663424ef",
+  "who": "sarenka",
+  "text": "Join the things we use together with your finger."
+ },
+ "line.d_miejsca": {
+  "hash": "8bcbe3525140",
+  "who": "sarenka",
+  "text": "Let's put things away: the hat on the hook, the boots on the doormat and the shoe on the shelf."
+ },
+ "line.d_miejsca_nie": {
+  "hash": "0da488590811",
+  "who": "sarenka",
+  "text": "That thing doesn't go there. Where do we put it?"
+ },
+ "line.d_miejsca_ok": {
+  "hash": "be5251dd225d",
+  "who": "bobr",
+  "text": "The hat on the hook, the boots on the doormat, the shoe on the shelf. All tidy!"
+ },
+ "line.d_czajniczek": {
+  "hash": "e085edbf3cf6",
+  "who": "sarenka",
+  "text": "Now the tea! Point to what goes with the teapot."
+ },
+ "line.d_czajniczek_nie": {
+  "hash": "96ea598f2042",
+  "who": "sarenka",
+  "text": "We can't pour tea into that. What do we pour tea into?"
+ },
+ "line.d_filizanka": {
+  "hash": "2e8c27932aca",
+  "who": "kret",
+  "text": "The cup! We pour tea from the teapot into the cup."
+ },
+ "line.d_herbatka": {
+  "hash": "40e9d012c5cc",
+  "who": "sarenka",
+  "text": "Every cup on its saucer, and the teapot in the middle. Enjoy your tea!"
+ },
+ "line.d_herbatka_kret": {
+  "hash": "bac84adb51bf",
+  "who": "kret",
+  "text": "Mmm, lovely! And my hammer is always with me."
+ },
+ "line.d_zabawa": {
+  "hash": "26258c013604",
+  "who": "sarenka",
+  "text": "Let's play “what goes with what”. I show a thing, and Mole looks for its pair."
+ },
+ "line.d_lyzka": {
+  "hash": "09e538205be7",
+  "who": "sarenka",
+  "text": "Mole, what goes with the spoon?"
+ },
+ "line.d_kret_miska": {
+  "hash": "cc54ecd0b106",
+  "who": "kret",
+  "text": "The bowl! We eat from the bowl with the spoon."
+ },
+ "line.d_teraz_ty": {
+  "hash": "bdadb9d48318",
+  "who": "sarenka",
+  "text": "Now it's your turn. Point to what goes with the star key."
+ },
+ "line.d_teraz_ty_nie": {
+  "hash": "bba2432abb6e",
+  "who": "sarenka",
+  "text": "This key opens something with a star. Look carefully."
+ },
+ "line.d_drzwi": {
+  "hash": "5c8064109af8",
+  "who": "bobr",
+  "text": "The star door! The key and the door are a pair."
+ },
+ "line.b_to_ja": {
+  "hash": "137edde98415",
+  "who": "kret",
+  "text": "That's me, in front of my burrow! I remember that day."
  }
 }
