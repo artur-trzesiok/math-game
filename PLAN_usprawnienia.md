@@ -12,8 +12,8 @@ Updated at the end of every phase (date, commit).
 | phase | state |
 |---|---|
 | 0 rules, game_mechanics.md, flags, lint | DONE 2026-10-29 (f7296d08, 3e40898d, b073483a + flags commit). Baseline from `montaz.py all`: 1209 shots, 44 % wide, 28 two-shots, 2 inserts, 74 wide-then-cut, 237 ping-pongs, 111 "Wskaż." lines, 22 home stages under 4 interactions |
-| 1 praise / wrong variants | - |
-| 2 seven mechanics | - |
+| 1 praise / wrong variants | DONE 2026-10-29: `game/pochwaly` (6 praise + 4 wrong, pl + en, all nine voices, 180 mp3), `ctx.brawo`, the wrong pool where a lesson has no line of its own; first use in shapes practice (verified: Owl said brawo_5) |
+| 2 seven mechanics | in progress: 2.1 illustration built (engine, pipeline, 2 samples, demo, manager tab) |
 | 2b breathers designed and built | - |
 | 3 home act, rooms with drop places | - |
 | tables: placements, breathers, panoramas | - |
@@ -140,7 +140,9 @@ longer bridge", "where there are more trees", "up the hill") and only the right 
 paths as in `make_znalezisko.py` with fork points named.
 
 Done per mechanic: demo works on the mechanics page, pipeline makes one sample with its review image, its entry is in
-`game_mechanics.md`.
+`game_mechanics.md`, and EVERY new asset (illustrations, rooms with their places, scratch-off pairs, dot pictures,
+story strips, torn pieces, walk maps) can be browsed in the manager (`http://localhost:8750/manager/`, a tab like
+Znaleziska with the answer drawn in) - the user asked to be able to look at all of them there.
 
 ## Phase 2b - breathers: design and build the non-maths mini-games
 

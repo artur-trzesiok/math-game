@@ -17,7 +17,7 @@
   window.__T = Date.now();
   (() => {
     const im = { imports: { three: "/game/vendor/three.module.js" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im); document.currentScript.after(s);
   })();
@@ -36,7 +36,11 @@ import { Stage } from "/game/engine/scene.js";
 import * as M from "/game/engine/mechaniki.js";
 import * as M2 from "/game/engine/mechaniki2.js";
 import * as M3 from "/game/engine/mechaniki3.js";
+import * as IL from "/game/engine/ilustracje.js";
 const $ = (id) => document.getElementById(id);
+const czekaj = (s) => new Promise((r) => setTimeout(r, s * 1000));
+// a character "speaking" on the demo stage (no recordings here): the badge follows S.ostatniMowca
+const mow = async (kto, s = 2.5) => { S.ostatniMowca = kto; S.puppets[kto].graj("Mowienie", true); await czekaj(s); S.puppets[kto].spoczynek(); };
 const S = new Stage($("scena"), { tick() {}, say: async () => {}, stop() {} });
 await S.background("laka");
 await Promise.all([S.puppet("lisek", { x: -4.8, side: "left" }), S.puppet("sowa", { x: 4.8, side: "right" })]);
@@ -127,6 +131,17 @@ const DEMA = {
   },
   roznice: async () => { pokaz(); info("znajdź 3 różnice"); await M2.roznice(S, "laka"); info("wszystkie różnice!"); },
   kolorowanka: async () => { pokaz(); info("wybierz kredkę, potem pole z tą cyfrą"); await M2.kolorowanka(S, "domek"); info("pokolorowane!"); },
+  ilustracja: async (nr) => {
+    pokaz("lisek", "sowa");
+    for (const [n, ruch] of [["pociag_most", "w_prawo"], ["burza_noc", "najazd"]]) {
+      if (nr !== bieg) return;
+      info(`ilustracja ${n}: ląduje jak znaczek, mówią postacie z plakietek, zsuwa się`);
+      const il = await IL.ilustracja(S, n, { ruch });
+      await mow("lisek"); await mow("sowa"); await czekaj(1.2);
+      await il.zsun(); await czekaj(1);
+    }
+    info("koniec");
+  },
 };
 const uruchom = async (n) => {
   const nr = ++bieg; S.palec = null; S.endSort(); S.clear(); S.pending = null; S.targets = [];

@@ -52,7 +52,7 @@ export class Stage {
     this.scene.background = new THREE.Color(0x9fd0f0);
     this.camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
     this.camera.position.set(0, 0, CAM_Z);
-    this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0; this.camZ = CAM_Z;
+    this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0; this.camZ = CAM_Z; this.warstwy = [];
     this.pauza = false; this.panorama = null; this.otoczenie = []; this.dymki = [];
     this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;
     this.raycaster = new THREE.Raycaster();
@@ -168,11 +168,19 @@ export class Stage {
     this.rysuj();
   }
   // the world, then the overlay (transitions, countdown, confetti) over it
+  // then the extra layers (`warstwy`: an event illustration in its own perspective scene) on top of everything; a layer
+  // may render something to a texture first (`przed`: the speaker's live badge)
   rysuj() {
+    for (const w of this.warstwy) w.przed?.();
     this.renderer.render(this.scene, this.camera);
     if (this.nak && this.nak.scena.children.length) {
       this.renderer.autoClear = false; this.renderer.clearDepth();
       this.renderer.render(this.nak.scena, this.nak.kam); this.renderer.autoClear = true;
+    }
+    if (this.warstwy.length) {
+      this.renderer.autoClear = false;
+      for (const w of this.warstwy) { this.renderer.clearDepth(); this.renderer.render(w.scena, w.kam); }
+      this.renderer.autoClear = true;
     }
   }
   tween(d, step, ease = null) { return new Promise((done) => this.tweens.push({ t: 0, d, step, done, ease })); }

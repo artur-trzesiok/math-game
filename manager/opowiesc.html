@@ -89,7 +89,7 @@ function analizuj(ev) {
       const nast = ev[i + 1];
       if (e.co === "ujecie" && /^ogolny/.test(e.opis || "") && nast?.typ === "obraz" && nast.co === "ujecie" && !/^ogolny/.test(nast.opis || ""))
         dodaj(i, "Plan ogólny od razu przecięty innym ujęciem: kamera odlatuje i wraca bez powodu.");
-      ciagMowy = []; if (["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "focus", "rozblysk", "przejscie"].includes(e.co)) wUjeciu = 0;   // the camera or the picture moved
+      ciagMowy = []; if (["go", "pan", "ujecie", "przejdz", "walkTo", "enter", "focus", "rozblysk", "przejscie", "ilustracja"].includes(e.co)) wUjeciu = 0;   // the camera or the picture moved
       if (["go", "pan", "przejscie"].includes(e.co)) poZmianieMiejsca = true;
     } else if (e.typ === "interakcja") {
       ciagMowy = [];

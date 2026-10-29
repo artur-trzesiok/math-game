@@ -31,11 +31,13 @@ const RODZAJE = {
   znaleziska: { tytul: "Znaleziska", opis: "Obrazki do zaznaczania (ctx.znalezisko). Czerwone: co dziecko ma wskazać - punkty albo całe ścieżki.", obrazy: ["obraz.webp"] },
   labirynty: { tytul: "Labirynty", opis: "Labirynty (ctx.labirynt). Żółte: ściany z planu (gra sprawdza ruchy na planie), zielone: wejście, czerwone: wyjście.", obrazy: ["obraz.webp"] },
   roznice: { tytul: "Różnice", opis: "Pary do szukania różnic (ctx.roznice) i ukryte rzeczy przez lunetę (ctx.szukaj, gra pokazuje tylko obrazek b). Czerwone: znalezione różnice.", obrazy: ["a.webp", "b.webp"] },
+  ilustracje: { tytul: "Ilustracje", opis: "Ilustracje zdarzeń (ctx.ilustracja): kadr ląduje na ekranie jak znaczek, postacie mówią z plakietek, na koniec zsuwa się w dół. Pod obrazkiem: co pokazuje i w jakiej lekcji ma być.", obrazy: ["obraz.webp"], bezPdf: true },
 };
 const rodzaj = RODZAJE[new URLSearchParams(location.search).get("rodzaj")] ? new URLSearchParams(location.search).get("rodzaj") : "znaleziska";
 const R = RODZAJE[rodzaj];
 document.getElementById("tytul").textContent = R.tytul; document.title = R.tytul; document.getElementById("opis").textContent = R.opis;
 document.getElementById("pdf").href = `/api/${rodzaj}.pdf`; document.getElementById("pdf2").href = `/api/${rodzaj}.pdf?cele=1`;
+if (R.bezPdf) for (const id of ["pdf", "pdf2"]) document.getElementById(id).style.display = "none";
 const L = await lekcje();
 const obraz = (src) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => ok(null); i.src = src; });
 const kat = `/game/assets/${rodzaj}/`;
@@ -58,16 +60,17 @@ const sciany = (x, m, W, H) => {
   }
   for (const [[k, r], kol] of [[m.start, "#3ddc84"], [m.cel, "#ff4d4d"]]) { x.fillStyle = kol; x.beginPath(); x.arc(fx0 * W + (k + 0.5) * cw, fy0 * H + (r + 0.5) * ch, Math.min(cw, ch) * 0.22, 0, 7); x.fill(); }
 };
-const zaznacz = { znaleziska: (x, m, W, H) => okregi(x, m.cele, W, H), labirynty: sciany, roznice: (x, m, W, H) => okregi(x, m.roznice, W, H) };
+const zaznacz = { znaleziska: (x, m, W, H) => okregi(x, m.cele, W, H), labirynty: sciany, roznice: (x, m, W, H) => okregi(x, m.roznice, W, H), ilustracje: () => {} };
 // Polish plural: 1 punkt, 2-4 punkty, 5+ punktów (12-14 too)
 const odm = (n, [jeden, kilka, wiele]) => `${n} ${n === 1 ? jeden : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? kilka : wiele}`;
 const chip = {
   znaleziska: (m) => { const d = m.cele.filter((c) => c.droga).length, p = m.cele.length - d; return [p ? odm(p, ["punkt", "punkty", "punktów"]) : "", d ? odm(d, ["ścieżka", "ścieżki", "ścieżek"]) : ""].filter(Boolean).join(" + "); },
   labirynty: (m) => `${m.kolumny}×${m.wiersze} pól`,
   roznice: (m) => odm(m.roznice.length, ["różnica", "różnice", "różnic"]),
+  ilustracje: (m) => (m.postacie?.length ? m.postacie.join(", ") : "bez postaci") + (m.lekcje?.length ? ` → plan: ${m.lekcje.join(", ")}` : ""),
 };
 // which lessons use it: the call that shows it (a scenery may share the name - "laka")
-const WYWOLANIE = { znaleziska: ["znalezisko"], labirynty: ["labirynt"], roznice: ["roznice", "szukaj"] };
+const WYWOLANIE = { znaleziska: ["znalezisko"], labirynty: ["labirynt"], roznice: ["roznice", "szukaj"], ilustracje: ["ilustracja"] };
 // (the call names it, or the lesson makes the call and names it elsewhere - practice takes its pairs from a list)
 const uzywa = (n) => L.filter((l) => WYWOLANIE[rodzaj].some((f) => new RegExp(`${f}\\(\\s*["'\`]${n}["'\`]`).test(l.kod)
   || (new RegExp(`\\b${f}\\(`).test(l.kod) && new RegExp(`["'\`]${n}["'\`]`).test(l.kod) && !(l.meta.backgrounds || []).includes(n))));
@@ -79,7 +82,8 @@ for (const n of (await katalog(kat)).filter((q) => q.endsWith("/")).map((q) => q
   const d = document.createElement("div"); d.className = "rzecz"; d.dataset.szukaj = (n + " " + kto.map((l) => l.title.pl).join(" ")).toLowerCase();
   d.innerHTML = `<h3>${esc(n)}</h3><div><span class="chip">${ims[0].naturalWidth}×${ims[0].naturalHeight}</span><span class="chip">${chip[rodzaj](meta)}</span>
     ${kto.length ? kto.map((l) => `<span class="chip">${esc(l.title.pl)}</span>`).join("") : '<span class="chip zle">nieużywane</span>'}</div>
-    <div class="obrazy">${ims.map(() => "<canvas></canvas>").join("")}</div><div class="opcje"><label><input type="checkbox" checked> pokaż zaznaczenia</label></div>`;
+    <div class="obrazy">${ims.map(() => "<canvas></canvas>").join("")}</div>
+    ${meta.opis ? `<p class="opcje">${esc(meta.opis)}</p>` : ""}<div class="opcje" ${rodzaj === "ilustracje" ? 'style="display:none"' : ""}><label><input type="checkbox" checked> pokaż zaznaczenia</label></div>`;
   lista.appendChild(d);
   const pokaz = d.querySelector("input"), cs = [...d.querySelectorAll("canvas")];
   const odswiez = () => cs.forEach((c, i) => { const im = ims[i], x = c.getContext("2d"); c.width = im.naturalWidth; c.height = im.naturalHeight; x.drawImage(im, 0, 0); if (pokaz.checked) zaznacz[rodzaj](x, meta, c.width, c.height); });
