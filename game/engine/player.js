@@ -11,7 +11,7 @@ import { narysujCyfre, liczDotykiem, narysujRownanie } from "./liczby.js";
 import * as G from "./geometria.js";
 import * as E from "./efekty.js";
 import * as U from "./ubior.js";
-import { Stage, GROUND } from "./scene.js";
+import { Stage, GROUND, SUFIT } from "./scene.js";
 import * as Album from "./album.js";
 import * as Mapa from "./mapa.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
@@ -600,10 +600,19 @@ export class Player {
       S.renderer.domElement.addEventListener("pointerdown", dotyk); plan();
       return () => { stop = true; clearTimeout(t); S.renderer.domElement.removeEventListener("pointerdown", dotyk); };
     };
+    // done right, the scene holds: the last thing lands, everyone cheers, ~1.2 s before anything moves on (a cut or a
+    // zoom straight away read to a child as "oops, I broke something")
+    const swietuj = async () => {
+      if (this.run !== run) return;
+      for (const L of Object.values(S.puppets)) if (L.korzen.visible && L.korzen.parent) L.graj("Radosc");
+      await S.wait(FAST ? 0.1 : 1.2);
+    };
     const wDzialaniu = (p, rodzaj = "przeciagnij") => {
       const pol = last; polecenieTeraz = pol; const koniecZachet = zachecaj(rodzaj);
       const koniec = () => { koniecZachet(); if (polecenieTeraz === pol) polecenieTeraz = null; };
-      Promise.resolve(p).then(koniec, koniec); return p;
+      Promise.resolve(p).then(koniec, koniec);
+      if (!(p instanceof Promise)) return p;
+      return Object.assign(p.then(async (r) => { await swietuj(); return r; }), p);   // keeps what was hung on p
     };
     wDzialaniu.dotknij = (p) => wDzialaniu(p, "dotknij");                 // counting by touch
     // a lesson's own dragging (S.free, not a ctx mechanic) gets the same rule: the last line is its instruction
@@ -701,7 +710,8 @@ export class Player {
       // a name (E.PRZEJSCIA) or false; the lesson's `przejscia: true` makes every change a transition
       go: guard(async (bg, { enter = false, przejscie = undefined, obszar = 0, ciecie = false } = {}) => {
         if (S.bgName === tloId(bg)) return;
-        if (S.objects.length) { S.clear(); await S.zejscia(); }        // the things leave before the place changes
+        // the things leave before the place changes (only they: clear() would also pull the camera out in the old place)
+        if (S.objects.length) { for (const o of S.objects.slice()) o.remove(); await S.zejscia(); }
         const zmien = async () => {
           S.clear(); E.ujecie(S, "ogolny", { ciecie: true });   // a new place: a cut
           for (const L of Object.values(S.puppets)) { if (enter) L.korzen.visible = false; else L.korzen.position.x = L.home; }
@@ -766,7 +776,8 @@ export class Player {
       domino: (a, b, o) => { alive(); return M3.domino(S, a, b, o); },
       szukaj: (nazwa, o) => wDzialaniu(M3.szukaj(S, nazwa, o), "wskaz"),
       znalezisko: guard((nazwa, o) => M3.znalezisko(S, nazwa, o)),
-      ilustracja: guard((nazwa, o) => IL.ilustracja(S, nazwa, o)),
+      ilustracja: guard((nazwa, o) => IL.ilustracja(S, nazwa, { ...o, czekaj: !NAGRAJ && !FAST,
+        mowDalej: () => { const t = this.etapy?.["line.ilustracja_dalej"]; return t && !FAST ? this.speech.say({ lang: this.lang, lessonId: "etapy", key: "line.ilustracja_dalej", text: t.text, who: "narrator" }).catch(() => {}) : null; } })),
       miejsca: guard((o) => M4.miejsca(S, o)),
       zdrapka: (nazwa, o) => wDzialaniu(M4.zdrapka(S, nazwa, o), "dotknij"),   // rub the cover off, then a found picture
       kropki: (nazwa, o = {}) => wDzialaniu(M4.kropki(S, nazwa, { ...o, onZle: () => blad(o.wrong) }), "dotknij"),
@@ -911,6 +922,17 @@ export class Player {
       // (by item.tag); a mixed zone sends its odd ones home with the `wrong` line
       _sort: async ({ items, zones, wrong }) => {
         alive();
+        // a thing waiting right over a container reads as already in it (a cake touching the plate): the row lifts
+        // until there is a clear gap over every container below it, never past the ceiling
+        let dy = 0;
+        for (const it of items) {
+          const b = S.bounds(it);
+          for (const z of zones) if (b.right > z.x - z.w / 2 - 0.2 && b.left < z.x + z.w / 2 + 0.2) dy = Math.max(dy, z.y + z.h / 2 + 0.55 - b.bottom);
+        }
+        if (dy > 0.05) {
+          dy = Math.min(dy, SUFIT - 0.1 - Math.max(...items.map((it) => S.bounds(it).top)));
+          if (dy > 0.05) await Promise.all(items.map((it) => { it.home = { x: it.mesh.position.x, y: it.mesh.position.y + dy }; return it.moveTo(it.home.x, it.home.y, 0.35); }));
+        }
         const polecenie = last;
         Object.keys(S.puppets).forEach((n, j) => S.lookAt(n, zones[j % zones.length]));   // the characters watch the containers
         return new Promise((resolve) => {
