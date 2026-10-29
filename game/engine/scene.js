@@ -77,6 +77,26 @@ export class Stage {
     this.camera.position.set(0, 0, CAM_Z);
     kadrBezParalaksy(this.camera, () => this.design(0));
     this.puppets = {}; this.objects = []; this.targets = []; this.tweens = []; this.bg = []; this.frame = 0; this.camZ = CAM_Z; this.warstwy = [];
+    // Nothing just vanishes (a global rule, 2026-10-30): a thing of the scene (every handle in `objects` - stickers,
+    // the ten frame, dominoes, cards) taken off the stage slides down out of the frame first. Its handle is gone at
+    // once (taps, counts and zones never see it again), only the picture is still leaving; zejscia() waits for it.
+    this.wychodza = new Set();
+    this.objects.push = (...hs) => { for (const h of hs) if (h?.mesh?.isObject3D) h.mesh.userData.zejdz = true; return Array.prototype.push.apply(this.objects, hs); };
+    // the thing itself is removed at once (re-parenting into a paw calls remove too); a copy sharing its geometry and
+    // materials does the leaving, started only if nobody took the thing a moment later
+    const usunTeraz = this.scene.remove.bind(this.scene);
+    this.scene.remove = (...objs) => {
+      for (const o of objs) {
+        const wyjdz = o?.userData?.zejdz && o.parent === this.scene && o.visible !== false;
+        usunTeraz(o);
+        if (wyjdz) queueMicrotask(() => {
+          if (o.parent) return;
+          const kopia = o.clone(); kopia.userData.zejdz = false; this.scene.add(kopia);
+          this.zejdz(kopia, () => usunTeraz(kopia));
+        });
+      }
+      return this.scene;
+    };
     this.pauza = false; this.panorama = null; this.otoczenie = []; this.dymki = [];
     this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;
     this.raycaster = new THREE.Raycaster();
@@ -208,6 +228,25 @@ export class Stage {
     }
   }
   tween(d, step, ease = null) { return new Promise((done) => this.tweens.push({ t: 0, d, step, done, ease })); }
+  // a thing leaves: it lifts a hair, then slides down past the bottom of the frame, turning a little; things leaving
+  // together go one after another from the left
+  zejdz(o, potem) {
+    this.wychodza.add(o);
+    const teraz = performance.now(), rzut = (this._rzutZejsc && teraz - this._rzutZejsc.t < 30) ? this._rzutZejsc : (this._rzutZejsc = { t: teraz, n: 0 });
+    const opoz = Math.min(0.3, rzut.n++ * 0.05);
+    if (rzut.n === 1) this.sfx.graj("whoosh", { glosnosc: 0.45 });
+    const v = this.visible(0), dol = this.camera.position.y - v.h / 2 / this.camera.zoom;
+    const b = new THREE.Box3().setFromObject(o);
+    const y0 = o.position.y, y1 = y0 + (dol - b.max.y - 0.3), r0 = o.rotation.z, r1 = r0 + (o.position.x < this.camera.position.x ? -0.35 : 0.35);
+    const d = PARAMS.has("szybko") ? 0.12 : 0.55;
+    const p = this.tween(d + opoz, (s) => {
+      const t = Math.max(0, (s * (d + opoz) - opoz) / d), spad = t > 0.15 ? ((t - 0.15) / 0.85) ** 2 : 0;
+      o.position.y = y0 + 0.15 * Math.sin(Math.min(1, t / 0.15) * Math.PI / 2) * (1 - spad) + (y1 - y0) * spad;   // a little hop up, then down
+      o.rotation.z = r0 + (r1 - r0) * spad;
+    }).then(() => { this.wychodza.delete(o); potem(); });
+    this._zejscia = (this._zejscia || new Set()).add(p); p.then(() => this._zejscia.delete(p));
+  }
+  async zejscia() { await null; await Promise.all([...(this._zejscia || [])]); }   // after the copies have started
   // things grow in from nothing with a little overshoot; not awaited by the caller, so a row appears sticker by sticker
   appear(h, cicho = false) {
     const m = this.meshOf(h), base = h.base ?? 1;

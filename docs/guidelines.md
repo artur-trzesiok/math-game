@@ -39,7 +39,9 @@ objects - no hand-made art, no in-house level editor.
   than"), with the same words every time.
 - **Nothing just appears or just happens**: things grow in with a little
   overshoot, the tapped thing pops, a wrong one also shakes, the right one flies
-  where it belongs. **Praise is a character's reaction** (a cheer,
+  where it belongs, and **nothing just vanishes**: a thing taken off the stage
+  (`remove()`, `clear()`) hops a little and slides down out of the frame first -
+  the engine does it for every handle in `S.objects` (scene.js `zejdz`). **Praise is a character's reaction** (a cheer,
   applause), not a score. No timers, no lives, no stars.
 
 ## The world

@@ -701,6 +701,7 @@ export class Player {
       // a name (E.PRZEJSCIA) or false; the lesson's `przejscia: true` makes every change a transition
       go: guard(async (bg, { enter = false, przejscie = undefined, obszar = 0, ciecie = false } = {}) => {
         if (S.bgName === tloId(bg)) return;
+        if (S.objects.length) { S.clear(); await S.zejscia(); }        // the things leave before the place changes
         const zmien = async () => {
           S.clear(); E.ujecie(S, "ogolny", { ciecie: true });   // a new place: a cut
           for (const L of Object.values(S.puppets)) { if (enter) L.korzen.visible = false; else L.korzen.position.x = L.home; }
