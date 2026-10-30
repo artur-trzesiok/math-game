@@ -19,15 +19,24 @@ const polowa = (c, h) => { const b = c.bounds(h); return (b.right - b.left) / 2;
 async function odLinii(c, rzeczy, { x0 = -3.4, ys = [0.9, -0.3], linia = true } = {}) {
   const S = c.stage, zajete = new Map();
   // nothing may lie on the line already, nor two things start level (a plank lying with its end on the line was a
-  // task done for the child): every left end at least 0.9 right of the line, each next one further, inside the screen
-  const ruchy = [];
+  // task done for the child): every left end at least 0.9 right of the line, each next one further, inside the screen.
+  // If nudging them so would lay one thing over another, they are laid out afresh: each on a row of its own, the left
+  // ends staggered
+  const ruchy = [], plan = new Map();
   rzeczy.slice().sort((a, b) => c.bounds(a).left - c.bounds(b).left).forEach((h, i) => {
     const b = c.bounds(h), min = x0 + 0.9 + i * 0.7;
-    if (b.left < min || (i && Math.abs(b.left - c.bounds(rzeczy[i - 1]).left) < 0.6)) {
-      const dx = Math.min(min - b.left + (b.left < min ? 0 : 0.7), 5.8 - b.right);
-      if (dx > 0.05) ruchy.push(h.moveTo(h.mesh.position.x + dx, h.mesh.position.y, 0.35));
-    }
+    plan.set(h, b.left < min ? Math.min(min - b.left, 5.8 - b.right) : 0);
   });
+  const ramka = (h) => { const b = c.bounds(h), dx = plan.get(h); return { l: b.left + dx, r: b.right + dx, d: b.bottom, g: b.top }; };
+  const nachodza = rzeczy.some((a, i) => rzeczy.slice(i + 1).some((q) => { const A = ramka(a), B = ramka(q); const m = 0.3; return A.l < B.r + m && B.l < A.r + m && A.d < B.g + m && B.d < A.g + m; }));   // with room for the white edges
+  if (nachodza) {
+    const rzedy = ys.length >= rzeczy.length ? ys : rzeczy.map((_, i) => ys[0] - i * 0.7);
+    const OD = [0.9, 2.0, 1.3, 2.6, 1.6, 2.2];
+    rzeczy.slice().sort((a, b) => c.bounds(b).top - c.bounds(a).top).forEach((h, i) => {
+      const b = c.bounds(h), w = b.right - b.left, l = Math.min(x0 + OD[i % OD.length], 5.8 - w);
+      ruchy.push(h.moveTo(h.mesh.position.x + (l - b.left), rzedy[i], 0.4));
+    });
+  } else for (const h of rzeczy) if (plan.get(h) > 0.05) ruchy.push(h.moveTo(h.mesh.position.x + plan.get(h), h.mesh.position.y, 0.35));
   await Promise.all(ruchy);
   const kreska = linia ? await c.line([[x0, ys[0] + 0.75], [x0, ys[ys.length - 1] - 0.75]], { color: "#3b3631", width: 0.07, strong: true }) : null;
   const cel = (h) => { const wolny = ys.find((y) => !zajete.has(y) || zajete.get(y) === h) ?? ys[0]; return [x0 + polowa(c, h), wolny]; };

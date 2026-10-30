@@ -721,7 +721,14 @@ export class Stage {
     const n = this.ndc(e); this.raycaster.setFromCamera(n, this.camera);
     let best = null, bestD = Infinity;
     // the topmost thing under the finger: a shape's own layer first (overlapping pieces), then distance
-    for (const it of set.items) { const hits = this.raycaster.intersectObject(it.mesh, true); if (!hits.length) continue; const d = hits[0].distance - (it.warstwa ?? 0) * 1e3; if (d < bestD) { best = it; bestD = d; } }
+    // a sticker is a square: a long thin one (spaghetti) covered the things lying under its empty corners - the thing
+    // whose DRAWING holds the finger wins, its square only when no drawing does
+    for (const it of set.items) {
+      const hits = this.raycaster.intersectObject(it.mesh, true); if (!hits.length) continue;
+      const p = hits[0].point, b = it.icon ? this.bounds(it) : null, wSrodku = !b || (p.x >= b.left - 0.15 && p.x <= b.right + 0.15 && p.y >= b.bottom - 0.15 && p.y <= b.top + 0.15);
+      const d = hits[0].distance - (it.warstwa ?? 0) * 1e3 + (wSrodku ? 0 : 1e6);
+      if (d < bestD) { best = it; bestD = d; }
+    }
     if (!best) {
       for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.trafLalke(L).length) { const f = set.free ? set.onPuppet : set.onTap; if (f) { this.bump(L); f(L); } else this.tapPuppet(L); return true; }
       return false;
