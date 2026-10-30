@@ -350,13 +350,14 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 ## 8. Open, not started
 
 
-- **Plan state 2026-10-29**: phases 0, 1, 2 done (see the plan's status table); new mechanics in `game_mechanics.md`
-  (ilustracja, miejsca, zdrapka, kropki, historyjka, podarty, wedrowka) and praise variants (`ctx.brawo`, game/pochwaly).
-  Waiting for the user: which new breathers to build (`game/lessons/oddechy_plan.md`) and the placement / panorama
-  tables (`game/lessons/rozmieszczenie_plan.md`); only then the lesson pass.
-- **`PLAN_usprawnienia.md`** (2026-10-29, from the lesson audit, approved): mechanics moved to `game_mechanics.md`,
-  praise / wrong-answer variants, 7 painted mechanics, the home stage as a third act, an editing pass per lesson,
-  new breathers, panoramas, every "Wskaż." line rewritten. "Mam pięć zabaw" stays on purpose (a calm rhythm).
+- **Plan state 2026-10-30**: phases 0-5 done for world 1 (all 24 lessons passed or built new, every one with a
+  breather - `game/lessons/oddechy_plan.md`). Next: phase 6 of `PLAN_usprawnienia.md` (the whole game: autopilot over
+  all 24, the lint table against the audit, recordings complete, the open list cleaned), then world 2.
+- The three lessons moved out of world 1 (numbers_6_10, adding_5, adding_10) have no breather yet; adding_5 still
+  counts claps in its place (maths).
+- Mole: the profile mouths still carry the old pig snout; the front nose is bigger than his new reference.
+- iPad: hitches not verified since the warm-up (needs a deployed dist and `?perf`); effects not warmed up yet:
+  kite, water, night, scratch-off, badge render target.
 
 - noticing_order and one_many still end in shared sceneries, not a place of their own.
 - shapes: the catching game was removed by an agent; ask the user if they want it back.
