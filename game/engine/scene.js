@@ -368,8 +368,15 @@ export class Stage {
     this.layer(L, false);
     return L;
   }
-  layer(L, front) { L.korzen.traverse((o) => { if (o.isMesh) o.renderOrder = front ? 30 : 20; }); }
-  bringToFront(L) { for (const o of Object.values(this.puppets)) this.layer(o, o === L); }
+  // every puppet on a layer of its own, in the order they were last in front (the one brought forward on top, 30): two
+  // overlapping puppets never interleave their pieces - one is wholly in front of the other (all on 20 they did)
+  layer(L, front) {
+    const kol = (this.kolejnoscLalek ||= []).filter((o) => o !== L);
+    if (front) kol.push(L); else kol.unshift(L);
+    this.kolejnoscLalek = kol;
+    kol.forEach((o, i) => { const ro = front && o === L ? 30 : 20 + i * 0.5; o.korzen.traverse((m) => { if (m.isMesh) m.renderOrder = ro; }); });
+  }
+  bringToFront(L) { this.layer(L, true); }
   // a contact shadow with a pencil feel: short diagonal strokes inside a slightly wobbly ellipse
   shadow(w) {
     if (!this.shadowTex) {
