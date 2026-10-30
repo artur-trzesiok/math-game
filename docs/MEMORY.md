@@ -362,6 +362,4 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 - shapes: the catching game was removed by an agent; ask the user if they want it back.
 - queue: a new wrong line for a tap on the photo's empty background.
 - long_short map: a right pick shows a tick and the path in pencil (fine); tangram poster: ear spots overlap.
-- Covers not regenerated for the lessons whose stories changed on 2026-10-29 (only ordering's was).
 - The story preview (`manager/opowiesc.html`) not yet run on the lessons changed 2026-10-29.
-- The adventure map in the menu - when the lessons are complete.
