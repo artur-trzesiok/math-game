@@ -130,8 +130,8 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   and door were invisible under the wall, the triangle's place was once a rectangle - "metodologicznie
   nieakceptowalne"); the bush really hides Hedgehog (renderOrder 35); kites painted with gpt-image (4 shapes), the
   geometric square laid on the chosen kite, the others vanish, it turns in the middle. Practice: tangram, turned
-  shapes in rows laid by their turned widths (they overlapped), colouring by SIGNS. The catching game was removed by an
-  agent to shorten the story (the user may want it back).
+  shapes in rows laid by their turned widths (they overlapped), colouring by SIGNS. The catching game is gone for
+  good (2026-10-30): the kite breather stands in its place.
 - `morning_night` (Rano i wieczór) - Mole thinks it is always night; morning icon with a crowing rooster (morning and
   evening were hard to tell apart); cards of the day in order; the lost little hedgehog led home through a dusk forest
   maze (`las_o_zmierzchu`) before the night; ends at his oak at night (`dab_noc`), fireflies.
