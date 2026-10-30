@@ -99,6 +99,24 @@ def rdzen(piece: np.ndarray) -> dict:
     return {"x": int(xs.min()), "y": int(ys.min()), "w": int(xs.max() - xs.min() + 1), "h": int(ys.max() - ys.min() + 1)}
 
 
+def nos(zrodlo) -> tuple[float, float] | None:
+    """The nose in a mouth piece: the largest very dark blob in its upper half (a beak has none: None)."""
+    arr = zrodlo if isinstance(zrodlo, np.ndarray) else (np.asarray(Image.open(zrodlo).convert("RGBA")) if Path(zrodlo).exists() else None)
+    if arr is None:
+        return None
+    jas = arr[:, :, :3].astype(int).mean(axis=2)
+    ciemne = (arr[:, :, 3] > 150) & (jas < 75)
+    ciemne[arr.shape[0] // 2:] = False
+    lab, n = ndimage.label(ndimage.binary_opening(ciemne, iterations=2))
+    if not n:
+        return None
+    rozm = ndimage.sum(ciemne, lab, range(1, n + 1)); k = int(np.argmax(rozm)) + 1
+    if rozm[k - 1] < 0.004 * arr.shape[0] * arr.shape[1]:
+        return None
+    y, x = ndimage.center_of_mass(lab == k)
+    return float(x), float(y)
+
+
 def cut(kto: str) -> None:
     kat = mc.KORZEN / kto; gra = mc.GRA / kto
     postac_g = json.loads((gra / "postac.json").read_text(encoding="utf-8"))
@@ -149,10 +167,16 @@ def cut(kto: str) -> None:
                 arr[~nieprz, :3] = arr[idx[0][~nieprz], idx[1][~nieprz], :3]
             Image.fromarray(arr).save(kat / "czesci" / f"{nazwa}.png")
             Image.fromarray(arr).save(gra / "czesci" / f"{nazwa}.webp", "WEBP", quality=75, method=6, exact=True)
-            # its placement copies the closed mouth's: the same core, shifted so the two pieces stay centred and their
-            # tops level (the engine fits a mouth by its core; a measured core of a wide-open mouth moved it)
+            # its placement copies the closed mouth's, pinned at the NOSE (every mouth piece carries it): the closed one's
+            # core, shifted by how far this piece's nose lies from the closed piece's - the nose never moves, the mouth
+            # opens below it (centring the pieces put a hedgehog's nose under its eye). No nose found: centred.
             wz = postac_g["czesci"].get(f"usta_zamkniete{suf}", {}); rz = wz.get("rdzen") or rdzen(arr)
-            r = dict(rz, x=int(round(rz["x"] + (im.width - wz.get("w", im.width)) / 2)))
+            dziob = mc.POSTACIE[kto]["usta"] == "beak"                      # a beak is the whole mouth: no nose to pin
+            n0, n1 = (None, None) if dziob else (nos(gra / "czesci" / wz.get("plik", "-")), nos(arr))
+            if n0 and n1:
+                r = dict(rz, x=int(round(rz["x"] + n1[0] - n0[0])), y=int(round(rz["y"] + n1[1] - n0[1])))
+            else:
+                r = dict(rz, x=int(round(rz["x"] + (im.width - wz.get("w", im.width)) / 2)))
             nowe[nazwa] = {"plik": f"{nazwa}.webp", "x": wz.get("x", 0), "y": wz.get("y", 0), "w": im.width, "h": im.height, "rdzen": r}
         print(f"  {kto}{suf}: scale {sk:.2f}, {sum(1 for n in nowe if n.endswith(suf) or not suf)} pieces")
     if not nowe:
