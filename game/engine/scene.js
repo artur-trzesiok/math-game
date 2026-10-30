@@ -82,12 +82,17 @@ const easeOutBack = (s) => { const c = 1.7; return 1 + (c + 1) * Math.pow(s - 1,
 
 // stickers with a handle, and the side it is drawn on (1 = right): a carried one turns its handle to the paw
 const UCHO = { kubek: 1, kubek_czerwony: 1, filizanka: 1, kubek_lyzka: 1 };
+const WSPOLNY = {};                     // the one renderer the game keeps (Stage)
 const KADENCJA = 1.5;                  // a capped walk steps at most this many times its natural speed, then glides
 export class Stage {
   constructor(container, speech) {
     this.container = container; this.speech = speech;
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, stencil: true, preserveDrawingBuffer: true });
-    this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+    // ONE renderer for the whole game: a lesson used to make its own WebGL context and destroy it after, so every lesson
+    // compiled every shader and uploaded every texture again (a tablet stuttered on each first appearance)
+    this.renderer = WSPOLNY.renderer ||= new THREE.WebGLRenderer({ antialias: true, stencil: true, preserveDrawingBuffer: true });
+    this.renderer.outputColorSpace = THREE.SRGBColorSpace; this.renderer.setRenderTarget(null);
+    this.sluchy = new AbortController();                                    // this stage's canvas listeners, gone with it
+    const sig = { signal: this.sluchy.signal };
     container.appendChild(this.renderer.domElement);
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x9fd0f0);
@@ -131,11 +136,11 @@ export class Stage {
       if (e.button !== 0 && e.pointerType === "mouse") return;
       if (this.palec && this.palec.down?.(naScenie(e)) !== false) { this.palecWcisniety = true; try { this.renderer.domElement.setPointerCapture(e.pointerId); } catch { /* ignore */ } return; }
       if (!this.dragStart(e)) this.pointer(e);
-    });
-    this.renderer.domElement.addEventListener("pointermove", (e) => { if (this.palec && this.palecWcisniety) return this.palec.move?.(naScenie(e)); this.dragMove(e); });
+    }, sig);
+    this.renderer.domElement.addEventListener("pointermove", (e) => { if (this.palec && this.palecWcisniety) return this.palec.move?.(naScenie(e)); this.dragMove(e); }, sig);
     const puszczony = () => { if (this.palecWcisniety) { this.palecWcisniety = false; return this.palec?.up?.(); } this.dragEnd(); };
-    this.renderer.domElement.addEventListener("pointerup", puszczony);
-    this.renderer.domElement.addEventListener("pointercancel", puszczony);
+    this.renderer.domElement.addEventListener("pointerup", puszczony, sig);
+    this.renderer.domElement.addEventListener("pointercancel", puszczony, sig);
     if (PARAMS.has("safe")) this.showSafe();
     this.last = performance.now(); this.lastRaf = this.last;
     this.running = true;
@@ -344,10 +349,35 @@ export class Stage {
     for (const L of Object.values(this.puppets)) zbierz(L.korzen);
     for (const p of TEKSTURY.values()) { const t = await p.catch(() => null); if (t) tex.add(t); }
     for (const t of await U.wczytajUbrania(ubrania)) tex.add(t);
+    for (const t of WSPOLNY.wGpu || []) if (!tex.has(t)) t.dispose();    // the last lesson's, not used now: off the GPU
+    WSPOLNY.wGpu = tex;
     for (const t of tex) this.renderer.initTexture(t);
     // the shaders too: one render of each scenery, off screen
     for (const n of tla) { const g = new THREE.Group(); for (const m of (await this.tlo(n)).meshes) g.add(m); this.scene.add(g); this.renderer.compile(this.scene, this.camera); this.scene.remove(g); for (const m of g.children.slice()) g.remove(m); }
+    await this.rozgrzej(obiekty);
     postep(1);
+  }
+
+  // shaders compile the first time something is DRAWN - on a tablet that froze the frame a pumpkin appeared in (3
+  // programs: the sticker, its rim, a pencil line). On the loading screen one of each common kind stands in front of
+  // the camera with every character, one frame is drawn on screen and one into a render target (the speaker's badge and
+  // the transitions draw there, and three builds those programs apart), then they go - no exit, nothing seen.
+  async rozgrzej(obiekty = []) {
+    const R = this.renderer, proby = [], cx = this.camera.position.x, cy = this.camera.position.y;
+    const sprobuj = async (f) => { try { const h = await f(); if (h) proby.push(h); } catch { /* a probe never breaks loading */ } };
+    await sprobuj(() => this.object(obiekty[0] || "jablko", { x: cx - 1, y: cy, size: 1, cicho: true }));
+    await sprobuj(() => this.sign("1", { x: cx + 1, y: cy, size: 0.8 }));
+    await sprobuj(() => this.line([[cx - 1, cy - 1], [cx + 1, cy - 0.8]], { duration: 0.01, wait: true }));
+    const ukryte = Object.values(this.puppets).filter((L) => !L.korzen.visible);
+    for (const L of ukryte) L.korzen.visible = true;
+    const rt = new THREE.WebGLRenderTarget(64, 64, { depthBuffer: true, stencilBuffer: true });
+    try {
+      R.render(this.scene, this.camera);
+      const stary = R.getRenderTarget(); R.setRenderTarget(rt); R.render(this.scene, this.camera); R.setRenderTarget(stary);
+    } catch { /* never breaks loading */ }
+    rt.dispose();
+    for (const L of ukryte) L.korzen.visible = false;
+    for (const h of proby) { if (h.mesh) h.mesh.traverse?.((o) => { o.userData.zejdz = false; }); h.mesh && (h.mesh.userData.zejdz = false); h.remove?.(); }
   }
 
   // ------------------------------------------------------------------ puppets
@@ -1044,5 +1074,5 @@ export class Stage {
     return name;
   }
   dispose() { this.muzyka?.zamknij();                                  // the music fades out with the lesson
-    for (const L of Object.values(this.puppets)) if (L.cien) this.scene.remove(L.cien); this.running = false; clearInterval(this.watchdog); window.removeEventListener("resize", this.onResize); this.renderer.dispose(); this.renderer.domElement.remove(); }
+    for (const L of Object.values(this.puppets)) if (L.cien) this.scene.remove(L.cien); this.running = false; clearInterval(this.watchdog); window.removeEventListener("resize", this.onResize); this.sluchy.abort(); this.renderer.domElement.remove(); }   // the renderer stays (WSPOLNY)
 }
