@@ -404,11 +404,6 @@
   "who": "zajac",
   "text": "Mamy to samo! Jeszcze raz."
  },
- "line.rps_ty": {
-  "hash": "6559f794439f",
-  "who": "lisek",
-  "text": "Ty wygrywasz! Brawo!"
- },
  "line.rps_ty.bobr": {
   "hash": "e6fa623650df",
   "who": "bobr",
@@ -1033,5 +1028,10 @@
   "hash": "db27d794ec0c",
   "who": "zajac",
   "text": "Fuj, tego się nie je!"
+ },
+ "line.rps_ty": {
+  "hash": "6559f794439f",
+  "who": "lisek",
+  "text": "Ty wygrywasz! Brawo!"
  }
 }
