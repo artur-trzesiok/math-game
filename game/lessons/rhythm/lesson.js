@@ -16,18 +16,21 @@ async function instrument(c, klucz, x, { y = -2.35, skala = 1.15 } = {}) {
   const d = INSTR[klucz], h = await c.object(d.obraz || klucz, { x, y, size: d.size * skala, dzwiek: d.dzwiek });
   h.klucz = klucz; return h;
 }
-// a note of the row: the instrument's picture joins the row as it is heard (no pop: the note is its own sound)
+// a note of the row: the instrument's picture joins the row as it is heard (no pop: the note is its own sound);
+// a row may carry its own layout (`uklad`: x0, krok, s) - two short songs side by side over the players' heads
+const rzadek = (uklad) => Object.assign([], { uklad });
 async function nuta(c, rzad, klucz) {
-  const d = INSTR[klucz], h = await c.object(d.obraz || klucz, { x: X0 + rzad.length * KROK, y: ROW_Y, size: d.size * 0.95, dzwiek: d.dzwiek, cicho: true });
+  const u = rzad.uklad || {}, d = INSTR[klucz];
+  const h = await c.object(d.obraz || klucz, { x: (u.x0 ?? X0) + rzad.length * (u.krok ?? KROK), y: ROW_Y, size: d.size * (u.s ?? 0.95), dzwiek: d.dzwiek, cicho: true });
   h.klucz = klucz; rzad.push(h); return h;
 }
-// someone plays: each instrument bumps on the ground and sounds, and its note joins the row
-async function graj(c, rzad, instr, klucze, { tempo = 0.62 } = {}) {
-  for (const k of klucze) {
-    const h = instr.find((i) => i.klucz === k);
+// someone plays: each instrument bumps on the ground and sounds, and its note joins the row; `tempa` per note (noise)
+async function graj(c, rzad, instr, klucze, { tempo = 0.62, tempa = null } = {}) {
+  for (const [i, k] of klucze.entries()) {
+    const h = instr.find((q) => q.klucz === k);
     c.sfx(INSTR[k].dzwiek); c.stage.bump(h, 0.3, false);
     await nuta(c, rzad, k);
-    await c.wait(tempo);
+    await c.wait(tempa ? tempa[i] : tempo);
   }
 }
 // what comes next: the child points to an instrument; a miss plays the row from the start again
@@ -67,6 +70,7 @@ const SLOWA = {
   czerwona: { pl: ["czerwona"], en: ["red"] }, zolta: { pl: ["żółta"], en: ["yellow"] },
   listek: { pl: ["listek"], en: ["leaf"] }, zoledz: { pl: ["żołądź"], en: ["acorn"] },
   klask: { pl: ["klask"], en: ["clap"] }, skok: { pl: ["skok"], en: ["jump"] }, obrot: { pl: ["obrót"], en: ["spin"] },
+  filizanka: { pl: ["filiżanka"], en: ["cup"] }, ciastko: { pl: ["ciastko"], en: ["cookie"] },
 };
 const czytaj = (c, items, kto, linia, o = {}) => c.rytm(items, { linia, kto, slowo: (h) => SLOWA[h.klucz || h.ruch || h.tag || h.name]?.[c.lang], ...o });
 
@@ -102,10 +106,9 @@ export default {
         await c.enter("lisek");
         await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.a_koncert", { anim: "Podskok" });
-        await c.ujecie("ogolny");
-        const instr = [await instrument(c, "beben", -1.0), await instrument(c, "dzwonek", 1.0)];
+        let instr = [await instrument(c, "beben", -1.0), await instrument(c, "dzwonek", 1.0)];
         await wyrosnij(c);
-        await c.ujecie("sredni", { na: [...instr, "sowa"] });                // the drum and the bell in the grass
+        await c.ujecie("sredni", { na: [...instr, "sowa"] });                // the drum and the bell grow in the grass
         await c.say("sowa", "line.a_mamy", { anim: "Radosc" });
         await c.ujecie("sredni", { na: ["wiewiorka", ...instr] });
         await c.say("wiewiorka", "line.a_ja", { anim: "Podskok" });
@@ -119,14 +122,16 @@ export default {
         }
         c.play("wiewiorka", "Spoczynek", { loop: true });
         await Promise.all([c.emocja("sowa", "wykrzyknik", { anim: "Smutek" }), c.emocja("lisek", "pot")]);
-        await c.ujecie("zblizenie", { na: "sowa" });
+        await c.ujecie("zblizenie", { na: "sowa" });                         // the jolt: Owl's ears
         await c.say("sowa", "line.a_halas");
-        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.ujecie("dwuujecie", { na: ["wiewiorka", "sowa"] });          // the dialogue of the two
         await c.say("wiewiorka", "line.a_jak");
-        await c.ujecie("sredni", { na: ["sowa"] });
         await c.say("sowa", "line.a_rytm", { anim: "Zgloszenie" });
-        await c.ujecie("zblizenie", { na: "wiewiorka" });
         await c.say("wiewiorka", "line.a_co_to");
+        // the method on a plain colour: what a rhythm is, the row builds as it is heard
+        await c.go({ kolor: "#fbe6c8", motyw: "kola" }, { ciecie: true });
+        instr = [await instrument(c, "beben", -1.0), await instrument(c, "dzwonek", 1.0)];
+        await wyrosnij(c);
         await c.ujecie("sredni", { na: ["sowa", ...instr] });
         await c.say("sowa", "line.a_rytm_to");
         // Owl plays: bum, dzyń, bum, dzyń - every sound puts its picture into the row
@@ -136,28 +141,29 @@ export default {
         await czytaj(c, rzad, "sowa", "line.a_co_dalej");
         await c.rytm(rzad);
         await coDalej(c, rzad, instr, "beben", { kto: "sowa", zle: "line.a_od_poczatku" });
-        await c.ujecie("sredni", { na: ["sowa"] });
+        await c.ujecie("sredni", { na: ["sowa", ...rzad.slice(-3)] });      // the answer stays in the row while it is named
         await c.say("sowa", "line.a_dobrze", { anim: "Brawo" });
         // Squirrel's own: bum, bum, dzyń
         sprzatnij(rzad);
-        await c.ujecie("zblizenie", { na: "wiewiorka" });
+        await c.ujecie("sredni", { na: ["wiewiorka", ...instr] });
         await c.say("wiewiorka", "line.a_moj", { anim: "Radosc" });
         await c.ujecie("ogolny");
         await graj(c, rzad, instr, ["beben", "beben", "dzwonek", "beben", "beben", "dzwonek", "beben", "beben"]);
         await czytaj(c, rzad, "wiewiorka", "line.a_moj_co");
         await coDalej(c, rzad, instr, "dzwonek", { kto: "wiewiorka", zle: "line.a_od_poczatku" });
-        await c.ujecie("sredni", { na: ["wiewiorka"] });
+        await c.ujecie("sredni", { na: ["wiewiorka", ...rzad.slice(-3)] });
         await c.say("wiewiorka", "line.a_moj_dobrze", { anim: "Podskok" });
         // the band plays it together, everyone nodding to the beat: it sounds like music
         await c.ujecie("ogolny");
         await c.say("lisek", "line.a_razem");
         await c.rytm(rzad, { kiwaja: ["lisek", "wiewiorka", "sowa"] });
-        await c.ujecie("zblizenie", { na: "sowa" });
-        await c.say("sowa", "line.a_muzyka", { anim: "Radosc" });
+        await c.ujecie("zblizenie", { na: "sowa" });                         // the joy of it
+        await c.emocja("sowa", "muzyka", { anim: "Radosc" });
+        await c.say("sowa", "line.a_muzyka");
+        // back in the garden: the band can play, now the decorations
+        await c.go("ogrod", { ciecie: true });
         await c.ujecie("sredni", { na: ["lisek"] });
-        await c.say("lisek", "line.a_ozdoby");
-        c.clear();
-        await c.ujecie("ogolny");
+        await c.say("lisek", "line.a_ozdoby", { anim: "Zgloszenie" });
       },
       // B. the garland: a rhythm you can see. Squirrel hangs flags with one mistake; read from the start, the child
       // finds it; then three empty places, the child drags the flags on
@@ -192,20 +198,18 @@ export default {
         await c.ujecie("dwuujecie", { na: ["lisek", "wiewiorka"] });
         await c.say("lisek", "line.b_gotowe", { anim: "Brawo" });
         c.clear();
-        await c.ujecie("ogolny");
       },
       // C. a breather, no maths: statues. While the music plays they dance; it stops, everyone freezes - but one
       // still wiggles; the child points to who moved
       async (c) => {
         await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.c_posagi", { anim: "Podskok" });
-        await c.ujecie("zblizenie", { na: "sowa" });
-        await c.say("sowa", "line.c_pilnuj");
-        await c.ujecie("ogolny");
+        await c.ujecie("ogolny");                                            // the judge's task: everyone in the shot
+        await c.say("sowa", "line.c_pilnuj", { anim: "Zgloszenie" });
         const tancerze = ["lisek", "wiewiorka", "sowa"], RUCHY = ["klask", "skok", "obrot"];
         const ruchliwi = tasuj(tancerze).slice(0, 2);
         for (const [runda, kto] of ruchliwi.entries()) {
-          if (runda > 0) await c.say("lisek", "line.c_jeszcze", { anim: "Podskok" });
+          if (runda > 0) { await c.ujecie("ogolny"); await c.say("lisek", "line.c_jeszcze", { anim: "Podskok" }); }
           const muzyka = c.muzyka("melodyjka");
           let tanczy = true;
           const petla = async (n, wiecej = () => tanczy) => { while (wiecej()) { c.ruch(n, RUCHY[Math.floor(Math.random() * 3)], { tempo: 0.9 }); await c.wait(c.fast ? 0.2 : 0.9); } };
@@ -224,11 +228,9 @@ export default {
           for (const n of tancerze) c.zamroz(n, false);
           await c.ujecie("zblizenie", { na: kto });                          // caught: the culprit's face
           await c.say(kto, `line.c_mam_${kto}`, { anim: "Radosc" });
-          await c.ujecie("ogolny");
         }
         await c.ujecie("sredni", { na: ["lisek"] });
-        await c.say("lisek", "line.c_koniec");
-        await c.ujecie("ogolny");
+        await c.say("lisek", "line.c_koniec", { anim: "Machanie" });
       },
       // D. the lake meadow: helping Deer. She is sad - she can't dance; a dance has a rhythm too: Fox dances,
       // the cards of the moves join a row, the child points to the next move, Deer does it
@@ -236,40 +238,47 @@ export default {
         await c.go("laka", { enter: true });
         c.show("sarenka");
         await Promise.all(["lisek", "wiewiorka", "sowa"].map((n) => c.enter(n)));
-        await c.ujecie("zblizenie", { na: "lisek" });                        // shot and reverse shot: the invitation, then Deer's answer
+        await c.ujecie("dwuujecie", { na: ["lisek", "sarenka"] });           // the invitation, Fox to Deer
         await c.say("lisek", "line.d_zaproszenie", { anim: "Machanie" });
-        await c.ujecie("zblizenie", { na: "sarenka" });
+        await c.ujecie("zblizenie", { na: "sarenka" });                      // her sadness
         await c.emocja("sarenka", "smutek", { anim: "Smutek" });
         await c.say("sarenka", "line.d_smutna");
-        await c.ujecie("ogolny");
+        await c.ujecie("dwuujecie", { na: ["lisek", "sarenka"] });
         await c.say("lisek", "line.d_nauczymy", { anim: "Zgloszenie" });
+        // the dance lesson on a plain colour: the moves join a row as they are danced
+        await c.go({ kolor: "#e4f0d6", motyw: "figury" }, { ciecie: true });
+        await c.ujecie("ogolny");
         const karty = await kartyRuchow(c, ["klask", "skok", "obrot"]);
         const rzad = [];
         const pierwszy = ["klask", "klask", "skok", "klask", "klask", "skok", "klask", "klask"];
         await tanczy(c, "lisek", rzad, pierwszy);
         await czytaj(c, rzad, "lisek", "line.d_co_teraz");
         await jakiRuch(c, rzad, karty, "skok", { kto: "lisek", uczen: "sarenka", zle: "line.d_od_poczatku", pokaz: () => c.rytm(rzad) });
-        await c.ujecie("zblizenie", { na: "sarenka" });
+        await c.ujecie("zblizenie", { na: "sarenka" });                      // her first success
         await c.say("sarenka", "line.d_udalo", { anim: "Radosc" });
         // a second dance, Squirrel's
         sprzatnij(rzad);
-        await c.ujecie("sredni", { na: ["wiewiorka"] });
+        await c.ujecie("sredni", { na: ["wiewiorka", ...karty] });
         await c.say("wiewiorka", "line.d_drugi", { anim: "Podskok" });
         await c.ujecie("ogolny");
         await tanczy(c, "wiewiorka", rzad, ["klask", "obrot", "klask", "obrot", "klask"]);
         await czytaj(c, rzad, "wiewiorka", "line.d_drugi_co");
         await jakiRuch(c, rzad, karty, "obrot", { kto: "wiewiorka", uczen: "sarenka", zle: "line.d_od_poczatku", pokaz: () => c.rytm(rzad) });
-        await c.ujecie("sredni", { na: ["sarenka"] });
+        await c.ujecie("sredni", { na: ["sarenka", ...rzad.slice(-3)] });
         await c.say("sarenka", "line.d_sama");
+        // back by the lake: Deer dances it alone
+        await c.go("laka", { ciecie: true });
+        await c.ujecie("dwuujecie", { na: ["lisek", "sarenka"] });
+        await c.say("lisek", "line.d_nad_jeziorem", { anim: "Zgloszenie" });
+        await c.say("sarenka", "line.d_patrzcie", { anim: "Podskok" });
         await c.ujecie("ogolny");
         await c.taniec("sarenka", ["klask", "obrot", "klask", "obrot"]);
-        await c.ujecie("zblizenie", { na: "sarenka" });
+        await c.ujecie("zblizenie", { na: "sarenka" });                      // joy and thanks
         await c.emocja("sarenka", "serce", { anim: "Radosc" });
         await c.say("sarenka", "line.d_umiem");
-        await c.ujecie("zblizenie", { na: "lisek" });
-        await c.say("lisek", "line.d_do_domu");
+        await c.ujecie("dwuujecie", { na: ["lisek", "sarenka"] });
+        await c.say("lisek", "line.d_do_domu", { anim: "Machanie" });
         c.clear();
-        await c.ujecie("ogolny");
       },
     ],
     practice: [
@@ -280,7 +289,7 @@ export default {
         S.puppets.wiewiorka.korzen.position.x = -5.3; S.puppets.sowa.korzen.position.x = 5.3;   // at the edges: the games fill the middle
         const gw = c.gwiazdki(5, { auto: false });
         await wyrosnij(c);
-        await c.ujecie("zblizenie", { na: "sowa" });
+        await c.ujecie("sredni", { na: ["sowa"] });                         // Owl opens the rehearsal
         await c.say("sowa", "line.p_start", { anim: "Radosc" });
         await c.ujecie("ogolny");
         // 1. echo: bum, dzyń, dzyń (ABB)
@@ -290,7 +299,7 @@ export default {
           await graj(c, rzad, instr, ["beben", "dzwonek", "dzwonek", "beben", "dzwonek", "dzwonek", "beben"]);
           await czytaj(c, rzad, "sowa", "line.p_echo_co");
           await coDalej(c, rzad, instr, "dzwonek", { kto: "sowa", zle: "line.p_od_poczatku" });
-          await c.ujecie("zblizenie", { na: "sowa" });
+          await c.ujecie("sredni", { na: ["sowa", ...rzad.slice(-4)] });   // the answer stays in the row while it is named
           await c.say("sowa", "line.p_echo_ok");
           gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
@@ -305,7 +314,7 @@ export default {
           await c.say("wiewiorka", "line.p_koraliki");
           const t = await c.slots({ items, slots: sloty, wrong: "line.p_koraliki_nie" });
           await t.done();
-          await c.ujecie("zblizenie", { na: "wiewiorka" });
+          await c.ujecie("sredni", { na: ["wiewiorka", ...items] });       // the finished string
           await c.say("wiewiorka", "line.p_koraliki_ok", { anim: "Radosc" });
           gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
@@ -315,6 +324,7 @@ export default {
           for (const [i, n] of wzor.entries()) rzad.push(await c.object(n, { x: -4.4 + i * 1.1, y: ROW_Y, size: 0.95 }));
           await c.say("sowa", "line.p_blad");
           await czytaj(c, rzad, "sowa", "line.p_blad_czytaj");
+          await c.wonder("sowa");
           await c.say("sowa", "line.p_blad_wskaz");
           dobre(rzad[4]);
           await c.task({ targets: rzad, correct: rzad[4], wrong: "line.p_blad_nie" });
@@ -340,58 +350,140 @@ export default {
           await tanczy(c, "wiewiorka", rzad, ["skok", "obrot", "obrot", "skok", "obrot", "obrot", "skok"]);
           await czytaj(c, rzad, "wiewiorka", "line.p_taniec_co");
           await jakiRuch(c, rzad, karty, "obrot", { kto: "wiewiorka", uczen: "wiewiorka", zle: "line.p_od_poczatku", pokaz: () => c.rytm(rzad) });
-          await c.ujecie("zblizenie", { na: "sowa" });
-          await c.say("sowa", "line.p_taniec_ok");
+          await c.ujecie("sredni", { na: ["sowa", ...rzad.slice(-4)] });
+          await c.say("sowa", "line.p_taniec_ok", { anim: "Radosc" });
           gw.dodaj(); c.clear(); await c.ujecie("ogolny");
         }
         await c.praise("sowa");
       },
     ],
     apply: [
-      // the concert in Fox's kitchen: the garland hangs; no drum at home - a pot is the drum, a spoon on a cup the
-      // bell; Fox starts and the child plays on; then Owl's song; Deer dances to it; applause from the parents
+      // home - the third act, the concert in Fox's kitchen. Arrival with the thread (the parents come soon, the garland
+      // hangs); no drum at home - the pot and the cup; Squirrel's "loud and a lot" again, Deer cannot dance to it; which
+      // song has a rhythm? (point); the table for the parents set in a rhythm (drag onto the painted table); the concert:
+      // the child plays on (point); Deer forgets her dance (drag the move into the gap); the parents applaud, seen; the
+      // home game shown in play (clap, clap, stomp)
       async (c) => {
-        for (const n of ["lisek", "wiewiorka", "sowa", "sarenka"]) c.show(n);
+        const S = c.stage;
+        const POZ = { lisek: -5.1, wiewiorka: -3.4, sowa: 3.5, sarenka: 5.3 };   // the table's middle stays free
+        for (const n of Object.keys(POZ)) c.show(n);
+        for (const [n, x] of Object.entries(POZ)) S.puppets[n].korzen.position.x = x;
+        await c.wait(0.3);
+        const m = await c.miejsca(), st = m.stol;
+        // arrival: the garland from the garden goes up over the kitchen
+        await c.ujecie("ogolny");
+        await c.say("lisek", "line.e_dom", { anim: "Podskok" });
         const girl = await girlanda(c, ["czerwona", "zolta", "czerwona", "zolta", "czerwona", "zolta", "czerwona", "zolta", "czerwona"], GIRLANDA.kuchnia);
         await czytaj(c, girl, "wiewiorka", "line.e_girlanda", { anim: "Radosc" });
-        await c.ujecie("zblizenie", { na: "sowa" });
+        await c.ujecie("zblizenie", { na: "sowa" });                         // the surprise: no drum, no bell
+        await c.emocja("sowa", "wykrzyknik", { anim: "Rozgladanie" });
         await c.say("sowa", "line.e_bez_bebna");
-        await c.wonder("sowa");
-        await c.ujecie("sredni", { na: ["lisek"] });
-        await c.say("lisek", "line.e_kuchnia", { anim: "Zgloszenie" });
-        await c.ujecie("ogolny");
+        await c.ujecie("ogolny");                                            // the kitchen band comes onto the floor
         const instr = [await instrument(c, "garnek", -1.0), await instrument(c, "kubek", 1.0)];
         await wyrosnij(c);
-        await c.ujecie("sredni", { na: instr });                            // the kitchen band: a pot and a cup
+        await c.say("lisek", "line.e_kuchnia", { anim: "Zgloszenie" });
         for (const h of instr) { c.sfx(h.dzwiek); await c.stage.bump(h, 0.3, false); await c.wait(0.5); }
-        c.sfx("clap", { glosnosc: 0.6 });                                   // the parents sit down (heard, not seen)
-        await c.ujecie("zblizenie", { na: "lisek" });
-        await c.say("lisek", "line.e_zaczynam");
+        // the misconception again: Squirrel bangs on everything, loud and a lot - her notes pile into a row over her head
+        await c.ujecie("sredni", { na: ["wiewiorka", ...instr] });
+        await c.say("wiewiorka", "line.e_wszystko", { anim: "Podskok" });
         await c.ujecie("ogolny");
-        // the first song: bum, dzyń ... Fox plays four, the child plays on four times
+        const halas = rzadek({ x0: -5.3, krok: 0.7, s: 0.66 });
+        c.play("wiewiorka", "Radosc", { loop: true });
+        await graj(c, halas, instr, ["garnek", "kubek", "kubek", "garnek", "garnek", "garnek", "kubek"], { tempa: [0.2, 0.15, 0.5, 0.15, 0.12, 0.4, 0.2] });
+        c.play("wiewiorka", "Spoczynek", { loop: true });
+        const podkresl = (r) => c.line([[r[0].mesh.position.x - 0.35, ROW_Y - 0.48], [r.at(-1).mesh.position.x + 0.35, ROW_Y - 0.48]], { color: "#8a6a48", duration: 0.3, width: 0.04 });
+        await podkresl(halas);                                                // a song is one row: a line under it
+        await c.ujecie("zblizenie", { na: "sarenka" });                      // Deer is lost
+        await c.emocja("sarenka", "pot", { anim: "Smutek" });
+        await c.say("sarenka", "line.e_nie_tance");
+        await c.ujecie("dwuujecie", { na: ["wiewiorka", "sowa"] });
+        await c.say("sowa", "line.e_przypomnij", { anim: "Zgloszenie" });
+        await c.say("wiewiorka", "line.e_ups", { anim: "Kiwanie" });
+        // Owl's song, a rhythm, over Owl's head
+        await c.ujecie("ogolny");
+        const piosenka = rzadek({ x0: 1.45, krok: 0.75, s: 0.66 });
+        await graj(c, piosenka, instr, ["garnek", "kubek", "garnek", "kubek", "garnek", "kubek"]);
+        await podkresl(piosenka);
+        // 1. which song can Deer dance to? the one with a rhythm
+        await c.say("sarenka", "line.e_ktora");
+        dobre(halas, false); dobre(piosenka);
+        await c.task({ targets: [...halas, ...piosenka], correct: piosenka, onWrong: async () => { await c.say("sarenka", "line.e_ktora_nie"); await c.rytm(piosenka); } });
+        dobre(piosenka, false);
+        await c.rytm(piosenka, { kiwaja: ["sarenka"] });
+        await c.ujecie("sredni", { na: ["sarenka", ...piosenka.slice(-3)] });
+        await c.say("sarenka", "line.e_ktora_ok", { anim: "Radosc" });
+        sprzatnij(halas); sprzatnij(piosenka);
+        // 2. the table for the parents: teacups and cookies in a rhythm, on the painted table
+        await c.ujecie("ogolny");
+        await Promise.all([c.take("lisek", instr[0]), c.take("wiewiorka", instr[1])]);   // the band holds its things: the floor is free
+        const yS = st.y + 0.15, KS = 0.9, xS = (i) => st.x - 0.4 + (i - 2.5) * KS;
+        const wzor = ["filizanka", "ciastko", "filizanka", "ciastko"], stol = [];
+        for (const [i, n] of wzor.entries()) { const h = await c.object(n, { x: xS(i), y: yS, size: 0.78 }); h.tag = n; stol.push(h); }
+        const naStol = [];
+        for (const [i, n] of tasuj(["filizanka", "ciastko", "ciastko"]).entries()) { const h = await c.object(n, { x: -1.0 + i * 1.0, y: -2.4, size: 0.78 }); h.tag = n; naStol.push(h); }
+        await c.say("lisek", "line.e_stol");
+        const sl = await c.slots({ items: naStol, slots: [4, 5].map((i) => ({ x: xS(i), y: yS, w: 0.9, h: 0.8, accept: (it) => it.tag === wzor[i % 2] })), wrong: "line.e_stol_nie" });
+        await sl.done(); sl.remove();
+        for (const h of naStol) if (!h.slot) h.remove();                     // the spare cookie goes back to the tin
+        const nakryty = S.objects.filter((h) => h.tag === "filizanka" || h.tag === "ciastko").sort((a, b) => a.mesh.position.x - b.mesh.position.x);
+        await c.ujecie("sredni", { na: ["wiewiorka", ...nakryty] });
+        await czytaj(c, nakryty, "wiewiorka", "line.e_stol_ok", { anim: "Radosc" });
+        // 3. the parents come in (heard, not seen); the concert: Fox starts, the child plays on
+        await c.ujecie("ogolny");
+        c.sfx("clap", { glosnosc: 0.6 });
+        await Promise.all([c.put("lisek", -1.0, -2.35), c.put("wiewiorka", 1.0, -2.35)]);   // the instruments back onto the floor
+        await c.say("lisek", "line.e_zaczynam", { anim: "Podskok" });
         const rzad = [];
         await graj(c, rzad, instr, ["garnek", "kubek", "garnek", "kubek"]);
         await c.say("lisek", "line.e_graj");
-        for (const k of ["garnek", "kubek", "garnek", "kubek"]) await coDalej(c, rzad, instr, k, { kto: "lisek", zle: "line.e_od_poczatku" });
-        await c.ujecie("sredni", { na: ["sowa"] });
+        for (const k of ["garnek", "kubek", "garnek"]) await coDalej(c, rzad, instr, k, { kto: "lisek", zle: "line.e_od_poczatku" });
+        await c.ujecie("sredni", { na: ["sowa", ...rzad.slice(-4)] });
         await c.say("sowa", "line.e_brawo", { anim: "Brawo" });
-        await c.ujecie("ogolny");
-        // the second song: bum, bum, dzyń - Owl plays one round, the child the next
         sprzatnij(rzad);
-        await c.say("sowa", "line.e_druga");
-        await graj(c, rzad, instr, ["garnek", "garnek", "kubek"]);
-        await c.say("sowa", "line.e_graj_dalej");
-        for (const k of ["garnek", "garnek", "kubek"]) await coDalej(c, rzad, instr, k, { kto: "sowa", zle: "line.e_od_poczatku" });
-        // Deer dances her dance while the band plays the song
+        // 4. Deer dances for the parents - and forgets the next move
         await c.ujecie("sredni", { na: ["sarenka"] });
         await c.say("sarenka", "line.e_tancze", { anim: "Podskok" });
         await c.ujecie("ogolny");
-        await Promise.all([c.taniec("sarenka", ["klask", "klask", "skok", "klask", "klask", "skok"], { tempo: 0.9 }), (async () => { for (let i = 0; i < 2; i++) await c.rytm(rzad, { tempo: 0.9, kiwaja: ["lisek", "wiewiorka", "sowa"] }); })()]);
-        c.sfx("clap");
-        await c.ujecie("sredni", { na: ["sarenka"] });                       // Deer in her glory, Fox telling it
-        c.rozblysk("sarenka");
-        await c.say("lisek", "line.e_rodzice");
+        const taniec = [];
+        let muzyka = c.muzyka("melodyjka");
+        c.emocja("sarenka", "muzyka");                                        // she dances to the music
+        await tanczy(c, "sarenka", taniec, ["klask", "klask", "skok", "klask", "klask"], { tempo: 0.9 });
+        muzyka.stop(150);
+        await c.ujecie("zblizenie", { na: "sarenka" });                      // stage fright
+        await c.emocja("sarenka", "pot", { anim: "Smutek" });
+        await c.say("sarenka", "line.e_zapomnialam");
         await c.ujecie("ogolny");
+        await Promise.all([c.take("lisek", instr[0]), c.take("wiewiorka", instr[1])]);   // room on the floor for the cards
+        const karty = await kartyRuchow(c, ["klask", "skok", "obrot"]);
+        await c.say("lisek", "line.e_ruch");
+        const xL = X0 + taniec.length * KROK;
+        const sd = await c.slots({ items: karty, slots: [{ x: xL, y: ROW_Y, w: 1.0, h: 1.0, accept: (it) => it.ruch === "skok" }], wrong: "line.e_ruch_nie" });
+        await sd.done(); sd.remove();
+        const wlozona = karty.find((h) => h.slot); taniec.push(wlozona);
+        for (const h of karty) if (h !== wlozona) h.remove();
+        c.ruch("sarenka", "skok");
+        await c.ujecie("sredni", { na: ["sarenka", ...taniec.slice(-3)] });
+        await c.say("sarenka", "line.e_ruch_ok", { anim: "Radosc" });
+        // the whole dance, the band nodding along to it
+        await c.ujecie("ogolny");
+        await c.say("lisek", "line.e_cala", { anim: "Podskok" });
+        muzyka = c.muzyka("melodyjka");
+        await Promise.all([c.taniec("sarenka", ["klask", "klask", "skok", "klask", "klask", "skok"], { tempo: 0.9 }), c.rytm(taniec, { tempo: 0.9, kiwaja: ["lisek", "wiewiorka", "sowa"] })]);
+        muzyka.stop(300);
+        await Promise.all([c.put("lisek", -1.0, -2.35), c.put("wiewiorka", 1.0, -2.35)]);   // the paws free for the bow
+        c.sfx("clap");
+        // the payoff, seen: the parents applaud
+        const il = await c.ilustracja("koncert_dla_rodzicow", { ruch: "najazd" });
+        await c.say("lisek", "line.e_oklaski");
+        await c.say("sarenka", "line.e_tanczylam");
+        await il.zsun();
+        // the home game, shown in play on a plain colour: clap, clap, jump - no pot needed
+        await c.go({ kolor: "#fde7d0", motyw: "kola" }, { ciecie: true });
+        await c.ujecie("dwuujecie", { na: ["lisek", "wiewiorka"] });
+        await c.say("lisek", "line.e_pokaz", { anim: "Zgloszenie" });
+        await Promise.all([c.taniec("lisek", ["klask", "klask", "skok"]), c.taniec("wiewiorka", ["klask", "klask", "skok"])]);
+        await c.ujecie("sredni", { na: ["lisek"] });
+        await c.say("lisek", "line.e_rodzice", { anim: "Machanie" });
       },
     ],
   },

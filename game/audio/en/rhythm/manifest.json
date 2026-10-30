@@ -300,14 +300,14 @@
   "text": "I have an idea! There are instruments in the kitchen too. The pot will be our drum, and a spoon in a cup our bell. Listen!"
  },
  "line.e_zaczynam": {
-  "hash": "ad41642a94d7",
+  "hash": "51d6bd99aa70",
   "who": "lisek",
-  "text": "Our parents are here and sitting down. The concert begins! I'll start, and you play on."
+  "text": "Our parents are sitting at the table. The concert begins!"
  },
  "line.e_graj": {
-  "hash": "510a0734208e",
+  "hash": "f74b42406758",
   "who": "lisek",
-  "text": "Now you! Play on: point to the pot or the cup, one after another, the way the rhythm goes."
+  "text": "Now you! Play on: point to the pot or the cup, the way the rhythm goes."
  },
  "line.e_od_poczatku": {
   "hash": "5fcc0db03b2a",
@@ -320,29 +320,19 @@
   "text": "Not that sound. Let's listen from the start and play on."
  },
  "line.e_brawo": {
-  "hash": "c8867d0cafa9",
+  "hash": "e15e07e04bd6",
   "who": "sowa",
-  "text": "Bravo! You're playing in rhythm with us."
- },
- "line.e_druga": {
-  "hash": "55c9351d11ce",
-  "who": "sowa",
-  "text": "And now my song: boom, boom, ding. Listen."
- },
- "line.e_graj_dalej": {
-  "hash": "2803e5a0b93b",
-  "who": "sowa",
-  "text": "Play on, the way my song goes."
+  "text": "Yes, pot, cup, pot, cup! You're playing in rhythm with us."
  },
  "line.e_tancze": {
-  "hash": "6239ce4f44b1",
+  "hash": "71884a6d1e47",
   "who": "sarenka",
-  "text": "And I'll dance to your music, just as you taught me!"
+  "text": "And now I'll dance for our parents, just as you taught me!"
  },
  "line.e_rodzice": {
-  "hash": "594e56326831",
+  "hash": "568aeb84a0e0",
   "who": "lisek",
-  "text": "Our parents are clapping! Make a concert like this at home together: a pot, a spoon and a rhythm, like boom, boom, ding. Or clap it: clap, clap, stomp."
+  "text": "Make a concert like this at home together: a pot, a spoon and a rhythm, like boom, boom, ding. Or dance it: clap, clap, jump."
  },
  "line.naklejka_daj": {
   "hash": "40e38d356a21",
@@ -395,9 +385,9 @@
   "text": "Clap, clap, jump, clap, clap, jump, clap, clap... Which move now? Point to the card, and Deer will do it."
  },
  "line.d_drugi_co": {
-  "hash": "25cf44c5d30f",
+  "hash": "e2ae38e86be6",
   "who": "wiewiorka",
-  "text": "Clap, spin, clap, spin, clap... Which move now? Point to the card."
+  "text": "Clap, spin, clap, spin, clap... Point to the card with the move that comes now."
  },
  "line.p_echo_co": {
   "hash": "73bde448055f",
@@ -410,9 +400,9 @@
   "text": "Leaf, leaf, acorn, leaf, acorn, acorn, leaf, leaf, acorn."
  },
  "line.p_blad_wskaz": {
-  "hash": "c972ebc687f2",
+  "hash": "e03f19c620bb",
   "who": "sowa",
-  "text": "What breaks the rhythm here? Point to it."
+  "text": "Point to what breaks the rhythm here."
  },
  "line.p_bebny_co": {
   "hash": "34558538c0b5",
@@ -420,13 +410,118 @@
   "text": "Big, small, big, small, big, small, big... Which drum plays now? Point to the big one or the small one."
  },
  "line.p_taniec_co": {
-  "hash": "ca3b3ba8915e",
+  "hash": "e8002a1b221c",
   "who": "wiewiorka",
-  "text": "Jump, spin, spin, jump, spin, spin, jump... Which move now? Point to the card."
+  "text": "Jump, spin, spin, jump, spin, spin, jump... Point to the card with the move that comes now."
  },
  "line.e_girlanda": {
   "hash": "7c50922b55a7",
   "who": "wiewiorka",
   "text": "Our garland is hanging in the kitchen! Red, yellow, red, yellow."
+ },
+ "line.e_dom": {
+  "hash": "ef833baca8bd",
+  "who": "lisek",
+  "text": "We're home! Our parents will be here any minute. Let's get the kitchen ready for the concert!"
+ },
+ "line.e_wszystko": {
+  "hash": "6619911493b3",
+  "who": "wiewiorka",
+  "text": "Hooray, a pot and a cup! I'll play on everything at once, loud and a lot!"
+ },
+ "line.e_nie_tance": {
+  "hash": "99c66a4bc45c",
+  "who": "sarenka",
+  "text": "Oh dear! I can't dance to that. I don't know which move to make."
+ },
+ "line.e_przypomnij": {
+  "hash": "802684df0a5b",
+  "who": "sowa",
+  "text": "Squirrel, remember? Music has a rhythm: something repeats in order, again and again. Listen to my song."
+ },
+ "line.e_ups": {
+  "hash": "b57cab4e292a",
+  "who": "wiewiorka",
+  "text": "Oops, I forgot about the rhythm!"
+ },
+ "line.e_ktora": {
+  "hash": "6690e8ddd78a",
+  "who": "sarenka",
+  "text": "Which song can I dance to? Point to the song that has a rhythm."
+ },
+ "line.e_ktora_nie": {
+  "hash": "6157afb5d9f2",
+  "who": "sarenka",
+  "text": "Nothing repeats in this song, so I don't know which move to make. Listen to Owl's song again."
+ },
+ "line.e_ktora_ok": {
+  "hash": "df0adb70c278",
+  "who": "sarenka",
+  "text": "Yes, Owl's song! Pot, cup, pot, cup. I know what comes next, so I can dance!"
+ },
+ "line.e_stol": {
+  "hash": "81c250559d6a",
+  "who": "lisek",
+  "text": "Our parents will sit at the table. Let's set out cups and cookies for them, in a rhythm too, like on the garland. Drag what comes next onto the empty places."
+ },
+ "line.e_stol_nie": {
+  "hash": "c8c3262ee334",
+  "who": "lisek",
+  "text": "That doesn't fit here. Look from the start: cup, cookie, cup, cookie. What comes now?"
+ },
+ "line.e_stol_ok": {
+  "hash": "897934f56f4b",
+  "who": "wiewiorka",
+  "text": "Cup, cookie, cup, cookie, cup, cookie. All set!"
+ },
+ "line.e_zapomnialam": {
+  "hash": "fac4ee58f6bf",
+  "who": "sarenka",
+  "text": "Oh no, I forgot what comes next! Clap, clap, jump, clap, clap... and what now?"
+ },
+ "line.e_ruch": {
+  "hash": "1395efbf2d0a",
+  "who": "lisek",
+  "text": "Help Deer! Drag the card with the move that comes now onto the empty place."
+ },
+ "line.e_ruch_nie": {
+  "hash": "f8c07ffe04d1",
+  "who": "lisek",
+  "text": "That move doesn't fit here. Look from the start: clap, clap, jump, clap, clap..."
+ },
+ "line.e_ruch_ok": {
+  "hash": "a718e9b0ac51",
+  "who": "sarenka",
+  "text": "A jump! Clap, clap, jump. Now I remember!"
+ },
+ "line.e_oklaski": {
+  "hash": "1fec4df80982",
+  "who": "lisek",
+  "text": "Our parents are clapping! Our concert worked, because we played in rhythm."
+ },
+ "line.e_tanczylam": {
+  "hash": "400e4951395b",
+  "who": "sarenka",
+  "text": "And I danced in front of everyone! This morning I couldn't dance at all."
+ },
+ "line.e_pokaz": {
+  "hash": "13aef2e935e8",
+  "who": "lisek",
+  "text": "At home you can play even without a pot. Watch: clap, clap, jump!"
+ },
+ "line.d_nad_jeziorem": {
+  "hash": "8a10f3c22951",
+  "who": "lisek",
+  "text": "We're back by the lake. Deer, now dance it on your own, and we'll watch!"
+ },
+ "line.e_cala": {
+  "hash": "88c723fed69c",
+  "who": "lisek",
+  "text": "And now the whole dance from the start! We play, and Deer dances."
+ },
+ "line.d_patrzcie": {
+  "hash": "c01a22651cd7",
+  "who": "sarenka",
+  "text": "Watch me! Clap, spin, clap, spin."
  }
 }

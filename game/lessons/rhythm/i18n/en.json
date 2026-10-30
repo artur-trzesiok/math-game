@@ -183,7 +183,7 @@
   },
   "line.d_drugi_co": {
     "who": "wiewiorka",
-    "text": "Clap, spin, clap, spin, clap... Which move now? Point to the card."
+    "text": "Clap, spin, clap, spin, clap... Point to the card with the move that comes now."
   },
   "line.d_sama": {
     "who": "sarenka",
@@ -242,7 +242,7 @@
   },
   "line.p_blad_wskaz": {
     "who": "sowa",
-    "text": "What breaks the rhythm here? Point to it."
+    "text": "Point to what breaks the rhythm here."
   },
   "line.p_blad_nie": {
     "who": "sowa",
@@ -270,7 +270,7 @@
   },
   "line.p_taniec_co": {
     "who": "wiewiorka",
-    "text": "Jump, spin, spin, jump, spin, spin, jump... Which move now? Point to the card."
+    "text": "Jump, spin, spin, jump, spin, spin, jump... Point to the card with the move that comes now."
   },
   "line.p_taniec_ok": {
     "who": "sowa",
@@ -290,11 +290,11 @@
   },
   "line.e_zaczynam": {
     "who": "lisek",
-    "text": "Our parents are here and sitting down. The concert begins! I'll start, and you play on."
+    "text": "Our parents are sitting at the table. The concert begins!"
   },
   "line.e_graj": {
     "who": "lisek",
-    "text": "Now you! Play on: point to the pot or the cup, one after another, the way the rhythm goes."
+    "text": "Now you! Play on: point to the pot or the cup, the way the rhythm goes."
   },
   "line.e_od_poczatku": {
     "who": "lisek",
@@ -305,23 +305,99 @@
   },
   "line.e_brawo": {
     "who": "sowa",
-    "text": "Bravo! You're playing in rhythm with us."
-  },
-  "line.e_druga": {
-    "who": "sowa",
-    "text": "And now my song: boom, boom, ding. Listen."
-  },
-  "line.e_graj_dalej": {
-    "who": "sowa",
-    "text": "Play on, the way my song goes."
+    "text": "Yes, pot, cup, pot, cup! You're playing in rhythm with us."
   },
   "line.e_tancze": {
     "who": "sarenka",
-    "text": "And I'll dance to your music, just as you taught me!"
+    "text": "And now I'll dance for our parents, just as you taught me!"
   },
   "line.e_rodzice": {
     "who": "lisek",
-    "text": "Our parents are clapping! Make a concert like this at home together: a pot, a spoon and a rhythm, like boom, boom, ding. Or clap it: clap, clap, stomp."
+    "text": "Make a concert like this at home together: a pot, a spoon and a rhythm, like boom, boom, ding. Or dance it: clap, clap, jump."
+  },
+  "line.e_dom": {
+    "who": "lisek",
+    "text": "We're home! Our parents will be here any minute. Let's get the kitchen ready for the concert!"
+  },
+  "line.e_wszystko": {
+    "who": "wiewiorka",
+    "text": "Hooray, a pot and a cup! I'll play on everything at once, loud and a lot!"
+  },
+  "line.e_nie_tance": {
+    "who": "sarenka",
+    "text": "Oh dear! I can't dance to that. I don't know which move to make."
+  },
+  "line.e_przypomnij": {
+    "who": "sowa",
+    "text": "Squirrel, remember? Music has a rhythm: something repeats in order, again and again. Listen to my song."
+  },
+  "line.e_ups": {
+    "who": "wiewiorka",
+    "text": "Oops, I forgot about the rhythm!"
+  },
+  "line.e_ktora": {
+    "who": "sarenka",
+    "text": "Which song can I dance to? Point to the song that has a rhythm."
+  },
+  "line.e_ktora_nie": {
+    "who": "sarenka",
+    "text": "Nothing repeats in this song, so I don't know which move to make. Listen to Owl's song again."
+  },
+  "line.e_ktora_ok": {
+    "who": "sarenka",
+    "text": "Yes, Owl's song! Pot, cup, pot, cup. I know what comes next, so I can dance!"
+  },
+  "line.e_stol": {
+    "who": "lisek",
+    "text": "Our parents will sit at the table. Let's set out cups and cookies for them, in a rhythm too, like on the garland. Drag what comes next onto the empty places."
+  },
+  "line.e_stol_nie": {
+    "who": "lisek",
+    "text": "That doesn't fit here. Look from the start: cup, cookie, cup, cookie. What comes now?"
+  },
+  "line.e_stol_ok": {
+    "who": "wiewiorka",
+    "text": "Cup, cookie, cup, cookie, cup, cookie. All set!"
+  },
+  "line.e_zapomnialam": {
+    "who": "sarenka",
+    "text": "Oh no, I forgot what comes next! Clap, clap, jump, clap, clap... and what now?"
+  },
+  "line.e_ruch": {
+    "who": "lisek",
+    "text": "Help Deer! Drag the card with the move that comes now onto the empty place."
+  },
+  "line.e_ruch_nie": {
+    "who": "lisek",
+    "text": "That move doesn't fit here. Look from the start: clap, clap, jump, clap, clap..."
+  },
+  "line.e_ruch_ok": {
+    "who": "sarenka",
+    "text": "A jump! Clap, clap, jump. Now I remember!"
+  },
+  "line.e_oklaski": {
+    "who": "lisek",
+    "text": "Our parents are clapping! Our concert worked, because we played in rhythm."
+  },
+  "line.e_tanczylam": {
+    "who": "sarenka",
+    "text": "And I danced in front of everyone! This morning I couldn't dance at all."
+  },
+  "line.e_pokaz": {
+    "who": "lisek",
+    "text": "At home you can play even without a pot. Watch: clap, clap, jump!"
+  },
+  "line.d_nad_jeziorem": {
+    "who": "lisek",
+    "text": "We're back by the lake. Deer, now dance it on your own, and we'll watch!"
+  },
+  "line.e_cala": {
+    "who": "lisek",
+    "text": "And now the whole dance from the start! We play, and Deer dances."
+  },
+  "line.d_patrzcie": {
+    "who": "sarenka",
+    "text": "Watch me! Clap, spin, clap, spin."
   },
   "line.naklejka_daj": {
     "who": "sarenka",

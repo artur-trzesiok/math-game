@@ -183,7 +183,7 @@
   },
   "line.d_drugi_co": {
     "who": "wiewiorka",
-    "text": "Klask, obrót, klask, obrót, klask... Jaki ruch teraz? Wskaż kartę."
+    "text": "Klask, obrót, klask, obrót, klask... Wskaż kartę z ruchem, który przyjdzie teraz."
   },
   "line.d_sama": {
     "who": "sarenka",
@@ -242,7 +242,7 @@
   },
   "line.p_blad_wskaz": {
     "who": "sowa",
-    "text": "Co tu psuje rytm? Wskaż to."
+    "text": "Wskaż, co tu psuje rytm."
   },
   "line.p_blad_nie": {
     "who": "sowa",
@@ -270,7 +270,7 @@
   },
   "line.p_taniec_co": {
     "who": "wiewiorka",
-    "text": "Skok, obrót, obrót, skok, obrót, obrót, skok... Jaki ruch teraz? Wskaż kartę."
+    "text": "Skok, obrót, obrót, skok, obrót, obrót, skok... Wskaż kartę z ruchem, który przyjdzie teraz."
   },
   "line.p_taniec_ok": {
     "who": "sowa",
@@ -290,11 +290,11 @@
   },
   "line.e_zaczynam": {
     "who": "lisek",
-    "text": "Rodzice już przyszli i siedzą. Zaczynamy koncert! Ja zacznę, a ty zagrasz dalej."
+    "text": "Rodzice już siedzą przy stole. Zaczynamy koncert!"
   },
   "line.e_graj": {
     "who": "lisek",
-    "text": "Teraz ty! Graj dalej: wskazuj garnek albo kubek, po kolei, tak jak idzie rytm."
+    "text": "Teraz ty! Graj dalej: wskazuj garnek albo kubek, tak jak idzie rytm."
   },
   "line.e_od_poczatku": {
     "who": "lisek",
@@ -305,23 +305,99 @@
   },
   "line.e_brawo": {
     "who": "sowa",
-    "text": "Brawo! Grasz razem z nami w rytmie."
-  },
-  "line.e_druga": {
-    "who": "sowa",
-    "text": "A teraz moja piosenka: bum, bum, dzyń. Posłuchaj."
-  },
-  "line.e_graj_dalej": {
-    "who": "sowa",
-    "text": "Graj dalej, tak jak idzie moja piosenka."
+    "text": "Tak, garnek, kubek, garnek, kubek! Grasz razem z nami w rytmie."
   },
   "line.e_tancze": {
     "who": "sarenka",
-    "text": "A ja zatańczę do waszej muzyki, tak jak mnie nauczyliście!"
+    "text": "A teraz ja zatańczę dla rodziców, tak jak mnie nauczyliście!"
   },
   "line.e_rodzice": {
     "who": "lisek",
-    "text": "Rodzice biją brawo! Zróbcie w domu taki koncert razem: garnek, łyżka i rytm, na przykład bum, bum, dzyń. Możecie też klaskać: klask, klask, tup."
+    "text": "Zróbcie w domu taki koncert razem: garnek, łyżka i rytm, na przykład bum, bum, dzyń. Albo zatańczcie: klask, klask, skok."
+  },
+  "line.e_dom": {
+    "who": "lisek",
+    "text": "Jesteśmy w domu! Rodzice przyjdą lada chwila. Szykujemy kuchnię na koncert!"
+  },
+  "line.e_wszystko": {
+    "who": "wiewiorka",
+    "text": "Hura, garnek i kubek! To ja zagram na wszystkim naraz, głośno i dużo!"
+  },
+  "line.e_nie_tance": {
+    "who": "sarenka",
+    "text": "Ojej! Do tego nie da się tańczyć. Nie wiem, jaki ruch zrobić."
+  },
+  "line.e_przypomnij": {
+    "who": "sowa",
+    "text": "Wiewiórko, pamiętasz? Muzyka ma rytm: coś powtarza się po kolei, znowu i znowu. Posłuchaj mojej piosenki."
+  },
+  "line.e_ups": {
+    "who": "wiewiorka",
+    "text": "Ups, zapomniałam o rytmie!"
+  },
+  "line.e_ktora": {
+    "who": "sarenka",
+    "text": "Do której piosenki mogę zatańczyć? Wskaż piosenkę, w której jest rytm."
+  },
+  "line.e_ktora_nie": {
+    "who": "sarenka",
+    "text": "W tej piosence nic się nie powtarza, więc nie wiem, jaki ruch zrobić. Posłuchaj jeszcze raz piosenki Sowy."
+  },
+  "line.e_ktora_ok": {
+    "who": "sarenka",
+    "text": "Tak, piosenka Sowy! Garnek, kubek, garnek, kubek. Wiem, co będzie dalej, więc mogę tańczyć!"
+  },
+  "line.e_stol": {
+    "who": "lisek",
+    "text": "Przy stole usiądą rodzice. Postawmy im filiżanki i ciastka, też w rytmie, jak na girlandzie. Przeciągnij na puste miejsca to, co przyjdzie dalej."
+  },
+  "line.e_stol_nie": {
+    "who": "lisek",
+    "text": "To tu nie pasuje. Popatrz od początku: filiżanka, ciastko, filiżanka, ciastko. Co przychodzi teraz?"
+  },
+  "line.e_stol_ok": {
+    "who": "wiewiorka",
+    "text": "Filiżanka, ciastko, filiżanka, ciastko, filiżanka, ciastko. Gotowe!"
+  },
+  "line.e_zapomnialam": {
+    "who": "sarenka",
+    "text": "Ojej, zapomniałam, co dalej! Klask, klask, skok, klask, klask... i co teraz?"
+  },
+  "line.e_ruch": {
+    "who": "lisek",
+    "text": "Pomóż Sarence! Przeciągnij kartę z ruchem, który przyjdzie teraz, na puste miejsce."
+  },
+  "line.e_ruch_nie": {
+    "who": "lisek",
+    "text": "Ten ruch tu nie pasuje. Popatrz od początku: klask, klask, skok, klask, klask..."
+  },
+  "line.e_ruch_ok": {
+    "who": "sarenka",
+    "text": "Skok! Klask, klask, skok. Już pamiętam!"
+  },
+  "line.e_oklaski": {
+    "who": "lisek",
+    "text": "Rodzice biją brawo! Nasz koncert się udał, bo graliśmy w rytmie."
+  },
+  "line.e_tanczylam": {
+    "who": "sarenka",
+    "text": "A ja tańczyłam przed wszystkimi! Rano jeszcze nie umiałam."
+  },
+  "line.e_pokaz": {
+    "who": "lisek",
+    "text": "W domu możecie zagrać nawet bez garnka. Popatrzcie: klask, klask, skok!"
+  },
+  "line.d_nad_jeziorem": {
+    "who": "lisek",
+    "text": "Jesteśmy znowu nad jeziorem. Sarenko, zatańcz teraz sama, a my popatrzymy!"
+  },
+  "line.e_cala": {
+    "who": "lisek",
+    "text": "A teraz cały taniec od początku! Gramy, a Sarenka tańczy."
+  },
+  "line.d_patrzcie": {
+    "who": "sarenka",
+    "text": "Patrzcie na mnie! Klask, obrót, klask, obrót."
   },
   "line.naklejka_daj": {
     "who": "sarenka",

@@ -32,11 +32,14 @@
     "koralik_zolty",
     "koralik_niebieski",
     "listek",
-    "zoledz"
+    "zoledz",
+    "filizanka",
+    "ciastko"
   ],
   "cover": "The four friends play a concert in a garden: the squirrel beats a small red toy drum, the owl rings a golden hand bell, the fox claps, the deer dances; a garland of red and yellow triangle flags hangs above them.",
   "naklejka": {
     "obraz": "objects/beben",
     "kto": "sarenka"
-  }
+  },
+  "oddech": "posagi"
 }
