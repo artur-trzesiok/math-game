@@ -1131,7 +1131,7 @@ export class Player {
     // timers, not animation frames: a hidden tab gets no frames and would hang here
     return new Promise((ok) => { setTimeout(() => { f.style.opacity = dark ? "1" : "0"; setTimeout(() => { if (!dark) f.style.display = "none"; ok(); }, FAST ? 60 : 380); }, 20); });
   }
-  // the goodbye: a blue iris closes around the characters' faces, then covers everything
+  // the goodbye: the game's blue with drifting shapes (index.html #iris) closes around a face, then covers everything
   async outro() {
     const S = this.stage, iris = $("#iris");
     // the iris closes on the face of whoever spoke last (the one saying goodbye)
