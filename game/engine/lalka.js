@@ -587,7 +587,15 @@ export class Lalka {
     this.widokGrupy.profil.visible = !!this.wProfilu;
     this.widokGrupy.tyl.visible = this.wTyle;
     this.widokGrupy.przod.visible = !this.wProfilu && !this.wTyle;
-    this.widokGrupy.profil.scale.x = kier === "lewo" ? -1 : 1;
+    // a gesture forced into profile (pointing, waving with a hoof) while facing front: it turns towards what the character
+    // looks at, else towards the middle of the stage - Deer on the right pointed right, away from the planks she spoke of
+    let wBok = kier;
+    if (this.wProfilu && kier !== "lewo" && kier !== "prawo") {
+      let cx = null; try { cx = this.celSpojrzenia?.()?.x ?? null; } catch { cx = null; }
+      const x0 = this.korzen.position.x;
+      wBok = cx != null ? (cx < x0 ? "lewo" : "prawo") : this.strona === "prawo" ? "lewo" : "prawo";
+    }
+    this.widokGrupy.profil.scale.x = wBok === "lewo" ? -1 : 1;
     this._ustawTwarz();
     // kosci: kat w stopniach; znak: prawa strona odwrotnie (odbicie)
     for (const [k, g] of Object.entries(this.kosci)) {
