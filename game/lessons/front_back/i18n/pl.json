@@ -95,6 +95,14 @@
     "who": "mis",
     "text": "Znaleźliśmy was po głosie! Chodźmy teraz na łąkę."
   },
+  "line.a_zwierzatka": {
+    "who": "mis",
+    "text": "Małe leśne zwierzątka też bawią się w chowanego. Każde schowało się za czymś. Znajdź wszystkie pięć!"
+  },
+  "line.a_zwierzatka_ok": {
+    "who": "jez",
+    "text": "Wszystkie znalezione! Każde było z tyłu, za czymś, a coś mu wystawało."
+  },
   "line.b_zabawa": {
     "who": "jez",
     "text": "To domek Myszki! Pobawmy się przy nim w z przodu i z tyłu."

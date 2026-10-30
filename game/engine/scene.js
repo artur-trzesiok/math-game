@@ -73,8 +73,9 @@ function zmierz(S, ms) {
 // one texture per file for the whole game: loaded (and sent to the GPU) once, shared by every sticker of it
 const loader = new THREE.TextureLoader(), TEKSTURY = new Map();
 export function texture(url) {
-  // decode() before resolving: the image is decoded now, off the frame, not at its first draw
-  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, bad) => loader.load(url.startsWith("data:") ? url : v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; const d = t.image?.decode?.(); (d ? d.catch(() => {}) : Promise.resolve()).then(() => ok(t)); }, undefined, (e) => { TEKSTURY.delete(url); bad(e); })));
+  // decode() is only a hint, never waited on: a hidden page defers it and the promise may never come (the loading screen
+  // hung); the loading screen's initTexture uploads - and so decodes - every texture the lesson uses anyway
+  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, bad) => loader.load(url.startsWith("data:") ? url : v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; t.image?.decode?.().catch(() => {}); ok(t); }, undefined, (e) => { TEKSTURY.delete(url); bad(e); })));
   return TEKSTURY.get(url);
 }
 const easeInOut = (s) => s * s * (3 - 2 * s);
@@ -364,10 +365,11 @@ export class Stage {
   // the transitions draw there, and three builds those programs apart), then they go - no exit, nothing seen.
   async rozgrzej(obiekty = []) {
     const R = this.renderer, proby = [], cx = this.camera.position.x, cy = this.camera.position.y;
-    const sprobuj = async (f) => { try { const h = await f(); if (h) proby.push(h); } catch { /* a probe never breaks loading */ } };
+    // a probe never waits on an animation (no frames run behind a hidden page) and never holds the loading screen
+    const sprobuj = async (f) => { try { const h = await Promise.race([f(), new Promise((r) => setTimeout(() => r(null), 1500))]); if (h) proby.push(h); } catch { /* never breaks loading */ } };
     await sprobuj(() => this.object(obiekty[0] || "jablko", { x: cx - 1, y: cy, size: 1, cicho: true }));
     await sprobuj(() => this.sign("1", { x: cx + 1, y: cy, size: 0.8 }));
-    await sprobuj(() => this.line([[cx - 1, cy - 1], [cx + 1, cy - 0.8]], { duration: 0.01, wait: true }));
+    await sprobuj(() => this.line([[cx - 1, cy - 1], [cx + 1, cy - 0.8]], { duration: 0.01, wait: false }));
     const ukryte = Object.values(this.puppets).filter((L) => !L.korzen.visible);
     for (const L of ukryte) L.korzen.visible = true;
     const rt = new THREE.WebGLRenderTarget(64, 64, { depthBuffer: true, stencilBuffer: true });

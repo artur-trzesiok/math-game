@@ -95,6 +95,14 @@
     "who": "mis",
     "text": "We found you by your voices! Now let's go to the meadow."
   },
+  "line.a_zwierzatka": {
+    "who": "mis",
+    "text": "The little forest animals are playing hide and seek too. Each one is hiding behind something. Find all five!"
+  },
+  "line.a_zwierzatka_ok": {
+    "who": "jez",
+    "text": "We found them all! Each one was behind something, and a bit of it was sticking out."
+  },
   "line.b_zabawa": {
     "who": "jez",
     "text": "This is Mouse's little house! Let's play in front and behind next to it."

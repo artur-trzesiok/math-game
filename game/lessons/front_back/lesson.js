@@ -139,6 +139,12 @@ export default {
         await c.ktoPowiedzial({ gospodarz: "mis", kryjowki: ["jez", "zajac"] });
         await c.ujecie("sredni", { na: ["mis"] });
         await c.say("mis", "line.a_po_glosie", { anim: "Brawo" });
+        // the little forest animals hide too: each BEHIND something, a tail, ears or eyes showing (tools/roznice chowany_las)
+        await c.ujecie("ogolny");
+        await c.say("mis", "line.a_zwierzatka");
+        const wl = await c.szukaj("chowany_las", { y: 0.3, size: 6.0, luneta: false });
+        await c.say("jez", "line.a_zwierzatka_ok", { anim: "Radosc" });
+        wl.remove();
       },
       // B. the meadow, Mouse's little house: "in front of the house - behind the house"; who stands in front, who behind
       async (c) => {

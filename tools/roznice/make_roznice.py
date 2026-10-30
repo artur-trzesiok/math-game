@@ -58,6 +58,18 @@ on the floor, a red ball, a round rug, a window with green curtains, a picture o
 {STYL}""",
         "zmiany": ["the red toy car on the shelf is GONE", "the red ball is GONE", "the boat picture shows a HOUSE instead"],
     },
+    # front_back: hide and seek in the forest - five little animals hidden BEHIND things, each only partly showing
+    "chowany_las": {
+        "obraz": f"""A square picture of a sunny forest clearing seen from a little above: a big grey stone, a tree stump, the
+trunk of a big tree, a large fern leaf, a red-capped mushroom, a log, a few flowers and tufts of grass. Lots of small
+details, everything well apart.
+{STYL}""",
+        "zmiany": ["a little grey mouse hides BEHIND the stone, only its long tail and one ear showing past the stone's edge",
+                   "a small brown rabbit hides BEHIND the tree stump, only its two long ears sticking up above the stump",
+                   "a small bird hides BEHIND the big tree trunk, only its head and beak peeking out at the side",
+                   "a little green frog hides BEHIND the large fern leaf, only its two eyes peeking over the leaf",
+                   "a small snail hides BEHIND the mushroom, only its shell peeking out at the side of the stem"],
+    },
     # grouping: the torn pieces of the forest map scattered on the forest floor
     "kawalki_mapy": {
         "obraz": f"""A square picture of a forest floor seen from close above: fallen autumn leaves in red, orange and yellow, a

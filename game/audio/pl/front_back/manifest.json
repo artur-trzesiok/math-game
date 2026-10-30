@@ -463,5 +463,15 @@
   "hash": "937c6f7aa620",
   "who": "zajac",
   "text": "Myszka jest za pudełkiem! Widać jej uszka. A piłka leży przed pudełkiem."
+ },
+ "line.a_zwierzatka": {
+  "hash": "cfe3f41ac7f4",
+  "who": "mis",
+  "text": "Małe leśne zwierzątka też bawią się w chowanego. Każde schowało się za czymś. Znajdź wszystkie pięć!"
+ },
+ "line.a_zwierzatka_ok": {
+  "hash": "86dd0efce4ad",
+  "who": "jez",
+  "text": "Wszystkie znalezione! Każde było z tyłu, za czymś, a coś mu wystawało."
  }
 }

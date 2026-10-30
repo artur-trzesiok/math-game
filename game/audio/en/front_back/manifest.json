@@ -463,5 +463,15 @@
   "hash": "279cfd63928a",
   "who": "zajac",
   "text": "Mouse is behind the box! I can see her ears. And the ball is in front of the box."
+ },
+ "line.a_zwierzatka": {
+  "hash": "45d12241c917",
+  "who": "mis",
+  "text": "The little forest animals are playing hide and seek too. Each one is hiding behind something. Find all five!"
+ },
+ "line.a_zwierzatka_ok": {
+  "hash": "2758ed2d2ef0",
+  "who": "jez",
+  "text": "We found them all! Each one was behind something, and a bit of it was sticking out."
  }
 }
