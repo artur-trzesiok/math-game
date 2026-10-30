@@ -438,7 +438,7 @@ export class Player {
       await czekaj(pominiete ? 0 : 450);
       el.classList.remove("ciemno"); el.classList.add("konfetti");
       if (brama) {
-        k.remove(); sec.classList.remove("zamknieta"); sec.classList.add("swieci"); dzwiekMenu("iskry");
+        k.remove(); sec.classList.remove("zamknieta"); sec.classList.add("swieci"); dzwiekMenu("iskry"); setTimeout(() => dzwiekMenu("odsloniecie"), 250);
         await czekaj(600);
         await powiedz(sec, `line.brama_${sec.dataset.swiat}`);
         sec.classList.add("wejscie"); dzwiekMenu("mgla");                          // as if we walked through it
@@ -446,7 +446,7 @@ export class Player {
         el.remove(); await this.przejdzSwiat(sec.dataset.swiat);
         return;
       }
-      k.remove(); sec.classList.add("rozwiej"); sec.classList.remove("zamkniety"); dzwiekMenu("mgla");
+      k.remove(); sec.classList.add("rozwiej"); sec.classList.remove("zamkniety"); dzwiekMenu("mgla"); setTimeout(() => dzwiekMenu("odsloniecie"), 250);   // the stage revealed
       const karty = [...sec.querySelectorAll(".lesson")];
       karty.forEach((b, i) => setTimeout(() => { b.classList.add("wyskok"); dzwiekMenu("pop"); setTimeout(() => b.classList.remove("wyskok"), 700); }, 350 + i * 180));
       await czekaj(500 + karty.length * 180);

@@ -66,6 +66,9 @@ SFX = {
     # a new stage's padlock opening in the menu (player.js otworzKlodke): the key turns, the shackle springs, the mist blows away
     "zamek":   ("an old brass key turning in a padlock: a short metallic scrape and two crisp clicks of the lock mechanism, close, clean, nothing else", 0.8),
     "iskry":   ("a padlock shackle springing open with a bright clack, followed by a burst of magical twinkling sparkles, cheerful, children's game, no voices", 1.2),
+    # a new stage revealed in the menu: as the mist clears and its cards pop up
+    "odsloniecie": ("a joyful magical reveal for a children's game: a bright rising harp glissando into a sparkling chime "
+                    "and a short happy little fanfare of bells, as if a curtain opens on something wonderful, no voices", 2.5),
     "mgla":    ("a soft airy magical whoosh of mist being blown away, a gentle breeze with a light shimmer, children's animation, no voices", 1.2),
     "etap":    ("a short bright playful chime announcing the next part of a children's game: three rising "
                 "glockenspiel notes and a little sparkle, warm and happy, no voices", 1.2),
