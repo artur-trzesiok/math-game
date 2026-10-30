@@ -184,6 +184,32 @@
   #swieto .glowa { position: absolute; left: calc(50% - min(40vh, 50vw)); bottom: 8vh; width: 18vh; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 6px 14px rgba(0,0,0,.35); animation: kiwa .5s ease-in-out infinite alternate; }
   #swieto i { position: absolute; top: -4vh; width: 1.4vh; height: 2.2vh; border-radius: 2px; animation: spada linear infinite; }
   #swieto.odlot { background: transparent; transition: background .6s; }
+  /* a new stage's padlock opened by finishing the one before (player.js swietujOtwarcie) */
+  #otwarcie { position: fixed; inset: 0; z-index: 80; background: rgba(40,25,10,0); transition: background .5s; overflow: hidden; }
+  #otwarcie.ciemno { background: rgba(40,25,10,.4); }
+  #otwarcie .kl { position: absolute; transform: translate(-50%, -50%); filter: drop-shadow(0 10px 16px rgba(0,0,0,.4)); }
+  #otwarcie .kl.drga { animation: drgaKl .12s 3; }
+  #otwarcie .kl.spada { transition: top .8s cubic-bezier(.5,-0.3,.8,.6), transform .8s ease-in !important; top: 140% !important; }
+  #otwarcie .kl.spada { transform: translate(-50%, -50%) rotate(30deg); }
+  #otwarcie .klucz { position: absolute; left: -40%; top: var(--y); transform: translate(-50%, -50%) rotate(-540deg); filter: drop-shadow(0 6px 8px rgba(0,0,0,.35));
+    transition: left .85s cubic-bezier(.3,1.2,.5,1), transform .85s cubic-bezier(.3,1.2,.5,1); }
+  #otwarcie .klucz.leci { left: var(--x); transform: translate(-50%, -50%) rotate(0deg); }
+  #otwarcie .klucz.wsuwa { left: calc(var(--x) + 3%); opacity: 0; transition: left .25s ease-in, opacity .25s ease-in; }
+    #otwarcie .przod { position: absolute; left: 50%; transform: translate(-50%, -50%) scale(.5); opacity: 0; filter: drop-shadow(0 6px 8px rgba(0,0,0,.35)); transition: transform .3s cubic-bezier(.3,1.5,.5,1), opacity .2s; }
+  #otwarcie .przod.jest { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  #otwarcie .przod.obrot { transform: translate(-50%, -50%) rotate(90deg); transition: transform .5s cubic-bezier(.5,0,.3,1.3); }
+  #otwarcie .przod.spada { transition: top .8s cubic-bezier(.5,-0.3,.8,.6), transform .8s ease-in !important; top: 140% !important; transform: translate(-50%, -50%) rotate(160deg); }
+  #otwarcie .iskry { position: absolute; left: 50%; top: 38%; width: 0; height: 0; }
+  #otwarcie .iskry b { position: absolute; width: 1.6vh; height: 1.6vh; margin: -.8vh; border-radius: 50%; background: radial-gradient(#fff, #ffd84a 45%, rgba(255,180,40,0) 70%); opacity: 0; }
+  #otwarcie.iskrzy .iskry b { animation: iskra .8s ease-out forwards; }
+  @keyframes iskra { 0% { opacity: 1; transform: rotate(var(--a)) translateY(0) scale(.6); } 100% { opacity: 0; transform: rotate(var(--a)) translateY(-22vh) scale(1.6); } }
+  @keyframes drgaKl { 25% { transform: translate(-52%, -50%) rotate(-5deg); } 75% { transform: translate(-48%, -50%) rotate(5deg); } }
+  #otwarcie .konf i { position: absolute; top: -4vh; width: 1.4vh; height: 2.2vh; border-radius: 2px; opacity: 0; }
+  #otwarcie.konfetti .konf i { opacity: 1; animation: spada linear 1; }
+  #otwarcie.konfetti { pointer-events: none; }
+  .topic.rozwiej::after { transform: scaleX(1.9) scaleY(1.2); transition: opacity 1.2s ease, transform 1.2s ease; }
+  .topic .lesson.wyskok { animation: wyskok .6s cubic-bezier(.3,1.6,.5,1); }
+  @keyframes wyskok { 0% { transform: scale(.82); } 60% { transform: scale(1.08) translateY(-3%); } 100% { transform: scale(1); } }
   #swieto.odlot .promienie, #swieto.odlot .glowa, #swieto.odlot i { opacity: 0; transition: opacity .4s; }
   @keyframes obrot { to { transform: rotate(360deg); } }
   @keyframes wzrost { from { transform: scale(.1) rotate(-30deg); } }

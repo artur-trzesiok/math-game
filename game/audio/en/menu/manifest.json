@@ -5,9 +5,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the first stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap2": {
-  "hash": "6a501f9f7981",
+  "hash": "3e442f684f42",
   "who": "lisek",
-  "text": "Hooray! The second stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the second stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap3": {
   "hash": "70ee3b82c767",
@@ -15,9 +15,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the second stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap3": {
-  "hash": "5d51a612fda7",
+  "hash": "c4ffe27072ca",
   "who": "lisek",
-  "text": "Hooray! The third stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the third stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap4": {
   "hash": "b0b8c980f006",
@@ -25,9 +25,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the third stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap4": {
-  "hash": "d0c5632b59d0",
+  "hash": "1713981eecc7",
   "who": "lisek",
-  "text": "Hooray! The fourth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the fourth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap5": {
   "hash": "d265a601abe0",
@@ -35,9 +35,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fourth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap5": {
-  "hash": "4a8fdfcc04d8",
+  "hash": "c218a8af45cf",
   "who": "lisek",
-  "text": "Hooray! The fifth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the fifth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap6": {
   "hash": "d1689c0187fa",
@@ -45,9 +45,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fifth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap6": {
-  "hash": "266ae4ceac52",
+  "hash": "ac047273496c",
   "who": "lisek",
-  "text": "Hooray! The sixth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the sixth stage of our journey! New adventures are waiting!"
  },
  "line.etap_koniec_etap1": {
   "hash": "ce7945386284",
@@ -295,9 +295,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the sixth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap7": {
-  "hash": "46e9dcfe4107",
+  "hash": "b5f8610e5862",
   "who": "lisek",
-  "text": "Hooray! The seventh stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the seventh stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap8": {
   "hash": "7037a613fb14",
@@ -305,9 +305,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the seventh stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap8": {
-  "hash": "39834106add5",
+  "hash": "ab51a117de5a",
   "who": "lisek",
-  "text": "Hooray! The eighth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the eighth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap9": {
   "hash": "27fbdc255876",
@@ -315,9 +315,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the eighth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap9": {
-  "hash": "25b6e8105c91",
+  "hash": "2c4a0e1a50af",
   "who": "lisek",
-  "text": "Hooray! The ninth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the ninth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap10": {
   "hash": "4d1237000da9",
@@ -325,9 +325,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the ninth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap10": {
-  "hash": "c7a7153c4212",
+  "hash": "c070f0d1f3f4",
   "who": "lisek",
-  "text": "Hooray! The tenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the tenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap11": {
   "hash": "ff32271ea6d4",
@@ -335,9 +335,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the tenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap11": {
-  "hash": "077ead57dae6",
+  "hash": "0e8697bf0a8d",
   "who": "lisek",
-  "text": "Hooray! The eleventh stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the eleventh stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap12": {
   "hash": "9b37497081b0",
@@ -345,9 +345,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the eleventh stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap12": {
-  "hash": "b3e47160ca0d",
+  "hash": "6782f11868bb",
   "who": "lisek",
-  "text": "Hooray! The twelfth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the twelfth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap13": {
   "hash": "61112ed86ee6",
@@ -355,9 +355,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twelfth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap13": {
-  "hash": "0b6cbbad54a8",
+  "hash": "d213079acfdd",
   "who": "lisek",
-  "text": "Hooray! The thirteenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the thirteenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap14": {
   "hash": "4830bad01b0b",
@@ -365,9 +365,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the thirteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap14": {
-  "hash": "3053597bd070",
+  "hash": "210e1e3e3366",
   "who": "lisek",
-  "text": "Hooray! The fourteenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the fourteenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap15": {
   "hash": "c527ea17dac8",
@@ -375,9 +375,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fourteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap15": {
-  "hash": "532391435aef",
+  "hash": "4caece9d1e69",
   "who": "lisek",
-  "text": "Hooray! The fifteenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the fifteenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap16": {
   "hash": "c47ad119f5ee",
@@ -385,9 +385,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fifteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap16": {
-  "hash": "8d9c3c2ba367",
+  "hash": "9af4dfc322af",
   "who": "lisek",
-  "text": "Hooray! The sixteenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the sixteenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap17": {
   "hash": "a150153272eb",
@@ -395,9 +395,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the sixteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap17": {
-  "hash": "655b17fb43a6",
+  "hash": "65fc9e6d6c9b",
   "who": "lisek",
-  "text": "Hooray! The seventeenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the seventeenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap18": {
   "hash": "7ad210f14daa",
@@ -405,9 +405,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the seventeenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap18": {
-  "hash": "f36c5124fc61",
+  "hash": "1e970c6061b7",
   "who": "lisek",
-  "text": "Hooray! The eighteenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the eighteenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap19": {
   "hash": "9a82bd123115",
@@ -415,9 +415,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the eighteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap19": {
-  "hash": "68a2531c5c39",
+  "hash": "910286da8796",
   "who": "lisek",
-  "text": "Hooray! The nineteenth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the nineteenth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap20": {
   "hash": "4d011335aeb4",
@@ -425,9 +425,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the nineteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap20": {
-  "hash": "c378484502b8",
+  "hash": "a1d63ca60b11",
   "who": "lisek",
-  "text": "Hooray! The twentieth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the twentieth stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap21": {
   "hash": "d25e64680905",
@@ -435,9 +435,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twentieth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap21": {
-  "hash": "2947eac0e0ee",
+  "hash": "b4e250946d74",
   "who": "lisek",
-  "text": "Hooray! The twenty-first stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the twenty-first stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap22": {
   "hash": "adfa0d0bbe28",
@@ -445,9 +445,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twenty-first stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap22": {
-  "hash": "fad8eea2dbdc",
+  "hash": "cd077e491de8",
   "who": "lisek",
-  "text": "Hooray! The twenty-second stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the twenty-second stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap23": {
   "hash": "9ba3a42d5330",
@@ -455,9 +455,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twenty-second stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap23": {
-  "hash": "ff526dad4cba",
+  "hash": "7aac577281fe",
   "who": "lisek",
-  "text": "Hooray! The twenty-third stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the twenty-third stage of our journey! New adventures are waiting!"
  },
  "line.zamkniete_etap24": {
   "hash": "640cf02a17cb",
@@ -465,9 +465,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twenty-third stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap24": {
-  "hash": "0fa2e9d4f564",
+  "hash": "967306e4e593",
   "who": "lisek",
-  "text": "Hooray! The twenty-fourth stage is open. New adventures are waiting!"
+  "text": "Hooray! We've unlocked the twenty-fourth stage of our journey! New adventures are waiting!"
  },
  "line.mapa_lisek_1": {
   "hash": "8b59c24ac3d6",

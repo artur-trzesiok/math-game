@@ -31,13 +31,13 @@ MAPA = {
 }
 TEKST = {
     "pl": ("Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z {poprz_d} etapu, a kłódka sama się otworzy!",
-           "Hurra! Otworzył się {nr} etap. Nowe przygody czekają!"),
+           "Hurra! Odblokowaliśmy {nr} etap naszej podróży! Nowe przygody czekają!"),
     "pl_koniec": ("Brawo! Ukończyliśmy cały {nr} etap! Za to dostajesz specjalną naklejkę do albumu.",
                   "To nagroda za ukończenie {nr_d} etapu. Wszystkie jego przygody przeszliśmy razem."),
     "en_koniec": ("Bravo! We finished the whole {nr} stage! Here is a special sticker for your album.",
                   "This is the prize for finishing the {nr} stage. We went through all its adventures together."),
     "en": ("This way is still locked. Let's first finish all the adventures of the {poprz} stage, and the padlock will open by itself!",
-           "Hooray! The {nr} stage is open. New adventures are waiting!"),
+           "Hooray! We've unlocked the {nr} stage of our journey! New adventures are waiting!"),
 }
 def tytul(l, lang):
     """A lesson's name read out over its card: the title, a longer breath, the subtitle ("Lekki i ciężki. Tratwa Bobra.")."""

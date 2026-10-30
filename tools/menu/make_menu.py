@@ -86,6 +86,13 @@ keyhole, a dark-brown outline, friendly and toy-like, seen straight from the fro
 picture, on a fully TRANSPARENT background.
 {STYL}
 NO key, NO chain, NO text."""),
+    # the key that opens a new stage's padlock (player.js otworzKlodke)
+    "klucz": ("1536x1024", "transparent", f"""ONE old-fashioned golden brass KEY lying horizontally, its bow (the round ring
+handle) on the LEFT with a little heart-shaped hole, the shank pointing to the RIGHT ending in a simple bit with two
+teeth, warm golden brass with a soft highlight and a few tiny scratches, a dark-brown outline, friendly and toy-like,
+filling most of the picture, on a fully TRANSPARENT background.
+{STYL}
+NO padlock, NO chain, NO ribbon, NO text."""),
     # the cover of a lesson that is not made yet (a placeholder in the menu)
     "wkrotce": ("1024x1024", "opaque", f"""A square cover illustration: a small wooden painter's easel standing on a sunny
 meadow, a BLANK white canvas on it, a few paint brushes in a jar and a palette with bright paint blobs beside it,
@@ -188,8 +195,8 @@ for _s, _opis in PNIAKI.items():
 {_opis}, filling most of the picture, on a fully TRANSPARENT background. The flat top stays free (a book will lie on it).
 {STYL}
 NO text.""")
-CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz", "klodka", "klodka_otwarta", "brama"] + [f"odznaka_{s}" for s in ODZNAKI] + [f"deska_{s}" for s in DESKI] + [f"{n}_{s}" for s in STOJAKI for n in ("drogowskaz", "brama")] + [f"guzik_{s}" for s in GUZIKI] + [f"pniak_{s}" for s in PNIAKI]
-DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900, "klodka": 420, "klodka_otwarta": 420, "brama": 900, **{f"odznaka_{s}": 360 for s in ODZNAKI}, **{f"deska_{s}": 1100 for s in DESKI}, **{f"{n}_{s}": 900 for s in STOJAKI for n in ("drogowskaz", "brama")}, **{f"guzik_{s}": 520 for s in GUZIKI}, **{f"pniak_{s}": 900 for s in PNIAKI}}      # the long side kept (the menu draws them big)
+CZESCI = ["deska", "guzik", "karta", "pniak", "tasma", "drogowskaz", "klodka", "klodka_otwarta", "klucz", "brama"] + [f"odznaka_{s}" for s in ODZNAKI] + [f"deska_{s}" for s in DESKI] + [f"{n}_{s}" for s in STOJAKI for n in ("drogowskaz", "brama")] + [f"guzik_{s}" for s in GUZIKI] + [f"pniak_{s}" for s in PNIAKI]
+DLUGOSC = {"karta": 900, "deska": 1100, "guzik": 520, "pniak": 900, "tasma": 400, "drogowskaz": 900, "klodka": 420, "klodka_otwarta": 420, "klucz": 420, "brama": 900, **{f"odznaka_{s}": 360 for s in ODZNAKI}, **{f"deska_{s}": 1100 for s in DESKI}, **{f"{n}_{s}": 900 for s in STOJAKI for n in ("drogowskaz", "brama")}, **{f"guzik_{s}": 520 for s in GUZIKI}, **{f"pniak_{s}": 900 for s in PNIAKI}}      # the long side kept (the menu draws them big)
 
 
 def gen() -> None:

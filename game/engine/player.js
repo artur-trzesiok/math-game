@@ -163,13 +163,21 @@ export class Player {
 
   menu({ zmiana = false } = {}) {
     this.closeStage();
-    // typing "admin" on the menu (a keyboard; a tablet has none): every sticker into the album, every stage open
+    // typing "metanoia" on the menu (a keyboard; a tablet has none): every sticker into the album, every stage open;
+    // "math": the next lesson in order counts as passed (its sticker), so finishing a stage and its unlocking can be watched
     if (!this.adminSluch) {
       this.adminSluch = true; let bufor = "";
       document.addEventListener("keydown", (e) => {
         if ($("#menu").style.display === "none" || e.key.length !== 1) return;
-        bufor = (bufor + e.key.toLowerCase()).slice(-5);
-        if (bufor !== "admin") return;
+        bufor = (bufor + e.key.toLowerCase()).slice(-8);
+        if (bufor.endsWith("math")) {
+          bufor = "";
+          const byId = Object.fromEntries(this.index.lessons.map((l) => [l.id, l]));
+          const id = (this.index.topics || []).flatMap((t) => t.lessons).find((i) => byId[i] && !byId[i].wkrotce && !Album.ma(i));
+          if (id) { Album.dodaj(id); dzwiekMenu("right"); this.menu(); }
+          return;
+        }
+        if (!bufor.endsWith("metanoia")) return;
         bufor = "";
         for (const l of this.index.lessons) if (!l.wkrotce) Album.dodaj(l.id);
         for (const t of this.index.topics || []) { dopisz(OTWARTE, t.id); dopisz(WIDZIANE, t.id); dopisz(UKONCZONE, t.id); if (t.znak) Album.dodaj(t.id); }
@@ -363,8 +371,55 @@ export class Player {
     // a stage newly open in ANOTHER world (the last stage of this one was just finished): the menu goes there to open it
     const gdzieIndziej = wszystkie.find((t, i) => i > 0 && otwartyId[t.id] && !PARAMS.has("wszystko") && !lista(WIDZIANE).includes(t.id) && swiatEtapu(t.id) !== swiat);
     if (nowy) { nowy.classList.add("zamkniety"); if (!nowy.querySelector(".klodka")) nowy.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`); }
+    // a stage opened by finishing the one before: celebrated - the padlock comes to the middle, a key turns in it,
+    // the shackle springs with sparks, the padlock falls away, the mist blows off, the cards pop in, confetti, Fox
+    const swietujOtwarcie = async (sec) => {
+      const k = sec.querySelector(".klodka");
+      if (!k || PARAMS.has("szybko")) { otworz(sec); return; }
+      dopisz(WIDZIANE, sec.dataset.topic);
+      const czekaj = (ms) => new Promise((r) => setTimeout(r, ms));
+      const r = k.getBoundingClientRect(), dlon = Math.min(innerHeight * 0.4, innerWidth * 0.34);
+      // in the keyhole the key is seen from its handle (tools/menu/make_klucz_przod.py): a key in a lock facing us turns
+      // round the axis pointing at us, so its turn is a plain rotation of that picture
+      new Image().src = v("/game/assets/menu/klucz_przod.webp");
+      const konfetti = Array.from({ length: 30 }, (_, i) => `<i style="left:${(i * 37) % 100}%;background:hsl(${(i * 47) % 360} 80% 60%);animation-delay:${0.4 + (i % 9) * 0.1}s;animation-duration:${2 + (i % 5) * 0.3}s"></i>`).join("");
+      const el = document.createElement("div"); el.id = "otwarcie";
+      el.innerHTML = `<img class="kl" src="${v("/game/assets/menu/klodka.webp")}" alt=""><img class="klucz" src="${v("/game/assets/menu/klucz.webp")}" alt=""><img class="przod" src="${v("/game/assets/menu/klucz_przod.webp")}" alt=""><div class="iskry">${Array.from({ length: 12 }, (_, i) => `<b style="--a:${i * 30}deg"></b>`).join("")}</div><div class="konf">${konfetti}</div>`;
+      document.body.appendChild(el);
+      let pominiete = false; el.onclick = () => { pominiete = true; };
+      const kl = el.querySelector(".kl"), klucz = el.querySelector(".klucz");
+      kl.style.cssText = `left:${r.left + r.width / 2}px;top:${r.top + r.height / 2}px;width:${r.width}px`;
+      k.style.visibility = "hidden";
+      await czekaj(40);
+      el.classList.add("ciemno");
+      kl.style.cssText = `left:50%;top:46%;width:${dlon}px;transition:left .8s cubic-bezier(.3,1.3,.5,1),top .8s cubic-bezier(.3,1.3,.5,1),width .8s cubic-bezier(.3,1.3,.5,1)`;
+      await czekaj(pominiete ? 0 : 850);
+      // the key flies in from the left, spinning, its bit into the keyhole (a little below the body's middle)
+      klucz.style.width = `${dlon * 0.7}px`; klucz.style.setProperty("--x", `calc(50% - ${dlon * 0.31}px)`); klucz.style.setProperty("--y", `calc(46% + ${dlon * 0.23}px)`);   // its bit in the keyhole (69% down the padlock)
+      klucz.classList.add("leci"); dzwiekMenu("whoosh");
+      await czekaj(pominiete ? 0 : 900);
+      const przod = el.querySelector(".przod"); przod.style.width = `${dlon * 0.34}px`; przod.style.top = `calc(46% + ${dlon * 0.23}px)`;
+      klucz.classList.add("wsuwa"); przod.classList.add("jest");                    // pushed in: now seen from its handle
+      await czekaj(pominiete ? 0 : 300);
+      przod.classList.add("obrot"); dzwiekMenu("zamek");                           // a quarter turn, clicking
+      await czekaj(pominiete ? 0 : 600);
+      kl.classList.add("drga");
+      await czekaj(pominiete ? 0 : 350);
+      kl.classList.remove("drga"); kl.src = v("/game/assets/menu/klodka_otwarta.webp"); el.classList.add("iskrzy"); dzwiekMenu("iskry");
+      await czekaj(pominiete ? 0 : 750);
+      kl.classList.add("spada"); przod.classList.add("spada"); dzwiekMenu("whoosh");   // nothing just vanishes: they fall out of the frame
+      await czekaj(pominiete ? 0 : 450);
+      el.classList.remove("ciemno"); el.classList.add("konfetti");
+      k.remove(); sec.classList.add("rozwiej"); sec.classList.remove("zamkniety"); dzwiekMenu("mgla");
+      const karty = [...sec.querySelectorAll(".lesson")];
+      karty.forEach((b, i) => setTimeout(() => { b.classList.add("wyskok"); dzwiekMenu("pop"); setTimeout(() => b.classList.remove("wyskok"), 700); }, 350 + i * 180));
+      await czekaj(500 + karty.length * 180);
+      powiedz(sec, `line.otwarte_${sec.dataset.topic}`);
+      await czekaj(2600);
+      sec.classList.remove("rozwiej"); el.remove();
+    };
     const odblokuj = () => {
-      if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => otworz(nowy), 900); }, 400);
+      if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => swietujOtwarcie(nowy), 900); }, 400);
       else if (gdzieIndziej) setTimeout(() => this.przejdzSwiat(swiatEtapu(gdzieIndziej.id).id), 600);
     };
     // a stage just finished (every lesson made so far has its sticker; once): its sign comes big to the middle with rays

@@ -51,7 +51,7 @@ bendable limbs, merged back as 151b815 and no longer needed.
   the link preview remind the user to refresh it in the Facebook Sharing Debugger.
 - The game must work OFFLINE: three.js and the Baloo 2 font live in `game/vendor` (2026-10-29); never add a CDN.
 - Lessons: 24, in six stages ("Etap 1".."Etap 6" in `game/lessons/index.json` topics). A topic opens when every lesson
-  of the one before has its sticker; typing "admin" in the menu opens everything; `?wszystko` too.
+  of the one before has its sticker; typing "metanoia" in the menu opens everything (renamed from "admin" 2026-10-30, the testers' joke), "math" passes the next lesson; `?wszystko` too.
 - Each lesson: story (an adventure), practice (five different mini-games, stars), at home (apply it in a room, ends
   with a task for the parents and the lesson's sticker). Stage cards: the narrator says "Poznaj opowieść!", "Teraz
   ćwiczenia!", "Wracamy do domu!" (game/etapy). The menu keeps its scroll position (localStorage).

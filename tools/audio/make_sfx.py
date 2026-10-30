@@ -63,6 +63,10 @@ SFX = {
     "chor_falsz": ("three tiny baby owls trying to sing a short wordless song of soft owl hoots but it goes funny and out "
                    "of tune, hoots in the wrong order, a wobbly sour note at the end, comic, children's animation, no human "
                    "voice, no instruments", 3.5),
+    # a new stage's padlock opening in the menu (player.js otworzKlodke): the key turns, the shackle springs, the mist blows away
+    "zamek":   ("an old brass key turning in a padlock: a short metallic scrape and two crisp clicks of the lock mechanism, close, clean, nothing else", 0.8),
+    "iskry":   ("a padlock shackle springing open with a bright clack, followed by a burst of magical twinkling sparkles, cheerful, children's game, no voices", 1.2),
+    "mgla":    ("a soft airy magical whoosh of mist being blown away, a gentle breeze with a light shimmer, children's animation, no voices", 1.2),
     "etap":    ("a short bright playful chime announcing the next part of a children's game: three rising "
                 "glockenspiel notes and a little sparkle, warm and happy, no voices", 1.2),
 }
