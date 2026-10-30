@@ -474,10 +474,22 @@ export class Player {
   }
 
   async swietoEtapu(t, gotowe) {
+    // first the strip goes to the stage's plank: the sticker grows out of its sign, which must be on screen
+    const pas = $("#lessons"), sec = pas?.querySelector(`.topic[data-topic="${t.id}"]`);
+    if (sec) {
+      const h = sec.querySelector("h2")?.getBoundingClientRect();
+      if (!h || h.left < 0 || h.right > innerWidth) {
+        const cel = sec.offsetLeft - parseFloat(getComputedStyle(pas).paddingLeft);
+        pas.scrollTo({ left: cel, behavior: "smooth" });
+        await new Promise((r) => setTimeout(r, 800));
+        const h2 = sec.querySelector("h2")?.getBoundingClientRect();
+        if (h2 && (h2.left < 0 || h2.right > innerWidth)) pas.scrollLeft = cel;            // a smooth scroll that did not run
+      }
+    }
     const el = document.createElement("div"); el.id = "swieto";
     const konfetti = Array.from({ length: 36 }, (_, i) => `<i style="left:${(i * 37) % 100}%;background:hsl(${(i * 47) % 360} 80% 60%);animation-delay:${(i % 9) * 0.12}s;animation-duration:${2.2 + (i % 5) * 0.3}s"></i>`).join("");
     el.innerHTML = `<div class="promienie"></div><img class="znak" src="${v(`/game/assets/objects/${t.znak}.webp`)}" alt=""><img class="glowa" src="${v("/game/assets/menu/lisek_glowa.webp")}" alt="">${konfetti}`;
-    document.body.appendChild(el); dzwiekMenu("plansza");
+    el.classList.add("czeka"); document.body.appendChild(el);
     // the sticker is a copy of the sign on the stage's plank: it grows out of it to the middle (the sign stays there),
     // so the child sees where it comes from; with the plank off screen it grows in the middle
     const z = el.querySelector(".znak"), zr = $(`.topic[data-topic="${t.id}"] h2 .znak`)?.getBoundingClientRect();
@@ -486,8 +498,17 @@ export class Player {
     z.style.cssText = widac ? `position:fixed;left:${zr.left + zr.width / 2}px;top:${zr.top + zr.height / 2}px;width:${zr.width}px;transform:translate(-50%,-50%);animation:none`
       : `position:fixed;left:50%;top:50%;width:${duzy * 0.1}px;transform:translate(-50%,-50%);animation:none`;
     void z.offsetWidth;
-    z.style.transition = "left .9s cubic-bezier(.3,1.25,.5,1), top .9s cubic-bezier(.3,1.25,.5,1), width .9s cubic-bezier(.3,1.25,.5,1)";
+    // on the plank it pulses three times with a golden glow before it lets go (the screen still bright)
+    if (widac) {
+      z.classList.add("pulsuje");
+      for (let i = 0; i < 3; i++) setTimeout(() => dzwiekMenu("pop"), 120 + i * 520);
+      await new Promise((r) => setTimeout(r, 1650));
+      z.classList.remove("pulsuje");
+    }
+    el.classList.remove("czeka"); dzwiekMenu("plansza");
+    z.style.transition = "left 1.3s cubic-bezier(.3,1.15,.5,1), top 1.3s cubic-bezier(.3,1.15,.5,1), width 1.3s cubic-bezier(.3,1.15,.5,1)";
     Object.assign(z.style, { left: "50%", top: "50%", width: `${duzy}px` });
+    await new Promise((r) => setTimeout(r, 700));
     menuMuzyka.przycisz(0.35);
     this.menuLinie = this.menuLinie?.lang === this.lang ? this.menuLinie : { lang: this.lang, t: await fetch(v(`/game/menu/i18n/${this.lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({})) };
     const klucz = `line.etap_koniec_${t.id}`, l = this.menuLinie.t[klucz];

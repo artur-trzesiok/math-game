@@ -184,6 +184,12 @@
   #swieto .glowa { position: absolute; left: calc(50% - min(40vh, 50vw)); bottom: 8vh; width: 18vh; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 6px 14px rgba(0,0,0,.35); animation: kiwa .5s ease-in-out infinite alternate; }
   #swieto i { position: absolute; top: -4vh; width: 1.4vh; height: 2.2vh; border-radius: 2px; animation: spada linear infinite; }
   #swieto.odlot { background: transparent; transition: background .6s; }
+  #swieto { transition: background .6s; }
+  #swieto.czeka { background: transparent; }                       /* the sign pulses on its plank first, the screen bright */
+  #swieto.czeka .promienie, #swieto.czeka .glowa, #swieto.czeka i { opacity: 0; }
+  #swieto .promienie, #swieto .glowa { transition: opacity .6s; }
+  #swieto .znak.pulsuje { animation: puls3 .52s ease-in-out 3 !important; }
+  @keyframes puls3 { 50% { scale: 1.6; filter: drop-shadow(0 0 10px #ffe27a) drop-shadow(0 0 22px rgba(255,210,80,.9)); } }
   /* a new stage's padlock opened by finishing the one before (player.js swietujOtwarcie) */
   #otwarcie { position: fixed; inset: 0; z-index: 80; background: rgba(40,25,10,0); transition: background .5s; overflow: hidden; }
   #otwarcie.ciemno { background: rgba(40,25,10,.4); }
