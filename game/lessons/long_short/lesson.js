@@ -140,8 +140,8 @@ export default {
         await c.ujecie("sredni", { na: ["lisek", dluga] });                  // the plank bridge across the brook
         await c.say("lisek", "line.a_siega", { anim: "Radosc" });
         await c.ujecie("ogolny");
-        for (const [n, x] of [["wiewiorka", -1.4], ["lisek", -0.7], ["sarenka", 0.0]]) await c.przejdz(n, [[2.3, -0.95], [-0.2, 0.5], [x, 0.9]], { glebia: 0.12 });   // side by side on the far bank
-        await c.say("sarenka", "line.a_przeszlismy");                      // wide: all three over the brook, on the far bank
+        for (const [n, x] of [["wiewiorka", -2.7], ["lisek", -2.0], ["sarenka", -1.3]]) await c.przejdz(n, [[2.3, -0.95], [-0.2, 0.5], [x, 0.9]], { glebia: 0.12 });   // side by side on the far bank's grass (further right is water)
+        await c.say("sarenka", "line.a_cieszymy_sie");                      // wide: all three over the brook, on the far bank
         c.clear();
       },
       // B. the meadow: Squirrel's short scarf - the long one warms her; the snail race; Deer's map - point to the

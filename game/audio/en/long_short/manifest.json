@@ -59,11 +59,6 @@
   "who": "lisek",
   "text": "The long plank reaches the other bank. We have a bridge!"
  },
- "line.a_przeszlismy": {
-  "hash": "93fe4ed5aea6",
-  "who": "sarenka",
-  "text": "We crossed to the other side! Hooray, to the meadow!"
- },
  "line.b_zimno": {
   "hash": "f0f6545ad200",
   "who": "wiewiorka",
@@ -423,5 +418,10 @@
   "hash": "ebb35888a0cb",
   "who": "narrator",
   "text": "This is the snail from the race on the meadow. We got it on the way to the picnic, when we learnt what is long and what is short."
+ },
+ "line.a_cieszymy_sie": {
+  "hash": "d5afff3b5cb5",
+  "who": "sarenka",
+  "text": "I'm so happy. Let's go to the meadow."
  }
 }
