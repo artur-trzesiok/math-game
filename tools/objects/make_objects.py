@@ -1260,6 +1260,7 @@ small downturned mouth, ONE small tear on one cheek, soft rosy cheeks. Gentle, N
 
 # bigger and smaller: the old hollow's little round door - carried along and held against each new hole (a template)
 SHEETS["drzwiczki"] = {
+    "outline": True,                              # dragged onto the hollows: it needs room for the game's white edge
     "names": ["drzwiczki"],
     "size": "1024x1024",
     "rows": 1,

@@ -26,7 +26,7 @@ const pasujeRozmiar = (h, who) => (h.ranga === MIEJSCE[who] ? true : h.ranga < M
 const zleRozmiar = (o) => (o === "za_duze" ? "line.za_duze" : "line.za_male");
 
 // the hole of a "dziupla" sticker: centre and diameter (measured on the picture: 0.43 of the sticker, a bit above the middle)
-const OTWOR = { dx: 0.0, dy: 0.025, d: 0.43 }, DRZWI = 0.94;      // DRZWI: the door's circle in its own sticker
+const OTWOR = { dx: 0.0, dy: 0.025, d: 0.43 }, DRZWI = 0.838;     // DRZWI: the door's circle in its own sticker (it has room round it for the white edge)
 const otwor = (h) => ({ x: h.mesh.position.x + OTWOR.dx * h.base, y: h.mesh.position.y + OTWOR.dy * h.base, d: OTWOR.d * h.base });
 // the door always in front of the hollows (stickers draw at 10): a drag lifts it and puts its own order back
 const przed = (drzwi) => { drzwi.mesh.position.z = 0.6; drzwi.mesh.traverse((m) => { if (m.isMesh) m.renderOrder = 12 + (m.renderOrder % 1); }); };
