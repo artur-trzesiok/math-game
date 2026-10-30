@@ -500,7 +500,7 @@ export async function ptaszek(S, h = null, { na = 1.2 } = {}) {
 // a small white bubble over the head with a big icon: what the character feels, readable from the sofa
 export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach"];
 // painted faces set into a bubble (a sweat drop read as nothing to a child): a sticker drawn over the bubble once loaded
-const MALOWANE = Object.fromEntries(["serce", "radosc", "zlosc", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach", "smutek"].map((n) => [n, `/game/assets/objects/emocja_${n}.webp`]));
+const MALOWANE = Object.fromEntries(["serce", "radosc", "zlosc", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach", "smutek", "pytanie"].map((n) => [n, `/game/assets/objects/emocja_${n}.webp`]));
 MALOWANE.pot = "/game/assets/objects/emocja_ojej.webp";
 function ikonaEmocji(rodzaj) {
   const tex = rysujDymek(rodzaj);
@@ -579,7 +579,7 @@ export async function emocja(S, who, rodzaj, { na = 2.2 } = {}) {
   };
   handle.q = 0.001; handle.za();
   (S.dymki = S.dymki || []).push(handle);
-  S.sfx.graj(rodzaj === "zarowka" ? "idea" : "pop");
+  S.sfx.graj(rodzaj === "zarowka" ? "idea" : rodzaj === "pytanie" ? "wonder" : "pop");
   await S.tween(T(0.3), (s) => { handle.q = Math.max(0.001, easeOutBack(s)); });
   handle.q = 1;
   if (na) setTimeout(async () => { await S.tween(T(0.2), (s) => { handle.q = Math.max(0.001, 1 - s); }); handle.remove(); }, na * 1000);

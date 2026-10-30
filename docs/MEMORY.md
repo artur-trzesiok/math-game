@@ -344,6 +344,12 @@ the cut (`gwiazdka`, `swietlik`, `ruch_klask`, `wanna`, six colouring signs). Th
   now Web Audio buffers decoded once, the pool only a fallback; a tap's ray tested the hidden back/side views of every
   puppet (3.6 -> 1.1 ms on a PC) - now only what is drawn (`trafLalke`). `?perf` shows fps and, per slow frame, the taps
   and sounds in it - ask for an iPad screenshot of it when a hitch is reported.
+- **A sort finished during the wrong-answer line was lost** (2026-10-30, the user moved the mushroom while Deer said it
+  was wrong - then nothing happened): a drop while the check was busy was ignored and never checked again; now it is
+  checked when the line ends. Any "busy" guard on a child's input must re-check what came in meanwhile.
+- **The "?" over a head** (`ctx.wonder`, 37 uses) was a pencil hook with a white halo - blurred and sunk into the head
+  in a close-up; it is now the painted sign `emocja_pytanie` in a thought bubble like every emotion. A one-object sheet
+  whose picture is in parts (the dot) needs `caly: True`, or the cut keeps only the biggest blob.
 - **The hidden browser pane**: rAF runs at 0 fps although the page says visible; screenshots are stale; real-time
   runs stall on animations (szybko runs work). JS evals time out at 45 s - split long polls. Background tabs throttle.
   An autopilot inside an iframe stalled on a drag where the same lesson in a tab passed.

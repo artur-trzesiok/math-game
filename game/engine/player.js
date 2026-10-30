@@ -1083,9 +1083,10 @@ export class Player {
         const polecenie = last;
         Object.keys(S.puppets).forEach((n, j) => S.lookAt(n, zones[j % zones.length]));   // the characters watch the containers
         return new Promise((resolve) => {
-          let busy = false;
+          let busy = false, znowu = false;
           const check = async () => {
-            if (busy || items.some((i) => !i.zone)) return;
+            if (busy) { znowu = true; return; }                  // dropped while the wrong-answer line plays: checked when it ends
+            if (items.some((i) => !i.zone)) return;
             busy = true;
             try {
               const odd = [];
@@ -1099,7 +1100,7 @@ export class Player {
               await S.wait(0.45);
               for (const i of odd) { i.zone.take(i); i.moveTo(i.home.x, i.home.y, 0.4); }
               if (this.run === run) await blad(wrong);
-            } finally { busy = false; }
+            } finally { busy = false; if (znowu && this.run === run) { znowu = false; check(); } }
           };
           S.sort({ items, zones, onDrop: () => { if (this.run === run) check(); }, onTap: () => S.onPuppetTap() });
         });

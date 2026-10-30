@@ -975,37 +975,9 @@ export class Stage {
     return a;
   }
   // a pencil "?" over a character's head for a moment: puzzled
-  async wonder(who, { na = 1.8 } = {}) {
-    const L = this.puppets[who]; if (!L || !L.korzen.visible) return null;
-    const o = new THREE.Vector3(); L.korzen.getWorldPosition(o);
-    // right over the head: above the head bone's x, its bottom just over the top of the ears
-    L.korzen.updateMatrixWorld(true);
-    const gl = L.kosci.glowa && L.widokGrupy.przod.visible ? L.kosci.glowa : (L.kosci.p_glowa && L.widokGrupy.profil.visible ? L.kosci.p_glowa : L.kosci.t_glowa);
-    const top = new THREE.Box3().setFromObject(L.korzen).max.y;
-    const hx = gl ? gl.getWorldPosition(new THREE.Vector3()).x : o.x;
-    // inside what the camera sees now (a close-up or a two-shot zooms in): under the phase icons, beside the head
-    // when there is no room above it; a little smaller when zoomed
-    const v = this.visible(0), zc = this.camera.zoom, hw = v.w / 2 / zc, hh = v.h / 2 / zc, s = 0.85 / Math.sqrt(zc);
-    const gora = Math.min(SUFIT, this.camera.position.y + hh - 2 * hh * 0.11) - 1.05 * s;
-    let x = hx + 0.12 * s, y = top + 0.5 * s + 0.3;
-    if (y > gora) {
-      y = gora;
-      const b = new THREE.Box3().setFromObject(gl || L.korzen), strona = o.x < this.camera.position.x ? 1 : -1;
-      x = strona > 0 ? b.max.x + 0.6 * s : b.min.x - 0.6 * s;
-    }
-    x = Math.max(this.camera.position.x - hw + 0.6 * s, Math.min(this.camera.position.x + hw - 0.6 * s, x));
-    this.sfx.graj("wonder");
-    const hook = await this.line({ bezier: [[x - 0.45 * s, y + 0.55 * s], [x - 0.45 * s, y + 1.05 * s], [x + 0.55 * s, y + 1.05 * s], [x + 0.5 * s, y + 0.55 * s],
-                                            [x + 0.45 * s, y + 0.2 * s], [x, y + 0.25 * s], [x, y - 0.15 * s]] }, { color: "#2b2622", duration: 0.5, width: 0.14, name: "pytajnik", strong: true });
-    // the dot: drawn with the same pencil as the hook - a small circle of Bezier quarters, overlapping where it closes
-    const r = 0.05 * s, k = 0.5523 * r, dx = x, dy = y - 0.46 * s;
-    const kolo = [[dx + r, dy], [dx + r, dy + k], [dx + k, dy + r], [dx, dy + r], [dx - k, dy + r], [dx - r, dy + k], [dx - r, dy],
-                  [dx - r, dy - k], [dx - k, dy - r], [dx, dy - r], [dx + k, dy - r], [dx + r, dy - k], [dx + r, dy],
-                  [dx + r, dy + k], [dx + k, dy + r], [dx, dy + r]];   // a quarter past the start: no notch where it closes
-    const dot = await this.line({ bezier: kolo }, { color: "#2b2622", duration: 0.2, width: 0.14, name: "pytajnik", strong: true });
-    setTimeout(() => { hook.remove(); dot.remove(); }, na * 1000);
-    return hook;
-  }
+  // "?" over a character: the painted sign in a thought bubble, like every emotion (a pencil "?" with a white halo grew
+  // blurred and sank into the head in a close-up)
+  async wonder(who, { na = 1.8 } = {}) { return E.emocja(this, who, "pytanie", { na }); }
 
   // where a sticker's drawing really is (its alpha box, not the transparent square around it), in safe-area units
   bounds(h) {

@@ -1313,6 +1313,18 @@ most of the image. NO glow outside it, NO halo, NO background, NO speech bubble,
 {STYL}
 The same painted style as the reference: one big bold red exclamation mark, cheerful and round.""",
 }
+SHEETS["emocja_pytanie"] = {                       # ctx.wonder: a pencil "?" blurred into the head in a close-up
+    "names": ["emocja_pytanie"],
+    "caly": True,                                   # the dot is a blob of its own
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "refs": ["emocja_wykrzyknik"],
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO speech bubble, NO text except as described.
+{STYL}
+The same painted style as the reference: one big bold blue question mark, cheerful and round, its dot clearly apart.""",
+}
 SHEETS["emocja_zarowka"] = {
     "names": ["emocja_zarowka"],
     "size": "1024x1024",
