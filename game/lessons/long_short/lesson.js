@@ -18,6 +18,17 @@ const polowa = (c, h) => { const b = c.bounds(h); return (b.right - b.left) / 2;
 // each on a row of its own; resolves when all stand from the line
 async function odLinii(c, rzeczy, { x0 = -3.4, ys = [0.9, -0.3], linia = true } = {}) {
   const S = c.stage, zajete = new Map();
+  // nothing may lie on the line already, nor two things start level (a plank lying with its end on the line was a
+  // task done for the child): every left end at least 0.9 right of the line, each next one further, inside the screen
+  const ruchy = [];
+  rzeczy.slice().sort((a, b) => c.bounds(a).left - c.bounds(b).left).forEach((h, i) => {
+    const b = c.bounds(h), min = x0 + 0.9 + i * 0.7;
+    if (b.left < min || (i && Math.abs(b.left - c.bounds(rzeczy[i - 1]).left) < 0.6)) {
+      const dx = Math.min(min - b.left + (b.left < min ? 0 : 0.7), 5.8 - b.right);
+      if (dx > 0.05) ruchy.push(h.moveTo(h.mesh.position.x + dx, h.mesh.position.y, 0.35));
+    }
+  });
+  await Promise.all(ruchy);
   const kreska = linia ? await c.line([[x0, ys[0] + 0.75], [x0, ys[ys.length - 1] - 0.75]], { color: "#3b3631", width: 0.07, strong: true }) : null;
   const cel = (h) => { const wolny = ys.find((y) => !zajete.has(y) || zajete.get(y) === h) ?? ys[0]; return [x0 + polowa(c, h), wolny]; };
   await new Promise((ok) => S.free({
