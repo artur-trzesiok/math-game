@@ -4,12 +4,14 @@
   python tools/audio/make_audio.py bigger_smaller  # one lesson
   python tools/audio/make_audio.py --voices        # list the account's voices and exit
   python tools/audio/make_audio.py --bake          # (re)compute the lip-sync envelopes of every mp3
-  python tools/audio/make_audio.py --normalize     # bring every mp3 to TARGET_RMS_DB and re-bake
+  python tools/audio/make_audio.py --normalize     # bring every mp3 to its speaker's loudness and re-bake
+  python tools/audio/make_audio.py --normalize zajac   # only that speaker's recordings (gain only, no re-bake)
 
 Loudness: every recording is normalised to the same speech loudness (-20 dBFS RMS
-of the voiced frames, peaks limited), so no voice shouts over another. A taste trim
-per character lives in game/assets/characters/<who>/meta.json ("volume", 1.0 =
-as recorded), together with the ElevenLabs voice per language ("voices").
+of the voiced frames, peaks limited), so no voice shouts over another. A character's
+calibration lives in game/assets/characters/<who>/meta.json ("volume", 1.0 = -20 dBFS,
+1.1 = 10% louder) and is baked into its recordings here - a browser cannot play
+louder than 1 - together with the ElevenLabs voice per language ("voices").
 
 Next to every mp3 a <key>.json holds the baked lip-sync envelope (RMS every 20 ms,
 normalised); the game drives the mouth from it and needs no WebAudio.
@@ -121,6 +123,12 @@ def voice_for(lang: str, who: str) -> str:
     return VOICES[lang].get(who) or next(iter(VOICES[lang].values()))
 
 
+def glosnosc(who: str | None) -> float:
+    """The speaker's calibration from meta.json (1.0 = TARGET_RMS_DB)."""
+    meta = CHARACTERS / str(who) / "meta.json"
+    return float(json.loads(meta.read_text(encoding="utf-8")).get("volume", 1.0)) if who and meta.exists() else 1.0
+
+
 def decode(mp3: Path) -> np.ndarray:
     pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(mp3), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
                          capture_output=True, check=True).stdout
@@ -134,10 +142,11 @@ def speech_rms_db(x: np.ndarray) -> float:
     return float(20 * np.log10(rms.mean())) if len(rms) else -60.0
 
 
-def normalize(mp3: Path) -> float:
-    """Re-encode the mp3 with the gain that brings its speech loudness to TARGET_RMS_DB
-    (a limiter keeps the peaks under -0.5 dBFS). Returns the gain applied in dB."""
-    gain = max(-12.0, min(12.0, TARGET_RMS_DB - speech_rms_db(decode(mp3))))
+def normalize(mp3: Path, who: str | None = None) -> float:
+    """Re-encode the mp3 with the gain that brings its speech loudness to TARGET_RMS_DB times the
+    speaker's calibration (a limiter keeps the peaks under -0.5 dBFS). Returns the gain applied in dB."""
+    cel = TARGET_RMS_DB + 20 * np.log10(glosnosc(who))
+    gain = max(-12.0, min(12.0, cel - speech_rms_db(decode(mp3))))
     if abs(gain) < 0.5:
         return 0.0
     tmp = mp3.with_suffix(".tmp.mp3")
@@ -230,7 +239,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
             continue
         try:
             wiz, sl = synthesize(l["text"], voice, dst)
-            normalize(dst)                                        # gain only: the timing stays
+            normalize(dst, l["who"])                              # gain only: the timing stays
             bake(dst, l["text"], wiz, sl)
             manifest[l["key"]] = {"hash": digest, "who": l["who"], "text": l["text"]}
             manifest_p.write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -261,9 +270,16 @@ def main() -> int:
             print(f"  {v['voice_id']}  {v['name']:<16} {lab.get('gender', '?'):<7} {lab.get('age', '?'):<11} {lab.get('accent', '?')}")
         return 0
     if "--normalize" in sys.argv:
+        tylko = [a for a in sys.argv[1:] if not a.startswith("--")]    # speakers: gain only, the baked visemes stay
         n = 0
         for mp3 in AUDIO.glob("*/*/*.mp3"):
-            g = normalize(mp3); bake(mp3); n += 1
+            mf = mp3.parent / "manifest.json"
+            who = json.loads(mf.read_text(encoding="utf-8")).get(mp3.stem, {}).get("who") if mf.exists() else None
+            if tylko and who not in tylko:
+                continue
+            g = normalize(mp3, who); n += 1
+            if not tylko:
+                bake(mp3)
             print(f"  {mp3.parent.parent.name} {mp3.parent.name} {mp3.name:32s} {g:+.1f} dB")
         print(f"normalised {n} recordings")
         return 0

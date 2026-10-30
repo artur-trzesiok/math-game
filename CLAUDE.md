@@ -359,7 +359,8 @@ opened a little more when loud; without visemes it falls back to loudness. A bre
 time, so the i18n text stays clean. Every recording is normalised
 to -20 dBFS RMS of its voiced frames (`--normalize` redoes all), and each character's
 `meta.json` (`game/assets/characters/<who>/`) holds its ElevenLabs voice per language
-and a `volume` trim the game multiplies in, plus its natural height `wysokosc` (scene units: Fox 3.6, Squirrel
+and a `volume` calibration (1.0 = -20 dBFS; Bunny 1.1) BAKED into its recordings by the pipeline - a browser
+cannot play louder than 1, so the game plays every voice at 1 (`--normalize <who>` re-applies one character's), plus its natural height `wysokosc` (scene units: Fox 3.6, Squirrel
 2.7 = three quarters of him, Owl 3.6 with the biggest head) - the game always draws it at that size, whatever a
 lesson says. Keys live in the repository's `.env`
 (`OPENAI_API_KEY`, `ELEVENLABS_API_KEY`, `ELEVENLABS_MODEL_ID`,

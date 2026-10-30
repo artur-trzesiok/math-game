@@ -96,7 +96,7 @@ export class Speech {
       if (m[key]) {
         const a = GLOS; a.onloadedmetadata = a.onplay = a.onpause = a.onended = a.onerror = null;
         a.src = v(`/game/audio/${lang}/${lessonId}/${key}.mp3`);
-        a.volume = Math.max(0, Math.min(1, volume));                      // the character's trim (recordings are normalised already)
+        a.volume = 1;                                                     // a character's loudness is baked into its recordings (meta.json volume)
         a.muted = CICHO;
         this.current.envelope = await fetch(v(`/game/audio/${lang}/${lessonId}/${key}.json`), { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
         if (!this.current.envelope) this.current.live = attachAnalyser(a);
