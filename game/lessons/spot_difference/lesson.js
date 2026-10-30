@@ -55,15 +55,15 @@ export default {
         await c.say("lisek", "line.a_bez_szalika");
         await c.ujecie("sredni", { na: ["sowa", o.odbicie] });               // what a difference is, the reflection in the shot
         await c.say("sowa", "line.a_roznica", { anim: "Zgloszenie" });
-        // a second trick: a hat and glasses on, the reflection wears neither
+        // a second trick: a hat and glasses on - the reflection has no glasses, and a winter cap instead of the hat
         o.remove(); c.zdejmij("lisek");
         await c.say("lisek", "line.a_jeszcze", { anim: "Radosc" });
-        o = await c.odbicie("lisek", { woda: WODA, ubrania: ["kapelusz", "okulary", "szalik"], rozne: ["kapelusz", "okulary"] });
+        o = await c.odbicie("lisek", { woda: WODA, ubrania: ["kapelusz", "okulary", "szalik"], rozne: ["kapelusz", "okulary"], zamiana: { kapelusz: "czapka_zimowa" } });
         await c.ujecie("ogolny");
         await c.say("sowa", "line.a_dwie");
         await o.znajdz();
         await c.ujecie("sredni", { na: ["lisek", o.odbicie] });
-        await c.say("lisek", "line.a_dwie_ok", { anim: "Brawo" });
+        await c.say("lisek", "line.a_dwie_zamiana", { anim: "Brawo" });
         o.remove(); c.zdejmij("lisek");
         await c.ujecie("ogolny");                                            // Fox steps back from the water
         await c.walkTo("lisek", -5.4);

@@ -301,7 +301,9 @@ export async function roznice(S, nazwa, { y = 0.45, size = 4.9, odstep = 0.35 } 
 // under it, moving as it does (scene.js copies the animation every frame), under a blue rippling veil. It wears
 // `ubrania` like the original except `rozne` - those are the differences; `znajdz()` makes each a target on both
 // (the garment on the character and its mirror image) and circles a found one on both.
-export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } = {}) {
+// `zamiana` {garment: other}: the reflection wears the other one in its place (a hat turned into a winter cap) - a
+// difference that is not only something missing
+export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [], zamiana = {} } = {}) {
   const L = S.puppets[who]; if (!L) return null;
   L.korzen.position.y = woda; L.podloga = woda; L.lustroOn = true;
   L.bezCienia = true;                                                   // the pond is its shadow (the hatched one flickered across the water)
@@ -313,7 +315,7 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [] } =
   S.scene.add(O.korzen); S.puppets[klucz] = O;
   const dwustronnie = () => O.korzen.traverse((o) => { if (o.isMesh) { o.material.depthTest = false; o.material.depthWrite = false; o.material.side = THREE.DoubleSide; } });
   dwustronnie(); S.layer(O, false);
-  for (const r of ubrania) { await U.ubierz(S, who, r, { pop: false }); if (!rozne.includes(r)) await U.ubierz(S, klucz, r, { pop: false }); }
+  for (const r of ubrania) { await U.ubierz(S, who, r, { pop: false }); if (!rozne.includes(r)) await U.ubierz(S, klucz, r, { pop: false }); else if (zamiana[r]) await U.ubierz(S, klucz, zamiana[r], { pop: false }); }
   dwustronnie();
   // the pond: an oval of water under the reflection, and a light rippling veil over it
   const wys = (L.meta?.wysokosc ?? 3.6) * 1.12 * k, szer = 4.8 * k;

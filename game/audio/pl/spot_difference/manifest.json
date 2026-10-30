@@ -39,11 +39,6 @@
   "who": "sowa",
   "text": "Teraz staw zmienił aż dwie rzeczy. Znajdź obie różnice."
  },
- "line.a_dwie_ok": {
-  "hash": "d47aa7ef4175",
-  "who": "lisek",
-  "text": "Odbicie nie ma kapelusza ani okularów! Ale sprytny staw."
- },
  "line.b_gra": {
   "hash": "d6e258b61d71",
   "who": "sowa",
@@ -383,5 +378,10 @@
   "hash": "0bd9a12024ee",
   "who": "sowa",
   "text": "Tak, ta zabawka leży gdzie indziej niż wieczorem!"
+ },
+ "line.a_dwie_zamiana": {
+  "hash": "d93edbbe223b",
+  "who": "lisek",
+  "text": "Odbicie nie ma okularów, a zamiast kapelusza ma zimową czapkę! Ale sprytny staw."
  }
 }

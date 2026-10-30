@@ -39,11 +39,6 @@
   "who": "sowa",
   "text": "Now the pond changed two things. Find both differences."
  },
- "line.a_dwie_ok": {
-  "hash": "b62f7f9dc3d1",
-  "who": "lisek",
-  "text": "The reflection has no hat and no glasses! What a clever pond."
- },
  "line.b_gra": {
   "hash": "447ecd89cb43",
   "who": "sowa",
@@ -383,5 +378,10 @@
   "hash": "3cfed9a3e3e6",
   "who": "sowa",
   "text": "Yes, this toy is somewhere else than in the evening!"
+ },
+ "line.a_dwie_zamiana": {
+  "hash": "97756cc60c12",
+  "who": "lisek",
+  "text": "My reflection has no glasses, and a winter hat instead of my hat! What a clever pond."
  }
 }
