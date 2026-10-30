@@ -146,13 +146,14 @@ export default {
         const poX = foto.cele.slice().sort((a, b) => foto.meta.cele[b.nr].x - foto.meta.cele[a.nr].x), [jez, mysz] = poX;
         const kropka = [...foto.cele, foto.tlo];
         await c.say("bobr", "line.a_zdjecie_kto");
-        dobre(jez); await c.task({ targets: kropka, correct: jez, wrong: "line.a_zdjecie_nie" }); dobre(jez, false);
+        const tlo = (zle) => (h) => c.say("bobr", h === foto.tlo ? "line.a_zdjecie_tlo" : zle);   // a tap on the empty photo
+        dobre(jez); await c.task({ targets: kropka, correct: jez, onWrong: tlo("line.a_zdjecie_nie") }); dobre(jez, false);
         await c.ujecie("zblizenie", { na: "kret" });                      // the surprise: so small, and first
         await c.say("kret", "line.a_jezyk", { anim: "Podskok" });
         await c.ujecie("ogolny");                                          // back to the photo Owl reads
         await c.say("sowa", "line.a_zdjecie_tak", { anim: "Zgloszenie" });
         await c.say("bobr", "line.a_kto_ostatni");
-        dobre(mysz); await c.task({ targets: kropka, correct: mysz, wrong: "line.a_kto_ostatni_nie" }); dobre(mysz, false);
+        dobre(mysz); await c.task({ targets: kropka, correct: mysz, onWrong: tlo("line.a_kto_ostatni_nie") }); dobre(mysz, false);
         await foto.zaznacz();
         await c.say("sowa", "line.a_ostatnia");
         await foto.remove();

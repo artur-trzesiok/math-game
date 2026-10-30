@@ -160,7 +160,7 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   a maze (`sciezki_do_norki`) into the burrow; ends in the warm burrow in the storm (`norka_burza`), shell game.
 - `tangram` (Tangram) - Owl's shadow theatre; Bear throws away a triangle that only needed turning; each finished
   puppet's shadow comes alive; the poster (`plakat_teatru`) shows a cat they have not made - mark its two triangle
-  ears (the two spots overlap a little).
+  ears.
 
 **Etap 5**
 - `grouping` (Grupowanie) - a detective story on the autumn panorama: red gifts; grouping by one rule then
@@ -174,7 +174,7 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   is always "play the row from the start". The longest lesson (~10 min minimum). Left as it was.
 - `queue` (Kolejka) - the race ends in a photo finish (`fotofinisz`): mark who touches the line first, then who came
   last; racers face the way they run; the podium glade (`podium_wyscigu`) with a painted podium sticker, medals in
-  order. 7 story interactions - do not trim. Open: tapping the photo's empty background plays "that one was faster".
+  order. 7 story interactions - do not trim.
 
 **Etap 6** (since 2026-10-30 only `counting_5` is built here; `numbers_6_10` moved to stage 7, `adding_5` to stage 12,
 `adding_10` to stage 18 - see section 5)
@@ -358,8 +358,4 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 - iPad: hitches not verified since the warm-up (needs a deployed dist and `?perf`); effects not warmed up yet:
   kite, water, night, scratch-off, badge render target.
 
-- noticing_order and one_many still end in shared sceneries, not a place of their own.
-- shapes: the catching game was removed by an agent; ask the user if they want it back.
-- queue: a new wrong line for a tap on the photo's empty background.
-- long_short map: a right pick shows a tick and the path in pencil (fine); tangram poster: ear spots overlap.
 - The story preview (`manager/opowiesc.html`) not yet run on the lessons changed 2026-10-29.

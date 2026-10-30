@@ -921,7 +921,7 @@ export class Stage {
   // a hand-drawn loop around a thing: a little more than one turn, its end overshooting the start
   circle(h, { color = ZAKRESLACZ, margin = 0.18, duration = 0.8, width = 0.13, warstwa = h?.nadObrazem ?? 11 } = {}) {
     const b = this._box(h), cx = (b.left + b.right) / 2, cy = (b.bottom + b.top) / 2;
-    const rx = (b.right - b.left) / 2 + margin, ry = (b.top - b.bottom) / 2 + margin;
+    const rx = h?.obrys ?? (b.right - b.left) / 2 + margin, ry = h?.obrys ?? (b.top - b.bottom) / 2 + margin;   // a found spot knows its own loop
     const pts = [], a0 = 2.2, turns = 1.12, n = 64;
     for (let i = 0; i <= n; i++) {
       const a = a0 + (i / n) * turns * 2 * Math.PI, r = 1 + 0.06 * (i / n);       // the stroke drifts outwards as a hand does

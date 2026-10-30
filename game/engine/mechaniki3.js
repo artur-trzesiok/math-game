@@ -430,6 +430,18 @@ export function miejsceNaObraz(S, szer) {
   return { k, cx: Math.max(lewa + pol, Math.min(prawa - pol, 0)) };
 }
 
+// a found picture's spots (world units): `r` the tap disc - at least 0.45 so a finger hits it, never past halfway to a
+// neighbour; `obrys` the loop drawn around it - kept inside that half, so two neighbours' loops never touch (a cat's two
+// ears on a small poster sat 0.64 apart)
+export function promienieCelow(cele, W, H) {
+  return cele.map((c, i) => {
+    let pol = Infinity;
+    if (!c.droga) for (const [j, d] of cele.entries()) if (j !== i && !d.droga) pol = Math.min(pol, Math.hypot((c.x - d.x) * W, (c.y - d.y) * H) / 2);
+    const r = Math.min(Math.max(0.45, c.r * W), Math.max(0.3, pol));
+    return { r, obrys: Math.max(0.2, Math.min(r + 0.18, (pol - 0.1) / 1.06)) };   // a hand loop drifts out 6 %, its line is 0.13 wide
+  });
+}
+
 export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, rama = "#fffaf0", obrot = -2.5, bezLotu = false, x = null } = {}) {
   const kat = `/game/assets/znaleziska/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
@@ -454,8 +466,9 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
   S.objects.push(h);
   // the spots: invisible discs on the picture (in the card, so they turn with it); the rest of the picture is a miss
   const lokalnie = ([x, yy]) => [(x - 0.5) * W, (0.5 - yy) * H];
+  const promienie = promienieCelow(meta.cele, W, H);
   const cele = meta.cele.map((c, k) => {
-    const rr = Math.max(0.45, c.r * W), g = new THREE.Group();
+    const { r: rr, obrys } = promienie[k], g = new THREE.Group();
     if (c.droga) {                                   // a whole path: discs all along it, one target (any of them counts)
       const [ox, oy] = lokalnie(c.droga[Math.floor(c.droga.length / 2)]); g.position.set(ox, oy, 0.05);   // its middle: where a test taps
       for (const q of c.droga) { const [px, py] = lokalnie(q); const d = new THREE.Mesh(new THREE.CircleGeometry(0.32, 16), mat({ opacity: 0, side: THREE.DoubleSide })); d.position.set(px - ox, py - oy, 0); g.add(d); }
@@ -464,7 +477,7 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
     }
     g.add(new THREE.Mesh(new THREE.CircleGeometry(rr, 24), mat({ opacity: 0, side: THREE.DoubleSide })));
     g.position.set((c.x - 0.5) * W, (0.5 - c.y) * H, 0.05); karta.add(g);
-    return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, dobry: false, nadObrazem: 39 });   // rings and counting digits draw over the picture; the lesson marks the right one (dobre)
+    return uchwytCelu(S, g, { name: `${nazwa}_${k}`, nr: k, r: rr, obrys, dobry: false, nadObrazem: 39 });   // rings and counting digits draw over the picture; the lesson marks the right one (dobre)
   });
   const tlo = uchwytCelu(S, obraz, { name: `${nazwa}_obraz`, dobry: false });
   // the flight: from whoever found it, small, to the middle, big
@@ -478,7 +491,7 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
     await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (cx - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.58 * e; });
   }
   const kolka = [];
-  const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [w.x + Math.cos(a) * c.r, w.y + Math.sin(a) * c.r * 0.92]; }); };
+  const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; const r = c.obrys ?? c.r; return [w.x + Math.cos(a) * r, w.y + Math.sin(a) * r * 0.92]; }); };
   return {
     ...h, cele, tlo, meta,
     // `ktore`: the spots to mark (all by default); a path is drawn along in pencil, a spot is ringed

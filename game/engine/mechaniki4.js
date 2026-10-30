@@ -31,7 +31,7 @@ function karta(S, { W, H, y, rama = "#fffaf0", obrot = -2 }) {
   S.objects.push(h);
   return { welon, grp, k, zdejmij: h.remove };
 }
-const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [w.x + Math.cos(a) * c.r, w.y + Math.sin(a) * c.r * 0.92]; }); };
+const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; const r = c.obrys ?? c.r; return [w.x + Math.cos(a) * r, w.y + Math.sin(a) * r * 0.92]; }); };
 
 // ===================================================================== scratch-off (zdrapka)
 // game/assets/zdrapki/<name> (tools/zdrapki): a picture under a cover painted for it (snow on the garden, mist on the
@@ -86,11 +86,12 @@ export async function zdrapka(S, nazwa, { y = 0.3, size = 7.6, pedzel = 0.6 } = 
   });
   // then it is a found picture: the spots as targets, the rest of the picture a miss
   const lokalnie = (c) => [(c.x - 0.5) * W, (0.5 - c.y) * H];
+  const promienie = (await import("./mechaniki3.js")).promienieCelow(meta.cele, W, H);
   const cele = meta.cele.map((c, i) => {
-    const rr = Math.max(0.45, c.r * W), g = new THREE.Group();
+    const { r: rr, obrys } = promienie[i], g = new THREE.Group();
     g.add(new THREE.Mesh(new THREE.CircleGeometry(rr, 24), mat({ opacity: 0, side: THREE.DoubleSide })));
     const [x, yy] = lokalnie(c); g.position.set(x, yy, 0.05); k.add(g);
-    return cel(S, g, { name: `${nazwa}_${i}`, nr: i, r: rr, dobry: false, nadObrazem: 39 });
+    return cel(S, g, { name: `${nazwa}_${i}`, nr: i, r: rr, obrys, dobry: false, nadObrazem: 39 });
   });
   const tlo = cel(S, obraz, { name: `${nazwa}_obraz`, dobry: false });
   const kolka = [];
