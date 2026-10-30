@@ -1,0 +1,15 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "oslona": "bloto",
+ "cele": [
+  {
+   "x": 0.5134,
+   "y": 0.4069,
+   "r": 0.084
+  }
+ ],
+ "lekcje": [
+  "thick_wide"
+ ]
+}

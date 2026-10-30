@@ -1,0 +1,59 @@
+{
+  "id": "thick_wide",
+  "title": {
+    "pl": "Czy się zmieści?",
+    "en": "Will it fit?"
+  },
+  "goal": "Say thick / thin about round things and wide / narrow about flat things and openings, see that whether a thing goes through a gap depends on how thick or wide it is, not how long, and put three things in order from the thinnest.",
+  "age": "3-4",
+  "characters": [
+    "kret",
+    "lisek",
+    "sarenka"
+  ],
+  "backgrounds": [
+    "ogrod",
+    "las",
+    "nora",
+    "przedpokoj"
+  ],
+  "objects": [
+    "beczka",
+    "patyk_wysoki",
+    "patyk_niski",
+    "szpara_furtka",
+    "szpara_brama",
+    "szpara_drzewa",
+    "polano_grube",
+    "polano_srednie",
+    "polano_cienkie",
+    "drzewo_grube",
+    "drzewo_srednie",
+    "drzewo_cienkie",
+    "kredka_gruba",
+    "kredka_srednia",
+    "kredka_cienka",
+    "tunel_waski",
+    "tunel_szeroki",
+    "wstazka_szeroka",
+    "wstazka_waska",
+    "dynia",
+    "stojak_parasol",
+    "parasol",
+    "ksiazka_gruba",
+    "ksiazka_srednia",
+    "ksiazka_cienka",
+    "szalik_szeroki",
+    "szalik_sredni",
+    "szalik_waski",
+    "obraz_szeroki",
+    "prezent",
+    "torebka"
+  ],
+  "cover": "Little Mole pushes a short fat wooden barrel that is stuck in a narrow wooden garden gate, while Fox, surprised, holds a long thin stick that has just passed through the gate; Deer stands beside them smiling; a sunny garden with vegetable beds.",
+  "naklejka": {
+    "obraz": "objects/norka_kreta",
+    "kto": "kret"
+  },
+  "oddech": "zdrapka"
+}

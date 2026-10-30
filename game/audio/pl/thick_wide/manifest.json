@@ -1,0 +1,487 @@
+{
+ "line.a_przeprowadzka": {
+  "hash": "4aa0d25b3a39",
+  "who": "kret",
+  "text": "Hura! Dzisiaj się przeprowadzam. Moja nowa norka jest w brzozowym lesie."
+ },
+ "line.a_pomozemy": {
+  "hash": "a0becc1b4db4",
+  "who": "sarenka",
+  "text": "Pomożemy ci nieść rzeczy, Krecie!"
+ },
+ "line.a_rzeczy": {
+  "hash": "bfe086fc7842",
+  "who": "kret",
+  "text": "Dziękuję! Zabieramy moją beczkę i mój długi kij."
+ },
+ "line.a_furtka": {
+  "hash": "21253785e25a",
+  "who": "kret",
+  "text": "Najpierw musimy przejść przez tę furtkę."
+ },
+ "line.a_zaklad": {
+  "hash": "ae205c9b6c2e",
+  "who": "lisek",
+  "text": "Beczka jest krótka, na pewno przejdzie! A kij jest długi. On się nie zmieści."
+ },
+ "line.a_beczka": {
+  "hash": "054ace94dd5a",
+  "who": "sarenka",
+  "text": "Sprawdźmy. Przepchnij beczkę przez furtkę."
+ },
+ "line.a_utknela": {
+  "hash": "66c78c50bb6d",
+  "who": "lisek",
+  "text": "Ojej! Beczka utknęła w furtce."
+ },
+ "line.a_jak_to": {
+  "hash": "db5177af0682",
+  "who": "lisek",
+  "text": "Jak to? Przecież beczka jest krótka!"
+ },
+ "line.a_kij": {
+  "hash": "ab101e9e4a56",
+  "who": "sarenka",
+  "text": "A teraz przepchnij długi kij przez furtkę."
+ },
+ "line.a_przeszedl": {
+  "hash": "a896701205fd",
+  "who": "lisek",
+  "text": "Długi kij przeszedł przez furtkę!"
+ },
+ "line.a_waska": {
+  "hash": "8e8d9810dbc1",
+  "who": "sarenka",
+  "text": "Popatrz. Furtka jest wąska. Przejdzie przez nią tylko coś cienkiego."
+ },
+ "line.a_cienki": {
+  "hash": "74626804af9c",
+  "who": "sarenka",
+  "text": "Kij jest długi, ale cienki, więc przeszedł. A beczka jest krótka, ale gruba."
+ },
+ "line.a_aha": {
+  "hash": "ad385f1de719",
+  "who": "lisek",
+  "text": "Aha! Długi nie znaczy gruby."
+ },
+ "line.a_jak_beczka": {
+  "hash": "cc054f333b84",
+  "who": "kret",
+  "text": "To jak przeniesiemy moją grubą beczkę?"
+ },
+ "line.a_brama": {
+  "hash": "d31665f9d65c",
+  "who": "sarenka",
+  "text": "Obok furtki jest szeroka brama!"
+ },
+ "line.a_ktora": {
+  "hash": "54c860107b40",
+  "who": "sarenka",
+  "text": "Którędy przejdzie gruba beczka? Przepchnij ją."
+ },
+ "line.a_ktora_nie": {
+  "hash": "2173089ca69c",
+  "who": "sarenka",
+  "text": "Furtka jest za wąska dla grubej beczki."
+ },
+ "line.a_ktora_tak": {
+  "hash": "99c03934a415",
+  "who": "lisek",
+  "text": "Tak! Gruba beczka przeszła przez szeroką bramę."
+ },
+ "line.a_do_lasu": {
+  "hash": "89297aedb49f",
+  "who": "kret",
+  "text": "Wszystko przeszło. Idziemy do brzozowego lasu!"
+ },
+ "line.b_las": {
+  "hash": "6c05392df4c8",
+  "who": "kret",
+  "text": "To jest brzozowy las. Moja nowa norka jest już blisko."
+ },
+ "line.b_polana": {
+  "hash": "d2b5916eb08d",
+  "who": "kret",
+  "text": "Niosę jeszcze trzy polana do mojego pieca."
+ },
+ "line.b_lisek": {
+  "hash": "6ea058b32424",
+  "who": "lisek",
+  "text": "Ścieżka idzie między tymi brzozami. Każde polano przejdzie, przecież są krótkie!"
+ },
+ "line.b_brzozy": {
+  "hash": "c32fdb7418a8",
+  "who": "sarenka",
+  "text": "Między brzozami jest wąsko. Które polano się zmieści? Przepchnij je."
+ },
+ "line.b_brzozy_nie": {
+  "hash": "71c097a5175b",
+  "who": "sarenka",
+  "text": "To polano jest za grube. Utknęło między brzozami."
+ },
+ "line.b_brzozy_tak": {
+  "hash": "b09a6e1878c0",
+  "who": "kret",
+  "text": "Przeszło najcieńsze polano! Grube polana poniesiemy dookoła."
+ },
+ "line.b_najgrubsze": {
+  "hash": "3942c127f037",
+  "who": "kret",
+  "text": "Moja norka jest pod najgrubszym drzewem w lesie. Ale ja tak słabo widzę..."
+ },
+ "line.b_pomozemy": {
+  "hash": "d3d0194bd59c",
+  "who": "sarenka",
+  "text": "Pomożemy ci! Wskaż najgrubsze drzewo."
+ },
+ "line.b_drzewo_nie": {
+  "hash": "db0bfc1727cd",
+  "who": "sarenka",
+  "text": "To drzewo ma cieńszy pień. Poszukaj najgrubszego."
+ },
+ "line.b_drzewo_tak": {
+  "hash": "bb4dab0902f0",
+  "who": "kret",
+  "text": "Tak! To drzewo ma najgrubszy pień. Tu mieszkam!"
+ },
+ "line.c_bloto": {
+  "hash": "b1a2c650a47b",
+  "who": "kret",
+  "text": "Ojej! Wycieraczka przed moimi drzwiami jest cała w błocie."
+ },
+ "line.c_zetrzyj": {
+  "hash": "d419d69ef6da",
+  "who": "lisek",
+  "text": "Zetrzyj błoto palcem! Coś jest pod spodem."
+ },
+ "line.c_odkryte": {
+  "hash": "53e2d6ac4503",
+  "who": "kret",
+  "text": "Czysto! Coś tu jest namalowane."
+ },
+ "line.c_kto": {
+  "hash": "811c1a1afb2d",
+  "who": "lisek",
+  "text": "Wskaż, kto jest namalowany na wycieraczce."
+ },
+ "line.c_kto_nie": {
+  "hash": "f2acf976978d",
+  "who": "lisek",
+  "text": "Tu są tylko kwiatki. Poszukaj zwierzątka."
+ },
+ "line.c_kto_tak": {
+  "hash": "7d5040bd381f",
+  "who": "kret",
+  "text": "To kret, tak jak ja! Teraz każdy wie, kto tu mieszka."
+ },
+ "line.c_tunele": {
+  "hash": "529f2b368b64",
+  "who": "kret",
+  "text": "Do mojej norki prowadzą dwa tunele: wąski i szeroki."
+ },
+ "line.c_tunele2": {
+  "hash": "5fe717099bef",
+  "who": "kret",
+  "text": "Wąskim tunelem przejdą tylko cienkie rzeczy. Grube rzeczy zmieszczą się w szerokim."
+ },
+ "line.c_wloz": {
+  "hash": "25d7cb7f0fc9",
+  "who": "sarenka",
+  "text": "Włóż cienkie rzeczy do wąskiego tunelu, a grube do szerokiego."
+ },
+ "line.c_wloz_nie": {
+  "hash": "a3f4f7ccdf4f",
+  "who": "sarenka",
+  "text": "Coś tu nie pasuje. Cienkie do wąskiego tunelu, grube do szerokiego."
+ },
+ "line.c_wloz_tak": {
+  "hash": "b59f6f1dc811",
+  "who": "kret",
+  "text": "Cienkie rzeczy są w wąskim tunelu, a grube w szerokim. Wszystko się zmieściło!"
+ },
+ "line.c_wszystko": {
+  "hash": "6ffb1bb90437",
+  "who": "kret",
+  "text": "Każda rzecz jest już na swoim miejscu w mojej norce!"
+ },
+ "line.c_witajcie": {
+  "hash": "b5f53fd0ab35",
+  "who": "kret",
+  "text": "Witajcie w mojej nowej norce!"
+ },
+ "line.c_przytulnie": {
+  "hash": "de9fd2de01c7",
+  "who": "sarenka",
+  "text": "Jak tu przytulnie!"
+ },
+ "line.c_dziekuje": {
+  "hash": "3c78af0e7dd7",
+  "who": "kret",
+  "text": "Dziękuję wam! Bez was nic by się tu nie zmieściło."
+ },
+ "line.c_parapetowka": {
+  "hash": "c178491b0ede",
+  "who": "kret",
+  "text": "Jutro robię parapetówkę. Zapraszam was!"
+ },
+ "line.c_prezenty": {
+  "hash": "60a2bf11c9bc",
+  "who": "lisek",
+  "text": "Przyjdziemy z prezentami!"
+ },
+ "line.p_start": {
+  "hash": "1e0581728b81",
+  "who": "lisek",
+  "text": "Teraz zabawa: co się zmieści? Mam pięć zabaw!"
+ },
+ "line.p_kredka": {
+  "hash": "fd182b0e21f4",
+  "who": "lisek",
+  "text": "Wskaż grubszą kredkę."
+ },
+ "line.p_kredka_nie": {
+  "hash": "17e0b9005c31",
+  "who": "lisek",
+  "text": "Ta kredka jest cieńsza. Poszukaj grubszej."
+ },
+ "line.p_kredka_tak": {
+  "hash": "d22238883fbf",
+  "who": "sarenka",
+  "text": "Tak, ta kredka jest grubsza."
+ },
+ "line.p_drzewo": {
+  "hash": "ed180525d4d5",
+  "who": "lisek",
+  "text": "Które drzewo ma cieńszy pień?"
+ },
+ "line.p_drzewo_nie": {
+  "hash": "cc9c308cc262",
+  "who": "lisek",
+  "text": "Ten pień jest grubszy. Poszukaj cieńszego."
+ },
+ "line.p_drzewo_tak": {
+  "hash": "11d5e59f20a1",
+  "who": "sarenka",
+  "text": "Tak, to drzewo ma cieńszy pień."
+ },
+ "line.p_wstazka": {
+  "hash": "9ffe62e4a231",
+  "who": "lisek",
+  "text": "Wskaż szerszą wstążkę."
+ },
+ "line.p_wstazka_nie": {
+  "hash": "8252c54c037d",
+  "who": "lisek",
+  "text": "Ta wstążka jest węższa. Poszukaj szerszej."
+ },
+ "line.p_wstazka_tak": {
+  "hash": "990a2a053b37",
+  "who": "sarenka",
+  "text": "Tak, ta wstążka jest szersza."
+ },
+ "line.p_wezsza": {
+  "hash": "7061d0ec3d39",
+  "who": "lisek",
+  "text": "A teraz wskaż węższą wstążkę."
+ },
+ "line.p_wezsza_nie": {
+  "hash": "94bf09b23546",
+  "who": "lisek",
+  "text": "Ta wstążka jest szersza. Poszukaj węższej."
+ },
+ "line.p_wezsza_tak": {
+  "hash": "4a31a8c1bb61",
+  "who": "sarenka",
+  "text": "Tak, ta wstążka jest węższa."
+ },
+ "line.p_szpara": {
+  "hash": "c4d60fe77cb9",
+  "who": "sarenka",
+  "text": "W murze jest wąska szpara. Co przez nią przejdzie? Przepchnij to."
+ },
+ "line.p_szpara_nie": {
+  "hash": "b701e3afa07b",
+  "who": "sarenka",
+  "text": "Dynia jest za gruba. Utknęła w szparze."
+ },
+ "line.p_szpara_tak": {
+  "hash": "8b719a018236",
+  "who": "lisek",
+  "text": "Tak, cienki patyk przeszedł przez wąską szparę."
+ },
+ "line.p_kolejka": {
+  "hash": "0527d7f7083e",
+  "who": "lisek",
+  "text": "Ułóż kredki od najcieńszej do najgrubszej."
+ },
+ "line.p_kolejka_nie": {
+  "hash": "1dedbd8cf7d1",
+  "who": "lisek",
+  "text": "Zacznij od najcieńszej kredki."
+ },
+ "line.p_kolejka_tak": {
+  "hash": "dfc704611825",
+  "who": "sarenka",
+  "text": "Cienka, średnia i gruba. Wszystkie po kolei!"
+ },
+ "line.p_grube": {
+  "hash": "f6cbce32353f",
+  "who": "lisek",
+  "text": "Wskaż, co jest grube."
+ },
+ "line.p_grube_nie": {
+  "hash": "bbbe03ae62bd",
+  "who": "lisek",
+  "text": "Wstążka jest szeroka. Poszukaj czegoś grubego."
+ },
+ "line.p_grube_tak": {
+  "hash": "6f0e72d8eb63",
+  "who": "sarenka",
+  "text": "Tak, okrągła kredka jest gruba."
+ },
+ "line.p_szerokie": {
+  "hash": "1c4e9f195d94",
+  "who": "lisek",
+  "text": "A teraz wskaż, co jest szerokie."
+ },
+ "line.p_szerokie_nie": {
+  "hash": "a201f9e6649a",
+  "who": "lisek",
+  "text": "Kredka jest gruba. Poszukaj czegoś szerokiego."
+ },
+ "line.p_szerokie_tak": {
+  "hash": "382d6a456ce3",
+  "who": "sarenka",
+  "text": "Tak, płaska wstążka jest szeroka."
+ },
+ "line.d_dom": {
+  "hash": "55b8a896617e",
+  "who": "kret",
+  "text": "Dzisiaj moja parapetówka! Zaraz przyjdą goście."
+ },
+ "line.d_balagan": {
+  "hash": "14306092d68d",
+  "who": "sarenka",
+  "text": "Przynieśliśmy tyle rzeczy! Posprzątajmy, zanim przyjdą goście."
+ },
+ "line.d_parasol": {
+  "hash": "65e8ff3c10cd",
+  "who": "sarenka",
+  "text": "Ten parasol jest taki długi! Nie zmieści się do wąskiego stojaka."
+ },
+ "line.d_pamietasz": {
+  "hash": "9c4395a2ddaf",
+  "who": "lisek",
+  "text": "Długi? Pamiętasz długi kij i wąską furtkę?"
+ },
+ "line.d_stojak": {
+  "hash": "18c2967de144",
+  "who": "kret",
+  "text": "Co zmieści się w wąskim stojaku? Włóż to do środka."
+ },
+ "line.d_stojak_nie": {
+  "hash": "f8e47a6d3e6b",
+  "who": "kret",
+  "text": "Gruba książka się nie zmieści. Stojak jest wąski."
+ },
+ "line.d_stojak_tak": {
+  "hash": "6915684c3137",
+  "who": "sarenka",
+  "text": "Parasol jest długi, ale cienki. Zmieścił się!"
+ },
+ "line.d_ksiazki": {
+  "hash": "0a7992d8a3de",
+  "who": "kret",
+  "text": "Książki postawimy na półce."
+ },
+ "line.d_uloz": {
+  "hash": "7cbbac425c1c",
+  "who": "kret",
+  "text": "Ułóż książki od najcieńszej do najgrubszej."
+ },
+ "line.d_uloz_nie": {
+  "hash": "f85226e79806",
+  "who": "kret",
+  "text": "Zacznij od najcieńszej książki."
+ },
+ "line.d_uloz_tak": {
+  "hash": "68a0c78f4f2e",
+  "who": "kret",
+  "text": "Najcieńsza, średnia i najgrubsza. Pięknie po kolei!"
+ },
+ "line.d_zimno": {
+  "hash": "fcf0c1492390",
+  "who": "lisek",
+  "text": "Brr, zimno mi w szyję. Który szalik będzie najcieplejszy?"
+ },
+ "line.d_szalik": {
+  "hash": "f86236da034f",
+  "who": "sarenka",
+  "text": "Najcieplejszy jest najszerszy. Wskaż najszerszy szalik."
+ },
+ "line.d_szalik_nie": {
+  "hash": "0a5886735714",
+  "who": "sarenka",
+  "text": "Ten szalik jest węższy. Poszukaj najszerszego."
+ },
+ "line.d_szalik_tak": {
+  "hash": "41d4323e374c",
+  "who": "lisek",
+  "text": "Najszerszy szalik! Ale ciepło."
+ },
+ "line.d_puk": {
+  "hash": "dedbddd97f5e",
+  "who": "kret",
+  "text": "Puk, puk! Goście już są. Jeden prezent potrzebuje szeroko otwartych drzwi."
+ },
+ "line.d_prezent": {
+  "hash": "6510ba04f3b1",
+  "who": "kret",
+  "text": "Wskaż najszerszy prezent."
+ },
+ "line.d_prezent_nie": {
+  "hash": "1c64fda4037e",
+  "who": "kret",
+  "text": "Ten prezent jest węższy. Poszukaj najszerszego."
+ },
+ "line.d_prezent_tak": {
+  "hash": "d21661fb2f83",
+  "who": "kret",
+  "text": "Tak, obraz jest najszerszy. Otwieramy drzwi szeroko!"
+ },
+ "line.d_goscie": {
+  "hash": "db4a85038028",
+  "who": "kret",
+  "text": "Witajcie, goście! Wszystko jest posprzątane."
+ },
+ "line.d_obraz": {
+  "hash": "408c5c119064",
+  "who": "sarenka",
+  "text": "Jaki piękny szeroki obraz! Przeszedł przez szeroko otwarte drzwi."
+ },
+ "line.d_kredki": {
+  "hash": "e2d71275a39d",
+  "who": "lisek",
+  "text": "Moja kredka jest cienka, a kredka Kreta jest gruba."
+ },
+ "line.d_rodzice": {
+  "hash": "a0b19694da2f",
+  "who": "kret",
+  "text": "Pobaw się tak w domu z rodzicami. Znajdź coś grubszego od swojego palca i coś cieńszego."
+ },
+ "line.naklejka_daj": {
+  "hash": "aa31e0d76ee0",
+  "who": "kret",
+  "text": "Dziękuję za pomoc w przeprowadzce! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "8556c4423588",
+  "who": "kret",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "aa052b945ac5",
+  "who": "narrator",
+  "text": "To nowa norka Kreta. Dostaliśmy ją, kiedy pomogliśmy mu się przeprowadzić i poznaliśmy, że zmieści się to, co cienkie albo wąskie, nawet gdy jest długie."
+ }
+}

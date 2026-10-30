@@ -1,0 +1,487 @@
+{
+ "line.a_przeprowadzka": {
+  "hash": "fb52e031f79c",
+  "who": "kret",
+  "text": "Hooray! Today I'm moving house. My new burrow is in the birch wood."
+ },
+ "line.a_pomozemy": {
+  "hash": "7dcff369fc1c",
+  "who": "sarenka",
+  "text": "We'll help you carry your things, Mole!"
+ },
+ "line.a_rzeczy": {
+  "hash": "a18c02620847",
+  "who": "kret",
+  "text": "Thank you! We're taking my barrel and my long stick."
+ },
+ "line.a_furtka": {
+  "hash": "450510445382",
+  "who": "kret",
+  "text": "First we have to get through this gate."
+ },
+ "line.a_zaklad": {
+  "hash": "23e88c97c520",
+  "who": "lisek",
+  "text": "The barrel is short, it will surely go through! But the stick is long. That one won't fit."
+ },
+ "line.a_beczka": {
+  "hash": "03ac82843e8d",
+  "who": "sarenka",
+  "text": "Let's check. Push the barrel through the gate."
+ },
+ "line.a_utknela": {
+  "hash": "22735247c077",
+  "who": "lisek",
+  "text": "Oh no! The barrel got stuck in the gate."
+ },
+ "line.a_jak_to": {
+  "hash": "4256333aeb49",
+  "who": "lisek",
+  "text": "How come? The barrel is short!"
+ },
+ "line.a_kij": {
+  "hash": "162352bb7f31",
+  "who": "sarenka",
+  "text": "Now push the long stick through the gate."
+ },
+ "line.a_przeszedl": {
+  "hash": "58e42b570e49",
+  "who": "lisek",
+  "text": "The long stick went through the gate!"
+ },
+ "line.a_waska": {
+  "hash": "5b791c1e98be",
+  "who": "sarenka",
+  "text": "Look. The gate is narrow. Only something thin can go through it."
+ },
+ "line.a_cienki": {
+  "hash": "49f1de202e89",
+  "who": "sarenka",
+  "text": "The stick is long, but it is thin, so it went through. The barrel is short, but it is thick."
+ },
+ "line.a_aha": {
+  "hash": "fe685328a0e9",
+  "who": "lisek",
+  "text": "Aha! Long doesn't mean thick."
+ },
+ "line.a_jak_beczka": {
+  "hash": "feed19e20ddb",
+  "who": "kret",
+  "text": "So how will we carry my thick barrel?"
+ },
+ "line.a_brama": {
+  "hash": "9195de50f0da",
+  "who": "sarenka",
+  "text": "Next to the gate there is a wide gateway!"
+ },
+ "line.a_ktora": {
+  "hash": "28f5b9c3ea96",
+  "who": "sarenka",
+  "text": "Which way will the thick barrel go through? Push it."
+ },
+ "line.a_ktora_nie": {
+  "hash": "4f7ea153678b",
+  "who": "sarenka",
+  "text": "The gate is too narrow for the thick barrel."
+ },
+ "line.a_ktora_tak": {
+  "hash": "05b9e74274ff",
+  "who": "lisek",
+  "text": "Yes! The thick barrel went through the wide gateway."
+ },
+ "line.a_do_lasu": {
+  "hash": "a04fad233b2f",
+  "who": "kret",
+  "text": "Everything is through. Off to the birch wood!"
+ },
+ "line.b_las": {
+  "hash": "5941768bd9be",
+  "who": "kret",
+  "text": "This is the birch wood. My new burrow is close now."
+ },
+ "line.b_polana": {
+  "hash": "d7a388291b13",
+  "who": "kret",
+  "text": "I'm also carrying three logs for my stove."
+ },
+ "line.b_lisek": {
+  "hash": "bd31391c79d9",
+  "who": "lisek",
+  "text": "The path goes between these birches. Every log will go through, they're short!"
+ },
+ "line.b_brzozy": {
+  "hash": "f1c0e713dc18",
+  "who": "sarenka",
+  "text": "It's narrow between the birches. Which log will fit? Push it through."
+ },
+ "line.b_brzozy_nie": {
+  "hash": "efa970fbbd8c",
+  "who": "sarenka",
+  "text": "That log is too thick. It got stuck between the birches."
+ },
+ "line.b_brzozy_tak": {
+  "hash": "828f7ad7e0aa",
+  "who": "kret",
+  "text": "The thinnest log went through! We'll carry the thick logs around."
+ },
+ "line.b_najgrubsze": {
+  "hash": "656720258076",
+  "who": "kret",
+  "text": "My burrow is under the thickest tree in the wood. But I see so badly..."
+ },
+ "line.b_pomozemy": {
+  "hash": "486955c71c22",
+  "who": "sarenka",
+  "text": "We'll help you! Point to the thickest tree."
+ },
+ "line.b_drzewo_nie": {
+  "hash": "2e09ca35e6f5",
+  "who": "sarenka",
+  "text": "This tree has a thinner trunk. Look for the thickest one."
+ },
+ "line.b_drzewo_tak": {
+  "hash": "d3c1bd1dfa04",
+  "who": "kret",
+  "text": "Yes! This tree has the thickest trunk. I live here!"
+ },
+ "line.c_bloto": {
+  "hash": "4cd6af7f716b",
+  "who": "kret",
+  "text": "Oh dear! The doormat in front of my door is all muddy."
+ },
+ "line.c_zetrzyj": {
+  "hash": "78b775028046",
+  "who": "lisek",
+  "text": "Rub the mud off with your finger! There's something underneath."
+ },
+ "line.c_odkryte": {
+  "hash": "1dea6b435f17",
+  "who": "kret",
+  "text": "All clean! Something is painted here."
+ },
+ "line.c_kto": {
+  "hash": "17aba525b020",
+  "who": "lisek",
+  "text": "Point to who is painted on the doormat."
+ },
+ "line.c_kto_nie": {
+  "hash": "c3c16b781049",
+  "who": "lisek",
+  "text": "These are only flowers. Look for the animal."
+ },
+ "line.c_kto_tak": {
+  "hash": "0b5be21d1980",
+  "who": "kret",
+  "text": "It's a mole, just like me! Now everyone knows who lives here."
+ },
+ "line.c_tunele": {
+  "hash": "7ed8db490d1b",
+  "who": "kret",
+  "text": "Two tunnels lead into my burrow: a narrow one and a wide one."
+ },
+ "line.c_tunele2": {
+  "hash": "8377f58b13a7",
+  "who": "kret",
+  "text": "Only thin things go down the narrow tunnel. Thick things fit into the wide one."
+ },
+ "line.c_wloz": {
+  "hash": "e2f3aa3ec233",
+  "who": "sarenka",
+  "text": "Put the thin things into the narrow tunnel and the thick things into the wide one."
+ },
+ "line.c_wloz_nie": {
+  "hash": "3572db5e05ab",
+  "who": "sarenka",
+  "text": "Something doesn't fit. Thin things into the narrow tunnel, thick things into the wide one."
+ },
+ "line.c_wloz_tak": {
+  "hash": "214591069ac6",
+  "who": "kret",
+  "text": "The thin things are in the narrow tunnel and the thick things in the wide one. Everything fitted!"
+ },
+ "line.c_wszystko": {
+  "hash": "694e11334d68",
+  "who": "kret",
+  "text": "Everything is in its place in my burrow now!"
+ },
+ "line.c_witajcie": {
+  "hash": "31751b29fa48",
+  "who": "kret",
+  "text": "Welcome to my new burrow!"
+ },
+ "line.c_przytulnie": {
+  "hash": "16f3c6c31da5",
+  "who": "sarenka",
+  "text": "How cosy it is here!"
+ },
+ "line.c_dziekuje": {
+  "hash": "6c1e1a3541c4",
+  "who": "kret",
+  "text": "Thank you! Without you nothing would have fitted in here."
+ },
+ "line.c_parapetowka": {
+  "hash": "0dc40da91618",
+  "who": "kret",
+  "text": "Tomorrow I'm having a housewarming party. You're invited!"
+ },
+ "line.c_prezenty": {
+  "hash": "dd3428e13e98",
+  "who": "lisek",
+  "text": "We'll come with presents!"
+ },
+ "line.p_start": {
+  "hash": "18b68ca992f4",
+  "who": "lisek",
+  "text": "Now let's play: what will fit? I have five games!"
+ },
+ "line.p_kredka": {
+  "hash": "3a70d1a0227f",
+  "who": "lisek",
+  "text": "Point to the thicker crayon."
+ },
+ "line.p_kredka_nie": {
+  "hash": "7136b9334e51",
+  "who": "lisek",
+  "text": "This crayon is thinner. Look for the thicker one."
+ },
+ "line.p_kredka_tak": {
+  "hash": "35db48ee24a4",
+  "who": "sarenka",
+  "text": "Yes, this crayon is thicker."
+ },
+ "line.p_drzewo": {
+  "hash": "a22ce3d9c47d",
+  "who": "lisek",
+  "text": "Which tree has the thinner trunk?"
+ },
+ "line.p_drzewo_nie": {
+  "hash": "57c19c7aabee",
+  "who": "lisek",
+  "text": "This trunk is thicker. Look for the thinner one."
+ },
+ "line.p_drzewo_tak": {
+  "hash": "28d5663831b1",
+  "who": "sarenka",
+  "text": "Yes, this tree has the thinner trunk."
+ },
+ "line.p_wstazka": {
+  "hash": "504549ddee8d",
+  "who": "lisek",
+  "text": "Point to the wider ribbon."
+ },
+ "line.p_wstazka_nie": {
+  "hash": "6ba4bd79ea25",
+  "who": "lisek",
+  "text": "This ribbon is narrower. Look for the wider one."
+ },
+ "line.p_wstazka_tak": {
+  "hash": "fa119cf374ae",
+  "who": "sarenka",
+  "text": "Yes, this ribbon is wider."
+ },
+ "line.p_wezsza": {
+  "hash": "c572dd65cc9d",
+  "who": "lisek",
+  "text": "Now point to the narrower ribbon."
+ },
+ "line.p_wezsza_nie": {
+  "hash": "1f18f6df1178",
+  "who": "lisek",
+  "text": "This ribbon is wider. Look for the narrower one."
+ },
+ "line.p_wezsza_tak": {
+  "hash": "4f7844955604",
+  "who": "sarenka",
+  "text": "Yes, this ribbon is narrower."
+ },
+ "line.p_szpara": {
+  "hash": "e5ec3530e01e",
+  "who": "sarenka",
+  "text": "There is a narrow gap in the wall. What will go through it? Push it through."
+ },
+ "line.p_szpara_nie": {
+  "hash": "1b9768cf2548",
+  "who": "sarenka",
+  "text": "The pumpkin is too thick. It got stuck in the gap."
+ },
+ "line.p_szpara_tak": {
+  "hash": "f1adcb02a232",
+  "who": "lisek",
+  "text": "Yes, the thin stick went through the narrow gap."
+ },
+ "line.p_kolejka": {
+  "hash": "924e2bebc26d",
+  "who": "lisek",
+  "text": "Put the crayons in order from the thinnest to the thickest."
+ },
+ "line.p_kolejka_nie": {
+  "hash": "19124ebc4d45",
+  "who": "lisek",
+  "text": "Start with the thinnest crayon."
+ },
+ "line.p_kolejka_tak": {
+  "hash": "5320f93c5f13",
+  "who": "sarenka",
+  "text": "Thin, middle and thick. All in order!"
+ },
+ "line.p_grube": {
+  "hash": "ad3240494315",
+  "who": "lisek",
+  "text": "Point to what is thick."
+ },
+ "line.p_grube_nie": {
+  "hash": "2d1c40aa02ff",
+  "who": "lisek",
+  "text": "The ribbon is wide. Look for something thick."
+ },
+ "line.p_grube_tak": {
+  "hash": "18d91fbfd01e",
+  "who": "sarenka",
+  "text": "Yes, the round crayon is thick."
+ },
+ "line.p_szerokie": {
+  "hash": "64ddbf3ef64a",
+  "who": "lisek",
+  "text": "Now point to what is wide."
+ },
+ "line.p_szerokie_nie": {
+  "hash": "dd4f7d2a640f",
+  "who": "lisek",
+  "text": "The crayon is thick. Look for something wide."
+ },
+ "line.p_szerokie_tak": {
+  "hash": "f13376b252de",
+  "who": "sarenka",
+  "text": "Yes, the flat ribbon is wide."
+ },
+ "line.d_dom": {
+  "hash": "44820592a44a",
+  "who": "kret",
+  "text": "Today is my housewarming party! The guests will be here soon."
+ },
+ "line.d_balagan": {
+  "hash": "ea54c96fac00",
+  "who": "sarenka",
+  "text": "We brought so many things! Let's tidy up before the guests come."
+ },
+ "line.d_parasol": {
+  "hash": "741754c91ebc",
+  "who": "sarenka",
+  "text": "This umbrella is so long! It won't fit into the narrow stand."
+ },
+ "line.d_pamietasz": {
+  "hash": "e9185b32fa76",
+  "who": "lisek",
+  "text": "Long? Remember the long stick and the narrow gate?"
+ },
+ "line.d_stojak": {
+  "hash": "05fe79efd6e0",
+  "who": "kret",
+  "text": "What will fit into the narrow stand? Put it in."
+ },
+ "line.d_stojak_nie": {
+  "hash": "63c4533ec0f5",
+  "who": "kret",
+  "text": "The thick book won't fit. The stand is narrow."
+ },
+ "line.d_stojak_tak": {
+  "hash": "e8d714b2b654",
+  "who": "sarenka",
+  "text": "The umbrella is long, but it is thin. It fitted!"
+ },
+ "line.d_ksiazki": {
+  "hash": "db5dfde45f3f",
+  "who": "kret",
+  "text": "We'll stand the books on the shelf."
+ },
+ "line.d_uloz": {
+  "hash": "32ca29011e82",
+  "who": "kret",
+  "text": "Put the books in order from the thinnest to the thickest."
+ },
+ "line.d_uloz_nie": {
+  "hash": "4f22cb6e721f",
+  "who": "kret",
+  "text": "Start with the thinnest book."
+ },
+ "line.d_uloz_tak": {
+  "hash": "4d539094f51c",
+  "who": "kret",
+  "text": "The thinnest, the middle one and the thickest. Nicely in order!"
+ },
+ "line.d_zimno": {
+  "hash": "05386a29eb70",
+  "who": "lisek",
+  "text": "Brr, my neck is cold. Which scarf will be the warmest?"
+ },
+ "line.d_szalik": {
+  "hash": "2b1d849a3e59",
+  "who": "sarenka",
+  "text": "The widest one is the warmest. Point to the widest scarf."
+ },
+ "line.d_szalik_nie": {
+  "hash": "3dfe63f18041",
+  "who": "sarenka",
+  "text": "This scarf is narrower. Look for the widest one."
+ },
+ "line.d_szalik_tak": {
+  "hash": "0c128b661013",
+  "who": "lisek",
+  "text": "The widest scarf! So warm."
+ },
+ "line.d_puk": {
+  "hash": "649cc0748567",
+  "who": "kret",
+  "text": "Knock, knock! The guests are here. One present needs the door opened wide."
+ },
+ "line.d_prezent": {
+  "hash": "c357478c0ca0",
+  "who": "kret",
+  "text": "Point to the widest present."
+ },
+ "line.d_prezent_nie": {
+  "hash": "0ceca37e410c",
+  "who": "kret",
+  "text": "This present is narrower. Look for the widest one."
+ },
+ "line.d_prezent_tak": {
+  "hash": "46b59689fdf4",
+  "who": "kret",
+  "text": "Yes, the picture is the widest. Let's open the door wide!"
+ },
+ "line.d_goscie": {
+  "hash": "11108dc33a9d",
+  "who": "kret",
+  "text": "Welcome, guests! Everything is tidy."
+ },
+ "line.d_obraz": {
+  "hash": "3bb42ef00703",
+  "who": "sarenka",
+  "text": "What a beautiful wide picture! It came in through the wide open door."
+ },
+ "line.d_kredki": {
+  "hash": "c4be726cff05",
+  "who": "lisek",
+  "text": "My crayon is thin, and Mole's crayon is thick."
+ },
+ "line.d_rodzice": {
+  "hash": "2bb6150e4dbf",
+  "who": "kret",
+  "text": "Play this at home with your parents. Find something thicker than your finger and something thinner."
+ },
+ "line.naklejka_daj": {
+  "hash": "fc855eb9c1d1",
+  "who": "kret",
+  "text": "Thank you for helping me move house! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "9b58a4117beb",
+  "who": "kret",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "122a54cf0ca2",
+  "who": "narrator",
+  "text": "This is Mole's new burrow. He gave it to us when we helped him move and learnt that what is thin or narrow fits, even when it is long."
+ }
+}
