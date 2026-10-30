@@ -15,9 +15,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the second stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap3": {
-  "hash": "c4ffe27072ca",
+  "hash": "1f48962c177b",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the third stage of our journey! New adventures are waiting!"
+  "text": "Congratulations! The third stage is open for us. Let's go on!"
  },
  "line.zamkniete_etap4": {
   "hash": "b0b8c980f006",
@@ -25,9 +25,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the third stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap4": {
-  "hash": "1713981eecc7",
+  "hash": "7b3055776ee0",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the fourth stage of our journey! New adventures are waiting!"
+  "text": "Bravo! We opened the fourth stage of our journey. Let's see what waits in it!"
  },
  "line.zamkniete_etap5": {
   "hash": "d265a601abe0",
@@ -35,9 +35,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fourth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap5": {
-  "hash": "c218a8af45cf",
+  "hash": "cd82e56d3354",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the fifth stage of our journey! New adventures are waiting!"
+  "text": "Great! The fifth stage is ahead of us. New adventures are waiting!"
  },
  "line.zamkniete_etap6": {
   "hash": "d1689c0187fa",
@@ -45,9 +45,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fifth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap6": {
-  "hash": "ac047273496c",
+  "hash": "842295a123a5",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the sixth stage of our journey! New adventures are waiting!"
+  "text": "Excellent! The sixth stage is open. Let's go on!"
  },
  "line.etap_koniec_etap1": {
   "hash": "ce7945386284",
@@ -60,9 +60,9 @@
   "text": "This is the prize for finishing the first stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap2": {
-  "hash": "ad71effbd3df",
+  "hash": "b7160d7f33fe",
   "who": "lisek",
-  "text": "Bravo! We finished the whole second stage! Here is a special sticker for your album."
+  "text": "Great! We finished the whole second stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap2": {
   "hash": "59c651a398d4",
@@ -70,9 +70,9 @@
   "text": "This is the prize for finishing the second stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap3": {
-  "hash": "31c988994686",
+  "hash": "f767ae9d7aeb",
   "who": "lisek",
-  "text": "Bravo! We finished the whole third stage! Here is a special sticker for your album."
+  "text": "Excellent! We finished the whole third stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap3": {
   "hash": "d51a33615c87",
@@ -80,9 +80,9 @@
   "text": "This is the prize for finishing the third stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap4": {
-  "hash": "4798b2329b11",
+  "hash": "14f6e92a9a85",
   "who": "lisek",
-  "text": "Bravo! We finished the whole fourth stage! Here is a special sticker for your album."
+  "text": "Hooray! We finished the whole fourth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap4": {
   "hash": "fa2c10230067",
@@ -90,9 +90,9 @@
   "text": "This is the prize for finishing the fourth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap5": {
-  "hash": "e1cc98a4a6a4",
+  "hash": "4fbbf61ae148",
   "who": "lisek",
-  "text": "Bravo! We finished the whole fifth stage! Here is a special sticker for your album."
+  "text": "Congratulations! We finished the whole fifth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap5": {
   "hash": "272cd940f997",
@@ -110,9 +110,9 @@
   "text": "This is the prize for finishing the sixth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap7": {
-  "hash": "9807e70d143b",
+  "hash": "5bda01e6abf5",
   "who": "lisek",
-  "text": "Bravo! We finished the whole seventh stage! Here is a special sticker for your album."
+  "text": "Great! We finished the whole seventh stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap7": {
   "hash": "ee274a8a2c92",
@@ -120,9 +120,9 @@
   "text": "This is the prize for finishing the seventh stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap8": {
-  "hash": "30cec8e00279",
+  "hash": "4d83824ac8dc",
   "who": "lisek",
-  "text": "Bravo! We finished the whole eighth stage! Here is a special sticker for your album."
+  "text": "Excellent! We finished the whole eighth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap8": {
   "hash": "7beeaefcb116",
@@ -130,9 +130,9 @@
   "text": "This is the prize for finishing the eighth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap9": {
-  "hash": "dad9f52604d3",
+  "hash": "b38c5d1cfa88",
   "who": "lisek",
-  "text": "Bravo! We finished the whole ninth stage! Here is a special sticker for your album."
+  "text": "Hooray! We finished the whole ninth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap9": {
   "hash": "6d95bde89f5e",
@@ -140,9 +140,9 @@
   "text": "This is the prize for finishing the ninth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap10": {
-  "hash": "577d7ba439e6",
+  "hash": "3da2196c77c4",
   "who": "lisek",
-  "text": "Bravo! We finished the whole tenth stage! Here is a special sticker for your album."
+  "text": "Congratulations! We finished the whole tenth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap10": {
   "hash": "2f3d4a89e3a2",
@@ -160,9 +160,9 @@
   "text": "This is the prize for finishing the eleventh stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap12": {
-  "hash": "f3f328722e5f",
+  "hash": "62c8ef471132",
   "who": "lisek",
-  "text": "Bravo! We finished the whole twelfth stage! Here is a special sticker for your album."
+  "text": "Great! We finished the whole twelfth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap12": {
   "hash": "9e8f1e39bb21",
@@ -170,9 +170,9 @@
   "text": "This is the prize for finishing the twelfth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap13": {
-  "hash": "678c6dd92257",
+  "hash": "ace121d0760e",
   "who": "lisek",
-  "text": "Bravo! We finished the whole thirteenth stage! Here is a special sticker for your album."
+  "text": "Excellent! We finished the whole thirteenth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap13": {
   "hash": "35558f5f7bfc",
@@ -180,9 +180,9 @@
   "text": "This is the prize for finishing the thirteenth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap14": {
-  "hash": "6d0249daf230",
+  "hash": "7ee46a92eac3",
   "who": "lisek",
-  "text": "Bravo! We finished the whole fourteenth stage! Here is a special sticker for your album."
+  "text": "Hooray! We finished the whole fourteenth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap14": {
   "hash": "c15d830c57d5",
@@ -190,9 +190,9 @@
   "text": "This is the prize for finishing the fourteenth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap15": {
-  "hash": "9b7fa0f659ba",
+  "hash": "837499692122",
   "who": "lisek",
-  "text": "Bravo! We finished the whole fifteenth stage! Here is a special sticker for your album."
+  "text": "Congratulations! We finished the whole fifteenth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap15": {
   "hash": "685f571c6b54",
@@ -210,9 +210,9 @@
   "text": "This is the prize for finishing the sixteenth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap17": {
-  "hash": "75233f971662",
+  "hash": "5c670b144044",
   "who": "lisek",
-  "text": "Bravo! We finished the whole seventeenth stage! Here is a special sticker for your album."
+  "text": "Great! We finished the whole seventeenth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap17": {
   "hash": "c6d396443adf",
@@ -220,9 +220,9 @@
   "text": "This is the prize for finishing the seventeenth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap18": {
-  "hash": "404b448bde5a",
+  "hash": "bda5b9aaaa92",
   "who": "lisek",
-  "text": "Bravo! We finished the whole eighteenth stage! Here is a special sticker for your album."
+  "text": "Excellent! We finished the whole eighteenth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap18": {
   "hash": "e4c44dc89b4c",
@@ -230,9 +230,9 @@
   "text": "This is the prize for finishing the eighteenth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap19": {
-  "hash": "74e0bbd38da2",
+  "hash": "e58e5c15c5cc",
   "who": "lisek",
-  "text": "Bravo! We finished the whole nineteenth stage! Here is a special sticker for your album."
+  "text": "Hooray! We finished the whole nineteenth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap19": {
   "hash": "8254900e99b8",
@@ -240,9 +240,9 @@
   "text": "This is the prize for finishing the nineteenth stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap20": {
-  "hash": "b4dd46b638bc",
+  "hash": "4392ca76c1fe",
   "who": "lisek",
-  "text": "Bravo! We finished the whole twentieth stage! Here is a special sticker for your album."
+  "text": "Congratulations! We finished the whole twentieth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap20": {
   "hash": "b99217029dda",
@@ -260,9 +260,9 @@
   "text": "This is the prize for finishing the twenty-first stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap22": {
-  "hash": "78e8d957f9fa",
+  "hash": "f668ab28b1f5",
   "who": "lisek",
-  "text": "Bravo! We finished the whole twenty-second stage! Here is a special sticker for your album."
+  "text": "Great! We finished the whole twenty-second stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap22": {
   "hash": "96ed32ffe06a",
@@ -270,9 +270,9 @@
   "text": "This is the prize for finishing the twenty-second stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap23": {
-  "hash": "869b50eb5163",
+  "hash": "6d503106b4ee",
   "who": "lisek",
-  "text": "Bravo! We finished the whole twenty-third stage! Here is a special sticker for your album."
+  "text": "Excellent! We finished the whole twenty-third stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap23": {
   "hash": "b7365917f966",
@@ -280,9 +280,9 @@
   "text": "This is the prize for finishing the twenty-third stage. We went through all its adventures together."
  },
  "line.etap_koniec_etap24": {
-  "hash": "35f62a166862",
+  "hash": "5e063d77d5a2",
   "who": "lisek",
-  "text": "Bravo! We finished the whole twenty-fourth stage! Here is a special sticker for your album."
+  "text": "Hooray! We finished the whole twenty-fourth stage! Here is a special sticker for your album."
  },
  "line.naklejka_opis_etap24": {
   "hash": "f87612e9c53a",
@@ -305,9 +305,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the seventh stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap8": {
-  "hash": "ab51a117de5a",
+  "hash": "2cc5ef63de94",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the eighth stage of our journey! New adventures are waiting!"
+  "text": "Congratulations! The eighth stage is open for us. Let's go on!"
  },
  "line.zamkniete_etap9": {
   "hash": "27fbdc255876",
@@ -315,9 +315,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the eighth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap9": {
-  "hash": "2c4a0e1a50af",
+  "hash": "17b38cfe32af",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the ninth stage of our journey! New adventures are waiting!"
+  "text": "Bravo! We opened the ninth stage of our journey. Let's see what waits in it!"
  },
  "line.zamkniete_etap10": {
   "hash": "4d1237000da9",
@@ -325,9 +325,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the ninth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap10": {
-  "hash": "c070f0d1f3f4",
+  "hash": "eb3d7b10726e",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the tenth stage of our journey! New adventures are waiting!"
+  "text": "Great! The tenth stage is ahead of us. New adventures are waiting!"
  },
  "line.zamkniete_etap11": {
   "hash": "ff32271ea6d4",
@@ -335,9 +335,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the tenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap11": {
-  "hash": "0e8697bf0a8d",
+  "hash": "621db287a068",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the eleventh stage of our journey! New adventures are waiting!"
+  "text": "Excellent! The eleventh stage is open. Let's go on!"
  },
  "line.zamkniete_etap12": {
   "hash": "9b37497081b0",
@@ -355,9 +355,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twelfth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap13": {
-  "hash": "d213079acfdd",
+  "hash": "ec0e4ca84d85",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the thirteenth stage of our journey! New adventures are waiting!"
+  "text": "Congratulations! The thirteenth stage is open for us. Let's go on!"
  },
  "line.zamkniete_etap14": {
   "hash": "4830bad01b0b",
@@ -365,9 +365,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the thirteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap14": {
-  "hash": "210e1e3e3366",
+  "hash": "e35c6212d3d6",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the fourteenth stage of our journey! New adventures are waiting!"
+  "text": "Bravo! We opened the fourteenth stage of our journey. Let's see what waits in it!"
  },
  "line.zamkniete_etap15": {
   "hash": "c527ea17dac8",
@@ -375,9 +375,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fourteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap15": {
-  "hash": "4caece9d1e69",
+  "hash": "429dd811a560",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the fifteenth stage of our journey! New adventures are waiting!"
+  "text": "Great! The fifteenth stage is ahead of us. New adventures are waiting!"
  },
  "line.zamkniete_etap16": {
   "hash": "c47ad119f5ee",
@@ -385,9 +385,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the fifteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap16": {
-  "hash": "9af4dfc322af",
+  "hash": "484be2cd0cdb",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the sixteenth stage of our journey! New adventures are waiting!"
+  "text": "Excellent! The sixteenth stage is open. Let's go on!"
  },
  "line.zamkniete_etap17": {
   "hash": "a150153272eb",
@@ -405,9 +405,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the seventeenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap18": {
-  "hash": "1e970c6061b7",
+  "hash": "a8a91514337e",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the eighteenth stage of our journey! New adventures are waiting!"
+  "text": "Congratulations! The eighteenth stage is open for us. Let's go on!"
  },
  "line.zamkniete_etap19": {
   "hash": "9a82bd123115",
@@ -415,9 +415,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the eighteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap19": {
-  "hash": "910286da8796",
+  "hash": "f4e144d5a9e0",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the nineteenth stage of our journey! New adventures are waiting!"
+  "text": "Bravo! We opened the nineteenth stage of our journey. Let's see what waits in it!"
  },
  "line.zamkniete_etap20": {
   "hash": "4d011335aeb4",
@@ -425,9 +425,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the nineteenth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap20": {
-  "hash": "a1d63ca60b11",
+  "hash": "ef4dabd19154",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the twentieth stage of our journey! New adventures are waiting!"
+  "text": "Great! The twentieth stage is ahead of us. New adventures are waiting!"
  },
  "line.zamkniete_etap21": {
   "hash": "d25e64680905",
@@ -435,9 +435,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twentieth stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap21": {
-  "hash": "b4e250946d74",
+  "hash": "1e238684efbb",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the twenty-first stage of our journey! New adventures are waiting!"
+  "text": "Excellent! The twenty-first stage is open. Let's go on!"
  },
  "line.zamkniete_etap22": {
   "hash": "adfa0d0bbe28",
@@ -455,9 +455,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twenty-second stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap23": {
-  "hash": "7aac577281fe",
+  "hash": "1360a177c3bf",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the twenty-third stage of our journey! New adventures are waiting!"
+  "text": "Congratulations! The twenty-third stage is open for us. Let's go on!"
  },
  "line.zamkniete_etap24": {
   "hash": "640cf02a17cb",
@@ -465,9 +465,9 @@
   "text": "This way is still locked. Let's first finish all the adventures of the twenty-third stage, and the padlock will open by itself!"
  },
  "line.otwarte_etap24": {
-  "hash": "967306e4e593",
+  "hash": "6bb7c30bb372",
   "who": "lisek",
-  "text": "Hooray! We've unlocked the twenty-fourth stage of our journey! New adventures are waiting!"
+  "text": "Bravo! We opened the twenty-fourth stage of our journey. Let's see what waits in it!"
  },
  "line.mapa_lisek_1": {
   "hash": "8b59c24ac3d6",
@@ -655,19 +655,19 @@
   "text": "The missing piece. The birthday picture."
  },
  "line.brama_swiat2": {
-  "hash": "648cd35b93b5",
+  "hash": "e19a7b34ca45",
   "who": "lisek",
-  "text": "Hooray! The gate to the Lakeside Village is open! Off we go!"
+  "text": "The gate to the Lakeside Village is wide open! Off we go!"
  },
  "line.brama_swiat3": {
-  "hash": "f3416157a15e",
+  "hash": "7be61c121cf4",
   "who": "lisek",
-  "text": "Hooray! The gate to the Snowy Mountains is open! Off we go!"
+  "text": "The gate to the Snowy Mountains is wide open! Off we go!"
  },
  "line.brama_swiat4": {
-  "hash": "2dc9a9b6cce1",
+  "hash": "f1cd2956571f",
   "who": "lisek",
-  "text": "Hooray! The gate to the Castle on the Hill is open! Off we go!"
+  "text": "The gate to the Castle on the Hill is wide open! Off we go!"
  },
  "line.brama_zamknieta_swiat2": {
   "hash": "f9ccc499def4",

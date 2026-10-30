@@ -9,7 +9,7 @@
   },
   "line.etap_koniec_etap2": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole second stage! Here is a special sticker for your album."
+    "text": "Great! We finished the whole second stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap2": {
     "who": "narrator",
@@ -17,7 +17,7 @@
   },
   "line.etap_koniec_etap3": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole third stage! Here is a special sticker for your album."
+    "text": "Excellent! We finished the whole third stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap3": {
     "who": "narrator",
@@ -25,7 +25,7 @@
   },
   "line.etap_koniec_etap4": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole fourth stage! Here is a special sticker for your album."
+    "text": "Hooray! We finished the whole fourth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap4": {
     "who": "narrator",
@@ -33,7 +33,7 @@
   },
   "line.etap_koniec_etap5": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole fifth stage! Here is a special sticker for your album."
+    "text": "Congratulations! We finished the whole fifth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap5": {
     "who": "narrator",
@@ -49,7 +49,7 @@
   },
   "line.etap_koniec_etap7": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole seventh stage! Here is a special sticker for your album."
+    "text": "Great! We finished the whole seventh stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap7": {
     "who": "narrator",
@@ -57,7 +57,7 @@
   },
   "line.etap_koniec_etap8": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole eighth stage! Here is a special sticker for your album."
+    "text": "Excellent! We finished the whole eighth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap8": {
     "who": "narrator",
@@ -65,7 +65,7 @@
   },
   "line.etap_koniec_etap9": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole ninth stage! Here is a special sticker for your album."
+    "text": "Hooray! We finished the whole ninth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap9": {
     "who": "narrator",
@@ -73,7 +73,7 @@
   },
   "line.etap_koniec_etap10": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole tenth stage! Here is a special sticker for your album."
+    "text": "Congratulations! We finished the whole tenth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap10": {
     "who": "narrator",
@@ -89,7 +89,7 @@
   },
   "line.etap_koniec_etap12": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole twelfth stage! Here is a special sticker for your album."
+    "text": "Great! We finished the whole twelfth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap12": {
     "who": "narrator",
@@ -97,7 +97,7 @@
   },
   "line.etap_koniec_etap13": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole thirteenth stage! Here is a special sticker for your album."
+    "text": "Excellent! We finished the whole thirteenth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap13": {
     "who": "narrator",
@@ -105,7 +105,7 @@
   },
   "line.etap_koniec_etap14": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole fourteenth stage! Here is a special sticker for your album."
+    "text": "Hooray! We finished the whole fourteenth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap14": {
     "who": "narrator",
@@ -113,7 +113,7 @@
   },
   "line.etap_koniec_etap15": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole fifteenth stage! Here is a special sticker for your album."
+    "text": "Congratulations! We finished the whole fifteenth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap15": {
     "who": "narrator",
@@ -129,7 +129,7 @@
   },
   "line.etap_koniec_etap17": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole seventeenth stage! Here is a special sticker for your album."
+    "text": "Great! We finished the whole seventeenth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap17": {
     "who": "narrator",
@@ -137,7 +137,7 @@
   },
   "line.etap_koniec_etap18": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole eighteenth stage! Here is a special sticker for your album."
+    "text": "Excellent! We finished the whole eighteenth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap18": {
     "who": "narrator",
@@ -145,7 +145,7 @@
   },
   "line.etap_koniec_etap19": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole nineteenth stage! Here is a special sticker for your album."
+    "text": "Hooray! We finished the whole nineteenth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap19": {
     "who": "narrator",
@@ -153,7 +153,7 @@
   },
   "line.etap_koniec_etap20": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole twentieth stage! Here is a special sticker for your album."
+    "text": "Congratulations! We finished the whole twentieth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap20": {
     "who": "narrator",
@@ -169,7 +169,7 @@
   },
   "line.etap_koniec_etap22": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole twenty-second stage! Here is a special sticker for your album."
+    "text": "Great! We finished the whole twenty-second stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap22": {
     "who": "narrator",
@@ -177,7 +177,7 @@
   },
   "line.etap_koniec_etap23": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole twenty-third stage! Here is a special sticker for your album."
+    "text": "Excellent! We finished the whole twenty-third stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap23": {
     "who": "narrator",
@@ -185,7 +185,7 @@
   },
   "line.etap_koniec_etap24": {
     "who": "lisek",
-    "text": "Bravo! We finished the whole twenty-fourth stage! Here is a special sticker for your album."
+    "text": "Hooray! We finished the whole twenty-fourth stage! Here is a special sticker for your album."
   },
   "line.naklejka_opis_etap24": {
     "who": "narrator",
@@ -205,7 +205,7 @@
   },
   "line.otwarte_etap3": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the third stage of our journey! New adventures are waiting!"
+    "text": "Congratulations! The third stage is open for us. Let's go on!"
   },
   "line.zamkniete_etap4": {
     "who": "lisek",
@@ -213,7 +213,7 @@
   },
   "line.otwarte_etap4": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the fourth stage of our journey! New adventures are waiting!"
+    "text": "Bravo! We opened the fourth stage of our journey. Let's see what waits in it!"
   },
   "line.zamkniete_etap5": {
     "who": "lisek",
@@ -221,7 +221,7 @@
   },
   "line.otwarte_etap5": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the fifth stage of our journey! New adventures are waiting!"
+    "text": "Great! The fifth stage is ahead of us. New adventures are waiting!"
   },
   "line.zamkniete_etap6": {
     "who": "lisek",
@@ -229,7 +229,7 @@
   },
   "line.otwarte_etap6": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the sixth stage of our journey! New adventures are waiting!"
+    "text": "Excellent! The sixth stage is open. Let's go on!"
   },
   "line.zamkniete_etap7": {
     "who": "lisek",
@@ -245,7 +245,7 @@
   },
   "line.otwarte_etap8": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the eighth stage of our journey! New adventures are waiting!"
+    "text": "Congratulations! The eighth stage is open for us. Let's go on!"
   },
   "line.zamkniete_etap9": {
     "who": "lisek",
@@ -253,7 +253,7 @@
   },
   "line.otwarte_etap9": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the ninth stage of our journey! New adventures are waiting!"
+    "text": "Bravo! We opened the ninth stage of our journey. Let's see what waits in it!"
   },
   "line.zamkniete_etap10": {
     "who": "lisek",
@@ -261,7 +261,7 @@
   },
   "line.otwarte_etap10": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the tenth stage of our journey! New adventures are waiting!"
+    "text": "Great! The tenth stage is ahead of us. New adventures are waiting!"
   },
   "line.zamkniete_etap11": {
     "who": "lisek",
@@ -269,7 +269,7 @@
   },
   "line.otwarte_etap11": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the eleventh stage of our journey! New adventures are waiting!"
+    "text": "Excellent! The eleventh stage is open. Let's go on!"
   },
   "line.zamkniete_etap12": {
     "who": "lisek",
@@ -285,7 +285,7 @@
   },
   "line.otwarte_etap13": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the thirteenth stage of our journey! New adventures are waiting!"
+    "text": "Congratulations! The thirteenth stage is open for us. Let's go on!"
   },
   "line.zamkniete_etap14": {
     "who": "lisek",
@@ -293,7 +293,7 @@
   },
   "line.otwarte_etap14": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the fourteenth stage of our journey! New adventures are waiting!"
+    "text": "Bravo! We opened the fourteenth stage of our journey. Let's see what waits in it!"
   },
   "line.zamkniete_etap15": {
     "who": "lisek",
@@ -301,7 +301,7 @@
   },
   "line.otwarte_etap15": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the fifteenth stage of our journey! New adventures are waiting!"
+    "text": "Great! The fifteenth stage is ahead of us. New adventures are waiting!"
   },
   "line.zamkniete_etap16": {
     "who": "lisek",
@@ -309,7 +309,7 @@
   },
   "line.otwarte_etap16": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the sixteenth stage of our journey! New adventures are waiting!"
+    "text": "Excellent! The sixteenth stage is open. Let's go on!"
   },
   "line.zamkniete_etap17": {
     "who": "lisek",
@@ -325,7 +325,7 @@
   },
   "line.otwarte_etap18": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the eighteenth stage of our journey! New adventures are waiting!"
+    "text": "Congratulations! The eighteenth stage is open for us. Let's go on!"
   },
   "line.zamkniete_etap19": {
     "who": "lisek",
@@ -333,7 +333,7 @@
   },
   "line.otwarte_etap19": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the nineteenth stage of our journey! New adventures are waiting!"
+    "text": "Bravo! We opened the nineteenth stage of our journey. Let's see what waits in it!"
   },
   "line.zamkniete_etap20": {
     "who": "lisek",
@@ -341,7 +341,7 @@
   },
   "line.otwarte_etap20": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the twentieth stage of our journey! New adventures are waiting!"
+    "text": "Great! The twentieth stage is ahead of us. New adventures are waiting!"
   },
   "line.zamkniete_etap21": {
     "who": "lisek",
@@ -349,7 +349,7 @@
   },
   "line.otwarte_etap21": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the twenty-first stage of our journey! New adventures are waiting!"
+    "text": "Excellent! The twenty-first stage is open. Let's go on!"
   },
   "line.zamkniete_etap22": {
     "who": "lisek",
@@ -365,7 +365,7 @@
   },
   "line.otwarte_etap23": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the twenty-third stage of our journey! New adventures are waiting!"
+    "text": "Congratulations! The twenty-third stage is open for us. Let's go on!"
   },
   "line.zamkniete_etap24": {
     "who": "lisek",
@@ -373,19 +373,19 @@
   },
   "line.otwarte_etap24": {
     "who": "lisek",
-    "text": "Hooray! We've unlocked the twenty-fourth stage of our journey! New adventures are waiting!"
+    "text": "Bravo! We opened the twenty-fourth stage of our journey. Let's see what waits in it!"
   },
   "line.brama_swiat2": {
     "who": "lisek",
-    "text": "Hooray! The gate to the Lakeside Village is open! Off we go!"
+    "text": "The gate to the Lakeside Village is wide open! Off we go!"
   },
   "line.brama_swiat3": {
     "who": "lisek",
-    "text": "Hooray! The gate to the Snowy Mountains is open! Off we go!"
+    "text": "The gate to the Snowy Mountains is wide open! Off we go!"
   },
   "line.brama_swiat4": {
     "who": "lisek",
-    "text": "Hooray! The gate to the Castle on the Hill is open! Off we go!"
+    "text": "The gate to the Castle on the Hill is wide open! Off we go!"
   },
   "line.brama_zamknieta_swiat2": {
     "who": "lisek",

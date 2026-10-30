@@ -29,12 +29,28 @@ MAPA = {
            ["We can't go there yet. Let's finish the adventures before it first!",
             "This clearing is still locked. We go one by one, step by step!"]),
 }
+# the cheer that opens a stage's lines, in turn (one "Hura!" every time was too much); the stage's end uses them shifted,
+# so its cheer and the next stage's opening never begin alike
+OKRZYK = {"pl": ["Hura!", "Gratulacje!", "Brawo!", "Świetnie!", "Znakomicie!"],
+          "en": ["Hooray!", "Congratulations!", "Bravo!", "Great!", "Excellent!"]}
+OTWARCIE = {
+    "pl": ["{o} Odblokowaliśmy {nr} etap naszej podróży! Nowe przygody czekają!",
+           "{o} {Nr} etap stoi przed nami otworem. Ruszamy dalej!",
+           "{o} Otworzyliśmy {nr} etap naszej podróży. Zobaczmy, co w nim czeka!",
+           "{o} Przed nami {nr} etap. Nowe przygody już czekają!",
+           "{o} {Nr} etap jest otwarty. Idziemy dalej!"],
+    "en": ["{o} We've unlocked the {nr} stage of our journey! New adventures are waiting!",
+           "{o} The {nr} stage is open for us. Let's go on!",
+           "{o} We opened the {nr} stage of our journey. Let's see what waits in it!",
+           "{o} The {nr} stage is ahead of us. New adventures are waiting!",
+           "{o} The {nr} stage is open. Let's go on!"],
+}
 TEKST = {
     "pl": ("Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z {poprz_d} etapu, a kłódka sama się otworzy!",
            "Hura! Odblokowaliśmy {nr} etap naszej podróży! Nowe przygody czekają!"),
-    "pl_koniec": ("Brawo! Ukończyliśmy cały {nr} etap! Za to dostajesz specjalną naklejkę do albumu.",
+    "pl_koniec": ("{o} Ukończyliśmy cały {nr} etap! Za to dostajesz specjalną naklejkę do albumu.",
                   "To nagroda za ukończenie {nr_d} etapu. Wszystkie jego przygody przeszliśmy razem."),
-    "en_koniec": ("Bravo! We finished the whole {nr} stage! Here is a special sticker for your album.",
+    "en_koniec": ("{o} We finished the whole {nr} stage! Here is a special sticker for your album.",
                   "This is the prize for finishing the {nr} stage. We went through all its adventures together."),
     "en": ("This way is still locked. Let's first finish all the adventures of the {poprz} stage, and the padlock will open by itself!",
            "Hooray! We've unlocked the {nr} stage of our journey! New adventures are waiting!"),
@@ -57,8 +73,8 @@ SKAD = {"pl": {"swiat1": "Leśnej Krainy", "swiat2": "Wioski nad Jeziorem", "swi
         "en": {"swiat1": "the Forest Land", "swiat2": "the Lakeside Village", "swiat3": "the Snowy Mountains"}}
 ZA_BRAMA = {"pl": "Za tą bramą czeka {kraina}! Brama otworzy się, gdy przejdziemy wszystkie etapy {skad}.",
             "en": "{kraina} is waiting behind this gate! It will open when we finish all the stages of {skad}."}
-BRAMA = {"pl": "Hura! Otworzyła się brama do {dokad}! Ruszamy w drogę!",
-         "en": "Hooray! The gate to {dokad} is open! Off we go!"}
+BRAMA = {"pl": "Brama do {dokad} stoi otworem! Ruszamy w drogę!",
+         "en": "The gate to {dokad} is wide open! Off we go!"}
 
 
 ix = json.loads((ROOT / "game" / "lessons" / "index.json").read_text(encoding="utf-8"))
@@ -69,12 +85,13 @@ for lang in ("pl", "en"):
     out = {}
     for k, t in enumerate(topics):                              # finishing a stage: Fox's cheer, the album's narrator
         nr_d = PORZ["pl_d" if lang == "pl" else "en"][k]
-        out[f"line.etap_koniec_{t['id']}"] = {"who": "lisek", "text": brawo.format(nr=PORZ[lang][k])}
+        out[f"line.etap_koniec_{t['id']}"] = {"who": "lisek", "text": brawo.format(o=OKRZYK[lang][(k + 2) % 5], nr=PORZ[lang][k])}
         out[f"line.naklejka_opis_{t['id']}"] = {"who": "narrator", "text": opis.format(nr_d=nr_d, nr=PORZ[lang][k])}
     for k, t in enumerate(topics[1:], start=1):
         pd = PORZ["pl_d" if lang == "pl" else "en"][k - 1]
         out[f"line.zamkniete_{t['id']}"] = {"who": "lisek", "text": zamk.format(poprz_d=pd, poprz=pd)}
-        out[f"line.otwarte_{t['id']}"] = {"who": "lisek", "text": otw.format(nr=PORZ[lang][k])}
+        nr, n = PORZ[lang][k], (k - 1) % 5
+        out[f"line.otwarte_{t['id']}"] = {"who": "lisek", "text": OTWARCIE[lang][n].format(o=OKRZYK[lang][n], nr=nr, Nr=nr[0].upper() + nr[1:])}
     for sw in ix.get("swiaty", [])[1:]:                         # the gate to a land opens (player.js swietujOtwarcie)
         out[f"line.brama_{sw['id']}"] = {"who": "lisek", "text": BRAMA[lang].format(dokad=DOKAD[lang][sw["id"]])}
     swiaty = ix.get("swiaty", [])
