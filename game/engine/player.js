@@ -203,7 +203,7 @@ export class Player {
     }
     const menu = $("#menu"); menu.style.display = "flex"; $("#hud").style.display = "none";
     if (!zmiana) { menu.classList.remove("in"); setTimeout(() => { menu.classList.add("in"); $("#iris").style.display = "none"; }, 20); }
-    $("#title .napis").textContent = this.t("menu.title");
+    $("#title .napis").textContent = this.t("menu.title"); $("#obroc .napis").textContent = this.t("menu.obroc");
     $("#title .szyld").src = v(`/game/assets/menu/szyld_${this.lang}.webp`); $("#title .szyld").alt = this.t("menu.title");
     $("#langs").innerHTML = LANGS.map((l) => `<button data-lang="${l}" class="${l === this.lang ? "on" : ""}">${l.toUpperCase()}</button>`).join("")
       + `<button class="pelny" aria-label="fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="#5a3518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V3h6M15 3h6v6M21 15v6h-6M9 21H3v-6"/></svg></button>`;

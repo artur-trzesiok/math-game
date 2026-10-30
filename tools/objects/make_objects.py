@@ -697,6 +697,18 @@ platform with a little roof, seen from the front, NO tree under it; one big tall
 # in order, at home: a water-glass xylophone - the SAME glass four times, water at four levels (more water, a lower note)
 # food that is good for the animals the children feed (bread harms fish and ducks): a pinch of fish food flakes, a
 # little heap of duck grain
+# the "turn your device" card: a phone or tablet held upright is asked to lie on its side
+SHEETS["obroc_tablet"] = {
+    "names": ["obroc_tablet"],
+    "size": "1024x1024",
+    "rows": 1,
+    "px": 512,
+    "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
+most of the image. NO glow outside it, NO halo, NO background, NO text.
+{STYL}
+A friendly little tablet computer drawn standing upright, with a big curved orange arrow round it showing it turning a
+quarter turn to lie on its side; on its screen a tiny smiling fox face. Cheerful, round, simple.""",
+}
 SHEETS["karma"] = {
     "outline": True,
     "names": ["karma_rybki", "ziarno_kaczki", "ziarno_ptaki"],
