@@ -70,6 +70,7 @@ small details, everything well apart.
                    "a torn scrap of old yellowed map paper with a painted little oak tree on it lies on the moss by the root"],
     },
     # logical_pairs: the torn pieces of Mole's photo scattered over the workshop floor by the storm
+    # (its build finds 3 areas: the hammer and sky scraps touch - meta.json was split into 4 by hand; redo after a rebuild)
     "kawalki_zdjecia": {
         "obraz": f"""A square picture of a cosy wooden workshop floor seen from close above: wooden planks, curly wood shavings, a
 small saw, a tin of nails, a paint brush, a coil of string, a wooden bucket, a few screws and a rag. Lots of small
