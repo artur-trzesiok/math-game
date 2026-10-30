@@ -3,7 +3,7 @@
 // key or a plan it checks against); the code never draws what the child looks at.
 
 import * as THREE from "three";
-import { texture } from "./scene.js";
+import { texture, petla } from "./scene.js";
 
 const FAST = new URLSearchParams(location.search).has("szybko");
 const CAM_Z = 7.2;
@@ -31,7 +31,7 @@ function karta(S, { W, H, y, rama = "#fffaf0", obrot = -2 }) {
   S.objects.push(h);
   return { welon, grp, k, zdejmij: h.remove };
 }
-const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; const r = c.obrys ?? c.r; return [w.x + Math.cos(a) * r, w.y + Math.sin(a) * r * 0.92]; }); };
+const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); const r = c.obrys ?? c.r; return petla(w.x, w.y, r, r * 0.92); };
 
 // ===================================================================== scratch-off (zdrapka)
 // game/assets/zdrapki/<name> (tools/zdrapki): a picture under a cover painted for it (snow on the garden, mist on the

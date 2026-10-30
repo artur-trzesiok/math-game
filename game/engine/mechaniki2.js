@@ -4,7 +4,7 @@
 import * as THREE from "three";
 import { narysujCyfre } from "./liczby.js";
 import { ksztalt } from "./geometria.js";
-import { texture, GROUND } from "./scene.js";
+import { texture, GROUND, petla } from "./scene.js";
 import { Lalka } from "./lalka.js";
 import * as U from "./ubior.js";
 
@@ -283,7 +283,7 @@ export async function roznice(S, nazwa, { y = 0.45, size = 4.9, odstep = 0.35 } 
     cele.push(uchwyt(S, g, { name: "roznica", nr: k, r: rr, dobry: true }));
   }
   const znalezione = new Set(), kolka = [];
-  const kolo = ([cx, cy], r) => Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6, w = 1 + 0.06 * Math.sin(j * 1.7); return [cx + Math.cos(a) * r * w, cy + Math.sin(a) * r * 0.92 * w]; });
+  const kolo = ([cx, cy], r) => petla(cx, cy, r, r * 0.92);
   Object.defineProperty(S, "zachetaCel", { configurable: true, get: () => cele.find((c) => !znalezione.has(c.nr)) || null });
   while (znalezione.size < meta.roznice.length) {
     const hit = await S.choose(cele.filter((c) => !znalezione.has(c.nr)));
@@ -357,7 +357,7 @@ export async function odbicie(S, who, { woda = 0.2, ubrania = [], rozne = [], za
       }
     }
     const znalezione = new Set(), kolka = [];
-    const kolo = ([cx, cy], r) => Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.9]; });
+    const kolo = ([cx, cy], r) => petla(cx, cy, r, r * 0.9);
     const ile = new Set(cele.map((c) => c.nr)).size;
     while (znalezione.size < ile) {
       const hit = await S.choose(cele.filter((c) => !znalezione.has(c.nr)));

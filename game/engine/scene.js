@@ -76,6 +76,13 @@ function zmierz(S, ms) {
   perfEl.textContent = [naglowekPerf(), ...perfLista].join("\n");
 }
 
+// a pencil loop round a point: a little more than one turn, drifting outwards as a hand does, so its tapered ends
+// overlap - a loop of exactly one turn left a gap where the thin ends met
+export function petla(cx, cy, rx, ry = rx, { a0 = 2.2, n = 64 } = {}) {
+  const pts = [];
+  for (let i = 0; i <= n; i++) { const a = a0 + (i / n) * 1.12 * 2 * Math.PI, r = 1 + 0.06 * (i / n); pts.push([cx + rx * r * Math.cos(a), cy + ry * r * Math.sin(a)]); }
+  return pts;
+}
 // one texture per file for the whole game: loaded (and sent to the GPU) once, shared by every sticker of it
 const loader = new THREE.TextureLoader(), TEKSTURY = new Map();
 export function texture(url) {
@@ -947,12 +954,7 @@ export class Stage {
   circle(h, { color = ZAKRESLACZ, margin = 0.18, duration = 0.8, width = 0.13, warstwa = h?.nadObrazem ?? 11 } = {}) {
     const b = this._box(h), cx = (b.left + b.right) / 2, cy = (b.bottom + b.top) / 2;
     const rx = h?.obrys ?? (b.right - b.left) / 2 + margin, ry = h?.obrys ?? (b.top - b.bottom) / 2 + margin;   // a found spot knows its own loop
-    const pts = [], a0 = 2.2, turns = 1.12, n = 64;
-    for (let i = 0; i <= n; i++) {
-      const a = a0 + (i / n) * turns * 2 * Math.PI, r = 1 + 0.06 * (i / n);       // the stroke drifts outwards as a hand does
-      pts.push([cx + rx * r * Math.cos(a), cy + ry * r * Math.sin(a)]);
-    }
-    return this.line(pts, { color, duration, width, name: "kolko", strong: true, warstwa });
+    return this.line(petla(cx, cy, rx, ry), { color, duration, width, name: "kolko", strong: true, warstwa });
   }
   // an arrow bending down onto a thing from above-left (or `from`), with a two-stroke head
   async arrow(h, { from = null, color = ZAKRESLACZ, duration = 0.6, width = 0.13, warstwa = h?.nadObrazem ?? 11 } = {}) {

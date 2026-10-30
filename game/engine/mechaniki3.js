@@ -2,7 +2,7 @@
 // the lift (a basket on a rope over a pulley, stopping at levels), the ten frame and dominoes. The player wraps them as ctx calls.
 
 import * as THREE from "three";
-import { texture } from "./scene.js";
+import { texture, petla } from "./scene.js";
 import { v } from "./v.js";
 
 const FAST = new URLSearchParams(location.search).has("szybko");
@@ -371,7 +371,7 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, lun
     return uchwytCelu(S, g, { name: "ukryta", nr: k, r: rr, dobry: true, p: [px, py] });
   });
   const znalezione = new Set(), kolka = [];
-  const kolo = ([cx, cy], r) => Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.92]; });
+  const kolo = ([cx, cy], r) => petla(cx, cy, r, r * 0.92);
   const znajdz = async (hit) => {
     znalezione.add(hit.nr); S.sfx.graj("right");
     kolka.push(await S.line(kolo(hit.p, hit.r), { color: "#e8502e", width: 0.09, duration: 0.3, strong: true, warstwa: luneta ? 11 : 39.6 }));
@@ -520,7 +520,7 @@ export async function znalezisko(S, nazwa, { skad = null, y = null, size = null,
     await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (cx - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.58 * e; });
   }
   const kolka = [];
-  const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; const r = c.obrys ?? c.r; return [w.x + Math.cos(a) * r, w.y + Math.sin(a) * r * 0.92]; }); };
+  const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); const r = c.obrys ?? c.r; return petla(w.x, w.y, r, r * 0.92); };
   return {
     ...h, cele, tlo, meta,
     // `ktore`: the spots to mark (all by default); a path is drawn along in pencil, a spot is ringed
