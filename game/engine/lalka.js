@@ -307,6 +307,8 @@ export class Lalka {
         const k = cel[t].w / rb.w;
         const y = t === "usta" ? cel[t].y - r.y * k : cel[t].y + cel[t].h - (r.y + r.h) * k;
         const bb = { x: cel[t].x + cel[t].w / 2 - (r.x + r.w / 2) * k, y, w: cz.w * k, h: cz.h * k };
+        // a mouth carries the nose: with both nose points marked, the piece's nose lands on the target's (nos_punkt.py)
+        if (t === "usta" && cel[t].nos && cz.nos) { bb.x = cel[t].x + cel[t].nos[0] - cz.nos.x * k; bb.y = cel[t].y + cel[t].nos[1] - cz.nos.y * k; }
         const nadOczami = d.usta_nad_oczami ? t === "usta" : t === "oczy";
         if (!grupyCelu[t]) {
           const sr = [cel[t].x + cel[t].w / 2, cel[t].y + cel[t].h / 2], gt = new THREE.Group();
@@ -444,11 +446,13 @@ export class Lalka {
 
   // ------------------------------------------------------------ stan
   _oczyTeraz() {
+    if (this.wymus?.oczy) return this.wymus.oczy;                    // the editor's face slider
     if (this.mruganie >= 0) return this.mruganie < 0.08 ? "pol" : this.mruganie < 0.2 ? "zamkniete" : "pol";
     return this.poza.oczy || this.emocja.oczy;
   }
   _ustaTeraz() {
     this.ustaSkala = null;
+    if (this.wymus?.usta) return this.wymus.usta;
     if (!this.mowi) return this.poza.usta || this.emocja.usta;
     if (this.wiz) {
       // a viseme: one of the drawn mouths, stretched to the sound's shape, opened a little more when louder
