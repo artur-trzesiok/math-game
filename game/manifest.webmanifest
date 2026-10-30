@@ -1,0 +1,22 @@
+{
+ "name": "Matematyka z Liskiem",
+ "short_name": "Matematyka",
+ "start_url": "./",
+ "scope": "./",
+ "display": "fullscreen",
+ "orientation": "landscape",
+ "background_color": "#000000",
+ "theme_color": "#5c8d3a",
+ "icons": [
+  {
+   "src": "ikona-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "ikona-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

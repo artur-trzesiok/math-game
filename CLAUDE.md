@@ -78,7 +78,13 @@ from the character and background references), then a run with `?szybko` and sna
 stages' backgrounds + lesson.json `backgrounds`), its stickers (lesson.json `objects` - list every sticker the
 lesson shows), the garments its code names, the characters and the transitions' bands and head badges, all sent
 to the GPU. A scenery is built once and kept (going back to it is a swap); textures are one per file and shared.
-Loading during a lesson (a sticker missing from `objects`) still works, but stutters on a tablet.
+Loading during a lesson (a sticker missing from `objects`) still works, but stutters on a tablet. The painted pictures (illustrations, found
+pictures, scratch-offs, search pictures, dots, comics, mazes, grids) are preloaded too: `game/assets/malowane.json`
+(`python tools/assets_index.py`, make_dist runs it) lists them, and every one whose name the lesson's code mentions is
+loaded, decoded (`img.decode()`) and sent to the GPU on the loading screen - a tablet froze for a frame each time one
+appeared. Run the index after adding pictures (a missing one still loads when shown). `?perf` lists every frame over
+50 ms in a corner with what appeared then (textures, shader programs, geometries, the line) - read a tablet's hitches
+off a screenshot. The page is a home-screen app too (`manifest.webmanifest`, full screen, no browser bars).
 
 Scenes are plain async functions; keep each one a screen's worth. Every stage
 (story, practice, at home) has about five interactions - a story that only talks

@@ -24,7 +24,7 @@ DIST = ROOT / "dist"
 
 POMIJANE_NAZWY = {"postac.build.json", "poprawki.json"}
 POMIJANE_ROZSZERZENIA = {".md", ".bak", ".py", ".tmp"}
-KORZEN = ("index.html", "og.jpg", "engine/")   # served from the domain root
+KORZEN = ("index.html", "og.jpg", "manifest.webmanifest", "ikona-192.png", "ikona-512.png", "ikona-180.png", "engine/")   # served from the domain root
 
 
 def lekcje() -> tuple[set[str], set[str]]:
@@ -86,6 +86,9 @@ def przekoduj(glosy: list[tuple[Path, Path]]) -> None:
 
 def main() -> int:
     tylko_sprawdz = "--check" in sys.argv
+    if not tylko_sprawdz:                                             # the painted pictures each lesson preloads
+        import runpy
+        runpy.run_path(str(ROOT / "tools" / "assets_index.py"), run_name="__main__")
     gotowe, wszystkie = lekcje()
     # every lesson folder or recording folder that is not ready or no longer in the index stays out;
     # the shared voices (menu, album, zachety, pochwaly, oddechy, etapy) are not lesson folders
@@ -117,7 +120,7 @@ def main() -> int:
     glosy = []
     for rel in pliki:
         r = rel.as_posix()
-        dst = DIST / (rel if r in KORZEN or r.startswith(KORZEN[2]) else Path("game") / rel)
+        dst = DIST / (rel if r in KORZEN or r.startswith("engine/") else Path("game") / rel)
         dst.parent.mkdir(parents=True, exist_ok=True)
         if KBPS and rel.parts[0] == "audio" and rel.parts[1] in ("pl", "en") and rel.suffix == ".mp3":
             glosy.append((rel, dst))

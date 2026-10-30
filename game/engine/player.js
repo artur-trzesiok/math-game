@@ -613,7 +613,10 @@ export class Player {
     const zrodlo = await fetch(v(`/game/lessons/${id}/lesson.js`), { cache: "no-store" }).then((r) => (r.ok ? r.text() : "")).catch(() => "");
     const tla = new Set([...Object.values(this.lesson.backgrounds || {}).filter((b) => typeof b === "string"), ...(meta.backgrounds || [])]);
     const G = await U.galeria(), slowa = new Set(zrodlo.match(/[a-z_0-9]+/g) || []);
-    return { tla: [...tla], obiekty: meta.objects || [], ubrania: Object.keys(G).filter((n) => slowa.has(n)) };
+    // the painted pictures it shows (tools/assets_index.py): loaded with the lesson, not the moment they appear
+    this.malowane = this.malowane || await fetch(v("/game/assets/malowane.json"), { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    const obrazy = Object.entries(this.malowane).filter(([k]) => slowa.has(k.split("/")[1])).flatMap(([k, pliki]) => pliki.map((f) => `/game/assets/${k}/${f}`));
+    return { tla: [...tla], obiekty: meta.objects || [], ubrania: Object.keys(G).filter((n) => slowa.has(n)), obrazy };
   }
 
   async runStage(st) {

@@ -53,10 +53,28 @@ const ZAKRESLACZ = "#ff5a1f";          // pencil annotations: a bold saturated o
 const PARAMS = new URLSearchParams(location.search);
 const FRESH = { cache: "no-store" };
 
+// ?perf: every frame longer than 50 ms listed in a corner with what appeared just then - new textures (an upload),
+// new shader programs (a compile), new geometries - and the line being said; a tablet's hitches read off a screenshot
+const PERF = PARAMS.has("perf");
+let perfEl = null, perfPrzed = null, perfIle = 0, perfMax = 0;
+const perfLista = [];
+function zmierz(S, ms) {
+  const inf = S.renderer.info, teraz = { tex: inf.memory.textures, geo: inf.memory.geometries, prog: inf.programs?.length || 0 };
+  const p = perfPrzed; perfPrzed = teraz;
+  if (!p || ms < 50 || ms > 5000) return;                                      // > 5 s: the tab was hidden
+  perfIle++; perfMax = Math.max(perfMax, ms);
+  const linia = window.gra?.dziennik?.slice(-1)[0]?.[0]?.replace("line.", "") || "";
+  perfLista.unshift(`${Math.round(ms)} ms  tex+${teraz.tex - p.tex} prog+${teraz.prog - p.prog} geo+${teraz.geo - p.geo}  ${linia}`);
+  perfLista.length = Math.min(perfLista.length, 12);
+  if (!perfEl) { perfEl = document.createElement("pre"); perfEl.style.cssText = "position:fixed;left:6px;top:40px;z-index:99;margin:0;padding:6px 8px;background:rgba(0,0,0,.6);color:#9f9;font:11px/1.35 monospace;pointer-events:none;border-radius:6px"; document.body.appendChild(perfEl); }
+  perfEl.textContent = [`zaciecia > 50 ms: ${perfIle}, najdluzsze ${Math.round(perfMax)} ms`, ...perfLista].join("\n");
+}
+
 // one texture per file for the whole game: loaded (and sent to the GPU) once, shared by every sticker of it
 const loader = new THREE.TextureLoader(), TEKSTURY = new Map();
 export function texture(url) {
-  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, bad) => loader.load(url.startsWith("data:") ? url : v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; ok(t); }, undefined, (e) => { TEKSTURY.delete(url); bad(e); })));
+  // decode() before resolving: the image is decoded now, off the frame, not at its first draw
+  if (!TEKSTURY.has(url)) TEKSTURY.set(url, new Promise((ok, bad) => loader.load(url.startsWith("data:") ? url : v(url), (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; const d = t.image?.decode?.(); (d ? d.catch(() => {}) : Promise.resolve()).then(() => ok(t)); }, undefined, (e) => { TEKSTURY.delete(url); bad(e); })));
   return TEKSTURY.get(url);
 }
 const easeInOut = (s) => s * s * (3 - 2 * s);
@@ -168,6 +186,7 @@ export class Stage {
 
   // ------------------------------------------------------------------ loop
   tick(t) {
+    if (PERF) zmierz(this, t - this.last);
     const dt0 = Math.min(0.05, (t - this.last) / 1000); this.last = t; this.frame++;
     if (this.pauza) { this.rysuj(); return; }                               // paused: the picture stands still
     const dt = dt0;
@@ -314,8 +333,8 @@ export class Stage {
   }
   // everything a lesson will show, loaded and sent to the GPU before it starts (a loading screen is fine; a stutter
   // in a transition is not): its sceneries, stickers, garments, the transitions' bands, the characters
-  async prepare({ tla = [], obiekty = [], ubrania = [] } = {}, postep = () => {}) {
-    const zadania = [...tla.map((n) => () => this.tlo(n)), ...obiekty.flatMap(warianty).map((n) => () => texture(`/game/assets/objects/${n}.webp`).catch(() => null)), () => U.wczytajUbrania(ubrania)];
+  async prepare({ tla = [], obiekty = [], ubrania = [], obrazy = [] } = {}, postep = () => {}) {
+    const zadania = [...tla.map((n) => () => this.tlo(n)), ...obrazy.map((u) => () => texture(u).catch(() => null)), ...obiekty.flatMap(warianty).map((n) => () => texture(`/game/assets/objects/${n}.webp`).catch(() => null)), () => U.wczytajUbrania(ubrania)];
     let zrobione = 0;
     for (const z of zadania) { await z(); postep(++zrobione / (zadania.length + 1)); }
     E.przygotujGlowy(this);                                          // the transitions' head badges, with faces

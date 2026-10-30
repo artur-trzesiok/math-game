@@ -15,6 +15,13 @@
 <meta property="og:image:alt" content="Lisek, Wiewiórka, Sowa i Sarenka na łące · Fox, Squirrel, Owl and Deer on a meadow">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://matematyka.cubeproject.pl/og.jpg">
+<!-- added to the home screen it runs full screen, without the browser's bars and their gestures -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Matematyka">
+<link rel="apple-touch-icon" href="ikona-180.png">
 <link href="/game/vendor/fonts/baloo2.css" rel="stylesheet">
 <style>
   html, body { margin: 0; height: 100%; overflow: hidden; background: #000; font: 16px/1.4 system-ui, sans-serif; touch-action: manipulation; user-select: none; -webkit-user-select: none;
@@ -343,6 +350,10 @@
 <script>
   // iPad Safari: a finger dragged down the page scrolled it (and left fullscreen); only the lesson strip may scroll
   document.addEventListener("touchmove", (e) => { if (!e.target.closest?.("#lessons")) e.preventDefault(); }, { passive: false });
+  // a drag on the scene belongs to the game from its first touch: Safari may decide to scroll before the finger moves;
+  // pointer events still reach the game. A pinch never zooms the page.
+  document.addEventListener("touchstart", (e) => { if (e.target.closest?.("#stage")) e.preventDefault(); }, { passive: false });
+  document.addEventListener("gesturestart", (e) => e.preventDefault());
   // cache busting (engine/v.js): one stamp per page load on every file, the engine's modules included -
   // the import map remaps each module URL to the same URL with ?t=<stamp>
   window.__T = Date.now();
