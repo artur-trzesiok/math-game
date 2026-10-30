@@ -1,7 +1,7 @@
 # Adding to 10 - the hopscotch tournament
 
 Goal: adding to ten by counting on - start from the known first number and count only the new things; equations to
-ten. Age 5-6. Characters: Squirrel, Owl, Bear. Stage 18 (moved from stage 6 on 2026-10-30).
+ten. Age 5-6. Characters: Squirrel, Owl, Bear. Stage 17 (moved from stage 6 on 2026-10-30).
 
 **Misconception:** counting only the new ones - Squirrel has five pebbles in her bag (a 5 on it), Owl brings three:
 "three, not enough!".

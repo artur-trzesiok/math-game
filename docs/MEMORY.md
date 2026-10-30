@@ -198,6 +198,10 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
   adding_5 -> stage 12 (after split_5, before subtract_5), adding_10 -> stage 18 (replaces the duplicate addition_10).
   New placeholders: quick_look (subitizing, stage 7), capacity (stage 8), missing_5 (stage 13). Full table in
   docs/program.md.
+- **Worlds 2-4 checked after it** (2026-10-30, user: "sprawdź logiczność"): no lesson may need what comes later
+  (the clock needs 11-12, coins need adding to 10, two-digit sums need place value) and no skill taught twice; a
+  duplicate is MERGED and the freed place goes to a gap the order exposed (doubles, numbers_100), never a topic
+  invented to fill a slot. Changes listed at the end of docs/program.md.
 
 **Editing and camera** (flagged "static" again and again - "uwagi o dynamicznym montażu wracają")
 - A static camera is a bug in every lesson and stage: at most three lines in one shot; close-ups for emotions,

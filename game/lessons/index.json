@@ -427,12 +427,12 @@
       "wkrotce": true
     },
     {
-      "id": "shapes_hunt",
+      "id": "days_of_week",
       "title": {
-        "pl": "Figury wokół nas",
-        "en": "Shapes around us"
+        "pl": "Dni tygodnia",
+        "en": "Days of the week"
       },
-      "temat": "figury",
+      "temat": "czas",
       "wkrotce": true
     },
     {
@@ -493,12 +493,12 @@
       "wkrotce": true
     },
     {
-      "id": "days_of_week",
+      "id": "shapes_hunt",
       "title": {
-        "pl": "Dni tygodnia",
-        "en": "Days of the week"
+        "pl": "Figury wokół nas",
+        "en": "Shapes around us"
       },
-      "temat": "czas",
+      "temat": "figury",
       "wkrotce": true
     },
     {
@@ -646,43 +646,7 @@
       "wkrotce": true
     },
     {
-      "id": "clock",
-      "title": {
-        "pl": "Zegar",
-        "en": "The clock"
-      },
-      "temat": "czas",
-      "wkrotce": true
-    },
-    {
-      "id": "seasons",
-      "title": {
-        "pl": "Pory roku",
-        "en": "The seasons"
-      },
-      "temat": "czas",
-      "wkrotce": true
-    },
-    {
-      "id": "coins",
-      "title": {
-        "pl": "Monety",
-        "en": "Coins"
-      },
-      "temat": "pieniadze",
-      "wkrotce": true
-    },
-    {
-      "id": "charts",
-      "title": {
-        "pl": "Wykresy",
-        "en": "Charts"
-      },
-      "temat": "dane",
-      "wkrotce": true
-    },
-    {
-      "id": "bonds_10",
+      "id": "make_ten",
       "title": {
         "pl": "Pary do dziesięciu",
         "en": "Pairs that make ten"
@@ -721,6 +685,42 @@
       "wkrotce": true
     },
     {
+      "id": "seasons",
+      "title": {
+        "pl": "Pory roku",
+        "en": "The seasons"
+      },
+      "temat": "czas",
+      "wkrotce": true
+    },
+    {
+      "id": "coins",
+      "title": {
+        "pl": "Monety",
+        "en": "Coins"
+      },
+      "temat": "pieniadze",
+      "wkrotce": true
+    },
+    {
+      "id": "change",
+      "title": {
+        "pl": "Reszta w sklepie",
+        "en": "Change in the shop"
+      },
+      "temat": "pieniadze",
+      "wkrotce": true
+    },
+    {
+      "id": "charts",
+      "title": {
+        "pl": "Wykresy",
+        "en": "Charts"
+      },
+      "temat": "dane",
+      "wkrotce": true
+    },
+    {
       "id": "count_20",
       "title": {
         "pl": "Liczymy do 20",
@@ -748,19 +748,19 @@
       "wkrotce": true
     },
     {
-      "id": "tens_add_sub",
+      "id": "numbers_100",
       "title": {
-        "pl": "Dziesiątki plus i minus",
-        "en": "Adding and taking tens"
+        "pl": "Liczby do stu",
+        "en": "Numbers to a hundred"
       },
-      "temat": "dodawanie",
+      "temat": "liczby",
       "wkrotce": true
     },
     {
-      "id": "make_ten",
+      "id": "doubles",
       "title": {
-        "pl": "Dopełnij do 10",
-        "en": "Make ten"
+        "pl": "Podwajamy",
+        "en": "Doubles"
       },
       "temat": "dodawanie",
       "wkrotce": true
@@ -802,19 +802,10 @@
       "wkrotce": true
     },
     {
-      "id": "subtract_three",
-      "title": {
-        "pl": "Odejmujemy dwa razy",
-        "en": "Taking away twice"
-      },
-      "temat": "odejmowanie",
-      "wkrotce": true
-    },
-    {
       "id": "add_sub_three",
       "title": {
-        "pl": "Plus i minus naraz",
-        "en": "Plus and minus together"
+        "pl": "Trzy liczby: plus i minus",
+        "en": "Three numbers: plus and minus"
       },
       "temat": "dodawanie",
       "wkrotce": true
@@ -824,6 +815,15 @@
       "title": {
         "pl": "Rodziny działań",
         "en": "Fact families"
+      },
+      "temat": "dodawanie",
+      "wkrotce": true
+    },
+    {
+      "id": "tens_add_sub",
+      "title": {
+        "pl": "Dziesiątki plus i minus",
+        "en": "Adding and taking tens"
       },
       "temat": "dodawanie",
       "wkrotce": true
@@ -883,21 +883,21 @@
       "wkrotce": true
     },
     {
+      "id": "clock",
+      "title": {
+        "pl": "Zegar",
+        "en": "The clock"
+      },
+      "temat": "czas",
+      "wkrotce": true
+    },
+    {
       "id": "calendar",
       "title": {
         "pl": "Kalendarz",
         "en": "The calendar"
       },
       "temat": "czas",
-      "wkrotce": true
-    },
-    {
-      "id": "change",
-      "title": {
-        "pl": "Reszta w sklepie",
-        "en": "Change in the shop"
-      },
-      "temat": "pieniadze",
       "wkrotce": true
     },
     {
@@ -1096,7 +1096,7 @@
       },
       "color": "#c77dd6",
       "lessons": [
-        "shapes_hunt",
+        "days_of_week",
         "number_hunt",
         "tables_1",
         "secret_code"
@@ -1114,7 +1114,7 @@
         "split_5",
         "adding_5",
         "subtract_5",
-        "days_of_week"
+        "shapes_hunt"
       ],
       "znak": "znak_kotwica"
     },
@@ -1186,10 +1186,10 @@
       },
       "color": "#9b7fd4",
       "lessons": [
-        "clock",
-        "seasons",
-        "coins",
-        "charts"
+        "make_ten",
+        "adding_10",
+        "subtraction_10",
+        "tangram_2"
       ],
       "znak": "znak_czapka"
     },
@@ -1201,10 +1201,10 @@
       },
       "color": "#e07a5f",
       "lessons": [
-        "bonds_10",
-        "adding_10",
-        "subtraction_10",
-        "tangram_2"
+        "seasons",
+        "coins",
+        "change",
+        "charts"
       ],
       "znak": "znak_kubek"
     },
@@ -1219,7 +1219,7 @@
         "count_20",
         "teens",
         "whole_tens",
-        "tens_add_sub"
+        "numbers_100"
       ],
       "znak": "znak_korona"
     },
@@ -1231,7 +1231,7 @@
       },
       "color": "#e69138",
       "lessons": [
-        "make_ten",
+        "doubles",
         "add_through_10",
         "subtract_through_10",
         "two_ways"
@@ -1247,9 +1247,9 @@
       "color": "#a64d79",
       "lessons": [
         "add_three",
-        "subtract_three",
         "add_sub_three",
-        "fact_families_20"
+        "fact_families_20",
+        "tens_add_sub"
       ],
       "znak": "znak_klucz"
     },
@@ -1278,8 +1278,8 @@
       "lessons": [
         "ruler_cm",
         "kilograms",
-        "calendar",
-        "change"
+        "clock",
+        "calendar"
       ],
       "znak": "znak_klejnot"
     },
