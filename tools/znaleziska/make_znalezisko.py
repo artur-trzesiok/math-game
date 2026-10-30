@@ -30,6 +30,54 @@ OUT = TU.parent.parent / "game" / "assets" / "znaleziska"
 STYL = """STYLE: a modern children's picture-book illustration - soft painterly shading with a fine paper-grain texture, warm
 friendly colours, thin soft dark outlines. NOT flat vector, NOT 3D render. NO text, NO letters, NO numbers."""
 ZNALEZISKA = {
+    # complete_shape story: Owl's painting for Hedgehog's birthday - who is on it? (the hedgehog by the door)
+    "obrazek_jeza": {
+        "rozmiar": "1536x1024",
+        "obraz": f"""A cheerful painting made by a child-like artist on white drawing paper, filling the whole picture edge to
+edge (no frame, no table, no border). In the MIDDLE stands ONE small cosy cottage with cream walls, ONE round blue window
+and ONE yellow door, and a big bright RED TRIANGULAR ROOF whose two straight slopes meet in one sharp point at the top;
+the roof is one plain flat red colour. Behind the house a plain clear BLUE SKY fills the whole upper part of the picture;
+in the top LEFT corner a round smiling yellow SUN. In front of the yellow door stands ONE small happy brown HEDGEHOG
+holding a little pink flower. Green grass along the bottom with a few red and yellow flowers. Big simple clear shapes,
+nothing in the sky right beside the roof (only plain blue sky there).
+{STYL}""",
+        "cele": ["on the small brown hedgehog standing in front of the yellow door (a disc covering only the hedgehog)"],
+    },
+    # complete_shape story: the same painting after the wind - a big triangular piece torn out of the red roof; the three candidate pieces (make_objects.py "kawalki_obrazka") are painted to fit this hole
+    "obrazek_jeza_dziura": {
+        "rozmiar": "1536x1024",
+        "refs": ["tools/znaleziska/work/obrazek_jeza_a.png"],
+        "obraz": """Exactly the same painting, unchanged in every way - the same house, roof, sun, hedgehog, grass and
+colours in the same places - with ONLY this one change: ONE piece of the paper has been TORN OUT, leaving a clean
+TRIANGULAR HOLE with three straight edges and three sharp corners (one corner pointing straight up, the bottom edge
+level), BIG - about one quarter of the picture's height - cut out of the RIGHT half of the red roof, so red roof is
+left all round it. Through the hole nothing of the picture shows - only a flat, plain, even DARK BROWN (the wooden table under the
+paper), with a thin white torn-paper rim along the hole's three edges. Nothing else changes.""",
+        "cele": ["on the triangular hole in the roof (a disc covering only the dark hole)"],
+    },
+    # complete_shape practice: Owl's second painting, torn into six pieces and put together
+    "obrazek_staw": {
+        "rozmiar": "1536x1024",
+        "obraz": f"""A cheerful painting made by a child-like artist on white drawing paper, filling the whole picture edge to
+edge (no frame, no table, no border): a round blue POND in the middle with ONE yellow duck and ONE small duckling
+swimming on it, green reeds and one big pink water lily, a little wooden boat tied at the left bank, a big green willow
+tree on the right, blue sky with two white clouds and a rainbow over the pond. Big simple clear shapes, many different
+colours in every part of the picture.
+{STYL}""",
+        "cele": [],
+    },
+    # complete_shape home: Hedgehog's birthday card - one of the three balloons has no string (what is missing?)
+    "kartka_urodzinowa": {
+        "rozmiar": "1024x1024",
+        "obraz": f"""A cheerful birthday CARD painted on cream paper, filling the whole picture edge to edge (no table, no
+border). At the bottom in the middle a round birthday CAKE with pink icing and a red cherry, NO candles. Above the cake
+float THREE big round BALLOONS side by side, far apart from one another: a RED balloon on the LEFT, a YELLOW balloon in
+the MIDDLE, a BLUE balloon on the RIGHT. The red and the yellow balloon each have a long wavy dark STRING hanging from it
+down to the cake. The BLUE balloon on the right has NO STRING at all - nothing hangs under it, only plain paper below it.
+A few small coloured paper confetti dots around. NO candles, NO text, NO letters, NO numbers.
+{STYL}""",
+        "cele": ["on the BLUE balloon on the right, the one without a string (a disc covering only that balloon)"],
+    },
     # up_down: Squirrel's map home - up the hill to her cottage, or down to the pond in the valley
     "mapa_wzgorza": {
         "rozmiar": "1536x1024",

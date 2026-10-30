@@ -1,0 +1,377 @@
+{
+ "line.a_gotowe": {
+  "hash": "77a20d8a662e",
+  "who": "sowa",
+  "text": "Skończyłam! Namalowałam obrazek na urodziny Jeżyka."
+ },
+ "line.a_pokaz": {
+  "hash": "fd9dc950330c",
+  "who": "wiewiorka",
+  "text": "Pokaż, pokaż! Jestem bardzo ciekawa."
+ },
+ "line.a_kto": {
+  "hash": "dbcde8690b93",
+  "who": "wiewiorka",
+  "text": "Kogo namalowała Sowa? Wskaż go na obrazku."
+ },
+ "line.a_kto_nie": {
+  "hash": "b29ae6e08869",
+  "who": "wiewiorka",
+  "text": "To nie on. Poszukaj kogoś z kolcami przed drzwiami."
+ },
+ "line.a_kto_tak": {
+  "hash": "988fa01aa715",
+  "who": "sowa",
+  "text": "Tak, to Jeżyk przed swoim domkiem. Dziś są jego urodziny!"
+ },
+ "line.a_wiatr": {
+  "hash": "ac19853daabc",
+  "who": "sowa",
+  "text": "Och nie! Wiatr porwał mój obrazek!"
+ },
+ "line.a_podarty": {
+  "hash": "bdafb234cd06",
+  "who": "wiewiorka",
+  "text": "Podarł się na kawałki! Wszystkie poleciały na łąkę."
+ },
+ "line.a_szukajmy": {
+  "hash": "811d4b0ff5fd",
+  "who": "sowa",
+  "text": "Szybko, chodźmy ich poszukać!"
+ },
+ "line.b_sa": {
+  "hash": "d5473644e713",
+  "who": "wiewiorka",
+  "text": "Tutaj są! Wszystkie kawałki leżą w trawie."
+ },
+ "line.b_uloz": {
+  "hash": "bdac95deb811",
+  "who": "sowa",
+  "text": "Ułóż obrazek z powrotem. Każdy kawałek ma swoje miejsce."
+ },
+ "line.b_dziura": {
+  "hash": "e842c4e70e47",
+  "who": "sowa",
+  "text": "Prawie cały... Ale w dachu jest dziura! Brakuje jednego kawałka."
+ },
+ "line.b_trzy": {
+  "hash": "77d88031def4",
+  "who": "wiewiorka",
+  "text": "Patrz, w trawie leżą jeszcze trzy kawałki!"
+ },
+ "line.b_czerwony": {
+  "hash": "73122395b976",
+  "who": "wiewiorka",
+  "text": "Wiem! Dziura jest w czerwonym dachu, więc pasuje czerwony kawałek. O, ten!"
+ },
+ "line.b_wystaje": {
+  "hash": "a8be67f7f765",
+  "who": "wiewiorka",
+  "text": "Oj... Nie pasuje! Rogi wystają, a dziurę nadal widać."
+ },
+ "line.b_ksztalt": {
+  "hash": "354f24b3fc06",
+  "who": "sowa",
+  "text": "Sam kolor nie wystarczy. Popatrz na brzegi dziury: jaki ma kształt?"
+ },
+ "line.b_wskaz": {
+  "hash": "ea5c2cc7d8fd",
+  "who": "sowa",
+  "text": "Wskaż kawałek, który ma taki sam kształt jak dziura."
+ },
+ "line.b_wskaz_nie": {
+  "hash": "1db33051e264",
+  "who": "sowa",
+  "text": "Ten kawałek ma inny kształt niż dziura. Popatrz na jej rogi."
+ },
+ "line.b_trojkat": {
+  "hash": "2a3875e3cb36",
+  "who": "sowa",
+  "text": "Tak, trójkąt! Dziura ma trzy rogi i ten kawałek też ma trzy rogi."
+ },
+ "line.b_caly": {
+  "hash": "0717089f3f44",
+  "who": "wiewiorka",
+  "text": "Hurra, obrazek jest cały!"
+ },
+ "line.b_metoda_kwadrat": {
+  "hash": "7a6cc68a3567",
+  "who": "sowa",
+  "text": "Popatrz. Kwadrat ma inny kształt niż dziura, więc rogi wystają."
+ },
+ "line.b_metoda_trojkat": {
+  "hash": "aa75cdb896b4",
+  "who": "sowa",
+  "text": "A trójkąt ma taki sam kształt jak dziura. Zakrywa ją całą!"
+ },
+ "line.b_aha": {
+  "hash": "a1d35a4f914d",
+  "who": "wiewiorka",
+  "text": "Aha! Nie patrzę na kolor, tylko na kształt."
+ },
+ "line.b_ramka": {
+  "hash": "a9d552b0f9a7",
+  "who": "wiewiorka",
+  "text": "Jeżyk dostanie obrazek w ramce! Pokoloruj ramkę palcem."
+ },
+ "line.b_ramka_tak": {
+  "hash": "bbffcacec699",
+  "who": "sowa",
+  "text": "Jaka kolorowa ramka! Wkładam do niej obrazek."
+ },
+ "line.b_idziemy": {
+  "hash": "3028bff22391",
+  "who": "sowa",
+  "text": "Jeżyk mieszka za strumykiem. Chodźmy do niego!"
+ },
+ "line.c_czesc": {
+  "hash": "b51b314906f2",
+  "who": "jez",
+  "text": "Cześć! Idziecie do mnie na urodziny?"
+ },
+ "line.c_niespodzianka": {
+  "hash": "f0cce4d2a66e",
+  "who": "sowa",
+  "text": "Tak! I mamy dla ciebie niespodziankę."
+ },
+ "line.c_mostek": {
+  "hash": "a055b28d1667",
+  "who": "jez",
+  "text": "Ojej! W kładce przez strumyk jest dziura. Nie przejdziemy!"
+ },
+ "line.c_wskaz": {
+  "hash": "2b2abb4d1d1d",
+  "who": "sowa",
+  "text": "Wskaż klocek, który zatka dziurę w kładce."
+ },
+ "line.c_wskaz_nie": {
+  "hash": "b0a302d97ca9",
+  "who": "sowa",
+  "text": "Ten klocek ma inny kształt niż dziura. Popatrz na jej boki."
+ },
+ "line.c_kwadrat": {
+  "hash": "dcf3550d79e7",
+  "who": "sowa",
+  "text": "Tak, kwadrat! Dziura jest kwadratowa, więc pasuje kwadrat."
+ },
+ "line.c_hurra": {
+  "hash": "6422d61ec49e",
+  "who": "jez",
+  "text": "Hurra! Możemy przejść. Chodźcie do mnie!"
+ },
+ "line.c_prezent": {
+  "hash": "59e1ad2c8e1b",
+  "who": "sowa",
+  "text": "Wszystkiego najlepszego, Jeżyku! Ten obrazek jest dla ciebie."
+ },
+ "line.c_dziekuje": {
+  "hash": "5e04a02fce74",
+  "who": "jez",
+  "text": "To mój domek i ja! Dziękuję! Zapraszam was na urodzinowy podwieczorek."
+ },
+ "line.p_start": {
+  "hash": "66518b83fda5",
+  "who": "sowa",
+  "text": "Pobawmy się w szukanie kawałków. Mam pięć zabaw!"
+ },
+ "line.p_ryba": {
+  "hash": "f0875c238593",
+  "who": "wiewiorka",
+  "text": "Rybka zgubiła ogon. Wskaż kawałek, który pasuje do dziury."
+ },
+ "line.p_ryba_nie": {
+  "hash": "fd61c16e87e9",
+  "who": "wiewiorka",
+  "text": "Ten ma taki sam kolor jak rybka, ale inny kształt niż dziura."
+ },
+ "line.p_ryba_tak": {
+  "hash": "310eb3d8840e",
+  "who": "sowa",
+  "text": "Tak, trójkąt! Ma taki sam kształt jak dziura."
+ },
+ "line.p_lodka": {
+  "hash": "0b80b1bf7cb8",
+  "who": "sowa",
+  "text": "Ułóż łódkę. Jeśli kawałek nie pasuje, dotknij go, a się obróci."
+ },
+ "line.p_lodka_tak": {
+  "hash": "0627e4f5dd54",
+  "who": "wiewiorka",
+  "text": "Łódka gotowa! Kawałki trzeba było tylko obrócić."
+ },
+ "line.p_staw": {
+  "hash": "617f4d5c67ff",
+  "who": "sowa",
+  "text": "Ojej, ten obrazek też się podarł. Ułóż go z powrotem."
+ },
+ "line.p_staw_tak": {
+  "hash": "8c3cf909b360",
+  "who": "wiewiorka",
+  "text": "Staw z kaczuszkami! Każdy kawałek jest na swoim miejscu."
+ },
+ "line.p_kubek": {
+  "hash": "986d4003c0e8",
+  "who": "wiewiorka",
+  "text": "Temu kubkowi czegoś brakuje. Wskaż, co trzeba do niego przyczepić."
+ },
+ "line.p_kubek_nie": {
+  "hash": "34a5fdee4aac",
+  "who": "wiewiorka",
+  "text": "Tego kubkowi nie brakuje. Popatrz na jego bok."
+ },
+ "line.p_kubek_tak": {
+  "hash": "f5ebd971e5a4",
+  "who": "sowa",
+  "text": "Tak, ucho! Teraz kubek jest cały i łatwo go trzymać."
+ },
+ "line.p_lis": {
+  "hash": "f4545be60dc3",
+  "who": "sowa",
+  "text": "Ostatnia zabawa! Ułóż głowę liska z trzech kawałków."
+ },
+ "line.p_lis_tak": {
+  "hash": "911879b252bf",
+  "who": "wiewiorka",
+  "text": "Lisek! Jeden duży trójkąt i dwa małe."
+ },
+ "line.d_dom": {
+  "hash": "651aeff5c372",
+  "who": "jez",
+  "text": "Witajcie w moim pokoju! Czas na urodzinowy podwieczorek."
+ },
+ "line.d_niose": {
+  "hash": "57c0af0ee5eb",
+  "who": "wiewiorka",
+  "text": "Ja przyniosę talerzyk!"
+ },
+ "line.d_ojej": {
+  "hash": "ea3972ea41fd",
+  "who": "wiewiorka",
+  "text": "Ojej! Talerzyk spadł i się stłukł!"
+ },
+ "line.d_nic": {
+  "hash": "70c7c8f1c824",
+  "who": "jez",
+  "text": "Nic się nie stało. Skleimy go!"
+ },
+ "line.d_niebieski": {
+  "hash": "42ea76ce722a",
+  "who": "wiewiorka",
+  "text": "Talerzyk jest niebieski, więc pasuje niebieski kawałek. O, ten!"
+ },
+ "line.d_niebieski_nie": {
+  "hash": "abc0d3efc45f",
+  "who": "sowa",
+  "text": "Niebieski, ale kwadratowy! Pamiętasz obrazek? Patrzymy na kształt."
+ },
+ "line.d_wskaz": {
+  "hash": "3e54e08e849a",
+  "who": "sowa",
+  "text": "Wskaż kawałek, który pasuje do dziury w talerzyku."
+ },
+ "line.d_wskaz_nie": {
+  "hash": "70e9aa877e4e",
+  "who": "sowa",
+  "text": "Ten kawałek ma inny kształt niż dziura w talerzyku."
+ },
+ "line.d_talerz_tak": {
+  "hash": "ca2efc652b48",
+  "who": "jez",
+  "text": "Pasuje! Ten kawałek ma taki sam kształt jak dziura. Talerzyk jest cały."
+ },
+ "line.d_prezent": {
+  "hash": "ec9247c16bbb",
+  "who": "wiewiorka",
+  "text": "A to prezent ode mnie! Zdrap papier i zobacz, co jest w środku."
+ },
+ "line.d_klocki": {
+  "hash": "1f59a5dccc8d",
+  "who": "jez",
+  "text": "Drewniane klocki do układania!"
+ },
+ "line.d_trojkat": {
+  "hash": "ddc132850c6e",
+  "who": "wiewiorka",
+  "text": "Wskaż w pudełku klocek, który jest trójkątem."
+ },
+ "line.d_trojkat_nie": {
+  "hash": "83bf730ee65e",
+  "who": "wiewiorka",
+  "text": "To nie trójkąt. Trójkąt ma trzy rogi."
+ },
+ "line.d_trojkat_tak": {
+  "hash": "1684ccbe96ca",
+  "who": "jez",
+  "text": "Tak, czerwony trójkąt. Ma trzy rogi."
+ },
+ "line.d_buduj": {
+  "hash": "283f895382e4",
+  "who": "jez",
+  "text": "Ułóżmy domek, taki jak na moim obrazku!"
+ },
+ "line.d_buduj_tak": {
+  "hash": "294d5cfa2a59",
+  "who": "sowa",
+  "text": "Piękny domek! Każdy kawałek trafił na swoje miejsce."
+ },
+ "line.d_kartka": {
+  "hash": "31b6be56af2b",
+  "who": "sowa",
+  "text": "A to kartka urodzinowa ode mnie. Ale czegoś na niej brakuje..."
+ },
+ "line.d_kartka_wskaz": {
+  "hash": "289ed23ba9ae",
+  "who": "sowa",
+  "text": "Wskaż balonik, któremu czegoś brakuje."
+ },
+ "line.d_kartka_nie": {
+  "hash": "d88fd1ee09f4",
+  "who": "sowa",
+  "text": "Ten balonik ma sznurek. Poszukaj takiego, który go nie ma."
+ },
+ "line.d_kartka_tak": {
+  "hash": "99a5ea70f869",
+  "who": "wiewiorka",
+  "text": "Niebieski balonik nie ma sznurka!"
+ },
+ "line.d_sznurek": {
+  "hash": "c5986e1d390d",
+  "who": "sowa",
+  "text": "Już dorysowuję. Teraz balonik jest cały."
+ },
+ "line.d_parapet": {
+  "hash": "17f76935db02",
+  "who": "jez",
+  "text": "Obrazek od Sowy postawię tam, gdzie wszyscy go zobaczą. Postaw go na parapecie pod oknem."
+ },
+ "line.d_hurra": {
+  "hash": "4d5f23275e1b",
+  "who": "jez",
+  "text": "Najpiękniejsze urodziny na świecie! Dziękuję wam."
+ },
+ "line.d_pokaz": {
+  "hash": "405ca64c6037",
+  "who": "sowa",
+  "text": "Zobacz, jak się w to bawimy: obrazek pocięty na cztery kawałki składamy z powrotem."
+ },
+ "line.d_rodzice": {
+  "hash": "5afa46757cf8",
+  "who": "sowa",
+  "text": "Pobaw się tak w domu z rodzicami. Potnijcie obrazek na cztery kawałki i ułóżcie go z powrotem."
+ },
+ "line.naklejka_daj": {
+  "hash": "ebc08c49763c",
+  "who": "sowa",
+  "text": "Dziękuję za pomoc przy moim obrazku! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "c5a826aa0ed3",
+  "who": "sowa",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "a5d86c8631bb",
+  "who": "narrator",
+  "text": "To obrazek Sowy w kolorowej ramce. Dostaliśmy go, kiedy znaleźliśmy brakujący kawałek po jego kształcie."
+ }
+}

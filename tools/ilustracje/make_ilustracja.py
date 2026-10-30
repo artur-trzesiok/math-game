@@ -34,6 +34,37 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # complete_shape story: the payoff - Hedgehog gets Owl's mended picture in its colourful frame for his birthday
+    "urodziny_jeza": {
+        "postacie": ["jez", "sowa", "wiewiorka"], "tlo": "pokoj", "lekcje": ["complete_shape"],
+        "scena": """The bright children's room from the reference picture (the same blue-striped wallpaper, big window, bed
+and bookcase), a birthday party: colourful paper garlands across the wall and three balloons. In the middle the small
+HEDGEHOG, very happy, holds up a PICTURE in a wide colourful FRAME (stripes of red, yellow, green and blue): the picture
+in it shows a little cream cottage with a red triangular roof, blue sky, a yellow sun and a small hedgehog by the door.
+On one side the OWL spreads its wings proudly, on the other the SQUIRREL claps her paws. A round pink birthday cake on a
+small table. Warm, joyful and sunny.""",
+    },
+    # thick_wide story: the payoff - Mole's things have all gone down the tunnels and found their places in the burrow
+    "przeprowadzka_kreta": {
+        "postacie": ["kret", "lisek", "sarenka"], "tlo": "nora", "lekcje": ["thick_wide"],
+        "scena": """The cosy underground burrow from the reference picture (the same earthen walls with roots, the round
+woven rug, the wooden shelves with jars, the bed with a patchwork blanket, the lantern and the tunnel opening with
+earthen steps at the back), warm lantern light. Moving day is over: in the corner stands a SHORT FAT wooden BARREL with
+iron hoops; by the wall lie a few round firewood LOGS, one thick and one thin; a long thin wooden STICK leans against
+the bed; a box of crayons on the shelf. The MOLE stands in the middle on the rug, arms wide open, beaming; the FOX puts
+the last thick log down; the ROE DEER looks round with a happy smile. Cosy, warm and happy.""",
+    },
+    # thick_wide home: the payoff - the housewarming: the door wide open, the guests carry the wide picture in
+    "parapetowka_kreta": {
+        "postacie": ["kret", "lisek", "sarenka", "jez", "wiewiorka"], "tlo": "przedpokoj", "lekcje": ["thick_wide"],
+        "scena": """The bright hallway from the reference picture (the same round window, the coat rail with hooks, the
+low wooden shoe shelf and the wooden front door with its little window), warm afternoon light. The front door is OPEN
+WIDE to a sunny garden; through it the HEDGEHOG and the SQUIRREL carry in together a big WIDE framed picture of a meadow
+with a red bow on it. The tidy hallway: a closed yellow umbrella stands in a slim green umbrella stand by the door,
+three books stand on the shoe shelf in order from the thinnest to the thickest, two striped scarves hang on the hooks.
+The MOLE greets the guests with open arms, the FOX wears a wide yellow-and-orange striped scarf, the ROE DEER smiles.
+A happy party, a few balloons.""",
+    },
     # light_heavy story: the payoff - the raft, loaded right, carries the picnic across the brook without tipping
     "tratwa_przeprawa": {
         "postacie": ["bobr", "mis", "zajac"], "tlo": "strumyk", "lekcje": ["light_heavy"],

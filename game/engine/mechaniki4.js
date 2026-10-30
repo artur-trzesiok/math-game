@@ -277,6 +277,7 @@ export async function podarty(S, nazwa, { kawalki = 4, y = 0.3, size = 7.6 } = {
   });
   S.sfx.graj("right");
   const z = await M3.znalezisko(S, nazwa, { y, size, obrot: 0, bezLotu: true });
+  for (const o of [...czesci.map((h) => h.mesh), tlo.mesh]) o.userData.zejdz = false;   // the whole picture takes their place: no slide-out
   czesci.forEach((h) => h.remove()); tlo.remove();
   return z;
 }

@@ -1,0 +1,302 @@
+{
+  "line.a_gotowe": {
+    "who": "sowa",
+    "text": "Skończyłam! Namalowałam obrazek na urodziny Jeżyka."
+  },
+  "line.a_pokaz": {
+    "who": "wiewiorka",
+    "text": "Pokaż, pokaż! Jestem bardzo ciekawa."
+  },
+  "line.a_kto": {
+    "who": "wiewiorka",
+    "text": "Kogo namalowała Sowa? Wskaż go na obrazku."
+  },
+  "line.a_kto_nie": {
+    "who": "wiewiorka",
+    "text": "To nie on. Poszukaj kogoś z kolcami przed drzwiami."
+  },
+  "line.a_kto_tak": {
+    "who": "sowa",
+    "text": "Tak, to Jeżyk przed swoim domkiem. Dziś są jego urodziny!"
+  },
+  "line.a_wiatr": {
+    "who": "sowa",
+    "text": "Och nie! Wiatr porwał mój obrazek!"
+  },
+  "line.a_podarty": {
+    "who": "wiewiorka",
+    "text": "Podarł się na kawałki! Wszystkie poleciały na łąkę."
+  },
+  "line.a_szukajmy": {
+    "who": "sowa",
+    "text": "Szybko, chodźmy ich poszukać!"
+  },
+  "line.b_sa": {
+    "who": "wiewiorka",
+    "text": "Tutaj są! Wszystkie kawałki leżą w trawie."
+  },
+  "line.b_uloz": {
+    "who": "sowa",
+    "text": "Ułóż obrazek z powrotem. Każdy kawałek ma swoje miejsce."
+  },
+  "line.b_dziura": {
+    "who": "sowa",
+    "text": "Prawie cały... Ale w dachu jest dziura! Brakuje jednego kawałka."
+  },
+  "line.b_trzy": {
+    "who": "wiewiorka",
+    "text": "Patrz, w trawie leżą jeszcze trzy kawałki!"
+  },
+  "line.b_czerwony": {
+    "who": "wiewiorka",
+    "text": "Wiem! Dziura jest w czerwonym dachu, więc pasuje czerwony kawałek. O, ten!"
+  },
+  "line.b_wystaje": {
+    "who": "wiewiorka",
+    "text": "Oj... Nie pasuje! Rogi wystają, a dziurę nadal widać."
+  },
+  "line.b_ksztalt": {
+    "who": "sowa",
+    "text": "Sam kolor nie wystarczy. Popatrz na brzegi dziury: jaki ma kształt?"
+  },
+  "line.b_wskaz": {
+    "who": "sowa",
+    "text": "Wskaż kawałek, który ma taki sam kształt jak dziura."
+  },
+  "line.b_wskaz_nie": {
+    "who": "sowa",
+    "text": "Ten kawałek ma inny kształt niż dziura. Popatrz na jej rogi."
+  },
+  "line.b_trojkat": {
+    "who": "sowa",
+    "text": "Tak, trójkąt! Dziura ma trzy rogi i ten kawałek też ma trzy rogi."
+  },
+  "line.b_caly": {
+    "who": "wiewiorka",
+    "text": "Hurra, obrazek jest cały!"
+  },
+  "line.b_metoda_kwadrat": {
+    "who": "sowa",
+    "text": "Popatrz. Kwadrat ma inny kształt niż dziura, więc rogi wystają."
+  },
+  "line.b_metoda_trojkat": {
+    "who": "sowa",
+    "text": "A trójkąt ma taki sam kształt jak dziura. Zakrywa ją całą!"
+  },
+  "line.b_aha": {
+    "who": "wiewiorka",
+    "text": "Aha! Nie patrzę na kolor, tylko na kształt."
+  },
+  "line.b_ramka": {
+    "who": "wiewiorka",
+    "text": "Jeżyk dostanie obrazek w ramce! Pokoloruj ramkę palcem."
+  },
+  "line.b_ramka_tak": {
+    "who": "sowa",
+    "text": "Jaka kolorowa ramka! Wkładam do niej obrazek."
+  },
+  "line.b_idziemy": {
+    "who": "sowa",
+    "text": "Jeżyk mieszka za strumykiem. Chodźmy do niego!"
+  },
+  "line.c_czesc": {
+    "who": "jez",
+    "text": "Cześć! Idziecie do mnie na urodziny?"
+  },
+  "line.c_niespodzianka": {
+    "who": "sowa",
+    "text": "Tak! I mamy dla ciebie niespodziankę."
+  },
+  "line.c_mostek": {
+    "who": "jez",
+    "text": "Ojej! W kładce przez strumyk jest dziura. Nie przejdziemy!"
+  },
+  "line.c_wskaz": {
+    "who": "sowa",
+    "text": "Wskaż klocek, który zatka dziurę w kładce."
+  },
+  "line.c_wskaz_nie": {
+    "who": "sowa",
+    "text": "Ten klocek ma inny kształt niż dziura. Popatrz na jej boki."
+  },
+  "line.c_kwadrat": {
+    "who": "sowa",
+    "text": "Tak, kwadrat! Dziura jest kwadratowa, więc pasuje kwadrat."
+  },
+  "line.c_hurra": {
+    "who": "jez",
+    "text": "Hurra! Możemy przejść. Chodźcie do mnie!"
+  },
+  "line.c_prezent": {
+    "who": "sowa",
+    "text": "Wszystkiego najlepszego, Jeżyku! Ten obrazek jest dla ciebie."
+  },
+  "line.c_dziekuje": {
+    "who": "jez",
+    "text": "To mój domek i ja! Dziękuję! Zapraszam was na urodzinowy podwieczorek."
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Pobawmy się w szukanie kawałków. Mam pięć zabaw!"
+  },
+  "line.p_ryba": {
+    "who": "wiewiorka",
+    "text": "Rybka zgubiła ogon. Wskaż kawałek, który pasuje do dziury."
+  },
+  "line.p_ryba_nie": {
+    "who": "wiewiorka",
+    "text": "Ten ma taki sam kolor jak rybka, ale inny kształt niż dziura."
+  },
+  "line.p_ryba_tak": {
+    "who": "sowa",
+    "text": "Tak, trójkąt! Ma taki sam kształt jak dziura."
+  },
+  "line.p_lodka": {
+    "who": "sowa",
+    "text": "Ułóż łódkę. Jeśli kawałek nie pasuje, dotknij go, a się obróci."
+  },
+  "line.p_lodka_tak": {
+    "who": "wiewiorka",
+    "text": "Łódka gotowa! Kawałki trzeba było tylko obrócić."
+  },
+  "line.p_staw": {
+    "who": "sowa",
+    "text": "Ojej, ten obrazek też się podarł. Ułóż go z powrotem."
+  },
+  "line.p_staw_tak": {
+    "who": "wiewiorka",
+    "text": "Staw z kaczuszkami! Każdy kawałek jest na swoim miejscu."
+  },
+  "line.p_kubek": {
+    "who": "wiewiorka",
+    "text": "Temu kubkowi czegoś brakuje. Wskaż, co trzeba do niego przyczepić."
+  },
+  "line.p_kubek_nie": {
+    "who": "wiewiorka",
+    "text": "Tego kubkowi nie brakuje. Popatrz na jego bok."
+  },
+  "line.p_kubek_tak": {
+    "who": "sowa",
+    "text": "Tak, ucho! Teraz kubek jest cały i łatwo go trzymać."
+  },
+  "line.p_lis": {
+    "who": "sowa",
+    "text": "Ostatnia zabawa! Ułóż głowę liska z trzech kawałków."
+  },
+  "line.p_lis_tak": {
+    "who": "wiewiorka",
+    "text": "Lisek! Jeden duży trójkąt i dwa małe."
+  },
+  "line.d_dom": {
+    "who": "jez",
+    "text": "Witajcie w moim pokoju! Czas na urodzinowy podwieczorek."
+  },
+  "line.d_niose": {
+    "who": "wiewiorka",
+    "text": "Ja przyniosę talerzyk!"
+  },
+  "line.d_ojej": {
+    "who": "wiewiorka",
+    "text": "Ojej! Talerzyk spadł i się stłukł!"
+  },
+  "line.d_nic": {
+    "who": "jez",
+    "text": "Nic się nie stało. Skleimy go!"
+  },
+  "line.d_niebieski": {
+    "who": "wiewiorka",
+    "text": "Talerzyk jest niebieski, więc pasuje niebieski kawałek. O, ten!"
+  },
+  "line.d_niebieski_nie": {
+    "who": "sowa",
+    "text": "Niebieski, ale kwadratowy! Pamiętasz obrazek? Patrzymy na kształt."
+  },
+  "line.d_wskaz": {
+    "who": "sowa",
+    "text": "Wskaż kawałek, który pasuje do dziury w talerzyku."
+  },
+  "line.d_wskaz_nie": {
+    "who": "sowa",
+    "text": "Ten kawałek ma inny kształt niż dziura w talerzyku."
+  },
+  "line.d_talerz_tak": {
+    "who": "jez",
+    "text": "Pasuje! Ten kawałek ma taki sam kształt jak dziura. Talerzyk jest cały."
+  },
+  "line.d_prezent": {
+    "who": "wiewiorka",
+    "text": "A to prezent ode mnie! Zdrap papier i zobacz, co jest w środku."
+  },
+  "line.d_klocki": {
+    "who": "jez",
+    "text": "Drewniane klocki do układania!"
+  },
+  "line.d_trojkat": {
+    "who": "wiewiorka",
+    "text": "Wskaż w pudełku klocek, który jest trójkątem."
+  },
+  "line.d_trojkat_nie": {
+    "who": "wiewiorka",
+    "text": "To nie trójkąt. Trójkąt ma trzy rogi."
+  },
+  "line.d_trojkat_tak": {
+    "who": "jez",
+    "text": "Tak, czerwony trójkąt. Ma trzy rogi."
+  },
+  "line.d_buduj": {
+    "who": "jez",
+    "text": "Ułóżmy domek, taki jak na moim obrazku!"
+  },
+  "line.d_buduj_tak": {
+    "who": "sowa",
+    "text": "Piękny domek! Każdy kawałek trafił na swoje miejsce."
+  },
+  "line.d_kartka": {
+    "who": "sowa",
+    "text": "A to kartka urodzinowa ode mnie. Ale czegoś na niej brakuje..."
+  },
+  "line.d_kartka_wskaz": {
+    "who": "sowa",
+    "text": "Wskaż balonik, któremu czegoś brakuje."
+  },
+  "line.d_kartka_nie": {
+    "who": "sowa",
+    "text": "Ten balonik ma sznurek. Poszukaj takiego, który go nie ma."
+  },
+  "line.d_kartka_tak": {
+    "who": "wiewiorka",
+    "text": "Niebieski balonik nie ma sznurka!"
+  },
+  "line.d_sznurek": {
+    "who": "sowa",
+    "text": "Już dorysowuję. Teraz balonik jest cały."
+  },
+  "line.d_parapet": {
+    "who": "jez",
+    "text": "Obrazek od Sowy postawię tam, gdzie wszyscy go zobaczą. Postaw go na parapecie pod oknem."
+  },
+  "line.d_hurra": {
+    "who": "jez",
+    "text": "Najpiękniejsze urodziny na świecie! Dziękuję wam."
+  },
+  "line.d_pokaz": {
+    "who": "sowa",
+    "text": "Zobacz, jak się w to bawimy: obrazek pocięty na cztery kawałki składamy z powrotem."
+  },
+  "line.d_rodzice": {
+    "who": "sowa",
+    "text": "Pobaw się tak w domu z rodzicami. Potnijcie obrazek na cztery kawałki i ułóżcie go z powrotem."
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Dziękuję za pomoc przy moim obrazku! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+  },
+  "line.naklejka_juz": {
+    "who": "sowa",
+    "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "To obrazek Sowy w kolorowej ramce. Dostaliśmy go, kiedy znaleźliśmy brakujący kawałek po jego kształcie."
+  }
+}

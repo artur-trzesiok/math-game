@@ -1,0 +1,41 @@
+{
+  "id": "complete_shape",
+  "title": {
+    "pl": "Brakujący kawałek",
+    "en": "The missing piece"
+  },
+  "goal": "See that a gap has a shape and the piece that fits it has the same shape (and turn), not the same colour; put a whole picture together from its pieces.",
+  "age": "3-4",
+  "characters": [
+    "sowa",
+    "wiewiorka",
+    "jez"
+  ],
+  "backgrounds": [
+    "dziupla_sowy",
+    "laka",
+    "strumyk",
+    "pokoj"
+  ],
+  "objects": [
+    "kawalek_trojkat",
+    "kawalek_kwadrat",
+    "kawalek_kolo",
+    "obrazek_w_ramce",
+    "kubek_bez_ucha",
+    "ucho_kubka",
+    "lyzka",
+    "spodek",
+    "talerz_niebieski",
+    "talerz_pekniety",
+    "talerz_kawalek",
+    "skorupka_niebieska",
+    "skorupka_zolta"
+  ],
+  "cover": "Owl proudly holds up her crayon painting of a little cottage with a red triangular roof, but a triangle-shaped piece is missing from the roof; Squirrel beside her offers a red square paper piece, and on the grass lie a red triangle piece and a green circle piece, while small Hedgehog peeks in, curious, from the right.",
+  "naklejka": {
+    "obraz": "objects/obrazek_w_ramce",
+    "kto": "sowa"
+  },
+  "oddech": "malowanie"
+}

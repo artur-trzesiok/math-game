@@ -1,0 +1,15 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "oslona": "kolorowanie",
+ "cele": [
+  {
+   "x": 0.1284,
+   "y": 0.0631,
+   "r": 0.05
+  }
+ ],
+ "lekcje": [
+  "complete_shape"
+ ]
+}

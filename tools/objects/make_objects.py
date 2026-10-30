@@ -32,6 +32,185 @@ vector, NOT 3D. Each object is one single thing seen straight on, NO ground
 shadow, NO text."""
 
 SHEETS = {
+    # complete_shape story: three paper pieces found by the torn picture (found picture obrazek_jeza_dziura): the red
+    # triangle torn out of its roof (the right shape), a red square (the right colour, the wrong shape), a green circle
+    "kawalki_obrazka": {
+        "names": ["kawalek_trojkat", "kawalek_kwadrat", "kawalek_kolo"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 512,
+        "wspolna_skala": True,
+        "refs": ["../znaleziska/obrazek_jeza/obraz", "../znaleziska/obrazek_jeza_dziura/obraz"],
+        "prompt": f"""A sprite sheet of THREE flat pieces of painted drawing paper for a children's picture book, in ONE ROW of 3
+on a fully TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background,
+NO glow, NO halo, NO table, NO shadow.
+{STYL}
+The first reference is a child's crayon painting of a house with a red roof; in the second one a TRIANGULAR piece has been
+torn out of that red roof, leaving a triangular hole. Left to right:
+1. EXACTLY that missing piece: a TRIANGLE of paper painted in the same bright red crayon texture as the roof, one corner
+   pointing straight UP, the bottom edge level, a little wider than tall (width about 1.1 times its height), straight
+   edges, a thin white torn-paper rim - it would fill the hole exactly.
+2. A SQUARE piece of paper (four equal straight sides) painted in the SAME bright red crayon as the roof, a thin white
+   torn-paper rim, about as big as the triangle.
+3. A round CIRCLE piece of paper painted in bright GREEN crayon like the grass, a thin white torn-paper rim, about as
+   big as the triangle.
+All three the same size and seen flat from the front.""",
+    },
+    # complete_shape: Owl's picture in the colourful frame the child coloured - given at the party, stood on the
+    # windowsill at home, and the lesson's album sticker
+    "obrazek_w_ramce": {
+        "names": ["obrazek_w_ramce"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 512,
+        "refs": ["../znaleziska/obrazek_jeza/obraz", "../zdrapki/rama_obrazka/odkryty"],
+        "prompt": f"""ONE illustrated thing for a children's picture book in the middle of a fully TRANSPARENT background,
+filling most of the image. NO coloured background, NO glow, NO halo, NO table, NO wall, NO shadow.
+{STYL}
+A framed PICTURE seen straight from the front, standing upright: the colourful frame of the second reference (red,
+orange, yellow, green, blue and purple patches with little flowers, hearts and dots), a little narrower so the picture
+shows big, and inside it the child's crayon painting of the first reference - the cream cottage with the big red
+triangular roof, the round blue window, the yellow door, the smiling sun top left, the small hedgehog with a flower by
+the door, the green grass with flowers. The whole picture is WHOLE, nothing torn. Wider than tall.""",
+    },
+    # complete_shape home: Hedgehog's blue plate falls and breaks - the whole plate, the plate with a wedge missing, the
+    # wedge that fits, a blue square shard (right colour, wrong shape) and a yellow round shard; one scale for all
+    "potluczony_talerz": {
+        "names": ["talerz_niebieski", "talerz_pekniety", "talerz_kawalek", "skorupka_niebieska", "skorupka_zolta"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 512,
+        "wspolna_skala": True,      # the wedge must fit the gap at the same scale
+        "prompt": f"""A sprite sheet of FIVE illustrated things for a children's picture book, in ONE ROW of 5 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO table, NO shadow.
+{STYL}
+All are seen straight from ABOVE, flat. Left to right:
+1. ONE whole round china PLATE, plain mid-blue with small white polka dots and a slightly darker blue rim, a perfect
+   circle, the biggest thing on the sheet.
+2. The SAME plate, the same size, BROKEN: ONE wedge-shaped piece (like a slice of cake, a triangle with its point at the
+   plate's centre and its wide end on the rim, about one sixth of the plate) is MISSING on the RIGHT side - the gap is
+   completely EMPTY and transparent, nothing in it; the edges of the gap are straight.
+3. That missing WEDGE alone, lying with its point to the LEFT and its wide rim end to the RIGHT, exactly as it sat in
+   the gap - the same blue with white dots, the same size as the gap.
+4. A small SQUARE shard of the same blue with white dots (four straight sides), about as big as the wedge.
+5. A small ROUND shard of plain YELLOW china, about as big as the wedge.""",
+    },
+    # complete_shape practice: what is missing? a mug without its handle and the handle that belongs to it
+    "kubek_ucho": {
+        "names": ["kubek_bez_ucha", "ucho_kubka"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 512,
+        "wspolna_skala": True,      # the handle fits the mug at the same scale
+        "prompt": f"""A sprite sheet of TWO illustrated things for a children's picture book, in ONE ROW of 2 on a fully
+TRANSPARENT background, with a wide empty gap between them. NO coloured background, NO glow, NO halo, NO table, NO shadow.
+{STYL}
+Left: ONE big plain round MUG seen from the side, bright orange with a white heart on its front, and NO HANDLE AT ALL -
+its right side is a plain smooth straight wall, nothing sticks out of it.
+Right: that mug's HANDLE alone - one orange C-shaped mug handle (the same orange), its open side facing LEFT, as tall as
+about two thirds of the mug's height, shown at the same scale as the mug.""",
+    },
+    # thick_wide: upright logs and crayons, each the SAME thing at three thicknesses (one height, one scale)
+    "tw_grube": {
+        "names": ["polano_grube", "polano_srednie", "polano_cienkie", "kredka_gruba", "kredka_srednia", "kredka_cienka"],
+        "outline": True,
+        "wspolna_skala": True,
+        "size": "1536x1024",
+        "rows": 2,
+        "px": 1024,
+        "prompt": f"""A sprite sheet of SIX illustrated things for a children's picture book, in a neat grid of 2 rows and 3
+columns on a fully TRANSPARENT background, with generous empty space between them so none of them touch. Every thing
+stands UPRIGHT, its bottom on the row's invisible ground line. NO coloured background, NO glow, NO halo, NO ground.
+{STYL}
+Row 1, left to right: the SAME round firewood LOG with brown bark three times, standing upright on its cut end, the
+light cut rings showing a little on top, all three exactly the SAME HEIGHT: a very THICK fat log (as wide as it is
+tall); a MIDDLE log (half as wide); a very THIN log (a thin round branch, a quarter as wide as the thick one).
+Row 2, left to right: the SAME wooden wax CRAYON three times, standing upright with its sharpened tip pointing UP, all
+three exactly the SAME LENGTH: a very THICK fat red crayon; a MIDDLE blue crayon (half as thick); a very THIN green
+crayon (a quarter as thick). The crayons are as tall as the logs.
+Only the thickness differs inside each row; NO numbers, NO letters.""",
+    },
+    # thick_wide: the wood - three trees of one height and one crown, trunks thick, middle and thin
+    "tw_drzewa": {
+        "names": ["drzewo_grube", "drzewo_srednie", "drzewo_cienkie"],
+        "outline": True,
+        "wspolna_skala": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 1024,
+        "prompt": f"""A sprite sheet of THREE illustrated trees for a children's picture book, in ONE ROW of 3 on a fully
+TRANSPARENT background, with generous empty space between them so they do not touch. They stand UPRIGHT, the bottoms of
+their trunks on one invisible ground line. NO coloured background, NO glow, NO halo, NO grass, NO ground.
+{STYL}
+The SAME kind of leafy green tree three times, exactly the SAME HEIGHT and the SAME round green crown, brown bark trunks
+reaching from the ground up to the crown, left to right: a tree with a very THICK, fat old trunk (the trunk as wide as
+half the crown); a tree with a MIDDLE trunk (half as thick); a tree with a very THIN young trunk (a quarter as thick as
+the first). Only the trunks' thickness differs. NO holes, NO doors, NO animals.""",
+    },
+    # thick_wide: flat things that are wide or narrow (ribbons, holes into the burrow, scarves on hooks)
+    "tw_szerokie": {
+        # the split's order for this painting (the narrow mound sits low, so its row is read as the second)
+        "names": ["wstazka_szeroka", "wstazka_waska", "tunel_szeroki", "szalik_szeroki", "szalik_sredni", "tunel_waski", "szalik_waski"],
+        "outline": True,
+        "wspolna_skala": True,
+        "size": "1536x1024",
+        "rows": 2,
+        "px": 1024,
+        "prompt": f"""A sprite sheet of SEVEN illustrated things for a children's picture book, in TWO ROWS on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo.
+{STYL}
+Row 1 (four things), left to right: one WIDE pink satin RIBBON lying straight and HORIZONTAL; the SAME pink ribbon, the
+SAME LENGTH, but NARROW (a third as wide); one low round mound of brown earth with a SMALL NARROW round dark tunnel hole
+in its front, a little grass on top; the SAME mound of earth, the SAME HEIGHT, but with a WIDE round dark tunnel hole
+(three times as wide as the narrow one), so the mound is wider.
+Row 2 (three things), left to right: the SAME knitted striped SCARF three times, yellow and orange stripes with a fringe
+at the bottom, each HANGING straight down from a little loop at its top, all three the SAME LENGTH: a very WIDE scarf; a
+MIDDLE scarf (half as wide); a very NARROW scarf (a quarter as wide).
+NO numbers, NO letters.""",
+    },
+    # thick_wide home: three books standing upright, spines to the viewer, one height, three thicknesses
+    "tw_ksiazki": {
+        "names": ["ksiazka_gruba", "ksiazka_srednia", "ksiazka_cienka"],
+        "outline": True,
+        "wspolna_skala": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 512,
+        "prompt": f"""A sprite sheet of THREE illustrated books for a children's picture book, in ONE ROW of 3 on a fully
+TRANSPARENT background, with generous empty space between them so they do not touch. They stand UPRIGHT side by side on
+one invisible shelf line, each seen from the SPINE side (the spine faces the viewer). NO coloured background, NO glow,
+NO halo, NO shelf.
+{STYL}
+Left to right, all three exactly the SAME HEIGHT: a very THICK fat book with a dark red spine; a MIDDLE book with a blue
+spine (half as thick); a very THIN book with a green spine (a quarter as thick). Each spine has a little golden band
+near the top and the bottom, NO letters, NO numbers, NO text.""",
+    },
+    # thick_wide: Mole's short fat barrel, the narrow umbrella stand, the wide framed picture (a present) and the
+    # lesson's album sticker (Mole's new burrow under a tree)
+    "tw_rzeczy": {
+        "names": ["beczka", "stojak_parasol", "obraz_szeroki", "norka_kreta"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 512,
+        "prompt": f"""A sprite sheet of FOUR illustrated things for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO ground.
+{STYL}
+Left to right: one SHORT FAT round wooden BARREL with two dark iron hoops, standing upright, a little wider than it is
+tall; one tall NARROW round UMBRELLA STAND, a slim green ceramic tube standing upright, open at the top, EMPTY, about
+four times as tall as it is wide; one WIDE framed PICTURE of a sunny meadow with flowers in a golden wooden frame, about
+three times as wide as it is tall, with a red ribbon bow on top as a present; one cosy little MOLE'S HOME: a round
+grassy mound of earth at the foot of a thick old tree trunk with a small round green door with a brass knob and a tiny
+round window, flowers by the door.
+NO numbers, NO letters, NO text.""",
+    },
     # light_heavy story: Beaver's raft on the brook - the characters stand on it and it dips under the heavy ones
     "tratwa_bobra": {
         "names": ["tratwa"],

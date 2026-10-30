@@ -25,6 +25,48 @@ from make_znalezisko import magenta, STYL  # noqa: E402
 WORK = TU / "work"
 OUT = TU.parent.parent / "game" / "assets" / "zdrapki"
 ZDRAPKI = {
+    # complete_shape story breather (oddechy malowanie, tlo "szyba"): colour the frame for Owl's picture - the finger
+    # wipes the plain uncoloured frame (zakryty) and the colourful one shows (odkryty)
+    "rama_obrazka": {
+        "oslona": "kolorowanie", "lekcje": ["complete_shape"],
+        "obraz": f"""ONE wide picture FRAME seen straight from the front, filling the whole image edge to edge: a broad flat
+wooden frame border all round, painted in many cheerful colours - stripes of red, orange, yellow, green, blue and purple,
+little painted flowers, hearts and dots on it. The INSIDE of the frame (the big middle opening, about two thirds of the
+width) is plain empty cream paper with nothing on it. NO picture inside, NO text, NO letters, NO numbers.
+{STYL}""",
+        "zakryj": """the frame's border NOT coloured at all yet: plain white unpainted wood with only thin light grey pencil
+outlines of the same stripes, flowers, hearts and dots, like a colouring page waiting for crayons; the empty cream middle
+stays exactly as it is.""",
+        "cele": ["on the small flower painted in the top LEFT corner of the frame"],
+    },
+    # complete_shape home: Squirrel's gift for Hedgehog under wrapping paper - a box of wooden shape puzzle pieces
+    "prezent_jeza": {
+        "oslona": "papier", "lekcje": ["complete_shape"],
+        "obraz": f"""A close view of a warm wooden TABLE seen from the front and a little from above, filling the whole picture.
+On the table lies ONE open flat wooden BOX with a green ribbon beside it, and in the box lie EXACTLY THREE big flat wooden
+puzzle pieces side by side, far apart: on the LEFT one RED TRIANGLE, in the MIDDLE one BLUE SQUARE, on the RIGHT one YELLOW
+CIRCLE. Each shape is big, plain and clear. Behind the table a soft blurred blue-striped bedroom wall. NO other pieces,
+NO animals, NO people, NO text, NO numbers.
+{STYL}""",
+        "zakryj": """a big sheet of shiny PINK WRAPPING PAPER with little white stars, with soft folds and a big green bow on
+top, laid over the whole table, so NONE of the box or the shapes shows through anywhere - only wrapping paper; the blurred
+wall at the back stays as it is.""",
+        "cele": ["on the RED TRIANGLE puzzle piece on the left (a disc covering only the triangle)"],
+    },
+    # thick_wide story (the breather): the doormat at Mole's new door is all muddy - rub it off: a mole painted on it
+    "wycieraczka_kreta": {
+        "oslona": "bloto", "lekcje": ["thick_wide"],
+        "obraz": f"""A close view of ONE brown woven coconut DOORMAT lying on the ground in front of a small round green
+door at the foot of a tree, the mat filling most of the picture, seen from the front and a little from above. On the mat
+is painted, big and simple in the middle, one cute smiling dark grey MOLE with a pink nose and pink paws, waving, with
+three little red and yellow flowers painted around it. Around the mat a bit of soft moss and earth. NO letters, NO
+words, NO numbers, NO other animals. Big simple clear shapes.
+{STYL}""",
+        "zakryj": """thick wet brown MUD splashed and smeared over the whole doormat, blobs, splashes and drips of glossy
+brown mud with a few muddy paw prints and a fallen leaf stuck in it, so NONE of the painted mole or the flowers shows
+through anywhere - only mud; the moss and the door at the edges stay as they are.""",
+        "cele": ["on the painted MOLE in the middle of the mat (a disc covering only the mole)"],
+    },
     # light_heavy home: Bear's heaviest bag lies under brown wrapping paper - rub it off: a big pumpkin for the soup
     "zakupy_misia": {
         "oslona": "papier", "lekcje": ["light_heavy"],

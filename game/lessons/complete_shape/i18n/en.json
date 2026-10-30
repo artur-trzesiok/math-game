@@ -1,0 +1,302 @@
+{
+  "line.a_gotowe": {
+    "who": "sowa",
+    "text": "I've finished! I painted a picture for Hedgehog's birthday."
+  },
+  "line.a_pokaz": {
+    "who": "wiewiorka",
+    "text": "Show me, show me! I'm so curious."
+  },
+  "line.a_kto": {
+    "who": "wiewiorka",
+    "text": "Who did Owl paint? Point to him on the picture."
+  },
+  "line.a_kto_nie": {
+    "who": "wiewiorka",
+    "text": "Not that. Look for someone prickly in front of the door."
+  },
+  "line.a_kto_tak": {
+    "who": "sowa",
+    "text": "Yes, it's Hedgehog in front of his little house. It's his birthday today!"
+  },
+  "line.a_wiatr": {
+    "who": "sowa",
+    "text": "Oh no! The wind took my picture!"
+  },
+  "line.a_podarty": {
+    "who": "wiewiorka",
+    "text": "It tore into pieces! They all flew to the meadow."
+  },
+  "line.a_szukajmy": {
+    "who": "sowa",
+    "text": "Quick, let's go and find them!"
+  },
+  "line.b_sa": {
+    "who": "wiewiorka",
+    "text": "Here they are! All the pieces are lying in the grass."
+  },
+  "line.b_uloz": {
+    "who": "sowa",
+    "text": "Put the picture back together. Every piece has its place."
+  },
+  "line.b_dziura": {
+    "who": "sowa",
+    "text": "Almost whole... But there's a hole in the roof! One piece is missing."
+  },
+  "line.b_trzy": {
+    "who": "wiewiorka",
+    "text": "Look, there are three more pieces in the grass!"
+  },
+  "line.b_czerwony": {
+    "who": "wiewiorka",
+    "text": "I know! The hole is in the red roof, so a red piece fits. This one!"
+  },
+  "line.b_wystaje": {
+    "who": "wiewiorka",
+    "text": "Oh... It doesn't fit! The corners stick out and the hole still shows."
+  },
+  "line.b_ksztalt": {
+    "who": "sowa",
+    "text": "Colour alone is not enough. Look at the edges of the hole: what shape is it?"
+  },
+  "line.b_wskaz": {
+    "who": "sowa",
+    "text": "Point to the piece that has the same shape as the hole."
+  },
+  "line.b_wskaz_nie": {
+    "who": "sowa",
+    "text": "That piece has a different shape from the hole. Look at its corners."
+  },
+  "line.b_trojkat": {
+    "who": "sowa",
+    "text": "Yes, the triangle! The hole has three corners and this piece has three corners too."
+  },
+  "line.b_caly": {
+    "who": "wiewiorka",
+    "text": "Hooray, the picture is whole!"
+  },
+  "line.b_metoda_kwadrat": {
+    "who": "sowa",
+    "text": "Look. The square has a different shape from the hole, so its corners stick out."
+  },
+  "line.b_metoda_trojkat": {
+    "who": "sowa",
+    "text": "But the triangle has the same shape as the hole. It covers all of it!"
+  },
+  "line.b_aha": {
+    "who": "wiewiorka",
+    "text": "Aha! I don't look at the colour, I look at the shape."
+  },
+  "line.b_ramka": {
+    "who": "wiewiorka",
+    "text": "Hedgehog will get the picture in a frame! Colour the frame with your finger."
+  },
+  "line.b_ramka_tak": {
+    "who": "sowa",
+    "text": "What a colourful frame! I'm putting the picture in it."
+  },
+  "line.b_idziemy": {
+    "who": "sowa",
+    "text": "Hedgehog lives across the brook. Let's go to him!"
+  },
+  "line.c_czesc": {
+    "who": "jez",
+    "text": "Hi! Are you coming to my birthday?"
+  },
+  "line.c_niespodzianka": {
+    "who": "sowa",
+    "text": "Yes! And we have a surprise for you."
+  },
+  "line.c_mostek": {
+    "who": "jez",
+    "text": "Oh no! There's a hole in the little bridge over the brook. We can't get across!"
+  },
+  "line.c_wskaz": {
+    "who": "sowa",
+    "text": "Point to the block that will fill the hole in the bridge."
+  },
+  "line.c_wskaz_nie": {
+    "who": "sowa",
+    "text": "That block has a different shape from the hole. Look at its sides."
+  },
+  "line.c_kwadrat": {
+    "who": "sowa",
+    "text": "Yes, the square! The hole is square, so the square fits."
+  },
+  "line.c_hurra": {
+    "who": "jez",
+    "text": "Hooray! We can get across. Come to my house!"
+  },
+  "line.c_prezent": {
+    "who": "sowa",
+    "text": "Happy birthday, Hedgehog! This picture is for you."
+  },
+  "line.c_dziekuje": {
+    "who": "jez",
+    "text": "It's my little house and me! Thank you! Come to my birthday tea."
+  },
+  "line.p_start": {
+    "who": "sowa",
+    "text": "Let's play at finding pieces. I have five games!"
+  },
+  "line.p_ryba": {
+    "who": "wiewiorka",
+    "text": "The fish has lost its tail. Point to the piece that fits the hole."
+  },
+  "line.p_ryba_nie": {
+    "who": "wiewiorka",
+    "text": "That one has the same colour as the fish, but a different shape from the hole."
+  },
+  "line.p_ryba_tak": {
+    "who": "sowa",
+    "text": "Yes, the triangle! It has the same shape as the hole."
+  },
+  "line.p_lodka": {
+    "who": "sowa",
+    "text": "Make the boat. If a piece doesn't fit, touch it and it will turn."
+  },
+  "line.p_lodka_tak": {
+    "who": "wiewiorka",
+    "text": "The boat is ready! The pieces only needed turning."
+  },
+  "line.p_staw": {
+    "who": "sowa",
+    "text": "Oh dear, this picture got torn too. Put it back together."
+  },
+  "line.p_staw_tak": {
+    "who": "wiewiorka",
+    "text": "A pond with ducks! Every piece is in its place."
+  },
+  "line.p_kubek": {
+    "who": "wiewiorka",
+    "text": "This mug is missing something. Point to what needs to go on it."
+  },
+  "line.p_kubek_nie": {
+    "who": "wiewiorka",
+    "text": "The mug isn't missing that. Look at its side."
+  },
+  "line.p_kubek_tak": {
+    "who": "sowa",
+    "text": "Yes, the handle! Now the mug is whole and easy to hold."
+  },
+  "line.p_lis": {
+    "who": "sowa",
+    "text": "The last game! Make a fox's head from three pieces."
+  },
+  "line.p_lis_tak": {
+    "who": "wiewiorka",
+    "text": "A fox! One big triangle and two small ones."
+  },
+  "line.d_dom": {
+    "who": "jez",
+    "text": "Welcome to my room! It's time for the birthday tea."
+  },
+  "line.d_niose": {
+    "who": "wiewiorka",
+    "text": "I'll bring the plate!"
+  },
+  "line.d_ojej": {
+    "who": "wiewiorka",
+    "text": "Oh no! The plate fell and broke!"
+  },
+  "line.d_nic": {
+    "who": "jez",
+    "text": "Never mind. We'll glue it together!"
+  },
+  "line.d_niebieski": {
+    "who": "wiewiorka",
+    "text": "The plate is blue, so a blue piece fits. This one!"
+  },
+  "line.d_niebieski_nie": {
+    "who": "sowa",
+    "text": "Blue, but square! Remember the picture? We look at the shape."
+  },
+  "line.d_wskaz": {
+    "who": "sowa",
+    "text": "Point to the piece that fits the gap in the plate."
+  },
+  "line.d_wskaz_nie": {
+    "who": "sowa",
+    "text": "That piece has a different shape from the gap in the plate."
+  },
+  "line.d_talerz_tak": {
+    "who": "jez",
+    "text": "It fits! This piece has the same shape as the gap. The plate is whole."
+  },
+  "line.d_prezent": {
+    "who": "wiewiorka",
+    "text": "And this is a present from me! Rub off the paper and see what's inside."
+  },
+  "line.d_klocki": {
+    "who": "jez",
+    "text": "Wooden puzzle pieces!"
+  },
+  "line.d_trojkat": {
+    "who": "wiewiorka",
+    "text": "Point to the piece in the box that is a triangle."
+  },
+  "line.d_trojkat_nie": {
+    "who": "wiewiorka",
+    "text": "That's not a triangle. A triangle has three corners."
+  },
+  "line.d_trojkat_tak": {
+    "who": "jez",
+    "text": "Yes, the red triangle. It has three corners."
+  },
+  "line.d_buduj": {
+    "who": "jez",
+    "text": "Let's make a little house, like the one on my picture!"
+  },
+  "line.d_buduj_tak": {
+    "who": "sowa",
+    "text": "A lovely house! Every piece found its place."
+  },
+  "line.d_kartka": {
+    "who": "sowa",
+    "text": "And this is a birthday card from me. But something is missing on it..."
+  },
+  "line.d_kartka_wskaz": {
+    "who": "sowa",
+    "text": "Point to the balloon that is missing something."
+  },
+  "line.d_kartka_nie": {
+    "who": "sowa",
+    "text": "This balloon has a string. Look for the one that doesn't."
+  },
+  "line.d_kartka_tak": {
+    "who": "wiewiorka",
+    "text": "The blue balloon has no string!"
+  },
+  "line.d_sznurek": {
+    "who": "sowa",
+    "text": "I'll draw it in. Now the balloon is whole."
+  },
+  "line.d_parapet": {
+    "who": "jez",
+    "text": "I'll put Owl's picture where everyone can see it. Stand it on the windowsill under the window."
+  },
+  "line.d_hurra": {
+    "who": "jez",
+    "text": "The best birthday in the world! Thank you."
+  },
+  "line.d_pokaz": {
+    "who": "sowa",
+    "text": "Look how we play it: a picture cut into four pieces is put back together."
+  },
+  "line.d_rodzice": {
+    "who": "sowa",
+    "text": "Play this at home with your parents. Cut a picture into four pieces and put it back together."
+  },
+  "line.naklejka_daj": {
+    "who": "sowa",
+    "text": "Thank you for helping with my picture! Here is a sticker for your album, to remember it. Touch it to take it."
+  },
+  "line.naklejka_juz": {
+    "who": "sowa",
+    "text": "You already have the sticker from this adventure. See you!"
+  },
+  "line.naklejka_opis": {
+    "who": "narrator",
+    "text": "This is Owl's picture in its colourful frame. We got it when we found the missing piece by its shape."
+  }
+}
