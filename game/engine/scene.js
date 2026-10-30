@@ -413,7 +413,18 @@ export class Stage {
     const kol = (this.kolejnoscLalek ||= []).filter((o) => o !== L);
     if (front) kol.push(L); else kol.unshift(L);
     this.kolejnoscLalek = kol;
-    kol.forEach((o, i) => { const ro = front && o === L ? 30 : 20 + i * 0.5; o.korzen.traverse((m) => { if (m.isMesh) m.renderOrder = ro; }); });
+    this.przodLalki = front ? L : this.przodLalki === L ? null : this.przodLalki;
+    this._warstwyLalek();
+  }
+  // a big picture over a dimmed scene: the characters step in front of it (39.1+, over the veil and the picture), so
+  // they may stand before its lower corners; off again when it goes
+  przedObrazem(on) { this.lalkiPrzedObrazem = on; this._warstwyLalek(); }
+  _warstwyLalek() {
+    const on = this.lalkiPrzedObrazem;
+    (this.kolejnoscLalek || []).forEach((o, i) => {
+      const ro = o === this.przodLalki ? (on ? 39.4 : 30) : on ? 39.1 + i * 0.02 : 20 + i * 0.5;
+      o.korzen.traverse((m) => { if (m.isMesh) m.renderOrder = ro; });
+    });
   }
   bringToFront(L) { this.layer(L, true); }
   // a contact shadow with a pencil feel: short diagonal strokes inside a slightly wobbly ellipse

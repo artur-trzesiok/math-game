@@ -88,7 +88,7 @@ export default {
         await c.wonder("lisek");
         await c.say("lisek", "line.a_czy_wszyscy");
         await c.ujecie("ogolny");
-        const zapr = await c.znalezisko("zaproszenie_lisa", { skad: "lisek", y: 0.9 });
+        const zapr = await c.znalezisko("zaproszenie_lisa", { skad: "lisek" });
         const goscie = zapr.cele.slice().sort((a, b) => zapr.meta.cele[a.nr].x - zapr.meta.cele[b.nr].x);   // snail, hedgehog, butterfly, mouse, duckling
         const brak = [goscie[0], goscie[2]];
         await c.say("sarenka", "line.a_kogo_brakuje");

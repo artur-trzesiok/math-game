@@ -396,22 +396,31 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, lun
 // rings the spots in pencil; `remove()` puts the picture away.
 // a big picture over the scene: every character it would cover steps aside to the nearer side, its whole body inside
 // the 4:3 safe area (x -6..6); returns a function that walks them back (only those still where they stepped to)
-export async function odsun(S, x0, x1) {
-  // a side with someone covered is repacked from the safe edge inwards, side by side (two characters on one side
-  // used to end up on top of each other)
-  const SAFE = 6, ZAKLAD = 0.95, wroc = [], ruchy = [], mid = (x0 + x1) / 2;
+// where the characters will stand when x0..x1 is cleared: a side with someone covered is repacked from the safe edge
+// inwards, side by side (two characters on one side used to end up on top of each other); every visible one, with its
+// box there ({n, L, x, cel, x0, x1, dol, gora})
+export function planOdsun(S, x0, x1) {
+  const SAFE = 6, ZAKLAD = 0.95, mid = (x0 + x1) / 2, plan = [];
   const widoczne = Object.entries(S.puppets).filter(([, L]) => L.korzen.visible && Math.abs(L.korzen.position.x) < SAFE + 1)
     .map(([n, L]) => { const b = S.bounds(L), x = L.korzen.position.x; return { n, L, x, b, lewo: x - b.left, prawo: b.right - x }; });
   for (const strona of [-1, 1]) {
     const ci = widoczne.filter((p) => Math.sign(p.x - mid || -1) === strona).sort((a, b) => strona * (b.x - a.x));   // outermost first
-    if (!ci.some((p) => p.b.right > x0 + 0.25 && p.b.left < x1 - 0.25)) continue;
+    const rusza = ci.some((p) => p.b.right > x0 + 0.25 && p.b.left < x1 - 0.25);
     let brzeg = strona * SAFE;
     for (const p of ci) {
-      const cel = strona < 0 ? brzeg + p.lewo : brzeg - p.prawo;
-      brzeg = strona < 0 ? cel + p.prawo * ZAKLAD : cel - p.lewo * ZAKLAD;
-      if (Math.abs(cel - p.x) < 0.05) continue;
-      wroc.push([p.n, p.L, p.x, cel]); ruchy.push(S.walkTo(p.n, cel));
+      let cel = p.x;
+      if (rusza) { cel = strona < 0 ? brzeg + p.lewo : brzeg - p.prawo; brzeg = strona < 0 ? cel + p.prawo * ZAKLAD : cel - p.lewo * ZAKLAD; }
+      plan.push({ n: p.n, L: p.L, x: p.x, cel, x0: cel - p.lewo, x1: cel + p.prawo, dol: p.b.bottom, gora: p.b.top });
     }
+  }
+  return plan;
+}
+
+export async function odsun(S, x0, x1) {
+  const wroc = [], ruchy = [];
+  for (const p of planOdsun(S, x0, x1)) {
+    if (Math.abs(p.cel - p.x) < 0.05) continue;
+    wroc.push([p.n, p.L, p.x, p.cel]); ruchy.push(S.walkTo(p.n, p.cel));
   }
   await Promise.all(ruchy);
   return () => Promise.all(wroc.map(([n, L, x, cel]) => (Math.abs(L.korzen.position.x - cel) < 1e-3 ? S.walkTo(n, x) : null)));
@@ -442,13 +451,32 @@ export function promienieCelow(cele, W, H) {
   });
 }
 
-export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, rama = "#fffaf0", obrot = -2.5, bezLotu = false, x = null } = {}) {
+// would a character standing as planned cover one of the picture's spots (centred at x 0, y `cy`)?
+function zaslania(plan, cele, W, H, cy) {
+  const pod = (px, py, r) => plan.some((p) => px + r > p.x0 && px - r < p.x1 && py + r > p.dol && py - r < p.gora);
+  return cele.some((c) => c.droga ? c.droga.some(([qx, qy]) => pod((qx - 0.5) * W, cy + (0.5 - qy) * H, 0.3))
+    : pod((c.x - 0.5) * W, cy + (0.5 - c.y) * H, Math.max(0.45, c.r * W)));
+}
+
+export async function znalezisko(S, nazwa, { skad = null, y = null, size = null, rama = "#fffaf0", obrot = -2.5, bezLotu = false, x = null } = {}) {
   const kat = `/game/assets/znaleziska/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const tex = await texture(kat + "obraz.webp");
   const ar = meta.wysokosc / meta.szerokosc, b = 0.32;
-  let W = ar > 1 ? size / ar * 1.0 : size, cx = x ?? 0;
-  if (x === null) { const m = miejsceNaObraz(S, W + b); W *= m.k; cx = m.cx; }
+  let W, cx = x ?? 0;
+  if (x !== null) { const s0 = size ?? 7.6; W = ar > 1 ? s0 / ar : s0; y ??= 0.3; }   // placed by its caller (a torn picture)
+  else {
+    // big enough to read on a tablet: up to 10.2 wide, its top just under the phase icons; the characters stand packed
+    // at the safe edges IN FRONT of its lower corners (S.przedObrazem) - it shrinks only while one of them would cover
+    // a spot (with three characters it used to shrink to half the screen)
+    const GORA = 3.2, DOL = -3.4, wys = y === null ? GORA - DOL - b : 2 * Math.min(GORA - y, y - DOL) - b;   // a given y: the room around it
+    const s0 = size ? (ar > 1 ? size / ar : size) : Math.min(10.2, wys / ar);
+    const y0 = y;
+    for (let k = 1; ; k -= 0.05) {
+      W = s0 * k; y = y0 ?? GORA - b / 2 - W * ar / 2;
+      if (k <= 0.6 || !zaslania(planOdsun(S, -(W + b) / 2 - 0.2, (W + b) / 2 + 0.2), meta.cele, W, W * ar, y)) break;
+    }
+  }
   const H = W * ar;
   const mat = (o) => new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, ...o });
   // the veil: the scene goes quiet behind the picture
@@ -462,7 +490,8 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
   const obraz = new THREE.Mesh(new THREE.PlaneGeometry(W, H), mat({ map: tex })); obraz.renderOrder = 38.6;
   karta.add(cien, brzeg, obraz);
   const wrocPostacie = odsun(S, cx - (W + b) / 2 - 0.2, cx + (W + b) / 2 + 0.2);         // nobody speaks from behind the picture
-  const h = { mesh: grp, kind: "znalezisko", name: nazwa, base: 1, remove: () => { S.scene.remove(grp); S.scene.remove(welon); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); wrocPostacie.then((f) => f()); } };
+  S.przedObrazem(true);
+  const h = { mesh: grp, kind: "znalezisko", name: nazwa, base: 1, remove: () => { S.przedObrazem(false); S.scene.remove(grp); S.scene.remove(welon); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); wrocPostacie.then((f) => f()); } };
   S.objects.push(h);
   // the spots: invisible discs on the picture (in the card, so they turn with it); the rest of the picture is a miss
   const lokalnie = ([x, yy]) => [(x - 0.5) * W, (0.5 - yy) * H];
