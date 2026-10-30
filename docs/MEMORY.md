@@ -325,6 +325,13 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 - **No parallax on the stage** (fixed 2026-10-30, user: "postacie pływają"): a shot must never move the camera's eye -
   puppets (z 0) and grass (then z -1.2) slid against the plate (z -9). `kadrBezParalaksy` (scene.js) turns
   camera.position.x/y into an off-axis projection shift; the movers lie just in front of the plate (tlo.js).
+- **iPad slowdowns that Android and PC never show** (2026-10-30, the user: the game slows when something appears and
+  when Hania taps a sticker a dozen times; the HUD buttons stop answering during the story): `preserveDrawingBuffer:
+  true` on the renderer (Safari pays every frame - now off, every read of the frame copies it in the same task); sound
+  effects through `<audio>` (pause, rewind, play on the main thread for every pop and tap; `volume` ignored on iOS) -
+  now Web Audio buffers decoded once, the pool only a fallback; a tap's ray tested the hidden back/side views of every
+  puppet (3.6 -> 1.1 ms on a PC) - now only what is drawn (`trafLalke`). `?perf` shows fps and, per slow frame, the taps
+  and sounds in it - ask for an iPad screenshot of it when a hitch is reported.
 - **The hidden browser pane**: rAF runs at 0 fps although the page says visible; screenshots are stale; real-time
   runs stall on animations (szybko runs work). JS evals time out at 45 s - split long polls. Background tabs throttle.
   An autopilot inside an iframe stalled on a drag where the same lesson in a tab passed.

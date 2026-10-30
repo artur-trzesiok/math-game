@@ -1,8 +1,9 @@
 import { v } from "./v.js";
 import { naPierwszyDotyk } from "./odblokuj.js";
-// Sound effects (game/audio/sfx/*.mp3, made by tools/audio/make_sfx.py): plain <audio> elements, no
-// WebAudio (the tablet), a small pool per effect so they can overlap, a gap so a burst of identical
-// events is one sound, and ducking under speech so an effect never covers what a character says.
+// Sound effects (game/audio/sfx/*.mp3, made by tools/audio/make_sfx.py): decoded once into Web Audio buffers and played
+// as one-shot sources - on an iPad every <audio> play (pause, rewind, play) cost the main thread, and a child's burst of
+// taps made the game stutter; <audio> also ignores `volume` there. The old element pool stays as the fallback (no Web
+// Audio, a buffer not decoded yet). A gap so a burst of identical events is one sound, ducking under speech.
 
 const NAZWY = ["pop", "tap", "wrong", "right", "pencil", "hop", "clap", "plop", "whoosh", "idea", "zoom", "wonder", "plansza", "etap", "melodyjka", "beben", "beben_maly", "dzwonek", "garnek", "kubek", "falsz", "klask", "koniec", "szklo_1", "szklo_2", "szklo_3", "szklo_4", "hu_1", "hu_2", "hu_3", "chor_sowiatek", "chor_falsz"];
 const PETLE = new Set(["melodyjka"]);    // music loops: WAV (an mp3 has a gap where it loops)
@@ -14,8 +15,14 @@ export class Sfx {
     this.wycisz = wycisz;
     this.glos = 1;                         // master
     this.mowa = false;                     // set by the speech while a line plays: effects duck
-    this.pule = {}; this.ostatnio = {};
+    this.pule = {}; this.ostatnio = {}; this.bufory = {}; this.grajace = {}; this.ile = 0;
     for (const n of NAZWY) this.pule[n] = [];
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (AC && !wycisz) {
+      try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch { /* iOS 17+: play past the silent switch like <audio> */ }
+      try { this.ctx = new AC(); } catch { this.ctx = null; }
+      naPierwszyDotyk(() => { if (this.ctx?.state === "suspended") this.ctx.resume().catch(() => {}); });   // a context starts only inside a tap
+    }
     // iPad: an element plays only once started inside a tap - start two of each, muted, in the first one
     naPierwszyDotyk(() => { for (const n of NAZWY) for (let i = 0; i < 2; i++) { const a = this._audio(n, true); a.muted = true; const p = a.play(); if (p) p.then(() => { a.pause(); a.muted = false; }).catch(() => { a.muted = false; }); } });
   }
@@ -30,7 +37,21 @@ export class Sfx {
     if (this.wycisz || !this.pule[n]) return;
     const t = performance.now() / 1000;
     if (t - (this.ostatnio[n] || -1) < ODSTEP) return;
-    this.ostatnio[n] = t;
+    this.ostatnio[n] = t; this.ile++;
+    const v0 = Math.max(0, Math.min(1, (GLOSNOSC[n] ?? 0.6) * glosnosc * this.glos * (this.mowa ? 0.55 : 1)));
+    const buf = this.bufory[n];
+    if (buf && this.ctx && this.ctx.state === "running") {
+      try {
+        const gr = (this.grajace[n] ||= []);
+        while (gr.length >= 4) { try { gr.shift().stop(); } catch { /* ended */ } }   // at most four of one effect at once
+        const src = this.ctx.createBufferSource(), g = this.ctx.createGain(), t0 = this.ctx.currentTime;
+        src.buffer = buf; src.playbackRate.value = tempo; g.gain.value = v0;
+        src.connect(g).connect(this.ctx.destination); src.start();          // started before a stop may be scheduled
+        if (dlugosc) { const k = t0 + Math.max(0.05, dlugosc - 0.15); g.gain.setValueAtTime(v0, k); g.gain.linearRampToValueAtTime(0, k + 0.15); src.stop(k + 0.16); }
+        gr.push(src); src.onended = () => { const i = gr.indexOf(src); if (i >= 0) gr.splice(i, 1); };
+        return;
+      } catch { /* fall back to the element */ }
+    }
     const a = this._audio(n);
     try {
       a.pause(); a.currentTime = 0; a.playbackRate = tempo;
@@ -55,5 +76,13 @@ export class Sfx {
     const duck = setInterval(() => { a.volume = baza * (this.mowa ? 0.35 : 1); }, 120);
     return { stop: (ms = 250) => { clearInterval(duck); let k = 0; const krok = () => { k++; a.volume = baza * Math.max(0, 1 - k / 6); if (k < 6) setTimeout(krok, ms / 6); else { a.pause(); a.loop = false; } }; krok(); } };
   }
-  wczytaj() { for (const n of NAZWY) this._audio(n); }      // warm the pool so the first pop is on time
+  // decode every effect once (a few MB of samples); the element pool is warmed too, for the fallback
+  wczytaj() {
+    for (const n of NAZWY) this._audio(n);
+    if (!this.ctx) return;
+    for (const n of NAZWY) {
+      fetch(v(`/game/audio/sfx/${n}.${PETLE.has(n) ? "wav" : "mp3"}`)).then((r) => r.arrayBuffer())
+        .then((b) => new Promise((ok, bad) => this.ctx.decodeAudioData(b, ok, bad))).then((buf) => { this.bufory[n] = buf; }).catch(() => {});
+    }
+  }
 }

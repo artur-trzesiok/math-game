@@ -58,16 +58,21 @@ const FRESH = { cache: "no-store" };
 const PERF = PARAMS.has("perf");
 let perfEl = null, perfPrzed = null, perfIle = 0, perfMax = 0;
 const perfLista = [];
+let perfOkno = [], perfOdsw = 0;
+// frames per second over the last 60 frames, and the slow ones counted
+const naglowekPerf = () => { const s = perfOkno.reduce((a, b) => a + b, 0); return `${perfOkno.length && s ? Math.round(1000 * perfOkno.length / s) : 0} fps | zaciecia > 50 ms: ${perfIle}, najdluzsze ${Math.round(perfMax)} ms`; };
 function zmierz(S, ms) {
-  const inf = S.renderer.info, teraz = { tex: inf.memory.textures, geo: inf.memory.geometries, prog: inf.programs?.length || 0 };
+  const inf = S.renderer.info, teraz = { tex: inf.memory.textures, geo: inf.memory.geometries, prog: inf.programs?.length || 0, tap: S.perfTapy || 0, sfx: S.sfx?.ile || 0 };
   const p = perfPrzed; perfPrzed = teraz;
+  if (ms < 5000) { perfOkno.push(ms); if (perfOkno.length > 60) perfOkno.shift(); }
+  if (perfEl && performance.now() - perfOdsw > 1000) { perfOdsw = performance.now(); perfEl.textContent = [naglowekPerf(), ...perfLista].join("\n"); }
   if (!p || ms < 50 || ms > 5000) return;                                      // > 5 s: the tab was hidden
   perfIle++; perfMax = Math.max(perfMax, ms);
   const linia = window.gra?.dziennik?.slice(-1)[0]?.[0]?.replace("line.", "") || "";
-  perfLista.unshift(`${Math.round(ms)} ms  tex+${teraz.tex - p.tex} prog+${teraz.prog - p.prog} geo+${teraz.geo - p.geo}  ${linia}`);
+  perfLista.unshift(`${Math.round(ms)} ms  tex+${teraz.tex - p.tex} prog+${teraz.prog - p.prog} geo+${teraz.geo - p.geo} tap+${teraz.tap - p.tap} sfx+${teraz.sfx - p.sfx}  ${linia}`);
   perfLista.length = Math.min(perfLista.length, 12);
   if (!perfEl) { perfEl = document.createElement("pre"); perfEl.style.cssText = "position:fixed;left:6px;top:40px;z-index:99;margin:0;padding:6px 8px;background:rgba(0,0,0,.6);color:#9f9;font:11px/1.35 monospace;pointer-events:none;border-radius:6px"; document.body.appendChild(perfEl); }
-  perfEl.textContent = [`zaciecia > 50 ms: ${perfIle}, najdluzsze ${Math.round(perfMax)} ms`, ...perfLista].join("\n");
+  perfEl.textContent = [naglowekPerf(), ...perfLista].join("\n");
 }
 
 // one texture per file for the whole game: loaded (and sent to the GPU) once, shared by every sticker of it
@@ -90,7 +95,9 @@ export class Stage {
     this.container = container; this.speech = speech;
     // ONE renderer for the whole game: a lesson used to make its own WebGL context and destroy it after, so every lesson
     // compiled every shader and uploaded every texture again (a tablet stuttered on each first appearance)
-    this.renderer = WSPOLNY.renderer ||= new THREE.WebGLRenderer({ antialias: true, stencil: true, preserveDrawingBuffer: true });
+    // no preserveDrawingBuffer: on an iPad it cost every frame (the buttons stopped answering while a story played);
+    // every read of the frame copies it right after drawing it, in the same task
+    this.renderer = WSPOLNY.renderer ||= new THREE.WebGLRenderer({ antialias: true, stencil: true });
     this.renderer.outputColorSpace = THREE.SRGBColorSpace; this.renderer.setRenderTarget(null);
     this.sluchy = new AbortController();                                    // this stage's canvas listeners, gone with it
     const sig = { signal: this.sluchy.signal };
@@ -691,7 +698,7 @@ export class Stage {
     // the topmost thing under the finger: a shape's own layer first (overlapping pieces), then distance
     for (const it of set.items) { const hits = this.raycaster.intersectObject(it.mesh, true); if (!hits.length) continue; const d = hits[0].distance - (it.warstwa ?? 0) * 1e3; if (d < bestD) { best = it; bestD = d; } }
     if (!best) {
-      for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.raycaster.intersectObject(L.korzen, true).some((i) => i.object.visible)) { const f = set.free ? set.onPuppet : set.onTap; if (f) { this.bump(L); f(L); } else this.tapPuppet(L); return true; }
+      for (const L of Object.values(this.puppets)) if (L.korzen.visible && this.trafLalke(L).length) { const f = set.free ? set.onPuppet : set.onTap; if (f) { this.bump(L); f(L); } else this.tapPuppet(L); return true; }
       return false;
     }
     if (set.free && best.zablokowany) return true;
@@ -1027,23 +1034,41 @@ export class Stage {
     let best = null, d = Infinity;
     for (const L of Object.values(this.puppets)) {
       if (!L.korzen.visible) continue;
-      const h = this.raycaster.intersectObject(L.korzen, true).filter((i) => i.object.visible);
+      const h = this.trafLalke(L);
       if (h.length && h[0].distance < d) { best = L; d = h[0].distance; }
     }
     return best;
   }
+  // a ray against the pieces a puppet DRAWS now: its back and side views are hidden groups full of grid meshes, and
+  // testing them all cost an iPad several ms a tap
+  trafLalke(L) {
+    const siatki = [];
+    const zbierz = (o) => { if (!o.visible) return; if (o.isMesh) siatki.push(o); for (const k of o.children) zbierz(k); };
+    zbierz(L.korzen);
+    return this.raycaster.intersectObjects(siatki, false);
+  }
   // the one rule of the whole game: a tapped character repeats the instruction in force (the player sets it while
   // an interaction runs). Here it covers what a task does not: no choice open, or a choice among things only
   tapPuppet(L) { if (!L) return null; this.bump(L); this.onPuppetTap?.(L); return L; }
+  // the same character tapped again within this is the same tap (a child taps ten times "to make it work"): no second
+  // bump or repeated line; things are not held back - a rhythm may want the same drum twice
+  static POWTORKA = 0.5;
+  powtorka(h) {
+    const t = performance.now() / 1000, sam = h && h === this.ostatniTap && t - this.ostatniTapT < Stage.POWTORKA;
+    if (h) { this.ostatniTap = h; this.ostatniTapT = t; }
+    return sam;
+  }
   click(nx, ny) {                                   // normalised device coords; also used by tests (gra.klik)
-    this.scene.updateMatrixWorld(); this.camera.updateMatrixWorld();   // things moved since the last frame (no frame while the page is hidden)
+    this.perfTapy = (this.perfTapy || 0) + 1;
+    // things moved since the last frame only matter with no frames (a hidden page, tests); a running page drew them just now
+    if (performance.now() - this.lastRaf > 100) { this.scene.updateMatrixWorld(); this.camera.updateMatrixWorld(); }
     this.raycaster.setFromCamera(new THREE.Vector2(nx, ny), this.camera);
-    if (!this.pending) return this.tapPuppet(this.puppetAt());
+    if (!this.pending) { const L = this.puppetAt(); return this.powtorka(L) ? L : this.tapPuppet(L); }
     // a thing beats a character: tapping a character only repeats the instruction, so where a sticker and a
     // character overlap (a cup rolled under the owl) the answer must win
     let best = null, bestD = Infinity, bestP = null, bestPD = Infinity;
     for (const h of this.targets) {
-      const hits = this.raycaster.intersectObject(this.meshOf(h), true).filter((i) => i.object.visible);
+      const hits = h.korzen ? this.trafLalke(h) : this.raycaster.intersectObject(this.meshOf(h), true).filter((i) => i.object.visible);
       if (!hits.length) continue;
       if (h.korzen) { if (hits[0].distance < bestPD) { bestP = h; bestPD = hits[0].distance; } continue; }
       // a sticker is a square: where squares overlap (long things in rows), the one whose drawing holds the point wins
@@ -1053,7 +1078,7 @@ export class Stage {
     }
     best = best || bestP;
     this.lastHit = best;
-    if (!best) return this.tapPuppet(this.puppetAt());     // a choice among things: the character still repeats
+    if (!best) { const L = this.puppetAt(); return this.powtorka(L) ? L : this.tapPuppet(L); }     // a choice among things: the character still repeats
     const ok = this.pending; this.pending = null; this.targets = [];
     this.bump(best);                                 // visible reaction before anything else happens
     ok(best);
@@ -1071,7 +1096,9 @@ export class Stage {
   // ------------------------------------------------------------------ tests
   async snap(name) {
     this.rysuj();
-    const blob = await new Promise((ok) => this.renderer.domElement.toBlob(ok, "image/png"));
+    const src = this.renderer.domElement, c = document.createElement("canvas");             // copied at once: the buffer is not kept
+    c.width = src.width; c.height = src.height; c.getContext("2d").drawImage(src, 0, 0);
+    const blob = await new Promise((ok) => c.toBlob(ok, "image/png"));
     await fetch(`/api/snap?name=${name}`, { method: "POST", body: blob });
     return name;
   }
