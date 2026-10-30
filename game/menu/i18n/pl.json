@@ -573,5 +573,9 @@
   "line.mapa_klodka_2": {
     "who": "lisek",
     "text": "Ta polanka jest jeszcze zamknięta. Idziemy po kolei, krok po kroku!"
+  },
+  "line.obroc": {
+    "who": "narrator",
+    "text": "Obróć tablet bokiem, wtedy zaczynamy!"
   }
 }

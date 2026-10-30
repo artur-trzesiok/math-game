@@ -283,6 +283,11 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
 
 **Postponed**: the adventure map in the menu (liked, but only when the lessons are complete).
 
+- **A tablet held upright** (2026-10-30): the menu covers itself with the `#obroc` card (CSS media query portrait + coarse
+  pointer). Its picture must say which way is right (the user: two smiling tablets read as "both are fine"): a sad Fox
+  upright, an arrow, a laughing Fox sideways. The narrator says `line.obroc` (menu i18n) once per showing, only in the
+  menu, and on iOS only after the first touch.
+
 ## 6. Engine and tools - what to know in practice
 
 - **Autopilot / tests**: `?cicho&szybko&scenariusz&lekcja=<id>&etap=story` runs story, practice and home to the

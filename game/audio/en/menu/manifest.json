@@ -683,5 +683,10 @@
   "hash": "213fdf2a9787",
   "who": "lisek",
   "text": "The Castle on the Hill is waiting behind this gate! It will open when we finish all the stages of the Snowy Mountains."
+ },
+ "line.obroc": {
+  "hash": "c18da4e54e7d",
+  "who": "narrator",
+  "text": "Turn your tablet sideways, then we can start!"
  }
 }

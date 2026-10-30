@@ -699,6 +699,7 @@ platform with a little roof, seen from the front, NO tree under it; one big tall
 # little heap of duck grain
 # the "turn your device" card: a phone or tablet held upright is asked to lie on its side
 SHEETS["obroc_tablet"] = {
+    "caly": True,
     "names": ["obroc_tablet"],
     "size": "1024x1024",
     "rows": 1,
@@ -706,8 +707,10 @@ SHEETS["obroc_tablet"] = {
     "prompt": f"""ONE illustrated icon for a children's picture book in the middle of a fully TRANSPARENT background, filling
 most of the image. NO glow outside it, NO halo, NO background, NO text.
 {STYL}
-A friendly little tablet computer drawn standing upright, with a big curved orange arrow round it showing it turning a
-quarter turn to lie on its side; on its screen a tiny smiling fox face. Cheerful, round, simple.""",
+Read left to right, three things in one row: on the LEFT a little tablet computer standing upright (tall, portrait)
+with a SAD fox face on its screen (droopy ears, a small frown, a tear); in the MIDDLE one big bold curved orange arrow
+pointing from left to right, bending a quarter turn clockwise; on the RIGHT the same tablet lying on its side (wide,
+landscape) with a HAPPY laughing fox face. The upright tablet must NOT smile. Round, simple, clearly readable.""",
 }
 SHEETS["karma"] = {
     "outline": True,

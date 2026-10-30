@@ -683,5 +683,10 @@
   "hash": "b81ff5185ae0",
   "who": "lisek",
   "text": "Za tą bramą czeka Zamek na Wzgórzu! Brama otworzy się, gdy przejdziemy wszystkie etapy Zimowych Gór."
+ },
+ "line.obroc": {
+  "hash": "924ed36c14d6",
+  "who": "narrator",
+  "text": "Obróć tablet bokiem, wtedy zaczynamy!"
  }
 }

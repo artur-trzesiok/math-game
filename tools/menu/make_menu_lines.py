@@ -19,6 +19,7 @@ PORZ = {"pl": _J + _N + ["dwudziesty"] + [f"dwudziesty {x}" for x in _J[:4]],
         "pl_d": _JD + _ND + ["dwudziestego"] + [f"dwudziestego {x}" for x in _JD[:4]],
         "en": _EN + [f"twenty-{x}" for x in _EN[:4]]}
 # the world map (engine/mapa.js): Fox tapped on the map (one at random), a locked stop tapped
+OBROC = {"pl": "Obróć tablet bokiem, wtedy zaczynamy!", "en": "Turn your tablet sideways, then we can start!"}
 MAPA = {
     "pl": (["To ja! Tu teraz jesteśmy.", "Hop, hop! Idziemy dalej ścieżką!", "Pokaż mi, dokąd chcesz iść!",
             "Ale ta mapa jest piękna! Ciekawe, co czeka na następnej polance."],
@@ -104,6 +105,7 @@ for lang in ("pl", "en"):
     lisek, klodka = MAPA[lang]
     for k, t in enumerate(lisek, 1): out[f"line.mapa_lisek_{k}"] = {"who": "lisek", "text": t}
     for k, t in enumerate(klodka, 1): out[f"line.mapa_klodka_{k}"] = {"who": "lisek", "text": t}
+    out["line.obroc"] = {"who": "narrator", "text": OBROC[lang]}    # the card asking to turn a tablet held upright
     d = ROOT / "game" / "menu" / "i18n"; d.mkdir(parents=True, exist_ok=True)
     (d / f"{lang}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(lang, len(out), "lines")

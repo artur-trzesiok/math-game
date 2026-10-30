@@ -573,5 +573,9 @@
   "line.mapa_klodka_2": {
     "who": "lisek",
     "text": "This clearing is still locked. We go one by one, step by step!"
+  },
+  "line.obroc": {
+    "who": "narrator",
+    "text": "Turn your tablet sideways, then we can start!"
   }
 }
