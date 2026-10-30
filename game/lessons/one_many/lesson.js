@@ -64,6 +64,13 @@ export default {
         c.czastki("liscie", { wiatr: 0.4 });
         ({ dynia, orzechy } = await dyniaOrzechy(c));
         const cele = [dynia, ...orzechy];
+        // the game's one rule, told once in the first lesson: a white edge = your turn, touch it; no edge = listen
+        await c.ujecie("sredni", { na: ["lisek", ...cele] });
+        c.obwodka(cele); await c.wait(0.4);
+        await c.say("lisek", "line.a_obwodka", { anim: "Wskazanie" });
+        c.obwodka(cele, false); await c.wait(0.5);
+        await c.say("lisek", "line.a_sluchaj");
+        await c.ujecie("ogolny");
         await c.say("wiewiorka", "line.a_gdzie_jedna");
         dobre(dynia); await c.task({ targets: cele, correct: dynia, wrong: "line.a_to_wiele" }); dobre(dynia, false);
         await c.ujecie("sredni", { na: [dynia] });

@@ -268,7 +268,8 @@ A sticker tapped while nothing waits nods a little and the characters glance at 
 cut into the story). `game/assets/objects/naklejki.json` lists the stickers with this look; interface pictures kept
 their baked edge (stage signs `znak_*`, `pora_*`, `ruch_*`, `strzalka`, `przycisk_muzyki`) and so did ten edited after
 the cut (`gwiazdka`, `swietlik`, `ruch_klask`, `wanna`, six colouring signs). The album draws its own edge in CSS
-(`.wycinek`). The manager's sticker pages show them without the edge.
+(`.wycinek`). The manager's sticker pages show them without the edge. Fox tells the rule once, in the first lesson
+(one_many, before the first task): the edge lit by hand on the pumpkin and the nuts, then put out (`ctx.obwodka`).
 
 **Sound and music**
 - Every place has a looping theme in two ~150 s versions (30-45 s loops felt repetitive - "30s to za krótko"),

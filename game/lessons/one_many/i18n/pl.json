@@ -23,6 +23,14 @@
     "who": "sarenka",
     "text": "Dynia jest jedna. A orzechów jest wiele."
   },
+  "line.a_obwodka": {
+    "who": "lisek",
+    "text": "Popatrz! Kiedy coś ma białą obwódkę, to znaczy, że teraz twoja kolej i możesz tego dotknąć."
+  },
+  "line.a_sluchaj": {
+    "who": "lisek",
+    "text": "A kiedy obwódki nie ma, słuchamy i patrzymy, co się dzieje."
+  },
   "line.a_gdzie_jedna": {
     "who": "wiewiorka",
     "text": "Teraz ty. Wskaż, gdzie jest jedna rzecz.",

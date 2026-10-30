@@ -348,5 +348,15 @@
   "hash": "8fb2268b0940",
   "who": "wiewiorka",
   "text": "Everyone at the table! One cake, many cherries and many friends."
+ },
+ "line.a_obwodka": {
+  "hash": "7689f093840c",
+  "who": "lisek",
+  "text": "Look! When something has a white edge, it means it's your turn and you can touch it."
+ },
+ "line.a_sluchaj": {
+  "hash": "88fea27251c4",
+  "who": "lisek",
+  "text": "And when there's no edge, we listen and watch what happens."
  }
 }

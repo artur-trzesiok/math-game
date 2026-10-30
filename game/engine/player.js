@@ -859,6 +859,8 @@ export class Player {
       przejscie: guard((zmiana, rodzaj = null) => E.przejscie(S, async () => { alive(); await zmiana(); }, { rodzaj })),
       // film tools (efekty.js, guidelines "Atmosphere and editing")
       ujecie: guard((typ, opts) => E.ujecie(S, typ, opts)),
+      // the white edge lit by hand (`on` false puts it out): to show a child what it means, without a task
+      obwodka: (hs, on = true) => { alive(); for (const h of [].concat(hs)) if (h) h.obwodka = on; },
       // night and light (efekty.js): noc({ciemnosc}) darkens, swiatlo(cel, {r, moc, migotanie}) opens a light around it
       noc: guard((o) => E.noc(S, o)),
       swiatlo: (cel, o) => { alive(); return E.swiatlo(S, typeof cel === "string" ? S.puppets[cel] : cel, o); },

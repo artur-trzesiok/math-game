@@ -255,6 +255,8 @@ Film tools (`efekty.js`, guidelines "Atmosphere and editing"; `bigger_smaller` u
   gwiazdki, liscie - drifting very faintly; `ciecie: true` inside one adventure);
 - transitions `E.przejscie` (tecza with the characters' heads cut from the frame, wzor, irys, babelki; random
   unless named): the lesson's `przejscia: true` makes every stage and `go` change one;
+- `ctx.obwodka(items, on = true)` lights (or puts out) the white "touch me" edge on stickers by hand, without a task - to
+  show a child what it means (one_many, the first lesson: Fox explains it once). Every target gets it by itself.
 - `ctx.ujecie(ogolny | sredni | zblizenie | dwuujecie, {na})` cuts or flies the camera (efekty.js `ruchKamery`: a cut on a change of subject, a flight when something stays in the shot, back to wide and wide to medium; held shots creep in; `ciecie: true|false` overrides; the speaker is kept in the shot before every line, `mowcaWKadrze`) (a two-shot steps the two closer
   until the next wide shot); `ctx.pan(k, {idz})` slides a panorama to area k (fractions allowed), the named
   characters walk on the spot in step with the ground;

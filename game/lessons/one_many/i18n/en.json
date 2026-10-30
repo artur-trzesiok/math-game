@@ -23,6 +23,14 @@
     "who": "sarenka",
     "text": "There is one pumpkin. And there are many nuts."
   },
+  "line.a_obwodka": {
+    "who": "lisek",
+    "text": "Look! When something has a white edge, it means it's your turn and you can touch it."
+  },
+  "line.a_sluchaj": {
+    "who": "lisek",
+    "text": "And when there's no edge, we listen and watch what happens."
+  },
   "line.a_gdzie_jedna": {
     "who": "wiewiorka",
     "text": "Now you. Point to where there is one thing.",

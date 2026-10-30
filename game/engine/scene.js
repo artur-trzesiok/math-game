@@ -205,7 +205,7 @@ export class Stage {
     if (this.pauza) { this.rysuj(); return; }                               // paused: the picture stands still
     const dt = dt0;
     E.ruszOtoczenie(this, dt, t); E.ruszNakladke(this, dt); E.ruszCzastki(this, dt, t); E.ruszNoc(this, t);
-    krokNaklejek(this.objects, (h) => h.pulse || this.targets.includes(h) || (!!this.dragSet && this.dragSet.items?.includes(h) && !h.zablokowany), dt);
+    krokNaklejek(this.objects, (h) => h.pulse || h.obwodka || this.targets.includes(h) || (!!this.dragSet && this.dragSet.items?.includes(h) && !h.zablokowany), dt);
     for (const d of this.dymki) d.za();
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) {

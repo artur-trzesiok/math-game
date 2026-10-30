@@ -16,7 +16,9 @@ becomes a feast for the friends met on the way (Mother Duck was invited at the b
 2. Deer, the pumpkin in the shot: Fox, that is ONE pumpkin - big, but one. Squirrel (close-up, "?"): then what is
    "many"? **Insert on a plain colour (the method):** many is when there are lots of things - this one, and this,
    and this... (each nut bumps); one pumpkin, many nuts.
-3. Back in the garden: **child** points: where is one thing? (the pumpkin) Where are many? (the nuts).
+3. Back in the garden, first the game's one rule (told once, in this first lesson): Fox lights the white edge on the
+   pumpkin and the nuts - "when something has a white edge, it's your turn, you can touch it" - and puts it out - "no
+   edge: we listen and watch". Then **child** points: where is one thing? (the pumpkin) Where are many? (the nuts).
 4. The harvest over their heads: one pear, many apples, one mushroom, many acorns, one carrot, many leaves.
    **Child** drags each onto the plate ("one") or into the basket ("many"). Fox laughs at himself: then the
    pumpkin goes to the store too - one big pumpkin and many nuts!

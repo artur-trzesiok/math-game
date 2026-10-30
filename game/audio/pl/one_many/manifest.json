@@ -348,5 +348,15 @@
   "hash": "c01eb6664373",
   "who": "wiewiorka",
   "text": "Wszyscy przy stole! Jedno ciasto, wiele wisienek i wielu przyjaciół."
+ },
+ "line.a_obwodka": {
+  "hash": "360bd30ec4e6",
+  "who": "lisek",
+  "text": "Popatrz! Kiedy coś ma białą obwódkę, to znaczy, że teraz twoja kolej i możesz tego dotknąć."
+ },
+ "line.a_sluchaj": {
+  "hash": "575bfd53d217",
+  "who": "lisek",
+  "text": "A kiedy obwódki nie ma, słuchamy i patrzymy, co się dzieje."
  }
 }
