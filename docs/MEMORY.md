@@ -344,10 +344,6 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 
 ## 8. Open, not started
 
-- **34 lines wait for recording** (2026-10-30, the ElevenLabs quota ran out: 1 credit of 315 033 left): en menu stage
-  ends (16, the keepsake wording) and pochwaly `brawo_5` for every speaker (9 pl + 9 en, "Ale uważnie patrzysz!").
-  Until then the game plays the old recordings of those keys. `python tools/audio/run.py menu pochwaly` once there are
-  credits.
 
 - **Plan state 2026-10-29**: phases 0, 1, 2 done (see the plan's status table); new mechanics in `game_mechanics.md`
   (ilustracja, miejsca, zdrapka, kropki, historyjka, podarty, wedrowka) and praise variants (`ctx.brawo`, game/pochwaly).
