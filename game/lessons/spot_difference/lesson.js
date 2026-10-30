@@ -151,7 +151,7 @@ export default {
         await c.say("sowa", "line.c_spi", { anim: "Zgloszenie" });
         // the drawing flies from Owl up to the little door and stays there
         await c.ujecie("ogolny");
-        const laurka = await c.object("laurka", { x: 2.4, y: 0.6, size: 1.2, obraz: "/game/assets/roznice/rysunek/a.webp" });
+        const laurka = await c.object("laurka", { x: 2.4, y: 0.6, size: 1.2 });           // the drawing alone (the pair's picture has the wall)
         await wyrosnij(c);
         await laurka.moveTo(DRZWI_BABCI.x, DRZWI_BABCI.y, 0.9);
         c.sfx("pop"); await S.tween(0.4, (s) => { laurka.base = 1.2 - 0.3 * s; laurka.mesh.scale.setScalar(laurka.base); });
