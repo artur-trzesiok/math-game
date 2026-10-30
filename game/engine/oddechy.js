@@ -219,11 +219,13 @@ export async function ktoPowiedzial(S, { gospodarz, kryjowki, mow = nic, size = 
     }
     S.oddech = null;
     S.sfx.graj("right"); S.shake(k);
-    const bok = k.mesh.position.x + (k.mesh.position.x < 0 ? 1 : -1) * size * 0.55;
-    await kucnij(L, false, bok); L.graj("Podskok");                   // jumps out beside the bush
+    // jumps out IN FRONT of its own bush, drawn over the bushes (beside it, it landed behind the next one)
+    L.korzen.traverse((o) => { if (o.isMesh) o.renderOrder = 37; });
+    await kucnij(L, false, k.mesh.position.x); L.graj("Podskok");
     await mow(kto, "kto_znalazles");
   }
   usun(krzaki);
+  for (const kto of domy.keys()) S.layer(S.puppets[kto], false);       // back on a character layer
   for (const [kto, x] of domy) await S.walkTo(kto, x);
 }
 
