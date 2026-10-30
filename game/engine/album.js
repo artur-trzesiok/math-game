@@ -140,13 +140,14 @@ export async function otworz({ lekcje, lang, speech, onZamknij, swiat = null }) 
   };
 
   // a free spot for a sticker on a page, nearest to where it was dropped: stickers never go one on another
-  // (positions in % of the page; a sticker is 27% of the page's width, the page about 0.72 as wide as tall)
+  // (positions in % of the page; a sticker is 27% of the page's width, the page about 0.72 as wide as tall; its centre
+  // stays in 16..84 x 12..88, where the whole sticker, turned up to 8 degrees, lies on the page)
   const SZ = 27, WYS = 27 * 0.72;
   const wolne = (strona, x0, y0) => {
     const inne = Object.entries(stan.naklejki).filter(([id, n]) => n.strona === strona && naklejkiLekcji[id]).map(([, n]) => n);   // this album's only
     const pasuje = (x, y) => inne.every((n) => Math.abs(n.x - x) > SZ * 0.9 || Math.abs(n.y - y) > WYS * 0.95);
     let best = null, bd = Infinity;
-    for (let x = 14; x <= 86; x += 3) for (let y = 12; y <= 88; y += 3) {
+    for (let x = 16; x <= 84; x += 3) for (let y = 12; y <= 88; y += 3) {
       if (!pasuje(x, y)) continue;
       const d = Math.hypot(x - x0, (y - y0) * 0.72); if (d < bd) { bd = d; best = [x, y]; }
     }
@@ -185,8 +186,10 @@ export async function otworz({ lekcje, lang, speech, onZamknij, swiat = null }) 
     const bok = strony.findIndex((s) => { const r = s.getBoundingClientRect(); return e.clientX > r.left && e.clientX < r.right && e.clientY > r.top && e.clientY < r.bottom; });
     if (bok >= 0) {
       const r = strony[bok].getBoundingClientRect(), n = stan.naklejki[c.id], strona = rozklad * 2 + bok;
-      const miejsce = wolne(strona, Math.max(14, Math.min(86, ((e.clientX - r.left) / r.width) * 100)), Math.max(12, Math.min(88, ((e.clientY - r.top) / r.height) * 100)));
-      if (!miejsce) { c.nakl.style.visibility = ""; c.nakl.classList.add("stuk"); return; }   // the page is full: back to the tray
+      const px = ((e.clientX - r.left) / r.width) * 100, py = ((e.clientY - r.top) / r.height) * 100;
+      // it sticks only lying wholly on the page (its centre where a whole sticker fits); half off the edge it goes back
+      const miejsce = px >= 16 && px <= 84 && py >= 12 && py <= 88 ? wolne(strona, px, py) : null;
+      if (!miejsce) { c.nakl.style.visibility = ""; c.nakl.classList.add("stuk"); setTimeout(() => c.nakl.classList.remove("stuk"), 400); return; }   // off the page's edge or the page is full: back to the tray
       Object.assign(n, { strona, x: miejsce[0], y: miejsce[1], obrot: Math.round((Math.random() - 0.5) * 16) }); delete n.nowa;
       zapisz(stan); rysuj();
       opowiedz(c.id);                                               // freshly stuck: say where it came from
