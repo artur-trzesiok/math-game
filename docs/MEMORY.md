@@ -173,8 +173,13 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
 
 **Etap 6** (since 2026-10-30 only `counting_5` is built here; `numbers_6_10` moved to stage 7, `adding_5` to stage 12,
 `adding_10` to stage 18 - see section 5)
-- `counting_5` (Liczymy do 5) - Bear's forest bakery: spreading five rolls does not make more; Owl's order note
-  (`zamowienie_sowy`): count the four rolls drawn on it, pack four; which basket has five; domino; first customers pay.
+- `counting_5` (Liczymy do 5) - pass 2026-10-30 (2701ef76): Bear's bakery, the flour scratch-off hides five rolls,
+  spread rolls are still five; Owl's order note (`zamowienie_sowy`), four rolls packed; ends at Owl's tree
+  (`dziupla_sowy`): four owlets one roll each, four coins; home: supper for five (plates and cups one to one, hoots
+  counted). Nothing past five, no adding language.
+- `light_heavy` (Lekki i ciężki, new 2026-10-30, 50245c86) - Beaver's raft dips under Bear; the balance (`waga`, first
+  use) beats Bunny's "big = heavy"; home: heavy low / light high on the kitchen shelves, pumpkin soup.
+
 - `numbers_6_10` (Liczby od 6 do 10) - Beaver's dam needs ten logs; Mole loses track ("twelve!"); counted into a row;
   two more from the forest; the dam itself shown at last (`tama_bobra`): ten counted again and laid in two rows of five
   like the ten frame (that shot stays wide on purpose - a zoom slides the painted hole off the logs).
@@ -304,6 +309,11 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 
 ## 7. Traps that cost time
 
+- **Recordings keep their originals** (2026-10-30, user: "skoro wypiekamy w plikach stratnych, musimy mieć oryginały"):
+  `tools/audio/work/oryginaly/` (local, not in git, ~350 MB) holds ElevenLabs' file or the oldest version; every gain
+  (a character's `volume` in meta.json, Bunny 1.1) is applied from there, so a recalibration is one lossy encode.
+- **`python make_dist.py`** builds `dist/` for the server (index.html, og.jpg, engine/ at the root, the rest under
+  /game/ - the hosting's layout); lessons without files ship as placeholders.
 - **No parallax on the stage** (fixed 2026-10-30, user: "postacie pływają"): a shot must never move the camera's eye -
   puppets (z 0) and grass (then z -1.2) slid against the plate (z -9). `kadrBezParalaksy` (scene.js) turns
   camera.position.x/y into an off-axis projection shift; the movers lie just in front of the plate (tlo.js).
