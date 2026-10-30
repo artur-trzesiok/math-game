@@ -106,18 +106,42 @@ export async function ilustracja(S, nazwa, { ruch = "najazd", czekaj = false, mo
 
   const t0 = performance.now();
   let curl = 1.3, gotowa = false;
+  // the magnifier: where the finger holds (in the picture's own texture coordinates) and how far in it is now
+  const LUPA = 0.5;                                                      // held: half the picture fills the frame
+  let lupa = 0, lupaCel = 0, lupaUV = [0.5, 0.5], lupaT = performance.now();
+  const rayL = new THREE.Raycaster(), elL = S.renderer.domElement;
+  const lupaDol = (e) => {
+    if (!gotowa) return;
+    const b = elL.getBoundingClientRect();
+    rayL.setFromCamera(new THREE.Vector2(((e.clientX - b.left) / b.width) * 2 - 1, -((e.clientY - b.top) / b.height) * 2 + 1), kam);
+    if (dalej && rayL.intersectObject(dalej).length) return;               // the "next" button lies over the picture's edge: its own
+    const hit = rayL.intersectObject(obraz)[0]; if (!hit?.uv) return;
+    e.stopImmediatePropagation();                                          // the picture's own: the stage under it gets nothing
+    lupaUV = [obrazTex.offset.x + hit.uv.x * obrazTex.repeat.x, obrazTex.offset.y + hit.uv.y * obrazTex.repeat.y];
+    lupaCel = 1; try { elL.setPointerCapture(e.pointerId); } catch { /* ignore */ }
+  };
+  const lupaGora = () => { lupaCel = 0; };
+  elL.addEventListener("pointerdown", lupaDol, true);
+  for (const n of ["pointerup", "pointercancel"]) elL.addEventListener(n, lupaGora, true);
   const warstwa = {
     scena, kam,
     przed: () => {
       kam.aspect = S.camera.aspect; kam.updateProjectionMatrix();
       for (const m of [cien, rama, obraz]) wygnij(m, curl, Hc);
       if (nakladka) wygnij(nakladka, curl, Hc);
+      let bz = 1, bx = 0, by = 0;
       if (gotowa && !komiks) {                                                  // the camera creeps over the picture
-        const s = Math.min(1, (performance.now() - t0) / 14000), z = 1 - 0.1 * s;
-        obrazTex.repeat.set(z, z);
-        const dx = ruch === "w_lewo" ? (1 - z) * (1 - s) : ruch === "w_prawo" ? (1 - z) * s : (1 - z) / 2;
-        obrazTex.offset.set(dx, (1 - z) / 2);
+        const s = Math.min(1, (performance.now() - t0) / 14000);
+        bz = 1 - 0.1 * s; by = (1 - bz) / 2;
+        bx = ruch === "w_lewo" ? (1 - bz) * (1 - s) : ruch === "w_prawo" ? (1 - bz) * s : (1 - bz) / 2;
       }
+      // a finger held on the picture zooms in there, smoothly; let go and it glides back
+      const teraz = performance.now(), dtL = Math.min(0.05, (teraz - lupaT) / 1000); lupaT = teraz;
+      lupa += (lupaCel - lupa) * Math.min(1, dtL * 7);
+      const e = lupa * lupa * (3 - 2 * lupa), z = bz * (1 - LUPA * e);
+      const [ux, uy] = lupaUV, ox = Math.max(0, Math.min(1 - z, ux - (ux - bx) * (z / bz))), oy = Math.max(0, Math.min(1 - z, uy - (uy - by) * (z / bz)));
+      obrazTex.repeat.set(z, z); obrazTex.offset.set(ox, oy);
+      if (nakladka) { const m = nakladka.material.map; m.repeat.set(z, z); m.offset.set(ox, oy); }   // a comic's panels move with it
       if (dalej) {                                                    // the button bobs and breathes
         const t = performance.now() / 1000, p = Math.min(1, (performance.now() - dalej.userData.t0) / 350);
         dalej.position.y = dalej.userData.y + Math.sin(t * 3.2) * dalej.userData.r * 0.14;
@@ -195,6 +219,7 @@ export async function ilustracja(S, nazwa, { ruch = "najazd", czekaj = false, mo
   };
   const usun = () => {
     if (zniknela) return; zniknela = true;
+    elL.removeEventListener("pointerdown", lupaDol, true); for (const n of ["pointerup", "pointercancel"]) elL.removeEventListener(n, lupaGora, true);
     puscDalej?.(); if (dalej) { dalej.geometry.dispose(); dalej.material.dispose(); }
     const i = S.warstwy.indexOf(warstwa); if (i >= 0) S.warstwy.splice(i, 1);
     rt.dispose(); papier.dispose(); obrazTex.dispose();
