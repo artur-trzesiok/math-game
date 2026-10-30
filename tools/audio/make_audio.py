@@ -12,6 +12,9 @@ of the voiced frames, peaks limited), so no voice shouts over another. A charact
 calibration lives in game/assets/characters/<who>/meta.json ("volume", 1.0 = -20 dBFS,
 1.1 = 10% louder) and is baked into its recordings here - a browser cannot play
 louder than 1 - together with the ElevenLabs voice per language ("voices").
+Every gain is applied to the ORIGINAL kept in tools/audio/work/oryginaly/<lang>/<dir>/
+(ElevenLabs' own file, or the oldest version we have), never to an mp3 already re-encoded,
+so a new calibration costs one lossy encode, not one more each time.
 
 Next to every mp3 a <key>.json holds the baked lip-sync envelope (RMS every 20 ms,
 normalised); the game drives the mouth from it and needs no WebAudio.
@@ -34,6 +37,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -142,15 +146,30 @@ def speech_rms_db(x: np.ndarray) -> float:
     return float(20 * np.log10(rms.mean())) if len(rms) else -60.0
 
 
+ORYGINALY = Path(__file__).resolve().parent / "work" / "oryginaly"
+
+
+def oryginal(mp3: Path) -> Path:
+    """Where the untouched source of a game mp3 is kept; the first call keeps the file as it is now."""
+    o = ORYGINALY / mp3.relative_to(AUDIO)
+    if not o.exists():
+        o.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(mp3, o)
+    return o
+
+
 def normalize(mp3: Path, who: str | None = None) -> float:
-    """Re-encode the mp3 with the gain that brings its speech loudness to TARGET_RMS_DB times the
-    speaker's calibration (a limiter keeps the peaks under -0.5 dBFS). Returns the gain applied in dB."""
+    """Write the mp3 from its original with the gain that brings its speech loudness to TARGET_RMS_DB times
+    the speaker's calibration (a limiter keeps the peaks under -0.5 dBFS). Returns the gain applied in dB."""
+    src = oryginal(mp3)
     cel = TARGET_RMS_DB + 20 * np.log10(glosnosc(who))
-    gain = max(-12.0, min(12.0, cel - speech_rms_db(decode(mp3))))
+    gain = max(-12.0, min(12.0, cel - speech_rms_db(decode(src))))
     if abs(gain) < 0.5:
+        if src.read_bytes() != mp3.read_bytes():
+            shutil.copy2(src, mp3)
         return 0.0
     tmp = mp3.with_suffix(".tmp.mp3")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(mp3), "-af", f"volume={gain:.2f}dB,alimiter=limit=0.94:attack=3:release=40",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", f"volume={gain:.2f}dB,alimiter=limit=0.94:attack=3:release=40",
                     "-codec:a", "libmp3lame", "-b:a", "128k", str(tmp)], check=True)
     tmp.replace(mp3)
     return gain
@@ -239,6 +258,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
             continue
         try:
             wiz, sl = synthesize(l["text"], voice, dst)
+            o = ORYGINALY / dst.relative_to(AUDIO); o.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(dst, o)   # ElevenLabs' own file
             normalize(dst, l["who"])                              # gain only: the timing stays
             bake(dst, l["text"], wiz, sl)
             manifest[l["key"]] = {"hash": digest, "who": l["who"], "text": l["text"]}
