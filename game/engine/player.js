@@ -857,7 +857,16 @@ export class Player {
       relation: (item, ref, ref2) => G.relacja(S, item, ref, ref2),
       symmetry: guard(async (name, o = {}) => { const pol = last; const t = await G.symetria(S, name, { ...o, onWrong: () => blad(o.wrong) }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
       slots: guard(async (o) => { const pol = last; const t = await G.sloty(S, { ...o, onWrong: () => blad(o.wrong) }); t.done = () => wDzialaniu(t.wait()).then((r) => { nagroda(null); return r; }); return t; }),
-      put: guard((who, x, y, opts) => S.put(who, x, y, opts)),
+      // a character puts a thing down where the shot does not reach (Fox's pumpkin onto a shelf off the frame): the
+      // camera first pulls out so the child sees where it goes, and the thing lies there a moment before anything else
+      put: guard(async (who, x, y, opts) => {
+        const kam = S.camera, v = S.visible(0), hw = v.w / 2 / kam.zoom, hh = v.h / 2 / kam.zoom;
+        const poza = Math.abs(x - kam.position.x) > hw - 0.8 || Math.abs(y - kam.position.y) > hh - 0.8;
+        if (poza) await E.ujecie(S, "ogolny", { ciecie: false });
+        const r = await S.put(who, x, y, opts);
+        if (poza) await S.wait(FAST ? 0.1 : 0.9);
+        return r;
+      }),
       // pencil annotations (each a handle: remove it, or clear() does)
       circle: guard((h, opts) => S.circle(h, opts)),
       arrow: guard((h, opts) => S.arrow(h, opts)),
@@ -927,7 +936,10 @@ export class Player {
         let dy = 0;
         for (const it of items) {
           const b = S.bounds(it);
-          for (const z of zones) if (b.right > z.x - z.w / 2 - 0.2 && b.left < z.x + z.w / 2 + 0.2) dy = Math.max(dy, z.y + z.h / 2 + 0.55 - b.bottom);
+          for (const z of zones) {
+            const zb = S.bounds(z), gora = Math.max(z.y + z.h / 2, zb.top);   // a painted plate stands out over its dashed box
+            if (b.right > Math.min(z.x - z.w / 2, zb.left) - 0.2 && b.left < Math.max(z.x + z.w / 2, zb.right) + 0.2) dy = Math.max(dy, gora + 0.55 - b.bottom);
+          }
         }
         if (dy > 0.05) {
           dy = Math.min(dy, SUFIT - 0.1 - Math.max(...items.map((it) => S.bounds(it).top)));

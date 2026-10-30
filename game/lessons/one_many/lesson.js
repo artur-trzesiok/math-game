@@ -264,11 +264,14 @@ export default {
         await c.say("lisek", "line.d_polki_ok", { anim: "Zgloszenie" });
         // the table: one cake on the plate, many cherries in the bowl - on the painted table
         await c.ujecie("ogolny");
-        const tort = await c.object("szarlotka", { x: -1.5, y: ROW_Y, size: 1.3 }); tort.tag = "jeden";
-        const wisnie = [];
-        for (let i = 0; i < 6; i++) { const h = await c.object("wisnia", { x: 0.4 + i * 0.7, y: ROW_Y, size: 0.7 }); h.tag = "wiele"; wisnie.push(h); }
+        // the containers first, then the things well above them: touching the plate, the cake read as already put away
         const zy = m.stol.y + 0.35;
         const zones = [await c.zone({ x: -0.8, y: zy, w: 2.2, h: 1.6, image: "talerz", name: "talerz" }), await c.zone({ x: 2.0, y: zy, w: 2.2, h: 1.6, image: "miska", name: "miska" })];
+        await c.wait(0.5);                                                    // measured grown, not mid pop-in
+        const nadZ = Math.max(...zones.map((z) => c.stage.bounds(z).top)) + 0.6;
+        const tort = await c.object("szarlotka", { x: -1.5, y: nadZ + 0.6, size: 1.3 }); tort.tag = "jeden";
+        const wisnie = [];
+        for (let i = 0; i < 6; i++) { const h = await c.object("wisnia", { x: 0.4 + i * 0.7, y: nadZ + 0.35, size: 0.7 }); h.tag = "wiele"; wisnie.push(h); }
         zones[0].want = "jeden"; zones[1].want = "wiele";
         await c.say("sarenka", "line.d_nakryj");
         await c.sort({ items: [tort, ...wisnie], zones, wrong: "line.d_pomylka" });
