@@ -4,7 +4,7 @@
 <title>Edytor lalek</title>
 <style>
   html, body { margin: 0; height: 100%; background: #6f6f6f; color: #eee; font: 13px/1.4 system-ui, sans-serif; }
-  body { display: grid; grid-template-columns: 360px 1fr; grid-template-rows: 100%; }
+  body { display: grid; grid-template-columns: 480px 1fr; grid-template-rows: 100%; }
   #panel { background: #2b2b2b; padding: 10px; overflow: auto; display: flex; flex-direction: column; gap: 8px; }
   #panel h3 { margin: 6px 0 0; font-size: 12px; text-transform: uppercase; color: #9a9a9a; }
   select, button, input { font: inherit; background: #3a3a3a; color: #eee; border: 1px solid #555; border-radius: 4px; padding: 3px 6px; }
@@ -398,7 +398,7 @@ function pokazPola() {
   const wn = wariantTwarzy();
   if (wn) {
     const cz = dane.czesci[wn], p = () => (cz.przesun ||= [0, 0]);
-    pola = [...pola, [`${wn} dx`, cz.przesun || [0, 0], 0, p], [`${wn} dy`, cz.przesun || [0, 0], 1, p]];
+    pola = [...pola, ["wariant dx", cz.przesun || [0, 0], 0, p], ["wariant dy", cz.przesun || [0, 0], 1, p]];
   }
   for (const [etyk, obj, klucz, przed] of pola) {
     const lab = document.createElement("label"); lab.textContent = etyk;
@@ -408,7 +408,7 @@ function pokazPola() {
     el.append(lab, inp);
   }
   const info = document.createElement("div"); info.style.gridColumn = "1 / -1"; info.className = "pomoc";
-  info.textContent = wybor.twarz ? `cel ${wybor.twarz} w widoku ${wybor.widok}` : `${wybor.nazwa} (widok ${wybor.widok})`;
+  info.textContent = wybor.twarz ? `cel ${wybor.twarz} w widoku ${wybor.widok}${wariantTwarzy() ? ` - wariant: ${wariantTwarzy()}` : ""}` : `${wybor.nazwa} (widok ${wybor.widok})`;
   el.append(info);
   if (!wybor.twarz) polaStawow(el);
 }

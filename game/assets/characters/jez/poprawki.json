@@ -1,1 +1,205 @@
-{"czesci": {"p_noga_przod": {"stawy": [{"x": 542, "y": 1287}, {"x": 526, "y": 1395}]}, "p_noga_tyl": {"y": 1112, "os": [657, 1307], "stawy": [{"x": 637, "y": 1296}, {"x": 659, "y": 1382}]}, "usta_pol": {"przesun": [1.5, -0.7]}, "usta_o": {"przesun": [0.4, -1.0]}, "usta_smutne": {"przesun": [-1.8, -0.6]}, "usta_fw": {"przesun": [-0.6, 3.7]}, "usta_l": {"przesun": [-5.6, -9.7]}, "usta_usmiech_bok": {"przesun": [-0.1, 1.0]}, "usta_pol_bok": {"przesun": [10.1, 0.5]}, "usta_o_bok": {"przesun": [22.2, 0.3]}, "usta_smutne_bok": {"przesun": [14.5, 0.6]}, "usta_zeby_bok": {"przesun": [-0.9, 2.6]}, "usta_fw_bok": {"przesun": [-0.5, 0.6]}, "usta_usmiech_profil": {"przesun": [32.1, -18.1]}, "usta_pol_profil": {"przesun": [26.5, -12.2]}, "usta_o_profil": {"przesun": [22.5, 3.8]}, "usta_smutne_profil": {"przesun": [9.8, 3.4]}, "usta_scisniete_profil": {"przesun": [1.1, -1.2]}, "usta_szeroko_profil": {"przesun": [15.4, -9.9]}, "usta_zeby_profil": {"przesun": [0.0, 2.1]}, "usta_fw_profil": {"przesun": [-0.4, 2.2]}, "usta_l_profil": {"przesun": [-0.1, 1.9]}, "usta_dziobek_profil": {"przesun": [-0.8, 1.7]}}, "twarz": {"przod": {"oczy": {"x": 336, "y": 353, "w": 418, "h": 217, "obrot": 8}, "usta": {"x": 426, "y": 593, "w": 159, "h": 185, "obrot": 8}}, "bok": {"oczy": {"x": 463, "y": 380, "w": 350, "h": 170}, "usta": {"x": 574, "y": 531, "w": 185, "h": 175}}, "profil": {"oczy": {"x": 669, "y": 324, "w": 102, "h": 208}, "usta": {"x": 758, "y": 534, "w": 155, "h": 165}}}}
+{
+ "czesci": {
+  "p_noga_przod": {
+   "stawy": [
+    {
+     "x": 542,
+     "y": 1287
+    },
+    {
+     "x": 526,
+     "y": 1395
+    }
+   ]
+  },
+  "p_noga_tyl": {
+   "y": 1112,
+   "os": [
+    657,
+    1307
+   ],
+   "stawy": [
+    {
+     "x": 637,
+     "y": 1296
+    },
+    {
+     "x": 659,
+     "y": 1382
+    }
+   ]
+  },
+  "usta_pol": {
+   "przesun": [
+    1.5,
+    -0.7
+   ]
+  },
+  "usta_o": {
+   "przesun": [
+    0.4,
+    -1
+   ]
+  },
+  "usta_smutne": {
+   "przesun": [
+    -1.8,
+    -0.6
+   ]
+  },
+  "usta_usmiech_bok": {
+   "przesun": [
+    -0.1,
+    1
+   ]
+  },
+  "usta_pol_bok": {
+   "przesun": [
+    10.1,
+    0.5
+   ]
+  },
+  "usta_o_bok": {
+   "przesun": [
+    22.2,
+    0.3
+   ]
+  },
+  "usta_smutne_bok": {
+   "przesun": [
+    14.5,
+    0.6
+   ]
+  },
+  "usta_usmiech_profil": {
+   "przesun": [
+    0,
+    0
+   ]
+  },
+  "usta_pol_profil": {
+   "przesun": [
+    0,
+    0
+   ]
+  },
+  "usta_o_profil": {
+   "przesun": [
+    22.5,
+    3.8
+   ]
+  },
+  "usta_smutne_profil": {
+   "przesun": [
+    9.8,
+    3.4
+   ]
+  },
+  "usta_fw": {
+   "przesun": [
+    -0.6,
+    3.7
+   ]
+  },
+  "usta_l": {
+   "przesun": [
+    -5.6,
+    -9.7
+   ]
+  },
+  "usta_zeby_bok": {
+   "przesun": [
+    -0.9,
+    2.6
+   ]
+  },
+  "usta_fw_bok": {
+   "przesun": [
+    -0.5,
+    0.6
+   ]
+  },
+  "usta_scisniete_profil": {
+   "przesun": [
+    1.1,
+    -1.2
+   ]
+  },
+  "usta_szeroko_profil": {
+   "przesun": [
+    0,
+    0
+   ]
+  },
+  "usta_zeby_profil": {
+   "przesun": [
+    0,
+    2.1
+   ]
+  },
+  "usta_fw_profil": {
+   "przesun": [
+    -0.4,
+    2.2
+   ]
+  },
+  "usta_l_profil": {
+   "przesun": [
+    -0.1,
+    1.9
+   ]
+  },
+  "usta_dziobek_profil": {
+   "przesun": [
+    -0.8,
+    1.7
+   ]
+  }
+ },
+ "twarz": {
+  "przod": {
+   "oczy": {
+    "x": 336,
+    "y": 353,
+    "w": 418,
+    "h": 217,
+    "obrot": 8
+   },
+   "usta": {
+    "x": 426,
+    "y": 593,
+    "w": 159,
+    "h": 185,
+    "obrot": 8
+   }
+  },
+  "bok": {
+   "oczy": {
+    "x": 463,
+    "y": 380,
+    "w": 350,
+    "h": 170
+   },
+   "usta": {
+    "x": 574,
+    "y": 531,
+    "w": 185,
+    "h": 175
+   }
+  },
+  "profil": {
+   "oczy": {
+    "x": 669,
+    "y": 324,
+    "w": 102,
+    "h": 208
+   },
+   "usta": {
+    "x": 758,
+    "y": 534,
+    "w": 155,
+    "h": 165
+   }
+  }
+ }
+}
