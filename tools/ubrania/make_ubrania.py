@@ -57,7 +57,7 @@ invisible.
 """ + STYL},
     "szalik": {"slot": "szyja", "prompt": _trzy("cosy striped scarf wrapped once around a neck (an empty ring of scarf, nobody inside), blue and white stripes, one fringed end hanging down the front", HAT)},
     "kalosze": {"slot": "stopy", "prompt": _trzy("single short yellow rubber rain boot (ONE boot, not a pair), shiny, with a rounded toe", "Left: seen from the FRONT (toe towards us). Middle: seen from the SIDE, toe pointing right. Right: seen from the BACK (the heel). " + BUT)},
-    "trampki": {"slot": "stopy", "do": 0.86, "prompt": _trzy("single low children's sneaker (ONE shoe, not a pair), blue with white laces and a white rubber sole", "Left: seen from the FRONT (toe towards us). Middle: seen from the SIDE, toe pointing right. Right: seen from the BACK (the heel). " + BUT)},
+    "trampki": {"slot": "stopy", "prompt": _trzy("single low children's sneaker (ONE shoe, not a pair), blue with white laces and a white rubber sole", "Left: seen from the FRONT (toe towards us). Middle: seen from the SIDE, toe pointing right. Right: seen from the BACK (the heel). " + BUT)},
 }
 # children like a choice: three of every kind (the first ones above, two variants each here)
 _WARIANTY = {
@@ -94,6 +94,19 @@ RZECZY["okulary_2"] = {"slot": "oczy", "widoki": ["przod", "profil"], "prompt": 
 RZECZY["okulary_3"] = {"slot": "oczy", "widoki": ["przod", "profil"], "prompt": _OKULARY.format(co="with green square frames with rounded corners")}
 
 WIDOKI = ["przod", "profil", "tyl"]
+# every shoe is stored at the boots' proportions per view (a low shoe padded with transparency on top), so the
+# engine fits them all alike; `pasma` keeps the low shoe out of the shaft band the engine shortens
+WZOR_BUTA = "kalosze"
+
+
+def na_wzor_buta(kaw: Image.Image, w: str) -> tuple[Image.Image, float]:
+    wz = OUT / f"{WZOR_BUTA}_{w}.webp"
+    prop = Image.open(wz).height / Image.open(wz).width if wz.exists() else 1.0
+    H = round(kaw.width * prop)
+    if H <= kaw.height:
+        return kaw, 1.0
+    out = Image.new("RGBA", (kaw.width, H), (0, 0, 0, 0)); out.paste(kaw, (0, H - kaw.height))
+    return out, kaw.height / H
 
 
 def gen(nazwy: list[str]) -> None:
@@ -129,17 +142,22 @@ def split(nazwy: list[str]) -> None:
         plamy = sorted(sorted(plamy, reverse=True)[:len(widoki)], key=lambda q: q[3])
         if len(plamy) != len(widoki):
             print(f"UWAGA {n}: {len(plamy)} plam, oczekiwano {len(widoki)}")
-        pliki = {}
+        pliki, udzial = {}, 0.0
         for w, (_, y0, y1, x0, x1) in zip(widoki, plamy):
             kaw = im.crop((x0, y0, x1 + 1, y1 + 1))
             m = np.asarray(kaw).copy(); m[(etyk[y0:y1 + 1, x0:x1 + 1] == 0) & (m[:, :, 3] < 40)] = 0
             kaw = Image.fromarray(m)
+            if r["slot"] == "stopy" and not n.startswith(WZOR_BUTA):
+                kaw, u = na_wzor_buta(kaw, w); udzial = max(udzial, u)
             kaw.thumbnail((512, 512), Image.LANCZOS)
             plik = f"{n}_{w}.webp"; kaw.save(OUT / plik, "WEBP", quality=85, method=6, exact=True)
             pliki[w] = plik
         wpis = {"slot": r["slot"], "widoki": pliki}
         for k in ("szer", "nasun", "do"):
             if k in r: wpis[k] = r[k]
+        if udzial:
+            wpis["pasma"] = [round(udzial + 0.02, 3), 0.0]
+        gal.get(n, {}).pop("do", None)
         gal[n] = {**gal.get(n, {}), **wpis}
         print(f"{n}: {', '.join(pliki)}")
     p.write_text(json.dumps(gal, ensure_ascii=False, indent=2), encoding="utf8")

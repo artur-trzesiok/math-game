@@ -284,7 +284,9 @@ A plate wider than 1.25 design frames is a panorama for the stage (`S.panorama`)
 
 Dressing up (`ubior.js`): garments from `game/assets/ubrania/ubrania.json` (`tools/ubrania/make_ubrania.py`: one
 picture per garment with front / side / back views, prompted WITHOUT visible insides - a hat's opening or a
-boot's top showed as a dark hole). Fitted from the character's own pieces: a hat between the ears (the dome
+boot's top showed as a dark hole). Every shoe is stored at the boots' (`kalosze`) proportions per view - a low shoe padded with
+transparency on top, its `pasma` keeping it out of the shaft band - so all shoes fit alike (a sneaker at its own
+proportions came out a pillow). Fitted from the character's own pieces: a hat between the ears (the dome
 width where the ears join; in profile the ear is redrawn over it with a soft mask), glasses on the eyes' box, a
 scarf at the neck (capped for small characters), shoes as a grid glued vertex by vertex to the nearest leg
 vertex at rest and turned by that vertex's angle - so they bend with knee and ankle (giving them the leg's s tore

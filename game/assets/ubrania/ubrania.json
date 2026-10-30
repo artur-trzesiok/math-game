@@ -66,7 +66,10 @@
       "profil": "trampki_profil.webp",
       "tyl": "trampki_tyl.webp"
     },
-    "do": 0.86
+    "pasma": [
+      0.605,
+      0.0
+    ]
   },
   "czapka_zimowa_2": {
     "slot": "glowa",
@@ -181,7 +184,10 @@
       "profil": "trampki_2_profil.webp",
       "tyl": "trampki_2_tyl.webp"
     },
-    "do": 0.86
+    "pasma": [
+      0.573,
+      0.0
+    ]
   },
   "trampki_3": {
     "slot": "stopy",
@@ -190,7 +196,10 @@
       "profil": "trampki_3_profil.webp",
       "tyl": "trampki_3_tyl.webp"
     },
-    "do": 0.86
+    "pasma": [
+      0.628,
+      0.0
+    ]
   },
   "okulary_2": {
     "slot": "oczy",
