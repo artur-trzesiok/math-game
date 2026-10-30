@@ -3,9 +3,17 @@
     "who": "bobr",
     "text": "Today is the great forest race! There are medals for the winners."
   },
+  "line.a_biegacze": {
+    "who": "kret",
+    "text": "Bunny, Hedgehog, Duckling and Mouse are running. Bunny is the biggest, he's sure to win!"
+  },
   "line.a_start": {
     "who": "sowa",
     "text": "On your marks, get set, go!"
+  },
+  "line.a_biegna": {
+    "who": "bobr",
+    "text": "They're off! Let's follow them, all the way to the finish!"
   },
   "line.a_zajac_wygral": {
     "who": "kret",
@@ -29,7 +37,7 @@
   },
   "line.a_zdjecie_kto": {
     "who": "bobr",
-    "text": "Who touches the finish line first in the photo? Point to them."
+    "text": "Point to the one who touches the finish line first in the photo."
   },
   "line.a_zdjecie_nie": {
     "who": "bobr",
@@ -45,7 +53,7 @@
   },
   "line.a_kto_ostatni": {
     "who": "bobr",
-    "text": "And who came in last? Point to them."
+    "text": "And now point to the one who came in last."
   },
   "line.a_kto_ostatni_nie": {
     "who": "bobr",
@@ -53,7 +61,79 @@
   },
   "line.a_ostatnia": {
     "who": "sowa",
-    "text": "Mouse was last, but she got there too. Well done!"
+    "text": "Mouse came in last. Last, but she reached the finish too!"
+  },
+  "line.a_po_wyscigu": {
+    "who": "bobr",
+    "text": "We'll give out the medals on the podium! While everything gets ready, let's go to the playground."
+  },
+  "line.b_zjezdzalnia": {
+    "who": "kret",
+    "text": "The playground! There's a queue for the slide. But who is first here?"
+  },
+  "line.b_od_przodu": {
+    "who": "sowa",
+    "text": "In a queue we count from the front, from the arrow: first, second, third, fourth."
+  },
+  "line.b_trzeci": {
+    "who": "kret",
+    "text": "Point to the one who is third in the queue."
+  },
+  "line.b_trzeci_nie": {
+    "who": "kret",
+    "text": "Count from the arrow: first, second, third."
+  },
+  "line.b_trzeci_ok": {
+    "who": "sowa",
+    "text": "Yes, Hedgehog is third! Mouse first, Bunny second, and Hedgehog third."
+  },
+  "line.b_zjezdza": {
+    "who": "bobr",
+    "text": "Mouse is first, so she slides down! And then she goes to the end of the queue."
+  },
+  "line.b_kto_teraz": {
+    "who": "bobr",
+    "text": "Point to the one who is first now."
+  },
+  "line.b_kto_teraz_nie": {
+    "who": "bobr",
+    "text": "Look who is standing by the arrow now."
+  },
+  "line.b_teraz_pierwszy": {
+    "who": "sowa",
+    "text": "Yes, now Bunny is first! When the first one leaves, everybody moves up."
+  },
+  "line.b_slimak": {
+    "who": "kret",
+    "text": "Oh, here comes Snail, and he wants to slide too! He came last, so drag him to where he should stand."
+  },
+  "line.b_slimak_nie": {
+    "who": "kret",
+    "text": "Oh no, no pushing in! Whoever comes last stands at the very end."
+  },
+  "line.b_slimak_ok": {
+    "who": "sowa",
+    "text": "Yes, Snail stands at the end. Now he is last in the queue."
+  },
+  "line.b_nudno": {
+    "who": "kret",
+    "text": "What a long queue... I'm bored of waiting."
+  },
+  "line.b_miny": {
+    "who": "sowa",
+    "text": "Then let's play faces! Mole pulls a face, and you point to the same one."
+  },
+  "line.b_miny_ok": {
+    "who": "kret",
+    "text": "Ha ha! With faces the waiting goes by fast."
+  },
+  "line.b_ceremonia": {
+    "who": "bobr",
+    "text": "The podium is ready! Let's go and give out the medals."
+  },
+  "line.c_podium_miejsce": {
+    "who": "kret",
+    "text": "How lovely it is here! Colourful flags, flowers and a real podium for the winners!"
   },
   "line.a_podium": {
     "who": "bobr",
@@ -71,74 +151,6 @@
     "who": "sowa",
     "text": "First, second and third on the podium. Well done, everyone!"
   },
-  "line.a_po_wyscigu": {
-    "who": "bobr",
-    "text": "We'll give out the medals on the podium! While everything gets ready, let's go to the playground."
-  },
-  "line.b_zjezdzalnia": {
-    "who": "kret",
-    "text": "Now the playground! There's a queue for the slide."
-  },
-  "line.b_od_przodu": {
-    "who": "sowa",
-    "text": "In a queue we count from the front, from the arrow: first, second, third, fourth."
-  },
-  "line.b_trzeci": {
-    "who": "kret",
-    "text": "Who is third in the queue? Point to them."
-  },
-  "line.b_trzeci_nie": {
-    "who": "kret",
-    "text": "Count from the arrow: first, second, third."
-  },
-  "line.b_zjezdza": {
-    "who": "bobr",
-    "text": "The first one slides down! And then goes to the end of the queue."
-  },
-  "line.b_kto_teraz": {
-    "who": "bobr",
-    "text": "Who is first now? Point to them."
-  },
-  "line.b_kto_teraz_nie": {
-    "who": "bobr",
-    "text": "Look who is standing by the arrow now."
-  },
-  "line.b_teraz_pierwszy": {
-    "who": "sowa",
-    "text": "When the first one leaves, everybody moves up."
-  },
-  "line.b_my": {
-    "who": "bobr",
-    "text": "And now Mole and Owl race to the swings! I'm the judge."
-  },
-  "line.b_kto_pierwszy": {
-    "who": "bobr",
-    "text": "Who got there first? Point to them."
-  },
-  "line.b_kto_pierwszy_nie": {
-    "who": "bobr",
-    "text": "That one came second. Who was first?"
-  },
-  "line.b_pierwszy_kret": {
-    "who": "kret",
-    "text": "I'm first!"
-  },
-  "line.b_pierwszy_sowa": {
-    "who": "sowa",
-    "text": "I'm first!"
-  },
-  "line.b_koniec": {
-    "who": "kret",
-    "text": "Now I know: first is the one who gets there first, not the biggest."
-  },
-  "line.b_ceremonia": {
-    "who": "bobr",
-    "text": "The podium is ready! Let's go and give out the medals."
-  },
-  "line.c_podium_miejsce": {
-    "who": "kret",
-    "text": "How lovely it is here! Colourful flags, flowers and a real podium for the winners!"
-  },
   "line.c_medale": {
     "who": "sowa",
     "text": "And here are the medals! Gold is for first place, silver for second, and bronze for third."
@@ -149,11 +161,15 @@
   },
   "line.c_srebrny": {
     "who": "bobr",
-    "text": "The silver medal is for second place. Who gets it? Point to them."
+    "text": "The silver medal is for second place. Point to the one who gets it."
   },
   "line.c_srebrny_nie": {
     "who": "bobr",
     "text": "That one is on another step. The second stands on the two."
+  },
+  "line.c_srebrny_ok": {
+    "who": "bobr",
+    "text": "Yes, the silver medal for Bunny, because he was second!"
   },
   "line.c_brazowy": {
     "who": "sowa",
@@ -163,32 +179,37 @@
     "who": "kret",
     "text": "Hooray! Now everyone knows who was first, second and third. And it wasn't the biggest who won, but the fastest!"
   },
+  "line.c_dom": {
+    "who": "kret",
+    "text": "You know what? At home I'll hold a race for my toys. And they'll get medals too!"
+  },
   "line.p_start": {
     "who": "bobr",
     "text": "Let's practise: first, second, third, last! I have five games."
   },
   "line.p_drugi": {
     "who": "kret",
-    "text": "Who is second in the queue? Point to them."
+    "text": "Point to the one who is second in the queue."
   },
   "line.p_drugi_nie": {
     "who": "kret",
     "text": "We count from the arrow: first, second."
   },
-  "line.p_dobrze": {
+  "line.p_drugi_ok": {
     "who": "bobr",
-    "text": "Bravo!",
-    "speakers": [
-      "kret"
-    ]
+    "text": "Yes! The first stands by the arrow, and right behind him the second."
   },
   "line.p_ostatni": {
     "who": "bobr",
-    "text": "Who is last in the queue? Point to them."
+    "text": "Point to the one who is last in the queue."
   },
   "line.p_ostatni_nie": {
     "who": "bobr",
     "text": "The last one stands at the very end, furthest from the arrow."
+  },
+  "line.p_ostatni_ok": {
+    "who": "kret",
+    "text": "Yes, the last one stands at the very end of the queue!"
   },
   "line.p_wyscig": {
     "who": "kret",
@@ -198,9 +219,13 @@
     "who": "bobr",
     "text": "Put the winners on the podium: first, second and third."
   },
+  "line.p_podium_ok": {
+    "who": "kret",
+    "text": "The first at the very top, the second and third beside him. That's how winners stand!"
+  },
   "line.p_medale": {
     "who": "bobr",
-    "text": "The gold medal is for first place, silver for second, bronze for third. Which medal does the second get? Point to it."
+    "text": "The gold medal is for first place, silver for second, bronze for third. Point to the medal for the second."
   },
   "line.p_medale_nie": {
     "who": "bobr",
@@ -208,35 +233,107 @@
   },
   "line.p_srebrny": {
     "who": "kret",
-    "text": "A silver medal for second place!"
+    "text": "Yes, the silver medal for second place!"
   },
   "line.p_trzeci": {
     "who": "kret",
-    "text": "The bronze medal is for the third in the queue. Who gets it? Point to them."
+    "text": "Duckling wants to stand third in the queue. Drag her to the third place."
   },
   "line.p_trzeci_nie": {
     "who": "kret",
-    "text": "Count from the arrow to three."
+    "text": "That's not the third place. Count from the arrow: first, second, third."
+  },
+  "line.p_trzeci_ok": {
+    "who": "bobr",
+    "text": "Yes, now Duckling stands third in the queue!"
   },
   "line.h_zabawki": {
     "who": "kret",
-    "text": "The toys are queueing up for bed."
+    "text": "We're at my home! Now my toys have a race, and medals after, just like in the forest!"
   },
-  "line.h_kolejnosc": {
+  "line.h_start": {
+    "who": "sowa",
+    "text": "Teddy, ball and block, to the start! On your marks, get set, go!"
+  },
+  "line.h_mis_wygral": {
     "who": "kret",
-    "text": "Teddy first, the ball second, the block third. Drag each toy to its place."
+    "text": "Teddy won! He's the biggest!"
   },
-  "line.h_nie": {
-    "who": "kret",
-    "text": "Listen again: teddy first, the ball second, the block third."
-  },
-  "line.h_dobrze": {
+  "line.h_znowu": {
     "who": "bobr",
-    "text": "First, second, third. Good night, toys!"
+    "text": "Mole, again? Look who touched the finish line first."
+  },
+  "line.h_ojej": {
+    "who": "kret",
+    "text": "Oh dear, the same as in the forest!"
+  },
+  "line.h_kto_pierwszy": {
+    "who": "bobr",
+    "text": "Point to the toy that got there first."
+  },
+  "line.h_kto_pierwszy_nie": {
+    "who": "bobr",
+    "text": "That one got there later. Look who is nearest to the finish."
+  },
+  "line.h_pilka": {
+    "who": "sowa",
+    "text": "Yes, the ball is first! Small, but the fastest. The block is second, and teddy is last."
+  },
+  "line.h_medale": {
+    "who": "kret",
+    "text": "I made paper medals! Drag each medal to the toy that won it."
+  },
+  "line.h_medale_nie": {
+    "who": "sowa",
+    "text": "That medal is for another place. Gold for the first toy, silver for the second, bronze for the third."
+  },
+  "line.h_medale_ok": {
+    "who": "kret",
+    "text": "Gold for the ball, silver for the block, and bronze for teddy. Hooray!"
+  },
+  "line.h_ceremonia": {
+    "who": "bobr",
+    "text": "A real ceremony, just like in the forest! Every toy has its medal."
+  },
+  "line.h_zdjecia": {
+    "who": "bobr",
+    "text": "I have photos from the forest race, but they all got mixed up!"
+  },
+  "line.h_zdjecia_uloz": {
+    "who": "sowa",
+    "text": "Put them in order: what came first, what second, what third, and what last."
+  },
+  "line.h_zdjecia_nie": {
+    "who": "sowa",
+    "text": "Look again. What happened at the very start of the race?"
+  },
+  "line.h_zdjecia_ok": {
+    "who": "bobr",
+    "text": "First the start, then the run, then the finish, and last the medals!"
+  },
+  "line.h_gra": {
+    "who": "kret",
+    "text": "And now Beaver and I race to the window! Owl is the judge."
+  },
+  "line.h_gra_kto": {
+    "who": "sowa",
+    "text": "Point to the one who reached the window first."
+  },
+  "line.h_gra_nie": {
+    "who": "sowa",
+    "text": "That one came second. Who was first?"
+  },
+  "line.h_gra_kret": {
+    "who": "kret",
+    "text": "I'm first, and Beaver is second!"
+  },
+  "line.h_gra_bobr": {
+    "who": "bobr",
+    "text": "I'm first, and Mole is second!"
   },
   "line.h_rodzice": {
     "who": "kret",
-    "text": "At dinner, tell your parents who sat down at the table first, who second and who last!"
+    "text": "Race your parents to the door. Then say who was first, who was second and who was last!"
   },
   "line.naklejka_daj": {
     "who": "kret",

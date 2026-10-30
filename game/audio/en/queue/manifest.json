@@ -30,9 +30,9 @@
   "text": "Hedgehog! So small, and first!"
  },
  "line.a_kto_ostatni": {
-  "hash": "38d73c4ee9b9",
+  "hash": "5627d5004c2d",
   "who": "bobr",
-  "text": "And who came in last? Point to them."
+  "text": "And now point to the one who came in last."
  },
  "line.a_kto_ostatni_nie": {
   "hash": "ba5845074dd9",
@@ -40,9 +40,9 @@
   "text": "That one was faster. Who arrived at the very end?"
  },
  "line.a_ostatnia": {
-  "hash": "4ad49539e448",
+  "hash": "2a16149de79f",
   "who": "sowa",
-  "text": "Mouse was last, but she got there too. Well done!"
+  "text": "Mouse came in last. Last, but she reached the finish too!"
  },
  "line.a_podium": {
   "hash": "a5e794361a91",
@@ -70,9 +70,9 @@
   "text": "First, second and third on the podium. Well done, everyone!"
  },
  "line.b_zjezdzalnia": {
-  "hash": "9e0609e74a89",
+  "hash": "85f44805c57e",
   "who": "kret",
-  "text": "Now the playground! There's a queue for the slide."
+  "text": "The playground! There's a queue for the slide. But who is first here?"
  },
  "line.b_od_przodu": {
   "hash": "c16b7b184316",
@@ -80,9 +80,9 @@
   "text": "In a queue we count from the front, from the arrow: first, second, third, fourth."
  },
  "line.b_trzeci": {
-  "hash": "06b45f66d85d",
+  "hash": "8dc014d56d90",
   "who": "kret",
-  "text": "Who is third in the queue? Point to them."
+  "text": "Point to the one who is third in the queue."
  },
  "line.b_trzeci_nie": {
   "hash": "0c518b6e9989",
@@ -90,14 +90,14 @@
   "text": "Count from the arrow: first, second, third."
  },
  "line.b_zjezdza": {
-  "hash": "e335bb873e74",
+  "hash": "5c270350bd3b",
   "who": "bobr",
-  "text": "The first one slides down! And then goes to the end of the queue."
+  "text": "Mouse is first, so she slides down! And then she goes to the end of the queue."
  },
  "line.b_kto_teraz": {
-  "hash": "3fcac7b0bc71",
+  "hash": "e41a1b4f7270",
   "who": "bobr",
-  "text": "Who is first now? Point to them."
+  "text": "Point to the one who is first now."
  },
  "line.b_kto_teraz_nie": {
   "hash": "35e234d2d63d",
@@ -105,39 +105,9 @@
   "text": "Look who is standing by the arrow now."
  },
  "line.b_teraz_pierwszy": {
-  "hash": "35b3ad556576",
+  "hash": "ae21c13e326a",
   "who": "sowa",
-  "text": "When the first one leaves, everybody moves up."
- },
- "line.b_my": {
-  "hash": "8a8b690c2ae9",
-  "who": "bobr",
-  "text": "And now Mole and Owl race to the swings! I'm the judge."
- },
- "line.b_kto_pierwszy": {
-  "hash": "596fd8bdb9e7",
-  "who": "bobr",
-  "text": "Who got there first? Point to them."
- },
- "line.b_kto_pierwszy_nie": {
-  "hash": "3bd8d1be65d7",
-  "who": "bobr",
-  "text": "That one came second. Who was first?"
- },
- "line.b_pierwszy_kret": {
-  "hash": "630534d93fc3",
-  "who": "kret",
-  "text": "I'm first!"
- },
- "line.b_pierwszy_sowa": {
-  "hash": "2f25c9be5f47",
-  "who": "sowa",
-  "text": "I'm first!"
- },
- "line.b_koniec": {
-  "hash": "1443cb3a885f",
-  "who": "kret",
-  "text": "Now I know: first is the one who gets there first, not the biggest."
+  "text": "Yes, now Bunny is first! When the first one leaves, everybody moves up."
  },
  "line.p_start": {
   "hash": "9cf8c61985e1",
@@ -145,29 +115,19 @@
   "text": "Let's practise: first, second, third, last! I have five games."
  },
  "line.p_drugi": {
-  "hash": "9bdab7cf86dc",
+  "hash": "1d1754c8f0d5",
   "who": "kret",
-  "text": "Who is second in the queue? Point to them."
+  "text": "Point to the one who is second in the queue."
  },
  "line.p_drugi_nie": {
   "hash": "06dd100ead2c",
   "who": "kret",
   "text": "We count from the arrow: first, second."
  },
- "line.p_dobrze": {
-  "hash": "443840bb6e59",
-  "who": "bobr",
-  "text": "Bravo!"
- },
- "line.p_dobrze.kret": {
-  "hash": "960458c5116f",
-  "who": "kret",
-  "text": "Bravo!"
- },
  "line.p_ostatni": {
-  "hash": "32d8e1b572d2",
+  "hash": "349431a6dfeb",
   "who": "bobr",
-  "text": "Who is last in the queue? Point to them."
+  "text": "Point to the one who is last in the queue."
  },
  "line.p_ostatni_nie": {
   "hash": "7f8c3dd42fca",
@@ -185,9 +145,9 @@
   "text": "Put the winners on the podium: first, second and third."
  },
  "line.p_medale": {
-  "hash": "4fb32f28a9bd",
+  "hash": "71ea32f84d7a",
   "who": "bobr",
-  "text": "The gold medal is for first place, silver for second, bronze for third. Which medal does the second get? Point to it."
+  "text": "The gold medal is for first place, silver for second, bronze for third. Point to the medal for the second."
  },
  "line.p_medale_nie": {
   "hash": "0ede55bd3da8",
@@ -195,44 +155,29 @@
   "text": "That one is for another place. The second gets silver."
  },
  "line.p_srebrny": {
-  "hash": "b06ff5ffe1c1",
+  "hash": "14c5ffffbbc0",
   "who": "kret",
-  "text": "A silver medal for second place!"
+  "text": "Yes, the silver medal for second place!"
  },
  "line.p_trzeci": {
-  "hash": "62affb714e4b",
+  "hash": "46d483ab6031",
   "who": "kret",
-  "text": "The bronze medal is for the third in the queue. Who gets it? Point to them."
+  "text": "Duckling wants to stand third in the queue. Drag her to the third place."
  },
  "line.p_trzeci_nie": {
-  "hash": "d6f4eabc5b5e",
+  "hash": "2904671a8ad0",
   "who": "kret",
-  "text": "Count from the arrow to three."
+  "text": "That's not the third place. Count from the arrow: first, second, third."
  },
  "line.h_zabawki": {
-  "hash": "3b67bcbb9b82",
+  "hash": "4fb0c4216f1c",
   "who": "kret",
-  "text": "The toys are queueing up for bed."
- },
- "line.h_kolejnosc": {
-  "hash": "7fdb23b83cb1",
-  "who": "kret",
-  "text": "Teddy first, the ball second, the block third. Drag each toy to its place."
- },
- "line.h_nie": {
-  "hash": "a2aae9035203",
-  "who": "kret",
-  "text": "Listen again: teddy first, the ball second, the block third."
- },
- "line.h_dobrze": {
-  "hash": "1ba5f9f0102e",
-  "who": "bobr",
-  "text": "First, second, third. Good night, toys!"
+  "text": "We're at my home! Now my toys have a race, and medals after, just like in the forest!"
  },
  "line.h_rodzice": {
-  "hash": "a340147ae708",
+  "hash": "2dc26da9ca5c",
   "who": "kret",
-  "text": "At dinner, tell your parents who sat down at the table first, who second and who last!"
+  "text": "Race your parents to the door. Then say who was first, who was second and who was last!"
  },
  "line.naklejka_daj": {
   "hash": "dc80c20921df",
@@ -260,9 +205,9 @@
   "text": "I took a photo of the finish! The photo will show us who touched the white line first."
  },
  "line.a_zdjecie_kto": {
-  "hash": "487a30425231",
+  "hash": "81acaf25cb30",
   "who": "bobr",
-  "text": "Who touches the finish line first in the photo? Point to them."
+  "text": "Point to the one who touches the finish line first in the photo."
  },
  "line.a_zdjecie_nie": {
   "hash": "66c5b66ecb9e",
@@ -300,9 +245,9 @@
   "text": "The gold medal for the first, for Hedgehog!"
  },
  "line.c_srebrny": {
-  "hash": "a4b4059e7c33",
+  "hash": "423ed5ab3089",
   "who": "bobr",
-  "text": "The silver medal is for second place. Who gets it? Point to them."
+  "text": "The silver medal is for second place. Point to the one who gets it."
  },
  "line.c_srebrny_nie": {
   "hash": "e89dd34dc729",
@@ -318,5 +263,180 @@
   "hash": "84b8cbb0e985",
   "who": "kret",
   "text": "Hooray! Now everyone knows who was first, second and third. And it wasn't the biggest who won, but the fastest!"
+ },
+ "line.a_biegacze": {
+  "hash": "219b1a6eed69",
+  "who": "kret",
+  "text": "Bunny, Hedgehog, Duckling and Mouse are running. Bunny is the biggest, he's sure to win!"
+ },
+ "line.a_biegna": {
+  "hash": "a02d783daa1e",
+  "who": "bobr",
+  "text": "They're off! Let's follow them, all the way to the finish!"
+ },
+ "line.b_trzeci_ok": {
+  "hash": "2b6aef1d78c3",
+  "who": "sowa",
+  "text": "Yes, Hedgehog is third! Mouse first, Bunny second, and Hedgehog third."
+ },
+ "line.b_slimak": {
+  "hash": "1a5f51583ec9",
+  "who": "kret",
+  "text": "Oh, here comes Snail, and he wants to slide too! He came last, so drag him to where he should stand."
+ },
+ "line.b_slimak_nie": {
+  "hash": "b01156ca8504",
+  "who": "kret",
+  "text": "Oh no, no pushing in! Whoever comes last stands at the very end."
+ },
+ "line.b_slimak_ok": {
+  "hash": "0bea193c036d",
+  "who": "sowa",
+  "text": "Yes, Snail stands at the end. Now he is last in the queue."
+ },
+ "line.b_nudno": {
+  "hash": "8cdb5894b5a4",
+  "who": "kret",
+  "text": "What a long queue... I'm bored of waiting."
+ },
+ "line.b_miny": {
+  "hash": "9f594e3e86d0",
+  "who": "sowa",
+  "text": "Then let's play faces! Mole pulls a face, and you point to the same one."
+ },
+ "line.b_miny_ok": {
+  "hash": "125a0c552ee3",
+  "who": "kret",
+  "text": "Ha ha! With faces the waiting goes by fast."
+ },
+ "line.c_srebrny_ok": {
+  "hash": "c84faf7bfea5",
+  "who": "bobr",
+  "text": "Yes, the silver medal for Bunny, because he was second!"
+ },
+ "line.c_dom": {
+  "hash": "abcb52454890",
+  "who": "kret",
+  "text": "You know what? At home I'll hold a race for my toys. And they'll get medals too!"
+ },
+ "line.p_drugi_ok": {
+  "hash": "d07095214e4a",
+  "who": "bobr",
+  "text": "Yes! The first stands by the arrow, and right behind him the second."
+ },
+ "line.p_ostatni_ok": {
+  "hash": "279030d24142",
+  "who": "kret",
+  "text": "Yes, the last one stands at the very end of the queue!"
+ },
+ "line.p_podium_ok": {
+  "hash": "4150aa9fcff0",
+  "who": "kret",
+  "text": "The first at the very top, the second and third beside him. That's how winners stand!"
+ },
+ "line.p_trzeci_ok": {
+  "hash": "818d457ea040",
+  "who": "bobr",
+  "text": "Yes, now Duckling stands third in the queue!"
+ },
+ "line.h_start": {
+  "hash": "cf4d253a0864",
+  "who": "sowa",
+  "text": "Teddy, ball and block, to the start! On your marks, get set, go!"
+ },
+ "line.h_mis_wygral": {
+  "hash": "a569725a4fb8",
+  "who": "kret",
+  "text": "Teddy won! He's the biggest!"
+ },
+ "line.h_znowu": {
+  "hash": "bb9ccd767078",
+  "who": "bobr",
+  "text": "Mole, again? Look who touched the finish line first."
+ },
+ "line.h_ojej": {
+  "hash": "c7700f90bcfe",
+  "who": "kret",
+  "text": "Oh dear, the same as in the forest!"
+ },
+ "line.h_kto_pierwszy": {
+  "hash": "4934e385ede2",
+  "who": "bobr",
+  "text": "Point to the toy that got there first."
+ },
+ "line.h_kto_pierwszy_nie": {
+  "hash": "df6485e8edb1",
+  "who": "bobr",
+  "text": "That one got there later. Look who is nearest to the finish."
+ },
+ "line.h_pilka": {
+  "hash": "50751af5228b",
+  "who": "sowa",
+  "text": "Yes, the ball is first! Small, but the fastest. The block is second, and teddy is last."
+ },
+ "line.h_medale": {
+  "hash": "4959afdc8846",
+  "who": "kret",
+  "text": "I made paper medals! Drag each medal to the toy that won it."
+ },
+ "line.h_medale_nie": {
+  "hash": "6ec5ef9e38d1",
+  "who": "sowa",
+  "text": "That medal is for another place. Gold for the first toy, silver for the second, bronze for the third."
+ },
+ "line.h_medale_ok": {
+  "hash": "cbd32aeed035",
+  "who": "kret",
+  "text": "Gold for the ball, silver for the block, and bronze for teddy. Hooray!"
+ },
+ "line.h_ceremonia": {
+  "hash": "1bc8964ce746",
+  "who": "bobr",
+  "text": "A real ceremony, just like in the forest! Every toy has its medal."
+ },
+ "line.h_zdjecia": {
+  "hash": "38db504d949e",
+  "who": "bobr",
+  "text": "I have photos from the forest race, but they all got mixed up!"
+ },
+ "line.h_zdjecia_uloz": {
+  "hash": "89883490f290",
+  "who": "sowa",
+  "text": "Put them in order: what came first, what second, what third, and what last."
+ },
+ "line.h_zdjecia_nie": {
+  "hash": "3205d1427ae4",
+  "who": "sowa",
+  "text": "Look again. What happened at the very start of the race?"
+ },
+ "line.h_zdjecia_ok": {
+  "hash": "1d4dedb068f3",
+  "who": "bobr",
+  "text": "First the start, then the run, then the finish, and last the medals!"
+ },
+ "line.h_gra": {
+  "hash": "ade8d00acab2",
+  "who": "kret",
+  "text": "And now Beaver and I race to the window! Owl is the judge."
+ },
+ "line.h_gra_kto": {
+  "hash": "5898aa47c9a3",
+  "who": "sowa",
+  "text": "Point to the one who reached the window first."
+ },
+ "line.h_gra_nie": {
+  "hash": "f3927a44f1a3",
+  "who": "sowa",
+  "text": "That one came second. Who was first?"
+ },
+ "line.h_gra_kret": {
+  "hash": "9b3328459e87",
+  "who": "kret",
+  "text": "I'm first, and Beaver is second!"
+ },
+ "line.h_gra_bobr": {
+  "hash": "fd545b7227a8",
+  "who": "bobr",
+  "text": "I'm first, and Mole is second!"
  }
 }

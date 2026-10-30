@@ -12,7 +12,7 @@
     "bobr"
   ],
   "backgrounds": [
-    "laka",
+    "tor_wyscigu",
     "plac_zabaw",
     "podium_wyscigu",
     "pokoj"
@@ -30,11 +30,18 @@
     "medal_brazowy",
     "misiu",
     "pilka",
-    "klocek"
+    "klocek",
+    "emocja_radosc",
+    "emocja_smutek",
+    "emocja_zlosc",
+    "emocja_sen",
+    "emocja_strach",
+    "emocja_ojej"
   ],
   "cover": "The great forest race on a sunny meadow: a little hedgehog bursts through a red-and-white finish ribbon first, a big bunny and a duckling just behind; Beaver waves a flag, Owl holds three medals, Mole cheers.",
   "naklejka": {
     "obraz": "objects/medal_zloty",
     "kto": "kret"
-  }
+  },
+  "oddech": "lustro"
 }

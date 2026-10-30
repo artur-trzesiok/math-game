@@ -34,6 +34,38 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # queue story: the start of the great forest race - the runners at the line, Owl's flag up
+    "start_wyscigu": {
+        "postacie": ["sowa", "kret", "bobr"], "tlo": "tor_wyscigu", "lekcje": ["queue"],
+        "scena": """The sunny race meadow from the reference picture, with its start: two wooden posts with colourful
+bunting. On the grass a white chalk START line runs across the picture, and behind it, side by side, four little animals
+crouch ready to run, all facing RIGHT: a big grey BUNNY with long ears, a small round brown HEDGEHOG, a fluffy yellow
+DUCKLING and a tiny grey MOUSE. The OWL stands at the end of the line and raises a small red flag high in one wing, about
+to wave it. In front on the left the MOLE hops with excitement and cheers; on the right the BEAVER holds a little camera
+to his eye, ready to take a photo. Bright, sunny, full of excitement.""",
+    },
+    # queue home: the payoff - the toys' own medal ceremony in Mole's room
+    "medale_zabawek": {
+        "postacie": ["kret", "sowa", "bobr"], "tlo": "pokoj", "lekcje": ["queue"],
+        "scena": """The bright children's room from the reference picture (the same striped wallpaper, the window, the bed,
+the round rug), warm afternoon light. On the round rug stands a little PODIUM built of three stacks of picture books: the
+tallest stack in the middle, a lower one on the left, the lowest on the right. On the tallest middle stack sits a
+red-and-white striped BALL wearing a big round GOLD paper medal on a ribbon; on the left stack a red wooden toy BLOCK
+with a SILVER paper medal; on the right stack a brown TEDDY BEAR with a BRONZE paper medal, smiling. The MOLE kneels
+proudly beside the podium, the OWL and the BEAVER clap. Paper bunting hangs over the window. Warm, cosy and funny.""",
+    },
+    # rhythm home: the payoff - the kitchen concert, the parents at the table applauding
+    "koncert_dla_rodzicow": {
+        "postacie": ["lisek", "wiewiorka", "sowa", "sarenka"], "tlo": "dom", "lekcje": ["rhythm"],
+        "scena": """The sunny kitchen from the reference picture (the same wallpaper, window, wall clock, shelves, mint
+fridge and dresser), warm afternoon light. Across the top of the kitchen hangs a GARLAND of small triangle paper flags on
+a string, alternating RED, YELLOW, RED, YELLOW all along. In the FRONT, a joyful little kitchen band facing us: the FOX
+beats an upside-down cooking POT with a wooden spoon; the SQUIRREL taps a teaspoon on a white CUP; the OWL sways and sings
+with her eyes closed; the ROE DEER dances in the middle, one front hoof raised, smiling proudly. BEHIND them, at the
+wooden kitchen table set with cups and small plates, sit FOUR GROWN-UP animals, the parents - a big grown-up fox, a
+grown-up squirrel, a big grown-up owl and a grown-up roe deer - all CLAPPING their paws, wings and hooves and smiling
+widely. A few little musical notes float in the air. Happy, warm and proud.""",
+    },
     # front_back story: the seeker counting - Bear's face in his paws at a tree, Bunny "hides" IN FRONT of a bush
     "mis_liczy": {
         "postacie": ["mis", "zajac", "jez"], "tlo": "las", "lekcje": ["front_back"],

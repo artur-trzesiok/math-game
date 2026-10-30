@@ -3,9 +3,17 @@
     "who": "bobr",
     "text": "Dziś wielki leśny wyścig! Dla zwycięzców są medale."
   },
+  "line.a_biegacze": {
+    "who": "kret",
+    "text": "Biegną Zajączek, Jeżyk, kaczuszka i Myszka. Zajączek jest największy, na pewno wygra!"
+  },
   "line.a_start": {
     "who": "sowa",
     "text": "Do biegu, gotowi, start!"
+  },
+  "line.a_biegna": {
+    "who": "bobr",
+    "text": "Biegną! Chodźmy za nimi, aż do mety!"
   },
   "line.a_zajac_wygral": {
     "who": "kret",
@@ -29,7 +37,7 @@
   },
   "line.a_zdjecie_kto": {
     "who": "bobr",
-    "text": "Kto na zdjęciu pierwszy dotyka mety? Wskaż go."
+    "text": "Wskaż, kto na zdjęciu pierwszy dotyka mety."
   },
   "line.a_zdjecie_nie": {
     "who": "bobr",
@@ -45,7 +53,7 @@
   },
   "line.a_kto_ostatni": {
     "who": "bobr",
-    "text": "A kto dobiegł ostatni? Wskaż."
+    "text": "A teraz wskaż, kto dobiegł ostatni."
   },
   "line.a_kto_ostatni_nie": {
     "who": "bobr",
@@ -53,7 +61,79 @@
   },
   "line.a_ostatnia": {
     "who": "sowa",
-    "text": "Myszka była ostatnia, ale też dobiegła. Brawo!"
+    "text": "Myszka dobiegła ostatnia. Ostatnia, ale też dobiegła do mety!"
+  },
+  "line.a_po_wyscigu": {
+    "who": "bobr",
+    "text": "Medale rozdamy na podium! Zanim wszystko będzie gotowe, chodźmy na plac zabaw."
+  },
+  "line.b_zjezdzalnia": {
+    "who": "kret",
+    "text": "Plac zabaw! Do zjeżdżalni ustawiła się kolejka. Tylko kto tu jest pierwszy?"
+  },
+  "line.b_od_przodu": {
+    "who": "sowa",
+    "text": "W kolejce liczymy od przodu, od strzałki: pierwszy, drugi, trzeci, czwarty."
+  },
+  "line.b_trzeci": {
+    "who": "kret",
+    "text": "Wskaż, kto jest trzeci w kolejce."
+  },
+  "line.b_trzeci_nie": {
+    "who": "kret",
+    "text": "Policz od strzałki: pierwszy, drugi, trzeci."
+  },
+  "line.b_trzeci_ok": {
+    "who": "sowa",
+    "text": "Tak, Jeżyk jest trzeci! Pierwsza Myszka, drugi Zajączek, a trzeci Jeżyk."
+  },
+  "line.b_zjezdza": {
+    "who": "bobr",
+    "text": "Pierwsza zjeżdża Myszka! A potem staje na końcu kolejki."
+  },
+  "line.b_kto_teraz": {
+    "who": "bobr",
+    "text": "Wskaż, kto jest teraz pierwszy."
+  },
+  "line.b_kto_teraz_nie": {
+    "who": "bobr",
+    "text": "Popatrz, kto stoi teraz przy strzałce."
+  },
+  "line.b_teraz_pierwszy": {
+    "who": "sowa",
+    "text": "Tak, teraz pierwszy jest Zajączek! Kiedy pierwszy odchodzi, wszyscy przesuwają się do przodu."
+  },
+  "line.b_slimak": {
+    "who": "kret",
+    "text": "O, przyszedł Ślimak i też chce zjechać! Przyszedł ostatni, więc przeciągnij go tam, gdzie ma stanąć."
+  },
+  "line.b_slimak_nie": {
+    "who": "kret",
+    "text": "Ojej, nie wolno się wpychać! Kto przychodzi ostatni, staje na samym końcu."
+  },
+  "line.b_slimak_ok": {
+    "who": "sowa",
+    "text": "Tak, Ślimak stanął na końcu. Teraz on jest ostatni w kolejce."
+  },
+  "line.b_nudno": {
+    "who": "kret",
+    "text": "Ale długa ta kolejka... Nudzi mi się tak czekać."
+  },
+  "line.b_miny": {
+    "who": "sowa",
+    "text": "To pobawmy się w miny! Krecik robi minę, a Ty wskaż taką samą."
+  },
+  "line.b_miny_ok": {
+    "who": "kret",
+    "text": "Ha, ha! Z minami czekanie szybko mija."
+  },
+  "line.b_ceremonia": {
+    "who": "bobr",
+    "text": "Podium już gotowe! Chodźmy rozdać medale."
+  },
+  "line.c_podium_miejsce": {
+    "who": "kret",
+    "text": "Ale tu pięknie! Kolorowe flagi, kwiaty i prawdziwe podium dla zwycięzców!"
   },
   "line.a_podium": {
     "who": "bobr",
@@ -71,74 +151,6 @@
     "who": "sowa",
     "text": "Pierwszy, drugi i trzeci na podium. Brawo dla wszystkich!"
   },
-  "line.a_po_wyscigu": {
-    "who": "bobr",
-    "text": "Medale rozdamy na podium! Zanim wszystko będzie gotowe, chodźmy na plac zabaw."
-  },
-  "line.b_zjezdzalnia": {
-    "who": "kret",
-    "text": "Teraz plac zabaw! Do zjeżdżalni ustawiła się kolejka."
-  },
-  "line.b_od_przodu": {
-    "who": "sowa",
-    "text": "W kolejce liczymy od przodu, od strzałki: pierwszy, drugi, trzeci, czwarty."
-  },
-  "line.b_trzeci": {
-    "who": "kret",
-    "text": "Kto jest trzeci w kolejce? Wskaż."
-  },
-  "line.b_trzeci_nie": {
-    "who": "kret",
-    "text": "Policz od strzałki: pierwszy, drugi, trzeci."
-  },
-  "line.b_zjezdza": {
-    "who": "bobr",
-    "text": "Pierwszy zjeżdża! A potem staje na końcu kolejki."
-  },
-  "line.b_kto_teraz": {
-    "who": "bobr",
-    "text": "Kto jest teraz pierwszy? Wskaż."
-  },
-  "line.b_kto_teraz_nie": {
-    "who": "bobr",
-    "text": "Popatrz, kto stoi teraz przy strzałce."
-  },
-  "line.b_teraz_pierwszy": {
-    "who": "sowa",
-    "text": "Kiedy pierwszy odchodzi, wszyscy przesuwają się do przodu."
-  },
-  "line.b_my": {
-    "who": "bobr",
-    "text": "A teraz Krecik i Sowa ścigają się do huśtawek! Ja jestem sędzią."
-  },
-  "line.b_kto_pierwszy": {
-    "who": "bobr",
-    "text": "Kto dobiegł pierwszy? Wskaż."
-  },
-  "line.b_kto_pierwszy_nie": {
-    "who": "bobr",
-    "text": "Ten dobiegł drugi. Kto był pierwszy?"
-  },
-  "line.b_pierwszy_kret": {
-    "who": "kret",
-    "text": "Jestem pierwszy!"
-  },
-  "line.b_pierwszy_sowa": {
-    "who": "sowa",
-    "text": "Jestem pierwsza!"
-  },
-  "line.b_koniec": {
-    "who": "kret",
-    "text": "Teraz wiem: pierwszy jest ten, kto pierwszy dobiegnie, a nie największy."
-  },
-  "line.b_ceremonia": {
-    "who": "bobr",
-    "text": "Podium już gotowe! Chodźmy rozdać medale."
-  },
-  "line.c_podium_miejsce": {
-    "who": "kret",
-    "text": "Ale tu pięknie! Kolorowe flagi, kwiaty i prawdziwe podium dla zwycięzców!"
-  },
   "line.c_medale": {
     "who": "sowa",
     "text": "A oto medale! Złoty jest za pierwsze miejsce, srebrny za drugie, a brązowy za trzecie."
@@ -149,11 +161,15 @@
   },
   "line.c_srebrny": {
     "who": "bobr",
-    "text": "Srebrny medal jest za drugie miejsce. Kto go dostanie? Wskaż."
+    "text": "Srebrny medal jest za drugie miejsce. Wskaż, kto go dostanie."
   },
   "line.c_srebrny_nie": {
     "who": "bobr",
     "text": "Ten stoi na innym stopniu. Drugi stoi na dwójce."
+  },
+  "line.c_srebrny_ok": {
+    "who": "bobr",
+    "text": "Tak, srebrny medal dla Zajączka, bo był drugi!"
   },
   "line.c_brazowy": {
     "who": "sowa",
@@ -163,32 +179,37 @@
     "who": "kret",
     "text": "Hurra! Teraz każdy wie, kto był pierwszy, drugi i trzeci. A nie wygrał największy, tylko najszybszy!"
   },
+  "line.c_dom": {
+    "who": "kret",
+    "text": "Wiecie co? W domu urządzę wyścig moich zabawek. I też dostaną medale!"
+  },
   "line.p_start": {
     "who": "bobr",
     "text": "Poćwiczmy: pierwszy, drugi, trzeci, ostatni! Mam pięć zabaw."
   },
   "line.p_drugi": {
     "who": "kret",
-    "text": "Kto jest drugi w kolejce? Wskaż."
+    "text": "Wskaż, kto jest drugi w kolejce."
   },
   "line.p_drugi_nie": {
     "who": "kret",
     "text": "Liczymy od strzałki: pierwszy, drugi."
   },
-  "line.p_dobrze": {
+  "line.p_drugi_ok": {
     "who": "bobr",
-    "text": "Brawo!",
-    "speakers": [
-      "kret"
-    ]
+    "text": "Tak! Pierwszy stoi przy strzałce, a zaraz za nim drugi."
   },
   "line.p_ostatni": {
     "who": "bobr",
-    "text": "Kto jest ostatni w kolejce? Wskaż."
+    "text": "Wskaż, kto jest ostatni w kolejce."
   },
   "line.p_ostatni_nie": {
     "who": "bobr",
     "text": "Ostatni stoi na samym końcu, najdalej od strzałki."
+  },
+  "line.p_ostatni_ok": {
+    "who": "kret",
+    "text": "Tak, ostatni stoi na samym końcu kolejki!"
   },
   "line.p_wyscig": {
     "who": "kret",
@@ -198,9 +219,13 @@
     "who": "bobr",
     "text": "Postaw zwycięzców na podium: pierwszego, drugiego i trzeciego."
   },
+  "line.p_podium_ok": {
+    "who": "kret",
+    "text": "Pierwszy na samej górze, a drugi i trzeci obok. Tak stoją zwycięzcy!"
+  },
   "line.p_medale": {
     "who": "bobr",
-    "text": "Złoty medal jest za pierwsze miejsce, srebrny za drugie, brązowy za trzecie. Który medal dostanie drugi? Wskaż."
+    "text": "Złoty medal jest za pierwsze miejsce, srebrny za drugie, brązowy za trzecie. Wskaż medal dla drugiego."
   },
   "line.p_medale_nie": {
     "who": "bobr",
@@ -208,35 +233,107 @@
   },
   "line.p_srebrny": {
     "who": "kret",
-    "text": "Srebrny medal za drugie miejsce!"
+    "text": "Tak, srebrny medal za drugie miejsce!"
   },
   "line.p_trzeci": {
     "who": "kret",
-    "text": "Brązowy medal jest dla trzeciego w kolejce. Komu go dać? Wskaż."
+    "text": "Kaczuszka chce stać w kolejce trzecia. Przeciągnij ją na trzecie miejsce."
   },
   "line.p_trzeci_nie": {
     "who": "kret",
-    "text": "Policz od strzałki do trzech."
+    "text": "To nie trzecie miejsce. Policz od strzałki: pierwszy, drugi, trzeci."
+  },
+  "line.p_trzeci_ok": {
+    "who": "bobr",
+    "text": "Tak, teraz kaczuszka stoi w kolejce trzecia!"
   },
   "line.h_zabawki": {
     "who": "kret",
-    "text": "Zabawki ustawiają się w kolejce do spania."
+    "text": "Jesteśmy u mnie w domu! Teraz wyścig moich zabawek, a potem medale, tak jak w lesie!"
   },
-  "line.h_kolejnosc": {
+  "line.h_start": {
+    "who": "sowa",
+    "text": "Misio, piłka i klocek na start! Do biegu, gotowi, start!"
+  },
+  "line.h_mis_wygral": {
     "who": "kret",
-    "text": "Misio pierwszy, piłka druga, klocek trzeci. Przeciągnij każdą zabawkę na jej miejsce."
+    "text": "Misio wygrał! Jest największy!"
   },
-  "line.h_nie": {
-    "who": "kret",
-    "text": "Posłuchaj jeszcze raz: misio pierwszy, piłka druga, klocek trzeci."
-  },
-  "line.h_dobrze": {
+  "line.h_znowu": {
     "who": "bobr",
-    "text": "Pierwszy, drugi, trzeci. Dobranoc, zabawki!"
+    "text": "Krecie, znowu? Popatrz, kto pierwszy dotknął mety."
+  },
+  "line.h_ojej": {
+    "who": "kret",
+    "text": "Ojej, znowu to samo co w lesie!"
+  },
+  "line.h_kto_pierwszy": {
+    "who": "bobr",
+    "text": "Wskaż zabawkę, która dobiegła pierwsza."
+  },
+  "line.h_kto_pierwszy_nie": {
+    "who": "bobr",
+    "text": "Ta dobiegła później. Popatrz, kto jest najbliżej mety."
+  },
+  "line.h_pilka": {
+    "who": "sowa",
+    "text": "Tak, piłka pierwsza! Mała, a najszybsza. Klocek drugi, a misio ostatni."
+  },
+  "line.h_medale": {
+    "who": "kret",
+    "text": "Zrobiłem medale z papieru! Przeciągnij każdy medal do zabawki, która go wygrała."
+  },
+  "line.h_medale_nie": {
+    "who": "sowa",
+    "text": "To medal za inne miejsce. Złoty dla pierwszej zabawki, srebrny dla drugiej, brązowy dla trzeciej."
+  },
+  "line.h_medale_ok": {
+    "who": "kret",
+    "text": "Złoto dla piłki, srebro dla klocka, a brąz dla misia. Hurra!"
+  },
+  "line.h_ceremonia": {
+    "who": "bobr",
+    "text": "Prawdziwa ceremonia, jak w lesie! Każda zabawka ma swój medal."
+  },
+  "line.h_zdjecia": {
+    "who": "bobr",
+    "text": "Mam zdjęcia z leśnego wyścigu, ale wszystkie się pomieszały!"
+  },
+  "line.h_zdjecia_uloz": {
+    "who": "sowa",
+    "text": "Ułóż je po kolei: co było pierwsze, co drugie, co trzecie, a co ostatnie."
+  },
+  "line.h_zdjecia_nie": {
+    "who": "sowa",
+    "text": "Popatrz jeszcze raz. Co było na samym początku wyścigu?"
+  },
+  "line.h_zdjecia_ok": {
+    "who": "bobr",
+    "text": "Najpierw start, potem bieg, potem meta, a na końcu medale!"
+  },
+  "line.h_gra": {
+    "who": "kret",
+    "text": "A teraz ja i Bóbr ścigamy się do okna! Sowa jest sędzią."
+  },
+  "line.h_gra_kto": {
+    "who": "sowa",
+    "text": "Wskaż, kto pierwszy dobiegł do okna."
+  },
+  "line.h_gra_nie": {
+    "who": "sowa",
+    "text": "Ten dobiegł drugi. Kto był pierwszy?"
+  },
+  "line.h_gra_kret": {
+    "who": "kret",
+    "text": "Jestem pierwszy, a Bóbr drugi!"
+  },
+  "line.h_gra_bobr": {
+    "who": "bobr",
+    "text": "Jestem pierwszy, a Krecik drugi!"
   },
   "line.h_rodzice": {
     "who": "kret",
-    "text": "Przy kolacji powiedz rodzicom, kto usiadł do stołu pierwszy, kto drugi, a kto ostatni!"
+    "text": "Pościgaj się z rodzicami do drzwi. A potem powiedz, kto był pierwszy, kto drugi, a kto ostatni!"
   },
   "line.naklejka_daj": {
     "who": "kret",

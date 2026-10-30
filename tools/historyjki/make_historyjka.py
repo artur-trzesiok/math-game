@@ -29,6 +29,12 @@ STYL = ("STYLE: a modern children's picture-book illustration, soft painterly sh
         "friendly colours, thin soft dark outlines. NOT flat vector, NOT 3D render. NO text, NO letters, NO numbers, NO "
         "speech bubbles, NO panel numbers.")
 HISTORYJKI = {
+    # queue home: Beaver's photos of the forest race, mixed up - the start, the run, the finish, the medals
+    "wyscig_lesny": {"postacie": ["sowa"], "lekcje": ["queue"], "panele": [
+        "a sunny meadow: four little animals - a grey BUNNY, a small brown HEDGEHOG, a fluffy yellow DUCKLING and a little grey MOUSE - crouch side by side behind a white chalk START line, ready to run, while the OWL beside them raises a small red flag high",
+        "the same sunny meadow: the four little animals RUN fast across the grass, side by side, dust puffs behind their feet, ears and tails flying",
+        "the same sunny meadow at the FINISH, a tall pole with a red-and-white checkered flag: the small brown HEDGEHOG crosses the white finish line FIRST by a nose, the grey bunny and the yellow duckling right behind him, the little mouse far back",
+        "a flowery glade with colourful bunting: a three-step wooden PODIUM - the small brown HEDGEHOG with a GOLD medal stands on the tallest middle step, the grey BUNNY with a SILVER medal on the left step, the yellow DUCKLING with a BRONZE medal on the right step, the OWL claps beside it"]},
     # front_back home: Bunny's pictures of the hide-and-seek day, mixed up - in front, behind, the mouse found
     "dzien_chowanego": {"postacie": ["zajac", "mis", "jez"], "lekcje": ["front_back"], "panele": [
         "a sunny forest clearing: the BUNNY stands IN FRONT of a round green BUSH, fully seen, his eyes squeezed shut and grinning, while the BEAR points at him and laughs",

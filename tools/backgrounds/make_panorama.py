@@ -40,6 +40,27 @@ The GRASS IS PLAIN - NO tufts, NO flowers, NO reeds.
 NO characters, NO animals, NO text."""
 
 PANORAMY = {
+    # queue: the great forest race - the pan follows the runners from the start to the finish
+    "tor_wyscigu": {
+        "kafle": [
+            """A sunny summer meadow at the edge of a forest, the place of a forest race. Near the LEFT side, far back
+at the horizon line, the START: two wooden posts with a string of colourful triangle bunting between them and a small
+red flag on top of each post. Behind it a low wooden fence, green bushes and a line of round leafy trees, soft blue
+hills far away. In front a wide stretch of short plain green grass, open and empty.""",
+            """The same sunny meadow goes on, the same low wooden fence along the back with colourful triangle bunting
+strung along it, the same leafy trees behind. Near the RIGHT side, far back at the horizon line, the FINISH: one tall
+wooden pole with a red-and-white CHECKERED flag waving on top, and a few balloons tied to the fence beside it. In
+front the same wide stretch of short plain green grass, open and empty.""",
+        ],
+        "ruch": """Exactly the same illustration, unchanged in every way, except that two things have been added, in
+the same style:
+  - FOUR or FIVE soft white cartoon clouds in the sky, big and small, none touching each other and none
+    touching the left or the right edge of the picture;
+  - MANY tufts of taller grass with a few little wildflowers, at least twelve, scattered over the lower foreground,
+    each tuft separate from the others, none touching the left or right edge.
+Same colours, same horizon, same fence, flags and bunting, same everything - only the clouds and the tufts are new.
+Do NOT move or redraw anything that was already there.""",
+    },
     # numbers_1_5: Mole's little train rides through the forest (the pan IS the ride) to the forest stop
     "kolej_lesna": {
         "kafle": [
