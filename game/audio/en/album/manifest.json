@@ -1,13 +1,13 @@
 {
  "line.album_witaj": {
-  "hash": "49cf76bc0652",
+  "hash": "7204e8ae8e0e",
   "who": "narrator",
-  "text": "This is your album of stickers you've earned in the lessons."
+  "text": "This is your album of keepsakes from our adventures together."
  },
  "line.album_pusty": {
-  "hash": "0fd15d93c949",
+  "hash": "9f34fd87294d",
   "who": "narrator",
-  "text": "There are no stickers here yet. You'll get one after every lesson!"
+  "text": "There are no stickers here yet. Every adventure we share will leave a keepsake here!"
  },
  "line.album_nowe": {
   "hash": "6c03e4ba74f6",

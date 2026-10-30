@@ -48,10 +48,10 @@ OTWARCIE = {
 TEKST = {
     "pl": ("Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z {poprz_d} etapu, a kłódka sama się otworzy!",
            "Hura! Odblokowaliśmy {nr} etap naszej podróży! Nowe przygody czekają!"),
-    "pl_koniec": ("{o} Ukończyliśmy cały {nr} etap! Za to dostajesz specjalną naklejkę do albumu.",
-                  "To nagroda za ukończenie {nr_d} etapu. Wszystkie jego przygody przeszliśmy razem."),
-    "en_koniec": ("{o} We finished the whole {nr} stage! Here is a special sticker for your album.",
-                  "This is the prize for finishing the {nr} stage. We went through all its adventures together."),
+    "pl_koniec": ("{o} Ukończyliśmy cały {nr} etap! Na pamiątkę tej wspólnej wędrówki przyklej w albumie jego naklejkę.",
+                  "To pamiątka z {nr_d} etapu. Wszystkie jego przygody przeszliśmy razem."),
+    "en_koniec": ("{o} We finished the whole {nr} stage! As a keepsake of our journey, stick its sticker in your album.",
+                  "This is a keepsake of the {nr} stage. We went through all its adventures together."),
     "en": ("This way is still locked. Let's first finish all the adventures of the {poprz} stage, and the padlock will open by itself!",
            "Hooray! We've unlocked the {nr} stage of our journey! New adventures are waiting!"),
 }

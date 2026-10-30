@@ -238,6 +238,22 @@ small story of its own, built like this:
    line for the parents, then the goodbye iris.
 The story preview flags a home stage with fewer than four interactions.
 
+## The language of rewards
+
+The game has stickers, stars and cheers, but it never pays the child for learning (the user, 2026-10-30: "ukończyłeś
+etap, ZA TO dostajesz naklejkę" - no; "na pamiątkę tego osiągnięcia przyklej w albumie" - yes):
+- **A sticker is a keepsake of a shared adventure**, not a payment: a character thanks for what we did together and
+  gives it "na pamiątkę"; a stage's sticker is "na pamiątkę tej wspólnej wędrówki"; the album holds keepsakes, not
+  things earned. Never "za to dostajesz", "nagroda za", "zdobyte", "po każdej lekcji dostaniesz".
+- **Stars for the practice tasks are fine** - a game element the child plays for ("Za każde zadanie dostaniemy
+  gwiazdkę", the user 2026-10-30: "to element grywalizacji"); the line above is about the album and the stages.
+- **Praise names what was done** ("Tak, trzy gruszki!") or how ("Ale uważnie patrzysz!"), never labels the child
+  ("jesteś mądry", "jesteś mistrzem", "bystrzak"); success is ours ("udało nam się", "rozwiązaliśmy").
+- **Cheers vary** (hura, gratulacje, brawo, świetnie, znakomicie): one word repeated at every step wears out (the menu said
+  "Hura!" 23 times).
+- A mistake costs nothing and is never scolded; a race or a game of chance is between characters, never a contest the
+  child loses.
+
 ## A lesson asks for the tools it needs
 
 The tools available today are listed in `game_mechanics.md`; that list is a starting point, not a limit.

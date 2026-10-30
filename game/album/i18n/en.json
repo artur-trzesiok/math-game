@@ -1,11 +1,11 @@
 {
   "line.album_witaj": {
     "who": "narrator",
-    "text": "This is your album of stickers you've earned in the lessons."
+    "text": "This is your album of keepsakes from our adventures together."
   },
   "line.album_pusty": {
     "who": "narrator",
-    "text": "There are no stickers here yet. You'll get one after every lesson!"
+    "text": "There are no stickers here yet. Every adventure we share will leave a keepsake here!"
   },
   "line.album_nowe": {
     "who": "narrator",

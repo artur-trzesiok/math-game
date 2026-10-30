@@ -1,11 +1,11 @@
 {
   "line.album_witaj": {
     "who": "narrator",
-    "text": "To Twój album z naklejkami zdobytymi w czasie lekcji."
+    "text": "To Twój album z pamiątkami z naszych wspólnych przygód."
   },
   "line.album_pusty": {
     "who": "narrator",
-    "text": "Jeszcze nie ma tu naklejek. Po każdej lekcji dostaniesz jedną!"
+    "text": "Jeszcze nie ma tu naklejek. Każda nasza przygoda zostawi tu swoją pamiątkę!"
   },
   "line.album_nowe": {
     "who": "narrator",

@@ -1,13 +1,13 @@
 {
  "line.album_witaj": {
-  "hash": "7c9105f9efaa",
+  "hash": "d9fa0fdcc41e",
   "who": "narrator",
-  "text": "To Twój album z naklejkami zdobytymi w czasie lekcji."
+  "text": "To Twój album z pamiątkami z naszych wspólnych przygód."
  },
  "line.album_pusty": {
-  "hash": "104ab901de55",
+  "hash": "9730ead35d07",
   "who": "narrator",
-  "text": "Jeszcze nie ma tu naklejek. Po każdej lekcji dostaniesz jedną!"
+  "text": "Jeszcze nie ma tu naklejek. Każda nasza przygoda zostawi tu swoją pamiątkę!"
  },
  "line.album_nowe": {
   "hash": "f15049f43aca",
