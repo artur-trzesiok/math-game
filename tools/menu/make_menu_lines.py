@@ -39,6 +39,16 @@ TEKST = {
     "en": ("This way is still locked. Let's first finish all the adventures of the {poprz} stage, and the padlock will open by itself!",
            "Hooray! The {nr} stage is open. New adventures are waiting!"),
 }
+def tytul(l, lang):
+    """A lesson's name read out over its card: the title, a longer breath, the subtitle ("Lekki i ciężki. Tratwa Bobra.")."""
+    t = l["title"][lang].strip()
+    t += "" if t[-1] in ".?!" else "."
+    pod = (l.get("subtitle") or {}).get(lang, "").strip()
+    if not pod:
+        return {"who": "narrator", "text": t}
+    return {"who": "narrator", "text": f"{t} {pod[0].upper()}{pod[1:]}.", "pauza": "1.0s"}
+
+
 ix = json.loads((ROOT / "game" / "lessons" / "index.json").read_text(encoding="utf-8"))
 topics = [t for t in ix.get("topics", []) if t.get("title")]
 for lang in ("pl", "en"):
@@ -56,7 +66,7 @@ for lang in ("pl", "en"):
     for sw in ix.get("swiaty", []):                             # a land tapped in the switcher: its name read out
         out[f"line.swiat_{sw['id']}"] = {"who": "narrator", "text": sw["title"][lang]}
     for l in ix.get("lessons", []):                             # a lesson chosen: its name read out over its card
-        if not l.get("wkrotce"): out[f"line.tytul_{l['id']}"] = {"who": "narrator", "text": l["title"][lang]}
+        if not l.get("wkrotce"): out[f"line.tytul_{l['id']}"] = tytul(l, lang)
     lisek, klodka = MAPA[lang]
     for k, t in enumerate(lisek, 1): out[f"line.mapa_lisek_{k}"] = {"who": "lisek", "text": t}
     for k, t in enumerate(klodka, 1): out[f"line.mapa_klodka_{k}"] = {"who": "lisek", "text": t}

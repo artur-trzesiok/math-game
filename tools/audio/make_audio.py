@@ -75,14 +75,14 @@ SETTINGS = {"stability": 0.6, "similarity_boost": 0.8, "style": 0.3, "use_speake
 PAUSE = os.environ.get("ELEVENLABS_PAUSE", "0.6s")          # a break after every sentence, so a child can take it in
 
 
-def with_pauses(text: str) -> str:
+def with_pauses(text: str, pauza: str | None = None) -> str:
     """Insert an ElevenLabs break tag after every sentence end; the i18n text stays clean. Not before a one-word
     sentence after a longer one ("Which one is bigger? Point."): alone after a break it came out garbled."""
     import re
     zdania = re.split(r"(?<=[.!?])\s+", text.strip())
     out = zdania[0]
     for poprz, z in zip(zdania, zdania[1:]):              # counting ("One. Two. Three.") keeps its breaks
-        out += (" " if len(z.split()) == 1 and len(poprz.split()) >= 3 else f' <break time="{PAUSE}" /> ') + z
+        out += (" " if len(z.split()) == 1 and len(poprz.split()) >= 3 else f' <break time="{pauza or PAUSE}" /> ') + z
     return out
 
 
@@ -107,7 +107,7 @@ def lines(lesson: Path, lang: str) -> list[dict]:
             continue
         default = v.get("who", "narrator")
         for who in dict.fromkeys([default, *v.get("speakers", [])]):
-            out.append({"key": k if who == default else f"{k}.{who}", "who": who, "text": v["text"]})
+            out.append({"key": k if who == default else f"{k}.{who}", "who": who, "text": v["text"], "pauza": v.get("pauza")})
     return out
 
 
@@ -234,14 +234,14 @@ def bake(dst: Path, text: str | None = None, wiz: list | None = None, slowa_: li
     dst.with_suffix(".json").write_text(json.dumps(e, separators=(",", ":")), encoding="utf-8")
 
 
-def synthesize(text: str, voice: str, dst: Path) -> tuple[list | None, list | None]:
+def synthesize(text: str, voice: str, dst: Path, pauza: str | None = None) -> tuple[list | None, list | None]:
     """Speech with character timestamps: returns the visemes of the recording (exact lip-sync) and its words' times."""
     import base64
     import visemes
     r = requests.post(f"{API}/text-to-speech/{voice}/with-timestamps",
                       headers={"xi-api-key": api_key(), "accept": "application/json"},
                       params={"output_format": FORMAT},
-                      json={"text": with_pauses(text), "model_id": MODEL, "voice_settings": SETTINGS}, timeout=120)
+                      json={"text": with_pauses(text, pauza), "model_id": MODEL, "voice_settings": SETTINGS}, timeout=120)
     if r.status_code != 200:
         raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
     d = r.json()
@@ -258,7 +258,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
     done = skipped = failed = 0
     for l in lines(lesson, lang):
         voice = voice_for(lang, l["who"])
-        digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + json.dumps(SETTINGS, sort_keys=True) + "|" + PAUSE + "|" + l["text"]).encode("utf-8")).hexdigest()[:12]   # a voice, settings or pause change regenerates too
+        digest = hashlib.sha1((l["who"] + "|" + voice + "|" + MODEL + "|" + json.dumps(SETTINGS, sort_keys=True) + "|" + PAUSE + "|" + l["text"] + (l.get("pauza") or "")).encode("utf-8")).hexdigest()[:12]   # a voice, settings or pause change regenerates too
         dst = out / f"{l['key']}.mp3"
         if dst.exists() and manifest.get(l["key"], {}).get("hash") == digest:
             if not dst.with_suffix(".json").exists():
@@ -266,7 +266,7 @@ def run(lesson: Path, lang: str) -> tuple[int, int, int]:
             skipped += 1
             continue
         try:
-            wiz, sl = synthesize(l["text"], voice, dst)
+            wiz, sl = synthesize(l["text"], voice, dst, l.get("pauza"))
             o = ORYGINALY / dst.relative_to(AUDIO); o.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(dst, o)   # ElevenLabs' own file
             normalize(dst, l["who"])                              # gain only: the timing stays
             bake(dst, l["text"], wiz, sl)

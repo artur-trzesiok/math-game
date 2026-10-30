@@ -393,99 +393,138 @@
   },
   "line.tytul_one_many": {
     "who": "narrator",
-    "text": "Jeden czy wiele?"
+    "text": "Jeden czy wiele? Zapasy Wiewiórki.",
+    "pauza": "1.0s"
   },
   "line.tytul_spot_difference": {
     "who": "narrator",
-    "text": "Znajdź różnice"
+    "text": "Znajdź różnice. Zaczarowany staw.",
+    "pauza": "1.0s"
   },
   "line.tytul_bigger_smaller": {
     "who": "narrator",
-    "text": "Większy, mniejszy"
+    "text": "Większy, mniejszy. Nowa dziupla Wiewiórki.",
+    "pauza": "1.0s"
   },
   "line.tytul_long_short": {
     "who": "narrator",
-    "text": "Krótki i długi"
+    "text": "Krótki i długi. Kładka na piknik.",
+    "pauza": "1.0s"
   },
   "line.tytul_tall_short": {
     "who": "narrator",
-    "text": "Wysoki i niski"
+    "text": "Wysoki i niski. Domek na drzewie.",
+    "pauza": "1.0s"
   },
   "line.tytul_ordering": {
     "who": "narrator",
-    "text": "Po kolei"
+    "text": "Po kolei. Wieża Bobra.",
+    "pauza": "1.0s"
   },
   "line.tytul_shapes": {
     "who": "narrator",
-    "text": "Figury geometryczne"
+    "text": "Figury geometryczne. Domek dla Jeżyka.",
+    "pauza": "1.0s"
   },
   "line.tytul_morning_night": {
     "who": "narrator",
-    "text": "Rano i wieczór"
+    "text": "Rano i wieczór. Długi dzień Kreta.",
+    "pauza": "1.0s"
   },
   "line.tytul_noticing_order": {
     "who": "narrator",
-    "text": "Zauważanie porządku"
+    "text": "Zauważanie porządku. Książeczka Sowy.",
+    "pauza": "1.0s"
   },
   "line.tytul_counting_3": {
     "who": "narrator",
-    "text": "Liczymy do 3"
+    "text": "Liczymy do 3. Urodziny Jeżyka.",
+    "pauza": "1.0s"
   },
   "line.tytul_more_fewer": {
     "who": "narrator",
-    "text": "Więcej, mniej"
+    "text": "Więcej, mniej. Noc świetlików.",
+    "pauza": "1.0s"
   },
   "line.tytul_logical_pairs": {
     "who": "narrator",
-    "text": "Co do pary?"
+    "text": "Co do pary? Rzeczy po burzy.",
+    "pauza": "1.0s"
   },
   "line.tytul_numbers_1_5": {
     "who": "narrator",
-    "text": "Liczby od 1 do 5"
+    "text": "Liczby od 1 do 5. Pociąg Kreta.",
+    "pauza": "1.0s"
   },
   "line.tytul_up_down": {
     "who": "narrator",
-    "text": "U góry i na dole"
+    "text": "U góry i na dole. Dzień jabłek.",
+    "pauza": "1.0s"
   },
   "line.tytul_in_out": {
     "who": "narrator",
-    "text": "W środku i na zewnątrz"
+    "text": "W środku i na zewnątrz. Wieczór przed burzą.",
+    "pauza": "1.0s"
   },
   "line.tytul_tangram": {
     "who": "narrator",
-    "text": "Tangram"
+    "text": "Tangram. Teatr cieni Sowy.",
+    "pauza": "1.0s"
   },
   "line.tytul_grouping": {
     "who": "narrator",
-    "text": "Grupowanie"
+    "text": "Grupowanie. Detektywi grupują.",
+    "pauza": "1.0s"
   },
   "line.tytul_front_back": {
     "who": "narrator",
-    "text": "Z przodu i z tyłu"
+    "text": "Z przodu i z tyłu. Zabawa w chowanego.",
+    "pauza": "1.0s"
   },
   "line.tytul_rhythm": {
     "who": "narrator",
-    "text": "Rytm"
+    "text": "Rytm. Co się powtarza, co dalej.",
+    "pauza": "1.0s"
   },
   "line.tytul_queue": {
     "who": "narrator",
-    "text": "Kolejka"
-  },
-  "line.tytul_numbers_6_10": {
-    "who": "narrator",
-    "text": "Liczby od 6 do 10"
+    "text": "Kolejka. Wielki leśny wyścig.",
+    "pauza": "1.0s"
   },
   "line.tytul_counting_5": {
     "who": "narrator",
-    "text": "Liczymy do 5"
+    "text": "Liczymy do 5. Leśna piekarnia.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_light_heavy": {
+    "who": "narrator",
+    "text": "Lekki i ciężki. Tratwa Bobra.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_thick_wide": {
+    "who": "narrator",
+    "text": "Czy się zmieści? Przeprowadzka Kreta.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_complete_shape": {
+    "who": "narrator",
+    "text": "Brakujący kawałek. Urodzinowy obrazek.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_numbers_6_10": {
+    "who": "narrator",
+    "text": "Liczby od 6 do 10. Tama Bobra.",
+    "pauza": "1.0s"
   },
   "line.tytul_adding_5": {
     "who": "narrator",
-    "text": "Dodawanie do 5"
+    "text": "Dodawanie do 5. Piknik Liska.",
+    "pauza": "1.0s"
   },
   "line.tytul_adding_10": {
     "who": "narrator",
-    "text": "Dodawanie do 10"
+    "text": "Dodawanie do 10. Turniej w klasy.",
+    "pauza": "1.0s"
   },
   "line.mapa_lisek_1": {
     "who": "lisek",

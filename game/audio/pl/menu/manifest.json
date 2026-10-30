@@ -520,123 +520,138 @@
   "text": "Zamek na Wzgórzu"
  },
  "line.tytul_one_many": {
-  "hash": "515206f1ca11",
+  "hash": "1e5fb4dfa970",
   "who": "narrator",
-  "text": "Jeden czy wiele?"
+  "text": "Jeden czy wiele? Zapasy Wiewiórki."
  },
  "line.tytul_spot_difference": {
-  "hash": "9354b738798c",
+  "hash": "075abcc66244",
   "who": "narrator",
-  "text": "Znajdź różnice"
+  "text": "Znajdź różnice. Zaczarowany staw."
  },
  "line.tytul_bigger_smaller": {
-  "hash": "64576aad8e77",
+  "hash": "ed48a5cb7436",
   "who": "narrator",
-  "text": "Większy, mniejszy"
+  "text": "Większy, mniejszy. Nowa dziupla Wiewiórki."
  },
  "line.tytul_long_short": {
-  "hash": "dd3052366036",
+  "hash": "cf4c6ceaea30",
   "who": "narrator",
-  "text": "Krótki i długi"
+  "text": "Krótki i długi. Kładka na piknik."
  },
  "line.tytul_tall_short": {
-  "hash": "470918bd3f8c",
+  "hash": "b789c94d8440",
   "who": "narrator",
-  "text": "Wysoki i niski"
+  "text": "Wysoki i niski. Domek na drzewie."
  },
  "line.tytul_ordering": {
-  "hash": "7f59bf79aa97",
+  "hash": "bf1d36daac8b",
   "who": "narrator",
-  "text": "Po kolei"
+  "text": "Po kolei. Wieża Bobra."
  },
  "line.tytul_shapes": {
-  "hash": "ff551c85587e",
+  "hash": "839abd5980f9",
   "who": "narrator",
-  "text": "Figury geometryczne"
+  "text": "Figury geometryczne. Domek dla Jeżyka."
  },
  "line.tytul_morning_night": {
-  "hash": "b5c1d199b9ec",
+  "hash": "45a0100d05b9",
   "who": "narrator",
-  "text": "Rano i wieczór"
+  "text": "Rano i wieczór. Długi dzień Kreta."
  },
  "line.tytul_noticing_order": {
-  "hash": "ca35c959a65a",
+  "hash": "bcc32d9f8173",
   "who": "narrator",
-  "text": "Zauważanie porządku"
+  "text": "Zauważanie porządku. Książeczka Sowy."
  },
  "line.tytul_counting_3": {
-  "hash": "669fce26f87f",
+  "hash": "31b7a5556957",
   "who": "narrator",
-  "text": "Liczymy do 3"
+  "text": "Liczymy do 3. Urodziny Jeżyka."
  },
  "line.tytul_more_fewer": {
-  "hash": "fd919217bcee",
+  "hash": "4b089fc08237",
   "who": "narrator",
-  "text": "Więcej, mniej"
+  "text": "Więcej, mniej. Noc świetlików."
  },
  "line.tytul_logical_pairs": {
-  "hash": "a57d226aa856",
+  "hash": "38ea72e944d3",
   "who": "narrator",
-  "text": "Co do pary?"
+  "text": "Co do pary? Rzeczy po burzy."
  },
  "line.tytul_numbers_1_5": {
-  "hash": "e42502c32342",
+  "hash": "02d7fb1cda2f",
   "who": "narrator",
-  "text": "Liczby od 1 do 5"
+  "text": "Liczby od 1 do 5. Pociąg Kreta."
  },
  "line.tytul_up_down": {
-  "hash": "dd9f65f88a7e",
+  "hash": "c5bfe56c5cac",
   "who": "narrator",
-  "text": "U góry i na dole"
+  "text": "U góry i na dole. Dzień jabłek."
  },
  "line.tytul_in_out": {
-  "hash": "d891316e94dd",
+  "hash": "65684c6b3b26",
   "who": "narrator",
-  "text": "W środku i na zewnątrz"
+  "text": "W środku i na zewnątrz. Wieczór przed burzą."
  },
  "line.tytul_tangram": {
-  "hash": "15b701f34b75",
+  "hash": "51a5899a2587",
   "who": "narrator",
-  "text": "Tangram"
+  "text": "Tangram. Teatr cieni Sowy."
  },
  "line.tytul_grouping": {
-  "hash": "f266cd38be91",
+  "hash": "0e228aafeb78",
   "who": "narrator",
-  "text": "Grupowanie"
+  "text": "Grupowanie. Detektywi grupują."
  },
  "line.tytul_front_back": {
-  "hash": "5284e57d4d07",
+  "hash": "e902db2b7750",
   "who": "narrator",
-  "text": "Z przodu i z tyłu"
+  "text": "Z przodu i z tyłu. Zabawa w chowanego."
  },
  "line.tytul_rhythm": {
-  "hash": "8f53b70b94b7",
+  "hash": "76c0001c4e84",
   "who": "narrator",
-  "text": "Rytm"
+  "text": "Rytm. Co się powtarza, co dalej."
  },
  "line.tytul_queue": {
-  "hash": "1a0980686c51",
+  "hash": "2c6ea6da6a59",
   "who": "narrator",
-  "text": "Kolejka"
+  "text": "Kolejka. Wielki leśny wyścig."
  },
  "line.tytul_numbers_6_10": {
-  "hash": "352c8fa9a743",
+  "hash": "52ea218abc21",
   "who": "narrator",
-  "text": "Liczby od 6 do 10"
+  "text": "Liczby od 6 do 10. Tama Bobra."
  },
  "line.tytul_counting_5": {
-  "hash": "7608557ac52e",
+  "hash": "8c7920d96483",
   "who": "narrator",
-  "text": "Liczymy do 5"
+  "text": "Liczymy do 5. Leśna piekarnia."
  },
  "line.tytul_adding_5": {
-  "hash": "333477c40a6c",
+  "hash": "19dd20f3e489",
   "who": "narrator",
-  "text": "Dodawanie do 5"
+  "text": "Dodawanie do 5. Piknik Liska."
  },
  "line.tytul_adding_10": {
-  "hash": "1df99d98f449",
+  "hash": "e9d13fdcb0e3",
   "who": "narrator",
-  "text": "Dodawanie do 10"
+  "text": "Dodawanie do 10. Turniej w klasy."
+ },
+ "line.tytul_light_heavy": {
+  "hash": "180c1fe08f9c",
+  "who": "narrator",
+  "text": "Lekki i ciężki. Tratwa Bobra."
+ },
+ "line.tytul_thick_wide": {
+  "hash": "82f06899ff87",
+  "who": "narrator",
+  "text": "Czy się zmieści? Przeprowadzka Kreta."
+ },
+ "line.tytul_complete_shape": {
+  "hash": "c30065712a55",
+  "who": "narrator",
+  "text": "Brakujący kawałek. Urodzinowy obrazek."
  }
 }

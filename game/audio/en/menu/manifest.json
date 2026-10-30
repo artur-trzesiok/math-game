@@ -520,123 +520,138 @@
   "text": "The Castle on the Hill"
  },
  "line.tytul_one_many": {
-  "hash": "b0f9bf462d82",
+  "hash": "5eb9e53be970",
   "who": "narrator",
-  "text": "One or many?"
+  "text": "One or many? Squirrel's winter store."
  },
  "line.tytul_spot_difference": {
-  "hash": "f110ddfcb4df",
+  "hash": "6a37e9b7f288",
   "who": "narrator",
-  "text": "Spot the difference"
+  "text": "Spot the difference. The magic pond."
  },
  "line.tytul_bigger_smaller": {
-  "hash": "1c22fc44bd9c",
+  "hash": "3153b5b0ec07",
   "who": "narrator",
-  "text": "Bigger, smaller"
+  "text": "Bigger, smaller. A new home for Squirrel."
  },
  "line.tytul_long_short": {
-  "hash": "ce5bd04b30a4",
+  "hash": "1c1f648b3c79",
   "who": "narrator",
-  "text": "Long and short"
+  "text": "Long and short. A bridge for the picnic."
  },
  "line.tytul_tall_short": {
-  "hash": "1e8cd1b0fe6e",
+  "hash": "97d085b67a9d",
   "who": "narrator",
-  "text": "Tall and short"
+  "text": "Tall and short. The treehouse."
  },
  "line.tytul_ordering": {
-  "hash": "b0875a1ce8db",
+  "hash": "b91fe904f824",
   "who": "narrator",
-  "text": "In order"
+  "text": "In order. Beaver's tower."
  },
  "line.tytul_shapes": {
-  "hash": "adc8008deaa5",
+  "hash": "513df44ea8a4",
   "who": "narrator",
-  "text": "Shapes"
+  "text": "Shapes. A house for Hedgehog."
  },
  "line.tytul_morning_night": {
-  "hash": "373e8f800c28",
+  "hash": "7342c0b88ca2",
   "who": "narrator",
-  "text": "Morning and night"
+  "text": "Morning and night. Mole's long day."
  },
  "line.tytul_noticing_order": {
-  "hash": "e7c6cb9dc9b9",
+  "hash": "7d2fe940e22a",
   "who": "narrator",
-  "text": "Noticing order"
+  "text": "Noticing order. Owl's picture book."
  },
  "line.tytul_counting_3": {
-  "hash": "4e0885e64896",
+  "hash": "24378cbcb2b6",
   "who": "narrator",
-  "text": "Counting to 3"
+  "text": "Counting to 3. Hedgehog's birthday."
  },
  "line.tytul_more_fewer": {
-  "hash": "1b14fae0f830",
+  "hash": "5727b80c91de",
   "who": "narrator",
-  "text": "More, fewer"
+  "text": "More, fewer. The night of the fireflies."
  },
  "line.tytul_logical_pairs": {
-  "hash": "6a4e232e728f",
+  "hash": "eb583d845c46",
   "who": "narrator",
-  "text": "What goes with what?"
+  "text": "What goes with what? Things after the storm."
  },
  "line.tytul_numbers_1_5": {
-  "hash": "05329f083b55",
+  "hash": "34ed043b326a",
   "who": "narrator",
-  "text": "Numbers 1 to 5"
+  "text": "Numbers 1 to 5. Mole's train."
  },
  "line.tytul_up_down": {
-  "hash": "afff3c26a147",
+  "hash": "b468a47d75bd",
   "who": "narrator",
-  "text": "Up and down"
+  "text": "Up and down. Apple day."
  },
  "line.tytul_in_out": {
-  "hash": "242918f50de7",
+  "hash": "cd3ad51fc6ea",
   "who": "narrator",
-  "text": "Inside and outside"
+  "text": "Inside and outside. The evening before the storm."
  },
  "line.tytul_tangram": {
-  "hash": "d5aae9d391aa",
+  "hash": "fd976b00526a",
   "who": "narrator",
-  "text": "Tangram"
+  "text": "Tangram. Owl's shadow theatre."
  },
  "line.tytul_grouping": {
-  "hash": "7899882b8142",
+  "hash": "77c7e143cdbd",
   "who": "narrator",
-  "text": "Grouping"
+  "text": "Grouping. Detectives group things."
  },
  "line.tytul_front_back": {
-  "hash": "a198124fa0d5",
+  "hash": "7c474764cc73",
   "who": "narrator",
-  "text": "In front and behind"
+  "text": "In front and behind. Hide-and-seek."
  },
  "line.tytul_rhythm": {
-  "hash": "86880b5ef23c",
+  "hash": "b3784741a8d8",
   "who": "narrator",
-  "text": "Rhythm"
+  "text": "Rhythm. What repeats, what comes next."
  },
  "line.tytul_queue": {
-  "hash": "2171322e2637",
+  "hash": "4f3a72a82cdd",
   "who": "narrator",
-  "text": "The queue"
+  "text": "The queue. The great forest race."
  },
  "line.tytul_numbers_6_10": {
-  "hash": "5bf5fe9caf51",
+  "hash": "7e6bf29aedc6",
   "who": "narrator",
-  "text": "Numbers 6 to 10"
+  "text": "Numbers 6 to 10. Beaver's dam."
  },
  "line.tytul_counting_5": {
-  "hash": "6dcc771e0f10",
+  "hash": "42373cec220a",
   "who": "narrator",
-  "text": "Counting to 5"
+  "text": "Counting to 5. The forest bakery."
  },
  "line.tytul_adding_5": {
-  "hash": "dfb3bddd5242",
+  "hash": "065be008a234",
   "who": "narrator",
-  "text": "Adding to 5"
+  "text": "Adding to 5. Fox's picnic."
  },
  "line.tytul_adding_10": {
-  "hash": "b27e14dfbc4c",
+  "hash": "6ae4dd99ae78",
   "who": "narrator",
-  "text": "Adding to 10"
+  "text": "Adding to 10. The hopscotch tournament."
+ },
+ "line.tytul_light_heavy": {
+  "hash": "e8500b5db46c",
+  "who": "narrator",
+  "text": "Light and heavy. Beaver's raft."
+ },
+ "line.tytul_thick_wide": {
+  "hash": "911395be4a67",
+  "who": "narrator",
+  "text": "Will it fit? Mole moves house."
+ },
+ "line.tytul_complete_shape": {
+  "hash": "5babe454cd2f",
+  "who": "narrator",
+  "text": "The missing piece. The birthday picture."
  }
 }

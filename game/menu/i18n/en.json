@@ -393,99 +393,138 @@
   },
   "line.tytul_one_many": {
     "who": "narrator",
-    "text": "One or many?"
+    "text": "One or many? Squirrel's winter store.",
+    "pauza": "1.0s"
   },
   "line.tytul_spot_difference": {
     "who": "narrator",
-    "text": "Spot the difference"
+    "text": "Spot the difference. The magic pond.",
+    "pauza": "1.0s"
   },
   "line.tytul_bigger_smaller": {
     "who": "narrator",
-    "text": "Bigger, smaller"
+    "text": "Bigger, smaller. A new home for Squirrel.",
+    "pauza": "1.0s"
   },
   "line.tytul_long_short": {
     "who": "narrator",
-    "text": "Long and short"
+    "text": "Long and short. A bridge for the picnic.",
+    "pauza": "1.0s"
   },
   "line.tytul_tall_short": {
     "who": "narrator",
-    "text": "Tall and short"
+    "text": "Tall and short. The treehouse.",
+    "pauza": "1.0s"
   },
   "line.tytul_ordering": {
     "who": "narrator",
-    "text": "In order"
+    "text": "In order. Beaver's tower.",
+    "pauza": "1.0s"
   },
   "line.tytul_shapes": {
     "who": "narrator",
-    "text": "Shapes"
+    "text": "Shapes. A house for Hedgehog.",
+    "pauza": "1.0s"
   },
   "line.tytul_morning_night": {
     "who": "narrator",
-    "text": "Morning and night"
+    "text": "Morning and night. Mole's long day.",
+    "pauza": "1.0s"
   },
   "line.tytul_noticing_order": {
     "who": "narrator",
-    "text": "Noticing order"
+    "text": "Noticing order. Owl's picture book.",
+    "pauza": "1.0s"
   },
   "line.tytul_counting_3": {
     "who": "narrator",
-    "text": "Counting to 3"
+    "text": "Counting to 3. Hedgehog's birthday.",
+    "pauza": "1.0s"
   },
   "line.tytul_more_fewer": {
     "who": "narrator",
-    "text": "More, fewer"
+    "text": "More, fewer. The night of the fireflies.",
+    "pauza": "1.0s"
   },
   "line.tytul_logical_pairs": {
     "who": "narrator",
-    "text": "What goes with what?"
+    "text": "What goes with what? Things after the storm.",
+    "pauza": "1.0s"
   },
   "line.tytul_numbers_1_5": {
     "who": "narrator",
-    "text": "Numbers 1 to 5"
+    "text": "Numbers 1 to 5. Mole's train.",
+    "pauza": "1.0s"
   },
   "line.tytul_up_down": {
     "who": "narrator",
-    "text": "Up and down"
+    "text": "Up and down. Apple day.",
+    "pauza": "1.0s"
   },
   "line.tytul_in_out": {
     "who": "narrator",
-    "text": "Inside and outside"
+    "text": "Inside and outside. The evening before the storm.",
+    "pauza": "1.0s"
   },
   "line.tytul_tangram": {
     "who": "narrator",
-    "text": "Tangram"
+    "text": "Tangram. Owl's shadow theatre.",
+    "pauza": "1.0s"
   },
   "line.tytul_grouping": {
     "who": "narrator",
-    "text": "Grouping"
+    "text": "Grouping. Detectives group things.",
+    "pauza": "1.0s"
   },
   "line.tytul_front_back": {
     "who": "narrator",
-    "text": "In front and behind"
+    "text": "In front and behind. Hide-and-seek.",
+    "pauza": "1.0s"
   },
   "line.tytul_rhythm": {
     "who": "narrator",
-    "text": "Rhythm"
+    "text": "Rhythm. What repeats, what comes next.",
+    "pauza": "1.0s"
   },
   "line.tytul_queue": {
     "who": "narrator",
-    "text": "The queue"
-  },
-  "line.tytul_numbers_6_10": {
-    "who": "narrator",
-    "text": "Numbers 6 to 10"
+    "text": "The queue. The great forest race.",
+    "pauza": "1.0s"
   },
   "line.tytul_counting_5": {
     "who": "narrator",
-    "text": "Counting to 5"
+    "text": "Counting to 5. The forest bakery.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_light_heavy": {
+    "who": "narrator",
+    "text": "Light and heavy. Beaver's raft.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_thick_wide": {
+    "who": "narrator",
+    "text": "Will it fit? Mole moves house.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_complete_shape": {
+    "who": "narrator",
+    "text": "The missing piece. The birthday picture.",
+    "pauza": "1.0s"
+  },
+  "line.tytul_numbers_6_10": {
+    "who": "narrator",
+    "text": "Numbers 6 to 10. Beaver's dam.",
+    "pauza": "1.0s"
   },
   "line.tytul_adding_5": {
     "who": "narrator",
-    "text": "Adding to 5"
+    "text": "Adding to 5. Fox's picnic.",
+    "pauza": "1.0s"
   },
   "line.tytul_adding_10": {
     "who": "narrator",
-    "text": "Adding to 10"
+    "text": "Adding to 10. The hopscotch tournament.",
+    "pauza": "1.0s"
   },
   "line.mapa_lisek_1": {
     "who": "lisek",

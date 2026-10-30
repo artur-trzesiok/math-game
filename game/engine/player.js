@@ -431,7 +431,7 @@ export class Player {
     catch (e) { console.warn("prepare:", e); }
     ekran.style.display = "none";
     if (run !== this.run) return;
-    if (!fromStage) await this.plansza({ obraz: v(`/game/lessons/${id}/cover.webp`), napis: meta.title[this.lang] || meta.title.en, dzwiek: "plansza", menuLinia: `line.tytul_${id}` });
+    if (!fromStage) await this.plansza({ obraz: v(`/game/lessons/${id}/cover.webp`), napis: meta.title[this.lang] || meta.title.en, podnapis: meta.subtitle?.[this.lang], dzwiek: "plansza", menuLinia: `line.tytul_${id}` });
     this.abort = false;
     const order = fromStage && STAGES.includes(fromStage) ? STAGES.slice(STAGES.indexOf(fromStage)) : STAGES;
     for (const st of order) {
@@ -461,11 +461,12 @@ export class Player {
 
   // a card for about two seconds (a tap skips it): the lesson's start (cover + name) or a stage (icon + name),
   // the lesson's characters peeking in from the sides
-  async plansza({ obraz, ikona = false, napis, dzwiek = "etap", linia = null, menuLinia = null }) {
+  async plansza({ obraz, ikona = false, napis, podnapis = null, dzwiek = "etap", linia = null, menuLinia = null }) {
     const el = $("#plansza"), glowy = Object.keys(this.lesson.characters || {}).map((n) => E.glowaObraz(n)).filter(Boolean).slice(0, 2);
-    el.innerHTML = `<div class="karta"><img class="obraz ${ikona ? "ikona" : ""}" src="${obraz}" alt=""><div class="napis"></div>`
+    el.innerHTML = `<div class="karta"><img class="obraz ${ikona ? "ikona" : ""}" src="${obraz}" alt=""><div class="napis"></div>${podnapis ? '<div class="podnapis"></div>' : ""}`
       + glowy.map((g, i) => `<img class="glowa ${i ? "p" : "l"}" src="${g.toDataURL()}" alt="">`).join("") + "</div>";
     el.querySelector(".napis").textContent = napis;
+    if (podnapis) el.querySelector(".podnapis").textContent = podnapis;
     el.className = "on"; this.stage?.sfx.graj(dzwiek);
     // the narrator says the stage's name ("here comes the story!", game/etapy): the card stays until both are done
     const tekst = linia && this.etapy?.[linia];
@@ -473,7 +474,7 @@ export class Player {
     const tytul = menuLinia && !FAST ? await this.liniaMenu(menuLinia) : null;   // a lesson's card: its name read out
     if (tytul) mowa = this.speech.say({ lang: this.lang, lessonId: "menu", key: menuLinia, text: tytul.text, who: "narrator" }).catch(() => {});
     await new Promise((ok) => { const t = setTimeout(ok, FAST ? 150 : 2100); el.onclick = () => { clearTimeout(t); this.speech.stop?.(); ok(); }; });
-    if (mowa) await Promise.race([mowa, new Promise((ok) => setTimeout(ok, 3500))]);
+    if (mowa) await Promise.race([mowa, new Promise((ok) => setTimeout(ok, 5500))]);   // the name and the subtitle read out
     el.className = "on out"; await new Promise((ok) => setTimeout(ok, FAST ? 30 : 330)); el.className = ""; el.innerHTML = "";
   }
 
