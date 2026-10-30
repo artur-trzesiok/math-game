@@ -198,7 +198,7 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 - **Stage 6 is not arithmetic** (2026-10-30, user: "dodawanie do 5 i do 10 to kolejne lekcje?", "liczymy do 10 jest
   później niż dodajemy do 10 - bez sensu"): the competitor adds only after a whole block of comparing, counting to 10
   and decomposition, and puts ~19 lessons between adding to 5 and to 10. World 1 ends with one number lesson
-  (counting_5) and three non-numerical ones (light_heavy, thick_wide = thick_thin + wide_narrow merged, complete_shape).
+  (counting_5) and three non-numerical ones (light_heavy, thick_wide "Czy się zmieści?" = thick_thin + wide_narrow merged, complete_shape).
   Moved, built lessons keep their ids and stickers: numbers_6_10 -> stage 7 (replaces the duplicate counting_10),
   adding_5 -> stage 12 (after split_5, before subtract_5), adding_10 -> stage 18 (replaces the duplicate addition_10).
   New placeholders: quick_look (subitizing, stage 7), capacity (stage 8), missing_5 (stage 13). Full table in

@@ -16,8 +16,8 @@ are ready earlier or later, and our own added. Stage ids continue: etap7 .. etap
 ## World 1 - Leśna Kraina (exists)
 1 one_many, spot_difference, bigger_smaller, long_short · 2 tall_short, ordering, shapes, morning_night ·
 3 noticing_order, counting_3, more_fewer, logical_pairs · 4 numbers_1_5, up_down, in_out, tangram ·
-5 grouping, front_back, rhythm, queue · 6 counting_5, light_heavy - lekki i ciężki (the balance), thick_wide - gruby
-i szeroki (thickness and width in one contrasting lesson), complete_shape - brakujący kawałek (the competitor's shape
+5 grouping, front_back, rhythm, queue · 6 counting_5, light_heavy - lekki i ciężki (the balance), thick_wide - czy się
+zmieści? (thickness and width in one contrasting lesson: what decides whether it fits), complete_shape - brakujący kawałek (the competitor's shape
 puzzle and complete-the-shape merged)
 
 Stage 6 reordered 2026-10-30: it held counting_5, numbers_6_10, adding_5 and adding_10 - adding to 10 came before

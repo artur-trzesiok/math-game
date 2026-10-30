@@ -134,7 +134,7 @@ does not tell weight; three things can be put in order from the lightest.
   on the balance; a scratch-off (what is in the heaviest bag?). Payoff: nothing falls, Bear lifts the heavy pot onto
   the stove. Parents: "take two things in your hands - which is heavier?".
 
-## 23. Thick and wide (thick_wide)
+## 23. Will it fit? - thick and wide (thick_wide, title "Czy się zmieści?")
 
 **Idea:** thick / thin for round things (logs, trunks, crayons) and wide / narrow for flat things and openings (gates,
 paths, ribbons); whether it fits is decided by thickness or width, not length; order three by thickness.
