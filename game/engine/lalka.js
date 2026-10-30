@@ -317,6 +317,12 @@ export class Lalka {
         }
         const m = this._plane(n, grupyCelu[t].sr, 0, profil, bb);
         m.visible = false; grupyCelu[t].g.add(m);
+        // the nose alone (tools/characters/make_nos.py) hangs on its mouth and is drawn over the eyes: turned 3/4 or in
+        // profile it sticks out in front of the near eye, while the muzzle patch stays under them
+        if (t === "usta" && c[`nos_${n}`] && this.tex[`nos_${n}`]) {
+          const nm = new THREE.Mesh(m.geometry, m.material.clone()); nm.material.map = this.tex[`nos_${n}`];
+          nm.position.z = 0.02; nm.renderOrder = m.renderOrder; m.add(nm);
+        }
         zestaw[t][baza.slice(5)] = m;
       }
       this.twarze[widok] = zestaw;
