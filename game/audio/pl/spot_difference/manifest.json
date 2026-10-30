@@ -249,16 +249,6 @@
   "who": "lisek",
   "text": "Laurka czeka na babcię. Ale będzie miała niespodziankę!"
  },
- "line.b_rybki": {
-  "hash": "3550aa6f82c0",
-  "who": "sowa",
-  "text": "Popatrzcie, w stawie pływa rybka! Jest głodna. Dajmy jej bułki na podziękowanie za zabawę."
- },
- "line.b_rybki_jak": {
-  "hash": "29cb4e7836fd",
-  "who": "lisek",
-  "text": "Przesuń palcem bułkę do rybki. Tylko szyszki jej nie dawaj!"
- },
  "line.b_rybki_ok": {
   "hash": "a9cee3d3b113",
   "who": "lisek",
@@ -383,5 +373,15 @@
   "hash": "d93edbbe223b",
   "who": "lisek",
   "text": "Odbicie nie ma okularów, a zamiast kapelusza ma zimową czapkę! Ale sprytny staw."
+ },
+ "line.b_rybki_karma": {
+  "hash": "1e4562a0dc96",
+  "who": "sowa",
+  "text": "Popatrzcie, w stawie pływa rybka! Jest głodna. Mam dla niej karmę dla rybek, na podziękowanie za zabawę."
+ },
+ "line.b_rybki_jak_karma": {
+  "hash": "7c3eff961bcd",
+  "who": "lisek",
+  "text": "Przesuń palcem karmę do rybki. Tylko szyszki jej nie dawaj!"
  }
 }

@@ -229,11 +229,6 @@
   "who": "jez",
   "text": "What a lovely orchard! Can you hear? Somebody's chirping."
  },
- "line.b_ptaszek": {
-  "hash": "4a66a44d526c",
-  "who": "wiewiorka",
-  "text": "It's a hungry little bird! Give it the crumbs from the bakery, and leave the pine cone."
- },
  "line.b_najedzony": {
   "hash": "42584665f185",
   "who": "jez",
@@ -418,5 +413,10 @@
   "hash": "a1411fcb7cf2",
   "who": "mis",
   "text": "That's four already! No more needed."
+ },
+ "line.b_ptaszek_ziarno": {
+  "hash": "68669f3a334f",
+  "who": "wiewiorka",
+  "text": "It's a hungry little bird! Give it the seeds we have in the basket, and leave the pine cone."
  }
 }

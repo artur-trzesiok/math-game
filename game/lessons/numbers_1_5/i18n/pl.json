@@ -271,13 +271,13 @@
     "who": "kret",
     "text": "Popatrz, na jeziorze pływa kaczka. Chyba jest głodna!"
   },
-  "line.d_karm": {
+  "line.d_karm_ziarno": {
     "who": "sowa",
-    "text": "Mamy bułkę z drogi. Przeciągnij jedzenie do kaczki - zobaczymy, co lubi."
+    "text": "Mamy ziarno dla kaczek. Przeciągnij jedzenie do kaczki, zobaczymy, co lubi."
   },
-  "line.d_najedzona": {
+  "line.d_najedzona_ziarno": {
     "who": "kret",
-    "text": "Bułkę zjadła, a szyszkę wypluła! Szyszki nie są dla kaczek."
+    "text": "Ziarno zjadła, a szyszkę wypluła! Szyszki nie są dla kaczek."
   },
   "line.d_jutro": {
     "who": "kret",

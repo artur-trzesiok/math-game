@@ -229,11 +229,6 @@
   "who": "jez",
   "text": "Jaki piękny sad! Słyszycie? Ktoś tu ćwierka."
  },
- "line.b_ptaszek": {
-  "hash": "9e95a0272178",
-  "who": "wiewiorka",
-  "text": "To głodny ptaszek! Daj mu okruszki z piekarni, a szyszkę zostaw."
- },
  "line.b_najedzony": {
   "hash": "d337b9f3c459",
   "who": "jez",
@@ -418,5 +413,10 @@
   "hash": "136fba513dd7",
   "who": "mis",
   "text": "Już są cztery! Więcej nie trzeba."
+ },
+ "line.b_ptaszek_ziarno": {
+  "hash": "aa1c07ae2b98",
+  "who": "wiewiorka",
+  "text": "To głodny ptaszek! Daj mu ziarenka, które mamy w koszyku, a szyszkę zostaw."
  }
 }

@@ -199,13 +199,13 @@
     "who": "lisek",
     "text": "The card is waiting for Granny. What a surprise she'll have!"
   },
-  "line.b_rybki": {
+  "line.b_rybki_karma": {
     "who": "sowa",
-    "text": "Look, a fish is swimming in the pond! It is hungry. Let's give it some bread to say thank you for the game."
+    "text": "Look, a little fish is swimming in the pond! It's hungry. I have fish food for it, to say thank you for the game."
   },
-  "line.b_rybki_jak": {
+  "line.b_rybki_jak_karma": {
     "who": "lisek",
-    "text": "Slide the bread to the fish with your finger. But don't give it the pine cone!"
+    "text": "Slide the fish food to the fish with your finger. Just don't give it the pine cone!"
   },
   "line.b_rybki_ok": {
     "who": "lisek",

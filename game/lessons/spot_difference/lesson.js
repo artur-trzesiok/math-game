@@ -103,11 +103,11 @@ export default {
         const RYBA = { x: 2.4, y: 0.15, size: 1.5 };                          // in the water of the pond
         const ryba = await c.object("rybka", RYBA);
         await c.ujecie("sredni", { na: ["sowa", ryba] });
-        await c.say("sowa", "line.b_rybki", { anim: "Wskazanie" });
+        await c.say("sowa", "line.b_rybki_karma", { anim: "Wskazanie" });
         await c.ujecie("ogolny");                                            // the bread over the heads, the fish in the water
-        await c.say("lisek", "line.b_rybki_jak");
+        await c.say("lisek", "line.b_rybki_jak_karma");
         ryba.remove();                                                       // the game's own fish takes its place
-        await c.karmienie({ zwierze: "rybka", jedzenie: ["bulka", "bulka", "bulka"], fuj: ["szyszka"], kto: "lisek", ...RYBA });
+        await c.karmienie({ zwierze: "rybka", jedzenie: ["karma_rybki", "karma_rybki", "karma_rybki"], fuj: ["szyszka"], kto: "lisek", ...RYBA });
         await c.ujecie("dwuujecie", { na: ["lisek", "sowa"] });
         await c.say("lisek", "line.b_rybki_ok", { anim: "Radosc" });
         await c.say("lisek", "line.b_do_babci", { anim: "Machanie" });

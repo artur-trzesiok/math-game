@@ -24,7 +24,7 @@ morning the room shows she came to say thank you.
 4. Helping Owl: she drew a picture for her granny and the pond made a copy - now she has two and does not know which
    is hers. **Child** finds the differences, then points to the real one (the kitten, the sun's rays).
 5. *Breather, no maths:* back at the pond, its fish swim up hungry - a thank-you for the pond. **Child** feeds the
-   fish with bread (`karmienie`); a pine cone it spits back.
+   fish with fish food (`karmienie` - never bread, it harms fish); a pine cone it spits back.
 
 ### C. The walk to Granny's oak (the panorama `droga_do_debu`)
 6. Off along the path through the meadow (a pan); the brook has no stones - **child** lays three stepping stones

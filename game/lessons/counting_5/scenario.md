@@ -20,7 +20,7 @@ rolls lie spread and the **child counts** again: still five. The rolls glide bac
 counts** the rolls she drew - four. Bear packs four into a bag, counting aloud; Squirrel: let's take them to Owl, she
 lives past the orchard.
 B. *The orchard* (sad), on the way. *Breather* (`karmienie`): a little bird chirps, hungry - the **child** feeds it the
-crumbs from the bakery and leaves it the pine cone. "Owl is waiting" - on we go.
+bird seed (never bread) and leaves it the pine cone. "Owl is waiting" - on we go.
 C. *Owl's tree* (`dziupla_sowy`, new, the story's own last place). The wide hollow high in the beech; Bear calls; Owl
 comes out: the rolls are for her owlets. Four owlets fly down - the **child gives** each one roll (`rozdaj`, one each):
 four owlets, four rolls. Owl pays one coin for each roll, but her eyes are sleepy by day - the **child counts out** four

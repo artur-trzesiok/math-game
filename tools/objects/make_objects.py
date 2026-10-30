@@ -695,6 +695,21 @@ platform with a little roof, seen from the front, NO tree under it; one big tall
 }
 
 # in order, at home: a water-glass xylophone - the SAME glass four times, water at four levels (more water, a lower note)
+# food that is good for the animals the children feed (bread harms fish and ducks): a pinch of fish food flakes, a
+# little heap of duck grain
+SHEETS["karma"] = {
+    "outline": True,
+    "names": ["karma_rybki", "ziarno_kaczki", "ziarno_ptaki"],
+    "rows": 1,
+    "size": "1536x1024",
+    "prompt": f"""A sprite sheet of THREE illustrated objects for a children's picture book, in ONE ROW of 3 on a fully
+TRANSPARENT background, with generous empty space between them so they do not touch.
+{STYL}
+Left to right: a small round paper-and-tin pot of fish food with a few colourful fish-food flakes spilling out in front
+of it, a little picture of a goldfish on its label (NO letters); a small neat heap of duck food - golden corn kernels,
+rolled oats and green peas mixed together; a small heap of bird seed - striped sunflower seeds and little millet grains.
+The background is fully TRANSPARENT: NO coloured background, NO glow, NO light halo around anything.""",
+}
 SHEETS["szklanki"] = {
     "outline": True,
     "wspolna_skala": True,

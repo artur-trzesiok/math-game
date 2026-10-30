@@ -199,13 +199,13 @@
     "who": "lisek",
     "text": "Laurka czeka na babcię. Ale będzie miała niespodziankę!"
   },
-  "line.b_rybki": {
+  "line.b_rybki_karma": {
     "who": "sowa",
-    "text": "Popatrzcie, w stawie pływa rybka! Jest głodna. Dajmy jej bułki na podziękowanie za zabawę."
+    "text": "Popatrzcie, w stawie pływa rybka! Jest głodna. Mam dla niej karmę dla rybek, na podziękowanie za zabawę."
   },
-  "line.b_rybki_jak": {
+  "line.b_rybki_jak_karma": {
     "who": "lisek",
-    "text": "Przesuń palcem bułkę do rybki. Tylko szyszki jej nie dawaj!"
+    "text": "Przesuń palcem karmę do rybki. Tylko szyszki jej nie dawaj!"
   },
   "line.b_rybki_ok": {
     "who": "lisek",

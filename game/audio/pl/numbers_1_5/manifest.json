@@ -364,16 +364,6 @@
   "who": "kret",
   "text": "Popatrz, na jeziorze pływa kaczka. Chyba jest głodna!"
  },
- "line.d_karm": {
-  "hash": "ef22fee0bdc5",
-  "who": "sowa",
-  "text": "Mamy bułkę z drogi. Przeciągnij jedzenie do kaczki - zobaczymy, co lubi."
- },
- "line.d_najedzona": {
-  "hash": "b5020a7af28a",
-  "who": "kret",
-  "text": "Bułkę zjadła, a szyszkę wypluła! Szyszki nie są dla kaczek."
- },
  "line.d_jutro": {
   "hash": "31a4e7729333",
   "who": "kret",
@@ -488,5 +478,15 @@
   "hash": "936c19fca5d5",
   "who": "mis",
   "text": "Tylko pięć? Myślałem, że mam więcej!"
+ },
+ "line.d_karm_ziarno": {
+  "hash": "7bd5e117979a",
+  "who": "sowa",
+  "text": "Mamy ziarno dla kaczek. Przeciągnij jedzenie do kaczki, zobaczymy, co lubi."
+ },
+ "line.d_najedzona_ziarno": {
+  "hash": "c2649885792b",
+  "who": "kret",
+  "text": "Ziarno zjadła, a szyszkę wypluła! Szyszki nie są dla kaczek."
  }
 }

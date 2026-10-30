@@ -123,8 +123,8 @@ export default {
         await Promise.all(["wiewiorka", "jez", "mis"].map((n) => c.enter(n, n === "mis" ? "right" : "left")));
         await c.play("jez", "Rozgladanie");
         await c.say("jez", "line.b_sad");                                    // the wide arrival
-        await c.say("wiewiorka", "line.b_ptaszek", { anim: "Zgloszenie" });
-        await c.karmienie({ zwierze: "ptak", jedzenie: ["kromka", "bulka", "kromka"], fuj: ["szyszka"], kto: "wiewiorka", size: 1.6 });
+        await c.say("wiewiorka", "line.b_ptaszek_ziarno", { anim: "Zgloszenie" });
+        await c.karmienie({ zwierze: "ptak", jedzenie: ["ziarno_ptaki", "ziarno_ptaki", "ziarno_ptaki"], fuj: ["szyszka"], kto: "wiewiorka", size: 1.6 });
         await c.ujecie("zblizenie", { na: "jez" });                          // his joy
         await c.say("jez", "line.b_najedzony", { anim: "Radosc" });
         await c.ujecie("sredni", { na: ["mis"] });

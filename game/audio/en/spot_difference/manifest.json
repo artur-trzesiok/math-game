@@ -249,16 +249,6 @@
   "who": "lisek",
   "text": "The card is waiting for Granny. What a surprise she'll have!"
  },
- "line.b_rybki": {
-  "hash": "3d8dca0c7c4d",
-  "who": "sowa",
-  "text": "Look, a fish is swimming in the pond! It is hungry. Let's give it some bread to say thank you for the game."
- },
- "line.b_rybki_jak": {
-  "hash": "ae8d94c0f3d7",
-  "who": "lisek",
-  "text": "Slide the bread to the fish with your finger. But don't give it the pine cone!"
- },
  "line.b_rybki_ok": {
   "hash": "d4a7475313a3",
   "who": "lisek",
@@ -383,5 +373,15 @@
   "hash": "97756cc60c12",
   "who": "lisek",
   "text": "My reflection has no glasses, and a winter hat instead of my hat! What a clever pond."
+ },
+ "line.b_rybki_karma": {
+  "hash": "b9f9b98694bf",
+  "who": "sowa",
+  "text": "Look, a little fish is swimming in the pond! It's hungry. I have fish food for it, to say thank you for the game."
+ },
+ "line.b_rybki_jak_karma": {
+  "hash": "5cd710fbb1f1",
+  "who": "lisek",
+  "text": "Slide the fish food to the fish with your finger. Just don't give it the pine cone!"
  }
 }

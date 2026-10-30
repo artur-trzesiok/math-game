@@ -23,7 +23,7 @@ close: "mine are more!" - the **child** counts both (`count`): five and five; Be
 the ride over the high bridge **seen** (`pociag_most`, Owl and Bear speak over it).
 D. *The lakeside stop* (`stacja_jezioro`, the end of the journey): Mole calls the end of the trip, Owl looks round; the
 five passengers hop off one by one and the **child** counts them - five, everybody got here. *Breather* (`karmienie`,
-not maths): a hungry duck on the lake - the **child** drags bread to her, she gulps it and spits out the pine cone.
+not maths): a hungry duck on the lake - the **child** drags duck grain to her (corn, oats, peas - never bread), she gulps it and spits out the pine cone.
 Mole: we go home now, and tomorrow we come back for a picnic; Bear: then we must pack!
 
 ## Stage 2 - practice (an insert, five stars)

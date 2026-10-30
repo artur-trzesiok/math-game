@@ -364,16 +364,6 @@
   "who": "kret",
   "text": "Look, a duck is swimming on the lake. I think she's hungry!"
  },
- "line.d_karm": {
-  "hash": "66293a55452b",
-  "who": "sowa",
-  "text": "We have bread left from the trip. Drag the food to the duck - let's see what she likes."
- },
- "line.d_najedzona": {
-  "hash": "6f343a473b44",
-  "who": "kret",
-  "text": "She ate the bread and spat out the cone! Cones are not for ducks."
- },
  "line.d_jutro": {
   "hash": "83021bbf53dc",
   "who": "kret",
@@ -488,5 +478,15 @@
   "hash": "902bcb9a009c",
   "who": "mis",
   "text": "Only five? I thought I had more!"
+ },
+ "line.d_karm_ziarno": {
+  "hash": "80c219510bf1",
+  "who": "sowa",
+  "text": "We have duck food. Drag the food to the duck, let's see what it likes."
+ },
+ "line.d_najedzona_ziarno": {
+  "hash": "e2201c689af5",
+  "who": "kret",
+  "text": "It ate the grain and spat out the pine cone! Pine cones aren't for ducks."
  }
 }

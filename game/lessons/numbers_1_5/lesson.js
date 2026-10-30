@@ -248,12 +248,12 @@ export default {
         const kaczka = await c.object("kaczka_mama", KACZKA);
         await c.ujecie("sredni", { na: ["kret", kaczka] });
         await c.say("kret", "line.d_kaczki", { anim: "Wskazanie" });
-        await c.ujecie("ogolny");                                            // the bread over the heads, the duck on the water
-        await c.say("sowa", "line.d_karm");
+        await c.ujecie("ogolny");                                            // the food over the heads, the duck on the water
+        await c.say("sowa", "line.d_karm_ziarno");
         kaczka.remove();                                                     // the game's own duck takes its place
-        await c.karmienie({ zwierze: "kaczka_mama", jedzenie: ["bulka", "bulka", "bulka"], fuj: ["szyszka"], kto: "sowa", ...KACZKA });
+        await c.karmienie({ zwierze: "kaczka_mama", jedzenie: ["ziarno_kaczki", "ziarno_kaczki", "ziarno_kaczki"], fuj: ["szyszka"], kto: "sowa", ...KACZKA });
         await c.ujecie("dwuujecie", { na: ["kret", "sowa"] });
-        await c.say("kret", "line.d_najedzona", { anim: "Radosc" });
+        await c.say("kret", "line.d_najedzona_ziarno", { anim: "Radosc" });
         await c.say("kret", "line.d_jutro");
         await c.ujecie("zblizenie", { na: "mis" });
         await c.say("mis", "line.d_piknik", { anim: "Podskok" });
