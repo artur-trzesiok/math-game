@@ -375,6 +375,30 @@
     "who": "lisek",
     "text": "Hurra! Odblokowaliśmy dwudziesty czwarty etap naszej podróży! Nowe przygody czekają!"
   },
+  "line.brama_swiat2": {
+    "who": "lisek",
+    "text": "Hurra! Otworzyła się brama do Wioski nad Jeziorem! Ruszamy w drogę!"
+  },
+  "line.brama_swiat3": {
+    "who": "lisek",
+    "text": "Hurra! Otworzyła się brama do Zimowych Gór! Ruszamy w drogę!"
+  },
+  "line.brama_swiat4": {
+    "who": "lisek",
+    "text": "Hurra! Otworzyła się brama do Zamku na Wzgórzu! Ruszamy w drogę!"
+  },
+  "line.brama_zamknieta_swiat2": {
+    "who": "lisek",
+    "text": "Za tą bramą czeka Wioska nad Jeziorem! Brama otworzy się, gdy przejdziemy wszystkie etapy Leśnej Krainy."
+  },
+  "line.brama_zamknieta_swiat3": {
+    "who": "lisek",
+    "text": "Za tą bramą czeka Zimowe Góry! Brama otworzy się, gdy przejdziemy wszystkie etapy Wioski nad Jeziorem."
+  },
+  "line.brama_zamknieta_swiat4": {
+    "who": "lisek",
+    "text": "Za tą bramą czeka Zamek na Wzgórzu! Brama otworzy się, gdy przejdziemy wszystkie etapy Zimowych Gór."
+  },
   "line.swiat_swiat1": {
     "who": "narrator",
     "text": "Leśna Kraina"

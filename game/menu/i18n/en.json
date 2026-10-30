@@ -375,6 +375,30 @@
     "who": "lisek",
     "text": "Hooray! We've unlocked the twenty-fourth stage of our journey! New adventures are waiting!"
   },
+  "line.brama_swiat2": {
+    "who": "lisek",
+    "text": "Hooray! The gate to the Lakeside Village is open! Off we go!"
+  },
+  "line.brama_swiat3": {
+    "who": "lisek",
+    "text": "Hooray! The gate to the Snowy Mountains is open! Off we go!"
+  },
+  "line.brama_swiat4": {
+    "who": "lisek",
+    "text": "Hooray! The gate to the Castle on the Hill is open! Off we go!"
+  },
+  "line.brama_zamknieta_swiat2": {
+    "who": "lisek",
+    "text": "The Lakeside Village is waiting behind this gate! It will open when we finish all the stages of the Forest Land."
+  },
+  "line.brama_zamknieta_swiat3": {
+    "who": "lisek",
+    "text": "The Snowy Mountains is waiting behind this gate! It will open when we finish all the stages of the Lakeside Village."
+  },
+  "line.brama_zamknieta_swiat4": {
+    "who": "lisek",
+    "text": "The Castle on the Hill is waiting behind this gate! It will open when we finish all the stages of the Snowy Mountains."
+  },
   "line.swiat_swiat1": {
     "who": "narrator",
     "text": "The Forest Land"

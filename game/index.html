@@ -262,6 +262,14 @@
   .brama.zamknieta img.slupy { filter: saturate(.55) brightness(1.05) drop-shadow(0 6px 8px rgba(60,30,0,.3)); }   /* sharp: the padlock says it is shut */
   .brama .klodka { position: absolute; left: 50%; top: 42%; width: calc(var(--k) * 0.34); height: auto; transform: translate(-50%, -50%); filter: drop-shadow(0 6px 8px rgba(60,30,0,.35)); }
   .brama.trzesie { animation: trzes .45s; }
+  /* the gate opening (player.js swietujOtwarcie brama): colours back, the land in it glows, then we walk through */
+  .brama img.slupy { transition: filter 1s ease; }
+  .brama.swieci .widok { animation: swiatlo 1.6s ease-in-out infinite alternate; }
+  @keyframes swiatlo { from { filter: brightness(1.05); box-shadow: inset 0 0 8px rgba(255,255,255,.35), 0 0 0 rgba(255,230,140,0); } to { filter: brightness(1.35) saturate(1.2); box-shadow: inset 0 0 30px rgba(255,255,255,.7), 0 0 60px rgba(255,230,140,.9); } }
+  .brama.wejscie .rama { transform: scale(3.2); opacity: 0; transition: transform .8s ease-in, opacity .8s ease-in; }
+  .brama .glowa-mowi { position: absolute; left: -10%; top: 18%; width: calc(var(--k) * 0.36); z-index: 7; border-radius: 50%; pointer-events: none;
+    border: 4px solid #fff; box-shadow: 0 6px 14px rgba(60,30,0,.35); animation: wysun .35s ease-out, kiwa .5s ease-in-out .35s infinite alternate; }
+  .brama .glowa-mowi.chowa { animation: wysun .3s ease-in reverse forwards; }
   /* the way back: the gate and the signpost mirrored, so their arrows point back; the land behind seen through it */
   .brama.wstecz img.slupy, .drogowskaz.wstecz img { transform: scaleX(-1); }
   .brama.wstecz .widok { left: 23%; right: 19%; }

@@ -653,5 +653,35 @@
   "hash": "5babe454cd2f",
   "who": "narrator",
   "text": "The missing piece. The birthday picture."
+ },
+ "line.brama_swiat2": {
+  "hash": "648cd35b93b5",
+  "who": "lisek",
+  "text": "Hooray! The gate to the Lakeside Village is open! Off we go!"
+ },
+ "line.brama_swiat3": {
+  "hash": "f3416157a15e",
+  "who": "lisek",
+  "text": "Hooray! The gate to the Snowy Mountains is open! Off we go!"
+ },
+ "line.brama_swiat4": {
+  "hash": "2dc9a9b6cce1",
+  "who": "lisek",
+  "text": "Hooray! The gate to the Castle on the Hill is open! Off we go!"
+ },
+ "line.brama_zamknieta_swiat2": {
+  "hash": "f9ccc499def4",
+  "who": "lisek",
+  "text": "The Lakeside Village is waiting behind this gate! It will open when we finish all the stages of the Forest Land."
+ },
+ "line.brama_zamknieta_swiat3": {
+  "hash": "6b15c424d6c0",
+  "who": "lisek",
+  "text": "The Snowy Mountains is waiting behind this gate! It will open when we finish all the stages of the Lakeside Village."
+ },
+ "line.brama_zamknieta_swiat4": {
+  "hash": "213fdf2a9787",
+  "who": "lisek",
+  "text": "The Castle on the Hill is waiting behind this gate! It will open when we finish all the stages of the Snowy Mountains."
  }
 }

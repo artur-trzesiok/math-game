@@ -49,6 +49,18 @@ def tytul(l, lang):
     return {"who": "narrator", "text": f"{t} {pod[0].upper()}{pod[1:]}.", "pauza": "1.0s"}
 
 
+# where the gate leads, in the form the sentence needs (Polish genitive after "do")
+DOKAD = {"pl": {"swiat2": "Wioski nad Jeziorem", "swiat3": "Zimowych Gór", "swiat4": "Zamku na Wzgórzu"},
+         "en": {"swiat2": "the Lakeside Village", "swiat3": "the Snowy Mountains", "swiat4": "the Castle on the Hill"}}
+# a closed gate tapped: which land waits behind it and which one to finish first (its genitive)
+SKAD = {"pl": {"swiat1": "Leśnej Krainy", "swiat2": "Wioski nad Jeziorem", "swiat3": "Zimowych Gór"},
+        "en": {"swiat1": "the Forest Land", "swiat2": "the Lakeside Village", "swiat3": "the Snowy Mountains"}}
+ZA_BRAMA = {"pl": "Za tą bramą czeka {kraina}! Brama otworzy się, gdy przejdziemy wszystkie etapy {skad}.",
+            "en": "{kraina} is waiting behind this gate! It will open when we finish all the stages of {skad}."}
+BRAMA = {"pl": "Hurra! Otworzyła się brama do {dokad}! Ruszamy w drogę!",
+         "en": "Hooray! The gate to {dokad} is open! Off we go!"}
+
+
 ix = json.loads((ROOT / "game" / "lessons" / "index.json").read_text(encoding="utf-8"))
 topics = [t for t in ix.get("topics", []) if t.get("title")]
 for lang in ("pl", "en"):
@@ -63,6 +75,11 @@ for lang in ("pl", "en"):
         pd = PORZ["pl_d" if lang == "pl" else "en"][k - 1]
         out[f"line.zamkniete_{t['id']}"] = {"who": "lisek", "text": zamk.format(poprz_d=pd, poprz=pd)}
         out[f"line.otwarte_{t['id']}"] = {"who": "lisek", "text": otw.format(nr=PORZ[lang][k])}
+    for sw in ix.get("swiaty", [])[1:]:                         # the gate to a land opens (player.js swietujOtwarcie)
+        out[f"line.brama_{sw['id']}"] = {"who": "lisek", "text": BRAMA[lang].format(dokad=DOKAD[lang][sw["id"]])}
+    swiaty = ix.get("swiaty", [])
+    for poprz, sw in zip(swiaty, swiaty[1:]):
+        out[f"line.brama_zamknieta_{sw['id']}"] = {"who": "lisek", "text": ZA_BRAMA[lang].format(kraina=sw["title"][lang], skad=SKAD[lang][poprz["id"]])}
     for sw in ix.get("swiaty", []):                             # a land tapped in the switcher: its name read out
         out[f"line.swiat_{sw['id']}"] = {"who": "narrator", "text": sw["title"][lang]}
     for l in ix.get("lessons", []):                             # a lesson chosen: its name read out over its card

@@ -347,7 +347,14 @@ export class Player {
     pas.onclick = (e) => {
       if (pas.dataset.przeciagniete) return;
       const br = e.target.closest(".brama");                              // the gate to the next world
-      if (br) { if (br.classList.contains("zamknieta")) { br.classList.remove("trzesie"); void br.offsetWidth; br.classList.add("trzesie"); dzwiekMenu("wrong"); } else this.przejdzSwiat(br.dataset.swiat); this.speech.stop?.(); this.mowMenu(`line.swiat_${br.dataset.swiat}`); return; }
+      if (br) {
+        this.speech.stop?.();
+        if (br.classList.contains("zamknieta")) {                          // shut: Fox says which land waits there and what opens it
+          br.classList.remove("trzesie"); void br.offsetWidth; br.classList.add("trzesie"); dzwiekMenu("wrong");
+          powiedz(br, `line.brama_zamknieta_${br.dataset.swiat}`);
+        } else { this.przejdzSwiat(br.dataset.swiat); this.mowMenu(`line.swiat_${br.dataset.swiat}`); }
+        return;
+      }
       const zam = e.target.closest(".topic.zamkniety");
       if (zam) { zam.classList.remove("trzesie"); void zam.offsetWidth; zam.classList.add("trzesie"); dzwiekMenu("wrong"); powiedz(zam, `line.zamkniete_${zam.dataset.topic}`); return; }   // not yet: the topic shakes, Fox says what to finish first
       const b = e.target.closest(".lesson"); if (!b) return;
@@ -373,12 +380,15 @@ export class Player {
     if (nowy) { nowy.classList.add("zamkniety"); if (!nowy.querySelector(".klodka")) nowy.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`); }
     // a stage opened by finishing the one before: celebrated - the padlock comes to the middle, a key turns in it,
     // the shackle springs with sparks, the padlock falls away, the mist blows off, the cards pop in, confetti, Fox
-    const swietujOtwarcie = async (sec) => {
+    // `brama`: the gate to the next land, bigger; after the padlock it takes its colours, the land in it glows, Fox
+    // cheers, the gate comes close as if we walked through it, and the new land opens
+    const swietujOtwarcie = async (sec, { brama = false } = {}) => {
       const k = sec.querySelector(".klodka");
+      if (brama && (!k || PARAMS.has("szybko"))) { this.przejdzSwiat(sec.dataset.swiat); return; }
       if (!k || PARAMS.has("szybko")) { otworz(sec); return; }
-      dopisz(WIDZIANE, sec.dataset.topic);
+      dopisz(WIDZIANE, brama ? `brama_${sec.dataset.swiat}` : sec.dataset.topic);
       const czekaj = (ms) => new Promise((r) => setTimeout(r, ms));
-      const r = k.getBoundingClientRect(), dlon = Math.min(innerHeight * 0.4, innerWidth * 0.34);
+      const r = k.getBoundingClientRect(), dlon = Math.min(innerHeight * 0.4, innerWidth * 0.34) * (brama ? 1.2 : 1);
       // in the keyhole the key is seen from its handle (tools/menu/make_klucz_przod.py): a key in a lock facing us turns
       // round the axis pointing at us, so its turn is a plain rotation of that picture
       new Image().src = v("/game/assets/menu/klucz_przod.webp");
@@ -410,6 +420,15 @@ export class Player {
       kl.classList.add("spada"); przod.classList.add("spada"); dzwiekMenu("whoosh");   // nothing just vanishes: they fall out of the frame
       await czekaj(pominiete ? 0 : 450);
       el.classList.remove("ciemno"); el.classList.add("konfetti");
+      if (brama) {
+        k.remove(); sec.classList.remove("zamknieta"); sec.classList.add("swieci"); dzwiekMenu("iskry");
+        await czekaj(600);
+        await powiedz(sec, `line.brama_${sec.dataset.swiat}`);
+        sec.classList.add("wejscie"); dzwiekMenu("mgla");                          // as if we walked through it
+        await czekaj(800);
+        el.remove(); await this.przejdzSwiat(sec.dataset.swiat);
+        return;
+      }
       k.remove(); sec.classList.add("rozwiej"); sec.classList.remove("zamkniety"); dzwiekMenu("mgla");
       const karty = [...sec.querySelectorAll(".lesson")];
       karty.forEach((b, i) => setTimeout(() => { b.classList.add("wyskok"); dzwiekMenu("pop"); setTimeout(() => b.classList.remove("wyskok"), 700); }, 350 + i * 180));
@@ -420,7 +439,14 @@ export class Player {
     };
     const odblokuj = () => {
       if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => swietujOtwarcie(nowy), 900); }, 400);
-      else if (gdzieIndziej) setTimeout(() => this.przejdzSwiat(swiatEtapu(gdzieIndziej.id).id), 600);
+      else if (gdzieIndziej) {
+        // the gate at the end of this strip leads there and was never seen open: it is opened first, here
+        const dokad = swiatEtapu(gdzieIndziej.id).id, br = pas.querySelector(`.brama:not(.wstecz)[data-swiat="${dokad}"]`);
+        if (br && !lista(WIDZIANE).includes(`brama_${dokad}`) && !PARAMS.has("szybko")) {
+          br.classList.add("zamknieta"); if (!br.querySelector(".klodka")) br.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`);
+          setTimeout(() => { naBlok(br); setTimeout(() => swietujOtwarcie(br, { brama: true }), 1100); }, 400);
+        } else setTimeout(() => this.przejdzSwiat(dokad), 600);
+      }
     };
     // a stage just finished (every lesson made so far has its sticker; once): its sign comes big to the middle with rays
     // and confetti, Fox cheers, the sign flies into the album as the stage's own sticker; then the next stage opens
