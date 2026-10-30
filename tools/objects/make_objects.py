@@ -32,6 +32,39 @@ vector, NOT 3D. Each object is one single thing seen straight on, NO ground
 shadow, NO text."""
 
 SHEETS = {
+    # light_heavy story: Beaver's raft on the brook - the characters stand on it and it dips under the heavy ones
+    "tratwa_bobra": {
+        "names": ["tratwa"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 1024,                 # wide on the stage, characters stand on it
+        "prompt": f"""A sprite sheet of ONE illustrated thing for a children's picture book, in the middle of a fully
+TRANSPARENT background. NO coloured background, NO glow, NO halo, NO water, NO ground.
+{STYL}
+One small flat wooden RAFT seen from the front and a little from above: SIX round light-brown logs lying side by side
+across the picture, tied together with rope at both ends, so the raft's flat top deck is clearly visible as a long wide
+strip. It is much wider than tall (about four times as wide as it is tall). NO mast, NO sail, NO oars, NO animals,
+NO things on it - the deck is empty. The raft fills about four fifths of the sheet's width.""",
+    },
+    # light_heavy: the picnic watermelon, the shopping bags (a big light crisps bag, a small heavy potato bag) and a big
+    # light popcorn jar to weigh against the small honey jar (sloik)
+    "lekki_ciezki": {
+        "names": ["arbuz", "torba_chipsy", "torba_ziemniaki", "sloik_popcorn"],
+        "outline": True,
+        "size": "1536x1024",
+        "rows": 1,
+        "px": 512,
+        "prompt": f"""A sprite sheet of FOUR illustrated things for a children's picture book, in ONE ROW of 4 on a fully
+TRANSPARENT background, with generous empty space between them so none of them touch. NO coloured background, NO glow,
+NO halo, NO table.
+{STYL}
+Left to right: one whole round green striped WATERMELON with dark green stripes, lying, NOT cut; one BIG puffy shiny
+yellow bag of potato CRISPS, blown up full of air like a pillow, with a picture of one golden crisp on it and NO
+letters; one SMALL brown paper bag full of POTATOES, open at the top, several round brown potatoes heaped in it and
+showing over the rim, the bag bulging heavy; one TALL big glass JAR full of white fluffy POPCORN, with a red lid.
+Each thing fills at most a fifth of the sheet's width; a WIDE empty gap between neighbours.""",
+    },
     # logical_pairs home: things that go together in Deer's hallway and at her tea (teapot -> cup, umbrella -> boots)
     "pary_dom": {
         "names": ["czajniczek", "parasol", "kalosze", "pasta"],

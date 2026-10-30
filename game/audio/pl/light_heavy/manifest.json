@@ -1,0 +1,462 @@
+{
+ "line.a_tratwa": {
+  "hash": "1091cfe09276",
+  "who": "bobr",
+  "text": "Zobaczcie! Zbudowałem tratwę. Przewieziemy nią piknik na drugi brzeg strumyka."
+ },
+ "line.a_uwaga": {
+  "hash": "147337d26244",
+  "who": "bobr",
+  "text": "Tylko uwaga: jeśli źle ją załadujemy, tratwa się przechyli."
+ },
+ "line.a_mis_pierwszy": {
+  "hash": "772c5800f626",
+  "who": "mis",
+  "text": "To ja wchodzę pierwszy! Hop!"
+ },
+ "line.a_ojej": {
+  "hash": "c7945e2d0684",
+  "who": "zajac",
+  "text": "Ojej! Pod Misiem tratwa zanurzyła się głęboko!"
+ },
+ "line.a_teraz_ja": {
+  "hash": "b9dbe5d1d36b",
+  "who": "zajac",
+  "text": "Teraz ja! Hop!"
+ },
+ "line.a_pode_mna": {
+  "hash": "8b276c6af7e7",
+  "who": "zajac",
+  "text": "Pode mną tratwa prawie się nie ruszyła!"
+ },
+ "line.a_kto": {
+  "hash": "e12b0ae81ca8",
+  "who": "bobr",
+  "text": "Wskaż, kto jest cięższy: Miś czy Zajączek."
+ },
+ "line.a_kto_nie": {
+  "hash": "77e46859b591",
+  "who": "bobr",
+  "text": "Pod Zajączkiem tratwa prawie się nie ruszyła. Pod kim zanurzyła się głęboko?"
+ },
+ "line.a_kto_tak": {
+  "hash": "a9ed23e7aa4f",
+  "who": "bobr",
+  "text": "Tak, Miś jest cięższy! Pod cięższym tratwa zanurza się głębiej."
+ },
+ "line.a_rzeczy": {
+  "hash": "a6ccc9551d6f",
+  "who": "mis",
+  "text": "A nasze rzeczy? Arbuz, garnek, kocyk... Które są ciężkie, a które lekkie?"
+ },
+ "line.a_waga": {
+  "hash": "b4efcd8887b2",
+  "who": "bobr",
+  "text": "Sprawdzimy to na mojej wadze. Chodźmy do warsztatu!"
+ },
+ "line.b_waga": {
+  "hash": "6b606f71e9a5",
+  "who": "bobr",
+  "text": "To moja waga. Ma dwie szalki. Kładziemy na nie rzeczy i patrzymy, co się stanie."
+ },
+ "line.b_poduszka": {
+  "hash": "cf4ea024a3c2",
+  "who": "zajac",
+  "text": "Ja wiem! Poduszka jest wielka, więc jest najcięższa. A kamyk jest malutki, on nic nie waży!"
+ },
+ "line.b_sprawdzmy": {
+  "hash": "22fc8b4e9e57",
+  "who": "mis",
+  "text": "Hmm... Nie zgadujmy. Sprawdźmy na wadze."
+ },
+ "line.b_poloz": {
+  "hash": "03a5095427bf",
+  "who": "bobr",
+  "text": "Połóż kamyk na jednej szalce, a poduszkę na drugiej."
+ },
+ "line.b_co": {
+  "hash": "f079eac3d5a9",
+  "who": "zajac",
+  "text": "Co? Szalka z kamykiem poszła w dół!"
+ },
+ "line.b_metoda": {
+  "hash": "ff4e21355fc9",
+  "who": "bobr",
+  "text": "Popatrz. Szalka, która idzie w dół, jest cięższa. Ta, która idzie w górę, jest lżejsza."
+ },
+ "line.b_kamyk": {
+  "hash": "c293dc189759",
+  "who": "bobr",
+  "text": "Kamyk jest mały, ale ciężki. Poduszka jest duża, ale lekka."
+ },
+ "line.b_aha": {
+  "hash": "0eaf9142670b",
+  "who": "zajac",
+  "text": "Aha! Duży wcale nie znaczy ciężki."
+ },
+ "line.b_dynia": {
+  "hash": "5fd020c7e0ad",
+  "who": "bobr",
+  "text": "Teraz zgadnij, zanim położysz. Dynia i piórko. Wskaż, co jest cięższe."
+ },
+ "line.b_dynia_nie": {
+  "hash": "bb37f89af3e3",
+  "who": "bobr",
+  "text": "Piórko jest leciutkie. Co jest cięższe?"
+ },
+ "line.b_sprawdz": {
+  "hash": "13b4ff2ad21b",
+  "who": "bobr",
+  "text": "Dobrze. Teraz połóż je na szalkach i sprawdź."
+ },
+ "line.b_dynia_tak": {
+  "hash": "d5ba9e990ba8",
+  "who": "mis",
+  "text": "Szalka z dynią poszła w dół. Dynia jest cięższa od piórka!"
+ },
+ "line.b_jablko": {
+  "hash": "106c7e89c99b",
+  "who": "bobr",
+  "text": "A teraz jabłko i orzech. Wskaż, co jest cięższe."
+ },
+ "line.b_jablko_nie": {
+  "hash": "12b33710f81c",
+  "who": "bobr",
+  "text": "Orzech jest mały i lekki. Co jest cięższe?"
+ },
+ "line.b_jablko_tak": {
+  "hash": "ffc99485084b",
+  "who": "zajac",
+  "text": "Jabłko jest na dole, bo jest cięższe. Orzech jest lżejszy, więc poszedł w górę."
+ },
+ "line.b_wracamy": {
+  "hash": "a270b1c7a57e",
+  "who": "mis",
+  "text": "Już wiemy, jak sprawdzić, co jest ciężkie. Wracajmy nad strumyk!"
+ },
+ "line.c_chowany": {
+  "hash": "19e5c4d6959d",
+  "who": "zajac",
+  "text": "Zanim popłyniemy, pobawmy się w chowanego!"
+ },
+ "line.c_szukam": {
+  "hash": "91e8e6ff3044",
+  "who": "bobr",
+  "text": "Dobrze, ja szukam. Chowajcie się!"
+ },
+ "line.c_ladujemy": {
+  "hash": "c45584417023",
+  "who": "bobr",
+  "text": "Mam was! A teraz ładujemy tratwę. Najpierw ułóżmy rzeczy od najlżejszej do najcięższej."
+ },
+ "line.c_uloz": {
+  "hash": "880cf62dafc0",
+  "who": "bobr",
+  "text": "Najlżejsza rzecz idzie tutaj, na początek. Ułóż je po kolei."
+ },
+ "line.c_uloz_nie": {
+  "hash": "10b8a6092f22",
+  "who": "bobr",
+  "text": "Hmm, to nie to miejsce. Najpierw najlżejsza, na końcu najcięższa."
+ },
+ "line.c_ulozone": {
+  "hash": "ff60e36dc5f0",
+  "who": "bobr",
+  "text": "Balonik jest najlżejszy, potem jabłko, a arbuz jest najcięższy. Choć balonik jest największy!"
+ },
+ "line.c_jablko": {
+  "hash": "081b97915a29",
+  "who": "zajac",
+  "text": "Jabłka nie musimy wieźć. Zjem je od razu. Mniam!"
+ },
+ "line.c_srodek": {
+  "hash": "56e13f5ad61f",
+  "who": "bobr",
+  "text": "Ciężkie rzeczy połóż na środku tratwy, a lekkie na brzegach. Wtedy się nie przechyli."
+ },
+ "line.c_srodek_nie": {
+  "hash": "2c4e257d06c4",
+  "who": "bobr",
+  "text": "Ojej, tratwa by się przechyliła! Ciężkie na środek, lekkie na brzegi."
+ },
+ "line.c_srodek_tak": {
+  "hash": "d1f00eb5fc42",
+  "who": "bobr",
+  "text": "Arbuz i garnek są na środku, balonik i kocyk na brzegach. Tratwa stoi prosto!"
+ },
+ "line.c_a_ja": {
+  "hash": "57c81c99e08a",
+  "who": "mis",
+  "text": "A ja? Ja też jestem ciężki..."
+ },
+ "line.c_ty_srodek": {
+  "hash": "709c84bcf276",
+  "who": "bobr",
+  "text": "Ty, Misiu, siadasz na sam środek!"
+ },
+ "line.c_plyniemy": {
+  "hash": "ec0d00489db7",
+  "who": "bobr",
+  "text": "Płyniemy! Ciężkie na środku, lekkie na brzegach i tratwa ani drgnie."
+ },
+ "line.c_brzeg": {
+  "hash": "606b02162613",
+  "who": "mis",
+  "text": "Jesteśmy na drugim brzegu! Nic nie wpadło do wody."
+ },
+ "line.c_dziekuje": {
+  "hash": "137e2ab7b244",
+  "who": "bobr",
+  "text": "Dziękuję za pomoc! Bez ciebie tratwa by się przechyliła."
+ },
+ "line.c_zupa": {
+  "hash": "b4d2f2a8db00",
+  "who": "mis",
+  "text": "Po pikniku zrobimy zakupy i ugotuję u siebie zupę dyniową. Zapraszam was!"
+ },
+ "line.p_start": {
+  "hash": "6ebff6dfc421",
+  "who": "bobr",
+  "text": "Teraz szkoła ważenia! Za każdą zabawę dostaniesz gwiazdkę."
+ },
+ "line.p_kamyk": {
+  "hash": "bc4cd18f218e",
+  "who": "mis",
+  "text": "Balonik czy kamyk? Wskaż, co jest cięższe."
+ },
+ "line.p_kamyk_nie": {
+  "hash": "567ee86e3c01",
+  "who": "mis",
+  "text": "Balonik jest duży, ale lekki. Co jest cięższe?"
+ },
+ "line.p_kamyk_tak": {
+  "hash": "1b78fd26db38",
+  "who": "bobr",
+  "text": "Tak, kamyk! Jest mały, ale ciężki."
+ },
+ "line.p_mlotek": {
+  "hash": "361fe92db365",
+  "who": "mis",
+  "text": "A teraz poduszka czy młotek? Wskaż, co jest cięższe."
+ },
+ "line.p_mlotek_nie": {
+  "hash": "a50596ba7e10",
+  "who": "mis",
+  "text": "Poduszka jest miękka i lekka. Co jest cięższe?"
+ },
+ "line.p_mlotek_tak": {
+  "hash": "7eba2f469aea",
+  "who": "bobr",
+  "text": "Tak, młotek jest cięższy od poduszki."
+ },
+ "line.p_szalka": {
+  "hash": "4b87fe06d117",
+  "who": "bobr",
+  "text": "Kamień i listek położę na wadze. Wskaż szalkę, która pójdzie w dół."
+ },
+ "line.p_szalka_nie": {
+  "hash": "a18879ff97ca",
+  "who": "bobr",
+  "text": "Nad tą szalką jest lekki listek. Która szalka pójdzie w dół?"
+ },
+ "line.p_szalka_tak": {
+  "hash": "3681a26b8f68",
+  "who": "mis",
+  "text": "Tak! Szalka z kamieniem poszła w dół, bo kamień jest cięższy."
+ },
+ "line.p_kolejka": {
+  "hash": "d0d9e99655a6",
+  "who": "bobr",
+  "text": "Ułóż listek, jabłko i dynię od najlżejszej do najcięższej."
+ },
+ "line.p_kolejka_nie": {
+  "hash": "f0fe90956a1c",
+  "who": "bobr",
+  "text": "Najpierw najlżejsza, na końcu najcięższa."
+ },
+ "line.p_kolejka_tak": {
+  "hash": "ae7332142671",
+  "who": "mis",
+  "text": "Listek, jabłko, dynia. Od najlżejszej do najcięższej!"
+ },
+ "line.p_rowno": {
+  "hash": "19b4f4cdad75",
+  "who": "bobr",
+  "text": "Na jednej szalce jest słoik miodu. Kładź jabłka na drugą szalkę, aż waga stanie równo."
+ },
+ "line.p_rowno_za_duzo": {
+  "hash": "ff25de7d1044",
+  "who": "mis",
+  "text": "Za dużo! Teraz jabłka są cięższe. Zdejmij jedno jabłko."
+ },
+ "line.p_rowno_tak": {
+  "hash": "bdca465153be",
+  "who": "mis",
+  "text": "Równo! Szalki są na tej samej wysokości. Dwa jabłka ważą tyle samo, co słoik miodu."
+ },
+ "line.p_bal": {
+  "hash": "dcaede3775d8",
+  "who": "bobr",
+  "text": "Ten bal jest bardzo ciężki. Wskaż, kto go uniesie: Miś czy Zajączek."
+ },
+ "line.p_bal_nie": {
+  "hash": "5933089a3855",
+  "who": "zajac",
+  "text": "Ojej, dla mnie jest za ciężki! Kto jest silniejszy?"
+ },
+ "line.p_bal_tak": {
+  "hash": "6f49fd5064ff",
+  "who": "mis",
+  "text": "Tak, ja go uniosę! Jestem duży i silny."
+ },
+ "line.p_balonik": {
+  "hash": "5ab0574daca3",
+  "who": "bobr",
+  "text": "A balonik uniesie tylko kogoś lekkiego. Wskaż, kto jest lżejszy."
+ },
+ "line.p_balonik_nie": {
+  "hash": "e2338f1d3519",
+  "who": "mis",
+  "text": "Ja jestem za ciężki na balonik. Kto jest lżejszy?"
+ },
+ "line.p_balonik_tak": {
+  "hash": "dc9d90d1632d",
+  "who": "zajac",
+  "text": "To ja! Jestem lżejszy od Misia. Hop, lecę!"
+ },
+ "line.d_dom": {
+  "hash": "691ad479234c",
+  "who": "mis",
+  "text": "Jesteśmy u mnie w kuchni! Najpierw rozpakujemy zakupy, a potem ugotuję zupę."
+ },
+ "line.d_zajac": {
+  "hash": "e9518d12ea88",
+  "who": "zajac",
+  "text": "Ja wiem, gdzie co postawić! Duża torba jest ciężka, więc na dolną półkę. A mała na górę!"
+ },
+ "line.d_bobr_nie": {
+  "hash": "9f00b0c2a306",
+  "who": "bobr",
+  "text": "Zajączku, czy duży znaczy ciężki? Pamiętasz kamyk i poduszkę?"
+ },
+ "line.d_lapki": {
+  "hash": "bdeed9b30b21",
+  "who": "mis",
+  "text": "Sprawdźmy w łapkach. Ja wezmę ziemniaki, a ty, Zajączku, chrupki."
+ },
+ "line.d_ktora": {
+  "hash": "c53392c4551d",
+  "who": "bobr",
+  "text": "Wskaż, która torba jest cięższa."
+ },
+ "line.d_ktora_nie": {
+  "hash": "31e49c2bc2f1",
+  "who": "zajac",
+  "text": "Chrupki są duże, ale lekkie jak piórko! Która torba jest cięższa?"
+ },
+ "line.d_ktora_tak": {
+  "hash": "a4a67650fbef",
+  "who": "mis",
+  "text": "Tak, ziemniaki! Mała torba, a taka ciężka."
+ },
+ "line.d_sloiki": {
+  "hash": "b12c832a92bd",
+  "who": "bobr",
+  "text": "Mamy jeszcze dwa słoiki: duży z popcornem i mały z miodem."
+ },
+ "line.d_nie_zgaduje": {
+  "hash": "dd0e1333abc9",
+  "who": "zajac",
+  "text": "Tym razem nie zgaduję. Sprawdzę na wadze!"
+ },
+ "line.d_poloz": {
+  "hash": "e3aa21a20e28",
+  "who": "bobr",
+  "text": "Połóż słoiki na szalkach."
+ },
+ "line.d_sloiki_tak": {
+  "hash": "0df8a583935d",
+  "who": "zajac",
+  "text": "Mały słoik z miodem poszedł w dół! Jest cięższy od dużego słoika z popcornem."
+ },
+ "line.d_polki": {
+  "hash": "3887f3dd51fd",
+  "who": "bobr",
+  "text": "Teraz na półki. Ciężkie rzeczy na dolną półkę, lekkie na górną, żeby nic nie spadło."
+ },
+ "line.d_polki_nie": {
+  "hash": "486d03401473",
+  "who": "bobr",
+  "text": "Ciężkie na dolną półkę, lekkie na górną."
+ },
+ "line.d_polki_tak": {
+  "hash": "78a3c65e9e11",
+  "who": "mis",
+  "text": "Ziemniaki i miód na dole, chrupki i popcorn na górze. Nic nie spadnie!"
+ },
+ "line.d_worek": {
+  "hash": "edffaa512b90",
+  "who": "mis",
+  "text": "Został jeszcze mój najcięższy worek. Przykryłem go papierem. Co w nim jest?"
+ },
+ "line.d_zdrap": {
+  "hash": "899be648523d",
+  "who": "zajac",
+  "text": "Zetrzyj papier palcem i zobacz!"
+ },
+ "line.d_co_ciezkie": {
+  "hash": "963c094b24b0",
+  "who": "zajac",
+  "text": "Wskaż, co jest w worku takie ciężkie."
+ },
+ "line.d_co_ciezkie_nie": {
+  "hash": "34969bac9e11",
+  "who": "zajac",
+  "text": "To jest lekkie. Co jest takie duże i ciężkie?"
+ },
+ "line.d_dynia": {
+  "hash": "fa7b450a0f38",
+  "who": "mis",
+  "text": "Wielka dynia! Ciężka, i to bardzo. Będzie z niej zupa dyniowa."
+ },
+ "line.d_zupa": {
+  "hash": "8f88749e1050",
+  "who": "mis",
+  "text": "Uff! Ciężki garnek stoi na kuchence. Zupa gotowa!"
+ },
+ "line.d_mniam": {
+  "hash": "5827801fb157",
+  "who": "zajac",
+  "text": "Mniam! Ciężkie na dole, lekkie na górze i nic nie spadło."
+ },
+ "line.d_pokaz": {
+  "hash": "72eecb550acd",
+  "who": "zajac",
+  "text": "Zobacz: ja trzymam orzech, a Miś jabłko. Jabłko jest cięższe!"
+ },
+ "line.d_rodzice": {
+  "hash": "bf3c57247a83",
+  "who": "bobr",
+  "text": "Pobaw się tak w domu z rodzicami. Weź dwie rzeczy w ręce i powiedz, która jest cięższa."
+ },
+ "line.naklejka_daj": {
+  "hash": "3cc04c45b4c4",
+  "who": "bobr",
+  "text": "Dziękuję za pomoc przy tratwie! Oto naklejka do Twojego albumu, na pamiątkę. Dotknij jej, żeby ją zabrać."
+ },
+ "line.naklejka_juz": {
+  "hash": "2e93bb84c2cf",
+  "who": "bobr",
+  "text": "Masz już naklejkę z tej przygody. Do zobaczenia!"
+ },
+ "line.naklejka_opis": {
+  "hash": "e8d67b0f8d36",
+  "who": "narrator",
+  "text": "To tratwa Bobra. Dostaliśmy ją, kiedy pomogliśmy ją dobrze załadować i poznaliśmy, co jest lekkie, a co ciężkie."
+ },
+ "line.d_odkryte": {
+  "hash": "5929755f8b13",
+  "who": "mis",
+  "text": "Papier zdjęty! Teraz widać, co tak ciąży w moim worku."
+ }
+}

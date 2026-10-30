@@ -1,0 +1,51 @@
+{
+  "id": "light_heavy",
+  "title": {
+    "pl": "Lekki i ciężki",
+    "en": "Light and heavy"
+  },
+  "goal": "Tell heavy from light by feel and on a balance (the heavier pan goes down), see that size does not tell weight, and put three things in order from the lightest.",
+  "age": "3-4",
+  "characters": [
+    "bobr",
+    "zajac",
+    "mis"
+  ],
+  "backgrounds": [
+    "strumyk",
+    "warsztat",
+    "polana_piknik",
+    "dom"
+  ],
+  "objects": [
+    "tratwa",
+    "waga_podstawa",
+    "waga_belka",
+    "waga_szalka",
+    "kamyk",
+    "poduszka",
+    "dynia",
+    "pioro_sowy",
+    "jablko",
+    "orzech",
+    "balonik",
+    "arbuz",
+    "garnek",
+    "kocyk",
+    "krzak",
+    "glaz",
+    "listek",
+    "mlotek",
+    "sloik",
+    "bal",
+    "torba_chipsy",
+    "torba_ziemniaki",
+    "sloik_popcorn"
+  ],
+  "cover": "Beaver stands proudly on his small log raft floating on a sunny brook, Bear sits in the middle of the raft so it dips into the water, and Bunny on the bank holds a red balloon and points at the raft, laughing; a watermelon and a pot wait on the grass.",
+  "naklejka": {
+    "obraz": "objects/tratwa",
+    "kto": "bobr"
+  },
+  "oddech": "ktoPowiedzial"
+}

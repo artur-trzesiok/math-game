@@ -1,0 +1,15 @@
+{
+ "szerokosc": 1280,
+ "wysokosc": 853,
+ "oslona": "papier",
+ "cele": [
+  {
+   "x": 0.5684,
+   "y": 0.5224,
+   "r": 0.0539
+  }
+ ],
+ "lekcje": [
+  "light_heavy"
+ ]
+}

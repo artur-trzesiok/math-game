@@ -1,0 +1,462 @@
+{
+ "line.a_tratwa": {
+  "hash": "c46c9f4cb376",
+  "who": "bobr",
+  "text": "Look! I built a raft. We'll take the picnic across the brook on it."
+ },
+ "line.a_uwaga": {
+  "hash": "19be76d6e016",
+  "who": "bobr",
+  "text": "But careful: if we load it wrong, the raft will tip."
+ },
+ "line.a_mis_pierwszy": {
+  "hash": "59d6c64b2a3f",
+  "who": "mis",
+  "text": "I'm going on first! Hop!"
+ },
+ "line.a_ojej": {
+  "hash": "b3cf64e5e3dc",
+  "who": "zajac",
+  "text": "Oh no! Under Bear the raft sank deep!"
+ },
+ "line.a_teraz_ja": {
+  "hash": "3768c82239e7",
+  "who": "zajac",
+  "text": "Now me! Hop!"
+ },
+ "line.a_pode_mna": {
+  "hash": "2a6da8972f82",
+  "who": "zajac",
+  "text": "Under me the raft hardly moved!"
+ },
+ "line.a_kto": {
+  "hash": "df727e734b74",
+  "who": "bobr",
+  "text": "Point to who is heavier: Bear or Bunny."
+ },
+ "line.a_kto_nie": {
+  "hash": "afc7c9b71896",
+  "who": "bobr",
+  "text": "Under Bunny the raft hardly moved. Under whom did it sink deep?"
+ },
+ "line.a_kto_tak": {
+  "hash": "edccf97261eb",
+  "who": "bobr",
+  "text": "Yes, Bear is heavier! Under the heavier one the raft sinks deeper."
+ },
+ "line.a_rzeczy": {
+  "hash": "c9e676283249",
+  "who": "mis",
+  "text": "And our things? The watermelon, the pot, the blanket... Which are heavy and which are light?"
+ },
+ "line.a_waga": {
+  "hash": "84b53d1654a8",
+  "who": "bobr",
+  "text": "We'll check on my balance. Let's go to the workshop!"
+ },
+ "line.b_waga": {
+  "hash": "44aa5e16c1ce",
+  "who": "bobr",
+  "text": "This is my balance. It has two pans. We put things on them and watch what happens."
+ },
+ "line.b_poduszka": {
+  "hash": "de388e8b80cb",
+  "who": "zajac",
+  "text": "I know! The pillow is huge, so it's the heaviest. And the stone is tiny, it weighs nothing!"
+ },
+ "line.b_sprawdzmy": {
+  "hash": "20c31db6dc79",
+  "who": "mis",
+  "text": "Hmm... Let's not guess. Let's check on the balance."
+ },
+ "line.b_poloz": {
+  "hash": "f8ecab6c8411",
+  "who": "bobr",
+  "text": "Put the stone on one pan and the pillow on the other."
+ },
+ "line.b_co": {
+  "hash": "6d087f5fadc5",
+  "who": "zajac",
+  "text": "What? The stone's pan went down!"
+ },
+ "line.b_metoda": {
+  "hash": "335f8cd7a60f",
+  "who": "bobr",
+  "text": "Look. The pan that goes down is heavier. The one that goes up is lighter."
+ },
+ "line.b_kamyk": {
+  "hash": "fc11b45f8823",
+  "who": "bobr",
+  "text": "The stone is small, but heavy. The pillow is big, but light."
+ },
+ "line.b_aha": {
+  "hash": "a0a7c94cd197",
+  "who": "zajac",
+  "text": "Aha! Big doesn't always mean heavy."
+ },
+ "line.b_dynia": {
+  "hash": "367d9fc3f6f5",
+  "who": "bobr",
+  "text": "Now guess before you put them on. A pumpkin and a feather. Point to what is heavier."
+ },
+ "line.b_dynia_nie": {
+  "hash": "8d5e30d1dde7",
+  "who": "bobr",
+  "text": "The feather is very light. What is heavier?"
+ },
+ "line.b_sprawdz": {
+  "hash": "3ea517b5be7d",
+  "who": "bobr",
+  "text": "Good. Now put them on the pans and check."
+ },
+ "line.b_dynia_tak": {
+  "hash": "11605e160d25",
+  "who": "mis",
+  "text": "The pumpkin's pan went down. The pumpkin is heavier than the feather!"
+ },
+ "line.b_jablko": {
+  "hash": "f822358af653",
+  "who": "bobr",
+  "text": "And now an apple and a nut. Point to what is heavier."
+ },
+ "line.b_jablko_nie": {
+  "hash": "a9e282e8191c",
+  "who": "bobr",
+  "text": "The nut is small and light. What is heavier?"
+ },
+ "line.b_jablko_tak": {
+  "hash": "32c889713edf",
+  "who": "zajac",
+  "text": "The apple is down, because it is heavier. The nut is lighter, so it went up."
+ },
+ "line.b_wracamy": {
+  "hash": "da63a00fe833",
+  "who": "mis",
+  "text": "Now we know how to check what is heavy. Let's go back to the brook!"
+ },
+ "line.c_chowany": {
+  "hash": "580150e41eb8",
+  "who": "zajac",
+  "text": "Before we sail, let's play hide-and-seek!"
+ },
+ "line.c_szukam": {
+  "hash": "603915223fb0",
+  "who": "bobr",
+  "text": "All right, I'll seek. Go and hide!"
+ },
+ "line.c_ladujemy": {
+  "hash": "919809b3d075",
+  "who": "bobr",
+  "text": "Got you! And now we load the raft. First let's put the things in order from the lightest to the heaviest."
+ },
+ "line.c_uloz": {
+  "hash": "c979b4c810c0",
+  "who": "bobr",
+  "text": "The lightest thing goes here, at the start. Put them in order."
+ },
+ "line.c_uloz_nie": {
+  "hash": "6ce734851870",
+  "who": "bobr",
+  "text": "Hmm, not that place. The lightest first, the heaviest last."
+ },
+ "line.c_ulozone": {
+  "hash": "bddb8f47fc14",
+  "who": "bobr",
+  "text": "The balloon is the lightest, then the apple, and the watermelon is the heaviest. Even though the balloon is the biggest!"
+ },
+ "line.c_jablko": {
+  "hash": "a992b7c02153",
+  "who": "zajac",
+  "text": "We don't need to take the apple. I'll eat it right now. Yum!"
+ },
+ "line.c_srodek": {
+  "hash": "30f5c3bef33b",
+  "who": "bobr",
+  "text": "Put the heavy things in the middle of the raft and the light ones on the edges. Then it won't tip."
+ },
+ "line.c_srodek_nie": {
+  "hash": "486149f09cdf",
+  "who": "bobr",
+  "text": "Oh no, the raft would tip! Heavy in the middle, light on the edges."
+ },
+ "line.c_srodek_tak": {
+  "hash": "d74ebdbb137b",
+  "who": "bobr",
+  "text": "The watermelon and the pot are in the middle, the balloon and the blanket on the edges. The raft is level!"
+ },
+ "line.c_a_ja": {
+  "hash": "0b1cb933da89",
+  "who": "mis",
+  "text": "And me? I'm heavy too..."
+ },
+ "line.c_ty_srodek": {
+  "hash": "16dc46494435",
+  "who": "bobr",
+  "text": "You, Bear, sit right in the middle!"
+ },
+ "line.c_plyniemy": {
+  "hash": "6eae5fee37f6",
+  "who": "bobr",
+  "text": "Off we go! Heavy in the middle, light on the edges, and the raft doesn't wobble at all."
+ },
+ "line.c_brzeg": {
+  "hash": "48e8b15736ea",
+  "who": "mis",
+  "text": "We're on the other bank! Nothing fell in the water."
+ },
+ "line.c_dziekuje": {
+  "hash": "0e5e73ef4908",
+  "who": "bobr",
+  "text": "Thank you for your help! Without you the raft would have tipped."
+ },
+ "line.c_zupa": {
+  "hash": "241217d97a8c",
+  "who": "mis",
+  "text": "After the picnic we'll do the shopping and I'll cook pumpkin soup at my home. You're all invited!"
+ },
+ "line.p_start": {
+  "hash": "dcde026c19f1",
+  "who": "bobr",
+  "text": "Now the weighing school! You get a star for every game."
+ },
+ "line.p_kamyk": {
+  "hash": "5c447f119756",
+  "who": "mis",
+  "text": "A balloon or a stone? Point to what is heavier."
+ },
+ "line.p_kamyk_nie": {
+  "hash": "cf0304e7f149",
+  "who": "mis",
+  "text": "The balloon is big, but light. What is heavier?"
+ },
+ "line.p_kamyk_tak": {
+  "hash": "76d55435cd43",
+  "who": "bobr",
+  "text": "Yes, the stone! It is small, but heavy."
+ },
+ "line.p_mlotek": {
+  "hash": "18897ecb3cbb",
+  "who": "mis",
+  "text": "And now a pillow or a hammer? Point to what is heavier."
+ },
+ "line.p_mlotek_nie": {
+  "hash": "70421ad6332d",
+  "who": "mis",
+  "text": "The pillow is soft and light. What is heavier?"
+ },
+ "line.p_mlotek_tak": {
+  "hash": "ea328c152209",
+  "who": "bobr",
+  "text": "Yes, the hammer is heavier than the pillow."
+ },
+ "line.p_szalka": {
+  "hash": "31253a5d9c1c",
+  "who": "bobr",
+  "text": "I'll put the stone and the leaf on the balance. Point to the pan that will go down."
+ },
+ "line.p_szalka_nie": {
+  "hash": "4478e71a5f3d",
+  "who": "bobr",
+  "text": "Over this pan there's a light leaf. Which pan will go down?"
+ },
+ "line.p_szalka_tak": {
+  "hash": "89df7fe1cd34",
+  "who": "mis",
+  "text": "Yes! The stone's pan went down, because the stone is heavier."
+ },
+ "line.p_kolejka": {
+  "hash": "483f95463ae3",
+  "who": "bobr",
+  "text": "Put the leaf, the apple and the pumpkin in order from the lightest to the heaviest."
+ },
+ "line.p_kolejka_nie": {
+  "hash": "efe804ae8b5e",
+  "who": "bobr",
+  "text": "The lightest first, the heaviest last."
+ },
+ "line.p_kolejka_tak": {
+  "hash": "da3c181b380c",
+  "who": "mis",
+  "text": "The leaf, the apple, the pumpkin. From the lightest to the heaviest!"
+ },
+ "line.p_rowno": {
+  "hash": "553c25ca02a9",
+  "who": "bobr",
+  "text": "There's a jar of honey on one pan. Put apples on the other pan until the balance is level."
+ },
+ "line.p_rowno_za_duzo": {
+  "hash": "a13415efc1dc",
+  "who": "mis",
+  "text": "Too many! Now the apples are heavier. Take one apple off."
+ },
+ "line.p_rowno_tak": {
+  "hash": "824c79d52a79",
+  "who": "mis",
+  "text": "Level! The pans are at the same height. Two apples weigh the same as the jar of honey."
+ },
+ "line.p_bal": {
+  "hash": "bc3211816b6e",
+  "who": "bobr",
+  "text": "This log is very heavy. Point to who can lift it: Bear or Bunny."
+ },
+ "line.p_bal_nie": {
+  "hash": "795943599fc1",
+  "who": "zajac",
+  "text": "Oh no, it's too heavy for me! Who is stronger?"
+ },
+ "line.p_bal_tak": {
+  "hash": "c7da459878c0",
+  "who": "mis",
+  "text": "Yes, I can lift it! I'm big and strong."
+ },
+ "line.p_balonik": {
+  "hash": "52163f65935f",
+  "who": "bobr",
+  "text": "And the balloon can only lift someone light. Point to who is lighter."
+ },
+ "line.p_balonik_nie": {
+  "hash": "41ea62bee67e",
+  "who": "mis",
+  "text": "I'm too heavy for the balloon. Who is lighter?"
+ },
+ "line.p_balonik_tak": {
+  "hash": "a0a3595445bb",
+  "who": "zajac",
+  "text": "That's me! I'm lighter than Bear. Hop, I'm flying!"
+ },
+ "line.d_dom": {
+  "hash": "34c7b929a062",
+  "who": "mis",
+  "text": "Here we are in my kitchen! First we'll unpack the shopping, then I'll cook the soup."
+ },
+ "line.d_zajac": {
+  "hash": "2ebfa0e2f478",
+  "who": "zajac",
+  "text": "I know where everything goes! The big bag is heavy, so the bottom shelf. And the little one on top!"
+ },
+ "line.d_bobr_nie": {
+  "hash": "ac5f911d0b49",
+  "who": "bobr",
+  "text": "Bunny, does big mean heavy? Remember the stone and the pillow?"
+ },
+ "line.d_lapki": {
+  "hash": "9b42bbe65704",
+  "who": "mis",
+  "text": "Let's check in our paws. I'll take the potatoes, and you, Bunny, the crisps."
+ },
+ "line.d_ktora": {
+  "hash": "1ffd805395bd",
+  "who": "bobr",
+  "text": "Point to the bag that is heavier."
+ },
+ "line.d_ktora_nie": {
+  "hash": "8b2ef7577454",
+  "who": "zajac",
+  "text": "The crisps are big, but light as a feather! Which bag is heavier?"
+ },
+ "line.d_ktora_tak": {
+  "hash": "e29cf5df09d6",
+  "who": "mis",
+  "text": "Yes, the potatoes! A small bag, but so heavy."
+ },
+ "line.d_sloiki": {
+  "hash": "437f1a586d39",
+  "who": "bobr",
+  "text": "We also have two jars: a big one of popcorn and a small one of honey."
+ },
+ "line.d_nie_zgaduje": {
+  "hash": "a6d06a5c7621",
+  "who": "zajac",
+  "text": "This time I won't guess. I'll check on the balance!"
+ },
+ "line.d_poloz": {
+  "hash": "4ee196e5e75d",
+  "who": "bobr",
+  "text": "Put the jars on the pans."
+ },
+ "line.d_sloiki_tak": {
+  "hash": "3df90f58cd76",
+  "who": "zajac",
+  "text": "The small honey jar went down! It is heavier than the big popcorn jar."
+ },
+ "line.d_polki": {
+  "hash": "2bbc41e4bfa4",
+  "who": "bobr",
+  "text": "Now onto the shelves. Heavy things on the lower shelf, light ones on the upper shelf, so nothing falls."
+ },
+ "line.d_polki_nie": {
+  "hash": "e0624ca00527",
+  "who": "bobr",
+  "text": "Heavy on the lower shelf, light on the upper one."
+ },
+ "line.d_polki_tak": {
+  "hash": "bf261e9841a4",
+  "who": "mis",
+  "text": "The potatoes and the honey below, the crisps and the popcorn on top. Nothing will fall!"
+ },
+ "line.d_worek": {
+  "hash": "40b734c81655",
+  "who": "mis",
+  "text": "There's still my heaviest bag. I covered it with paper. What's inside?"
+ },
+ "line.d_zdrap": {
+  "hash": "2b6723831986",
+  "who": "zajac",
+  "text": "Rub the paper off with your finger and see!"
+ },
+ "line.d_co_ciezkie": {
+  "hash": "1ec076217ef4",
+  "who": "zajac",
+  "text": "Point to what makes the bag so heavy."
+ },
+ "line.d_co_ciezkie_nie": {
+  "hash": "99e8143f9db3",
+  "who": "zajac",
+  "text": "That's light. What is so big and heavy?"
+ },
+ "line.d_dynia": {
+  "hash": "ef5df3189ec8",
+  "who": "mis",
+  "text": "A huge pumpkin! Heavy, very heavy. It will make pumpkin soup."
+ },
+ "line.d_zupa": {
+  "hash": "3722be097686",
+  "who": "mis",
+  "text": "Phew! The heavy pot is on the stove. The soup is ready!"
+ },
+ "line.d_mniam": {
+  "hash": "84dd93ec5d28",
+  "who": "zajac",
+  "text": "Yum! Heavy below, light on top, and nothing fell."
+ },
+ "line.d_pokaz": {
+  "hash": "179e5dcec68a",
+  "who": "zajac",
+  "text": "Look: I'm holding a nut, and Bear an apple. The apple is heavier!"
+ },
+ "line.d_rodzice": {
+  "hash": "c9476a177668",
+  "who": "bobr",
+  "text": "Play this at home with your parents. Take two things in your hands and say which one is heavier."
+ },
+ "line.naklejka_daj": {
+  "hash": "553039f9a007",
+  "who": "bobr",
+  "text": "Thank you for helping with my raft! Here is a sticker for your album. Touch it to take it."
+ },
+ "line.naklejka_juz": {
+  "hash": "46b7b6d44f2f",
+  "who": "bobr",
+  "text": "You already have the sticker from this adventure. See you!"
+ },
+ "line.naklejka_opis": {
+  "hash": "46ef264a5dd7",
+  "who": "narrator",
+  "text": "This is Beaver's raft. He gave it to us when we helped load it well and learnt what is light and what is heavy."
+ },
+ "line.d_odkryte": {
+  "hash": "6b55b022e0e1",
+  "who": "mis",
+  "text": "The paper is off! Now we can see what makes my bag so heavy."
+ }
+}

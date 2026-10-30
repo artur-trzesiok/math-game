@@ -258,8 +258,11 @@
         "pl": "Lekki i ciężki",
         "en": "Light and heavy"
       },
-      "temat": "porownywanie",
-      "wkrotce": true
+      "subtitle": {
+        "pl": "tratwa Bobra",
+        "en": "Beaver's raft"
+      },
+      "temat": "porownywanie"
     },
     {
       "id": "thick_wide",
@@ -267,8 +270,11 @@
         "pl": "Gruby i szeroki",
         "en": "Thick and wide"
       },
-      "temat": "porownywanie",
-      "wkrotce": true
+      "subtitle": {
+        "pl": "przeprowadzka Kreta",
+        "en": "Mole moves house"
+      },
+      "temat": "porownywanie"
     },
     {
       "id": "complete_shape",
@@ -276,8 +282,11 @@
         "pl": "Brakujący kawałek",
         "en": "The missing piece"
       },
-      "temat": "figury",
-      "wkrotce": true
+      "subtitle": {
+        "pl": "urodzinowy obrazek",
+        "en": "the birthday picture"
+      },
+      "temat": "figury"
     },
     {
       "id": "numbers_6_10",

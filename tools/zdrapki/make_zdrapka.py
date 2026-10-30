@@ -25,6 +25,39 @@ from make_znalezisko import magenta, STYL  # noqa: E402
 WORK = TU / "work"
 OUT = TU.parent.parent / "game" / "assets" / "zdrapki"
 ZDRAPKI = {
+    # light_heavy home: Bear's heaviest bag lies under brown wrapping paper - rub it off: a big pumpkin for the soup
+    "zakupy_misia": {
+        "oslona": "papier", "lekcje": ["light_heavy"],
+        "obraz": f"""A close view of a warm wooden kitchen TABLE seen from the front and a little from above, filling the whole
+picture. On the table lies ONE big open brown paper shopping BAG on its side, and out of it has rolled ONE very BIG round
+ORANGE PUMPKIN with a green stalk, in the middle of the picture, much bigger than anything else; beside it two orange
+carrots and one small onion. Behind the table a soft blurred cream kitchen wall. NO other pumpkins, NO animals, NO
+people, NO text, NO numbers. Big simple clear shapes.
+{STYL}""",
+        "zakryj": """a big sheet of crumpled light-brown WRAPPING PAPER laid over the whole table, with soft folds and creases
+and a piece of string, so NONE of the pumpkin, the bag or the vegetables shows through anywhere - only paper; the blurred
+wall at the back stays as it is.""",
+        "cele": ["on the big orange pumpkin in the middle (a disc covering only the pumpkin)"],
+    },
+    # counting_5: Bear's flour sack tipped over the counter - wipe the flour off and count the rolls under it
+    "maka_na_ladzie": {
+        "oslona": "maka", "lekcje": ["counting_5"],
+        "obraz": f"""A close view of a warm wooden bakery COUNTER seen from the front and a little from above, filling the whole
+picture. On the counter lies ONE long flat wooden baking TRAY, and on the tray, in ONE row from left to right, EXACTLY
+FIVE round golden-brown bread ROLLS with a cross cut on top, all the same size, big, each one clearly apart from the next
+with a gap of wood between them. Behind the counter a soft blurred warm bakery wall with a glowing brick oven far on the
+left. NO other rolls, NO other bread, NO cakes, NO bowls, NO animals, NO people, NO text, NO numbers. Big simple clear
+shapes.
+{STYL}""",
+        "zakryj": """a thick, soft, even layer of white FLOUR spilled all over the counter and the tray, like fresh powdery snow
+with little heaps and puffs and a few fingerprints of dust, so NONE of the five rolls shows through anywhere - only
+flour; the blurred wall and the oven at the back stay as they are.""",
+        "cele": ["on the FIRST roll from the left (a disc covering only that roll)",
+                 "on the SECOND roll from the left (a disc covering only that roll)",
+                 "on the THIRD roll from the left, in the middle (a disc covering only that roll)",
+                 "on the FOURTH roll from the left (a disc covering only that roll)",
+                 "on the FIFTH roll from the left, the last one on the right (a disc covering only that roll)"],
+    },
     # grouping: the breather - the wind heaped leaves over the trail; rake them off and the paw prints show the way
     "trop_pod_liscmi": {
         "oslona": "liscie", "lekcje": ["grouping"],

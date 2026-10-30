@@ -34,6 +34,39 @@ POSTAC = {
 }
 # name: {postacie: [who], tlo: scenery plate or None, scena: what happens, lekcje: [ids] (for the manager)}
 ILUSTRACJE = {
+    # light_heavy story: the payoff - the raft, loaded right, carries the picnic across the brook without tipping
+    "tratwa_przeprawa": {
+        "postacie": ["bobr", "mis", "zajac"], "tlo": "strumyk", "lekcje": ["light_heavy"],
+        "scena": """The sunny brook from the reference picture (the same clear water, round mossy boulders and the little
+wooden footbridge far on the right). In the middle of the water floats a small flat wooden RAFT of six logs tied with
+rope, lying perfectly LEVEL and steady on the water. In the MIDDLE of the raft sits the big BEAR, and next to him in the
+middle a whole green striped WATERMELON and a silver cooking POT with a lid; at the LEFT edge of the raft lies a folded
+red-and-white checked picnic BLANKET, at the RIGHT edge the BUNNY sits holding the string of one red BALLOON floating
+above. At the back of the raft the BEAVER steers it with a long wooden pole, proud. On the far bank ahead, green grass
+with a few flowers waits for the picnic. Calm, happy and sunny, little ripples round the raft.""",
+    },
+    # light_heavy home: the payoff - Bear lifts the heavy pot of pumpkin soup onto the stove, the shopping tidied
+    "zupa_dyniowa": {
+        "postacie": ["mis", "bobr", "zajac"], "tlo": "dom", "lekcje": ["light_heavy"],
+        "scena": """The cosy kitchen from the reference picture (the same wallpaper, window, wall clock, mint fridge, mint
+cupboard and big wooden table), warm afternoon light. At the left wall the two little wooden wall SHELVES: on the LOWER
+shelf a small brown paper bag of POTATOES and a small glass jar of golden HONEY, on the UPPER shelf a big puffy yellow
+bag of CRISPS and a tall jar of white POPCORN. In front of the cupboard stands a small white kitchen STOVE; the big
+BEAR lifts a big heavy silver soup POT with both paws onto the stove, puffing his cheeks with the effort, steam rising
+from the orange pumpkin SOUP in it. The BEAVER claps, the BUNNY sits at the table with a spoon and a bowl, laughing.
+Warm, homely and happy.""",
+    },
+    # counting_5 home: the payoff - the bakery's opening supper, Owl and her four owlets at the table set for five
+    "kolacja_sowiatek": {
+        "postacie": ["mis", "sowa", "wiewiorka", "jez"], "tlo": "dom", "lekcje": ["counting_5"],
+        "scena": """The cosy kitchen from the reference picture (the same wallpaper, window, wall clock, shelves, mint
+cupboard and big wooden table), warm evening light, the window dark blue with a few stars. Around the table sit five
+guests: the OWL and her FOUR small fluffy grey-brown OWLETS (baby owls with big round eyes), each one on its own chair or
+cushion. In front of each guest ONE white plate with a blue rim and ONE blue cup on it - five plates and five cups in
+all, one for each guest. The BEAR, in a white baker's apron, carries a big basket of golden bread rolls to the table and
+smiles; the SQUIRREL pours tea from a teapot and the small HEDGEHOG hands an owlet a roll. Everybody is happy, warm and
+festive, a little paper garland over the window.""",
+    },
     # queue story: the start of the great forest race - the runners at the line, Owl's flag up
     "start_wyscigu": {
         "postacie": ["sowa", "kret", "bobr"], "tlo": "tor_wyscigu", "lekcje": ["queue"],
