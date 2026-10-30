@@ -1,7 +1,7 @@
 // Drive a lesson from the console: waits for click targets, picks the right one from the
 // last spoken line, snapshots each task. Usage in the page: await (await import('/manager/autopilot.js')).run(20)
 // The story preview (?scenariusz) runs it too, without the snapshots.
-const snap = (n) => (new URLSearchParams(location.search).has("scenariusz") ? Promise.resolve() : gra.snap(n));
+const snap = (n) => (new URLSearchParams(location.search).has("scenariusz") ? Promise.resolve() : gra.snap(String(n).toLowerCase().replace(/[^a-z0-9_]/g, "_")));   // the server takes [a-z0-9_] only
 export async function run(maxSteps = 20, prefix = "a") {
   const log = [];
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -67,6 +67,9 @@ export async function run(maxSteps = 20, prefix = "a") {
         } else if (ds.wieza) {
           kind = "wieza";                                           // a tower: the widest first, each on the first place
           for (const h of ds.items.slice().sort((p, q) => q.w - p.w)) { if (!S.dragSet) break; S.upusc(h, ds.wieza.miejsca[0].x, 0); await sleep(700); }
+        } else if (ds.waga && !ds.doLinii) {
+          kind = "waga";                                            // the balance: things onto the pans in turn
+          for (const [i, h] of ds.items.slice().entries()) { if (!S.dragSet) break; const s = ds.waga.szalki[i % 2].mesh.position; S.upusc(h, s.x, s.y + 0.2); await sleep(700); }
         } else if (ds.doLinii) {
           kind = "doLinii";                                         // from one line: drop each where it snaps
           for (const h of ds.items.slice()) { const [x, y] = ds.doLinii(h); S.upusc(h, x, y); await sleep(500); }

@@ -78,6 +78,13 @@ def main() -> int:
         dst = DIST / (rel if r in KORZEN or r.startswith(KORZEN[2]) else Path("game") / rel)
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(GAME / rel, dst)
+    # a lesson without its files is a placeholder in the shipped menu, whatever the working index says
+    ix = DIST / "game" / "lessons" / "index.json"
+    d = json.loads(ix.read_text(encoding="utf-8"))
+    for l in d["lessons"]:
+        if l["id"] not in gotowe:
+            l["wkrotce"] = True
+    ix.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"-> {DIST}  (upload its contents to the domain root)")
     return 0
 
