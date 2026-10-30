@@ -423,7 +423,8 @@ a leaf flutters. Funny, not scary: a comic moment, the trunk and the hole big in
         "postacie": ["wiewiorka", "lisek", "sowa"], "tlo": "dziupla_wnetrze", "lekcje": ["bigger_smaller"],
         "scena": """A cosy HOUSEWARMING party inside the squirrel's round hollow home from the reference picture: the SQUIRREL,
 the FOX and the OWL sit round a small round wooden table, laughing and raising their cups. The OWL on the BIGGEST chair,
-the FOX on a middle chair, the little SQUIRREL on the SMALLEST chair; a big cup for the fox, a small cup for the squirrel.
+the FOX on a middle chair, the little SQUIRREL on the SMALLEST chair; a big cup for the fox, a small cup for the squirrel -
+every cup BLUE (the blue cups handed out in the lesson).
 On the BIG shelf on the wall stands one BIG open cardboard box full of nuts and acorns, on the SMALL shelf one small
 open cardboard box full of nuts. A plate of acorn
 cookies on the table, a little garland of leaves, warm light, steam from the cups. A joyful party.""",
