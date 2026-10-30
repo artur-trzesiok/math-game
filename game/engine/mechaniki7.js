@@ -4,6 +4,7 @@
 // mata_peczki; the cards are the memory game's (menu/karta, karta_rewers) with the puppets rendered on them.
 
 import * as THREE from "three";
+import { materialNaklejki } from "./naklejka.js";
 import { texture } from "./scene.js";
 import { CYFRY } from "./liczby.js";
 import { Lalka } from "./lalka.js";
@@ -214,7 +215,7 @@ export async function portrety(S, { postacie, ubrania = {}, widok = "przod", kad
     const papier = new THREE.Mesh(new THREE.PlaneGeometry(szer, wys), mat({ map: kartaT, alphaTest: 0.05 })); papier.renderOrder = 10; lico.add(papier);
     const plan = (t) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(szer * 0.88, szer * 0.88 / 0.73), materialPortretu(t)); m.position.z = 0.01; m.renderOrder = 10.5; return m; };
     const widokM = plan(obrazy[i]), przodM = widok === "przod" ? widokM : plan(przody[i]); lico.add(widokM); if (przodM !== widokM) { przodM.visible = false; lico.add(przodM); }
-    const rew = new THREE.Mesh(new THREE.PlaneGeometry(wys * 1.0, wys * 1.0), mat({ map: rewersT, alphaTest: 0.05 })); rew.renderOrder = 10; tyl.add(rew);
+    const rew = new THREE.Mesh(new THREE.PlaneGeometry(wys * 1.0, wys * 1.0), materialNaklejki(rewersT));   // a card's back: a sticker - its edge while it waits for a touch rew.renderOrder = 10; tyl.add(rew);
     const h = uchwyt(S, grp, { name: `portret_${kto}`, kto, otwarta: true, dobry: false });
     const obrot = async (zmien) => {
       await S.tween(FAST ? 0.04 : 0.16, (s) => { grp.scale.x = Math.max(0.01, 1 - s); });

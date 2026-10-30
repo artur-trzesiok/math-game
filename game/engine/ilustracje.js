@@ -8,6 +8,7 @@
 // h.calosc() shows the whole page.
 
 import * as THREE from "three";
+import { materialNaklejki } from "./naklejka.js";
 import { texture } from "./scene.js";
 
 const FAST = new URLSearchParams(location.search).has("szybko");
@@ -165,8 +166,10 @@ export async function ilustracja(S, nazwa, { ruch = "najazd", czekaj = false, mo
   const naDalej = async () => {
     const tex = await texture("/game/assets/objects/przycisk_dalej.webp").catch(() => null);
     if (!tex || zniknela) return;
-    const r = widac().h * 0.075;
-    dalej = new THREE.Mesh(new THREE.PlaneGeometry(2 * r, 2 * r * tex.image.height / tex.image.width), mat({ map: tex }));
+    const r = widac().h * 0.075 * 1.18;                                            // the picture has room round it for the edge
+    // a thing to touch: the white edge of every target (engine/naklejka.js), lit for good
+    const mDalej = materialNaklejki(tex); mDalej.depthTest = false; mDalej.userData.naklejka.uObw.value = 1; mDalej.userData.naklejka.staly = true; mDalej.userData.naklejka.uR.value = 0.07;
+    dalej = new THREE.Mesh(new THREE.PlaneGeometry(2 * r, 2 * r * tex.image.height / tex.image.width), mDalej);
     dalej.renderOrder = 7; dalej.userData = { y: -Hc / 2 - r * 0.15, r, t0: performance.now() };
     dalej.position.set(0, dalej.userData.y, 0.5); dalej.scale.setScalar(0.001); karta.add(dalej);
     S.sfx.graj("pop");

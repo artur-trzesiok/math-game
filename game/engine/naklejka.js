@@ -44,10 +44,10 @@ void main() {`)
 // sticker the handle holds: a heap is one handle of several stickers, and each of them needs its own edge
 export function krokNaklejek(objects, czeka, dt) {
   for (const h of objects) {
-    if (!h.icon || !h.mesh) continue;
+    if (!h.mesh?.traverse) continue;                                // a sticker, or a group holding stickers (a card, a heap)
     let us = h.naklejkiU;
     if (!us || h.naklejkiN !== h.mesh.children.length) {             // gathered again when the group's children change
-      us = []; h.mesh.traverse((o) => { const u = o.material?.userData?.naklejka; if (u) us.push(u); });
+      us = []; h.mesh.traverse((o) => { const u = o.material?.userData?.naklejka; if (u && !u.staly) us.push(u); });   // `staly`: set by its owner
       h.naklejkiU = us; h.naklejkiN = h.mesh.children.length;
     }
     if (!us.length) continue;
