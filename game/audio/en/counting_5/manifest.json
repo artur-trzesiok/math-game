@@ -25,9 +25,9 @@
   "text": "Oh, now there are more! They take up so much room!"
  },
  "line.a_policz": {
-  "hash": "a48cd5a5aa6f",
+  "hash": "aeaafb7779cd",
   "who": "jez",
-  "text": "Bear, did more rolls appear? Let's count again."
+  "text": "Bear, are there really more rolls now? Count them again, each one in turn."
  },
  "line.a_dalej_piec": {
   "hash": "95ff752cbec6",
@@ -39,135 +39,25 @@
   "who": "mis",
   "text": "Five is five, close together or far apart. I see!"
  },
- "line.a_spakuj": {
-  "hash": "900656afb12f",
-  "who": "mis",
-  "text": "Put four rolls into the bag. Drag them one at a time and I'll count."
- },
- "line.a_za_duzo": {
-  "hash": "a1411fcb7cf2",
-  "who": "mis",
-  "text": "That's four already! No more needed."
- },
- "line.a_cztery": {
-  "hash": "08500036e380",
-  "who": "wiewiorka",
-  "text": "Four rolls for Owl, just right!"
- },
- "line.b_jablka": {
-  "hash": "9bc400507485",
-  "who": "mis",
-  "text": "I need five apples for the apple pie."
- },
- "line.b_ktora": {
-  "hash": "283f1e9619ff",
-  "who": "wiewiorka",
-  "text": "Where are five apples? Point to them."
- },
- "line.b_ktora_nie": {
-  "hash": "33f86689828e",
-  "who": "wiewiorka",
-  "text": "Count again. We're looking for five."
- },
- "line.b_dobrze": {
-  "hash": "0dd6f14defab",
-  "who": "mis",
-  "text": "Five apples for the pie!"
- },
- "line.b_piec_twarzy": {
-  "hash": "ade710a9c193",
-  "who": "wiewiorka",
-  "text": "Five can be shown in many ways. For example with dots on a domino."
- },
- "line.b_domino": {
-  "hash": "a155fdf7d326",
-  "who": "wiewiorka",
-  "text": "Which domino has five dots altogether? Point to it."
- },
- "line.b_domino_nie": {
-  "hash": "ec99fed7590b",
-  "who": "wiewiorka",
-  "text": "Count all the dots on that domino, at the top and at the bottom."
- },
- "line.b_dwa_i_trzy": {
-  "hash": "3a5312122d8d",
-  "who": "jez",
-  "text": "Two dots and three dots, five altogether!"
- },
- "line.b_skacze": {
-  "hash": "2a420a036c73",
-  "who": "jez",
-  "text": "I'm jumping for joy! Count my jumps."
- },
- "line.b_ile_skokow": {
-  "hash": "c49cba8adc5c",
-  "who": "wiewiorka",
-  "text": "How many times did Hedgehog jump? Point to the number."
- },
- "line.b_skok3": {
-  "hash": "18a1d29b785e",
-  "who": "jez",
-  "text": "Three jumps!"
- },
- "line.b_skok4": {
-  "hash": "a16678140f92",
-  "who": "jez",
-  "text": "Four jumps!"
- },
- "line.b_skok5": {
-  "hash": "0a9bfcc203d9",
-  "who": "jez",
-  "text": "Five jumps!"
- },
- "line.b_klient": {
-  "hash": "8907f23751ee",
-  "who": "mis",
-  "text": "Back to the bakery. A customer wants a cookie for five coins. Help them pay."
- },
- "line.b_zaplacone": {
-  "hash": "c342ff58adc2",
-  "who": "mis",
-  "text": "Five coins, all paid. Thank you!"
- },
  "line.p_start": {
   "hash": "bce67b4c01a2",
   "who": "mis",
   "text": "Let's practise counting to five! I have five games."
  },
  "line.p_ile": {
-  "hash": "37215fc6187c",
+  "hash": "f068d6ae400a",
   "who": "wiewiorka",
-  "text": "How many rolls are there? Count and point to the number."
+  "text": "How many rolls are there? Count them and point to the number."
  },
  "line.p_ile_nie": {
   "hash": "00ff18c41766",
   "who": "wiewiorka",
   "text": "Count again, touching each roll."
  },
- "line.p_dobrze": {
-  "hash": "2c107cf2e33b",
-  "who": "mis",
-  "text": "Bravo!"
- },
- "line.p_dobrze.wiewiorka": {
-  "hash": "b078bb8b91d9",
-  "who": "wiewiorka",
-  "text": "Bravo!"
- },
- "line.p_trzy": {
-  "hash": "19658ba34feb",
-  "who": "mis",
-  "text": "Put three rolls into the bag."
- },
- "line.p_trzy_juz": {
-  "hash": "1b0cab7af157",
-  "who": "mis",
-  "text": "That's three already!"
- },
  "line.p_taca": {
-  "hash": "115a57241aaf",
+  "hash": "b374131ee07c",
   "who": "wiewiorka",
-  "text": "Which tray has five cookies? Point to it."
+  "text": "Which tray has five cookies?"
  },
  "line.p_taca_nie": {
   "hash": "dccc6027caf2",
@@ -175,14 +65,14 @@
   "text": "Count the cookies. A long row doesn't mean more."
  },
  "line.p_memory": {
-  "hash": "195c2e5e6d51",
+  "hash": "717ca1567efd",
   "who": "mis",
-  "text": "Turn the cards and find pairs: a number and as many dots."
+  "text": "Turn the cards over and find the pairs: a number and as many dots."
  },
  "line.p_czwarta": {
-  "hash": "923023eaa228",
+  "hash": "c0e667a79db1",
   "who": "wiewiorka",
-  "text": "Which roll will Hedgehog eat? The fourth from the arrow. Point to it."
+  "text": "Count from the arrow and point to the fourth roll."
  },
  "line.p_czwarta_nie": {
   "hash": "3dbd7b38b1e3",
@@ -190,29 +80,29 @@
   "text": "Count from the arrow: first, second, third, fourth."
  },
  "line.h_goscie": {
-  "hash": "be90ae9704ac",
+  "hash": "aeee9d401c1b",
   "who": "jez",
-  "text": "Five guests are coming for supper. Let's set the table!"
+  "text": "Five guests are coming to supper. Let's set the table!"
  },
  "line.h_talerze": {
-  "hash": "b637af67454b",
-  "who": "mis",
-  "text": "Count the plates."
+  "hash": "354c2263e503",
+  "who": "jez",
+  "text": "Put all the plates on the table."
  },
  "line.h_kubki": {
-  "hash": "ef1e7e1ad7f2",
-  "who": "jez",
-  "text": "Every plate gets one cup. Count the cups."
+  "hash": "5ad9b7d51abe",
+  "who": "mis",
+  "text": "And I'll stand the cups here, close together."
  },
  "line.h_po_jednym": {
-  "hash": "63da4a20cce6",
+  "hash": "3d6bbf107168",
   "who": "jez",
-  "text": "Five plates and five cups. Every guest has their own!"
+  "text": "Five plates and five cups. Every guest has one!"
  },
  "line.h_rodzice": {
-  "hash": "bfc9fc2516c9",
+  "hash": "9b8a5bf8b765",
   "who": "mis",
-  "text": "Count five stairs with your parents, and count the plates at the table!"
+  "text": "When you set the table, count the plates and the cups with your parents!"
  },
  "line.n1": {
   "hash": "2fe167afcc42",
@@ -310,13 +200,223 @@
   "text": "Someone slipped a note under the door! There's a feather on it. It's from Owl!"
  },
  "line.a_karteczka_ile": {
-  "hash": "a3c5f10e8143",
+  "hash": "d3e77f957d6f",
   "who": "mis",
-  "text": "It's an order! Owl drew how many rolls she wants. Let's count them, then I'll know how many to pack. Point to each roll in the drawing, one by one."
+  "text": "It's an order! Owl drew how many rolls she wants, so point to each roll in the drawing, one by one."
  },
  "line.a_karteczka_cztery": {
   "hash": "6dc4ddf08e19",
   "who": "wiewiorka",
   "text": "Four rolls! Owl wants four."
+ },
+ "line.a_maka": {
+  "hash": "fd71b4eb0ce0",
+  "who": "mis",
+  "text": "Just a little flour on top... Oh no! The sack fell over!"
+ },
+ "line.a_pod_maka": {
+  "hash": "235fdfa4b20f",
+  "who": "wiewiorka",
+  "text": "Everything is white! Wipe the flour off the counter with your finger, and we'll see what's under it."
+ },
+ "line.a_zaniesiemy": {
+  "hash": "322cc2b013d4",
+  "who": "wiewiorka",
+  "text": "Let's take them to Owl! She lives past the orchard, in a big hollow."
+ },
+ "line.b_sad": {
+  "hash": "6adb5dcb9aa5",
+  "who": "jez",
+  "text": "What a lovely orchard! Can you hear? Somebody's chirping."
+ },
+ "line.b_ptaszek": {
+  "hash": "4a66a44d526c",
+  "who": "wiewiorka",
+  "text": "It's a hungry little bird! Give it the crumbs from the bakery, and leave the pine cone."
+ },
+ "line.b_najedzony": {
+  "hash": "42584665f185",
+  "who": "jez",
+  "text": "The bird is full! It's chirping goodbye to us."
+ },
+ "line.b_dalej": {
+  "hash": "4510e71de27b",
+  "who": "mis",
+  "text": "Let's go on, Owl is waiting for her rolls."
+ },
+ "line.c_dziupla": {
+  "hash": "59ae9440911a",
+  "who": "wiewiorka",
+  "text": "This is it! Owl's hollow is high up in the tree."
+ },
+ "line.c_halo": {
+  "hash": "4f65426f8aad",
+  "who": "mis",
+  "text": "Owl! We've brought your order!"
+ },
+ "line.c_sowa": {
+  "hash": "afc72051af9d",
+  "who": "sowa",
+  "text": "Good afternoon! My rolls! They're for my owlets."
+ },
+ "line.c_rozdaj": {
+  "hash": "2f56aa22b3f0",
+  "who": "sowa",
+  "text": "Owlets, come down! Give each owlet one roll."
+ },
+ "line.c_po_jednej": {
+  "hash": "7a2884a648d9",
+  "who": "sowa",
+  "text": "Four owlets and four rolls. Each one has its own!"
+ },
+ "line.c_zaplace": {
+  "hash": "8849a3ea6371",
+  "who": "sowa",
+  "text": "I pay one coin for each roll. Count four coins onto the plate for me, my eyes are so sleepy in the daytime."
+ },
+ "line.c_dziekuje": {
+  "hash": "f668e2646dff",
+  "who": "mis",
+  "text": "Four coins! My very first payment. Thank you!"
+ },
+ "line.c_zaproszenie": {
+  "hash": "30f9aa11b177",
+  "who": "mis",
+  "text": "Tonight we celebrate the bakery's opening. Come to supper at my house!"
+ },
+ "line.c_przyjdziemy": {
+  "hash": "c5d311420cc0",
+  "who": "sowa",
+  "text": "We'll all come, me and my owlets!"
+ },
+ "line.p_bulki3": {
+  "hash": "58254874fa26",
+  "who": "mis",
+  "text": "Yes, three rolls!"
+ },
+ "line.p_bulki4": {
+  "hash": "6a302ab7c72f",
+  "who": "mis",
+  "text": "Yes, four rolls!"
+ },
+ "line.p_bulki5": {
+  "hash": "65f8537d564a",
+  "who": "mis",
+  "text": "Yes, five rolls!"
+ },
+ "line.p_domino": {
+  "hash": "04249aa66c4c",
+  "who": "mis",
+  "text": "These are domino tiles. Which tile has five dots?"
+ },
+ "line.p_domino_nie": {
+  "hash": "e575289b314d",
+  "who": "mis",
+  "text": "Count all the dots on this tile, one after another."
+ },
+ "line.p_domino_ok": {
+  "hash": "078cf373432b",
+  "who": "wiewiorka",
+  "text": "Yes, this tile has five dots!"
+ },
+ "line.p_taca_ok": {
+  "hash": "d229841449c0",
+  "who": "mis",
+  "text": "Yes, there are five cookies here, even though they lie far apart!"
+ },
+ "line.p_czwarta_ok": {
+  "hash": "057322c4efde",
+  "who": "mis",
+  "text": "Yes, that's the fourth roll!"
+ },
+ "line.h_w_domu": {
+  "hash": "3ae71ed1b176",
+  "who": "mis",
+  "text": "The bakery is open, and tonight Owl and the owlets are coming!"
+ },
+ "line.h_za_malo": {
+  "hash": "9e060d0a99c4",
+  "who": "mis",
+  "text": "Oh no! There are more plates than cups! There won't be enough cups!"
+ },
+ "line.h_sprawdzmy": {
+  "hash": "5e8a1a8b143f",
+  "who": "wiewiorka",
+  "text": "Let's check! First count the cups, touching each one in turn."
+ },
+ "line.h_piec_kubkow": {
+  "hash": "cbfcfc895966",
+  "who": "wiewiorka",
+  "text": "Five cups."
+ },
+ "line.h_teraz_talerze": {
+  "hash": "dfbc7e59edd0",
+  "who": "jez",
+  "text": "And now count the plates on the table."
+ },
+ "line.h_piec_talerzy": {
+  "hash": "6c3f9f9cbcb8",
+  "who": "jez",
+  "text": "Five plates! As many as the cups."
+ },
+ "line.h_kubek_na_talerz": {
+  "hash": "627915d4115e",
+  "who": "wiewiorka",
+  "text": "Put one cup on each plate."
+ },
+ "line.h_starczy": {
+  "hash": "01d4db2f1906",
+  "who": "mis",
+  "text": "Enough for everyone! Far apart or close together, five is five."
+ },
+ "line.h_hu": {
+  "hash": "be71648a1cf1",
+  "who": "wiewiorka",
+  "text": "Shh! Somebody's hooting at the door. Count how many times."
+ },
+ "line.h_ile_hu": {
+  "hash": "983ba7df00a5",
+  "who": "wiewiorka",
+  "text": "How many times did somebody hoot? Point to the number."
+ },
+ "line.h_ile_hu_nie": {
+  "hash": "741a32959fb6",
+  "who": "wiewiorka",
+  "text": "Listen again and count how many times somebody hoots."
+ },
+ "line.h_piec_gosci": {
+  "hash": "8237e1b8809a",
+  "who": "jez",
+  "text": "Five times! Each guest hooted once, so there are five guests."
+ },
+ "line.h_smacznego": {
+  "hash": "2e2abdd32064",
+  "who": "mis",
+  "text": "Welcome, guests! Rolls fresh from my bakery. Enjoy your meal!"
+ },
+ "line.h_udane": {
+  "hash": "c3e425a4d005",
+  "who": "wiewiorka",
+  "text": "The bakery's first day was a great success!"
+ },
+ "line.h_pokaz": {
+  "hash": "463afcb0dc98",
+  "who": "mis",
+  "text": "Watch how I count the plates at the table."
+ },
+ "line.a_sa": {
+  "hash": "e6ac0b981da9",
+  "who": "jez",
+  "text": "There they are! The rolls were under the flour!"
+ },
+ "line.a_spakuj": {
+  "hash": "900656afb12f",
+  "who": "mis",
+  "text": "Put four rolls into the bag. Drag them one at a time and I'll count."
+ },
+ "line.a_za_duzo": {
+  "hash": "a1411fcb7cf2",
+  "who": "mis",
+  "text": "That's four already! No more needed."
  }
 }

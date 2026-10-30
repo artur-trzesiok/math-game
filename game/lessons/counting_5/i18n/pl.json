@@ -3,6 +3,18 @@
     "who": "mis",
     "text": "Otwieram leśną piekarnię! Upiekłem pierwsze bułeczki."
   },
+  "line.a_maka": {
+    "who": "mis",
+    "text": "Jeszcze tylko posypię je mąką... Ojej! Worek się przewrócił!"
+  },
+  "line.a_pod_maka": {
+    "who": "wiewiorka",
+    "text": "Wszystko jest białe! Zetrzyj palcem mąkę z lady, zobaczymy, co jest pod nią."
+  },
+  "line.a_sa": {
+    "who": "jez",
+    "text": "Są! Bułeczki znalazły się pod mąką!"
+  },
   "line.a_ile": {
     "who": "wiewiorka",
     "text": "Ile bułeczek jest na tacy? Policz je, dotykając każdej po kolei."
@@ -21,7 +33,7 @@
   },
   "line.a_policz": {
     "who": "jez",
-    "text": "Misiu, czy przybyło bułeczek? Policzmy jeszcze raz."
+    "text": "Misiu, czy naprawdę przybyło bułeczek? Policz je jeszcze raz, każdą po kolei."
   },
   "line.a_dalej_piec": {
     "who": "jez",
@@ -37,7 +49,7 @@
   },
   "line.a_karteczka_ile": {
     "who": "mis",
-    "text": "To zamówienie! Sowa narysowała, ile bułeczek chce. Policzmy je, to będę wiedział, ile zapakować. Wskazuj po kolei każdą bułeczkę na rysunku."
+    "text": "To zamówienie! Sowa narysowała, ile bułeczek chce, więc wskaż po kolei każdą bułeczkę na rysunku."
   },
   "line.a_karteczka_cztery": {
     "who": "wiewiorka",
@@ -51,69 +63,61 @@
     "who": "mis",
     "text": "Już są cztery! Więcej nie trzeba."
   },
-  "line.a_cztery": {
+  "line.a_zaniesiemy": {
     "who": "wiewiorka",
-    "text": "Cztery bułeczki dla Sowy, w sam raz!"
+    "text": "Zanieśmy je Sowie! Mieszka za sadem, w wielkiej dziupli."
   },
-  "line.b_jablka": {
+  "line.b_sad": {
+    "who": "jez",
+    "text": "Jaki piękny sad! Słyszycie? Ktoś tu ćwierka."
+  },
+  "line.b_ptaszek": {
+    "who": "wiewiorka",
+    "text": "To głodny ptaszek! Daj mu okruszki z piekarni, a szyszkę zostaw."
+  },
+  "line.b_najedzony": {
+    "who": "jez",
+    "text": "Ptaszek najedzony! Ćwierka nam na pożegnanie."
+  },
+  "line.b_dalej": {
     "who": "mis",
-    "text": "Do szarlotki potrzebuję pięciu jabłek."
+    "text": "Chodźmy dalej, Sowa czeka na bułeczki."
   },
-  "line.b_ktora": {
+  "line.c_dziupla": {
     "who": "wiewiorka",
-    "text": "Gdzie jest pięć jabłek? Wskaż."
+    "text": "To tutaj! Wysoko na drzewie jest dziupla Sowy."
   },
-  "line.b_ktora_nie": {
-    "who": "wiewiorka",
-    "text": "Policz jeszcze raz. Szukamy pięciu."
-  },
-  "line.b_dobrze": {
+  "line.c_halo": {
     "who": "mis",
-    "text": "Pięć jabłek na szarlotkę!"
+    "text": "Sowo! Przynieśliśmy twoje zamówienie!"
   },
-  "line.b_piec_twarzy": {
-    "who": "wiewiorka",
-    "text": "Pięć można pokazać na różne sposoby. Na przykład kropkami na domino."
+  "line.c_sowa": {
+    "who": "sowa",
+    "text": "Dzień dobry! Moje bułeczki! To dla moich sowiątek."
   },
-  "line.b_domino": {
-    "who": "wiewiorka",
-    "text": "Na którym domino jest razem pięć kropek? Wskaż."
+  "line.c_rozdaj": {
+    "who": "sowa",
+    "text": "Sowiątka, chodźcie na dół! Daj każdemu sowiątku jedną bułeczkę."
   },
-  "line.b_domino_nie": {
-    "who": "wiewiorka",
-    "text": "Policz wszystkie kropki na tym domino, na górze i na dole."
+  "line.c_po_jednej": {
+    "who": "sowa",
+    "text": "Cztery sowiątka i cztery bułeczki. Każde ma swoją!"
   },
-  "line.b_dwa_i_trzy": {
-    "who": "jez",
-    "text": "Dwie kropki i trzy kropki, razem pięć!"
+  "line.c_zaplace": {
+    "who": "sowa",
+    "text": "Płacę jedną monetą za każdą bułeczkę. Odlicz na talerzyk cztery monety, bo w dzień oczy mi się kleją."
   },
-  "line.b_skacze": {
-    "who": "jez",
-    "text": "Skaczę z radości! Policz moje skoki."
-  },
-  "line.b_ile_skokow": {
-    "who": "wiewiorka",
-    "text": "Ile razy skoczył Jeżyk? Wskaż cyfrę."
-  },
-  "line.b_skok3": {
-    "who": "jez",
-    "text": "Trzy skoki!"
-  },
-  "line.b_skok4": {
-    "who": "jez",
-    "text": "Cztery skoki!"
-  },
-  "line.b_skok5": {
-    "who": "jez",
-    "text": "Pięć skoków!"
-  },
-  "line.b_klient": {
+  "line.c_dziekuje": {
     "who": "mis",
-    "text": "Wracamy do piekarni. Klient chce ciasteczko za pięć monet. Pomóż mu zapłacić."
+    "text": "Cztery monety! Moja pierwsza zapłata. Dziękuję!"
   },
-  "line.b_zaplacone": {
+  "line.c_zaproszenie": {
     "who": "mis",
-    "text": "Pięć monet, zapłacone. Dziękuję!"
+    "text": "Wieczorem świętujemy otwarcie piekarni. Zapraszam was na kolację do mojego domu!"
+  },
+  "line.c_przyjdziemy": {
+    "who": "sowa",
+    "text": "Przyjdziemy wszyscy, ja i moje sowiątka!"
   },
   "line.p_start": {
     "who": "mis",
@@ -127,28 +131,41 @@
     "who": "wiewiorka",
     "text": "Policz jeszcze raz, dotykając każdej bułeczki."
   },
-  "line.p_dobrze": {
+  "line.p_bulki3": {
     "who": "mis",
-    "text": "Brawo!",
-    "speakers": [
-      "wiewiorka"
-    ]
+    "text": "Tak, trzy bułeczki!"
   },
-  "line.p_trzy": {
+  "line.p_bulki4": {
     "who": "mis",
-    "text": "Włóż do torebki trzy bułeczki."
+    "text": "Tak, cztery bułeczki!"
   },
-  "line.p_trzy_juz": {
+  "line.p_bulki5": {
     "who": "mis",
-    "text": "Już są trzy!"
+    "text": "Tak, pięć bułeczek!"
+  },
+  "line.p_domino": {
+    "who": "mis",
+    "text": "To są kostki domina. Na której kostce jest pięć kropek?"
+  },
+  "line.p_domino_nie": {
+    "who": "mis",
+    "text": "Policz wszystkie kropki na tej kostce, jedną po drugiej."
+  },
+  "line.p_domino_ok": {
+    "who": "wiewiorka",
+    "text": "Tak, na tej kostce jest pięć kropek!"
   },
   "line.p_taca": {
     "who": "wiewiorka",
-    "text": "Na której tacy jest pięć ciasteczek? Wskaż."
+    "text": "Na której tacy jest pięć ciasteczek?"
   },
   "line.p_taca_nie": {
     "who": "wiewiorka",
     "text": "Policz ciasteczka. Długi rządek to jeszcze nie znaczy więcej."
+  },
+  "line.p_taca_ok": {
+    "who": "mis",
+    "text": "Tak, tu jest pięć ciasteczek, chociaż leżą daleko od siebie!"
   },
   "line.p_memory": {
     "who": "mis",
@@ -156,31 +173,95 @@
   },
   "line.p_czwarta": {
     "who": "wiewiorka",
-    "text": "Którą bułeczkę zje Jeżyk? Czwartą od strzałki. Wskaż."
+    "text": "Licz od strzałki i wskaż czwartą bułeczkę."
   },
   "line.p_czwarta_nie": {
     "who": "wiewiorka",
     "text": "Licz od strzałki: pierwsza, druga, trzecia, czwarta."
+  },
+  "line.p_czwarta_ok": {
+    "who": "mis",
+    "text": "Tak, to czwarta bułeczka!"
+  },
+  "line.h_w_domu": {
+    "who": "mis",
+    "text": "Piekarnia otwarta, a wieczorem przychodzą Sowa i sowiątka!"
   },
   "line.h_goscie": {
     "who": "jez",
     "text": "Na kolację przyjdzie pięcioro gości. Nakryjmy do stołu!"
   },
   "line.h_talerze": {
-    "who": "mis",
-    "text": "Policz talerze."
+    "who": "jez",
+    "text": "Połóż wszystkie talerze na stole."
   },
   "line.h_kubki": {
+    "who": "mis",
+    "text": "A kubki postawię tutaj, blisko siebie."
+  },
+  "line.h_za_malo": {
+    "who": "mis",
+    "text": "Ojej! Talerzy jest więcej niż kubków! Kubków nie starczy!"
+  },
+  "line.h_sprawdzmy": {
+    "who": "wiewiorka",
+    "text": "Sprawdźmy! Policz najpierw kubki, dotykając każdego po kolei."
+  },
+  "line.h_piec_kubkow": {
+    "who": "wiewiorka",
+    "text": "Pięć kubków."
+  },
+  "line.h_teraz_talerze": {
     "who": "jez",
-    "text": "Każdy talerz dostaje jeden kubek. Policz kubki."
+    "text": "A teraz policz talerze na stole."
+  },
+  "line.h_piec_talerzy": {
+    "who": "jez",
+    "text": "Pięć talerzy! Tyle samo, co kubków."
+  },
+  "line.h_kubek_na_talerz": {
+    "who": "wiewiorka",
+    "text": "Postaw na każdym talerzu jeden kubek."
   },
   "line.h_po_jednym": {
     "who": "jez",
     "text": "Pięć talerzy i pięć kubków. Każdy gość ma swój!"
   },
+  "line.h_starczy": {
+    "who": "mis",
+    "text": "Starczy dla wszystkich! Daleko czy blisko, pięć to pięć."
+  },
+  "line.h_hu": {
+    "who": "wiewiorka",
+    "text": "Cicho! Ktoś pohukuje pod drzwiami. Policz, ile razy."
+  },
+  "line.h_ile_hu": {
+    "who": "wiewiorka",
+    "text": "Ile razy ktoś zahukał? Wskaż cyfrę."
+  },
+  "line.h_ile_hu_nie": {
+    "who": "wiewiorka",
+    "text": "Posłuchaj jeszcze raz i policz, ile razy ktoś zahuka."
+  },
+  "line.h_piec_gosci": {
+    "who": "jez",
+    "text": "Pięć razy! Każdy gość zahukał raz, więc jest pięcioro gości."
+  },
+  "line.h_smacznego": {
+    "who": "mis",
+    "text": "Witajcie, goście! Bułeczki prosto z mojej piekarni. Smacznego!"
+  },
+  "line.h_udane": {
+    "who": "wiewiorka",
+    "text": "Pierwszy dzień piekarni bardzo się udał!"
+  },
+  "line.h_pokaz": {
+    "who": "mis",
+    "text": "Zobaczcie, jak liczę talerze przy stole."
+  },
   "line.h_rodzice": {
     "who": "mis",
-    "text": "Policz z rodzicami pięć schodów, a przy stole policzcie talerze!"
+    "text": "Kiedy nakrywacie do stołu, policzcie z rodzicami talerze i kubki!"
   },
   "line.n1": {
     "who": "mis",

@@ -54,6 +54,23 @@ with a fine paper-grain texture, warm friendly colours, thin soft outlines.
 NOT flat vector, NOT 3D render."""
 
 SCENY = {
+    # counting_5: Owl's home - the tall beech with the owl family's wide hollow, where the rolls are delivered (the end)
+    "dziupla_sowy": {
+        "plyta": f"""A background illustration for a children's game: a quiet sunny corner of a friendly forest in the early
+afternoon. On the LEFT side of the picture stands a tall old smooth grey BEECH tree with a wide green-and-golden crown.
+High in its trunk ONE big WIDE round hollow, dark and cosy inside, with a little wooden perch sticking out under it like
+a doorstep - the home of an owl family. A rope ladder hangs from the perch down the trunk. At the foot of the tree mossy
+roots, a few ferns, three little red mushrooms and a small wooden post with a little round wooden MAILBOX on it. Other
+trees and round bushes at the back and on the far right, soft golden light, blue sky. The grass in the lower middle and
+the lower right is EMPTY and open where characters will stand.
+{STYL}
+Wide landscape composition, horizon one third from the top.
+NO characters, NO animals, NO owls, NO birds, NO text, NO letters on the mailbox.""",
+        "ruch": """Exactly the same illustration, unchanged in every way, except that some things have been added, in the
+same style: at least fifteen tufts of grass and a few small ferns across the ground, and six or seven soft white clouds
+in the blue sky between the tree crowns.
+Same colours, same beech, same hollow, same ladder, same mailbox. Do NOT move or redraw anything that was already there.""",
+    },
     # in_out: the same lake meadow on the evening before the storm (the story says "a storm is coming", then it rains)
     "laka_burza": {
         "z": "laka",
