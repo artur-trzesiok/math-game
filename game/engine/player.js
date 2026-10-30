@@ -461,6 +461,16 @@ export class Player {
     const konfetti = Array.from({ length: 36 }, (_, i) => `<i style="left:${(i * 37) % 100}%;background:hsl(${(i * 47) % 360} 80% 60%);animation-delay:${(i % 9) * 0.12}s;animation-duration:${2.2 + (i % 5) * 0.3}s"></i>`).join("");
     el.innerHTML = `<div class="promienie"></div><img class="znak" src="${v(`/game/assets/objects/${t.znak}.webp`)}" alt=""><img class="glowa" src="${v("/game/assets/menu/lisek_glowa.webp")}" alt="">${konfetti}`;
     document.body.appendChild(el); dzwiekMenu("plansza");
+    // the sticker is a copy of the sign on the stage's plank: it grows out of it to the middle (the sign stays there),
+    // so the child sees where it comes from; with the plank off screen it grows in the middle
+    const z = el.querySelector(".znak"), zr = $(`.topic[data-topic="${t.id}"] h2 .znak`)?.getBoundingClientRect();
+    const widac = zr && zr.width && zr.right > 0 && zr.left < innerWidth;
+    const duzy = Math.min(innerHeight * 0.46, innerWidth * 0.6);
+    z.style.cssText = widac ? `position:fixed;left:${zr.left + zr.width / 2}px;top:${zr.top + zr.height / 2}px;width:${zr.width}px;transform:translate(-50%,-50%);animation:none`
+      : `position:fixed;left:50%;top:50%;width:${duzy * 0.1}px;transform:translate(-50%,-50%);animation:none`;
+    void z.offsetWidth;
+    z.style.transition = "left .9s cubic-bezier(.3,1.25,.5,1), top .9s cubic-bezier(.3,1.25,.5,1), width .9s cubic-bezier(.3,1.25,.5,1)";
+    Object.assign(z.style, { left: "50%", top: "50%", width: `${duzy}px` });
     menuMuzyka.przycisz(0.35);
     this.menuLinie = this.menuLinie?.lang === this.lang ? this.menuLinie : { lang: this.lang, t: await fetch(v(`/game/menu/i18n/${this.lang}.json`), { cache: "no-store" }).then((r) => r.json()).catch(() => ({})) };
     const klucz = `line.etap_koniec_${t.id}`, l = this.menuLinie.t[klucz];
@@ -470,9 +480,9 @@ export class Player {
     menuMuzyka.przycisz(1);
     // the sign flies into the album on the stump
     Album.dodaj(t.id);
-    const z = el.querySelector(".znak"), ab = $("#albumBtn"), a = ab.getBoundingClientRect(), b = z.getBoundingClientRect();
-    z.style.animation = "none"; z.style.transition = "transform .9s cubic-bezier(.5,-0.3,.6,1)"; el.classList.add("odlot");
-    z.style.transform = `translate(${a.left + a.width / 2 - (b.left + b.width / 2)}px, ${a.top + a.height / 2 - (b.top + b.height / 2)}px) scale(.18)`;
+    const ab = $("#albumBtn"), a = ab.getBoundingClientRect();
+    z.style.transition = "left .9s cubic-bezier(.5,-0.3,.6,1), top .9s cubic-bezier(.5,-0.3,.6,1), width .9s cubic-bezier(.5,-0.3,.6,1)"; el.classList.add("odlot");
+    Object.assign(z.style, { left: `${a.left + a.width / 2}px`, top: `${a.top + a.height / 2}px`, width: `${duzy * 0.18}px` });
     await new Promise((r) => setTimeout(r, 950));
     const k = Album.nieprzyklejone(this.albumIds); ab.querySelector(".ile").textContent = k || ""; ab.classList.toggle("nowe", k > 0); dzwiekMenu("pop");
     el.remove(); gotowe();
