@@ -1,7 +1,7 @@
 # Adding to 5 - Fox's picnic
 
 Goal: adding is putting two groups together and counting them all; the signs + and =; the order does not matter
-(1 + 4 = 4 + 1). Age 5-6. Characters: Fox, Bunny, Deer. Stage 6, lesson 23.
+(1 + 4 = 4 + 1). Age 5-6. Characters: Fox, Bunny, Deer. Stage 12 (moved from stage 6 on 2026-10-30).
 
 **Misconception:** counting only the newcomers - Bunny sees the duckling arrive: "one guest!".
 

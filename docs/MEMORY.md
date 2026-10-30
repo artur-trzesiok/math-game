@@ -171,7 +171,8 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   last; racers face the way they run; the podium glade (`podium_wyscigu`) with a painted podium sticker, medals in
   order. 7 story interactions - do not trim. Open: tapping the photo's empty background plays "that one was faster".
 
-**Etap 6**
+**Etap 6** (since 2026-10-30 only `counting_5` is built here; `numbers_6_10` moved to stage 7, `adding_5` to stage 12,
+`adding_10` to stage 18 - see section 5)
 - `counting_5` (Liczymy do 5) - Bear's forest bakery: spreading five rolls does not make more; Owl's order note
   (`zamowienie_sowy`): count the four rolls drawn on it, pack four; which basket has five; domino; first customers pay.
 - `numbers_6_10` (Liczby od 6 do 10) - Beaver's dam needs ten logs; Mole loses track ("twelve!"); counted into a row;
@@ -188,6 +189,15 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
 (±25 %); taps, walks, cards and the sticker estimated - real-time runs stall in the hidden pane.
 
 ## 5. Decisions and rules the user set (with the feedback behind them)
+
+- **Stage 6 is not arithmetic** (2026-10-30, user: "dodawanie do 5 i do 10 to kolejne lekcje?", "liczymy do 10 jest
+  później niż dodajemy do 10 - bez sensu"): the competitor adds only after a whole block of comparing, counting to 10
+  and decomposition, and puts ~19 lessons between adding to 5 and to 10. World 1 ends with one number lesson
+  (counting_5) and three non-numerical ones (light_heavy, thick_wide = thick_thin + wide_narrow merged, complete_shape).
+  Moved, built lessons keep their ids and stickers: numbers_6_10 -> stage 7 (replaces the duplicate counting_10),
+  adding_5 -> stage 12 (after split_5, before subtract_5), adding_10 -> stage 18 (replaces the duplicate addition_10).
+  New placeholders: quick_look (subitizing, stage 7), capacity (stage 8), missing_5 (stage 13). Full table in
+  docs/program.md.
 
 **Editing and camera** (flagged "static" again and again - "uwagi o dynamicznym montażu wracają")
 - A static camera is a bug in every lesson and stage: at most three lines in one shot; close-ups for emotions,

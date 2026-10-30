@@ -241,18 +241,6 @@
       "temat": "liczby"
     },
     {
-      "id": "numbers_6_10",
-      "title": {
-        "pl": "Liczby od 6 do 10",
-        "en": "Numbers 6 to 10"
-      },
-      "subtitle": {
-        "pl": "tama Bobra",
-        "en": "Beaver's dam"
-      },
-      "temat": "liczby"
-    },
-    {
       "id": "counting_5",
       "title": {
         "pl": "Liczymy do 5",
@@ -265,30 +253,6 @@
       "temat": "liczby"
     },
     {
-      "id": "adding_5",
-      "title": {
-        "pl": "Dodawanie do 5",
-        "en": "Adding to 5"
-      },
-      "subtitle": {
-        "pl": "piknik Liska",
-        "en": "Fox's picnic"
-      },
-      "temat": "dodawanie"
-    },
-    {
-      "id": "adding_10",
-      "title": {
-        "pl": "Dodawanie do 10",
-        "en": "Adding to 10"
-      },
-      "subtitle": {
-        "pl": "turniej w klasy",
-        "en": "the hopscotch tournament"
-      },
-      "temat": "dodawanie"
-    },
-    {
       "id": "light_heavy",
       "title": {
         "pl": "Lekki i ciężki",
@@ -298,37 +262,40 @@
       "wkrotce": true
     },
     {
-      "id": "thick_thin",
+      "id": "thick_wide",
       "title": {
-        "pl": "Gruby i cienki",
-        "en": "Thick and thin"
+        "pl": "Gruby i szeroki",
+        "en": "Thick and wide"
       },
       "temat": "porownywanie",
       "wkrotce": true
     },
     {
-      "id": "wide_narrow",
+      "id": "complete_shape",
       "title": {
-        "pl": "Szeroki i wąski",
-        "en": "Wide and narrow"
+        "pl": "Brakujący kawałek",
+        "en": "The missing piece"
       },
-      "temat": "porownywanie",
+      "temat": "figury",
       "wkrotce": true
     },
     {
-      "id": "measure_steps",
+      "id": "numbers_6_10",
       "title": {
-        "pl": "Mierzymy łapką",
-        "en": "Measuring with a paw"
+        "pl": "Liczby od 6 do 10",
+        "en": "Numbers 6 to 10"
       },
-      "temat": "mierzenie",
-      "wkrotce": true
+      "subtitle": {
+        "pl": "tama Bobra",
+        "en": "Beaver's dam"
+      },
+      "temat": "liczby"
     },
     {
-      "id": "counting_10",
+      "id": "quick_look",
       "title": {
-        "pl": "Liczymy do 10",
-        "en": "Counting to 10"
+        "pl": "Ile na mgnienie oka?",
+        "en": "How many at a glance?"
       },
       "temat": "liczby",
       "wkrotce": true
@@ -352,12 +319,39 @@
       "wkrotce": true
     },
     {
-      "id": "number_hunt",
+      "id": "measure_steps",
       "title": {
-        "pl": "Polowanie na liczby",
-        "en": "Number hunt"
+        "pl": "Mierzymy łapką",
+        "en": "Measuring with a paw"
       },
-      "temat": "liczby",
+      "temat": "mierzenie",
+      "wkrotce": true
+    },
+    {
+      "id": "capacity",
+      "title": {
+        "pl": "Co pomieści więcej?",
+        "en": "Which holds more?"
+      },
+      "temat": "mierzenie",
+      "wkrotce": true
+    },
+    {
+      "id": "plane_shapes_2",
+      "title": {
+        "pl": "Owal, trapez, pięciokąt",
+        "en": "Oval, trapezium, pentagon"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "symmetry",
+      "title": {
+        "pl": "Lustrzane połówki",
+        "en": "Mirror halves"
+      },
+      "temat": "figury",
       "wkrotce": true
     },
     {
@@ -397,42 +391,6 @@
       "wkrotce": true
     },
     {
-      "id": "complete_shape",
-      "title": {
-        "pl": "Brakujący kawałek",
-        "en": "The missing piece"
-      },
-      "temat": "figury",
-      "wkrotce": true
-    },
-    {
-      "id": "plane_shapes_2",
-      "title": {
-        "pl": "Owal, trapez, pięciokąt",
-        "en": "Oval, trapezium, pentagon"
-      },
-      "temat": "figury",
-      "wkrotce": true
-    },
-    {
-      "id": "symmetry",
-      "title": {
-        "pl": "Lustrzane połówki",
-        "en": "Mirror halves"
-      },
-      "temat": "figury",
-      "wkrotce": true
-    },
-    {
-      "id": "shapes_hunt",
-      "title": {
-        "pl": "Figury wokół nas",
-        "en": "Shapes around us"
-      },
-      "temat": "figury",
-      "wkrotce": true
-    },
-    {
       "id": "rhythm_hunt",
       "title": {
         "pl": "Rytmy w domu",
@@ -469,6 +427,24 @@
       "wkrotce": true
     },
     {
+      "id": "shapes_hunt",
+      "title": {
+        "pl": "Figury wokół nas",
+        "en": "Shapes around us"
+      },
+      "temat": "figury",
+      "wkrotce": true
+    },
+    {
+      "id": "number_hunt",
+      "title": {
+        "pl": "Polowanie na liczby",
+        "en": "Number hunt"
+      },
+      "temat": "liczby",
+      "wkrotce": true
+    },
+    {
       "id": "tables_1",
       "title": {
         "pl": "Tabelki",
@@ -496,13 +472,16 @@
       "wkrotce": true
     },
     {
-      "id": "days_of_week",
+      "id": "adding_5",
       "title": {
-        "pl": "Dni tygodnia",
-        "en": "Days of the week"
+        "pl": "Dodawanie do 5",
+        "en": "Adding to 5"
       },
-      "temat": "czas",
-      "wkrotce": true
+      "subtitle": {
+        "pl": "piknik Liska",
+        "en": "Fox's picnic"
+      },
+      "temat": "dodawanie"
     },
     {
       "id": "subtract_5",
@@ -514,12 +493,30 @@
       "wkrotce": true
     },
     {
+      "id": "days_of_week",
+      "title": {
+        "pl": "Dni tygodnia",
+        "en": "Days of the week"
+      },
+      "temat": "czas",
+      "wkrotce": true
+    },
+    {
       "id": "add_sub_family",
       "title": {
         "pl": "Dodawanie i odejmowanie",
         "en": "Adding and taking away"
       },
       "temat": "odejmowanie",
+      "wkrotce": true
+    },
+    {
+      "id": "missing_5",
+      "title": {
+        "pl": "Ile brakuje do pięciu?",
+        "en": "How many more to five?"
+      },
+      "temat": "dodawanie",
       "wkrotce": true
     },
     {
@@ -694,13 +691,16 @@
       "wkrotce": true
     },
     {
-      "id": "addition_10",
+      "id": "adding_10",
       "title": {
         "pl": "Dodawanie do 10",
-        "en": "Adding within 10"
+        "en": "Adding to 10"
       },
-      "temat": "dodawanie",
-      "wkrotce": true
+      "subtitle": {
+        "pl": "turniej w klasy",
+        "en": "the hopscotch tournament"
+      },
+      "temat": "dodawanie"
     },
     {
       "id": "subtraction_10",
@@ -1022,9 +1022,9 @@
       "color": "#e0b83c",
       "lessons": [
         "counting_5",
-        "numbers_6_10",
-        "adding_5",
-        "adding_10"
+        "light_heavy",
+        "thick_wide",
+        "complete_shape"
       ],
       "znak": "znak_gwiazda"
     },
@@ -1036,10 +1036,10 @@
       },
       "color": "#7ec8a9",
       "lessons": [
-        "light_heavy",
-        "thick_thin",
-        "wide_narrow",
-        "measure_steps"
+        "numbers_6_10",
+        "quick_look",
+        "number_neighbors",
+        "ordinal_10"
       ],
       "znak": "znak_rybka"
     },
@@ -1051,10 +1051,10 @@
       },
       "color": "#f4a259",
       "lessons": [
-        "counting_10",
-        "number_neighbors",
-        "ordinal_10",
-        "number_hunt"
+        "measure_steps",
+        "capacity",
+        "plane_shapes_2",
+        "symmetry"
       ],
       "znak": "znak_lodka"
     },
@@ -1081,10 +1081,10 @@
       },
       "color": "#5b9bd5",
       "lessons": [
-        "complete_shape",
-        "plane_shapes_2",
-        "symmetry",
-        "shapes_hunt"
+        "rhythm_hunt",
+        "guess_rule",
+        "sort_free",
+        "two_features"
       ],
       "znak": "znak_kaczka"
     },
@@ -1096,10 +1096,10 @@
       },
       "color": "#c77dd6",
       "lessons": [
-        "rhythm_hunt",
-        "guess_rule",
-        "sort_free",
-        "two_features"
+        "shapes_hunt",
+        "number_hunt",
+        "tables_1",
+        "secret_code"
       ],
       "znak": "znak_lilia"
     },
@@ -1111,9 +1111,9 @@
       },
       "color": "#3d85c6",
       "lessons": [
-        "tables_1",
-        "secret_code",
         "split_5",
+        "adding_5",
+        "subtract_5",
         "days_of_week"
       ],
       "znak": "znak_kotwica"
@@ -1126,8 +1126,8 @@
       },
       "color": "#e06666",
       "lessons": [
-        "subtract_5",
         "add_sub_family",
+        "missing_5",
         "split_10",
         "fair_share"
       ],
@@ -1202,7 +1202,7 @@
       "color": "#e07a5f",
       "lessons": [
         "bonds_10",
-        "addition_10",
+        "adding_10",
         "subtraction_10",
         "tangram_2"
       ],

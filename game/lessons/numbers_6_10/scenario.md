@@ -2,7 +2,7 @@
 
 Goal: count past five to ten, each thing once (a counted thing moves aside into a row); 6-10 as five and some more
 (the ten frame); the digits 6-10; ten is written with two digits. Age 5-6. Characters: Beaver, Mole, Owl.
-Stage 6, lesson 22.
+Stage 7 (moved from stage 6 on 2026-10-30).
 
 **Misconception:** losing track in a heap - Mole counts the logs lying anyhow, some twice: "twelve!".
 
