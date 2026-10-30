@@ -13,6 +13,7 @@ largest blobs, closed so a leaf does not fall off its apple.
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -1594,13 +1595,16 @@ def gen(sheet: str) -> None:
 PX = 384             # sticker side in pixels
 
 
-def die_cut(im: Image.Image, border: float = 0.055) -> Image.Image:
-    """A thick white outline following the object's shape - a sticker cut around it.
-    The canvas grows so the outline is not clipped; the object is drawn on top."""
+def die_cut(im: Image.Image, border: float = 0.055, krawedz: bool = False) -> Image.Image:
+    """A sticker's canvas: grown so a white edge as wide as `border` fits round the object, then back to the sticker's
+    size. The game draws that edge itself (engine/naklejka.js: only on what waits for a touch, a shadow otherwise), so
+    by default it is NOT painted in; `krawedz` paints it (the manager's sheets, a look at the old style)."""
     from scipy import ndimage
 
     n = im.width; r = max(2, int(n * border)); pad = r + 3
     big = Image.new("RGBA", (im.width + 2 * pad, im.height + 2 * pad), (0, 0, 0, 0)); big.paste(im, (pad, pad))
+    if not krawedz:
+        return big.resize((n, n), Image.LANCZOS)
     a = np.asarray(big)[:, :, 3] > 40
     y, x = np.ogrid[-r:r + 1, -r:r + 1]
     disk = (x * x + y * y) <= r * r
@@ -1638,6 +1642,8 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
     else:
         plamy.sort(key=lambda p: ((0 if p[4] < srodek_y else 1) if rows == 2 else 0, p[5]))
     OUT.mkdir(parents=True, exist_ok=True)
+    lista = OUT / "naklejki.json"                       # the stickers the game draws its edge and shadow round
+    naklejki = set(json.loads(lista.read_text(encoding="utf-8"))) if lista.exists() else set()
     wspolny = max(max(p[1] - p[0], p[3] - p[2]) for p in plamy) + 16 if SHEETS[sheet].get("wspolna_skala") else None
     for nazwa, (y0, y1, x0, x1, _, _, lab) in zip(names, plamy):
         pad = 8
@@ -1651,9 +1657,10 @@ def split(sheet: str, min_pikseli: int = 1500) -> None:
         kw.paste(kaw, ((bok - kaw.width) // 2, (bok - kaw.height) // 2))
         kw = kw.resize((SHEETS[sheet].get("px", PX),) * 2, Image.LANCZOS)
         if SHEETS[sheet].get("outline") and nazwa not in SHEETS[sheet].get("bez_obwodki", []):
-            kw = die_cut(kw)
+            kw = die_cut(kw); naklejki.add(nazwa)
         kw.save(OUT / f"{nazwa}.webp", "WEBP", quality=80, method=6, exact=True)
         print(f"  {nazwa:10s} {kaw.width}x{kaw.height}")
+    lista.write_text(json.dumps(sorted(naklejki), ensure_ascii=False), encoding="utf-8")
 
 
 if __name__ == "__main__":

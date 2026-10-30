@@ -86,7 +86,9 @@
   @keyframes puls { 50% { box-shadow: 0 0 0 3px #fff, 0 0 0 9px rgba(255,210,74,.75), 0 4px 10px rgba(60,30,0,.45); } }
   #mapa .zamknij { position: absolute; top: 2vh; right: 2vh; width: min(64px, 9vh); aspect-ratio: 1; border-radius: 50%; border: 0; background: #fff; color: #555; font: 700 min(30px, 4vh) system-ui; box-shadow: 0 4px 12px rgba(0,0,0,.25); cursor: pointer; z-index: 3; }
   #albumBtn.nowe { animation: kiw 1.4s ease-in-out infinite; }
-  .wycinek { filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 4px 6px rgba(0,0,0,.3)); }
+  /* the album's stickers: their pictures carry no white edge any more (the stage draws its own), so the page cuts it:
+     four chained offsets (each shadows the one before, so the corners fill) make the edge, sized by the screen */
+  .wycinek { --w: max(3px, .7vh); filter: drop-shadow(var(--w) 0 0 #fff) drop-shadow(calc(-1 * var(--w)) 0 0 #fff) drop-shadow(0 var(--w) 0 #fff) drop-shadow(0 calc(-1 * var(--w)) 0 #fff) drop-shadow(0 4px 6px rgba(0,0,0,.3)); }
   #wreczenie { position: fixed; inset: 0; z-index: 45; display: flex; align-items: center; justify-content: center; cursor: pointer; background: rgba(20,30,50,.25); }
   #wreczenie .blask { position: absolute; width: min(80vh, 80vw); aspect-ratio: 1; border-radius: 50%; background: repeating-conic-gradient(rgba(255,226,110,.75) 0 9deg, rgba(255,226,110,0) 9deg 20deg);
     -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 68%); mask-image: radial-gradient(circle, #000 25%, transparent 68%); animation: obrot 9s linear infinite; transition: opacity .4s; }
@@ -360,7 +362,7 @@
   (() => {
     const im = { imports: {
       three: "/game/vendor/three.module.js" } };
-    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje", "mechaniki4", "oddechy", "mechaniki5", "mechaniki6", "mechaniki7", "mapa"])
+    for (const n of ["player", "scene", "lalka", "siatka", "tlo", "olowek", "liczby", "sfx", "speech", "i18n", "v", "geometria", "efekty", "ubior", "odblokuj", "album", "rytm", "mechaniki", "mechaniki2", "mechaniki3", "warianty", "muzyka", "ilustracje", "mechaniki4", "oddechy", "mechaniki5", "mechaniki6", "mechaniki7", "mapa", "naklejka"])
       im.imports[`/game/engine/${n}.js`] = `/game/engine/${n}.js?t=${window.__T}`;
     const s = document.createElement("script"); s.type = "importmap"; s.textContent = JSON.stringify(im);
     document.currentScript.after(s);

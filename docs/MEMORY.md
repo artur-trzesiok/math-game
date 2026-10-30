@@ -259,6 +259,17 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
   ticket, Hedgehog over a tree were all flagged).
 - Pixelated stickers are flagged at once (the pasta, the height chart): long or big stickers need 1024 px sheets.
 
+**Stickers say when they may be touched** (2026-10-30, Hania tapped every sticker of a story a dozen times - a white
+die-cut edge says "touch me", and nothing happened): sticker pictures carry NO white edge any more; the GPU draws it
+(`engine/naklejka.js`): in a story a soft shadow only (the user chose "C" from a sheet of five looks, a thin edge was
+not wanted), on what waits for a touch (a target, a thing to drag, a hint) the old-width white edge grows in - plain
+white, no glow (the user: "po prostu biała obwódka jak teraz"). In a group (a heap) every sticker gets its own edge.
+A sticker tapped while nothing waits nods a little and the characters glance at it (no sound, no line - a line would
+cut into the story). `game/assets/objects/naklejki.json` lists the stickers with this look; interface pictures kept
+their baked edge (stage signs `znak_*`, `pora_*`, `ruch_*`, `strzalka`, `przycisk_muzyki`) and so did ten edited after
+the cut (`gwiazdka`, `swietlik`, `ruch_klask`, `wanna`, six colouring signs). The album draws its own edge in CSS
+(`.wycinek`). The manager's sticker pages show them without the edge.
+
 **Sound and music**
 - Every place has a looping theme in two ~150 s versions (30-45 s loops felt repetitive - "30s to za krótko"),
   crossfaded; weather loops next to it; ducking under speech; silence while a scene listens; the menu has two versions;

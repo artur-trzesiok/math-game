@@ -14,6 +14,7 @@ import { Sfx } from "./sfx.js";
 import { zbudujTlo, czas as bgClock, zginanieTla } from "./tlo.js";
 import { probkuj, wstega, material as olowekMaterial } from "./olowek.js";
 import * as E from "./efekty.js";
+import { materialNaklejki, krokNaklejek, NAKLEJKI } from "./naklejka.js";
 import { ruszUbiory } from "./ubior.js";
 import * as U from "./ubior.js";
 if (new URLSearchParams(location.search).has("sztywnetlo")) zginanieTla.value = 0;   // A/B: the old shearing grass
@@ -204,6 +205,7 @@ export class Stage {
     if (this.pauza) { this.rysuj(); return; }                               // paused: the picture stands still
     const dt = dt0;
     E.ruszOtoczenie(this, dt, t); E.ruszNakladke(this, dt); E.ruszCzastki(this, dt, t); E.ruszNoc(this, t);
+    krokNaklejek(this.objects, (h) => h.pulse || this.targets.includes(h) || (!!this.dragSet && this.dragSet.items?.includes(h) && !h.zablokowany), dt);
     for (const d of this.dymki) d.za();
     bgClock.value += dt;
     for (const L of Object.values(this.puppets)) {
@@ -374,7 +376,9 @@ export class Stage {
     const R = this.renderer, proby = [], cx = this.camera.position.x, cy = this.camera.position.y;
     // a probe never waits on an animation (no frames run behind a hidden page) and never holds the loading screen
     const sprobuj = async (f) => { try { const h = await Promise.race([f(), new Promise((r) => setTimeout(() => r(null), 1500))]); if (h) proby.push(h); } catch { /* never breaks loading */ } };
-    await sprobuj(() => this.object(obiekty[0] || "jablko", { x: cx - 1, y: cy, size: 1, cicho: true }));
+    const nak = await NAKLEJKI, jakaNaklejka = obiekty.find((n) => nak.has(n)) || "jablko", inna = obiekty.find((n) => !nak.has(n));
+    await sprobuj(() => this.object(jakaNaklejka, { x: cx - 1, y: cy, size: 1, cicho: true }));             // the sticker's own shader
+    if (inna) await sprobuj(() => this.object(inna, { x: cx, y: cy, size: 1, cicho: true }));                // and a plain picture's
     await sprobuj(() => this.sign("1", { x: cx + 1, y: cy, size: 0.8 }));
     await sprobuj(() => this.line([[cx - 1, cy - 1], [cx + 1, cy - 0.8]], { duration: 0.01, wait: false }));
     const ukryte = Object.values(this.puppets).filter((L) => !L.korzen.visible);
@@ -540,7 +544,10 @@ export class Stage {
     }
     const mapa = await texture(obraz || `/game/assets/objects/${plik}.webp`), iw = mapa.image.width, ih = mapa.image.height;
     // a non-square picture (a garment) keeps its proportions inside the unit square
-    const icon = new THREE.Mesh(new THREE.PlaneGeometry(iw >= ih ? 1 : iw / ih, iw >= ih ? ih / iw : 1), new THREE.MeshBasicMaterial({ map: mapa, transparent: true, alphaTest: 0.05, depthWrite: false }));
+    // a sticker (objects/naklejki.json) gets its look from the GPU: a shadow in the story, the white edge when it waits for a touch
+    const naklejka = !obraz && (await NAKLEJKI).has(plik);
+    const mat = naklejka ? materialNaklejki(mapa) : new THREE.MeshBasicMaterial({ map: mapa, transparent: true, alphaTest: 0.05, depthWrite: false });
+    const icon = new THREE.Mesh(new THREE.PlaneGeometry(iw >= ih ? 1 : iw / ih, iw >= ih ? ih / iw : 1), mat);
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 10; });                 // the foreground draws after every background prop
@@ -1069,12 +1076,30 @@ export class Stage {
     if (h) { this.ostatniTap = h; this.ostatniTapT = t; }
     return sam;
   }
+  // a thing tapped while nothing waits for a touch (a story plays): it only nods a little and the characters glance at
+  // it - never silence (a child then tapped harder and harder), never a reward or a sound that invites more taps
+  echo() {
+    let best = null, d = Infinity;
+    for (const h of this.objects) {
+      if (h.kind !== "object" || !h.icon || !h.mesh.visible) continue;
+      const hit = this.raycaster.intersectObject(h.icon, false)[0];
+      if (!hit) continue;
+      const b = this.bounds(h), p = hit.point;
+      if (p.x < b.left || p.x > b.right || p.y < b.bottom || p.y > b.top) continue;   // the square's empty corners are not the thing
+      if (hit.distance < d) { best = h; d = hit.distance; }
+    }
+    if (!best || best.kiwa || this.powtorka(best)) return null;
+    best.kiwa = true; const ic = best.icon;
+    this.tween(0.4, (s) => { ic.rotation.z = 0.12 * Math.sin(s * Math.PI * 3) * (1 - s); }).then(() => { ic.rotation.z = 0; best.kiwa = false; });
+    for (const L of Object.values(this.puppets)) if (L.korzen.visible) L.patrzNa(() => this.pointOf(best), 0.9);
+    return null;
+  }
   click(nx, ny) {                                   // normalised device coords; also used by tests (gra.klik)
     this.perfTapy = (this.perfTapy || 0) + 1;
     // things moved since the last frame only matter with no frames (a hidden page, tests); a running page drew them just now
     if (performance.now() - this.lastRaf > 100) { this.scene.updateMatrixWorld(); this.camera.updateMatrixWorld(); }
     this.raycaster.setFromCamera(new THREE.Vector2(nx, ny), this.camera);
-    if (!this.pending) { const L = this.puppetAt(); return this.powtorka(L) ? L : this.tapPuppet(L); }
+    if (!this.pending) { const L = this.puppetAt(); if (!L) return this.echo(); return this.powtorka(L) ? L : this.tapPuppet(L); }
     // a thing beats a character: tapping a character only repeats the instruction, so where a sticker and a
     // character overlap (a cup rolled under the owl) the answer must win
     let best = null, bestD = Infinity, bestP = null, bestPD = Infinity;
