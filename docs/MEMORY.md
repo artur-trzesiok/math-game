@@ -355,7 +355,8 @@ mean ~5:20; a real child 1.5-2x. Speech measured by the autopilot for 3 lessons,
   all 24, the lint table against the audit, recordings complete, the open list cleaned), then world 2.
 - The three lessons moved out of world 1 (numbers_6_10, adding_5, adding_10) have no breather yet; adding_5 still
   counts claps in its place (maths).
-- iPad: hitches not verified since the warm-up (needs a deployed dist and `?perf`); effects not warmed up yet:
+- iPad (2026-10-30, the user): smooth after the warm-up and the shared renderer (after a device restart); loading a
+  lesson is clearly longer now - accepted ("lepiej tak i mieć płynność"). Not warmed up yet, only if a hitch shows:
   kite, water, night, scratch-off, badge render target.
 
 - The story preview (`manager/opowiesc.html`) not yet run on the lessons changed 2026-10-29.
