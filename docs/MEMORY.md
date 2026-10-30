@@ -179,6 +179,9 @@ All recorded pl + en, all pass the autopilot end to end. "Tools" = story tools u
   counted). Nothing past five, no adding language.
 - `light_heavy` (Lekki i ciężki, new 2026-10-30, 50245c86) - Beaver's raft dips under Bear; the balance (`waga`, first
   use) beats Bunny's "big = heavy"; home: heavy low / light high on the kitchen shelves, pumpkin soup.
+- `complete_shape` (Brakujący kawałek, new 2026-10-30, df11ad01) - Owl's picture for Hedgehog torn by the wind
+  (`podarty`, first use), the red square sticks out of the triangular hole (shape, not colour); home: the broken plate,
+  a house from pieces, the birthday card. `thick_wide` ("Czy się zmieści?") still being built.
 
 - `numbers_6_10` (Liczby od 6 do 10) - Beaver's dam needs ten logs; Mole loses track ("twelve!"); counted into a row;
   two more from the forest; the dam itself shown at last (`tama_bobra`): ten counted again and laid in two rows of five
