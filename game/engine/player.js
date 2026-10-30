@@ -165,11 +165,28 @@ export class Player {
     this.closeStage();
     // typing "metanoia" on the menu (a keyboard; a tablet has none): every sticker into the album, every stage open;
     // "math": the next lesson in order counts as passed (its sticker), so finishing a stage and its unlocking can be watched
+    // "kerygmat": every lesson of this land and the lands before counts as passed but the land's last one - then one "math"
+    // shows the last stage finishing and the gate opening
     if (!this.adminSluch) {
       this.adminSluch = true; let bufor = "";
       document.addEventListener("keydown", (e) => {
         if ($("#menu").style.display === "none" || e.key.length !== 1) return;
         bufor = (bufor + e.key.toLowerCase()).slice(-8);
+        if (bufor.endsWith("kerygmat")) {                               // this land passed but its last lesson (earlier lands whole)
+          bufor = "";
+          const byId = Object.fromEntries(this.index.lessons.map((l) => [l.id, l])), topics = this.index.topics || [];
+          const swiaty = this.index.swiaty || [], nr = Math.max(0, swiaty.findIndex((s) => s.id === this.swiat)), tu = new Set(swiaty[nr]?.etapy || []);
+          const doTej = topics.slice(0, topics.findIndex((t) => tu.has(t.id)) + topics.filter((t) => tu.has(t.id)).length);
+          const ostatnia = doTej.flatMap((t) => t.lessons).filter((i) => byId[i] && !byId[i].wkrotce).pop();
+          for (const t of doTej) {
+            for (const i of t.lessons) if (byId[i] && !byId[i].wkrotce && i !== ostatnia) Album.dodaj(i);
+            dopisz(WIDZIANE, t.id);
+            if (!t.lessons.includes(ostatnia)) { dopisz(UKONCZONE, t.id); if (t.znak) Album.dodaj(t.id); }
+          }
+          for (const s of swiaty.slice(1, nr + 1)) dopisz(WIDZIANE, `brama_${s.id}`);
+          dzwiekMenu("right"); this.menu();
+          return;
+        }
         if (bufor.endsWith("math")) {
           bufor = "";
           const byId = Object.fromEntries(this.index.lessons.map((l) => [l.id, l]));

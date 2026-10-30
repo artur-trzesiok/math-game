@@ -292,7 +292,7 @@ ODZNAKI, brama); music: `make_music.py` MOTYWY `menu_swiatN`.
 Topics open one after another (player.js menu): a topic opens when every lesson of the one before has its sticker in
 the album; until then its cards lie in a mist under a painted padlock (tools/menu: klodka, klodka_otwarta), a tap
 shakes it, a 3 s press on the padlock opens it for good (localStorage math_game.otwarte - a parent's way through),
-`?wszystko` opens all, and typing "metanoia" on the menu (a keyboard; the testers' cheat) puts every sticker in the album and opens every stage for good, typing "math" passes the next lesson (its sticker - to watch a stage finish and the next padlock open); the first time a topic is seen open it unlocks on screen (math_game.widziane_otwarte).
+`?wszystko` opens all, and typing "metanoia" on the menu (a keyboard; the testers' cheat) puts every sticker in the album and opens every stage for good, typing "math" passes the next lesson (its sticker - to watch a stage finish and the next padlock open), "kerygmat" passes the whole land but its last lesson (then "math" shows the gate opening); the first time a topic is seen open it unlocks on screen (math_game.widziane_otwarte).
 Menu topics: `lessons/index.json` "topics" ({id, title, color, lessons}), in the order a child should take them
 (topics by the age of their easiest lesson, lessons by difficulty). The menu is ONE strip scrolled sideways (a
 finger, the mouse wheel, a mouse drag; no visible scrollbar, edges fade where there is more), each topic a tinted

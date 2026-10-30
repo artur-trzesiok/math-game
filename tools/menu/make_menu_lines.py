@@ -31,7 +31,7 @@ MAPA = {
 }
 TEKST = {
     "pl": ("Ta droga jest jeszcze zamknięta. Najpierw skończmy wszystkie przygody z {poprz_d} etapu, a kłódka sama się otworzy!",
-           "Hurra! Odblokowaliśmy {nr} etap naszej podróży! Nowe przygody czekają!"),
+           "Hura! Odblokowaliśmy {nr} etap naszej podróży! Nowe przygody czekają!"),
     "pl_koniec": ("Brawo! Ukończyliśmy cały {nr} etap! Za to dostajesz specjalną naklejkę do albumu.",
                   "To nagroda za ukończenie {nr_d} etapu. Wszystkie jego przygody przeszliśmy razem."),
     "en_koniec": ("Bravo! We finished the whole {nr} stage! Here is a special sticker for your album.",
@@ -57,7 +57,7 @@ SKAD = {"pl": {"swiat1": "Leśnej Krainy", "swiat2": "Wioski nad Jeziorem", "swi
         "en": {"swiat1": "the Forest Land", "swiat2": "the Lakeside Village", "swiat3": "the Snowy Mountains"}}
 ZA_BRAMA = {"pl": "Za tą bramą czeka {kraina}! Brama otworzy się, gdy przejdziemy wszystkie etapy {skad}.",
             "en": "{kraina} is waiting behind this gate! It will open when we finish all the stages of {skad}."}
-BRAMA = {"pl": "Hurra! Otworzyła się brama do {dokad}! Ruszamy w drogę!",
+BRAMA = {"pl": "Hura! Otworzyła się brama do {dokad}! Ruszamy w drogę!",
          "en": "Hooray! The gate to {dokad} is open! Off we go!"}
 
 
