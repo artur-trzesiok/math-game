@@ -58,6 +58,17 @@ on the floor, a red ball, a round rug, a window with green curtains, a picture o
 {STYL}""",
         "zmiany": ["the red toy car on the shelf is GONE", "the red ball is GONE", "the boat picture shows a HOUSE instead"],
     },
+    # complete_shape: the torn pieces of Owl's picture hidden in the meadow, found through her spyglass
+    "luneta_kawalki": {
+        "obraz": f"""A square picture of a sunny meadow seen from close above: tall green grass, a few dandelions and daisies, a
+low bush, a red-capped mushroom, a grey stone, a clump of clover and a fallen leaf. Lots of small details, everything well
+apart.
+{STYL}""",
+        "zmiany": ["a torn scrap of white drawing paper with a piece of BLUE crayon sky and part of a YELLOW sun on it lies half hidden in the tall grass",
+                   "a torn scrap of white drawing paper with a corner of a RED crayon roof on it peeks out from under the bush",
+                   "a torn scrap of white drawing paper with a YELLOW crayon door on it leans against the mushroom",
+                   "a torn scrap of white drawing paper with crayon RED FLOWERS and green grass on it lies beside the stone"],
+    },
     # tall and short: the view through the spyglass (mechaniki3.js szukaj) - six mice hidden in the orchard; the code
     # finds each where the two pictures differ, the game shows only the second one
     "luneta_sad": {

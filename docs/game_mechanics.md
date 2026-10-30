@@ -33,7 +33,7 @@ appendix at the end (moved from CLAUDE.md); puppets, feet, walks, meshes, audio 
 | `c.odbicie(who, {woda, ubrania, rozne})` | a character's reflection in water with something different; point to the difference | spot_difference |
 | `c.roznice(name, {size})` | spot the difference on a painted pair (`tools/roznice`) | spot_difference |
 | `c.portrety({postacie, ubrania, widok, kadr, kolumny, szer})` -> `{odrzuc({pasuje, wrong}), znajdz(kto, {wrong}), ostatni(), karty, remove}` | the characters as cards (the memory game's `menu/karta` and `karta_rewers`): each puppet rendered once at rest onto its card in `widok` "przod" / "tyl" / "profil", dressed in `ubrania` ({kto: ["okulary", "kapelusz"]}, the wardrobe's garments; quadrupeds are not dressed), framed `kadr` "glowa" (a head badge with shoulders, the default from the front) or "cala" (the default from behind / the side). `odrzuc({pasuje: (kto) => bool})`: "who has glasses? turn over who has not" - the child taps the cards that do NOT fit, each turns face down; a fitting one shakes and stays (`wrong`); resolves with the names left up (one left = the answer, it bumps). `znajdz(kto)`: cards show the back / side, a tapped card turns round to its front - the right one stays, another shows who it was, shakes and turns back. Cards to tap carry `dobry`; tests `S.portrety.dokoncz()` | - (guess_who, every_side) |
-| `c.szukaj(name, {y, size})` | looks through a round spyglass at a painted scene and finds the hidden things, a count at the side | tall_short |
+| `c.szukaj(name, {y, size, luneta})` | finds the hidden things in a painted scene (tools/roznice), a count of circles; through a round spyglass with a painted brass rim (`luneta_obwodka`, the count set into its arc) where the story has one, `luneta: false` = a plain picture on paper (pieces in the grass) | tall_short, complete_shape |
 
 ## 2. Dragging and placing
 
@@ -305,3 +305,7 @@ blurred difference; review `tools/roznice/work/<name>_roznice.png`); `ctx.koloro
 (`tools/kolorowanki/make_kolorowanka.py`: a flat-coloured page split into regions, colours clustered into a palette).
 A drawing finger takes the stage's pointers while set (`S.palec` {down, move, up}); tests drive them through
 `S.slad.dokoncz()`, `S.zagroda.dokoncz()`, `S.winda.dokoncz()`, `S.podziel.tnij(kat)`, `S.memory.karty`, `S.strzalki`, `S.kolorowanka.dokoncz()`.
+
+A big picture over the scene (`znalezisko`, `podarty`) makes room for the characters (`miejsceNaObraz`, `odsun` in
+mechaniki3.js): it shrinks or shifts so each visible character fits beside it inside the 4:3 safe area, the ones it
+would cover walk aside and come back when it goes. Nobody speaks from behind a picture.

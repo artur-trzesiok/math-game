@@ -150,9 +150,9 @@ export default {
         // through the spyglass: the orchard below; Fox and Bear watch from the sides
         await c.go({ kolor: "#2b2a33", motyw: null }, { przejscie: "irys" });
         S.puppets.wiewiorka.korzen.visible = false;
-        S.puppets.mis.korzen.position.x = -5.0; S.puppets.lisek.korzen.position.x = 5.6;   // clear of the circle and its count
+        S.puppets.mis.korzen.position.x = -4.9; S.puppets.lisek.korzen.position.x = 5.2;   // clear of the circle and its count, inside 4:3
         await c.say("mis", "line.c_widze_sad", { anim: "Zgloszenie" });
-        const w = c.szukaj("luneta_sad", { y: -0.55, size: 7.0 });
+        const w = c.szukaj("luneta_sad", { y: -0.55, size: 6.4 });
         await c.say("lisek", "line.c_myszki");
         await w;
         await c.ujecie("zblizenie", { na: "mis" });                          // the joy of finding them all

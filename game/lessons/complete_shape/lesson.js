@@ -116,8 +116,20 @@ export default {
         const S = c.stage;
         await c.go("laka", { enter: true });
         await Promise.all(["sowa", "wiewiorka"].map((n) => c.enter(n)));
-        await c.ujecie("sredni", { na: ["wiewiorka"] });                     // the pieces found in the grass
-        await c.say("wiewiorka", "line.b_sa", { anim: "Wskazanie" });
+        await c.ujecie("sredni", { na: ["wiewiorka"] });                     // where are they? the grass is tall
+        await c.say("wiewiorka", "line.b_sa", { anim: "Rozgladanie" });
+        await c.ujecie("sredni", { na: ["sowa"] });
+        await c.say("sowa", "line.b_luneta", { anim: "Wskazanie" });
+        // the grass close up: the four pieces hidden in it (tools/roznice luneta_kawalki), a plain picture, no spyglass
+        await c.go({ kolor: "#cfe3a8", motyw: "kola" }, { ciecie: true });
+        const [xSowa, xWiew] = [S.puppets.sowa.korzen.position.x, S.puppets.wiewiorka.korzen.position.x];
+        S.puppets.sowa.korzen.position.x = -4.8; S.puppets.wiewiorka.korzen.position.x = 5.0;   // beside the picture and its count, inside 4:3
+        const w = c.szukaj("luneta_kawalki", { y: -0.3, size: 6.6, luneta: false });
+        await w;
+        await c.say("wiewiorka", "line.b_znalezione", { anim: "Radosc" });
+        (await w).remove();
+        await c.go("laka", { ciecie: true });
+        S.puppets.sowa.korzen.position.x = xSowa; S.puppets.wiewiorka.korzen.position.x = xWiew;
         await c.ujecie("ogolny");
         await c.say("sowa", "line.b_uloz");
         const z = await c.podarty("obrazek_jeza_dziura", { kawalki: 4, ...OBRAZ });

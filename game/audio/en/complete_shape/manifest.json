@@ -40,9 +40,9 @@
   "text": "Quick, let's go and find them!"
  },
  "line.b_sa": {
-  "hash": "edcf2e331d24",
+  "hash": "c0efa899f710",
   "who": "wiewiorka",
-  "text": "Here they are! All the pieces are lying in the grass."
+  "text": "Oh dear, where are they? The grass is so tall!"
  },
  "line.b_uloz": {
   "hash": "c66bd7a8c0df",
@@ -373,5 +373,15 @@
   "hash": "da5e40bfd4a2",
   "who": "narrator",
   "text": "This is Owl's picture in its colourful frame. We got it when we found the missing piece by its shape."
+ },
+ "line.b_luneta": {
+  "hash": "728e2ace5670",
+  "who": "sowa",
+  "text": "The pieces are hiding in the grass. Look for them and touch each one."
+ },
+ "line.b_znalezione": {
+  "hash": "62a90ac35ee1",
+  "who": "wiewiorka",
+  "text": "We've got them! All the pieces are found."
  }
 }

@@ -33,7 +33,15 @@
   },
   "line.b_sa": {
     "who": "wiewiorka",
-    "text": "Tutaj są! Wszystkie kawałki leżą w trawie."
+    "text": "Ojej, gdzie one są? Ta trawa jest taka wysoka!"
+  },
+  "line.b_luneta": {
+    "who": "sowa",
+    "text": "Kawałki schowały się w trawie. Poszukaj ich i dotknij każdego."
+  },
+  "line.b_znalezione": {
+    "who": "wiewiorka",
+    "text": "Mamy je! Wszystkie kawałki znalezione."
   },
   "line.b_uloz": {
     "who": "sowa",

@@ -3,6 +3,7 @@
 
 import * as THREE from "three";
 import { texture } from "./scene.js";
+import { v } from "./v.js";
 
 const FAST = new URLSearchParams(location.search).has("szybko");
 const DREWNO = "#7a5530";
@@ -307,26 +308,47 @@ export function domino(S, a, b, { x = 0, y = 0.8, size = 2.4, pozioma = false } 
 // One picture of a roznice pair (tools/roznice: the second picture, `b`, has the hidden things; its found areas are
 // where they hide), shown big in a round spyglass view with a dark rim; the child taps each hidden thing - it gets a
 // pencil ring and a tick in the count of empty circles at the side. szukaj(S, nazwa) -> {remove}. Tests: S.szukaj.dokoncz().
-export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null } = {}) {
+// `luneta: false` - the same search on a plain picture in a paper frame (pieces in the grass need no spyglass).
+export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, luneta = true } = {}) {
   const kat = `/game/assets/roznice/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const tex = await texture(kat + "b.webp");
+  // the painted ring keeps the old outer size (inside the safe area); the view shrinks to its hole
+  const om = await fetch(v("/game/assets/objects/luneta_obwodka.json"), { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const ramaZew = size / 2 + 0.36;
+  if (luneta && om?.wew) size = ramaZew * om.wew * 2 + 0.08;
   const grp = new THREE.Group(); grp.position.set(0, y, 0.3); S.scene.add(grp);
-  const obraz = new THREE.Mesh(new THREE.CircleGeometry(size / 2, 96), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false }));
+  const obraz = new THREE.Mesh(luneta ? new THREE.CircleGeometry(size / 2, 96) : new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false }));
   const uv = obraz.geometry.attributes.uv, pos = obraz.geometry.attributes.position;          // the square picture seen through a circle
   for (let i = 0; i < uv.count; i++) uv.setXY(i, 0.5 + pos.getX(i) / size, 0.5 + pos.getY(i) / size);
   const brzeg = new THREE.Mesh(new THREE.RingGeometry(size / 2, size / 2 + 0.28, 96), new THREE.MeshBasicMaterial({ color: "#6b4a2a", transparent: true, depthWrite: false }));
   const brzeg2 = new THREE.Mesh(new THREE.RingGeometry(size / 2 + 0.28, size / 2 + 0.36, 96), new THREE.MeshBasicMaterial({ color: "#c9a25a", transparent: true, depthWrite: false }));
-  obraz.renderOrder = 9.9; brzeg.renderOrder = 10; brzeg2.renderOrder = 10; grp.add(obraz, brzeg, brzeg2);
+  obraz.renderOrder = 9.9; brzeg.renderOrder = 10; brzeg2.renderOrder = 10; grp.add(obraz);
+  if (luneta) grp.add(brzeg, brzeg2);
+  else {                                                                              // a picture on paper, like a found picture
+    const rama = new THREE.Mesh(new THREE.PlaneGeometry(size + 0.32, size + 0.32), new THREE.MeshBasicMaterial({ color: "#fffaf0", transparent: true, depthWrite: false }));
+    const cien = new THREE.Mesh(new THREE.PlaneGeometry(size + 0.32, size + 0.32), new THREE.MeshBasicMaterial({ color: "#000000", transparent: true, opacity: 0.28, depthWrite: false }));
+    rama.position.z = -0.01; cien.position.set(0.14, -0.16, -0.02); rama.renderOrder = 9.8; cien.renderOrder = 9.7; grp.add(cien, rama);
+  }
+  // the painted eyepiece ring (tools/objects/make_luneta_obwodka.py) over the drawn one, its hole fitted to the view
+  let ramaR = luneta ? size / 2 + 0.36 : size / 2 + 0.16;
+  if (luneta && om?.wew) {
+    ramaR = ramaZew;
+    const P = ramaR * 2;
+    const ob = new THREE.Mesh(new THREE.PlaneGeometry(P, P), new THREE.MeshBasicMaterial({ map: await texture("/game/assets/objects/luneta_obwodka.webp"), transparent: true, depthWrite: false }));
+    ob.renderOrder = 10; grp.remove(brzeg, brzeg2); grp.add(ob); ramaR = P / 2;
+  }
   const h = { mesh: grp, kind: "szukaj", name: "luneta_widok", base: 1, remove: () => { S.scene.remove(grp); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
   S.objects.push(h);
   const punkt = (r) => [(r.x - 0.5) * size, y + (0.5 - r.y) * size];
   // inside the circle only: a hidden thing in the square's corner would be unseen
-  const rzeczy = meta.roznice.filter((r) => Math.hypot(r.x - 0.5, r.y - 0.5) < 0.47);
+  const rzeczy = meta.roznice.filter((r) => !luneta || Math.hypot(r.x - 0.5, r.y - 0.5) < 0.47);
   // the count: empty circles at the side, filled one by one
   const licznik = [];
   for (let i = 0; i < rzeczy.length; i++) {
-    const ky = y + ((rzeczy.length - 1) / 2 - i) * 0.62, kx = Math.min(size / 2 + 0.85, 5.6);
+    // on the painted ring: set into its right arc like gems (no room beside it for a column and a character in 4:3)
+    const luk = luneta && om?.wew ? ramaR * (om.wew + (1 - om.wew) * 0.64) : 0, kat = ((rzeczy.length - 1) / 2 - i) * 0.27;
+    const ky = luk ? y + Math.sin(kat) * luk : y + ((rzeczy.length - 1) / 2 - i) * 0.62, kx = luk ? Math.cos(kat) * luk : Math.min(ramaR + 0.5, 5.6);
     const k = new THREE.Mesh(new THREE.CircleGeometry(0.24, 32), new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, depthWrite: false }));
     const o = new THREE.Mesh(new THREE.RingGeometry(0.24, 0.3, 32), new THREE.MeshBasicMaterial({ color: "#3a332d", transparent: true, depthWrite: false }));
     k.position.set(kx, ky - y, 0.01); o.position.set(kx, ky - y, 0.02); k.renderOrder = o.renderOrder = 10.2; grp.add(k, o); licznik.push(k);
@@ -361,11 +383,42 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null } = 
 // has `cele`: n spots to mark (one or more); the lesson asks with c.task({targets: z.cele.concat(z.tlo), correct:
 // z.cele, wszystkie: n > 1}), so a tap elsewhere on the picture is a miss with the usual hint ladder. `zaznacz()`
 // rings the spots in pencil; `remove()` puts the picture away.
-export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, rama = "#fffaf0", obrot = -2.5, bezLotu = false } = {}) {
+// a big picture over the scene: every character it would cover steps aside to the nearer side, its whole body inside
+// the 4:3 safe area (x -6..6); returns a function that walks them back (only those still where they stepped to)
+export async function odsun(S, x0, x1) {
+  const SAFE = 6, wroc = [];
+  await Promise.all(Object.entries(S.puppets).map(async ([n, L]) => {
+    if (!L.korzen.visible) return;
+    const b = S.bounds(L), x = L.korzen.position.x, lewo = x - b.left, prawo = b.right - x;
+    if (b.right < x0 + 0.25 || b.left > x1 - 0.25) return;                      // not covered
+    const cel = x < (x0 + x1) / 2 ? Math.max(-SAFE + lewo, x0 - prawo - 0.15) : Math.min(SAFE - prawo, x1 + lewo + 0.15);
+    if (Math.abs(cel - x) < 0.05) return;
+    wroc.push([n, L, x, cel]); await S.walkTo(n, cel);
+  }));
+  return () => Promise.all(wroc.map(([n, L, x, cel]) => (Math.abs(L.korzen.position.x - cel) < 1e-3 ? S.walkTo(n, x) : null)));
+}
+
+// where a big picture of width `szer` goes so every character on screen keeps room beside it inside the 4:3 safe area:
+// {k: its scale (<= 1), cx: its centre}; a wide owl and a squirrel leave less than the full width
+export function miejsceNaObraz(S, szer) {
+  const SAFE = 6; let lewa = -SAFE, prawa = SAFE;
+  for (const L of Object.values(S.puppets)) {
+    if (!L.korzen.visible || Math.abs(L.korzen.position.x) > SAFE + 1) continue;
+    const b = S.bounds(L), w = b.right - b.left;
+    if (L.korzen.position.x < 0) lewa = Math.max(lewa, -SAFE + w + 0.15); else prawa = Math.min(prawa, SAFE - w - 0.15);
+  }
+  const k = Math.max(0.6, Math.min(1, (prawa - lewa) / szer)), pol = szer * k / 2;
+  return { k, cx: Math.max(lewa + pol, Math.min(prawa - pol, 0)) };
+}
+
+export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, rama = "#fffaf0", obrot = -2.5, bezLotu = false, x = null } = {}) {
   const kat = `/game/assets/znaleziska/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const tex = await texture(kat + "obraz.webp");
-  const ar = meta.wysokosc / meta.szerokosc, W = ar > 1 ? size / ar * 1.0 : size, H = W * ar, b = 0.32;
+  const ar = meta.wysokosc / meta.szerokosc, b = 0.32;
+  let W = ar > 1 ? size / ar * 1.0 : size, cx = x ?? 0;
+  if (x === null) { const m = miejsceNaObraz(S, W + b); W *= m.k; cx = m.cx; }
+  const H = W * ar;
   const mat = (o) => new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, ...o });
   // the veil: the scene goes quiet behind the picture
   const welon = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), mat({ color: "#1d1a17", opacity: 0 }));
@@ -377,7 +430,8 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
   const brzeg = new THREE.Mesh(new THREE.PlaneGeometry(W + b, H + b), mat({ color: rama })); brzeg.position.z = -0.01; brzeg.renderOrder = 38.4;
   const obraz = new THREE.Mesh(new THREE.PlaneGeometry(W, H), mat({ map: tex })); obraz.renderOrder = 38.6;
   karta.add(cien, brzeg, obraz);
-  const h = { mesh: grp, kind: "znalezisko", name: nazwa, base: 1, remove: () => { S.scene.remove(grp); S.scene.remove(welon); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
+  const wrocPostacie = odsun(S, cx - (W + b) / 2 - 0.2, cx + (W + b) / 2 + 0.2);         // nobody speaks from behind the picture
+  const h = { mesh: grp, kind: "znalezisko", name: nazwa, base: 1, remove: () => { S.scene.remove(grp); S.scene.remove(welon); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); wrocPostacie.then((f) => f()); } };
   S.objects.push(h);
   // the spots: invisible discs on the picture (in the card, so they turn with it); the rest of the picture is a miss
   const lokalnie = ([x, yy]) => [(x - 0.5) * W, (0.5 - yy) * H];
@@ -398,11 +452,11 @@ export async function znalezisko(S, nazwa, { skad = null, y = 0.3, size = 7.6, r
   let x0 = 0, y0 = y - 2;
   const L = typeof skad === "string" ? S.puppets[skad] : null;
   if (L) { x0 = L.korzen.position.x; y0 = L.korzen.position.y + 2.2; } else if (skad?.mesh) { x0 = skad.mesh.position.x; y0 = skad.mesh.position.y; }
-  if (bezLotu) { grp.position.set(0, y, 0.45); welon.material.opacity = 0.58; }   // it is already there (a torn picture just put together)
+  if (bezLotu) { grp.position.set(cx, y, 0.45); welon.material.opacity = 0.58; }   // it is already there (a torn picture just put together)
   else {
     grp.position.set(x0, y0, 0.45); grp.scale.setScalar(0.12);
     S.sfx.graj("whoosh");
-    await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (0 - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.58 * e; });
+    await S.tween(0.55, (s) => { const e = 1 - (1 - s) ** 3; grp.position.set(x0 + (cx - x0) * e, y0 + (y - y0) * e, 0.45); grp.scale.setScalar(0.12 + 0.88 * e); welon.material.opacity = 0.58 * e; });
   }
   const kolka = [];
   const kolo = (c) => { const w = new THREE.Vector3(); c.mesh.getWorldPosition(w); return Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [w.x + Math.cos(a) * c.r, w.y + Math.sin(a) * c.r * 0.92]; }); };

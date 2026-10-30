@@ -40,9 +40,9 @@
   "text": "Szybko, chodźmy ich poszukać!"
  },
  "line.b_sa": {
-  "hash": "d5473644e713",
+  "hash": "5649d3238320",
   "who": "wiewiorka",
-  "text": "Tutaj są! Wszystkie kawałki leżą w trawie."
+  "text": "Ojej, gdzie one są? Ta trawa jest taka wysoka!"
  },
  "line.b_uloz": {
   "hash": "bdac95deb811",
@@ -373,5 +373,15 @@
   "hash": "a5d86c8631bb",
   "who": "narrator",
   "text": "To obrazek Sowy w kolorowej ramce. Dostaliśmy go, kiedy znaleźliśmy brakujący kawałek po jego kształcie."
+ },
+ "line.b_luneta": {
+  "hash": "f9974d6fae2a",
+  "who": "sowa",
+  "text": "Kawałki schowały się w trawie. Poszukaj ich i dotknij każdego."
+ },
+ "line.b_znalezione": {
+  "hash": "fdb8b240b44c",
+  "who": "wiewiorka",
+  "text": "Mamy je! Wszystkie kawałki znalezione."
  }
 }

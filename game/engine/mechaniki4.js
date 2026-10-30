@@ -220,14 +220,17 @@ export async function podarty(S, nazwa, { kawalki = 4, y = 0.3, size = 7.6 } = {
   const kat = `/game/assets/znaleziska/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const img = (await texture(kat + "obraz.webp")).image;
-  const ar = meta.wysokosc / meta.szerokosc, W = ar > 1 ? size / ar : size, H = W * ar;
+  const ar = meta.wysokosc / meta.szerokosc, m0 = M3.miejsceNaObraz(S, (ar > 1 ? size / ar : size) + 0.32), cx = m0.cx;
+  size *= m0.k;                                                                     // room for the characters beside it
+  const W = ar > 1 ? size / ar : size, H = W * ar;
   const kol = kawalki >= 6 ? 3 : 2, wier = 2;
   // the jagged cut lines, in picture pixels: one shared line between every two neighbours
   const PW = img.width, PH = img.height, los = (a) => (Math.random() - 0.5) * a;
   const pion = [...Array(kol + 1).keys()].map((i) => [...Array(13).keys()].map((j) => [i === 0 ? 0 : i === kol ? PW : PW * i / kol + los(PW * 0.06) + (j % 2 ? los(PW * 0.02) : 0), PH * j / 12]));
   const poz = [...Array(wier + 1).keys()].map((i) => [...Array(13).keys()].map((j) => [PW * j / 12, i === 0 ? 0 : i === wier ? PH : PH * i / wier + los(PH * 0.06) + (j % 2 ? los(PH * 0.025) : 0)]));
   const welon = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), mat({ color: "#1d1a17", opacity: 0 })); welon.position.set(0, 0, 0.42); welon.renderOrder = 37.5; S.scene.add(welon);
-  const rama = new THREE.Mesh(new THREE.PlaneGeometry(W, H), mat({ color: "#fffaf0", opacity: 0.18 })); rama.position.set(0, y, 0.43); rama.renderOrder = 37.6; S.scene.add(rama);
+  const rama = new THREE.Mesh(new THREE.PlaneGeometry(W, H), mat({ color: "#fffaf0", opacity: 0.18 })); rama.position.set(cx, y, 0.43); rama.renderOrder = 37.6; S.scene.add(rama);
+  const wroc = await M3.odsun(S, cx - W / 2 - 0.4, cx + W / 2 + 0.4);                                    // the scattered pieces need the middle clear too
   const tlo = { kind: "karta", mesh: rama, base: 1, remove: () => { S.scene.remove(rama); S.scene.remove(welon); const i = S.objects.indexOf(tlo); if (i >= 0) S.objects.splice(i, 1); } };
   S.objects.push(tlo);
   await S.tween(FAST ? 0.1 : 0.35, (s) => { welon.material.opacity = 0.58 * s; });
@@ -250,14 +253,14 @@ export async function podarty(S, nazwa, { kawalki = 4, y = 0.3, size = 7.6 } = {
     const pw = cv.width / PW * W, ph = cv.height / PH * H;
     const m = new THREE.Mesh(new THREE.PlaneGeometry(pw, ph), mat({ map: t })); m.renderOrder = 38.6;
     const grp = new THREE.Group(); grp.add(m); S.scene.add(grp);
-    const cel = [-W / 2 + ((x0 + x1) / 2) / PW * W, y + H / 2 - ((y0 + y1) / 2) / PH * H];
+    const cel = [cx - W / 2 + ((x0 + x1) / 2) / PW * W, y + H / 2 - ((y0 + y1) / 2) / PH * H];
     const h = { mesh: grp, kind: "object", name: `${nazwa}_kawalek`, base: 1, size0: 1, pulse: false, zone: null, cel, gotowy: false,
       moveTo: (x, yy, d = 0.25) => { const a = grp.position.clone(); return S.tween(d, (s) => grp.position.set(a.x + (x - a.x) * s, a.y + (yy - a.y) * s, a.z)); },
       highlight: () => {}, remove: () => { S.scene.remove(grp); t.dispose(); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
     S.objects.push(h); czesci.push(h);
   }
   // scattered: each away from its place, turned a little, a bit smaller
-  const miejscaRozrzutu = czesci.map((_, i) => [(-1 + 2 * ((i * 0.618) % 1)) * W * 0.32, y + (i % 2 ? -1 : 1) * H * 0.18 + los(0.5)]);
+  const miejscaRozrzutu = czesci.map((_, i) => [cx + (-1 + 2 * ((i * 0.618) % 1)) * W * 0.32, y + (i % 2 ? -1 : 1) * H * 0.18 + los(0.5)]);
   miejscaRozrzutu.sort(() => Math.random() - 0.5);
   czesci.forEach((h, i) => { const [x, yy] = miejscaRozrzutu[i]; h.mesh.position.set(x, yy, 0.46 + i * 0.002); h.mesh.rotation.z = los(0.5); h.mesh.scale.setScalar(0.8); h.home = { x, y: yy }; });
   S.sfx.graj("whoosh");
@@ -276,9 +279,10 @@ export async function podarty(S, nazwa, { kawalki = 4, y = 0.3, size = 7.6 } = {
     S.podarty = { dokoncz: async () => { for (const h of czesci) if (!h.gotowy) await wloz(h); sprawdz(); } };
   });
   S.sfx.graj("right");
-  const z = await M3.znalezisko(S, nazwa, { y, size, obrot: 0, bezLotu: true });
+  const z = await M3.znalezisko(S, nazwa, { y, size, obrot: 0, bezLotu: true, x: cx });
   for (const o of [...czesci.map((h) => h.mesh), tlo.mesh]) o.userData.zejdz = false;   // the whole picture takes their place: no slide-out
   czesci.forEach((h) => h.remove()); tlo.remove();
+  const usun = z.remove; z.remove = async () => { await usun(); wroc(); };          // the characters come back when it goes
   return z;
 }
 

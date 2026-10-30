@@ -33,7 +33,15 @@
   },
   "line.b_sa": {
     "who": "wiewiorka",
-    "text": "Here they are! All the pieces are lying in the grass."
+    "text": "Oh dear, where are they? The grass is so tall!"
+  },
+  "line.b_luneta": {
+    "who": "sowa",
+    "text": "The pieces are hiding in the grass. Look for them and touch each one."
+  },
+  "line.b_znalezione": {
+    "who": "wiewiorka",
+    "text": "We've got them! All the pieces are found."
   },
   "line.b_uloz": {
     "who": "sowa",
