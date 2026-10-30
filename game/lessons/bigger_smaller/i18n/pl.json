@@ -81,11 +81,11 @@
   },
   "line.b_do_domu": {
     "who": "wiewiorka",
-    "text": "Mam nową dziuplę w sam raz! Zapraszam was do siebie na parapetówkę."
+    "text": "Mam nową dziuplę w sam raz! Zapraszam was do mojego nowego domku na przyjęcie."
   },
   "line.p_start": {
     "who": "wiewiorka",
-    "text": "Zanim zacznie się parapetówka, pobawmy się w duże i małe!"
+    "text": "Zanim zaczniemy przyjęcie, pobawmy się w duże i małe!"
   },
   "line.p_wiekszy": {
     "who": "lisek",
@@ -145,7 +145,7 @@
   },
   "line.d_parapetowka": {
     "who": "wiewiorka",
-    "text": "Witajcie na parapetówce w mojej nowej dziupli! Najpierw postawię zapasy na półkach."
+    "text": "Witajcie na przyjęciu w mojej nowej dziupli! Najpierw postawię zapasy na półkach."
   },
   "line.d_kubki": {
     "who": "sowa",
@@ -281,7 +281,7 @@
   },
   "line.d_impreza": {
     "who": "wiewiorka",
-    "text": "Najpiękniejsza parapetówka! Każde pudło, krzesło i kubek jest w sam raz."
+    "text": "Najpiękniejsze przyjęcie! Każde pudło, krzesło i kubek jest w sam raz."
   },
   "line.d_buty": {
     "who": "lisek",

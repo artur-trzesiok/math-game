@@ -177,7 +177,7 @@
   },
   "line.c_parapetowka": {
     "who": "kret",
-    "text": "Tomorrow I'm having a housewarming party. You're invited!"
+    "text": "Tomorrow I'm having a party in my new burrow. You're invited!"
   },
   "line.c_prezenty": {
     "who": "lisek",
@@ -285,7 +285,7 @@
   },
   "line.d_dom": {
     "who": "kret",
-    "text": "Today is my housewarming party! The guests will be here soon."
+    "text": "Today is the party in my new burrow! The guests will be here soon."
   },
   "line.d_balagan": {
     "who": "sarenka",

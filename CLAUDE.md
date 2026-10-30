@@ -124,6 +124,12 @@ python tools/characters/make_character.py all lisek   # gen (~25 images) -> buil
    the reference's frame, its position is free: no scaling, no placement.
 3. **Face sheets** - 3x3 per view (front, 3/4, profile; the profile sheet asks
    for ONE eye): eyes open/half/closed/wide, mouth closed/smile/half/O/sad.
+   Speech mouths (2026-10-30, `tools/characters/make_usta.py gen|cut <kto>|all`): six more per view - scisniete (m b p),
+   szeroko (a), zeby (s z c, a thin sliver of teeth), fw (f), l (l t d n...), dziobek (u) - subtle, drawn from a 2x4
+   sheet that also redraws the closed and O mouths: the sheet is scaled so those match the installed pieces, and each
+   new mouth copies the closed one's placement. `lalka.js` WIZEMY_RYSOWANE maps the baked visemes to them (no
+   re-baking); a character without them falls back to the stretched old mouths. Run `cut` again after a full rebuild.
+   The editor's "mówi" shows every sound in turn or holds one (`usta` select).
 4. **Build** = measurement + tests, writes `work/<kto>/czesci/*.png` + `postac.json`.
 5. **Install** converts to WebP (q75, exact alpha), rewrites `animacje`, `kosci`,
    `glowy`, `lokomocja` from the rig (a rig edit needs only `install`), re-applies

@@ -100,14 +100,14 @@
   "text": "Myszki zmieściły się w większym pudełku i dziękują!"
  },
  "line.b_do_domu": {
-  "hash": "03d196fe8e65",
+  "hash": "daa74dd575ea",
   "who": "wiewiorka",
-  "text": "Mam nową dziuplę w sam raz! Zapraszam was do siebie na parapetówkę."
+  "text": "Mam nową dziuplę w sam raz! Zapraszam was do mojego nowego domku na przyjęcie."
  },
  "line.p_start": {
-  "hash": "b0d037b6bddf",
+  "hash": "e099c1ae4dbe",
   "who": "wiewiorka",
-  "text": "Zanim zacznie się parapetówka, pobawmy się w duże i małe!"
+  "text": "Zanim zaczniemy przyjęcie, pobawmy się w duże i małe!"
  },
  "line.p_wiekszy": {
   "hash": "fad7bc0e7f8c",
@@ -190,9 +190,9 @@
   "text": "Ta czapka jest za mała. Spróbuj większej."
  },
  "line.d_parapetowka": {
-  "hash": "48bc3abe5656",
+  "hash": "80fedbd5bc2e",
   "who": "wiewiorka",
-  "text": "Witajcie na parapetówce w mojej nowej dziupli! Najpierw postawię zapasy na półkach."
+  "text": "Witajcie na przyjęciu w mojej nowej dziupli! Najpierw postawię zapasy na półkach."
  },
  "line.d_kubki": {
   "hash": "c7b0011d217f",
@@ -360,9 +360,9 @@
   "text": "Tak, najmniejsze krzesło jest w sam raz dla mnie!"
  },
  "line.d_impreza": {
-  "hash": "11e71fcac64d",
+  "hash": "6fd54fc79de5",
   "who": "wiewiorka",
-  "text": "Najpiękniejsza parapetówka! Każde pudło, krzesło i kubek jest w sam raz."
+  "text": "Najpiękniejsze przyjęcie! Każde pudło, krzesło i kubek jest w sam raz."
  },
  "line.d_buty": {
   "hash": "c3c31da35855",

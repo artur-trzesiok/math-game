@@ -40,6 +40,9 @@ const WIZEMY = {
   X: ["zamkniete", 1, 1], M: ["zamkniete", 1.02, 0.9], A: ["o", 1.12, 1.12], O: ["o", 0.84, 1.0], U: ["o", 0.66, 0.82],
   E: ["pol", 1.12, 1.0], I: ["usmiech", 1.06, 0.82], S: ["usmiech", 0.92, 0.66], F: ["pol", 0.94, 0.58], L: ["pol", 0.96, 0.78],
 };
+// the speech mouths drawn for a sound (tools/characters/make_usta.py) - used when the character has them, else the
+// stretched one above: m b p pressed lips, a wide, u a small round, s z c teeth, f w lip under teeth, l t d n the tongue
+export const WIZEMY_RYSOWANE = { M: "scisniete", A: "szeroko", U: "dziobek", S: "zeby", F: "fw", L: "l" };
 // a right-side bone (and its joints) takes mirrored angles
 const lustro = (k) => k.endsWith("_p") || k === "reka_p" || k === "noga_p" || k === "noga_tp";
 
@@ -443,6 +446,11 @@ export class Lalka {
     if (!this.mowi) return this.poza.usta || this.emocja.usta;
     if (this.wiz) {
       // a viseme: one of the drawn mouths, stretched to the sound's shape, opened a little more when louder
+      const rys = WIZEMY_RYSOWANE[this.wiz];
+      if (rys && this.twarze?.przod?.usta?.[rys]) {                         // drawn for this sound: barely stretched
+        this.ustaSkala = [1, rys === "scisniete" ? 1 : 0.97 + 0.06 * Math.min(1, this.amplituda)];
+        return rys;
+      }
       const [n, sx, sy] = WIZEMY[this.wiz] || WIZEMY.X;
       const otwarcie = n === "zamkniete" ? 1 : 0.94 + 0.1 * Math.min(1, this.amplituda);
       this.ustaSkala = [sx, sy * otwarcie];

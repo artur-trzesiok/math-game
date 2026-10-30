@@ -43,7 +43,12 @@
   <div class="wiersz"><label>Postać <select id="kto"></select></label></div>
   <div class="wiersz"><label>Animacja <select id="anim"></select></label><button id="graj">▶</button><label title="zagraj raz i wróć do spoczynku - widać przejście między animacjami"><input type="checkbox" id="raz"> raz</label></div>
   <div class="wiersz"><label>Faza <input type="range" id="faza" min="0" max="1" step="0.01" value="0" style="width:120px"></label><button id="zrzut" title="zapisz PNG do work/snap">Zrzut</button></div>
-  <div class="wiersz"><label><input type="checkbox" id="mow"> mówi</label></div>
+  <div class="wiersz"><label><input type="checkbox" id="mow"> mówi</label>
+    <label title="cykl: wszystkie głoski po kolei; albo jedna, zatrzymana - do obejrzenia i poprawek">usta <select id="mowaUsta">
+      <option value="cykl">cykl (wszystkie)</option>
+      <option value="X">X cisza</option><option value="M">M m b p</option><option value="A">A a</option><option value="E">E e</option>
+      <option value="I">I i y</option><option value="O">O o</option><option value="U">U u ó w</option><option value="S">S s z c sz cz</option>
+      <option value="F">F f</option><option value="L">L l t d n …</option></select></label> <b id="mowaTeraz" style="color:#ffb347"></b></div>
   <div class="wiersz"><label title="A/B: wyłączone = sztywna wycinanka jak dotąd"><input type="checkbox" id="zginanie" checked> zginanie</label>
     <label title="siatka kończyn"><input type="checkbox" id="druty"> siatka</label>
     <button id="zeruj" title="zeruj ręczne zgięcia">zeruj zgięcia</button></div>
@@ -82,7 +87,7 @@
 <div id="scena"><div id="naglowki"><div>przód</div><div>¾ (patrz prawo)</div><div>tył</div><div>profil</div></div></div>
 <script type="module">
 import * as THREE from "three";
-import { Lalka } from "../game/engine/lalka.js";
+import { Lalka, WIZEMY_RYSOWANE } from "../game/engine/lalka.js";
 import { v } from "../game/engine/v.js";
 import * as U from "../game/engine/ubior.js";
 
@@ -252,15 +257,15 @@ function kolumnaGra(i) {
 // ------------------------------------------------------------ petla
 let ost = performance.now();
 // syntetyczny glos: sylaby ~3,5/s o zmiennej sile, z pauzami co kilka sekund
-function amplitudaMowy(t) {
-  if (Math.sin(t * 0.9) < -0.65) return 0;
-  return Math.max(0, Math.sin(t * 2 * Math.PI * 3.5)) * (0.55 + 0.45 * Math.sin(t * 1.7 + 1));
-}
 function klatka(t, recznie = false) {
   const dt = Math.min(0.05, (t - ost) / 1000); ost = t;
-  const mowi = $("mow").checked;
+  const mowi = $("mow").checked, tryb = $("mowaUsta").value;
+  // speech: every sound in turn (0.6 s each, its name shown) or one sound held
+  const KOLEJ = ["X", "M", "A", "E", "I", "O", "U", "S", "F", "L"];
+  const wiz = !mowi ? null : tryb === "cykl" ? KOLEJ[Math.floor(t / 600) % KOLEJ.length] : tryb;
+  $("mowaTeraz").textContent = wiz ? `${wiz} → ${WIZEMY_RYSOWANE[wiz] && lalki[0]?.twarze?.przod?.usta?.[WIZEMY_RYSOWANE[wiz]] ? WIZEMY_RYSOWANE[wiz] : "(obecny kształt)"}` : "";
   for (const L of lalki) {
-    if (mowi) L.mow(amplitudaMowy(t / 1000)); else if (L.mowi) L.cicho();
+    if (mowi) L.mow(0.6, wiz); else if (L.mowi) L.cicho();
     if (gra) L.update(dt);
     else { const ta = L.ta; L.update(dt); L.ta = ta; }   // poza stoi, ale twarz zyje: mruganie i usta
   }

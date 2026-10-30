@@ -34,7 +34,7 @@ bendable limbs, merged back as 151b815 and no longer needed.
   and the stage-card icons were repainted with gpt-image after the user flagged vector ones.
 - **Comments**: one line where it adds something; reasons go to the commit message.
 - **Visual judgement by eye**: render, snapshot, look; measure only what the eye cannot settle (counts, positions).
-- **Content rules**: lines never assume the child's gender; counting up to 3 is fine before the counting lessons, more
+- **Content rules**: no grown-up words a 4-year-old does not know ("parapetówka" -> "przyjęcie w nowym domku", 2026-10-30); lines never assume the child's gender; counting up to 3 is fine before the counting lessons, more
   is not; no digits before the digit lessons (shapes colours by SIGNS, not numbers); a colour a story names must stay
   (sticker variants keep it).
 - **How the user reports**: screenshots mid-task, short Polish notes, often several in a row while Claude works.
