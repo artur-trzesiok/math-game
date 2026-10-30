@@ -363,14 +363,15 @@ export async function miejsca(S, { scena = S.bgName } = {}) {
   for (const [name, m] of Object.entries(dane)) {
     const [x0, y0] = naScene(m.x - m.w / 2, m.y - m.h / 2), [x1, y1] = naScene(m.x + m.w / 2, m.y + m.h / 2);
     const p = { name, rodzaj: m.rodzaj, x: (x0 + x1) / 2, y: (y0 + y1) / 2, w: Math.abs(x1 - x0), h: Math.abs(y1 - y0) };
+    if (m.stopy != null) p.stopy = naScene(m.x, m.stopy)[1];             // a flat shelf: the line its things stand on, measured on the painting
     // a place off the safe area (x beyond +-6) is cut off on a 4:3 tablet: a lesson must not use it
     const widac = Math.max(0, Math.min(6, p.x + p.w / 2) - Math.max(-6, p.x - p.w / 2)) / Math.max(0.01, p.w);
     p.poza = widac < 0.6 || Math.abs(p.y) > 4.5;
     p.nadSufitem = p.y + p.h / 2 > 3.3;                                     // the phase icons live up there
     if (p.poza) console.warn(`miejsca: "${name}" in ${scena} lies mostly outside the safe area - not seen on a 4:3 screen`);
     else if (p.nadSufitem) console.warn(`miejsca: "${name}" in ${scena} reaches above SUFIT (y 3.3), under the phase icons`);
-    p.slot = (accept = () => true) => ({ x: p.x, y: p.y, w: Math.max(0.9, p.w), h: Math.max(0.7, p.h), accept, niewidoczna: true, rodzaj: p.rodzaj, miejsce: name });
-    p.strefa = () => S.zone({ x: p.x, y: p.y, w: Math.max(0.9, p.w), h: Math.max(0.7, p.h), name: `miejsce_${name}`, niewidoczna: true, rodzaj: p.rodzaj });
+    p.slot = (accept = () => true) => ({ x: p.x, y: p.y, w: Math.max(0.9, p.w), h: Math.max(0.7, p.h), accept, niewidoczna: true, rodzaj: p.rodzaj, stopy: p.stopy, miejsce: name });
+    p.strefa = () => S.zone({ x: p.x, y: p.y, w: Math.max(0.9, p.w), h: Math.max(0.7, p.h), name: `miejsce_${name}`, niewidoczna: true, rodzaj: p.rodzaj, stopy: p.stopy });
     out[name] = p;
   }
   return out;

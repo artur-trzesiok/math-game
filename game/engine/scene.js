@@ -592,7 +592,7 @@ export class Stage {
   // widths, a little smaller than loose (0.8), so even the big ones fit.
   // `obrys`: a polygon (points in units, around the zone's centre) drawn dashed instead of the rounded rectangle - a
   // place for a triangle looks like a triangle; it is drawn over what already lies there (a window on a wall)
-  async zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff", image = null, name = "zone", obrys = null, niewidoczna = false, rodzaj = "stoi" } = {}) {
+  async zone({ x = 0, y = -2.2, w = 3, h = 2.2, color = "#ffffff", image = null, name = "zone", obrys = null, niewidoczna = false, rodzaj = "stoi", stopy = null } = {}) {
     const g = new THREE.Group(); g.position.set(x, y, 0.3);
     if (niewidoczna) {                                                      // a painted place (ctx.miejsca): the picture shows where, no dashes
       const handle = { mesh: g, name, kind: "zone", x, y, w, h, base: 1, pulse: false, items: [], niewidoczna: true, rodzaj,
@@ -602,7 +602,7 @@ export class Stage {
           const n = handle.items.length;
           handle.items.forEach((it, i) => {
             const tx = x - w / 2 + (i + 0.5) * w / n, b = this.bounds(it), dol = it.mesh.position.y - b.bottom, gora = b.top - it.mesh.position.y;
-            const ty = rodzaj === "stoi" ? y - h * 0.3 + dol : rodzaj === "wisi" ? y + h * 0.1 - gora : y;
+            const ty = rodzaj === "stoi" ? (stopy ?? y - h * 0.3) + dol : rodzaj === "wisi" ? y + h * 0.1 - gora : y;   // `stopy`: the painted shelf's top, measured
             it.moveTo(tx, ty, 0.2);
           });
         },

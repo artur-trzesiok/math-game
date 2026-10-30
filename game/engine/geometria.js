@@ -357,7 +357,7 @@ export async function sloty(S, { items, slots, onWrong = null, numery = false, n
   for (const [i, s] of slots.entries()) {
     // a slot may say its shape (`ksztalt`, `size`, `rot`): its place is drawn as that shape's outline
     const obrys = s.ksztalt ? obroc(KSZTALTY[s.ksztalt].pts.map(([a, b]) => [a * s.size, b * s.size]), s.rot || 0) : null;
-    const z = await S.zone({ x: s.x, y: s.y, w: s.w + (obrys ? 0.3 : 0), h: s.h + (obrys ? 0.3 : 0), name: `slot_${i}`, obrys, niewidoczna: !!s.niewidoczna, rodzaj: s.rodzaj });
+    const z = await S.zone({ x: s.x, y: s.y, w: s.w + (obrys ? 0.3 : 0), h: s.h + (obrys ? 0.3 : 0), name: `slot_${i}`, obrys, niewidoczna: !!s.niewidoczna, rodzaj: s.rodzaj, stopy: s.stopy });
     z.accept = s.accept; z.i = i; strefy.push(z);
     if (numery) z.nr = await narysujCyfre(S, i + 1, { x: s.x, y: numeryNad ? Math.min(SUFIT - 0.3, s.y + s.h / 2 + 0.42) : s.y - s.h / 2 - 0.42, size: 0.55, color: "#1f5fbf", duration: 0.15 });
   }
