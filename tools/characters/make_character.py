@@ -92,10 +92,12 @@ POSTACIE = {
     "kret": {
         "rig": "humanoid", "wysokosc": 1.4,
         # v1 and v2 drew a featureless head with a tiny face low on it, and a huge nose in profile: the face is spelled out
+        # v3 (2026-10-30, the user: the head looked bald and unfriendly): a light face mask, a tuft, small round ears
         "opis": "a chubby, cheerful cartoon mole from a children's picture book, soft dark grey velvety fur, a round head "
-                "with the face filling its front: two big friendly round dark eyes with a white shine set wide apart in the "
-                "middle of the face, a SMALL short pink snout between and just below them, a wide smiling mouth under it, "
-                "rosy cheeks, NO whiskers, large pink digging paws with short claws",
+                "with a soft light warm-beige face mask around the muzzle and the eyes, a small fluffy tuft of fur on top of "
+                "the head, two small round furry ears peeking out at the sides, two big friendly round dark eyes with a white "
+                "shine, a small soft round pink button nose (not a snout), a wide smiling mouth, rosy cheeks, NO whiskers, "
+                "large pink digging paws with short claws",
         "konczyny": "arms", "konczyna": "arm", "usta": "mouth", "ogon": False,
     },
 }
