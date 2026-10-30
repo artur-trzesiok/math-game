@@ -10,3 +10,5 @@ __pycache__/
 # never
 .env
 reference/
+# the package for the server (make_dist.py)
+dist/
