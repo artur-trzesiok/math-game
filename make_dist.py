@@ -2,6 +2,8 @@
 
   python make_dist.py            # rebuild dist/ from game/
   python make_dist.py --check    # list what would be shipped and what is left out, write nothing
+  python make_dist.py --glos64   # the spoken lines at 64 kbps mono (music and effects untouched), each encoded
+                                 # once from its original (tools/audio/work/oryginaly) with its speaker's loudness
 
 Layout = the hosting (https://matematyka.cubeproject.pl): `index.html`, `og.jpg` and `engine/` at the root (the page
 imports `./engine/player.js`), everything the engine loads by its `/game/...` paths under `/game/`. Left out: notes and plans (*.md), editor files (postac.build.json, poprawki.json, *.bak),
@@ -43,6 +45,32 @@ def wysylamy(rel: Path, gotowe: set[str], katalogi_lekcji: set[str]) -> bool:
     return True
 
 
+KBPS = 64 if "--glos64" in sys.argv else 0
+
+
+def przekoduj(glosy: list[tuple[Path, Path]]) -> None:
+    """The spoken lines at KBPS: from the original, with the speaker's gain (tools/audio/make_audio.py normalize)."""
+    import runpy
+    from concurrent.futures import ThreadPoolExecutor
+    argv, sys.argv = sys.argv, [sys.argv[0]]
+    A = runpy.run_path(str(ROOT / "tools" / "audio" / "make_audio.py"), run_name="make_dist")
+    sys.argv = argv
+    kto = {}
+    for rel, _ in glosy:
+        mf = GAME / rel.parent / "manifest.json"
+        if mf.parent not in kto:
+            kto[mf.parent] = json.loads(mf.read_text(encoding="utf-8")) if mf.exists() else {}
+    def jeden(para):
+        rel, dst = para
+        A["normalize"](GAME / rel, kto[(GAME / rel).parent].get(rel.stem, {}).get("who"), dst=dst, kbps=KBPS)
+    with ThreadPoolExecutor(8) as ex:
+        for i, _ in enumerate(ex.map(jeden, glosy), 1):
+            if i % 500 == 0:
+                print(f"  voices {i}/{len(glosy)}")
+    mb = sum(d.stat().st_size for _, d in glosy) / 2**20
+    print(f"voices: {len(glosy)} at {KBPS} kbps, {mb:.0f} MB")
+
+
 def main() -> int:
     tylko_sprawdz = "--check" in sys.argv
     gotowe, wszystkie = lekcje()
@@ -73,11 +101,17 @@ def main() -> int:
 
     if DIST.exists():
         shutil.rmtree(DIST)
+    glosy = []
     for rel in pliki:
         r = rel.as_posix()
         dst = DIST / (rel if r in KORZEN or r.startswith(KORZEN[2]) else Path("game") / rel)
         dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(GAME / rel, dst)
+        if KBPS and rel.parts[0] == "audio" and rel.parts[1] in ("pl", "en") and rel.suffix == ".mp3":
+            glosy.append((rel, dst))
+        else:
+            shutil.copy2(GAME / rel, dst)
+    if glosy:
+        przekoduj(glosy)
     # a lesson without its files is a placeholder in the shipped menu, whatever the working index says
     ix = DIST / "game" / "lessons" / "index.json"
     d = json.loads(ix.read_text(encoding="utf-8"))

@@ -158,20 +158,29 @@ def oryginal(mp3: Path) -> Path:
     return o
 
 
-def normalize(mp3: Path, who: str | None = None) -> float:
+def normalize(mp3: Path, who: str | None = None, dst: Path | None = None, kbps: int = 128) -> float:
     """Write the mp3 from its original with the gain that brings its speech loudness to TARGET_RMS_DB times
-    the speaker's calibration (a limiter keeps the peaks under -0.5 dBFS). Returns the gain applied in dB."""
-    src = oryginal(mp3)
+    the speaker's calibration (a limiter keeps the peaks under -0.5 dBFS). Returns the gain applied in dB.
+    With `dst` the game file stays as it is and a copy at `kbps` goes there (make_dist.py)."""
+    if dst is None:
+        src = oryginal(mp3)
+    else:
+        o = ORYGINALY / mp3.relative_to(AUDIO)
+        src = o if o.exists() else mp3
     cel = TARGET_RMS_DB + 20 * np.log10(glosnosc(who))
     gain = max(-12.0, min(12.0, cel - speech_rms_db(decode(src))))
     if abs(gain) < 0.5:
-        if src.read_bytes() != mp3.read_bytes():
-            shutil.copy2(src, mp3)
-        return 0.0
-    tmp = mp3.with_suffix(".tmp.mp3")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", f"volume={gain:.2f}dB,alimiter=limit=0.94:attack=3:release=40",
-                    "-codec:a", "libmp3lame", "-b:a", "128k", str(tmp)], check=True)
-    tmp.replace(mp3)
+        gain = 0.0
+        if dst is None:
+            if src.read_bytes() != mp3.read_bytes():
+                shutil.copy2(src, mp3)
+            return gain
+    out = dst or mp3.with_suffix(".tmp.mp3")
+    filtr = f"volume={gain:.2f}dB,alimiter=limit=0.94:attack=3:release=40" if gain else "anull"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", filtr, "-ac", "1", "-ar", "44100",
+                    "-codec:a", "libmp3lame", "-b:a", f"{kbps}k", str(out)], check=True)
+    if dst is None:
+        out.replace(mp3)
     return gain
 
 
