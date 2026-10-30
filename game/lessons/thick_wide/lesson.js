@@ -73,9 +73,7 @@ const LEKCJA = {
         await c.say("lisek", "line.a_zaklad", { anim: "Zgloszenie" });
         await c.ujecie("ogolny");
         await c.say("sarenka", "line.a_beczka");
-        // the barrel only sticks: the round ends with it stuck, so no confetti for it (the lesson's own reward switch)
-        LEKCJA.nagrody = false;
-        try { await c.szpara({ szpary: [{ ...FURTKA, x: -0.6 }], rzeczy: [b], wrong: "line.a_utknela" }); } finally { LEKCJA.nagrody = true; }
+        await c.szpara({ szpary: [{ ...FURTKA, x: -0.6 }], rzeczy: [b], wrong: "line.a_utknela" });   // only sticks: the engine does not cheer it
         c.wonder("lisek");                                                   // over the head while the wide shot has room for it
         await c.ujecie("sredni", { na: ["lisek"] });
         await c.say("lisek", "line.a_jak_to");

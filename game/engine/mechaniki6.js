@@ -70,7 +70,7 @@ export function zmierzOtwor(img, os) {
 // the sides - so it visibly sticks out over them - gets stuck, wobbles, `onZle(h, gap)` and goes back. The opening is
 // measured on the painting; `szczelina` scales a gap so its opening is that many units. `pasuje(h, gap)` overrides the
 // measure (solids: what rolls). Resolves when every thing that fits some gap went through (`jedna`: after the first).
-export async function szpara(S, { szpary = [{ obraz: "szpara_furtka" }], rzeczy = [], y = GROUND + 0.1, rzeczyY = 1.6, rozmiar = 1.1, pasuje = null, jedna = false, luz = 0.02, onZle = null, onPrzeszla = null } = {}) {
+export async function szpara(S, { szpary = [{ obraz: "szpara_furtka" }], rzeczy = [], y = GROUND + 0.1, rzeczyY = 1.6, rozmiar = 1.1, pasuje = null, jedna = false, luz = 0.02, onZle = null, onPrzeszla = null, przed = null } = {}) {
   // the gaps, standing on the ground line
   const bramy = [];
   for (const [i, s0] of szpary.entries()) {
@@ -100,6 +100,8 @@ export async function szpara(S, { szpary = [{ obraz: "szpara_furtka" }], rzeczy 
     lista.push(h);
   }
   for (const h of lista) { h.home = { x: h.mesh.position.x, y: h.mesh.position.y }; h.przeszla = null; }
+  // `przed`: the gaps and things stand, the characters say their bet and the instruction, only then the drag starts
+  if (przed) await przed({ szpary: bramy, rzeczy: lista });
   const miara = (h, g) => { const b = S.bounds(h); return g.os === "x" ? b.right - b.left : b.top - b.bottom; };
   const miesci = (h, g) => (pasuje ? pasuje(h, g) : miara(h, g) <= (g.os === "x" ? g.otwor.szer : g.otwor.wys) + luz);
   const przeszly = [], utknely = [];
@@ -136,7 +138,7 @@ export async function szpara(S, { szpary = [{ obraz: "szpara_furtka" }], rzeczy 
     const sprawdz = () => {
       if (koniec) return;
       const ok = jedna ? przeszly.length > 0 : moga().length ? moga().every((h) => h.przeszla) : lista.every((h) => utknely.includes(h));
-      if (ok) { koniec = true; S.endSort(); S.szpara = null; S.sfx.graj("right"); gotowe(); }
+      if (ok) { koniec = true; S.endSort(); S.szpara = null; if (przeszly.length) S.sfx.graj("right"); gotowe(); }   // nothing went through: no "right" 
     };
     const aktywne = lista.slice();
     S.free({ items: aktywne, onTap: () => {}, onPuppet: () => S.onPuppetTap?.(), onDrop: async (h, p) => {
@@ -152,7 +154,7 @@ export async function szpara(S, { szpary = [{ obraz: "szpara_furtka" }], rzeczy 
       sprawdz();
     } };
   });
-  return { kind: "szpara", szpary: bramy, rzeczy: lista, przeszly, utknely, miesci,
+  return { kind: "szpara", szpary: bramy, rzeczy: lista, przeszly, utknely, miesci, udane: przeszly.length > 0,
     remove: () => { bramy.forEach((g) => g.remove()); lista.forEach((h) => h.remove()); } };
 }
 

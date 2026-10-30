@@ -742,7 +742,7 @@ export class Player {
       const koniec = () => { koniecZachet(); if (polecenieTeraz === pol) polecenieTeraz = null; };
       Promise.resolve(p).then(koniec, koniec);
       if (!(p instanceof Promise)) return p;
-      return Object.assign(p.then(async (r) => { await swietuj(); return r; }), p);   // keeps what was hung on p
+      return Object.assign(p.then(async (r) => { if (r?.udane !== false) await swietuj(); return r; }), p);   // keeps what was hung on p; a round where nothing succeeded is not cheered
     };
     wDzialaniu.dotknij = (p) => wDzialaniu(p, "dotknij");                 // counting by touch
     // a lesson's own dragging (S.free, not a ctx mechanic) gets the same rule: the last line is its instruction
@@ -922,7 +922,7 @@ export class Player {
       }),
       peczki: guard(async (o = {}) => { const m = await M7.peczki(S, o); const u0 = m.uloz; m.uloz = (q = {}) => wDzialaniu(u0({ ...q, onZle: (pw) => blad(typeof q.wrong === "function" ? q.wrong(pw) : q.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }); return m; }),
       // mechaniki6.js: push through a gap, measure with units (counted by `who`), a picture bar chart; `wrong` may be (reason) => key
-      szpara: (o = {}) => wDzialaniu(M6.szpara(S, { ...o, onZle: () => blad(o.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }),
+      szpara: (o = {}) => wDzialaniu(M6.szpara(S, { ...o, onZle: () => blad(o.wrong), przed: o.przed && (async (...a) => { await o.przed(...a); polecenieTeraz = last; }) }), "przeciagnij").then((r) => { if (r?.udane !== false) nagroda(null); return r; }),   // the last line of przed is the instruction
       miarka: (o = {}) => wDzialaniu(M6.miarka(S, { ...o, onZle: (pow) => blad(typeof o.wrong === "function" ? o.wrong(pow) : o.wrong), onLicz: o.who ? (n) => say(o.who, `line.n${n}`) : null }), "przeciagnij").then((r) => { nagroda(null); return r; }),
       wykres: guard((o = {}) => (o.rzeczy?.length ? wDzialaniu(M6.wykres(S, { ...o, onZle: () => blad(o.wrong) }), "przeciagnij").then((r) => { nagroda(null); return r; }) : M6.wykres(S, o))),
       // mechaniki5.js: a grid with headers (without `rzeczy` it only lays out cells to read), a hidden rule, giving out
