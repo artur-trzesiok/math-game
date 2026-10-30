@@ -13,6 +13,7 @@ lessons not ready yet (index.json "wkrotce") with their recordings, recordings o
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -48,24 +49,36 @@ def wysylamy(rel: Path, gotowe: set[str], katalogi_lekcji: set[str]) -> bool:
 KBPS = 64 if "--glos64" in sys.argv else 0
 
 
-def przekoduj(glosy: list[tuple[Path, Path]]) -> None:
-    """The spoken lines at KBPS: from the original, with the speaker's gain (tools/audio/make_audio.py normalize)."""
+_A = None
+
+
+def _wczytaj_audio() -> None:
+    """In each worker process: tools/audio/make_audio.py's functions (normalize, the originals)."""
+    global _A
     import runpy
-    from concurrent.futures import ThreadPoolExecutor
     argv, sys.argv = sys.argv, [sys.argv[0]]
-    A = runpy.run_path(str(ROOT / "tools" / "audio" / "make_audio.py"), run_name="make_dist")
+    _A = runpy.run_path(str(ROOT / "tools" / "audio" / "make_audio.py"), run_name="make_dist")
     sys.argv = argv
+
+
+def _jeden(zadanie: tuple[str, str, str | None, int]) -> None:
+    src, dst, who, kbps = zadanie
+    _A["normalize"](Path(src), who, dst=Path(dst), kbps=kbps)
+
+
+def przekoduj(glosy: list[tuple[Path, Path]]) -> None:
+    """The spoken lines at KBPS: from the original, with the speaker's gain (tools/audio/make_audio.py normalize).
+    Worker processes, one per core: threads left most cores idle (the loudness is measured in Python)."""
+    from concurrent.futures import ProcessPoolExecutor
     kto = {}
     for rel, _ in glosy:
         mf = GAME / rel.parent / "manifest.json"
         if mf.parent not in kto:
             kto[mf.parent] = json.loads(mf.read_text(encoding="utf-8")) if mf.exists() else {}
-    def jeden(para):
-        rel, dst = para
-        A["normalize"](GAME / rel, kto[(GAME / rel).parent].get(rel.stem, {}).get("who"), dst=dst, kbps=KBPS)
-    with ThreadPoolExecutor(8) as ex:
-        for i, _ in enumerate(ex.map(jeden, glosy), 1):
-            if i % 500 == 0:
+    zadania = [(str(GAME / rel), str(dst), kto[(GAME / rel).parent].get(rel.stem, {}).get("who"), KBPS) for rel, dst in glosy]
+    with ProcessPoolExecutor(os.cpu_count() or 8, initializer=_wczytaj_audio) as ex:
+        for i, _ in enumerate(ex.map(_jeden, zadania, chunksize=24), 1):
+            if i % 1000 == 0:
                 print(f"  voices {i}/{len(glosy)}")
     mb = sum(d.stat().st_size for _, d in glosy) / 2**20
     print(f"voices: {len(glosy)} at {KBPS} kbps, {mb:.0f} MB")
