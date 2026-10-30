@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CHARACTERS = ROOT / "game" / "assets" / "characters"
 SNAPS = ROOT / "work" / "snap"
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8750
-FIELDS = ("x", "y", "w", "h", "os", "obrot", "rdzen", "stawy", "nos")
+FIELDS = ("x", "y", "w", "h", "os", "obrot", "rdzen", "stawy", "przesun")
 NAME = re.compile(r"[a-z0-9_]+")
 
 

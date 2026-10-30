@@ -307,8 +307,7 @@ export class Lalka {
         const k = cel[t].w / rb.w;
         const y = t === "usta" ? cel[t].y - r.y * k : cel[t].y + cel[t].h - (r.y + r.h) * k;
         const bb = { x: cel[t].x + cel[t].w / 2 - (r.x + r.w / 2) * k, y, w: cz.w * k, h: cz.h * k };
-        // a mouth carries the nose: with both nose points marked, the piece's nose lands on the target's (nos_punkt.py)
-        if (t === "usta" && cel[t].nos && cz.nos) { bb.x = cel[t].x + cel[t].nos[0] - cz.nos.x * k; bb.y = cel[t].y + cel[t].nos[1] - cz.nos.y * k; }
+        if (cz.przesun) { bb.x += cz.przesun[0]; bb.y += cz.przesun[1]; }   // the editor's per-variant correction (frame px)
         const nadOczami = d.usta_nad_oczami ? t === "usta" : t === "oczy";
         if (!grupyCelu[t]) {
           const sr = [cel[t].x + cel[t].w / 2, cel[t].y + cel[t].h / 2], gt = new THREE.Group();

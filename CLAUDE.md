@@ -130,11 +130,11 @@ python tools/characters/make_character.py all lisek   # gen (~25 images) -> buil
    new mouth copies the closed one's placement. `lalka.js` WIZEMY_RYSOWANE maps the baked visemes to them (no
    re-baking); a character without them falls back to the stretched old mouths. Run `cut` again after a full rebuild.
    The editor's "mówi" shows every sound in turn or holds one (`usta` select).
-   The nose point (`tools/characters/nos_punkt.py <kto>`, so far Mole): every mouth piece carries the nose, so each
-   gets `nos` {x, y} (piece px) and the view's mouth target `nos` [dx, dy] (frame px from its corner); lalka.js puts
-   each mouth so the two meet - the nose never jumps between mouths (the core-based placement let it). The editor's
-   `twarz` slider steps through every mouth and eye state with the target's nose as a pink cross; selecting the mouth
-   target shows both points as fields.
+   Every mouth carries the nose, so placed by its core alone the nose jumped between mouths: each face piece may
+   carry `przesun` [dx, dy] (frame px), a per-variant correction lalka.js adds to its placement.
+   `tools/characters/wyrownaj_usta.py all|<kto>` measures the nose on every mouth and sets them so it stands where the
+   closed mouth's does (pieces that have one keep it; beaks skipped). The editor's `twarz` slider steps through every
+   mouth and eye state; with a face target selected, arrows and drag move only the variant shown.
 4. **Build** = measurement + tests, writes `work/<kto>/czesci/*.png` + `postac.json`.
 5. **Install** converts to WebP (q75, exact alpha), rewrites `animacje`, `kosci`,
    `glowy`, `lokomocja` from the rig (a rig edit needs only `install`), re-applies

@@ -49,7 +49,7 @@
       <option value="X">X cisza</option><option value="M">M m b p</option><option value="A">A a</option><option value="E">E e</option>
       <option value="I">I i y</option><option value="O">O o</option><option value="U">U u ó w</option><option value="S">S s z c sz cz</option>
       <option value="F">F f</option><option value="L">L l t d n …</option></select></label> <b id="mowaTeraz" style="color:#ffb347"></b></div>
-  <div class="wiersz"><label title="przewija wszystkie usta i oczy po kolei (0 = jak animacja); różowy krzyżyk = punkt noska celu - nosek każdego wariantu ma na nim stać">twarz <input type="range" id="twarzPoz" min="0" max="0" step="1" value="0" style="width:120px"></label> <b id="twarzNazwa" style="color:#ff7ab6"></b></div>
+  <div class="wiersz"><label title="przewija wszystkie usta i oczy po kolei (0 = jak animacja). Z zaznaczonym celem ust/oczu strzałki i przeciąganie przesuwają TYLKO pokazany wariant">twarz <input type="range" id="twarzPoz" min="0" max="0" step="1" value="0" style="width:120px"></label> <b id="twarzNazwa" style="color:#ff7ab6"></b></div>
   <div class="wiersz"><label title="A/B: wyłączone = sztywna wycinanka jak dotąd"><input type="checkbox" id="zginanie" checked> zginanie</label>
     <label title="siatka kończyn"><input type="checkbox" id="druty"> siatka</label>
     <button id="zeruj" title="zeruj ręczne zgięcia">zeruj zgięcia</button></div>
@@ -285,15 +285,14 @@ function pozycjeTwarzy() {
   const z = lalki[0]?.twarze?.przod; if (!z) return [null];
   return [null, ...Object.keys(z.usta).map((u) => ({ usta: u, oczy: "otwarte", co: `usta: ${u}` })), ...Object.keys(z.oczy).map((o) => ({ oczy: o, usta: "zamkniete", co: `oczy: ${o}` }))];
 }
-$("twarzPoz").oninput = () => { $("twarzPoz").max = pozycjeTwarzy().length - 1; requestAnimationFrame(() => rysujNakladke()); };
+$("twarzPoz").oninput = () => { $("twarzPoz").max = pozycjeTwarzy().length - 1; requestAnimationFrame(() => { rysujNakladke(); pokazPola(); }); };
 $("twarzPoz").onfocus = () => { $("twarzPoz").max = pozycjeTwarzy().length - 1; };
-// the target's nose point (twarz[view].usta.nos, frame px from the box corner) in world space
-function nosCelu(L, widok) {
-  const cel = dane.twarz?.[widok]?.usta; if (!cel?.nos) return null;
-  const gt = L.twarzeGrupy[widok]?.children.find((o) => o.userData.cel === "usta"); if (!gt) return null;
-  const s = L._skala(widok === "profil" ? "profil" : "przod");
-  gt.updateWorldMatrix(true, false);
-  return new THREE.Vector3((cel.nos[0] - cel.w / 2) * s, -(cel.nos[1] - cel.h / 2) * s, 0.6).applyMatrix4(gt.matrixWorld);
+// with the slider on and a face target selected: the piece of the variant shown (it takes the moves, not the target)
+function wariantTwarzy() {
+  const poz = pozycjeTwarzy()[+$("twarzPoz").value];
+  if (!poz || !wybor?.twarz) return null;
+  const n = `${wybor.twarz}_${poz[wybor.twarz]}${{ przod: "", bok: "_bok", profil: "_profil" }[wybor.widok]}`;
+  return dane.czesci[n] ? n : null;
 }
 // ------------------------------------------------------------ wybor i nakladka
 function widokElementu(nazwa) {
@@ -324,11 +323,10 @@ function rysujNakladke() {
     nakladka.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(x - KOL / 2, y, 0.5), new THREE.Vector3(x + KOL / 2, y, 0.5)]),
       new THREE.LineBasicMaterial({ color: 0x4a4a4a })));
   }
-  if (+$("twarzPoz").value > 0) for (const L of lalki) for (const w of ["przod", "bok", "profil"]) { const p = nosCelu(L, w); if (p) nakladka.add(krzyz(p, 0xff40a0, 0.05)); }
   if (!wybor) return;
   const L = lalki[wybor.kolumna];
   if (wybor.twarz) {
-    const pn = wybor.twarz === "usta" && nosCelu(L, wybor.widok); if (pn) nakladka.add(krzyz(pn, 0xff40a0, 0.05));
+
     const cel = dane.twarz[wybor.widok][wybor.twarz], s = L._skala(wybor.widok === "profil" ? "profil" : "przod");
     const gt = L.twarzeGrupy[wybor.widok]?.children.find((o) => o.userData.cel === wybor.twarz);
     if (!gt) return;
@@ -397,13 +395,10 @@ function pokazPola() {
   const cel = wybor.twarz ? dane.twarz[wybor.widok][wybor.twarz] : dane.czesci[wybor.nazwa];
   let pola = wybor.twarz ? [["x", cel, "x"], ["y", cel, "y"], ["w", cel, "w"], ["h", cel, "h"], ["obrót", cel, "obrot"]]
     : [["x", cel, "x"], ["y", cel, "y"], ["w", cel, "w"], ["h", cel, "h"], ...osPola(cel), ["obrót", cel, "obrot"]];
-  if (wybor.twarz === "usta" && cel.nos) {
-    // the nose point of the target, and of the mouth shown now (nos_punkt.py): the piece is placed so they meet
-    pola = [...pola, ["nos x", cel.nos, 0], ["nos y", cel.nos, 1]];
-    const z = lalki[wybor.kolumna]?.twarze?.[wybor.widok]?.usta || {};
-    const teraz = Object.entries(z).find(([, m]) => m.visible)?.[0], suf = { przod: "", bok: "_bok", profil: "_profil" }[wybor.widok];
-    const cz = teraz && dane.czesci[`usta_${teraz}${suf}`];
-    if (cz?.nos) pola = [...pola, [`nos ust ${teraz} x`, cz.nos, "x"], [`nos ust ${teraz} y`, cz.nos, "y"]];
+  const wn = wariantTwarzy();
+  if (wn) {
+    const cz = dane.czesci[wn], p = () => (cz.przesun ||= [0, 0]);
+    pola = [...pola, [`${wn} dx`, cz.przesun || [0, 0], 0, p], [`${wn} dy`, cz.przesun || [0, 0], 1, p]];
   }
   for (const [etyk, obj, klucz, przed] of pola) {
     const lab = document.createElement("label"); lab.textContent = etyk;
@@ -472,7 +467,9 @@ function cofnij() {
 function zaznaczZmiane() { zmieniono = true; $("zmiany").textContent = "niezapisane zmiany"; }
 function przesun(dx, dy, tylkoOs = false) {
   if (!wybor) return;
-  if (wybor.twarz) { const c = dane.twarz[wybor.widok][wybor.twarz]; c.x += dx; c.y += dy; }
+  const wn = wariantTwarzy();
+  if (wn) { const p = (dane.czesci[wn].przesun ||= [0, 0]); p[0] += dx; p[1] += dy; }
+  else if (wybor.twarz) { const c = dane.twarz[wybor.widok][wybor.twarz]; c.x += dx; c.y += dy; }
   else {
     const cz = dane.czesci[wybor.nazwa];
     if (!cz.os && [dane.glowy?.bok, dane.glowy?.tyl].includes(wybor.nazwa) && dane.czesci.glowa?.os) cz.os = [...dane.czesci.glowa.os];   // own pivot from now on
