@@ -44,6 +44,11 @@ bendable limbs, merged back as 151b815 and no longer needed.
 
 ## 2. The product
 
+- **The browser is the dev build** (the user, 2026-10-30): the target is the app stores (Google Play, App Store,
+  Steam), native or wrapped - not decided, not now. The three.js/HTML game is the reference a later "port to native"
+  (TDD, by an agent) follows. Now: mechanics, content, organisation; technology only so far as it lets us do what we
+  want. Performance fixes never at the cost of quality.
+
 - A maths game for children 3-6 (Polish first, English too) on a landscape tablet, 4:3..16:9; the safe area is 4:3
   (12 x 9 units) in the middle, the background scaled to a fixed 16:9 design frame around it (never to the viewport).
 - Production: https://matematyka.cubeproject.pl = the `game/` folder as the domain root (the user deploys it
