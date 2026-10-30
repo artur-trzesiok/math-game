@@ -74,6 +74,11 @@ export default {
         await c.ujecie("zblizenie", { na: "lisek" });
         await c.emocja("lisek", "wykrzyknik", { anim: "Smutek" });
         await c.say("lisek", "line.a_wiatr_plan");
+        await c.ujecie("ogolny");                                            // the pieces in the grass first
+        await c.say("wiewiorka", "line.a_szukaj_planu");
+        const wp = await c.szukaj("kawalki_planu", { y: 0.3, size: 6.0, luneta: false });
+        await c.say("lisek", "line.a_mamy_plan", { anim: "Radosc" });
+        wp.remove();
         await c.ujecie("ogolny");                                            // the pieces land over the wide scene
         await c.say("wiewiorka", "line.a_posklejaj");
         const plan = await c.podarty("plan_windy", { kawalki: 4 });

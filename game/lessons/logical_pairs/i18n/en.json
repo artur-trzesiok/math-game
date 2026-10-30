@@ -96,7 +96,15 @@
   },
   "line.b_zdjecie": {
     "who": "bobr",
-    "text": "Mole, your old photo was lying on the shelf. Oh dear, the storm tore it!"
+    "text": "Mole, your old photo was lying on the shelf. Oh dear, the storm tore it and blew it all over the workshop!"
+  },
+  "line.b_szukaj_zdjecia": {
+    "who": "sarenka",
+    "text": "First look for the pieces of the photo on the floor and touch each one."
+  },
+  "line.b_mamy_zdjecie": {
+    "who": "kret",
+    "text": "They're all here! Good thing you can see them."
   },
   "line.b_posklejaj": {
     "who": "sarenka",

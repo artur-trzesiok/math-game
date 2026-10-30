@@ -170,9 +170,9 @@
   "text": "Chyba moje... Ale słabo widzę i nie jestem pewien."
  },
  "line.b_zdjecie": {
-  "hash": "b79809b90d7f",
+  "hash": "45f761b11aa3",
   "who": "bobr",
-  "text": "Krecie, na półce leżało twoje stare zdjęcie. Ojej, burza je podarła!"
+  "text": "Krecie, na półce leżało twoje stare zdjęcie. Ojej, burza je podarła i rozrzuciła po warsztacie!"
  },
  "line.b_zdjecie_co": {
   "hash": "315df64d3a28",
@@ -398,5 +398,15 @@
   "hash": "cc56bbcd4e4c",
   "who": "kret",
   "text": "To ja, przed moją norką! Pamiętam ten dzień."
+ },
+ "line.b_szukaj_zdjecia": {
+  "hash": "ab6c7f50f53a",
+  "who": "sarenka",
+  "text": "Najpierw poszukaj kawałków zdjęcia na podłodze i dotknij każdego."
+ },
+ "line.b_mamy_zdjecie": {
+  "hash": "ec79673ffe4d",
+  "who": "kret",
+  "text": "Są wszystkie! Dobrze, że ty je widzisz."
  }
 }

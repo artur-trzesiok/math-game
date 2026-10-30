@@ -103,7 +103,15 @@
   },
   "line.b_kartka": {
     "who": "sarenka",
-    "text": "The wind blew something in... It's a map of the forest! Oh no, it tore on a branch."
+    "text": "The wind blew something in... It's a map of the forest! Oh no, it tore, and the pieces are scattered in the leaves."
+  },
+  "line.b_szukaj_mapy": {
+    "who": "wiewiorka",
+    "text": "Look for the pieces of the map among the leaves and touch each one."
+  },
+  "line.b_mamy_mapy": {
+    "who": "sarenka",
+    "text": "We've got all the pieces!"
   },
   "line.b_mapa_plan": {
     "who": "wiewiorka",

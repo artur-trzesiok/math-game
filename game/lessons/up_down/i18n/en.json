@@ -29,7 +29,15 @@
   },
   "line.a_wiatr_plan": {
     "who": "lisek",
-    "text": "Oh no! The wind pulled the plan out of my paw and tore it to pieces!"
+    "text": "Oh no! The wind pulled the plan out of my paw, tore it and blew it all over the orchard!"
+  },
+  "line.a_szukaj_planu": {
+    "who": "wiewiorka",
+    "text": "Look for the pieces of the plan in the grass and touch each one."
+  },
+  "line.a_mamy_plan": {
+    "who": "lisek",
+    "text": "All the pieces are here! Thank you!"
   },
   "line.a_posklejaj": {
     "who": "wiewiorka",

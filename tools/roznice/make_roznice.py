@@ -58,6 +58,39 @@ on the floor, a red ball, a round rug, a window with green curtains, a picture o
 {STYL}""",
         "zmiany": ["the red toy car on the shelf is GONE", "the red ball is GONE", "the boat picture shows a HOUSE instead"],
     },
+    # grouping: the torn pieces of the forest map scattered on the forest floor
+    "kawalki_mapy": {
+        "obraz": f"""A square picture of a forest floor seen from close above: fallen autumn leaves in red, orange and yellow, a
+fern, three pinecones, a small brown mushroom, a mossy root, a twig, a patch of green moss and a few acorns. Lots of
+small details, everything well apart.
+{STYL}""",
+        "zmiany": ["a torn scrap of old yellowed map paper with tiny painted trees and part of a dotted path on it lies among the leaves",
+                   "a torn scrap of old yellowed map paper with a bit of a small blue pond painted on it is half hidden under the fern",
+                   "a torn scrap of old yellowed map paper with a painted red dotted path on it leans against the mushroom",
+                   "a torn scrap of old yellowed map paper with a painted little oak tree on it lies on the moss by the root"],
+    },
+    # logical_pairs: the torn pieces of Mole's photo scattered over the workshop floor by the storm
+    "kawalki_zdjecia": {
+        "obraz": f"""A square picture of a cosy wooden workshop floor seen from close above: wooden planks, curly wood shavings, a
+small saw, a tin of nails, a paint brush, a coil of string, a wooden bucket, a few screws and a rag. Lots of small
+details, everything well apart.
+{STYL}""",
+        "zmiany": ["a torn scrap of an old photo with green grass and a red apple on it lies among the wood shavings",
+                   "a torn scrap of an old photo with a bit of dark grey fur and a pink paw on it peeks out from under the rag",
+                   "a torn scrap of an old photo with a wooden hammer handle on it lies beside the tin of nails",
+                   "a torn scrap of an old photo with blue sky and a white cloud on it leans against the bucket"],
+    },
+    # up_down: the torn pieces of Fox's lift plan blown into the orchard grass
+    "kawalki_planu": {
+        "obraz": f"""A square picture of orchard grass seen from close above: fallen red apples, green leaves, a little wicker basket
+on its side, the foot of a wooden ladder, a tree root, a few daisies and a snail. Lots of small details, everything
+well apart.
+{STYL}""",
+        "zmiany": ["a torn scrap of squared paper with a pencil drawing of a brown tree trunk on it lies in the grass between the apples",
+                   "a torn scrap of squared paper with a pencil drawing of a round wheel on it is caught under the ladder foot",
+                   "a torn scrap of squared paper with a pencil drawing of a long rope on it lies beside the basket",
+                   "a torn scrap of squared paper with a pencil drawing of a small basket on it lies by the tree root"],
+    },
     # complete_shape: the torn pieces of Owl's picture hidden in the meadow, found through her spyglass
     "luneta_kawalki": {
         "obraz": f"""A square picture of a sunny meadow seen from close above: tall green grass, a few dandelions and daisies, a

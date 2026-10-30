@@ -250,9 +250,9 @@
   "text": "Winda gotowa, tak jak na planie: kółko na górze, koszyk na dole."
  },
  "line.a_wiatr_plan": {
-  "hash": "6bef37f9841e",
+  "hash": "841e03e8d4d7",
   "who": "lisek",
-  "text": "Ojej! Wiatr wyrwał mi plan z łapki i podarł go na kawałki!"
+  "text": "Ojej! Wiatr wyrwał mi plan z łapki, podarł go i porozrzucał po sadzie!"
  },
  "line.a_posklejaj": {
   "hash": "ecb09ef8123e",
@@ -423,5 +423,15 @@
   "hash": "15f4114bf4e9",
   "who": "wiewiorka",
   "text": "Tak, koszyk z jabłkami jest teraz wyżej niż balonik."
+ },
+ "line.a_szukaj_planu": {
+  "hash": "76fb2812ccb8",
+  "who": "wiewiorka",
+  "text": "Poszukaj kawałków planu w trawie i dotknij każdego."
+ },
+ "line.a_mamy_plan": {
+  "hash": "1bf42d49e398",
+  "who": "lisek",
+  "text": "Są wszystkie kawałki! Dziękuję!"
  }
 }

@@ -236,6 +236,11 @@ export default {
         c.czastki("liscie", { wiatr: 2.2, gestosc: 1.4 }); c.sfx("whoosh");
         await c.say("sarenka", "line.b_kartka", { anim: "Podskok" });
         c.czastki("liscie", { wiatr: 0.6 });
+        await c.ujecie("ogolny");                                                // first the pieces, hidden in the leaves
+        await c.say("wiewiorka", "line.b_szukaj_mapy");
+        const wm = await c.szukaj("kawalki_mapy", { y: 0.3, size: 6.0, luneta: false });
+        await c.say("sarenka", "line.b_mamy_mapy", { anim: "Radosc" });
+        wm.remove();
         await c.ujecie("ogolny");                                                // the torn map: a task, wide
         await c.say("wiewiorka", "line.b_poskladaj");
         const mapa = await c.podarty("mapa_lasu", { kawalki: 4 });

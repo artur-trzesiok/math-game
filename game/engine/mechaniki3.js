@@ -308,7 +308,8 @@ export function domino(S, a, b, { x = 0, y = 0.8, size = 2.4, pozioma = false } 
 // One picture of a roznice pair (tools/roznice: the second picture, `b`, has the hidden things; its found areas are
 // where they hide), shown big in a round spyglass view with a dark rim; the child taps each hidden thing - it gets a
 // pencil ring and a tick in the count of empty circles at the side. szukaj(S, nazwa) -> {remove}. Tests: S.szukaj.dokoncz().
-// `luneta: false` - the same search on a plain picture in a paper frame (pieces in the grass need no spyglass).
+// `luneta: false` - the same search on a plain picture in a paper frame over the dimmed scene, like a found picture
+// (pieces in the grass need no spyglass): it makes room for the characters and stays where the scene is.
 export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, luneta = true } = {}) {
   const kat = `/game/assets/roznice/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
@@ -317,18 +318,27 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, lun
   const om = await fetch(v("/game/assets/objects/luneta_obwodka.json"), { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   const ramaZew = size / 2 + 0.36;
   if (luneta && om?.wew) size = ramaZew * om.wew * 2 + 0.08;
-  const grp = new THREE.Group(); grp.position.set(0, y, 0.3); S.scene.add(grp);
+  const RO = luneta ? 0 : 28.6;                                                   // a plain picture lies over the characters
+  let gx = 0, welon = null, wroc = null;
+  if (!luneta) {
+    const m = miejsceNaObraz(S, size + 0.32); size *= m.k; gx = m.cx;              // the count in a row under it
+    wroc = odsun(S, gx - size / 2 - 0.4, gx + size / 2 + 0.4);
+    welon = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), new THREE.MeshBasicMaterial({ color: "#1d1a17", transparent: true, opacity: 0, depthWrite: false }));
+    welon.position.set(0, 0, 0.42); welon.renderOrder = 38; S.scene.add(welon);
+    S.tween(0.35, (s) => { welon.material.opacity = 0.58 * s; });
+  }
+  const grp = new THREE.Group(); grp.position.set(gx, y, luneta ? 0.3 : 0.45); S.scene.add(grp);
   const obraz = new THREE.Mesh(luneta ? new THREE.CircleGeometry(size / 2, 96) : new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false }));
   const uv = obraz.geometry.attributes.uv, pos = obraz.geometry.attributes.position;          // the square picture seen through a circle
   for (let i = 0; i < uv.count; i++) uv.setXY(i, 0.5 + pos.getX(i) / size, 0.5 + pos.getY(i) / size);
   const brzeg = new THREE.Mesh(new THREE.RingGeometry(size / 2, size / 2 + 0.28, 96), new THREE.MeshBasicMaterial({ color: "#6b4a2a", transparent: true, depthWrite: false }));
   const brzeg2 = new THREE.Mesh(new THREE.RingGeometry(size / 2 + 0.28, size / 2 + 0.36, 96), new THREE.MeshBasicMaterial({ color: "#c9a25a", transparent: true, depthWrite: false }));
-  obraz.renderOrder = 9.9; brzeg.renderOrder = 10; brzeg2.renderOrder = 10; grp.add(obraz);
+  obraz.renderOrder = 9.9 + RO; brzeg.renderOrder = 10; brzeg2.renderOrder = 10; grp.add(obraz);
   if (luneta) grp.add(brzeg, brzeg2);
   else {                                                                              // a picture on paper, like a found picture
     const rama = new THREE.Mesh(new THREE.PlaneGeometry(size + 0.32, size + 0.32), new THREE.MeshBasicMaterial({ color: "#fffaf0", transparent: true, depthWrite: false }));
     const cien = new THREE.Mesh(new THREE.PlaneGeometry(size + 0.32, size + 0.32), new THREE.MeshBasicMaterial({ color: "#000000", transparent: true, opacity: 0.28, depthWrite: false }));
-    rama.position.z = -0.01; cien.position.set(0.14, -0.16, -0.02); rama.renderOrder = 9.8; cien.renderOrder = 9.7; grp.add(cien, rama);
+    rama.position.z = -0.01; cien.position.set(0.14, -0.16, -0.02); rama.renderOrder = 9.8 + RO; cien.renderOrder = 9.7 + RO; grp.add(cien, rama);
   }
   // the painted eyepiece ring (tools/objects/make_luneta_obwodka.py) over the drawn one, its hole fitted to the view
   let ramaR = luneta ? size / 2 + 0.36 : size / 2 + 0.16;
@@ -338,9 +348,9 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, lun
     const ob = new THREE.Mesh(new THREE.PlaneGeometry(P, P), new THREE.MeshBasicMaterial({ map: await texture("/game/assets/objects/luneta_obwodka.webp"), transparent: true, depthWrite: false }));
     ob.renderOrder = 10; grp.remove(brzeg, brzeg2); grp.add(ob); ramaR = P / 2;
   }
-  const h = { mesh: grp, kind: "szukaj", name: "luneta_widok", base: 1, remove: () => { S.scene.remove(grp); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
+  const h = { mesh: grp, kind: "szukaj", name: "luneta_widok", base: 1, remove: () => { S.scene.remove(grp); if (welon) S.scene.remove(welon); wroc?.then((f) => f()); const i = S.objects.indexOf(h); if (i >= 0) S.objects.splice(i, 1); } };
   S.objects.push(h);
-  const punkt = (r) => [(r.x - 0.5) * size, y + (0.5 - r.y) * size];
+  const punkt = (r) => [gx + (r.x - 0.5) * size, y + (0.5 - r.y) * size];
   // inside the circle only: a hidden thing in the square's corner would be unseen
   const rzeczy = meta.roznice.filter((r) => !luneta || Math.hypot(r.x - 0.5, r.y - 0.5) < 0.47);
   // the count: empty circles at the side, filled one by one
@@ -348,10 +358,11 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, lun
   for (let i = 0; i < rzeczy.length; i++) {
     // on the painted ring: set into its right arc like gems (no room beside it for a column and a character in 4:3)
     const luk = luneta && om?.wew ? ramaR * (om.wew + (1 - om.wew) * 0.64) : 0, kat = ((rzeczy.length - 1) / 2 - i) * 0.27;
-    const ky = luk ? y + Math.sin(kat) * luk : y + ((rzeczy.length - 1) / 2 - i) * 0.62, kx = luk ? Math.cos(kat) * luk : Math.min(ramaR + 0.5, 5.6);
+    const ky = luk ? y + Math.sin(kat) * luk : luneta ? y + ((rzeczy.length - 1) / 2 - i) * 0.62 : y - size / 2 - 0.55;
+    const kx = luk ? Math.cos(kat) * luk : luneta ? Math.min(ramaR + 0.5, 5.6) : (i - (rzeczy.length - 1) / 2) * 0.66;
     const k = new THREE.Mesh(new THREE.CircleGeometry(0.24, 32), new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, depthWrite: false }));
     const o = new THREE.Mesh(new THREE.RingGeometry(0.24, 0.3, 32), new THREE.MeshBasicMaterial({ color: "#3a332d", transparent: true, depthWrite: false }));
-    k.position.set(kx, ky - y, 0.01); o.position.set(kx, ky - y, 0.02); k.renderOrder = o.renderOrder = 10.2; grp.add(k, o); licznik.push(k);
+    k.position.set(kx, ky - y, 0.01); o.position.set(kx, ky - y, 0.02); k.renderOrder = o.renderOrder = 10.2 + RO; grp.add(k, o); licznik.push(k);
   }
   const cele = rzeczy.map((r, k) => {
     const [px, py] = punkt(r), rr = Math.max(0.4, r.r * size);
@@ -363,7 +374,7 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, lun
   const kolo = ([cx, cy], r) => Array.from({ length: 41 }, (_, j) => { const a = j / 40 * Math.PI * 2 + 0.6; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.92]; });
   const znajdz = async (hit) => {
     znalezione.add(hit.nr); S.sfx.graj("right");
-    kolka.push(await S.line(kolo(hit.p, hit.r), { color: "#e8502e", width: 0.09, duration: 0.3, strong: true }));
+    kolka.push(await S.line(kolo(hit.p, hit.r), { color: "#e8502e", width: 0.09, duration: 0.3, strong: true, warstwa: luneta ? 11 : 39.6 }));
     const k = licznik[znalezione.size - 1]; k.material.color.set("#f2b632"); S.bump({ mesh: k, base: 1 }, 0.3, false);
   };
   Object.defineProperty(S, "zachetaCel", { configurable: true, get: () => cele.find((c) => !znalezione.has(c.nr)) || null });
@@ -386,15 +397,23 @@ export async function szukaj(S, nazwa, { y = 0.25, size = 5.6, ikona = null, lun
 // a big picture over the scene: every character it would cover steps aside to the nearer side, its whole body inside
 // the 4:3 safe area (x -6..6); returns a function that walks them back (only those still where they stepped to)
 export async function odsun(S, x0, x1) {
-  const SAFE = 6, wroc = [];
-  await Promise.all(Object.entries(S.puppets).map(async ([n, L]) => {
-    if (!L.korzen.visible) return;
-    const b = S.bounds(L), x = L.korzen.position.x, lewo = x - b.left, prawo = b.right - x;
-    if (b.right < x0 + 0.25 || b.left > x1 - 0.25) return;                      // not covered
-    const cel = x < (x0 + x1) / 2 ? Math.max(-SAFE + lewo, x0 - prawo - 0.15) : Math.min(SAFE - prawo, x1 + lewo + 0.15);
-    if (Math.abs(cel - x) < 0.05) return;
-    wroc.push([n, L, x, cel]); await S.walkTo(n, cel);
-  }));
+  // a side with someone covered is repacked from the safe edge inwards, side by side (two characters on one side
+  // used to end up on top of each other)
+  const SAFE = 6, ZAKLAD = 0.95, wroc = [], ruchy = [], mid = (x0 + x1) / 2;
+  const widoczne = Object.entries(S.puppets).filter(([, L]) => L.korzen.visible && Math.abs(L.korzen.position.x) < SAFE + 1)
+    .map(([n, L]) => { const b = S.bounds(L), x = L.korzen.position.x; return { n, L, x, b, lewo: x - b.left, prawo: b.right - x }; });
+  for (const strona of [-1, 1]) {
+    const ci = widoczne.filter((p) => Math.sign(p.x - mid || -1) === strona).sort((a, b) => strona * (b.x - a.x));   // outermost first
+    if (!ci.some((p) => p.b.right > x0 + 0.25 && p.b.left < x1 - 0.25)) continue;
+    let brzeg = strona * SAFE;
+    for (const p of ci) {
+      const cel = strona < 0 ? brzeg + p.lewo : brzeg - p.prawo;
+      brzeg = strona < 0 ? cel + p.prawo * ZAKLAD : cel - p.lewo * ZAKLAD;
+      if (Math.abs(cel - p.x) < 0.05) continue;
+      wroc.push([p.n, p.L, p.x, cel]); ruchy.push(S.walkTo(p.n, cel));
+    }
+  }
+  await Promise.all(ruchy);
   return () => Promise.all(wroc.map(([n, L, x, cel]) => (Math.abs(L.korzen.position.x - cel) < 1e-3 ? S.walkTo(n, x) : null)));
 }
 
@@ -405,7 +424,7 @@ export function miejsceNaObraz(S, szer) {
   for (const L of Object.values(S.puppets)) {
     if (!L.korzen.visible || Math.abs(L.korzen.position.x) > SAFE + 1) continue;
     const b = S.bounds(L), w = b.right - b.left;
-    if (L.korzen.position.x < 0) lewa = Math.max(lewa, -SAFE + w + 0.15); else prawa = Math.min(prawa, SAFE - w - 0.15);
+    if (L.korzen.position.x < 0) lewa += w * 0.95 + 0.15; else prawa -= w * 0.95 + 0.15;   // characters on one side stand side by side
   }
   const k = Math.max(0.6, Math.min(1, (prawa - lewa) / szer)), pol = szer * k / 2;
   return { k, cx: Math.max(lewa + pol, Math.min(prawa - pol, 0)) };

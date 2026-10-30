@@ -250,9 +250,9 @@
   "text": "The lift is ready, just like the plan: the wheel at the top, the basket at the bottom."
  },
  "line.a_wiatr_plan": {
-  "hash": "ed1c5cc287f0",
+  "hash": "b1154b48a843",
   "who": "lisek",
-  "text": "Oh no! The wind pulled the plan out of my paw and tore it to pieces!"
+  "text": "Oh no! The wind pulled the plan out of my paw, tore it and blew it all over the orchard!"
  },
  "line.a_posklejaj": {
   "hash": "681c6daa6f98",
@@ -423,5 +423,15 @@
   "hash": "8f990bf5c754",
   "who": "wiewiorka",
   "text": "Yes, the basket of apples is higher than the balloon now."
+ },
+ "line.a_szukaj_planu": {
+  "hash": "ccb64fc9ad6f",
+  "who": "wiewiorka",
+  "text": "Look for the pieces of the plan in the grass and touch each one."
+ },
+ "line.a_mamy_plan": {
+  "hash": "ffcdcf2e6591",
+  "who": "lisek",
+  "text": "All the pieces are here! Thank you!"
  }
 }

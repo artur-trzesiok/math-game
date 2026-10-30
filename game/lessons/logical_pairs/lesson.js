@@ -109,6 +109,11 @@ export default {
         await c.ujecie("dwuujecie", { na: ["bobr", "sarenka"] });                // the find, and what to do with it
         await c.emocja("bobr", "wykrzyknik");
         await c.say("bobr", "line.b_zdjecie");
+        await c.ujecie("ogolny");                                                // the pieces on the floor first
+        await c.say("sarenka", "line.b_szukaj_zdjecia");
+        const wz = await c.szukaj("kawalki_zdjecia", { y: 0.3, size: 6.0, luneta: false });
+        await c.say("kret", "line.b_mamy_zdjecie", { anim: "Radosc" });
+        wz.remove();
         await c.say("sarenka", "line.b_posklejaj");
         await c.ujecie("ogolny");                                                // a found picture flies with the camera: wide first
         const foto = await c.podarty("zdjecie_kreta", { kawalki: 4 });

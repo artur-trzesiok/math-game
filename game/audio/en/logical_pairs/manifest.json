@@ -170,9 +170,9 @@
   "text": "Mine, I think... But I can't see very well, and I'm not sure."
  },
  "line.b_zdjecie": {
-  "hash": "0a037afce513",
+  "hash": "ded18a530cf8",
   "who": "bobr",
-  "text": "Mole, your old photo was lying on the shelf. Oh dear, the storm tore it!"
+  "text": "Mole, your old photo was lying on the shelf. Oh dear, the storm tore it and blew it all over the workshop!"
  },
  "line.b_zdjecie_co": {
   "hash": "26f3d7e794f9",
@@ -398,5 +398,15 @@
   "hash": "137edde98415",
   "who": "kret",
   "text": "That's me, in front of my burrow! I remember that day."
+ },
+ "line.b_szukaj_zdjecia": {
+  "hash": "1303d92c2be5",
+  "who": "sarenka",
+  "text": "First look for the pieces of the photo on the floor and touch each one."
+ },
+ "line.b_mamy_zdjecie": {
+  "hash": "612a89b21e98",
+  "who": "kret",
+  "text": "They're all here! Good thing you can see them."
  }
 }

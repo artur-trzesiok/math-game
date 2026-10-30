@@ -96,7 +96,15 @@
   },
   "line.b_zdjecie": {
     "who": "bobr",
-    "text": "Krecie, na półce leżało twoje stare zdjęcie. Ojej, burza je podarła!"
+    "text": "Krecie, na półce leżało twoje stare zdjęcie. Ojej, burza je podarła i rozrzuciła po warsztacie!"
+  },
+  "line.b_szukaj_zdjecia": {
+    "who": "sarenka",
+    "text": "Najpierw poszukaj kawałków zdjęcia na podłodze i dotknij każdego."
+  },
+  "line.b_mamy_zdjecie": {
+    "who": "kret",
+    "text": "Są wszystkie! Dobrze, że ty je widzisz."
   },
   "line.b_posklejaj": {
     "who": "sarenka",

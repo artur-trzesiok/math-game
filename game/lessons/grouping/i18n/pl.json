@@ -103,7 +103,15 @@
   },
   "line.b_kartka": {
     "who": "sarenka",
-    "text": "Wiatr coś przywiał... To mapa lasu! Ojej, podarła się na gałęzi."
+    "text": "Wiatr coś przywiał... To mapa lasu! Ojej, podarła się, a kawałki rozsypały się w liściach."
+  },
+  "line.b_szukaj_mapy": {
+    "who": "wiewiorka",
+    "text": "Poszukaj kawałków mapy wśród liści i dotknij każdego."
+  },
+  "line.b_mamy_mapy": {
+    "who": "sarenka",
+    "text": "Mamy wszystkie kawałki!"
   },
   "line.b_mapa_plan": {
     "who": "wiewiorka",

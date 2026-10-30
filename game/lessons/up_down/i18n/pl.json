@@ -29,7 +29,15 @@
   },
   "line.a_wiatr_plan": {
     "who": "lisek",
-    "text": "Ojej! Wiatr wyrwał mi plan z łapki i podarł go na kawałki!"
+    "text": "Ojej! Wiatr wyrwał mi plan z łapki, podarł go i porozrzucał po sadzie!"
+  },
+  "line.a_szukaj_planu": {
+    "who": "wiewiorka",
+    "text": "Poszukaj kawałków planu w trawie i dotknij każdego."
+  },
+  "line.a_mamy_plan": {
+    "who": "lisek",
+    "text": "Są wszystkie kawałki! Dziękuję!"
   },
   "line.a_posklejaj": {
     "who": "wiewiorka",

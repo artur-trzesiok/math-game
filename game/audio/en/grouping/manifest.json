@@ -390,9 +390,9 @@
   "text": "Oh, the forest is so big. Which way now?"
  },
  "line.b_kartka": {
-  "hash": "b48c6b8744b0",
+  "hash": "1f821313b802",
   "who": "sarenka",
-  "text": "The wind blew something in... It's a map of the forest! Oh no, it tore on a branch."
+  "text": "The wind blew something in... It's a map of the forest! Oh no, it tore, and the pieces are scattered in the leaves."
  },
  "line.b_mapa_plan": {
   "hash": "59579f10e086",
@@ -633,5 +633,15 @@
   "hash": "6038be4e80a0",
   "who": "sarenka",
   "text": "Now that's real tidiness!"
+ },
+ "line.b_szukaj_mapy": {
+  "hash": "ad8b93db6f25",
+  "who": "wiewiorka",
+  "text": "Look for the pieces of the map among the leaves and touch each one."
+ },
+ "line.b_mamy_mapy": {
+  "hash": "9b74895ab0b2",
+  "who": "sarenka",
+  "text": "We've got all the pieces!"
  }
 }

@@ -390,9 +390,9 @@
   "text": "Ojej, las jest taki wielki. Którędy teraz iść?"
  },
  "line.b_kartka": {
-  "hash": "4e6014e5d652",
+  "hash": "b5f5496e1030",
   "who": "sarenka",
-  "text": "Wiatr coś przywiał... To mapa lasu! Ojej, podarła się na gałęzi."
+  "text": "Wiatr coś przywiał... To mapa lasu! Ojej, podarła się, a kawałki rozsypały się w liściach."
  },
  "line.b_mapa_plan": {
   "hash": "dadfc40c448e",
@@ -633,5 +633,15 @@
   "hash": "0adab01f3fdc",
   "who": "sarenka",
   "text": "Teraz to jest prawdziwy porządek!"
+ },
+ "line.b_szukaj_mapy": {
+  "hash": "204850d388b9",
+  "who": "wiewiorka",
+  "text": "Poszukaj kawałków mapy wśród liści i dotknij każdego."
+ },
+ "line.b_mamy_mapy": {
+  "hash": "b0db65c522be",
+  "who": "sarenka",
+  "text": "Mamy wszystkie kawałki!"
  }
 }
