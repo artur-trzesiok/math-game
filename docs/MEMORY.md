@@ -399,6 +399,11 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   spot_difference stopped loading, `Unexpected token ','`). After scripted edits run a module syntax check of every
   lesson and engine file (copy to .mjs, `node --check`) - a bad lesson.js breaks only that lesson, silently.
 
+- **A spoken line must never hang the game** (2026-10-31, iPad: the gate show stopped under Fox's speaking head, nothing
+  answered). `speech.say` ends a line by a text-length guess until the recording's duration arms the real timer, and
+  the tap-to-play button (`#dotknij`) sits over every overlay (it lay under the padlock show's, z 80). The iPad's
+  refusal to play is likely the same as the missing menu music - see `?dzwiek`.
+
 ## 8. Open, not started
 - iPad: no menu music (2026-10-31, the user). `?dzwiek` shows the music element, the Web Audio context and the iOS
   audio session; suspect `navigator.audioSession.type = "playback"` / the effects' AudioContext (sfx.js, since 4d97d69f).

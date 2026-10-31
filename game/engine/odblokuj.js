@@ -30,7 +30,7 @@ export const CISZA = (() => {
 export function poprosODotyk(fn) {
   if (document.getElementById("dotknij")) return;
   const el = document.createElement("div"); el.id = "dotknij";
-  el.style.cssText = "position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:rgba(10,10,20,.35)";
+  el.style.cssText = "position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(10,10,20,.35)";
   el.innerHTML = '<button aria-label="graj" style="width:min(160px,22vh);height:min(160px,22vh);border-radius:50%;border:0;background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.35)"><svg viewBox="0 0 10 10" style="width:55%;margin-left:10%"><path d="M3 2 L8 5 L3 8 Z" fill="#2a4a6a"/></svg></button>';
   el.addEventListener("click", () => { el.remove(); fn(); }, { once: true });
   document.body.appendChild(el);

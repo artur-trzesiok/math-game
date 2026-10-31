@@ -102,8 +102,10 @@ export class Speech {
         if (!this.current.envelope) this.current.live = attachAnalyser(a);
         subtitle(FORCE_SUBS);
         await new Promise((ok, bad) => {
-          let timer = null;
-          const end = () => { clearTimeout(timer); document.removeEventListener("visibilitychange", vis); ok(); };
+          // a line never hangs: until the recording says how long it is, a guess from the text ends it (iPad: a play that
+          // neither starts nor fails froze the padlock show under Fox's head)
+          let timer = setTimeout(() => end(), (8 + text.length * 0.1) * 1000);
+          const end = () => { clearTimeout(timer); document.removeEventListener("visibilitychange", vis); document.getElementById("dotknij")?.remove(); ok(); };
           const arm = () => { clearTimeout(timer); timer = setTimeout(end, ((a.duration || 10) - a.currentTime + 1.5) * 1000); };
           a.onloadedmetadata = arm; a.onplay = arm; a.onpause = () => clearTimeout(timer); a.onended = end;
           this.current.koniec = end;                                     // stop() ends the line too
