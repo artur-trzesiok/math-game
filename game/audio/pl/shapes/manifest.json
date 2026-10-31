@@ -30,9 +30,9 @@
   "text": "To jest koło. Poprowadź palcem po drodze, od zielonej kropki."
  },
  "line.a_kolo_ok": {
-  "hash": "aeadc9236d15",
+  "hash": "53265e345174",
   "who": "sowa",
-  "text": "Koło jest okrągłe i nie ma żadnych rogów."
+  "text": "Koło jest okrągłe i nie ma żadnych wierzchołków."
  },
  "line.a_trojkat": {
   "hash": "34ce18d49933",
@@ -40,14 +40,14 @@
   "text": "A to jest trójkąt. Narysuj go palcem."
  },
  "line.a_policz": {
-  "hash": "ef7f985f6bc5",
+  "hash": "fa06cd91af51",
   "who": "sowa",
-  "text": "Teraz dotknij każdego rogu kwadratu."
+  "text": "Teraz dotknij każdego wierzchołka kwadratu."
  },
  "line.a_trzy_rogi": {
-  "hash": "2bee790abe78",
+  "hash": "6f8be1bc8b62",
   "who": "sowa",
-  "text": "Trójkąt ma trzy rogi. Jest spiczasty jak dach domku."
+  "text": "Trójkąt ma trzy wierzchołki. Jest spiczasty jak dach domku."
  },
  "line.a_kwadrat": {
   "hash": "1c306cefd697",
@@ -75,14 +75,14 @@
   "text": "Najpierw ściany. Ściany to kwadrat. Przeciągnij kwadrat na miejsce."
  },
  "line.b_dach": {
-  "hash": "2ba2cd849102",
+  "hash": "82df41e5e357",
   "who": "sowa",
-  "text": "Trzy rogi i trzy boki, to trójkąt! Mamy dach."
+  "text": "Trzy wierzchołki i trzy boki, to trójkąt! Mamy dach."
  },
  "line.b_okno": {
-  "hash": "0f45b8f72d87",
+  "hash": "45aaf936b1e3",
   "who": "lisek",
-  "text": "Okienko będzie okrągłe. Która figura nie ma rogów? Przeciągnij ją na okno."
+  "text": "Okienko będzie okrągłe. Która figura nie ma wierzchołków? Przeciągnij ją na okno."
  },
  "line.b_drzwi": {
   "hash": "e239de807da0",
@@ -90,14 +90,14 @@
   "text": "A drzwi to prostokąt, dwa boki długie, dwa krótkie. Przeciągnij prostokąt na drzwi."
  },
  "line.b_nie_ta": {
-  "hash": "788bf90027b1",
+  "hash": "7c25511b7e18",
   "who": "sowa",
-  "text": "Ta figura tu nie pasuje. Popatrz na jej rogi i boki, i spróbuj innej."
+  "text": "Ta figura tu nie pasuje. Popatrz na jej wierzchołki i boki, i spróbuj innej."
  },
  "line.b_nie_ta.lisek": {
-  "hash": "0a51fe63340e",
+  "hash": "93da855d441c",
   "who": "lisek",
-  "text": "Ta figura tu nie pasuje. Popatrz na jej rogi i boki, i spróbuj innej."
+  "text": "Ta figura tu nie pasuje. Popatrz na jej wierzchołki i boki, i spróbuj innej."
  },
  "line.b_gotowy": {
   "hash": "7be5ae6d00da",
@@ -115,9 +115,9 @@
   "text": "Tu są latawce, ale mojego nie ma. Mój był kwadratem, a tu żaden nie jest kwadratem!"
  },
  "line.c_ktory": {
-  "hash": "78728c21acaf",
+  "hash": "67474344ae0e",
   "who": "lisek",
-  "text": "Pamiętasz? Figurę poznajemy po rogach i bokach. Wskaż latawiec, który jest kwadratem."
+  "text": "Pamiętasz? Figurę poznajemy po wierzchołkach i bokach. Wskaż latawiec, który jest kwadratem."
  },
  "line.c_ktory_nie": {
   "hash": "fe0898b6ea32",
@@ -165,14 +165,14 @@
   "text": "Narysuj palcem prostokąt, od zielonej kropki."
  },
  "line.p_bez_rogow": {
-  "hash": "7f705a7141e4",
+  "hash": "52a045d8488c",
   "who": "sowa",
-  "text": "Wskaż figurę, która nie ma żadnych rogów."
+  "text": "Wskaż figurę, która nie ma żadnych wierzchołków."
  },
  "line.p_bez_rogow_nie": {
-  "hash": "fa65ef5463b2",
+  "hash": "448b9799c765",
   "who": "sowa",
-  "text": "Ta figura ma rogi. Poszukaj okrągłej."
+  "text": "Ta figura ma wierzchołki. Poszukaj okrągłej."
  },
  "line.p_kolorowanka_ok": {
   "hash": "d3d5e44dbd4f",
@@ -180,9 +180,9 @@
   "text": "Piękny kolorowy domek!"
  },
  "line.d_rodzice": {
-  "hash": "76051cae9ecd",
+  "hash": "ca31b6769955",
   "who": "lisek",
-  "text": "Zagraj w tę zgadywankę w domu z rodzicami: widzę coś okrągłego, widzę coś, co ma trzy rogi!"
+  "text": "Zagraj w tę zgadywankę w domu z rodzicami: widzę coś okrągłego, widzę coś, co ma trzy wierzchołki!"
  },
  "line.n1": {
   "hash": "4fae823a23d6",
@@ -215,9 +215,9 @@
   "text": "To Jeżyk. Zbudowaliśmy mu domek z figur: z kwadratu, trójkąta, koła i prostokąta."
  },
  "line.a_policz_trojkat": {
-  "hash": "0d5c469171ea",
+  "hash": "2fc49d3a42ae",
   "who": "sowa",
-  "text": "Policzmy jego rogi. Dotknij każdego rogu."
+  "text": "Policzmy jego wierzchołki. Dotknij każdego wierzchołka."
  },
  "line.p_kolorowanka_znak": {
   "hash": "9a6c55c438cc",
@@ -235,9 +235,9 @@
   "text": "Piękny rysunek! Zbudujemy taki sam domek. Wskaż na rysunku trójkąt."
  },
  "line.b_rysunek_nie": {
-  "hash": "97f6545df45f",
+  "hash": "a48985e708fd",
   "who": "sowa",
-  "text": "To nie trójkąt. Trójkąt ma trzy rogi i jest spiczasty."
+  "text": "To nie trójkąt. Trójkąt ma trzy wierzchołki i jest spiczasty."
  },
  "line.b_rysunek_dach": {
   "hash": "8737bd7c7023",
@@ -250,9 +250,9 @@
   "text": "Zupełnie jak na moim rysunku!"
  },
  "line.a_nie_kwadrat": {
-  "hash": "8aeed997603c",
+  "hash": "ec353d1f001a",
   "who": "lisek",
-  "text": "Kwadrat jest tutaj! A ten drugi to nie kwadrat. Stoi na rogu i jest spiczasty, więc to jakaś inna figura."
+  "text": "Kwadrat jest tutaj! A ten drugi to nie kwadrat. Stoi na wierzchołku i jest spiczasty, więc to jakaś inna figura."
  },
  "line.a_obroc": {
   "hash": "c802d75b9867",
@@ -265,14 +265,14 @@
   "text": "Teraz wygląda tak samo! To skąd wiadomo, jaka to figura?"
  },
  "line.a_rogi_boki": {
-  "hash": "96ea77ae5352",
+  "hash": "6becbeb9ab66",
   "who": "sowa",
-  "text": "Figurę poznajemy po rogach i bokach, a nie po tym, jak stoi."
+  "text": "Figurę poznajemy po wierzchołkach i bokach, a nie po tym, jak stoi."
  },
  "line.a_co_to": {
-  "hash": "f60acd0f8ceb",
+  "hash": "435b6dead48c",
   "who": "lisek",
-  "text": "Po rogach i bokach? A co to znaczy?"
+  "text": "Po wierzchołkach i bokach? A co to znaczy?"
  },
  "line.a_pokaze": {
   "hash": "4272a34bd340",
@@ -290,9 +290,9 @@
   "text": "To nie kwadrat. Kwadrat ma wszystkie boki równe."
  },
  "line.a_oba_kwadraty": {
-  "hash": "5600fbb2fdc4",
+  "hash": "1566a74b6d92",
   "who": "lisek",
-  "text": "Oba to kwadraty! Mają takie same rogi i równe boki. Obrócony kwadrat to nadal kwadrat!"
+  "text": "Oba to kwadraty! Mają tyle samo wierzchołków i równe boki. Obrócony kwadrat to nadal kwadrat!"
  },
  "line.b_pokaz": {
   "hash": "6650816cc507",
@@ -315,9 +315,9 @@
   "text": "A tu jest trójkąt na dach!"
  },
  "line.b_za_maly": {
-  "hash": "044f4d1b3682",
+  "hash": "3ba3c183728d",
   "who": "sowa",
-  "text": "Ten trójkąt jest za mały na dach. Zróbmy duży: trójkąt to trzy rogi połączone bokami."
+  "text": "Ten trójkąt jest za mały na dach. Zróbmy duży: trójkąt to trzy wierzchołki połączone bokami."
  },
  "line.b_kropki": {
   "hash": "649e26f1b843",
@@ -345,9 +345,9 @@
   "text": "Domek z kawałków gotowy, zupełnie jak domek Jeżyka!"
  },
  "line.p_trojkat_ok": {
-  "hash": "524c2032403e",
+  "hash": "b97c21234ff8",
   "who": "lisek",
-  "text": "Tak, to trójkąt! Ma trzy rogi, nawet kiedy jest obrócony."
+  "text": "Tak, to trójkąt! Ma trzy wierzchołki, nawet kiedy jest obrócony."
  },
  "line.p_prostokat_ok": {
   "hash": "0c108d82eb9f",
@@ -355,9 +355,9 @@
   "text": "Piękny prostokąt: dwa boki długie i dwa krótkie."
  },
  "line.p_bez_rogow_ok": {
-  "hash": "f568ec7a3794",
+  "hash": "a258ea947daf",
   "who": "lisek",
-  "text": "Tak, koło! Jest okrągłe i nie ma żadnych rogów."
+  "text": "Tak, koło! Jest okrągłe i nie ma żadnych wierzchołków."
  },
  "line.d_herbatka": {
   "hash": "aec0d9adb9e6",
@@ -395,14 +395,14 @@
   "text": "I to też tutaj, bo jest spiczaste, jak trójkąt!"
  },
  "line.d_rogi": {
-  "hash": "189c8659bfe9",
+  "hash": "2a08cf511340",
   "who": "jez",
-  "text": "Zaczekaj, Zajączku! Popatrzmy na jego rogi. Dotknij każdego rogu ciasteczka."
+  "text": "Zaczekaj, Zajączku! Popatrzmy na jego wierzchołki. Dotknij każdego wierzchołka ciasteczka."
  },
  "line.d_kwadrat": {
-  "hash": "ed3ab86cc3fc",
+  "hash": "6d6bcca9dee7",
   "who": "jez",
-  "text": "Trójkąt ma trzy rogi, a to ciasteczko ma więcej. Wszystkie boki ma równe, to kwadrat, tylko obrócony!"
+  "text": "Trójkąt ma trzy wierzchołki, a to ciasteczko ma więcej. Wszystkie boki ma równe, to kwadrat, tylko obrócony!"
  },
  "line.d_zapomnialem": {
   "hash": "c87e606f3cc4",
@@ -415,9 +415,9 @@
   "text": "Połóż wszystkie ciasteczka na talerzykach, na każdym talerzyku jedną figurę."
  },
  "line.d_poloz_nie": {
-  "hash": "e922362a87e0",
+  "hash": "5c0a37cf8239",
   "who": "lisek",
-  "text": "Na tym talerzyku są różne figury. Popatrz na rogi i boki."
+  "text": "Na tym talerzyku są różne figury. Popatrz na wierzchołki i boki."
  },
  "line.d_gotowe": {
   "hash": "6bee2bf3f469",
@@ -435,19 +435,19 @@
   "text": "Wiem! Zegar na ścianie!"
  },
  "line.d_trzy_rogi": {
-  "hash": "5f4149152d17",
+  "hash": "31ac9c3a797c",
   "who": "jez",
-  "text": "Teraz ja! Wskaż w kuchni coś, co ma trzy rogi."
+  "text": "Teraz ja! Wskaż w kuchni coś, co ma trzy wierzchołki."
  },
  "line.d_trzy_rogi_nie": {
-  "hash": "484957e6c8f2",
+  "hash": "0afcc3d1d11e",
   "who": "jez",
-  "text": "To nie ma trzech rogów. Poszukaj czegoś spiczastego."
+  "text": "To nie ma trzech wierzchołków. Poszukaj czegoś spiczastego."
  },
  "line.d_kanapka": {
-  "hash": "300573882341",
+  "hash": "65b341b343c1",
   "who": "lisek",
-  "text": "Tak, kanapka! Jest trójkątem, ma trzy rogi."
+  "text": "Tak, kanapka! Jest trójkątem, ma trzy wierzchołki."
  },
  "line.d_herbatka_ok": {
   "hash": "f2c255231d65",
@@ -465,9 +465,9 @@
   "text": "Okrągłe okienko! Będę przez nie patrzył na las."
  },
  "line.a_kwadraty_nie_cztery": {
-  "hash": "698d73fdcdee",
+  "hash": "53cd0e810fce",
   "who": "sowa",
-  "text": "To nie kwadrat. Kwadrat ma cztery rogi i cztery równe boki."
+  "text": "To nie kwadrat. Kwadrat ma cztery wierzchołki i cztery równe boki."
  },
  "line.p_kredka_1": {
   "hash": "b2006d52828d",

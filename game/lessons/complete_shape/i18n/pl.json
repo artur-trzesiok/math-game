@@ -61,7 +61,7 @@
   },
   "line.b_wystaje": {
     "who": "wiewiorka",
-    "text": "Oj... Nie pasuje! Rogi wystają, a dziurę nadal widać."
+    "text": "Oj... Nie pasuje! Wierzchołki wystają, a dziurę nadal widać."
   },
   "line.b_ksztalt": {
     "who": "sowa",
@@ -73,11 +73,11 @@
   },
   "line.b_wskaz_nie": {
     "who": "sowa",
-    "text": "Ten kawałek ma inny kształt niż dziura. Popatrz na jej rogi."
+    "text": "Ten kawałek ma inny kształt niż dziura. Popatrz na jej wierzchołki."
   },
   "line.b_trojkat": {
     "who": "sowa",
-    "text": "Tak, trójkąt! Dziura ma trzy rogi i ten kawałek też ma trzy rogi."
+    "text": "Tak, trójkąt! Dziura ma trzy wierzchołki i ten kawałek też ma trzy wierzchołki."
   },
   "line.b_caly": {
     "who": "wiewiorka",
@@ -85,7 +85,7 @@
   },
   "line.b_metoda_kwadrat": {
     "who": "sowa",
-    "text": "Popatrz. Kwadrat ma inny kształt niż dziura, więc rogi wystają."
+    "text": "Popatrz. Kwadrat ma inny kształt niż dziura, więc wierzchołki wystają."
   },
   "line.b_metoda_trojkat": {
     "who": "sowa",
@@ -245,11 +245,11 @@
   },
   "line.d_trojkat_nie": {
     "who": "wiewiorka",
-    "text": "To nie trójkąt. Trójkąt ma trzy rogi."
+    "text": "To nie trójkąt. Trójkąt ma trzy wierzchołki."
   },
   "line.d_trojkat_tak": {
     "who": "jez",
-    "text": "Tak, czerwony trójkąt. Ma trzy rogi."
+    "text": "Tak, czerwony trójkąt. Ma trzy wierzchołki."
   },
   "line.d_buduj": {
     "who": "jez",

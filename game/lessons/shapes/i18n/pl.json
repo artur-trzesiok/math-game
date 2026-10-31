@@ -21,7 +21,7 @@
   },
   "line.a_nie_kwadrat": {
     "who": "lisek",
-    "text": "Kwadrat jest tutaj! A ten drugi to nie kwadrat. Stoi na rogu i jest spiczasty, więc to jakaś inna figura."
+    "text": "Kwadrat jest tutaj! A ten drugi to nie kwadrat. Stoi na wierzchołku i jest spiczasty, więc to jakaś inna figura."
   },
   "line.a_obroc": {
     "who": "sowa",
@@ -33,11 +33,11 @@
   },
   "line.a_rogi_boki": {
     "who": "sowa",
-    "text": "Figurę poznajemy po rogach i bokach, a nie po tym, jak stoi."
+    "text": "Figurę poznajemy po wierzchołkach i bokach, a nie po tym, jak stoi."
   },
   "line.a_co_to": {
     "who": "lisek",
-    "text": "Po rogach i bokach? A co to znaczy?"
+    "text": "Po wierzchołkach i bokach? A co to znaczy?"
   },
   "line.a_pokaze": {
     "who": "sowa",
@@ -49,7 +49,7 @@
   },
   "line.a_kolo_ok": {
     "who": "sowa",
-    "text": "Koło jest okrągłe i nie ma żadnych rogów."
+    "text": "Koło jest okrągłe i nie ma żadnych wierzchołków."
   },
   "line.a_trojkat": {
     "who": "sowa",
@@ -57,11 +57,11 @@
   },
   "line.a_policz_trojkat": {
     "who": "sowa",
-    "text": "Policzmy jego rogi. Dotknij każdego rogu."
+    "text": "Policzmy jego wierzchołki. Dotknij każdego wierzchołka."
   },
   "line.a_trzy_rogi": {
     "who": "sowa",
-    "text": "Trójkąt ma trzy rogi. Jest spiczasty jak dach domku."
+    "text": "Trójkąt ma trzy wierzchołki. Jest spiczasty jak dach domku."
   },
   "line.a_kwadrat": {
     "who": "sowa",
@@ -69,7 +69,7 @@
   },
   "line.a_policz": {
     "who": "sowa",
-    "text": "Teraz dotknij każdego rogu kwadratu."
+    "text": "Teraz dotknij każdego wierzchołka kwadratu."
   },
   "line.a_cztery_rogi": {
     "who": "sowa",
@@ -85,11 +85,11 @@
   },
   "line.a_kwadraty_nie_cztery": {
     "who": "sowa",
-    "text": "To nie kwadrat. Kwadrat ma cztery rogi i cztery równe boki."
+    "text": "To nie kwadrat. Kwadrat ma cztery wierzchołki i cztery równe boki."
   },
   "line.a_oba_kwadraty": {
     "who": "lisek",
-    "text": "Oba to kwadraty! Mają takie same rogi i równe boki. Obrócony kwadrat to nadal kwadrat!"
+    "text": "Oba to kwadraty! Mają tyle samo wierzchołków i równe boki. Obrócony kwadrat to nadal kwadrat!"
   },
   "line.a_budujemy": {
     "who": "lisek",
@@ -121,7 +121,7 @@
   },
   "line.b_rysunek_nie": {
     "who": "sowa",
-    "text": "To nie trójkąt. Trójkąt ma trzy rogi i jest spiczasty."
+    "text": "To nie trójkąt. Trójkąt ma trzy wierzchołki i jest spiczasty."
   },
   "line.b_rysunek_dach": {
     "who": "sowa",
@@ -141,7 +141,7 @@
   },
   "line.b_za_maly": {
     "who": "sowa",
-    "text": "Ten trójkąt jest za mały na dach. Zróbmy duży: trójkąt to trzy rogi połączone bokami."
+    "text": "Ten trójkąt jest za mały na dach. Zróbmy duży: trójkąt to trzy wierzchołki połączone bokami."
   },
   "line.b_kropki": {
     "who": "sowa",
@@ -149,11 +149,11 @@
   },
   "line.b_dach": {
     "who": "sowa",
-    "text": "Trzy rogi i trzy boki, to trójkąt! Mamy dach."
+    "text": "Trzy wierzchołki i trzy boki, to trójkąt! Mamy dach."
   },
   "line.b_okno": {
     "who": "lisek",
-    "text": "Okienko będzie okrągłe. Która figura nie ma rogów? Przeciągnij ją na okno."
+    "text": "Okienko będzie okrągłe. Która figura nie ma wierzchołków? Przeciągnij ją na okno."
   },
   "line.b_okienko": {
     "who": "jez",
@@ -165,7 +165,7 @@
   },
   "line.b_nie_ta": {
     "who": "sowa",
-    "text": "Ta figura tu nie pasuje. Popatrz na jej rogi i boki, i spróbuj innej.",
+    "text": "Ta figura tu nie pasuje. Popatrz na jej wierzchołki i boki, i spróbuj innej.",
     "speakers": [
       "lisek"
     ]
@@ -196,7 +196,7 @@
   },
   "line.c_ktory": {
     "who": "lisek",
-    "text": "Pamiętasz? Figurę poznajemy po rogach i bokach. Wskaż latawiec, który jest kwadratem."
+    "text": "Pamiętasz? Figurę poznajemy po wierzchołkach i bokach. Wskaż latawiec, który jest kwadratem."
   },
   "line.c_ktory_nie": {
     "who": "lisek",
@@ -240,7 +240,7 @@
   },
   "line.p_trojkat_ok": {
     "who": "lisek",
-    "text": "Tak, to trójkąt! Ma trzy rogi, nawet kiedy jest obrócony."
+    "text": "Tak, to trójkąt! Ma trzy wierzchołki, nawet kiedy jest obrócony."
   },
   "line.p_prostokat": {
     "who": "lisek",
@@ -252,15 +252,15 @@
   },
   "line.p_bez_rogow": {
     "who": "sowa",
-    "text": "Wskaż figurę, która nie ma żadnych rogów."
+    "text": "Wskaż figurę, która nie ma żadnych wierzchołków."
   },
   "line.p_bez_rogow_nie": {
     "who": "sowa",
-    "text": "Ta figura ma rogi. Poszukaj okrągłej."
+    "text": "Ta figura ma wierzchołki. Poszukaj okrągłej."
   },
   "line.p_bez_rogow_ok": {
     "who": "lisek",
-    "text": "Tak, koło! Jest okrągłe i nie ma żadnych rogów."
+    "text": "Tak, koło! Jest okrągłe i nie ma żadnych wierzchołków."
   },
   "line.p_kolorowanka_znak": {
     "who": "sowa",
@@ -300,11 +300,11 @@
   },
   "line.d_rogi": {
     "who": "jez",
-    "text": "Zaczekaj, Zajączku! Popatrzmy na jego rogi. Dotknij każdego rogu ciasteczka."
+    "text": "Zaczekaj, Zajączku! Popatrzmy na jego wierzchołki. Dotknij każdego wierzchołka ciasteczka."
   },
   "line.d_kwadrat": {
     "who": "jez",
-    "text": "Trójkąt ma trzy rogi, a to ciasteczko ma więcej. Wszystkie boki ma równe, to kwadrat, tylko obrócony!"
+    "text": "Trójkąt ma trzy wierzchołki, a to ciasteczko ma więcej. Wszystkie boki ma równe, to kwadrat, tylko obrócony!"
   },
   "line.d_zapomnialem": {
     "who": "zajac",
@@ -316,7 +316,7 @@
   },
   "line.d_poloz_nie": {
     "who": "lisek",
-    "text": "Na tym talerzyku są różne figury. Popatrz na rogi i boki."
+    "text": "Na tym talerzyku są różne figury. Popatrz na wierzchołki i boki."
   },
   "line.d_gotowe": {
     "who": "jez",
@@ -332,15 +332,15 @@
   },
   "line.d_trzy_rogi": {
     "who": "jez",
-    "text": "Teraz ja! Wskaż w kuchni coś, co ma trzy rogi."
+    "text": "Teraz ja! Wskaż w kuchni coś, co ma trzy wierzchołki."
   },
   "line.d_trzy_rogi_nie": {
     "who": "jez",
-    "text": "To nie ma trzech rogów. Poszukaj czegoś spiczastego."
+    "text": "To nie ma trzech wierzchołków. Poszukaj czegoś spiczastego."
   },
   "line.d_kanapka": {
     "who": "lisek",
-    "text": "Tak, kanapka! Jest trójkątem, ma trzy rogi."
+    "text": "Tak, kanapka! Jest trójkątem, ma trzy wierzchołki."
   },
   "line.d_herbatka_ok": {
     "who": "jez",
@@ -348,7 +348,7 @@
   },
   "line.d_rodzice": {
     "who": "lisek",
-    "text": "Zagraj w tę zgadywankę w domu z rodzicami: widzę coś okrągłego, widzę coś, co ma trzy rogi!"
+    "text": "Zagraj w tę zgadywankę w domu z rodzicami: widzę coś okrągłego, widzę coś, co ma trzy wierzchołki!"
   },
   "line.naklejka_daj": {
     "who": "jez",

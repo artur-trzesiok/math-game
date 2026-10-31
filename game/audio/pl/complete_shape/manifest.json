@@ -65,9 +65,9 @@
   "text": "Wiem! Dziura jest w czerwonym dachu, więc pasuje czerwony kawałek. O, ten!"
  },
  "line.b_wystaje": {
-  "hash": "a8be67f7f765",
+  "hash": "7e3a1d92dc85",
   "who": "wiewiorka",
-  "text": "Oj... Nie pasuje! Rogi wystają, a dziurę nadal widać."
+  "text": "Oj... Nie pasuje! Wierzchołki wystają, a dziurę nadal widać."
  },
  "line.b_ksztalt": {
   "hash": "354f24b3fc06",
@@ -80,14 +80,14 @@
   "text": "Wskaż kawałek, który ma taki sam kształt jak dziura."
  },
  "line.b_wskaz_nie": {
-  "hash": "1db33051e264",
+  "hash": "e2eebad57065",
   "who": "sowa",
-  "text": "Ten kawałek ma inny kształt niż dziura. Popatrz na jej rogi."
+  "text": "Ten kawałek ma inny kształt niż dziura. Popatrz na jej wierzchołki."
  },
  "line.b_trojkat": {
-  "hash": "2a3875e3cb36",
+  "hash": "0aee75638eae",
   "who": "sowa",
-  "text": "Tak, trójkąt! Dziura ma trzy rogi i ten kawałek też ma trzy rogi."
+  "text": "Tak, trójkąt! Dziura ma trzy wierzchołki i ten kawałek też ma trzy wierzchołki."
  },
  "line.b_caly": {
   "hash": "06c362eb18f8",
@@ -95,9 +95,9 @@
   "text": "Hura, obrazek jest cały!"
  },
  "line.b_metoda_kwadrat": {
-  "hash": "7a6cc68a3567",
+  "hash": "aa09a5bd278e",
   "who": "sowa",
-  "text": "Popatrz. Kwadrat ma inny kształt niż dziura, więc rogi wystają."
+  "text": "Popatrz. Kwadrat ma inny kształt niż dziura, więc wierzchołki wystają."
  },
  "line.b_metoda_trojkat": {
   "hash": "aa75cdb896b4",
@@ -295,14 +295,14 @@
   "text": "Wskaż w pudełku klocek, który jest trójkątem."
  },
  "line.d_trojkat_nie": {
-  "hash": "83bf730ee65e",
+  "hash": "e21d7011a4c9",
   "who": "wiewiorka",
-  "text": "To nie trójkąt. Trójkąt ma trzy rogi."
+  "text": "To nie trójkąt. Trójkąt ma trzy wierzchołki."
  },
  "line.d_trojkat_tak": {
-  "hash": "1684ccbe96ca",
+  "hash": "e7bf4547710b",
   "who": "jez",
-  "text": "Tak, czerwony trójkąt. Ma trzy rogi."
+  "text": "Tak, czerwony trójkąt. Ma trzy wierzchołki."
  },
  "line.d_buduj": {
   "hash": "283f895382e4",

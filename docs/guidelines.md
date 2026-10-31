@@ -442,3 +442,6 @@ ElevenLabs through `tools/audio`, and the only hand work is in the manager
 (`manager/`): a character editor to nudge a piece or a pivot after a review, whose
 corrections survive every rebuild. Reviews are done by looking at renders, never
 by trusting a green test alone.
+
+- Polish lines name a shape's corners `wierzchołki`, never `rogi` (2026-10-31, the user's wife; the term children
+  meet at school). English keeps "corners".
