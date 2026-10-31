@@ -413,5 +413,10 @@
   "hash": "3a19ef085266",
   "who": "sowa",
   "text": "Porównaj z rodzicami buty całej rodziny: ustawcie je piętami przy jednej linii. Który sięga dalej, ten jest większy!"
+ },
+ "line.d_buty_dom": {
+  "hash": "d04ea792a37d",
+  "who": "lisek",
+  "text": "Pokażę wam zabawę, w którą możecie się bawić w domu. Dwa buty, duży i mały. Wskaż, który but jest większy."
  }
 }

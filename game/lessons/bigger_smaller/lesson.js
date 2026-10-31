@@ -334,7 +334,7 @@ export default {
         const bd = await c.object("but", { x: lewyDuzy ? -0.7 : 2.1, y: -2.2, size: 2.3, ...p }), bm = await c.object("but", { x: lewyDuzy ? 2.1 : -0.7, y: -2.45, size: 1.35, ...p });
         await wyrosnij(c);
         await c.ujecie("ogolny");
-        await c.say("lisek", "line.d_buty");
+        await c.say("lisek", "line.d_buty_dom");
         dobre(bd); await c.task({ targets: [bd, bm], correct: bd, wrong: "line.d_buty_nie" }); dobre(bd, false);
         await c.ujecie("sredni", { na: [bd, bm, "lisek"] });
         await c.say("lisek", "line.d_buty_linia");

@@ -368,7 +368,7 @@ export default {
         await c.ujecie("ogolny");                                            // the task: every piece and the line
         await Promise.all(mak.map((h) => obroc(c, h, 0)));
         await c.say("sarenka", "line.k_przeciagnij");
-        const lm = await odLinii(c, mak, { x0: -1.7, ys: [2.4, 1.7, 1.0, 0.3, -0.4] });
+        const lm = await odLinii(c, mak, { x0: -1.7, ys: [2.5, 1.5, 0.5, -0.5, -1.5] });   // a row each, wide apart: a small finger points at one
         c.stage.bump(penne, 0.3);
         await c.ujecie("zblizenie", { na: "lisek" });                        // the visible consequence: his pick is short
         await c.wonder("lisek");

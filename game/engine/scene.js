@@ -85,6 +85,15 @@ export function petla(cx, cy, rx, ry = rx, { a0 = 2.2, n = 64 } = {}) {
 }
 // one texture per file for the whole game: loaded (and sent to the GPU) once, shared by every sticker of it
 const loader = new THREE.TextureLoader(), TEKSTURY = new Map();
+// a picture cut to its edges on a square canvas with room round it for the sticker edge (naklejka.js), like die_cut
+const marginesy = new WeakMap();
+function zMarginesem(tex) {
+  let m = marginesy.get(tex); if (m) return m;
+  const img = tex.image, n = Math.max(img.width, img.height), pad = Math.ceil(n * 0.075), c = document.createElement("canvas");
+  c.width = c.height = n + 2 * pad; c.getContext("2d").drawImage(img, pad + (n - img.width) / 2, pad + (n - img.height) / 2);
+  m = new THREE.CanvasTexture(c); m.colorSpace = tex.colorSpace; m.anisotropy = tex.anisotropy; marginesy.set(tex, m);
+  return m;
+}
 export function texture(url) {
   // decode() is only a hint, never waited on: a hidden page defers it and the promise may never come (the loading screen
   // hung); the loading screen's initTexture uploads - and so decodes - every texture the lesson uses anyway
@@ -549,12 +558,16 @@ export class Stage {
       const m = new THREE.Mesh(new THREE.PlaneGeometry(1.18, 1.18), new THREE.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false }));
       m.position.z = -0.01; g.add(m);
     }
-    const mapa = await texture(obraz || `/game/assets/objects/${plik}.webp`), iw = mapa.image.width, ih = mapa.image.height;
+    let mapa = await texture(obraz || `/game/assets/objects/${plik}.webp`), iw = mapa.image.width, ih = mapa.image.height;
     // a non-square picture (a garment) keeps its proportions inside the unit square
     // a sticker (objects/naklejki.json) gets its look from the GPU: a shadow in the story, the white edge when it waits for a touch
-    const naklejka = !obraz && (await NAKLEJKI).has(plik);
+    // a garment is cut to its edges: it gets a margin for that edge (once per picture), drawn as big as before
+    const ubior = !obraz && plik.startsWith("../ubrania/");
+    let zapas = 1;
+    if (ubior) { mapa = zMarginesem(mapa); zapas = mapa.image.width / Math.max(iw, ih); iw = ih = mapa.image.width; }
+    const naklejka = ubior || (!obraz && (await NAKLEJKI).has(plik));
     const mat = naklejka ? materialNaklejki(mapa) : new THREE.MeshBasicMaterial({ map: mapa, transparent: true, alphaTest: 0.05, depthWrite: false });
-    const icon = new THREE.Mesh(new THREE.PlaneGeometry(iw >= ih ? 1 : iw / ih, iw >= ih ? ih / iw : 1), mat);
+    const icon = new THREE.Mesh(new THREE.PlaneGeometry((iw >= ih ? 1 : iw / ih) * zapas, (iw >= ih ? ih / iw : 1) * zapas), mat);
     g.add(icon);
     if (label) g.add(this.textMesh(label, { y: -0.72, size: 0.32 }));
     g.traverse((o) => { if (o.isMesh) o.renderOrder = 10; });                 // the foreground draws after every background prop
@@ -709,7 +722,15 @@ export class Stage {
   upusc(item, x, y) { const set = this.dragSet; if (!set?.free) return; item.mesh.position.x = x; item.mesh.position.y = y; set.onDrop(item, { x, y }); }
   stuknij(item) { const set = this.dragSet; if (set?.free) set.onTap(item); }
   endSort() { this.dragSet = null; this.drag = null; }
-  dropInto(item, zone) { zone.put(item); this.bump(zone, 0.06, false); this.sfx.graj("plop"); if (this.dragSet) this.dragSet.onDrop(item, zone); }
+  dropInto(item, zone) {
+    zone.put(item); this.bump(zone, 0.06, false); this.sfx.graj("plop");
+    // given to a character (a zone over its body): it stays in front of that character, not behind it (20-30)
+    const { x, y } = zone;                                                // where it goes, not where it is on its way
+    const naPostaci = (L) => { if (!L.korzen.visible) return false; const b = new THREE.Box3().setFromObject(L.korzen); return x >= b.min.x && x <= b.max.x && y >= b.min.y && y <= b.max.y; };
+    if (Object.values(this.puppets).some(naPostaci))
+      item.mesh.traverse((o) => { if ((o.isMesh || o.isLine) && o.renderOrder < 31) { (item.roZwykly ||= []).push([o, o.renderOrder]); o.renderOrder = 31 + (o.renderOrder % 5); } });
+    if (this.dragSet) this.dragSet.onDrop(item, zone);
+  }
   ndc(e) { const r = this.renderer.domElement.getBoundingClientRect(); return new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); }
   worldAt(ndc, z = 0.4) {
     this.raycaster.setFromCamera(ndc, this.camera);
@@ -781,7 +802,7 @@ export class Stage {
     await this.wait(0.25);                                            // the arm comes forward first
     L.korzen.updateMatrixWorld(true);
     const { p, na } = L.uchwyt();
-    h.zapisanyRO = []; h.mesh.traverse((o) => { if (o.isMesh) h.zapisanyRO.push([o, o.renderOrder]); });
+    h.zapisanyRO = h.roZwykly || []; if (!h.roZwykly) h.mesh.traverse((o) => { if (o.isMesh) h.zapisanyRO.push([o, o.renderOrder]); }); h.roZwykly = null;   // its own order, not the one over a character
     this.untarget(h);
     h.baseNiesiony = h.base; h.base = h.base * 0.72; h.mesh.scale.setScalar(h.base);   // a carried thing is held close: a bit smaller
     await h.moveTo(p.x, p.y + (na === "plecy" ? h.base * 0.35 : -h.base * 0.1), d);

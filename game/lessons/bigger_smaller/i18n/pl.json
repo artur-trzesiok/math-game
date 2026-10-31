@@ -287,6 +287,10 @@
     "who": "lisek",
     "text": "Pokażę wam zabawę na dom. Dwa buty, duży i mały. Wskaż, który but jest większy."
   },
+  "line.d_buty_dom": {
+    "who": "lisek",
+    "text": "Pokażę wam zabawę, w którą możecie się bawić w domu. Dwa buty, duży i mały. Wskaż, który but jest większy."
+  },
   "line.d_buty_nie": {
     "who": "lisek",
     "text": "Ten but jest mniejszy. Szukaj większego."

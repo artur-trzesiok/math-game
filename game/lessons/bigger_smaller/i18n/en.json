@@ -287,6 +287,10 @@
     "who": "lisek",
     "text": "I'll show you a game for home. Two shoes, a big one and a small one. Point to the bigger shoe."
   },
+  "line.d_buty_dom": {
+    "who": "lisek",
+    "text": "I'll show you a game you can play at home. Two shoes, a big one and a small one. Point to the bigger shoe."
+  },
   "line.d_buty_nie": {
     "who": "lisek",
     "text": "That shoe is smaller. Look for the bigger one."

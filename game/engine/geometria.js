@@ -370,7 +370,10 @@ export async function sloty(S, { items, slots, onWrong = null, numery = false, n
       onTap: () => {},
       onDrop: async (k, p) => {
         if (k.slot) { k.slot.zajety = null; k.slot = null; }
-        const z = strefy.find((s) => !s.zajety && Math.abs(p.x - s.x) < s.w / 2 + 0.2 && Math.abs(p.y - s.y) < s.h / 2 + 0.2);
+        // a painted place a thing STANDS on is a thin strip (a shelf): what counts there is where the thing's bottom
+        // was put, not its middle - a big box set down on the shelf has its middle far above it
+        const dol = S.bounds(k).bottom;
+        const z = strefy.find((s) => !s.zajety && Math.abs(p.x - s.x) < s.w / 2 + 0.2 && (Math.abs(p.y - s.y) < s.h / 2 + 0.2 || (s.niewidoczna && s.rodzaj === "stoi" && Math.abs(dol - s.y) < s.h / 2 + 0.5)));
         if (z && z.accept(k)) {
           z.zajety = k; k.slot = z; S.sfx.graj("plop");
           if (z.niewidoczna) { z.items = [k]; z.layout(); await S.wait(0.2); }       // a painted place: it stands, hangs or lies there

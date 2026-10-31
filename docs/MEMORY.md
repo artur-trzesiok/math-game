@@ -296,6 +296,10 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
 - **The menu takes no touch while a stage finishes or the next opens** (2026-10-31, the user: a child went into the
   album to stick two stickers and missed the whole padlock show): `#menu.pokaz` (pointer-events none) from the
   return to the menu until the padlock or gate show ends, 30 s at most; a tap on the show still hurries it.
+- **Garments as stickers carry the edge too** (2026-10-31): their pictures are cut to the edges, so `S.object` puts a
+  `../ubrania/` picture on a padded canvas (`zMarginesem`) with the sticker material, drawn as big as before.
+- **Drops** (2026-10-31): a painted place a thing stands on (a shelf strip) takes it by where its BOTTOM was put
+  (`sloty`); a thing dropped into a zone over a character draws in front of it (31) until `take` restores its order.
 - **Shadow tasks pin one variant** (2026-10-31): a sticker variant changes the outline, so a shadow and its answers (and
   heaps, `kupka({plik})`) use one file. bigger_smaller's shoes: compared heels on one line, not laid one on another.
 
