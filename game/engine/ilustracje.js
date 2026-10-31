@@ -169,7 +169,11 @@ export async function ilustracja(S, nazwa, { ruch = "najazd", czekaj = false, mo
       } else { mowca.korzen.getWorldPosition(glowa); glowa.y += mowca.wysokosc * 0.8; }
       kamG.position.set(glowa.x, glowa.y, glowa.z + 8); kamG.lookAt(glowa);
       kamG.fov = 2 * Math.atan(rozmiar / 8) * 180 / Math.PI; kamG.updateProjectionMatrix();
+      // the speaker alone in the badge: Hedgehog standing by Bear came out peering from under Bear's arm
+      const inni = Object.values(S.puppets).filter((L) => L !== mowca && L.korzen.visible);
+      for (const L of inni) L.korzen.visible = false;
       S.renderer.setRenderTarget(rt); S.renderer.render(S.scene, kamG); S.renderer.setRenderTarget(null);
+      for (const L of inni) L.korzen.visible = true;
     },
   };
   S.warstwy.push(warstwa);

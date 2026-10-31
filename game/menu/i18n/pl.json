@@ -462,7 +462,7 @@
   },
   "line.tytul_counting_3": {
     "who": "narrator",
-    "text": "Liczymy do 3. Urodziny Jeżyka.",
+    "text": "Liczymy do trzech. Urodziny Jeżyka.",
     "pauza": "1.0s"
   },
   "line.tytul_more_fewer": {
@@ -477,7 +477,7 @@
   },
   "line.tytul_numbers_1_5": {
     "who": "narrator",
-    "text": "Liczby od 1 do 5. Pociąg Kreta.",
+    "text": "Liczby od jednego do pięciu. Pociąg Kreta.",
     "pauza": "1.0s"
   },
   "line.tytul_up_down": {
@@ -517,7 +517,7 @@
   },
   "line.tytul_counting_5": {
     "who": "narrator",
-    "text": "Liczymy do 5. Leśna piekarnia.",
+    "text": "Liczymy do pięciu. Leśna piekarnia.",
     "pauza": "1.0s"
   },
   "line.tytul_light_heavy": {
@@ -537,17 +537,17 @@
   },
   "line.tytul_numbers_6_10": {
     "who": "narrator",
-    "text": "Liczby od 6 do 10. Tama Bobra.",
+    "text": "Liczby od sześciu do dziesięciu. Tama Bobra.",
     "pauza": "1.0s"
   },
   "line.tytul_adding_5": {
     "who": "narrator",
-    "text": "Dodawanie do 5. Piknik Liska.",
+    "text": "Dodawanie do pięciu. Piknik Liska.",
     "pauza": "1.0s"
   },
   "line.tytul_adding_10": {
     "who": "narrator",
-    "text": "Dodawanie do 10. Turniej w klasy.",
+    "text": "Dodawanie do dziesięciu. Turniej w klasy.",
     "pauza": "1.0s"
   },
   "line.mapa_lisek_1": {

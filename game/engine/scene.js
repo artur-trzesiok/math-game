@@ -149,7 +149,10 @@ export class Stage {
     this.pending = null; this.lastHit = null; this.dragSet = null; this.drag = null;
     this.raycaster = new THREE.Raycaster();
     // sound effects: ?cicho mutes them; a hop and a clap come with the puppets' animations
-    this.sfx = new Sfx({ wycisz: PARAMS.has("cicho") }); this.sfx.wczytaj();
+    // one for the whole game, like the renderer: per lesson it opened a new AudioContext (iOS keeps a handful), decoded
+    // every effect again and started 64 <audio> elements - before the loading screen, slower with every lesson
+    this.sfx = WSPOLNY.sfx ||= (() => { const s = new Sfx({ wycisz: PARAMS.has("cicho") }); s.wczytaj(); return s; })();
+    this.sfx.mowa = false;
     this.muzyka = new Muzyka({ wycisz: PARAMS.has("cicho"), sfx: this.sfx });     // the place's music and the weather (muzyka.js)
     Lalka.naGraj = (L, nazwa) => { if (L.bezDzwieku) return; if (nazwa === "Podskok") this.sfx.graj("hop"); else if (nazwa === "Brawo") this.sfx.graj("clap", { glosnosc: 0.8 }); };
     this.onResize = () => this.resize();
@@ -986,6 +989,7 @@ export class Stage {
     if (czas >= 0.2) this.sfx.graj("pencil", { dlugosc: czas, tempo: 0.9 + Math.random() * 0.2 });
     const draw = this.tween(czas, (s) => { mat.uniforms.postep.value = s; if (haloMesh) haloMesh.material.uniforms.postep.value = s; })
       .then(() => { mat.uniforms.postep.value = 1; if (haloMesh) haloMesh.material.uniforms.postep.value = 1; });
+    handle.narysowana = draw;                                            // its draw-in done (a caller resetting it waits for this)
     if (wait) await draw;
     return handle;
   }

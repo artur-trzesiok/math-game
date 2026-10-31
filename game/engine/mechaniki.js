@@ -47,9 +47,10 @@ export async function slad(S, co, { x = 0, y = 0.4, size = 3.4, tolerancja = 0.5
     const przygotuj = async () => {                                  // the ink along pts, waiting for the finger
       cum = [0]; for (let k = 1; k < pts.length; k++) cum.push(cum[k - 1] + dl(pts[k], pts[k - 1]));
       if (ink) { ink.remove(); tusz.splice(tusz.indexOf(ink), 1); }
-      // hidden until its draw-in has been reset to nothing (it would flash in full)
+      // hidden until its draw-in has been reset to nothing. Reset only after the draw-in has really ended: a timer of
+      // 0.06 s lost to it on a slow iPad frame and the whole outline flashed in blue as the way round was chosen
       ink = await S.line(pts, { color: kolor, width: 0.17, duration: 0.01, strong: true, wobble: 0.004, wait: false });
-      ink.mesh.visible = false; await czekaj(0.06);
+      ink.mesh.visible = false; await ink.narysowana;
       postep = kreskaMaterialy(ink); postep.forEach((u) => (u.value = 0)); ink.mesh.visible = true; tusz.push(ink);
     };
     await przygotuj();

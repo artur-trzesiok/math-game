@@ -299,6 +299,14 @@ export default {
         const hak = { ...m.wieszak.slot((h) => h === luneta), x: 2.2, w: 1.8 };
         const t1 = await c.slots({ items: [luneta], slots: [hak] });
         await t1.done();
+        // it HANGS on a hook: lying across the rail it read as put on a shelf. Upright, its top on the nearest hook's tip
+        // (the hooks and their tips measured on the painting, in fractions of the rail's place)
+        const W = m.wieszak, HAKI = [0.3652, 0.4342, 0.5043, 0.5754, 0.6442].map((f) => W.x + (f - 0.5036) / 0.3535 * W.w);
+        const hx = HAKI.reduce((a, b) => (Math.abs(b - luneta.mesh.position.x) < Math.abs(a - luneta.mesh.position.x) ? b : a)), czubek = W.y - (0.2217 - 0.1855) / 0.0742 * W.h;
+        const bl = c.bounds(luneta), ox = (bl.left + bl.right) / 2 - luneta.mesh.position.x, oy = (bl.top + bl.bottom) / 2 - luneta.mesh.position.y;
+        const szer = bl.right - bl.left;                                     // bounds ignore the turn: turned a quarter clockwise,
+        await c.stage.tween(0.25, (s) => { luneta.icon.rotation.z = -Math.PI / 2 * s; });   // the drawing's middle goes (ox, oy) -> (oy, -ox)
+        await luneta.moveTo(hx - oy, czubek + 0.08 + ox - szer / 2, 0.25);
         // the height chart: a line over each head
         const miarka = await c.object("miarka_scienna", { x: CHART, y: -0.4, size: 5.6, z: -0.2 });
         await c.ujecie("sredni", { na: ["lisek", miarka] });                 // Fox and the chart

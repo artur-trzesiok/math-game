@@ -56,9 +56,21 @@ TEKST = {
     "en": ("This way is still locked. Let's first finish all the adventures of the {poprz} stage, and the padlock will open by itself!",
            "Hooray! We've unlocked the {nr} stage of our journey! New adventures are waiting!"),
 }
+# a number after "od"/"do" spoken in words: the voice read "Liczymy do 3" as "do trzeciej"
+DOPELNIACZ = {1: "jednego", 2: "dwóch", 3: "trzech", 4: "czterech", 5: "pięciu", 6: "sześciu", 7: "siedmiu", 8: "ośmiu",
+              9: "dziewięciu", 10: "dziesięciu", 20: "dwudziestu"}
+
+
+def mowiony(t, lang):
+    if lang != "pl":
+        return t
+    import re
+    return re.sub(r"\b(od|do) (\d+)\b", lambda m: f"{m[1]} {DOPELNIACZ.get(int(m[2]), m[2])}", t)
+
+
 def tytul(l, lang):
     """A lesson's name read out over its card: the title, a longer breath, the subtitle ("Lekki i ciężki. Tratwa Bobra.")."""
-    t = l["title"][lang].strip()
+    t = mowiony(l["title"][lang].strip(), lang)
     t += "" if t[-1] in ".?!" else "."
     pod = (l.get("subtitle") or {}).get(lang, "").strip()
     if not pod:

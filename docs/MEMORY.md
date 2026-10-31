@@ -416,6 +416,11 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   the square at home): a shape pops in from scale 0, and corners read right after it appeared all fell into its centre.
   Locally `?szybko` hid it - the pop-in is nearly instant there.
 
+- **One Sfx for the whole game** (2026-10-31, iPad: the next lesson's loading screen came late): a Stage per lesson made
+  a new AudioContext (iOS keeps a handful), decoded every effect and started 64 <audio> elements, before the loading
+  screen. Shared now (WSPOLNY.sfx), like the renderer.
+- **Lesson titles read numbers as words** (make_menu_lines `mowiony`): "Liczymy do 3" was read "do trzeciej".
+
 ## 8. Open, not started
 - iPad: no menu music (2026-10-31, the user). `?dzwiek` shows the music element, the Web Audio context and the iOS
   audio session; suspect `navigator.audioSession.type = "playback"` / the effects' AudioContext (sfx.js, since 4d97d69f).
