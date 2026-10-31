@@ -395,6 +395,10 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
 - **Lesson code positions vs plate**: zooms slide the painted background against stickers (parallax) - things that
   must sit ON a painted thing (logs in the dam's hole, winners on a painted podium) need a wide shot or a sticker.
 
+- **A scripted edit that appends `// comment` to a one-line loop comments out the rest of the line** (2026-10-31:
+  spot_difference stopped loading, `Unexpected token ','`). After scripted edits run a module syntax check of every
+  lesson and engine file (copy to .mjs, `node --check`) - a bad lesson.js breaks only that lesson, silently.
+
 ## 8. Open, not started
 - iPad: no menu music (2026-10-31, the user). `?dzwiek` shows the music element, the Web Audio context and the iOS
   audio session; suspect `navigator.audioSession.type = "playback"` / the effects' AudioContext (sfx.js, since 4d97d69f).

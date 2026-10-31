@@ -211,7 +211,7 @@ export default {
         // which one is not like the others: four shadows, one of another thing
         {
           const inny = Math.floor(Math.random() * 4), cienie = [];
-          for (let i = 0; i < 4; i++) { const h = await c.object(i === inny ? "gruszka" : "jablko", { x: -2.7 + i * 1.8, y: 0.6, size: 1.4, plik: i === inny ? null : "jablko" });   // the apples alike: only the pear differs c.cien(h); cienie.push(h); }
+          for (let i = 0; i < 4; i++) { const h = await c.object(i === inny ? "gruszka" : "jablko", { x: -2.7 + i * 1.8, y: 0.6, size: 1.4, plik: i === inny ? null : "jablko" }); c.cien(h); cienie.push(h); }   // the apples alike: only the pear differs
           await c.say("sowa", "line.p_inny");
           dobre(cienie[inny]); await c.task({ targets: cienie, correct: cienie[inny], wrong: "line.p_inny_nie" });
           for (const h of cienie) c.cien(h, false);
