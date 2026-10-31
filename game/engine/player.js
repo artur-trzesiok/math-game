@@ -14,7 +14,7 @@ import * as U from "./ubior.js";
 import { Stage, GROUND, SUFIT } from "./scene.js";
 import * as Album from "./album.js";
 import * as Mapa from "./mapa.js";
-import { naPierwszyDotyk } from "./odblokuj.js";
+import { naPierwszyDotyk, przyKazdymDotyku } from "./odblokuj.js";
 import * as R from "./rytm.js";
 import * as M from "./mechaniki.js";
 import * as M2 from "./mechaniki2.js";
@@ -70,6 +70,7 @@ const menuMuzyka = {
     this.a.volume = MENU_GLOS;
     const sprobuj = () => { if (this.gra && this.a.paused) this.a.play()?.catch(() => {}); };
     sprobuj(); naPierwszyDotyk(sprobuj);
+    if (!this.zawsze) { this.zawsze = true; przyKazdymDotyku(() => { if (this.gra && this.a?.paused) this.a.play()?.catch(() => {}); }); }   // refused outside a tap: again at every tap
   },
   przycisz(k) { if (this.a) this.a.volume = MENU_GLOS * k; },
   stop() {

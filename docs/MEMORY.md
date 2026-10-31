@@ -399,6 +399,10 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   spot_difference stopped loading, `Unexpected token ','`). After scripted edits run a module syntax check of every
   lesson and engine file (copy to .mjs, `node --check`) - a bad lesson.js breaks only that lesson, silently.
 
+- **Shapes round, from the family's iPad** (2026-10-31): two fingers turn a held piece (settles on 45 degrees, never a
+  tap); colouring joins small neighbouring areas of one colour (a window's panes) and a tap on a frame takes the
+  nearest area; a picked crayon is said (`onKredka`); a thought bubble on the right mirrors only the bubble, not its
+  sign; music refused outside a tap gets another go at every tap (`przyKazdymDotyku`).
 - **A release reaches a running iPad by itself** (2026-10-31): the home-screen app is woken, never reloaded, and ran
   code days old (clearing the history to update wiped the children's progress). make_dist.py writes `wersja.json`
   (time + commit) at the root; the game reads it at start and, in the menu or when woken, reloads on a different
@@ -407,6 +411,10 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   answered). `speech.say` ends a line by a text-length guess until the recording's duration arms the real timer, and
   the tap-to-play button (`#dotknij`) sits over every overlay (it lay under the padlock show's, z 80). The iPad's
   refusal to play is likely the same as the missing menu music - see `?dzwiek`.
+
+- **A shape's corners come from where it stands, not its matrix** (2026-10-31, iPad: one corner dot in the middle of
+  the square at home): a shape pops in from scale 0, and corners read right after it appeared all fell into its centre.
+  Locally `?szybko` hid it - the pop-in is nearly instant there.
 
 ## 8. Open, not started
 - iPad: no menu music (2026-10-31, the user). `?dzwiek` shows the music element, the Web Audio context and the iOS

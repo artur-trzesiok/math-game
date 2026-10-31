@@ -463,5 +463,40 @@
   "hash": "ef7e0334ff83",
   "who": "jez",
   "text": "Okrągłe okienko! Będę przez nie patrzył na las."
+ },
+ "line.a_kwadraty_nie_cztery": {
+  "hash": "698d73fdcdee",
+  "who": "sowa",
+  "text": "To nie kwadrat. Kwadrat ma cztery rogi i cztery równe boki."
+ },
+ "line.p_kredka_1": {
+  "hash": "b2006d52828d",
+  "who": "sowa",
+  "text": "Zielony kolor, symbol trójkąt."
+ },
+ "line.p_kredka_2": {
+  "hash": "a00379e6aedd",
+  "who": "sowa",
+  "text": "Czerwony kolor, symbol kwadrat."
+ },
+ "line.p_kredka_3": {
+  "hash": "0d05faf9849d",
+  "who": "sowa",
+  "text": "Żółty kolor, symbol koło."
+ },
+ "line.p_kredka_4": {
+  "hash": "840c694bd5f9",
+  "who": "sowa",
+  "text": "Jasnoniebieski kolor, symbol prostokąt."
+ },
+ "line.p_kredka_5": {
+  "hash": "f0d6cdd5d523",
+  "who": "sowa",
+  "text": "Niebieski kolor, symbol serce."
+ },
+ "line.p_kredka_6": {
+  "hash": "d6b6709f2994",
+  "who": "sowa",
+  "text": "Brązowy kolor, symbol gwiazdka."
  }
 }

@@ -194,7 +194,7 @@ const ZNAK = (cx, k, x, y, r) => {
   else { for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, q = i % 2 ? r * 0.42 : r; cx.lineTo(x + q * Math.cos(a), y + q * Math.sin(a)); } cx.closePath(); }   // gwiazdka
   cx.fill();
 };
-export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6, znaki = null } = {}) {
+export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6, znaki = null, onKredka = null } = {}) {
   const kat = `/game/assets/kolorowanki/${nazwa}/`;
   const meta = await fetch(kat + "meta.json", { cache: "no-store" }).then((r) => r.json());
   const wczytaj = (u) => new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = bad; i.src = kat + u; });
@@ -204,6 +204,14 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6, zna
   const ids = mx.getImageData(0, 0, W, H).data;
   const plotno = document.createElement("canvas"); plotno.width = W; plotno.height = H; const px = plotno.getContext("2d");
   const barwy = new Map();                                                // region id -> fill colour (once coloured)
+  // small neighbours of one colour are one area (a window's four panes): one tap colours them all, one sign marks them
+  const MALY = 4000, grupa = new Map(meta.regiony.map((r) => [r.id, [r]]));
+  for (const a of meta.regiony) for (const b of meta.regiony) {
+    if (a.id >= b.id || a.kolor !== b.kolor || a.pole > MALY || b.pole > MALY || grupa.get(a.id) === grupa.get(b.id)) continue;
+    if (Math.hypot(a.x - b.x, a.y - b.y) > 2.6 * Math.max(a.r, b.r)) continue;
+    const ga = grupa.get(a.id), gb = grupa.get(b.id); ga.push(...gb); for (const r of gb) grupa.set(r.id, ga);
+  }
+  const znakGrupy = (g) => ({ x: g.reduce((s, r) => s + r.x, 0) / g.length, y: g.reduce((s, r) => s + r.y, 0) / g.length, r: Math.max(...g.map((r) => r.r)) * (g.length > 1 ? 1.6 : 1) });
   const rysuj = () => {
     const img = px.createImageData(W, H), d = img.data;
     for (let i = 0; i < W * H; i++) {
@@ -212,10 +220,10 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6, zna
     }
     px.putImageData(img, 0, 0); px.drawImage(linieImg, 0, 0);
     px.fillStyle = "#6b6258"; px.textAlign = "center"; px.textBaseline = "middle";
-    for (const r of meta.regiony) if (!barwy.has(r.id)) {
-      const wys = Math.max(18, Math.min(64, r.r * 1.1));
-      if (znaki) ZNAK(px, znaki[r.kolor - 1], r.x, r.y, Math.min(r.r * 0.7, wys * 0.6));   // a sign reads smaller than a digit
-      else { px.font = `bold ${wys}px sans-serif`; px.fillText(String(r.kolor), r.x, r.y); }
+    for (const r of meta.regiony) if (!barwy.has(r.id) && grupa.get(r.id)[0] === r) {   // once per area
+      const g = znakGrupy(grupa.get(r.id)), wys = Math.max(18, Math.min(64, g.r * 1.1));
+      if (znaki) ZNAK(px, znaki[r.kolor - 1], g.x, g.y, Math.min(g.r * 0.7, wys * 0.6));   // a sign reads smaller than a digit
+      else { px.font = `bold ${wys}px sans-serif`; px.fillText(String(r.kolor), g.x, g.y); }
     }
     tex.needsUpdate = true;
   };
@@ -234,9 +242,20 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6, zna
     return h;
   });
   let wybrana = null;
-  const wybierz = (k) => { if (wybrana) wybrana.moveTo(wybrana.home.x, wybrana.home.y, 0.15); wybrana = k; k.moveTo(k.home.x, k.home.y + 0.3, 0.15); S.sfx.graj("tap"); };
+  // `onKredka(i)`: a crayon newly picked (a scene says its colour and sign)
+  const wybierz = (k) => { if (k !== wybrana) onKredka?.(k.kolor - 1); if (wybrana) wybrana.moveTo(wybrana.home.x, wybrana.home.y, 0.15); wybrana = k; k.moveTo(k.home.x, k.home.y + 0.3, 0.15); S.sfx.graj("tap"); };
   const zostalo = () => meta.regiony.filter((r) => !barwy.has(r.id));
-  const pomaluj = (r) => { barwy.set(r.id, hex(meta.paleta[r.kolor - 1])); rysuj(); S.sfx.graj("pop"); };
+  const pomaluj = (r) => { for (const q of grupa.get(r.id)) barwy.set(q.id, hex(meta.paleta[q.kolor - 1])); rysuj(); S.sfx.graj("pop"); };
+  // the area under the finger; on a line or a window frame the nearest area within a few pixels (a small finger)
+  const obszar = (u, v) => {
+    const cx = Math.floor(u * W), cy = Math.floor(v * H), R = Math.round(W * 0.025);
+    let best = 0, bd = Infinity;
+    for (let dy = -R; dy <= R; dy += 2) for (let dx = -R; dx <= R; dx += 2) {
+      const xx = cx + dx, yy = cy + dy, d = dx * dx + dy * dy; if (xx < 0 || yy < 0 || xx >= W || yy >= H || d > R * R || d >= bd) continue;
+      const id = ids[(yy * W + xx) * 4]; if (id) { best = id; bd = d; }
+    }
+    return meta.regiony.find((q) => q.id === best);
+  };
   await new Promise((ok) => {
     const oddaj = (S.palec = {
       down: ([wx, wy]) => {
@@ -244,7 +263,7 @@ export async function kolorowanka(S, nazwa, { x = 0.4, y = 0.55, size = 5.6, zna
         if (k) { wybierz(k); return true; }
         const u = (wx - (x - size / 2)) / size, v = 1 - (wy - (y - size * H / W / 2)) / (size * H / W);
         if (u < 0 || u > 1 || v < 0 || v > 1) return false;
-        const id = ids[(Math.floor(v * H) * W + Math.floor(u * W)) * 4], r = meta.regiony.find((q) => q.id === id);
+        const r = obszar(u, v);
         if (!r || barwy.has(r.id)) return true;
         if (!wybrana) { kredki.forEach((h) => S.bump(h, 0.2, false)); return true; }        // no crayon yet: the crayons wave
         if (wybrana.kolor !== r.kolor) { S.shake(wybrana); return true; }

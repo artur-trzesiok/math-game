@@ -83,6 +83,10 @@
     "who": "sowa",
     "text": "That's not a square. A square has all its sides the same."
   },
+  "line.a_kwadraty_nie_cztery": {
+    "who": "sowa",
+    "text": "That's not a square. A square has four corners and four equal sides."
+  },
   "line.a_oba_kwadraty": {
     "who": "lisek",
     "text": "Both are squares! They have the same corners and equal sides. A turned square is still a square!"
@@ -369,5 +373,29 @@
   "line.n3": {
     "who": "sowa",
     "text": "Three!"
+  },
+  "line.p_kredka_1": {
+    "who": "sowa",
+    "text": "Green, the triangle sign."
+  },
+  "line.p_kredka_2": {
+    "who": "sowa",
+    "text": "Red, the square sign."
+  },
+  "line.p_kredka_3": {
+    "who": "sowa",
+    "text": "Yellow, the circle sign."
+  },
+  "line.p_kredka_4": {
+    "who": "sowa",
+    "text": "Light blue, the rectangle sign."
+  },
+  "line.p_kredka_5": {
+    "who": "sowa",
+    "text": "Blue, the heart sign."
+  },
+  "line.p_kredka_6": {
+    "who": "sowa",
+    "text": "Brown, the star sign."
   }
 }

@@ -15,6 +15,13 @@ function odblokuj() {
 }
 for (const t of ["touchend", "click", "keydown"]) document.addEventListener(t, odblokuj, true);
 
+// every later tap too: a play started outside a tap (a new tune after a lesson has loaded) can still be refused on an
+// iPad - music waited for the next tune then (the story was silent, it came in at the practice). What should be
+// playing and is not gets another go inside each tap.
+const zawsze = [];
+export function przyKazdymDotyku(fn) { zawsze.push(fn); }
+for (const t of ["touchend", "click"]) document.addEventListener(t, () => { for (const fn of zawsze) { try { fn(); } catch { /* ignore */ } } }, true);
+
 // a short silent clip (8 kHz mono 8-bit WAV) to start an element with
 export const CISZA = (() => {
   const n = 400, b = new Uint8Array(44 + n), d = new DataView(b.buffer);

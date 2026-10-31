@@ -91,6 +91,7 @@ export default {
         await c.ujecie("sredni", { na: [prosty, rog] });                     // the pointy one turns: the same as the square
         await rog.rotateTo(0, 0.9);
         c.stage.bump(rog, 0.3);
+        await c.wait(1.6);                                                   // the two squares side by side, alike: time to see it
         await c.ujecie("zblizenie", { na: "lisek" });
         await c.wonder("lisek");
         await c.say("lisek", "line.a_jak_poznac");
@@ -133,7 +134,7 @@ export default {
         await wyrosnij(c);
         const kwadraty = hs2.filter((h) => h.ksztalt === "kwadrat");
         await c.say("sowa", "line.a_wszystkie_kwadraty");
-        dobre(kwadraty); await c.task({ targets: hs2, correct: kwadraty, wszystkie: true, wrong: "line.a_kwadraty_nie" }); dobre(kwadraty, false);
+        dobre(kwadraty); await c.task({ targets: hs2, correct: kwadraty, wszystkie: true, wrong: "line.a_kwadraty_nie_cztery" }); dobre(kwadraty, false);
         await c.ujecie("sredni", { na: ["lisek", ...kwadraty] });            // Fox has got it: both squares in the shot
         await c.say("lisek", "line.a_oba_kwadraty", { anim: "Radosc" });
         c.clear();
@@ -322,7 +323,7 @@ export default {
         }
         // 5. colour the house by signs (not digits: numbers come later)
         {
-          await c.say("sowa", "line.p_kolorowanka_znak"); const k = await c.kolorowanka("domek", { x: 0.2, y: 0.55, size: 5.0, znaki: ["trojkat", "kwadrat", "kolo", "prostokat", "serce", "gwiazdka"] });
+          await c.say("sowa", "line.p_kolorowanka_znak"); const k = await c.kolorowanka("domek", { x: 0.2, y: 0.55, size: 5.0, znaki: ["trojkat", "kwadrat", "kolo", "prostokat", "serce", "gwiazdka"], onKredka: (i) => c.say("sowa", `line.p_kredka_${i + 1}`).catch(() => {}) });   // the picked crayon said aloud: its colour and its sign
           await c.ujecie("sredni", { na: [{ mesh: k.obraz }] });           // the coloured picture
           await c.say("lisek", "line.p_kolorowanka_ok"); k.remove(); gw.dodaj(); await c.ujecie("ogolny");
         }
@@ -386,7 +387,7 @@ export default {
         await Promise.all([rog.moveTo(-1.0, -1.6, 0.6), c.stage.tween(0.6, (s) => rog.mesh.scale.setScalar(s0 * (1 + 1.3 * s)))]);
         await c.say("jez", "line.d_rogi");
         const bok = 0.95 * 2.3 * 0.8;                                        // the biscuit's side: 0.8 of the sticker, 2.3x enlarged
-        const kw = c.shape("kwadrat", { x: rog.mesh.position.x, y: rog.mesh.position.y, size: bok, color: KOLOR.kwadrat, rot: 45 });
+        const kw = c.shape("kwadrat", { x: rog.mesh.position.x, y: rog.mesh.position.y, size: bok, color: KOLOR.kwadrat, rot: 45, wypelnienie: 0.3 });   // the biscuit shows through: its corners are touched
         const r = await rogi(c, kw, "line.d_rogi");
         await c.say("jez", "line.d_kwadrat");
         r.remove(); kw.remove();

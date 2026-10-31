@@ -502,8 +502,10 @@ export const EMOCJE = ["zlosc", "pot", "serce", "radosc", "smutek", "sen", "wykr
 // painted faces set into a bubble (a sweat drop read as nothing to a child): a sticker drawn over the bubble once loaded
 const MALOWANE = Object.fromEntries(["serce", "radosc", "zlosc", "sen", "wykrzyknik", "zarowka", "zimno", "mokro", "muzyka", "strach", "smutek", "pytanie"].map((n) => [n, `/game/assets/objects/emocja_${n}.webp`]));
 MALOWANE.pot = "/game/assets/objects/emocja_ojej.webp";
-function ikonaEmocji(rodzaj) {
-  const tex = rysujDymek(rodzaj);
+// `lustro`: the bubble's tail on the other side (a character on the right) - only the bubble is mirrored, never its
+// sign (a mirrored question mark)
+function ikonaEmocji(rodzaj, lustro = false) {
+  const tex = rysujDymek(rodzaj, lustro);
   if (MALOWANE[rodzaj]) {
     const img = new Image();
     img.onload = () => { const x = tex.image.getContext("2d"); x.setTransform(1, 0, 0, 1, 0, 0); x.drawImage(img, 256 - 140, 224 - 140, 280, 280); tex.needsUpdate = true; };   // the bubble was drawn scaled 2x
@@ -511,14 +513,16 @@ function ikonaEmocji(rodzaj) {
   }
   return tex;
 }
-function rysujDymek(rodzaj) {
+function rysujDymek(rodzaj, lustro = false) {
   return canvasTex(512, 512, (x) => {
     x.scale(2, 2);                                               // drawn at 256, rendered at twice the pixels
     // the bubble
+    x.save(); if (lustro) { x.translate(256, 0); x.scale(-1, 1); }
     x.fillStyle = "#fff"; x.strokeStyle = "#4a433c"; x.lineWidth = 8;
     x.beginPath(); x.ellipse(128, 112, 104, 92, 0, 0, 7); x.fill(); x.stroke();
     x.beginPath(); x.moveTo(96, 196); x.lineTo(80, 246); x.lineTo(132, 202); x.closePath(); x.fill(); x.stroke();
     x.fillStyle = "#fff"; x.beginPath(); x.ellipse(128, 112, 98, 86, 0, 0, 7); x.fill();
+    x.restore();
     x.lineCap = "round"; x.lineJoin = "round";
     const C = (k) => { x.fillStyle = k; x.strokeStyle = k; };
     if (MALOWANE[rodzaj]) return;                                  // only the bubble: the painted sign goes in when loaded
@@ -557,10 +561,10 @@ function rysujDymek(rodzaj) {
 export async function emocja(S, who, rodzaj, { na = 2.2 } = {}) {
   const L = S.puppets[who]; if (!L || !L.korzen.visible) return null;
   if (!S.ikonyEmocji) S.ikonyEmocji = {};
-  const tex = S.ikonyEmocji[rodzaj] || (S.ikonyEmocji[rodzaj] = ikonaEmocji(rodzaj));
+  const strona = L.korzen.position.x < 0 ? 1 : -1, klucz = `${rodzaj}${strona < 0 ? "_l" : ""}`;
+  const tex = S.ikonyEmocji[klucz] || (S.ikonyEmocji[klucz] = ikonaEmocji(rodzaj, strona < 0));
   const m = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 1.2), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }));
   m.renderOrder = 46; m.frustumCulled = false; S.scene.add(m);
-  const strona = L.korzen.position.x < 0 ? 1 : -1;
   const handle = { mesh: m, kind: "emocja", base: 1,
     remove: () => { S.scene.remove(m); m.geometry.dispose(); m.material.dispose(); S.dymki = (S.dymki || []).filter((d) => d !== handle); } };
   handle.za = () => {                                                   // follows the head every frame
@@ -575,7 +579,7 @@ export async function emocja(S, who, rodzaj, { na = 2.2 } = {}) {
     if (y > gora) { y = gora; x = strona > 0 ? b.max.x + r * 0.9 : b.min.x - r * 0.9; }
     m.position.set(Math.max(lewo, Math.min(prawo, x)), y, 0.9);
     handle.k = k;
-    m.scale.set(strona * k * (handle.q ?? 1), k * (handle.q ?? 1), 1);   // the tail points to the head
+    m.scale.set(k * (handle.q ?? 1), k * (handle.q ?? 1), 1);          // the tail points to the head: drawn so (ikonaEmocji lustro)
   };
   handle.q = 0.001; handle.za();
   (S.dymki = S.dymki || []).push(handle);

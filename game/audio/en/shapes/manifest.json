@@ -463,5 +463,40 @@
   "hash": "cffae9318023",
   "who": "jez",
   "text": "A round window! I'll look out at the forest through it."
+ },
+ "line.a_kwadraty_nie_cztery": {
+  "hash": "f40c6c0e80e4",
+  "who": "sowa",
+  "text": "That's not a square. A square has four corners and four equal sides."
+ },
+ "line.p_kredka_1": {
+  "hash": "7b7a9af33f12",
+  "who": "sowa",
+  "text": "Green, the triangle sign."
+ },
+ "line.p_kredka_2": {
+  "hash": "cb6c07524308",
+  "who": "sowa",
+  "text": "Red, the square sign."
+ },
+ "line.p_kredka_3": {
+  "hash": "8c9f6a79f3a8",
+  "who": "sowa",
+  "text": "Yellow, the circle sign."
+ },
+ "line.p_kredka_4": {
+  "hash": "237def934bd2",
+  "who": "sowa",
+  "text": "Light blue, the rectangle sign."
+ },
+ "line.p_kredka_5": {
+  "hash": "ecc7297a5e6f",
+  "who": "sowa",
+  "text": "Blue, the heart sign."
+ },
+ "line.p_kredka_6": {
+  "hash": "9166d358a7d6",
+  "who": "sowa",
+  "text": "Brown, the star sign."
  }
 }

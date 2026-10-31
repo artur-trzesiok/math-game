@@ -4,7 +4,7 @@
 // particles: rain, snow, leaves ...) loops quietly next to it. Both duck under speech and fall silent while a scene
 // listens (counting claps, the rhythm). Plain <audio> elements, no WebAudio (the tablet); a missing file is silence.
 import { v } from "./v.js";
-import { naPierwszyDotyk } from "./odblokuj.js";
+import { naPierwszyDotyk, przyKazdymDotyku } from "./odblokuj.js";
 
 export const MOTYW = {
   laka: "laka", laka_burza: "laka", kurnik: "laka", sad: "laka", ogrod: "laka", ogrod_zima: "laka", plac_zabaw: "laka", stacyjka: "laka", podium_wyscigu: "laka", tor_wyscigu: "laka",turniej_klasy: "laka",ogrod_labirynt: "laka", polana_piknik: "laka", dab_babci: "las", dab_wiewiorki: "las",
@@ -33,7 +33,8 @@ export class Muzyka {
     this.pogodaNazwa = null; this.pog = [];
     this.cicho = 0;                                                  // >0: a scene listens
     this.wylaczona = false;
-    naPierwszyDotyk(() => { for (const k of [...this.muz, ...this.pog]) if (k.a.paused && k.cel > 0) k.a.play()?.catch(() => {}); });
+    const wznow = () => { for (const k of [...this.muz, ...this.pog]) if (k.a.paused && k.cel > 0 && !this.wylaczona) k.a.play()?.catch(() => {}); };
+    naPierwszyDotyk(wznow); przyKazdymDotyku(wznow);
     this.t = setInterval(() => this._krok(), 50);
   }
   _krok() {

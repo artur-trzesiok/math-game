@@ -74,13 +74,13 @@ function obrys(pts, width, color, seed, halo) {
 }
 
 // a filled shape handle (a sticker-like thing: draggable, a task target, zones take it)
-export function ksztalt(S, kind, { x = 0, y = 1.2, size = 1.3, color = null, rot = 0, def = null, name = kind } = {}) {
+export function ksztalt(S, kind, { x = 0, y = 1.2, size = 1.3, color = null, rot = 0, def = null, name = kind, wypelnienie = 1 } = {}) {
   const d = def || KSZTALTY[kind];
   const pts = d.pts.map(([a, b]) => [a * size, b * size]);
   const shp = new THREE.Shape(pts.map(([a, b]) => new THREE.Vector2(a, b)));
   const g = new THREE.Group(); g.position.set(x, y, 0.4);
   const inner = new THREE.Group(); inner.rotation.z = rot * Math.PI / 180; g.add(inner);
-  const fill = new THREE.Mesh(new THREE.ShapeGeometry(shp, 24), new THREE.MeshBasicMaterial({ color: color || d.kolor, transparent: true, depthWrite: false, side: THREE.DoubleSide }));
+  const fill = new THREE.Mesh(new THREE.ShapeGeometry(shp, 24), new THREE.MeshBasicMaterial({ color: color || d.kolor, transparent: true, opacity: wypelnienie, depthWrite: false, side: THREE.DoubleSide }));   // wypelnienie < 1: laid over a picture, it shows through
   fill.renderOrder = 10.6;
   const seed = Math.random() * 1000;
   const warstwy = [obwodka(pts, 0.13), fill, obrys(pts, 0.06, "#2b2622", seed, false)];
@@ -104,7 +104,9 @@ export function ksztalt(S, kind, { x = 0, y = 1.2, size = 1.3, color = null, rot
       warstwy.forEach((m, k) => { m.renderOrder = 10.5 + j * 0.03 + k * 0.01; m.userData.ro0 = m.renderOrder; });
     },
     // corners in world coordinates, as drawn now
-    corners: () => { g.updateMatrixWorld(true); return obroc(pts, handle.rot).map(([a, b]) => new THREE.Vector3(a, b, 0).applyMatrix4(g.matrixWorld)); },
+    // from where it stands and its own size, not its matrix: right after it appears it is still popping in from scale 0,
+    // and every corner came out in its middle (an iPad showed one corner dot in the centre of the square)
+    corners: () => obroc(pts, handle.rot).map(([a, b]) => new THREE.Vector3(g.position.x + a * handle.base, g.position.y + b * handle.base, 0)),
   };
   handle.naWierzch();
   S.scene.add(g); S.objects.push(handle); S.appear(handle);

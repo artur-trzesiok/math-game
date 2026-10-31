@@ -83,6 +83,10 @@
     "who": "sowa",
     "text": "To nie kwadrat. Kwadrat ma wszystkie boki równe."
   },
+  "line.a_kwadraty_nie_cztery": {
+    "who": "sowa",
+    "text": "To nie kwadrat. Kwadrat ma cztery rogi i cztery równe boki."
+  },
   "line.a_oba_kwadraty": {
     "who": "lisek",
     "text": "Oba to kwadraty! Mają takie same rogi i równe boki. Obrócony kwadrat to nadal kwadrat!"
@@ -369,5 +373,29 @@
   "line.n3": {
     "who": "sowa",
     "text": "Trzy!"
+  },
+  "line.p_kredka_1": {
+    "who": "sowa",
+    "text": "Zielony kolor, symbol trójkąt."
+  },
+  "line.p_kredka_2": {
+    "who": "sowa",
+    "text": "Czerwony kolor, symbol kwadrat."
+  },
+  "line.p_kredka_3": {
+    "who": "sowa",
+    "text": "Żółty kolor, symbol koło."
+  },
+  "line.p_kredka_4": {
+    "who": "sowa",
+    "text": "Jasnoniebieski kolor, symbol prostokąt."
+  },
+  "line.p_kredka_5": {
+    "who": "sowa",
+    "text": "Niebieski kolor, symbol serce."
+  },
+  "line.p_kredka_6": {
+    "who": "sowa",
+    "text": "Brązowy kolor, symbol gwiazdka."
   }
 }

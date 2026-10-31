@@ -160,10 +160,16 @@ export class Stage {
     this.renderer.domElement.addEventListener("pointerdown", (e) => {
       if (e.button !== 0 && e.pointerType === "mouse") return;
       if (this.palec && this.palec.down?.(naScenie(e)) !== false) { this.palecWcisniety = true; try { this.renderer.domElement.setPointerCapture(e.pointerId); } catch { /* ignore */ } return; }
+      if (this.drag && e.pointerId !== this.drag.id) return this.skretStart(e);   // a second finger on a held piece: it turns
       if (!this.dragStart(e)) this.pointer(e);
     }, sig);
-    this.renderer.domElement.addEventListener("pointermove", (e) => { if (this.palec && this.palecWcisniety) return this.palec.move?.(naScenie(e)); this.dragMove(e); }, sig);
-    const puszczony = () => { if (this.palecWcisniety) { this.palecWcisniety = false; return this.palec?.up?.(); } this.dragEnd(); };
+    this.renderer.domElement.addEventListener("pointermove", (e) => { if (this.palec && this.palecWcisniety) return this.palec.move?.(naScenie(e)); if (this.drag?.skret) this.skretRuch(e); if (!this.drag || e.pointerId === this.drag.id) this.dragMove(e); }, sig);
+    const puszczony = (e) => {
+      if (this.palecWcisniety) { this.palecWcisniety = false; return this.palec?.up?.(); }
+      if (this.drag?.skret && e.pointerId === this.drag.skret.id) return this.skretKoniec();     // the turning finger lifted: the piece is still held
+      if (this.drag?.skret) this.skretKoniec();
+      if (!this.drag || e.pointerId === this.drag.id) this.dragEnd();
+    };
     this.renderer.domElement.addEventListener("pointerup", puszczony, sig);
     this.renderer.domElement.addEventListener("pointercancel", puszczony, sig);
     if (PARAMS.has("safe")) this.showSafe();
@@ -757,7 +763,7 @@ export class Stage {
     if (set.free && best.zablokowany) return true;
     const p = this.worldAt(n);
     best.naWierzch?.();                                     // a picked-up shape lies over the others
-    this.drag = { item: best, dx: best.mesh.position.x - p.x, dy: best.mesh.position.y - p.y, from: { x: best.mesh.position.x, y: best.mesh.position.y }, zone: best.zone, t0: performance.now() };
+    this.drag = { item: best, id: e.pointerId, dx: best.mesh.position.x - p.x, dy: best.mesh.position.y - p.y, from: { x: best.mesh.position.x, y: best.mesh.position.y }, zone: best.zone, t0: performance.now(), palec: p };
     if (best.zone) best.zone.take(best);
     // in the hand it is over everything, the characters too (a scarf dragged onto Owl went under her)
     this.drag.ro = []; best.mesh.traverse((o) => { if (o.isMesh || o.isLine) { this.drag.ro.push([o, o.renderOrder]); o.renderOrder = 50 + (o.renderOrder % 10); } });
@@ -767,7 +773,27 @@ export class Stage {
   }
   dragMove(e) {
     const d = this.drag; if (!d) return;
-    const p = this.worldAt(this.ndc(e)); d.item.mesh.position.x = p.x + d.dx; d.item.mesh.position.y = p.y + d.dy;
+    const p = this.worldAt(this.ndc(e)); d.palec = p; d.item.mesh.position.x = p.x + d.dx; d.item.mesh.position.y = p.y + d.dy;
+  }
+  // two fingers turn a held piece (a shape: `rotateTo`, `rot` in degrees): the second finger's angle round the first
+  // turns it; when it lifts, the piece settles on the nearest 45 degrees. Never counted as a tap (a tap turns by 45).
+  skretStart(e) {
+    const d = this.drag, it = d?.item; if (!it?.rotateTo || it.rot == null || d.skret) return;
+    const p = this.worldAt(this.ndc(e)), a0 = Math.atan2(p.y - d.palec.y, p.x - d.palec.x);
+    d.skret = { id: e.pointerId, a0, rot0: it.rot }; d.skrecony = true;
+    try { this.renderer.domElement.setPointerCapture(e.pointerId); } catch { /* ignore */ }
+  }
+  skretRuch(e) {
+    const d = this.drag, s = d?.skret; if (!s || e.pointerId !== s.id) return;
+    const p = this.worldAt(this.ndc(e)), a = Math.atan2(p.y - d.palec.y, p.x - d.palec.x);
+    s.kat = s.rot0 + (a - s.a0) * 180 / Math.PI;
+    (d.item.inner || d.item.icon || d.item.mesh).rotation.z = s.kat * Math.PI / 180;
+  }
+  skretKoniec() {
+    const d = this.drag, s = d?.skret; if (!s) return; d.skret = null;
+    if (s.kat == null) return;
+    const cel = Math.round(s.kat / 45) * 45; d.item.rot = s.kat;                  // from where the fingers left it
+    d.item.rotateTo(cel, 0.15); this.sfx.graj("tap");
   }
   dragEnd() {
     const d = this.drag; if (!d) return; this.drag = null;
@@ -776,7 +802,7 @@ export class Stage {
     for (const [o, r] of d.ro || []) o.renderOrder = r;
     if (this.dragSet?.free) {
       const ruch = Math.hypot(px - d.from.x, py - d.from.y);
-      if (ruch < 0.15 && performance.now() - d.t0 < 450) { it.mesh.position.x = d.from.x; it.mesh.position.y = d.from.y; this.dragSet.onTap?.(it); }
+      if (ruch < 0.15 && performance.now() - d.t0 < 450 && !d.skrecony) { it.mesh.position.x = d.from.x; it.mesh.position.y = d.from.y; this.dragSet.onTap?.(it); }
       else this.dragSet.onDrop?.(it, { x: px, y: py });
       return;
     }
