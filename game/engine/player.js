@@ -474,20 +474,26 @@ export class Player {
       await czekaj(2600);
       sec.classList.remove("rozwiej"); el.remove();
     };
+    const zwolnij = () => { this.menuBlok = false; $("#menu").classList.remove("pokaz"); };
     const odblokuj = () => {
-      if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => swietujOtwarcie(nowy), 900); }, 400);
+      if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => swietujOtwarcie(nowy).finally(zwolnij), 900); }, 400);
       else if (gdzieIndziej) {
         // the gate at the end of this strip leads there and was never seen open: it is opened first, here
         const dokad = swiatEtapu(gdzieIndziej.id).id, br = pas.querySelector(`.brama:not(.wstecz)[data-swiat="${dokad}"]`);
         if (br && !lista(WIDZIANE).includes(`brama_${dokad}`) && !PARAMS.has("szybko")) {
           br.classList.add("zamknieta"); if (!br.querySelector(".klodka")) br.insertAdjacentHTML("beforeend", `<img class="klodka" src="${v("/game/assets/menu/klodka.webp")}" alt="">`);
-          setTimeout(() => { naBlok(br); setTimeout(() => swietujOtwarcie(br, { brama: true }), 1100); }, 400);
-        } else setTimeout(() => this.przejdzSwiat(dokad), 600);
+          setTimeout(() => { naBlok(br); setTimeout(() => swietujOtwarcie(br, { brama: true }).finally(zwolnij), 1100); }, 400);
+        } else setTimeout(() => { zwolnij(); this.przejdzSwiat(dokad); }, 600);
       }
     };
     // a stage just finished (every lesson made so far has its sticker; once): its sign comes big to the middle with rays
     // and confetti, Fox cheers, the sign flies into the album as the stage's own sticker; then the next stage opens
     const swieto = topics.findIndex((t, i) => t.znak && otwarty[i] && !PARAMS.has("wszystko") && t.lessons.some((id) => !byId[id].wkrotce) && skonczony(t) && !lista(UKONCZONE).includes(t.id));
+    // while the menu celebrates (a stage finished, the next one opening) nothing in it takes a touch: a child went into
+    // the album meanwhile and the whole padlock show played unseen; a tap on the show itself still hurries it
+    this.menuBlok = swieto >= 0 || !!nowy || !!gdzieIndziej;
+    $("#menu").classList.toggle("pokaz", this.menuBlok); clearTimeout(this.menuZwolnij);
+    if (this.menuBlok) this.menuZwolnij = setTimeout(zwolnij, 30000);      // never locked for good if a show breaks
     if (swieto >= 0) setTimeout(() => this.swietoEtapu(topics[swieto], () => { dopisz(UKONCZONE, topics[swieto].id); odblokuj(); }), 700);
     else odblokuj();
     for (const b of bloki) if (!b.classList.contains("zamkniety") && b !== nowy) b.querySelector(".klodka")?.remove();

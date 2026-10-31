@@ -293,6 +293,9 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   (a painted glow under the stage signs trimmed; the rooster card redrawn from the clean morning card); the drawn
   shapes' white ring (geometria.js, also the tower blocks) follows the sticker rule through `naklejka.js`. The stage
   signs in HTML (menu plank, map, celebration) get the white edge from CSS, like the album's `.wycinek`.
+- **The menu takes no touch while a stage finishes or the next opens** (2026-10-31, the user: a child went into the
+  album to stick two stickers and missed the whole padlock show): `#menu.pokaz` (pointer-events none) from the
+  return to the menu until the padlock or gate show ends, 30 s at most; a tap on the show still hurries it.
 - **Shadow tasks pin one variant** (2026-10-31): a sticker variant changes the outline, so a shadow and its answers (and
   heaps, `kupka({plik})`) use one file. bigger_smaller's shoes: compared heels on one line, not laid one on another.
 

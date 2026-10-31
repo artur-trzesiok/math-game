@@ -58,6 +58,7 @@
   @keyframes kiw { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg) scale(1.03); } }
   /* the sticker album (engine/album.js): the button on the menu, the giving at a lesson's end, the album */
   #albumBtn { position: relative; width: calc(var(--k) * 0.62); height: calc(var(--k) * 0.58); padding: 0; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 5px 8px rgba(60,30,0,.3)); }
+  #menu.pokaz { pointer-events: none; }                               /* a stage finishing / the next opening: watch it */
   #albumBtn .pniak { position: absolute; left: 0; bottom: 0; width: 100%; }
   #albumBtn .ksiega { position: absolute; left: 20%; bottom: 30%; width: 58%; transform: rotate(-8deg); transition: transform .2s; }
   #albumBtn:active .ksiega { transform: rotate(-8deg) scale(.94); }
