@@ -91,6 +91,11 @@ if (PARAMS.has("dzwiek")) {
       `dotyk: ${zdarzenia.join(" ") || "-"}`].join("\n");
   }, 400);
 }
+// a new release on the server (make_dist.py writes /wersja.json): a home-screen app on an iPad is only woken, never
+// reloaded, and kept running code from days before. The version is read at start; back in the menu, or woken, a
+// different one reloads the page - in the menu only, never in a lesson or over the album, the map or a show
+const WERSJA = { zStartu: null };
+const wersjaSerwera = () => fetch(`/wersja.json?t=${Date.now()}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).then((d) => d?.wersja ?? null).catch(() => null);
 const STAGES = ["story", "practice", "apply"];
 const DEBUG = PARAMS.has("debug");
 // ?scenariusz: the story preview (manager/opowiesc.html) - the autopilot plays the lesson and every line, shot and
@@ -134,6 +139,8 @@ export class Player {
   }
 
   async boot() {
+    wersjaSerwera().then((w) => { WERSJA.zStartu = w; });                // none on the dev server: the check sleeps
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) this.sprawdzWersje(); });
     this.ui = await loadStrings(`/game/i18n/${this.lang}.json`);
     this.t = translator([this.ui]);
     this.index = await (await fetch(v("/game/lessons/index.json"), { cache: "no-store" })).json();
@@ -474,7 +481,7 @@ export class Player {
       await czekaj(2600);
       sec.classList.remove("rozwiej"); el.remove();
     };
-    const zwolnij = () => { this.menuBlok = false; $("#menu").classList.remove("pokaz"); };
+    const zwolnij = () => { this.menuBlok = false; $("#menu").classList.remove("pokaz"); this.sprawdzWersje(); };
     const odblokuj = () => {
       if (nowy) setTimeout(() => { naBlok(nowy); setTimeout(() => swietujOtwarcie(nowy).finally(zwolnij), 900); }, 400);
       else if (gdzieIndziej) {
@@ -494,9 +501,17 @@ export class Player {
     this.menuBlok = swieto >= 0 || !!nowy || !!gdzieIndziej;
     $("#menu").classList.toggle("pokaz", this.menuBlok); clearTimeout(this.menuZwolnij);
     if (this.menuBlok) this.menuZwolnij = setTimeout(zwolnij, 30000);      // never locked for good if a show breaks
+    else this.sprawdzWersje();                                             // back in the menu: a new release takes over here
     if (swieto >= 0) setTimeout(() => this.swietoEtapu(topics[swieto], () => { dopisz(UKONCZONE, topics[swieto].id); odblokuj(); }), 700);
     else odblokuj();
     for (const b of bloki) if (!b.classList.contains("zamkniety") && b !== nowy) b.querySelector(".klodka")?.remove();
+  }
+
+  async sprawdzWersje() {
+    const wMenu = () => $("#menu").style.display !== "none" && !this.menuBlok && !document.querySelector("#album, #mapa, #swieto, #otwarcie, #wreczenie");
+    if (!WERSJA.zStartu || !wMenu()) return;
+    const w = await wersjaSerwera();
+    if (w && w !== WERSJA.zStartu && wMenu()) location.reload();
   }
 
   async swietoEtapu(t, gotowe) {

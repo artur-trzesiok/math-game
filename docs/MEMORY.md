@@ -399,6 +399,10 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   spot_difference stopped loading, `Unexpected token ','`). After scripted edits run a module syntax check of every
   lesson and engine file (copy to .mjs, `node --check`) - a bad lesson.js breaks only that lesson, silently.
 
+- **A release reaches a running iPad by itself** (2026-10-31): the home-screen app is woken, never reloaded, and ran
+  code days old (clearing the history to update wiped the children's progress). make_dist.py writes `wersja.json`
+  (time + commit) at the root; the game reads it at start and, in the menu or when woken, reloads on a different
+  one - never in a lesson or over the album, the map or a show. The server sends index.html with `no-cache`.
 - **A spoken line must never hang the game** (2026-10-31, iPad: the gate show stopped under Fox's speaking head, nothing
   answered). `speech.say` ends a line by a text-length guess until the recording's duration arms the real timer, and
   the tap-to-play button (`#dotknij`) sits over every overlay (it lay under the padlock show's, z 80). The iPad's

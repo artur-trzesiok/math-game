@@ -135,7 +135,12 @@ def main() -> int:
         if l["id"] not in gotowe:
             l["wkrotce"] = True
     ix.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"-> {DIST}  (upload its contents to the domain root)")
+    # the release's stamp: a running game compares it with the one it started with and reloads in the menu (player.js)
+    import subprocess, datetime
+    commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    stempel = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    (DIST / "wersja.json").write_text(json.dumps({"wersja": f"{stempel} {commit}"}) + "\n", encoding="utf-8")
+    print(f"-> {DIST}  (upload its contents to the domain root)  version {stempel} {commit}")
     return 0
 
 
