@@ -1157,7 +1157,9 @@ NO glow, NO halo outside the card.
 {STYL}
 Exactly the reference card - the same rounded frame, the same little house, tree, path and pink morning sky with the
 sun rising - with ONE thing added in the front on the left: a proud colourful ROOSTER standing on the fence, beak wide
-open, crowing, with three little curved sound lines coming from its beak. Keep everything else as it is.""",
+open, crowing, with three little curved sound lines coming from its beak. Keep everything else as it is: the card as
+wide as tall with the same proportions, its edge exactly like the reference's. NO dark outline, NO white border, NO
+frame line round the card.""",
 }
 
 # stage 6: the bakery, the dam, the picnic, the tournament

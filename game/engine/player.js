@@ -78,6 +78,19 @@ const menuMuzyka = {
     this.fade = setInterval(() => { k++; a.volume = MENU_GLOS * Math.max(0, 1 - k / 8); if (k >= 8) { clearInterval(this.fade); a.pause(); } }, 50);
   },
 };
+// ?dzwiek: what the sound is doing, in a corner - the menu music element, the effects' Web Audio context, the iOS audio
+// session, the first-touch unlock - for a tablet that stays silent (read it off a screenshot)
+if (PARAMS.has("dzwiek")) {
+  const el = document.createElement("pre"); el.style.cssText = "position:fixed;left:4px;bottom:4px;z-index:99999;margin:0;padding:6px 8px;font:12px/1.35 monospace;color:#fff;background:rgba(0,0,0,.72);border-radius:6px;pointer-events:none;white-space:pre";
+  document.body.appendChild(el); const zdarzenia = [];
+  for (const t of ["touchend", "click", "pointerdown"]) document.addEventListener(t, () => { zdarzenia.push(t); if (zdarzenia.length > 6) zdarzenia.shift(); }, true);
+  setInterval(() => {
+    const a = menuMuzyka.a, ctx = window.gra?.S?.sfx?.ctx || window.gra?.stage?.sfx?.ctx;
+    el.textContent = [`muzyka: ${a ? `${a.src.split("/").pop()} paused=${a.paused} t=${a.currentTime.toFixed(1)} ready=${a.readyState} err=${a.error?.code ?? "-"} vol=${a.volume} muted=${a.muted}` : "brak"}  gra=${menuMuzyka.gra}`,
+      `webaudio: ${ctx ? ctx.state : "brak"}   audioSession: ${navigator.audioSession?.type ?? "brak"}`,
+      `dotyk: ${zdarzenia.join(" ") || "-"}`].join("\n");
+  }, 400);
+}
 const STAGES = ["story", "practice", "apply"];
 const DEBUG = PARAMS.has("debug");
 // ?scenariusz: the story preview (manager/opowiesc.html) - the autopilot plays the lesson and every line, shot and

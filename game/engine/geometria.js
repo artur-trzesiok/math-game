@@ -84,6 +84,8 @@ export function ksztalt(S, kind, { x = 0, y = 1.2, size = 1.3, color = null, rot
   fill.renderOrder = 10.6;
   const seed = Math.random() * 1000;
   const warstwy = [obwodka(pts, 0.13), fill, obrys(pts, 0.06, "#2b2622", seed, false)];
+  const rm = warstwy[0].material; rm.opacity = 0;                           // the white rim like a sticker's: only while it waits for a touch (naklejka.js)
+  rm.userData.naklejka = { uObw: { get value() { return rm.opacity; }, set value(v) { rm.opacity = v; } } };
   inner.add(...warstwy);
   const handle = { mesh: g, inner, name, tag: kind, kind: "object", ksztalt: kind, base: 1, size0: 1, size, pts, rot, home: { x, y }, zone: null, pulse: false,
     remove: () => { S.scene.remove(g); const i = S.objects.indexOf(handle); if (i >= 0) S.objects.splice(i, 1); S.untarget(handle); if (handle.zone) handle.zone.take(handle, false); },

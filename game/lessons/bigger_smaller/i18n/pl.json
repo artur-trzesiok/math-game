@@ -310,5 +310,17 @@
   "line.p_czapki_ok": {
     "who": "wiewiorka",
     "text": "Każdy ma czapkę w sam raz: największa na największej głowie Sowy, a najmniejsza na mojej!"
+  },
+  "line.d_buty_linia": {
+    "who": "lisek",
+    "text": "Tak, ten but jest większy. Ustawię oba piętami przy jednej kresce."
+  },
+  "line.d_buty_dalej": {
+    "who": "lisek",
+    "text": "Widzisz? Duży sięga dalej!"
+  },
+  "line.d_rodzice_linia": {
+    "who": "sowa",
+    "text": "Porównaj z rodzicami buty całej rodziny: ustawcie je piętami przy jednej linii. Który sięga dalej, ten jest większy!"
   }
 }

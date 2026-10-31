@@ -398,5 +398,20 @@
   "hash": "32fc07955c4c",
   "who": "wiewiorka",
   "text": "Everyone has a cap that's just right: the biggest on Owl's big head, the smallest on mine!"
+ },
+ "line.d_buty_linia": {
+  "hash": "b7b2276fb964",
+  "who": "lisek",
+  "text": "Yes, this shoe is bigger. I'll stand both with their heels on one line."
+ },
+ "line.d_buty_dalej": {
+  "hash": "6c54a60945f0",
+  "who": "lisek",
+  "text": "See? The big one reaches further!"
+ },
+ "line.d_rodzice_linia": {
+  "hash": "ecf4ae0d48c0",
+  "who": "sowa",
+  "text": "Compare the whole family's shoes with your parents: stand them with their heels on one line. The one that reaches further is bigger!"
  }
 }

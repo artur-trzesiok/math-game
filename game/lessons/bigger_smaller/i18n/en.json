@@ -310,5 +310,17 @@
   "line.p_czapki_ok": {
     "who": "wiewiorka",
     "text": "Everyone has a cap that's just right: the biggest on Owl's big head, the smallest on mine!"
+  },
+  "line.d_buty_linia": {
+    "who": "lisek",
+    "text": "Yes, this shoe is bigger. I'll stand both with their heels on one line."
+  },
+  "line.d_buty_dalej": {
+    "who": "lisek",
+    "text": "See? The big one reaches further!"
+  },
+  "line.d_rodzice_linia": {
+    "who": "sowa",
+    "text": "Compare the whole family's shoes with your parents: stand them with their heels on one line. The one that reaches further is bigger!"
   }
 }

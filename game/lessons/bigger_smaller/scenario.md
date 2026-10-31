@@ -45,7 +45,7 @@ named at the end ("the biggest on Owl's big head, the smallest on mine").
 4. The tea: **child** gives the big cup to big Fox and the small cup to little Squirrel (dragged to them).
 5. The payoff, seen: **event illustration** - the housewarming party, every box, chair and cup its own size.
 6. The home task shown in play, on a plain-colour insert: two shoes, a big and a small one; **child** points to the
-   bigger, then Fox lays one on the other - the bigger sticks out all round. Owl: compare the family's shoes with your
+   bigger, then Fox stands both with their heels on one line - the bigger reaches further. Owl: compare the family's shoes with your
    parents the same way.
 
 ## Iterations

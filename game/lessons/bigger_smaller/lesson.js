@@ -248,7 +248,8 @@ export default {
         {
           const duzy = Math.random() < 0.5;
           const cien = await c.object("gruszka", { x: 0.4, y: 1.7, size: duzy ? 1.7 : 0.9 }); c.cien(cien);
-          const a = await c.object("gruszka", { x: -1.2, y: -1.6, size: 1.6 }), b = await c.object("gruszka", { x: 1.9, y: -1.6, size: 0.9 });
+          const p = { plik: cien.plik };                                     // the shadow's own pear: a variant changes the outline
+          const a = await c.object("gruszka", { x: -1.2, y: -1.6, size: 1.6, ...p }), b = await c.object("gruszka", { x: 1.9, y: -1.6, size: 0.9, ...p });
           await c.say("lisek", "line.p_cien");
           const ok = duzy ? a : b;
           dobre(ok); await c.task({ targets: [a, b], correct: ok, wrong: "line.p_cien_nie" });
@@ -329,16 +330,24 @@ export default {
         // the home task shown in play, on a plain colour: two shoes, the bigger one sticks out all round
         await c.go({ kolor: "#f6e2c4", motyw: "kola" }, { ciecie: true });
         const lewyDuzy = Math.random() < 0.5;
-        const bd = await c.object("but", { x: lewyDuzy ? -0.7 : 2.1, y: -2.2, size: 2.3 }), bm = await c.object("but", { x: lewyDuzy ? 2.1 : -0.7, y: -2.45, size: 1.35 });
+        const p = { plik: "but" };                                         // one shoe, its heel on the left (the variants face both ways)
+        const bd = await c.object("but", { x: lewyDuzy ? -0.7 : 2.1, y: -2.2, size: 2.3, ...p }), bm = await c.object("but", { x: lewyDuzy ? 2.1 : -0.7, y: -2.45, size: 1.35, ...p });
         await wyrosnij(c);
         await c.ujecie("ogolny");
         await c.say("lisek", "line.d_buty");
         dobre(bd); await c.task({ targets: [bd, bm], correct: bd, wrong: "line.d_buty_nie" }); dobre(bd, false);
         await c.ujecie("sredni", { na: [bd, bm, "lisek"] });
-        await c.say("lisek", "line.d_buty_tak");
-        await c.nalozenie(bm, bd);
+        await c.say("lisek", "line.d_buty_linia");
+        // Fox lines them up: both heels on one pencil line, one above the other; a tick where each toe ends
+        await c.ujecie("ogolny");                                            // the free middle, right of the characters
+        const x0 = -0.6, kreska = await c.line([[x0, 0.9], [x0, -3.3]], { color: "#3b3631", width: 0.07, strong: true });
+        await Promise.all([[bd, -0.5], [bm, -2.4]].map(([h, y]) => { const b = c.bounds(h); return h.moveTo(h.mesh.position.x + (x0 - b.left), y, 0.6); }));
+        c.sfx("plop");
+        const konce = []; for (const h of [bd, bm]) { const b = c.bounds(h); konce.push(await c.line([[b.right, b.top + 0.2], [b.right, b.bottom - 0.2]], { color: "#e8502e", width: 0.07, strong: true, duration: 0.35 })); }
+        await c.say("lisek", "line.d_buty_dalej");
+        kreska?.remove(); konce.forEach((k) => k.remove());
         await c.ujecie("sredni", { na: ["sowa", bd] });                      // Owl gives the game to the parents, the shoes in the shot
-        await c.say("sowa", "line.d_rodzice");
+        await c.say("sowa", "line.d_rodzice_linia");
       },
     ],
   },

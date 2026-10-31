@@ -211,9 +211,10 @@ export default {
         // 4. shadows: one pear's or many pears'
         {
           const wiele = Math.random() < 0.5;
-          const cien = wiele ? await c.kupka("gruszka", 5, { x: 0, y: 1.5, size: 2.0 }) : await c.object("gruszka", { x: 0, y: 1.5, size: 1.5 });
+          const p = { plik: "gruszka" };                                     // one pear file: a variant changes the outline
+          const cien = wiele ? await c.kupka("gruszka", 5, { x: 0, y: 1.5, size: 2.0, ...p }) : await c.object("gruszka", { x: 0, y: 1.5, size: 1.5, ...p });
           cienie(c, cien);
-          const jedna = await c.object("gruszka", { x: -1.7, y: -1.9, size: 1.35 }), kilka = await c.kupka("gruszka", 5, { x: 1.7, y: -1.9, size: 1.4 });
+          const jedna = await c.object("gruszka", { x: -1.7, y: -1.9, size: 1.35, ...p }), kilka = await c.kupka("gruszka", 5, { x: 1.7, y: -1.9, size: 1.4, ...p });
           await c.ujecie("sredni", { na: [cien] });                          // the shadow first, then the options
           await c.say("lisek", "line.p_cien");
           await c.ujecie("ogolny");

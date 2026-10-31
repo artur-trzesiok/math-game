@@ -223,12 +223,12 @@ export function wieza(S, { klocki, miejsca = [{ x: 0 }], podloga = GROUND + 0.02
 
 // ===================================================================== a heap
 // many of one thing as ONE handle (dragged, pointed at, hidden as one): the first sticker shrunk to the middle and the
-// rest around it, children of its group; `dzieci` are the others (a shadow is made of each)
-export async function kupka(S, name, n, { x = 0, y = 1.2, size = 1.1, z = 0.4, cicho = false } = {}) {
-  const h = await S.object(name, { x, y, size, z, cicho });
+// rest around it, children of its group; `dzieci` are the others (a shadow is made of each); `plik` = one variant for all
+export async function kupka(S, name, n, { x = 0, y = 1.2, size = 1.1, z = 0.4, cicho = false, plik = null } = {}) {
+  const h = await S.object(name, { x, y, size, z, cicho, plik });
   h.icon.scale.setScalar(0.5); h.dzieci = []; h.ile = n;
   for (let j = 1; j < n; j++) {
-    const a = j / (n - 1) * Math.PI * 2 + 0.5, d = await S.object(name, { size: 1, cicho: true });
+    const a = j / (n - 1) * Math.PI * 2 + 0.5, d = await S.object(name, { size: 1, cicho: true, plik });
     S.scene.remove(d.mesh); const i = S.objects.indexOf(d); if (i >= 0) S.objects.splice(i, 1);
     // spread so each one reads on its own (0.34 piled ducklings on each other), still close enough to be one heap
     d.mesh.position.set(Math.cos(a) * 0.5, Math.sin(a) * 0.38, 0.01 + j * 0.002); d.mesh.scale.setScalar(0.44); h.mesh.add(d.mesh); h.dzieci.push(d);

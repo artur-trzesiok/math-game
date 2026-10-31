@@ -398,5 +398,20 @@
   "hash": "0a11bc592dce",
   "who": "wiewiorka",
   "text": "Każdy ma czapkę w sam raz: największa na największej głowie Sowy, a najmniejsza na mojej!"
+ },
+ "line.d_buty_linia": {
+  "hash": "ba12c21fefee",
+  "who": "lisek",
+  "text": "Tak, ten but jest większy. Ustawię oba piętami przy jednej kresce."
+ },
+ "line.d_buty_dalej": {
+  "hash": "ae8a189a12b0",
+  "who": "lisek",
+  "text": "Widzisz? Duży sięga dalej!"
+ },
+ "line.d_rodzice_linia": {
+  "hash": "3a19ef085266",
+  "who": "sowa",
+  "text": "Porównaj z rodzicami buty całej rodziny: ustawcie je piętami przy jednej linii. Który sięga dalej, ten jest większy!"
  }
 }

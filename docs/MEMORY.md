@@ -288,6 +288,14 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   upright, an arrow, a laughing Fox sideways. The narrator says `line.obroc` (menu i18n) once per showing, only in the
   menu, and on iOS only after the first touch.
 
+- **No painted rims, anywhere** (2026-10-31, the user: the bath and the day cards had burnt-in edges; blocks and shapes
+  framed during the story). 36 stickers from outline sheets never re-cut since the change still had the old rim - re-cut
+  (a painted glow under the stage signs trimmed; the rooster card redrawn from the clean morning card); the drawn
+  shapes' white ring (geometria.js, also the tower blocks) follows the sticker rule through `naklejka.js`. The stage
+  signs in HTML (menu plank, map, celebration) get the white edge from CSS, like the album's `.wycinek`.
+- **Shadow tasks pin one variant** (2026-10-31): a sticker variant changes the outline, so a shadow and its answers (and
+  heaps, `kupka({plik})`) use one file. bigger_smaller's shoes: compared heels on one line, not laid one on another.
+
 ## 6. Engine and tools - what to know in practice
 
 - **Autopilot / tests**: `?cicho&szybko&scenariusz&lekcja=<id>&etap=story` runs story, practice and home to the
@@ -381,6 +389,8 @@ the edge of each while the group is a target. A mechanic that draws a sticker pi
   must sit ON a painted thing (logs in the dam's hole, winners on a painted podium) need a wide shot or a sticker.
 
 ## 8. Open, not started
+- iPad: no menu music (2026-10-31, the user). `?dzwiek` shows the music element, the Web Audio context and the iOS
+  audio session; suspect `navigator.audioSession.type = "playback"` / the effects' AudioContext (sfx.js, since 4d97d69f).
 
 
 - **Plan state 2026-10-30**: phases 0-5 done for world 1 (all 24 lessons passed or built new, every one with a
